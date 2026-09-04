@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERCOM: LIBRERIA PARA COMUNICACIONES SERIE</title>
+  </head>
+
+<!-- A partir de aquí viene el contenido real de la pagina>-->
+
+<table width="95%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>SERCOM: LIBRERIA PARA COMUNICACIONES SERIE</b>
+ </td>
+</tr>
+</tbody></table>
+
+<br>
+<blockquote>
+<li>
+<b>MOTIVACIÓN</b>
+</li>
+<p>
+   La mayoría de los <b>microcontroladres actuales incorporan un puerto serie</b> lo que permite <b>comunicar</b> de una manera
+muy sencilla <b>un ordenador con un hardware externo</b>, que en muchos casos ha sido construido por nosotros mismos.
+<br>   <br>
+  A mí siempre me ha gustado la idea de controlar otros sistemas desde el PC, como por ejemplo un robot, una maqueta de
+  tren, las luces de una casa, etc... Con el puerto serie y un microcontrolador esto es muy sencillo de realizar :-)
+  <br> <br>
+  Este proyecto nace con la idea de crear una <b>librería serie</b>, <b>multiplataforma</b> y <b>fácilmente integrable</b> con programas gráficos. Para ello
+  he decidido basarla en la librería <a href="http://www.gtk.org/">GLIB</a>.
+</p>
+ <br><br>
+<li>
+<b>AUTOR:</b>
+</li>
+<ul>
+  <li><b>Juan González Gómez</b>. Agosto-2002</li>
+</ul>
+<br>
+
+<li>
+<b>LICENCIA:</b> <a href="http://gugs.sindominio.net/gnu-gpl/gples.html">GPL </a>
+</li>
+ <br>
+ <li>
+<b>DESCRIPCIÓN</b>
+</li>
+<p>
+  La librería <b>SERCOM</b> (SERial COMunications) ofrece una <b>API basada en GLIB</b> para acceder al puerto serie. Tanto la apertura/cierre del
+  puerto serie, como la lectura/escritura se puede realizar utilizando los <b>IOChannels</b> de la GLIB-2.0.   <br><br>
+  Para<b> configurar el puerto serie</b> se utilizan <b>funciones POSIX</b>, sin embargo para acceder a detalles de más bajo nivel, como el acceso
+  a las señales de control<b> DTR</b>, <b>CTS</b> y <b>RTS</b> hay que recurrir a<b> ioctls</b> y funciones específicas que dependen del sistema operativo.
+  <br><br>
+  La versión inicial sercom-0.2, solo está para plataformas Linux
+</p>
+
+<br><br>
+<li>
+<b>DOWNLOAD</b>
+</li>
+<br><br>
+<table width=95% bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>FICHEROS PARA DESCARGAR</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=95%  border="0" >
+<tbody><tr bgcolor="#cabeeb">
+ <td >
+   <a href="sercom-0.2.tgz">sercom-0.2.tgz (40KB)</a>
+ </td>
+ <td> Libreria SERCOM-0.2. Fuentes, ejecutables y ejemplos</td>
+</tr>
+</tbody></table>
+<br><br>
+<li>
+<b>UTILIZACIÓN</b>
+</li>
+<ol>
+  <li>Bajar el fichero <b>sercom-0.2.tgz</b></li>
+  <li>Descomprimir el paquete (<b>tar vzxf sercom-0.2.tgz</b>)</li>
+  <li>Acceder a las fuentes (<b>cd sercom-0.2.tgz</b>)</li>
+  <li>Compilar los ejemplos (<b>make</b>)</li>
+</ol>
+En el paquete se incluyen los siguientes ejemplos, todos ellos trabajan con el dispositivo<b> /dev/ttyS0 (COM1)</b>. La mayoría de los
+ejemplos están pensados para trabajar con la tarjeta CT6811.  Además de mostrar cómo hay que utilizar la API de SERCOM, los
+ejemplos son muy útiles para ver cómo manejar los IOChannels y el bucle principal de la GLIB-2.0.
+<ol>
+  <li><b>con-scterm</b>: Mini-terminal de comunicaciones para consola. </li>
+  <li><b>con-scledp1</b>: Carga del programa ledp en una tarjeta CT6811. Versión bloqueante.</li>
+  <li><b>con-scledp2</b>: Idem. Versión no bloqueante, basada en espera activa </li>
+  <li><b>con-scledp3</b>: Idem. Version no bloqueante basada en eventos. Cada vez que se reciben datos por el puerto serie se llama a una
+    función de retrollamada definida.</li>
+</ol>
+
+<li>
+<b>NOTICIAS</b>
+</li> <br>
+<blockquote>
+<li><b>12/Abr/2002: Liberada versión inicial 0.2 de SERCOM.</b></li>
+<br>
+  <blockquote>
+  -Solo para plataformas Linux<br>
+  -Basada en los IOChannels de la GLIB-2.0 <br>
+  -Un mini-terminal de comunicaciones de prueba así como diversos ejemplos de carga del programa ledp en la CT6811<br>
+</blockquote>
+<br><br>
+<br><br>
+</blockquote>
+
+
+</blockquote>
+
+</body></html>
