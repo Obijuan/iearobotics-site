@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html>
+  <head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+SHEILA: HEXAPODO CON TRES SERVOS</title>
+</head>
+
+
+<!-- A partir de aquí viene el contenido real de la pagina>-->
+
+
+<table width="95%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>SHEILA: HEXAPODO CON TRES SERVOS</b>
+ </td>
+</tr>
+</tbody></table>
+
+<br>
+<blockquote>
+<li>
+<b>MOTIVACIÓN</b>
+</li>
+<br>
+<a href="http://www.eagleman.org">Ricardo Gómez González</a>(a.k.a <strong>eagleman</strong>), estudiante en la escuela de informática 
+de la <a href="http://www.upsam.com">UPSAM</a>, 
+diseñó todas las piezas y construyó la estructura mecánica de <strong>SHEILA</strong>.
+ Me comentó que la tenía diseíada pero que todavía no le había puesto electránica ni la había hecho andar. 
+Dado que yo ya había trabajado con <strong>robots articulados</strong> y tenía desarrollado
+ el programa <a href="personal/juan/proyectos/XBT6811/xbt6811.html">XBT6811</a> 
+que permite grabar una secuencia de movimiento, para luego
+ser reproducida, le pedí que me dejase a <strong>Sheila </strong>para generar una secuencia de movimiento muy simple 
+y ver cómo andaba.<br><br>
+
+Utilicé una <strong>tarjeta BT6811</strong> para la conexión de los servos y una <strong>CT6811</strong> 
+para la conexión al PC, y el programa <a href="personal/juan/proyectos/XBT6811/xbt6811.html">XBT6811</a>
+para la generación de la secuencia de movimiento. El resultado fue que SHEILA andaba con bastante gracia ;-), pero eso sí,
+con un cable de conexión al PC.<br><br>
+Más adelante hice el programa <a href="sheila.asm">sheila.asm</a>
+que se graba en la <strong>eeprom</strong> de la <strong>CT6811</strong>, 
+y que contiene la secuencia de movimiento, de manera que se convierte en un sistema autónomo.
+<br><br>
+
+  Aqui puedes ver algunas <b>fotos</b> de <strong>SHEILA</strong>, aunque la calidad no es muy buena :-(
+ <br><br>
+ <table>
+  <tr>
+    <td><img src="sheila1.jpg" alt="Sheila" width=300 height=226 align="middle" border=2>  </td>
+    <td><img src="sheila2.jpg" width=300 height=226 border=2></td>
+  </tr>
+</table>
+<br>
+<a href="sheila1.mpg">Aquí</a> hay un vídeo de sheila andando y <a href="sheila2.mpg">aquí</a> se dirige hacia la cámara.
+<br>
+<br>
+<li>
+<b>AUTORES:</b>  </li>
+<ul>
+  <li><strong>Ricardo Gómez González</strong>(a.k.a Eagleman) : Idea original, piezas, planos, 
+  estructura mecánica y construcción de SHEILA</li>
+  <li><strong>Juan González Gómez</strong> (a.k.a Obijuan): Software y generación de la secuencia de movimiento</li>
+</ul>
+<br>
+<li><b>LICENCIA</b>: Todo el software se encuentra bajo licencia <a href="http://gugs.sindominio.net/gnu-gpl/gples.html"> GPL</a> </li>
+<br>
+<li>
+<b>DESCRIPCIÓN</b> <br>
+</li>
+<ul>
+  <li><strong>Materiales</strong>: PVC EXPANDIDO </li>
+  <li><strong>Dimensiones</strong>:  25x14x7 cm aprox. </li>
+  <li><strong>Servos</strong>: 3 del tipo Hitec HS-300BB </li>
+  <li><strong>Hardware</strong>:  Tarjetas BT6811 y CT6811 </li>
+  <li><strong>Software</strong>: Programa <a href="futA.asm">futA.asm</a> en la BT6811 y  <a href="sheila.asm">sheila.asm</a>
+  en la CT6811 </li>
+</ul>
+La estructura mecánica de <strong>Sheila</strong> está diseíada de manera que 
+<strong>con solo 3 servos se consiguen mover las 6 seis patas</strong>.
+Combinando adecuadamente el movimiento de los servos, sheila se puede mover hacia adelante y hacia atrás.<br>
+La tarjeta <strong>BT6811</strong> se encarga de controlar la posición de los 3 servos, 
+y la tarjeta <strong>CT6811</strong> es la que tiene grabada la secuencia de movimiento que se la envía 
+a la BT6811 a través del <strong>SPI</strong>.
+<br><br>
+Tambión es posible <strong>conectar sheila directamente al PC</strong> y controlarla usando el programa
+ <a href="http://www.iearobotics.com/personal/juan/proyectos/XBT6811/xbt6811.html">XBT6811</a>
+<br><br>
+
+<li>
+<b>DOWNLOAD</b>
+</li>
+<br>
+<table width=95% bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>FICHEROS PARA DESCARGAR</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=95%  border="0" >
+<tbody>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="sheila.asm">sheila.asm (5KB)</a>  </td>
+  <td> Programa para que sheila ande recto. Para grabar en un 6811E2. Fuentes </td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="sheila.s19">sheila.s19 (586 Bytes)</a>  </td>
+  <td> Programa ejecutable</td>
+</tr>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="sheila.f4">sheila.f4 (76 Bytes)</a>  </td>
+  <td> Secuencia de movimiento, para el programa XBT6811</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="futA.asm">futA.asm (12KB)</a>  </td>
+  <td>Programa para grabar en la EEPROM de la tarjeta BT6811. Fuentes </td>
+</tr>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="planos_sheila.dwg">planos_sheila.dwg (86KB)</a>  </td>
+  <td> Planos de sheila, en formato .dwg</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="planos_sheila.dxf">planos_sheila.dxf (135KB)</a>  </td>
+  <td>Planos de sheila, en formato .dxf </td>
+</tr>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="planos_sheila.pdf">planos_sheila.pdf (8KB)</a>  </td>
+  <td> Planos de sheila, en formato .pdf</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="sheila1.mpg">sheila1.mpg (343KB)</a>  </td>
+  <td>Vídeo de Sheila, andando lateralmente </td>
+</tr>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="sheila2.mpg">sheila2.mpg (344KB)</a>  </td>
+  <td>Vídeo de Sheila, andando hacia la cámara</td>
+</tr>
+
+</tbody></table>
+
+<br>
+
+<li>
+<b>NOTICIAS</b>
+</li>
+<blockquote>
+ <li><strong>20/Noviembre/2002</strong>: Aíadidos planos y vídeos de Sheila</li>
+ <li><strong>27/Agosto/2002</strong>: Puesta Sheila en esta web. Descripción y software</li>
+ </blockquote>
+ <br>
+
+<li>
+<b>AGRADECIMIENTOS:</b></li>
+<blockquote>
+<li> A <strong>Ricardo Gómez González</strong>, autor original de Sheila, por darme carta blanca para participar en el proyecto</li>
+<li> A <strong>Carlos Soria Heredia</strong>, profesor de la <a href="http://www.upsam.com">UPSAM</a>
+y responsable del <a href="http://www.cit-ups.com/">CIT</a> por su apoyo logístico al proyecto. </li>
+<li> A <strong>Iván González</strong>, por su ayuda en la grabación de los vídeos</li>.
+
+</blockquote>
+<br>
+
+<li>
+<b>CREDITOS:</b>
+</li>
+
+<ul>
+  <li>El programa <strong>sheila.asm</strong> está basado en el software desarrollado por
+  <a href="andres">Andrés Prieto-Moreno Torres</a> para PUCHOBOT</li>
+  <li> Tarjeta <strong>BT6811</strong>, diseíada por  <a href="andres">Andrés Prieto-Moreno Torres</a> </li>
+  <li> Tarjeta <strong>CT6811</strong>, <a href="http://www.microbotica.com">Microbática</a>
+</ul>
+
+</blockquote>
+
+</body></html>
