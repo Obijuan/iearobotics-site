@@ -1,7 +1,13 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><title>Proyecto LABOBOT</title></head>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto LABOBOT</title>
+  </head>
 
 
-<!-- A partir de aquí viene el contenido real de la pagina>-->
+<!-- A partir de aquÃ­ viene el contenido real de la pagina>-->
 
 
 <table width="95%" bgcolor="#abbeeb" border="0" cellpadding="4">
@@ -18,15 +24,15 @@
 <b>INTRODUCCION</b>
 </li>
 <br>
-Proyecto desarrollado para la asignatura de doctorado "Codiseño de Sistemas Software/Hardware avanzados",
+Proyecto desarrollado para la asignatura de doctorado "CodiseÃ±o de Sistemas Software/Hardware avanzados",
 curso 2001-2002, impartido en la E.T.S de Informatica de la <a href="http://www.ii.uam.es">UAM</a>,
 por los profesores:
 
-<a href="http://www.ii.uam.es/~fjgomez/ "> D. Francisco Gómez Arribas </a>,
-<a href="http://www.ii.uam.es/~jmartine/ "> D. Javier Martínez Rodríguez</a>,
+<a href="http://www.ii.uam.es/~fjgomez/ "> D. Francisco GÃ³mez Arribas </a>,
+<a href="http://www.ii.uam.es/~jmartine/ "> D. Javier MartÃ­nez RodrÃ­guez</a>,
 <b>Jean-Pierre Deschamps,</b>
-<b>Jose Ignacio Martínez</b>,
-<a href="http://www.ii.uam.es/~sergio/">Sergio López-Buedo</a>
+<b>Jose Ignacio MartÃ­nez</b>,
+<a href="http://www.ii.uam.es/~sergio/">Sergio LÃ³pez-Buedo</a>
 
 <p>Se ha trabajado con la tarjeta de desarrollo <a href="http://www.ii.uam.es/~laboweb/LabWeb/index.php3">LABOMAT</a>
 que incorpora un microprocesador 68360 y una FPGA XC4013E de <a href="http://www.xilinx.com">Xilinx</a>,
@@ -52,14 +58,14 @@ Juan Gonzalez Gomez. Marzo-2002. <b>Proyecto  bajo licencia GPL</b>.
 <b>PARTE HARDWARE</b>
 </li>
 <p>
-La unidad PWM diseñada permite posicionar servos del tipo Futaba 3003 o compatibles, utilizados en la
+La unidad PWM diseÃ±ada permite posicionar servos del tipo Futaba 3003 o compatibles, utilizados en la
 construccion de robots articulados. Para la aplicacion de las minicamaras se han usado 4 unidades PWM para
 controlar los 4 servos, pero se podrian controlar hasta 28.
 </p>
 
 <blockquote>
 <li>
-<a href="labobot_vhd.zip">Descripción en VHDL</a></li>
+<a href="labobot_vhd.zip">DescripciÃ³n en VHDL</a></li>
 <p>La entidad superior es el fichero <b>perif_access.vhd</b> en el que se implementa la interfaz entre la CPU y la FPGA,
  asi como 4 unidades de PWM y un divisor de la frecuencia del reloj (prescaler) para conseguir la frecuencia
  necesaria de trabajo. El sistema necesita un reloj de 409.600 Hz de frecuencia para generar el PWM correctamente.
@@ -70,12 +76,12 @@ de 32 bits en la memoria. Cada byte de este registro indica la posicion en la qu
 </p>
 
 <li>
-<a href="labobot_hex.zip">Configuración de la FPGA (bitstream)</a>
+<a href="labobot_hex.zip">ConfiguraciÃ³n de la FPGA (bitstream)</a>
 </li>
-<p>Tomando como base el código anterior y empleando las Herramientas <b>Foundation de Xilinx</b>
- se realiza la síntesis, place & route y generación del bitstream de configuración de la FPGA.</p>
+<p>Tomando como base el cÃ³digo anterior y empleando las Herramientas <b>Foundation de Xilinx</b>
+ se realiza la sÃ­ntesis, place & route y generaciÃ³n del bitstream de configuraciÃ³n de la FPGA.</p>
  <p>
- Salvo el proceso de Sintesis, todo el diseño de ha desarrollado bajo el <b>sistema operativo LINUX</b>. Xilinx ha
+ Salvo el proceso de Sintesis, todo el diseÃ±o de ha desarrollado bajo el <b>sistema operativo LINUX</b>. Xilinx ha
  anunciado que pronto sacara al mercado herramientas de Sintesis para LINUX. De momento hay que utilizar WINDOWS.
  </p>
  <br>
@@ -85,7 +91,7 @@ de 32 bits en la memoria. Cada byte de este registro indica la posicion en la qu
 <b>PARTE SOFTWARE</b>
  </li>
 <p> El programa de <a href="labobot.c">prueba</a> permite que las minicamaras sigan dos secuencias de movimiento diferentes.
-El procesador accece a las unidades de PWM de la FPGA como si fuese un periférico
+El procesador accece a las unidades de PWM de la FPGA como si fuese un perifÃ©rico
  en el que hay mapeado un registro de 32 bits en la direccion 0x16000000. Los 8 bits de menor peso especifican
  la posicion del servo 1, los siguientes 8 bits la del servo 2, los siguientes la del 3 y los 8 bits de mayor peso la del 4.</p>
 <br><br>
@@ -132,7 +138,7 @@ El procesador accece a las unidades de PWM de la FPGA como si fuese un periféric
   
    <tr bgcolor="#abbeeb">
     <td> <a href="labobot.mpg">labobot.mpg</a> (344 KB)</td>
-    <td> Vídeo del movimiento de las 2 minicámaras</td>
+    <td> VÃ­deo del movimiento de las 2 minicÃ¡maras</td>
   </tr>
 
 </tbody></table>
@@ -144,7 +150,7 @@ El procesador accece a las unidades de PWM de la FPGA como si fuese un periféric
   <ul>
     <li> <b>Andres Prieto-Moreno Torres</b> es el autor original de la estructura mecanica de las
       minicamaras y los servos y que he utilizado como aplicacion. </li> 
-    <li><strong>Iván González</strong> es el autor original del programa <strong>perif-access.vhd</strong>, que yo
+    <li><strong>IvÃ¡n GonzÃ¡lez</strong> es el autor original del programa <strong>perif-access.vhd</strong>, que yo
      he adaptado para este proyecto.
     </li>
   </ul>
@@ -158,13 +164,13 @@ El procesador accece a las unidades de PWM de la FPGA como si fuese un periféric
 <ul>
   <li>A <b>Ivan Gonzalez</b>, por su ayuda en el manejo de la tarjeta LABOMAT y del entorno Foundation. Tambien
       me ha ayudado a depurar los programas en VHDL. Yo nunca habia programado en este lenguaje y su
-      ayuda ha sido muy valiosa. ¡Gracias!</li><br>
-    <li>A <strong>Andrés Prieto-Moreno Torres</strong> por dejarme la estructura mecánica. ¡Gracias!</li>  
+      ayuda ha sido muy valiosa. Â¡Gracias!</li><br>
+    <li>A <strong>AndrÃ©s Prieto-Moreno Torres</strong> por dejarme la estructura mecÃ¡nica. Â¡Gracias!</li>  
   <br>
   <li>A <b>Sergio Lopez-Buedo</b> por ser una "maquina" de resolver problemas y tener siempre tiempo
-      para ayudarte. Me ha ayudado mucho en mis primeros pasos con Foundation y VHDL. ¡Gracias!</li> <br>
+      para ayudarte. Me ha ayudado mucho en mis primeros pasos con Foundation y VHDL. Â¡Gracias!</li> <br>
   <li>A <b>Gustavo Daniel Sutter</b> por instalarme desinteresadamente el entorno Foundation de Xilinx en el
-      portatil, asi como otras herramientas muy utiles. ¡Gracias!</li><br>
+      portatil, asi como otras herramientas muy utiles. Â¡Gracias!</li><br>
 </ul>
 </blockquote>
 
@@ -173,16 +179,16 @@ El procesador accece a las unidades de PWM de la FPGA como si fuese un periféric
 <H2 id="noticias">Noticias</H2>
 <div class="lista">
 <ul>
-   <li><b>30/Jul/2003</b>: Añadido fichero labobot.pdf de mayor calidad, junto con sus fuentes</li>
+   <li><b>30/Jul/2003</b>: AÃ±adido fichero labobot.pdf de mayor calidad, junto con sus fuentes</li>
    <li><b>Marzo/2002</b>: Publicado en la web</li>
 </ul>
 </div>   
 
 <HR>
-<a href="http://www.iearobotics.com">IEA ROBOTICS</a>
+<a href="">IEA ROBOTICS</a>
 <ADDRESS>
-Página creada por
-<A HREF="http://www.iearobotics.com/personal/juan/index.html">Juan González</A>
+PÃ¡gina creada por
+<A HREF="personal/juan/index.html">Juan GonzÃ¡lez</A>
 </ADDRESS>
 
 </body></html>
