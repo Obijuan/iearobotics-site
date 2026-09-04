@@ -1,0 +1,168 @@
+<html>
+  <head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <title>Tarjeta PCT-LED</title>
+    <style type="text/css">
+    </style>
+  </head>
+
+<body>
+  
+  <!-- título de la página -->
+
+<table align="center" width="100%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>TARJETA PCT-LED</b>
+ </td>
+</tr>
+</tbody></table> 
+
+ <table align="center">
+<tr>
+<td><a href="#uno">[Introducción]</a></td>
+<td><a href="#dos">[caracteristicas]</a></td>
+<td><a href="#tres">[Autores]</a></td>
+<td><a href="#licencia">[Licencia]</a></td>
+<td><a href="#historia">[Historia]</a></td>
+<td><a href="#puertos">[Conexión]</a></td>
+<td><a href="#download">[Download]</a></td>
+<td><a href="#links">[Links]</a></td>
+<td><a href="#noticias">[Noticias]</a></td>
+<td><a href="#agradecimientos">[Agradecimientos]</a></td>
+</tr>
+</table>  
+<center>
+<img src="images/pct-led-foto.jpg" width=320 heigth=200>
+</center><!-- Introducción -->
+<HR><h2 id="uno"> Introducción </h2><!-- texto --><div class="cuerpo"><p>
+	Tarjeta de prueba con 8 leds y conector para cable de tipo bus, para ser conectada a diferentes placas 
+entrenadoras, aunque fue diseñada inicialmente para conectarse al <b>puerto C</b> de la 
+<a href="../ct6811/ct6811.html">tarjeta CT6811</a>.
+</p></div>
+<!-- Sección 1 -->
+<HR><H2 id="dos"> Características </H2>
+<div class="lista"><ul>
+	<li>8 leds de 3mm</li>  <li><b>Dimensiones</b>: 5 x 4.1cm</li>
+  <li>PCB a simple cara</li>
+    <li>Conector acodado de tipo bus de 10 pines
+    <li>Conexión a traves de cable plano de tipo bus, de 10 líneas</li></div>
+<!-- Sección 2 -->
+<HR><H2 id="tres"> Autor</H2><div class="lista"><ul>
+  <li><a href="../../personal/andres/index.html">Andrés Prieto-Moreno Torres</a>. 
+        Esquemático, PCB, fabricación y pruebas</li>
+</ul>
+</div><!-- Sección 3 -->
+<HR><H2 id="licencia"> Licencia</H2><div class="cuerpo">
+  Esta tarjeta es <b>hardware abierto</b>, por lo que se permite su copia, modificación y distribución, siempre y cuando se mantenga esta nota.</div>
+<!-- DOWNLOAD: Archivos -->
+<HR><H2 id="historia"> Historia </H2>
+
+<div class="cuerpo">
+<p>
+	Lo mismo que en el mundo del software el primer programa que se hace es el "hola mundo", para familiarizarse
+	con el entorno y con el lenguaje, esta placa es un "hola mundo" en hardware. Para aprender a trabajar con el
+	programa eagle de diseño electrónico y aprender a realizar diseños de placas industriales, primero se realiz�
+	esta pequeña placa, que además resulta muy útil para hacer depuración en electrónica.
+</p>
+<p>
+  La PCTLED la realizó Andrés Prieto-Moreno  en Agosto del 2001 cuando trabajaba en la empresa <b>Pulsar Technologies</b>.
+</p>
+<p>
+	Aunque el PCB y el esquema son correctos, debido a que se trata de una placa a simple cara, hubo un
+	malentendido con el fabricante y el PCB obtenido fue una imagen especular del realmente diseñado. Esto no 
+	supone ningún problema puesto que la placa es simétrica. Sin embargo, el conector de bus fue necesario colocarlo
+	en la cara de abajo.
+</p>
+<p>
+	En la siguiente foto se muestra la PCT-LED conectada a una CT6811
+	<center>
+<img src="images/pct-led-ct6811.jpg" width=320 heigth=200>
+</center>	
+	
+	
+</p>
+</div>
+
+<!-- Puertos de expansion -->
+<HR><H2 id="puertos"> Conexión</H2>
+<div class="cuerpo">
+<p>
+  La PCT-LED dispone de un conector acodado de 10 pines. En la siguiente foto se muestra la asignación de 
+  cada uno de estos pines. Donde Dx hace referencia al Diodo led x, marcado en la serigrafía de la placa.
+<p>
+<center><img src="images/bus-pct-led.jpg"></center>
+</p>
+<p>
+	<b>Cuando se conecta al puerto C de la CT6811, el led indicado como D8 será el de menor peso y el indicado como
+	D1 el de mayor</b>.
+</p>
+<br><br>
+</div>
+
+
+<HR>
+<!-- DOWNLOAD --><H2 id="download"> Download </H2>
+
+<p>
+<table width=80% bgcolor="#abbeeb" border="0" align="center" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>TARJETA PCTLED</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=80%  border="0" align="center">
+<tbody>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="download/pct-led-sch.pdf">pct-led-sch.pdf (266KB)</a>  </td>
+  <td>Esquemático en PDF</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="download/pct-led-pcb.pdf">pct-led-pcb.pdf(20KB)</a>  </td>
+  <td> PCB en PDF</td>
+</tr>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="download/pct-led-serigrafia.pdf">pct-led-serigrafia.pdf (37KB)</a>  </td>
+  <td> Serigrafías en PDF</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="download/pctled-eagle.zip">pctled-eagle.zip (13KB)</a>  </td>
+  <td> Esquemático y PCB para el Eagle.</td>
+</tr>  
+
+<tr bgcolor="#cabeeb">
+  <td><a href="download/pctled-fabricacion.zip">pctled-fabricacion.zip (77KB)</a>  </td>
+  <td>  Ficheros en formato GERBER y plano de taladros para la fabricación</td>
+</tr>  
+
+<tr bgcolor="#abbeeb">
+  <td><a href="download/cable.asm">cable.asm (2KB)</a>  </td>
+  <td> Programa de prueba para la PCTLED conectada al puerto C de una CT6811.</td>
+</tr>    
+
+<tr bgcolor="#cabeeb">
+  <td><a href="download/cable.s19">cable.s19 (139 Bytes)</a>  </td>
+  <td>  Programa Cable. Ejecutable</td>
+</tr>    
+
+</tbody></table>
+</p>
+<br>           
+
+<!-- Links --><HR><H2 id="links">Links</H2><div class="lista"><ul>  <li><a href="../ct6811/ct6811.html">Tarjeta CT6811</a>
+  			:Tarjeta entrenadora para el microcontrolador 68HC11</li></ul></div>
+
+<!-- Noticias --><HR><H2 id="noticias">Noticias</H2><div class="lista"><ul>  <li><b>26/Ene/2003</b>: Colocada información sobre tarjeta PCTLED</li></ul></div>
+<!-- Agradecimientos -->
+<HR><H2 id="agradecimientos">Agradecimientos</H2><div class="lista"><ul>  <li>A la empresa <a href="http://www.pulsartec.com/enter.htm">Pulsar Technologies</a> por la financiaci�n de la primera tirada.</li></div>
+
+<HR>Página creada por: <a href="../../personal/juan/index.html">Juan González</a></body></html>
+
