@@ -1,0 +1,7 @@
+DOS=UMB,HIGH
+lastdrive=H
+files=20
+rem buffers=10
+devicehigh=c:\dosemu\ems.sys
+rem devicehigh=c:\dosemu\cdrom.sys
+shell=c:\command.com /e:1024 /p

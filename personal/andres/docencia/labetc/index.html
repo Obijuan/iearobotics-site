@@ -1,0 +1,212 @@
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Laboratorio de ETC-2</TITLE>
+	<META NAME="KEYWORDS" CONTENT="estructura y tecnologia de computadoras">
+</HEAD>
+
+<body style="background-color: #FFFFFF; " background="imagenes/fondouam.gif">
+
+<h1><div align="center">Estructura y Tecnologia de Computadores II</div></h1>
+<h2><div align="center">Universidad Autonoma de Madrid - Curso 2005/2006</div></h2>
+<br><br>
+
+
+<TABLE class="margen" border=0>
+<TR>
+	<TD align="right"><img src="./imagenes/tron.png"></td>
+	<TD>
+  		<TABLE border=0 >
+		   <TR><TD class="indice" bgcolor="#aaaaaa")>Indice</TD></TR>
+   		<TR><TD>1. <a href="#uno">Introducción</a></TD></TR>
+		<TR><TD>2. <a href="#dos">Entorno de trabajo</a></TD>
+		<TR><TD>3. <a href="#tres">Calificaciones</a></TD>
+		<TR><TD>4. <a href="#cuatro">Programas</a></TD></TR>
+  		<TR><TD>5. <a href="#cinco">FAQs / News</a></TD></TR>
+   		<TR><TD>6. <a href="#seis">Enlaces de la asignatura</a></TD></TR>
+  		</TABLE>
+	</TD>
+</TR>
+</TABLE>
+
+<!-- Introducción -->
+<h2 id="uno">1. Introducción </h2>
+<p>
+En esta página encontramos una serie de programas de ejemplo para facilitar la realización 
+de la práctica. El objetivo de la pr&aacute;ctica es programar el programa TRON en ensamblador y aprender a combinar el lenguaje C con el ensamblador.
+Para ello se han propuesto una serie de objetivos a cumplir durante el curso, dichos objetivos se muestran en la 
+ <A href="http://www.ii.uam.es/~gdrivera/labetcii/labetcii.htm">p&aacute;gina principal</a> de la asignatura, mantenida por el profesor Guillermo Gonz&aacute;lez de Rivera Peces.
+El alumno podrá utilizar este código siempre y cuando lo entienda, ya que podrá ser objeto de evaluación.
+
+<!-- Entorno de trabajo -->
+<h2 id="dos">2. Entorno de trabajo </h2>
+<p> En los laboratorios de la Escuela encontraremos una partici&oacute;n con MSDOS con todas las herramientas necesarias para hacer la pr&aacute;ctica. Todos los
+trabajos de los alumnos se corregir&aacute;n en clase en dicho entorno. Opcionalmente existe la posibilidad de utilizar los emuladores
+de MSDOS para poder trabajar en casa sin necesidad de instalar el MSDOS. </p>
+<p><li>Para la plataforma <b>LINUX</b> podemos usar el <b>dosemu</b> junto con el <b>freedos</b>. En Debian se pueden instalar dichos programas usando:<br>
+<b>apt-get install dosemu</b><br>
+<b>apt-get install dosemu-freedos</b><br><br>
+Si todo ha ido bien, con ejecutar <b>dosemu -X</b> nos deber&iacute;a salir una ventana con MSDOS. Inincialmente el Prompt nos señala el disco virtual C, en el cual
+no podemos trabajar. Por el contrario, si tecleamos <b>d:</b> veremos nuestro directorio <I>home</I> de <I>linux</I>, a partir del cual podemos colocar nuestros directorios de trabajo.
+Por ejemplo el directorio <I>/home/user/mi_dir</I> lo veremos como <I>d:\mi_dir</I>.<br><br>
+
+La configuraci&oacute;n del Dosemu puede ser m&aacute;s o menos complicada seg&uacute;n lo que queramos hacer. Por ejemplo entre
+las opciones est&aacute;n el activar los puertos serie, cambiar la tipograf&iacute;a, la configuraci&oacute;n de memoria y otras muchas. Aqu&iacute; podeis encontrar
+el fichero <a href="descargas/dosemu.conf"><i>/etc/dosemu/dosemu.conf</i></a> que yo estoy utilizando.<BR>
+Si necesitais editar el AUTOEXEC.BAT o el CONFIG.SYS los encontrar&eacute;is en el directorio <I>/usr/lib/freedos</I> (instalaci&oacute;n en Debian Sarge). Por si acaso aqu&iacute; os pongo mis dos 
+archivos de configuraci&oacute;n: <a href="descargas/autoexec.bat">AUTOEXEC.BAT</a> y <a href="descargas/config.sys">CONFIG.SYS</a><BR><BR>
+
+<p><li>Para la plataforma Windows podemos usar el programa <B>DOSBOX</B> qur tambi&eacute;n es gratuito. En el directorio de instalaci&oacute;n encontraremos
+un fichero de configuraci&oacute;n que al igual que en linux podemos cambiar para activar diferentes opciones del emulador. Una de las
+posibilidades de dicho archivo es utilizarlo como Autoexec.bat ya que al final del todo podemos colocar instrucciones que se ejecutar&aacute;n 
+a continuaci&oacute;n del AUTOEXEC.BAT. En dicho archivo adem&aacute;s habr&aacute; que indicar que directorio vamos  a usar como unidad de disco de desarrollo.
+
+
+
+<p><li>El compilador de <B>Ensamblador</B> que vamos a usar es el <b>TASM</b> y el de <B>C</B> es el <b>Turbo C</b>, ambos de Borland, del que podemos encontrar una 
+versi&oacute;n gratuita en la web de <A href="http://bdn.borland.com/article/0,1410,21751,00.html">Borland</A>. Otra opci&oacute;n es copiar 
+los directorios TC, TD y TASM de los ordenadores del laboratorio. Recordad que luego tendreis que configurar el entorno indicando cuales son las 
+nuevas rutas a las <i>librer&iacute;as</i> y a los ficheros <i>include</i>. <br>
+Adem&aacute;s en el AUTOEXEC.BAT conviene poner en el PATH la ruta
+a los archivos binarios que vamos a usar:<br>
+TASM (compilador de Ensamblador)<br>
+TC (Compilador de C)<br>
+TLINK (Enlazador o com&uacuten;mente Linker)<br>
+TLIB (generador de librer&iacute;as)<br>
+TD (Depurador)<br>
+
+
+<!-- Calificaciones -->
+<h2 id="tres">3. Grupos y Calificaciones </h2>
+
+<A href="listas-etcii.html#table0">Grupo 2a</A>: Martes de 14:00 a 16:00<br>
+<A href="listas-etcii.html#table1">Grupo 2c</A>: Jueves de 15:00 a 17:00<br><br>
+
+<!-- Programas -->
+<h2 id="cuatro">4. Programas de Ejemplo </h2>
+<p>
+
+<table align="center">
+<table border=1>
+<tr bgcolor="grey">
+<td width="20">Programa</td>
+<td width="50">Descripción</td>
+<td width="20">Enlace</td>
+<td width="10">Última actualización</td>
+</tr>
+<tr>
+<td>Cursor</td>
+<td>Programa que mueve un caracter por la pantalla. Acceso directo al modo texto. Teclas O,P,Q,A,'.' para salir</td>
+<td><A href="programas/cursor.asm">cursor.asm</a></td>
+<td>7-nov-06</td>
+</tr>
+<tr>
+<td>Makefile</td>
+<td>Ejemplo de fichero Makefile sencillo. El programa que compila se llama driver.asm</td>
+<td><A href="programas/Makefile">Makefile</a></td>
+<td>7-nov-06</td>
+</tr>
+<tr>
+<td>Prueba Driver</td>
+<td>Ejemplo de programa que verifica que hay un  driver instalado en la INT61H</td>
+<td><A href="programas/driver.asm">driver.asm</a></td>
+<td>7-nov-06</td>
+</tr>
+<tr>
+<td>Efecto</td>
+<td>Programa que rota un caracter en la esquina superior derecha. No usa interrupciones.Optimizado para CPU 386sx</td>
+<td><A href="programas/EFECTO.ASM">efecto.asm</a></td>
+<td>13-ene-05</td>
+</tr>
+<tr>
+<td>Sonido</td>
+<td>Programa que muestra como usar el tercer timer para generar sonidos</td>
+<td><A href="programas/SONIDO.ASM">sonido.asm</a></td>
+<td>08-dic-04</td>
+</tr>
+<tr>
+<td>Timer</td>
+<td>Programa que usa las interrupciones del Timer0 para rotar un caracter</td>
+<td><A href="programas/TIMER.ASM">timer.asm</a></td>
+<td>08-dic-04</td>
+</tr>
+<tr>
+<td>RTC</td>
+<td>Programa que usa las interrupciones del RTC para rotar un caracter. Este es el mecanismo a seguir en la practica 3</td>
+<td><A href="programas/RTC.ASM">rtc.asm</a></td>
+<td>13-ene-05</td>
+</tr>
+<tr>
+<td>Driver</td>
+<td>Ejemplo de estructura basica del driver. Preparado para generacion de archivo .COM</td>
+<td><A href="programas/DRVMIO.ASM">drvmio.asm</a></td>
+<td>07-dic-04</td>
+</tr>
+
+<td>Paralelo</td>
+<td>Programa ejemplo de envio de datos por el puerto paralelo. Hace parpadear un LED por espera activa. (Optimizado para CPU 386)</td>
+<td><A href="programas/PARALELO.ASM">paralelo.asm</a></td>
+<td>13-ene-05</td>
+</tr>
+<td>Paralelo-I</td>
+<td>Programa ejemplo de envio de datos por el puerto paralelo. Hace parpadear un LED mediante el RTC</td>
+<td><A href="programas/PARALELO1.ASM">paralelo1.asm</a></td>
+<td>13-ene-05</td>
+</tr>
+<td>Paralelo-II</td>
+<td>Programa que enciende un LED cuando detecta que se ha apretado un pulsador. Ejemplo de envío y recepción en el puerto paralelo.</td>
+<td><A href="programas/PARALELO2.ASM">paralelo2.asm</a></td>
+<td>13-ene-05</td>
+</tr>
+</table>
+</P>
+
+<!-- Faq & news -->
+<h2 id="cinco">5. FAQs & News </h2>
+<p>
+
+<B>El Bit 5 (Bidireccional On/Off) no me funciona. (23-ene-2005) </B><br>
+En algunos ordenadores el bit del registro de control que controla la  Bi-direccionalidad del puerto no es el bit 5. Por ejemplo en los ordenadores Toshiba modelo T2000SX es el bit 7. En los ordenadores del Laboratorio es el bit 5.
+</p>
+
+<B>¿ Para que sirve el LED rojo ?. (20-ene-2005)</B><BR>
+La placa hardware tiene un LED rojo que se enciende cuando tiene la alimentación correcta y no se debería de apagar salvo que quitemos la alimentación. Si al leer o escribir datos del puerto paralelo veis que esa luz parpadea entonces teneis un problema en la alimentación. En ese caso teneis que utilizar pilas o algún transformador externo. En los ordenadores del Laboratorio en modo escritura suele funcionar sin alimentación externa pero en modo escritura suele fallar. Por eso os recomiendo que useis 4 pilas tipo AA para alimentar la  tarjeta.
+</P>
+
+<B>¿ Debo copiar los programas tal cual ? (14-ene-2005)</B><BR>
+Recomiendo que el alumno los entienda y que haga sus propias rutinas. Adaptándolas a la práctica 3 y mejorando el código. Por
+en los códigos de recibir y enviar dato del puerto paralelo se muestra la secuencia pero no se ha respetado el acceso ordenado a los bits del registro de control del puerto paralelo. Es decir, si lo que queremos es activar un solo bit, lo que hay que hacer es leer el registro de control modificar el bit sin tocar el resto y volverlo a escribir al registro de control.
+</P>
+<B>No me funciona el modo EPP en los laboratorios. (13-ene-2005)</B><BR>
+En los ordenadores del laboratorio no disponemos del modo EPP, por eso hay que utilizar el modo bidireccional del puerto paralelo. En los ejemplos PARALELO1 y PARALELO2 encontrareis las rutinas para enviar y leer datos de la tarjeta electrónica. Cuando los probeis es importante que tengais en cuenta varias cosas:<BR>
+*) Para configurar el modo Bidireccional hay que tocar la BIOS y no en todos los ordenadores funciona.<BR> 
+*) Los programas que hay en esta página se han probado en un portatil Toshiba 2000SX (386sx) y en los ordenadores del Laboratorio. Los programas que realizan las pausas con espera activa (Efecto) pueden funcionar de forma diferente en función de la frecuencia de la CPU. 
+
+
+<!-- Enlaces -->
+<h2 id="seis">6. Enlaces de la asignatura </h2>
+<p>
+<ul>
+	<li><A href="http://www.ii.uam.es/~gdrivera/labetcii/labetcii.htm">Pagina Principal de la asignatura</a></li>
+	<li><A href="http://www.ii.uam.es/~gdrivera/labetcii/curso0506/fechas.htm">Calendario de practicas</a></li>
+	<li><A href="http://atc.ugr.es/docencia/udigital/index.html">El Universo Digital del PC.</a></li>
+</ul>
+
+<HR NOSHADE>
+
+<table>
+<tr>
+    <td>IEA ROBOTICS</td>
+    <td><A href="/index.php">P&aacute;gina de inicio</A></td>
+</tr>
+<tr>
+     <td>Andr&eacute;s Prieto-Moreno Torres</td>
+     <td><A href="../../index.html">P&aacute;gina Personal</A></td>
+</tr>
+</table>
+
+<HR NOSHADE>
+<font size="-2" color="grey"><em>Ultima modificacion: 17-nov-2005</em></font>
+</body>
+
+</html>

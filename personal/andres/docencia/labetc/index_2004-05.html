@@ -1,0 +1,146 @@
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Laboratorio de ETC-2</TITLE>
+	<META NAME="KEYWORDS" CONTENT="estructura y tecnologia de computadoras">
+</HEAD>
+
+<body style="background-color: #FFFFFF; " background="imagenes/fondouam.gif">
+
+<h1><div align="center">Estructura y Tecnologia de Computadores II</div></h1>
+<h2><div align="center">Universidad Autonoma de Madrid - Curso 2004</div></h2>
+<br><br>
+
+
+<TABLE class="margen" border=0>
+<TR>
+	<TD align="right"><img src="./imagenes/etciip.jpg"></td>
+	<TD>
+  		<TABLE border=0 >
+		   <TR><TD class="indice" bgcolor="#aaaaaa")>Indice</TD></TR>
+   		<TR><TD>1. <a href="#uno">Introducción</a></TD></TR>
+  			<TR><TD>2. <a href="#dos">FAQs / News</a></TD></TR>
+   		<TR><TD>3. <a href="#tres">Programas</a></TD></TR>
+   		<TR><TD>4. <a href="#cuatro">Enlaces de la asignatura</a></TD></TR>
+  		</TABLE>
+	</TD>
+</TR>
+</TABLE>
+
+<!-- Introducción -->
+<h2 id="uno">1. Introducción </h2>
+<p>
+En esta página encontramos una serie de programas de ejemplo para facilitar la realización 
+de la práctica 3. El objetivo de dicha práctica es programar el driver para controlar la tarjeta del "analizador lógico".
+El alumno podrá utilizar este código siempre y cuando lo entienda, ya que podrá ser objeto de evaluación.
+
+<!-- Faq & news -->
+<h2 id="dos">2. FAQs & News </h2>
+<p>
+
+<B>El Bit 5 (Bidireccional On/Off) no me funciona. (23-ene-2005) </B><br>
+En algunos ordenadores el bit del registro de control que controla la  Bi-direccionalidad del puerto no es el bit 5. Por ejemplo en los oredenadores Toshiba modelo T2000SX es el bit 7. En los ordenadores del Laboratorio es el bit 5.
+</p>
+
+<B>¿ Para que sirve el LED rojo ?. (20-ene-2005)</B><BR>
+La placa hardware tiene un LED rojo que se enciende cuando tiene la alimentación correcta y no se debería de apagar salvo que quitemos la alimentación. Si al leer o escribir datos del puerto paralelo veis que esa luz parpadea entonces teneis un problema en la alimentación. En ese caso teneis que utilizar pilas o algún transformador externo. En los ordenadores del Laboratorio en modo escritura suele funcionar sin alimentación externa pero en modo escritura suele fallar. Por eso os recomiendo que useis 4 pilas tipo AA para alimentar la  tarjeta.
+</P>
+
+<B>¿ Debo copiar los programas tal cual ? (14-ene-2005)</B><BR>
+Recomiendo que el alumno los entienda y que haga sus propias rutinas. Adaptándolas a la práctica 3 y mejorando el código. Por
+en los códigos de recibir y enviar dato del puerto paralelo se muestra la secuencia pero no se ha respetado el acceso ordenado a los bits del registro de control del puerto paralelo. Es decir, si lo que queremos es activar un solo bit, lo que hay que hacer es leer el registro de control modificar el bit sin tocar el resto y volverlo a escribir al registro de control.
+</P>
+<B>No me funciona el modo EPP en los laboratorios. (13-ene-2005)</B><BR>
+En los ordenadores del laboratorio no disponemos del modo EPP, por eso hay que utilizar el modo bidireccional del puerto paralelo. En los ejemplos PARALELO1 y PARALELO2 encontrareis las rutinas para enviar y leer datos de la tarjeta electrónica. Cuando los probeis es importante que tengais en cuenta varias cosas:<BR>
+*) Para configurar el modo Bidireccional hay que tocar la BIOS y no en todos los ordenadores funciona.<BR> 
+*) Los programas que hay en esta página se han probado en un portatil Toshiba 2000SX (386sx) y en los ordenadores del Laboratorio. Los programas que realizan las pausas con espera activa (Efecto) pueden funcionar de forma diferente en función de la frecuencia de la CPU. 
+
+<!-- Programas -->
+<h2 id="tres">3. Programas de Ejemplo </h2>
+<p>
+
+<table align="center">
+<table border=1>
+<tr bgcolor="grey">
+<td width="20">Programa</td>
+<td width="50">Descripción</td>
+<td width="20">Enlace</td>
+<td width="10">Última actualización</td>
+</tr>
+<tr>
+<td>Efecto</td>
+<td>Programa que rota un caracter en la esquina superior derecha. No usa interrupciones.Optimizado para CPU 386sx</td>
+<td><A href="programas/EFECTO.ASM">efecto.asm</a></td>
+<td>13-ene-05</td>
+</tr>
+<tr>
+<td>Sonido</td>
+<td>Programa que muestra como usar el tercer timer para generar sonidos</td>
+<td><A href="programas/SONIDO.ASM">sonido.asm</a></td>
+<td>08-dic-04</td>
+</tr>
+<tr>
+<td>Timer</td>
+<td>Programa que usa las interrupciones del Timer0 para rotar un caracter</td>
+<td><A href="programas/TIMER.ASM">timer.asm</a></td>
+<td>08-dic-04</td>
+</tr>
+<tr>
+<td>RTC</td>
+<td>Programa que usa las interrupciones del RTC para rotar un caracter. Este es el mecanismo a seguir en la practica 3</td>
+<td><A href="programas/RTC.ASM">rtc.asm</a></td>
+<td>13-ene-05</td>
+</tr>
+<tr>
+<td>Driver</td>
+<td>Ejemplo de estructura basica del driver. Preparado para generacion de archivo .COM</td>
+<td><A href="programas/DRVMIO.ASM">drvmio.asm</a></td>
+<td>07-dic-04</td>
+</tr>
+
+<td>Paralelo</td>
+<td>Programa ejemplo de envio de datos por el puerto paralelo. Hace parpadear un LED por espera activa. (Optimizado para CPU 386)</td>
+<td><A href="programas/PARALELO.ASM">paralelo.asm</a></td>
+<td>13-ene-05</td>
+</tr>
+<td>Paralelo-I</td>
+<td>Programa ejemplo de envio de datos por el puerto paralelo. Hace parpadear un LED mediante el RTC</td>
+<td><A href="programas/PARALELO1.ASM">paralelo1.asm</a></td>
+<td>13-ene-05</td>
+</tr>
+<td>Paralelo-II</td>
+<td>Programa que enciende un LED cuando detecta que se ha apretado un pulsador. Ejemplo de envío y recepción en el puerto paralelo.</td>
+<td><A href="programas/PARALELO2.ASM">paralelo2.asm</a></td>
+<td>13-ene-05</td>
+</tr>
+</table>
+</P>
+
+<!-- Programas -->
+<h2 id="cuatro">4. Enlaces de la asignatura </h2>
+<p>
+<ul>
+	<li><A href="http://www.ii.uam.es/~gdrivera/labetcii/curso0405/proyecto.htm">Pagina Principal de la asignatura</a></li>
+	<li><A href="http://anguiano.hopto.org">Portal de Eloy con las transparencias de la asignatura</a>(No siempre esta activo)</li>
+	<li><A href="http://www.ii.uam.es/~gdrivera/labetcii/curso0405/fechas.htm">Calendario de practicas</a></li>
+	<li><A href="http://pinsa.escomposlinux.org/sromero/articulos/">Pagina de Santiago Romero con una serie de articulos sobre el modo grafico</a></li>
+</ul>
+
+<HR NOSHADE>
+
+<table>
+<tr>
+    <td>IEA ROBOTICS</td>
+    <td><A href="/index.php">P&aacute;gina de inicio</A></td>
+</tr>
+<tr>
+     <td>Andr&eacute;s Prieto-Moreno Torres</td>
+     <td><A href="../../index.html">P&aacute;gina Personal</A></td>
+</tr>
+</table>
+
+<HR NOSHADE>
+<font size="-2" color="grey"><em>Ultima modificacion: 23-ene-2005</em></font>
+</body>
+
+</html>
