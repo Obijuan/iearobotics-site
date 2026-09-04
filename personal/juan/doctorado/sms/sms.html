@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERVICIO SMS: UN ENFOQUE PRACTICO</title>
+  </head>
+
+<!-- A partir de aquí viene el contenido real de la pagina>-->
+
+<table width="95%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>SERVICIO SMS: UN ENFOQUE PRÁCTICO</b>
+ </td>
+</tr>
+</tbody></table>
+
+<br>
+<blockquote>
+<li>
+<b>INTRODUCCION</b>
+</li>
+<br>
+Trabajo desarrollado para la asignatura de doctorado "<b>Nuevas tecnologías para las comunicaciones</b>",
+curso 2001-2002, impartido en la E.T.S de Informatica de la <a href="http://www.ii.uam.es">UAM</a> por los profesores:
+
+<a href="http://www.ii.uam.es/~jmartine/ "> D. Javier Martínez Rodríguez</a>,
+<a href="http://www.ii.uam.es/~fjgomez/ "> D. Francisco Gómez Arribas </a>,
+ <a href=" http://www.ii.uam.es/~sholgado/ "> Dª  Susana Holgado González-Guerrero</a>  y
+ D. Luis de Pedro Sánchez
+
+ <br><br>
+<li>
+<b>AUTOR:</b>
+</li>
+<ul>
+  <li><b>Juan Gonzalez Gomez</b>. Junio-2002</li>
+</ul>
+<br>
+
+<li>
+<b>LICENCIA:</b>
+</li>
+<br>
+Todo el software desarrollado tiene <a href="http://gugs.sindominio.net/gnu-gpl/gples.html"> LICENCIA GPL </a>. El resto de material (documentación,
+presentación, etc...) se encuentra bajo <a href="http://www.gnu.org/copyleft/fdl.es.html"> LICENCIA FDL</a> (Free Documentation License).
+<br><br>
+
+ <li>
+<b>DESCRIPCIÒN</b>
+</li>
+<p>El servicio de mensajes cortos, <b>SMS</b>, está teniendo un gran auge en nuestros días, y está siendo mucho más utilizado de lo que inicialmente
+se estimó. En este trabajo se describe el servicio SMS desde un <b>punto de vista práctico</b>, haciendo hincapié en cómoo es posible realizar
+ aplicaciones que utilicen este servicio. Se parte de una descripción teóricaa de la red GSM en general y del servicio SMS en particular para familiarizarse
+ con la terminología y tener una idea básica de lo que está pasando por debajo. Se describen los protocolos necesarios, centrándose en la capa de transferencia
+ de mensajes, que es la que se utiliza desde las aplicaciones. Se muestra cómoo es la <b>interfaz entre las aplicaciones y el servicio SMS</b>
+ utilizándose un módemem GSM para tener acceso a ellas, y cómoo es posible controlar este módemem mediante los <b>comandos AT y AT+</b>.
+  Finalmente se muestra un ejemplo de una aplicación, <b>gterm</b>, muy sencilla, que permite enviar mensajes, leerlos, borrarlos, listar los teléfonos, etc.
+   Se trata de una aplicación básica a partir de la cual se pueden realizar programas mucho más complejos.</p>
+
+ <li>
+<b>LA APLICACION GTERM</b>
+</li>  <br>
+Aquí puedes ver una captura de pantalla de Gterm-0.1
+<br><br>
+<center><img src="gterm.jpg" alt="" border="0"></center><br>
+<br><br>
+ <img SRC="glade.gif" ALIGN="left" >
+<p>La aplicación está desarrollada bajo <b>LINUX</b>, usando <b>gnome-1.4</b> y <b>gtk-1.2</b>. Para el diseño del interfaz gráfico
+se ha empleado <a href="http://glade.gnome.org/">GLADE</a> que permite que todo el interfaz se encuentre en un fichero en XML, que se carga
+ dinámicamente al ejecutarse la aplicación. Esto es muy interesante porque permite i<b>ndependizar totalmente el código fuente del
+ interfaz</b>, pudióndose rediseñar el interfaz sin tener que compilar.
+</p>
+<p>Para utilizar <b>GTERM</b> hay que conectar al puerto serie COM1 un <b>modem GSM</b>, como por ejemplo
+<a href=" http://www.wavecom.com/products/fastrack_modem.php"> este modelo</a> de la compañía
+ <a href="http://www.wavecom.com">Wavecom</a> que es como se muestra en esta foto:
+ <br><br>
+<center><img src="modem_gsm_pc.jpg" alt="" border="0"></center><br>
+<br><br>
+  Como no disponía de uno de esos modelos, he empleado la tarjeta ENDOR de la compañía
+<a href="http://www.pulsartec.com">Pulsar Technologies</a>, desarrollada como parte del proyecto DACER, en el cual participé
+cuando era miembro de su equipo de I+D. Esta tarjeta tiene muchas funcionalidades sin embargo yo solo he utilizado el
+modem GSM integrado, que puede ser conectado a un PC como si fuese un modem externo cualquiera. Aquí se muestra una
+foto.
+<br><br>
+<center><img src="dacer_disco.jpg" alt="" border="0"></center><br>
+</p>
+
+
+<br><br>
+<li>
+<b>DOWNLOAD</b>
+</li>
+<br><br>
+<table width=95% bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>FICHEROS PARA DESCARGAR</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=95%  border="0" >
+<tbody><tr bgcolor="#cabeeb">
+ <td >
+   <a href="gterm-0.1.tgz">gterm-0.1.tgz (157KB)</a>
+ </td>
+ <td> Fuentes y ejecutables de la aplicación GTERM-0.1</td>
+</tr>
+<tr bgcolor="#abbeeb">
+  <td><a href="sms.pdf">sms.pdf (510KB)</a>  </td>
+  <td> Trabajo teóricao</td>
+</tr>
+<tr bgcolor="#cabeeb">
+    <td> <a href="presentacion.tgz">presentacion.tgz (229KB)</a> </td>
+    <td> Presentación en Magic Point</td>
+  </tr>
+</tbody></table>
+
+<br><br>
+
+<li>
+<b>NOTICIAS</b>
+</li> <br>
+<blockquote>
+<li><b>12/Abr/2002: Publicado trabajo. Version 0.1 de Gterm</b></li>
+<br>
+  Publicacion de la aplicación Gterm-0.1 (fuentes y ejecutables) así como el trabajo teóricao y la presentación realizada.
+<br><br>
+<br><br>
+</blockquote>
+
+<li>
+<b>AGRADECIMIENTOS</b>
+</li>
+<ul>
+  <li>A la empresa <a href="http://www.pulsartec.com">Pulsar Technologies</a> por regalarme un<b> DACER</b> cuando dejé de trabajar allí. Sin el modem
+  que incorpora no hubiese podido realizar la parte práctica de este trabajo, que para mí era lo más interesante. Aprovecho
+  para dar públicamente las gracias. </li><br>
+  <li>A <b>Andrés Prieto-Moreno Torres</b> por dejarme una antena para poder enviar mensajes SMS y por su ayuda para
+  que Pulsar me regalase un DACER ;-)</li> <br>
+</ul>
+
+<li>
+<b>CRÉDITOS</b>
+</li>
+<ul>
+  Para realizar la parte práctica de este trabajo (la aplicación GTERM) he re-implementado parte del software que había desarrollado
+  <b>Andrés Prieto-Moreno Torres</b> para enviar mensajes SMS desde el sistema uClinux. Tambión he utilizado la documentación que creé
+  sobre el manejo de los modems GSM utilizando comandos AT+
+  <br>
+</ul>
+
+</blockquote>
+
+</body></html>
