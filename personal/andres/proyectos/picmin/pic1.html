@@ -1,7 +1,7 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html" charset="iso-8859-1">
-<meta http-equiv="Content-Style-Type" content="text/css">
+  <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Proyecto Picmin</title>
 <style type="text/css">
 <!--
@@ -96,20 +96,20 @@
 </head>
 
 <body>
-<!-- t�tulo de la p�gina -->
+<!-- título de la página -->
 <H1> Microcontroladores PIC </H1>
 
 <!-- Foto e indice                           -->
-<!-- utilizar el tama�o 340x200 para la foto -->
+<!-- utilizar el tamaño 340x200 para la foto -->
 <!-- Cada punto del indice te lleva a la zona-->
-<!-- del documento se�alada por el indice    -->
+<!-- del documento señalada por el indice    -->
 
 <TABLE class="margen" border=0 align="left">
 <TR><TD><img src="foto-pic.jpg"></TD></TR>
 <TR><TD>
   <TABLE border=1 width="100%">
     <TR><TD class="indice" bgcolor="#aaaaaa">Indice</TD></TR>
-    <TR><TD>1. <a href="#uno">Introducci�n</a></TD></TR>
+    <TR><TD>1. <a href="#uno">Introducción</a></TD></TR>
     <TR><TD>2. <a href="#dos">Entorno de desarrollo</a></TD></TR>
 	<TR><TD>3. <a href="#tres">Proyecto Picmin</a></TD></TR>
 	<TR><TD>4. <a href="#linux">uC PIC y Linux</a></TD></TR>
@@ -122,70 +122,70 @@
 </TR>
 </TABLE>
 
-<!-- Introducci�n -->
-<h2 id="uno"> Introducci�n </h2>
+<!-- Introducción -->
+<h2 id="uno"> Introducción </h2>
 
 <!-- texto -->
 <div class="cuerpo">
-<p>Los microcontroladores PIC, basados en la arquitectura <span class="cursiva">RISC</span>, contemplan la mayor�a de las 
-caracter�sticas de esta arquitectura. Entre ellas podemos destacar, set de instrucciones homogeneo, reducido n�mero de instrucciones y alta velocidad.</p>
-<P>Por su reducido coste, su amplia gama y la cantidad de informacio�n disponible se han abierto un hueco bastante
+<p>Los microcontroladores PIC, basados en la arquitectura <span class="cursiva">RISC</span>, contemplan la mayoría de las 
+características de esta arquitectura. Entre ellas podemos destacar, set de instrucciones homogeneo, reducido número de instrucciones y alta velocidad.</p>
+<P>Por su reducido coste, su amplia gama y la cantidad de información disponible se han abierto un hueco bastante
 importante en el mercado de los microcontroladores, siendo Microchip una empresa lider junto  Motorola o  Intel. 
-El objetivo de esta p�gina no es juzgar que microcontrolador es el mejor, sino mostrar como empezar a trabajar con los 
-microcontroladores PIC. Para ello utilizaremos el modelo b�sico PIC16F84A y diferentes herramientas de trabajo 
+El objetivo de esta página no es juzgar que microcontrolador es el mejor, sino mostrar como empezar a trabajar con los 
+microcontroladores PIC. Para ello utilizaremos el modelo básico PIC16F84A y diferentes herramientas de trabajo 
 obtenidas gratuitamente de internet.</P>
-<P>El PIC16F876A es de gama media, es decir no tiene todos los recursos internos que poseen otros modelos m�s
-avanzados, pero por otro lado su tama�o, precio y facilidad de uso, lo hacen id�neo para introducirse en el 
+<P>El PIC16F876A es de gama media, es decir no tiene todos los recursos internos que poseen otros modelos más
+avanzados, pero por otro lado su tamaño, precio y facilidad de uso, lo hacen idóneo para introducirse en el 
 mundillo. </P>
 </div>
 
-<!-- Secci�n 1 -->
+<!-- Sección 1 -->
 <H2 id="dos"> Entorno de desarrollo </H2>
 
 <div class="cuerpo">
-<p> La empresa <A href="www.microchip.com">Microchip</A> adem�s de fabricar y distribuir los microcontroladores PIC ofrece un entorno
-de desarrollo semi-gratuito para ellos, se trata del MPLAB-IDE. Con esta aplicaci�n podemos programar, compilar, simular y con una serie de 
+<p> La empresa <A href="www.microchip.com">Microchip</A> además de fabricar y distribuir los microcontroladores PIC ofrece un entorno
+de desarrollo semi-gratuito para ellos, se trata del MPLAB-IDE. Con esta aplicación podemos programar, compilar, simular y con una serie de 
 herramientas extras incluso grabar. Esta claro que  estas herramientas (PICMASTER, ICD, ICE,...) son las que no son gratuitas y las que impiden
 que se tenga el entorno completo de desarrollo. Pero esto no nos debe de preocupar, como en todo, la gente se ha buscado otros caminos para 
 poder grabar PIC y se han desarrollado sus propios cargadores y grabadores. </p>
-<p>Nuestra b�sqeda nos ha proporcionado un entorno de desarrollo para Windows, aunque esperamos tener la lista de herramientas linux en breve, formado por:
+<p>Nuestra búsqeda nos ha proporcionado un entorno de desarrollo para Windows, aunque esperamos tener la lista de herramientas linux en breve, formado por:
 <UL>
 <LI>MPLAB (v5.6) para editar, compilar y simular las aplicaciones.</LI>
 <LI>Icprog (v1.0.4) para grabar el fichero compilado en el PIC.</LI>
 <LI>Grabador TE20 para poder grabar los PIC.</LI>
 </UL>
-Todas ellas son gratuitas y est�n disponibles en internet. El MPLAB lo ha desarrollado la empresa  <A href="http://www.microchip.com">Microchip</A> y en su WEB  siempre podemos encontrar
-la �ltima versi�n. El <A href="http://www.ic-prog.com">Icprog</A>  lo ha desarrollado Bonny Gijzan y en su web podemos ver las �ltimas noticias sobre su estado. Por �ltimo el grabador 
-TE20 lo compr� en una tienda de electr�nica, me costo unos 18 Euros, pero en internet est�n las especificaciones del mismo para poder construirse
+Todas ellas son gratuitas y están disponibles en internet. El MPLAB lo ha desarrollado la empresa  <A href="http://www.microchip.com">Microchip</A> y en su WEB  siempre podemos encontrar
+la última versión. El <A href="http://www.ic-prog.com">Icprog</A>  lo ha desarrollado Bonny Gijzan y en su web podemos ver las últimas noticias sobre su estado. Por último el grabador 
+TE20 lo compré en una tienda de electrónica, me costo unos 18 Euros, pero en internet están las especificaciones del mismo para poder construirse
 uno.
 </P>
 </div>
 
-<!-- Secci�n 2 -->
+<!-- Sección 2 -->
 <H2 id="tres"> Proyecto PICMIN</H2>
 
 <div class="cuerpo">
-<p>Los microcontroladores PIC han supuesto una novedad para m�, si bien hab�a o�do hablar mucho de ellos, hasta ahora no hab�a tenido necesidad 
-de realizar ning�n proyecto sobre ellos. Ahora, gracias a la asignatura de Arquitectura de Ordenadores, me veo en la necesidad de aprender 
-su tecnolog�a y empezar a realizar aplicaciones.</p>
-<p>Siguiendo el m�todo utilizado para dise�ar la CT6811 (basada en el microcontrolador 68Hc11 de Motorola), hemos realizado una placa m�nima
-que nos permita ir conociendo el hardware m�nimo para tener un PIC funcionando y poder desarrollar una entrenadora. Para empezar hemos montado en
-una placa de puntos un PIC16F84 con un reloj externo, circuito de reset, un led y un pulsador. Para nosotros este es el esquema m�nimo, aunque por las
-caracter�sticas de estos micros, nos podr�amos incluso ahorrar el reloj. Hemos bautizado a este primer esquem�tico con el nombre de
-<A href="./download/planos/picmin.pdf">Picmin</A>, que se puede obtener en la secci�n de downloads.</p>
-<p>Los circuitos que aparecen en el esquema son independientes del PIC, por lo tanto si algui�n quiere hacerse la placa con el PIC16F877 el circuito sigue
-siendo v�lido. La forma de desarrollar aplicaciones es utilizando las herramientas descritas en la secci�n del Entorno de Desarrollo. En los siguientes meses 
+<p>Los microcontroladores PIC han supuesto una novedad para mí, si bien había oído hablar mucho de ellos, hasta ahora no había tenido necesidad 
+de realizar ningún proyecto sobre ellos. Ahora, gracias a la asignatura de Arquitectura de Ordenadores, me veo en la necesidad de aprender 
+su tecnología y empezar a realizar aplicaciones.</p>
+<p>Siguiendo el método utilizado para diseñar la CT6811 (basada en el microcontrolador 68Hc11 de Motorola), hemos realizado una placa mínima
+que nos permita ir conociendo el hardware mínimo para tener un PIC funcionando y poder desarrollar una entrenadora. Para empezar hemos montado en
+una placa de puntos un PIC16F84 con un reloj externo, circuito de reset, un led y un pulsador. Para nosotros este es el esquema mínimo, aunque por las
+características de estos micros, nos podríamos incluso ahorrar el reloj. Hemos bautizado a este primer esquemático con el nombre de
+<A href="./download/planos/picmin.pdf">Picmin</A>, que se puede obtener en la sección de downloads.</p>
+<p>Los circuitos que aparecen en el esquema son independientes del PIC, por lo tanto si alguión quiere hacerse la placa con el PIC16F877 el circuito sigue
+siendo válido. La forma de desarrollar aplicaciones es utilizando las herramientas descritas en la sección del Entorno de Desarrollo. En los siguientes meses 
 queremos desarrollar el circuito cargador desde el PC, de esa forma evitaremos el cargador externo. </p>
-<p>Esta placa nos ha permitido desarrollar algunos programas de ejemplo que se encuentran en el apartado de download, lo que no encontrar�is ser� 
+<p>Esta placa nos ha permitido desarrollar algunos programas de ejemplo que se encuentran en el apartado de download, lo que no encontraréis será 
 el PCB de la placa porque no se ha realizado. Consideramos que es demasiado simple y que hasta que no se tenga el circuito grabador no conviene 
 hacer su PCB. Os mantendremos informados de los avances</p>
 </div>
 
-<!-- Secci�n 3 -->
+<!-- Sección 3 -->
 <H2 id="linux"> Microcontroladores PIC y Linux</H2>
 
 <div class="cuerpo">
-Poco a poco en esta secci�n pondremos como manejar los Pics desde Linux, por ahora marcamos una serie de enlaces
+Poco a poco en esta sección pondremos como manejar los Pics desde Linux, por ahora marcamos una serie de enlaces
 </div>
 <BR>
 <TABLE CLASS="down" BORDER=1>
@@ -255,11 +255,11 @@ Poco a poco en esta secci�n pondremos como manejar los Pics desde Linux, por a
 </TABLE>
 
 <TABLE CLASS="down" border="1">
-  <CAPTION>Dise�os Hardware Relacionados con el PIC</CAPTION>
+  <CAPTION>Diseños Hardware Relacionados con el PIC</CAPTION>
   <TR align="center">
 	<TD>Nombre</TD>
-	<TD>Descripci�n</TD>
-	<TD>Versi�n</TD>
+	<TD>Descripción</TD>
+	<TD>Versión</TD>
 	<TD>SCH</TD>
 	<TD>PDF</TD>
 	<TD>PCB</TD>
@@ -267,7 +267,7 @@ Poco a poco en esta secci�n pondremos como manejar los Pics desde Linux, por a
   </TR>
   <TR>
     <TD>Picmin</TD>
-	<TD>Esquem�tico de la Placa Picmin</TD>
+	<TD>Esquemático de la Placa Picmin</TD>
 	<TD> v1.0 </TD>
 	<TD><A href="./download/planos/picmin.sch">picmin.sch</A></TD>
 	<TD><A href="./download/planos/picmin.pdf">picmin.pdf</A></TD>
@@ -276,7 +276,7 @@ Poco a poco en esta secci�n pondremos como manejar los Pics desde Linux, por a
   </TR>
   <TR>
     <TD><B>Picupsam</B></TD>
-	<TD>Esquem�tico de la Placa Picupsam</TD>
+	<TD>Esquemático de la Placa Picupsam</TD>
 	<TD> v1.0 </TD>
 	<TD><A href="./download/planos/picupsam.sch">picupsam.sch</A></TD>
 	<TD><A href="./download/planos/picupsam.pdf">picupsam.pdf</A></TD>
@@ -290,7 +290,7 @@ Poco a poco en esta secci�n pondremos como manejar los Pics desde Linux, por a
   <CAPTION>Programas de demo para 16F84 y 16F87X</CAPTION>
    <TR>
     <TD>Nombre</TD>
-	<TD>Descripci�n</TD>
+	<TD>Descripción</TD>
 	<TD>Fichero ASM</TD>
 	<TD>Fichero HEX</TD>
   </TR> 
@@ -348,7 +348,7 @@ Poco a poco en esta secci�n pondremos como manejar los Pics desde Linux, por a
   </TR>
   <TR>
     <TD>Microsystems engineering</TD>
-	<TD>Empresa que distribuye en Espa�a productos relacionados con el PIC</TD>
+	<TD>Empresa que distribuye en España productos relacionados con el PIC</TD>
 	<TD><A href="http://www.microcontroladores.com">http://www.microcontroladores.com</A></TD>
   </TR>  
   <TR>
@@ -370,7 +370,7 @@ Poco a poco en esta secci�n pondremos como manejar los Pics desde Linux, por a
 
 <div class="lista">
 <ul>
-  <li>Andr�s Prieto-Moreno Torres (<A mailto="andres@iearobotics.com">andres@iearobotics.com</A>)</li>
+  <li>Andrés Prieto-Moreno Torres (<A mailto="andres@iearobotics.com">andres@iearobotics.com</A>)</li>
 </ul>
 </div>
 
@@ -379,9 +379,9 @@ Poco a poco en esta secci�n pondremos como manejar los Pics desde Linux, por a
 
 <div class="lista">
 <ul>
-  <li>A Carlos Soria y a Eric por la documentaci�n inicial del PIC, y por probar el primer desarrollo.
-  <li>A Alfonso Alejandre por contar conmigo en la preparaci�n de las pr�cticas de microcontroladores.
-  <li>A Juan Gonz�lez por involucrarse en la b�squeda de herramientas para linux.
+  <li>A Carlos Soria y a Eric por la documentación inicial del PIC, y por probar el primer desarrollo.
+  <li>A Alfonso Alejandre por contar conmigo en la preparación de las prácticas de microcontroladores.
+  <li>A Juan González por involucrarse en la búsqueda de herramientas para linux.
   <li>A Eduardo Boemo por permitirme dar un seminario sobre las herramientas de Microchip.
 </ul>
 </div>
@@ -395,12 +395,12 @@ Poco a poco en esta secci�n pondremos como manejar los Pics desde Linux, por a
 <ul>
   <li>30-10-2003 Introducido el esquematico de la PICUPSAM, la placa base para las practicas con micros</li>
   <li>29-10-2003 Cambiados los enlaces para apuntar a los sitios oficiales de descarga</li>
-  <li>19-11-2002 Actualizados los enlaces y a�adido ejemplo con interrupciones.</li>
-  <li>29-10-2002 A�adida documentaci�n sobre programaci�n serie.</li>
-  <li>24-10-2002 A�adido enlance Compilador de C para 16F84. PicLite. </li>
-  <li>21-10-2002 Actualizada la WEB con enlaces y documentaci�n</li>
+  <li>19-11-2002 Actualizados los enlaces y añadido ejemplo con interrupciones.</li>
+  <li>29-10-2002 Añadida documentación sobre programación serie.</li>
+  <li>24-10-2002 Añadido enlance Compilador de C para 16F84. PicLite. </li>
+  <li>21-10-2002 Actualizada la WEB con enlaces y documentación</li>
   <li>13-08-2002 PicMin v1.0 actualizada en la WEB</li>
-  <li>13-08-2002 Documentaci�n en la WEB</li>
+  <li>13-08-2002 Documentación en la WEB</li>
 </ul>
 </div>
 
@@ -411,8 +411,8 @@ Poco a poco en esta secci�n pondremos como manejar los Pics desde Linux, por a
 <table align="center">
 	<tr>
 		<td>IEA ROBOTICS</td>
-		<td><A href="/iearobotics-site">P�gina de inicio</A></td>
-		<td><A HREF="mailto:info@iearobotics.com">Direcci�n de contacto</A></td>
+		<td><A href="/iearobotics-site">Página de inicio</A></td>
+		<td><A HREF="mailto:info@iearobotics.com">Dirección de contacto</A></td>
 	</tr>
 </table>
 
