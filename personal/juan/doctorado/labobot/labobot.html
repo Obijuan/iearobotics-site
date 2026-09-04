@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><title>Proyecto LABOBOT</title></head>
+
+
+<!-- A partir de aquí viene el contenido real de la pagina>-->
+
+
+<table width="95%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>PROYECTO LABOBOT: Control de servos a traves de una FPGA</b>
+ </td>
+</tr>
+</tbody></table>
+
+<br>
+<blockquote>
+<li>
+<b>INTRODUCCION</b>
+</li>
+<br>
+Proyecto desarrollado para la asignatura de doctorado "Codiseño de Sistemas Software/Hardware avanzados",
+curso 2001-2002, impartido en la E.T.S de Informatica de la <a href="http://www.ii.uam.es">UAM</a>,
+por los profesores:
+
+<a href="http://www.ii.uam.es/~fjgomez/ "> D. Francisco Gómez Arribas </a>,
+<a href="http://www.ii.uam.es/~jmartine/ "> D. Javier Martínez Rodríguez</a>,
+<b>Jean-Pierre Deschamps,</b>
+<b>Jose Ignacio Martínez</b>,
+<a href="http://www.ii.uam.es/~sergio/">Sergio López-Buedo</a>
+
+<p>Se ha trabajado con la tarjeta de desarrollo <a href="http://www.ii.uam.es/~laboweb/LabWeb/index.php3">LABOMAT</a>
+que incorpora un microprocesador 68360 y una FPGA XC4013E de <a href="http://www.xilinx.com">Xilinx</a>,
+entre otras cosas.
+</p>
+<p>
+Se ha desarrollado una unidad de PWM en VHDL, para el control de los servos y como aplicacion practica
+se mueve un sistema constituido por dos minicamaras conectadas a dos servos cada una. El software esta en C
+y permite reproducir una serie de secuencias programadas.
+</p>
+Aqui se muestra una foto de las minicamaras conectadas al sistema de desarrollo
+<br><br>
+<center><img src="labobot.jpg" width="304" height="228" alt="" border="0"></center><br>
+y aqui hay una <a href="labobot.mpg"><b>ANIMACION</b> </a> del movimiento de las camaras.
+<br><br>
+<li>
+<b>AUTOR:</b>
+</li>
+<br>
+Juan Gonzalez Gomez. Marzo-2002. <b>Proyecto  bajo licencia GPL</b>.
+<br><br>
+<li>
+<b>PARTE HARDWARE</b>
+</li>
+<p>
+La unidad PWM diseñada permite posicionar servos del tipo Futaba 3003 o compatibles, utilizados en la
+construccion de robots articulados. Para la aplicacion de las minicamaras se han usado 4 unidades PWM para
+controlar los 4 servos, pero se podrian controlar hasta 28.
+</p>
+
+<blockquote>
+<li>
+<a href="labobot_vhd.zip">Descripción en VHDL</a></li>
+<p>La entidad superior es el fichero <b>perif_access.vhd</b> en el que se implementa la interfaz entre la CPU y la FPGA,
+ asi como 4 unidades de PWM y un divisor de la frecuencia del reloj (prescaler) para conseguir la frecuencia
+ necesaria de trabajo. El sistema necesita un reloj de 409.600 Hz de frecuencia para generar el PWM correctamente.
+</p>
+<p>La FPGA esta "mapeada" en el mapa de memoria de la CPU. La CPU "ve" la FPGA como constituida por 1 registro
+de 32 bits en la memoria. Cada byte de este registro indica la posicion en la que se debe situar cada uno de los
+4 servos. Toda esta circuiteria se encuentra en la FPGA, descrita con VHDL.
+</p>
+
+<li>
+<a href="labobot_hex.zip">Configuración de la FPGA (bitstream)</a>
+</li>
+<p>Tomando como base el código anterior y empleando las Herramientas <b>Foundation de Xilinx</b>
+ se realiza la síntesis, place & route y generación del bitstream de configuración de la FPGA.</p>
+ <p>
+ Salvo el proceso de Sintesis, todo el diseño de ha desarrollado bajo el <b>sistema operativo LINUX</b>. Xilinx ha
+ anunciado que pronto sacara al mercado herramientas de Sintesis para LINUX. De momento hay que utilizar WINDOWS.
+ </p>
+ <br>
+</li>
+</blockquote>
+<li>
+<b>PARTE SOFTWARE</b>
+ </li>
+<p> El programa de <a href="labobot.c">prueba</a> permite que las minicamaras sigan dos secuencias de movimiento diferentes.
+El procesador accece a las unidades de PWM de la FPGA como si fuese un periférico
+ en el que hay mapeado un registro de 32 bits en la direccion 0x16000000. Los 8 bits de menor peso especifican
+ la posicion del servo 1, los siguientes 8 bits la del servo 2, los siguientes la del 3 y los 8 bits de mayor peso la del 4.</p>
+<br><br>
+</li>
+<li>
+<b>DOWNLOAD</b>
+</li>
+<br>
+<table width=95% bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>FICHEROS PARA DESCARGAR</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=95%  border="0" >
+<tbody><tr bgcolor="#cabeeb">
+ <td >
+   <a href="labobot.pdf">labobot.pdf</a>(432 KB)
+ </td>
+ <td> Documentacion completa del proyecto</td>
+</tr>
+
+<tbody><tr bgcolor="#abbeeb">
+ <td >
+   <a href="labobot.tgz">labobot.tgz</a>(2.6MB)
+ </td>
+ <td> Fuentes del documento labobot, para lyx y dibujos para Xfig</td>
+</tr> 
+
+<tr bgcolor="#cabeeb">
+  <td><a href="labobot_vhd.zip">labobot_vhd.zip</a>(5KB)  </td>
+  <td> Programas fuente en VHDL </td>
+</tr>
+<tr bgcolor="#abbeeb">
+    <td> <a href="labobot_hex.zip">labobot_hex.zip</a>(7KB) </td>
+    <td> Fichero de configuracion de la FPGA (bitstream) (FPGA XC4013E) </td>
+  </tr>
+  <tr bgcolor="#cabeeb">
+    <td> <a href="labobot.c">labobot.c</a>(7 KB) </td>
+    <td> Programa que envia las secuencias a la FPGA. Especifico para la tarjeta LABOMAT</td>
+  </tr>
+  
+   <tr bgcolor="#abbeeb">
+    <td> <a href="labobot.mpg">labobot.mpg</a> (344 KB)</td>
+    <td> Vídeo del movimiento de las 2 minicámaras</td>
+  </tr>
+
+</tbody></table>
+
+<br>
+<li>
+<b>CREDITOS: </b>
+</li>
+  <ul>
+    <li> <b>Andres Prieto-Moreno Torres</b> es el autor original de la estructura mecanica de las
+      minicamaras y los servos y que he utilizado como aplicacion. </li> 
+    <li><strong>Iván González</strong> es el autor original del programa <strong>perif-access.vhd</strong>, que yo
+     he adaptado para este proyecto.
+    </li>
+  </ul>
+
+
+<br><br>
+<li>
+<b>AGRADECIMIENTOS</b>
+</li>
+
+<ul>
+  <li>A <b>Ivan Gonzalez</b>, por su ayuda en el manejo de la tarjeta LABOMAT y del entorno Foundation. Tambien
+      me ha ayudado a depurar los programas en VHDL. Yo nunca habia programado en este lenguaje y su
+      ayuda ha sido muy valiosa. ¡Gracias!</li><br>
+    <li>A <strong>Andrés Prieto-Moreno Torres</strong> por dejarme la estructura mecánica. ¡Gracias!</li>  
+  <br>
+  <li>A <b>Sergio Lopez-Buedo</b> por ser una "maquina" de resolver problemas y tener siempre tiempo
+      para ayudarte. Me ha ayudado mucho en mis primeros pasos con Foundation y VHDL. ¡Gracias!</li> <br>
+  <li>A <b>Gustavo Daniel Sutter</b> por instalarme desinteresadamente el entorno Foundation de Xilinx en el
+      portatil, asi como otras herramientas muy utiles. ¡Gracias!</li><br>
+</ul>
+</blockquote>
+
+<!-- Noticias -->
+<HR>
+<H2 id="noticias">Noticias</H2>
+<div class="lista">
+<ul>
+   <li><b>30/Jul/2003</b>: Añadido fichero labobot.pdf de mayor calidad, junto con sus fuentes</li>
+   <li><b>Marzo/2002</b>: Publicado en la web</li>
+</ul>
+</div>   
+
+<HR>
+<a href="http://www.iearobotics.com">IEA ROBOTICS</a>
+<ADDRESS>
+Página creada por
+<A HREF="http://www.iearobotics.com/personal/juan/index.html">Juan González</A>
+</ADDRESS>
+
+</body></html>
