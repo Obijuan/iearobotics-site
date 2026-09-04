@@ -1,0 +1,401 @@
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html"; charset=iso-8859-1">
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<title>Servidor PICP: servicios específicos</title>
+
+<style type="text/css">
+
+<!--
+
+  H1 {
+
+    font-family: Current Schoolbook, Arial;
+
+    background-color: blue;
+
+    color: rgb(192,192,192);
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    border: thin outset rgb(192,192,192);
+
+    margin-left: 25px;
+
+    margin-right: 25px;
+
+    margin-top: 10px;
+
+    padding: 2px;
+
+  }
+
+  H2 {
+
+    font-family: Times,Arial;
+
+    color: rgb(0,0,0);
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+
+    text-align: left;
+
+    border: medium none;
+
+    margin-left: 25px;
+
+    margin-right: 25px;
+
+    margin-top: 10px;
+
+    padding: 5px;   
+
+  }
+  H3 {
+
+    font-family: Times,Arial;
+
+    color: rgb(0,0,0);
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+
+    text-align: left;
+
+    border: medium none;
+
+    margin-left: 25px;
+
+    margin-right: 25px;
+
+    margin-top: 10px;
+
+    padding: 5px;   
+
+  }
+
+  DIV.cuerpo {
+
+    font-family: Book Antiqua, Arial;
+
+    color: rgb(20,20,20);
+
+    text-indent: 50px;
+
+    line-height: 20px;
+
+    text-align: justify;
+
+    margin-left: 25px;
+
+    margin-right: 25px;
+
+  }    
+
+  SPAN.cursiva { 
+
+    font-style: oblique;
+
+  }
+
+  DIV.autor { 
+
+    font-family: Arial;
+
+    font-style: oblique;
+
+    color: rgb(20,20,20);
+
+    font-size: 10pt;
+
+    text-align: left;
+
+    margin-right: 25px;
+
+    margin-left: 25px;
+
+  }
+
+  
+
+  DIV.lista {
+
+    font-family: Book Antiqua, Arial;
+
+    color: rgb(20,20,20);
+
+    line-height: 20px;
+
+    text-align: justify;
+
+    margin-left: 25px;
+    margin-right: 25px;
+
+  }    
+
+
+
+  TABLE.margen {
+
+    margin-left: 25px;
+
+    margin-right: 25px;
+
+    margin-bottom:25px;
+
+  }
+
+  
+
+  TABLE.links {
+
+    color: rgb(55,0,0);
+
+    margin-left: 25px;
+
+    margin-right: 25px;
+
+    margin-bottom:25px;
+
+    background-color: rgb(255,255,128);
+
+    border: thin outset rgb(192,192,192);    
+
+  }
+
+   
+
+  TABLE.down {
+
+    color: rgb(55,0,0);
+
+    margin-left: 25px;
+
+    margin-right: 25px;
+
+    margin-bottom:25px;
+
+    background-color: rgb(255,255,128);
+
+    border: thin outset rgb(192,192,192);    
+
+  }
+
+  
+
+  TD.indice {
+
+    fo<TR><TD><a href="#noticias">Noticias</a></TD></TR>nt-size:15pt;
+
+    text-align: center;
+
+    color="blue";
+
+  }
+
+  
+
+-->
+
+</style>
+
+</head>
+
+
+
+<body>
+
+<!-- título de la página -->
+
+<table align="center" width="100%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>Servidor PICP: servicios específicos</b>
+ </td>
+</tr>
+</tbody></table> 
+
+<br>
+
+<hr>
+<h2 id="reset">Reset</h2>
+
+
+
+<div class="cuerpo">
+
+<p>
+  El cliente envía la <b>trama RST</b>. El servidor realiza el reset y devuelve la <b>trama RRST</b>.
+</p>
+<center>	<img SRC="images/trama_rst.png"></center>
+<p>
+      El byte de identificación de trama se corresponde con la <b>letra 'T'</b>.
+ </p>
+ <p> 
+      <b>Ejemplo</b>: Queremos hacer un reset. 
+      El cliente del PC envía la trama RST:
+ </p>
+      <blockquote>
+      <p>
+      <i>Trama enviada</i>: 0x54</p>
+       <p><i>Trama recibida</i>: 0x54</p>
+      </blockquote>
+</div>  
+  
+<hr>
+
+<h2 id="load_conf">Load Configuration</h2>
+
+<div class="cuerpo">
+
+<p>
+  El cliente envía la <b>trama CONF</b>. El servidor accede al servicio <b>load configuration</b> del 
+  monitor del pic y devuelve la <b>trama RCONF</b>.
+</p>
+<center>	<img SRC="images/trama_load_config.png"></center>
+<p>
+      El byte de identificación de trama se corresponde con la <b>letra 'C'</b>.
+ </p>
+ <p> 
+      <b>Ejemplo</b>: Acceso al servicio Load Configuration: 
+      El cliente del PC envía la trama CONF:
+ </p>
+      <blockquote>
+      <p>
+      <i>Trama enviada</i>: 0x43</p>
+       <p><i>Trama recibida</i>: 0x43</p>
+      </blockquote>
+</div>        
+
+
+<HR>
+<h2 id="load_data_prog">Load Data for Program Memory </h2>
+<div class="cuerpo">
+
+<p>
+  El cliente envía la <b>trama DATA</b>, que contiene el dato de 14 bits a enviar. Como se envían 2 bytes
+  (16 bits), los 2 bits más significativos se ignoran. Primero se envía el byte bajo y luego el alto.
+   El servidor envía el dato al pic y devuelve la <b>trama RDATA</b>.
+</p>
+<center>	<img SRC="images/trama_load_data_prog.png"></center>
+<p>
+      El byte de identificación de trama se corresponde con la <b>letra 'D'</b>.
+ </p>
+ <p> 
+      <b>Ejemplo</b>: Envío del dato 0x01C8
+ </p>
+      <blockquote>
+      <p>
+      <i>Trama enviada</i>: 0x44 0xC8 0x01</p>
+       <p><i>Trama recibida</i>: 0x44</p>
+      </blockquote>
+</div>              
+  
+<HR>
+
+<h2 id="read_data_prog">Read Data from Program Memory</h2>
+
+ <div class="cuerpo">
+
+<p>
+  El cliente envía la <b>trama RD</b>. El servidor accede al pic, a la dirección actual del contador
+  de programa (PC) y devuelve la <b>trama RRD</b>, que contiene la palabra de 14 bits leída.
+   Del dato de 2 bytes (16 bits) recibidos, los 2 bits más significativos se ignoran.
+    Primero se recibe el byte bajo y luego el alto.
+</p>
+<center>	<img SRC="images/trama_read_data_prog.png"></center>
+<p>
+      El byte de identificación de trama se corresponde con la <b>letra 'R'</b>.
+ </p>
+ <p> 
+      <b>Ejemplo</b>: Lectura de la palabra apuntada por el contador de programa
+       (Ejemplo: se recibe la palabra 0x02fe):
+ </p>
+      <blockquote>
+      <p>
+      <i>Trama enviada</i>: 0x52</p>
+       <p><i>Trama recibida</i>: 0x52 0xfe 0x02</p>
+      </blockquote>
+</div>                                 
+
+
+
+<HR>
+
+<h2 id="increment">Increment Address</h2>
+
+<div class="cuerpo">
+
+<p>
+  El cliente envía la <b>trama INC</b>. El servidor accede al servicio increment address
+  del monitor del PIC con lo que se incrementa el contador de programa (PC=PC+1).
+  El servidor devuelve la <b>trama RINC</b>.
+</p>
+<center>	<img SRC="images/trama_inc.png"></center>
+<p>
+      El byte de identificación de trama se corresponde con la <b>letra 'A'</b>.
+ </p>
+ <p> 
+      <b>Ejemplo</b>: Acceder a la siguiente posición de memoria.
+ </p>
+      <blockquote>
+      <p>
+      <i>Trama enviada</i>: 0x41</p>
+       <p><i>Trama recibida</i>: 0x41</p>
+      </blockquote>
+</div>                                       
+
+<HR>
+
+<h2 id="programming">Begin Erase/Programming Cycle</h2>
+
+<div class="cuerpo">
+
+<p>
+  El cliente envía la <b>trama BEG</b>. El servidor accede al servicio Begin Erase/Programming Cycle
+  del monitor del PIC, con lo que se graba la información previamente enviada con la trama DATA.
+  El servidor devuelve la <b>trama RBEG</b>.
+</p>
+<center>	<img SRC="images/trama_beg_prog.png"></center>
+<p>
+      El byte de identificación de trama se corresponde con la <b>letra 'B'</b>.
+ </p>
+ <p> 
+      <b>Ejemplo</b>: Comenzar un ciclo de borrado/programación de la dirección actual:
+ </p>
+      <blockquote>
+      <p>
+      <i>Trama enviada</i>: 0x42</p>
+       <p><i>Trama recibida</i>: 0x42</p>
+      </blockquote>
+</div>                       
+
+
+
+<HR>
+<a href="sg-picp.html">[Servidor PICP]</a><br>
+<a href="http://www.iearobotics.com">IEA ROBOTICS</a>
+
+<ADDRESS>
+
+<A HREF="http://www.iearobotics.com/personal/juan/index.html">Juan González</A>
+
+</ADDRESS>
+
+</body>
+
+</html>
+
+
+

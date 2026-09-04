@@ -1,0 +1,453 @@
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html"; charset=iso-8859-1">
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<title>G-SGC-GENERIC: CLIENTE PARA STARGATE GENERICO</title>
+
+<style type="text/css">
+
+<!--
+
+  H1 {
+
+    font-family: Current Schoolbook, Arial;
+
+    background-color: blue;
+
+    color: rgb(192,192,192);
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    border: thin outset rgb(192,192,192);
+
+    margin-left: 25px;
+
+    margin-right: 25px;
+
+    margin-top: 10px;
+
+    padding: 2px;
+
+  }
+
+  H2 {
+
+    font-family: Times,Arial;
+
+    color: rgb(0,0,0);
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+
+    text-align: left;
+
+    border: medium none;
+
+    margin-left: 25px;
+
+    margin-right: 25px;
+
+    margin-top: 10px;
+
+    padding: 5px;   
+
+  }
+
+  DIV.cuerpo {
+
+    font-family: Book Antiqua, Arial;
+
+    color: rgb(20,20,20);
+
+    text-indent: 50px;
+
+    line-height: 20px;
+
+    text-align: justify;
+
+    margin-left: 25px;
+
+    margin-right: 25px;
+
+  }    
+
+  SPAN.cursiva { 
+
+    font-style: oblique;
+
+  }
+
+  DIV.autor { 
+
+    font-family: Arial;
+
+    font-style: oblique;
+
+    color: rgb(20,20,20);
+
+    font-size: 10pt;
+
+    text-align: left;
+
+    margin-right: 25px;
+
+    margin-left: 25px;
+
+  }
+
+  
+
+  DIV.lista {
+
+    font-family: Book Antiqua, Arial;
+
+    color: rgb(20,20,20);
+
+    line-height: 20px;
+
+    text-align: justify;
+
+    margin-left: 25px;
+    margin-right: 25px;
+
+  }    
+
+
+
+  TABLE.margen {
+
+    margin-left: 25px;
+
+    margin-right: 25px;
+
+    margin-bottom:25px;
+
+  }
+
+  
+
+  TABLE.links {
+
+    color: rgb(55,0,0);
+
+    margin-left: 25px;
+
+    margin-right: 25px;
+
+    margin-bottom:25px;
+
+    background-color: rgb(255,255,128);
+
+    border: thin outset rgb(192,192,192);    
+
+  }
+
+   
+
+  TABLE.down {
+
+    color: rgb(55,0,0);
+
+    margin-left: 25px;
+
+    margin-right: 25px;
+
+    margin-bottom:25px;
+
+    background-color: rgb(255,255,128);
+
+    border: thin outset rgb(192,192,192);    
+
+  }
+
+  
+
+  TD.indice {
+
+    fo<TR><TD><a href="#noticias">Noticias</a></TD></TR>nt-size:15pt;
+
+    text-align: center;
+
+    color="blue";
+
+  }
+
+  
+
+-->
+
+</style>
+
+</head>
+
+
+
+<body>
+
+<!-- título de la página -->
+
+<table align="center" width="100%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>G-SGC-GENERIC: CLIENTE PARA STARGATE GENERICO</b>
+ </td>
+</tr>
+</tbody></table> 
+
+
+
+ <table align="center">
+<tr>
+<td><a href="#introduccion">[Introducción]</a></td>
+<td><a href="#caracteristicas">[caracteristicas]</a></td>
+<td><a href="#funcionamiento">[Funcionamiento]</a></td>
+<td><a href="#autores">[Autor]</a></td>
+<td><a href="#licencia">[Licencia]</a></td>
+<td><a href="#download">[Download]</a></td>
+<td><a href="#links">[Links]</a></td>
+<td><a href="#noticias">[Noticias]</a></td>
+</tr>
+</table>
+
+
+<br>
+<div align="center"><img src="images/pantallazo1.png"></div>
+
+
+<!-- Introducción -->
+<HR>
+<h2 id="introduccion">Introducción </h2>
+<div class="cuerpo">
+
+ <p>
+   Para probar el 
+   <a href="../../servidores/sg-generic/sg-generic.html">Stargate genérico</a>,
+    se ha desarrollado un cliente gráfico de pruebas, <b>g-sgc-generic</b>, 
+   basado en la <a href="../libstargate/libstargate.html">libstargate 1.0</a>.
+   Nos permite acceder al mapa de memoria del microcontrolador de una forma fácil y sencilla,
+   y realizar diferente pruebas. Resulta muy útil para:
+ </p>
+ </div>
+ 
+ <div class="lista">
+ <ul>
+   <li>Comprobar si una implementación de un 
+   <a href="../../servidores/sg-generic/sg-generic.html">Stargate genérico</a> funciona</li>
+   <li>Comprobar que los 
+   <a href="../../serv-basicos/serv-basicos.html">servicios básicos</a>
+    de cualquier <a href="../../index.html">Stargate</a> convencional funcionan</li>
+    <li>Acceder a todos los recursos del microcontrolador de una forma sencilla, por ejemplo
+    para sacar información por su puertos o leer sus entradas</li>
+    <li>Sirve de programa modelo para la creación de otros clientes más complejos</li>
+ </ul>
+ </div>
+
+
+<!-- Sección 1 -->
+<HR>
+
+<H2 id="caracteristicas">Características </H2>
+
+
+<div class="lista">
+<ul>
+<li><b>Plataforma</b>: Linux</li>
+<li><b>Librerías gráficas</b>: GTK2</li>
+<li><b>Lenguaje</b>: C</li>
+<li><b>Dependencias</b>: <a href="../libstargate/libstargate.html">libstargate 1.0</a>,
+ además de las GTK2</li>
+<li><b>Licencia</b>: <a href="http://gugs.sindominio.net/gnu-gpl/gples.html">GPL</a></li>
+</ul>
+</div>
+
+<HR>
+
+<H2 id="funcionamiento">Funcionamiento</H2>
+
+
+<div class="cuerpo">
+<p>
+  Al arrancar el programa, comprueba si hay un 
+  <a href="../../index.html">Stargate</a> conectado al puerto serie (servicio PING) y 
+  lo identifica (Servicio ID). 
+</p>
+<center>
+<table>
+<tr>
+<td>
+  <img src="images/pantallazo2.png">
+</td>
+<td><img src="images/pantallazo3.png"></td>
+</tr>
+<tr>
+<td><b>1)</b> No se ha detectado ningún <a href="../../index.html">Stargate</a></td>
+<td><b>2) </b>Detectado un 
+  <a href="../../servidores/sg-generic/sg-generic.html">Stargate Genérico</a>,
+   implementado en un PIC16F876</td>
+</tr>
+</table>
+</center>
+
+<p>
+  El cliente está constantemente chequeando el estado de la conexión. Si se pierde nos informa. <b>Es posible
+  conectar y desconectar Stargates "en caliente"</b>. Si se conecta un nuevo 
+  <a href="../../index.html">Stargate</a>,
+   el cliente lo identificará.
+</p>
+
+<p>
+  Sólo en el caso de que sea un 
+  <a href="../../servidores/sg-generic/sg-generic.html">Stargate genérico</a>,
+   el usuario tendrá acceso a los servicios LOAD y STORE. 
+  En la figura 3 se ha desconectado el 
+  <a href="../../servidores/sg-generic/sg-generic.html">Stargate genérico</a>.
+   El interfaz muestra que no hay conexión. 
+  A continuación (figura 4) se conecta a un Stargate de tipo 
+  <a href="../../servidores/sg-servos8/sg-servos8.html">Servos8</a>,
+   implementado en una <a href="../../../ct6811/ct6811.html">tarjeta CT6811</a>.
+  Vemos cómo el programa nos lo muestra, pero ahora el usuario NO puede usar los servicios LOAD y STORE.
+</p>
+
+<center>
+<table>
+<tr>
+<td>
+  <img src="images/pantallazo4.png">
+</td>
+<td><img src="images/pantallazo5.png"></td>
+</tr>
+<tr>
+<td><b>3) </b>Stargate genérico desconectado</td>
+<td><b>4)</b> Conectado a un Stargate Servos 8, en una <a href="../../../ct6811/ct6811.html">tarjeta CT6811</a>
+</td>
+</tr>
+</table>
+</center>  
+
+
+
+</div>
+
+
+<!-- Sección 2 -->
+<HR>
+
+<H2 id="autores"> Autores</H2>
+
+
+
+<div class="lista">
+
+<ul>
+  <li><a href="http://www.iearobotics.com/personal/juan/index.html">Juan González Gómez</a></li>
+</ul>
+
+
+</div>
+
+
+
+<!-- Sección 3 -->
+<HR>
+
+<H2 id="licencia">Licencia</H2>
+
+
+
+<div class="cuerpo">
+ Este programa se distribuye bajo <a href="http://gugs.sindominio.net/gnu-gpl/gples.html">licencia GPL </a>
+
+</div>
+<br>
+
+<!-- DOWNLOAD: Archivos -->
+<HR>
+<!-- DOWNLOAD -->
+
+<H2 id="download"> Download </H2>
+
+<p>
+<table width=90% bgcolor="#abbeeb" border="0" align="center" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>Ficheros para descargar</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=90%  border="0" align="center">
+<tbody>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="download/g-sgc-generic-1.0.tgz">g-sgc-generic-1.0.tgz</a> (19KB) </td>
+  <td>Fichero fuente. Versión 1.0</td>
+</tr>
+
+</tbody></table>
+</p>
+<br>           
+
+<HR>
+<H2 id="links">Links</H2>
+<div class="lista">
+<ul>
+  <li><a href="../../index.html">Proyecto Stargate</a>: Página principal del proyecto</li>
+  <li><a href="../../serv-basicos/serv-basicos.html">servicios básicos</a>: PING, ID</li>
+  <li><a href="../../servidores/sg-generic/sg-generic.html">Stargate genérico</a>: 
+  Servicios LOAD y STORE</li>
+  <li><a href="../../servidores/sg-servos8/sg-servos8.html">Stargate Servos8</a>
+  : Permite mover servos</li>
+  <li><a href="../libstargate/libstargate.html">libstargate 1.0</a>: 
+  Librería para hacer clientes para Stargates</li>
+  <li><a href="../../../ct6811/ct6811.html">tarjeta CT6811</a>: Plataforma donde se pueden implementar
+  Stargates</li>
+</ul>
+</div>
+
+<!-- Noticias -->
+
+<HR>
+
+<H2 id="noticias">Noticias</H2>
+
+<div class="lista">
+
+<ul>
+  <li><b>22/Feb/2004</b>: Publicada <b>version 1.2</b>. Se ha cambiado el nombre a la aplicación.
+  Ahora se llama star-generic y se puede encontrar la información  
+  <a href="../star-generic/star-generic.html">aquí</a>. Esta página ya no se mantendrá más.</li> <br>
+  <li><b>22/Oct/2003</b>: Publicada versión 1.0 del cliente, con la siguiente funcionalidad:</li>
+  <ul>
+    <li>Sólo se soporta el COM1</li>
+    <li>Basado en la librería <a href="../libstargate/libstargate.html">libstargate-1.0</a></li>
+    <li>Comprobación del estado de la conexión</li>
+    <li>Servicios LOAD y STORE sólo si el Stargate es genérico</li>
+  </ul>
+
+</ul>
+
+</div>
+
+
+
+<hr>
+<a href="../../index.html">[Proyecto Stargate]</a><br>
+<a href="http://www.iearobotics.com">IEA ROBOTICS</a>
+<address>
+<a HREF="http://www.iearobotics.com/personal/juan/index.html">Juan González</a>
+
+
+
+</body>
+
+</html>
+

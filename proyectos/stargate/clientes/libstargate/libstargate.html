@@ -1,0 +1,553 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>LIBRERIA LIBSTARGATE [PROYECTO STARGATE]</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20040713;15290600">
+	<META NAME="CHANGEDBY" CONTENT="juan">
+	<META NAME="CHANGED" CONTENT="20070726;13590000">
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!-- título de la página -->
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>LIBRERIA
+				LIBSTARGATE [PROYECTO STARGATE]</B> </FONT>
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P><A HREF="#introduccion"><FONT FACE="Arial, sans-serif">[Introducci&oacute;n]</FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#caracteristicas"><FONT FACE="Arial, sans-serif">[caracteristicas]</FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#arquitectura"><FONT FACE="Arial, sans-serif">[Arquitectura]</FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#autores"><FONT FACE="Arial, sans-serif">[Autor]</FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#licencia"><FONT FACE="Arial, sans-serif">[Licencia]</FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#download"><FONT FACE="Arial, sans-serif">[Download]</FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#instalacion"><FONT FACE="Arial, sans-serif">[instalacion]</FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#links"><FONT FACE="Arial, sans-serif">[Links]</FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#noticias"><FONT FACE="Arial, sans-serif">[Noticias]</FONT></A></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<HR>
+<H2><A NAME="introduccion"></A><FONT FACE="Arial, sans-serif">Introducci&oacute;n
+</FONT>
+</H2>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Librer&iacute;a para
+la creaci&oacute;n de clientes para la comunicaci&oacute;n con los
+</FONT></FONT><A HREF="../../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Stargates</FONT></FONT></A>
+</P>
+<HR>
+<H2><A NAME="caracteristicas"></A><FONT FACE="Arial, sans-serif">Caracter&iacute;sticas
+</FONT>
+</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Plataforma</B>:
+	MULTIPLATAFORMA (Linux y Windows/Cygwin)</FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Lenguaje</B>:
+	C </FONT></FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Licencia</B>:
+	GPL </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<H2><A NAME="arquitectura"></A><FONT FACE="Arial, sans-serif">Arquitectura</FONT></H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>La librer&iacute;a
+est&aacute; compuesta por dos m&oacute;dulos. Uno de acceso al puerto
+serie y otro que implementa las servicios ofrecidos por los
+Stargates, de forma que sean accesibles desde el programa cliente. </FONT></FONT>
+</P>
+<P ALIGN=CENTER><IMG SRC="images/arquitectura.png" NAME="Imagen1" ALIGN=BOTTOM WIDTH=231 HEIGHT=256 BORDER=0>
+</P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">La versi&oacute;n 1.0
+ofrece el acceso a los </FONT></FONT><A HREF="../../serv-basicos/serv-basicos.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">servicios
+b&aacute;sicos</FONT></FONT></A> <FONT SIZE=2><FONT FACE="Arial, sans-serif">(PING,
+ID) y a los servicios del </FONT></FONT><A HREF="../../servidores/sg-generic/sg-generic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">servidor
+gen&eacute;rico</FONT></FONT></A> <FONT SIZE=2><FONT FACE="Arial, sans-serif">(LOAD
+y STORE). Sucesivas versiones ampliar&aacute;n el n&uacute;mero de
+servicios implementados. </FONT></FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Adem&aacute;s se ha
+creado una <B>extensi&oacute;n</B> a esta librer&iacute;a, que
+permite que desde diferentes <I>hilos</I> (threads) se pueda acceder
+a los servicios del Stargate. Se denomina <B>librer&iacute;a
+libstargateh</B> y contiene un nuevo m&oacute;dulo llamado sg-motor. </FONT></FONT>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/arquitectura_libstargateh.png" NAME="Imagen2" ALIGN=BOTTOM WIDTH=263 HEIGHT=332 BORDER=0>
+</P>
+<HR>
+<H2><A NAME="autores"></A><FONT FACE="Arial, sans-serif">Autores</FONT></H2>
+<UL>
+	<LI><P><A HREF="http://www.iearobotics.com/personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+	Gonz&aacute;lez G&oacute;mez</FONT></FONT></A> 
+	</P>
+</UL>
+<HR>
+<H2><A NAME="licencia"></A><FONT FACE="Arial, sans-serif">Licencia</FONT></H2>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Esta
+librer&iacute;a se distribuye bajo </FONT><A HREF="http://gugs.sindominio.net/gnu-gpl/gples.html"><FONT FACE="Arial, sans-serif">licencia
+GPL</FONT></A></FONT><A HREF="http://gugs.sindominio.net/gnu-gpl/gples.html">
+</A>
+</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Documentaci&oacute;n</FONT></H2>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">La &uacute;ltima
+documentaci&oacute;n se encuentra aqu&iacute;: </FONT></FONT><A HREF="download/libstargate-doc-1.0.pdf"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[PDF]</FONT></FONT></A>
+<A HREF="download/libstargate-doc-1.0.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[LYX]</FONT></FONT></A></P>
+<HR>
+<H2><A NAME="download"></A><!-- DOWNLOAD --><FONT FACE="Arial, sans-serif">Download</FONT></H2>
+<P><BR><BR>
+</P>
+<CENTER>
+	<TABLE WIDTH=90% BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+		<COL WIDTH=256*>
+		<TR>
+			<TD WIDTH=100%>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Versi&oacute;n
+				1.0.2</B> </FONT></FONT>
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=90% BORDER=0 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=72*>
+		<COL WIDTH=184*>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=28% BGCOLOR="#e6e6ff">
+				<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="http://www.iearobotics.com/proyectos/stargate/clientes/libstargate/download/v1.0.2/libstargate-1.0.2.tar.gz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">libstargate-1.0.2.tar.gz</FONT></FONT></A>
+				</FONT></FONT>
+				</P>
+			</TD>
+			<TD WIDTH=72% BGCOLOR="#e6e6ff">
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Fuentes. Para
+				Linux y Windows (Cygwin). Librer&iacute;a y ejempos sencillos.</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=28%>
+				<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="http://www.iearobotics.com/proyectos/stargate/clientes/libstargate/download/v1.0.2/libstargate-1.0.2-bin.tar.gz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">libstargate-1.0.2-bin.tar.gz</FONT></FONT></A>
+				</FONT></FONT>
+				</P>
+			</TD>
+			<TD WIDTH=72%>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Binarios para
+				Linux. Instalar con make install. Librer&iacute;a y ejemplos.</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=28% BGCOLOR="#e6e6ff">
+				<P><A HREF="download/v1.0.2/libstargate_1.0.2-1_i386.deb"><FONT SIZE=2><FONT FACE="Arial, sans-serif">libstargate_1.0.2-1_i386.deb</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=72% BGCOLOR="#e6e6ff">
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Paquete para
+				Debian/Etch.</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=28%>
+				<P><A HREF="download/v1.0.2/libstargate-dev_1.0.2-1_i386.deb"><FONT SIZE=2><FONT FACE="Arial, sans-serif">libstargate-dev_1.0.2-1_i386.deb</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=72%>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Paquete para
+				Debian/Etch. Desarrollo</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=28% BGCOLOR="#e6e6ff">
+				<P><A HREF="download/v1.0.2/libstargate_1.0.2.src.tar.gz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">libstargate_1.0.2.src.tar.gz</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=72% BGCOLOR="#e6e6ff">
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Fuentes y ficheros
+				necesarios para empaquetar para Debian (.orig.tar.gz, diff.gz,
+				.dsc)</FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P><BR><BR>
+</P>
+<CENTER>
+	<TABLE WIDTH=90% BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+		<COL WIDTH=256*>
+		<TR>
+			<TD WIDTH=100%>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Versi&oacute;n
+				1.0.1</B> </FONT></FONT>
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=90% BORDER=0 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=72*>
+		<COL WIDTH=184*>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=28%>
+				<P><A HREF="download/v1.0.1/libstargate-1.0.1.tar.gz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">libstargate-1.0.1.tar.gz</FONT></FONT></A>
+								</P>
+			</TD>
+			<TD WIDTH=72%>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Fuentes. Para
+				Linux y Windows (Cygwin). Librer&iacute;a y ejempos sencillos.</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=28%>
+				<P><A HREF="download/v1.0.1/libstargate-1.0.1-bin.tar.gz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">libstargate-1.0.1-bin.tar.gz</FONT></FONT></A>
+								</P>
+			</TD>
+			<TD WIDTH=72%>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Binarios para
+				Linux. Instalar con make install. Librer&iacute;a y ejemplos.</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=28%>
+				<P><A HREF="download/v1.0.1/libstargate-1.0.1-bin.zip"><FONT SIZE=2><FONT FACE="Arial, sans-serif">libstargate-1.0.1-bin.zip</FONT></FONT></A>
+								</P>
+			</TD>
+			<TD WIDTH=72%>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Binarios para
+				Windows. Librer&iacute;as y ejemplos.</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=28%>
+				<P><A HREF="download/v1.0.1/libstargate_1.0.1-1_i386.deb"><FONT SIZE=2><FONT FACE="Arial, sans-serif">libstargate_1.0.1-1_i386.deb</FONT></FONT></A>
+								</P>
+			</TD>
+			<TD WIDTH=72%>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Paquete para
+				Debian/Sarge. Librer&iacute;as.</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=28%>
+				<P><A HREF="download/v1.0.1/libstargate-dev_1.0.1-1_i386.deb"><FONT SIZE=2><FONT FACE="Arial, sans-serif">libstargate-dev_1.0.1-1_i386.deb</FONT></FONT></A>
+								</P>
+			</TD>
+			<TD WIDTH=72%>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Paquete para
+				Debian/Sarge. Paquete para desarrollo (ficheros .h)</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=28%>
+				<P><A HREF="download/v1.0.1/libstargate_1.0.1-1.src.tar.gz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">libstargate_1.0.1-1.src.tar.gz</FONT></FONT></A>
+								</P>
+			</TD>
+			<TD WIDTH=72%>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Fuentes para
+				Debian/Sarge (s&oacute;lo desarrolladores)</FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<CENTER>
+	<TABLE WIDTH=90% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Versi&oacute;n
+				1.0 (Obsoleta)</B> </FONT></FONT>
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=90% BORDER=0 CELLPADDING=2 CELLSPACING=2>
+		<TR BGCOLOR="#cabeeb">
+			<TD>
+				<P><A HREF="download/libstargate-1.0.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">libstargate-1.0.tgz</FONT></FONT></A>
+				<FONT SIZE=2><FONT FACE="Arial, sans-serif">(8KB) </FONT></FONT>
+				</P>
+			</TD>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Fichero fuente con
+				las librerias <B>libstargate</B> y <B>libstargateh</B>, as&iacute;
+				como programas de ejemplo</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD>
+				<P><A HREF="download/libstargate-doc-1.0.pdf"><FONT SIZE=2><FONT FACE="Arial, sans-serif">libstargate-doc-1.0.pdf</FONT></FONT></A>
+				<FONT SIZE=2><FONT FACE="Arial, sans-serif">(113KB) </FONT></FONT>
+				</P>
+			</TD>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Documentaci&oacute;n
+				en PDF</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#cabeeb">
+			<TD>
+				<P><A HREF="download/libstargate-doc-1.0.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">libstargate-doc-1.0.tgz</FONT></FONT></A>
+				<FONT SIZE=2><FONT FACE="Arial, sans-serif">(10KB) </FONT></FONT>
+				</P>
+			</TD>
+			<TD>
+				<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Fuentes de la
+				documentaci&oacute;n en </FONT></FONT><A HREF="http://www.lyx.org/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Lyx</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+				Figuras para </FONT></FONT><A HREF="http://www.xfig.org/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Xfig</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+				</FONT></FONT>
+				</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD>
+				<P><A HREF="download/libstargate_1.0-1_i386.deb"><FONT SIZE=2><FONT FACE="Arial, sans-serif">libstargate_1.0-1_i386.deb</FONT></FONT></A>
+				<FONT SIZE=2><FONT FACE="Arial, sans-serif">(9KB) </FONT></FONT>
+				</P>
+			</TD>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Paquete para
+				Debian/Sarge</FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Ejemplos</FONT></H2>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">En las fuentes se
+incluyen ejemplos de clientes para el </FONT></FONT><A HREF="../../servidores/sg-null/sg-null.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">servidor
+nulo</FONT></FONT></A> <FONT SIZE=2><FONT FACE="Arial, sans-serif">(para
+hacer IDENTIFICACION y PING) y para el </FONT></FONT><A HREF="../../servidores/sg-generic/sg-generic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">servidor
+gen&eacute;rico</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">:</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Todos funcionan en
+consola, tanto para Windows como para Linux. Por defecto funcionan
+con el COM1 (/dev/ttyS0). Ofrecen un sencillo men&uacute; de
+opciones. La idea es mostrar c&oacute;mo invocar los servicios desde
+una programa en C.</FONT></FONT></P>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>test-null</B>:
+	Ejemplo para </FONT></FONT><A HREF="../../servidores/sg-null/sg-null.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">servidor
+	nulo</FONT></FONT></A></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>test-null-hilos</B>:
+	Idem ejemplo pero que utiliza hilos (threads)</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>test-generic</B>:
+	Ejemplos para </FONT></FONT><A HREF="../../servidores/sg-generic/sg-generic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">servidor
+	gen&eacute;rico</FONT></FONT></A></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>test-generic-hilos</B>:
+	Idem pero con hilos (threads)</FONT></FONT></P>
+</UL>
+<HR>
+<H2><A NAME="instalacion"></A><FONT FACE="Arial, sans-serif">Instalaci&oacute;n</FONT></H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=4><B><FONT SIZE=4 STYLE="font-size: 16pt">Linux</FONT></B>:</FONT></FONT></P>
+<OL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Bajar fichero con
+	binarios: <B>libstargate-1.x.bin.tar.gz</B></FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>$ tar vzxf
+	libstargate-1.x.bin.tar.gz</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>$ cd
+	libstargate-1.x</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>$ make install
+	(como root)</FONT></FONT></P>
+</OL>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Para compilarla</B>:</FONT></FONT></P>
+<OL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Bajar el paquete
+	fuente: libstargate-1.x.tar.gz</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>$ tar vzxf
+	libstargate-1.x.tar.gz</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>$ cd
+	libstargate-1.x</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>$ make</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para instalar:
+	make install (como root. Instala las libreri&iacute;as y los
+	ficheros .h para desarrollo)</FONT></FONT></P>
+</OL>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Usuarios de debian,
+bajarse los paquetes .deb y teclear, como root: <B>dpkg -i
+libstargate-xx.deb</B> </FONT></FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif"><B><FONT SIZE=4 STYLE="font-size: 16pt">WINDOWS</FONT></B>:</FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para tener las
+librer&iacute;as y probar los ejemplos compilados:</FONT></FONT></P>
+<OL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Bajar el paquete
+	<B>libstargate-1.x.bin.zip</B></FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Descomprimirlo</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Abrir una ventana
+	de MS-DOS y ejecutar los ejemplos</FONT></FONT></P>
+</OL>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Nota</B>: <I>Los
+ficheros .exe s&oacute;lo precisan del fichero cygwin1.dll para
+ejecutarse, que debe estar en el propio directorio o en PATH</I></FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Para compilar:</B></FONT></FONT></P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Hay que instalar la
+herramienta </FONT></FONT><A HREF="http://www.cygwin.com/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">CYGWIN</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+Se trata de una librer&iacute;a que ofrece una API POSIX, junto con
+herramientas de GNU para poder compilar y diversas aplicaciones
+opcionales portadas de Linux.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Las herramientas de
+desarrollo necesarias para compilar correctamente la libstargate son:
+(Secci&oacute;n devel) </FONT></FONT>
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><I>binutils</I>
+	</FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>gcc
+	</FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>gcc-mingw:
+	Ming32 support headers and libraries for GCC </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>gcc-mingw-core
+	</FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>make
+	</FONT></FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>mingw-runtime </FONT></FONT>
+	</P>
+</UL>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Bajar el paquete
+<B>libstargate-1.x.tar.gz</B>. Abrir una shell de cygwin y ejecutar:</FONT></FONT></P>
+<OL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>$
+	tar vzxf libstargate-1.x.tar.gz </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>$
+	cd libstargate-1.x </FONT></FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>$ /bin/make </FONT></FONT>
+	</P>
+</OL>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Esto generar&aacute;
+las librer&iacute;as y los fichero .exe de ejemplo, dentro del
+directorio src.</FONT></FONT></P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Los ficheros .exe se
+pueden ejecutar desde la shell de Cygwin o desde una consola MS-DOS.
+En este &uacute;ltimo caso el fichero <A HREF="../../../cuadernos/ct6/download/cygwin1.dll">cygwin1.dll</A>
+debe estar en el PATH.</FONT></FONT></P>
+<HR>
+<H2><A NAME="links"></A><FONT FACE="Arial, sans-serif">Links</FONT></H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Proyecto
+	Stargate</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">:
+	P&aacute;gina principal del proyecto </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../serv-basicos/serv-basicos.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">servicios
+	b&aacute;sicos</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">:
+	PING, ID </FONT></FONT>
+	</P>
+	<LI><P><A HREF="../../servidores/sg-generic/sg-generic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">servidor
+	gen&eacute;rico</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">:
+	LOAD y STORE </FONT></FONT>
+	</P>
+	<LI><P><A HREF="http://www.cygwin.com/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cygwin<SPAN STYLE="text-decoration: none">:</SPAN></FONT></FONT></A>
+	<FONT SIZE=2><FONT FACE="Arial, sans-serif">API de Linux para
+	Windows. Permite hacer software en Linux que funcione en m&aacute;quinas
+	Windows.</FONT></FONT></P>
+	<LI><P><A HREF="../../../cuadernos/ct6/ct6.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cuaderno
+	t&eacute;cnico 6: Desarrollo de aplicaciones multiplataforma
+	Linux/Windows, para consola, con Cygwin</FONT></FONT></A></P>
+</UL>
+<HR>
+<H2><A NAME="noticias"></A><FONT FACE="Arial, sans-serif">Noticias</FONT></H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>09/Jul/2006:
+	</B>Nueva versi&oacute;n <B>1.0.2</B> con los siguientes cambios:</FONT></FONT></P>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0cm; font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Funcionamiento
+		con conversores USB-serie</FONT></FONT></P>
+		<LI><P STYLE="margin-bottom: 0cm; font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Modificados
+		los ejemplos para que se pueda especificar el dipositivo serie (y
+		poder as&iacute; probarlo con conversores USB-serie)</FONT></FONT></P>
+		<LI><P STYLE="margin-bottom: 0cm; font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ahora
+		la librer&iacute;a se puede usar tambi&eacute;n desde clientes
+		escritos en C++ (Gracias a <B>Fernando Herrero Carr&oacute;n</B>)</FONT></FONT></P>
+	</UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>13/Jul/2004:
+	</B>Nueva versi&oacute;n <B>1.0.1</B>, con los siguientes cambios:</FONT></FONT></P>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Versi&oacute;n
+		Multiplataforma, que funciona en Linux y Windows (</FONT></FONT><A HREF="http://www.cygwin.com/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">CYGWIN</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">)</FONT></FONT></P>
+		<LI><P STYLE="margin-bottom: 0cm; font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Las
+		fuentes son &uacute;nicas, tanto para Linux como para Windows
+		(fichero <B>libstargate_1.0.1-1.tar.gz</B>)</FONT></FONT></P>
+		<LI><P STYLE="margin-bottom: 0cm; font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Corregido
+		BUG: Los arrays de almacenamiento de las tramas estaban mal
+		dimensionados y causaban una “violaci&oacute;n de segmento” de
+		vez en cuando.</FONT></FONT></P>
+		<LI><P STYLE="margin-bottom: 0cm; font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Creados
+		paquetes para Debian/Sarge: <B>libstargate_1.0.1-1_i386.deb</B> y
+		<B>libstargate-dev_1.0.1-1_i386.deb</B></FONT></FONT></P>
+		<LI><P STYLE="margin-bottom: 0cm; font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Disponible
+		tami&eacute;n el paquete con las fuentes de los paquetes para
+		debian: <B>libstargate_1.0.1-1.src.tar.gz</B></FONT></FONT></P>
+	</UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>29/Oct/2003</B>:
+	Creado paquete Debian, <B>libstargate_1.0-1_i386.deb</B> </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>21/Oct/2003</B>:
+	Publicada versi&oacute;n 1.0 de la libstargate, con la siguiente
+	funcionalidad: </FONT></FONT>
+	</P>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>libstargate
+		implementa los servicios PING, ID, LOAD y STORE </FONT></FONT>
+		</P>
+		<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Extensi&oacute;n
+		para hilos: libstargateh, que implementa los servicios PING, ID </FONT></FONT>
+		</P>
+		<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Programa
+		ejemplo sgc-null-test, para libstargate </FONT></FONT>
+		</P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Programa ejemplo
+		sgc-null-test-hilos, para libstargateh </FONT></FONT>
+		</P>
+	</UL>
+</UL>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A HREF="../../index.html"><FONT FACE="Arial, sans-serif">[Proyecto
+Stargate]</FONT></A><FONT FACE="Arial, sans-serif"><BR></FONT><A HREF="../../../../../web-iearobotics"><FONT FACE="Arial, sans-serif">IEA
+ROBOTICS</FONT></A> 
+</P>
+<ADDRESS><A HREF="../../../../personal/juan/index.html"><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></A> 
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,871 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>PROYECTO STARGATE: SERVIDOR GENERICO</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 3.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20060104;12304300">
+	<META NAME="CHANGED" CONTENT="20090917;15473100">
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!-- título de la página -->
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>PROYECTO STARGATE: SERVIDOR GENERICO</B> 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P><A HREF="#uno"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>[Introducción]</FONT></FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#caracteristicas"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>[Características]</FONT></FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#especificos"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>[Servicios
+				Especificos]</FONT></FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#dos"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>[implementaciones]</FONT></FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#download"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>[Download]</FONT></FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#links"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>[Links]</FONT></FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#noticias"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>[Noticias]</FONT></FONT></A></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=2 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=70*>
+	<COL WIDTH=186*>
+	<TR>
+		<TD WIDTH=27%>
+			<P><IMG SRC="images/stargate5.jpg" NAME="Imagen1" ALIGN=MIDDLE WIDTH=240 HEIGHT=180 BORDER=0></P>
+		</TD>
+		<TD WIDTH=73%>
+			<UL>
+				<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Nombre</B>:
+				sg-generic </FONT></FONT>
+				</P>
+			</UL>
+			<UL>
+				<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Servicio</B>:
+				Servidor Genérico </FONT></FONT>
+				</P>
+			</UL>
+			<UL>
+				<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Identificación</B>:
+				0x20 </FONT></FONT>
+				</P>
+			</UL>
+			<UL>
+				<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Tipo</B>:
+				Convencional </FONT></FONT>
+				</P>
+			</UL>
+			<UL>
+				<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Descripción</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+				Se implementan los servicios LOAD y STORE, además de los
+				<A HREF="../../serv-basicos/serv-basicos.html">servicios básicos</A></FONT></FONT>
+								</P>
+			</UL>
+			<UL>
+				<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Aplicaciones</B>:
+				Control y monitorización de sistemas desde el PC </FONT></FONT>
+				</P>
+			</UL>
+		</TD>
+	</TR>
+</TABLE>
+<H2><A NAME="uno"></A>Introducción 
+</H2>
+<P><!-- texto --><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Servidor
+de propósito general</B> para poder acceder desde el PC a todos los
+recursos del microcontrolador empleado. Muy útil para hacer <B>sistemas
+de monitorización y control</B>. También facilita la creación del
+prototipos de programas que interactúen con sistemas externos. </FONT></FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Este servidor
+implementa los <A HREF="../../serv-basicos/serv-basicos.html">servicios
+básicos</A></FONT></FONT> <FONT FACE="Arial, sans-serif"><FONT SIZE=2>y
+además dos </FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>específicos</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+</FONT></FONT>
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>LOAD</B>:
+	Lectura de un dato de 8 bits del mapa de memoria del
+	microcontrolador </FONT></FONT>
+	</P>
+</UL>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>STORE</B>:
+	Escritura de un dato de 8 bits en el mapa de memoria del
+	microcontrolador </FONT></FONT>
+	</P>
+</UL>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El mapa es de 64KB
+(Direcciones de 16 bits). Es responsabilidad del programa cliente el
+identificador el microcontrolador empleado (servicio de
+identificación) y conocer así la estructura del mapa de memoria. </FONT></FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Por ejemplo, si se
+está usando un 68hc11, el cliente sabrá que en la dirección 0x1000
+se encuentra el mapeado el puerto A. En el caso de un PIC16F876A, el
+puerto B se encuentra en la dirección 0x0006. </FONT></FONT>
+</P>
+<HR>
+<H2><A NAME="caracteristicas"></A>Caracteristicas</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El funcionamiento del
+servidor es el siguiente: </FONT></FONT>
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Implementación
+	de los servicios LOAD y STORE </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Implementación
+	de los <A HREF="../../serv-basicos/serv-basicos.html">servicios
+	básicos</A></FONT></FONT> <FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+	</FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PING</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>,
+	</FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>ID</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>.
+	</FONT></FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Si recibe un byte
+	que no reconoce, lo ignora </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<H2><A NAME="especificos"></A>Servicios especificos</H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Servicio LOAD</B>
+	</FONT></FONT>
+	</P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El
+	cliente envía la <B>trama LD</B> en la que especifica el código de
+	la trama y la dirección de la que se quiere leer. Primero se envía
+	el byte menos significativo y luego el más significativo. El
+	servidor responde con la <B>trama RLD</B>, que tiene un código de
+	identificación y el dato solicitado: </FONT></FONT>
+	</P>
+	<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/tramas_load.jpg" NAME="Imagen2" ALIGN=MIDDLE WIDTH=256 HEIGHT=147 BORDER=0></P>
+	<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><BR><B>Ejemplo</B>:
+	Desde el cliente (PC) queremos leer el valor de la dirección 0x1000
+	(supongamos que es 0xB8)</FONT></FONT></P>
+	<BLOCKQUOTE><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Trama
+	enviada: 0x4C 0x00 0x10<BR>Trama recibida: 0x4c 0xb8</FONT></FONT></BLOCKQUOTE>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Servicio STORE</B>
+	</FONT></FONT>
+	</P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El
+	cliente envía la <B>trama ST</B> en la que se especifica el código
+	de la trama, la dirección y el dato que se quiere escribir. Para el
+	envío de la dirección, primero se manda el byte menos
+	significativo y luego el de mayor peso. El servidor responde con la
+	<B>trama RST</B>. </FONT></FONT>
+	</P>
+	<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/tramas_store.jpg" NAME="Imagen3" ALIGN=MIDDLE WIDTH=310 HEIGHT=147 BORDER=0></P>
+	<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><BR><B>Ejemplo</B>:
+	Desde el cliente (PC) queremos escribir el valor 0xB8 en la
+	dirección 0x1000</FONT></FONT></P>
+	<BLOCKQUOTE><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Trama
+	enviada: 0x53 0x00 0x10 0xB8<BR>Trama recibida: 0x53</FONT></FONT></BLOCKQUOTE>
+</UL>
+<HR>
+<H2><A NAME="dos"></A>Implementaciones 
+</H2>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TARJETA
+				SKYPIC (20 MHZ)</B></FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=82*>
+	<COL WIDTH=174*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=32%>
+				<P ALIGN=CENTER><IMG SRC="../sg-null/images/skypic1.jpg" NAME="gráficos2" ALIGN=LEFT WIDTH=283 HEIGHT=213 BORDER=0><BR><BR>
+				</P>
+				<P ALIGN=CENTER><BR>
+				</P>
+			</TD>
+			<TD WIDTH=68% VALIGN=TOP>
+				<UL>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Microcontrolador</B>:
+					PIC16F876A (a 20MHZ)</FONT></FONT></P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Tarjeta</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<A HREF="/skypic/skypic.html">SKYPIC</A></FONT></FONT></P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Fichero
+					Ejecutable</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					[<A HREF="download/sg-generic-pic16f876a-skypic-0-BOOT.hex">Para
+					Bootloader</A>] [<A HREF="download/sg-generic-pic16f876a-skypic-0.hex">Normal</A>]
+					</FONT></FONT>
+					</P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Autor</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<A HREF="http://www.iearobotics.com/personal/juan/index.html">Juan
+					González</A></FONT></FONT> 
+					</P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Licencia</B>:
+					GPL</FONT></FONT></P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Notas</B>:
+					Inicialmente el led está encendido.</FONT></FONT></P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Hay dos
+					implementaciones, una en ensamblador y otra en C</B>:</FONT></FONT></P>
+				</UL>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Configuración
+	de la tarjeta Skypic</B>:</FONT></FONT></P>
+	<UL>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Jumpers JP1,
+		JP2, JP6 y JP7 puestos</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Jumper JP4 en
+		posición 1-2</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Jumper JP5 en
+		posición 3-2</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Jumper JP3 en
+		posición 1-2</FONT></FONT></P>
+	</UL>
+</UL>
+<CENTER>
+	<TABLE WIDTH=914 BORDER=1 CELLPADDING=2 CELLSPACING=3>
+		<COL WIDTH=442>
+		<COL WIDTH=453>
+		<TR>
+			<TD WIDTH=442 BGCOLOR="#ffffcc">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Implementación
+				1</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=453 BGCOLOR="#ffffcc">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Implementación
+				2</B></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=442 BGCOLOR="#ffffcc">
+				<UL>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Lenguaje</B>:
+					ASM </FONT></FONT>
+					</P>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Ensamblador</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<A HREF="http://gputils.sourceforge.net/">gpasm</A></FONT></FONT>
+										</P>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Autor</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<A HREF="http://www.iearobotics.com/personal/juan/index.html">Juan
+					González</A></FONT></FONT></P>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Licencia</B>:
+					GPL </FONT></FONT>
+					</P>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Fuentes:
+					</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="download/sg-generic-pic16f876a-skypic-0-asm.tgz">sg-generic-pic16f876a-skypic-0-asm.tgz</A>
+					</FONT></FONT>
+					</P>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Ver
+					fichero</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<A HREF="download/sg-generic-pic16f876a-skypic-0.asm">sg-generic-pic16f876a-skypic-0.asm</A>
+					</FONT></FONT>
+					</P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Notas</B>:
+					Por defecto está para un cristal de 20 MHZ pero se puede
+					configurar para 4 MHZ cambiando una constante. También se puede
+					configurar para ser grabado normalmente o cargarlo con
+					bootloader.</FONT></FONT></P>
+				</UL>
+			</TD>
+			<TD WIDTH=453 BGCOLOR="#ffffcc">
+				<UL>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Lenguaje</B>:
+					C</FONT></FONT></P>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Compilador:
+					</B></FONT></FONT><A HREF="http://sdcc.sourceforge.net/"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>SDCC</FONT></FONT></A></P>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Autor</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<A HREF="http://www.iearobotics.com/personal/juan/index.html">Juan
+					González</A></FONT></FONT></P>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Licencia</B>:
+					GPL </FONT></FONT>
+					</P>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Fuentes</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<A HREF="download/sg-generic-pic16f876a-skypic-0-c.tgz">sg-generic-pic16f876a-skypic-0-c.tgz</A></FONT></FONT></P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Ver
+					fichero HTML: </B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>[<A HREF="sg-generic-pic16f876a-skypic-0.c.html">sg-generic-pic16f876a-skypic-0.c.html</A>]</FONT></FONT></P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Notas</B>:
+					Se puede grabar con bootloader o normalmente. También se puede
+					configurar para un cristal de 20Mhz (defecto) ó 4MHZ.</FONT></FONT></P>
+				</UL>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P><BR><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TARJETA
+				CT6811</B></FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=82*>
+	<COL WIDTH=174*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=32%>
+				<P ALIGN=CENTER><IMG SRC="../sg-null/images/ct6811-null.jpg" NAME="gráficos5" ALIGN=MIDDLE WIDTH=240 HEIGHT=217 BORDER=0></P>
+			</TD>
+			<TD WIDTH=68% VALIGN=TOP>
+				<UL>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Microcontrolador</B>:
+					6811E2</FONT></FONT></P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Tarjeta</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<A HREF="/ct6811/ct6811.html">CT6811</A> </FONT></FONT>
+					</P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Fichero
+					Ejecutable</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<A HREF="download/sg-generic-6811e2-ct-0.s19">sg-generic-6811e2-ct-0.s19</A>
+					</FONT></FONT>
+					</P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Fuentes</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<A HREF="download/sg-generic-6811e2-ct-0.asm">sg-generic-6811e2-ct-0.asm</A>
+					</FONT></FONT>
+					</P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Autor</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<A HREF="http://www.iearobotics.com/personal/juan/index.html">Juan
+					González</A> </FONT></FONT>
+					</P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Licencia</B>:
+					GPL</FONT></FONT></P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Ensamblador
+					usado</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					AS11 de Motorola. Download: [<A HREF="/ct6811/linux/as11.tgz">Linux</A>]
+					[<A HREF="/ct6811/windos/as11.exe">ms-dos/Windows</A>]</FONT></FONT></P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Notas</B>:
+					Inicialmente el led está encendido.</FONT></FONT></P>
+				</UL>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Configuracion
+	de la tarjeta CT6811</B>:</FONT></FONT></P>
+	<UL>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Jumper JP5
+		quitado</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Jumper JP3
+		puesto (Led activado)</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Jumper JP7 en
+		posición OFF</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Jumper JP8
+		puesto</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Jumper JP4 en
+		posición RST</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Switch 2 a ON,
+		resto a OFF (Modo single chip)</FONT></FONT></P>
+	</UL>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TARJETA
+				GPBOT</B></FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=82*>
+	<COL WIDTH=174*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=32%>
+				<P ALIGN=CENTER><IMG SRC="../sg-echo/images/gpbot.jpg" NAME="gráficos4" ALIGN=MIDDLE WIDTH=230 HEIGHT=173 BORDER=0></P>
+			</TD>
+			<TD WIDTH=68% VALIGN=TOP>
+				<UL>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Microcontrolador</B>:
+					68HC908gp32</FONT></FONT></P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Tarjeta</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<A HREF="http://www.ii.uam.es/%7Egdrivera/robotica/gp_bot/gp_bot.htm">GPBOT</A>
+					</FONT></FONT>
+					</P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Fichero
+					Ejecutable</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<A HREF="download/sg-generic-6808-gpbot-0.S19">sg-generic-6808-gpbot-0.S19</A>
+					</FONT></FONT>
+					</P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Notas</B>:
+					Existen diferentes implementaciones:</FONT></FONT></P>
+				</UL>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<BLOCKQUOTE STYLE="margin-bottom: 0cm"><BR>
+</BLOCKQUOTE>
+<CENTER>
+	<TABLE WIDTH=914 BORDER=1 CELLPADDING=2 CELLSPACING=3>
+		<COL WIDTH=257>
+		<COL WIDTH=289>
+		<COL WIDTH=342>
+		<TR>
+			<TD WIDTH=257 BGCOLOR="#ffffcc">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Implementación
+				1</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=289 BGCOLOR="#ffffcc">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Implementación
+				2</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=342 BGCOLOR="#ffffcc">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Implementación
+				3</B></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=257 BGCOLOR="#ffffcc">
+				<UL>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Lenguaje</B>:
+					ASM </FONT></FONT>
+					</P>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Ensamblador</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<A HREF="http://shop-pdp.kent.edu/ashtml/asxxxx.htm">ASXXX</A></FONT></FONT>
+					<FONT FACE="Arial, sans-serif"><FONT SIZE=2>(Libre y
+					multiplataforma) </FONT></FONT>
+					</P>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Autor</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<BR><A HREF="http://www.iearobotics.com/personal/juan/index.html">Juan
+					González</A>,</FONT></FONT></P>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Licencia</B>:
+					GPL </FONT></FONT>
+					</P>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Fuentes</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<A HREF="download/sg-generic-6808-gpbot-0-imp1.zip">sg-generic-6808-gpbot-0-imp1.zip</A></FONT></FONT>
+					<FONT FACE="Arial, sans-serif"><FONT SIZE=2>(6KB) </FONT></FONT>
+					</P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Notas</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					El <A HREF="http://shop-pdp.kent.edu/ashtml/asxxxx.htm">ASXXX</A></FONT></FONT>
+					<FONT FACE="Arial, sans-serif"><FONT SIZE=2>es un ensamblador
+					libre y multiplataforma, con la sintaxis de los ensambladores de
+					GNU </FONT></FONT>
+					</P>
+				</UL>
+			</TD>
+			<TD WIDTH=289 BGCOLOR="#ffffcc">
+				<UL>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Lenguaje</B>:
+					ASM </FONT></FONT>
+					</P>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Ensamblador
+					usado</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<A HREF="http://www.pemicro.com/ics08/">P&amp;E Microsystems</A></FONT></FONT>
+					<FONT FACE="Arial, sans-serif"><FONT SIZE=2>(Sólo plataformas
+					Windows) </FONT></FONT>
+					</P>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Autores</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<BR><A HREF="http://www.iearobotics.com/personal/juan/index.html">Juan
+					González</A></FONT></FONT> 
+					</P>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Licencia</B>:
+					GPL </FONT></FONT>
+					</P>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Fuentes</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<A HREF="download/sg-generic-6808-gpbot-0-imp2.zip">sg-generic-6808-gpbot-0-imp2.zip</A></FONT></FONT>
+					<FONT FACE="Arial, sans-serif"><FONT SIZE=2>(3KB) </FONT></FONT>
+					</P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Notas</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					El entorno <A HREF="http://www.pemicro.com/ics08/">P&amp;E</A></FONT></FONT>
+					<FONT FACE="Arial, sans-serif"><FONT SIZE=2>es propietario, de
+					descarga gratuita y aunque es para plataformas Windows se puede
+					utilizar en Linux con <A HREF="http://www.winehq.com/">WINE</A></FONT></FONT>
+										</P>
+				</UL>
+			</TD>
+			<TD WIDTH=342 BGCOLOR="#ffffcc">
+				<UL>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Lenguaje</B>:
+					C </FONT></FONT>
+					</P>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Compilador</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<A HREF="http://sdcc.sourceforge.net/">SDCC</A></FONT></FONT>
+					<FONT FACE="Arial, sans-serif"><FONT SIZE=2>(Libre y
+					Multiplataforma) </FONT></FONT>
+					</P>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Autores</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<A HREF="http://www.iearobotics.com/personal/juan/index.html">Juan
+					González</A></FONT></FONT> 
+					</P>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Licencia</B>:
+					GPL </FONT></FONT>
+					</P>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Fuentes</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<A HREF="download/sg-generic-6808-gpbot-0-imp3.zip">sg-generic-6808-gpbot-0-imp3.zip</A></FONT></FONT>
+					<FONT FACE="Arial, sans-serif"><FONT SIZE=2>(9KB) </FONT></FONT>
+					</P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Notas</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					El compilador <A HREF="http://sdcc.sourceforge.net/">SDCC</A></FONT></FONT>
+					<FONT FACE="Arial, sans-serif"><FONT SIZE=2>es libre y
+					multiplataforma. Es un compilador de C cruzado, para muchos
+					microcontroladores, entre los que se encuentra el 68hc08 </FONT></FONT>
+					</P>
+				</UL>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P><BR><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Microcontrolador
+				PIC16F876 a 4MHZ</B></FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=82*>
+	<COL WIDTH=174*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=32%>
+				<P ALIGN=CENTER><IMG SRC="../sg-echo/images/pic16f876.jpg" NAME="gráficos5" ALIGN=MIDDLE WIDTH=232 HEIGHT=174 BORDER=0></P>
+			</TD>
+			<TD WIDTH=68% VALIGN=TOP>
+				<UL>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Microcontrolador</B>:
+					PIC16F876A</FONT></FONT></P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Tarjeta</B>:
+					Prototipo, a 4 MHZ </FONT></FONT>
+					</P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Fichero
+					Ejecutable</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<A HREF="download/sg-generic-pic16f876-xx-0.hex">sg-generic-pic16F876-xx-0.hex</A></FONT></FONT></P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Fuentes</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<A HREF="download/sg-generic-pic16f876-xx-0.asm">[Fichero para
+					Linux]</A>, <A HREF="download2/sg-generic-pic16f876-xx-0.asm">[Fichero
+					para Windows]</A> </FONT></FONT>
+					</P>
+				</UL>
+				<UL>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Autores:
+					</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="mailto:josejosejose@iespana.es">Jose
+					Angel de Sande Tundidor</A>, <A HREF="http://www.iearobotics.com/personal/juan/index.html">Juan
+					González</A> </FONT></FONT>
+					</P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Licencia</B>:
+					GPL</FONT></FONT></P>
+				</UL>
+				<UL>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Ensamblador</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>:
+					<A HREF="http://gputils.sourceforge.net/">gpasm</A></FONT></FONT></P>
+				</UL>
+				<UL>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Notas</B>:
+					Inicialmente el led conectado al pin RB1 está encendido.</FONT></FONT></P>
+				</UL>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2><A NAME="download"></A>Download 
+</H2>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+		<COL WIDTH=256*>
+		<TR>
+			<TD WIDTH=100%>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TARJETA
+				SKYPIC</B></FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=102*>
+		<COL WIDTH=154*>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=40% BGCOLOR="#ccccff">
+				<P><A HREF="download/sg-generic-pic16f876a-skypic-0-asm.tgz"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>sg-generic-pic16f876a-skypic-0-asm.tgz</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=60% BGCOLOR="#ccccff">
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Implementación
+				para el Microcontrolador PIC16F876A, en una tarjeta SKYPIC.
+				Lenguaje ensamblador</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=40%>
+				<P><A HREF="download/sg-generic-pic16f876a-skypic-0-c.tgz"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>sg-generic-pic16f876a-skypic-0-c.tgz</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=60%>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Implementación
+				para el Microcontrolador PIC16F876A, en una tarjeta SKYPIC.
+				Lenguaje C</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=40% BGCOLOR="#ccccff">
+				<P><A HREF="download/sg-generic-pic16f876a-skypic-0.hex"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>sg-generic-pic16f876a-skypic-0.hex</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=60% BGCOLOR="#ccccff">
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejecutable</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=40%>
+				<P><A HREF="download/sg-generic-pic16f876a-skypic-0-BOOT.hex"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>sg-generic-pic16f876a-skypic-0-BOOT.hex</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=60%>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejecutable, para
+				cargar con un bootloader</FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>68HC11</B>
+				</FONT></FONT>
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=2 CELLSPACING=2>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=40%>
+				<P><A HREF="download/sg-generic-6811e2-ct-0.asm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>sg-generic-6811e2-ct-0.asm</FONT></FONT></A>
+								</P>
+			</TD>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Implementación
+				para el 6811, en una CT6811. Ensamblador as11</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD>
+				<P><A HREF="download/sg-generic-6811e2-ct-0.s19"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>sg-generic-6811e2-ct-0.s19
+				</FONT></FONT></A>
+				</P>
+			</TD>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejecutable</FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>68HC908GP32</B>
+				</FONT></FONT>
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=2 CELLSPACING=2>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=40%>
+				<P><A HREF="download/sg-generic-6808-gpbot-0-imp1.zip"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>sg-generic-6808-gpbot-0-imp1.zip</FONT></FONT></A>
+								</P>
+			</TD>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Implementación
+				para la GPBOT y el ensamblador asxxx</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD>
+				<P><A HREF="download/sg-generic-6808-gpbot-0-imp2.zip"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>sg-generic-6808-gpbot-0-imp2.zip</FONT></FONT></A>
+								</P>
+			</TD>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Implementación
+				para la GPBOT y el entorno P&amp;E Microsystem</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#cabeeb">
+			<TD>
+				<P><A HREF="download/sg-generic-6808-gpbot-0-imp3.zip"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>sg-generic-6808-gpbot-0-imp3.zip</FONT></FONT></A>
+								</P>
+			</TD>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Implementación
+				para la GPBOT y el compilador SDCC </FONT></FONT>
+				</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD>
+				<P><A HREF="download/sg-generic-6808-gpbot-0.S19"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>sg-generic-6808-gpbot-0.S19</FONT></FONT></A></P>
+			</TD>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejecutable</FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+		<COL WIDTH=256*>
+		<TR>
+			<TD WIDTH=100%>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PIC16F876A
+				y Compatibles</B> </FONT></FONT>
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=102*>
+		<COL WIDTH=154*>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=40%>
+				<P><A HREF="download/sg-generic-pic16f876-xx-0.asm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>sg-generic-pic16F876-xx-0.asm</FONT></FONT></A>
+								</P>
+			</TD>
+			<TD WIDTH=60%>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Implementación
+				para el 16F876A, para el ensamblador gpasm (Linux)</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=40%>
+				<P><A HREF="download2/sg-generic-pic16f876-xx-0.asm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>sg-generic-pic16F876-xx-0.asm</FONT></FONT></A>
+								</P>
+			</TD>
+			<TD WIDTH=60%>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Implementacion
+				para el 16F876A, para el entorno MPLAB de Microchip (Windows)</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=40%>
+				<P><A HREF="download/sg-generic-pic16f876-xx-0.hex"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>sg-generic-pic16F876-xx-0.hex
+				</FONT></FONT></A>
+				</P>
+			</TD>
+			<TD WIDTH=60%>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejecutable</FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="links"></A>Links</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="../../index.html">Proyecto
+	Stargate</A>, Página principal </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="/skypic/skypic.html">Tarjeta
+	Skypic</A>: Tarjeta entrenadora para el microprocesador 16F786A de
+	Microchip</FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="/ct6811/ct6811.html"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Tarjeta
+	CT6811</FONT></FONT></A> <FONT FACE="Arial, sans-serif"><FONT SIZE=2>:Tarjeta
+	entrenadora para el microcontrolador 68HC11 </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="http://www.ii.uam.es/~gdrivera/robotica/gp_bot/gp_bot.htm">GPBOT</A>,
+	:Tarjeta entrenadora para el microcontrolador 68hc908gp32 </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ensamblador
+	as11 para 6811: <A HREF="/ct6811/linux/as11.tgz">[Linux]</A></FONT></FONT>
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=2>y <A HREF="/ct6811/windos/as11.exe">[Windows]</A></FONT></FONT>
+		</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ensamblador
+	<A HREF="http://gputils.sourceforge.net/">gpasm</A></FONT></FONT>
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=2>para PICs </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ensamblador
+	<A HREF="http://shop-pdp.kent.edu/ashtml/asxxxx.htm">ASXXX</A>, para
+	68hc08 </FONT></FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Compilador de C:
+	<A HREF="http://sdcc.sourceforge.net/">SDCC</A>, para 68hc08 y PICs </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<H2><A NAME="noticias"></A>Noticias</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>21/Julio/2006:</B>
+	<SPAN STYLE="font-weight: normal">Publicado servidor
+	</SPAN><B>sg-generic-pic16f876a-skypic-0</B><SPAN STYLE="font-weight: normal">,
+	para la tarjeta Skypic a 20Mhz</SPAN></FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>4/Enero/2006:
+	</B>Actualizada dirección de correo electrónico de Jose Angel de
+	Sande Tundidor</FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>17/Feb/2004</B>:
+	Publicado servidor <B>sg-generic-6808-gpbot-0</B> </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>22/Oct/2003</B>:
+	Publicado servidor <B>sg-generic-pic16f876-xx-0</B> </FONT></FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>21/Mar/2003</B>:
+	Publicado servidor <B>sg-generic-6811e2-ct-0</B> </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="../../index.html">[Proyecto
+Stargate]</A><BR><A HREF="http://www.iearobotics.com/">IEA ROBOTICS</A></FONT></FONT>
+</P>
+<ADDRESS><A HREF="http://www.iearobotics.com/personal/juan/index.html"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Juan
+González</FONT></FONT></A> 
+</ADDRESS>
+</BODY>
+</HTML>

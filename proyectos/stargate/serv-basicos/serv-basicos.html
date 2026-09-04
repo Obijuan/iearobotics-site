@@ -1,0 +1,341 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>PROYECTO STARGATE: SERVICIOS BASICOS</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.1  (Linux)">
+	<META NAME="CREATED" CONTENT="20040709;9355400">
+	<META NAME="CHANGED" CONTENT="20040709;9555300">
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!-- título de la página -->
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>PROYECTO STARGATE: SERVICIOS BASICOS</B> 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P><A HREF="#uno">[descripci&oacute;n]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#identificacion">[Identif. Servidor]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#idmicro">[Identif. microcontrolador]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#idpv">[Identif. placa y versi&oacute;n]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#links">[Links]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#noticias">[Noticias]</A></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<HR>
+<H2><A NAME="uno"></A>Descripci&oacute;n 
+</H2>
+<P><!-- texto --><FONT FACE="Arial, sans-serif">Todos las Stargates
+de <B>tipo convencional</B> implementan los <B>servicios b&aacute;sicos</B>,
+que son: </FONT>
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>Servicio
+	PING</B>: conocer si un servidor est&aacute; conectado al PC o si
+	est&aacute; funcionando. El cliente env&iacute;a una <B>trama PING</B>
+	y el servidor responde con una <B>trama PONG</B>. Ambas tramas est&aacute;n
+	constituidas por un &uacute;nico byte</FONT></P>
+	<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/tramas_ping.jpg" NAME="Imagen1" ALIGN=MIDDLE WIDTH=158 HEIGHT=100 BORDER=0></P>
+	<P><BR><BR><B>Ejemplo</B>: Queremos hacer un ping desde el PC</P>
+	<BLOCKQUOTE>Trama enviada: 0x50<BR>Trama recibida: 0x4F</BLOCKQUOTE>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>Servicio
+	de identificaci&oacute;n</B>: conocer qu&eacute; tipo de servidor
+	est&aacute; conectado al PC as&iacute; como el micro y la tarjeta.
+	El cliente env&iacute;a la <B>trama ID</B> y el servidor responde
+	con la <B>trama RID</B>. </FONT>
+	</P>
+	<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/tramas_id2.jpg" NAME="Imagen2" ALIGN=MIDDLE WIDTH=310 HEIGHT=150 BORDER=0></P>
+	<P STYLE="margin-bottom: 0cm"><BR><FONT FACE="Arial, sans-serif">La
+	trama de respuesta tiene 3 bytes: </FONT>
+	</P>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>IS</B>:
+		C&oacute;digo de Identificaci&oacute;n del servidor </FONT>
+		</P>
+		<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>IM</B>:
+		C&oacute;digo de identificaci&oacute;n del microcontrolador </FONT>
+		</P>
+		<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>IPV</B>:
+		Identificaci&oacute;n de la placa y versi&oacute;n del servidor </FONT>
+		</P>
+	</UL>
+	<P><BR><B>Ejemplo</B>: Queremos identificar el servidor</P>
+	<BLOCKQUOTE>Trama enviada: 0x49<BR>Trama recibida: 0x49 0x10 0x10
+	0x10<BR>Se trata de un servidor nulo, que se est&aacute; ejecutando
+	en una tarjeta CT6811 con un 68hc11E2 
+	</BLOCKQUOTE>
+</UL>
+<HR>
+<H2><A NAME="identificacion"></A>Identificaci&oacute;n del servidor
+(IS)</H2>
+<P><FONT FACE="Arial, sans-serif">En la siguiente tabla se muestran
+los c&oacute;digos de identificaci&oacute;n de los diferentes
+servidores. Los servidores no convencionales, como por ejemlo el de
+eco, tambi&eacute;n tienen asignado un c&oacute;digo, aunque no
+implementen el servicio de identificaci&oacute;n. </FONT>
+</P>
+<CENTER>
+	<TABLE WIDTH=609 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=61>
+		<COL WIDTH=79>
+		<COL WIDTH=457>
+		<TR>
+			<TD WIDTH=61>
+				<P><FONT FACE="Arial, sans-serif"><B>Servidor</B></FONT></P>
+			</TD>
+			<TD WIDTH=79>
+				<P><FONT FACE="Arial, sans-serif"><B>C&oacute;digo (IS)</B></FONT></P>
+			</TD>
+			<TD WIDTH=457>
+				<P><FONT FACE="Arial, sans-serif"><B>Descripci&oacute;n</B></FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=61>
+				<P><A HREF="../servidores/sg-echo/sg-echo.html"><FONT FACE="Arial, sans-serif">Eco</FONT></A></P>
+			</TD>
+			<TD WIDTH=79>
+				<P><FONT FACE="Arial, sans-serif">0x00</FONT></P>
+			</TD>
+			<TD WIDTH=457>
+				<P><FONT FACE="Arial, sans-serif">Hace eco de todo lo recibido</FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=61>
+				<P><A HREF="../servidores/sg-null/sg-null.html"><FONT FACE="Arial, sans-serif">Nulo</FONT></A></P>
+			</TD>
+			<TD WIDTH=79>
+				<P><FONT FACE="Arial, sans-serif">0x10</FONT></P>
+			</TD>
+			<TD WIDTH=457>
+				<P><FONT FACE="Arial, sans-serif">S&oacute;lo implementa los
+				servicios b&aacute;sicos</FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=61>
+				<P><A HREF="../servidores/sg-generic/sg-generic.html"><FONT FACE="Arial, sans-serif">Gen&eacute;rico</FONT></A></P>
+			</TD>
+			<TD WIDTH=79>
+				<P><FONT FACE="Arial, sans-serif">0x20</FONT></P>
+			</TD>
+			<TD WIDTH=457>
+				<P><FONT FACE="Arial, sans-serif">Servicios b&aacute;sicos +
+				servicios LOAD y STORE</FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=61>
+				<P><A HREF="../servidores/sg-servos8/sg-servos8.html"><FONT FACE="Arial, sans-serif">Servos8</FONT></A></P>
+			</TD>
+			<TD WIDTH=79>
+				<P><FONT FACE="Arial, sans-serif">0x30</FONT></P>
+			</TD>
+			<TD WIDTH=457>
+				<P><FONT FACE="Arial, sans-serif">Servicios b&aacute;sicos +
+				servicios POS (Posicionamiento) y ENA (Habilitaci&oacute;n)</FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=61>
+				<P><A HREF="../servidores/sg-picp/sg-picp.html"><FONT FACE="Arial, sans-serif">PICP</FONT></A></P>
+			</TD>
+			<TD WIDTH=79>
+				<P><FONT FACE="Arial, sans-serif">0x40</FONT></P>
+			</TD>
+			<TD WIDTH=457>
+				<P><FONT FACE="Arial, sans-serif">Servicios b&aacute;sicos +
+				servicios para grabaci&oacute;n de los PICs</FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="idmicro"></A>Identificaci&oacute;n del microcontrolador
+(IM)</H2>
+<P><FONT FACE="Arial, sans-serif">En la siguiente tabla se muestran
+los c&oacute;digos de identificaci&oacute;n del microcontrolador:</FONT></P>
+<CENTER>
+	<TABLE BORDER=1 BORDERCOLOR="#000000" CELLPADDING=2 CELLSPACING=0>
+		<TR>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif"><B>C&oacute;digo (IM)</B></FONT></P>
+			</TD>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif"><B>Microcontrolador</B></FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif">0x00</FONT></P>
+			</TD>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif">Reservado</FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif">0x10</FONT></P>
+			</TD>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif">68HC11E2</FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif">0x20</FONT></P>
+			</TD>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif">68HC08</FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif">0x30</FONT></P>
+			</TD>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif">PIC16F876</FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<HR>
+<H2><A NAME="idpv"></A>Identificaci&oacute;n de la placa y versi&oacute;n
+del servidor (IPV)</H2>
+<P><FONT FACE="Arial, sans-serif">El byte IPV se divide en dos partes
+de 4 bits. Los 4 bits m&aacute;s significativos identifican la placa
+sobre la que se est&aacute; funcionando el microcontrolador. Un mismo
+micro puede estar en diferentes tarjetas. Por ejemplo el 6811 puede
+estar en una CT6811 o en una construida por el propio usuario. <BR>Los
+4 bits de identificaci&oacute;n de la placa se usan junto con el
+campo IM para determinar el hardware donde se ejecuta el servidor: </FONT>
+</P>
+<CENTER>
+	<TABLE WIDTH=606 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=210>
+		<COL WIDTH=388>
+		<TR>
+			<TD WIDTH=210>
+				<P><FONT FACE="Arial, sans-serif"><B>IM + 4 bits mayor peso de
+				IPV</B></FONT></P>
+			</TD>
+			<TD WIDTH=388>
+				<P><FONT FACE="Arial, sans-serif"><B>Tarjeta</B></FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=210>
+				<P><FONT FACE="Arial, sans-serif">XX0</FONT></P>
+			</TD>
+			<TD WIDTH=388>
+				<P><FONT FACE="Arial, sans-serif">Tarjeta dise&ntilde;ada por el
+				usuario, que usa el micro de c&oacute;digo XX</FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=210>
+				<P><FONT FACE="Arial, sans-serif">0x101</FONT></P>
+			</TD>
+			<TD WIDTH=388>
+				<P><A HREF="../../ct6811/ct6811.html"><FONT FACE="Arial, sans-serif">Tarjeta
+				CT6811</FONT></A><FONT FACE="Arial, sans-serif">, con un 6811E2</FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=210>
+				<P><FONT FACE="Arial, sans-serif">0x201</FONT></P>
+			</TD>
+			<TD WIDTH=388>
+				<P><A HREF="http://www.ii.uam.es/~gdrivera/robotica/gp_bot/gp_bot.htm"><FONT FACE="Arial, sans-serif">Tarjeta
+				GP-BOT</FONT></A><FONT FACE="Arial, sans-serif">, con un 6808</FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=210>
+				<P><FONT FACE="Arial, sans-serif">0x300</FONT></P>
+			</TD>
+			<TD WIDTH=388>
+				<P><FONT FACE="Arial, sans-serif">Tarjeta construida por el
+				usuario, con un PIC16F876 </FONT>
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=210>
+				<P><FONT FACE="Arial, sans-serif">0x301</FONT></P>
+			</TD>
+			<TD WIDTH=388>
+				<P><FONT FACE="Arial, sans-serif"><A HREF="../../skypic/skypic.html">Tarjeta
+				SKYPIC</A>, con un PIC16F876</FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P><FONT FACE="Arial, sans-serif">Los 4 bits menos significativos del
+byte IPV especifican la versi&oacute;n del servidor, o permite
+diferenciar servidores que ofrecen el mismo servicio pero con algunas
+particularidades diferentes. Normalmente tendr&aacute; el valor 0. </FONT>
+</P>
+<HR>
+<H2><A NAME="links"></A>Links</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../skypic/skypic.html"><FONT FACE="Arial, sans-serif">Tarjeta
+	SKYPIC</FONT></A>: <FONT FACE="Arial, sans-serif">Tarjeta
+	entrenadora para los Microcontroladores PIC de 28 pines</FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../ct6811/ct6811.html"><FONT FACE="Arial, sans-serif">Tarjeta
+	CT6811</FONT></A><FONT FACE="Arial, sans-serif"> :Tarjeta
+	entrenadora para el microcontrolador 68HC11 </FONT>
+	</P>
+	<LI><P><A HREF="http://www.ii.uam.es/~gdrivera/robotica/gp_bot/gp_bot.htm"><FONT FACE="Arial, sans-serif">Tarjeta
+	GP-BOT</FONT></A><FONT FACE="Arial, sans-serif"> :Tarjeta
+	entrenadora para el microcontrolador 68HC08 </FONT>
+	</P>
+</UL>
+<HR>
+<H2><A NAME="noticias"></A>Noticias</H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>9/Jul/2004</B><SPAN STYLE="font-weight: medium">:
+	A&ntilde;adida la tarjeta SKYPIC. Tiene asignado el c&oacute;digo
+	301</SPAN></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>21/Mar/2003</B>: Publicados
+	los servicios b&aacute;sicos </FONT>
+	</P>
+</UL>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A HREF="http://www.iearobotics.com">IEA
+ROBOTICS</A> 
+</P>
+<ADDRESS><A HREF="http://www.iearobotics.com/personal/juan/index.html">Juan Gonz&aacute;lez</A>
+</ADDRESS>
+</BODY>
+</HTML>

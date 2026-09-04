@@ -1,0 +1,441 @@
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html"; charset=iso-8859-1">
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<title>Servidor PICP: Ejemplos</title>
+
+<style type="text/css">
+
+<!--
+
+  H1 {
+
+    font-family: Current Schoolbook, Arial;
+
+    background-color: blue;
+
+    color: rgb(192,192,192);
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    border: thin outset rgb(192,192,192);
+
+    margin-left: 25px;
+
+    margin-right: 25px;
+
+    margin-top: 10px;
+
+    padding: 2px;
+
+  }
+
+  H2 {
+
+    font-family: Times,Arial;
+
+    color: rgb(0,0,0);
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+
+    text-align: left;
+
+    border: medium none;
+
+    margin-left: 25px;
+
+    margin-right: 25px;
+
+    margin-top: 10px;
+
+    padding: 5px;   
+
+  }
+  H3 {
+
+    font-family: Times,Arial;
+
+    color: rgb(0,0,0);
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+
+    text-align: left;
+
+    border: medium none;
+
+    margin-left: 25px;
+
+    margin-right: 25px;
+
+    margin-top: 10px;
+
+    padding: 5px;   
+
+  }
+
+  DIV.cuerpo {
+
+    font-family: Book Antiqua, Arial;
+
+    color: rgb(20,20,20);
+
+    text-indent: 50px;
+
+    line-height: 20px;
+
+    text-align: justify;
+
+    margin-left: 25px;
+
+    margin-right: 25px;
+
+  }    
+
+  SPAN.cursiva { 
+
+    font-style: oblique;
+
+  }
+
+  DIV.autor { 
+
+    font-family: Arial;
+
+    font-style: oblique;
+
+    color: rgb(20,20,20);
+
+    font-size: 10pt;
+
+    text-align: left;
+
+    margin-right: 25px;
+
+    margin-left: 25px;
+
+  }
+
+  
+
+  DIV.lista {
+
+    font-family: Book Antiqua, Arial;
+
+    color: rgb(20,20,20);
+
+    line-height: 20px;
+
+    text-align: justify;
+
+    margin-left: 25px;
+    margin-right: 25px;
+
+  }    
+
+
+
+  TABLE.margen {
+
+    margin-left: 25px;
+
+    margin-right: 25px;
+
+    margin-bottom:25px;
+
+  }
+
+  
+
+  TABLE.links {
+
+    color: rgb(55,0,0);
+
+    margin-left: 25px;
+
+    margin-right: 25px;
+
+    margin-bottom:25px;
+
+    background-color: rgb(255,255,128);
+
+    border: thin outset rgb(192,192,192);    
+
+  }
+
+   
+
+  TABLE.down {
+
+    color: rgb(55,0,0);
+
+    margin-left: 25px;
+
+    margin-right: 25px;
+
+    margin-bottom:25px;
+
+    background-color: rgb(255,255,128);
+
+    border: thin outset rgb(192,192,192);    
+
+  }
+
+  
+
+  TD.indice {
+
+    fo<TR><TD><a href="#noticias">Noticias</a></TD></TR>nt-size:15pt;
+
+    text-align: center;
+
+    color="blue";
+
+  }
+
+  
+
+-->
+
+</style>
+
+</head>
+
+
+
+<body>
+
+<!-- título de la página -->
+
+<table align="center" width="100%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>Servidor PICP: ejemplos</b>
+ </td>
+</tr>
+</tbody></table> 
+
+<br>
+
+<hr>
+<h2 id="ejemplo1">Lectura memoria de configuración</h2>
+
+
+
+<div class="cuerpo">
+
+<p>
+  La memoria de configuración se encuentra a partir de la dirección 2000h y en ella se encuentra la
+  <b>palabra de configuración</b> y la <b>palabra de identificación</b> del PIC
+   (Se puede encontrar más información
+  <a href="../../../cuadernos/ct4/ct4.html#memoria">aquí</a>)
+</p>
+<p>
+  Una vez en modo monitor, se accede a la memoria de configuración invocando el servicio
+  <a href="tramas.html#load_conf">Load Configuration</a>, que hace que el contador
+  de programa apunte a la dirección 2000h (<b>PC=2000h</b>). Las direcciones que nos interesa leer
+  son la 2006h (identificación) y la 2007h (configuracion). Para acceder a ellas se incrementa el contador
+  de programa realizando llamadas al servicio 
+  <a href="tramas.html#increment">Increment Address</a>. Con cada llamada, el PC se incrementa en
+  una unidad. Una vez que PC=2006h, usamos el servicio 
+  <a href="tramas.html#read_data_prog">Read Data from Program Memory</a> para leer su
+  contenido. A continuación volvemos a incrementar el PC y leemos el contenido de la dirección
+  2007h.
+</p>
+<p>
+  <b>La  secuencia completa de  llamadas a los servicios</b> es la siguiente:
+<p>
+</div>
+
+<div class="lista">
+<ol>
+  <li><a href="tramas.html#load_conf">Load Configuration</a> (PC=2000h)</li>
+  <li><a href="tramas.html#increment">Increment Address</a> (PC=2001h)</li>
+  <li><a href="tramas.html#increment">Increment Address</a> (PC=2002h)</li>
+  <li><a href="tramas.html#increment">Increment Address</a> (PC=2003h)</li>
+  <li><a href="tramas.html#increment">Increment Address</a> (PC=2004h)</li>
+  <li><a href="tramas.html#increment">Increment Address</a> (PC=2005h)</li>
+  <li><a href="tramas.html#increment">Increment Address</a> (PC=2006h)</li>
+  <li><a href="tramas.html#read_data_prog">Read Data from Program Memory</a>. Lectura
+  de la identificación del PIC</li>
+  <li><a href="tramas.html#increment">Increment Address</a> (PC=2007h)</li>
+  <li><a href="tramas.html#read_data_prog">Read Data from Program Memory</a>. Lectura
+  de la palabra de configuración</li>
+</ol>
+</div>
+
+<hr>
+<h2 id="ejemplo2">Grabación de palabras (PIC16F8X)</h2>
+
+
+
+<div class="cuerpo">
+
+<p>
+  La grabación en la familia <b>PIC16F8X</b> se realiza <b>byte a byte</b>. 
+  Primero hay que incrementar el contador
+  de programa hasta que apunte a la dirección a partir de la cual queremos grabar las palabras. En este
+  ejemplo comenzaremos en la dirección 0000h, por lo que primero habrá que hacer un 
+  <a href="tramas.html#reset">Reset</a> para inicializar el contador de programa (PC=0000h). A
+  continuación se envía la primera palabra a grabar, usando el servicio 
+  <a href="tramas.html#load_data_prog">Load Data for Program Memory</a> y a continuación
+  invocando el servicio de <a href="tramas.html#programming">Begin Erase/Programming Cycle</a>.
+  El primer dato queda grabado. Ahora se incrementa el contador de programa 
+  (<a href="tramas.html#increment">Increment Address</a>) y se repite la operación, enviando
+  las otras dos palabras que faltan.
+</p>
+<p>
+  <b>La  secuencia completa de  llamadas a los servicios</b> es la siguiente:
+</p>
+</div>
+
+<div class="lista">
+<ol>
+  <li><a href="tramas.html#reset">Reset</a> (PC=0000h)</li>
+  <li><a href="tramas.html#load_data_prog">Load Data for Program Memory</a> (Envío del dato 
+  0x01AB)</li>
+  <li><a href="tramas.html#programming">Begin Erase/Programming Cycle</a> (Gración en la Flash)</li>
+  <li><a href="tramas.html#increment">Increment Address</a> (PC=0001h)</li>
+  <li><a href="tramas.html#load_data_prog">Load Data for Program Memory</a> (Envío del dato 
+  0x02BC)</li>
+  <li><a href="tramas.html#programming">Begin Erase/Programming Cycle</a> (Gración en la Flash)</li>
+  <li><a href="tramas.html#increment">Increment Address</a> (PC=0002h)</li>
+  <li><a href="tramas.html#load_data_prog">Load Data for Program Memory</a> (Envío del dato 
+  0x03CD)</li>
+  <li><a href="tramas.html#programming">Begin Erase/Programming Cycle</a> (Gración en la Flash)</li>
+</ol>
+</div>
+
+<div class="cuerpo">
+<p>
+  Con esto se graban las palabras 0x01AB, 0x02BC y 0x03CD  en las direcciones 
+  0000h, 0001h y 0002h, respectivamente.
+</p>
+</div>
+
+<hr>
+<h2 id="ejemplo3">Grabación de palabras (PIC16F87XA)</h2>
+
+
+
+<div class="cuerpo">
+
+<p>
+  En la familia <b>16f87x</b>A las palabras se <b>graban de 8 en 8</b>. 
+  Es preciso por tanto enviar bloques de 8 palabras, 
+  aunque sólo se quieran grabar menos. Para grabar las tres palabras de este ejemplo, habrá que enviar
+  8 palabras. Las 3 primeras son las que nos interesan. En las 5 restantes se enviará "basura"
+  (por ejemplo 0x0000). Primero hay que inicializar el contador de programa, utilizando el servicio de
+  <a href="tramas.html#reset">Reset</a> (PC=0000h). Ahora se envía el primer dato, con
+  <li><a href="tramas.html#load_data_prog">Load Data for Program Memory</a> y se
+  incrementa el contador de programa (<a href="tramas.html#increment">Increment Address</a>).
+  Este proceso se repite hasta que el contador de programa alcance la dirección 0007h, donde se
+  almacenará la octava palabra, que se envía
+   con <a href="tramas.html#load_data_prog">Load Data for Program Memory</a> y luego
+   se invoca a <a href="tramas.html#programming">Begin Erase/Programming Cycle</a>. Al hacerlo
+   se grabarán las 8 palabras previamente enviadas.
+</p>
+
+<p>
+  <b>La  secuencia completa de  llamadas a los servicios</b> es la siguiente:
+</p>
+</div>
+
+<div class="lista">
+<ol>
+  <li><a href="tramas.html#reset">Reset</a> (PC=0000h)</li>
+  <li><a href="tramas.html#load_data_prog">Load Data for Program Memory</a> (Envío del dato 
+  0x01AB)</li>
+  <li><a href="tramas.html#increment">Increment Address</a> (PC=0001h)</li>
+  <li><a href="tramas.html#load_data_prog">Load Data for Program Memory</a> (Envío del dato 
+  0x02BC)</li>
+  <li><a href="tramas.html#increment">Increment Address</a> (PC=0002h)</li>
+  <li><a href="tramas.html#load_data_prog">Load Data for Program Memory</a> (Envío del dato 
+  0x03CD)</li>
+  <li><a href="tramas.html#increment">Increment Address</a> (PC=0003h)</li>
+  <li><a href="tramas.html#load_data_prog">Load Data for Program Memory</a> (Envío un dato 
+  "basura")</li>
+  <li><a href="tramas.html#increment">Increment Address</a> (PC=0004h)</li>
+  <li><a href="tramas.html#load_data_prog">Load Data for Program Memory</a> (Envío un dato 
+  "basura")</li>
+  <li><a href="tramas.html#increment">Increment Address</a> (PC=0005h)</li>
+  <li><a href="tramas.html#load_data_prog">Load Data for Program Memory</a> (Envío un dato 
+  "basura")</li>
+  <li><a href="tramas.html#increment">Increment Address</a> (PC=0006h)</li>
+  <li><a href="tramas.html#load_data_prog">Load Data for Program Memory</a> (Envío un dato 
+  "basura")</li>
+  <li><a href="tramas.html#increment">Increment Address</a> (PC=0007h)</li>
+   <li><a href="tramas.html#load_data_prog">Load Data for Program Memory</a> (Envío un dato 
+  "basura")</li>
+  <li><a href="tramas.html#programming">Begin Erase/Programming Cycle</a> (Gración en la Flash
+  de las 8 palabras)</li>
+</ol>
+</div>  
+  
+  
+<hr>
+<h2 id="ejemplo4">Grabación de la palabra de configuración</h2>
+
+
+
+<div class="cuerpo">
+
+<p>
+  La palabra de configuración se graba de las misma manera en las familias 16F87XA y 16F8x. Hay que
+  situar el contador de programa en la dirección PC=2007h, enviar la nueva palabra con 
+  <a href="tramas.html#load_data_prog">Load Data for Program Memory</a> y grabarla con
+  <a href="tramas.html#programming">Begin Erase/Programming Cycle</a>
+</p>
+<p>
+  <b>La  secuencia completa de  llamadas a los servicios</b> es la siguiente:
+</p>
+</div>
+
+<div class="lista">
+<ol>
+  <li><a href="tramas.html#load_conf">Load Configuration</a> (PC=2000h)</li>
+  <li><a href="tramas.html#increment">Increment Address</a> (PC=2001h)</li>
+  <li><a href="tramas.html#increment">Increment Address</a> (PC=2002h)</li>
+  <li><a href="tramas.html#increment">Increment Address</a> (PC=2003h)</li>
+  <li><a href="tramas.html#increment">Increment Address</a> (PC=2004h)</li>
+  <li><a href="tramas.html#increment">Increment Address</a> (PC=2005h)</li>
+  <li><a href="tramas.html#increment">Increment Address</a> (PC=2006h)</li>
+  <li><a href="tramas.html#increment">Increment Address</a> (PC=2007h)</li>
+  <li><a href="tramas.html#load_data_prog">Load Data for Program Memory</a> (Enviar
+  la nueva palabra de configuración)</li>
+  <li><a href="tramas.html#programming">Begin Erase/Programming Cycle</a> (Grabarla
+  en la Flash)</li>
+  
+</ol>
+</div>
+            
+
+
+
+<HR>
+<a href="sg-picp.html">[Servidor PICP]</a><br>
+<a href="http://www.iearobotics.com">IEA ROBOTICS</a>
+
+<ADDRESS>
+
+<A HREF="http://www.iearobotics.com/personal/juan/index.html">Juan González</A>
+
+</ADDRESS>
+
+</body>
+
+</html>
+
+
+

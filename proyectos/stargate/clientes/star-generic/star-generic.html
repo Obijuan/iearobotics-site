@@ -1,0 +1,524 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>STAR-GENERIC</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.2  (Linux)">
+	<META NAME="CREATED" CONTENT="20041226;13552200">
+	<META NAME="CHANGED" CONTENT="20041226;20462100">
+	<STYLE>
+	<!--
+		@page { size: 21.59cm 27.94cm }
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>STAR-GENERIC:
+				CLIENTE PARA STARGATE GENERICO</B> </FONT>
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P><A HREF="#introduccion"><FONT SIZE=2 STYLE="font-size: 11pt">[Introducci&oacute;n]</FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#version_1_2"><FONT SIZE=2 STYLE="font-size: 11pt">[Funcionamiento]</FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#autores"><FONT SIZE=2 STYLE="font-size: 11pt">[Autor]</FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#licencia"><FONT SIZE=2 STYLE="font-size: 11pt">[Licencia]</FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#Download |outline"><FONT SIZE=2 STYLE="font-size: 11pt">[Download]</FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#links"><FONT SIZE=2 STYLE="font-size: 11pt">[Links]</FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#noticias"><FONT SIZE=2 STYLE="font-size: 11pt">[Noticias]</FONT></A></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=2 CELLSPACING=0 RULES=NONE>
+	<TR>
+		<TD>
+			<P ALIGN=CENTER><IMG SRC="images/stargate_logo.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=100 HEIGHT=100 BORDER=0></P>
+		</TD>
+		<TD WIDTH=85%>
+			<UL>
+				<LI><DD><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>Nombre:
+				</B>star-generic </FONT></FONT>
+				</DD><LI><DD>
+				<FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif"><B>Servicio</B>:
+				Cliente para el </FONT></FONT><A HREF="../../servidores/sg-generic/sg-generic.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Stargate
+				gen&eacute;rico</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">
+				</FONT></FONT>
+				</DD><LI><DD>
+				<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>Lenguaje:
+				</B>C </FONT></FONT>
+				</DD><LI><DD>
+				<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>Plataforma:
+				</B>Linux </FONT></FONT>
+				</DD><LI><DD>
+				<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>Tipo</B>:
+				Convencional </FONT></FONT>
+				</DD><LI><DD>
+				<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>Descripci&oacute;n</B>:
+				Acceso a los servicios LOAD y STORE </FONT></FONT>
+				</DD><LI><DD>
+				<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>Aplicaciones</B>:
+				Control y monitorizaci&oacute;n de sistemas desde el PC </FONT></FONT>
+				</DD></UL>
+		</TD>
+	</TR>
+</TABLE>
+<H2><A NAME="introduccion"></A>Introducci&oacute;n 
+</H2>
+<P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Para
+probar el </FONT></FONT><A HREF="../../servidores/sg-generic/sg-generic.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Stargate
+gen&eacute;rico</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">,
+se ha desarrollado un cliente gr&aacute;fico de pruebas,
+<B>star-generic</B>, basado en la </FONT></FONT><A HREF="../libstargate/libstargate.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">libstargate
+1.0.1</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">.
+Nos permite acceder al mapa de memoria del microcontrolador de una
+forma f&aacute;cil y sencilla, y realizar diferente pruebas. Resulta
+muy &uacute;til para: </FONT></FONT>
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Comprobar
+	si una implementaci&oacute;n de un </FONT></FONT><A HREF="../../servidores/sg-generic/sg-generic.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Stargate
+	gen&eacute;rico</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">
+	funciona </FONT></FONT>
+	</P>
+</UL>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Comprobar
+	que los </FONT></FONT><A HREF="../../serv-basicos/serv-basicos.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">servicios
+	b&aacute;sicos</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">
+	de cualquier </FONT></FONT><A HREF="../../index.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Stargate</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">
+	convencional funcionan </FONT></FONT>
+	</P>
+</UL>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Acceder
+	a todos los recursos del microcontrolador de una forma sencilla, por
+	ejemplo para sacar informaci&oacute;n por su puertos o leer sus
+	entradas </FONT></FONT>
+	</P>
+</UL>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Sirve
+	de programa modelo para la creaci&oacute;n de otros clientes m&aacute;s
+	complejos </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<H2><A NAME="caracteristicas"></A><FONT FACE="Arial, sans-serif">Caracter&iacute;sticas
+</FONT>
+</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>Plataforma</B>:
+	Linux </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>Librer&iacute;as
+	gr&aacute;ficas</B>: GTK2 </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>Lenguaje</B>:
+	C </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif"><B>Dependencias</B>:
+	</FONT></FONT><A HREF="../libstargate/libstargate.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">libstargate
+	1.0.1</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">,
+	adem&aacute;s de las GTK2 </FONT></FONT>
+	</P>
+	<LI><P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif"><B>Licencia</B>:
+	</FONT></FONT><A HREF="http://gugs.sindominio.net/gnu-gpl/gples.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">GPL</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">
+	</FONT></FONT>
+	</P>
+</UL>
+<HR>
+<H2><A NAME="autores"></A><FONT FACE="Arial, sans-serif">Autores</FONT></H2>
+<UL>
+	<LI><P><A HREF="http://www.iearobotics.com/personal/juan/index.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Juan
+	Gonz&aacute;lez G&oacute;mez</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">
+	</FONT></FONT>
+	</P>
+</UL>
+<HR>
+<H2><A NAME="licencia"></A><FONT FACE="Arial, sans-serif">Licencia</FONT></H2>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Este
+programa se distribuye bajo </FONT></FONT><A HREF="http://gugs.sindominio.net/gnu-gpl/gples.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">licencia
+GPL </FONT></FONT></A>
+</P>
+<HR>
+<H2><A NAME="version_1_2"></A><FONT FACE="Arial, sans-serif">Versi&oacute;n
+1.2</FONT></H2>
+<P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">La
+ventana principal muestra la informaci&oacute;n sobre el estado de la
+conexi&oacute;n y el </FONT></FONT><A HREF="../../index.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Stargate</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">
+detectado. Regularmente se hace un PING para actualizar el estado de
+la conexi&oacute;n y al detectarse un nuevo stargate se identifica
+(Servicio ID). </FONT></FONT>
+</P>
+<CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P><IMG SRC="images/pant2.jpg" NAME="Imagen2" ALIGN=BOTTOM WIDTH=291 HEIGHT=175 BORDER=0>
+								</P>
+			</TD>
+			<TD>
+				<P ALIGN=CENTER><IMG SRC="images/pant1.jpg" NAME="Imagen3" ALIGN=BOTTOM WIDTH=291 HEIGHT=175 BORDER=0></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P><FONT SIZE=1 STYLE="font-size: 8pt"><FONT FACE="Arial, sans-serif"><B>1)</B>
+				No se ha detectado ning&uacute;n </FONT></FONT><A HREF="../../index.html"><FONT SIZE=1 STYLE="font-size: 8pt"><FONT FACE="Arial, sans-serif">Stargate</FONT></FONT></A></P>
+			</TD>
+			<TD>
+				<P><FONT SIZE=1 STYLE="font-size: 8pt"><FONT FACE="Arial, sans-serif"><B>2)
+				</B>Detectado un </FONT></FONT><A HREF="../../servidores/sg-generic/sg-generic.html"><FONT SIZE=1 STYLE="font-size: 8pt"><FONT FACE="Arial, sans-serif">Stargate
+				Gen&eacute;rico</FONT></FONT></A><FONT SIZE=1 STYLE="font-size: 8pt"><FONT FACE="Arial, sans-serif">,
+				implementado en una </FONT></FONT><A HREF="../../../ct6811/ct6811.html"><FONT SIZE=1 STYLE="font-size: 8pt"><FONT FACE="Arial, sans-serif">tarjeta
+				CT6811</FONT></FONT></A></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">El
+cliente est&aacute; constantemente chequeando el estado de la
+conexi&oacute;n. Si se pierde nos informa. <B>Es posible conectar y
+desconectar Stargates &quot;en caliente&quot;</B>. Si se conecta un
+nuevo </FONT></FONT><A HREF="../../index.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Stargate</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">,
+el cliente lo identificar&aacute;. </FONT></FONT>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">S&oacute;lo
+en el caso de que sea un </FONT></FONT><A HREF="../../servidores/sg-generic/sg-generic.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Stargate
+gen&eacute;rico</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">,
+el usuario tendr&aacute; acceso a los servicios LOAD y STORE, a
+trav&eacute;s de un <I>control gen&eacute;rico</I> o usando el <I>modo
+monitor</I>. </FONT></FONT>
+</P>
+<CENTER>
+	<TABLE WIDTH=916 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=525>
+		<COL WIDTH=383>
+		<TR>
+			<TD WIDTH=525>
+				<P><IMG SRC="images/pant4.jpg" NAME="Imagen4" ALIGN=BOTTOM WIDTH=483 HEIGHT=153 BORDER=0>
+								</P>
+			</TD>
+			<TD WIDTH=383>
+				<P><IMG SRC="images/pant3.jpg" NAME="Imagen5" ALIGN=BOTTOM WIDTH=337 HEIGHT=195 BORDER=0></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=525>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=1 STYLE="font-size: 8pt"><B>3)
+				</B>Control gen&eacute;rico. Desde esta ventana se tiene acceso a
+				los servicos LOAD y STORE. Los datos se visualizan en binario,
+				decimal, hexadecimal y en una barra de desplazamiento (datos
+				anal&oacute;gicos). </FONT></FONT>
+				</P>
+			</TD>
+			<TD WIDTH=383>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=1 STYLE="font-size: 8pt"><B>4)</B>Modo
+				Monitor. Se introduce la direcci&oacute;n que se quiere
+				comprobar, y periodicamente se accece al servicio LOAD para
+				mostrar lo que se encuentra en ella. Resulta muy &uacute;til para
+				comprobar el estado de sensores conectados en puertos digitales
+				del stargate. </FONT></FONT>
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<HR>
+<H2><A NAME="version_1_0"></A><FONT FACE="Arial, sans-serif">Versi&oacute;n
+1.0</FONT></H2>
+<P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Anteriormente,
+recib&iacute;a el nombre de <B>g-sgc-generic</B>. Se puede encontrar
+m&aacute;s informaci&oacute;n </FONT></FONT><A HREF="../g-sgc-generic/g-sgc-generic.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">aqu&iacute;</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">.
+</FONT></FONT>
+</P>
+<HR>
+<H2><A NAME="Download |outline"></A><FONT FACE="Arial, sans-serif">Download
+</FONT>
+</H2>
+<CENTER>
+	<TABLE WIDTH=90% BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+		<COL WIDTH=256*>
+		<TR>
+			<TD WIDTH=100% BGCOLOR="#9999ff">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>Ultima versi&oacute;n
+				(1.2.1)</B></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=90% BORDER=0 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=86*>
+		<COL WIDTH=170*>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=34% BGCOLOR="#9999cc">
+				<P><FONT FACE="Arial, sans-serif"><A HREF="download/v1.2.1/star-generic-1.2.1.tar.gz"><FONT FACE="Arial, sans-serif">star-generic-1.2.1.tar.gz</FONT></A>
+				</FONT>
+				</P>
+			</TD>
+			<TD WIDTH=66% BGCOLOR="#9999cc">
+				<P><FONT FACE="Arial, sans-serif">Fuentes para Linux. </FONT>
+				</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=34% BGCOLOR="#9999ff">
+				<P><FONT FACE="Arial, sans-serif"><A HREF="download/v1.2.1/star-generic-1.2.1-bin.tar.gz"><FONT FACE="Arial, sans-serif">star-generic-1.2.1-bin.tar.gz</FONT></A>
+				</FONT>
+				</P>
+			</TD>
+			<TD WIDTH=66% BGCOLOR="#9999ff">
+				<P><FONT FACE="Arial, sans-serif">Ficheros binarios, para Linux.
+				Cualquier distribuci&oacute;n. Instalar con make install</FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=34% BGCOLOR="#9999cc">
+				<P><FONT FACE="Arial, sans-serif"><A HREF="download/v1.2.1/star-generic_1.2.1-1_i386.deb"><FONT FACE="Arial, sans-serif">star-generic_1.2.1-1_i386.deb</FONT></A>
+				</FONT>
+				</P>
+			</TD>
+			<TD WIDTH=66% BGCOLOR="#9999cc">
+				<P><FONT FACE="Arial, sans-serif">Paquete para Debian/Sarge.
+				Necesario instalar previamente la libstargate-1.0.1</FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=34% BGCOLOR="#9999ff">
+				<P><FONT FACE="Arial, sans-serif"><A HREF="download/v1.2.1/star-generic-static_1.2.1-1_i386.deb"><FONT FACE="Arial, sans-serif">star-generic-static_1.2.1-1_i386.deb</FONT></A>
+				</FONT>
+				</P>
+			</TD>
+			<TD WIDTH=66% BGCOLOR="#9999ff">
+				<P><FONT FACE="Arial, sans-serif">Versi&oacute;n est&aacute;tica.
+				No necesita instalar la libstargate-1.0.1</FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=34% BGCOLOR="#9999cc">
+				<P><FONT FACE="Arial, sans-serif"><A HREF="download/v1.2.1/star-generic_1.2.1-1.src.tar.gz"><FONT FACE="Arial, sans-serif">star-generic_1.2.1-1.src.tar.gz</FONT></A>
+				</FONT>
+				</P>
+			</TD>
+			<TD WIDTH=66% BGCOLOR="#9999cc">
+				<P><FONT FACE="Arial, sans-serif">Paquete fuente para
+				Debian/Sarge (Ficheros *orig.tar.gz, *.dsc y *.diff)</FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<CENTER>
+	<TABLE WIDTH=90% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>Versiones
+				anteriores</B></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=90% BORDER=0 CELLPADDING=2 CELLSPACING=2>
+		<TR BGCOLOR="#cabeeb">
+			<TD>
+				<P><A HREF="download/star-generic-1.2.tgz"><FONT FACE="Arial, sans-serif">star-generic-1.2.tgz</FONT></A><FONT FACE="Arial, sans-serif">
+				(365KB) </FONT>
+				</P>
+			</TD>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif">Ficheros fuentes y binario.
+				Versi&oacute;n 1.2</FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD>
+				<P><A HREF="../g-sgc-generic/download/g-sgc-generic-1.0.tgz"><FONT FACE="Arial, sans-serif">g-sgc-generic-1.0.tgz</FONT></A><FONT FACE="Arial, sans-serif">
+				(19KB) </FONT>
+				</P>
+			</TD>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif">Ficheros fuentes y binario.
+				Versi&oacute;n 1.0.</FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2>Instalaci&oacute;n</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt">Debian/Sarge</FONT></FONT></P>
+<OL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Instalar
+	primero la librer&iacute;a  <A HREF="../libstargate/libstargate.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">libstargate
+	1.0.1</FONT></FONT></A>. Para ello descargar el <A HREF="../libstargate/download/v1.0.1/libstargate_1.0.1-1_i386.deb">paquete</A>
+	para Debian/Sarge y ejecutar:</FONT></FONT></P>
+</OL>
+<DL>
+	<DD><I># dpkg -i libstargate-1.0.1-1_i386.deb</I></DD></DL>
+<OL START=2>
+	<LI><P>
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Descargar
+	el <A HREF="download/v1.2.1/star-generic_1.2.1-1_i386.deb"><FONT FACE="Arial, sans-serif">paquete</FONT></A>
+	del star-generic para Debian/Sarge y teclear:</FONT></FONT></P>
+</OL>
+<DL>
+	<DD> <I># dpkg -i star-generic-1.2.1-1_i386.deb</I></DD></DL>
+<OL START=3>
+	<LI><P>
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Teclar
+	star-generic para ejecutarlo</FONT></FONT></P>
+</OL>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">El
+paquete <I>star-generic-static</I> es exactamente igual pero la
+librer&iacute;a libstargate-1.0.1 est&aacute; compilada con el propio
+programa, de manera que no hace falta instalarla previamente. Para
+ejecutarlo hay que teclear: <I>star-generic-static.</I></FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt">Otras
+distribuciones</FONT></FONT></P>
+<OL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Bajar
+	y descomprimir el paquete <A HREF="download/v1.2.1/star-generic-1.2.1-bin.tar.gz"><FONT FACE="Arial, sans-serif">star-generic-1.2.1-bin.tar.gz</FONT></A><FONT FACE="Arial, sans-serif">
+	</FONT></FONT></FONT>
+	</P>
+</OL>
+<DL>
+	<DD><I><FONT FACE="Arial, sans-serif">$ tar vzxf
+	star-generic-1.2.1-bin.tar.gz</FONT></I></DD></DL>
+<OL START=2>
+	<LI><P>
+	<FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Los
+	ejecutables ya est&aacute;n compilados. Instalarlos con <I>make
+	install</I></FONT></FONT></P>
+</OL>
+<DL>
+	<DD><I>$ make install</I></DD></DL>
+<OL START=3>
+	<LI><P>
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Contiene
+	tanto la versi&oacute;n est&aacute;tica como la din&aacute;mica</FONT></FONT></P>
+</OL>
+<HR>
+<H2><A NAME="links"></A><FONT FACE="Arial, sans-serif">Links</FONT></H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../index.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Proyecto
+	Stargate</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">:
+	P&aacute;gina principal del proyecto </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../serv-basicos/serv-basicos.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">servicios
+	b&aacute;sicos</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">:
+	PING, ID </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../servidores/sg-generic/sg-generic.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Stargate
+	gen&eacute;rico</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">:
+	Servicios LOAD y STORE </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../servidores/sg-servos8/sg-servos8.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Stargate
+	Servos8</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">
+	: Permite mover servos </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../libstargate/libstargate.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">libstargate
+	1.0</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">:
+	Librer&iacute;a para hacer clientes para Stargates </FONT></FONT>
+	</P>
+	<LI><P><A HREF="../../../ct6811/ct6811.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">tarjeta
+	CT6811</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">:
+	Plataforma donde se pueden implementar Stargates </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<H2><A NAME="noticias"></A><FONT FACE="Arial, sans-serif">Noticias</FONT></H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>26/Dic/2004:
+	</B><SPAN STYLE="font-weight: medium">Publicada versi&oacute;n
+	1.2.1. Cambios:</SPAN></FONT></FONT></P>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0cm; font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Preparado
+		para ser instalado en cualquier distribuci&oacute;n</FONT></FONT></P>
+		<LI><P STYLE="margin-bottom: 0cm; font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Hechos
+		paquetes para espec&iacute;ficos para Debian/Sarge</FONT></FONT></P>
+	</UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>22/Feb/2004</B>:
+	Publicada versi&oacute;n 1.2. Cambios: </FONT></FONT>
+	</P>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Soporte
+		para cualquier dispositivo serie, no s&oacute;lo COM1 </FONT></FONT>
+		</P>
+		<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Ventana
+		principal que detecta el estado de la conexi&oacute;n y el tipo de
+		Stargte </FONT></FONT>
+		</P>
+		<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Ventana
+		de <B>controles gen&eacute;ricos</B> para acceso a los servicios
+		LOAD y STORE, que utilizar datos en binario, decimal y hexadecimal </FONT></FONT>
+		</P>
+		<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>Modo
+		monitor</B> para estar constantemente comprobando el valor de una
+		direcci&oacute;n </FONT></FONT>
+		</P>
+		<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Se
+		pueden abrir tantas ventanas de controles gen&eacute;ricos y de
+		monitorizaci&oacute;n como se quieran </FONT></FONT>
+		</P>
+	</UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>22/Oct/2003</B>:
+	Publicada versi&oacute;n 1.0 del cliente, con la siguiente
+	funcionalidad: </FONT></FONT>
+	</P>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">S&oacute;lo
+		se soporta el COM1 </FONT></FONT>
+		</P>
+		<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Basado
+		en la librer&iacute;a </FONT></FONT><A HREF="../libstargate/libstargate.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">libstargate-1.0</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">
+		</FONT></FONT>
+		</P>
+		<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Comprobaci&oacute;n
+		del estado de la conexi&oacute;n </FONT></FONT>
+		</P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Servicios
+		LOAD y STORE s&oacute;lo si el Stargate es gen&eacute;rico </FONT></FONT>
+		</P>
+	</UL>
+</UL>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A HREF="../../index.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">[Proyecto
+Stargate]</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif"><BR></FONT></FONT><A HREF="http://www.iearobotics.com"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">IEA
+ROBOTICS</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">
+</FONT></FONT>
+</P>
+<ADDRESS><A HREF="http://www.iearobotics.com/personal/juan/index.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">
+</FONT></FONT>
+</ADDRESS>
+</BODY>
+</HTML>

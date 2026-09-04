@@ -1,0 +1,182 @@
+
+<html>
+<head>
+<title>sg-generic-pic16f876a-skypic-0.c</title>
+<meta name="generator" content="c2html 0.9.6">
+<meta name="date" content="2006-07-21T08:35:28+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/*************************************************************************** */</font>
+<font color="#B22222">/* sg-generic-pic16F876A-skypic.c  Julio 2006                                */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Servidor Generico                                                         */</font>
+<font color="#B22222">/* Servidor: sg-generic                                                      */</font>
+<font color="#B22222">/* Implementado para la tarjeta Skypic a 20MHz                               */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Implementados los servicios de Identificacion, PING, LOAD y STORE         */</font>
+<font color="#B22222">/* Inicialmente el led de la skypic esta encendido                           */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  Juan Gonzalez &lt;juan@iearobotics.com&gt;                                     */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  LICENCIA GPL                                                             */</font>
+<font color="#B22222">/*****************************************************************************/</font>
+
+//-- Especificar el pic a emplear
+<strong><font color="#228B22">#define __16f877</font></strong>
+<font color="#A020F0">#include </font><font color="#666666">"pic16f877.h"</font><font color="#A020F0"></font>
+
+
+<font color="#B22222">/*******************************/</font>
+<font color="#B22222">/* DEFINICIONES                */</font>
+<font color="#B22222">/*******************************/</font>
+<strong><font color="#228B22">#define LED 0x02     //-- Bit del puerto B donde se encuentra el LED</font></strong>
+
+<font color="#A020F0">#include </font><font color="#666666">"sci.h"</font><font color="#A020F0"></font>
+<font color="#A020F0">#include </font><font color="#666666">"pic16f877.h"</font><font color="#A020F0"></font>
+
+<font color="#B22222">/*----------------------------*/</font>
+<font color="#B22222">/*   CONSTANTES DEL STARGATE  */</font>
+<font color="#B22222">/*----------------------------*/</font>
+
+//-- Datos devueltos por el servicio de identificacion
+<strong><font color="#228B22">#define IS  0x20  // IS. Identificacion del servidor</font></strong>
+<strong><font color="#228B22">#define IM  0x30  // IM. Identificacion del microcontrolador (pic16F876A)</font></strong>
+<strong><font color="#228B22">#define IPV 0x10  // IPV. Placa Skypic. Version 0.</font></strong>
+
+//-- Identificadores de los servicios
+<strong><font color="#228B22">#define SID   0x49 // Servicio de identificacion</font></strong>
+<strong><font color="#228B22">#define SPING 0x50 // Servicio de PING (0x50)</font></strong>
+<strong><font color="#228B22">#define SLD   0x4C // Servicio LOAD</font></strong>
+<strong><font color="#228B22">#define SST   0x53 // Servicio STORE </font></strong>
+
+//-- Identificadores para la respuesta
+<strong><font color="#228B22">#define RPING 0x4F // Respuesta al Servicio de PING (0x4F)</font></strong>
+<strong><font color="#228B22">#define RSI   0x49 // RSI. Codigo de respuesta del servicio de identificacion        </font></strong>
+<strong><font color="#228B22">#define RLD   0x4C // Codigo respuesta servicio LOAD</font></strong>
+<strong><font color="#228B22">#define RST   0x53 // Codigo respuesta servicio STORE</font></strong>
+
+<font color="#B22222">/********************************************/</font>
+<font color="#B22222">/* REGISTRO PARA DIRECCIONAMIENTO INDEXADO  */</font>
+<font color="#B22222">/********************************************/</font>
+//-- Por razones que desconozco, si se utiliza el registro INDF tal y 
+//-- y como esta definido en el fichero pic16f87X.h, el direccionaimento
+//-- indirecto no funciona. Con la siguiente definicion no hay problemas
+sfr  at INDF_ADDR INDF2;
+
+<font color="#B22222">/*-----------------------------*/</font>
+<font color="#B22222">/* VARIABLES GLOBALES          */</font>
+<font color="#B22222">/*-----------------------------*/</font>
+//-- Byte alto de la direccion de memoria donde hacer LOAD/STORE
+unsigned char dirH; 
+unsigned char valor;
+
+<font color="#B22222">/*********************************************************************/</font>
+<font color="#B22222">/* Leer la direccion enviada y situarla en los registros adecuados   */</font>
+<font color="#B22222">/* para poder hacer el direccionamienot indirecto                    */</font>
+<font color="#B22222">/*********************************************************************/</font>
+<strong><font color="#4169E1"><a name="leer_dir"></a>void leer_dir()</font></strong>
+{
+  //-- El byte bajo se pone en el registro FSR
+  FSR=sci_read();
+  
+  //-- Poner el bit menos significativo de dirH en el bit IRP del
+  //-- registro de status, para indicar direccionamiento indirecto
+  dirH=sci_read();
+  IRP=dirH&amp;0x01;
+}
+
+
+<font color="#B22222">/**************************************************************************/</font>
+<font color="#B22222">/* Servicio STORE: se almacena en la direccion indicada, el valor pasado  */</font>
+<font color="#B22222">/**************************************************************************/</font>
+<strong><font color="#4169E1"><a name="store"></a>void store(void)</font></strong>
+{
+  //-- Leer la direccion
+  leer_dir();
+  
+  //-- Realizar la escritura del valor pasado
+  INDF2=sci_read();
+  
+  //-- Enviar la respuesta
+  sci_write(RST);
+}
+
+<font color="#B22222">/**************************************************************************/</font>
+<font color="#B22222">/* Servicio LOAD: Se devuelve el valor que se encuentra en la direccion   */</font>
+<font color="#B22222">/* indicada                                                               */</font>
+<font color="#B22222">/**************************************************************************/</font>
+<strong><font color="#4169E1"><a name="load"></a>void load(void)</font></strong>
+{
+  //-- Leer la direccion
+  leer_dir();
+  
+  //-- Leer el valor
+  valor=INDF2;
+  
+  <font color="#B22222">/* Devolver trama de respuesta con el valor leido */</font>
+ sci_write(RLD);
+ sci_write(valor);
+}
+
+
+<font color="#B22222">/*---------------------*/</font>
+<font color="#B22222">/* PROGRAMA PRINCIPAL  */</font>
+<font color="#B22222">/*---------------------*/</font>
+<strong><font color="#4169E1"><a name="main"></a>void main(void)</font></strong>
+{
+  unsigned char car;
+  
+  <font color="#B22222">/*----------------------------*/</font>
+  <font color="#B22222">/* Configurar el sistema      */</font>
+  <font color="#B22222">/*----------------------------*/</font>
+  //-- Configurar el led de la skypic
+  TRISB=~LED;
+  
+  //-- Activar LED de la Skypic
+  PORTB=LED;
+  
+  <font color="#B22222">/*-----------------------------*/</font>
+  <font color="#B22222">/* Configurar el puerto serie  */</font>
+  <font color="#B22222">/*-----------------------------*/</font>
+  sci_init();
+  
+  <font color="#B22222">/*------------------*/</font>
+  <font color="#B22222">/* Bucle principal  */</font>
+  <font color="#B22222">/*------------------*/</font>
+  <font color="#4169E1">for</font> (;;) {
+    
+    //-- Esperar a que se solicite un servicio
+    car=sci_read();
+    
+    <font color="#4169E1">switch</font>(car) {
+      
+      //-- Servicio de identificacion
+      <font color="#4169E1">case</font> SID: 
+        sci_write(RSI);
+        sci_write(IS);
+        sci_write(IM);
+        sci_write(IPV);
+        <font color="#4169E1">break</font>;
+      
+      //-- Servicio de PING
+      <font color="#4169E1">case</font> SPING: 
+        sci_write(RPING);
+        <font color="#4169E1">break</font>;
+      
+      //-- Servicio de LOAD
+      <font color="#4169E1">case</font> SLD:
+        load();
+        <font color="#4169E1">break</font>;
+      
+      //-- Servicio de STORE
+      <font color="#4169E1">case</font> SST:
+        store();
+        <font color="#4169E1">break</font>;
+    }
+  }
+}
+</pre>
+</body>
+
+</html>

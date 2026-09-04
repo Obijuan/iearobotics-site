@@ -1,0 +1,705 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>PROYECTO STARGATE: SERVIDOR PICP</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.2  (Linux)">
+	<META NAME="CREATED" CONTENT="20050309;15293400">
+	<META NAME="CHANGED" CONTENT="20050309;16171100">
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!-- título de la página -->
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>PROYECTO STARGATE: SERVIDOR PICP</B> 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P><A HREF="#uno">[Introducci&oacute;n]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#caracteristicas">[Caracter&iacute;sticas]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#especificos">[Servicios Especificos]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#dos">[Implementaciones]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#ejemplos">[Ejemplos]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#links">[Links]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#noticias">[Noticias]</A></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<TABLE WIDTH=100% CELLPADDING=2 CELLSPACING=2>
+	<TR>
+		<TD>
+			<P><IMG SRC="images/stargate3.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=200 HEIGHT=136 BORDER=0></P>
+		</TD>
+		<TD WIDTH=85%>
+			<UL>
+				<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Nombre</B>:
+				sg-picp </FONT></FONT>
+				</P>
+			</UL>
+			<UL>
+				<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Servicio</B>:
+				Servidor de grabaci&oacute;n de microcontroladores PIC, de
+				instrucciones de 14 bits. </FONT></FONT>
+				</P>
+			</UL>
+			<UL>
+				<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Identificaci&oacute;n</B>:
+				0x40 </FONT></FONT>
+				</P>
+			</UL>
+			<UL>
+				<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Tipo</B>:
+				Convencional </FONT></FONT>
+				</P>
+			</UL>
+			<UL>
+				<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Descripci&oacute;n</B>:
+				Adem&aacute;s de los </FONT></FONT><A HREF="../../serv-basicos/serv-basicos.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">servicios
+				b&aacute;sicos</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+				se implementa un servicio de reset del PIC (para entrar en modo
+				monitor e inicializar el PC) as&iacute; como parte de los
+				servicios del </FONT></FONT><A HREF="../../../cuadernos/ct4/ct4.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">protocolo
+				ICSP</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+				de Microchip, para la programaci&oacute;n/verificaci&oacute;n de
+				PICs. </FONT></FONT>
+				</P>
+			</UL>
+			<UL>
+				<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Aplicaciones</B>:
+				Grabadores de PICs </FONT></FONT>
+				</P>
+			</UL>
+		</TD>
+	</TR>
+</TABLE>
+<HR>
+<H2><A NAME="uno"></A>Introducci&oacute;n 
+</H2>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Servidor de
+programaci&oacute;n/verificaci&oacute;n de microcontroladores PIC</B>.
+Implementa parte de los servicios del </FONT></FONT><A HREF="../../../cuadernos/ct4/ct4.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">protocolo
+ICSP</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+de Microchip, adem&aacute;s de los </FONT></FONT><A HREF="../../serv-basicos/serv-basicos.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">servicios
+b&aacute;sicos</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+</FONT></FONT>
+</P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Todos los servicios
+espec&iacute;ficos, salvo el de reset, son los mismos que los del
+</FONT></FONT><A HREF="../../../cuadernos/ct4/ct4.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">protocolo
+ICSP</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+El servidor PICP ofrece una interfaz serie para la mayor&iacute;a de
+los servicios ofrecidos por este protocolo. </FONT></FONT>
+</P>
+<HR>
+<H2><A NAME="caracteristicas"></A>Caracter&iacute;sticas</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El funcionamiento del
+servidor es el siguiente: </FONT></FONT>
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Implementaci&oacute;n
+	de los </FONT></FONT><A HREF="../../serv-basicos/serv-basicos.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">servicios
+	b&aacute;sicos</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+	</FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Implementaci&oacute;n
+	de 6 servicios espec&iacute;ficos </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Si
+	recibe un byte que no reconoce, lo ignora </FONT></FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Inicialmente NO
+	se hace reset del PIC </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<H2><A NAME="especificos"></A>Servicios espec&iacute;ficos</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Los servicios
+<B>espec&iacute;ficos</B> son: </FONT></FONT>
+</P>
+<TABLE BORDER=1 CELLPADDING=2 CELLSPACING=2>
+	<TR>
+		<TD BGCOLOR="#ffffcc">
+			<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Servicio</B></FONT></FONT></P>
+		</TD>
+		<TD BGCOLOR="#ffffcc">
+			<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Descripci&oacute;n</B></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD BGCOLOR="#ffffcc">
+			<P><A HREF="tramas.html#reset"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Reset</FONT></FONT></A></P>
+		</TD>
+		<TD BGCOLOR="#ffffcc">
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Entrada en modo
+			monitor y puesta a cero del contador de programa (PC=0000h)</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD BGCOLOR="#ffffcc">
+			<P><A HREF="tramas.html#load_conf"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Load
+			Configuration</FONT></FONT></A></P>
+		</TD>
+		<TD BGCOLOR="#ffffcc">
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Saltar a la memoria
+			de configuraci&oacute;n (PC=2000h)</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD BGCOLOR="#ffffcc">
+			<P><A HREF="tramas.html#load_data_prog"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Load
+			Data for Program Memory</FONT></FONT></A></P>
+		</TD>
+		<TD BGCOLOR="#ffffcc">
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Enviar un dato para
+			la memoria de programa. (Se almacena en un registro interno, pero
+			no se graba en la memoria)</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD BGCOLOR="#ffffcc">
+			<P><A HREF="tramas.html#read_data_prog"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Read
+			Data from Program Memory</FONT></FONT></A></P>
+		</TD>
+		<TD BGCOLOR="#ffffcc">
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Lectura de la
+			palabra apuntada por el contador de programa</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD BGCOLOR="#ffffcc">
+			<P><A HREF="tramas.html#increment"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Increment
+			Address</FONT></FONT></A></P>
+		</TD>
+		<TD BGCOLOR="#ffffcc">
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Incrementar el
+			contador de programa (PC=PC+1)</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD BGCOLOR="#ffffcc">
+			<P><A HREF="tramas.html#programming"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Begin
+			Erase/Programming Cycle</FONT></FONT></A></P>
+		</TD>
+		<TD BGCOLOR="#ffffcc">
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Comenzar un ciclo
+			de borrado/grabaci&oacute;n</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><A HREF="tramas.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Aqu&iacute;</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+puedes encontrar m&aacute;s informaci&oacute;n sobre las tramas. </FONT></FONT>
+</P>
+<HR>
+<H2><A NAME="ejemplos"></A>Ejemplos</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para poder hacer un
+cliente que grabe PICs no s&oacute;lo es necesario conocer los
+servicios ofrecidos, sino en qu&eacute; orden hay que invocarlos para
+poder realizar la grabaci&oacute;n/verificaci&oacute;n. Lo mejor es
+ver algunos ejemplos. <B>La grabaci&oacute;n depende del PIC
+empleado</B>, aunque los servicios son los mismos. </FONT></FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Cosas a tener en
+cuenta</B>: </FONT></FONT>
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Entrada
+	en modo monitor</B>. Para que los servicios funcionen correctamente,
+	es necesario previamente que el pic entre en modo monitor. Esto se
+	consigue invocando el servicio de </FONT></FONT><A HREF="tramas.html#reset"><FONT SIZE=2><FONT FACE="Arial, sans-serif">RESET</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+	Si el PIC no est&aacute; conectado, o no recibe correctamente los
+	12v, no entrar&aacute; en este modo.</FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Grabaci&oacute;n
+	en familias 16F8XA</B>: Se graban <B>byte a byte</B>. Una vez que el
+	contador de programa contiene la direcci&oacute;n en la que queremos
+	grabar, se invoca el servicio </FONT></FONT><A HREF="tramas.html#load_data_prog"><FONT SIZE=2><FONT FACE="Arial, sans-serif">load
+	data for program memory</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	con el que se env&iacute;a la palabra a grabar, y luego se invoca a
+	</FONT></FONT><A HREF="tramas.html#programming"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Begin
+	Erase/Programming Cycle</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+	La palabra quedar&aacute; grabada. Para verificar que as&iacute; ha
+	sido se puede usar </FONT></FONT><A HREF="tramas.html#read_data_prog"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Read
+	Data from Program Memory</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	con lo que se lee lo que hay almacenado en esa posici&oacute;n. Para
+	grabar la siguiente posici&oacute;n de memoria invocamos al servicio
+	</FONT></FONT><A HREF="tramas.html#increment"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Increment
+	Address</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+	(el contador de programa se incrementa) y repetimos el proceso.</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Grabaci&oacute;n
+	en familias 16F87XA</B>: Se graban de 8 en 8 bytes. Primero situamos
+	el contador de programa en la direcci&oacute;n a partir de la cual
+	queremos grabar. Se env&iacute;a la primera palabra con el servicio
+	</FONT></FONT><A HREF="tramas.html#load_data_prog"><FONT SIZE=2><FONT FACE="Arial, sans-serif">load
+	data for program memory</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+	y se incrementa el contador de programa (</FONT></FONT><A HREF="tramas.html#increment"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Increment
+	Address</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">).
+	Ahora se hace lo mismo con la segunda palabra. Una vez que se ha
+	enviado la octava palabra, en vez de incrementar el contador de
+	programa se invoca el servicio de grabaci&oacute;n (</FONT></FONT><A HREF="tramas.html#programming"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Begin
+	Erase/Programming Cycle</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">),
+	con lo que las 8 palabras se grabar&aacute;n. </FONT></FONT>
+	</P>
+</UL>
+<TABLE BORDER=1 CELLPADDING=2 CELLSPACING=2>
+	<TR>
+		<TD BGCOLOR="#ffffcc">
+			<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Ejemplo</B></FONT></FONT></P>
+		</TD>
+		<TD BGCOLOR="#ffffcc">
+			<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Descripci&oacute;n</B></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD BGCOLOR="#ffffcc">
+			<P><A HREF="ejemplos.html#ejemplo1"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Lectura
+			de la memoria de configuraci&oacute;n</FONT></FONT></A></P>
+		</TD>
+		<TD BGCOLOR="#ffffcc">
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Secuencia de
+			servicios a invocar para leer la identificaci&oacute;n del chip y
+			la palabra de configuraci&oacute;n, tanto de los PIC16F8X, como de
+			los PIC16F87XA.</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD BGCOLOR="#ffffcc">
+			<P><A HREF="ejemplos.html#ejemplo2"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Grabaci&oacute;n
+			de palabras (PIC16F8X)</FONT></FONT></A></P>
+		</TD>
+		<TD BGCOLOR="#ffffcc">
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejemplo de
+			grabaci&oacute;n de las palabas 0x01AB, 0x02BC y 0x03CD a partir
+			de la direcci&oacute;n 0000h</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD BGCOLOR="#ffffcc">
+			<P><A HREF="ejemplos.html#ejemplo3"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Grabaci&oacute;n
+			de palabras (PIC16F87XA)</FONT></FONT></A></P>
+		</TD>
+		<TD BGCOLOR="#ffffcc">
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejemplo de
+			grabaci&oacute;n de las palabas 0x01AB, 0x02BC y 0x03CD a partir
+			de la direcci&oacute;n 0000h</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD BGCOLOR="#ffffcc">
+			<P><A HREF="ejemplos.html#ejemplo4"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Grabaci&oacute;n
+			de la palabra de configuraci&oacute;n</FONT></FONT></A></P>
+		</TD>
+		<TD BGCOLOR="#ffffcc">
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejemplo de
+			grabaci&oacute;n de la palabra de configuraci&oacute;n XXXX.
+			V&aacute;lido para las familias 16F8X y 16F87XA</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<HR>
+<H2><A NAME="todo"></A>Lista de cosas por hacer</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>La versi&oacute;n
+actual del servidor PICP est&aacute; en fase de pruebas. Todav&iacute;a
+no se han implementado todos los servicios del protocolo ICSP. Las
+caracter&iacute;sticas futuras que se a&ntilde;adir&aacute;n ser&aacute;n:
+</FONT></FONT>
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Load
+	Data for Data Memory</B>: Enviar un dato para la memoria de datos </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Read
+	Data for Data Memory</B>: Leer un dato de la memoria de Datos </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Bulk
+	Erase Program Memory</B>: Borrado completo de la memoria de programa
+	</FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Bulk
+	Erase Data Memory</B>: Borrado completo de la memoria de datos </FONT></FONT>
+	</P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Soporte para
+	los pic de la familia 18</B> </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<H2><A NAME="dos"></A>Implementaciones 
+</H2>
+<BLOCKQUOTE><TABLE DIR="LTR" ALIGN=LEFT WIDTH=100% BORDER=0 CELLPADDING=0 CELLSPACING=0 BGCOLOR="#cabeeb">
+	<COL WIDTH=256*>
+	<TR>
+		<TD WIDTH=100%>
+			<P ALIGN=LEFT><B>sg-picp-pic16f876-skypic-0</B> 
+			</P>
+		</TD>
+	</TR>
+</TABLE><BR><BR>
+</BLOCKQUOTE>
+<DL>
+	<DD>
+	<TABLE WIDTH=840 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=508>
+		<COL WIDTH=325>
+		<TR>
+			<TD WIDTH=508>
+				<UL>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Microcontrolador</B>:
+					PIC16F876A </FONT></FONT>
+					</P>
+				</UL>
+				<UL>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Tarjeta</B>:
+					</FONT></FONT><A HREF="../../../skypic/skypic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Skypic</FONT></FONT></A></P>
+				</UL>
+				<UL>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Autor</B>:
+					</FONT></FONT><A HREF="http://www.iearobotics.com/personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+					Gonz&aacute;lez</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+					</FONT></FONT>
+					</P>
+				</UL>
+				<UL>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Licencia</B>:
+					GPL </FONT></FONT>
+					</P>
+				</UL>
+				<UL>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Notas</B>:
+					Los pines asignados para las se&ntilde;ales de reset, datos y
+					reloj son : </FONT></FONT>
+					</P>
+				</UL>
+				<UL>
+					<UL>
+						<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Reset</B>:
+						RB4 </FONT></FONT>
+						</P>
+						<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Datos</B>:
+						RB7 </FONT></FONT>
+						</P>
+						<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Reloj</B>:
+						RB3</FONT></FONT></P>
+					</UL>
+				</UL>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Cuando se graba
+				una skypic desde otra skypic, la conexi&oacute;n es la siguiente.
+				Se conecta un cable de bus del puerto B de la grabadora (conector
+				CT2) al puerto de grabaci&oacute;n de la que se quiere grabar
+				(CT4). Esta conexi&oacute;n se muestra en la foto. Fijarse en la
+				posici&oacute;n de los jumpers de programaci&oacute;n. La skypic
+				que hace de grabadora es la de la izquierda, que es la que est&aacute;
+				conectada a un PC</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=325>
+				<P><IMG SRC="images/skypic-picp.jpg" NAME="Imagen4" ALIGN=BOTTOM WIDTH=320 HEIGHT=240 BORDER=0></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P><B>sg-picp-pic16f876-xx-0</B></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<DL>
+	<DD>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<UL>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Microcontrolador</B>:
+					PIC16F876A </FONT></FONT>
+					</P>
+				</UL>
+				<UL>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Tarjeta</B>:
+					Prototipo </FONT></FONT>
+					</P>
+				</UL>
+				<UL>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Autor</B>:
+					</FONT></FONT><A HREF="http://www.iearobotics.com/personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+					Gonz&aacute;lez</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+					</FONT></FONT>
+					</P>
+				</UL>
+				<UL>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Licencia</B>:
+					GPL </FONT></FONT>
+					</P>
+				</UL>
+				<UL>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Notas</B>:
+					Los pines asignados para las se&ntilde;ales de reset, datos y
+					reloj son los siguientes (el usuario puede cambiarlos por los
+					que le interesen) </FONT></FONT>
+					</P>
+				</UL>
+				<UL>
+					<UL>
+						<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Reset</B>:
+						RB5 </FONT></FONT>
+						</P>
+						<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Datos</B>:
+						RB7 </FONT></FONT>
+						</P>
+						<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Reloj</B>:
+						RB6 </FONT></FONT>
+						</P>
+					</UL>
+				</UL>
+			</TD>
+			<TD>
+				<P><IMG SRC="images/pic16f867a-picp.png" NAME="Imagen2" ALIGN=BOTTOM WIDTH=320 HEIGHT=240 BORDER=0></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<BLOCKQUOTE><BR><TABLE DIR="LTR" ALIGN=LEFT WIDTH=924 BORDER=0 CELLPADDING=0 CELLSPACING=0 BGCOLOR="#cabeeb">
+	<COL WIDTH=924>
+	<TR>
+		<TD WIDTH=924>
+			<P ALIGN=LEFT><B>sg-picp-6811e2-ct-0</B> 
+			</P>
+		</TD>
+	</TR>
+</TABLE><BR><BR>
+</BLOCKQUOTE>
+<DL>
+	<DD>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<UL>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Microcontrolador</B>:
+					6811E2 </FONT></FONT>
+					</P>
+				</UL>
+				<UL>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Tarjeta</B>:
+					</FONT></FONT><A HREF="../../../ct6811/ct6811.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">CT6811</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+					</FONT></FONT>
+					</P>
+				</UL>
+				<UL>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Autor</B>:
+					</FONT></FONT><A HREF="http://www.iearobotics.com/personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+					Gonz&aacute;lez</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+					</FONT></FONT>
+					</P>
+				</UL>
+				<UL>
+					<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Licencia</B>:
+					GPL </FONT></FONT>
+					</P>
+				</UL>
+				<UL>
+					<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Configuraci&oacute;n
+					de la tarjeta CT6811</B>:</FONT></FONT></P>
+				</UL>
+				<UL>
+					<UL>
+						<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>P5 quitado </FONT></FONT>
+						</P>
+						<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>P3 puesto
+						(led activado)</FONT></FONT></P>
+						<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>P7 en
+						posici&oacute;n OFF</FONT></FONT></P>
+						<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>P8 puesto</FONT></FONT></P>
+						<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>P4 en
+						posici&oacute;n RST</FONT></FONT></P>
+						<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Switch 2 a
+						ON, resto a OFF (Modo single chip)</FONT></FONT></P>
+					</UL>
+				</UL>
+				<UL>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Notas</B>:
+					Los pines asignados para las se&ntilde;ales de reset, datos y
+					reloj son los siguientes (el usuario puede cambiarlos por los
+					que le interesen) </FONT></FONT>
+					</P>
+				</UL>
+				<UL>
+					<UL>
+						<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Reset</B>:
+						PA4 </FONT></FONT>
+						</P>
+						<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Datos</B>:
+						PA7 </FONT></FONT>
+						</P>
+						<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Reloj</B>:
+						PA3 </FONT></FONT>
+						</P>
+					</UL>
+				</UL>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Inicialmente se
+				enciende el led de la tarjeta CT6811 </FONT></FONT>
+				</P>
+			</TD>
+			<TD>
+				<P><IMG SRC="images/ct6811-picp.png" NAME="Imagen3" ALIGN=BOTTOM WIDTH=320 HEIGHT=240 BORDER=0></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P><BR><BR>
+</P>
+<HR>
+<H2>Download<FONT SIZE=2><FONT FACE="Arial, sans-serif"> </FONT></FONT>
+</H2>
+<CENTER>
+	<TABLE WIDTH=90% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>IMPLEMENTACIONES
+				DEL SERVIDOR PICP</B> </FONT></FONT>
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=90% BORDER=0 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=69*>
+		<COL WIDTH=66*>
+		<COL WIDTH=120*>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=27%>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Fuente</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=26%>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Ejecutable</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=47%>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Descripci&oacute;n</B></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=27%>
+				<P><A HREF="download/sg-picp-pic16f876-xx-0.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sg-picp-pic16f876-xx-0.asm</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=26%>
+				<P><A HREF="download/sg-picp-pic16f876-xx-0.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sg-picp-pic16f876-xx-0.hex</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=47%>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Implementaci&oacute;n
+				para un <B>PIC16F876A</B></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=27%>
+				<P><A HREF="download/sg-picp-6811e2-ct-0.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sg-picp-6811e2-ct-0.asm</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=26%>
+				<P><A HREF="download/sg-picp-6811e2-ct-0.s19"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sg-picp-6811e2-ct-0.s19</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+				</FONT></FONT>
+				</P>
+			</TD>
+			<TD WIDTH=47%>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Implementaci&oacute;n
+				para una <B>tarjeta CT6811</B> con un <B>68hc11E2</B></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=27% BGCOLOR="#ccccff">
+				<P><A HREF="download/sg-picp-pic16f876-skypic-0.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sg-picp-pic16f876-skypic-0.asm</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=26% BGCOLOR="#ccccff">
+				<P><A HREF="download/sg-picp-pic16f876-skypic-0.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sg-picp-pic16f876-skypic-0.hex</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+				</FONT></FONT>
+				</P>
+			</TD>
+			<TD WIDTH=47% BGCOLOR="#ccccff">
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Implementaci&oacute;n
+				para una <B>tarjeta SKYPIC</B> con un pic16f876</FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="links"></A>Links</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../../skypic/skypic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Skypic</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">:
+	Tarjeta entrenadora para el microcontrolador PIC16F876</FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../../cuadernos/ct4/ct4.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cuaderno
+	t&eacute;cnico 4</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">:
+	Grabaci&oacute;n de microcontroladores PIC. Informaci&oacute;n sobre
+	el protocolo ICSP. </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Proyecto
+	Stargate</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	P&aacute;gina principal </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="http://www.iearobotics.com/personal/andres/proyectos/picmin/pic1.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Tarjeta
+	PICUPSAM</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	un prototipo de una entrenadora m&iacute;nima para el PIC 16F876A </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../../GEYDi/GEYDi.htm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Tarjeta
+	GEYDi</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	entrenadora para PIC de 40 pines (P18F452, familia P16F87XA, etc) </FONT></FONT>
+	</P>
+	<LI><P><A HREF="../../../ct6811/ct6811.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Tarjeta
+	CT6811</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+	:Tarjeta entrenadora para el microcontrolador 68HC11 </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<H2><A NAME="noticias"></A>Noticias</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>9/Mar/2005
+	: </B><SPAN STYLE="font-weight: medium">A&ntilde;adido
+	sg-picp-pic16f876-skypic-0. Preparado para funcionar con la tarjeta
+	Skypic</SPAN></FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>10/Mar/2004</B>:
+	Modificado sg-picp-pic16f876-xx-0 para que funcione correctamente en
+	una tarjeta SKYPIC </FONT></FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>29/Dic/2003</B>:
+	Publicados servidores <B>sg-picp-6811e2-ct-0</B> y
+	<B>sg-picp-pic16f876-xx-0</B> </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A HREF="../../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Proyecto
+Stargate]</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif"><BR></FONT></FONT><A HREF="http://www.iearobotics.com"><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEA
+ROBOTICS</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+</FONT></FONT>
+</P>
+<ADDRESS><A HREF="http://www.iearobotics.com/personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+</FONT></FONT>
+</ADDRESS>
+</BODY>
+</HTML>

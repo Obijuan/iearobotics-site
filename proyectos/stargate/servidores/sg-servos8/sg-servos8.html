@@ -1,0 +1,581 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>PROYECTO STARGATE: SERVIDOR SERVOS8</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20070403;16425700">
+	<META NAME="CHANGEDBY" CONTENT="juan">
+	<META NAME="CHANGED" CONTENT="20070403;20253500">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>PROYECTO STARGATE: SERVIDOR SERVOS8</B> 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P><A HREF="#uno"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Introducci&oacute;n]</FONT></FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#caracteristicas"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Caracter&iacute;sticas]</FONT></FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#especificos"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Servicios
+				Especificos]</FONT></FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#dos"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[implementaciones]</FONT></FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#Download |outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Download]</FONT></FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#links"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Links]</FONT></FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#noticias"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Noticias]</FONT></FONT></A></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% CELLPADDING=2 CELLSPACING=2>
+	<TR>
+		<TD>
+			<P><IMG SRC="images/stargate6.jpg" NAME="gr&aacute;ficos1" ALIGN=MIDDLE WIDTH=200 HEIGHT=200 BORDER=0></P>
+		</TD>
+		<TD WIDTH=85%>
+			<UL>
+				<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Nombre</B>:
+				sg-servos8 </FONT></FONT>
+				</P>
+			</UL>
+			<UL>
+				<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Servicio</B>:
+				Servidor de posicionamiento de 8 servos (tipo <A HREF="../../../cuadernos/ct3/ct3.html">Futaba
+				3003</A> o compatibles)</FONT></FONT></P>
+			</UL>
+			<UL>
+				<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Identificaci&oacute;n</B>:
+				0x30 </FONT></FONT>
+				</P>
+			</UL>
+			<UL>
+				<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Tipo</B>:
+				Convencional </FONT></FONT>
+				</P>
+			</UL>
+			<UL>
+				<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Descripci&oacute;n</B>:
+				Se implementan los servicios POS (posicionamiento) y ENA
+				(habilitaci&oacute;n) , adem&aacute;s de los </FONT></FONT><A HREF="../../serv-basicos/serv-basicos.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">servicios
+				b&aacute;sicos</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+				</FONT></FONT>
+				</P>
+			</UL>
+			<UL>
+				<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Aplicaciones</B>:
+				Control de servos para robots y maquetas </FONT></FONT>
+				</P>
+			</UL>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="border-top: none; border-bottom: 1.10pt double #808080; border-left: none; border-right: none; padding: 0cm">
+<!-- Introducción --><BR><BR>
+</P>
+<H2><FONT FACE="Arial, sans-serif">Introducci&oacute;n </FONT>
+</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Servidor de control
+de servos</B> para posicionar hasta 8 servos (tipo <A HREF="../../../cuadernos/ct3/ct3.html">Futaba
+3003</A> o compatibles) desde el PC. Muy &uacute;til para probar
+prototipos de robots. Por ejemplo, el robot <A HREF="../../../../personal/juan/doctorado/cube-revolutions/index.html">Cube
+Revolutions</A> utiliza este servidor para que un programa del PC
+env&iacute;e las secuencias de movimiento. </FONT></FONT>
+</P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Este servidor
+implementa los </FONT></FONT><A HREF="../../serv-basicos/serv-basicos.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">servicios
+b&aacute;sicos</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+y adem&aacute;s dos <B>espec&iacute;ficos</B>: </FONT></FONT>
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>POS</B>:
+	Posicionamiento de un servo </FONT></FONT>
+	</P>
+</UL>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>ENA</B>:
+	Habilitaci&oacute;n/deshabilitaci&oacute;n de un servo </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Caracter&iacute;sticas</FONT></H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El funcionamiento del
+servidor es el siguiente: </FONT></FONT>
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Implementaci&oacute;n
+	de los servicios POS y ENA </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Implementaci&oacute;n
+	de los </FONT></FONT><A HREF="../../serv-basicos/serv-basicos.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">servicios
+	b&aacute;sicos</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+	: <B>PING</B>, <B>ID</B>. </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Si
+	recibe un byte que no reconoce, lo ignora </FONT></FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Inicialmente los
+	servos <B>est&aacute;n deshabilitados</B> </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Servicios especificos</FONT></H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Servicio POS</B>
+	</FONT></FONT>
+	</P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Este
+	servicio es s&oacute;lo de una direcci&oacute;n. El cliente env&iacute;a
+	la <B>trama POS</B> pero el servidor no devuelve ninguna respuesta.
+	Se ha hecho as&iacute; para que sea un servicio m&aacute;s
+	&quot;din&aacute;mico&quot;. La trama es de la siguiente manera: </FONT></FONT>
+	</P>
+	<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/tramas_pos.png" NAME="gr&aacute;ficos2" ALIGN=MIDDLE WIDTH=294 HEIGHT=50 BORDER=0></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><BR>El
+	byte de identificaci&oacute;n de trama se corresponde con la letra
+	'W'. Los otros datos son:</FONT></FONT></P>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Servo</B>:
+		N&uacute;mero de servo a posicionar, comprendido entre 1 y 8 </FONT></FONT>
+		</P>
+	</UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Posici&oacute;n</B>:
+	Valor comprendido entre 0 (un extremo) y 232 (el otro extremo). La
+	precisi&oacute;n que se tiene es de 0.77 grados. </FONT></FONT>
+	</P>
+	<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><BR><B>Ejemplo</B>:
+	Queremos posicionar el servo 1 en la posici&oacute;n central. El
+	cliente del PC env&iacute;a los siguientes 3 bytes:</FONT></FONT></P>
+	<BLOCKQUOTE><FONT FACE="Arial, sans-serif"><FONT SIZE=2><I>Trama
+	enviada</I>: 0x57 0x01 0x74</FONT></FONT></BLOCKQUOTE>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Servicio ENA</B>
+	</FONT></FONT>
+	</P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Servicio
+	tambi&eacute;n unidireccional, del cliente al stargate, pero no hay
+	respuesta. La trama es: </FONT></FONT>
+	</P>
+	<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/tramas_ena.png" NAME="gr&aacute;ficos3" ALIGN=MIDDLE WIDTH=234 HEIGHT=50 BORDER=0></P>
+	<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><BR>El campo m&aacute;scara
+	indica qu&eacute; servos est&aacute;n activos y cuales no. El bit de
+	menor peso se corresponde con el servo 1 y el de mayor peso con el
+	8. Cuando un bit est&eacute; a 1 el servo correspondiente estar&aacute;
+	activado. <BR><BR><B>Ejemplo</B>: Queremos habilitar los servos 4 y
+	7 y que los dem&aacute;s no lo est&eacute;n. Se env&iacute;an los
+	dos bytes siguientes: </FONT></FONT>
+	</P>
+	<BLOCKQUOTE><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Trama
+	enviada: 0x45 0x48</FONT></FONT></BLOCKQUOTE>
+</UL>
+<P STYLE="border-top: none; border-bottom: 1.10pt double #808080; border-left: none; border-right: none; padding: 0cm">
+<!-- Sección 1 --><BR><BR>
+</P>
+<H2><FONT FACE="Arial, sans-serif">Implementaciones </FONT>
+</H2>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TARJETA
+				SKYPIC (20 MHZ)</B></FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=82*>
+	<COL WIDTH=174*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=32%>
+				<P ALIGN=CENTER><IMG SRC="../sg-null/images/skypic1.jpg" NAME="gr&aacute;ficos6" ALIGN=LEFT WIDTH=283 HEIGHT=213 BORDER=0><BR><BR>
+				</P>
+				<P ALIGN=CENTER><BR>
+				</P>
+			</TD>
+			<TD WIDTH=68% VALIGN=TOP>
+				<UL>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Microcontrolador</B>:
+					PIC16F876A (a 20MHZ)</FONT></FONT></P>
+					<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Tarjeta</B>:
+					</FONT></FONT><A HREF="../../../skypic/skypic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">SKYPIC</FONT></FONT></A></P>
+					<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Fichero
+					Ejecutable</B>:  [<A HREF="download/sg-servos8-pic16f876-skypic.hex">sg-servos8-pic16f876-skypic.hex</A>]
+					</FONT></FONT>
+					</P>
+					<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Fuentes</B>:
+					<A HREF="download/sg-servos8-pic16f876-skypic-1.tgz">sg-servos8-pic16f876-skypic-1.tgz</A></FONT></FONT></P>
+					<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Autor</B>:
+					</FONT></FONT><A HREF="../../../../personal/andres/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Andres
+					Prieto-Moreno</FONT></FONT></A> 
+					</P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Licencia</B>:
+					GPL</FONT></FONT></P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Lenguaje: 
+					</B><SPAN STYLE="font-weight: medium">C</SPAN></FONT></FONT></P>
+					<LI><P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Compilador</B>:
+					<B> </B><A HREF="http://sdcc.sourceforge.net/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">SDCC</FONT></FONT></A></FONT></FONT></P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Notas: </B><SPAN STYLE="font-weight: medium">Se
+					puede grabar con bootloader o sin &eacute;l</SPAN></FONT></FONT></P>
+					<LI><P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Los
+					valores a enviar en el servicio de posicionamiento son entre <B>0
+					y 0x89</B>. Se tiene una precisi&oacute;n de 1.17 grados.</FONT></FONT></P>
+				</UL>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Configuraci&oacute;n
+	de la tarjeta Skypic</B>:</FONT></FONT></P>
+	<UL>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Jumpers JP1,
+		JP2, JP6 y JP7 puestos</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Jumper JP4 en
+		posici&oacute;n 1-2</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Jumper JP5 en
+		posici&oacute;n 3-2</FONT></FONT></P>
+		<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Jumper JP3 en
+		posici&oacute;n 1-2</FONT></FONT></P>
+	</UL>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Microcontrolador
+				PIC16F876 a 4MHZ</B></FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=82*>
+	<COL WIDTH=174*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=32%>
+				<P ALIGN=CENTER><IMG SRC="images/servos8-pic.png" NAME="gr&aacute;ficos7" ALIGN=BOTTOM WIDTH=300 HEIGHT=225 BORDER=0></P>
+				<P ALIGN=CENTER><BR>
+				</P>
+			</TD>
+			<TD WIDTH=68% VALIGN=TOP>
+				<UL>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Microcontrolador</B>:
+					PIC16F876A (a 20MHZ)</FONT></FONT></P>
+					<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Tarjeta</B>:
+					Prototipo, a 4 MHz</FONT></FONT></P>
+					<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Fichero
+					Ejecutable</B>:  [<A HREF="download/sg-servos8-pic16f876-xx-0.hex">sg-servos8-pic16f876-xx-0.hex</A>]
+					</FONT></FONT>
+					</P>
+					<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Fuentes</B>:
+					<A HREF="download/sg-servos8-pic16f876-xx-0.asm">sg-servos8-pic16f876-xx-0.asm</A></FONT></FONT></P>
+					<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Autor</B>:
+					 <A HREF="../../../../personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+					Gonz&aacute;lez</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+					</FONT></FONT></FONT></FONT> 
+					</P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Licencia</B>:
+					GPL</FONT></FONT></P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Lenguaje: 
+					</B>Ensamblador</FONT></FONT></P>
+					<LI><P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Compilador</B>:
+					 <A HREF="http://gputils.sourceforge.net/">gpasm</A></FONT></FONT></P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Notas: </B><SPAN STYLE="font-weight: medium">
+					<FONT FACE="Arial, sans-serif">Las se&ntilde;ales de control de
+					los servos se sacan por el puerto B del PIC</FONT> </SPAN></FONT></FONT>
+					</P>
+				</UL>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Tarjeta
+				CT6811</B></FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=89*>
+	<COL WIDTH=167*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=35%>
+				<P ALIGN=CENTER><IMG SRC="images/ct-servos8.png" NAME="gr&aacute;ficos4" ALIGN=BOTTOM WIDTH=320 HEIGHT=240 BORDER=0></P>
+				<P ALIGN=CENTER><BR>
+				</P>
+			</TD>
+			<TD WIDTH=65% VALIGN=TOP>
+				<UL>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Microcontrolador</B>:
+					<FONT FACE="Arial, sans-serif">6811E2</FONT></FONT></FONT></P>
+					<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Tarjeta</B>:
+					<A HREF="../../../ct6811/ct6811.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">CT6811</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+					</FONT></FONT></FONT></FONT>
+					</P>
+					<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Fichero
+					Ejecutable</B>:  [<A HREF="download/sg-servos8-6811e2-ct-0.s19">sg-servos8-6811e2-ct-0.s19</A>]
+					</FONT></FONT>
+					</P>
+					<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Fuentes</B>:
+					<A HREF="download/sg-servos8-6811e2-ct-0.asm">sg-servos8-6811e2-ct-0.asm</A></FONT></FONT></P>
+					<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Autor</B>:
+					 </FONT><A HREF="../../../../personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+					Gonz&aacute;lez</FONT></FONT></A><FONT FACE="Arial, sans-serif">
+					</FONT></FONT> 
+					</P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Licencia</B>:
+					GPL</FONT></FONT></P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Lenguaje: 
+					</B>Ensamblador</FONT></FONT></P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN STYLE="font-weight: medium"><B>Compilador</B>:
+					AS11 de Motorola. Download: [<A HREF="../../../ct6811/linux/as11.tgz">Linux</A>]
+					[<A HREF="../../../ct6811/windos/as11.exe">ms-dos/Windows</A>]</SPAN></FONT></FONT></P>
+				</UL>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Configuraci&oacute;n
+	de la tarjeta CT6811</B>:</FONT></FONT></P>
+	<UL>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Jumper JP5
+		quitado</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Jumper JP7 en
+		posici&oacute;n OFF</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Jumper JP8
+		puesto</FONT></FONT></P>
+		<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Jumper JP4 en
+		posici&oacute;n RST</FONT></FONT></P>
+		<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Switch 2 a ON,
+		resto a OFF (Modo single chip)</FONT></FONT></P>
+	</UL>
+</UL>
+<HR>
+<H2><A NAME="Download |outline"></A><FONT FACE="Arial, sans-serif">Download
+</FONT>
+</H2>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+		<COL WIDTH=256*>
+		<TR>
+			<TD WIDTH=100% BGCOLOR="#9999cc">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TARJETA
+				SKYPIC</B></FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=102*>
+		<COL WIDTH=154*>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=40% BGCOLOR="#ccccff">
+				<P><A HREF="download/sg-servos8-pic16f876-skypic-1.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sg-servos8-pic16f876-skypic-1.tgz</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=60% BGCOLOR="#ccccff">
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Implementaci&oacute;n
+				para el Microcontrolador PIC16F876A, en una tarjeta SKYPIC.
+				Lenguaje C</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=40%>
+				<P><A HREF="../sg-generic/download/sg-generic-pic16f876a-skypic-0-c.tgz"></A><A HREF="download/sg-servos8-pic16f876-skypic.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sg-servos8-pic16f876-skypic.hex</FONT></FONT></A><A HREF="../sg-generic/download/sg-generic-pic16f876a-skypic-0-c.tgz"></A></P>
+			</TD>
+			<TD WIDTH=60%>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejecutable</FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+		<COL WIDTH=256*>
+		<TR>
+			<TD WIDTH=100% BGCOLOR="#9999cc">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PIC16F876A
+				y Compatibles (a 4 Mhz)</B></FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=102*>
+		<COL WIDTH=154*>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=40% BGCOLOR="#ccccff">
+				<P><A HREF="download/sg-servos8-pic16f876-xx-0.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sg-servos8-pic16f876-xx-0.asm</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=60% BGCOLOR="#ccccff">
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Implementaci&oacute;n
+				para el Microcontrolador PIC16F876A. Lenguaje ensamblador</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=40%>
+				<P><A HREF="download/sg-servos8-pic16f876-xx-0.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sg-servos8-pic16f876-xx-0.hex</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=60%>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejecutable</FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+		<COL WIDTH=256*>
+		<TR>
+			<TD WIDTH=100% BGCOLOR="#9999cc">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TARJETA
+				CT6811</B></FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=102*>
+		<COL WIDTH=154*>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=40% BGCOLOR="#ccccff">
+				<P><A HREF="download/sg-servos8-6811e2-ct-0.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sg-servos8-6811e2-ct-0.asm
+				(9KB)</FONT></FONT></A><A HREF="download/sg-servos8-pic16f876-skypic-1.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+				</FONT></FONT></A>
+				</P>
+			</TD>
+			<TD WIDTH=60% BGCOLOR="#ccccff">
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Tarjeta CT6811</B>
+				con un <B>68hc11E2</B>. Fichero fuente</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=40%>
+				<P><A HREF="download/sg-servos8-6811e2-ct-0.s19"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sg-servos8-6811e2-ct-0.s19(658
+				Bytes)</FONT></FONT></A><A HREF="download/sg-servos8-pic16f876-skypic.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+				</FONT></FONT></A>
+				</P>
+			</TD>
+			<TD WIDTH=60%>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Tarjeta CT6811</B>
+				con un <B>68hc11E2</B>. Ejecutable</FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Links</FONT></H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Proyecto
+	Stargate</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	P&aacute;gina principal </FONT></FONT>
+	</P>
+</UL>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="../../../cuadernos/ct3/ct3.html"><FONT SIZE=2 STYLE="font-size: 10pt"><FONT FACE="Arial, sans-serif">Servos
+	Futaba 3003</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 10pt"><FONT FACE="Arial, sans-serif">
+	:Descripci&oacute;n de los Servos Futaba 3003 </FONT></FONT></FONT></FONT>
+	</P>
+</UL>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../../skypic/skypic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Tarjeta
+	Skypic</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">:
+	Tarjeta entrenadora para el microprocesador 16F786A de Microchip</FONT></FONT></P>
+</UL>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="../../../../personal/andres/proyectos/picmin/pic1.html"><FONT SIZE=2 STYLE="font-size: 10pt"><FONT FACE="Arial, sans-serif">Tarjeta
+	PICUPSAM</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 10pt"><FONT FACE="Arial, sans-serif">,
+	P&aacute;gina principal </FONT></FONT></FONT></FONT>
+	</P>
+</UL>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="http://www.iearobotics.com/proyectos/ct6811/ct6811.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Tarjeta
+	CT6811</FONT></FONT></A> <FONT SIZE=2><FONT FACE="Arial, sans-serif">:Tarjeta
+	entrenadora para el microcontrolador 68HC11 </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Ensamblador
+	as11 para 6811: </FONT></FONT><A HREF="../../../ct6811/linux/as11.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Linux]</FONT></FONT></A>
+	<FONT SIZE=2><FONT FACE="Arial, sans-serif">y </FONT></FONT><A HREF="../../../ct6811/windos/as11.exe"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Windows]</FONT></FONT></A>
+		</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Ensamblador
+	</FONT></FONT><A HREF="http://gputils.sourceforge.net/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">gpasm</FONT></FONT></A>
+	<FONT SIZE=2><FONT FACE="Arial, sans-serif">para PICs </FONT></FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Compilador
+	de C: </FONT></FONT><A HREF="http://sdcc.sourceforge.net/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">SDCC</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	para 68hc08 y PICs </FONT></FONT></FONT>
+	</P>
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Noticias</FONT></H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>3/Abr/2007:
+	</B><SPAN STYLE="font-weight: medium">Publicada implementaci&oacute;n
+	<B>sg-servos8-pic16f876-skypic-1</B>: Para tarjeta Skypic a 20Mhz</SPAN></FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>26/Dic/2003</B>:
+	Publicada implementaci&oacute;n <B>sg-servos8-pic16f876-xx-0</B> </FONT></FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>16/Oct/2003</B>:
+	Publicado servidor <B>sg-servos8-6811e2-ct-0</B> </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A HREF="../../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Proyecto
+Stargate]</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif"><BR></FONT></FONT><A HREF="../../../../../web-iearobotics"><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEA
+ROBOTICS</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+</FONT></FONT>
+</P>
+<ADDRESS><A HREF="../../../../personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+</FONT></FONT>
+</ADDRESS>
+</BODY>
+</HTML>

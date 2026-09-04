@@ -1,0 +1,112 @@
+
+<html>
+<head>
+<title>sg-echo-pic16F876A-skypic-0.c</title>
+<meta name="generator" content="c2html 0.9.6">
+<meta name="date" content="2006-07-17T16:09:55+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/*************************************************************************** */</font>
+<font color="#B22222">/* sg-echo-pic16F876A-skypic.c  Julio 2006                                   */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Servidor de eco para la tarjeta Skypic (a 20MHZ)                          */</font>
+<font color="#B22222">/* Se hace eco de todo lo recibido por el puerto serie y se envia tambien    */</font>
+<font color="#B22222">/* por el puerto B para que se pueda ver con una tarjeta de leds, como la    */</font>
+<font color="#B22222">/* FREELEDS                                                                  */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  Juan Gonzalez &lt;juan@iearobotics.com&gt;                                     */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  LICENCIA GPL                                                             */</font>
+<font color="#B22222">/*****************************************************************************/</font>
+
+//-- Especificar el pic a emplear
+<strong><font color="#228B22">#define __16f877</font></strong>
+<font color="#A020F0">#include </font><font color="#666666">"pic16f877.h"</font><font color="#A020F0"></font>
+
+//-- CONSTANTES
+<strong><font color="#228B22">#define B9600_4MHZ   0x19</font></strong>
+<strong><font color="#228B22">#define B9600_20MHZ  0x81</font></strong>
+
+//---------------------------------------------
+//-- CONSTANTES MODIFICABLES POR EL USUARIO
+//---------------------------------------------
+//-- Establecer la velocidad para un cristal de 20MHZ
+//-- La skypic lleva 20Mhz
+<strong><font color="#228B22">#define B9600 B9600_20MHZ</font></strong>
+
+
+<font color="#B22222">/****************************************************/</font>
+<font color="#B22222">/* Configurar el puerto serie a N81 y 9600 Baudios  */</font>
+<font color="#B22222">/****************************************************/</font>
+<strong><font color="#4169E1"><a name="sci_conf"></a>void sci_conf(void)</font></strong>
+{
+  SPBRG = 0x81;  //-- 9600 baudios (con cristal de 20MHz)
+  TXSTA = 0x24;  //-- Configurar transmisor
+  RCSTA = 0x90;  //-- Configurar receptor 
+}
+
+<font color="#B22222">/******************************************/</font>
+<font color="#B22222">/* Recibir un caracter por el SCI         */</font>
+<font color="#B22222">/*----------------------------------------*/</font>
+<font color="#B22222">/* DEVUELVE:                              */</font>
+<font color="#B22222">/*   -Caracter recibido                   */</font>
+<font color="#B22222">/******************************************/</font>
+<strong><font color="#4169E1"><a name="sci_read"></a>unsigned char sci_read(void)</font></strong>
+{
+  //-- Eserar hasta que llegue el dato
+  <font color="#4169E1">while</font> (!RCIF);
+    
+  <font color="#4169E1">return</font> RCREG;
+}
+
+<font color="#B22222">/*****************************************/</font>
+<font color="#B22222">/* Transmitir un caracter por el SCI     */</font>
+<font color="#B22222">/*---------------------------------------*/</font>
+<font color="#B22222">/* ENTRADAS:                             */</font>
+<font color="#B22222">/*   -car: Caracter a enviar             */</font>
+<font color="#B22222">/*****************************************/</font>
+<strong><font color="#4169E1"><a name="sci_write"></a>void sci_write(unsigned char car)</font></strong>
+{
+  //-- Esperar a que Flag de lista para transmitir se active
+  <font color="#4169E1">while</font> (!TXIF);
+    
+  //-- Hacer la transmision
+  TXREG=car;
+}
+
+
+<font color="#B22222">/*********************************/</font>
+<font color="#B22222">/* Programa principal            */</font>
+<font color="#B22222">/*********************************/</font>
+<strong><font color="#4169E1"><a name="main"></a>void main(void)</font></strong>
+{
+  unsigned char c;
+
+  //-- Configurar el puerto B para salida 
+  TRISB=0x00;
+  
+  //-- Inicialmente activar todos los leds
+  PORTB=0xFF;
+  
+  //-- Configurar las comunicaciones serie
+  sci_conf();
+  
+  //-- Bucle infinito
+  <font color="#4169E1">for</font> (;;) {
+    
+    //-- Esperar a que llegue dato del PC
+    c=sci_read();
+    
+    //-- Sacarlo por el puerto B para verlo en los leds
+    PORTB=c; 
+    
+    //-- ...y enviar de vuelta el caracter por el puerto serie
+    sci_write(c);
+  }
+
+}
+</pre>
+</body>
+
+</html>

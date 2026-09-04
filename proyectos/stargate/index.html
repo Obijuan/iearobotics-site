@@ -1,0 +1,432 @@
+<html>
+<head>
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyecto Stargate</title>
+<style type="text/css">
+<!--
+  H1 {
+    font-family: Current Schoolbook, Arial;
+    background-color: blue;
+    color: rgb(192,192,192);
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    border: thin outset rgb(192,192,192);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    padding: 2px;
+  }
+  H2 {
+    font-family: Times,Arial;
+    color: rgb(0,0,0);
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: left;
+    border: medium none;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    padding: 5px;   
+  }
+  DIV.cuerpo {
+    font-family: Book Antiqua, Arial;
+    color: rgb(20,20,20);
+    text-indent: 50px;
+    line-height: 20px;
+    text-align: justify;
+    margin-left: 25px;
+    margin-right: 25px;
+  }    
+  SPAN.cursiva { 
+    font-style: oblique;
+  }
+  DIV.autor { 
+    font-family: Arial;
+    font-style: oblique;
+    color: rgb(20,20,20);
+    font-size: 10pt;
+    text-align: left;
+    margin-right: 25px;
+    margin-left: 25px;
+  }
+  
+  DIV.lista {
+    font-family: Book Antiqua, Arial;
+    color: rgb(20,20,20);
+    line-height: 20px;
+    text-align: justify;
+    margin-left: 25px;
+    margin-right: 25px;
+  }    
+
+  TABLE.margen {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+  }
+  
+  TABLE.links {
+    color: rgb(55,0,0);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+    background-color: rgb(255,255,128);
+    border: thin outset rgb(192,192,192);    
+  }
+   
+  TABLE.down {
+    color: rgb(55,0,0);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+    background-color: rgb(255,255,128);
+    border: thin outset rgb(192,192,192);    
+  }
+  
+  TD.indice {
+    font-size:15pt;
+    text-align: center;
+    color:"blue";
+  }
+  
+-->
+</style>
+</head>
+
+<body>
+<!-- título de la página -->
+
+<table align="center" width="100%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>PROYECTO STARGATE</b>
+ </td>
+</tr>
+</tbody></table> 
+
+ <table align="center">
+<tr>
+<td><a href="#uno">[Introducción]</a></td>
+<td><a href="#objetivos">[Objetivos]</a></td>
+<td><a href="#arquitectura">[Arquitectura]</a></td>
+<td><a href="#ejemplos">[Ejemplos]</a></td>
+<td><a href="#servidores">[Servidores]</a></td>
+<td><a href="#clientes">[Clientes]</a></td>
+<td><a href="#historia">[Historia]</a></td>
+<td><a href="#links">[Links]</a></td>
+<td><a href="#noticias">[Noticias]</a></td>
+</tr>
+</table>
+
+<center>
+<img src="images/cabecera.png" >
+</center>
+
+<!-- Introducción -->
+<HR>
+<h2 id="uno"> Introducción </h2>
+
+<!-- texto -->
+<div class="cuerpo">
+<p>
+  La programación de ordenadores es muy interesante. 
+  Uno se puede pasar horas, disfrutando con la creación de estructuras, unióndolas como si fuesen
+   piezas de Lego. A mí, además, siempre me ha atraído la idea poder <b>utilizar el ordenador 
+   para controlar "el mundo exterior"</b>:
+    mover robots, encender y apagar luces, controlar la maqueta del tren... 
+   así la informática cobra un nuevo sentido: los programas interactúan con el exterior,
+    intercambiando información, modificando lo que nos rodea.
+ </p>
+ <p>
+ La llave para llegar a la "realidad exterior" es la <b>electrónica</b> y 
+ esto asusta mucho a los informáticos, cuando 
+ la realidad es que actualmente, con la llegada de los microcontroladores y las FPGAs 
+ "la electrónica se programa". He visto como muchos ingenieros informáticos hacían auténticas virguerías
+ para conseguir sacar BITS al exterior a través del puerto paralelo, y con ellos controlar un
+ dispositivo externo, como un robot. Es triste estar limitador por los pocos bits disponibles en él.
+ </p>
+ <p>
+   El <b>proyecto StarGate</b> surge como una <b>puerta de Enlace</b> entre el universo del software
+    y el universo de los bits de la electrónica digital, permitiendo a los informáticos 
+    acceder al mundo exterior, de una manera sencilla,
+     sin tener ampios conocimientos de electrónica. Otro objetivo fundamental es el de <b>poder
+     construir prototipos muy rápidamente</b> para evaluar su viabilidad.
+ </p>
+ <p>
+   Un ejemplo puede ser el <b>control de un robot articulado</b>. Conseguir coordinar todas las articulaciones
+   puede ser complicado. Para evaluar la viabilidad se puede desarrollar 
+   un prototipo controlado desde el ordenador, utilizando un <b>Stargate</b>.
+ </p>
+
+ </div>
+ 
+ <!-- Sección 1 -->
+<HR>
+<H2 id="objetivos">Objetivos</H2> 
+<div class="lista">
+<ul>
+  <li>Ayuda para la <b>construcción rápida de interfaces</b> para el desarrollo de 
+  prototipos</li>
+   <li><b>Facilitar el intercambio de "bits"</b> entre el software del ordenador y el "exterior"</li>
+   <li><b>API's</b> en distintos lenguajes de programación para ese intercambio de bits</li>
+   <li>Definir una arquitectura, protocolos y servicios <b>abiertos</b></li>
+   <li><b>Enfoque multiplataforma</b>: permitir que el software se pueda implementar 
+    en cualquier plataforma,
+   así como la utilización de cualquier microcontrolador</li>
+</ul>
+</div>
+
+<!-- Sección 1 -->
+<HR>
+<H2 id="arquitectura">Arquitectura</H2>
+<div class="cuerpo">
+<p>
+  La arquitectura se muestra a continuación. Se busca que sea lo más <b>modular</b>, 
+  <b>sencilla</b> y <b>estándar</b> posible. 
+  Por ello puede no ser la más eficiente.
+</p>
+</div>
+
+<div class="lista">
+<ul>
+  <li>Estructura <b>cliente/servidor</b> basada en microcontroladores. Existe un microcontrolador
+  que ofrece unos servicios a la aplicación cliente del PC, mediante protocolos por el puerto serie.</li><br>
+  <li><b>Comunicaciones RS-232 estándar</b>, a la velocidad de <b>9600 baudios</b>, </li><br>
+  <li>Diferentes tipos de servidores, que ofrecen diferentes servicios, 
+  que se ejecutan en diferentes microcontroladores</li><br>
+</ul>
+</div>
+<br>
+<div align="center"><img src="images/arquitectura.png" ></div>
+<br>
+
+<div class="cuerpo">
+<p>
+  El <b>Stargate</b> es un microcontrolador en el que se ejecuta un programa servidor, 
+  que ofrece diferentes <b>servicios</b>. 
+  El cliente se comunica con el Stargate.
+</p>
+</div>
+
+<!------------------------------ Ejemplos ------------------>
+<HR>
+<H2 id="ejemplos">Ejemplos</H2>
+<div class="cuerpo">
+<p>
+  Para hacerse una idea de lo que se puede realizar con esta arquitectura, lo mejor es ver ejemplos en los
+  que se ha aplicado:
+</p>
+</div>
+
+<div class="lista">
+<ul>
+  <li><b>Control de servos</b>. Para el control del robot ápodo <b>Cube Reloaded</b> se utilizó 
+  el 
+  <a href="servidores/sg-servos8/sg-servos8.html">Stargate Servos 8</a>,
+   que permite mover hasta 8 servos del tipo
+   <a href="../cuadernos/ct3/ct3.html">Futaba 3003</a>
+    desde el PC.</li><br>
+    
+  <li><b>Control de un robot móvil</b>. Usando el 
+  <a href="servidores/sg-generic/sg-generic.html">Stargate genérico </a> 
+  se pueden manejar robot móviles
+  desde el PC, como por ejemplo 
+  <a href="../tritt/tritt.html">Tritt<a></li><br>
+  
+  <li><b>Grabación de PICS</b>. Para poder grabar PICS desde Linux se ha desarrollado el 
+  <b>Stargate PICP</b>, que implementa el protocolo de grabación serie de Microchip.</li><br>
+  
+  <li><b>... la imaginación al poder</b></li>
+</ul>
+
+<center>
+<table width=90%>
+<tr>
+<td width=33%><img src="images/cube-reloaded-stargate.png"></td>
+<td width=33%><img src="images/tritt-stargate.jpg"></td>
+<td width=33%><img src="images/grabador-stargate.jpg"></td>
+</tr>
+<tr>
+<td>El robot ápodo <b>Cube Reloaded</b>, controlado con una Stargate</td>
+<td>El microbot 
+  <a href="../tritt/tritt.html">Tritt</a>,
+    manejado desde el PC a través de una Stargate</td>
+<td>Grabando un <b>PIC16F84</b> a través de una Stargate</td>
+</tr>
+</table>
+</center>
+
+</div>
+
+<div class="cuerpo">
+<p>
+  El software del PC desarrollado para estos ejemplos 
+  es <b>independiente de la tecnología del Stargate</b>, que pueden
+  estar implementadas con microcontroladores diferentes, pero que ofrecen los mismos servicios.
+</p>
+</div>
+
+<HR>
+<H2 id="servicios">Servicios</H2>
+<div class="cuerpo">
+<p>
+  Existen dos tipos de stargates: las <b>convencionales</b> y 
+  las de <b>desarrollo</b>. Las convencionales implementan
+  los <a href="serv-basicos/serv-basicos.html">servicios básicos</a>, comunes a todas
+  ellas:
+</p>
+</div>
+
+<div class="lista">
+<ul>
+  <li><b>Servicio PING</b>: Permite conocer si la stargate está "viva" 
+  (es decir, que hay conexión con ella)</li>
+  <li><b>Servicio de IDENTIFICACIÓN</b>: Para conocer el tipo de servidor y
+   los servicios que ofrece</li>
+</ul>
+</div>
+
+<div class="cuerpo">
+<p>
+  Además de los servicios básicos, cada Stargate implementa una serie de <b>servicios específicos</b>.
+</p>
+<p>
+  Las <b>stargates de desarrollo</b> no se ajustan a ninguna "norma", y se utilizan para hacer pruebas o 
+  desarrollar nuevas familias de Stargates. Un ejemplo es la 
+  <a href="servidores/sg-echo/sg-echo.html">Stargate de eco</a>, que simplemente reenvía
+  al PC todo lo que recibe. Muy útil para comprobar que los clientes envían y reciben información 
+  por el puerto serie.
+</p>
+</div>
+<!----------------- Servidores  ----------------------->
+<HR>
+<H2 id="servidores">Servidores</H2>
+
+<div class="cuerpo">
+<p>
+  El servidor es el programa que se ejecuta en el <b>Stargate</b>. Existen diferentes implementaciones, según
+  los microcontroladores usados.
+ </p>
+ <p>
+   Los <b>servidores</b> que hay creados por el momento son:
+ </p>
+</div> 
+
+<div class="lista">
+<ul>
+  <li><a href="servidores/sg-echo/sg-echo.html">Servidor de eco</a>. 
+  Stargate de desarrollo. Se hace eco de todo lo que llega por el puerto serie</li><br>
+  
+  <li><a href="servidores/sg-null/sg-null.html">Servidor NULO</a>.
+   Solo implementa los servicios básicos. Sirve de base la implementación
+  de otros más avanzados</li><br>
+  
+  <li><a href="servidores/sg-generic/sg-generic.html">Servidor GENERICO</a>.
+  Permite acceder a todo el mapa de memoria del microcontrolador empleado.
+  Mediante el software del PC se tiene acceso a cualquier recurso de Microcontrolador, lo que resulta
+  muy útil para hacer prototipos, programas de comprobación del hardware, herramientas de 
+  volcado...</li><br>
+  
+  <li><a href="servidores/sg-servos8/sg-servos8.html">Servidor SERVOS8</a>.
+   Control de la posición de hasta 8 servos. Muy útil para la realización de 
+  prototipos de robots articulados</li><br>
+  
+  <li><a href="servidores/sg-picp/sg-picp.html">Servidor PICP</a>. 
+  Programación de los microcontroladores PIC, de Microchip</li>
+</ul>
+</div>
+
+<!--------------- CLIENTES -------------------->
+
+<HR>
+<H2 id="clientes">Clientes</H2>
+
+<div class="cuerpo">
+<p>
+  Para cada Stargate <b>el usuario puede implementarse diferentes Clientes</b>. 
+  Resulta útil tener algunos clientes
+  de ejemplo, para que luego puedan ser adaptados por el usuario.
+ </p>
+ <p>
+   La creación de clientes se realiza con la librería
+   <a href="clientes/libstargate/libstargate.html">libstargate</a>, 
+   con la que se tiene acceso a los 
+   <a href="serv-basicos/serv-basicos.html">servicios básicos</a>
+    (PING, IDENTIFICACION) de cualquier Stargate convencional y a LOAD y STORE del 
+   <a href="servidores/sg-generic/sg-generic.html">servidor genérico</a>. 
+ </p>
+ <p>
+   El <a href="clientes/star-generic/star-generic.html">star-generic</a>
+    es un cliente grífico para el 
+    <a href="servidores/sg-generic/sg-generic.html">Stargate genérico</a>,
+     aunque se puede usar para comprobar
+   el funcionamiento de los 
+   <a href="serv-basicos/serv-basicos.html">servicios básicos</a> 
+   de otros Stargates
+ </p>
+ 
+ <div align="center">
+ <img src="clientes/star-generic/images/pant2.jpg" >
+ </div>
+ 
+</div>
+
+<!--------------- HISTORIA -------------------->
+
+<HR>
+<H2 id="historia">Historia</H2>
+
+<div class="cuerpo">
+<p>
+  Este proyecto surge como una <b>generalización</b> de la
+  <a href="../../personal/juan/proyectos/cts/cts.html">librería CTS</a>
+   y el servidor 
+   <a href="../../personal/juan/proyectos/cts/cts.html">CTSERVER</a>, utilizados para el 
+  control de la 
+  <a href="../ct6811/ct6811.html">CT6811</a>
+   desde el PC, desarrolladas en el 1997. 
+  ¿Por qué no extender estas ideas hacia una <b>arquitectura más 
+  genérica</b>, válida para cualquier otro microcontrolador y que se ofrezcan otros servicios? ¿Por qué no
+  "estandarizar" el comportamiento para poder reutilizar código?
+ </p>
+</div>
+
+<HR>
+<H2 id="links">Links</H2>
+<div class="lista">
+<ul>
+  <li><a href="../cuadernos/ct1/ct1.html">Cuaderno técnico 1</a>: comunicaciones serie</li>
+   <li><a href="servidores/sg-echo/sg-echo.html">Servidor de eco</a></li>
+   <li><a href="servidores/sg-null/sg-null.html">Servidor NULO</a></li>
+   <li><a href="servidores/sg-generic/sg-generic.html">Servidor GENERICO</a></li>
+   <li><a href="servidores/sg-servos8/sg-servos8.html">Servidor SERVOS8</a></li>
+   <li><a href="servidores/sg-picp/sg-picp.html">Servidor PICP</a>
+   <li><a href="clientes/libstargate/libstargate.html">libstargate</a></li>
+   <li><a href="clientes/star-generic/star-generic.html">Star-generic</a>:
+     Cliente grífico para Stargate genérico</li>
+   <li><a href="../ct6811/ct6811.html">Tarejta CT6811</a></li>
+   <li><a href="../tritt/tritt.html">Microbot Tritt</a></li>
+</ul>
+</div>
+
+<!-- Noticias -->
+<HR>
+<H2 id="noticias">Noticias</H2>
+<div class="lista">
+<ul>
+  <li><b>22/Feb/2004</b>: Añadido enlace al cliente <a href="clientes/star-generic/star-generic.html">Star-generic</a></li>
+  <li><b>29/Dic/2003</b>: Añadido Enlace al servidor <a href="servidores/sg-picp/sg-picp.html">PICP</a>
+  <li><b>23/Oct/2003</b>: Publicada la página principal del proyecto Stargate</li>
+</ul>
+</div>
+
+<HR>
+<a href="../../">IEA ROBOTICS</a>
+<ADDRESS>
+<A HREF="../../personal/juan/index.html">Juan González</A>
+</ADDRESS>
+
+</body>
+</html>

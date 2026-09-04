@@ -1,0 +1,301 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html"; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>PROYECTO STARGATE: SERVICIOS BASICOS</title>
+<style type="text/css">
+<!--
+  H1 {
+    font-family: Current Schoolbook, Arial;
+    background-color: blue;
+    color: rgb(192,192,192);
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    border: thin outset rgb(192,192,192);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    padding: 2px;
+  }
+  H2 {
+    font-family: Times,Arial;
+    color: rgb(0,0,0);
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: left;
+    border: medium none;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    padding: 5px;   
+  }
+  DIV.cuerpo {
+    font-family: Book Antiqua, Arial;
+    color: rgb(20,20,20);
+    text-indent: 50px;
+    line-height: 20px;
+    text-align: justify;
+    margin-left: 25px;
+    margin-right: 25px;
+  }    
+  SPAN.cursiva { 
+    font-style: oblique;
+  }
+  DIV.autor { 
+    font-family: Arial;
+    font-style: oblique;
+    color: rgb(20,20,20);
+    font-size: 10pt;
+    text-align: left;
+    margin-right: 25px;
+    margin-left: 25px;
+  }
+  
+  DIV.lista {
+    font-family: Book Antiqua, Arial;
+    color: rgb(20,20,20);
+    line-height: 20px;
+    text-align: justify;
+    margin-left: 25px;
+  }    
+
+  TABLE.margen {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+  }
+  
+  TABLE.links {
+    color: rgb(55,0,0);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+    background-color: rgb(255,255,128);
+    border: thin outset rgb(192,192,192);    
+  }
+   
+  TABLE.down {
+    color: rgb(55,0,0);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+    background-color: rgb(255,255,128);
+    border: thin outset rgb(192,192,192);    
+  }
+  
+  TD.indice {
+    fo<TR><TD><a href="#noticias">Noticias</a></TD></TR>nt-size:15pt;
+    text-align: center;
+    color="blue";
+  }
+  
+-->
+</style>
+</head>
+
+<body>
+<!-- título de la página -->
+
+<table align="center" width="100%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>PROYECTO STARGATE: SERVICIOS BASICOS</b>
+ </td>
+</tr>
+</tbody></table> 
+
+
+ <table align="center">
+<tr>
+<td><a href="#uno">[descripción]</a></td>
+<td><a href="#identificacion">[Identificación Servidor]</a></td>
+<td><a href="#idmicro">[Identificación microcontrolador]</a></td>
+<td><a href="#idpv">[Identificación placa y versión]</a></td>
+<td><a href="#links">[Links]</a></td>
+<td><a href="#noticias">[Noticias]</a></td>
+<td><a href="#agradecimientos">[Agradecimientos]</a></td>
+</tr>
+</table>
+  
+
+<!-- Introducción -->
+<HR>
+<h2 id="uno"> Descripción </h2>
+
+<!-- texto -->
+<div class="cuerpo">
+<p>
+  Todos las Stargates de <b>tipo convencional</b> implementan los <b>servicios básicos</b>, que son:
+</p>
+</div>
+<div class="lista">
+  <ul>
+    <li><b>Servicio PING</b>: conocer si un servidor está conectado al PC o si está 
+    funcionando. El cliente envía una <b>trama PING</b> y el servidor responde con una <b>trama PONG</b>.
+    Ambas tramas están constituidas por un único byte</li><br>
+    <center>	<img SRC="images/tramas_ping.jpg"  align=CENTER></center><br><br>
+      <b>Ejemplo</b>: Queremos hacer un ping desde el PC<br>
+      <blockquote>
+      Trama enviada: 0x50<br>
+      Trama recibida: 0x4F<br>
+      </blockquote>
+      <li><b>Servicio de identificación</b>: conocer qué tipo de servidor está conectado al PC así
+      como el micro y la tarjeta. El cliente envía la <b>trama ID</b> y el servidor responde con la 
+      <b>trama RID</b>. </li><br>
+      <center>	<img SRC="images/tramas_id2.jpg"  align=CENTER></center><br>
+      La trama de respuesta tiene 3 bytes:
+      <ul>
+        <li><b>IS</b>: Código de Identificación del servidor</li>
+        <li><b>IM</b>: Código de identificación del microcontrolador </li>
+        <li><b>IPV</b>: Identificación de la placa y versión del servidor</li>
+      </ul><br>
+      <b>Ejemplo</b>: Queremos identificar el servidor<br>
+      <blockquote>
+      Trama enviada: 0x49<br>
+      Trama recibida: 0x49 0x10 0x10 0x10<br>
+      </blockquote>
+  </ul>
+</div>
+
+ 
+<HR>
+<h2 id="identificacion">Identificación del servidor (IS)</h2>
+<div class="cuerpo">
+<p>
+  En la siguiente tabla se muestran los códigos de identificación de los diferentes servidores. Los servidores no
+  convencionales, como por ejemlo el de eco, también tienen asignado un código, aunque no implementen
+  el servicio de identificación.
+</p>
+<table>
+<tr>
+<td><b>Servidor</b></td>
+<td><b>Código (IS)</b></td>
+<td><b>Descripción</b></td>
+</tr>
+<tr>
+<td><a href="../servidores/sg-echo/sg-echo.html">Eco</a></td>
+<td>0x00</td>
+<td>Hace eco de todo lo recibido</td>
+</tr>
+<tr>
+<td><a href="../servidores/sg-null/sg-null.html">Nulo</a></td>
+<td>0x10</td>
+<td>Sólo implementa los servicios básicos</td>
+</tr>
+<tr>
+<td><a href="../servidores/sg-generic/sg-generic.html">Genérico</a></td>
+<td>0x20</td>
+<td>Servicios básicos + servicios LOAD y STORE</td>
+</tr>
+</table>
+<br>
+
+</div>
+
+<HR>
+<h2 id="idmicro">Identificación del microcontrolador (IM)</h2>
+<div class="cuerpo">
+<p>
+  En la siguiente tabla se muestran los códigos de identificación del microcontrolador:<br><br>
+  
+  <table>
+<tr>
+<td><b>Código (IM)</b></td>
+<td><b>Microcontrolador</b></td>
+</tr>
+<tr>
+<td>0x00</td>
+<td>Reservado</td>
+</tr>
+<tr>
+<td>0x10</td>
+<td>68HC11E2</td>
+</tr>
+<tr>
+<td>0x20</td>
+<td>68HC08</td>
+</tr>
+<tr>
+<td>0x30</td>
+<td>PIC16F877</td>
+</tr>
+</table>
+</p>
+</div>
+
+<HR>
+<h2 id="idpv">Identificación de la placa y versión del servidor (IPV)</h2>
+<div class="cuerpo">
+<p>
+  El byte IPV se divide en dos partes de 4 bits. Los 4 bits más significativos identifican la placa sobre
+  la que se está funcionando el microcontrolador. Un mismo micro puede estar en diferentes tarjetas. 
+  Por ejemplo el 6811 puede estar en una CT6811 o en una construida por el propio usuario. <br>
+  Los 4 bits de identificación de la placa se usan junto con el campo IM para determinar el hardware donde
+  se ejecuta el servidor:
+ <br><br>
+  
+ <table>
+<tr>
+<td><b>IM + 4 bits mayor peso de IPV</b></td>
+<td><b>Tarjeta</b></td>
+</tr>
+<tr>
+<td>XX0</td>
+<td>Tarjeta diseñada por el usuario, que usa el micro de código XX</td>
+</tr>
+<tr>
+<td>0x101</td>
+<td><a href="http://www.iearobotics.com/proyectos/ct6811/ct6811.html">Tarjeta CT6811</a>,
+ con un 6811E2</td>
+</tr>
+<tr>
+<td>0x201</td>
+<td><a href="http://www.ii.uam.es/~gdrivera/robotica/gp_bot/gp_bot.htm">Tarjeta GP-BOT</a>,
+ con un 6808</td>
+</tr>
+</table>
+</p>
+<p>
+  Los 4 bits menos significativos del byte IPV especifican la versión del servidor, o permite diferenciar servidores 
+  que ofrecen el mismo servicio pero con algunas particularidades diferentes. Normalmente tendrá el valor 0.
+</p>
+</div>  
+
+<!-- Links -->
+<HR>
+<H2 id="links">Links</H2>
+<div class="lista">
+<ul>
+  <li><a href="http://www.iearobotics.com/proyectos/ct6811/ct6811.html">Tarjeta CT6811</a>
+  			:Tarjeta entrenadora para el microcontrolador 68HC11</li>
+  	<li><a href="http://www.ii.uam.es/~gdrivera/robotica/gp_bot/gp_bot.htm">Tarjeta GP-BOT</a>
+  			:Tarjeta entrenadora para el microcontrolador 68HC08</li>
+</ul>
+</div>
+
+<!-- Noticias -->
+<HR>
+<H2 id="noticias">Noticias</H2>
+<div class="lista">
+<ul>
+  <li><b>21/Mar/2003</b>: Publicados los servicios básicos</li>
+</ul>
+</div>
+
+<!-- Agradecimientos -->
+<HR>
+<H2 id="agradecimientos">Agradecimientos</H2>
+
+<div class="lista">
+
+</div>
+
+<HR>
+<a href="http://www.iearobotics.com">IEA ROBOTICS</a>
+<ADDRESS>
+Página creada por
+<A HREF="http://www.iearobotics.com/personal/juan/index.html">Juan González</A>
+</ADDRESS>
+</body>
+</html>

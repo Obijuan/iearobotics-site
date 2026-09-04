@@ -1,0 +1,473 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>STAR-SERVOS8</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.2  (Linux)">
+	<META NAME="CREATED" CONTENT="20041226;13552200">
+	<META NAME="CHANGED" CONTENT="20050112;13121000">
+	<STYLE>
+	<!--
+		@page { size: 21.59cm 27.94cm }
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>STAR-SERVOS8:
+				CONTROL DE SERVOS DESDE EL PC</B> </FONT>
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=514 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=87>
+		<COL WIDTH=84>
+		<COL WIDTH=50>
+		<COL WIDTH=68>
+		<COL WIDTH=74>
+		<COL WIDTH=48>
+		<COL WIDTH=75>
+		<TR>
+			<TD WIDTH=87>
+				<P><A HREF="#Introducci&oacute;n |outline"><FONT SIZE=2 STYLE="font-size: 11pt">[Introducci&oacute;n]</FONT></A></P>
+			</TD>
+			<TD WIDTH=84>
+				<P><A HREF="#Pantallazos|outline"><FONT SIZE=2 STYLE="font-size: 11pt">[Pantallazos]</FONT></A></P>
+			</TD>
+			<TD WIDTH=50>
+				<P><A HREF="#Autores|outline"><FONT SIZE=2 STYLE="font-size: 11pt">[Autor]</FONT></A></P>
+			</TD>
+			<TD WIDTH=68>
+				<P><A HREF="#licencia"><FONT SIZE=2 STYLE="font-size: 11pt">[Licencia]</FONT></A></P>
+			</TD>
+			<TD WIDTH=74>
+				<P><A HREF="#Download |outline"><FONT SIZE=2 STYLE="font-size: 11pt">[Download]</FONT></A></P>
+			</TD>
+			<TD WIDTH=48>
+				<P><A HREF="#links"><FONT SIZE=2 STYLE="font-size: 11pt">[Links]</FONT></A></P>
+			</TD>
+			<TD WIDTH=75>
+				<P><A HREF="#noticias"><FONT SIZE=2 STYLE="font-size: 11pt">[Noticias]</FONT></A></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=2 CELLSPACING=0 RULES=NONE>
+	<TR>
+		<TD>
+			<P ALIGN=CENTER><IMG SRC="images/futaba.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=100 HEIGHT=100 BORDER=0></P>
+		</TD>
+		<TD WIDTH=85%>
+			<DL>
+				<DD><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>Nombre:
+				</B>star-servos8 </FONT></FONT>
+				</DD><DD>
+				<FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif"><B>Servicio</B>:
+				Cliente para el </FONT></FONT><A HREF="../../servidores/sg-servos8/sg-servos8.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Stargate
+				servos8</FONT></FONT></A> 
+				</DD><DD>
+				<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>Lenguaje:
+				</B>C </FONT></FONT>
+				</DD><DD>
+				<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>Plataforma:
+				</B>Linux </FONT></FONT>
+				</DD><DD>
+				<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>Tipo</B>:
+				Convencional </FONT></FONT>
+				</DD><DD>
+				<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>Descripci&oacute;n</B>:
+				Control de servos del tipo Futaba 3003 o compatibles desde el PC.
+				Movimiento mediante barras deslizantes y Canvas. Generaci&oacute;n,
+				grabaci&oacute;n y reproducci&oacute;n de secuencias </FONT></FONT>
+				</DD><DD>
+				<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>Aplicaciones</B>:
+				Prototipado r&aacute;pido de sistemas articulados. Por ejemplo
+				robots. </FONT></FONT>
+				</DD></DL>
+		</TD>
+	</TR>
+</TABLE>
+<H2><A NAME="introduccion"></A><A NAME="Introducci&oacute;n |outline"></A>
+Introducci&oacute;n 
+</H2>
+<P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Cuando
+se est&aacute;n desarrollando <B>prototipos de robots articulados</B>,
+como <A HREF="http://www.iearobotics.com/personal/andres/proyectos/pucho/pucho.html">PuchoBot</A>,
+<A HREF="http://www.iearobotics.com/personal/juan/conferencias/conf1">Cube
+Revolutions</A> o <A HREF="http://www.iearobotics.com/personal/juan/proyectos/sheila/sheila.html">Sheila</A>,
+resulta muy &uacute;til poder <B>controlar los servos desde el PC</B>,
+utilizando una interfaz gr&aacute;fica. De esta forma se pueden
+definir secuencias sencillas de movimiento sin tener que programar
+ning&uacute;n microcontrolador y as&iacute; poder validar la
+estructura mec&aacute;nica o el dise&ntilde;o del robot. </FONT></FONT>
+</P>
+<P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">El
+programa <B>star-servos8</B> permite manejar hasta 8 <A HREF="../../../cuadernos/ct3/ct3.html">servos
+del tipo Futaba 3003</A> o compatibles. El posicionamiento se puede
+hacer mediante barras de desplazamiento o usando un canvas. De una
+manera muy sencilla se pueden grabar las posiciones de los servos
+para generar secuencias de movimiento, que se pueden grabar en un
+fichero para recuperarlas posteriormente.</FONT></FONT></P>
+<P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Esta
+aplicaci&oacute;n forma parte del <A HREF="../../index.html">proyecto
+Stargate</A>, y es un cliente para el servidor <A HREF="../../servidores/sg-servos8/sg-servos8.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">servos8</FONT></FONT></A>.
+</FONT></FONT>
+</P>
+<HR>
+<H2><A NAME="caracteristicas"></A><FONT FACE="Arial, sans-serif">Caracter&iacute;sticas
+</FONT>
+</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>Plataforma</B>:
+	Linux </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>Librer&iacute;as
+	gr&aacute;ficas</B>: GTK2 </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>Lenguaje</B>:
+	C </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif"><B>Dependencias</B>:
+	</FONT></FONT><A HREF="../libstargate/libstargate.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">libstargate
+	1.0.1</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">,
+	adem&aacute;s de las GTK2 </FONT></FONT>
+	</P>
+	<LI><P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif"><B>Licencia</B>:
+	</FONT></FONT><A HREF="http://gugs.sindominio.net/gnu-gpl/gples.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">GPL</FONT></FONT></A>
+		</P>
+</UL>
+<HR>
+<H2><A NAME="autores"></A><A NAME="Autores|outline"></A><FONT FACE="Arial, sans-serif">Autores</FONT></H2>
+<UL>
+	<LI><P><A HREF="http://www.iearobotics.com/personal/juan/index.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Juan
+	Gonz&aacute;lez G&oacute;mez</FONT></FONT></A> 
+	</P>
+</UL>
+<HR>
+<H2><A NAME="licencia"></A><FONT FACE="Arial, sans-serif">Licencia</FONT></H2>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Este
+programa se distribuye bajo </FONT></FONT><A HREF="http://gugs.sindominio.net/gnu-gpl/gples.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">licencia
+GPL </FONT></FONT></A>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Conexi&oacute;n de los servos</FONT></H2>
+<P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Los
+servos se conectan a una placa con un microcontrolador (<A HREF="../../index.html">Stargate</A>),
+y se graba el servidor <A HREF="../../servidores/sg-servos8/sg-servos8.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">servos8</FONT></FONT></A>.
+Los microcontroladores soportados actualmente son: <B>PIC16F87X</B>,
+<B>68HC11</B> y <B>68HC08</B>. El usuario puede fabricarse su propia
+placa o bien utilizar alguna de las siguientes, en las que se ha
+probado su funcionamiento:</FONT></FONT></P>
+<UL>
+	<LI><P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif"><A HREF="../../../skypic/skypic.html">Tarjeta
+	Skypic</A>. La conexi&oacute;n de los servos es inmediata, ya que
+	dispone de conectores espec&iacute;ficos. Se trata de <B>hardware
+	libre</B> y por tanto todos lo esquemas est&aacute;n disponibles.</FONT></FONT></P>
+	<LI><P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif"><A HREF="../../../ct6811/ct6811.html">Tarjeta
+	CT6811</A>. Para conectar los servos hay que utilizar una plaquita
+	que tenga conectores de servos por un lado y conector para cable
+	plano de bus por otro. Tambi&eacute;n es <B>hardware libre</B>.</FONT></FONT></P>
+	<LI><P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif"><A HREF="http://www.iearobotics.com/personal/juan/proyectos/gpbot/gpbot.html">Tarjeta
+	GPBOT</A>. Hay que construirse tambi&eacute;n una plaquita de
+	adaptaci&oacute;n. Esta placa NO es hardware libre.</FONT></FONT></P>
+</UL>
+<P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">El
+<A HREF="../../index.html">Stargate</A> se conecta al PC a trav&eacute;s
+de un cable serie.</FONT></FONT></P>
+<HR>
+<H2><A NAME="Pantallazos|outline"></A>Pantallazos</H2>
+<DL>
+	<DD>
+	<TABLE WIDTH=786 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=401>
+		<COL WIDTH=367>
+		<THEAD>
+			<TR VALIGN=TOP>
+				<TH WIDTH=401>
+					<P ALIGN=CENTER><IMG SRC="images/pant1.png" NAME="Imagen6" ALIGN=MIDDLE WIDTH=320 HEIGHT=322 BORDER=0></P>
+				</TH>
+				<TH WIDTH=367>
+					<P><IMG SRC="images/pant2.png" NAME="Imagen7" ALIGN=MIDDLE WIDTH=320 HEIGHT=322 BORDER=0></P>
+				</TH>
+			</TR>
+		</THEAD>
+		<TBODY>
+			<TR VALIGN=TOP>
+				<TD WIDTH=401>
+					<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>Ventana
+					inicial,</B> que da acceso al resto de ventanas de control.
+					Permite configurar el dispositivo serie en el que est&aacute;
+					conectado el stargate. Muestra en todo comento el identificador
+					del stargate y el estado de la conexi&oacute;n.</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=367>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">En
+					todo momento se est&aacute; comprobando la conexi&oacute;n con
+					el stargate. Si se desconecta se indica.</FONT></FONT></P>
+				</TD>
+			</TR>
+		</TBODY>
+	</TABLE>
+</DL>
+<P><BR><BR>
+</P>
+<DL>
+	<DD>
+	<TABLE WIDTH=780 BORDER=1 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=770>
+		<THEAD>
+			<TR>
+				<TH WIDTH=770 VALIGN=TOP>
+					<P><IMG SRC="images/pant3.png" NAME="Imagen8" ALIGN=MIDDLE WIDTH=586 HEIGHT=412 BORDER=0></P>
+				</TH>
+			</TR>
+		</THEAD>
+		<TBODY>
+			<TR>
+				<TD WIDTH=770 VALIGN=TOP>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>Ventana
+					principal para el posicionamiento de servos</B>. Movimiento con
+					el raton cada una de las barras deslizante, se act&uacute;a
+					sobre cada uno de los servos. Se pueden habilitar/deshabilitar
+					los servos marcando las casillas de la izquierda. El bot&oacute;n
+					de Reset lleva a todos los servos a la posici&oacute;n inicial.</FONT></FONT></P>
+				</TD>
+			</TR>
+		</TBODY>
+	</TABLE>
+</DL>
+<P><BR><BR>
+</P>
+<DL>
+	<DL>
+		<DL>
+			<DL>
+				<DL>
+					<DD>
+					<TABLE WIDTH=544 BORDER=1 CELLPADDING=4 CELLSPACING=0>
+						<COL WIDTH=534>
+						<THEAD>
+							<TR>
+								<TH WIDTH=534 VALIGN=TOP>
+									<P><IMG SRC="images/pant4.png" NAME="Imagen9" ALIGN=MIDDLE WIDTH=382 HEIGHT=347 BORDER=0></P>
+								</TH>
+							</TR>
+						</THEAD>
+						<TBODY>
+							<TR>
+								<TD WIDTH=534 VALIGN=TOP>
+									<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>Ventana
+									de control por canvas</B>. Moviendo el rat&oacute;n por la
+									zona azul se act&uacute;a sobre los dos servos asociados. En
+									este ejemplo, el servo 1 se controla con el eje X y el servo
+									2 con el Y. Se pueden habrir tantas ventanas de control por
+									canvas como se quiera. Este tipo de control resulta
+									especialmente &uacute;ltil cuando se est&aacute; moviendo
+									una c&aacute;mara con dos grados de libertad.</FONT></FONT></P>
+								</TD>
+							</TR>
+						</TBODY>
+					</TABLE>
+				</DL>
+			</DL>
+		</DL>
+	</DL>
+</DL>
+<P><BR><BR>
+</P>
+<DL>
+	<DL>
+		<DL>
+			<DL>
+				<DD>
+				<TABLE WIDTH=654 BORDER=1 CELLPADDING=4 CELLSPACING=0>
+					<COL WIDTH=644>
+					<THEAD>
+						<TR>
+							<TH WIDTH=644 VALIGN=TOP>
+								<P><IMG SRC="images/pant5.png" NAME="Imagen10" ALIGN=MIDDLE WIDTH=525 HEIGHT=501 BORDER=0></P>
+							</TH>
+						</TR>
+					</THEAD>
+					<TBODY>
+						<TR>
+							<TD WIDTH=644 VALIGN=TOP>
+								<P><FONT FACE="Arial, sans-serif"><B>Ventana de grabaci&oacute;n
+								de secuencias</B>. En cada instante se puede grabar una
+								posici&oacute;n de los servos (similar a los &ldquo;fotogramas&rdquo;
+								en el mundo de la animaci&oacute;n). Mediante los botones de
+								edici&oacute;n podemos recorrer todos los instantes. Pulsando
+								el bot&oacute;n de reproducci&oacute;n ejecutamos la
+								secuencia de movimiento grabada. Estas secuencias se pueden
+								grabar en ficheros para luego leerlos posteriormente.</FONT></P>
+							</TD>
+						</TR>
+					</TBODY>
+				</TABLE>
+			</DL>
+		</DL>
+	</DL>
+</DL>
+<P><BR><BR>
+</P>
+<P><FONT FACE="Arial, sans-serif">Aqu&iacute; se puede ver un
+<A HREF="images/Pantallazo.png"><B>pantallazo final</B></A> el
+programa star-servos8 funcioando en un escritorio Gnome, en un
+port&aacute;til con Debian/Sarge.</FONT></P>
+<HR>
+<H2><A NAME="Download |outline"></A><FONT FACE="Arial, sans-serif">Download
+</FONT>
+</H2>
+<CENTER>
+	<TABLE WIDTH=90% BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+		<COL WIDTH=256*>
+		<TR>
+			<TD WIDTH=100% BGCOLOR="#cccccc">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>Ultima versi&oacute;n
+				(1.0)</B></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=90% BORDER=0 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=84*>
+		<COL WIDTH=172*>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=33% BGCOLOR="#ffffcc">
+				<P><FONT FACE="Arial, sans-serif"><A HREF="download/v1.0/star-servos8_1.0-1_i386.deb"><FONT FACE="Arial, sans-serif">star-servos8_1.0-1_i386.deb</FONT></A>
+				</FONT>
+				</P>
+			</TD>
+			<TD WIDTH=67% BGCOLOR="#ffffcc">
+				<P><FONT FACE="Arial, sans-serif">Paquete para Debian/Sarge.
+				Necesario instalar previamente la <B>libstargate-1.0.1. </B></FONT>
+				</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=33% BGCOLOR="#e6e6e6">
+				<P><FONT FACE="Arial, sans-serif"><A HREF="download/v1.0/star-servos8-1.0.tar.gz"><FONT FACE="Arial, sans-serif">star-servos8-1.0.tar.gz</FONT></A>
+				</FONT>
+				</P>
+			</TD>
+			<TD WIDTH=67% BGCOLOR="#e6e6e6">
+				<P><FONT FACE="Arial, sans-serif">Fuentes</FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=33% BGCOLOR="#ffffcc">
+				<P><FONT FACE="Arial, sans-serif"><A HREF="download/v1.0/star-servos8_1.0.src.tar.gz"><FONT FACE="Arial, sans-serif">star-servos8_1.0.src.tar.gz</FONT></A>
+				</FONT>
+				</P>
+			</TD>
+			<TD WIDTH=67% BGCOLOR="#ffffcc">
+				<P><FONT FACE="Arial, sans-serif">Paquete fuente para
+				Debian/Sarge (Ficheros *orig.tar.gz, *.dsc y *.diff)</FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2>Instalaci&oacute;n</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt">Debian/Sarge</FONT></FONT></P>
+<OL>
+	<LI><P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Instalar
+	primero la librer&iacute;a <A HREF="../libstargate/libstargate.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">libstargate
+	1.0.1</FONT></FONT></A>. Para ello descargar el <A HREF="../libstargate/download/v1.0.1/libstargate_1.0.1-1_i386.deb">paquete</A>
+	para Debian/Sarge y ejecutar:</FONT></FONT></P>
+</OL>
+<DL>
+	<DD STYLE="margin-bottom: 0.5cm"><I># dpkg -i
+	libstargate-1.0.1-1_i386.deb</I></DD></DL>
+<OL START=2>
+	<LI><P>
+	<FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Descargar
+	el <A HREF="download/v1.0/star-servos8_1.0-1_i386.deb"><FONT FACE="Arial, sans-serif">paquete</FONT></A><FONT FACE="Arial, sans-serif">
+	</FONT>del star-servos8 para Debian/Sarge y teclear:</FONT></FONT></P>
+</OL>
+<DL>
+	<DD STYLE="margin-bottom: 0.5cm"><I># dpkg -i
+	star-servos8-1.0-1_i386.deb</I></DD></DL>
+<OL START=3>
+	<LI><P>
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Teclar
+	<B>star-servos8</B> para ejecutarlo</FONT></FONT></P>
+</OL>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt">Otras
+distribuciones</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">No
+hay paquetes creados para otras distribuciones. Hay que compilar el
+paquete fuente:</FONT></FONT></P>
+<OL>
+	<LI><P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Compilar
+	e instalar la <FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">
+	</FONT></FONT><A HREF="../libstargate/libstargate.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">libstargate
+	1.0.1</FONT></FONT></A></FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Bajar
+	y descomprimir el paquete <A HREF="download/v1.0/star-servos8-1.0.tar.gz"><FONT FACE="Arial, sans-serif">star-servos8-1.0.tar.gz</FONT></A><FONT FACE="Arial, sans-serif">
+	</FONT></FONT></FONT>
+	</P>
+</OL>
+<P STYLE="margin-left: 2cm"><FONT SIZE=2 STYLE="font-size: 11pt"><I><FONT FACE="Arial, sans-serif">$
+tar vzxf star-servos8-1.0.tar.gz</FONT></I></FONT></P>
+<OL START=3>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Entrar
+	en el directorio </FONT></FONT>
+	</P>
+</OL>
+<P STYLE="margin-left: 2cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><I>$
+cd star-servos8-1.0</I></FONT></FONT></P>
+<OL START=3>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Ejecutar:
+	./configure</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Si
+	todo ha ido bien, compilar:  make</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Instalar
+	con : make install</FONT></FONT></P>
+</OL>
+<HR>
+<H2><A NAME="links"></A><FONT FACE="Arial, sans-serif">Links</FONT></H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../index.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Proyecto
+	Stargate</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">:
+	P&aacute;gina principal del proyecto </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../libstargate/libstargate.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">libstargate
+	1.0</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">:
+	Librer&iacute;a para hacer clientes para Stargates </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><A HREF="../../../skypic/skypic.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Tarjeta
+	Skypic</FONT></FONT></A></FONT></FONT></P>
+	<LI><P><A HREF="../../../ct6811/ct6811.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">tarjeta
+	CT6811</FONT></FONT></A></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><A HREF="http://www.iearobotics.com/personal/juan/proyectos/gpbot/gpbot.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Tarjeta
+	GPBOT</FONT></FONT></A></FONT></FONT></P>
+</UL>
+<HR>
+<H2><A NAME="noticias"></A><FONT FACE="Arial, sans-serif">Noticias</FONT></H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>12/Enero/2005:
+	</B>Publicada versi&oacute;n 1.0</FONT></FONT></P>
+</UL>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A HREF="../../index.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">[Proyecto
+Stargate]</FONT></FONT></A><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif"><BR></FONT></FONT><A HREF="http://www.iearobotics.com"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">IEA
+ROBOTICS</FONT></FONT></A> 
+</P>
+<ADDRESS><A HREF="http://www.iearobotics.com/personal/juan/index.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A> 
+</ADDRESS>
+</BODY>
+</HTML>
