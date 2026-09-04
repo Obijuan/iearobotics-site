@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><title>Proyecto Newton</title></head>
+
+
+<!-- A partir de aquí viene el contenido real de la pagina>-->
+
+
+<table width="95%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>PROYECTO NEWTON: Programa de simulación de cinemática de partículas</b>
+ </td>
+</tr>
+</tbody></table>
+
+<br>
+<blockquote>
+<li>
+<b>MOTIVACION</b>
+</li>
+<br>
+Para mi tesis doctoral quiero crear un modelo físico que me permita simular la mecanica de un robot gusano (CUBE).
+Con la idea de volver a "recordar" y refrescar la Fisica elemental que ya tengo olvidada, he decidido comenzar a
+hacer el programa Newton, que ademas me va a permitir aprender a programar con las nuevas
+<a href="http://www.gnome.org/">librerias GNOME/GTK+</a><br>
+<br>
+Yo siempre he creido que para aprender una materia, bien sea fisica, programacion o matematicas, lo mejor es
+practicar. "A programar se aprende programando". ¿Que mejor manera de aprender Física que programarse un "universo"
+particular, constituido por particulas sometidas a diferentes fuerzas, y experimentar modificando sus vectores de
+velocidad, aceleracion, etc?<br>
+<br>
+Ese es el objetivo de NEWTON. Y lo mismo que me sirve a mi, considero que le puede ser útil a mas gente, por eso
+lo pongo en la web. Y por esa razón el programa está realizado en <b>LINUX</b> y bajo
+<a href="http://www.gnu.org/copyleft/gpl.html">Licencia GPL</a><br>
+<br>
+Aqui puedes ver una captura de pantalla de la version 0.4.1 de GNEWTON:
+ <br><br>
+<center><img src="gnewton-0.4.1.png" alt="" border="0"></center><br>
+<br><br>
+<li>
+<b>AUTORES:</b>
+</li>
+<br>
+ Juan Gonzalez Gomez. (GNEWTON)<br>
+ Carlos Jesus Venegas. (NEWTON)<br><br>
+  <b>Proyecto  bajo licencia GPL</b>.
+<br><br>
+<li>
+<b>DESCRIPCION</b> <br><br>
+</li>
+El objetivo de Newton es experimentar con la cinemática de las particulas, a dos niveles:
+<br><br>
+<blockquote>
+<li><b>CINEMATICA DIRECTA:</b></li><br>
+Sobre las particulas se especifican los vectores de velocidad y aceleracion, y opcionalmente se define el campo
+al que están sometidas todas las particulas. Al realizar la simulación se observa cual es la trayectoria seguida
+por ellas.
+<br> <br>
+<li><b>CINEMATICA INVERSA:</b></li><br>
+Hacer que las particulas sigan una trayectoria y averiguar cuales son los vectores de velocidad y aceleración
+que aparecen. Por ejemplo, se puede desplazar una particula con el ratón y observar qué sucede.
+<br>
+<br>
+</blockquote>
+
+En las diferentes versiones de NEWTON se irá incorporando cada vez más funcionalidad. La primera version es la 0.1
+que esta descrita mas abajo.
+<br><br>
+
+<li><b>PLATAFORMA</b></li>
+<p>Desarrollado en Linux. Se han empleado las librerias <b>GNOME/GTK+ V1.2.13</b>. Anteriormente habia trabajado con
+GTK+ (aplicación cube_virtual para calcular los vectores de moviento de CUBE) y ahora quiero evaluar la capa
+GNOME situada por encima. Hay que destacar la total portabilidad de estas librerias al resto de sistemas operativos,
+incluido Windows, aunque sólo lo he probado la migración de GTK+</p>
+<img SRC="glade.gif"  ALIGN="left" >
+<p> A partir de la versión 0.4.1 el interfaz se ha desarrollado con <a href="http://glade.gnome.org/">GLADE</a>, y se carga
+dinámicamente a partir de un fichero XML</p>
+<br>
+
+
+<li>
+<b>DOWNLOAD</b>
+</li>
+<br><br>
+<table width=95% bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>FICHEROS PARA DESCARGAR</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=95%  border="0" >
+<tbody>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="gnewton-0.4.1.tgz">gnewton-0.4.1.tgz</a>  </td>
+  <td> Fuentes y ejecutables. GNEWTON version 0.4.1</td>
+</tr>
+
+
+<tr bgcolor="#cabeeb">
+  <td><a href="gnewton-0.3.tgz">gnewton-0.3.tgz</a>  </td>
+  <td> Fuentes y ejecutables. GNEWTON version 0.3</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="newton-0.2.tgz">newton-0.2.tgz</a>  </td>
+  <td> Fuentes y ejecutables. NEWTON version 0.2 (Obsoleto)</td>
+</tr>
+<tr bgcolor="#cabeeb">
+ <td >
+   <a href="newton-0.1.tgz">newton-0.1.tgz</a>
+ </td>
+ <td> Fuentes y ejecutables. NEWTON version 0.1 (Obsoleto) </td>
+</tr>
+
+
+</tbody></table>
+<br>
+
+Los pasos para <b>ejecutarlo</b> son los siguientes:
+<ol>
+  <li>Bajar el fichero gnewton-xx.tgz</li>
+  <li>Descomprimir el paquete (<b>tar vzxf gnewton-xx.tgz</b>)</li>
+  <li>Acceder a las fuentes (<b>cd gnewton-xx</b>)</li>
+  <li>Compilar (<b>make</b>)</li>
+  <li>Para ejecutar teclear: <b>./gnewton</b></li>
+</ol>
+
+<br><br>
+
+
+<li>
+<b>NOTICIAS</b>
+</li> <br>
+<blockquote>
+<li><b>05/Mayo/2002: Liberada version 0.4.1 de Gnewton</b></li>
+<br>
+<blockquote>
+  -Actualizado el módulo de vectores (vector.c), del proyecto Newton<br>
+  -Incorporado el módulo particles.c (del proyecto Newton) <br>
+  -Modificación completa del INTERFAZ<br>
+  -Interfaz realizado 100% con Glade, cargándose dinámicamente al ejecutarse, lo que permite modificarlo sin
+   tener que compilar el código<br>
+  -Visualización de las coordenadas de los vectores de velocidad, aceleración y posición de la partícula activa</li><br>
+  -La aceleración se tiene en cuenta en la simulación <br>
+</blockquote>
+<br>
+<br>
+<li><b>22/Abr/2002: Liberada version 0.3</b></li>
+<br>
+  El proyecto se ha dividio en dos partes: un motor de física, <b>NEWTON</b>, y un front-end, <b>GNEWTON</b>.
+  <b>Carlos Jesús Venegas</b> se ha unido al proyecto y está realizando el motor de física.<br>
+  -Incorporado el modulo vectores.c, del proyecto Newton <br>
+  -Nuevos modulos temporales para la gestión de partículas y el universo, hasta que se incorporen los de Newton<br>
+  -Nuevo botón para añadir nuevas partículas
+<br><br>
+<li><b>2/Abr/2002: Liberada version 0.2</b></li>
+<br>
+  Dibujo de los vectores de velocidad de la cinematica inversa. Al arrastrar las particulas con el raton
+aparece el vector velocidad aplicado. Añadidos botones para hacer ZOOM+ y ZOOM-
+<br><br>
+<li><b>31/mar/2002: Liberada version 0.1</b></li>
+<br>
+Version inicial. Permite trabajar con dos particulas, situandolas en cualquier parte del "universo" y
+definiendo su vector de velocidad. Al simular las particulas describen un movimiento rectilineo uniforme.
+Lo interesante es el interfaz. Pinchando en las particulas y arrastrando el raton se pueden cambiar de
+posicion. De igual manera, pinchando en el vector de velocidad se puede establecer su modulo y direccion.
+<br><br>
+</blockquote>
+
+
+<li>
+<b>AGRADECIMIENTOS</b>
+</li>
+
+<ul>
+  <li>A <b>Carlos Jesus Venegas (Charli) </b>, por todo lo que he aprendido de el y por su geniales
+  sugerencias. De hecho, en el caso de este proyecto, he descubierto el widget CANVAS gracias a el, aunque
+  Charli prefiere utilizar directamente GTK+, sin GNOME. Seguro que pronto se unira al proyecto ;-)</li><br>
+
+</ul>
+
+</blockquote>
+
+</body></html>
