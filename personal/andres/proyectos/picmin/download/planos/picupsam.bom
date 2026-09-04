@@ -1,0 +1,23 @@
+Partlist exported from /home/andres/eagle/CTPIC/pontificia/picupsam.sch at 10/30/2003 02:22:15 
+
+Part  Value   Device        Package          Description                 
+C1    22pF    CON-MUL5      C5               Condensadores multicapa     
+C2    22pF    CON-MUL5      C5               Condensadores multicapa     
+C4    Power   CLEMA3P       C3P              clema 3 entradas            
+C7    100n    CON-MUL5      C5               Condensadores multicapa     
+CT1   PROGRAM CTCONA        CTCON            Conector compatible CT      
+JACK  Hembra  JACKP         JACK             Jack alimentacion           
+JP1   RB0     JUMPER2R      JP2              jumper doble                
+JP2   RB5     JUMPER2R      JP2              jumper doble                
+JP3           JUMPER3R      JP3R             jumper triple               
+L1    LED     LED3          LED3MM           Diodo LED                   
+R1    10K     RESISTENCIA10 R207/10          Resistencia                 
+R2    10K     RESISTENCIA10 R207/10          Resistencia                 
+R11   330     RESISTENCIA10 R207/10          Resistencia                 
+R13   4K7     RESISTENCIA10 R207/10          Resistencia                 
+RESET         PULSADORP     PULSADOR-PEQUEÑO Pulsador de circuito impreso
+RJ11  TEL6A   TEL6A         RJ6              Conector de telefono 6 vias 
+S1            PULSADORP     PULSADOR-PEQUEÑO Pulsador de circuito impreso
+TRT   SC107   SC107NPN      TRT-NPN          SC107 y equivalente         
+U1            PIC16F876A    DIL28            Microcontrolador PIC16f876A 
+X1    4Mhz    XTALR         XTAL-R           XTAL                        

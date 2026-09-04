@@ -1,0 +1,22 @@
+Partlist exported from /home/aprieto/eagle/CTPIC/New_Project_1/picmin.sch at 11/24/2002 20:13:18 
+
+Part  Value     Device        Package          Description                 
+C1    22pF      CON-MUL5      C5               Condensadores multicapa     
+C2    22pF      CON-MUL5      C5               Condensadores multicapa     
+C3    Power     CLEMA2P       C2P              Clema doble                 
+C7    100n      CON-MUL5      C5               Condensadores multicapa     
+CT2   Expansion CTCONA        CTCON            Conector compatible CT      
+CT3   Puerto B  CTCONA        CTCON            Conector compatible CT      
+D1    1N4148    1N4148        DIODO            Diodo                       
+JACK  Hembra    JACKP         JACK             Jack alimentacion           
+JP1   RB0       JUMPER2R      JP2              jumper doble                
+JP2   RB5       JUMPER2R      JP2              jumper doble                
+L1    LED       LED3          LED3MM           Diodo LED                   
+R1    4K7       RESISTENCIA10 R207/10          Resistencia                 
+R11   330       RESISTENCIA10 R207/10          Resistencia                 
+R12   100       RESISTENCIA10 R207/10          Resistencia                 
+R13   4K7       RESISTENCIA10 R207/10          Resistencia                 
+RESET           PULSADORP     PULSADOR-PEQUEÑO Pulsador de circuito impreso
+S1              PULSADORP     PULSADOR-PEQUEÑO Pulsador de circuito impreso
+U1    PIC16F84A PIC16F84A     DIL18            Microcontrolador PIC16F84   
+X1    4Mhz      XTALR         XTAL-R           XTAL                        
