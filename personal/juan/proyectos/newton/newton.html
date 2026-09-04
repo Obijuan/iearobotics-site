@@ -1,13 +1,18 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><title>Proyecto Newton</title></head>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head><title>Proyecto Newton</title>
+</head>
 
 
-<!-- A partir de aquÌ viene el contenido real de la pagina>-->
+<!-- A partir de aqu√≠ viene el contenido real de la pagina>-->
 
 
 <table width="95%" bgcolor="#abbeeb" border="0" cellpadding="4">
 <tbody><tr>
  <td colspan="2" align="center">
-   <b>PROYECTO NEWTON: Programa de simulaciÛn de cinem·tica de partÌculas</b>
+   <b>PROYECTO NEWTON: Programa de simulaci√≥n de cinem√°tica de part√≠culas</b>
  </td>
 </tr>
 </tbody></table>
@@ -18,18 +23,18 @@
 <b>MOTIVACION</b>
 </li>
 <br>
-Para mi tesis doctoral quiero crear un modelo fÌsico que me permita simular la mecanica de un robot gusano (CUBE).
+Para mi tesis doctoral quiero crear un modelo f√≠sico que me permita simular la mecanica de un robot gusano (CUBE).
 Con la idea de volver a "recordar" y refrescar la Fisica elemental que ya tengo olvidada, he decidido comenzar a
 hacer el programa Newton, que ademas me va a permitir aprender a programar con las nuevas
 <a href="http://www.gnome.org/">librerias GNOME/GTK+</a><br>
 <br>
 Yo siempre he creido que para aprender una materia, bien sea fisica, programacion o matematicas, lo mejor es
-practicar. "A programar se aprende programando". øQue mejor manera de aprender FÌsica que programarse un "universo"
+practicar. "A programar se aprende programando". ¬øQue mejor manera de aprender F√≠sica que programarse un "universo"
 particular, constituido por particulas sometidas a diferentes fuerzas, y experimentar modificando sus vectores de
 velocidad, aceleracion, etc?<br>
 <br>
-Ese es el objetivo de NEWTON. Y lo mismo que me sirve a mi, considero que le puede ser ˙til a mas gente, por eso
-lo pongo en la web. Y por esa razÛn el programa est· realizado en <b>LINUX</b> y bajo
+Ese es el objetivo de NEWTON. Y lo mismo que me sirve a mi, considero que le puede ser √∫til a mas gente, por eso
+lo pongo en la web. Y por esa raz√≥n el programa est√° realizado en <b>LINUX</b> y bajo
 <a href="http://www.gnu.org/copyleft/gpl.html">Licencia GPL</a><br>
 <br>
 Aqui puedes ver una captura de pantalla de la version 0.4.1 de GNEWTON:
@@ -47,33 +52,33 @@ Aqui puedes ver una captura de pantalla de la version 0.4.1 de GNEWTON:
 <li>
 <b>DESCRIPCION</b> <br><br>
 </li>
-El objetivo de Newton es experimentar con la cinem·tica de las particulas, a dos niveles:
+El objetivo de Newton es experimentar con la cinem√°tica de las particulas, a dos niveles:
 <br><br>
 <blockquote>
 <li><b>CINEMATICA DIRECTA:</b></li><br>
 Sobre las particulas se especifican los vectores de velocidad y aceleracion, y opcionalmente se define el campo
-al que est·n sometidas todas las particulas. Al realizar la simulaciÛn se observa cual es la trayectoria seguida
+al que est√°n sometidas todas las particulas. Al realizar la simulaci√≥n se observa cual es la trayectoria seguida
 por ellas.
 <br> <br>
 <li><b>CINEMATICA INVERSA:</b></li><br>
-Hacer que las particulas sigan una trayectoria y averiguar cuales son los vectores de velocidad y aceleraciÛn
-que aparecen. Por ejemplo, se puede desplazar una particula con el ratÛn y observar quÈ sucede.
+Hacer que las particulas sigan una trayectoria y averiguar cuales son los vectores de velocidad y aceleraci√≥n
+que aparecen. Por ejemplo, se puede desplazar una particula con el rat√≥n y observar qu√© sucede.
 <br>
 <br>
 </blockquote>
 
-En las diferentes versiones de NEWTON se ir· incorporando cada vez m·s funcionalidad. La primera version es la 0.1
+En las diferentes versiones de NEWTON se ir√° incorporando cada vez m√°s funcionalidad. La primera version es la 0.1
 que esta descrita mas abajo.
 <br><br>
 
 <li><b>PLATAFORMA</b></li>
 <p>Desarrollado en Linux. Se han empleado las librerias <b>GNOME/GTK+ V1.2.13</b>. Anteriormente habia trabajado con
-GTK+ (aplicaciÛn cube_virtual para calcular los vectores de moviento de CUBE) y ahora quiero evaluar la capa
+GTK+ (aplicaci√≥n cube_virtual para calcular los vectores de moviento de CUBE) y ahora quiero evaluar la capa
 GNOME situada por encima. Hay que destacar la total portabilidad de estas librerias al resto de sistemas operativos,
-incluido Windows, aunque sÛlo lo he probado la migraciÛn de GTK+</p>
+incluido Windows, aunque solo lo he probado la migraci√≥n de GTK+</p>
 <img SRC="glade.gif"  ALIGN="left" >
-<p> A partir de la versiÛn 0.4.1 el interfaz se ha desarrollado con <a href="http://glade.gnome.org/">GLADE</a>, y se carga
-din·micamente a partir de un fichero XML</p>
+<p> A partir de la versi√≥n 0.4.1 el interfaz se ha desarrollado con <a href="http://glade.gnome.org/">GLADE</a>, y se carga
+din√°micamente a partir de un fichero XML</p>
 <br>
 
 
@@ -137,28 +142,28 @@ Los pasos para <b>ejecutarlo</b> son los siguientes:
 <li><b>05/Mayo/2002: Liberada version 0.4.1 de Gnewton</b></li>
 <br>
 <blockquote>
-  -Actualizado el mÛdulo de vectores (vector.c), del proyecto Newton<br>
-  -Incorporado el mÛdulo particles.c (del proyecto Newton) <br>
-  -ModificaciÛn completa del INTERFAZ<br>
-  -Interfaz realizado 100% con Glade, carg·ndose din·micamente al ejecutarse, lo que permite modificarlo sin
-   tener que compilar el cÛdigo<br>
-  -VisualizaciÛn de las coordenadas de los vectores de velocidad, aceleraciÛn y posiciÛn de la partÌcula activa</li><br>
-  -La aceleraciÛn se tiene en cuenta en la simulaciÛn <br>
+  -Actualizado el m√≥dulo de vectores (vector.c), del proyecto Newton<br>
+  -Incorporado el m√≥dulo particles.c (del proyecto Newton) <br>
+  -Modificaci√≥n completa del INTERFAZ<br>
+  -Interfaz realizado 100% con Glade, carg√°ndose din√°micamente al ejecutarse, lo que permite modificarlo sin
+   tener que compilar el c√≥digo<br>
+  -Visualizaci√≥n de las coordenadas de los vectores de velocidad, aceleraci√≥n y posici√≥n de la part√≠cula activa</li><br>
+  -La aceleraci√≥n se tiene en cuenta en la simulaci√≥n <br>
 </blockquote>
 <br>
 <br>
 <li><b>22/Abr/2002: Liberada version 0.3</b></li>
 <br>
-  El proyecto se ha dividio en dos partes: un motor de fÌsica, <b>NEWTON</b>, y un front-end, <b>GNEWTON</b>.
-  <b>Carlos Jes˙s Venegas</b> se ha unido al proyecto y est· realizando el motor de fÌsica.<br>
+  El proyecto se ha dividio en dos partes: un motor de f√≠sica, <b>NEWTON</b>, y un front-end, <b>GNEWTON</b>.
+  <b>Carlos Jes√∫s Venegas</b> se ha unido al proyecto y est√° realizando el motor de f√≠sica.<br>
   -Incorporado el modulo vectores.c, del proyecto Newton <br>
-  -Nuevos modulos temporales para la gestiÛn de partÌculas y el universo, hasta que se incorporen los de Newton<br>
-  -Nuevo botÛn para aÒadir nuevas partÌculas
+  -Nuevos modulos temporales para la gesti√≥n de part√≠culas y el universo, hasta que se incorporen los de Newton<br>
+  -Nuevo bot√≥n para a√±adir nuevas part√¨culas
 <br><br>
 <li><b>2/Abr/2002: Liberada version 0.2</b></li>
 <br>
-  Dibujo de los vectores de velocidad de la cinematica inversa. Al arrastrar las particulas con el raton
-aparece el vector velocidad aplicado. AÒadidos botones para hacer ZOOM+ y ZOOM-
+  Dibujo de los vectores de velocidad de la cinem√°tica inversa. Al arrastrar las particulas con el raton
+aparece el vector velocidad aplicado. A√±adidos botones para hacer ZOOM+ y ZOOM-
 <br><br>
 <li><b>31/mar/2002: Liberada version 0.1</b></li>
 <br>
