@@ -1,0 +1,6 @@
+
+
+NET "i"  LOC="P69";
+NET "o" LOC="P68";
+
+

@@ -1,0 +1,412 @@
+<html>
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarjeta JPS-XPC84: Entrenadora para FPGA</title>
+<style type="text/css">
+<!--
+  H1 {
+    font-family: Current Schoolbook, Arial;
+    background-color: blue;
+    color: rgb(192,192,192);
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    border: thin outset rgb(192,192,192);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    padding: 2px;
+  }
+  H2 {
+    font-family: Times,Arial;
+    color: rgb(0,0,0);
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: left;
+    border: medium none;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    padding: 5px;   
+  }
+  DIV.cuerpo {
+    font-family: Book Antiqua, Arial;
+    color: rgb(20,20,20);
+    text-indent: 50px;
+    line-height: 20px;
+    text-align: justify;
+    margin-left: 25px;
+    margin-right: 25px;
+  }    
+  SPAN.cursiva { 
+    font-style: oblique;
+  }
+  DIV.autor { 
+    font-family: Arial;
+    font-style: oblique;
+    color: rgb(20,20,20);
+    font-size: 10pt;
+    text-align: left;
+    margin-right: 25px;
+    margin-left: 25px;
+  }
+  
+  DIV.lista {
+    font-family: Book Antiqua, Arial;
+    color: rgb(20,20,20);
+    line-height: 20px;
+    text-align: justify;
+    margin-left: 25px;
+    margin-right: 25px;
+  }    
+
+  TABLE.margen {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+  }
+  
+  TABLE.links {
+    color: rgb(55,0,0);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+    background-color: rgb(255,255,128);
+    border: thin outset rgb(192,192,192);    
+  }
+   
+  TABLE.down {
+    color: rgb(55,0,0);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+    background-color: rgb(255,255,128);
+    border: thin outset rgb(192,192,192);    
+  }
+  
+  /* TD.indice {
+    <TR><TD><a href="#noticias">Noticias</a></TD></TR>nt-size:15pt;
+    text-align: center;
+    color="blue";
+  } */
+  
+-->
+</style>
+</head>
+
+<body>
+<!-- título de la página -->
+
+<table align="center" width="100%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>TARJETA JPS-XPC84: Entrenadora para FPGA</b>
+ </td>
+</tr>
+</tbody></table> 
+
+
+ <table align="center">
+<tr>
+<td><a href="#uno">[Introducción]</a></td>
+<td><a href="#dos">[caracteristicas]</a></td>
+<td><a href="#tres">[Autores]</a></td>
+<td><a href="#licencia">[Licencia]</a></td>
+<td><a href="#aplicaciones">[Aplicaciones]</a></td>
+<td><a href="#puertos">[Puertos]</a></td>
+<td><a href="#download">[Download]</a></td>
+<td><a href="#links">[Links]</a></td>
+<td><a href="#noticias">[Noticias]</a></td>
+<td><a href="#agradecimientos">[Agradecimientos]</a></td>
+</tr>
+</table>
+  
+<center>
+<img src="images/jps-xpc84-1.jpg" width=320 heigth=200>
+</center>
+
+<!-- Introducción -->
+<HR>
+<h2 id="uno"> Introducción </h2>  
+
+<div class="cuerpo">
+<p>
+Proyecto desarrollado para la asignatura de doctorado "<b>Diseño de Sistemas Reconfigurables de Alta Velocidad</b>",
+curso 2001-2002, impartido en la E.T.S de Informática de la <a href="http://www.ii.uam.es">UAM</a>, por el profesor
+<a href="http://www.ii.uam.es/~ivan/">D. Eduardo Boemo Scalvinoni</a>.
+</p>
+<p>Para implementar circuitos para las FPGA's se pueden utilizar programas de simulación, como los proporcionados
+por <a href="http://www.xilinx.com">Xilinx</a>. Este proyecto surge para ayudar a los estudiantes o la gente interesada en el mundo de las FPGA's a llevar
+sus diseños de la simulación a la realidad. En mi caso particular es casi una necesidad el poder "tocar" el hardware
+que se esta desarrollando. Necesitaba disponer de una plataforma para poder probar "en la realidad" los diseños
+sintetizados.
+</p>
+<p>
+Se ha desarrollado una <b>tarjeta entrenadora muy básica</b>, que permite funcionar tanto en <b>modo autónomo</b> (el bitstream
+se almacena en una memoria eeprom serie) o en <b>modo conexión al PC</b> (lo que permite descargar los diseños usando en
+"download" cable de Xilinx y la herramienta Foundation).  Mi intencion personal es utilizar FPGA's en robots,
+por lo que es muy importante que puede funcionar en modo autónomo.
+</p>
+Aqui se muestran dos fotos. En la foto de la derecha se ha incluido un disquete para hacerse una idea del
+tamaño que tiene: <br> <br>
+<table>
+  <tr>
+    <td><img src="images/jps-xpc84-3.jpg" alt="Tarjeta JPS-XPC84" width=300 height=226 align="middle" border=2>  </td>
+    <td><img src="images/jps-xpc84-2.jpg" width=300 height=226 border=2></td>
+  </tr>
+</table>
+</div>
+
+<HR>
+<H2 id="dos"> Características </H2>
+<div class="lista">
+<ul>
+  <li>Tarjeta de desarrollo para las FPGA de Xilinx de la <b>familia 4000</b> o <b>Spartan</b>, con encapsulados PLCC84</li>
+  <li>La carga de la FPGA se realiza desde la EEPROM serie (modo autónomo), desde cualquier microcontrolador o
+      a traves de un cable JTAG desde un PC</li>
+  <li>Zócalo para incorporar un oscilador que funcione como reloj</li>
+  <li>Posibilidad de grabar la EEPROM on-chip</li>
+  <li>Todas los pines disponibles de la FPGA se sacan al exterior a través de 6 conectores acodados
+      de tipo bus, de 8x2 pines</li>
+  <li>Todos los puertos de salida incorporan las señales de VCC y GND para la rápida conexion de
+      periféricos</li>
+  <li>Pulsador de programación</li>
+  <li>Led y pulsador de pruebas, conectados a dos pines de la FPGA, lo que permite realizar pruebas
+      sin tener que conectar ningún periferico</li>
+  <li>Jumper para la configuración del modo de carga</li>
+  <li>1 Switch para configuración modo lectura/grabación de la EEPROM serie</li>
+  <li>3 Switches de pruebas conectados a 3 pines de la FPGA</li>
+</ul>  
+</div>
+
+<HR>
+<H2 id="tres"> Autores</H2>
+
+<div class="lista">
+<ul>
+  <li><a href="http://www.iearobotics.com/personal/juan/index.html">Juan González Gómez</a>
+  			(juan@iearobotics.com) </li> 
+   <li><a href="http://www.ii.uam.es/~phaya/">Pablo Haya Coll</a>
+        (Pablo.Haya@ii.uam.es)</li>
+   <li><a href="mailto:Sergio.Lopez-Buedo@ii.uam.es">Sergio López-Buedo</a>
+        (Sergio.Lopez-Buedo@ii.uam.es)</li>    
+</ul>
+</div>
+        
+<HR>
+<H2 id="licencia"> Licencia</H2>
+
+<div class="cuerpo">
+<p>
+La tarjeta JPS-XPC84 es <b>HARDWARE ABIERTO</b> y tiene una <b>licencia GPL</b> (o lo mas parecido pero en versión Hardware).
+Esto quiere decir que <b>se distribuye junto con TODOS sus esquemas</b> (esquemáticos, rutado y ficheros de fabricación).
+Cualquiera tiene derecho a fabricarla, copiarla, modificarla, distribuirla o venderla siempre y cuando vaya
+acompañada de TODOS los esquemas.</p>
+<p>
+La licencia GPL otorga todas las libertades comentadas anteriormente, sin embargo <b>el copyright sigue siendo de
+los autores</b>. Y esto tiene que ser así para que ninguna empresa u organización se "apropie" del diseño y no permita
+su libre distribución.</p>
+</div>
+
+<HR>
+<H2 id="aplicaciones"> Aplicaciones</H2>
+<div class="cuerpo">
+La tarjeta puede ser empleada para infinidad de cosas, sin embargo resulta especialmente útil para:
+</div>
+<div class="lista">
+<ul>
+  <li><b>Aprendizaje</b>: Es su misión fundamental. Que los alumnos o gente que están aprendiendo puedan disponer
+      de una plataforma sencilla, libre y facil de usar. Al ser libre y disponer de todos los esquemas, los
+      estudiantes pueden comprender todos los detalles y construirse sus propias entrenadoras o reproducir esta
+      misma, bien en modo prototipo o bien mandando fabricar el PCB</li><br>
+  <li><b>Conexión con microcontroladores</b>: Por tratarse de un sistema autónomo es muy útill para desarrollar
+      periféricos para diferentes microcontroladores: 6811, 6808, PIC...</li><br>
+  <li><b>Robútilca</b>: Muy útill en la construcción de robots autónomos o periféricos para ellos</li><br>
+  <li><b>Investigación</b>: Posiblidad de implementar pequeñas CPU's en la FPGA, que luego funcionaran de
+      manera autánoma</li><br>
+  <li><b>Hardware abierto</b>: La posibilidad de que esta placa se convierta en un sistema de desarrollo
+      libre empleado por desarrolladores de hardware libre, que diseñen cores o hardware para esta FPGA con
+      una licencia libre. Esto hará, al igual que en el case del software libre, que todos nos beneficiemos
+      de las aportaciones que otras personas hacen a la comunidad.</li><br>
+</ul>
+</div>
+
+<HR>
+<H2 id="puertos">Puertos</H2>
+<div class="cuerpo">
+<p>
+  La tarjeta JPS dispone de 6 puertos de expansión. A continuación se muestran las señales que salen
+  por cada uno de ellos. Las que comienzan por P son pines de la FPGA.
+ </p> 
+<center>
+<img src="images/puertos.jpg">
+</center>
+</div>
+
+<HR>
+<!-- DOWNLOAD -->
+<H2 id="download"> Download </H2>
+
+<table width=95% bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>TARJETA JPS-XPC84</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=95%  border="0" >
+<tbody><tr bgcolor="#cabeeb">
+ <td >
+   <a href="downloads/jps-xpc84-v1.0-pro-sch.pdf">jps-xpc84-v1.0-pro-sch.pdf (138KB)</a>
+ </td>
+ <td> Esquema en pdf</td>
+</tr>
+<tr bgcolor="#abbeeb">
+  <td><a href="downloads/jps-xpc84-v1.0-pro-brd1.pdf">jps-xpc84-v1.0-pro-brd1.pdf (168KB)</a>  </td>
+  <td> Serigrafias del PCB.</td>
+</tr>
+<tr bgcolor="#cabeeb">
+    <td> <a href="downloads/jps-xpc84-v1.0-pro-brd2.pdf">jps-xpc84-v1.0-pro-brd2.pdf (230KB)</a> </td>
+    <td> PCB. Cara de los componentes. Formato PDF</td>
+  </tr>
+  <tr bgcolor="#abbeeb">
+    <td> <a href="downloads/jps-xpc84-v1.0-pro-brd3.pdf">jps-xpc84-v1.0-pro-brd3.pdf (232KB)</a> </td>
+    <td> PCB. Cara de abajo. Formato PDF</td>
+  </tr>
+<tr bgcolor="#cabeeb">
+    <td> <a href="downloads/esquemas.zip">esquemas.zip (36KB)</a> </td>
+    <td> Esquematico y PCB para el EAGLE</td>
+  </tr>
+<tr bgcolor="#abbeeb">
+    <td> <a href="downloads/fabricacion.zip">fabricacion.zip (89KB)</a> </td>
+    <td> Ficheros en formato GERBER y plano de taladros para la fabricacion</td>
+</tr>
+</tbody></table>
+
+<br>
+
+<table width=95% bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>DOCUMENTACIÓN Y EJEMPLOS</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=95%  border="0" >
+<tbody><tr bgcolor="#cabeeb">
+ <td width=30%>
+   <a href="downloads/manual-jps-xpc84.pdf">manual-jps-xpc84.pdf (1.2MB)</a>
+ </td>
+ <td> Manual de la tarjeta JPS-XPC84. Bajo licencia FDL</td>
+</tr>
+<tr bgcolor="#abbeeb">
+  <td><a href="downloads/manual-jps-1.0.tgz">manual-jps-1.0.tgz (2.9MB)</a>  </td>
+  <td> Fichero fuente (para Lyx) y figuras (Xfig).</td>
+</tr>
+            
+<tr bgcolor="#cabeeb">
+<td width=30%>
+   <a href="ejemplos/inversor.vhd">inversor.vhd (773 Bytes)</a>
+ </td>
+ <td>Un inversor de ejemplo en VHDL</td>
+</tr> 
+
+<tr bgcolor="#abbeeb">
+  <td><a href="ejemplos/inversor.ucf">inversor.ucf (49 Bytes)</a>  </td>
+  <td> Fichero de restricciones para el inversor. Conexión al pulsador y led de pruebas</td>
+</tr>  
+
+<tr bgcolor="#cabeeb">
+<td>
+   <a href="ejemplos/inversor.hex">inversor.hex (23 KB)</a>
+ </td>
+ <td>Bitstream del inversor en hexadecimal. Sintentizado para una FPGA XCS10.</td>
+</tr>  
+
+<tr bgcolor="#abbeeb">
+<td>
+   <a href="ejemplos/inversor.bit">inversor.bit (12 KB)</a>
+ </td>
+ <td>Bitstream del inversor. Sintentizado para una FPGA XCS10.</td>
+</tr>   
+
+<tr bgcolor="#cabeeb">
+  <td><a href="ejemplos/inversor.mcs">inversor.mcs (33 KB)</a>  </td>
+  <td>Fichero en formato HEX de Intel para grabar en la EEPROM. (Para una FPGA XCS10)</td>
+</tr>    
+</tbody></table>
+
+<!-- Links -->
+<HR>
+<H2 id="links">Links</H2>
+<div class="lista">
+<ul>
+  <li><a href="http://www.xilinx.com">Empresa Xilinx</a>
+  			:Fabricante de FPGAs</li>
+  	<li><a href="http://www.opencores.org">Open Cores</a>: Página en la que se pueden encontrar diseños
+  	libres para ser sintetizados en FPGAs</li>
+  	<li>
+  	<a href="http://www.terra.es/personal5/cuchomen1/FPGA/pararel_download_cable_iii.htm">Download cable III</a>
+  	.Documentación y esquemas de un cable de descarga que funciona con la tarjeta JPS y el
+  	ISE 4.1. Proyecto desarrollado por Víctor Apéstigue
+  	
+  	</li>
+</ul>
+</div>
+
+<!-- Noticias -->
+<HR>
+<H2 id="noticias">Noticias</H2>
+<div class="lista">
+<ul>
+
+  <li><b>23/Enero/2004</b>: Añadido enlace al 
+  <a href="http://www.terra.es/personal5/cuchomen1/FPGA/pararel_download_cable_iii.htm">Download cable III</a>,
+  desarrollado por Víctor Apéstigue</li><br>
+  <li><b>29/Abril/2003</b>: Tarjeta JPS presentada en el
+  <a href="http://www.depeca.uah.es/alcabot/hispabot2003/seminario.htm">
+  Seminario de Hispabot 2003</a>.
+  El artículo y las transparencias están disponibles 
+  <a href="http://www.iearobotics.com/personal/juan/publicaciones/art1/index.html">aquí</a>
+  </li><br>
+  <li><b>18/Feb/2003</b>: Añadido fichero inversor.bit</li><br>
+  <li><b>13-16/Feb/2003</b>: Tarjeta JPS 
+  <a href="http://www.ii.uam.es/~mecatron/index.php3?seccion=3&pagina=6">
+  presentada en la feria "Madrid por la ciencia"</a>, en el estand del 
+  <a href="http://www.ii.uam.es/~mecatron/">Club de Robútilca Mecatrónica</a>
+   de la Escuela Politécnica Superior de la Universidad Autánoma de Madrid</li><br>
+   
+  <li><b>31/Ene/2003</b>: Publicada versión 1.0 del manual de usuario, 
+  así como el ejemplo del inversor </li><br>
+  <li><b>6/Abr/2002: Publicada versión 1.0-pro de la tarjeta JPS-XPC84.</b>
+   Publicación de los esquemas, PCB's y ficheros necesarios para su fabricación</li>
+</ul>
+</div>
+<br><br>
+
+<!-- Agradecimientos -->
+<HR>
+<H2 id="agradecimientos">Agradecimientos</H2>
+
+<div class="lista">
+<ul>
+  <li>A <b>Ivan González</b>, por sus comentarios, sugerencias y ayuda con el manejo del programa Foundation </li><br>
+  <li>A <b>Andrés Prieto-Moreno Torres</b> por su apoyo y ayuda para la financiación de la primera tirada</li> <br>
+  <li>A <b>Guillermo González de Rivera</b> por prestarme su impresora de chorro de tinta para la impresión
+     del PCB del primer prototipo</li> <br>
+  <li>A <b>Eduardo Boemo</b>, por confiar en mi y darme "carta blanca" para poder realizar esta placa, como
+      trabajo para la asignatura de doctorado que imparte.</li> <br>
+  <li>A los otros dos autores, <b>Sergio López-Buedo</b> y <b>Pablo Haya Coll</b>, por permitir que se publique
+      bajo una licencia libre y porque sin ellos este proyecto no hubiese salido adelante.</li> <br>
+</ul>
+</div>
+
+<HR>
+<a href="../../../../">IEAROBOTICS</a><br>
+<a href="../../index.html">Juan González</a>
+
+
+</body></html>
