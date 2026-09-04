@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Microcontrolador MC68HC11: Fundamentos, recursos y programaci&oacute;n</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.4  (Linux)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGED" CONTENT="0;0">
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!-- título de la página -->
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>MICROCONTROLADOR MC68HC11: FUNDAMENTOS,
+				RECURSOS Y PROGRAMACI&Oacute;N</B> 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=24*>
+	<COL WIDTH=232*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=9% BGCOLOR="#ffcc99">
+				<P ALIGN=CENTER><IMG SRC="Icono_aviso.png" NAME="gr&aacute;ficos6" ALIGN=MIDDLE WIDTH=24 HEIGHT=24 BORDER=0></P>
+			</TD>
+			<TD WIDTH=91% VALIGN=TOP BGCOLOR="#ffcc99">
+				<P ALIGN=CENTER><FONT FACE="Bitstream Vera Sans, sans-serif"><FONT SIZE=2><B>Esta
+				p&aacute;gina ya no se mantiene m&aacute;s (02/Mayo/2009)</B></FONT></FONT></P>
+				<P ALIGN=CENTER><A HREF="http://www.iearobotics.com/wiki/index.php?title=MICROCONTROLADOR_MC68HC11:_FUNDAMENTOS,_RECURSOS_Y_PROGRAMACI&Oacute;N"><FONT FACE="Bitstream Vera Sans, sans-serif"><FONT SIZE=2><B>Acceso
+				a la nueva p&aacute;gina en el wiki</B></FONT></FONT></A></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<CENTER>
+	<TABLE WIDTH=678 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=90>
+		<COL WIDTH=49>
+		<COL WIDTH=61>
+		<COL WIDTH=63>
+		<COL WIDTH=76>
+		<COL WIDTH=76>
+		<COL WIDTH=46>
+		<COL WIDTH=63>
+		<COL WIDTH=117>
+		<TR>
+			<TD WIDTH=90>
+				<P><A HREF="#introduccion">[Introducci&oacute;n]</A></P>
+			</TD>
+			<TD WIDTH=49>
+				<P><A HREF="#datos">[Datos]</A></P>
+			</TD>
+			<TD WIDTH=61>
+				<P><A HREF="#tres">[Autores]</A></P>
+			</TD>
+			<TD WIDTH=63>
+				<P><A HREF="#licencia">[Licencia]</A></P>
+			</TD>
+			<TD WIDTH=76>
+				<P><A HREF="#contenido">[Contenido]</A></P>
+			</TD>
+			<TD WIDTH=76>
+				<P><A HREF="#download">[Download]</A></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><A HREF="#links">[Links]</A></P>
+			</TD>
+			<TD WIDTH=63>
+				<P><A HREF="#noticias">[Noticias]</A></P>
+			</TD>
+			<TD WIDTH=117>
+				<P><A HREF="#agradecimientos">[Agradecimientos]</A></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="libro6811.jpg" NAME="gr&aacute;ficos1" ALIGN=BOTTOM WIDTH=352 HEIGHT=430 BORDER=0>
+</P>
+<P STYLE="border-top: none; border-bottom: 1.10pt double #808080; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+<!-- Introducción --><BR><BR>
+</P>
+<H2><A NAME="introduccion"></A>Introducci&oacute;n 
+</H2>
+<P><!-- texto -->Libro en castellano sobre el <B>Microcontrolador
+68hc11 </B>de Motorola. Se describe desde un punto de vista pr&aacute;ctico,
+con muchos ejemplos, la arquitectura de este micro y c&oacute;mo se
+programa cada uno de los perif&eacute;ricos que incorpora. 
+</P>
+<P>Con este libro se pretende cubrir el gran vac&iacute;o que existe
+de informaci&oacute;n en castellano sobre el microcontrolador 68HC11.
+Est&aacute; basado en la experiencia que han ido adquiriendo los
+autores en el desarrollo de aplicaciones digitales. Por ello <B>es
+eminentemente pr&aacute;ctico</B>. Se ha evitado explicar con
+profundidad los mecanismos internos de funcionamiento, centr&aacute;ndose
+sobre todo en los conocimientos b&aacute;sicos que hay que tener para
+poder utilizar todos los recursos internos. 
+</P>
+<P STYLE="border-top: none; border-bottom: 1.10pt double #808080; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+<!-- Sección 1 --><BR><BR>
+</P>
+<H2><A NAME="datos"></A>Datos: 
+</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><B>I.S.B.N.</B>: 84-605-8743-6 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>Dep&oacute;sito Legal:</B>
+	M-10412-1999 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>Editor</B>: <A HREF="http://www.microbotica.es/">Microb&oacute;tica,
+	S.L</A> 
+	</P>
+	<LI><P><B>Imprime</B>: Servicio de Publicaciones. E.T.S.I
+	Telecomunicaci&oacute;n. Ciudad Universitaria s/n 
+	</P>
+</UL>
+<P STYLE="border-top: none; border-bottom: 1.10pt double #808080; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+<!-- Sección 2 --><BR><BR>
+</P>
+<H2><A NAME="tres"></A>Autores</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="http://www.iearobotics.com/personal/juan/index.html">Juan
+	Gonz&aacute;lez G&oacute;mez</A>. Cap&iacute;tulos 1, 3, 5.
+	Ap&eacute;ndices A,B,C,D,E. Apartados: 4.1, 4.2, 4.3, 4.5, 4.6, 4.7,
+	4.8, 4.9, 4.10. 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="%20http://www.iearobotics.com/personal/andres/index.html">Andr&eacute;s
+	Prieto-Moreno Torres</A>. Apartados 4.11 y 4.12 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="http://www.microbotica.es/">Juan
+	Jos&eacute; San Mart&iacute;n</A>. Cap&iacute;tulo 2 y apartado 4.4.
+		</P>
+	<LI><P><A HREF="http://www.microbotica.es/">Cristina Doblado Alc&aacute;zar</A>
+	Correcci&oacute;n de errores y erratas. 
+	</P>
+</UL>
+<P STYLE="border-top: none; border-bottom: 1.10pt double #808080; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+<!-- Sección 3 --><BR><BR>
+</P>
+<H2><A NAME="licencia"></A>Licencia</H2>
+<P STYLE="margin-bottom: 0cm">Se conceden permisos para copiar,
+modificar y distribuir este libro, siempre y cuando se mantenga esta
+nota. 
+</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="contenido"></A>Contenido</H2>
+<P STYLE="margin-bottom: 0cm">&nbsp;<BR><B>PROLOGO</B><BR><BR><B>1.-
+INTRODUCCI&Oacute;N</B><BR><B>2.- ASPECTOS HARDWARE DEL 68HC11</B><BR>&nbsp;&nbsp;&nbsp;&nbsp;
+2.1.- El patillaje del 68HC11<BR>&nbsp;&nbsp;&nbsp;&nbsp; 2.2.- Pines
+de reloj<BR>&nbsp;&nbsp;&nbsp;&nbsp; 2.3.- Pines de alimentaci&oacute;n<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+2.4.- Pines de reset<BR>&nbsp;&nbsp;&nbsp;&nbsp; 2.5.- Pines de
+transmisiones serie as&iacute;ncronas<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+2.6.- Pines de los capturadores<BR>&nbsp;&nbsp;&nbsp;&nbsp; 2.7.-
+Pines de interrupci&oacute;n externa<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+2.8.- Pines de configuraci&oacute;n del modo de arranque<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+2.9.- Pines de los comparadores<BR>&nbsp;&nbsp;&nbsp;&nbsp; 2.10.-
+Pines de transmisiones serie s&iacute;ncronas<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+2.11.- Pines de los puertos de entrada/salida<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+2.12.- Pines de los buses<BR>&nbsp;&nbsp;&nbsp;&nbsp; 2.13.- Pines de
+los conversores anal&oacute;gicos/digitales<BR><BR><B>3.-
+PROGRAMACI&Oacute;N DE LA CPU DEL 68HC11</B><BR>&nbsp;&nbsp;&nbsp;&nbsp;
+3.1.- Los modos de funcionamiento del 68HC11<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+3.2.- Registros de la CPU<BR>&nbsp;&nbsp;&nbsp;&nbsp; 3.3.- Modos de
+direccionamiento<BR>&nbsp;&nbsp;&nbsp;&nbsp; 3.4.- Juego de
+instrucciones<BR>&nbsp;&nbsp;&nbsp;&nbsp; 3.5.- INTERRUPCIONES<BR><BR><B>4.-
+RECURSOS DEL 68HC11 Y SU PROGRAMACI&Oacute;N</B><BR>&nbsp;&nbsp;&nbsp;&nbsp;
+4.1.- El mapa de memoria<BR>&nbsp;&nbsp;&nbsp;&nbsp; 4.2.- Puertos de
+entrada/salida<BR>&nbsp;&nbsp;&nbsp;&nbsp; 4.3.- Transmisiones serie
+as&iacute;ncronas (SCI)<BR>&nbsp;&nbsp;&nbsp;&nbsp; 4.4.-
+Transmisiones serie s&iacute;ncronas (SPI)<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+4.5.- Temporizador principal<BR>&nbsp;&nbsp;&nbsp;&nbsp; 4.6.-
+Interrupciones en tiemo real<BR>&nbsp;&nbsp;&nbsp;&nbsp; 4.7.-
+Comparadores<BR>&nbsp;&nbsp;&nbsp;&nbsp; 4.8.- Capturadores de
+entrada<BR>&nbsp;&nbsp;&nbsp;&nbsp; 4.9.- Acumulador de pulsos<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+4.10.- La interrupci&oacute;n externa IRQ<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+4.11.- Conversor anal&oacute;gico/digital<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+4.12.- La memoria EEPROM<BR><BR><B>5.- LA COMUNICACI&Oacute;N ENTRE
+EL 68HC11 Y EL PC</B><BR>&nbsp;&nbsp;&nbsp;&nbsp; 5.1.-
+Introducci&oacute;n<BR>&nbsp;&nbsp;&nbsp;&nbsp; 5.2.- El programa de
+arranque BOOTSTRAP<BR>&nbsp;&nbsp;&nbsp;&nbsp; 5.3.- Dialogando con
+el 68HC11<BR>&nbsp;&nbsp;&nbsp;&nbsp; 5.4.- El formato .S19 de
+Motorola<BR><BR><B>APENDICE A</B>: Patillaje del 68hc11<BR><B>APENDICE
+B</B>: Numeraci&oacute;n del z&oacute;calo PLCC de 52 pines<BR><B>APENDICE
+C</B>: Resumen de los registros de control del 68HC11<BR><B>APENDICE
+D</B>: Descripci&oacute;n de todos los registros de control del
+68HC11<BR><B>APENDICE E</B>: Lista de nem&oacute;nicos del 68HC11</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="download"></A><!-- DOWNLOAD -->Download 
+</H2>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>FICHEROS PARA DESCARGAR</B> 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=2 CELLSPACING=2>
+		<TR BGCOLOR="#cabeeb">
+			<TD>
+				<P><A HREF="libro-6811.pdf">libro-6811.pdf (720KB)</A> 
+				</P>
+			</TD>
+			<TD>
+				<P>Microcontrolador 68HC11: Fundamentos, recursos y programaci&oacute;n</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD>
+				<P><A HREF="http://www.iearobotics.com/proyectos/ct6811/6811/ejemplos-6811.zip">ejemplos-6811.zip
+				(33KB)</A></P>
+			</TD>
+			<TD>
+				<P>Todos los ejemplos del libro</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="links"></A>Links</H2>
+<UL>
+	<LI><P><A HREF="http://www.iearobotics.com/proyectos/ct6811/ct6811.html">CT6811</A>:
+	Tarjeta entrenadora basada en el 6811. Todos los ejemplos del libro
+	ha sido probados en ella. 
+	</P>
+</UL>
+<P STYLE="border-top: none; border-bottom: 1.10pt double #808080; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+<!-- Noticias --><BR><BR>
+</P>
+<H2><A NAME="noticias"></A>Noticias</H2>
+<UL>
+	<LI><P><B>02/mayo/2009: </B><SPAN STYLE="font-weight: medium">P&aacute;gina
+	migrada al wiki (<A HREF="http://www.iearobotics.com/wiki/index.php?title=MICROCONTROLADOR_MC68HC11:_FUNDAMENTOS,_RECURSOS_Y_PROGRAMACI&Oacute;N">Nuevo
+	enlace</A>)</SPAN></P>
+	<LI><P><B>04/Ene/2003</B>: Publicada esta p&aacute;gina 
+	</P>
+</UL>
+<P STYLE="border-top: none; border-bottom: 1.10pt double #808080; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+<!-- Agradecimientos --><BR><BR>
+</P>
+<H2><A NAME="agradecimientos"></A>Agradecimientos</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm">A <B>Eduardo Boemo</B>, por
+	realizar la revisi&oacute;n t&eacute;cnica del libro y escribir el
+	pr&oacute;logo 
+	</P>
+	<HR>
+	</BODY>
+	</HTML>
