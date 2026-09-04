@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-SCTERM: TERMINAL SERIE PARA GNOME2</title>
+  </head>
+
+
+<!-- A partir de aquí viene el contenido real de la pagina>-->
+
+
+<table width="95%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>G-SCTERM: TERMINAL SERIE PARA GNOME2</b>
+ </td>
+</tr>
+</tbody></table>
+
+<br>
+<blockquote>
+<li>
+<b>MOTIVACIÓN</b>
+</li>
+<br>
+Los terminales serie siempre me han gustado mucho, porque me permiten conectarme con el hardware que desarrollo.
+Me he propuesto aprender a programar con las librerías de <a href="http://www.gnome.org/">GNOME2/GTK+2.0</a>
+ y qué mejor manera de hacerlo que comenzar a programar un terminal de comunicaciones serie.<br><br>
+
+  Este programa es la base para:
+
+  <ul>
+    <li>Aprender a hacer una aplicación para GNOME-2</li>
+    <li>Aprender a manejar el puerto serie</li>
+    <li>Desarrollar un programa gráfico más avanzado para comunicarse por el puerto serie</li>
+  </ul>
+
+  Yo personalmente lo voy a utilizar de base para hacer programas de <b>control de Robots</b>.
+  <br><br>
+  Aqui puedes ver una <b>captura de pantalla</b> de la version <b>0.2-2-alfa</b> de <b>G-SCTERM</b>:
+ <br><br>
+<center><img src="g-scterm-0.2-2-alfa.png" alt="" border="0"></center><br>
+<br><br>
+
+<li>
+<b>AUTOR:</b> Juan González Gómez (a.k.a. Obijuan)
+</li>
+<br>
+<li><b>LICENCIA</b>: <a href="http://gugs.sindominio.net/gnu-gpl/gples.html"> GPL</a> </li>
+ <br>
+<li>
+<b>DESCRIPCIÓN</b> <br><br>
+</li>
+Se trata de un <b>terminal de comunicaciones</b> que muestra en la pantalla todo lo que se recibe por el puerto serie y
+envía por este todo lo que el usuario teclea. Además permite seleccionar entre las <b>velocidades de 1200 y 9600</b>
+Baudios y <b>cambiar el estado del DTR</b>, señal que se suele utilizar para controlar el hardware. En el caso de la
+tarjeta CT6811, la señal DTR se usa para hacer un reset (equivalente a la pulsación del botón de Reset).  <br>
+<br>
+<img SRC="glade.gif"  ALIGN="left" >
+Está desarrollado usando las librerías de  <a href="http://www.gnome.org/">GNOME2/GTK+2.0</a>, y lo más interesante, el interfaz se ha diseñado con
+<a href="http://glade.gnome.org/">GLADE-2</a>. Con esta herramienta el interfaz se almacena en un <b>fichero XML</b> que es
+leído por la aplicación G-SCTERM durante el arranque, generándose el interfaz a partir de ese fichero. Esto permite
+<b>independizar totalmente el interfaz del programa fuente</b>.
+Para las comunicaciones serie se utiliza la Librería
+ <a href="http://www.iearobotics.com/personal/juan/proyectos/sercom/sercom.html">SERCOM </a>.
+<br><br>
+
+<li><b>PLATAFORMA</b></li>
+<p><b>Linux</b>, aunque debido a que está desarrollado con <a href="http://www.gtk.org/">GTK+</a>, es portable a Windows, sin embargo todavía no se ha comenzado.
+
+
+<li>
+<b>DOWNLOAD</b>
+</li>
+<br><br>
+<table width=95% bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>FICHEROS PARA DESCARGAR</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=95%  border="0" >
+<tbody>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="g-scterm-0.2-2-alfa.tgz">g-scterm-0.2-2-alfa.tgz (26KB)</a>  </td>
+  <td> Fuentes y ejecutable. G-SCTERM Version 0.2-2-alfa </td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="g-scterm-0.1.tgz">g-scterm-0.1.tgz (26KB)</a>  </td>
+  <td> Fuentes y ejecutable. G-SCTERM Versión 0.1</td>
+</tr>
+
+</tbody></table>
+<br>
+
+Los pasos para <b>ejecutarlo</b> son los siguientes:
+<ol>
+  <li>Bajar el fichero g-scterm-xx.tgz</li>
+  <li>Descomprimir el paquete (<b>tar vzxf g-scterm-xx.tgz</b>)</li>
+  <li>Acceder a las fuentes (<b>cd g-scterm-xx</b>)</li>
+  <li>Compilar (<b>make</b>)</li>
+  <li>Para ejecutar teclear: <b>./g-scterm</b></li>
+</ol>
+
+<br><br>
+
+
+<li>
+<b>NOTICIAS</b>
+</li>
+<blockquote>
+ <li><b>20/Agosto/2002: Version 0.2-2-alfa de G-scterm</b></li>
+<blockquote>
+  -Corregidos BUGS reportados por Ayose Cazorla León (zubzet@yahoo.es) <br>
+  -Terminal ASCII y HEXADECIMAL<br>
+  -Consola para informar de errores<br>
+  -Gestión básica de los errores<br>
+</blockquote>
+
+<li><b>13/Agosto/2002: Liberada version inicial 0.1 de G-scterm</b></li>
+<blockquote>
+  -Terminal de comunicaciones mínimo, para GNOME-2<br>
+  -Velocidades soportadas: 1200 y 9600<br>
+  -Compilado para el dispositivo /dev/ttyS0 (COM1)<br>
+  -Control de la señal DTR<br>
+</blockquote>
+<br>
+<br>
+
+<br><br>
+</blockquote>
+
+</blockquote>
+
+</body></html>
