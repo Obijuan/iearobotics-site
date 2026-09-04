@@ -1,0 +1,23 @@
+NOTA Programa ejemplo para activar todas las salidas
+
+NOTA -------- Activar todas las salidas
+repite (0) {
+  salida(1,on);
+  salida(2,off);
+  salida(3,on);
+  salida(4,off);
+  salida(5,on);
+  salida(6,off);
+  salida(7,on);
+  salida(8,off);
+  espera(10);
+  salida(1,off);
+  salida(2,on);
+  salida(3,off);
+  salida(4,on);
+  salida(5,off);
+  salida(6,on);
+  salida(7,off);
+  salida(8,on);
+  espera(10);
+}

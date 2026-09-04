@@ -1,0 +1,7 @@
+NOTA -- Programa ejemplo para la placa PC-BOT
+NOTA -- Activar la salida 8, esperar 3 segundos y desactivarla
+
+salida(8,on);
+espera(30);
+salida(8,off);
+

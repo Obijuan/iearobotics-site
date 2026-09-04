@@ -1,0 +1,23 @@
+
+NOTA ---- Realizar un test de todas las salidas
+salida(1,on); espera(10); salida(1,off);
+salida(2,on); espera(10); salida(2,off);
+salida(3,on); espera(10); salida(3,off);
+salida(4,on); espera(10); salida(4,off);
+salida(5,on); espera(10); salida(5,off);
+salida(6,on); espera(10); salida(6,off);
+salida(7,on); espera(10); salida(7,off);
+salida(8,on); espera(10); salida(8,off);
+
+NOTA ---- Realizar un test de los motores
+motor(1,derecha); espera(20); motor(1,off);
+motor(2,derecha); espera(20); motor(2,off);
+motor(3,derecha); espera(20); motor(3,off);
+motor(4,derecha); espera(20); motor(4,off);
+
+motor(1,izquierda); espera(20); motor(1,off);
+motor(2,izquierda); espera(20); motor(2,off);
+motor(3,izquierda); espera(20); motor(3,off);
+motor(4,izquierda); espera(20); motor(4,off);
+
+

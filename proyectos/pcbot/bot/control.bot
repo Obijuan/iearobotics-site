@@ -1,0 +1,10 @@
+NOTA Programa ejemplo para manejar el motor 1
+NOTA Con la entrada 1 el motor gira en un sentido
+NOTA Con la entrada 2 gira en el otro sentido
+NOTA Con la entrada 3 se para
+
+repite(0) {  NOTA bucle infinito
+  si entrada(1,on) motor(1,derecha);
+  si entrada(2,on) motor(1,izquierda);
+  si entrada(3,on) motor(1,off);
+}

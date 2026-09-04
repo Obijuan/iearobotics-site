@@ -1,0 +1,16 @@
+NOTA -- Programa ejemplo para la tarjeta PC-BOT
+NOTA -- Este programa activa la salida 1 durante dos segundos. Despues
+NOTA -- activa la salida 2 durante otros dos segundos y finalmente
+NOTA -- desactiva las dos salidas
+
+NOTA -- Activar salida 1 y esperar dos segundos
+salida(1,on);
+espera(20);
+
+NOTA -- Activar salida 2 y esperar dos segundos
+salida(2,on);
+espera(20);
+
+NOTA -- Desactivar las salidas 1 y 2
+salida(1,off);
+salida(2,off);

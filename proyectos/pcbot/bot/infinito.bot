@@ -1,0 +1,13 @@
+NOTA -- Programa ejemplo para la tarjeta PC-BOT
+NOTA -- Este programa activa y desactiva la salida 4.
+NOTA -- El bucle es infinito, por lo que el usuario debe pulsar espacio
+NOTA -- para terminar
+
+
+NOTA -- Repetir infinitamente
+repite(0) {
+  salida(4,on);
+  espera(10);
+  salida(4,off);
+  espera(10);
+}

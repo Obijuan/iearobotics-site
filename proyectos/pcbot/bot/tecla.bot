@@ -1,0 +1,8 @@
+NOTA -- Programa ejemplo para la tarjeta PC-BOT
+NOTA -- Este programa activa la salida 5 y espera a que el usuario
+NOTA -- pulse una tecla para desactivarla
+
+salida(5,on);
+espera(0);
+salida(5,off);
+

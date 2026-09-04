@@ -1,0 +1,5 @@
+NOTA --- Programa ejemplo para la tarjeta PC-BOT
+NOTA --- Este programa simplemente activa la salida 1
+
+salida(1,on);
+

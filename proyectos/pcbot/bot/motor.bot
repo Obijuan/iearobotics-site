@@ -1,0 +1,11 @@
+NOTA -- Programa de prueba para la tarjeta PC-BOT
+NOTA -- Mover el motor 1 en un sentido, pararlo y luego moverlo en otro
+
+motor(1,derecha);
+espera(30);
+motor(1,off);
+espera(20);
+motor(1,izquierda);
+espera(30);
+motor(1,off);
+

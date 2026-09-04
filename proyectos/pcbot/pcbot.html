@@ -1,0 +1,510 @@
+<html>
+<head>
+  <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarjeta PCBOT</title>
+<style type="text/css">
+<!--
+  H1 {
+    font-family: Current Schoolbook, Arial;
+    background-color: blue;
+    color: rgb(192,192,192);
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    border: thin outset rgb(192,192,192);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    padding: 2px;
+  }
+  H2 {
+    font-family: Times,Arial;
+    color: rgb(0,0,0);
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: left;
+    border: medium none;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    padding: 5px;   
+  }
+  DIV.cuerpo {
+    font-family: Book Antiqua, Arial;
+    color: rgb(20,20,20);
+    text-indent: 50px;
+    line-height: 20px;
+    text-align: justify;
+    margin-left: 25px;
+    margin-right: 25px;
+  }    
+  SPAN.cursiva { 
+    font-style: oblique;
+  }
+  DIV.autor { 
+    font-family: Arial;
+    font-style: oblique;
+    color: rgb(20,20,20);
+    font-size: 10pt;
+    text-align: left;
+    margin-right: 25px;
+    margin-left: 25px;
+  }
+  
+  DIV.lista {
+    font-family: Book Antiqua, Arial;
+    color: rgb(20,20,20);
+    line-height: 20px;
+    text-align: justify;
+    margin-left: 25px;
+  }    
+
+  TABLE.margen {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+  }
+  
+  TABLE.links {
+    color: rgb(55,0,0);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+    background-color: rgb(255,255,128);
+    border: thin outset rgb(192,192,192);    
+  }
+   
+  TABLE.down {
+    color: rgb(55,0,0);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+    background-color: rgb(255,255,128);
+    border: thin outset rgb(192,192,192);    
+  }
+  
+  TD.indice {
+    font-size:15pt;
+    text-align: center;
+    color:"blue";
+  }
+  
+-->
+</style>
+</head>
+
+<body>
+<!-- título de la página -->
+
+<table align="center" width="100%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>TARJETA PCBOT</b>
+ </td>
+</tr>
+</tbody></table> 
+
+
+ <table align="center">
+<tr>
+<td><a href="#uno">[Introducción]</a></td>
+<td><a href="#dos">[caracteristicas]</a></td>
+<td><a href="#tres">[Autores]</a></td>
+<td><a href="#licencia">[Licencia]</a></td>
+<td><a href="#historia">[Historia]</a></td>
+<td><a href="#puertos">[Puertos]</a></td>
+<td><a href="#alimentacion">[Alimentación]</a></td>
+<td><a href="#download">[Download]</a></td>
+<td><a href="#links">[Links]</a></td>
+<td><a href="#noticias">[Noticias]</a></td>
+<td><a href="#agradecimientos">[Agradecimientos]</a></td>
+</tr>
+</table>
+  
+<center>
+<img src="images/pcbot1.jpg" width="340" height="200">
+</center>
+
+<!-- Introducción -->
+<HR>
+<h2 id="uno"> Introducción </h2>
+
+<!-- texto -->
+<div class="cuerpo">
+<p>
+  La <b>tarjeta PCBOT</b> permite <b>controlar circuitos externos desde un PC</b>. Dispone de <b>8 salidas</b>
+  que permiten abrir/cerrar circuitos externos, <b>8 entradas</b> para conectar interruptores externos y conexión
+  para <b>4 motores</b>. Hay 8 pulsadores que permiten simular entradas externas y leds que indican el estado de
+  las salidas y los motores, de manera que se pueden depurar aplicaciones sin necesidad de conectar
+  motores ni circuitos externos.
+</p>
+<p>La programación de PCBOT se puede realizar de varias maneras, según al nivel en que nos queramos
+mover (depende de los conocimientos del usuario/programador).
+</p>
+</div>
+
+<div class="lista">
+<ul>
+  <li> <b>Programación desde el PC</b> utilizando <b>un intérprete</b> de un lenguaje muy sencillo, pensado para
+  aquellas personas que tienen <b>conocimientos muy básicos de programación</b>. Mediante este lenguaje
+  de programación, se tiene pueden activar/desactivar las salidas, los motores, así como tomar 
+  decisiones en función de lo recibido por las entradas.
+  </li><br>
+  <li>
+   <b> Programación desde el PC, controlando la tarjeta desde nuestras aplicaciones escritas en C</b>. Son necesarios
+    conocimientos más avanzados de programación. Las herramientas empleadas son las mismas que para 
+    programar la <a href="../ct6811/ct6811.html">tarjeta CT6811</a> desde el PC.
+  </li><br>
+  <li>
+  <b>Construcción de un sistema autónomo</b>, programando aplicaciones directamente para el microcontrolador
+  68hc11. En este caso la tarjeta PCBOT <b>NO</b> se conecta al PC y se programa con las mismas herramientas
+  que la <a href="../ct6811/ct6811.html">tarjeta CT6811</a>
+</ul>
+</div>
+ 
+ <div class="cuerpo">
+ <p>
+   Se trata de una placa <b>MULTIPLATAFORMA</b>, que se puede usar tanto en máquinas Linux como Windows.
+  </p>
+</div>
+
+<!-- Sección 1 -->
+<HR>
+<H2 id="dos"> Características </H2>
+
+<div class="lista">
+<ul>
+  <li> <b>8 entradas de tipo ON/OFF</b>, para conectar interruptores externos </li>
+  <li> <b>8 salidas de tipo ON/OFF</b> a través de Relé </li>
+  <li> <b>Control de 4 motores</b>, de tres estados: parado, adelante, atrás.</li>
+  <li> <b>Conexión al PC a través del puerto serie</b> (RS-232) </li>
+  <li> <b>8 pulsadores </b>para simular entradas externas </li>
+  <li> <b>8 leds verdes </b> para indicar el estado de las entradas </li>
+  <li> <b>8 leds rojos</b> para indicar el estado de las salidas </li>
+  <li> <b>4 leds amarillos</b> para indicar el estado de los motores </li>
+  <li> <b>Alimentación</b>: Entre 6-12 voltios </li>
+  <li> <b>Alimentación externa de los motores</b> </li>
+  <li> <b>Clemas para la fácil conexión</b> de los circuitos/motores externos </li>
+ 
+</ul>
+</div>
+
+ <center><img src="images/componentes.jpg"></center>
+<br><br>
+
+<!-- Sección 2 -->
+<HR>
+<H2 id="tres"> Autores</H2>
+
+<div class="lista">
+<ul>
+  <li><a href="../../personal/andres/index.html">Andrés Prieto-Moreno Torres</a>. 
+        Diseño del esquema y PCB. Fabricación y pruebas del hardware</li>
+  <li><a href="http://www.iearobotics.com/personal/juan/index.html"">Juan González Gómez</a>.
+        Programación del intérprete, documentación y pruebas.</li>
+   <li><a href="http://www.microbotica.es">Microbótica</a> .Apoyo logístico y financiación</li>
+</ul>
+
+</div>
+
+<!-- Sección 3 -->
+<HR>
+<H2 id="licencia"> Licencia</H2>
+
+<div class="cuerpo">
+  La tarjeta PCBOT es <b>hardware abierto</b>, por lo que se permite su copia, modificación y distribución, siempre y cuando se mantenga esta nota.
+</div>
+
+<!-- DOWNLOAD: Archivos -->
+<HR>
+<H2 id="historia"> Historia </H2>
+
+<div class="cuerpo">
+<p>
+  La Tarjeta PCBOT se diseñó para vendérsela a la empresa 
+  <a href="http://www.microlog.net/">MICROLOG</a>, con los que se mantiene exclusividad en la venta.<br>
+  La primera tirada se realizó en febrero de 1999.
+</p>
+
+<p>
+  Aquí se muestra una foto de PCBOT junto a la tarjeta
+   <a href="http://www.iearobotics.com/proyectos/ct6811/ct6811.html">CT6811</a> y la
+   <a href="http://www.iearobotics.com/personal/juan/doctorado/jps-xpc84/jps-xpc84.html"">JPS</a>
+</p>
+
+<center><img src="images/pcbot2.jpg" width="320" height="200" ></center>
+</div>
+
+<!-- Puertos de expansion -->
+<HR>
+<H2 id="puertos"> Puertos de expansión</H2>
+<div class="cuerpo">
+<p>
+  La TARJETA PCBOT incluye tres puertos de expansión por los que se han sacado diferentes pines del 6811. 
+  En la siguiente figura se muestran estos puertos así como los pines del 6811 empleados para cada recurso 
+  de PCBOT.
+</p>
+<p>
+<center><img src="images/conex.jpg"></center>
+</p>
+<br><br>
+</div>
+<br><br>
+
+<HR>
+<H2 id="alimentacion"> Alimentación </H2>
+
+<div class="cuerpo">
+<p>
+  La tarjeta PCBOT se alimenta bien a través de un conector de <b>tipo Jack</b> o conectando los cables a la <b>clema</b> de alimentación.
+  La alimentación nominal es de 6-12 voltios.
+ </p>
+<center><img src="images/jack-pcbot.jpg"></center> 
+
+<br>
+<p>
+	<center>
+  <b>¡¡¡LA POLARIDAD ES JUSTO LA CONTRARIA QUE LA DE LA TARJETA CT6811!!!</b>
+  </center>
+</p>
+</div>
+<br>
+
+<HR>
+<!-- DOWNLOAD -->
+<H2 id="download"> Download </H2>
+
+<p>
+<table width=80% bgcolor="#abbeeb" border="0" align="center" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>HARDWARE</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=80%  border="0" align="center">
+<tbody>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="hard/pcbot.pcb">pcbot.pcb (152KB)</a>  </td>
+  <td>PCB, hecho con Tango-PCB plus, 2.11</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="hard/pcbot.sch">pcbot.sch (18KB)</a>  </td>
+  <td> Esquemático, hecho en Orcad</td>
+</tr>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="hard/pcbot.net">pcbot.net (9KB)</a>  </td>
+  <td> Netlist, para Tango Versión 2.11</td>
+</tr>
+
+</tbody></table>
+</p>
+<br>           
+
+<table width=80% bgcolor="#abbeeb" border="0" cellpadding="4" align="center">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>DOCUMENTACIÒN</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=80%  border="0" align="center" >
+<tbody>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="doc/manual-pcbot.pdf">manual-pcbot.pdf (84KB) </td>
+   <td> Manual de la tarjeta PCBOT </td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="doc/manual-pcbot-src.tgz">manual-pcbot-src.tgz (32KB)</a>  </td>
+  <td> Fuentes del documento, para Lyx 1.1 y figuras en Xfig</td>
+</tr>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="doc/conex.pdf">conex.pdf (6KB)</a>  </td>
+  <td> Esquema de los puertos de expansión y pines del 6811 empleados</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="doc/test.pdf"> test.pdf (9KB)</a>  </td>
+  <td> Prueba rápida para comprobar PCBOT. Entorno MS-DOC</td>
+</tr>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="doc/miscelanea.zip">miscelanea.zip (61KB)</a>  </td>
+  <td>Fuentes del documento test.pdf y otros dibujos en xfig</td>
+</tr>
+
+</tbody></table>
+
+
+<br><br>
+<table width=80% bgcolor="#abbeeb" border="0" cellpadding="4" align="center">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>SOFTWARE PARA LINUX</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=80%  border="0" align="center" >
+<tbody>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="linux/intpcbot-bin.tgz">
+    intpcbot-bin.tgz (11KB)</a>  </td>
+   <td> Interprete para PCBOT</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="linux/intpcbot-src.tgz">
+   intpcbot-src.tgz (16KB)</a>  </td>
+  <td> Fuentes del interprete</td>
+</tr>  
+
+<tr bgcolor="#cabeeb">
+  <td><a href="linux/entorno-pcbot-bin.tgz">
+   entorno-pcbot-bin.tgz (19KB)</a>  </td>
+  <td> Front-end con ncurses para el interprete. Permite editar y ejecutar programas para PCBOT</td>
+</tr>
+
+ <tr bgcolor="#abbeeb">
+  <td><a href="linux/entorno-pcbot-src.tgz">
+    entorno-pcbot-src.tgz (24KB)</a>  </td>
+   <td> Fuentes del entorno para PCBOT</td>
+</tr>
+
+</tbody></table>
+                        
+
+
+<br><br>
+<table width=80% bgcolor="#abbeeb" border="0" cellpadding="4" align="center">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>SOFTWARE PARA MSDOS/WINDOWS</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=80%  border="0" align="center" >
+<tbody>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="doswin/intpcbot.zip">
+    intpcbot.zip (44KB)</a>  </td>
+   <td> Interprete para PCBOT (El utilizado en el manual de usuario)</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="doswin/intpcbot-src.zip">
+   intpcbot-src.zip (123KB)</a>  </td>
+  <td> Fuentes del interprete. Hechas con el Turbo C de Borland, v.2.0</td>
+</tr>
+
+</tbody></table>
+
+<br><br>
+<table width=80% bgcolor="#abbeeb" border="0" cellpadding="4" align="center">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>EJEMPLOS PARA PCBOT</b>
+ </td>
+</tr>
+</tbody></table> 
+
+<table  width=80%  border="0" align="center" >
+<tr bgcolor="#cabeeb">
+<td><a href="bot/activa1.bot">activa1.bot</a></td>
+<td>Activar la salida 1</td>
+</tr >
+<tr bgcolor="#abbeeb">
+<td><a href="bot/activa8.bot">activa8.bot</a></td>
+<td>Activar la salida 8 durante 3 y luego desconectarla</td>
+</tr>
+<tr bgcolor="#cabeeb">
+<td><a href="bot/entrada1.bot">entrada1.bot</a></td>
+<td>Activar la salida 1 cuando se activa la entrada 1</td>
+</tr >
+<tr bgcolor="#abbeeb">
+<td><a href="bot/motor.bot">motor.bot</a></td>
+<td>Mover el motor 1 en un sentido, pararlo y luego moverlo en otro</td>
+</tr>
+<tr bgcolor="#cabeeb">
+<td><a href="bot/infinito.bot">infinito.bot</a></td>
+<td>Activar y desactivar la salida 4 en un bucle infinito</td>
+</tr >
+<tr bgcolor="#abbeeb">
+<td><a href="bot/control.bot">control.bot</a></td>
+<td>Manejar el motor 1 con las entradas 1, 2 y 3</td>
+</tr>
+<tr bgcolor="#cabeeb">
+<td><a href="bot/parpadeo.bot">parpadeo.bot</a></td>
+<td>Activar y desactivar 4 veces la salida 6</td>
+</tr >
+<tr bgcolor="#abbeeb">
+<td><a href="bot/retardo.bot">retardo.bot</a></td>
+<td>Ejemplo de retardos</td>
+</tr>
+<tr bgcolor="#cabeeb">
+<td><a href="bot/salidas.bot">salidas.bot</a></td>
+<td>Ejemplo que activa/desactiva todas las salidas, en grupos de 4</td>
+</tr >
+<tr bgcolor="#abbeeb">
+<td><a href="bot/tecla.bot">tecla.bot</a></td>
+<td>Activar la salida 5, esperar a que se pulse una tecla y desactivarla</td>
+</tr>
+<tr bgcolor="#cabeeb">
+<td><a href="bot/test.bot">test.bot</a></td>
+<td>Prueba de PCBOT. Activación/desactivación de todas las salidas y movimiento de todos
+los motores, en ambos sentidos</td>
+</tr >
+<tr bgcolor="#abbeeb">
+<td><a href="bot/ejemplos.zip">ejemplos.zip</a></td>
+<td>Todos los ejemplos anteriores</td>
+</tr>
+</table>
+
+<br><br>
+
+<HR>
+<H2 id="links">Links</H2>
+<div class="lista">
+<ul>
+  <li><a href="http://www.microbotica.es">Microbótica</a></li>
+  <li><a href="http://www.microlog.net">Empresa Microlog </a>, 
+   que comercializa PCBOT para centros de enseñanza</li> 
+</ul>
+</div>
+
+<!-- Noticias -->
+<HR>
+<H2 id="noticias">Noticias</H2>
+<div class="lista">
+<ul>
+  <li><b>08/Feb/2003</b>: Colocada información sobre tarjeta PCBOT</li>
+</ul>
+</div>
+
+<!-- Agradecimientos -->
+<HR>
+<H2 id="agradecimientos">Agradecimientos</H2>
+
+<div class="lista">
+<ul>
+  
+</ul>
+</div>
+
+<HR>
+Página creada por: <a href="../../personal/juan/index.html">Juan Gonzalez</a>
+
+</body>
+</html>

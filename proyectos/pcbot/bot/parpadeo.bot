@@ -1,0 +1,10 @@
+NOTA --- Programa de prueba para la tarjeta PC-BOT
+NOTA -- Este programa activa y desactiva la salida 6 cuatro veces
+
+NOTA -- Repetir 4 veces
+repite(4) {
+  salida(6,on);
+  espera(20);
+  salida(6,off);
+  espera(20);
+}

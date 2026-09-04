@@ -1,0 +1,12 @@
+NOTA --- Programa ejemplo para la tarjeta PC-BOT
+NOTA --- Este programa Activa la salida 1 cuando se activa la entrada 1
+
+NOTA -- Bucle infinito
+repite(0) {
+  si entrada(1,on) {
+    salida(1,on);
+  }
+  si entrada(1,off) {
+    salida(1,off);
+  }
+}
