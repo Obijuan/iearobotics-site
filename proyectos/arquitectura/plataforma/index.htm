@@ -1,0 +1,460 @@
+<html>
+<head>
+  <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plataforma orientable hacia la luz</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+
+</script>
+<meta name="description" content="Plataforma orientable hacia la luz. Se trata de una plataforma gobernada por el microcontrolador PIC 16f876. El encargado de hacer girar la plataforma es un motor paso a paso bipolar. Se utilizan 3 LDR o celulas fotosensibles como sensores de luz.">
+<meta name="keywords" content="PIC,16f877,16f876,16f874,microcontrolador,electronica,motor paso a paso,bipolar,LDR,sensor de luz,plataforma,orientable">
+</head>
+
+<body text="#000000" background="fondo.jpg">
+<div id="Layer3" style="position:absolute; left:363px; top:317px; width:286px; height:215px; z-index:3"><img src="foto.jpg" width="283" height="213"></div>
+<p align="center">Pr&aacute;ctica de Laboratorio de Arquitectura de las computadoras 
+  - 4&ordm; Curso -</p>
+<p align="center">Universidad Pontificia de Salamanca en Madrid</p>
+<p align="center">- Facultad de Inform&aacute;tica -</p>
+<p align="center">&nbsp;</p>
+<p align="center"><font size="5">PLATAFORMA ORIENTABLE HACIA LA LUZ</font></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="98%" border="0" height="228">
+  <tr> 
+    <td width="46%" height="255">&nbsp;</td>
+    <td width="41%" height="255"> 
+      <p align="left">Autores:</p>
+      <p align="right"> Oscar Herrera Cabanillas</p>
+      <p align="right">David Nicolas Villen Naranjo</p>
+      <p align="left">Tutelado por:</p>
+      <p align="right">Andres Prieto-Moreno Torres</p>
+    </td>
+    <td width="13%" height="255">&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><b>1.DESCRIPCION GENERAL DEL PROYECTO</b></p>
+<p>&nbsp;</p>
+<p>Se trata de una plataforma que se orienta hacia donde detecte mas luz. </p>
+<p>Dicha plataforma consta de tres LDR y dos diodos LED. La plataforma est&aacute; 
+  montada sobre un motor que ser&aacute; el encargado de moverla. Dos de los sensores 
+  est&aacute;n dispuestos en cada lateral de dicha plataforma y el tercero est&aacute; 
+  situado justo en el centro. Si se detecta mas luz por alguno de los sensores 
+  de los laterales , la plataforma girar&aacute; hacia el lado en que se encuentre 
+  situado el sensor. Si se detecta mas luz por el sensor central, la plataforma 
+  permanece inm&oacute;vil. </p>
+<p>El giro del motor se ha limitado a 180 &ordm; para evitar que los cables que 
+  conectan la plataforma con el microcontrolador se enreden con el eje del motor 
+  al realizar giros mas grandes. Desde la posici&oacute;n inicial en la que se 
+  encuentra la plataforma, se podr&aacute; girar 90 &ordm; hacia la derecha o 
+  hacia la izquierda. Se dispone de dos diodos LED que se iluminan cuando la plataforma 
+  ha alcanzado el tope de giro y por tanto no puede seguir girando en ese sentido.</p>
+<p>&nbsp;</p>
+<p align="center">[ <a href="foto1.jpg" target="_blank">Foto 1</a> ] [ <a href="foto2.jpg" target="_blank">Foto 
+  2 </a>] [ <a href="foto3.jpg" target="_blank"> Foto 3</a> ] [ <a href="foto4.jpg" target="_blank">Foto 
+  4</a> ]</p>
+<p align="center">&nbsp;</p>
+<p><br>
+  <b>2. DESCRIPCION DEL FUNCIONAMIENTO</b></p>
+<p>&nbsp;</p>
+<p></p>
+<p>El encargado de gobernar todo el funcionamiento es un microcontrolador PIC16F876. 
+  Este utiliza un cristal de cuarzo de 4 MHZ. </p>
+<p>El motor utilizado es un motor paso a paso bipolar de cuatro hilos. Para poder 
+  mover el motor con el microcontrolador se ha utilizado el driver L293b.</p>
+<p>Tambi&eacute;n se han utilizado tres potenci&oacute;metros para ajustar la 
+  cantidad de luz que pueden detectar los tres LDR tambi&eacute;n utilizados y 
+  para evitar que la luz ambiente provoque un funcionamiento an&oacute;malo en 
+  el funcionamiento.</p>
+<p> Se han conectado los LDR en serie con los potenci&oacute;metros y se ha aplicado 
+  una tensi&oacute;n de 5v. En funci&oacute;n de la cantidad de luz, la tensi&oacute;n 
+  en el punto medio (uni&oacute;n de un potenci&oacute;metro con la LDR) var&iacute;a. 
+  En condiciones normales, se han ajustado los potenci&oacute;metros para que 
+  la tensi&oacute;n en el punto medio sea de 2,5 V.</p>
+<p><br>
+  Se ha utilizado el conversor A/D para convertir las se&ntilde;ales anal&oacute;gicas. 
+  El conversor A/D del PIC16F876 tiene 10 bits de resoluci&oacute;n. La entrada 
+  anal&oacute;gica de 0 V le corresponde el c&oacute;digo digital de 00 0000 0000 
+  y para la de 5 V un c&oacute;digo de 11 1111 1111. <br>
+  <br>
+  Contra mayor luz detecte un sensor, menor valor decimal tendr&aacute; la representaci&oacute;n 
+  con esos diez bits. Por otro lado, si detecta menos luz, mayor ser&aacute; el 
+  valor decimal representado. Para evitar que la luz ambiente afecte, se han considerado 
+  v&aacute;lidos los valores decimales comprendido entre 0-255 correspondientes 
+  a la conversi&oacute;n.</p>
+<p>&nbsp;</p>
+<p><b>3.ESQUEMA ELECTRICO</b></p>
+<p>&nbsp;</p>
+<table width="91%" border="0">
+  <tr> 
+    <td width="8%">&nbsp;</td>
+    <td width="84%"><img src="esquema.jpg" width="794" height="539"></td>
+    <td width="8%">&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><b>4. COMPONENTES UTILIZADOS</b></p>
+<pre> 			
+</pre>
+<p><br>
+  <font face="Times New Roman, Times, serif"> </font></p>
+<table width="94%" border="0">
+  <tr>
+    <td width="22%">&nbsp;</td>
+    <td width="78%"><font face="Times New Roman, Times, serif">1 Microcontrolador 
+      PIC16F876<br>
+      1 Cristal de cuarzo XT 4MHZ<br>
+      2 Condensadores cer&aacute;micos de 27 pF<br>
+      2 Resistencias 4K7<br>
+      1 Resistencia 330 ohmios<br>
+      1 Resistencia 100 ohmios<br>
+      3 Potenci&oacute;metros 10K<br>
+      3 Sensores de luz ( LDR )<br>
+      1 Motor paso a paso bipolar<br>
+      1 Driver L293b<br>
+      3 Diodos LED<br>
+      1 Portapilas<br>
+      1 Pulsador<br>
+      1 Interruptor</font></td>
+  </tr>
+</table>
+<p><br>
+  <br>
+</p>
+<pre> </pre>
+<p></p>
+<p><b>5. DESCRIPCION DEL SOFTWARE</b></p>
+<p><br>
+  Lo primero de todo, es configurar los pines de los puertos utilizados por el 
+  motor y por los diodos LED de salida y los correspondientes a las LDR de entrada.</p>
+<p> Una vez configurado esto, hay que sincronizar las bobinas del motor con una 
+  secuencia, para evitar que cuando el motor tenga que girar lo haga de forma 
+  extra&ntilde;a durante un breve espacio de tiempo.</p>
+<p> Lo siguiente es entrar en el bucle principal de la aplicaci&oacute;n que ser&aacute; 
+  un bucle infinito. Lo que hace es convertir los valores proporcionados por los 
+  sensores con el conversor A/D. Si el valor decimal de estos valores est&aacute;n 
+  comprendidos entre 0-255 se consideran valores v&aacute;lidos y se cargar&aacute;n 
+  en registros para posteriormente poder compararlos. Los registros utilizados 
+  se llaman VALORA0, VALORA1 y VALORA2 correspondientes a cada uno de los valores 
+  proporcionados por los sensores. Si los valores no son validos, en estos registros 
+  se cargar&aacute; el valor FF. </p>
+<p> Posteriormente se comparan dichos valores y en funci&oacute;n de esta comparaci&oacute;n 
+  se girar&aacute; hacia un lado u otro, o bien se volver&aacute; a realizar una 
+  conversi&oacute;n.</p>
+<p>&nbsp;</p>
+<p><b>6. CODIGO FUENTE</b></p>
+<p>&nbsp;</p>
+<table width="98%" border="0">
+  <tr>
+    <td width="27%">&nbsp;</td>
+    <td width="73%"> 
+      <pre><font size="1">         LIST P=16f876
+         include &quot;P16f876.INC&quot; </font></pre>
+      <pre><font size="1">
+         RADIX HEX 
+         WREG EQU 0x00</font></pre>
+      <pre><font size="1">         Z          EQU     0x02
+         TEMP1      EQU     0x20 ; Registros de prop&oacute;sito general. 
+         TEMP2      EQU     0x21
+         CONTA0     EQU     0x22
+         VALORA0    EQU     0x23 ; Valor de la conversion de los sensores
+         VALORA1    EQU     0x24
+         VALORA2    EQU     0x25
+         CONTADE    EQU     0x26 ; Contador para limitar el giro
+         CONTAIZ    EQU     0x27
+
+
+;*****************************************************************</font></pre>
+      <pre><font size="1">            org 0x00
+         
+            goto inicio
+         
+            org 0x05
+         
+inicio:     clrf INTCON          ;Se anulan las interrupciones. 
+            movlw 0X04
+            movwf CONTADE        ; Limita el giro a la derecha.
+            movwf CONTAIZ        ; limita el giro a la izquierda.
+         
+            bcf STATUS,RP1
+            bsf STATUS,RP0       ; Seleccionamos el banco 1 </font></pre>
+      <pre><font size="1">            movlw b'00000000' 
+            movwf TRISB          ; Puerto B de salida
+         
+            movlw b'00000000'   ; Puerto C de salida
+            movwf TRISC
+         
+            movlw b'00000111'   ; RA0,RA1 y RA2 como entradas
+            movwf TRISA
+         
+         
+            movlw b'10000000'   ; Configuramos entradas analogicas 
+            movwf ADCON1        ; Resultado justificado en ADRESH.</font></pre>
+      <pre><font size="1">            bcf STATUS,RP0      ; Seleccionamos banco1 
+         
+            clrf PORTA          ; PORTA &lt;- 0
+            clrf PORTC
+            
+            movlw b'00110101'   ; Secuencia de inicializacion del motor.
+            movwf PORTB         ; Sincroniza las bobinas con una secuencia inicial
+            call TEMPO          ; para evitar un comportamiento an&oacute;malo la 
+                                ; primera  que recibe una secuencia de giro
+            
+            movlw b'00110101' 
+            movwf PORTB 
+            call TEMPO
+         
+            movlw b'00110101' 
+            movwf PORTB 
+            call TEMPO
+         
+            movlw b'00110101' 
+            movwf PORTB 
+         
+         
+            movlw b'00000000'; Se selecciona RA0 para realizar la conversion
+            movwf ADCON0
+            bsf ADCON0,0     ; Activa el convertidor A/D
+         
+convertir:  call espera20u
+            bsf ADCON0,2     ; Inicia la conversion
+espera:     btfsc ADCON0,2   ; Espera a que termine la conversion
+            goto espera
+         
+            bsf STATUS,RP0
+            movf ADRESL,0
+            bcf STATUS,RP0
+            movwf VALORA0
+            movf ADRESH,0
+            sublw b'00000000' ; Si ADRESH es 0x00, VALORA0=ADRESL
+            btfsc STATUS,Z 
+            goto convertir2
+         
+            movlw b'11111111'  ; Si ADRESH &lt;&gt; 0x00, VALORA0=0xFF
+            movwf VALORA0  </font></pre>
+      <pre><font size="1">convertir2: bsf ADCON0,3      ; Seleccionamos RA1
+            call espera20u
+            bsf ADCON0,2      ; Inicia la conversion
+espera2:    btfsc ADCON0,2    ; Espera a que termine la conversion
+            goto espera2
+         
+            bsf STATUS,RP0;
+            movf ADRESL,0
+            bcf STATUS,RP0
+            movwf VALORA1
+            movf ADRESH,0
+            sublw b'00000000' ;Si ADRESH es 0x00, VALORA1=ADRESL
+            btfsc STATUS,Z 
+            goto convertir3
+         
+            movlw b'11111111'
+            movwf VALORA1      ; Si ADRESH &lt;&gt; 0x00, VALORA0=0xFF
+                  
+convertir3: bcf ADCON0,3 ; 
+            bsf ADCON0,4      ; Seleccionamos RA2
+            call espera20u
+            bsf ADCON0,2      ; Inicia la conversion
+   espera3: btfsc ADCON0,2    ; Espera a que termine la conversion
+            goto espera3
+         
+            bsf STATUS,RP0;
+            movf ADRESL,0
+            bcf STATUS,RP0
+            movwf VALORA2
+            movf ADRESH,0
+            sublw b'00000000' ;Si ADRESH es 0x00, VALORA1=ADRESL
+            btfsc STATUS,Z 
+            goto comparar
+         
+            movlw b'11111111'
+            movwf VALORA2     ; Si ADRESH &lt;&gt; 0x00, VALORA0=0xFF
+         
+         
+comparar:   movf VALORA0,0
+            subwf VALORA2,0   ; Comparamos los extremos
+            btfsc STATUS,Z
+            goto configura    ;Si los extremos son iguales, vuelve a coger valores
+         
+            btfss STATUS,0    ; Vemos cual es el que ha detectado mas luz 
+            goto compara2     ; RA2 Detecta mas luz
+         </font></pre>
+      <pre><font size="1">compara1:   movf VALORA0,0    ; RA0 Detecta mas luz
+           subwf VALORA1,0    ; Restamos RA0 - RA1 (Central y extremo con mayor luz)
+           btfsc STATUS,0 
+         
+           goto derecha       ; RA0 es el sensor que detecta mas luz
+           goto configura     ; RA1 es el central y es el que tiene mas luz</font></pre>
+      <pre><font size="1">compara2:  movf VALORA2,0
+           subwf VALORA1,0    ; Restamos RA2 - RA1 (Central y extremo con mayor luz)          
+           btfsc STATUS,0; 
+         
+           goto izquierda     ; RA2 es el sensor que detecta mas luz</font></pre>
+      <pre><font size="1">
+configura: movlw b'00000000'  ; Se selecciona RA0 para realizar la conversion
+           movwf ADCON0
+           bsf ADCON0,0       ; Activa el convertidor A/D
+           goto convertir
+         </font></pre>
+      <pre><font size="1">derecha:  decfsz CONTADE,1    ; Comprobamos que no ha llegado al tope 
+          goto derechaok      ; Si llega al tope que no gire
+          incf CONTADE,1      ; y vuelva a tomar valores
+          movlw 0x04
+          movwf PORTC
+          goto configura</font></pre>
+      <pre><font size="1">derechaok: movlw 0x00
+          movwf PORTC
+          incf CONTAIZ,1
+          movlw b'00110101'    ; primer paso 
+          movwf PORTB 
+          call TEMPO           ;Temporizaci&oacute;n antes de realizar el siguiente paso 
+         
+          movlw b'00110110'    ;segundo paso. 
+          movwf PORTB 
+          call TEMPO 
+         
+          movlw b'00111010'    ;tercer paso.
+          movwf PORTB 
+          call TEMPO 
+         
+          movlw b'00111001'    ;cuarto y &uacute;ltimo paso
+          movwf PORTB 
+          call TEMPO 
+         
+         
+          goto configura</font></pre>
+      <pre><font size="1">
+izquierda: decfsz CONTAIZ,1    ; Comprobamos que no ha llegado al tope 
+          goto izquierdaok     ; Si llega al tope que no gire
+          incf CONTAIZ,1       ; y vuelva a tomar valores
+          movlw 0x08
+          movwf PORTC
+          goto configura</font></pre>
+      <pre><font size="1">
+izquierdaok: movlw 0x00
+             movwf PORTC
+             incf CONTADE,1 
+             movlw b'00111001'  ; Primer paso para el giro hacia la derecha.
+             movwf PORTB 
+             call TEMPO         ;Temporizaci&oacute;n antes de realizar el siguiente paso 
+         
+         
+             movlw b'00111010'  ;Segundo paso.
+             movwf PORTB 
+             call TEMPO 
+         
+             movlw b'00110110'  ;Tercer paso. 
+             movwf PORTB 
+             call TEMPO 
+         
+             movlw b'00110101'  ;&Uacute;ltimo paso. 
+             movwf PORTB 
+             call TEMPO </font></pre>
+      <pre><font size="1">            goto configura</font></pre>
+      <pre> </pre>
+      <pre><font size="1">;******************************************************************************************</font></pre>
+      <pre><font size="1">;TEMPO Subrutina de temporizaci&oacute;n para poder enviar          otra secuencia al motor. </font></pre>
+      <pre> </pre>
+      <pre><font size="1">TEMPO      movlw 0xFF        ;carga FF en TEMP1 
+           movwf TEMP1 
+           clrf TEMP2        ;Carga 0 en TEMP2 </font></pre>
+      <pre><font size="1">TEMPO_1   decfsz TEMP2,1     ;Decrementa TEMP2 y si es 0 salta          </font></pre>
+      <pre><font size="1">          goto TEMPO_1       ;volver a TEMPO_1 
+          decfsz TEMP1,1     ;Decrementa TEMP1 y si es 0 salta 
+         </font><font size="1"> goto TEMPO_1       ;volver a TEMPO_1 </font></pre>
+      <pre><font size="1">          RETURN 
+         
+;**********************************************************************************
+; espera20u Subrutina de espera para poder volver a tomar otro valor del          conversor 
+         
+espera20u  movlw 0x05
+           movwf CONTA0
+           ret1 decfsz CONTA0,1
+           goto ret1
+           
+            return
+         
+         
+         end
+         </font> </pre>
+    </td>
+  </tr>
+</table>
+<div align="left">
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  </div>
+<p><b>7. PROBLEMAS Y SOLUCIONES</b></p>
+<p> <br>
+  A lo largo del desarrollo del proyecto nos hemos encontrado con diversos problemas 
+  que al final fueron resueltos con &eacute;xito. Mostramos una enumeraci&oacute;n 
+  de los mismos con sus soluciones:</p>
+<p><br>
+  <i>1. El motor al recibir una secuencia para girar se comporta de manera extra&ntilde;a</i></p>
+<p> Al enviar diferentes secuencias al motor, este empezaba a vibrar y ha realizar 
+  giros incontrolados. Inicialmente pensamos que podr&iacute;a deberse al driver 
+  L293b y despu&eacute;s de revisar todas las conexiones compramos otro en la 
+  tienda de electr&oacute;nica. Al sustituir el antiguo por el nuevo, el motor 
+  segu&iacute;a comport&aacute;ndose de la misma forma. La segunda idea que se 
+  nos ocurri&oacute; era ver que secuencia estaba llegando al motor, por tanto 
+  se decidi&oacute; poner unos diodos LED's. Nuestra sorpresa fue los diodos LED's 
+  estaban continuamente iluminados por lo que decidimos poner una peque&ntilde;a 
+  pausa entre secuencia y secuencia. Esta era la causa del problema. Hay que pausar 
+  las secuencias enviadas al motorpara que este funcione bien.</p>
+<p><br>
+  <i>2. Al enchufar la alimentaci&oacute;n en el circuito, cuando el motor ten&iacute;a 
+  que girar por primera vez, ten&iacute;a un comportamiento an&oacute;malo. </i></p>
+<p> Esto es debido a que las bobinas del motor inicialmente no se encuentran en 
+  un estado conocido y hay que sincronizarlas con una secuencia inicial. Esta 
+  secuencia tiene que ser enviada antes de que hagamos girar el motor a nuestro 
+  antojo. La secuencia inicial puede observarse en el c&oacute;digo.</p>
+<p> <i>3. No podemos cargar el valor de la conversi&oacute;n del registro ADRESH 
+  en un registro de prop&oacute;sito general. </i></p>
+<p> Esto fue un fallo de programaci&oacute;n muy com&uacute;n cuando uno est&aacute; 
+  familiarizandose con el ensamblador del micro. El problema estaba en que no 
+  cambiamos de banco para realizar la carga del registro de prop&oacute;sito general 
+  a partir del registro ADRESH.</p>
+<p> <br>
+  <i>4. El programa no se ejecutaba a no ser que toc&aacute;ramos con el dedo 
+  el oscilador</i></p>
+<p> La fuente de este error era la pata MCLR del PIC encargada de producir un 
+  reset al micro. Esta pata se activa a nivel bajo y nosotros en principio la 
+  dej&aacute;bamos al aire. La soluci&oacute;n fue poner un pulsador y una resistencia 
+  de pull-up. Esta puede observarse en el esquema del circuito.</p>
+<p></p>
+<p></p>
+<p></p>
+<p>&nbsp;</p>
+<p align="center">[ <a href="foto1.jpg" target="_blank">Foto 1</a> ] [ <a href="foto2.jpg" target="_blank">Foto 
+  2</a> ] [ <a href="foto3.jpg" target="_blank"> Foto 3</a> ] [<a href="foto4.jpg" target="_blank"> 
+  Foto 4</a> ]<br>
+</p>
+<p align="center">&nbsp; </p>
+
+
+<p>&nbsp;</p>
+<HR NOSHADE>
+
+<table align="center">
+	<tr>
+		<td>IEA ROBOTICS</td>
+		<td><A href="https://obijuan.github.io/iearobotics-site/">Página de inicio</A></td>
+		<td><A HREF="mailto:info@iearobotics.com">Dirección de contacto</A></td>
+	</tr>
+</table>
+
+<HR NOSHADE>
+
+</body>
+</html>
