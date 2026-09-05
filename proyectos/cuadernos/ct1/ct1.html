@@ -1,0 +1,419 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.2  (Linux)">
+	<META NAME="CREATED" CONTENT="20040905;19282300">
+	<META NAME="CHANGED" CONTENT="20040909;17263800">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>Cuaderno t&eacute;cnico I: Comunicaciones
+				serie (HW)</B> 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<DL>
+	<DL>
+		<DL>
+			<DL>
+				<DL>
+					<DL>
+						<DL>
+							<DL>
+								<DD>
+								<TABLE WIDTH=333 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+									<COL WIDTH=62>
+									<COL WIDTH=63>
+									<COL WIDTH=76>
+									<COL WIDTH=46>
+									<COL WIDTH=65>
+									<TR>
+										<TD WIDTH=62>
+											<P><A HREF="#AUTOR|outline">[Autores]</A></P>
+										</TD>
+										<TD WIDTH=63>
+											<P><A HREF="#Licencia|outline">[Licencia]</A></P>
+										</TD>
+										<TD WIDTH=76>
+											<P><A HREF="#Download |outline">[Download]</A></P>
+										</TD>
+										<TD WIDTH=46>
+											<P><A HREF="#links">[Links]</A></P>
+										</TD>
+										<TD WIDTH=65>
+											<P><A HREF="#Noticias|outline">[Noticias]</A></P>
+										</TD>
+									</TR>
+								</TABLE>
+							</DL>
+						</DL>
+					</DL>
+				</DL>
+			</DL>
+		</DL>
+	</DL>
+</DL>
+<H2>Introducci&oacute;n</H2>
+<P>Una manera de conectara dos dipositivos es mediante <B>comunicaciones
+serie as&iacute;ncronas</B>. En ellas los bits de datos se transmiten
+&quot;en serie&quot; (uno de tr&aacute;s de otro) y cada dispositivo
+realiza tiene su propio reloj. Previamente se ha acordado que ambos
+dispositivos transmitir&aacute;n datos a la misma velocidad. 
+</P>
+<P>En este <B>cuaderno t&eacute;cnico</B> se muestran los fundamentos
+de estas comunicaciones, los pines empleados y ejemplos del circuitos
+para conectar el PC con un microcontrolador, adem&aacute;s de mostrar
+los cables que se pueden emplear. 
+</P>
+<HR>
+<H2><A NAME="serie"></A>Comunicaciones serie as&iacute;ncronas</H2>
+<P STYLE="margin-bottom: 0cm">Los datos serie se encuentran
+encapsulados en tramas de la forma: 
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/trama-serie.jpg" NAME="Imagen1" ALIGN=BOTTOM WIDTH=238 HEIGHT=43 BORDER=0></P>
+<P><BR>Primero se env&iacute;a un <B>bit de start</B>, a continuaci&oacute;n
+los <B>bits de datos</B> (primero el bit de mayor peso) y finalmente
+los <B>bits de STOP</B>. 
+</P>
+<P>El n&uacute;mero de bits de datos y de bits de Stop es uno de los
+par&aacute;metros configurables, as&iacute; como el criterio de
+paridad par o impar para la detecci&oacute;n de errores. <B>Normalmente,
+las comunicaciones serie tienen los siguientes par&aacute;metros: 1
+bit de Start, 8 bits de Datos, 1 bit de Stop y sin paridad</B>. 
+</P>
+<P STYLE="margin-bottom: 0cm">En esta figura se puede ver un ejemplo
+de la transmisi&oacute;n del dato binario 10011010. La l&iacute;nea
+en reposo est&aacute; a nivel alto: 
+</P>
+<P ALIGN=CENTER><IMG SRC="images/serial-data.jpg" NAME="Imagen2" ALIGN=BOTTOM WIDTH=536 HEIGHT=212 BORDER=0></P>
+<HR>
+<H2>Norma RS232</H2>
+<P STYLE="margin-bottom: 0cm">La Norma RS-232 fue definida para
+conectar un ordenador a un modem. Adem&aacute;s de transmitirse los
+datos de una forma serie as&iacute;ncrona son necesarias una serie de
+se&ntilde;ales adicionales, que se definen en la norma. Las tensiones
+empleadas est&aacute;n comprendidas entre +15/-15 voltios. 
+</P>
+<P ALIGN=CENTER><IMG SRC="images/rs-232.jpg" NAME="Imagen3" ALIGN=BOTTOM WIDTH=213 HEIGHT=197 BORDER=0></P>
+<HR>
+<H2><A NAME="conexion"></A>Conexi&oacute;n de un microcontrolador al
+puerto serie del PC</H2>
+<P STYLE="margin-bottom: 0cm">Para conectar el <B>PC</B> a un
+<B>microcontrolador</B> por el puerto serie se utilizan las se&ntilde;ales
+<B>Tx</B>, <B>Rx</B> y <B>GND</B>. El PC utiliza la norma RS232, por
+lo que los niveles de tensi&oacute;n de los pines ent&aacute;n
+comprendidos entre +15 y -15 voltios. Los microcontroladores
+normalmente trabajan con niveles TTL (0-5v). Es necesario por tanto
+intercalar un circuito que <B>adapte los niveles</B>: 
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/niveles.jpg" NAME="Imagen4" ALIGN=BOTTOM WIDTH=419 HEIGHT=200 BORDER=0></P>
+<P><BR>Uno de estos circuitos, que se utiliza mucho, es el <B>MAX232</B>.
+</P>
+<HR>
+<H2>El conector DB9 del PC</H2>
+<P STYLE="margin-bottom: 0cm">En los PCs hay <B>conectores DB9 macho</B>,
+de 9 pines, por el que se conectan los dispositivos al puerto serie.
+Los conectores hembra que se enchufan tienen una colocaci&oacute;n de
+pines diferente, de manera que se conectan el pin 1 del macho con el
+pin 1 del hembra, el pin2 con el 2, etc... 
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/db9.jpg" NAME="Imagen5" ALIGN=BOTTOM WIDTH=554 HEIGHT=141 BORDER=0></P>
+<P><BR><BR>
+</P>
+<P>La informaci&oacute;n asociada a cada uno de los pines es la
+siguiente: 
+</P>
+<DL>
+	<DL>
+		<DL>
+			<DL>
+				<DL>
+					<DL>
+						<DL>
+							<DL>
+								<DD>
+								<TABLE WIDTH=422 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=2 CELLSPACING=0 RULES=COLS>
+									<COL WIDTH=133>
+									<COL WIDTH=279>
+									<TBODY>
+										<TR>
+											<TD WIDTH=133>
+												<P ALIGN=CENTER STYLE="margin-right: 0.06cm"><B>N&uacute;mero
+												de pin</B></P>
+											</TD>
+											<TD WIDTH=279>
+												<P ALIGN=CENTER><B>Se&ntilde;al</B></P>
+											</TD>
+										</TR>
+									</TBODY>
+									<TBODY>
+										<TR>
+											<TD WIDTH=133>
+												<P ALIGN=CENTER>1</P>
+											</TD>
+											<TD WIDTH=279>
+												<P><B>DCD</B> (Data Carrier Detect)</P>
+											</TD>
+										</TR>
+										<TR>
+											<TD WIDTH=133>
+												<P ALIGN=CENTER>2</P>
+											</TD>
+											<TD WIDTH=279>
+												<P><B>RX</B></P>
+											</TD>
+										</TR>
+										<TR>
+											<TD WIDTH=133>
+												<P ALIGN=CENTER>3</P>
+											</TD>
+											<TD WIDTH=279>
+												<P><B>TX</B></P>
+											</TD>
+										</TR>
+										<TR>
+											<TD WIDTH=133>
+												<P ALIGN=CENTER>4</P>
+											</TD>
+											<TD WIDTH=279>
+												<P><B>DTR</B> (Data Terminal Ready)</P>
+											</TD>
+										</TR>
+										<TR>
+											<TD WIDTH=133>
+												<P ALIGN=CENTER>5</P>
+											</TD>
+											<TD WIDTH=279>
+												<P><B>GND</B></P>
+											</TD>
+										</TR>
+										<TR>
+											<TD WIDTH=133>
+												<P ALIGN=CENTER>6</P>
+											</TD>
+											<TD WIDTH=279>
+												<P><B>DSR</B> (Data Sheet Ready)</P>
+											</TD>
+										</TR>
+										<TR>
+											<TD WIDTH=133>
+												<P ALIGN=CENTER>7</P>
+											</TD>
+											<TD WIDTH=279>
+												<P><B>RTS</B> (Request To Send)</P>
+											</TD>
+										</TR>
+										<TR>
+											<TD WIDTH=133>
+												<P ALIGN=CENTER>8</P>
+											</TD>
+											<TD WIDTH=279>
+												<P><B>CTS</B> (Clear To Send)</P>
+											</TD>
+										</TR>
+										<TR>
+											<TD WIDTH=133>
+												<P ALIGN=CENTER>9</P>
+											</TD>
+											<TD WIDTH=279>
+												<P><B>RI</B> (Ring Indicator)</P>
+											</TD>
+										</TR>
+									</TBODY>
+								</TABLE>
+							</DL>
+						</DL>
+					</DL>
+				</DL>
+			</DL>
+		</DL>
+	</DL>
+</DL>
+<P><BR><BR>
+</P>
+<HR>
+<H2>El chip MAX 232</H2>
+<P>Este chip permite <B>adaptar los niveles RS232</B> y <B>TTL</B>,
+permitendo conectar un PC con un microcontrolador. S&oacute;lo es
+necesario este chip y <B>4 condensadores electrol&iacute;ticos</B> de
+22 micro-faradios. El esquema es el siguiente: 
+</P>
+<P ALIGN=CENTER><IMG SRC="images/max232-conex.jpg" NAME="Imagen6" ALIGN=BOTTOM WIDTH=467 HEIGHT=330 BORDER=0></P>
+<HR>
+<H2>Cable de conexi&oacute;n (I)</H2>
+<P STYLE="margin-bottom: 0cm">Para realizar la conexi&oacute;n entre
+el PC y nuestro circuito podemos usar diferentes alternativas. Una
+manera es utilizar un <B>cable serie macho-hembra no cruzado</B>, y
+en el circuito un conector hembra db9 para circuito impreso: 
+</P>
+<CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P ALIGN=CENTER><IMG SRC="images/cable-serie-db9.jpg" NAME="Imagen7" ALIGN=BOTTOM WIDTH=201 HEIGHT=201 BORDER=0></P>
+			</TD>
+			<TD>
+				<P ALIGN=CENTER><IMG SRC="images/hembra-db9-ci.jpg" NAME="Imagen8" ALIGN=BOTTOM WIDTH=201 HEIGHT=179 BORDER=0></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P>Cuando conectamos un micro al PC normalmente s&oacute;lo usamos
+los pines TX, RX y GND, sin embargo en este tipo de cables se llevan
+los 9 pines. Por ello puede resultar &uacute;til el utilizar otro
+tipo de cable, como el utilizado para la <A HREF="../../ct6811/ct6811.html">tarjeta
+CT6811</A>. 
+</P>
+<P STYLE="margin-bottom: 0cm">Tambi&eacute;n se puede fabricar un
+cable serie utilizando cable plano de bus, conectactando un conector
+db9 hembra para bus: 
+</P>
+<P ALIGN=CENTER><IMG SRC="images/cable-bus-serie.jpg" NAME="Imagen9" ALIGN=BOTTOM WIDTH=265 HEIGHT=200 BORDER=0></P>
+<HR>
+<H2>Cable de conexi&oacute;n (II): Cable telef&oacute;nico</H2>
+<P STYLE="margin-bottom: 0cm">Puesto que en la conexi&oacute;n del PC
+con un micro s&oacute;lo se usan las se&ntilde;ales TX, RX y GND se
+puede emplear un cable telef&oacute;nico, que es sencillo de
+construir, f&aacute;cil de conectar y desconectar y las conexiones
+son muy fiables. Es necesario cable telef&oacute;nico y un conversor
+de tel&eacute;fono a DB9: 
+</P>
+<CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P ALIGN=CENTER><IMG SRC="images/cable-tlf1.jpg" NAME="Imagen10" ALIGN=BOTTOM WIDTH=212 HEIGHT=216 BORDER=0></P>
+			</TD>
+			<TD>
+				<P ALIGN=CENTER><IMG SRC="images/db9tlf.jpg" NAME="Imagen11" ALIGN=BOTTOM WIDTH=344 HEIGHT=230 BORDER=0></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P>El cable de tel&eacute;fono se tiene tiene que construir o
+adquirir se esquematiza a continuaci&oacute;n: 
+</P>
+<P ALIGN=CENTER><IMG SRC="images/cabletlf.jpg" NAME="Imagen12" ALIGN=BOTTOM WIDTH=326 HEIGHT=89 BORDER=0></P>
+<P>Este cable tiene una muesca que diferencia las dos caras del
+cable. La correcta posici&oacute;n de los conectores telef&oacute;nicos
+es como se ha indicado en la figura, con la muesca del cable hacia
+arriba. 
+</P>
+<P STYLE="margin-bottom: 0cm">El conector db9-tel&eacute;fono que se
+conecta al PC se compra desmontado. Por un lado se encuentra la
+carcasa con el conector hembra de tel&eacute;fono y por otro lado el
+conector DB9 hembra. Los 4 cables que salen de la carcasa se conectan
+al DB9 hembra, en los pines que vayamos a utilizar. Como para las
+conexiones con los micros s&oacute;lo usaremos los pines RX, TX y GND
+(Pines 2,3 y 5). 
+</P>
+<P ALIGN=CENTER><IMG SRC="images/tripas-cable.jpg" NAME="Imagen13" ALIGN=BOTTOM WIDTH=465 HEIGHT=219 BORDER=0></P>
+<P STYLE="margin-bottom: 0cm">La manera en la que se conecten estos
+cables es indiferente, sin embargo, para tener compatibilidad con el
+cable de la CT6811, hay que hacerlo de la siguiente manera: 
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/db9tlf-in.jpg" NAME="Imagen14" ALIGN=BOTTOM WIDTH=610 HEIGHT=248 BORDER=0></P>
+<P><BR>El cable que lleva la se&ntilde;al de DTR es opcional, y en la
+CT6811 se usa para hacer reset. 
+</P>
+<P STYLE="margin-bottom: 0cm">Para la conexi&oacute;n al micro se usa
+un conector telef&oacute;nico hembra para ciruito impreso: 
+</P>
+<P ALIGN=CENTER><IMG SRC="images/tlf-hembra.jpg" NAME="Imagen15" ALIGN=BOTTOM WIDTH=233 HEIGHT=200 BORDER=0></P>
+<P STYLE="margin-bottom: 0cm">Los pines del conector hembra son los
+siguientes, vistos desde abajo: 
+</P>
+<P ALIGN=CENTER><IMG SRC="images/hembra-tlf.jpg" NAME="Imagen16" ALIGN=BOTTOM WIDTH=470 HEIGHT=200 BORDER=0></P>
+<HR>
+<H2><A NAME="AUTOR|outline"></A>AUTOR</H2>
+<UL>
+	<LI><P><A HREF="../../../personal/juan/index.html">Juan
+	Gonz&aacute;lez G&oacute;mez</A>. 
+	</P>
+</UL>
+<HR>
+<H2><A NAME="Licencia|outline"></A>Licencia</H2>
+<P STYLE="border-top: none; border-bottom: 1.10pt double #808080; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+Este documento se distribuye bajo <A HREF="http://gugs.sindominio.net/licencias/fdl-es.html">licencia
+FDL</A> por lo que se permite su copia, modificaci&oacute;n y
+distribuci&oacute;n, siempre y cuando se mantenga esta nota. 
+</P>
+<HR>
+<H2><A NAME="Download |outline"></A>Download 
+</H2>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>Cuaderno t&eacute;cnico I</B> 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=2 CELLSPACING=2>
+		<TR BGCOLOR="#cabeeb">
+			<TD>
+				<P><A HREF="download/ct1.tgz">ct1.tgz</A> (7KB) 
+				</P>
+			</TD>
+			<TD>
+				<P>Figuras del cuaderno, para XFIG</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P><BR><BR>
+</P>
+<HR>
+<H2><A NAME="links"></A>Links</H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><A HREF="../../skypic/skypic.html">Tarjeta
+	Skypic</A>: Tarjeta entrenadora para microcontroladores PIC de 28
+	pines</FONT></P>
+	<LI><P><A HREF="../../ct6811/ct6811.html">Tarjeta
+	CT6811:</A> <FONT FACE="Arial, sans-serif">Tarjeta entrenadora para
+	el microcontrolador 68hc11.</FONT></P>
+</UL>
+<HR>
+<H2><A NAME="Noticias|outline"></A>Noticias</H2>
+<UL>
+	<LI><P><B>5/Sep/2004: </B>
+	</P>
+	<UL>
+		<LI><P>&ldquo;<FONT FACE="Arial, sans-serif">Suavizado&rdquo; de
+		los dibujos. </FONT>
+		</P>
+		<LI><P><FONT FACE="Arial, sans-serif">A&ntilde;adido enlace a la
+		p&aacute;gina <A HREF="../index.html">&iacute;ndice de los
+		cuadernos t&eacute;cnicos</A></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif">A&ntilde;adido enlace a la
+		<A HREF="../../skypic/skypic.html">Tarjeta Skypic</A></FONT></P>
+	</UL>
+	<LI><P><B>26/Jul/2003</B>: Corregida errata. Ahora ya est&aacute;
+	disponible el fichero ct1.tgz 
+	</P>
+	<LI><P><B>3/Mar/2003</B>: Publicado en la web</P>
+</UL>
+<HR>
+<a href="https://obijuan.github.io/iearobotics-site/">IEA ROBOTICS</a>
+<ADDRESS>
+Página creada por
+<A HREF="../../../../personal/juan/index.html">Juan González</A>
+</ADDRESS>
+</body>
+</html>
