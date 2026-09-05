@@ -1,0 +1,158 @@
+<html>
+<head>
+   <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cube 2.0: Control I</title>
+<style type="text/css">
+<!--
+  H1 {
+    font-family: Current Schoolbook, Arial;
+    background-color: blue;
+    color: rgb(192,192,192);
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    border: thin outset rgb(192,192,192);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    padding: 2px;
+  }
+  H2 {
+    font-family: Times,Arial;
+    color: rgb(0,0,0);
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: left;
+    border: medium none;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    padding: 5px;   
+  }
+  DIV.cuerpo {
+    font-family: Book Antiqua, Arial;
+    color: rgb(20,20,20);
+    text-indent: 50px;
+    line-height: 20px;
+    text-align: justify;
+    margin-left: 25px;
+    margin-right: 25px;
+  }    
+  SPAN.cursiva { 
+    font-style: oblique;
+  }
+  
+  DIV.lista {
+    font-family: Book Antiqua, Arial;
+    color: rgb(20,20,20);
+    line-height: 20px;
+    text-align: justify;
+    margin-left: 25px;
+  }    
+
+  TABLE.margen {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+  }
+  
+  TABLE.links {
+    color: rgb(55,0,0);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+    background-color: rgb(255,255,128);
+    border: thin outset rgb(192,192,192);    
+  }
+   
+  TABLE.down {
+    color: rgb(55,0,0);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+    background-color: rgb(255,255,128);
+    border: thin outset rgb(192,192,192);    
+  }
+  
+  TD.indice {
+    font-size:15pt;
+    text-align: center;
+    color:"blue";
+  }
+  
+-->
+</style>
+</head>
+
+<body>
+<!-- título de la página -->
+
+<table align="center" width="100%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>CUBE 2.0: CONTROL I</b>
+ </td>
+</tr>
+</tbody></table> 
+<br><br>
+
+<!-- texto -->
+<div class="cuerpo">
+
+<p>
+  El programa <b>cube-fisico</b> es el que se comunica con la 
+  <a href="../../../../proyectos/ct6811/ct6811.html">tarjeta CT6811</a> para controlar
+  la posición de los servos. Esta aplicación está programada en C, utilizando las GTK1.2. Aquí puedes
+  ver un pantallazo:
+</p>
+<br>
+<center><img src="images/cube-fisico.jpg"></center>
+<br><br>
+
+<p>
+  Este programa permite realizar lo siguiente:
+</p>
+</div>
+
+<div class="lista">
+  <ul>
+    <li><b>Movimiento de los servos</b> mediante las barras de desplazamiento</li>
+    <li><b>Generación</b> de secuencias manuales de movimiento. <b>Grabación</b> en fichero</li>
+    <li><b>Lectura</b> y <b>reproducción</b> de secuencias grabadas</li>
+  </ul>
+</p>
+</div>
+
+<div class="cuerpo">
+<p>
+  Una vez conectado CUBE al ordenador se ejecuta este programa y se pulsa el botón de
+  <b>LOAD</b>, que carga el programa <b>maestro_ram.s19</b> en la RAM de la CT6811. 
+  A partir de ese momento se  establece la conexión entre el interfaz y los servos.
+</p>
+<p>
+  Para la <b>generación de secuencias </b>hay que proceder de la siguiente manera. Primero se <b>posicionan
+  los servos</b> usando las barras de desplazamiento y se pulsa el botón de <b>GRAB</b>.
+   A continuación se colocan
+  en otra posición y se vuelve a pulsar<b> GRAB</b>. De esta manera se genera una secuencia 
+  "fotograma a fotograma". Es posible especificar el tiempo de espera de los servos en una posición, antes
+  de pasar a la siguiente.
+</p>
+<p>
+  Para reproducir una <b>secuencia indefinidamente</b> solo hay que pulsar el<b> botón de PLAY</b>, 
+  o el botón de <b>PLAY#</b> si se quiere
+  que se reproduzca una sola vez.
+</p>
+</div>
+
+<HR>
+<a href="https://obijuan.github.io/iearobotics-site/">IEA ROBOTICS</a>
+<ADDRESS>
+Página creada por
+<A HREF="../../../..//personal/juan/index.html">Juan González</A>
+</ADDRESS>
+</body>
+</html>
+
+
+

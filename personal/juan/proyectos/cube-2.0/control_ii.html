@@ -1,0 +1,181 @@
+<html>
+<head>
+   <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cube 2.0: Control II</title>
+<style type="text/css">
+<!--
+  H1 {
+    font-family: Current Schoolbook, Arial;
+    background-color: blue;
+    color: rgb(192,192,192);
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    border: thin outset rgb(192,192,192);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    padding: 2px;
+  }
+  H2 {
+    font-family: Times,Arial;
+    color: rgb(0,0,0);
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: left;
+    border: medium none;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    padding: 5px;   
+  }
+  DIV.cuerpo {
+    font-family: Book Antiqua, Arial;
+    color: rgb(20,20,20);
+    text-indent: 50px;
+    line-height: 20px;
+    text-align: justify;
+    margin-left: 25px;
+    margin-right: 25px;
+  }    
+  SPAN.cursiva { 
+    font-style: oblique;
+  }
+  
+  DIV.lista {
+    font-family: Book Antiqua, Arial;
+    color: rgb(20,20,20);
+    line-height: 20px;
+    text-align: justify;
+    margin-left: 25px;
+  }    
+
+  TABLE.margen {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+  }
+  
+  TABLE.links {
+    color: rgb(55,0,0);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+    background-color: rgb(255,255,128);
+    border: thin outset rgb(192,192,192);    
+  }
+   
+  TABLE.down {
+    color: rgb(55,0,0);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+    background-color: rgb(255,255,128);
+    border: thin outset rgb(192,192,192);    
+  }
+  
+  TD.indice {
+    font-size:15pt;
+    text-align: center;
+    color:"blue";
+  }
+  
+-->
+</style>
+</head>
+
+<body>
+<!-- título de la página -->
+
+<table align="center" width="100%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>CUBE 2.0: CONTROL II, el gusano virtual</b>
+ </td>
+</tr>
+</tbody></table> 
+<br><br>
+
+<!-- texto -->
+<div class="cuerpo">
+
+<p>
+  Con el programa <b>cube-virtual</b> se pueden <b>generar secuencias</b> de movimiento 
+  <b>automáticamente</b>,
+  utilizando un modelo de propagación de ondas sinusoidales. Aquí puedes ver un pantallazo:
+</p>
+<br>
+<center><img src="images/cube-virtual.jpg"></center>
+<br><br>
+  La <b>generación de secuencias</b> se explica a continuación. Realmente los cálculos se hacen usando
+  el modelo de gusano, pero aquí se va a mostrar de una <b>manera gráfica</b>:
+</div>
+
+<div class="lista">
+  <ol>
+    <li>Se toma el <b>gusano virtual</b> y una <b>función sinusoidal</b> de una amplitud, longitud de onda y
+    frecuencia dada, y se coloca la <b>articulación 1</b> sobre la función (las coordenadas de la cola
+    del gusano deben cumplir la función sinusoidal)</li>
+    <p>
+    <center><img src="images/cv-ajuste1.jpg"></center>
+    </p>
+    <li>Se rota el gusano<b> fijando la articulación 1</b> hasta que la <b>articulación 2</b> cumpla la función
+    sinusoidal</li>
+    <p>
+    <center><img src="images/cv-ajuste2.jpg"></center>
+    </p>
+    <li>Ahora se rota la parte derecha del gusano, <b>fijando la articulación 2</b>, 
+    hasta que la <b>articulación 3</b>
+    cumpla la función de contorno</li>
+    <center><img src="images/cv-ajuste3.jpg"></center>
+    <li>Se repite lo mismo, pero ahora fijando la <b>articulación 3</b></li>
+    <center><img src="images/cv-ajuste4.jpg"></center>
+    <li>Idem, fijando la <b>articulación 4</b></li>
+    <center><img src="images/cv-ajuste5.jpg"></center>
+    <li>Finalmente tenemos que el gusano se <b>"ajusta"</b> perfectamente a la función sinusoidal</li>
+    <center><img src="images/cv-ajuste6.jpg"></center>
+  </ol>
+</div>
+
+<HR>
+<div class="cuerpo">
+<p>
+  Este algoritmo se ha llamado <b>Algoritmo de ajuste</b>. Para <b>generar la secuencia de movimiento</b> se parte
+  del gusano en reposo, una función sinusoidal y se aplica el <b>algoritmo de ajuste:</b>
+  <center><img src="images/cv-sec1.jpg"></center>
+</p>
+<p>
+  Ahora se <b>desplaza la onda</b> y vuelve a aplicar el <b>algoritmo de ajuste</b>:
+  <center><img src="images/cv-sec2.jpg"></center>
+</p>
+<p>
+  El proceso <b>se repite hasta que la onda vuelve a tener la fase inicial</b>. El resultado obtenido, visualmente, es como 
+  el mostrado en esta <b>animación</b>:
+  <center><img src="images/cv-anim.gif"></center>
+</p>
+</div>
+
+<HR>
+<div class="cuerpo">
+<p>
+El programa <b>cube-virtual</b> muestra la secuencia de movimiento visualmente, permitiendo que el usuario
+cambia los parámetros de la función de onda y vea qué tipo de secuencias de movimiento se producen.
+</p>
+<p>
+  Las <b>secuencias de movimiento</b> creadas s<b>e graban en un fichero</b> y luego se envían a CUBE-2.0 usando el 
+  programa <b>cube-físico</b>.
+</p>
+</div>
+
+<HR>
+<a href="https://obijuan.github.io/iearobotics-site/">IEA ROBOTICS</a>
+<ADDRESS>
+Página creada por
+<A HREF="../../../..//personal/juan/index.html">Juan González</A>
+</ADDRESS>
+</body>
+</html>
+
+
+

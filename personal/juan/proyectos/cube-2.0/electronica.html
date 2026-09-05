@@ -1,0 +1,144 @@
+<html>
+<head>
+   <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cube 2.0: Electrónica</title>
+<style type="text/css">
+<!--
+  H1 {
+    font-family: Current Schoolbook, Arial;
+    background-color: blue;
+    color: rgb(192,192,192);
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    border: thin outset rgb(192,192,192);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    padding: 2px;
+  }
+  H2 {
+    font-family: Times,Arial;
+    color: rgb(0,0,0);
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: left;
+    border: medium none;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    padding: 5px;   
+  }
+  DIV.cuerpo {
+    font-family: Book Antiqua, Arial;
+    color: rgb(20,20,20);
+    text-indent: 50px;
+    line-height: 20px;
+    text-align: justify;
+    margin-left: 25px;
+    margin-right: 25px;
+  }    
+  SPAN.cursiva { 
+    font-style: oblique;
+  }
+  
+  DIV.lista {
+    font-family: Book Antiqua, Arial;
+    color: rgb(20,20,20);
+    line-height: 20px;
+    text-align: justify;
+    margin-left: 25px;
+  }    
+
+  TABLE.margen {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+  }
+  
+  TABLE.links {
+    color: rgb(55,0,0);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+    background-color: rgb(255,255,128);
+    border: thin outset rgb(192,192,192);    
+  }
+   
+  TABLE.down {
+    color: rgb(55,0,0);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+    background-color: rgb(255,255,128);
+    border: thin outset rgb(192,192,192);    
+  }
+  
+  TD.indice {
+    font-size:15pt;
+    text-align: center;
+    color:"blue";
+  }
+  
+-->
+</style>
+</head>
+
+<body>
+<!-- título de la página -->
+
+<table align="center" width="100%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>CUBE 2.0: ELECTRÓNICA</b>
+ </td>
+</tr>
+</tbody></table> 
+<br><br>
+
+<!-- texto -->
+<div class="cuerpo">
+
+<p>
+  La electrónica está constituida por una <b>red de microcontroladores</b>, a través del <b>SPI</b>.
+  Aunque CUBE 2.0 solo tiene 4 servos, la electrónica es expandible y permite controlar muchos más.
+</p>
+<p>
+  En la siguiente figura se muestra la electrónica necesaria para controlar un gusano de 8 servos:
+</p>
+<br>
+<center><img src="images/red-spi.jpg"></center>
+<br><br>
+<p>
+  Las <a href="../../../../proyectos/bt6811/bt6811.html">BT6811</a> son los <b>nodos esclavos</b> de la red y se encargan de posicionar los servos, según
+  los comandos recibidos del <b>nodo maestro</b>. 
+</p>
+<p>
+  El nodo maestro es la <a href="../../../../proyectos/ct6811/ct6811.html">CT6811</a>,
+   que además está conectado a un <b>PC</b> a través del <b>puerto serie</b>, del que recibe
+  los comandos de posicionamiento. Este nodo realmente hace de "pasarela" entre el PC y las
+  tarjetas BT6811. Es posible almacenar en la CT6811 una secuencia de movimiento para que el gusano
+  sea autónomo del PC.
+</p>
+</div>
+
+<HR>
+<div class="cuerpo">
+<p>
+  Se utilizan <b>alimentaciones separadas</b> para la electrónica y los servos. Con 4 pilas AA se alimenta
+  la electrónica (Tarjetas BT6811 y CT6811) y con una fuente de alimentación externa los servos
+</p>
+<br>
+<center><img src="images/cube-2-0-elec2.jpg"></center>
+<br><br>
+</div>
+<HR>
+<a href="https://obijuan.github.io/iearobotics-site/">IEA ROBOTICS</a>
+<ADDRESS>
+Página creada por
+<A HREF="../../../..//personal/juan/index.html">Juan González</A>
+</ADDRESS>
+</body>
+</html>
+

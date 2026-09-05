@@ -1,0 +1,526 @@
+<html>
+<head>
+<meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cube: El Gusano Robot.(v2.0)</title>
+<style type="text/css">
+<!--
+  H1 {
+    font-family: Current Schoolbook, Arial;
+    background-color: blue;
+    color: rgb(192,192,192);
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    border: thin outset rgb(192,192,192);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    padding: 2px;
+  }
+  H2 {
+    font-family: Times,Arial;
+    color: rgb(0,0,0);
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: left;
+    border: medium none;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    padding: 5px;   
+  }
+  DIV.cuerpo {
+    font-family: Book Antiqua, Arial;
+    color: rgb(20,20,20);
+    text-indent: 50px;
+    line-height: 20px;
+    text-align: justify;
+    margin-left: 25px;
+    margin-right: 25px;
+  }    
+  SPAN.cursiva { 
+    font-style: oblique;
+  }
+  
+  DIV.lista {
+    font-family: Book Antiqua, Arial;
+    color: rgb(20,20,20);
+    line-height: 20px;
+    text-align: justify;
+    margin-left: 25px;
+  }    
+
+  TABLE.margen {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+  }
+  
+  TABLE.links {
+    color: rgb(55,0,0);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+    background-color: rgb(255,255,128);
+    border: thin outset rgb(192,192,192);    
+  }
+   
+  TABLE.down {
+    color: rgb(55,0,0);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+    background-color: rgb(255,255,128);
+    border: thin outset rgb(192,192,192);    
+  }
+  
+  TD.indice {
+    font-size:15pt;
+    text-align: center;
+    color:"blue";
+  }
+  
+-->
+</style>
+</head>
+
+<body>
+<!-- título de la página -->
+
+<table align="center" width="100%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>CUBE: EL GUSANO ROBOT (V.2.0)</b>
+ </td>
+</tr>
+</tbody></table> 
+
+
+ <table align="center">
+<tr>
+<td><a href="#uno">[Introducción]</a></td>
+<td><a href="#autores">[Autores]</a></td>
+<td><a href="#licencia">[Licencia]</a></td>
+<td><a href="#mecanica">[Mecónica]</a></td>
+<td><a href="#electronica">[Electrónica]</a></td>
+<td><a href="#control_i">[Control I]</a></td>
+<td><a href="#control_ii">[Control II]</a></td>
+<td><a href="#historia">[Historia]</a></td>
+<td><a href="#video">[Video]</a></td>
+<td><a href="#download">[Download]</a></td>
+<td><a href="#links">[Links]</a></td>
+<td><a href="#noticias">[Noticias]</a></td>
+<td><a href="#creditos">[Créditos]</a></td>
+</tr>
+</table>
+  
+  <br>
+<center>
+<img src="images/cube-2-0-foto1.jpg">
+</center>
+
+<!-- Introducción -->
+<HR>
+<h2 id="uno"> Introducción </h2>
+
+<!-- texto -->
+<div class="cuerpo">
+
+<p>
+  Este es el trabajo que realizó el <a href="#autores">autor</a> como proyecto fin de carrera, en la 
+  <a href="http://www.etsit.upm.es/">ETSI de Telecomunicación</a> de la UPM.
+   Las <b>dos preguntas fundamentales</b>
+  que motivaron su realización fueron las siguientes:
+</p>
+</div>
+
+<div class="lista">
+  <ul>
+    <li>¿Es posible realizar un robot <b>SIN PATAS NI RUEDAS</b> que se pueda desplazar?</li>
+    <li>¿Qué <b>modelos</b> hay que aplicar para coordinar los motores y conseguir el movimiento?</li>
+  </ul>
+ </div>
+
+<div class="cuerpo">
+<p>
+  <b>En este proyecto se ha realizado lo siguiente</b>:
+</p>
+</div>
+
+<div class="lista">
+  <ul>
+    <li>Diseño y construcción de un <b>robot tipo gusano </b>que se desplaza en línea recta,
+    utilizando un <b>modelo de propagación de ondas</b>, que recorren el gusano
+    desde la cola hasta la cabeza</li>
+    <li>Desarrollo de <b>modelos teóricos</b> para la caracterización de los <b>gusanos longitudinales</b> y 
+    <b>transversales</b></li>
+    <li>Desarrollo de un <b>sistema de cálculo automático </b>de las secuencias de movimiento, basado
+    en los modelos teóricos anteriores</li>
+    <li>Implementación de los modelos teóricos en un <b>gusano virtual</b>, con una interfaz gráfica sencilla
+    e intuitiva</li>
+    <li>Software para la reproducción de secuencias en el <b>gusano real</b></li>
+  </ul>
+</div>
+
+<div class="cuerpo">
+  Además, el prototipo tenía que ser <b>sencillo</b>, <b>barato</b>, de <b>fácil construcción</b> 
+  y <b>extensible</b>.
+</div>
+
+<!-- Sección 2 -->
+<HR>
+<H2 id="autores"> Autores</H2>
+
+<div class="lista">
+<ul>
+  <li>AUTOR: <a href="../../index.html">Juan González Gómez</a>. 
+  </li>
+  <li>TUTOR: <a href="http://lorien.die.upm.es/~macias/me-e.html">Javier Macías Guarasa</a></li>
+</ul>
+
+</div>
+
+<!-- Sección 3 -->
+<HR>
+<H2 id="licencia"> Licencia</H2>
+
+<div class="cuerpo">
+  Este proyecto tiene una <b>licencia GPL</b>. Todo el software, documentación, hardware y estructuras mecónicas
+  se puede copiar, modificar y distribuir siempre y cuando se mantenga esta nota.
+</div>  
+
+
+
+<!-- MECANICA -->
+<HR>
+<H2 id="mecanica"> Mecónica</H2>
+<div class="cuerpo">
+<p>
+  El gusano está basado en <b>módulos iguales</b>, que se interconectan para formar un gusano de cualquier
+logitud. <b>CUBE 2.0 tiene solo 4 módulos</b>. Cada módulo tiene un servo del 
+tipo <b>Futaba 3003</b>, con un doble eje.
+</p>
+<p>
+ <a href="mecanica.html"> Puedes encontrar más información aquí</a>
+</p>
+</div>
+ <center><img src="images/cube-2-0-mec1.jpg"></center>
+<br><br>
+
+<!-- ELECTRONICA -->
+<HR>
+<H2 id="electronica"> Electrónica</H2>
+<div class="cuerpo">
+<p>
+   Para el control del robot se ha utilizado <b>la red de microcontroladores</b> desarrollada por 
+   <a href="../../../andres/index.html">Andrés Prieto-Moreno</a>, basada
+   en las tarjetas <a href="../../../../proyectos/ct6811/ct6811.html">CT6811</a> y 
+   <a href="../../../../proyectos/bt6811/bt6811.html">BT6811</a>. Como CUBE-2.0 solo tiene
+   4 servos, solo es necesario utilizar una CT6811 y una BT6811, sin embargo es muy facilmente ampliable a
+   un número mayor: solo hay que añadir más tarjetas BT6811 a la red.
+</p>
+<p>
+ <a href="electronica.html"> Puedes encontrar más información aquí</a>
+</p>
+</div>
+<br>
+ <center><img src="images/cube-2-0-elec1.jpg"></center>
+<br><br>   
+
+<!-- CONTROL i -->
+<HR>
+<H2 id="control_i"> Control I</H2>
+<div class="cuerpo">
+<p>
+  El posicionamiento de los servos lo hace la <b>tarjeta BT6811</b> (Nodo esclavo) 
+  que se conecta a la <b>CT6811</b> 
+  (Nodo maestro) a través del SPI. En este nodo se ejecuta un <b>servidor</b> que recibe comandos por el 
+  puerto serie y los re-envía por el SPI para posicionar los servos. 
+</p>
+
+<p>
+  Mediante el programa <b>cube-fisico</b>, se pueden posicionar los diferentes servos, a través de una 
+  interfaz gráfica sencilla, y es posible generar <b>secuencias de movimiento manuales</b>.
+</p>
+
+<p>
+  A este nivel de control, los servos se mueven desde aplicaciones del PC, pero <b>no se soluciona
+  el problema de la coordinación</b>. La geneación manual de secuencias es un proceso lento y complejo.
+  La principal utilidad del programa <b>cube-físico</b> es la de r<b>eproducir secuencias</b> (bien generadas 
+  manual o automáticamente) y la de <b>mover los servos individualmente</b> para corregir fallos mecánicos y
+  comprobar si los servos funcionan correctamente.
+</p>
+<p>
+ <a href="control_i.html"> Puedes encontrar más información aquí</a>
+</p>
+</div>
+<br>
+
+<!-- CONTROL II -->
+<HR>
+<H2 id="control_ii"> Control II</H2>
+<div class="cuerpo">
+<p>
+  En este nivel de control se resuelve el problema de la <b>coordinación de las articulaciones</b>. Para ello
+  se utiliza un <b>gusano virtual</b>, sobre el que se aplica el <b>modelo de movimiento basado
+  en la propagación de ondas sinusoidales</b>.
+</p>
+<p>
+  Mediante el programa <b>cube-virtual</b> se generan las <b>secuencias de movimiento</b>, 
+  a partir de los parámetros
+  de la <b>onda sinusoidal</b> que queremos que recorra el gusano. Las secuencias se almacenan en un fichero
+  para luego ser reproducidas usando el programa <b>cube-fisico</b>.
+</p>
+<p>
+ <a href="control_ii.html"> Puedes encontrar más información aquí</a>
+</p>
+</div> 
+<center><img src="images/cv-anim.gif"></center>
+<br><br>
+
+<!-- Historia -->
+<HR>
+<H2 id="historia"> Historia </H2>
+
+<div class="cuerpo">
+<p>
+  La primera versión del gusano, <b>CUBE 1.0</b>, estaba realizada con piezas de madera y la estructura, aunque 
+  se parece bastante a la final, no era modular. Solo tenía 4 servos y no era ampliable. Para la electrónica 
+  solo se usaba la <b>Tarjeta CT6811</b>, por lo que tampoco era ampliable.
+</p>
+
+<table align="center">
+<tr>
+<td><img src="images/cube-1-0-foto1.jpg"></td>
+<td><img src="images/cubes.jpg"></td>
+</tr>
+</table>
+<br>
+  En la foto de la derecha estan los dos gusano, CUBE 1.0 y CUBE 2.0.
+  <p>
+    La segunda versión, <b>CUBE 2.0</b>, es la que se describe en esta página. El proyecto se terminó en
+    <b>abril del 2001</b>.
+  </p>
+  <p>
+ <a href="historia.html"> Puedes encontrar más información aquí</a>
+</p>  
+</div>
+
+<br><br>
+
+<!-- Historia -->
+<HR>
+<H2 id="video">Documentación y Vídeo </H2>
+
+<div class="cuerpo">
+<p>
+  <a href="video/cube-2-0-video.mpg">En este vídeo</a>, grabado en el 
+  <a href="http://www.ii.uam.es/~mecatron/">Club de Robática Mecatrónica</a> de la UAM, se puede ver
+  una secuencia de movimiento de CUBE 2.0.
+</p>
+<p>
+  <b>La memoria</b> del proyecto se ha fragmentado en 4 ficheros, disponibles en la sección de 
+  <a href="#download">Download</a>, para que sea más fácil su descarga. El proyecto se terminó en
+  <b>Abril del 2001</b>, pero la fecha que aparece en la portada es la de Feb del 2003 (Fecha en la que se ha
+  publicado en esta web)
+</p>
+<p>
+  Para la escritura del proyecto se ha empleado <a href="http://www.lyx.org">Lyx</a> (1.1), y las figuras se han realizado con
+  <a href="http://www.xfig.org">XFIG</a>, bajo el sistema operativo <b>GNU/LINUX</b>.
+</p>
+
+</div>
+
+<HR>
+<!-- DOWNLOAD -->
+<H2 id="download"> Download </H2>
+
+<p>
+<table width=80% bgcolor="#abbeeb" border="0" align="center" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>SOFTWARE</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=80%  border="0" align="center">
+<tbody>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="soft/futA.asm">futA.asm (12KB)</a>  </td>
+  <td>Programa servidor para la tarjeta BT6811. Fuentes</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="soft/futA.s19">futA.s19 (693 Bytes)</a>  </td>
+  <td>Programa servidor para la tarjeta BT6811. Ejecutable</td>
+</tr>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="soft/maestro_ram.asm">maestro_ram.asm (3KB)</a>  </td>
+  <td>Programa para cargar en la CT6811. Fuentes</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="soft/maestro_ram.s19">maestro_ram.s19 (236Bytes)</a>  </td>
+  <td> Programa para cargar en la CT6811. Ejecutable</td>
+</tr>  
+
+<tr bgcolor="#cabeeb">
+  <td><a href="soft/cube_fisico-2.0.1.tgz">cube_fisico-2.0.1.tgz (22KB)</a>  </td>
+  <td>Programa cube-fisico para reproducir secuencias y mover los servos. Ejecutable</td>
+</tr>  
+
+<tr bgcolor="#abbeeb">
+  <td><a href="soft/cube_fisico-src-2.0.1.tgz">cube_fisico-src-2.0.1.tgz (29KB)</a>  </td>
+  <td> Programa cube-fisico. Fuentes</td>
+</tr>    
+
+<tr bgcolor="#cabeeb">
+  <td><a href="soft/cube_virtual-1.4.1.tgz">cube_virtual-1.4.1.tgz (30KB)</a>  </td>
+  <td>Programa cube-virtual para generar secuencias de movimiento. Ejecutable</td>
+</tr>  
+
+<tr bgcolor="#abbeeb">
+  <td><a href="soft/cube_virtual-src-1.4.1.tgz">cube_virtual-src-1.4.1.tgz (40KB)</a>  </td>
+  <td> Programa cube-virtual. Fuentes</td>
+</tr>        
+</tbody></table>
+
+
+<br><br>
+<table width=80% bgcolor="#abbeeb" border="0" align="center" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>PLANOS</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=80%  border="0" align="center">
+<tbody>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="planos/estructura-cube.pdf">estrucutra-cube.pdf (7KB)</a>  </td>
+  <td>Estrucutra general del gusano</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="planos/base_bt6811.pdf">base_bt6811.pdf (7KB)</a>  </td>
+  <td>Pieza base para la BT6811</td>
+</tr>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="planos/base_futaba.pdf">base_futaba.pdf (4KB)</a>  </td>
+  <td> Pieza base del futaba, unida al servo con velcro. (Opcional)</td>
+</tr>  
+
+<tr bgcolor="#abbeeb">
+  <td><a href="planos/base_cabeza.pdf">base_cabeza.pdf (6KB)</a>  </td>
+  <td>Pieza base de la cabeza</td>
+</tr>  
+
+<tr bgcolor="#cabeeb">
+  <td><a href="planos/base_cola.pdf">base_cola.pdf (7KB)</a>  </td>
+  <td>Pieza base de la cola</td>
+</tr>    
+
+<tr bgcolor="#abbeeb">
+  <td><a href="planos/piezaA.pdf">piezaA.pdf (7KB)</a>  </td>
+  <td> Pieza de tipo A</td>
+</tr>    
+
+<tr bgcolor="#cabeeb">
+  <td><a href="planos/piezaB.pdf">piezaB.pdf (7KB)</a>  </td>
+  <td>Pieza de tipo B</td>
+</tr>  
+
+<tr bgcolor="#abbeeb">
+  <td><a href="planos/piezaC.pdf">piezaC.pdf (6KB)</a>  </td>
+  <td>Pieza de tipo C</td>
+</tr>    
+
+<tr bgcolor="#cabeeb">
+  <td><a href="planos/planos-cube-2-0-src.tgz">planos-cube-2-0-src.tgz (7KB)</a>  </td>
+  <td>Fuentes de todos los planos anteriores, para XFIG</td>
+</tr>        
+</tbody></table>                 
+
+<br><br>
+<table width=80% bgcolor="#abbeeb" border="0" align="center" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>DOCUMENTACIÓN</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=80%  border="0" align="center">
+<tbody>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="doc/cube_1.pdf">cube_1.pdf (555 KB)</a>  </td>
+  <td>Capítulo 1: Encuadre e introducción</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="doc/cube_2.pdf">cube_2.pdf (500 KB)</a>  </td>
+  <td>Parte I: Teoría de gusanos (Capítulos del 2 al 6)</td>
+</tr>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="doc/cube_3.pdf">cube_3.pdf (1 MB)</a>  </td>
+  <td>Parte II: Implementación. Mecónica, electrónica y software (Capítulos del 7 al 11)</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="doc/cube_4.pdf">cube_4.pdf (614KB)</a>  </td>
+  <td> Apéndices, fotos, bibliografía y listados</td>
+</tr>  
+</tbody></table>                 
+</p>
+
+<HR>
+<H2 id="links">Links</H2>
+<div class="lista">
+  <ul>
+  <li><a href="../../../../proyectos/ct6811/ct6811.html">Tarjeta CT6811</a></li>
+  <li><a href="../../../../proyectos/bt6811/bt6811.html">Tarjeta BT6811</a></li>
+  <li><a href="../../doctorado/Robots_apodos/estudio_apodos.html">
+   Estudio sobre las principales líneas de investigación en robots tipo ápodos</a></li>
+  </ul>
+ </div>
+
+<!-- Noticias -->
+<HR>
+<H2 id="noticias">Noticias</H2>
+<div class="lista">
+<ul>
+  <li><b>19/Feb/2003</b>: Publicada información sobre CUBE 2.0</li>
+</ul>
+</div>
+
+<!-- Agradecimientos -->
+<HR>
+<H2 id="creditos">Creditos</H2>
+
+<div class="lista">
+<ul>
+ <li><a href="../../../../personal/andres/index.html">Andrés Prieto-Moreno</a>
+  es el autor de la red de microcontroladores empleada para CUBE. Tambión
+ es el creador de la estrucutra de los servos con doble eje, que he utilizado para construir los módulos mecánicos</li>
+</ul>
+</div>
+
+<HR>
+<a href="https://obijuan.github.io/iearobotics-site/">IEA ROBOTICS</a>
+<ADDRESS>
+Página creada por
+<A HREF="../../../..//personal/juan/index.html">Juan González</A>
+</ADDRESS>
+</body>
+</html>
+
+
