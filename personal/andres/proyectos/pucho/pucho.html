@@ -1,0 +1,326 @@
+<html>
+<head>
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PuchoBot</title>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<!-- título de la página -->
+<H1> PuchoBot: Robot Cuadrúpedo </H1>
+
+<!-- Foto e indice                           -->
+<!-- utilizar el tamaño 340x200 para la foto -->
+<!-- Cada punto del indice te lleva a la zona-->
+<!-- del documento señalada por el indice    -->
+
+<TABLE class="margen" border=0 align="left">
+<TR><TD><img src="multimedia/fotos/puchop.jpg"></TD></TR>
+<TR><TD>
+  <TABLE border=1 width="100%">
+    <TR><TD class="indice" bgcolor="#aaaaaa">Indice</TD></TR>
+    <TR><TD>1. <a href="#uno">   Introducción </a></TD></TR>
+    <TR><TD>2. <a href="#dos">   Características</a></TD></TR>
+    <TR><TD>3. <a href="#tres">  Download</a></TD></TR>
+    <TR><TD>4. <a href="#cuatro">Links</a></TD></TR>
+    <TR><TD>5. <a href="#cinco"> Agradecimientos</a></TD></TR>
+    <TR><TD>6. <a href="#seis">Noticias</a></TD></TR>
+  </TABLE></TD>
+</TR>
+</TABLE>
+
+<!-- Motivación -->
+<h2 id="uno"> Introducción </h2>
+
+<!-- texto -->
+<div class="cuerpo">
+<p></p>PuchoBot fue mi tercera generación de robots autónomos. A la espera de la siguiente, puedo decir que es todavía una buena base de estudio, sobretodo por
+la cantidad de cosas innovadoras con las que fue diseñado. Por ejemplo, fue el primer robot que usó el control real de los servos, mejorando a la
+<A href="multimedia/fotos/hormiga-2.jpg">hormiga Benita</A> que sólo los podía mover de extremo a extremo. El control se realizaba mediante una red de micros, en concreto una tarjeta maestra y tres esclavas.
+Cada esclava se encargaba de controlar cuatro motores, es decir una 'pata' y algo más. Mientras que la maestra se encargaba de los sensores  (que nunca tuvo), de la 
+secuencia de movimiento y del modo dependiente del PC. Los planos se hicieron bien, es decir con cotas y esas cosas, para poder ser
+replicados, no como en los robots anteriores que no había nada. El material fue el aluminio, resistente y a la vez ligero, fácil de cortar y de plegar. No se uso ningún 
+tipo de pegamento debido a las fuertes tensiones que en algunos momentos debían soportar las extremidades, todavía no sabía de los nuevos materiales y de los
+nuevos pegamentos. En el PC se desarrolló un software para poder crear las secuencias de movimiento, gracias a él se tardó relativamente poco en hacer que
+el robot puediese girar, levantarse, andar, en fin, toda la serie de movimientos que dispone.
+</p>
+<p>Con esta página queremos dejar accesible toda la información del proyecto, para que pueda ser de ayuda a futuros creadores de robots. 
+Lamentablemente hay muchas cosas que ya están obsoletas, la informática y la electrónica tienen esa peculiaridad, pero el planteamiento y muchas 
+de las decisiones que se tomaron siguen siendo válidas.
+</p>
+Para tener una referencia en el tiempo, el robot se construyó durante el año 2000, en mi etapa de estudiante, en concreto fue mi Proyecto Fin de Carrera, presentado en Febrero del 2001.
+A partir de ahí ha participado en más de una conferencia, primero de la mano de <A href="http://www.microbotica.es">Microbótica</A>, y luego de forma independiente, por lo que a más de 
+uno le puede resultar familiar. Como anécdota diremos que cuando se empezó a construir, Sony todavía no había lanzado el <A href="multimedia/fotos/aibo2.jpg">Aibo</A>, justo cuando se terminó apareció su gran competidor. En fin,
+nos conformaremos con decir que el trabajo mereció la pena.
+
+</div>
+
+<!-- Sección 1 -->
+<HR></HR>
+<H2 id="dos"> Características </H2>
+
+<div class="lista">
+    <li> Dispone de 12 servomecanismos Futaba 3003 </li>
+	<li> Dispone de un total de 4 microcontroladores 68hc11E2 de Motorola:</li>
+	<li>&nbsp; &nbsp; 3 BT6811 que controlan 4 servos cada una, y con ocupación al 25% </li>
+	<li>&nbsp; &nbsp; 1 CT6811 para controlar el modo dependiente del PC y las secuencias. (10%) </li>
+	<li> La conexión con el PC es mediante un enlace RS232 a 9600 baudios </li>
+	<li> La red interna esta basada en el BUS SPI </li>
+	<li> Tramas homogéneas y sin control de errores. Sorprendentemente no hizo falta.</li>
+</div>
+
+
+<!-- Downloads -->
+<HR></HR>
+<H2 id="tres"> Downloads </H2>
+
+<p>
+<table width=80%  border="0" align="center">
+<td colspan="2" align="center" bgcolor="#abbeeb">
+   <b>DOCUMENTACIÓN</b>
+</td>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="documentacion/indice.pdf">indice.pdf</a> (46KB)  </td>
+  <td><b>Indice</b>. Contenido del proyecto</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="documentacion/capitulo1.pdf">capitulo1.pdf</a> (228KB)  </td>
+  <td><b> Capítulo 1</b>. La evolución de la robótica</td>
+</tr>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="documentacion/capitulo2.pdf">capitulo2.pdf</a> (340KB)  </td>
+  <td><b>Capítulo 2</b>. Estructura mecónica</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="documentacion/capitulo3.pdf">capitulo3.pdf</a> (140KB)  </td>
+  <td><b> Capítulo 3</b>. Servomecanismos</td>
+</tr>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="documentacion/capitulo4.pdf">capitulo4.pdf</a> (186KB)  </td>
+  <td><b>Capítulo 4</b>. Electrónica de control</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="documentacion/capitulo5.pdf">capitulo5.pdf</a> (385KB)  </td>
+  <td><b> Capítulo 5</b>. Software de control</td>
+</tr>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="documentacion/capitulo6.pdf">capitulo6.pdf</a> (120KB)  </td>
+  <td><b>Capítulo 6</b>. Conclusiones y líneas futuras</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="documentacion/apendiceA.pdf">apendiceA.pdf</a> (171KB)  </td>
+  <td><b> Apéndice A</b>. Manual de usuario de la BT6811</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="documentacion/apendiceB.pdf">apendiceB.pdf</a> (316KB)  </td>
+  <td><b> Apéndice B</b>. Manual de usuario de la CT6811</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="documentacion/presentacion/puchobot-fin.ppt">puchobot-fin.ppt</a> (1,4 MB)  </td>
+  <td><b> Presentación PPT</b>. Transparencias con la presentación del proyecto</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="documentacion/puchobot.pdf">puchobot.pdf</a> (4MB)  </td>
+  <td><b> Libro</b>. Documento que contiene todos los anteriores excepto la presentación</td>
+</tr>
+
+</tr>   
+</table>
+</p>
+
+<p>
+<table width=80%  border="0" align="center">
+<td colspan="2" align="center" bgcolor="#abbeeb">
+   <b>Planos</b>
+</td>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="planos/puchonew5.pdf">puchonew5.pdf</a> (14KB)  </td>
+  <td><b>Cuerpo</b>. Planos del cuerpo del robot</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="planos/puchonew6.pdf">puchonew6.pdf</a> (8KB)  </td>
+  <td><b>Lomo.</b>Planos de la cubierta superior del cuerpo del robot</td>
+</tr>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="planos/puchonew7.pdf">puchonew7.pdf</a>(12KB)  </td>
+  <td><b>Patas</b>. Planos de las patas del robot</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="planos/puchonew3.pdf">puchonew3.pdf</a> (8KB)  </td>
+  <td><b> Hombro.</b> Planos de la articulación del hombro.</td>
+</tr>    
+
+<tr bgcolor="#cabeeb">
+  <td><a href="planos/planos.zip">planos.zip</a>(14KB)  </td>
+  <td><b>Fuentes</b>. Fuentes de los planos del robot en formato (.fig) para el programa XFIG</td>
+</tr>
+
+</table>
+</p>
+
+
+<p>
+<table width=80%  border="0" align="center">
+<td colspan="2" align="center" bgcolor="#abbeeb">
+   <b>Software (Fuentes y Ejecutables) </b>
+</td>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="software/maestro.zip">maestro.zip</a> (3KB)  </td>
+  <td><b>Maestro</b>. Programa en ensamblador del 68hc11 para el control de la tarjeta maestra CT6811.</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="software/esclavo.zip">esclavo.zip</a> (9,3KB)  </td>
+  <td><b>Esclavo.</b> Programa para las BT6811 (esclavas) que recibe órdenes por el SPI y controla 4 servos</td>
+</tr>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="software/control.zip">control.zip</a>(42,5KB)  </td>
+  <td><b>Control</b>. Programa para el PC (Linux) en Xforms que mueve el robot mediante unos cursores</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="software/xpucho.zip">xpucho.zip</a> (76,4KB)  </td>
+  <td><b>Xpucho</b>. Programa para el PC (Linux) en Xforms que permite generar las secuencias de movimiento del robot.</td>
+</tr>    
+   
+</table>
+</p>
+
+
+<p>
+<table width=80%  border="0" align="center">
+<td colspan="2" align="center" bgcolor="#abbeeb">
+   <b>Fotos</b>
+</td>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="multimedia/fotos/botonera.gif">botonera.gif</a> (27,1KB)  </td>
+  <td><b>XPUCHO</b>. Pantallazo del programa de control Xpucho. Realizado en Xforms para Linux.</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="multimedia/fotos/cuerpo-3.jpg">cuerpo-3.jpg</a> (40KB)  </td>
+  <td><b>Cuerpo.</b> Foto del cuerpo del robot sin la cubierta</td>
+</tr>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="multimedia/fotos/montado-1.jpg">montado-1.jpg</a>(60KB)  </td>
+  <td><b>Control</b>. Foto del cuerpo del robot sin la cubiera en posición levantado</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="multimedia/fotos/pata-4.jpg">pata-4.jpg</a> (48,2KB)  </td>
+  <td><b>Pata</b>. Foto de una de las articulaciones compuesta por tres servos.</td>
+</tr>    
+   
+   
+<tr bgcolor="#cabeeb">
+  <td><a href="multimedia/fotos/tumbado.gif">tumbado.gif</a>(151KB)  </td>
+  <td><b>PuchoBot</b>. Robot Pucho tumbado a la espera de algún evento divertido</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="multimedia/fotos/puchoifara.jpg">puchoifara.jpg</a> (82KB)  </td>
+  <td><b>PuchoBot</b>. Pucho sin cabeza es vigilado por una de nuestras cámaras en Ifara.</td>
+</tr>    
+
+</table>
+</p>
+
+
+<!-- LINKS: Enlaces de interes -->
+<HR></HR>
+<H2 id="cuatro"> Links </H2>
+<div class="lista">
+  <li><a href="../../../../proyectos/ct6811/ct6811.html">Tarjeta CT6811</a>
+  , basada en el microcontrolador <b>68hc11 </b>de Motorola</li>
+  <li><a href="../../../../proyectos/bt6811/bt6811.html">Tarjeta BT6811</a>, 
+  para el control de 4 servomecanismos.
+  <li><a href="../../../../personal/juan/proyectos/XBT6811/xbt6811.html">Programa XBT6811</a>, 
+  para el control de 4 servomecanismos desde el PC.</li>
+  <li><a href="../../../../proyectos/cuadernos/ct3/ct3.html">Futaba 3003</a>, 
+  documentación del famoso servomecanismo</li>
+  <li><a href="../../../../personal/juan/proyectos/cube-2.0/cube.html">Robot CUBE 2.0</a>, es la
+  cuarta generación de robots, llevada a cabo por <A href="../../../../personal/juan"> Juan González Gómez</A>
+</div>
+
+
+<!-- Programas de ejemplo -->
+<!-- Documentacion -->
+<!-- Agradecimientos -->
+<HR></HR>
+<H2 id="cinco">Agradecimientos</H2>
+
+<div class="lista">
+<ul>
+  <li> A mis padres por haberme costeado la financiación del robot</li>
+  <li> A <A href="../../../../personal/juan"> Juan González Gómez</A>
+         por enseñarme a controlar los futaba desde la CT6811 y a hacer programas con Xforms.</li>
+  <li> A <A href="http://lorien.die.upm.es/~macias/teaching-e.html"> Javier Macías-Guarasa</A>
+         por haber aceptado la construcción de este robot como PFC</li>
+</ul>
+</div>
+
+
+<!-- Noticias -->
+<HR>
+<H2 id="seis">Noticias</H2>
+
+<div class="lista">
+<ul>
+  <li>31-07-2003 Publicado el Proyecto Pucho</li>
+</ul>
+</div>
+
+
+<!-- Autores -->
+<HR>
+<H2 id="autor">Autores</H2>
+
+<div class="lista">
+<ul>
+  <li>Andrés Prieto-Moreno Torres (<A href="mailto:andres@iearobotics.com">andres@iearobotics.com</A>) 
+  (<A href="../../../../personal/andres/index.html">Página Personal</A>)  
+  </li>
+</ul>
+<div class="cuerpo">
+  Este proyecto tiene una <b>licencia GPL</b>. Todo el software, documentación, hardware y estructuras mecónicas
+  se puede copiar, modificar y distribuir siempre y cuando se mantenga esta nota.
+</div>
+
+
+<p>&nbsp;</p>
+<HR NOSHADE>
+
+<table align="center">
+	<tr>
+		<td>IEA ROBOTICS</td>
+		<td><A href="https://obijuan.github.io/iearobotics-site/">Página de inicio</A></td>
+		<td><A HREF="mailto:info@iearobotics.com">Dirección de contacto</A></td>
+	</tr>
+</table>
+
+<HR NOSHADE>
+
+</body>
+</html>
