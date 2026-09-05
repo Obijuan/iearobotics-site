@@ -1,0 +1,466 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>Cuaderno t&eacute;cnico II: Trucaje de los servos Futaba 3003</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.2  (Linux)">
+	<META NAME="CREATED" CONTENT="20040905;19451700">
+	<META NAME="CHANGED" CONTENT="20040909;17315600">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>Cuaderno t&eacute;cnico II: Trucaje de los
+				servos Futaba 3003</B> 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P><A HREF="#tres">[Autores]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#licencia">[Licencia]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#download">[download]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#links">[Links]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#noticias">[noticias]</A></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P><BR><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/trucaje.png" NAME="Imagen1" ALIGN=BOTTOM WIDTH=517 HEIGHT=179 BORDER=0>
+</P>
+<HR>
+<H2>Introducci&oacute;n 
+</H2>
+<P>Para la construcci&oacute;n de <B>robots m&oacute;biles</B> es
+necesario disponer de motores que hagan girar las ruedas del robot.
+Se pueden usar de dos tipos: paso a paso o de <B>corriente continua</B>.
+En este cuaderno t&eacute;cnico nos centraremos en los segundos. 
+</P>
+<P>Los motores de corriente cont&iacute;nua (<B>Motores CC</B>) son
+muy f&aacute;ciles de controlar. Disponen de dos cables donde se
+aplica un voltaje. A mayor voltaje mayor velocidad, y la polaridad
+aplicada determina el sentido de giro. Si tomamos un motor de este
+tipo y lo conectamos directamente a una pila veremos que empieza a
+moverse. 
+</P>
+<P>El problema es que giran muy r&aacute;pido y tienen poca fuerza,
+lo que los hace poco adecuados para la construcci&oacute;n de robots
+m&oacute;viles destinados al aprendizaje, donde queremos que se
+muevan lentamente sobre una superficie peque&ntilde;a, como la de una
+mesa. Es necesario utilizar una <B>caja reductora </B>con un eje de
+salida que gira m&aacute;s lentamente, pero con mayor fuerza. 
+</P>
+<P>Construir la caja reductora es complicado y las que se pueden
+comprar son caras. En este <B>cuaderno t&eacute;cnico</B> describimos
+una soluci&oacute;n muy empleada en la construcci&oacute;n de robots
+m&oacute;viles: la <B>utilizaci&oacute;n de servos trucados</B>. Los
+servos incorporan un motor CC, una caja reductora y un circuito de
+control y sirven para la construcci&oacute;n de articulaciones.
+Tienen un rango de giro limitado a 180 grados. Es posible &quot;trucar&quot;
+estos servos, eliminando el circuito de control y cortando los topes
+mec&aacute;nicos de manera que se comporten como motores de CC
+normales, pero con mucha fuerza. <B>Perfectos para hacer peque&ntilde;os
+robots m&oacute;viles</B>. 
+</P>
+<P ALIGN=CENTER><IMG SRC="../../tritt/images/tritt2.jpg" NAME="Imagen2" ALIGN=BOTTOM WIDTH=320 HEIGHT=307 BORDER=0>
+</P>
+<P>Por ejemplo, el <A HREF="../../tritt/tritt.html">Microbot Tritt</A>
+utiliza este tipo de motores. 
+</P>
+<HR>
+<H2><A NAME="servos"></A>Servos Futaba 3003</H2>
+<P>En la foto de la izquierda se pueden dos servos reci&eacute;n
+comprados. Adem&aacute;s del propio servo, incluyen tornillos y
+diferentes coronas que se colocan en el eje de salida. En la foto de
+la derecha se muestra un servo junto a un disco de 3 y 1/2 &quot;,
+para apreciar su tama&ntilde;o. Obs&eacute;rvese el conector que
+tiene, que incluye tres cables: dos para la alimentaci&oacute;n (rojo
+y negro) y otro para la se&ntilde;al de control (blanco). Una vez
+trucado s&oacute;lo tendr&aacute; dos cables 
+</P>
+<CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P><IMG SRC="images/futabas.png" NAME="Imagen3" ALIGN=BOTTOM WIDTH=300 HEIGHT=225 BORDER=0>
+								</P>
+			</TD>
+			<TD>
+				<P><IMG SRC="images/fut1.png" NAME="Imagen4" ALIGN=BOTTOM WIDTH=300 HEIGHT=225 BORDER=0></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<HR>
+<H2><A NAME="trucaje"></A>Trucando los servos</H2>
+<P><BR><BR>
+</P>
+<CENTER>
+	<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=2 CELLSPACING=0>
+		<TR>
+			<TD WIDTH=20%>
+				<P><IMG SRC="images/futaba1.png" NAME="Imagen5" ALIGN=BOTTOM WIDTH=127 HEIGHT=95 BORDER=0>
+								</P>
+			</TD>
+			<TD WIDTH=75%>
+				<P ALIGN=JUSTIFY><B>Paso 1</B>. Hay aplicaciones con microbots
+				que necesitan un giro completo de los motores. Ya se ha visto que
+				los servomecanismos tienen un giro de 180 grados. Esta limitaci&oacute;n
+				viene impuesta por unos topes mec&aacute;nicos y un circuito
+				electr&oacute;nico. Todo esto se puede anular para conseguir el
+				giro completo buscado, pero es un <B>proceso destructivo</B>, es
+				decir, no se podr&aacute; recuperar la funcionalidad original. 
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P><IMG SRC="images/futaba2.png" NAME="Imagen6" ALIGN=BOTTOM WIDTH=127 HEIGHT=95 BORDER=0>
+								</P>
+			</TD>
+			<TD>
+				<P ALIGN=JUSTIFY><B>Paso 2</B>. Al quitar los cuatro tornillos
+				posteriores se aprecia un circuito electr&oacute;nico. Para poder
+				extraerlo es necesario quitar el tornillo que une la rueda con el
+				eje del motor. Una vez hecho esto se puede quitar la tapa
+				superior del servomecanismo, dejando al descubierto unos
+				engranajes blancos. 
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P><IMG SRC="images/futaba3.png" NAME="Imagen7" ALIGN=BOTTOM WIDTH=127 HEIGHT=95 BORDER=0>
+								</P>
+			</TD>
+			<TD>
+				<P ALIGN=JUSTIFY><B>Paso 3</B>. Los engranajes blancos que se
+				pueden apreciar en esta figura forman <B>la caja reductora</B>
+				del servomecanismo. La misi&oacute;n de esta es proporcionar m&aacute;s
+				par (fuerza) de salida en el eje del motor y reducir la velocidad
+				del mismo. Para quitar el circuito electr&oacute;nico se tiene
+				que desmontar primero la caja reductora. Con mucho cuidado para
+				no perder las piezas se ir&aacute;n quitando las peque&ntilde;as
+				ruedas dentadas blancas. Atenci&oacute;n con el peque&ntilde;o
+				eje situado en las dos ruedas intermedias. 
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P><IMG SRC="images/futaba4.png" NAME="Imagen8" ALIGN=BOTTOM WIDTH=127 HEIGHT=95 BORDER=0>
+								</P>
+			</TD>
+			<TD>
+				<P ALIGN=JUSTIFY><B>Paso 4</B>. Una vez hecho lo anterior se
+				puede presionar con un destornillador el saliente mec&aacute;nico
+				que se esconde debajo del engranaje m&aacute;s grande (eje de
+				salida). Se observar&aacute; c&oacute;mo el circuito electr&oacute;nico
+				sobresale por debajo. Ahora se puede hacer palanca para extraerlo
+				entero. En la figura se muestra la apariencia de ese circuito
+				electr&oacute;nico una vez extra&iacute;do. Hay dos cilindros y
+				un circuito integrado. Uno es el <B>potenci&oacute;metro</B> de
+				control (en la figura a la izquierda), el otro es el <B>motor </B>(En
+				la figura a la derecha). 
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P><IMG SRC="images/futaba5.png" NAME="Imagen9" ALIGN=BOTTOM WIDTH=127 HEIGHT=95 BORDER=0>
+								</P>
+			</TD>
+			<TD>
+				<P ALIGN=JUSTIFY><B>Paso 5</B>. Ha llegado el momento de empezar
+				a transformar el servomecanismo. Hasta ahora el proceso no ha
+				sido destructivo, pero a partir de aqu&iacute; s&iacute; lo ser&aacute;.
+				Lo primero que hay que hacer es desoldar el motor, ser&aacute; la
+				&uacute;nica parte que se reutilice, el resto no se va a
+				necesitar. El potenci&oacute;metro establece junto con el chip la
+				limitaci&oacute;n de giro electr&oacute;nica. Al quitar ambos
+				componentes se elimina dicha limitaci&oacute;n. 
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P><IMG SRC="images/futaba6.png" NAME="Imagen10" ALIGN=BOTTOM WIDTH=127 HEIGHT=95 BORDER=0>
+								</P>
+			</TD>
+			<TD>
+				<P ALIGN=JUSTIFY><B>Paso 6</B>. El cable triple que sale del
+				circuito electr&oacute;nico se puede cortar para utilizarlo en
+				otras aplicaciones. Es muy &uacute;til debido al conector triple
+				que tiene en su extremo. Por ejemplo se puede usar para conectar
+				los sensores de infrarrojos a la <A HREF="../../ct293/ct293.html">tarjeta
+				CT293+</A>. En la figura se observa el circuito totalmente
+				desmontado. El potenci&oacute;metro se puede reutilizar en otras
+				aplicaciones, por eso no viene mal guardarlo, nunca se sabe. 
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P><IMG SRC="images/futaba7.png" NAME="Imagen11" ALIGN=BOTTOM WIDTH=127 HEIGHT=95 BORDER=0>
+								</P>
+			</TD>
+			<TD>
+				<P ALIGN=JUSTIFY><B>Paso 7</B>. Antes de volver a colocar el
+				motor en su sitio se deben soldar dos cablecillos en sus bornas
+				de alimentaci&oacute;n. Se recomienda usar un cable rojo y otro
+				negro, el primero se soldar&aacute; a la borna positiva (la que
+				tiene el punto rojo) y el segundo a la negativa. La
+				diferenciaci&oacute;n no importa en el caso de microbots m&oacute;viles,
+				pero en aplicaciones que impliquen un solo sentido de giro del
+				motor s&iacute;. Conviene hacer coincidir la polaridad de la
+				fuente de alimentaci&oacute;n con la del motor, de esa forma la
+				vida &uacute;til del mismo ser&aacute; mayor. 
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P><IMG SRC="images/futaba8.png" NAME="Imagen12" ALIGN=BOTTOM WIDTH=128 HEIGHT=96 BORDER=0>
+								</P>
+			</TD>
+			<TD>
+				<P ALIGN=JUSTIFY><B>Paso 8</B>. Ahora se elimina la <B>limitaci&oacute;n
+				mec&aacute;nica</B>. Esta consiste en un peque&ntilde;o saliente
+				situado en el engranaje que forma el eje de salida del
+				servomecanismo. En la figura se puede apreciar dicho engranaje y
+				la situaci&oacute;n del saliente. Para cortarlo se pueden emplear
+				unas pinzas, lima, etc... lo importante es no da&ntilde;ar las
+				muescas de la rueda dentada, o peor a&uacute;n partir el eje. En
+				caso de que esto ocurra se puede intentar pegar con 'Super Glue
+				3'. 
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P><IMG SRC="images/futaba9.png" NAME="Imagen13" ALIGN=BOTTOM WIDTH=127 HEIGHT=95 BORDER=0>
+								</P>
+			</TD>
+			<TD>
+				<P ALIGN=JUSTIFY><B>Paso 9</B>. Una vez eliminado el saliente se
+				recomienda limar la zona para que no queden rugosidades, es decir
+				que parezca que nunca hubo un saliente. La raz&oacute;n es evitar
+				rozamientos innecesarios una vez montada la reductora. Cuantos
+				m&aacute;s rozamientos m&aacute;s ruido y m&aacute;s p&eacute;rdida
+				de energ&iacute;a mec&aacute;nica. 
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P><IMG SRC="images/futaba10.png" NAME="Imagen14" ALIGN=BOTTOM WIDTH=127 HEIGHT=95 BORDER=0>
+								</P>
+			</TD>
+			<TD>
+				<P ALIGN=JUSTIFY><B>Paso 10</B>. Una vez realizado lo anterior se
+				procede a montar el servomecanismo. Lo primero es introducir el
+				motor en el hueco cil&iacute;ndrico que hay en el interior de la
+				carcasa negra, es decir del lugar de d&oacute;nde sali&oacute;. 
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P><IMG SRC="images/futaba11.png" NAME="Imagen15" ALIGN=BOTTOM WIDTH=127 HEIGHT=95 BORDER=0>
+								</P>
+			</TD>
+			<TD>
+				<P ALIGN=JUSTIFY><B>Paso 11</B>. Una vez introducido se monta la
+				caja reductora, para ello fijarse en la figura, sobretodo tener
+				cuidado con la posici&oacute;n que deben tener los engranajes y
+				nunca forzar su colocaci&oacute;n. La tapa superior debe entrar
+				sin ning&uacute;n problema, en caso contrario revisar los
+				engranajes. 
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P><IMG SRC="images/futaba12.png" NAME="Imagen16" ALIGN=BOTTOM WIDTH=128 HEIGHT=96 BORDER=0>
+								</P>
+			</TD>
+			<TD>
+				<P ALIGN=JUSTIFY><B>Paso 12</B>. Por &uacute;ltimo se atornilla
+				la tapa inferior, pero antes conviene hacer un peque&ntilde;o
+				nudo en los cablecillos del motor, y dejar dicho nudo en el
+				interior. Este proteger&aacute; las soldaduras hechas al motor
+				cuando se produzcan tirones en los cablecillos. 
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P><IMG SRC="images/futaba13.png" NAME="Imagen17" ALIGN=BOTTOM WIDTH=127 HEIGHT=95 BORDER=0>
+								</P>
+			</TD>
+			<TD>
+				<P ALIGN=JUSTIFY><B>Paso 13</B>. En la figura se aprecia el
+				aspecto del servomecanismo trucado. La primera diferencia
+				respecto al principio est&aacute; en el cable de conexi&oacute;n,
+				ahora no es triple sino doble. Pero la m&aacute;s importante es
+				que ahora puede girar cont&iacute;nuamente, es decir giros
+				completos de 360 grados. Llegado a este punto se tendr&aacute;n
+				preparados los motores del microbot y se podr&aacute; abordar la
+				construcci&oacute;n de la estructura mec&aacute;nica. 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<HR>
+<H2>Detalles de los engranajes</H2>
+<P>En la siguiente figura se pueden apreciar con m&aacute;s detalle
+el <B>conjunto de engranajes</B> que forman la caja reductora del
+servo Futaba 3003. En total hay 4. El que est&aacute; conectado al
+eje de salida del servo es el que tiene el tope a eliminar. En
+algunos servos es de color negro (como en este caso) pero en otros es
+blanco (fotos anteriores). 
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/engranajes.png" NAME="Imagen18" ALIGN=BOTTOM WIDTH=320 HEIGHT=240 BORDER=0></P>
+<HR>
+<H2><A NAME="tres"></A>Autores</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../../personal/andres/index.html">Andr&eacute;s
+	Prieto-Moreno Torres</A>. 
+	</P>
+	<LI><P><A HREF="../../../personal/juan/index.html">Juan
+	Gonz&aacute;lez G&oacute;mez</A>. 
+	</P>
+</UL>
+<HR>
+<H2><A NAME="licencia"></A>Licencia</H2>
+<P STYLE="margin-bottom: 0cm">Este documento se distribuye bajo
+<A HREF="http://gugs.sindominio.net/licencias/fdl-es.html">licencia
+FDL</A> por lo que se permite su copia, modificaci&oacute;n y
+distribuci&oacute;n, siempre y cuando se mantenga esta nota. 
+</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A name="download"></A>Download</H2>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>Cuaderno t&eacute;cnico II</B> 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=2 CELLSPACING=2>
+		<TR BGCOLOR="#cabeeb">
+			<TD>
+				<P><A HREF="../../tritt/download/microbot.pdf">microbot.pdf</A>
+				(409KB) 
+				</P>
+			</TD>
+			<TD>
+				<P>Construcci&oacute;n de Tritt. Informaci&oacute;n sobre los
+				Futaba, <B>Trucado de los servos</B> y estructura ALF I</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD>
+				<P><A HREF="../../tritt/download/microbot-tritt.tgz">microbot-tritt.tgz</A>(865KB)
+								</P>
+			</TD>
+			<TD>
+				<P>Fuentes del documento microbot, para Lyx. (Incluye todas las
+				fotos) 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P><BR><BR>
+</P>
+<HR>
+<H2><A NAME="todo"></A>Lista de cosas por hacer</H2>
+<P><B>&iquest;Quieres participar?</B> A continuaci&oacute;n
+proponemos una serie de cosas que quedan por hacer. Si has realizado
+alguna de ellas y quieres que te la publiquemos s&oacute;lo tienes
+que mandarnos un <A HREF="mailto:info@iearobotics.com">correo</A>. 
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><B>Planos</B> de las distintas
+	partes del Futaba (engranajes, motor, etc...), usando el programa
+	<B>libre y multiplataforma</B> <A HREF="http://www.qcad.org/">QCAD</A>,
+	para poder compartir los planos con cualquiera</P>
+	<LI><P><B>Modelos virtuales</B> de las distintas piezas, usando el
+	programa <B>libre y multiplataforma</B> <A HREF="http://www.blender.org/">Blender</A>
+		</P>
+</UL>
+<HR>
+<H2><A NAME="links"></A>Links</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../tritt/tritt.html">Microbot
+	Tritt</A> 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../skypic/skypic.html">Tarjeta
+	Skypic</A>, entrenadora para los microcontroladores PIC de 28 pines</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../ct6811/ct6811.html">Tarjeta
+	CT6811</A> , basada en el microcontrolador <B>68hc11 </B>de Motorola
+		</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../ct293/ct293.html">Tarjeta
+	CT293</A>, para el control de <B>motores</B> y <B>sensores</B> 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../../personal/andres/proyectos/picmin/pic1.html">Tarjeta
+	PICMIN</A> , tarjeta b&aacute;sica para comenzar a trabajar con el
+	microcontrolador <B>PIC 16F84</B> 
+	</P>
+	<LI><P><A HREF="http://www.terra.es/personal5/cuchomen1/Micros/placa_fast.htm">Placa
+	FastPic</A>, Tarjeta de desarrollo para microcontroladores <B>PIC
+	16F876</B> ,<B>18F258</B> y pin compatibles. 
+	</P>
+</UL>
+<HR>
+<H2><A NAME=noticias></A>Noticias 
+</H2>
+<UL>
+	<LI><P><B>5/Sep/2004: </B>
+	</P>
+	<UL>
+		<LI><P>A&ntilde;adido enlace al <A HREF="../index.html">&iacute;ndice
+		de cuadernos t&eacute;cnicos</A></P>
+		<LI><P>A&ntilde;adido enlace a la <A HREF="../../skypic/skypic.html">Tarjeta
+		Skypic</A></P>
+	</UL>
+	<LI><P><B>28/Jul/2003</B>: Publicado en la web 
+	</P>
+</UL>
+<HR>
+<a href="https://obijuan.github.io/iearobotics-site/">IEA ROBOTICS</a>
+<ADDRESS>
+<A href="../../../personal/juan/index.html">Juan González</A>
+</ADDRESS>
+</body>
+</html>
