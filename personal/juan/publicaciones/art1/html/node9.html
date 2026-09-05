@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>9 Ventajas e inconvenientes</TITLE>
+<META NAME="description" CONTENT="9 Ventajas e inconvenientes">
+<META NAME="keywords" CONTENT="jps">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="jps.css">
+
+<LINK REL="next" HREF="node10.html">
+<LINK REL="previous" HREF="node8.html">
+<LINK REL="up" HREF="jps.html">
+<LINK REL="next" HREF="node10.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html112"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html110"
+  HREF="jps.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html104"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html113"
+  HREF="node10.html">10 Conclusiones</A>
+<B> Up:</B> <A NAME="tex2html111"
+  HREF="jps.html">Tarjeta entrenadora para FPGA,</A>
+<B> Previous:</B> <A NAME="tex2html105"
+  HREF="node8.html">8 Un ejemplo de</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00090000000000000000">
+9 Ventajas e inconvenientes</A>
+</H1>
+
+<P>
+Las ventajas de la tarjeta JPS frente a los tradicionales sistemas
+basados en microcontroladores son las que se derivan de la utilización
+de las FPGAs:
+
+<P>
+
+<UL>
+<LI><B>Hardware a la medida</B>. El diseñador no tiene que buscar los
+productos del mercado que mejor se adapten a sus diseños, sino que
+se los diseña a la medida de sus necesidades, o reutiliza o modifica
+los diseños ya existentes. En robótica, es muy común emplear un microcontrolador
+u otro en función de los periféricos que traiga integrados, y es muy
+común que sólo se utilicen unos pocos de ellos. En un sistema que
+incorporen FPGAs, es el diseñador el que implemente sólo los controladores
+necesarios. Se abren nuevas posibilidades de diseño, como por ejemplo
+el crear una CPU específica para una aplicación determinada junto
+con sus propios controladores de periféricos.
+</LI>
+<LI><B>Acortamiento del ciclo de diseño</B>. El modelo de diseño hardware
+basado en HDL contiene muchas de las ventajas del diseño software.
+El circuito es ahora un fichero de texto, que se puede editar, simular,
+modificar y finalmente sintetizar. Se pueden crear repositorios hardware,
+con colecciones de diseños ya probados: controladores de VGA, UARTs,
+temporizadores, CPUs, etc. El diseñador puede crear prototipos muy
+rápidamente, probarlos, medirlos y modificarlos.
+</LI>
+<LI><B>Flexibilidad</B>. Con el mismo hardware físico, conseguimos tener
+hardware con comportamientos diferentes. En la misma placa JPS, ahora
+podemos tener sintetizada una CPU, y más adelante podemos probar una
+UART.
+</LI>
+<LI><B>Posibilidad de pasar algoritmos al hardware</B>: En los diseños
+mixtos microcontrolador/FPGA se puede optar por implementar una solución
+hardware frente a uno puramente software, consiguiéndose una mayor
+velocidad. Por ejemplo la implementación de algoritmos de cifrado.
+En un microcontrolador de 8 bits esto sería un proceso lento, pero
+se convierte en viable si se añade un hardware que haga el cifrado. 
+</LI>
+<LI><B>Diseños hardware libres</B>. Posibilidad de realizar diseños
+hardware libres que se compartan dentro de la comunidad hardware y
+que cualquier diseñador pueda utilizarlos, modificarlos y distribuir
+las modificaciones. Esto es especialmente útil en el campo de la docencia
+y la investigación. Esto se potencia si el hardware físico en el que
+se prueban los diseños es también libre, como es el caso de la placa
+JPS. Desaparece la dependencia con el fabricante de la placa y cada
+Universidad o diseñador puede fabricarse las placas que considere
+necesarias.
+</LI>
+</UL>
+Este tipo de arquitecturas presenta también una serie de inconvenientes:
+
+<P>
+
+<UL>
+<LI><B>Mayor precio</B>. Una FPGA en comparación con un microcontrolador
+es mucho más cara. En concreto, la FPGA utilizada en el robot de docencia
+cuesta 24 euros frente a los 5 euros (precios en el 2003) que costaría
+típicamente un microcontrolador de 8 bits en el que se puede implementar
+fácilmente el mismo algoritmo de seguir la línea.
+</LI>
+<LI><B>Entornos de desarrollo propietarios, con licencias altas</B>.
+Para realizar la síntesis del hardware hay que utilizar las herramientas
+del fabricante de las FPGA, que son caras y al día de hoy no existen
+alternativas libres. 
+</LI>
+</UL>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html112"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html110"
+  HREF="jps.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html104"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html113"
+  HREF="node10.html">10 Conclusiones</A>
+<B> Up:</B> <A NAME="tex2html111"
+  HREF="jps.html">Tarjeta entrenadora para FPGA,</A>
+<B> Previous:</B> <A NAME="tex2html105"
+  HREF="node8.html">8 Un ejemplo de</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-09-20
+</ADDRESS>
+</BODY>
+</HTML>

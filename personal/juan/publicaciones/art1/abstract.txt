@@ -1,0 +1,12 @@
+Resumen
+
+En este artículo se presenta la placa JPS, una tarjeta 
+entrenadora para FPGAs de Xilinx, diseñada con una 
+licencia abierta que permite a cualquiera disponer de 
+los esquemas y planos relativos al PCB, modificarlos 
+y/o distribuirlos, así como fabricar la placa. La 
+tarjeta permite realizar diseños autónomos sobre 
+algunos modelos de FPGAs Spartan y XC4000. Éstos se 
+pueden cargar desde una EEPROM serie incluida en la 
+placa, o trabajar en modo entrenador, cargando los 
+diseños desde el PC. 

@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>4 Modos de funcionamiento</TITLE>
+<META NAME="description" CONTENT="4 Modos de funcionamiento">
+<META NAME="keywords" CONTENT="jps">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="jps.css">
+
+<LINK REL="next" HREF="node5.html">
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="jps.html">
+<LINK REL="next" HREF="node5.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html62"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html60"
+  HREF="jps.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html54"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html63"
+  HREF="node5.html">5 Diagrama de bloques</A>
+<B> Up:</B> <A NAME="tex2html61"
+  HREF="jps.html">Tarjeta entrenadora para FPGA,</A>
+<B> Previous:</B> <A NAME="tex2html55"
+  HREF="node3.html">3 Características de la</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00040000000000000000">
+4 Modos de funcionamiento</A>
+</H1>
+
+<P>
+La tarjeta puede trabajar en dos modos de funcionamiento: modo entrenador
+y modo autónomo. En el modo entrenador, la tarjeta se conecta a un
+PC desde el que se reconfigura la FPGA, usando el cable de descarga
+de Xilinx o bien uno construido por el propio desarrollador. Una vez
+que la simulación del diseño cumple con las especificaciones, y el
+circuito se ha sintetizado correctamente , se conecta la placa y se
+descarga el <I>bitstream</I>, permitiendo comprobar físicamente su
+funcionamiento (realización de mediciones, conexión de otros dispositivos,
+etc).
+
+<P>
+Para su utilización en robótica, es muy útil el modo autónomo, en
+el que el diseño se graba en una memoria EEPROM serie y la
+FPGA se configura automáticamente cada vez que se conecta la tarjeta
+o se pulsa el botón de <I>reset</I>. Usando una FPGA del tipo XC10,
+el tiempo de reconfiguración es de 200ms.
+
+<P>
+Otra opción es configurar la tarjeta en modo entrenador (FPGA en modo
+esclavo) pero realizando la carga desde un sistema microcontrolador,
+en vez de desde la EEPROM serie. Esto abre la posibilidad
+de trabajar con sistemas reconfigurables o adaptables, que descarguen
+un determinado circuito según las necesidades concretas.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html62"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html60"
+  HREF="jps.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html54"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html63"
+  HREF="node5.html">5 Diagrama de bloques</A>
+<B> Up:</B> <A NAME="tex2html61"
+  HREF="jps.html">Tarjeta entrenadora para FPGA,</A>
+<B> Previous:</B> <A NAME="tex2html55"
+  HREF="node3.html">3 Características de la</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-09-20
+</ADDRESS>
+</BODY>
+</HTML>

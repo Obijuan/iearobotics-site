@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>5 Diagrama de bloques</TITLE>
+<META NAME="description" CONTENT="5 Diagrama de bloques">
+<META NAME="keywords" CONTENT="jps">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="jps.css">
+
+<LINK REL="next" HREF="node6.html">
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="jps.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html72"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html70"
+  HREF="jps.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html64"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html73"
+  HREF="node6.html">6 Campos de aplicación</A>
+<B> Up:</B> <A NAME="tex2html71"
+  HREF="jps.html">Tarjeta entrenadora para FPGA,</A>
+<B> Previous:</B> <A NAME="tex2html65"
+  HREF="node4.html">4 Modos de funcionamiento</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00050000000000000000">
+5 Diagrama de bloques</A>
+</H1>
+
+<P>
+El diagrama de bloques se muestra en la figura <A HREF="node5.html#cap:fig:digrama-bloques">2</A>.
+El bloque principal lo constituye la FPGA, a la que se añade una circuitería
+adicional, dividida en los siguientes bloques:
+
+<P>
+
+<UL>
+<LI><B>Circuito de reloj</B>, para la realización de diseños síncronos.
+La frecuencia del oscilador empleado depende de la aplicación de usuario.
+</LI>
+<LI><B>Circuito de programación interno</B>, constituido por la memoria
+EEPROM serie y un multiplexor para que los pines de la EEPROM sean
+accesibles bien desde la FPGA, para su carga, o bien desde los pines
+del puerto de control para su programación in circuit.
+</LI>
+<LI><B>Circuito de programación externa</B>, que permite descargar <I>bitstreams</I>
+desde el PC o desde un sistema externo.
+</LI>
+<LI><B>Circuito de configuración</B>: jumper y switch para la configuración
+de los diferentes modos de trabajo. Mediante el jumper se pueden configurar
+el modo de trabajo: entrenador o autónomo. Mediante un conmutador
+se selecciona si la memoria EEPROM se conecta a la FPGA o al puerto
+de control para programarla desde un sistema externo, sin tener que
+sacarla del zócalo.
+</LI>
+<LI><B>Circuito de pruebas</B>, constituido por un led y un pulsador
+conectados a los pines P68 y P69 de la FPGA, que permiten probar el
+correcto funcionamiento de la placa, configurando la FPGA con un diseño
+de pruebas que los use, como por ejemplo un puerta inversora entre
+ellos.
+</LI>
+<LI><B>Puertos de expansión</B>. La placa incorpora 6 puertos de expansión,
+con 8 bits de datos, configurables para entrada o salida, y dos pines
+para la alimentación, de forma que los circuitos externos conectados
+se puedan alimentar directamente a través de los cables de bus. Están
+diseñados para ser compatibles con los conectores de la tarjeta GP-BOT[<A
+ HREF="node11.html#GPBOT">5</A>]
+y CT6811[<A
+ HREF="node11.html#ct6811">3</A>].
+</LI>
+</UL>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="cap:fig:digrama-bloques"></A><A NAME="207"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2:</STRONG>
+Diagrama de bloques de la tarjeta JPS</CAPTION>
+<TR><TD><P>
+<IMG
+ WIDTH="361" HEIGHT="211" ALIGN="BOTTOM" BORDER="0"
+ SRC="images/img1.png"
+ ALT="Diagrama">
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+Todos los detalles se pueden ver en el esquema de la figura <A HREF="node5.html#cap:fig:esquema-jps">3</A>
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="cap:fig:esquema-jps"></A><A NAME="208"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3:</STRONG>
+Esquema de la placa JPS</CAPTION>
+<TR><TD><IMG
+ WIDTH="679" HEIGHT="991" ALIGN="BOTTOM" BORDER="0"
+ SRC="images/img2.png"
+ ALT="Esquema">
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html72"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html70"
+  HREF="jps.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html64"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html73"
+  HREF="node6.html">6 Campos de aplicación</A>
+<B> Up:</B> <A NAME="tex2html71"
+  HREF="jps.html">Tarjeta entrenadora para FPGA,</A>
+<B> Previous:</B> <A NAME="tex2html65"
+  HREF="node4.html">4 Modos de funcionamiento</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-09-20
+</ADDRESS>
+</BODY>
+</HTML>

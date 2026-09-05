@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3 Características de la tarjeta</TITLE>
+<META NAME="description" CONTENT="3 Características de la tarjeta">
+<META NAME="keywords" CONTENT="jps">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="jps.css">
+
+<LINK REL="next" HREF="node4.html">
+<LINK REL="previous" HREF="node2.html">
+<LINK REL="up" HREF="jps.html">
+<LINK REL="next" HREF="node4.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html52"
+  HREF="node4.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html50"
+  HREF="jps.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html44"
+  HREF="node2.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html53"
+  HREF="node4.html">4 Modos de funcionamiento</A>
+<B> Up:</B> <A NAME="tex2html51"
+  HREF="jps.html">Tarjeta entrenadora para FPGA,</A>
+<B> Previous:</B> <A NAME="tex2html45"
+  HREF="node2.html">2 Introducción a las</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00030000000000000000">
+3 Características de la tarjeta</A>
+</H1>
+
+<P>
+La tarjeta JPS-XP84[<A
+ HREF="node11.html#JPS">4</A>] (ver foto en la figura <A HREF="node3.html#cap:fig:foto-jps">1</A>)
+es una tarjeta entrenadora para FPGAs, de propósito general, aunque
+está pensada para ser utilizada fundamentalmente en robótica. Sus
+dimensiones son reducidas (99x73mm) y dispone de conectores de expansión
+de 10 vías, compatibles con cables planos.
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="cap:fig:foto-jps"></A><A NAME="204"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1:</STRONG>
+La tarjeta JPS, situada al lado de un disquete de 3 y 1/2''</CAPTION>
+<TR><TD><P>
+<IMG
+ ALIGN="BOTTOM" BORDER="0" SRC="images/jps-xpc84-2-peq.jpg"
+ ALT="Image images/jps-xpc84-2-peq.jpg">
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+Las FPGAs de la empresa Xilinx[<A
+ HREF="node11.html#xilinx">7</A>]que soporta la JPS se
+muestran en la tabla <A HREF="#cap:tab:modelos-fpga">1</A>. Todas ellas tienen
+el encapsulado PLCC84, elegido por ser el de menor coste. Adicionalmente,
+es uno de los pocos encapsulados actuales que pueden ser soldados
+sin herramientas especiales para SMD. 
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="206"></A>
+<TABLE>
+<CAPTION><STRONG>Table 1:</STRONG>
+FPGAs soportadas por la tarjeta JPS</CAPTION>
+<TR><TD>
+<P>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="CENTER"><B>Device</B></TH>
+<TH ALIGN="CENTER"><B><FONT SIZE="-1">Logic cells</FONT></B></TH>
+<TH ALIGN="CENTER"><B><FONT SIZE="-1">Total CLBs</FONT></B></TH>
+<TD ALIGN="LEFT" COLSPAN=1><B><FONT SIZE="-1">Total FF</B></FONT></TD>
+</TR>
+<TR><TH ALIGN="CENTER"><B><FONT SIZE="-1">XC4003E</FONT></B></TH>
+<TD ALIGN="CENTER">238</TD>
+<TD ALIGN="CENTER">100</TD>
+<TD ALIGN="CENTER">360</TD>
+</TR>
+<TR><TH ALIGN="CENTER"><B><FONT SIZE="-1">XC4005E</FONT></B></TH>
+<TD ALIGN="CENTER">466</TD>
+<TD ALIGN="CENTER">196</TD>
+<TD ALIGN="CENTER">616</TD>
+</TR>
+<TR><TH ALIGN="CENTER"><B><FONT SIZE="-1">XC4010E</FONT></B></TH>
+<TD ALIGN="CENTER">950</TD>
+<TD ALIGN="CENTER">400</TD>
+<TD ALIGN="CENTER">1120</TD>
+</TR>
+<TR><TH ALIGN="CENTER"><B><FONT SIZE="-1">XCS05</FONT></B></TH>
+<TD ALIGN="CENTER">238</TD>
+<TD ALIGN="CENTER">100</TD>
+<TD ALIGN="CENTER">360</TD>
+</TR>
+<TR><TH ALIGN="CENTER"><B><FONT SIZE="-1">XCS10</FONT></B></TH>
+<TD ALIGN="CENTER">466</TD>
+<TD ALIGN="CENTER">196</TD>
+<TD ALIGN="CENTER">616</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+</TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<P>
+Las características de la tarjeta son:
+
+<P>
+
+<UL>
+<LI>6 puertos de expansión (48 <I>pines</I>), que dan acceso a las patas
+genéricas de entrada/salida de la FPGA.
+</LI>
+<LI>Zócalo para la inserción de un oscilador que genere la señal de reloj
+para los diseños síncronos.
+</LI>
+<LI><I>Led</I> y pulsador de pruebas, conectados a unos terminales fijos
+de la FPGA, para hacer pruebas de funcionamiento, sin tener que conectar
+ningún circuito externo.
+</LI>
+<LI><I>Led</I> de programación, conectado al terminal <I>done</I>, que
+indica si la FPGA está correctamente programada.
+</LI>
+<LI>Tres <I>switches</I> de configuración genéricos, conectados a tres
+terminales fijos, para ser utilizados como entradas de configuración
+en los diseños realizados.
+</LI>
+<LI>Configuración del modo de carga de la FPGA: maestro o esclavo. El
+modo maestro permite cargar la FPGA desde la memoria EEPROM
+integrada en la propia tarjeta. El modo esclavo se utiliza para cargarla
+desde un sistema externo (PC o un microcontrolador)
+</LI>
+<LI>Programación <I>in circuit</I> de la <SMALL>EEPROM</SMALL>.
+</LI>
+<LI>Pulsador para hacer <I>reset</I> de la FPGA.
+</LI>
+<LI>Conector para usar el cable de descarga (<I>download)</I> estándar
+de Xilinx
+</LI>
+</UL>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html52"
+  HREF="node4.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html50"
+  HREF="jps.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html44"
+  HREF="node2.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html53"
+  HREF="node4.html">4 Modos de funcionamiento</A>
+<B> Up:</B> <A NAME="tex2html51"
+  HREF="jps.html">Tarjeta entrenadora para FPGA,</A>
+<B> Previous:</B> <A NAME="tex2html45"
+  HREF="node2.html">2 Introducción a las</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-09-20
+</ADDRESS>
+</BODY>
+</HTML>

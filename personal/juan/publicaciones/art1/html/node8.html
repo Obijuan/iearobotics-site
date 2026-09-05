@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>8 Un ejemplo de uso: robot de docencia</TITLE>
+<META NAME="description" CONTENT="8 Un ejemplo de uso: robot de docencia">
+<META NAME="keywords" CONTENT="jps">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="jps.css">
+
+<LINK REL="next" HREF="node9.html">
+<LINK REL="previous" HREF="node7.html">
+<LINK REL="up" HREF="jps.html">
+<LINK REL="next" HREF="node9.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html102"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html100"
+  HREF="jps.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html94"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html103"
+  HREF="node9.html">9 Ventajas e inconvenientes</A>
+<B> Up:</B> <A NAME="tex2html101"
+  HREF="jps.html">Tarjeta entrenadora para FPGA,</A>
+<B> Previous:</B> <A NAME="tex2html95"
+  HREF="node7.html">7 Hardware abierto</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00080000000000000000">
+8 Un ejemplo de uso: robot de docencia</A>
+</H1>
+
+<P>
+En el laboratorio de Arquitectura e Ingeniería de Computadores los
+alumnos trabajan en el estudio y diseño de una CPU de docencia, de
+tipo RISC, de 16 bits, con una arquitectura Harvard y un total de
+8 instrucciones. Esta CPU ha sido implementada en VHDL y sintetizada
+en una FPGA de tipo Spartan I (XCS10). 
+
+<P>
+Una de las aplicaciones realizadas ha sido el robot de docencia, mostrado
+en la figura <A HREF="node8.html#cap:fig:robot-docencia">4</A>, programado para seguir
+una línea negra sobre un fondo blanco. Los resultados de sintetizar
+la CPU junto con la memoria que contiene el programa se muestran en
+la tabla <A HREF="#cap:tab:sistesis-cpu">2</A>.
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="cap:fig:robot-docencia"></A><A NAME="209"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Robot de docencia, que lleva una CPU diseñada en VHDL y sintetizada
+en la placa JPS</CAPTION>
+<TR><TD><IMG
+ ALIGN="BOTTOM" BORDER="0" SRC="images/robot-docencia-peq.jpg"
+ ALT="Image images/robot-docencia-peq.jpg">
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="210"></A>
+<TABLE>
+<CAPTION><STRONG>Table:</STRONG>
+Resultados de la síntesis de la CPU del robot de docencia</CAPTION>
+<TR><TD>
+<P>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="LEFT">Número de CLBs</TD>
+<TD ALIGN="RIGHT">147 (75%)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Máxima frecuencia</TD>
+<TD ALIGN="RIGHT">12MHZ</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+</TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<P>
+El programa del robot sigue líneas ocupa en total 56 bytes y la FPGA
+se encuentra al 75% de ocupación. Otros ejemplos de aplicaciones
+se muestra en la tabla <A HREF="#cap:fig:otros-dise_F1os">3</A>.
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="212"></A>
+<TABLE>
+<CAPTION><STRONG>Table:</STRONG>
+Otros diseños sintetizados</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1" ALIGN="CENTER">
+<TR><TD ALIGN="CENTER" COLSPAN=1><B>Diseño</B></TD>
+<TH ALIGN="CENTER"><B>CLBs ocupados</B></TH>
+</TR>
+<TR><TH ALIGN="LEFT"><B>Algoritmo de criptografía RSA</B></TH>
+<TD ALIGN="CENTER">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Clave de 8 bits</TD>
+<TD ALIGN="CENTER">96 (49%)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Clave de 16 bits</TD>
+<TD ALIGN="CENTER">164 (84%)</TD>
+</TR>
+<TR><TH ALIGN="LEFT"><B>Algoritmo de compresión LZ</B></TH>
+<TD ALIGN="CENTER">122 (82%)</TD>
+</TR>
+<TR><TH ALIGN="LEFT"><B>Reloj digital</B></TH>
+<TD ALIGN="CENTER">113 (58%)</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+</TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html102"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html100"
+  HREF="jps.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html94"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html103"
+  HREF="node9.html">9 Ventajas e inconvenientes</A>
+<B> Up:</B> <A NAME="tex2html101"
+  HREF="jps.html">Tarjeta entrenadora para FPGA,</A>
+<B> Previous:</B> <A NAME="tex2html95"
+  HREF="node7.html">7 Hardware abierto</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-09-20
+</ADDRESS>
+</BODY>
+</HTML>
