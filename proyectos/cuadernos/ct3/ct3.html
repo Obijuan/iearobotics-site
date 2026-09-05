@@ -1,0 +1,399 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>Cuaderno técnico 3: Servos Futaba 3003</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 3.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20040920;12053800">
+	<META NAME="CHANGED" CONTENT="20091130;17473700">
+	<META NAME="CHANGEDBY" CONTENT="juan">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>Cuaderno técnico 3: Servos Futaba 3003</B> 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P><A HREF="#tres"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>[Autores]</FONT></FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#licencia"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>[Licencia]</FONT></FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#download"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>[Download]</FONT></FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#links"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>[Links]</FONT></FONT></A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#noticias"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>[Noticias]</FONT></FONT></A></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P ALIGN=CENTER><IMG SRC="images/servo-f3003.png" NAME="Imagen1" ALIGN=BOTTOM WIDTH=288 HEIGHT=236 BORDER=0>
+</P>
+<P ALIGN=CENTER><BR><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=24*>
+	<COL WIDTH=232*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=9% BGCOLOR="#ffcc99">
+				<P ALIGN=CENTER><IMG SRC="../../../personal/juan/Icono_aviso.png" NAME="gráficos6" ALIGN=MIDDLE WIDTH=24 HEIGHT=24 BORDER=0></P>
+			</TD>
+			<TD WIDTH=91% VALIGN=TOP BGCOLOR="#ffcc99">
+				<P ALIGN=CENTER><FONT FACE="Bitstream Vera Sans, sans-serif"><FONT SIZE=2><B>Esta
+				página ya no se mantiene más (30/Nov/2009)</B></FONT></FONT></P>
+				<P ALIGN=CENTER><A HREF="http://www.iearobotics.com/wiki/index.php?title=Servos_Futaba_3003"><FONT FACE="Bitstream Vera Sans, sans-serif"><FONT SIZE=2><B>Acceso
+				a la nueva página de la Skypic en el wiki</B></FONT></FONT></A></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H2><FONT FACE="Arial, sans-serif">Introducción </FONT>
+</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Los <B>servos</B> se
+emplean mucho en aplicaciones de robótica. En este cuaderno nos
+centraremos en uno de los más comunes y usados: los <B>servos Futaba
+3003</B>. </FONT></FONT>
+</P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Tienen dos
+tipos de aplicaciones. Por un lado se pueden <A HREF="../ct2/ct2.html">&quot;trucar&quot;
+y convertir en motores de corriente contínua</A></FONT></FONT> <FONT FACE="Arial, sans-serif"><FONT SIZE=2>,
+para construir robots móviles, como por ejemplo el robot de
+iniciación a la robótica <A HREF="../../skybot/skybot.html">Skybot</A>.
+Por otro lado se emplean como articulaciones para construir </FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>robots
+articulados</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>,
+como el perro <A HREF="../../../personal/andres/proyectos/pucho/pucho.html">Puchobot</A>,
+el gusano <A HREF="../../../personal/juan/doctorado/cube-revolutions/index.html">Cube
+Revolutions</A> o el hexápodo <A HREF="../../../personal/juan/proyectos/sheila/sheila.html">Sheila</A>.
+</FONT></FONT>
+</P>
+<CENTER>
+	<TABLE BORDER=0 CELLPADDING=2 CELLSPACING=0>
+		<TR>
+			<TD>
+				<P ALIGN=CENTER><IMG SRC="images/pucho-p.png" NAME="Imagen2" ALIGN=BOTTOM WIDTH=192 HEIGHT=144 BORDER=0>
+								</P>
+			</TD>
+			<TD>
+				<P ALIGN=CENTER><IMG SRC="images/cube-cobra-tux.png" NAME="gráficos1" ALIGN=BOTTOM WIDTH=200 HEIGHT=150 BORDER=0>
+								</P>
+			</TD>
+			<TD>
+				<P ALIGN=CENTER><IMG SRC="images/sheila-peq2.png" NAME="Imagen4" ALIGN=BOTTOM WIDTH=200 HEIGHT=150 BORDER=0>
+								</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P ALIGN=CENTER><A HREF="../../../personal/andres/proyectos/pucho/pucho.html"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Puchobot</FONT></FONT></A></P>
+			</TD>
+			<TD>
+				<P ALIGN=CENTER><A HREF="../../../personal/juan/doctorado/cube-revolutions/index.html"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Cube
+				Revolutions</FONT></FONT></A></P>
+			</TD>
+			<TD>
+				<P ALIGN=CENTER><A HREF="../../../personal/juan/proyectos/sheila/sheila.html"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Sheila</FONT></FONT></A>
+								</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<HR>
+<H2 ALIGN=LEFT><A NAME="caracteisticas"></A><FONT FACE="Arial, sans-serif">Características</FONT></H2>
+<TABLE WIDTH=369 BORDER=0 CELLPADDING=2 CELLSPACING=0 BGCOLOR="#e0e0e0">
+	<COL WIDTH=121>
+	<COL WIDTH=240>
+	<TR>
+		<TD WIDTH=121>
+			<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Velocidad:</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=240>
+			<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>0.23
+			seg/60 grados (260 grados/seg)</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=121>
+			<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Par
+			de salida:</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=240>
+			<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>3.2
+			Kg-cm (0.314 N.m)</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=121>
+			<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Dimensiones:</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=240>
+			<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>40.4 x
+			19.8 x 36 mm</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=121>
+			<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Peso:</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=240>
+			<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>37.2 gr</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=121>
+			<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Frec.
+			PWM:</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=240>
+			<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>50Hz
+			(20ms)</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=121>
+			<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Rango
+			giro:</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=240>
+			<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>180
+			grados</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<HR>
+<H2><A NAME="control"></A><FONT FACE="Arial, sans-serif">Control</FONT></H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Los servos se
+controlan aplicando una <B>señal PWM </B>por su cable de control.
+Las señales PWM (Pulse Width Modulation, Modulación por anchura de
+pulso) son digitales (pueden valer 0 ó 1) y permiten que <B>usando
+un único pin de un microcontrolador podamos posicionar el servo</B>.
+Esto es una gran ventaja, porque si por ejemplo, disponemos de un
+micro con 8 pines de salida, podremos posicionar 8 servos. </FONT></FONT>
+</P>
+<P ALIGN=CENTER><IMG SRC="images/pwm.jpg" NAME="Imagen5" ALIGN=BOTTOM WIDTH=507 HEIGHT=364 BORDER=0></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para posicionar el
+servo hay que aplicar una señal periódica, de <B>50Hz</B> (<B>20ms</B>
+de periodo). La anchura del pulso determina la posición del servo.
+Si la anchura es de <B>2.3ms</B>, el servo se sitúa en un extremo y
+si la anchura es de <B>0.3ms</B> se sitúa en el opuesto. Cualquier
+otra anchura entre 0.3 y 2.3 sitúa el servo en una posición
+comprendida entre un extremo y otro. Por ejemplo, si queremos que se
+sitúe exactamente en el centro, aplicamos una anchura de 1.3ms. </FONT></FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Cuando se deja de
+enviar la señal, el <B>servo entra en un estado de reposo</B>, y por
+tanto se podrá mover con la mano. Mientras se le aplique la señal,
+permanecerá fijado en su posición, haciendo fuerza para permanecer
+en ella. </FONT></FONT>
+</P>
+<HR>
+<H2><A NAME="conexion"></A><FONT FACE="Arial, sans-serif">Conexión</FONT></H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El servo dispone de un
+conector al que llegan <B>tres cables</B>. El <B>rojo</B> es el de
+alimentación (4.5-6 voltios). El <B>negro</B> es masa. Y el <B>blanco</B>
+es el de la señal de control </FONT></FONT>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/conector.png" NAME="Imagen6" ALIGN=BOTTOM WIDTH=200 HEIGHT=150 BORDER=0></P>
+<HR>
+<H2><A NAME="planos"></A><FONT FACE="Arial, sans-serif">Planos</FONT></H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Plano de los servos,
+con </FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>cotas
+en mm</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>.
+El de la derecha tiene un corona enganchada al eje y el de la
+izquierda no. Se han realizado usando el programa <A HREF="http://www.qcad.org/">QCAD</A></FONT></FONT>
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2>que es </FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>libre</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>
+y </FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Multiplataforma</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>
+(Linux, Windows..). Los planos están en formato .DXF y se pueden
+leer con Autocad.</FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/plano-futaba.png" NAME="Imagen7" ALIGN=BOTTOM WIDTH=475 HEIGHT=366 BORDER=0></P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Modelo virtual</FONT></H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En las figuras de
+abajo puedes ver dos escenarios, con servos virtuales, creados con el
+programa <A HREF="http://www.blender.org/">Blender</A>, </FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>libre</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>
+y </FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>multiplataforma
+</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>(Linux,
+Windows...). En la izquierda está un servo con su corona. A la
+derecha hay dos servos, uno con corona y otro sin ella. Tanto el
+servo como la corona están modelados con el blender, como objetos
+separados, lo que permite utilizarlos para </FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>modelar
+robots</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>.
+</FONT></FONT>
+</P>
+<CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P><IMG SRC="images/fut-virtual1.png" NAME="Imagen8" ALIGN=BOTTOM WIDTH=200 HEIGHT=160 BORDER=0></P>
+			</TD>
+			<TD>
+				<P><IMG SRC="images/fut-virtual2.png" NAME="Imagen9" ALIGN=BOTTOM WIDTH=200 HEIGHT=160 BORDER=0></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<HR>
+<H2><A NAME="tres"></A><FONT FACE="Arial, sans-serif">Autores</FONT></H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="../../../personal/juan/index.html">Juan
+	González Gómez</A>. </FONT></FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="../../../personal/andres/index.html">Andrés
+	Prieto-Moreno Torres</A>. </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<H2><A NAME="licencia"></A><FONT FACE="Arial, sans-serif">Licencia</FONT></H2>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Este
+</FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>documento</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>
+se distribuyen bajo <A HREF="http://gugs.sindominio.net/licencias/fdl-es.html">licencia
+FDL</A></FONT></FONT> <FONT FACE="Arial, sans-serif"><FONT SIZE=2>por
+lo que se permite su copia, modificación y distribución, siempre y
+cuando se mantenga esta nota. Los </FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>planos</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>
+y los </FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>modelos
+en 3D</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>
+se distribuyen bajo <A HREF="http://gugs.sindominio.net/gnu-gpl/gples.html">licencia
+GPL</A>. </FONT></FONT>
+</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Download </FONT>
+</H2>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Cuaderno
+				técnico 3</B> </FONT></FONT>
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=2 CELLSPACING=2>
+		<TR BGCOLOR="#cabeeb">
+			<TD>
+				<P><A HREF="download/planos-futaba.dxf"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>planos-futaba.dxf</FONT></FONT></A>
+				<FONT FACE="Arial, sans-serif"><FONT SIZE=2>(88KB)</FONT></FONT></P>
+			</TD>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Planos del
+				servo</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>
+				Futaba 3003, para el programa <A HREF="http://www.qcad.org/">QCAD</A></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD>
+				<P><A HREF="download/plano-futaba.pdf"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>plano-futaba.pdf</FONT></FONT></A>
+				<FONT FACE="Arial, sans-serif"><FONT SIZE=2>(70KB) </FONT></FONT>
+				</P>
+			</TD>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Planos del servo,
+				en formato PDF</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#cabeeb">
+			<TD>
+				<P><A HREF="download/futaba.blend"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>futaba.blend</FONT></FONT></A>
+				<FONT FACE="Arial, sans-serif"><FONT SIZE=2>(210KB)</FONT></FONT></P>
+			</TD>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Modelo 3D</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>
+				del futaba, para el programa <A HREF="http://www.blender.org/">Blender</A></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD>
+				<P><A HREF="download/futabas-2.blend"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>futabas-2.blend</FONT></FONT></A>
+				<FONT FACE="Arial, sans-serif"><FONT SIZE=2>(356KB) </FONT></FONT>
+				</P>
+			</TD>
+			<TD>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Escenario virtual
+				con 2 futabas, uno con corona y otro sin ella. para el programa
+				<A HREF="http://www.blender.org/">Blender</A></FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P><BR><BR>
+</P>
+<HR>
+<H2><A NAME="links"></A><FONT FACE="Arial, sans-serif">Links</FONT></H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../ct2/ct2.html"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Cuaderno
+	Técnico 2</FONT></FONT></A> <FONT FACE="Arial, sans-serif"><FONT SIZE=2>:Trucaje
+	de los servos Futaba 3003 </FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Robot
+	de iniciación <A HREF="../../skybot/skybot.html">Skybot</A>, que
+	usa servos Futaba 3003 trucados para desplazarse. </FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="../../../personal/andres/proyectos/pucho/pucho.html">Puchobot</A>:
+	Un perro robot que utiliza 12 servos </FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="../../../personal/juan/doctorado/cube-revolutions/index.html">Cube
+	Revolutions</A>: Un robot gusano con 8 servos</FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="http://www.iearobotics.com/personal/juan/proyectos/sheila/sheila.html">Sheila</A>,
+	Robot hexápodo que usa 3 servos </FONT></FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="http://www.iearobotics.com/personal/juan/doctorado/labobot/labobot.html">Proyecto
+	Labobot</A>, control de servos usando una FPGA </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<H2><A NAME="noticias"></A><FONT FACE="Arial, sans-serif">Noticias</FONT></H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>09/Abril/2007:</B>
+	<SPAN STYLE="font-weight: normal">Mejorado el modelo virtual: Nueva
+	versión de los ficheros </SPAN><B>futaba.blend</B><SPAN STYLE="font-weight: normal">
+	y </SPAN><B>futabas-2.blend</B><SPAN STYLE="font-weight: normal">.
+	Hecho con Blender 2.42a</SPAN></FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>08/Abril/2007:
+	</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Añadidos
+	enlaces a <A HREF="../../../personal/juan/doctorado/cube-revolutions/index.html">Cube
+	Revolutions</A> y <A HREF="../../skybot/skybot.html">Skybot</A>.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>20/Sep/2004: </B></FONT></FONT>
+	</P>
+	<UL>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Añadido enlace
+		al </FONT></FONT><A HREF="../index.html"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>índice
+		de cuadernos técnicos</B></FONT></FONT></A></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Nueva version
+		del plano del servo, en formato DFX 2000 (hecho con Qcad 2). Se
+		debería leer correctamente con Autocad</FONT></FONT></P>
+	</UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>31/Jul/2003</B>:
+	Publicado en la web </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<a href="https://obijuan.github.io/iearobotics-site/">IEA ROBOTICS</a>
+<ADDRESS>
+<A href="../../../personal/juan/index.html">Juan González</A>
+</ADDRESS>
+</body>
+</html>
