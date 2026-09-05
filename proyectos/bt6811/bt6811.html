@@ -1,0 +1,411 @@
+<html>
+<head>
+  <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarjeta BT6811</title>
+<style type="text/css">
+<!--
+  H1 {
+    font-family: Current Schoolbook, Arial;
+    background-color: blue;
+    color: rgb(192,192,192);
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    border: thin outset rgb(192,192,192);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    padding: 2px;
+  }
+  H2 {
+    font-family: Times,Arial;
+    color: rgb(0,0,0);
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: left;
+    border: medium none;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    padding: 5px;   
+  }
+  DIV.cuerpo {
+    font-family: Book Antiqua, Arial;
+    color: rgb(20,20,20);
+    text-indent: 50px;
+    line-height: 20px;
+    text-align: justify;
+    margin-left: 25px;
+    margin-right: 25px;
+  }    
+  SPAN.cursiva { 
+    font-style: oblique;
+  }
+  DIV.autor { 
+    font-family: Arial;
+    font-style: oblique;
+    color: rgb(20,20,20);
+    font-size: 10pt;
+    text-align: left;
+    margin-right: 25px;
+    margin-left: 25px;
+  }
+  
+  DIV.lista {
+    font-family: Book Antiqua, Arial;
+    color: rgb(20,20,20);
+    line-height: 20px;
+    text-align: justify;
+    margin-left: 25px;
+  }    
+
+  TABLE.margen {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+  }
+  
+  TABLE.links {
+    color: rgb(55,0,0);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+    background-color: rgb(255,255,128);
+    border: thin outset rgb(192,192,192);    
+  }
+   
+  TABLE.down {
+    color: rgb(55,0,0);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+    background-color: rgb(255,255,128);
+    border: thin outset rgb(192,192,192);    
+  }
+  
+  TD.indice {
+    font-size:15pt;
+    text-align: center;
+    color:"blue";
+  }
+  
+-->
+</style>
+</head>
+
+<body>
+<!-- título de la página -->
+
+<table align="center" width="100%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>TARJETA BT6811</b>
+ </td>
+</tr>
+</tbody></table> 
+
+
+ <table align="center">
+<tr>
+<td><a href="#uno">[Introducción]</a></td>
+<td><a href="#dos">[caracteristicas]</a></td>
+<td><a href="#tres">[Autores]</a></td>
+<td><a href="#licencia">[Licencia]</a></td>
+<td><a href="#historia">[Historia]</a></td>
+<td><a href="#puertos">[Puertos]</a></td>
+<td><a href="#alimentacion">[Alimentación]</a></td>
+<td><a href="#software">[Software]</a></td>
+<td><a href="#download">[Download]</a></td>
+<td><a href="#links">[Links]</a></td>
+<td><a href="#noticias">[Noticias]</a></td>
+<td><a href="#agradecimientos">[Agradecimientos]</a></td>
+</tr>
+</table>
+  
+<center>
+<img src="images/bt6811p.jpg">
+</center>
+
+<!-- Introducción -->
+<HR>
+<h2 id="uno"> Introducción </h2>
+
+<!-- texto -->
+<div class="cuerpo">
+
+
+<p>
+La <b>BT6811</b> es una tarjeta basada en el Microcontrolador <b>68hc11</b> de Motorola.
+ Su objetivo es controlar de forma autónoma <b>cuatro servomecanismos</b>, permitiendo una conexión
+ sencilla de los mismos y facilitando su alimentación. 
+ </p>
+ 
+ <P>
+ Para desarrollar esta placa se ha partido de la 
+ <a href="../ct6811/ct6811.html">Tarjeta CT6811</a>,
+  de la que se han eliminado 
+ los siguientes elementos: Max232, los puertos B, C, Control, el jack de alimentación, los switches de 
+ configuración y algunos jumpers.
+ </p>
+ 
+ <p>
+  Se han introducido los siguientes <b>elementos nuevos</b>: una clema para la alimentación de los servos, 
+  un jumper para que la alimentación de los motores sea la misma que la de la lógica, cuatro conexiones
+  directas para servos y un puerto mixto, que saca al exterior el puerto C y el E. 
+</p>
+ </div>
+ 
+ <div class="cuerpo">
+ <p>
+   Se trata de una placa <b>MULTIPLATAFORMA</b>, que se puede usar tanto en máquinas Linux como Windows.
+  </p>
+</div>
+
+<!-- Sección 1 -->
+<HR>
+<H2 id="dos"> Características </H2>
+<div class="lista">
+<ul>
+  <li><b>Microcontrolador 68HC11E2</b>, con encapsulado PLCC</li>
+  <li>Conexión directa para <b>4 servos</b></li>
+  <li><b>Dimensiones</b>: 48 x 58 mm </li>
+  <li>Rutado a una sola cara </li>
+  <li><b>6 jumpers</b> de configuración </li>
+  <li>Alimentaciones de servos y electrónica separadas </li>
+  <li> Led de pruebas </li>
+  <li> <b>3 puertos</b>: A, D y X </li> 
+  <li> Posibilidad de crear <b>redes maestro-esclavo</b>, a través del SPI </li>
+   <li> Fácil conexión con la tarjeta CT6811</li>
+</div>
+
+ <center><img src="images/bt6811-comp.jpg"></center>
+<br><br>
+
+<!-- Sección 2 -->
+<HR>
+<H2 id="tres"> Autores</H2>
+
+<div class="lista">
+<ul>
+  <li><a href="../../personal/andres/index.html">Andrés Prieto-Moreno Torres</a>. 
+  </li>
+</ul>
+
+</div>
+
+<!-- Sección 3 -->
+<HR>
+<H2 id="licencia"> Licencia</H2>
+
+<div class="cuerpo">
+  La tarjeta BT6811 es <b>hardware abierto</b>, por lo que se permite su copia, modificación y distribución, siempre y cuando se mantenga esta nota.
+</div>
+
+<!-- DOWNLOAD: Archivos -->
+<HR>
+<H2 id="historia"> Historia </H2>
+
+<div class="cuerpo">
+<p>El primer prototipo de la BT6811 se creó en <b>Febrero de 1999</b> para controlar de una manera sencilla los
+8 motores de <b>Puchobot</b>, el robot Perro que estaba diseñando 
+<a href="../../personal/andres/index.html"">Andrés</a>
+ para su proyecto fin de carrera.
+</p>
+<p>
+  Las pruebas realizadas con el primer prototipo fueron un éxito y su autor decidió sacar una <b>tirada
+  industrial</b>. El nuevo prototipo de Puchobot tendría que controlar 12 motores, usando 3 tarjetas BT6811 y
+  una CT6811 como maestra. 
+</p>
+<p>
+  <a href="../../personal/juan/index.html">Juan González </a>
+   encontró que esta placa se adaptaba perfectamente a su idea de crear un<b> robot gusano</b>
+modular y expandible (<b>CUBE</b>). 
+</p>
+<p>
+  Se sacó una tirada inicial de 30 PCB's, financiada al 50% por Andrés y Juan. 
+</p>
+ <b>La BT6811 se ha utilizado en los siguientes proyectos</b>:<br><br>
+</div>
+ <div class="lista">
+      <li><b>Puchobot</b>: Perro robot dotado de 12 servos, controlados por 3 tarjetas BT6811 y una CT6811</li>
+      <li><b>Cube</b>: Gusano robot, con 4 servos. Utiliza una tarjeta BT6811 y una CT6811</li>
+      <li><a href="../../personal/juan/proyectos/sheila/sheila.html">Sheila</a>:
+       Hexápodo con 3 servos. Utiliza una BT6811 y una CT6811</li>
+      <li><b>Esfera</b>: Control de 2 minicámaras, simulando 2 ojos, desde el PC. Utiliza una BT6811 y una CT6811</li>
+  </div>
+
+<!-- Puertos de expansion -->
+<HR>
+<H2 id="puertos"> Puertos de expansión</H2>
+<div class="cuerpo">
+<p>
+  La tarjeta BT6811 dispone de 3 puerto de expansión, que se muestran en la siguiente figura:
+  <center><img src="images/puertos.jpg"></center>
+</p>
+<p>
+  Los conectores para los servos son:
+  <center><img src="images/servos.jpg"></center>
+</p>
+</div>
+
+<HR>
+<H2 id="alimentacion"> Alimentación </H2>
+
+<div class="cuerpo">
+<p>
+  La <b>alimentación nominal es de 4.5-5.5 voltios</b>, a través de una clema. Para<b> los servos hay que emplear 
+  una tensión de 5v</b>, que se introducen a través de otra clema diferente. <b>La alimentación independiente
+  de los servos es opcional</b>. Es posible alimentar el conjunto electrónica + servos únicamente a través 
+  de la clema de la lógica TTL y colocar el<b> jumper JP5</b>.
+ </p>
+ <p>
+   <b>Se recomienda utilizar alimentacione separadas</b>, aunque para hacer pruebas puede resultar útil
+ el utilizar solo una única alimentación de 5v.
+ </p> 
+ </div>
+
+<HR>
+<H2 id="software"> Software </H2>
+<div class="cuerpo">
+  <p>
+  En el 6811E2 de la BT6811 hay que grabar un <b>programa servido</b>r, que recibe comandos por el SPI y posiciona
+  los servos. Puesto que se pueden conectar en red, cada BT6811 debe llevar un servidor diferente, que reconozca
+  las tramas que van destinadas a él. Los nodos tienen las direcciones 'A', 'B', 'C',... El servidor que sirve de base
+  es el futA.asm (Para el nodo 'A'). Los demás son iguales cambiando la dirección de cada nodo.
+  </p>
+  <p>
+    El software que se ejecuta en el nodo maestro depende de la aplicación.
+  </p>
+  <p>
+    <b>Para el control de 4 servos desde el PC</b>, hay que utilizar una BT6811, una CT6811 y usar el programa 
+    <a href="../../personal/juan/proyectos/XBT6811/xbt6811.html">XBT6811<a>
+  </p>
+</div>
+
+<HR>
+<!-- DOWNLOAD -->
+<H2 id="download"> Download </H2>
+
+<p>
+<table width=80% bgcolor="#abbeeb" border="0" align="center" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>TARJETA BT6811</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=80%  border="0" align="center">
+<tbody>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="hard/bt6811-manual.pdf">bt6811-manual.pdf (120KB)</a>  </td>
+  <td>Manual de usuario de la tarjeta BT6811</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="hard/bt6811-manual-src.tgz">bt6811-manual-src.tgz (63KB)</a>  </td>
+  <td>Fuentes del manual en Lyx, y figuras en Xfig</td>
+</tr>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="hard/bt6811.sch">bt6811.sch (7KB)</a>  </td>
+  <td> Esquemático, para ORCAD</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="hard/bt6811.pcb">bt6811.pcb (18KB)</a>  </td>
+  <td> PCB, hecho en TANGO 2.11</td>
+</tr>  
+
+<tr bgcolor="#cabeeb">
+  <td><a href="hard/bt6811.net">bt6811.net (3KB)</a>  </td>
+  <td> Netlist, para Tango 2.11</td>
+</tr>  
+
+</tbody></table>
+</p>
+<br>           
+
+<table width=80% bgcolor="#abbeeb" border="0" cellpadding="4" align="center">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>SOFTWARE PARA EL 6811</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=80%  border="0" align="center" >
+<tbody>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="soft/futA.asm">FutA.asm (12KB)</a>  </td>
+   <td>Programa servidor para el E2 de la BT6811 (Fuentes)</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="soft/futA.s19">FutA.s19 (690 Bytes)</a>  </td>
+  <td> Programa servidor para el E2 de la BT6811 (Ejecutable)</td>
+</tr>
+</tbody></table>
+
+
+<br><br>
+<table width=80% bgcolor="#abbeeb" border="0" cellpadding="4" align="center">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>SOFTWARE PARA LINUX</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=80%  border="0" align="center" >
+<tbody>
+
+<tr bgcolor="#cabeeb">
+  <td>Programa XBT6811. Visitar este <a href="../../personal/juan/proyectos/XBT6811/xbt6811.html">
+    enlace</a>  </td>
+</tr>
+</tbody></table>
+
+<br><br>
+
+<HR>
+<H2 id="links">Links</H2>
+<div class="lista">
+  <ul>
+  <li><a href="../ct6811/ct6811.html">Tarjeta CT6811</a></li>
+  <li><a href="../../personal/juan/proyectos/XBT6811/xbt6811.html">Programa XBT6811</a></li>
+  </ul>
+ </div>
+
+<!-- Noticias -->
+<HR>
+<H2 id="noticias">Noticias</H2>
+<div class="lista">
+<ul>
+  <li><b>16/Feb/2003</b>: Colocada información sobre tarjeta BT6811</li>
+</ul>
+</div>
+
+<!-- Agradecimientos -->
+<HR>
+<H2 id="agradecimientos">Agradecimientos</H2>
+
+<div class="lista">
+<ul>
+ 
+</ul>
+</div>
+
+<HR>
+<a href="https://obijuan.github.io/iearobotics-site/">IEA ROBOTICS</a>
+<ADDRESS>
+Página creada por
+<A HREF="../../personal/juan/index.html">Juan González</A>
+</ADDRESS>
+</body>
+</html>
+
+
