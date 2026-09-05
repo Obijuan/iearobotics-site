@@ -1,0 +1,146 @@
+<html>
+<head>
+<meta http-equiv="Content-Type"content="text/html" charset="iso-8859-1">
+<title>Página I Taller UAX 2003</title>
+</head>
+<body bgcolor="#FFFFFF">
+<h1 align="center"> Página I Taller UAX 2003</h1>
+
+<LI><B>Avanzadilla del taller</B>:
+<UL>
+Mostramos dos documentos, el primero contiene las preguntas mas habituales sobre el robot Tritt, el mas comun a la hora de impartir talleres. El 
+segundo contiene una seleccion de las transparencias basicas del taller.
+<BR><A href="http://www.iearobotics.com/proyectos/tritt/download/faq-tritt.pdf">Faq del Microbot Tritt</A>
+<BR><A href="http://www.iearobotics.com/proyectos/tritt/download/taller-tritt.pdf">Transparencias para el taller</A>
+<BR><BR><img src="fotos/dia0-1.jpg"></img><img src="fotos/dia0-2.jpg"></img>
+</UL>
+
+<LI><B>Primer dia</B>:
+<UL>
+    Hoy se ha comenzado con las presentaciones, repartos de material  y objetivos del taller, para rapidamente meternos en materia 
+	con la estructura mecanica. Se ha enseñado el proceso para desmontar los motores del robot, 
+	en concreto los Futaba S3003. Una vez desmontados y probados se ha procedido a armar la estructura. En este caso
+	se han utilizado piezas de Lego sencillas, varillas roscadas y tuercas. Bastante simple.
+	<BR>Los enlaces relacionados donde se muestra toda esta informacion
+	<BR><A href="http://www.iearobotics.com/proyectos/cuadernos/ct2/ct2.html">Cuaderno tecnico II</A>
+	<BR><A href="http://www.iearobotics.com/proyectos/cuadernos/ct3/ct3.html">Cuaderno tecnico III</A>
+	<BR><A href="http://www.iearobotics.com/proyectos/tritt/tritt.html">Robot Tritt</A></BR>
+	<BR><img src="fotos/dia1-1.jpg"></img><img src="fotos/dia1-2.jpg"></img>
+</UL>
+
+<BR><LI><B>Segundo dia</B> </LI>
+    <UL>
+        Hoy hemos explicado como conectar los sensores de infrarrojos al robot, la experiencia ha sido dura, sobretodo por el tema de las 
+		soldaduras. Una vez listos los motores y los sensores hemos terminado de montar la estructura del robot. <BR>
+		Las primeras pruebas de software las hemos realizado con el programa CT294 y con el LiveCD. La experiencia ha ido bien, pero en algunos PCs no ha sido tan bonito, 
+		demasiado lentos pare el mundo actual. En esos no queda mas remedio que usar MSDOS :-(
+		<BR>Los enlaces relacionados donde se muestra toda esta informacion
+		<BR><A href="http://www.iearobotics.com/proyectos/ct293/ct293.html">Tarjeta CT293+</A>
+		<BR></BR><img src="fotos/dia2-1.jpg"></img><img src="fotos/dia2-2.jpg"></img>
+		</UL>
+	
+<BR><LI><B>Tercer  dia</B> </LI>
+    <UL>
+		Hoy se ha empezado con la programacion. Se han utilizado dos entornos distintos, uno basado en un LiveCD de Linux, basado en <A href="http://metadistros.hispalinux.es">Metadistros</A>. Y otro 
+		con ordenadores en MSDOS. El software y la distribucion de directorios se ha mantenido igual en los dos sistemas, de forma que la explicacion ha servido para ambas.
+		<BR><BR>El software utilizado (las cttools) esta disponible en:  <A href="http://www.iearobotics.com/personal/juan/proyectos/cttools/cttools.html">CTTOOLS</A>
+		<BR>Tambien se puede encontrar todo el software necesario (linux y ms-dos), en la pagina de la CT6811, ademas de muchisimos ejemplos:
+		<A href="http://www.iearobotics.com/proyectos/ct6811/ct6811.html">CT6811</A>
+		<BR>Toda la informacion de como se programa el 68HC11 esta en el libro: <A href="http://www.iearobotics.com/proyectos/libro6811/libro6811.html">Libro CT6811</A>
+		<BR>Los programas de ejemplo que se han visto son:
+		<UL>ledp.asm (lo han tenido que cargar en la ram y grabar en la eeprom):
+		<A href="http://www.iearobotics.com/proyectos/ct6811/6811/ledp.asm">ASM</A>&nbsp;
+		<A href="http://www.iearobotics.com/proyectos/ct6811/6811/ledp.s19">S19</A></UL>
+		<UL>delay.asm, (lo han tenido que modificar para hacer que tritt avance en linea recta durante un rato, gire a la derecha y lo repita todo otra vez.
+		<A href="http://www.iearobotics.com/proyectos/ct6811/6811/delay.asm">ASM</A>&nbsp;
+		<A href="http://www.iearobotics.com/proyectos/ct6811/6811/delay.s19">S19</A></UL>
+		<BR>Para la gente que use Windows XP, y anteriores versiones, el software que se utiliza es el CTLOAD para windows, que permite cargar en ram, grabar en eeprom y la
+misma funcionalidad del programa ct294: <A href="http://www.iearobotics.com/proyectos/ct6811/windos/ctload-1.0.3.zip">CTLOAD.ZIP</A>
+	Las fuentes se encuentran en:<A href="http://www.iearobotics.com/proyectos/ct6811/windos/ctload-1.0.3.src.zip">CTLOAD.SRC</A>
+	( El CTLOAD para Windows ha sido programado  por Javier de Lope y puesto ha disposicion del publico con licencia GPL ).<BR>
+
+		<BR></BR><img src="fotos/dia3-1.jpg"></img><img src="fotos/dia3-2.jpg"></img>
+		</UL>
+
+<BR><LI><B>Cuarto dia</B> </LI>
+    <UL>
+        Hoy ha sido el segundo dia de programacion, y se ha estado resolviendo bastantes dudas. En algunos momentos hemos estado desbordados por la gente. Esperamos que los participantes sean comprensivos en el caso de 
+haber dejado alguna duda sin resolver.  
+<BR> Los programas sobre los que se ha trabajado han sido:</BR>
+<UL>Programa para que Tritt siga la linea negra, lo han tenido que adaptar a su robot: <A href="http://www.iearobotics.com/proyectos/tritt/download/tritt-ram.asm">Tritt-ram.asm</A></UL>
+<UL>Circuito de pruebas para Tritt, en pdf. Se imprime en una hoja dina4 (con impresora Laser) y sirve para hacer pruebas: 
+<A href="http://www.iearobotics.com/proyectos/tritt/download/circuito-tritt-1.pdf">Circuito</A></UL>
+<BR>Tambien se han explicado las reglas del concurso del viernes, "El Mogollon".
+
+<BR><BR></BR><B>Objetivo:</B>
+<UL>1. Pasarselo bien.</UL>
+<UL>2. Vivir en vivo un concurso de robots.</UL>
+<UL>3. Ganan los tres primeros robots que consigan salir de un recinto cerrado.</UL>
+<B>Reglas</B>:
+<UL>1. Todos los participantes partiran del centro del recinto.</UL>
+<UL>2. La posicion de salida se sorteara previamente al concurso.</UL>
+<UL>3. Todos los robots saldran en la misma direccion, pero se mantendra en secreto en relacion a la salida del recinto.</UL>
+<UL>4.  La salida del recinto se establece como una linea imaginaria entre dos puntos.  Todo robot que la atraviese se considerara que ha salido del recinto pero solo si lo hace caminando de frente.
+Es decir salir marcha atras no vale.</UL>
+<UL>5. El jurado podra intervenir en ciertas ocasiones para poner orden dentro del recinto e incluso introducir de nuevo, algun robot que haya sido despedido del recinto. 
+</UL>
+<BR>Para dar mas emocion los participantes ya saben de que posicion van a seguir, de esa manera pueden pensar que algoritmo van a usar. Ademas hemos comentado que esta permitido ir a perder, o dicho de 
+otra forma, ir a molestar a los otros robots en lugar de buscar la salida del recinto.</BR>
+	<BR><img src="fotos/dia4-1.jpg"></img><img src="fotos/dia4-2.jpg"></img>
+	</UL>
+	
+<BR><LI><B>Quinto  dia</B> </LI>
+    <UL>
+        Durante la primera hora la gente ha estado poniendo a punto sus robots, en la segunda se va ha celebrado el concurso. 
+		Se ha permitido que la gente pudiese ver la construccion del recinto,	pero no se les ha dicho la orientacion de salida.
+		Se ha mantenido en suspense hasta el final.
+		<BR>Al final, de los 36 grupos se han presentado 30 robots al concurso, de los cuales unos estaban mejor y otros peor, pero todos tuvieron su oportunidad. La salida fue conjunta en direccion contraria a la salida del recinto, era de imaginar, ¿ no ? 
+		El primer participante tardo unos cinco minutos en salir, a partir de el , fueron saliendo poco a poco el resto. Durante el concurso hubo bajas, robots que perdieron las ruedas,
+		que agotaron sus baterias o simplemente que dejaron de funcionar. Esos robots no participaron en una segunda vuelta, no valida para puntuaciones, pero si para ver a los mejores en accion.
+		<BR>Al final pasamos un rato divertido.
+		<BR><BR><img src="fotos/dia5-1.jpg"></img><img src="fotos/dia5-2.jpg"></img><BR>
+		<BR><BR><img src="fotos/dia5-3.jpg"></img><img src="fotos/dia5-4.jpg"></img><BR>
+		<BR><BR><img src="fotos/dia5-5.jpg"></img><img src="fotos/dia5-6.jpg"></img><BR>
+		<BR><BR><img src="fotos/dia5-7.jpg"></img><img src="fotos/dia5-8.jpg"></img><BR>
+		<BR><BR><img src="fotos/dia5-9.jpg"></img><img src="fotos/dia5-10.jpg"></img><BR>
+		</UL>
+
+<hr>
+<BR><B>Profesores</B>
+<BR><BR>
+Juan Gonzalez Gomez: Ingeniero de Telecomunicacion y Profesor Asociado en la Universidad Autonoma de Madrid. <A href="http://www.iearobotics.com/personal/juan/index.html">( Pagina personal )</A><BR>
+Andres Prieto-Moreno Torres: Ingeniero de Telecomunicacion y trabaja en <A href="http://www.ifara.com"> Ifara Tecnologias </A>. <A href="http://www.iearobotics.com/personal/juan/index.html"> ( Pagina personal )</A><BR>
+Joaquin Moreno Mateos: Ingeniero Industrial y trabaja en <A href="http://www.ifara.com"> Ifara Tecnologias </A>.<BR>
+<BR>
+<hr>
+<BR><B>Organiza</B>
+<BR><BR>
+Rama de Estudiantes del IEEE de la Universidad Alfonso X el Sabio.
+<A href="http://www.uax.es/ieee/inicio.htm"> Pagina web</A>
+<UL>Miguel Angel Simon coordinador y nexo de union en el evento.
+<BR>Adolfo Abalo:  Presidente de la asociacion. 
+<BR>Alejandro Somozas: Coordinador Rama de Robotica de la asociacion
+</UL><BR>
+
+<hr>
+<BR><B>Agradecimientos</B>
+<BR>
+<BR> A todos y cada uno de los asistentes al taller.
+<BR> A la Rama de estudiantes del  IEEE por toda la organizacion.
+<BR> A la Universidad Alfonso X el Sabio por permitir celebrar el taller.
+
+<p>&nbsp;</p>
+<HR NOSHADE>
+
+<table align="center">
+	<tr>
+		<td>IEA ROBOTICS</td>
+		<td><A href="/index.php">Página de inicio</A></td>
+		<td><A HREF="mailto:info@iearobotics.com">Dirección de contacto</A></td>
+	</tr>
+</table>
+
+<HR NOSHADE>
+
+</body>
+</html>

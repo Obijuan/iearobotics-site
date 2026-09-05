@@ -1,0 +1,577 @@
+<html>
+
+<head>
+
+<meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Microbot Tritt</title>
+
+<style type="text/css">
+</style>
+</head>
+
+
+
+<body>
+
+<!-- título de la página -->
+
+<table align="center" width="100%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>MICROBOT TRITT</b>
+ </td>
+</tr>
+</tbody></table> 
+
+
+
+ <table align="center">
+<tr>
+<td><a href="#dos">[caracteristicas]</a></td>
+<td><a href="#tres">[Autores]</a></td>
+<td><a href="#licencia">[Licencia]</a></td>
+<td><a href="#mecanica">[Mecánica]</a></td>
+<td><a href="#electronica">[Electrónica]</a></td>
+<td><a href="#software">[Software]</a></td>
+<td><a href="#historia">[Historia]</a></td>
+<td><a href="#download">[Download]</a></td>
+<td><a href="#links">[Links]</a></td>
+<td><a href="#noticias">[Noticias]</a></td>
+</tr>
+</table>
+
+  
+<center>
+<img src="images/tritt.jpg" width="320" height="302">
+</center>
+
+
+
+<!-- Introducción -->
+<HR>
+
+<h2 id="uno"> Introducción </h2>
+
+
+
+<!-- texto -->
+
+<div class="cuerpo">
+
+<p>
+  <b>Tritt</b> es un robot muy sencillo pensado para aquellos que se quieren <b>iniciar en el mundo de la microbótica</b>.
+  La estructura mecánica está realizada con <b>piezas de Lego</b> y como motores se utilizan los <b>servos Futaba 3003</b>
+ , trucados para poder funcionar como motores de corriente continua normales.
+ </p>
+ <p>
+   Se trata de uno de los robots más básicos y sencillos de construir. Con los conocimientos adquiridos en su construcción,
+   el usuario puede ampliar la estructura, modificarla o construir una nueva. En todos los talleres realizados con
+   Tritt nos hemos sorprendido al ver el aspecto final de los robots. Cada asistente lo personaliza a su manera.
+ </p>
+ <p>
+   Para su control se utiliza la <a href="../ct6811/ct6811.html">tarjeta CT6811</a>
+   , basada en el <b>microcontrolador 68hc11</b> de Motorola y
+   la <a href="../ct293/ct293.html">tarjeta CT293+</a> para
+   el control de los motores y los sensores de infrarrojos. Sin embargo, se puede utilizar cualquier otra electrónica o
+   microcontrolador, como por ejemplos los PICs.
+ </p>
+ <p>
+   La aplicación típica es el <b>robot seguidor de línea</b> que permite a sus diseñadores adquirir los 
+   conocimientos básicos para poder realizar robots más complejos. 
+   <a href="download/video-tritt.mpg"><b>Aquí puedes ver un vídeo</b></a>
+ </p>
+ </div>
+ 
+
+<!-- Sección 1 -->
+<HR>
+
+<H2 id="dos">Características </H2>
+ <div class="lista">
+
+<ul>
+
+  <li> Estructura mecánica con <b>piezas de Lego</b></li>
+   <li>Motores: <b>servos Futaba 3003 trucados</b> para girar 360 grados</li>
+   <li><a href="../ct293/ct293.html">tarjeta CT293+</a>
+    para controlar dos motores, 4 sensores de infrarrojos del tipo CNY70
+     y hasta 8 bumpers</li>
+    <li><a href="../ct6811/ct6811.html">tarjeta CT6811</a> 
+    para la programación del robot </li>
+    <li><b>Alimentación</b>: entre 4.5 - 6 voltios. Se utilizan 4 pilas AA.
+         Opcionalmente se puede utilizar una alimentación separada para
+           los motores, comprendida entre 4-12 voltios. (Por ejemplo una pila de 9v)</li>
+    <li><b>Robot abierto</b>. Están disponibles los esquemas de la estructura y la electrónica y se permite
+           su copia y modificación</li>
+
+</ul>
+
+</div>
+
+
+<!-- Sección 2 -->
+<HR>
+
+<H2 id="tres"> Autores</H2>
+
+
+
+<div class="lista">
+
+<ul>
+  <li><a href="../../personal/andres/index.html">Andrés Prieto-Moreno Torres</a>.</li>
+  <li><a href="../../personal/juan/index.html"">Juan González Gómez</a></li>
+  <li><a href="http://www.microbotica.es">Juan José San Martín</a>
+  <li><a href="http://www.microbotica.es">Cristina Doblado Alcázar</a>
+  
+</ul>
+
+
+</div>
+
+
+
+<!-- Sección 3 -->
+<HR>
+
+<H2 id="licencia"> Licencia</H2>
+
+
+
+<div class="cuerpo">
+<p>
+  Tritt es un <b>robot abierto</b> por lo que están disponibles los esquemas y la documentación de su estructura
+  mecánica y electrónica. Se conceden permisos para copiar, modificar y distribuir las modificaciones, siempre
+  que se mantenga esta misma nota.
+ </p>
+
+</div>
+
+<!-- Sección 3 -->
+<HR>
+
+<H2 id="mecanica">Mecónica</H2>
+
+
+
+<div class="cuerpo">
+<p>
+   La estructura mecánica está compuesta por piezas de lego y dos servos Futaba 3003 trucados. Recibe el nombre
+   de <b>estructura ALF</b> (Adaptación Lego-Futaba) y ha sido diseñada por 
+   <a href="../../personal/andres/index.html">Andrés Prieto-Moreno Torres</a>.
+ </p>
+ <p>
+   Los servos se unen mediante dos varillas roscadas de 4mm de diámetro y 7.5 y 9.5 cm de longitud.
+ </p>
+ 
+ <center>
+<img src="images/alf.jpg">
+</center> 
+
+</div>
+
+<HR>
+
+<H2 id="electronica">Electrónica</H2>
+
+
+
+<div class="cuerpo">
+<p>
+  Tritt utiliza las tarjetas 
+  <a href="../ct6811/ct6811.html">CT6811</a> y
+  <a href="../ct293/ct293.html">CT293+</a>
+    que se unen formando una <b>torre</b>, colocándose encima 
+  de la <b>estructura ALF</b>.
+ </p>
+<center>
+<img src="images/sand.jpg" width="320" height="240">
+</center>
+ 
+ 
+
+</div> 
+
+<HR>
+
+<H2 id="software">Software</H2>
+
+
+
+<div class="cuerpo">
+<p>
+  El software que se  utiliza es el mismo que se usa para la 
+   <a href="../ct6811/ct6811.html">tarjeta CT6811</a>, que 
+   permite cargar programas en la ram del 6811, así como grabar en la eeprom. Dentro de las
+   <a href="../../personal/juan/proyectos/cttools/cttools.html">CTTOOLS </a>
+   es  muy útil el <b>programa CT294</b> que permite controlar a Tritt desde el PC y leer los sensores de 
+   infrarrojos.
+ </p>
+ <p>
+   Todo el software está bajo licencia GPL, por lo que están disponibles las fuentes.
+ </p>
+
+
+</div> 
+
+
+
+<!-- DOWNLOAD: Archivos -->
+<HR>
+
+<H2 id="historia"> Historia </H2>
+
+<div class="cuerpo">
+<p>
+  El nombre de <b>Tritt</b> se tomó la novela de ciencia ficción "<b>Los propios dioses</b>" de Isaac Asimov.
+ Es uno de los protagonistas que forman una tríada, junto con <b>Dua</b> y <b>Odeen</b>.  Tritt es un
+ Paternal, Dua una Emocional y Odeen un Racional.
+</p>
+
+  <p> La historia de Tritt está relacionada con los talleres de robótica impartidos. Nació con el
+          I Taller de Microbótica de la UPM, organizado por la Rama de estudiantes del IEEE,
+          cuando los autores eran conocidos bajo el nombre de <b>Grupo J&J</b>. Las
+          fechas más importantes fueron:
+  </p>
+</div>
+
+<div class="lista">
+<ul>
+  <li><b>[Mar 1997]</b>:  I Taller de Microbótica en la ETSI de Telecomunicaciones 
+     de la <b>UPM</b>, organizado por la Rama de estudiantes del IEEE.</li>
+  <li><b>[Jul 1997]</b>: <a href="http://www.ii.uam.es/~ivan/m-news.htm">I Taller de Robótica-Mecatrónica </a> de la 
+     Escuela Superior de Informótica de la <b>UAM</b></li>
+   <li><b>[Mar 1998]</b>: II taller de Microbótica en la ETSI de Telecomunicaciones. <b>UPM</b>.
+    Rama de estudiantes del IEE. </li>
+   <li><b>[Nov 1998]:</b> <a href="http://www.microbotica.es">Microbótica</a> comercializa Tritt
+   (Continuación legal de la actividad del Grupo J&J). Impartido Taller en la Universidad de <b>Deusto</b></li>
+   <li><b>[Mar 2000]</b>: III taller de Microbótica en la ETSI de Telecomunicaciones.
+   <b>UPM</b>.  Rama de estudiantes del IEE. </li>
+   <li><b>[Jun 2000]</b>: Taller de Microbótica en la Universidad <b>Antonio de Nebrija</b>.</li>
+   <li><b>[Ma 2001]</b>: Taller de Microbótica en la Universidad Pontificia de Salamanca
+    en Madrid. <b>UPSAM</b></li>
+    <li><b>[Nov 2003]</b>: 
+    <a href="../../concursos/uax-2003/uax.html">
+    I Taller de robótica en la <b>Universidad Alfonso X el Sabio</b></a>,
+    organizado por la Rama de estudiantes del IEEE. Este es el primera taller que se planifica para
+    usar el software en Linux, diseñándose un <b>Live CD</b> con todo el software y documentación
+    necesaria</li>
+  <br>  
+<center>
+<img src="images/tritt2.jpg">
+</center>
+</ul>
+</div>
+
+<div class="cuerpo">
+<p>
+  A partir del II Taller de Robótica celebrado en la UPM <b>la estructura de Tritt fue modificada</b> (estructura ALF II, 
+  que es la que tiene actualmente), adaptándose  a las nuevas piezas de Lego disponible.
+</p>
+</div>
+
+<br>
+
+<HR>
+<!-- DOWNLOAD -->
+
+<H2 id="download">Download </H2>
+
+<p>
+<table width=80% bgcolor="#abbeeb" border="0" align="center" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>DOCUMENTACIÓN</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=80%  border="0" align="center">
+<tbody>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="download/faq-tritt.pdf">faq-tritt.pdf</a> (59KB)  </td>
+  <td><b>FAQ de Tritt</b>. Respuesta a las preguntas más frecuentes</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="download/faq-tritt.tgz">faq-tritt.tgz</a> (8KB)  </td>
+  <td> FAQ de Tritt. Fichero fuente para Lyx</td>
+</tr>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="download/ALF-doc.pdf">ALF-doc.pdf</a>(145KB)  </td>
+  <td><b>Manual básico</b> de construcción de Tritt. Sólo la estructura ALF</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="download/ALF-doc.tgz">ALF-doc.tgz</a> (26KB)  </td>
+  <td> Fuentes del documento ALF-doc para Lyx. Figuras para Xfig</td>
+</tr>    
+
+<tr bgcolor="#cabeeb">
+  <td><a href="download/taller-tritt.pdf">taller-tritt.pdf</a>(390KB)  </td>
+  <td>Documentación empleada en los <b>talleres</b></td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="download/taller-tritt.sxw">taller-tritt.sxw</a> (361KB)  </td>
+  <td> Fuentes del documento taller-tritt para OpenOffice</td>
+</tr>    
+    
+<tr bgcolor="#cabeeb">
+  <td><a href="download/taller-tritt.tgz">taller-tritt.tgz</a>(12KB)  </td>
+  <td>Fuentes de los dibujos del documento taller-tritt. Para Xfig 
+  </td>
+</tr>            
+
+<tr bgcolor="#abbeeb">
+  <td><a href="download/microbot.pdf">microbot.pdf</a> (409KB)  </td>
+  <td> <b>Construcción de Tritt</b>. Información sobre los Futaba, Trucado de los servos y  estructura ALF I</td>
+</tr>    
+    
+<tr bgcolor="#cabeeb">
+  <td><a href="download/microbot-tritt.tgz">microbot-tritt.tgz</a>(865KB)  </td>
+  <td>Fuentes del documento microbot, para Lyx. (Incluye todas las fotos) 
+  </td>
+</tr>                
+
+<tr bgcolor="#abbeeb">
+  <td><a href="download/Manual-tritt.pdf">Manual-tritt.pdf</a>(847KB)  </td>
+  <td>Manual  de construcción de Tritt de Microbótica 
+          <a href="#nota">[1]</a>. </td>
+</tr>   
+
+</tbody></table>
+</p>
+
+<br>
+<table width=80% bgcolor="#abbeeb" border="0" cellpadding="4" align="center">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>RECORRIDOS DE PRUEBA</b>
+ </td>
+</tr>
+</tbody></table> 
+
+<table width=80%  border="0" align="center">
+<tbody>
+<tr bgcolor="#cabeeb">
+  <td><a href="download/circuito-tritt-1.pdf">circuito-tritt-1.pdf</a>(8KB)  </td>
+  <td><b>Circuito de pruebas 1</b> para que Tritt lo recorra. Imprimir en papel A4 con impresora Láser</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="download/circuito-tritt-1.fig">circuito-tritt-1.fig</a>(0'6KB)  </td>
+  <td>Circuito de pruebas 1. Fuentes para Xfig</td>
+</tr>
+    
+<tr bgcolor="#cabeeb">
+  <td><a href="download/circuito-tritt-2.pdf">circuito-tritt-2.pdf</a>(1KB)  </td>
+  <td><b>Circuito de pruebas 2</b> para que Tritt lo recorra. Imprimir en papel A4 con impresora Láser</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="download/circuito-tritt-2.fig">circuito-tritt-2.fig</a>(0'6KB)  </td>
+  <td>Circuito de pruebas 2. Fuentes para Xfig</td>
+</tr>            
+</tbody></table> 
+<br>           
+ 
+
+<br>
+<table width=80% bgcolor="#abbeeb" border="0" cellpadding="4" align="center">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>EJEMPLOS PARA TRITT</b>
+ </td>
+</tr>
+</tbody></table> 
+
+<table  width=80%  border="0" align="center" >
+<tr bgcolor="#abbeeb">
+<td><center><b>Fuente</b></center></td>
+
+<td><center><b>Ejecutable</b></center></td>
+<td><center><b>Descripción</b></center></td>
+</tr>
+<tr bgcolor="#cabeeb">
+<td><a href="download/tritt-ram.asm">tritt-ram.asm</a></td>
+<td><a href="download/tritt-ram.s19">tritt-ram.s19</a></td>
+<td>Programa para que Tritt siga una línea negra. Ejemplo para cargar en la RAM interna</td>
+</tr >
+<tr bgcolor="#abbeeb">
+<td><a href="download/tritt-a1.asm">tritt-a1.asm</a></td>
+<td><a href="download/tritt-a1.s19">tritt-a1.s19</a></td>
+<td>Idem, pero para la memoria eeprom de un A1</td>
+</tr>
+<tr bgcolor="#cabeeb">
+<td><a href="download/tritt-E2.asm">tritt-E2.asm</a></td>
+<td><a href="download/tritt-E2.s19">tritt-E2.s19</a></td>
+<td>Idem, para la memoria eeprom de un E2</td>
+</tr>
+
+</table>
+<br>           
+
+<table width=80% bgcolor="#abbeeb" border="0" align="center" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>MULTIMEDIA</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=80%  border="0" align="center">
+<tbody>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="download/video-tritt.mpg">video-tritt.mpg</a> (1.6MB)  </td>
+  <td>Vídeo de Tritt siguiendo <a href="download/circuito-tritt-1.pdf">este recorrido</a></td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="download/tritt-01.jpg">tritt-01.jpg</a> (24KB)  </td>
+  <td> Foto de Tritt de frente</td>
+</tr>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="download/tritt-02.jpg">tritt-02.jpg</a>(42KB)  </td>
+  <td>Tamaño de tritt en relación con una mano</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="download/tritt-03.jpg">tritt-03.jpg</a> (122KB)  </td>
+  <td> Un Tritt "tuneado"</td>
+</tr>    
+
+<tr bgcolor="#cabeeb">
+  <td><a href="download/tritt-04.jpg">tritt-04.jpg</a>(114KB)  </td>
+  <td>Un Tritt "con pluma"</td>
+</tr>  
+
+<tr bgcolor="#abbeeb">
+  <td><a href="download/tritt-05.jpg">tritt-05.jpg</a> (62KB)  </td>
+  <td> Tritt en el Taller en la Universidad de Deusto, en Noviembre de 1998</td>
+</tr>    
+
+<tr bgcolor="#cabeeb">
+  <td><a href="download/tritt-06.jpg">tritt-06.jpg</a>(44KB)  </td>
+  <td>El batallón de Tritts del I Taller en la UPM, Marzo 1997</td>
+</tr>      
+
+<tr bgcolor="#abbeeb">
+  <td><a href="download/tritt-07.jpg">tritt-07.jpg</a> (22KB)  </td>
+  <td> Concurso "el mogollón". II Taller en la UPM, Marzo 98</td>
+</tr>    
+
+<tr bgcolor="#cabeeb">
+  <td><a href="download/tritt-08.jpg">tritt-08.jpg</a>(43KB)  </td>
+  <td>Consurso de la UPSAM, Marzo, 2001</td>
+</tr>          
+
+<tr bgcolor="#abbeeb">
+  <td><a href="download/tritt-09.jpg">tritt-09.jpg</a> (62KB)  </td>
+  <td> Tritts en Formación</td>
+</tr>      
+
+</tbody></table>                   
+<br>
+<HR>
+<H2 id="todo">Lista de cosas por hacer</H2>
+
+<div class="cuerpo">
+
+<p>
+ <b> ¿Quieres participar?</b> A continuación proponemos una serie de cosas que quedan por hacer.
+ Si has realizado alguna de ellas y quieres que te la publiquemos solo tienes que mandarnos un 
+ <a HREF="mailto:info@iearobotics.com">correo</a>.
+</p>
+ </div>
+
+
+<div class="lista">
+<ul>
+  <li>Más <b>Recorridos</b> de prueba para Tritt</li><br>
+  <li>Controlar a Tritt con un <b>circuito combinacional</b>. El diseño está realizado en 
+ <a href="../../personal/juan/docencia/docencia.html">
+  estos apuntes de electrónica digital</a>
+  , pero no se ha construido la placa ni se han hecho los esquemas.</li><br>
+  <li>Manejar a Tritt con un <b>PIC</b>, usando por ejemplo la
+   <a href="../../personal/andres/proyectos/picmin/pic1.html">placa Picmin</a>
+    en vez de la 
+    <a href="../ct6811/ct6811.html">tarjeta CT6811</a>
+    </li><br>
+ 
+  <li>Manejar a Tritt con una <b>FPGA </b>(Por ejemplo con la 
+ <a href="../../juan/doctorado/jps-xpc84/jps-xpc84.html"> tarjeta JPS
+ </a>
+  ) de dos formar diferentes:
+    <ul>
+      <li> Usando un circuito basado en <b>lógica combinacional</b>, como el diseñado en 
+      <a href="../../personal/juan/docencia/docencia.html">
+  estos apuntes de electrónica digital</a></li>
+      <li> Usando una <b>CPU empotrada</b></li>
+    </ul>
+    </li><br>
+  <li> Realizar un <b>Cliente gráfico en el PC</b> para controlar a Tritt, utilizando
+   <a href="../stargate/servidores/sg-generic/sg-generic.html">el 
+   servidor genérico</a>
+  [Parte del proyecto Stargate]</li>  
+  </li> <br>
+  <li> Hacer la <b>estructura ALF</b> con el programa <a href="http://www.leocad.org/"> LeoCad</a>  </li>
+</ul>
+</div>
+
+<HR>
+<H2 id="links">Links</H2>
+<div class="lista">
+<ul>
+  <li><a href="http://www.microbotica.com/">Microbótica</a></li>
+  <li><a href="../ct6811/ct6811.html">tarjeta CT6811</a></li>
+  <li><a href="../ct293/ct293.html">Tarjeta CT293+</a></li>
+</ul>
+</div>
+
+<!-- Noticias -->
+
+<HR>
+
+<H2 id="noticias">Noticias</H2>
+
+<div class="lista">
+
+<ul>
+<li><b>02/Jun/2004</b>: Añadido enlace hacia 
+<a href="http://www.ii.uam.es/~ivan/m-news.htm">I Taller de Robótica en la EPS UAM</a></li>
+<li><b>30/Nov/2003</b>: Puesto enlace hacia el 
+<a href="../../concursos/uax-2003/uax.html">
+I taller de robótica en la UAX</a>.</li>
+<li><b>25/Jul/2003</b>: Publicado el documento microbot, con más información sobre Tritt 
+    <a href="#download">[Microbot]</a></li>
+  <li><b>21/Jul/2003</b>: Publicada documentación usada en los talleres 
+    <a href="#download">[taller-tritt]</a></li>
+  <li><b>08/Jul/2003</b>: Publicada información de Tritt en esta web</li>
+
+</ul>
+
+</div>
+<hr>
+
+<H2> Notas</H2>
+<p id="nota">
+<b>[1]</b> Las letras del fichero Manual-tritt.pdf se ven "borrosas" con el Acrobat Reader, pero el documento
+se imprime correctamente. Con otros visualizadores, como el GV o XPDF se ve correctamente. Desgraciadamente
+las fuentes de este documento se han perdido, y solo disponemos del fichero en pdf.
+</p>
+
+<HR>
+<a href="https://obijuan.github.io/iearobotics-site/">IEA ROBOTICS</a>
+<ADDRESS>
+<A href="../../../../personal/juan/index.html">Juan González</A>
+</ADDRESS>
+</body>
+</html>
+
