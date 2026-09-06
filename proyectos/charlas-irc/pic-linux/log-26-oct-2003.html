@@ -1,0 +1,665 @@
+<ml><head>
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charla/taller en el Chat, sobre Microcontroladores PIC y Linux [I]</title>
+
+<table align="center" width="100%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>Charla/taller en el Chat, sobre Microcontroladores PIC y Linux [I]</b>
+ </td>
+</tr>
+</tbody></table> 
+
+ <table align="center">
+<tr>
+<td><a href="#introduccion">[Introducción]</a></td>
+<td><a href="#log">[Registro(Log)]</a></td>
+<td><a href="#info">[Información]</a></td>
+<td><a href="#licencia">[Licencia]</a></td>
+<td><a href="#download">[Download]</a></td>
+<td><a href="#links">[Links]</a></td>
+<td><a href="#agradecimientos">[Agradecimientos]</a></td>
+</tr>
+</table>  
+<center>
+<img src="pantallazos/logo-charla.png">
+</center>  
+  
+<HR><h2 id="introduccion">Introducción</h2>
+<!-- texto --><div class="cuerpo"><p>
+  El domingo <b>26 de Octubre de 2003</b> se impartió una charla/taller por el Chat 
+  sobre las herramientas que existen en GNU/Linux para poder trabajar
+   con los <b>microcontroladores PIC</b>
+</p>
+<p>
+  <a href="http://www.microchip.com">Microchip</a>,
+   el fabricante de los PICs, actualmente sólo proporciona herramientas para entornos
+  Windows. Ese es el motivo por el que yo nunca los había usado: desde mi portátil con Debian no
+  los podía programar, ni tampoco los podía grabar.
+</p>
+<p>
+  Buscando aplicaciones, encontré las que se presentan en esta charla: <b>gputils</b> y 
+  <b>gpsim</b>, ambas
+  software libre, publicadas bajo licencia GPL. No son tan potentes como las herramientas para
+  Windows, pero nos solucionan la vida a aquellos que utilizamos GNU/Linux.
+</p>
+<p>
+  Además, junto con el 
+  <a href="../../../personal/andres/index.html">Profesor Andrés Prieto-Moreno</a>,
+   hemos desarrollado
+  una tarjeta entrenadora, la <b>Skypic</b>, y el software necesario para poder grabarla
+  fácilmente desde GNU/Linux. <b>Ahora ya es posible hacer aplicaciones con el PIC desde GNU/Linux</b>.
+</p>
+<p>
+  Los PICs son los que utilizamos en el<b> Laboratorio de Arquitectura de Computadores</b>, de cuarto
+  curso de Informática en la Universidad Pontificia de Salamanca en Madrid 
+  <a href="http://www.upsam.com/">[UPSAM]</a>. Aunque el 
+  software "oficial" que se imparte es para Windows, veo muy interesante que los alumnos 
+  puedan realizar sus aplicaciones microcontroladoras desde <b>la plataforma que ellos prefieran</b>, bien
+  máquinas Windows o bien Máquinas GNU/Linux.
+</p>
+</div>  
+<HR><h2 id="info">Información</h2>
+<div class="lista">
+<p>
+  <ul>
+    <li><b>Autor</b>: <a href="../../../personal/juan/index.html">Juan González</a> [Obijuan]</li>
+    <li><b>Fecha</b>: 26/Oct/2003</li>
+    <li><b>Lugar</b>: Canal <b>#linups</b>, en el servidor <b>irc.debian.org</b></li>
+    <li><b>Duración</b>: 40 minutos</li>
+    <li><b>Asistentes</b>: 19</li>
+  </ul>
+</p>
+</div>
+
+<HR><h2 id="licencia">Licencia</h2>
+<div class="cuerpo">
+<p>
+  Se otorga permiso para citar, copiar y redistribuir este texto
+  por cualquier medio si se hace de forma literal y se mantiene esta nota
+</p>
+</div>
+
+<HR><h2 id="log">Registro (Log) de la charla</h2><!-- texto --><div class="cuerpo"><p>
+<br><br>
+
+<table width=100% bgcolor="#abbeeb" border="0" align="center">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>Direcciones de internet</b>
+ </td>
+</tr>
+</tbody></table> 
+
+[16:03] <b>&lt;Obijuan&gt;</b> ok, vamos a empezar con las URL's interesantes<br>
+[16:03] <b>&lt;Obijuan&gt;</b> <a href="http://www.gnupic.org/">http://www.gnupic.org/</a><br>
+[16:03] <b>&lt;Obijuan&gt;</b> Portal con herramientas libres para PICs<br>
+[16:03] <b>&lt;Obijuan&gt;</b> Un poco obsoleto, pero es interesante<br>
+[16:04] <b>&lt;Obijuan&gt;</b> <a href="http://gputils.sourceforge.net/">http://gputils.sourceforge.net/</a><br>
+[16:04] <b>&lt;Obijuan&gt;</b> Estas son las herramientas que vamos a usar<br>
+[16:04] <b>&lt;Obijuan&gt;</b> Herramientas para trabajar con PICS: Ensamblador, 
+desensamblador, enlazador, etc...<br>
+[16:04]  <b>&lt;Obijuan&gt;</b> Compatibles con el ensamblador oficial de MicroChip: MPASM<br>
+[16:04] <b>&lt;sliver&gt;</b> Obijuan: no puedes hacer streaming de auido ?<br>
+[16:04]  <b>&lt;Obijuan&gt;</b> sliver: no, pero alguien podría dar una charla sobre eso :-)))<br>
+[16:05]  <b>&lt;Obijuan&gt;</b> <a href="http://www.dattalo.com/gnupic/gpsim.html">http://www.dattalo.com/gnupic/gpsim.html</a><br>
+[16:05]  <b>&lt;Obijuan&gt;</b> Herramienta para la simulación de los PICS<br>
+
+<table width=100% bgcolor="#abbeeb" border="0" align="center">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>Herramientas e instalación</b>
+ </td>
+</tr>
+</tbody></table>  
+
+[16:05]  <b>&lt;Obijuan&gt;</b> El <b>GPSIM</b> es el que usaremos<br>
+[16:05]  <b>&lt;Obijuan&gt;</b> Versiones que vamos a emplear en esta charla:<br>
+[16:05]  <b>&lt;Obijuan&gt;</b> gpsim: 0.20.14<br>
+[16:05]  <b>&lt;Obijuan&gt;</b> gpasm: 0.11.6<br>
+[16:05]  <b>&lt;Obijuan&gt;</b> Yo las tengo instaladas en mi Debian/Sarge. Para instalarlas en Debian<br>
+[16:05]  <b>&lt;Obijuan&gt;</b> Sólo hay que poner:<br>
+[16:06]  <b>&lt;Obijuan&gt;</b> <i># apt-get install gpasm gpsim</i><br>
+[16:06]  <b>&lt;Obijuan&gt;</b> Para otras distribuciones hay que ir directamente a las URLs que os<br>
+[16:06]  <b>&lt;Obijuan&gt;</b> he comentado antes<br>
+
+<table width=100% bgcolor="#abbeeb" border="0" align="center">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>Lo que veremos en la charla</b>
+ </td>
+</tr>
+</tbody></table>   
+
+[16:06]  <b>&lt;Obijuan&gt;</b> Ideas previas:<br>
+[16:06]  <b>&lt;Obijuan&gt;</b> -No es un tutorial sobre como programar los PICs<br>
+[16:06]  <b>&lt;Obijuan&gt;</b> -Veremos cómo manejar las herramientas disponibles para Linux,<br>
+[16:06]  <b>&lt;Obijuan&gt;</b> que nos permiten manejar los PICs<br>
+[16:07]  <b>&lt;Obijuan&gt;</b> -Supondré que tenéis instaladas las herramientas. Las iremos probando, yo<br>
+[16:07]  <b>&lt;Obijuan&gt;</b> en mi máquina y vosotros en las vuestras. Para los que no las tengáis<br>
+[16:07]  <b>&lt;Obijuan&gt;</b> instaladas será un poco rollo :-(, por eso he preparado unos "pantallazos"<br>
+[16:07]  <b>&lt;Obijuan&gt;</b> para que los podáis ver :-)<br>
+[16:07]  <b>&lt;Obijuan&gt;</b> -Dejad el navegador listo<br>
+
+<table width=100% bgcolor="#abbeeb" border="0" align="center">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>Primer ejemplo: suma.asm</b>
+ </td>
+</tr>
+</tbody></table>   
+ 
+[16:07]  <b>&lt;Obijuan&gt;</b> Vamos a empezar con un primer programa<br>
+[16:08]  <b>&lt;Obijuan&gt;</b> Manos a la obra. Vamos a trabajar con un programa MUY sencillo. (lo hice<br>
+[16:08]  <b>&lt;Obijuan&gt;</b> en clase). Haremos la siguiente operación: SUMA = 1 + 2<br>
+[16:08]  <b>&lt;Obijuan&gt;</b> En clase vimos para qué era cada instrucción y directiva. Aqué veremos<br>
+[16:08]  <b>&lt;Obijuan&gt;</b> el proceso de <b>ensamblar</b> y <b>simular</b>.<br>
+[16:08]  <b>&lt;Obijuan&gt;</b> El programa lo podéis bajar de:<br>
+[16:08]  <b>&lt;Obijuan&gt;</b>
+ <a href="ejemplos/suma.asm">
+ http://www.iearobotics.com/proyectos/charlas-irc/pic-linux/ejemplos/suma.asm </a><br>
+[16:09]  <b>&lt;Obijuan&gt;</b> (Esta URL es temporal, sólo para esta charla. Más adelante la colocará en<br>
+[16:09]  <b>&lt;Obijuan&gt;</b> otro lugar)<br>
+[16:09]  <b>&lt;Obijuan&gt;</b> Abrimos un terminal<br>
+[16:09]  <b>&lt;Obijuan&gt;</b> Nos creamos un directorio de trabajo, donde probaremos todos los ejemplos:<br>
+[16:09]  <b>&lt;Obijuan&gt;</b> <i>$ mkdir pic</i><br>
+[16:09]  <b>&lt;Obijuan&gt;</b> <i>$ cd pic</i><br>
+[16:09]  <b>&lt;Obijuan&gt;</b> Ahí ponemos el programa <b>suma.asm</b>. Los ficheros "fuente" tienen<br>
+[16:10]  <b>&lt;Obijuan&gt;</b> la extensión <b>.asm</b>. Son archivos de texto ASCII, que podremos editar<br>
+[16:10]  <b>&lt;Obijuan&gt;</b> con cualquier editor. Vamos a echar un vistazo al código, antes de<br>
+[16:10]  <b>&lt;Obijuan&gt;</b> ensamblarlo.<br>
+[16:10]  <b>&lt;Obijuan&gt;</b> Según los gustos:<br>
+[16:10]  <b>&lt;Obijuan&gt;</b> 1) <i>cat suma.asm</i><br>
+[16:10]  <b>&lt;Obijuan&gt;</b> 2) <i>emacs suma.asm</i><br>
+[16:10]  <b>&lt;Obijuan&gt;</b> 3) <i>vim suma.asm</i><br>
+[16:10]  <b>&lt;Obijuan&gt;</b> 4) <i>gedit suma.asm</i><br>
+[16:10]  <b>&lt;Obijuan&gt;</b> 5) <i>kate suma.asm</i><br>
+[16:10]  <b>&lt;Obijuan&gt;</b> 6) ...<br>
+[16:10]  <b>&lt;Obijuan&gt;</b> En el Laboratorio de arquitectura trabajamos con la familia<br>
+[16:10]  <b>&lt;Obijuan&gt;</b> de PICS <b>16F87X</b>. Los ejemplos de clase los he hecho para el<br>
+[16:10]  <b>&lt;Obijuan&gt;</b> <b>16F876</b>.<br>
+[16:11]  <b>&lt;Obijuan&gt;</b> Sin embargo véis que en la primera línea pone:<br>
+[16:11]  <b>&lt;Obijuan&gt;</b> <b>LIST P=16F873</b><br>
+[16:11]  <b>&lt;Obijuan&gt;</b> El simulador (GPSIM) todavía no soporta el 16F876, así que usaremos<br>
+[16:11]  <b>&lt;Obijuan&gt;</b> el 16F873 que es prácticamente igual (tiene el mismo número de pines,<br>
+[16:11]  <b>&lt;Obijuan&gt;</b> los mismos registros, etc...)<br>
+[16:11]  <b>&lt;Obijuan&gt;</b> (Realmente no sé cual es la diferencia con el 16F876 ;-)<br>
+[16:11]  <b>&lt;Obijuan&gt;</b> Así que para nosotros 16F873 = 16F876<br>
+[16:11]  <b>&lt;Obijuan&gt;</b> Fijaros también en la directiva:<br>
+[16:11]  <b>&lt;Obijuan&gt;</b> <b>INCLUDE "p16f873.inc"</b><br>
+[16:12]  <b>&lt;Obijuan&gt;</b> que incluye el archivo <b>p16f873.inc</b>, el cual contiene todas las definiciones<br>
+[16:12]  <b>&lt;Obijuan&gt;</b> de los recursos del pic16f876. Vamos a ver físicamente donde está<br>
+[16:12]  <b>&lt;Obijuan&gt;</b> este archivo, por si lo queremos ver:<br>
+[16:12]  <b>&lt;Obijuan&gt;</b> <i>$ locate p16f873.inc</i><br>
+[16:12]  <b>&lt;Obijuan&gt;</b> <i>/usr/share/gputils/header/p16f873.inc</i><br>
+[16:12] <b>&lt;Obijuan&gt;</b>  Es un archivo de texto, que podemos editar... pero eso lo haremos más<br>
+[16:12] <b>&lt;Obijuan&gt;</b>  adelante.<br>
+
+<table width=100% bgcolor="#abbeeb" border="0" align="center">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>Ensamblando suma.asm</b>
+ </td>
+</tr>
+</tbody></table>    
+
+[16:12] <b>&lt;Obijuan&gt;</b>  Vamos a <b>ensamblar</b> nuestro programa. Tecleamos:<br>
+[16:12] <b>&lt;Obijuan&gt;</b>  <i>$ gpasm suma.asm</i><br>
+[16:12] <b>&lt;Obijuan&gt;</b>  No han aparecido errores (de hecho no sale ningún mensaje).<br>
+[16:13] <b>&lt;Obijuan&gt;</b>  ¿Qué ficheros se han generado?<br>
+[16:13] <b>&lt;Obijuan&gt;</b>  <i>$ ls -l</i><br>
+[16:13] <b>&lt;Obijuan&gt;</b>  <i>-rw-r--r-- 1 juan juan 565 2003-10-26 11:48 <b>suma.asm</b></i><br>
+[16:13] <b>&lt;Obijuan&gt;</b>  <i>-rw-r--r-- 1 juan juan 5632 2003-10-26 11:57 <b>suma.cod</b></i><br>
+[16:13] <b>&lt;Obijuan&gt;</b>  <i>-rw-r--r-- 1 juan juan 56 2003-10-26 11:57 <b>suma.hex</b></i><br>
+[16:13] <b>&lt;Obijuan&gt;</b>  <i>-rw-r--r-- 1 juan juan 12299 2003-10-26 11:57 <b>suma.lst</b></i><br>
+[16:13] <b>&lt;Obijuan&gt;</b>  La hora es de esta mañana :-)<br>
+[16:13] <b>&lt;Obijuan&gt;</b>  Vemos tres ficheros nuevos:<br>
+[16:13] <b>&lt;Obijuan&gt;</b>  <b>1) suma.hex</b>: este es el ejecutable. Contiene el programa en 
+<b>código máquina</b><br>
+[16:13] <b>&lt;Obijuan&gt;</b>  y será el que se grabe en el PIC.<br>
+[16:13] <b>&lt;Obijuan&gt;</b>  Realmente es un fichero ASCII. Vamos a cotillearlo ;-)<br>
+[16:14] <b>&lt;Obijuan&gt;</b>  <i>$ cat suma.hex</i><br>
+[16:14] <b>&lt;Obijuan&gt;</b>  <i>:020000040000FA</i><br>
+[16:14] <b>&lt;Obijuan&gt;</b>  <i>:080000000130023EA0000328BC</i><br>
+[16:14] <b>&lt;Obijuan&gt;</b>  <i>:00000001FF</i><br>
+[16:14] <b>&lt;Obijuan&gt;</b>  Ahí está el código máquina, junto con alguna información adicional. Este<br>
+[16:14] <b>&lt;Obijuan&gt;</b>  formato es necesario conocerlo si eres un desarrollador y quieres<br>
+[16:14] <b>&lt;Obijuan&gt;</b>  hacerte un grabador, por ejemplo. Se denomina <b>formato HEX</b> 
+y es de Intel.<br>
+[16:14] <b>&lt;Obijuan&gt;</b>  <b>2) suma.cod</b><br>
+[16:14] <b>&lt;Obijuan&gt;</b> Este es el fichero que usaremos para la simulación. No es ASCII.<br>
+[16:14] <b>&lt;Obijuan&gt;</b>  <b>3) suma.lst</b><br>
+[16:14] <b>&lt;Obijuan&gt;</b>  Fichero ASCII con el listado de nuestro programa, e información sobre<br>
+[16:14] <b>&lt;Obijuan&gt;</b>  los símbolos empleados, cuantas palabras de memoria ocupa, etc... Nosotros<br>
+[16:14] <b>&lt;Obijuan&gt;</b>  no lo usaremos.<br>
+[16:15] <b>&lt;Obijuan&gt;</b>  Vamos a ver cómo funciona el programa y comprobar si hace lo que tiene<br>
+[16:15] <b>&lt;Obijuan&gt;</b>  que hacer. <b>Aqué empieza lo interesante</b>.<br>
+[16:15] <b>&lt;Obijuan&gt;</b>  Algún problema con el ensamblado?<br>
+[16:15] <b>&lt;Obijuan&gt;</b>  Alguien lo ha probado? :-)<br>
+[16:15] <b>&lt;alejandro&gt;</b>  está moderado el canal, por el momento no hay ninguna pregunta.<br>
+[16:15] <b>&lt;Obijuan&gt;</b>  ok<br>
+
+<table width=100% bgcolor="#abbeeb" border="0" align="center">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>Simulando el programa suma.asm</b>
+ </td>
+</tr>
+</tbody></table>     
+
+
+[16:15] <b>&lt;Obijuan&gt;</b>  Vamos a usar el <b>GPSIM</b>, que es basante alfa, por lo que casca de vez en<br>
+[16:15] <b>&lt;Obijuan&gt;</b>  cuando. Si lo hacéis como yo os digo no habrá problemas :-)<br>
+[16:16] <b>&lt;Obijuan&gt;</b>  Pero si empezáis a pinchar opciones por vuestra cuenta seguro que<br>
+[16:16] <b>&lt;Obijuan&gt;</b>  lo petáis. Aún así, veréis que es bastante potente y es cojonudo para<br>
+[16:16] <b>&lt;Obijuan&gt;</b>  aprender a programar el PIC.<br>
+[16:16] <b>&lt;Obijuan&gt;</b>  Manos a la obra. Teclead:<br>
+[16:16] <b>&lt;Obijuan&gt;</b>  <i>$ gpsim -s suma.cod</i><br>
+[16:16] <b>&lt;Obijuan&gt;</b>  En la consola os aparecerá:<br>
+[16:16] <b>&lt;Obijuan&gt;</b>  <i>gpsim - the GNUPIC simulator</i><br>
+[16:16] <b>&lt;Obijuan&gt;</b>  <i>version: 0.20.14</i><br>
+[16:16] <b>&lt;Obijuan&gt;</b> <br>
+[16:16] <b>&lt;Obijuan&gt;</b> <br>
+[16:16] <b>&lt;Obijuan&gt;</b>  <i>type help for help</i><br>
+[16:16] <b>&lt;Obijuan&gt;</b>  <i>gpsim&gt; Loading suma.cod</i><br>
+[16:16] <b>&lt;Obijuan&gt;</b>  <i>processing cod file suma.cod</i><br>
+[16:16] <b>&lt;Obijuan&gt;</b>  <i>f873 create</i><br>
+[16:16] <b>&lt;Obijuan&gt;</b>  <i>symbol at address 3 name fin</i><br>
+[16:16] <b>&lt;Obijuan&gt;</b>  <i>--- Reset</i><br>
+[16:16] <b>&lt;Obijuan&gt;</b>  <i>Enabling WDT timeout = 0.018 seconds</i><br>
+[16:17] <b>&lt;Obijuan&gt;</b> <br>
+[16:17] <b>&lt;Obijuan&gt;</b>  <i>gpsim&gt;</i><br>
+[16:17] <b>&lt;Obijuan&gt;</b>  y además se os abrirá una ventana gráfica como esta:<br>
+[16:17]  <b>&lt;Obijuan&gt;</b> <a href="pantallazos/pantallazo1.png">
+http://www.iearobotics.com/proyectos/charlas-irc/pic-linux/pantallazos/pantallazo1.png
+</a><br>
+<center>
+<img src="pantallazos/pantallazo1.png">
+</center>
+<br>
+
+[16:17]  <b>&lt;Obijuan&gt;</b>  (Si os aparecen más ventanas, cerradlas. Eso es que habéis estado<br>
+[16:17]  <b>&lt;Obijuan&gt;</b>  jugueteando antes, eh??)<br>
+[16:17] *** alejandro  cierra [16:17] [Read error: 104 (Connection reset by peer)]<br>
+[16:17]  <b>&lt;Obijuan&gt;</b>  Vaya, el moderador se ha esfumado<br>
+[16:18]  <b>&lt;Obijuan&gt;</b>  De la consola nos olvidamos. Aparecerán mensajes, pero no les prestaremos<br>
+[16:18]  <b>&lt;Obijuan&gt;</b>  atención. Nos centraremos en el <b>interfaz gráfico</b>.<br>
+[16:18]  <b>&lt;Obijuan&gt;</b>  Lo primero que necesitamos es "ver" nuestro código fuente, para conocer<br>
+[16:18]  <b>&lt;Obijuan&gt;</b>  paso a paso qué ocurre cada vez que se ejecuta una instrucción.<br>
+[16:18]  <b>&lt;Obijuan&gt;</b>  Pinchamos en "<b>windows</b>" y marcamos la opción "<b>Source</b>".
+ Se nos abrirá<br>
+[16:18]  <b>&lt;Obijuan&gt;</b>  una nueva ventana que contiene nuestro <b>código fuente</b>. Algo como esto:<br>
+[16:18]  <b>&lt;Obijuan&gt;</b>  <a href="pantallazos/pantallazo2.png">
+http://www.iearobotics.com/proyectos/charlas-irc/pic-linux/pantallazos/pantallazo2.png</a><br>
+<br>
+<center>
+<img src="pantallazos/pantallazo2.png">
+</center>
+<br>
+
+
+[16:19]  <b>&lt;Obijuan&gt;</b>  El resaltado de sintáxis es un poco "ortera" :-). Me imagino que en las<br>
+[16:19]  <b>&lt;Obijuan&gt;</b>  siguientes versiones habrá alguna opción para cambiarlo :-DDD<br>
+[16:19]  <b>&lt;Obijuan&gt;</b>  Vemos que en esta ventana tenemos <b>dos "pestañas"</b> en la parte superior<br>
+[16:19]  <b>&lt;Obijuan&gt;</b>  En la de la izquierda está nuestro programa <b>suma.asm</b>. En la de la derecha<br>
+[16:19]  <b>&lt;Obijuan&gt;</b>  el fichero <b>p16f873.inc</b>.<br>
+[16:19]  <b>&lt;Obijuan&gt;</b>  Los ficheros <b>.inc</b> son los originales de Microchip por eso no os extrañáis<br>
+[16:19]  <b>&lt;Obijuan&gt;</b>  al ver cosas coma esta (líneas 12 y 13):<br>
+[16:19]  <b>&lt;Obijuan&gt;</b>  <i>; 1. Command line switch:</i><br>
+[16:19]  <b>&lt;Obijuan&gt;</b>  <i>; C:\ MPASM MYFILE.ASM /PIC16F873</i><br>
+[16:19]  <b>&lt;Obijuan&gt;</b>  El ensamblador <b>gpasm</b> se ha hecho para ser <b>totalmente compatible</b> con<br>
+[16:19]  <b>&lt;Obijuan&gt;</b>  el <b>MPASM de Microchi</b>p. Viendo estas líneas ya habéis aprendido a<br>
+[16:19]  <b>&lt;Obijuan&gt;</b>  ensamblar desde Windows. Para probar este mismo ejemplo sólo habráa que<br>
+[16:19]  <b>&lt;Obijuan&gt;</b>  poner:<br>
+[16:20]  <b>&lt;Obijuan&gt;</b>  <i>C:\> MPASM suma.asm</i><br>
+[16:20]  <b>&lt;Obijuan&gt;</b>  Volvemos a la pestaña de suma.asm. En la izquierda vemos una<br>
+[16:20]  <b>&lt;Obijuan&gt;</b>  <b>flecha verde</b>, que apunta a la primera instrucción:<br>
+[16:20]  <b>&lt;Obijuan&gt;</b>  <b>MOVLW 1</b><br>
+[16:20]  <b>&lt;Obijuan&gt;</b>  Pero para simular necesitamos ver la memoria y todos sus registros,<br>
+[16:20]  <b>&lt;Obijuan&gt;</b>  el acumulador W, etc... Pinchamos en la ventana principal, en la<br>
+[16:20]  <b>&lt;Obijuan&gt;</b>  <b>opción windows/ram</b>. Se nos abre otra ventana, similar a esta:<br>
+[16:20]  <b>&lt;Obijuan&gt;</b>  <a href="pantallazos/pantallazo3.png">
+http://www.iearobotics.com/proyectos/charlas-irc/pic-linux/pantallazos/pantallazo2.png</a><br>
+<br>
+<center>
+<img src="pantallazos/pantallazo3.png">
+</center>
+<br>
+
+[16:20]  <b>&lt;Obijuan&gt;</b>  En ella vemos una parte de la <b>RAM</b>. Con la barra de desplazamiento<br>
+[16:20]  <b>&lt;Obijuan&gt;</b>  de la derecha nos movemos por ella.<br>
+[16:21]  <b>&lt;Obijuan&gt;</b>  Alguna pregunta?<br>
+
+
+[16:21] <b>&lt;alejandro&gt;</b> No, por el momento no.<br>
+[16:21]  <b>&lt;alejandro&gt;</b> Aunque como se lanza el simulador una vez que hemos generado el código? :-)<br>
+[16:21]  <b>&lt;Obijuan&gt;</b>  <i>$ gpsim -s suma.cod</i><br>
+[16:21]  <b>&lt;Obijuan&gt;</b>  no lo he puesto?<br>
+[16:22]  <b>&lt;alejandro&gt;</b> Si, pero me cai. :)<br>
+
+
+[16:22]  <b>&lt;Obijuan&gt;</b> Fijaros en la <b>parte inferior de la ventana</b>. Ahí podemos ver el<br>
+[16:22]  <b>&lt;Obijuan&gt;</b> valor del <b>registro de STATUS</b>, el contenido del <b>registro W</b>, el<br>
+[16:22]  <b>&lt;Obijuan&gt;</b> <b>contador de programa</b> (PC) y <b>el tiempo</b>. Como todavía no hemos<br>
+[16:22]  <b>&lt;Obijuan&gt;</b> empezado a simular, el tiempo está a 0.00 micro-segundos.<br>
+[16:22]  <b>&lt;Obijuan&gt;</b> Las celdas de <b>color azul oscuro</b> son registros internos del<br>
+[16:22]  <b>&lt;Obijuan&gt;</b> PIC (Contador de programa, registros de periféricos, etc...)<br>
+[16:23]  <b>&lt;Obijuan&gt;</b> Las <b>celdas en negro</b> son registros que NO están implementados<br>
+[16:23]  <b>&lt;Obijuan&gt;</b> en el PIC16F876<br>
+[16:23] <b>Alejandro</b> recuerda que para cualquier pregunta, haganmela a mi por privado.<br>
+[16:23]  <b>&lt;Obijuan&gt;</b> Las <b>celdas "azul celeste claro" </b>son los registros disponibles para que<br>
+[16:23]  <b>&lt;Obijuan&gt;</b> los use el programador.<br>
+[16:23]  <b>&lt;Obijuan&gt;</b> Las <b>celdas grises</b> son las que están accesibles desde todos los bancos.<br>
+[16:23]  <b>&lt;Obijuan&gt;</b> (registros comunes)<br>
+[16:23]  <b>&lt;Obijuan&gt;</b> Para trabajar, colocaros las tres ventanas que tenemos abiertas<br>
+[16:23]  <b>&lt;Obijuan&gt;</b> de manera que tengáis acceso a ellas, por ejemplo yo lo tengo así:<br>
+[16:23]  <b>&lt;Obijuan&gt;</b> (cuidado, ocupa 300KB)<br>
+
+[16:24]  <b>&lt;Obijuan&gt;</b>
+<a href="pantallazos/pantallazo4.png">
+http://www.iearobotics.com/proyectos/charlas-irc/pic-linux/pantallazos/pantallazo4.png
+</a><br>
+
+[16:24]  <b>&lt;Obijuan&gt;</b> Comenzamos a simular.<br>
+[16:24]  <b>&lt;Obijuan&gt;</b> Vamos a ejecutar la primera instrucción.<br>
+[16:24]  <b>&lt;Obijuan&gt;</b> <b>Pulsamos el botón "step" </b>de la ventana principal<br>
+[16:24]  <b>&lt;Obijuan&gt;</b> Se ha ejecutado:<br>
+[16:24]  <b>&lt;Obijuan&gt;</b> <b>MOVLW 1</b><br>
+[16:24]  <b>&lt;Obijuan&gt;</b> Que lo que hace es poner el valor 1 en el acumulador W.<br>
+[16:25]  <b>&lt;Obijuan&gt;</b> Podemos ver en la ventana de la <b>RAM</b> (parte inferior) que efectivamente<br>
+[16:25]  <b>&lt;Obijuan&gt;</b> ahora W vale 0x01<br>
+[16:25]  <b>&lt;Obijuan&gt;</b> Observad también que algunas posiciones de la<br>
+[16:25]  <b>&lt;Obijuan&gt;</b> memoria RAM se han vuelto de <b>color "azul"</b><br>
+[16:25]  <b>&lt;Obijuan&gt;</b> Eso indica lo que ha cambiado<br>
+[16:25]  <b>&lt;Obijuan&gt;</b> al ejecutar la instrucción.<br>
+[16:25]  <b>&lt;Obijuan&gt;</b> Ejecutamos la siguiente instrucción (<b>pinchamos otra vez en step</b>)<br>
+[16:25]  <b>&lt;Obijuan&gt;</b> <b>ADDLW 2</b><br>
+[16:25]  <b>&lt;Obijuan&gt;</b> Esta instrucción suma 2 a lo que había en W. Efectivamente, vemos que<br>
+[16:25]  <b>&lt;Obijuan&gt;</b> ahora W vale 3.<br>
+[16:25]  <b>&lt;Obijuan&gt;</b> Pinchamos otra vez en <b>step</b>:<br>
+[16:26]  <b>&lt;Obijuan&gt;</b> <b>MOVWF SUMA</b><br>
+[16:26]  <b>&lt;Obijuan&gt;</b> El contenido del acumulador W se deposita en la variable SUMA. Esta<br>
+[16:26]  <b>&lt;Obijuan&gt;</b> variable la hemos situado en la dirección 0x20 de la RAM. Si nos fijamos<br>
+[16:26]  <b>&lt;Obijuan&gt;</b> en esa posición vemos que se ha puesto en "azul" y que contiene el valor 3<br>
+[16:26]  <b>&lt;Obijuan&gt;</b> La última instrucción es un bucle infinito, para finalizar.<br>
+[16:26]  <b>&lt;Obijuan&gt;</b> <b>¡¡Ya hemos simulado nuestro primer programa!!</b><br>
+[16:26]  <b>&lt;Obijuan&gt;</b> Preguntas?<br>
+
+[16:26]  <b>&lt;alejandro&gt;</b> Parece que ninguna, se lo saben todo. :-)<br>
+[16:27]  <b>&lt;Obijuan&gt;</b> o nadie lo está probando :-))))<br>
+[16:27]  <b>&lt;Obijuan&gt;</b> ¿Cuanto tiempo ha tardado en ejecutarse?<br>
+[16:27]  <b>&lt;Obijuan&gt;</b> Miramos el tiempo y vemos que<br>
+[16:27]  <b>&lt;Obijuan&gt;</b> pone: 3.00 micro segundos.<br>
+[16:27]  <b>&lt;Obijuan&gt;</b> ¡¡Sólo ha tardado 3 micro segundos!! (antes de<br>
+[16:27]  <b>&lt;Obijuan&gt;</b> entrar en el bucle infinito, claro, donde permanecería de por vida, hasta<br>
+[16:27]  <b>&lt;Obijuan&gt;</b> que hiciésemos un reset)<br>
+[16:27] <b>&lt;alejandro&gt;</b> 33.00 µs<br>
+[16:27] <b>&lt;alejandro&gt;</b> hmm, a mi más :-)<br>
+[16:28]  <b>&lt;Obijuan&gt;</b> Porque le habrás dado más veces al step<br>
+[16:28]  <b>&lt;Obijuan&gt;</b> :-)<br>
+[16:28]  <b>&lt;Obijuan&gt;</b> Apretad el <b>botón "Quit gpsim"</b>. Todas las ventanas desaparecen.<br>
+[16:28]  <b>&lt;Obijuan&gt;</b> Tranquilos,<br>
+[16:28]  <b>&lt;Obijuan&gt;</b> gpsim almacena el tamaño y la colocación. La próxima vez que lo ejecutemos<br>
+[16:28]  <b>&lt;Obijuan&gt;</b> nos aparecerá exactamente igual que como lo teníamos.<br>
+
+<table width=100% bgcolor="#abbeeb" border="0" align="center">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>Un segundo programa de ejemplo: ledon.asm</b>
+ </td>
+</tr>
+</tbody></table>   
+
+[16:28]  <b>&lt;Obijuan&gt;</b> Bueno, para terminar una segunda simulación.<br>
+[16:28]  <b>&lt;Obijuan&gt;</b> Vamos a comunicarnos con<br>
+[16:28]  <b>&lt;Obijuan&gt;</b> el "exterior" del PIC. Queremos <b>encender un led</b> que está conectado al<br>
+[16:28]  <b>&lt;Obijuan&gt;</b> <b>bit 1</b> del <b>puerto</b> B.<br>
+[16:29]  <b>&lt;Obijuan&gt;</b> Primero tendremos que <b>configurar el puerto B</b> para que<br>
+[16:29]  <b>&lt;Obijuan&gt;</b> su <b>bit 1 sea de salida</b> y luego enviaremos un "1" a esa posición para que<br>
+[16:29]  <b>&lt;Obijuan&gt;</b> salgan <b>5v voltios </b>por el <b>pin</b> correspondiente y se encienda un led.<br>
+[16:29]  <b>&lt;Obijuan&gt;</b> Aqué está el programa:<br>
+[16:29]  <b>&lt;Obijuan&gt;</b><a href="ejemplos/ledon.asm">
+http://www.iearobotics.com/proyectos/charlas-irc/pic-linux/ejemplos/ledon.asm
+</a><br>
+[16:29]  <b>&lt;Obijuan&gt;</b> Para los alumnos de arquitectura: este ejemplo lo mostrará el próximo<br>
+[16:29]  <b>&lt;Obijuan&gt;</b> día en clase y nos servirá más adelante para comprobar que tenemos<br>
+[16:29]  <b>&lt;Obijuan&gt;</b> el hardware correctamente construido<br>
+[16:29]  <b>&lt;Obijuan&gt;</b> Hacemos el mismo proceso que antes. <b>Primero ensamblamos</b>:<br>
+[16:29]  <b>&lt;Obijuan&gt;</b> <i>$ gpasm ledon.asm</i><br>
+[16:29]  <b>&lt;Obijuan&gt;</b> Ahora sí que nos aparece un mensaje. No es un error, es una especie de<br>
+[16:30]  <b>&lt;Obijuan&gt;</b> Warning:<br>
+[16:30]  <b>&lt;Obijuan&gt;</b> <i>ledon.asm:21:Message [302] Register in operand not in bank 0. Ensure bank bits are correct.</i><br>
+[16:30]  <b>&lt;Obijuan&gt;</b> En la línea 21:<br>
+[16:30]  <b>&lt;Obijuan&gt;</b> <b>BCF TRISB,1</b>		; Poner RB1 como salida<br>
+[16:30]  <b>&lt;Obijuan&gt;</b> estamos accediendo al registro <b>TRISB</b>, que está en el Banco 1. El<br>
+[16:30]  <b>&lt;Obijuan&gt;</b> ensamblador nos avisa de que tengamos cuidado. Nos tenemos que<br>
+[16:30]  <b>&lt;Obijuan&gt;</b> asegurar que antes de acceder a TRISB estemos en el banco correcto.<br>
+[16:30]  <b>&lt;Obijuan&gt;</b> <i>$ ls -l ledon*</i><br>
+[16:30]  <b>&lt;Obijuan&gt;</b> <i>juan@milenium:~/pic$ ls -l ledon*</i><br>
+[16:30]  <b>&lt;Obijuan&gt;</b> <i>-rw-r--r-- 1 juan juan 1079 2003-10-26 13:01 <b>ledon.asm</b></i><br>
+[16:30]  <b>&lt;Obijuan&gt;</b> <i>-rw-r--r-- 1 juan juan 5632 2003-10-26 13:02 <b>ledon.cod</b></i><br>
+[16:30]  <b>&lt;Obijuan&gt;</b> <i>-rw-r--r-- 1 juan juan 60 2003-10-26 13:02 <b>ledon.hex</b></i><br>
+[16:30]  <b>&lt;Obijuan&gt;</b> <i>-rw-r--r-- 1 juan juan 12974 2003-10-26 13:02 <b>ledon.lst</b></i><br>
+[16:30]  <b>&lt;Obijuan&gt;</b> <i>juan@milenium:~/pic$</i><br>
+[16:31]  <b>&lt;Obijuan&gt;</b> Se han generado los ficheros <b>ledon.cod</b>, <b>ledon.hex</b> y <b>ledon.lst</b>.<br>
+[16:31]  <b>&lt;Obijuan&gt;</b> El fichero <b>ledon.hex</b> lo podríamos grabar en nuestro pic. De echo, esto<br>
+[16:31]  <b>&lt;Obijuan&gt;</b> lo haremos en el Laboartorio de arquitectura.<br>
+[16:31]  <b>&lt;Obijuan&gt;</b> Ahora vamos a simular.<br>
+[16:31]  <b>&lt;Obijuan&gt;</b> <i>$ gpsim -s ledon.cod</i><br>
+[16:31] <b>&lt;alejandro&gt;</b>Obijuan: Dicen que si puedes ir algo más despacio.<br>
+[16:31]  <b>&lt;Obijuan&gt;</b> <b>TACHAN!!!!</b> Nos aparecen las ventanas en la misma posición que las habíamos<br>
+[16:31]  <b>&lt;Obijuan&gt;</b> dejado antes: la ventana principal, la ventana con el código fuente y<br>
+[16:31]  <b>&lt;Obijuan&gt;</b> la que tiene la RAM.<br>
+[16:31]  <b>&lt;Obijuan&gt;</b> sorry<br>
+
+[16:32] <b>&lt;alejandro&gt;</b>Q: <b>&lt;sliver&gt;</b> como sabe el programador que registros tiene para usarlos, los dice el fabricante ?<br>
+[16:32]  <b>&lt;Obijuan&gt;</b> Sí, viene en las especificaciones del pic<br>
+[16:32]  <b>&lt;Obijuan&gt;</b> El <b>manual del PIC16F876</b> se puede bajar de la página de microchip<br>
+[16:32]  <b>&lt;Obijuan&gt;</b> Pero también lo tengo en mi web:<br>
+
+[16:33] <b>&lt;alejandro&gt;</b>A mi no me ha quedado muy claro el concepto de banco.<br>
+[16:33]  <b>&lt;Obijuan&gt;</b> <a href="http://www.iearobotics.com/personal/andres/proyectos/picmin/download/manuales/manual16f87x.pdf">
+http://www.iearobotics.com/personal/andres/proyectos/picmin/download/manuales/manual16f87x.pdf
+</a><br>
+[16:33]  <b>&lt;Obijuan&gt;</b> alejandro: eso no lo he explicado :-)<br>
+[16:33]  <b>&lt;Obijuan&gt;</b> Me estoy centrando en el uso de las herramientas<br>
+[16:33]  <b>&lt;alejandro&gt;</b> Ya, por eso. :)<br>
+[16:34]  <b>&lt;Obijuan&gt;</b> Básicamente, en la memoria del PIC hay <b>4 bancos</b><br>
+[16:34]  <b>&lt;Obijuan&gt;</b> En cada uno de ellos hay unos registros<br>
+[16:34]  <b>&lt;Obijuan&gt;</b> Para acceder a esos registros hay que <b>seleccionar el banco</b> adecuado<br>
+[16:34]  <b>&lt;Obijuan&gt;</b> En la <b>página 15</b> del manual podéis ver todos los bancos, y todos los registros que hay en ellos<br>
+[16:34]  <b>&lt;Obijuan&gt;</b> En la <b>página 158</b> están todos los nemónicos<br>
+[16:35]  <b>&lt;Obijuan&gt;</b> Pero ahora nos centraremos en la simulación<br>
+[16:35]  <b>&lt;Obijuan&gt;</b> Tenéis ensamblado el programa <b>ledon.asm</b>?<br>
+[16:35]  <b>&lt;alejandro&gt;</b> si<br>
+
+[16:35]  <b>&lt;Obijuan&gt;</b> Continuamos con la simulación<br>
+[16:36]  <b>&lt;Obijuan&gt;</b> <i>$ gpsim -s ledon.cod</i><br>
+[16:36]  <b>&lt;Obijuan&gt;</b> Y os deberían aparecer todas las ventanas que tenías abierta antes<br>
+[16:36]  <b>&lt;Obijuan&gt;</b> Una con las <b>Fuentes</b>, otra con la <b>ram</b> y la <b>principal</b><br>
+[16:36]  <b>&lt;Obijuan&gt;</b> Pero necesitamos más cosas. Ahora queremos ver qué está pasando con los<br>
+[16:36]  <b>&lt;Obijuan&gt;</b> pines del pic.<br>
+[16:36]  <b>&lt;Obijuan&gt;</b> Pinchamos en <b>windows/pin</b> (en la ventana principal) y nos<br>
+[16:36]  <b>&lt;Obijuan&gt;</b> aparece un dibujo (un poco cutre) del PIC<br>
+[16:37]  <b>&lt;Obijuan&gt;</b> Aqué lo podéis ver:<br>
+[16:37]  <b>&lt;Obijuan&gt;</b> <a href="pantallazos/pantallazo5.png">
+http://www.iearobotics.com/proyectos/charlas-irc/pic-linux/pantallazos/pantallazo5.png
+</a><br>
+
+<br>
+<center>
+<img src="pantallazos/pantallazo5.png">
+</center>
+<br>
+
+[16:37]  <b>&lt;Obijuan&gt;</b> Este tipo de dibujos reciben el nombre de <b>PinOut</b>.<br>
+[16:37]  <b>&lt;Obijuan&gt;</b> Las "cosas" verdes que hay son en realidad "flechas" que nos indican el<br>
+[16:37]  <b>&lt;Obijuan&gt;</b> sentido del pin.<br>
+[16:38]  <b>&lt;Obijuan&gt;</b> Ahora está indicando que son <b>PINES DE ENTRADA </b>(Es el<br>
+[16:38]  <b>&lt;Obijuan&gt;</b> estado por defecto depués de un reset).<br>
+[16:38]  <b>&lt;Obijuan&gt;</b> Las letras <b>"L" </b>indican que los pines están a nivel <b>"LOW"</b>.<br>
+[16:38]  <b>&lt;Obijuan&gt;</b> El color verde<br>
+[16:38]  <b>&lt;Obijuan&gt;</b> de las flechas nos indica esto también: que todas las entradas están<br>
+[16:38]  <b>&lt;Obijuan&gt;</b> a "LOW", es decir, que se está recibiendo un '0' lógico.<br>
+[16:38]  <b>&lt;Obijuan&gt;</b> Comenzamos la simulación.<br>
+[16:38]  <b>&lt;Obijuan&gt;</b> Pulsamos <b>Step</b><br>
+[16:38]  <b>&lt;Obijuan&gt;</b> <b>BSF STATUS,RP0</b><br>
+[16:38]  <b>&lt;Obijuan&gt;</b> Con esta instrucción ponermos a 1 el bit RP0 del registro de STATUS,<br>
+[16:38]  <b>&lt;Obijuan&gt;</b> para acceder al banco 0.<br>
+[16:39]  <b>&lt;Obijuan&gt;</b> Volvemos a pulsar <b>STEP</b>:<br>
+[16:39]  <b>&lt;Obijuan&gt;</b> <b>BCF TRISB,1</b><br>
+[16:39]  <b>&lt;Obijuan&gt;</b> Con esto configuramos el pin 1 del puerto B para que sea de salida<br>
+[16:39]  <b>&lt;Obijuan&gt;</b>  en vez de entrada.<br>
+[16:39]  <b>&lt;Obijuan&gt;</b> Fijaros en el <b>Pinout</b><br>
+[16:39]  <b>&lt;Obijuan&gt;</b> Ahora la Flecha verde que está en "portb1" está<br>
+[16:39]  <b>&lt;Obijuan&gt;</b> <b>apuntando hacia fuera</b>: Esto indica que <b>se ha configurado como salida</b>.<br>
+[16:39]  <b>&lt;Obijuan&gt;</b> Chulo, eh?<br>
+[16:40]  <b>&lt;Obijuan&gt;</b> Lo véis bien?<br>
+[16:40] <b>&lt;alejandro&gt;</b>si, mola. :)<br>
+[16:40] <b>&lt;alejandro&gt;</b> &lt;sliver&gt; el dibujo es horrible<br>
+[16:40] <b>&lt;alejandro&gt;</b> jeje. :-)<br>
+[16:40]  <b>&lt;Obijuan&gt;</b> Siguiente instrucción. Hacemos otro <b>STEP</b>:<br>
+[16:40]  <b>&lt;Obijuan&gt;</b> <b>BCF STATUS,RP0</b><br>
+[16:40] <b>&lt;alejandro&gt;</b> &lt;HyLian&gt; dile q ta mu chulo xD<br>
+[16:40]  <b>&lt;Obijuan&gt;</b> Ahora accedemos al banco 0, que es donde se encuentra el registro PORTB<br>
+[16:40]  <b>&lt;Obijuan&gt;</b> Hacemos un nuevo <b>STEP</b>:<br>
+[16:41]  <b>&lt;Obijuan&gt;</b> <b>BSF PORTB,1</b><br>
+[16:41]  <b>&lt;Obijuan&gt;</b> Con esto ponemos a '1' el bit 1 del puerto B, es decir, sacamos 5v al<br>
+[16:41]  <b>&lt;Obijuan&gt;</b> exterior del PIC.<br>
+[16:41]  <b>&lt;Obijuan&gt;</b> Fijaos en el Pinout: Ahora la <b>flecha es Roja</b> y tiene la<br>
+[16:41]  <b>&lt;Obijuan&gt;</b> letra H de "HIGH".<br>
+[16:41]  <b>&lt;Obijuan&gt;</b> Hemos sacado 5v al exterior. Y si tenemos conectado un<br>
+[16:41]  <b>&lt;Obijuan&gt;</b> led en nuestro PIC real, veríamos que se encendería.<br>
+
+[16:41]  <b>&lt;Obijuan&gt;</b> ¿Cuanto tiempo ha tardado en ejecutarse el programa?<br>
+[16:41]  <b>&lt;Obijuan&gt;</b> Miramos el tiempo: 4 micro-segundos.<br>
+[16:42]  <b>&lt;Obijuan&gt;</b> ¿Cuanta memoria ocupa el programa?<br>
+[16:42]  <b>&lt;Obijuan&gt;</b> Pinchamos en <b>Windows/program memory</b> para ver la memoria de programa:<br>
+[16:42]  <b>&lt;Obijuan&gt;</b> Vemos que ocupa 5 posiciones, desde la 0x0000 hasta la 0x0004. Es decir,<br>
+[16:42]  <b>&lt;Obijuan&gt;</b> 5 palabras de memoria.<br>
+[16:42]  <b>&lt;Obijuan&gt;</b> El PIC16F876 tiene 8K palabras en total<br>
+
+<table width=100% bgcolor="#abbeeb" border="0" align="center">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>Fin de la charla</b>
+ </td>
+</tr>
+</tbody></table>
+
+[16:42]  <b>&lt;Obijuan&gt;</b> Con el <b>GPSIM</b> podemos hacer cosas mucho más potentes: poner breakpoints,<br>
+[16:42]  <b>&lt;Obijuan&gt;</b> simular interrupciones, conectar LCDs...<br>
+[16:43]  <b>&lt;Obijuan&gt;</b> pero eso lo veremos en otra<br>
+[16:43]  <b>&lt;Obijuan&gt;</b> charla :-)<br>
+[16:43]  <b>&lt;Obijuan&gt;</b> No quiero aburriros<br>
+[16:43]  <b>&lt;Obijuan&gt;</b> Para terminar:<br>
+</a>
+[16:43]  <b>&lt;Obijuan&gt;</b><a href="pantallazos/fin.png">
+http://www.iearobotics.com/proyectos/charlas-irc/pic-linux/pantallazos/fin.png
+</a><br>
+
+[16:43]  <b>&lt;Obijuan&gt;</b> Con estas nociones básicas, se pueden simular todos los programas que hagan en clase del laboratorio de Arquitectura<br>
+[16:44]  <b>&lt;Obijuan&gt;</b> Otro día organizaremos otra charla pero de programación del PIC, ahora que ya conocemos las herramientas<br>
+[16:44]  <b>&lt;Obijuan&gt;</b> Preguntas? Dudas?<br>
+
+<br>
+<center>
+<img src="pantallazos/fin.png">
+</center>
+<br>
+</p>
+ </div>
+<HR>
+<!-- DOWNLOAD --><H2 id="download"> Download </H2>
+
+<p>
+<table width=90% bgcolor="#abbeeb" border="0" align="center" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>Ejemplos empleados en la charla</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=90%  border="0" align="center">
+<tbody>
+
+<tr bgcolor="#abbeeb">
+  <td align="center"><b>Fuente</b></td>
+  <td align="center"><b>Ejecutable</b></td>
+  <td align="center"><b>Simulación</b></a></td>
+  <td align="center"><b>Descripción</b></td>
+</tr>  
+
+<tr bgcolor="#cabeeb">
+  <td><a href="ejemplos/suma.asm">suma.asm</a>  </td>
+  <td><a href="ejemplos/suma.hex">suma.hex</a></td>
+  <td><a href="ejemplos/suma.cod">suma.cod</a></td>
+  <td>Programa básico que hace la operación: SUMA = 1 + 2</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="ejemplos/ledon.asm">ledon.asm</a>  </td>
+  <td><a href="ejemplos/ledon.hex">ledon.hex</a></td>
+  <td><a href="ejemplos/ledon.cod">ledon.cod</a></td>
+  <td> Programa que enciende el led conectado al pin RB1</td>
+</tr>
+
+</tbody></table>
+</p>
+<br>      
+<p>
+<table width=90% bgcolor="#abbeeb" border="0" align="center" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>Registro de la charla</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=90%  border="0" align="center">
+<tbody>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="download/log-26-oct-2003.txt">log-26-oct-2003.txt</a>  </td>
+  <td>Log en ASCII</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="download/log-26-oct-2003.pdf">log-26-oct-2003.pdf</a>  </td>
+  <td> Log en PDF</td>
+</tr>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="download/log-post-charla-26-oct-2003.txt">log-post-charla-26-oct-2003.txt</a>  </td>
+  <td>Log de las conversaciones de después de la charla, en ASCII</td>
+</tr>  
+
+</tbody></table>
+</p>
+<br>                    
+
+
+<HR>
+<H2 id="links">Links</H2>
+<div class="lista">
+<ul>
+  <li><a href="http://gputils.sourceforge.net/">Gputils</a>
+  : Herramientas de ensamblado y enlazado para el PIC</li>
+  <li><a href="http://www.dattalo.com/gnupic/gpsim.html">Gpsim</a>
+  : Simulador de microcontroladores PIC</li>
+  <li><a href="http://www.microchip.com">Microchip</a>:  Fabricante de los microcontroladores PIC</li>
+  <li><a href="http://www.linups.org/">Linups</a>: Grupo de usuarios de GNU/Linux de la UPSAM</li>
+</ul>
+</div>
+
+<!-- Agradecimientos -->
+<HR><H2 id="agradecimientos">Agradecimientos</H2><div class="lista"><ul>  <li>A <b>alejandro</b> por hacer de moderador</li>
+  <li>A <b>ExTrA</b> por Logear la charla</li>
+  <li>Al <b>grupo Linups</b> por permitir que la charla se realizase en su canal</li></ul></div>
+
+<hr>
+<a href="https://obijuan.github.io/iearobotics-site/wiki">IEA ROBOTICS</a>
+<address>
+<a HREF="../../../personal/juan/index.html">Juan González</a></body></html>

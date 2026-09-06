@@ -1,0 +1,150 @@
+[16:44] *** modo: alejandro pone [-m ]
+[16:44] <JoAkKiNeN> bravo!!!!
+[16:44] <@alejandro> <HyLian> Se pueden poner breakpoints?
+[16:44] <Skelter> muy bueno
+[16:44] <@Obijuan> Si
+[16:44] <daimon> :)
+[16:45] <@alejandro> <sliver> muy buena la charla, interesante y sobre todo util
+[16:45] <@Obijuan> De hecho es una de las cosas más interesantes
+[16:45] <@alejandro> Obijuan: Estás hecho un machine.
+[16:45] <muttley`> plas plas plas plas
+[16:45] <daimon> quien tiene el log?
+[16:45] <@Obijuan> Pero los breakpoints los dejamos para otra charla
+[16:45] <Skelter> tienes los apuntes de Arquitectura colgados en algun sitio??
+[16:45] <@Obijuan> Se pueden simular también interrupciones
+[16:45] <@Obijuan> Skelter: todavía no, pero los pondré :-)
+[16:45] <sliver> ¿ que posibilidades nos brinda un pic para el entorno domestico ?
+[16:45] <HyLian> Obijuan y se pueden simular entradas?
+[16:46] *** KaL es ahora KaL_
+[16:46] *** KaL_ es ahora KaL
+[16:46] <@Obijuan> HyLian: Si, pulsa por ejemplo en la letra L de un pin de entrada
+[16:47] <@Obijuan> sliver: muchas :-)
+[16:47] <HyLian> Obijuan: ahora mismo no puedo gnome acaba de dejar de funcionar :-/
+[16:47] <@Obijuan> vaya :-(
+[16:47] <@Obijuan> sliver: Por ejemplo se pueden encender y apagar luces desde tu ordenador, conectando un pic por el puerto serie
+[16:47] <@alejandro> Obijuan: Estaría chula dar una de programación de PIC's.
+[16:47] <@alejandro> Vamos a mi me molaría.
+[16:47] <@Obijuan> alejandro: Eso es lo que estamos viendo en el laboratorio de Arquitectura :-))
+[16:48] <sliver> Obijuan: la donÃ³tica se apoya sobre estos pics ?
+[16:48] <@Obijuan> Sobre cualquier microcontrolador, pero los pics están muy extendidos
+[16:48] <@Obijuan> Son baratos
+[16:48] <sliver> o hay algun hw especÃ­fico ....
+[16:48] <@alejandro> Obijuan: Ya, pero ejem.. yo no voy a esa clase. :)
+[16:48] <@Obijuan> sliver: no, se puede hacer todo con microcontroladores normales
+[16:49] <@Obijuan> alejandro: Podremos entonces organizar una sobre programación
+[16:49] <@alejandro> Ahora que se ha animado la gente, si que se podrían dar charlas los domingos.
+[16:50] <@Obijuan> Pues sí, hay muchos temas interesantes
+[16:50] <@alejandro> Obijuan: Comentalo si eso en la lista, por si se anima más gente a dar charlas, aparte de las tuyas.
+[16:50] <sliver> Obijuan: hay una cosa que no me queda clara, los programas para controlar cosas, necesitan la intervencion del usuario, Â¿como se hace eso con los pics ?
+[16:50] <@Obijuan> sliver: conectando al pic un teclado y un LCD
+[16:50] <KaL> quien tenga el log y lo cuelgue por ahi que aÃ±ada un comentario a la noticia en la web indicando la url del log, plis
+[16:51] <sliver> como el que enseÃ±aste en clase ?
+[16:51] <@Obijuan> sliver: Si, de ese estilo
+[16:51] *** topic: KaL pone: http://square.ya.st || http://www.libroblanco.com/ || MigraciÃ³n en Salamanca, una realidad http://linux.upsa.es/gallery/ || http://www.emacswiki.org/elisp/eperiodic.el
+[16:51] <@Obijuan> Ahora estamos viendo cómo convertir los bits del software en tensiones
+[16:52] <@Obijuan> Luego veremos cómo hacer cosas con esas tensiones
+[16:52] <@Obijuan> Porque claro, encender un led es una chorradilla :-)
+[16:52] <sliver> Â¿tambien se podria centralizar la entrada de datos en el pc ?
+[16:52] <@Obijuan> Si, efectivamente
+[16:52] <sliver> mmm eso es interesante
+[16:52] <@Obijuan> De hecho yo controlo mis robots desde el PC
+[16:53] <@Obijuan> El PC le envía comandos al microcontrolador
+[16:53] <@alejandro> por puerto serie?
+[16:53] <@Obijuan> y el microcontrolador controla las cosas de "bajo nivel"
+[16:53] <hylian> obijuan, aunque quizas no tenga mucho q ver, es posible obtener datos por USB en lugar de rs232 ?
+[16:53] <@Obijuan> alejandro: por ejemplo
+[16:53] <@Obijuan> hylian: Sí, hay pics que ya traen el USB integrado
+[16:53] <@alejandro> Me imagino que se podrá usar cualquier tipo de bus para la comunicación.
+[16:53] <hylian> Obijuan, e incluso aprovechar la tension que nos da el propio USB
+[16:53] <@Obijuan> Pero yo no tengo experiencia en eso (todavía)
+[16:53] <@alejandro> Sería lo mismo con usb, pci, isa, sbus, eisa..
+[16:53] <@Obijuan> hylian: si
+[16:54] <@Obijuan> alejandro: con pci y buses del pc sería un poco más complejo, pero también se podría hacer
+[16:54] <hylian> es mucho fliparse pero con paciencia y conocimientos seria posible hacerse un reproductor de MP3 portatil, por ejemplo
+[16:54] <hylian> o quizas seria demasiada carga para un pobre pic?
+[16:54] <@alejandro> Bueno, lo más sencillo sería por el puerto serie/paralelo.
+[16:55] <@Obijuan> hylian: habría que usar uno de gama alta, pero sí sería posible
+[16:55] <@Obijuan> alejandro: si, si no necesitas muchas velocidad sí
+[16:55] <hylian> total microchip los manda gratis xD
+[16:55] <@Obijuan> hylian: cierto :-DDDDD
+[16:55] <@alejandro> En el caso de velocidad, si incluye soporte para usb 2.0, se consiguen transfarencias muy altas.
+[16:55] <sliver> Obijuan: por cierto, encarguÃ© los pics a microchip y creo que cada persona que se registra, tiene derecho a 2 pedidos
+[16:55] <@Obijuan> Para los que no lo sepáis, en la web de Microchip se pueden conseguir muestras gratis
+[16:55] <@alejandro> Por eso te comentaba usar el pci, que tampoco es tan lento como el serie o paralelo.
+[16:56] <@Obijuan> sliver: mejor que mejor :-)
+[16:56] <sliver> supuestamente el jueves 30 me llegan a casa
+[16:56] <sliver> si veo que llegan, hago otro pedido
+[16:56] <@Obijuan> sliver: a uno del FT42 ya le han llegado
+[16:56] <@Obijuan> 5 flamantes PICS
+[16:56] <sliver> jejejejeje
+[16:57] <@Obijuan> Y como ahora se pueden usar desde Linux :-DDDD
+[16:57] <sliver> lo mejor de todo es que es gratis !!!!!!
+[16:57] <@alejandro> Obijuan: antes no podías usar los microcontroladores de microchip?
+[16:57] <hylian> el problema de los pics es grabarlos
+[16:57] <hylian> para mi gusto estan mejor los de motorola :)
+[16:57] <@Obijuan> alejandro: las herramientas eran demasiado alfa
+[16:58] <hylian> mucho mas sencillo el sistema de grabacion
+[16:58] <@Obijuan> si
+[16:58] <@Obijuan> Pero con el sistema que tengo ahora está tirao :-)
+[16:58] <@Obijuan> Se graban igual que las CT6811
+[16:58] <@alejandro> Obijuan: ¿Ahora les enseñas a la gente a usarlas con GNU/Linux?
+[16:58] <@Obijuan> alejandro: ese era uno de los objetivos de la charla :-)
+[16:58] <@alejandro> Ya, pero digo en clase.
+[16:59] <@Obijuan> Mostrar que ya se pueden usar las herramientas de GNU/Linux
+[16:59] <sliver> Items Ordered:Item: PIC16F876A-I/SPQuantity: 2 Item: PIC16F877A-I/PQuantity: 3 -> son estos ? o me he equivocado con el encapsulado ?
+[16:59] *** ChanServ [ ChanServ@services. ] cierra [16:59] [Shutting Down]
+[16:59] <@alejandro> Que si has conseguido avanzar algo.
+[16:59] <@alejandro> Con tu metadistro personalizada. :-)
+[16:59] <@Obijuan> alejandro: En clase sólo hay Windows instalado. Por eso estoy haciendo un LIVE CD :-)
+[16:59] <@Obijuan> sliver: son esos, pero ahí no pone el encapsulado
+[17:00] <@Obijuan> Si es PDIP todo ok :-)
+[17:00] <sliver> en la seleccion en su web, ponian esos y al lado pdip
+[17:00] <@alejandro> ¿Alguien ha ido ya a votar? Lo digo porque es que espero que no se tarde demasiado.
+[17:00] <@Obijuan> sliver: entonces todo ok
+[17:00] <@alejandro> Como en Junio no pude votar y era la primera vez, no sé ni que hay que hacer. :)
+[17:01] <@alejandro> ¿PDIP?
+[17:01] <@Obijuan> alejandro: creo que cierran a las 20:00. Con sólo llevar el DNI es suficiente
+[17:01] <KaL> alejandro: se mete un sobre en una urna y te vas a tu casa
+[17:01] <@alejandro> jeje, no parece complicado :-)
+[17:01] <KaL> alejandro: y como dice Obijuan, el dni es fundamental
+[17:01] <@Obijuan> alejandro: PDIP es un tipo de encapsulado para los circuitos integrados
+[17:01] <@Obijuan> El que has usado en digitales :-)
+[17:02] <@alejandro> Bueno, más que nada mi preocupación era si suele haber mucha gente, como lo hacen por barrios.
+[17:02] <@Obijuan> Al final, quién hay del FT-42 o del FT-41?
+[17:02] <@alejandro> Obijuan: Ok.
+[17:02] *** ChanServ [ ChanServ@services. ] cierra [17:02] [Shutting Down]
+[17:03] <hylian> alejandro: no hay mucha gente, hay muchas mesas xD
+[17:03] <sliver> Obijuan: estos no? ->	PIC16F876A-I/SP	28	PDIP 300mil	-40C to +85C	 TUBE
+[17:03] <@alejandro> 300mil?
+[17:03] <@alejandro> euros? :)
+[17:03] <sliver> no hombre .. ejjejeje
+[17:03] <@Obijuan> sliver: justo esos
+[17:03] <sliver> yujuuuuu !!!!!!!!!!!!!!!!!!
+[17:04] <@Obijuan> 300 milésimas de pulgada
+[17:04] <sliver> no la he cagado !!!
+[17:04] <ciberdec> taluego seÃ±ores
+[17:04] <@alejandro> :)
+[17:04] <@Obijuan> sliver: y si la hubieses cagado no pasa anda, vuelves a pedir :-))
+[17:04] -NickServ(NickServ@services.)- This nickname is owned by someone else
+[17:04] -NickServ(NickServ@services.)- If this is your nickname, type /msg NickServ IDENTIFY <password>
+[17:05] <sliver> Obijuan: el log de la charla se subirÃ¡ al weblog del ft24 : ft42.no-ip.org , algÃºn problema ?
+[17:05] <hylian> yo pedi algunos q como para soldarlos xD
+[17:05] <@Obijuan> sliver: ninguno
+[17:05] <sliver> ok
+[17:05] <@Obijuan> Es GPL
+[17:05] <@Obijuan> :-DDDDDDDDD
+[17:05] <sliver> ok !
+[17:06] <@Obijuan> sliver: estás en el FT-42?
+[17:06] <sliver> si ,
+[17:06] <sliver> lo que pasa que no caeras en este momento en quien soy
+[17:07] <@Obijuan> ahora mismo no :-(
+[17:07] <sliver> jejeje , el viernes ya nos vemos en clase
+[17:07] <@Obijuan> Eres el que estabas con KaL?
+[17:07] <sliver> si
+[17:07] <sliver> ese :-)
+[17:07] <@Obijuan> Ya sé quien eres
+[17:07] <@Obijuan> De los pocos que levantaste la mano cuando dije lo del Live CD
+[17:07] <sliver> si jejeej, una idea como esa hay que apoyarla
+[17:08] <sliver> y si puedo seguir sin usar windows, pues mejor !
+[17:11] <sliver> bueno tengo que seguir trabajando, espero que se repitan estas charlas
+[17:11] <sliver> ciao !
