@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>WikiRobotics</title>
+
+	<!-- <script>
+	  document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );
+	</script> -->
+
+
+	<!-- <script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Página_principal","wgTitle":"Página principal","wgCurRevisionId":26271,"wgRevisionId":26271,"wgArticleId":3064,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Indice"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Página_principal","wgRelevantArticleId":3064,"wgRequestId":"ap1AUfd343aiv6kNJoTelwAAWYk","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgIsMainPage":true});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script> -->
+
+<link rel="stylesheet" href="WikiRobotics_files/load_UvhD.css">
+
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none} 
+.mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} 
+.mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+
+<script async="" src="WikiRobotics_files/load_UvhD.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="WikiRobotics_files/load_002_UvhD.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Página_principal rootpage-Página_principal skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+<!-- <div class="mw-indicators"></div> -->
+<h1 id="firstHeading" class="firstHeading" lang="es">Página principal</h1>
+				
+<div id="bodyContent" class="mw-body-content">
+	<!-- <div id="siteSub">De WikiRobotics</div>
+	<div id="contentSub"></div> -->
+	<!-- <div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, 
+	<a href="#searchInput">buscar</a></div> -->
+
+
+
+<!-- start content -->
+<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr">
+<p><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Logo-iearobotics.png" class="image" title="center">
+<img alt="center" src="WikiRobotics_files/Logo-iearobotics_UvhD.png" width="679" height="114"></a>
+</p>
+
+
+<h2><span class="mw-headline" id="Proyectos_destacados">Proyectos destacados</span></h2>
+
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; 
+padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+  <tbody>
+	<tr>
+
+    <!-- (1,1) -->
+	  <td>
+		  <div>
+			  <img alt="Robot_FlatBot" src="WikiRobotics_files/Flatbot3-icono_UvhD.jpg" width="160" height="106">
+      </div>
+      <center><a href="https://iearobotics.com/wiki/index.php?title=Robot_FlatBot" 
+			           title="Robot FlatBot"> FlatBot</a>
+		  </center>
+	  </td>
+
+    <!-- (1,2) -->
+    <td>
+      <div>
+        <img alt="Skybot" src="WikiRobotics_files/Skybot-peq_UvhD.png" width="109" height="105">
+      </div>
+      <center><a href="https://iearobotics.com/wiki/index.php?title=Skybot" title="Skybot">Skybot</a></center>
+    </td>
+
+    <!-- (1,3) -->
+    <td>
+      <div>
+        <img alt="Skypic" src="WikiRobotics_files/Skypic-thumb_UvhD.jpg" width="133" height="100">
+      </div>
+      <center>
+        <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a>
+      </center>
+    </td>
+
+    <!-- (1,4)-->
+     <td>
+      <div>
+        <img alt="150px" src="WikiRobotics_files/Pendrive-holder-1-r1_UvhD.jpg" title="150px" height="105">
+      </div>
+      <center><a href="https://iearobotics.com/wiki/index.php?title=Objetos_3D" title="Objetos 3D">Objetos 3D imprimibles</a>
+      </center>
+     </td>
+	</tr>
+
+  <tr>
+    <!-- (2,1)-->
+    <td>
+      <div>
+        <img alt="center" src="WikiRobotics_files/Pucho-peq_UvhD.png" width="150" height="113">
+      </div>
+      <center>
+        <a rel="nofollow" class="external text" href="personal/andres/proyectos/pucho/pucho.html">PuchoBot</a>
+      </center>
+    </td>
+  </tr>
+
+
+  </tbody>
+</table>
+
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; 
+padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody>
+<tr>
+
+<td><div style="position: relative; width: 133px; height: 100px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://iearobotics.com/wiki/index.php?title=Cube_Revolutions" title="Cube Revolutions">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cube-rev-cobra-peq.png" class="image" title="Cube_Revolutions"><img alt="Cube_Revolutions" src="WikiRobotics_files/Cube-rev-cobra-peq_UvhD.png" width="150" height="105"></a></div>
+</div>
+<center><a href="https://iearobotics.com/wiki/index.php?title=Cube_Revolutions" title="Cube Revolutions">Cube Revolutions</a></center>
+</td>
+<td> <div style="position: relative; width: 150px; height: 100px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://iearobotics.com/wiki/index.php?title=Tutorial:_ODE_y_robots_modulares" title="Tutorial: ODE y robots modulares">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Ode_mr_snake_pant1.png" class="image" title="Tutorial: ODE y robots modulares"><img alt="Tutorial: ODE y robots modulares" src="WikiRobotics_files/Ode_mr_snake_pant1_UvhD.png" width="408" height="323"></a></div>
+</div>
+<center><a href="https://iearobotics.com/wiki/index.php?title=Tutorial:_ODE_y_robots_modulares" title="Tutorial: ODE y robots modulares">Tutorial simulación</a></center>
+</td>
+<td> <div style="position: relative; width: 150px; height: 100px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://iearobotics.com/wiki/index.php?title=Programaci%C3%B3n_del_PIC16_en_C" title="Programación del PIC16 en C">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skypic-altavoz2-peq.jpg" class="image" title=":Programación del PIC16 en C"><img alt=":Programación del PIC16 en C" src="WikiRobotics_files/Skypic-altavoz2-peq_UvhD.jpg" width="200" height="126"></a></div>
+</div>
+<center><a href="https://iearobotics.com/wiki/index.php?title=Programaci%C3%B3n_del_PIC16_en_C" title="Programación del PIC16 en C">Programación del PIC16 en C</a></center>
+</td></tr>
+<tr align="center">
+<td> <img alt="120px" src="WikiRobotics_files/Miniskybot-red_UvhD.png" title="120px" width="1088" height="1010">
+<p><a href="https://iearobotics.com/wiki/index.php?title=Mini-Skybot" title="Mini-Skybot">Mini-Skybot</a>
+</p>
+</td>
+<td> <img alt="120px" src="WikiRobotics_files/Modulo-y1-peq_UvhD.png" title="120px" width="134" height="105">
+<p><a href="https://iearobotics.com/wiki/index.php?title=M%C3%B3dulos_Y1" title="Módulos Y1">Módulos Y1</a>
+</p>
+</td>
+<td> <img alt="120px" src="WikiRobotics_files/Modulo-y1-lote1-2_UvhD.jpg" title="120px" width="1144" height="1018">
+<p><a href="https://iearobotics.com/wiki/index.php?title=M%C3%B3dulos_MY" title="Módulos MY">Módulos MY1</a>
+</p>
+</td>
+<td> <img alt="120px" src="WikiRobotics_files/Skycube-1.0-modulo-y1-2_UvhD.jpg" title="120px" width="1187" height="1027">
+<p><a href="https://iearobotics.com/wiki/index.php?title=Skycube" title="Skycube">Skycube</a>
+</p>
+</td></tr>
+<tr align="center">
+<td> <img alt="120px" src="WikiRobotics_files/Skymega-front-1_UvhD.png" title="120px" width="824" height="796">
+<p><a href="https://iearobotics.com/wiki/index.php?title=SkyMega" title="SkyMega">SkyMega</a>
+</p>
+</td>
+<td><img alt="130px" src="WikiRobotics_files/Prusa-r2d2-clon_UvhD.jpg" title="130px" width="1200" height="1117">
+<p><a href="https://iearobotics.com/wiki/index.php?title=Impresoras_3D_open-source" title="Impresoras 3D open-source">Impresoras 3D Open-source</a>
+</p>
+</td>
+<td> <img alt="120px" src="WikiRobotics_files/Clone-Wars-logo_UvhD.png" title="120px" width="348" height="204">
+<p><a rel="nofollow" class="external text" href="http://www.reprap.org/wiki/Proyecto_Clone_Wars">Proyecto Clone Wars</a>
+</p>
+</td>
+<td> <img alt="120px" src="WikiRobotics_files/Logo-obijuan-academy-white-back_UvhD.png" title="120px" width="731" height="655">
+<p><a href="https://iearobotics.com/wiki/index.php?title=Obijuan_Academy" title="Obijuan Academy">Obijuan Academy</a>
+</p>
+</td></tr>
+<tr align="center">
+<td> <img alt="120px" src="WikiRobotics_files/Raspberry-pi_UvhD.jpg" title="120px" width="300" height="225">
+<p><a href="https://iearobotics.com/wiki/index.php?title=Mini-PI" title="Mini-PI">Mini-PI</a>
+</p>
+</td>
+<td> <img alt="130px" src="WikiRobotics_files/Logo-printbots-parts-library_UvhD.png" title="130px" width="595" height="552">
+<p><a href="https://iearobotics.com/wiki/index.php?title=Biblioteca_printbots" title="Biblioteca printbots">Biblioteca printbots</a>
+</p>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id=".C3.8Dndice">Índice</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <b><a href="https://iearobotics.com/wiki/index.php?title=Robots" title="Robots">Robots</a></b>
+</td>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Documentaci%C3%B3n" title="Documentación">Documentación</a>
+</td>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Talleres_y_Cursos" title="Talleres y Cursos">Talleres y Cursos</a>
+</td>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Software" title="Software">Software</a>
+</td>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Conferencias_y_charlas" title="Conferencias y charlas">Conferencias y charlas</a>
+</td></tr>
+<tr>
+<td><b><a href="https://iearobotics.com/wiki/index.php?title=Hardware" title="Hardware">Hardware</a></b>
+</td>
+<td><a href="https://iearobotics.com/wiki/index.php?title=Cuadernos_T%C3%A9cnicos" title="Cuadernos Técnicos">Cuadernos Técnicos</a>
+</td>
+<td><a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Eventos" title="Juan Gonzalez:Eventos"> Eventos</a>
+</td>
+<td><a href="https://iearobotics.com/wiki/index.php?title=Enlaces" title="Enlaces">Enlaces</a>
+</td>
+<td><a href="https://iearobotics.com/wiki/index.php?title=Caj%C3%B3n_desastre" title="Cajón desastre">Cajón desastre</a>
+</td></tr>
+<tr>
+<td><b><a rel="nofollow" class="external text" href="http://www.iearobotics.com/blog">BLOG</a></b>
+</td>
+<td><a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Publicaciones" title="Juan Gonzalez:Publicaciones">Publicaciones</a>
+</td>
+<td><a rel="nofollow" class="external text" href="http://www.iearobotics.com/proyectos-html.html">Proyectos hasta 2007</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://fotos.iearobotics.com/">Fotos</a>
+</td>
+<td><a href="https://iearobotics.com/wiki/index.php?title=Pagina_de_Test" title="Pagina de Test">Pagina de Test</a>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="P.C3.A1ginas_personales">Páginas personales</span></h2>
+<table class="wikitable">
+
+<tbody><tr align="center">
+<td>
+<p><img alt="100px" src="WikiRobotics_files/AndresPrieto-Moreno_peq_UvhD.jpg" title="100px" width="235" height="283"> <br>
+<a href="https://iearobotics.com/wiki/index.php?title=Andr%C3%A9s_Prieto-Moreno" title="Andrés Prieto-Moreno">Andrés Prieto-Moreno</a>
+</p>
+</td>
+<td>
+<p><img alt="110px" src="WikiRobotics_files/Foto-obijuan-2016-sin-fondo2_UvhD.jpg" title="110px" width="896" height="1025"> <br>
+<a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main"> Juan González Gómez</a>
+</p>
+</td>
+<td>
+<p><img alt="100px" src="WikiRobotics_files/RicardoGomez_peq_UvhD.jpg" title="100px" width="336" height="426"> <br>
+<a href="https://iearobotics.com/wiki/index.php?title=Ricardo_G%C3%B3mez" title="Ricardo Gómez">Ricardo Gómez</a>
+</p>
+</td></tr>
+<tr align="center">
+<td>
+<p><img alt="100px" src="WikiRobotics_files/AvinashRanganath.highlight_UvhD.jpg" title="100px" width="108" height="150"> <br>
+<a href="https://iearobotics.com/wiki/index.php?title=Avinash_Ranganath" title="Avinash Ranganath">Avinash Ranganath</a>
+</p>
+</td>
+<td>
+<ul><li><a rel="nofollow" class="external text" href="http://rafael.trevino.menendez.googlepages.com/">Rafael Treviño</a></li></ul>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<h3><span class="mw-headline" id="2018">2018</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Icebot-0_1-01_UvhD.jpg" title="100px" width="1200" height="1087"></center>
+<p><b>03/Abril/2018</b> 
+</p>
+</td>
+<td> Publicada la versión 0.1 del <b>Icebot</b>, diseñado con <b>FreeCAD 0.17</b>
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/icebot/wiki">Más información</a>) (<a rel="nofollow" class="external text" href="https://www.youmagine.com/designs/icebot-v0-1">Youmagine</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Servo-support-1-2_UvhD.jpg" title="100px" width="1200" height="1211"></center>
+<p><b>26/Marzo/2018</b> 
+</p>
+</td>
+<td> Soporte para servos de rotación continua <b>SM-S4303R</b> (Versión inclinada), diseñado con <b>FreeCAD 0.17</b>
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/3D-parts/wiki/Soporte-para-servo-SM-S4303R.-Inclinado">Más información</a>) (<a rel="nofollow" class="external text" href="https://www.youmagine.com/designs/sm-s4303r-servo-inclined-support">Youmagine</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Servo-support-1_UvhD.jpg" title="100px" width="1200" height="1283"></center>
+<p><b>26/Marzo/2018</b> 
+</p>
+</td>
+<td> Soporte para servos de rotación continua <b>SM-S4303R</b>, diseñado con <b>FreeCAD 0.17</b>
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/3D-parts/wiki/Soporte-para-servo-SM-4303R.-Vertical">Más información</a>) (<a rel="nofollow" class="external text" href="https://www.youmagine.com/designs/sm-s4303r-servo-support">Youmagine</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Drawing-pin-with-cover_UvhD.png" title="100px" width="819" height="830"></center>
+<p><b>10/Marzo/2018</b> 
+</p>
+</td>
+<td> Modelo de la <b>Chincheta</b> con cubierta de plástico migrado a <b>FreeCAD 0.17</b>
+<p>(<a rel="nofollow" class="external text" href="https://github.com/FreeCAD/FreeCAD-library/tree/master/Generic%20objects/pushpins">Más información</a>) 
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Drawing-pin_UvhD.png" title="100px" width="686" height="674"></center>
+<p><b>1/Marzo/2018</b> 
+</p>
+</td>
+<td> Modelo de una <b>Chincheta</b> migrado a <b>FreeCAD 0.17</b>
+<p>(<a rel="nofollow" class="external text" href="https://github.com/FreeCAD/FreeCAD-library/tree/master/Generic%20objects/pushpins">Más información</a>) (<a rel="nofollow" class="external text" href="https://commons.wikimedia.org/wiki/File:Drawing-pin.stl">Wikicommons</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Res-1_4w-1K_UvhD.png" title="100px" width="1051" height="701"></center>
+<p><b>24/Febrero/2018</b> 
+</p>
+</td>
+<td> <b>Resistencia</b> pasante de 1/4w actualizada a <b>FreeCAD 0.17</b>
+<p>(<a rel="nofollow" class="external text" href="https://github.com/FreeCAD/FreeCAD-library/tree/master/Electrical%20Parts/electronic-components/resistors/through-hole">Más información</a>) (<a rel="nofollow" class="external text" href="https://commons.wikimedia.org/wiki/File:0.25_watts_through-hole_resistor.stl">Wikicommons</a>)
+</p>
+</td></tr>
+</tbody></table>
+<h3><span class="mw-headline" id="2017">2017</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Moneda-bit-1_UvhD.jpg" title="100px" width="1200" height="900"></center>
+<p><b>26/Noviembre/2017</b> 
+</p>
+</td>
+<td> Publicadas las <b>Monedas Bits</b>, imprimibles
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/3D-parts/wiki/Monedas-Bit">Más información</a>) (<a rel="nofollow" class="external text" href="https://www.youmagine.com/designs/printable-bits">Youmagine</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Logo-01_UvhD.jpg" title="100px" width="1200" height="1132"></center>
+<p><b>11/Octubre/2017</b> 
+</p>
+</td>
+<td> Moneda llavero con el logo de la <b>Universidad Rey Juan Carlos</b> de Madrid
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/3D-parts/wiki/Llavero-moneda-URJC">Más información</a>) (<a rel="nofollow" class="external text" href="https://www.youmagine.com/designs/universidad-rey-juan-carlos-logo">Youmagine</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Ps2-keyboard-01_UvhD.jpg" title="100px" width="1200" height="760"></center>
+<p><b>18/Septiembre/2017</b> 
+</p>
+</td>
+<td> <b>Publicada</b> la documentación del <b>controlador de teclado PS/2</b> para FPGA
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/PS2-KeyBoard-FPGA/wiki">Más información</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/MonsterLED-01_UvhD.jpg" title="100px" width="1200" height="1389"></center>
+<p><b>08/Septiembre/2017</b> 
+</p>
+</td>
+<td> <b>Publicada</b> la documentación del <b>MonsterLED</b>: convierte tu monitor VGA en un LED
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/MonsterLED/wiki">Más información</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Oreilly-open-source-award-01_UvhD.jpg" title="100px" width="1200" height="900"></center>
+<p><b>21/Julio/2017</b> 
+</p>
+</td>
+<td> <b>Publicada</b> la información y fotos de la entrega de los <b>O'Reilly Open Source Awards</b> y los <b>eventos organizador por la comunidad</b>. ¡Muchas gracias!
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/myslides/wiki/2017_05_11:-Entrega-del-O'Reilly-Open-Source-Award-2017">Más información</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/2017-07-06-uc-portada_UvhD.png" title="100px" width="1026" height="770"></center>
+<p><b>18/Julio/2017</b> 
+</p>
+</td>
+<td> <b>Publicada</b> la documentación de la charla y taller dados en el Curso de Verano de la <b>Universidad de Cantabría</b>, organizado por <b>Iberobotics</b>
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/myslides/wiki/2017_07_06:-UC:-Electr%C3%B3nica-digital-para-todos-con-FPGAs-libres">Más información</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Rtve-logo_UvhD.png" title="100px" width="125" height="67"></center>
+<p><b>13/Julio/2017</b> 
+</p>
+</td>
+<td> <b>Recopilados</b> y publicados todas las <b>apariciones en medios</b>, blogs, podcast, etc, desde el 2013
+<p>(<a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Medios" title="Juan Gonzalez:Medios">Más información</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Escornabot-fpga-1_UvhD.jpg" title="100px" width="4160" height="3120"></center>
+<p><b>10/Julio/2017</b> 
+</p>
+</td>
+<td> Circuito de control del movimiento en <b>línea recta</b> del Robot <b>Escornabot</b>, en <b>Icestudio</b>, usando la <b>FPGA</b> de la <b>Icezum Alhambra</b>
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/escornabot-fpga">Más información</a>) (<a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=sA6YvgCmY6U">Vídeo</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Serial-rx-115200_UvhD.png" title="100px" width="1164" height="448"></center>
+<p><b>04/Julio/2017</b> 
+</p>
+</td>
+<td> <b>Receptor</b> de comunicaciones serie asíncronas, a 115200 baudios para <b>Icestudio</b>
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/Curso-Electronica-Digital-para-makers-con-FPGAs-Libres/tree/master/fp-don-bosco-1/blocks/Varios/Serial">Más información</a>) 
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Analizador-01_UvhD.jpg" title="100px" width="1200" height="900"></center>
+<p><b>03/Julio/2017</b> 
+</p>
+</td>
+<td> <b>VideoBlog 26</b>: Probando el <b>analizador lógico</b> compatible Saleae con la FPGA
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/videoblog/wiki/Cap%C3%ADtulo-26:-Probando-el-analizador-l%C3%B3gico-compatible-Saleae-con-la-FPGA">Más información</a>)  (<a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=ZPh1Goh93lk&amp;list=PLmnz0JqIMEzVo7w2pv6Q04QgRaBTkqR30&amp;index=26">Vídeo</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Serial-tx-1_UvhD.png" title="100px" width="788" height="437"></center>
+<p><b>22/Junio/2017</b> 
+</p>
+</td>
+<td> <b>Transmisor</b> de comunicaciones serie asíncronas a 115200 baudios para <b>Icestudio</b>
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Alhambra-bits/Lattuino-collection/tree/master/blocks/Varios/Serial">Más información</a>)  
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Fuerteventura-EDDFPGAs-Libres-Portada_UvhD.png" title="100px" width="1028" height="770"></center>
+<p><b>14/Junio/2017</b> 
+</p>
+</td>
+<td> Publicada informacion de la charla <b>Electrónica digital para todos con FPGAs Libres</b> dada en Fuerteventura
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/myslides/wiki/2017_06_01:-Fuerteventura-Makers:-Electr%C3%B3nica-digital-para-todos-con-FPGAs-libres">Más información</a>)  
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Nosotros-compartimos-portada_UvhD.png" title="100px" width="1202" height="904"></center>
+<p><b>13/Junio/2017</b> 
+</p>
+</td>
+<td> Publicada informacion de la charla <b>Nosotros compartimos</b> dada en Fuerteventura
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/myslides/wiki/2017_06_01:-Fuerteventura-Makers:-Nosotros-compartimos">Más información</a>)  
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Meetup-murcial-portada_UvhD.png" title="100px" width="1069" height="803"></center>
+<p><b>09/Junio/2017</b> 
+</p>
+</td>
+<td> Publicada informacion de la charla sobre <b>Electrónica Digital para todos con FPGAs Libres</b> dada en el Meetup Murcia
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/myslides/wiki/2017_05_20:-Murcia-Meetup:-Electr%C3%B3nica-digital-para-todos-con-FPGAs-libres">Más información</a>)  
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/IES-Juan-Cierva-portada_UvhD.png" title="100px" width="1026" height="771"></center>
+<p><b>06/Mayo/2017</b> 
+</p>
+</td>
+<td> Publicada informacion de la charla sobre <b>Electrónica Digital Divertida con FPGAs Libres</b> dada en el IES Juan de la Cierva, en Madrid
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/myslides/wiki/2017_05_05:-PEAC.-IES-Juan-de-la-Cierva:-Electr%C3%B3nica-digital-divertida-con-FPGAs-libres">Más información</a>)  
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Alhambra-switch-01_UvhD.jpg" title="100px" width="1200" height="1110"></center>
+<p><b>02/Mayo/2017</b> 
+</p>
+</td>
+<td> Publicada la <b>Alhambra-switch</b>, un periférico para la Icezum Alhambra con un interruptor
+<p>(<a rel="nofollow" class="external text" href="https://github.com/PCBPrints/Alhambra-switch/wiki">Más información</a>) (<a rel="nofollow" class="external text" href="https://www.youmagine.com/designs/alhambra-switch">YouMagine</a>) 
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Malakabot-17-portada_UvhD.png" title="100px" width="884" height="664"></center>
+<p><b>01/Mayo/2017</b> 
+</p>
+</td>
+<td> Publicada informacion de la charla sobre <b>Electrónica Digital Divertida con FPGAs Libres</b> dada en <b>Malakabot 2017</b>
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/myslides/wiki/2017_04_27:-Malakabot-17:-Electr%C3%B3nica-digital-divertida-con-FPGAs-libres">Más información</a>) 
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/2017-04-21-portada_UvhD.jpg" title="100px" width="960" height="584"></center>
+<p><b>22/Abril/2017</b> 
+</p>
+</td>
+<td> <b>Taller de Introducción a FreeCAD</b>, en la Escuela Técnica Superior de Ingeniería de la Universidad de Huelva (UHU)
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/mycourses/wiki/2017-04-21-Taller-Freecad-ETSI-OSL-UHU">Más información</a>) 
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Slide-sw-spdt_UvhD.png" title="100px" width="1461" height="943"></center>
+<p><b>18/Abril/2017</b> 
+</p>
+</td>
+<td> Modelado el <b>Switch SPDT recto</b>, de paso 2.54mm,  en FreeCAD. Disponible en la biblioteca de piezas de FreeCAD
+<p>(<a rel="nofollow" class="external text" href="https://github.com/FreeCAD/FreeCAD-library/tree/master/Electrical%20Parts/electronic-components/switches/through-hole">Más información</a>) 
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Boad-clamp-inst-05_UvhD.jpg" title="100px" width="1200" height="832"></center>
+<p><b>12/Abril/2017</b> 
+</p>
+</td>
+<td> Publicado el <b>Fijador de placas</b> con chincheta, para organizar tus periféricos en el panel cuando trabajes con la <b>Icezum Alhambra</b>
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/3D-parts/wiki/Fijador-de-placas">Más información</a>) (<a rel="nofollow" class="external text" href="https://www.youmagine.com/designs/board-clamp">YouMagine</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Corner-holder-01_UvhD.jpg" title="100px" width="1200" height="900"></center>
+<p><b>08/Abril/2017</b> 
+</p>
+</td>
+<td> Publicado el <b>Fija-esquinas</b> con chincheta, para organizar tus piezas cuando trabajes con la <b>Icezum Alhambra</b>
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/3D-parts/wiki/Fijador-de-esquinas">Más información</a>) (<a rel="nofollow" class="external text" href="https://www.youmagine.com/designs/corner-holder">YouMagine</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Wire-holder-01_UvhD.jpg" title="100px" width="1200" height="900"></center>
+<p><b>06/Abril/2017</b> 
+</p>
+</td>
+<td> Publicado el <b>Fija-cables</b> con chincheta, para organizar tus periféricos cuando trabajes con la <b>Icezum Alhambra</b>
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/3D-parts/wiki/Fijador-de-cables-con-chinchetas">Más información</a>) (<a rel="nofollow" class="external text" href="https://www.youmagine.com/designs/wire-holder-40-58">YouMagine</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/3pin-buckled-female-2.54mm-connector_UvhD.png" title="100px" width="1520" height="943"></center>
+<p><b>04/Abril/2017</b> 
+</p>
+</td>
+<td> <b>Connector hembra abrochado</b>, de 3 pines y paso de 2.54mm, modelado en <b>FreeCAD</b>
+<p>(<a rel="nofollow" class="external text" href="https://github.com/FreeCAD/FreeCAD-library/tree/master/Electrical%20Parts/electronic-components/connectors/female">Más información</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/3pin-female-2.54mm-connector_UvhD.png" title="100px" width="976" height="544"></center>
+<p><b>03/Abril/2017</b> 
+</p>
+</td>
+<td> <b>Connector hembra</b>, de 3 pines y paso de 2.54mm, modelado en <b>FreeCAD</b>
+<p>(<a rel="nofollow" class="external text" href="https://github.com/FreeCAD/FreeCAD-library/tree/master/Electrical%20Parts/electronic-components/connectors/female">Más información</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/2017-03-30-Reset-ETSII-portada_UvhD.png" title="100px" width="769" height="580"></center>
+<p><b>30/Marzo/2017</b> 
+</p>
+</td>
+<td> Publicada la información sobre el <b>Taller de Electrónica digital con FPGAs libres</b> dado en la asociación de estudiantes RESET, de la ETSII, UPM
+<p>(<a rel="nofollow" class="external text" href="https://github.com/FPGAwars/workshops/wiki/2017_03_30:-Reset.-ETSII,-UPM">Más información</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Roland-camm1-gs-24-picture-01_UvhD.jpg" title="100px" width="1200" height="582"></center>
+<p><b>29/Marzo/2017</b> 
+</p>
+</td>
+<td> Instrucciones de instalación de la <b>Cortadora de vinilo Roland GS-24</b> en Ubuntu 16.04 (Sólo con herramientas libres)
+<p>(<a rel="nofollow" class="external text" href="https://github.com/TecnoLab/Cortadora-vinilo-Roland-camm1-GS-24/wiki">Más información</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Servobit-dashboard-01_UvhD.jpg" title="100px" width="1200" height="891"></center>
+<p><b>26/Marzo/2017</b> 
+</p>
+</td>
+<td> Publicado el <b>Tablero indicador</b> binario para Servo, diseñado en FreeCAD
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/3D-parts/wiki/Tablero-indicador-binario-para-Servo">Más información</a>) (<a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=wZMCaF08eYA">Vídeo Youtube</a>) (<a rel="nofollow" class="external text" href="https://www.youmagine.com/designs/servo-binary-position-dashboard">Youmagine</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Servo-pins-08_UvhD.jpg" title="100px" width="1200" height="1331"></center>
+<p><b>21/Marzo/2017</b> 
+</p>
+</td>
+<td> (Servo pins) <b>Clavijas</b> para acoplar piezas a los <b>servos Futaba 3003</b> sin necesidad de usar tornillos y tuercas
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/3D-parts/wiki/Servo-pins-para-Futaba-3003">Más información</a>) (<a rel="nofollow" class="external text" href="https://www.youmagine.com/designs/servo-pins-for-futaba-3003">Youmagine</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Pushpin-model-III_UvhD.png" title="100px" width="1487" height="943"></center>
+<p><b>20/Marzo/2017</b> 
+</p>
+</td>
+<td> <b>Chincheta</b> modelada en Freecad (Modelo III). Disponible en la <b>biblioteca de piezas de FreeCAD</b>
+<p>(<a rel="nofollow" class="external text" href="https://github.com/FreeCAD/FreeCAD-library/tree/master/Generic%20objects/pushpins">Más información</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Pushpin-model-II-2_UvhD.png" title="100px" width="1577" height="943"></center>
+<p><b>20/Marzo/2017</b> 
+</p>
+</td>
+<td> <b>Chincheta</b> modelada en Freecad (Modelo II). Disponible en la <b>biblioteca de piezas de FreeCAD</b>
+<p>(<a rel="nofollow" class="external text" href="https://github.com/FreeCAD/FreeCAD-library/tree/master/Generic%20objects/pushpins">Más información</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Pushpin-model-I_UvhD.png" title="100px" width="835" height="789"></center>
+<p><b>20/Marzo/2017</b> 
+</p>
+</td>
+<td> <b>Chincheta</b> modelada en Freecad (Modelo I). Disponible en la <b>biblioteca de piezas de FreeCAD</b>
+<p>(<a rel="nofollow" class="external text" href="https://github.com/FreeCAD/FreeCAD-library/tree/master/Generic%20objects/pushpins">Más información</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/2017-03-15-portada-taller-hacklab-upm_UvhD.png" title="100px" width="855" height="644"></center>
+<p><b>15/Marzo/2017</b> 
+</p>
+</td>
+<td> Publicada la información sobre el Taller: <b>Taller de electónica digital con FPGAs Libres</b> dado en el HackLab-UPM de la ETS de Ingeniería y Diseño Industrial
+<p>(<a rel="nofollow" class="external text" href="https://github.com/FPGAwars/workshops/wiki/2017_03_14:-Hacklab-UPM.-ETSIDI">Más información</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/14_1_Memoria_ROM_fichero_UvhD.png" title="100px" width="900" height="620"></center>
+<p><b>06/Marzo/2017</b> 
+</p>
+</td>
+<td> Publicada la información sobre el Taller: <b>Frikeando con Icestudio y FPGAs libres</b> dado en el Hackerspace Valencia
+<p>(<a rel="nofollow" class="external text" href="https://github.com/FPGAwars/workshops/wiki/2017_03_04:-Fablab-Valencia">Más información</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Portada-fablab-valencia_UvhD.png" title="100px" width="799" height="601"></center>
+<p><b>05/Marzo/2017</b> 
+</p>
+</td>
+<td> Publicada la información sobre la charla <b>Electrónica digital divertida con FPGAs libres</b> dada en el Hackerspace Valencia
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/myslides/wiki/2017_03_04:-Fablab-Valencia:-Electr%C3%B3nica-digital-divertida-con-FPGAs-libres">Más información</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/2017-02-24-workshop-UAL_UvhD.png" title="100px" width="884" height="558"></center>
+<p><b>27/Febrero/2017</b> 
+</p>
+</td>
+<td> Publicada la información sobre el <b>Taller Diseño Hardware con FPGAs Libres</b> dado en las <b>IV Jornadas de Informática de la Universidad de Almería</b>
+<p>(<a rel="nofollow" class="external text" href="https://github.com/FPGAwars/workshops/wiki/2017-02-24:-IV-Jornadas-de-Inform%C3%A1tica-Universidad-de-Almer%C3%ADa">Más información</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/UAL-portada_UvhD.png" title="100px" width="912" height="687"></center>
+<p><b>26/Febrero/2017</b> 
+</p>
+</td>
+<td> Publicada la información sobre la charla <b>Diseño Hardware con FPGAs Libres</b> dada en las <b>IV Jornadas de Informática de la Universidad de Almería</b>
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/myslides/wiki/2017-02-24:-UAL-Dise%C3%B1o-Hardware-con-FPGAs-libres">Más información</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Picture-04_UvhD.jpg" title="100px" width="1200" height="900"></center>
+<p><b>12/Febrero/2017</b> 
+</p>
+</td>
+<td> <b>Corazón con texto personalizable</b>, para regalar por San Valentín&nbsp;:-)
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/3D-parts/wiki/Coraz%C3%B3n-para-San-Valentin-personalizable">Más información</a>) (<a rel="nofollow" class="external text" href="https://www.youmagine.com/designs/san-valentin-s-customized-heart">Youmagine</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Etsidi-upm-portada_UvhD.png" title="100px" width="1070" height="801"></center>
+<p><b>12/Febrero/2017</b> 
+</p>
+</td>
+<td> Publicada la información sobre la charla <b>Electrónica digital divertida con FPGAs libres</b> dada en la <b>ETS de Ingeniería y Diseño Industrial</b> de la UPM
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/myslides/wiki/2017_0209:-ETSIDI-Electr%C3%B3nica-Digital-Divertida-con-FPGAs-Libres">Más información</a>)
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Servo-pointer-horn-01_UvhD.jpg" title="100px" width="1200" height="1145"></center>
+<p><b>01/Febrero/2017</b> 
+</p>
+</td>
+<td><b>Puntero</b> para servo <b>Futaba 3003</b>, diseñado en FreeCAD
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/3D-parts/wiki/Puntero-para-Servo-Futaba-3003">Más información</a>) (<a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=4BtiAzAIcRc">Vídeo Youtube</a>)  
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Comparto-existo-foto-04_UvhD.jpg" title="100px" width="1200" height="800"></center>
+<p><b>29/Enero/2017</b> 
+</p>
+</td>
+<td> Publicados el <b>vídeo</b> y la <b>documentación</b> de la charla <b>Comparto, Luego existo</b> que di en el evento <b>El Pais con tu Futuro</b>
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/myslides/wiki/2016_12_21:-Comparto,-luego-existo">Más información</a>) (<a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=vI88Za3Pt5g">Vídeo Youtube</a>)  
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Servo-support-01_UvhD.jpg" title="100px" width="1200" height="1046"></center>
+<p><b>28/Enero/2017</b> 
+</p>
+</td>
+<td> <b>Soporte</b> imprimible en 3D para <b>servos Futaba 3003</b>, diseñado en FreeCAD
+<p>(<a rel="nofollow" class="external text" href="https://github.com/Obijuan/3D-parts/wiki/Soporte-para-servo-Futaba-3003">Más información</a>) (<a rel="nofollow" class="external text" href="https://www.youmagine.com/designs/futaba-3003-servo-support">Youmagine</a>) 
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Icezum-alhambra-support-01_UvhD.jpg" title="100px" width="1200" height="900"></center>
+<p><b>22/Enero/2017</b> 
+</p>
+</td>
+<td> <b>Soporte</b> imprimible en 3D para la <b>Icezum Alhambra</b>, diseñado en FreeCAD
+<p>(<a rel="nofollow" class="external text" href="https://github.com/FPGAwars/Icezum-Alhambra-3D-support/wiki">Más información</a>) (<a rel="nofollow" class="external text" href="https://www.youmagine.com/designs/support-for-the-icezum-alhambra-fpga-board">Youmagine</a>) 
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/Alhambra-button-01_UvhD.jpg" title="100px" width="1200" height="961"></center>
+<p><b>15/Enero/2017</b> 
+</p>
+</td>
+<td> <b>Alhambra-Button</b>, PCBPrint con pulsador para la <b>Icezum Alhambra</b>, diseñado en FreeCAD
+<p>(<a rel="nofollow" class="external text" href="https://github.com/PCBPrints/Alhambra-button/wiki">Más información</a>) (<a rel="nofollow" class="external text" href="https://www.youmagine.com/designs/alhambra-buttom-pcbprint-board">Youmagine</a>) 
+</p>
+</td></tr>
+<tr>
+<td> <center><img alt="100px" src="WikiRobotics_files/3-pin-array-right-angle-2.54mm_UvhD.png" title="100px" width="1444" height="913"></center>
+<p><b>01/Enero/2017</b> 
+</p>
+</td>
+<td> <b>Conector de 3 pines acodados</b>, paso de 2.54mm (tipo II) modelado en FreeCAD
+<p>(<a rel="nofollow" class="external text" href="https://github.com/FreeCAD/FreeCAD-library/tree/master/Electrical%20Parts/electronic-components/headers/2.54mm-pitch/male/right-angle">Más información</a>) 
+</p>
+</td></tr>
+</tbody></table>
+<p><br>
+</p>
+<h3><span class="mw-headline" id="A.C3.B1os_anteriores">Años anteriores</span></h3>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=Archivo_de_noticias" title="Archivo de noticias">Archivo de noticias</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20260906102834
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.132 seconds
+Real time usage: 0.153 seconds
+Preprocessor visited node count: 167/1000000
+Preprocessor generated node count: 537/1000000
+Post‐expand include size: 3081/2097152 bytes
+Template argument size: 409/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.763      1 - -total
+ 51.67%    2.461      6 - Plantilla:Click
+ 36.34%    1.731      4 - Plantilla:Tablabonita
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal&amp;oldid=26271">https://iearobotics.com/wiki/index.php?title=Página_principal&amp;oldid=26271</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categoría</a>: <ul><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Indice" title="Categoría:Indice">Indice</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página principal</a></li>
+				<li id="ca-talk" class="new"><a href="https://iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:P%C3%A1gina_principal&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=P%C3%A1gina+principal" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/P%C3%A1gina_principal" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/P%C3%A1gina_principal" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal&amp;oldid=26271" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="WikiRobotics_files/gnu-fdl_UvhD.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="WikiRobotics_files/poweredby_mediawiki_88x31_UvhD.png" alt="Powered by MediaWiki" srcset="WikiRobotics_files/poweredby_mediawiki_132x47_UvhD.png 1.5x, WikiRobotics_files/poweredby_mediawiki_176x62_UvhD.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 3 abr 2018 a las 09:38.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":216});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
