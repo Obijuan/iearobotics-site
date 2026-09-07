@@ -1,0 +1,605 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!-- saved from url=(0055)http://www.iearobotics.com/proyectos/ct6811/ct6811.html -->
+
+<HTML>
+  <HEAD>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <TITLE>TARJETA GEYDi para PIC de 40 pines</TITLE>
+
+<STYLE type=text/css>H1 {
+
+	BORDER-RIGHT: rgb(192,192,192) thin outset; PADDING-RIGHT: 2px; BORDER-TOP: rgb(192,192,192) thin outset; MARGIN-TOP: 10px; PADDING-LEFT: 2px; FONT-WEIGHT: bold; PADDING-BOTTOM: 2px; MARGIN-LEFT: 25px; BORDER-LEFT: rgb(192,192,192) thin outset; COLOR: rgb(192,192,192); MARGIN-RIGHT: 25px; PADDING-TOP: 2px; BORDER-BOTTOM: rgb(192,192,192) thin outset; FONT-FAMILY: Current Schoolbook, Arial; LETTER-SPACING: 2px; BACKGROUND-COLOR: blue; TEXT-ALIGN: center
+
+}
+
+H2 {
+
+	BORDER-RIGHT: medium none; PADDING-RIGHT: 5px; BORDER-TOP: medium none; MARGIN-TOP: 10px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; PADDING-BOTTOM: 5px; MARGIN-LEFT: 25px; BORDER-LEFT: medium none; COLOR: rgb(0,0,0); MARGIN-RIGHT: 25px; PADDING-TOP: 5px; BORDER-BOTTOM: medium none; FONT-FAMILY: Times,Arial; LETTER-SPACING: 2px; TEXT-ALIGN: left
+
+}
+
+DIV.cuerpo {
+
+	MARGIN-LEFT: 25px; COLOR: rgb(20,20,20); TEXT-INDENT: 50px; LINE-HEIGHT: 20px; MARGIN-RIGHT: 25px; FONT-FAMILY: Book Antiqua, Arial; TEXT-ALIGN: justify
+
+}
+
+SPAN.cursiva {
+
+	FONT-STYLE: oblique
+
+}
+
+DIV.autor {
+
+	FONT-SIZE: 10pt; MARGIN-LEFT: 25px; COLOR: rgb(20,20,20); MARGIN-RIGHT: 25px; FONT-STYLE: oblique; FONT-FAMILY: Arial; TEXT-ALIGN: left
+
+}
+
+DIV.lista {
+
+	MARGIN-LEFT: 25px; COLOR: rgb(20,20,20); LINE-HEIGHT: 20px; FONT-FAMILY: Book Antiqua, Arial; TEXT-ALIGN: justify
+
+}
+
+TABLE.margen {
+
+	MARGIN-BOTTOM: 25px; MARGIN-LEFT: 25px; MARGIN-RIGHT: 25px
+
+}
+
+TABLE.links {
+
+	BORDER-RIGHT: rgb(192,192,192) thin outset; BORDER-TOP: rgb(192,192,192) thin outset; MARGIN-BOTTOM: 25px; MARGIN-LEFT: 25px; BORDER-LEFT: rgb(192,192,192) thin outset; COLOR: rgb(55,0,0); MARGIN-RIGHT: 25px; BORDER-BOTTOM: rgb(192,192,192) thin outset; BACKGROUND-COLOR: rgb(255,255,128)
+
+}
+
+TABLE.down {
+
+	BORDER-RIGHT: rgb(192,192,192) thin outset; BORDER-TOP: rgb(192,192,192) thin outset; MARGIN-BOTTOM: 25px; MARGIN-LEFT: 25px; BORDER-LEFT: rgb(192,192,192) thin outset; COLOR: rgb(55,0,0); MARGIN-RIGHT: 25px; BORDER-BOTTOM: rgb(192,192,192) thin outset; BACKGROUND-COLOR: rgb(255,255,128)
+
+}
+
+TD.indice {
+
+	COLOR: blue; TEXT-ALIGN: center; font-size:15pt
+
+}
+
+</STYLE>
+
+
+
+<META content="MSHTML 6.00.2800.1141" name=GENERATOR></HEAD>
+
+<BODY>
+
+<TABLE cellPadding=4 width="100%" align=center bgColor=#abbeeb border=0>
+
+  <TBODY>
+
+  <TR>
+
+    <TD align=middle colSpan=2><B>TARJETA GEYDi para PIC de 40 pines</B> </TD>
+
+  </TR></TBODY></TABLE>
+
+<TABLE align=center>
+
+  <TBODY>
+
+  <TR>
+
+    <TD><A 
+
+      href="#uno">[Introducción]</A></TD>
+
+    <TD><A 
+
+      href="#dos">[caracteristicas]</A></TD>
+
+    <TD><A 
+
+      href="#tres">[Autores]</A></TD>
+
+    <TD><A 
+
+      href="#licencia">[Licencia]</A></TD>
+
+    <TD><A 
+
+      href="#historia">[Historia]</A></TD>
+
+    <TD><A 
+
+      href="#puertos">[Puertos]</A></TD>
+
+    <TD><A 
+
+      href="#alimentacion">[Alimentación]</A></TD>
+
+    <TD><A 
+
+      href="#software">[Software]</A></TD>
+
+    <TD><A 
+
+      href="#download">[Download]</A></TD>
+
+    <TD><A 
+
+      href="#links">[Links]</A></TD>
+
+    <TD><A 
+
+      href="#noticias">[Noticias]</A></TD>
+
+    <TD><A 
+
+      href="#agradecimientos">[Agradecimientos]</A></TD></TR></TBODY></TABLE>
+
+<CENTER> 
+
+</CENTER><!-- Introducción -->
+
+<HR>
+
+
+
+<H2 id=uno>Introducción </H2><!-- texto -->
+
+<DIV class=cuerpo>
+
+<P>La tarjeta <strong>GEYDi</strong> es una tarjeta para el desarrollo de aplicaciones hardware
+
+  y 
+
+software basadas en  microcontroladores de la casa <strong>MICROCHIP</strong>,
+
+entre ellos se encuentran el <strong>P18F452</strong>, la familia <strong>P16F87XA</strong> y todos aquellos PIC's
+
+de
+
+patillaje
+
+compatibles de 40 pines.
+
+No sólo sirve
+
+para
+
+el
+
+desarrollo
+
+
+
+de prototipos, sino que también está pensada para funcionar en <B>sistemas 
+
+terminados</B>. Se trata de una tarjeta muy versátil que se puede emplear como: 
+
+</P>
+
+</DIV>
+
+<DIV class=lista>
+
+<UL>
+
+  <LI><B>Tarjeta entrenadora:</B> Se conecta al PC a través del puerto serie.
+
+    El funiconamiento como tarjeta entrenadora, est&aacute; sujeto a las herramientas
+
+    de Microchip, es decir, si se quiere utilizar la tarjeta como un programador/emulador,
+
+    se ha de utilizar otro dsipositivo intermedio como puede ser un ICD2, etc... Pero
+
+    si solo se desea usar como programador, conectando un cable serie al puerto
+
+    de programaci&oacute;n, se puede programar el PIC con el IC-Prog como un programador
+
+    normal.<BR>
+
+  <LI><B>Tarjeta autónoma de control</B>: Puede funcionar en modo autónomo, sin
+
+     conectarse al PC. Cada vez que se encienda la tarjeta se ejecutará el programa
+
+      que está grabado en la memoria del PIC.<BR>
+
+  <LI><B>Periférico Inteligente del PC:</B> También es posible utilizar la 
+
+    <strong>GEYDi</strong> para conectar el PC con el mundo exterior. La tarjeta
+
+    actuaría como un
+
+   periférico conectado al puerto serie del PC, que puede recibir órdenes y 
+
+  actuar en consecuencia. </LI>
+
+</UL></DIV>
+
+<DIV class=cuerpo>
+
+<P>
+
+  <!-- Sección 1 -->
+
+</P>
+
+</DIV>
+
+<HR>
+
+
+
+<H2 id=dos>Características </H2>
+
+<DIV class=lista>
+
+<UL>
+
+  <LI><B>Microcontrolador P18F452</B>, o de patillaje compatible de la familia
+
+    16F87X o 18FXX2, con encapsulado DIP<BR>
+
+  <LI><B>Bus de Expansión</B>: Dividido en 5 puertos de 10 bits cada uno. Desde
+
+    estos puertos se tiene acceso a todas las patas del micro<BR>  
+
+  <LI><B>Pulsador:</B> Inicialización de la tarjeta RESET. Cambiando el jumper
+
+    se conecta a la linea RB0 para generar interrupciones<br>
+
+  <LI><B>LED:</B> Indicador de ON/OFF. Cambiando el jumper, se conecta a la linea
+
+    RB1 para poder hacer pruebas en la placa GEYdi<BR>  
+
+  <LI><B>Alimentación</B>, entre 9-15voltios d.c., a través de  conector
+
+    tipo jack<BR>
+
+  <LI><B>Conexión directa al PC</B>, por medio de un cable tipo tel�fono<BR>
+
+  <LI><B>Conexión a dispositivo de programaci&oacute;n</B>, por medio de un cable
+
+    tipo teléfono<BR>  
+
+  <LI><B>Reset  hardware</B> de la placa </LI>
+
+</UL>
+
+</DIV>
+
+<CENTER>
+
+<img src="Tarjeta%20GEYDi_archivos/GEYDi.jpg" width="642" height="647">
+
+</CENTER><BR><BR><!-- Sección 2 -->
+
+<HR>
+
+
+
+<H2 id=tres>Autores</H2>
+
+<DIV class=lista>
+
+<UL>
+
+  <LI><A href="mailto:diegojm@wanadoo.es" ?>Diego Jim&eacute;nez
+
+      Mart&iacute;nez</A>. Diseño del PCB, fabricación y pruebas
+
+    de la primera versión. Financiación.  
+
+</UL>
+
+</DIV><!-- Sección 3 -->
+
+<p>&nbsp;</p>
+
+<HR>
+
+
+
+<H2 id=licencia>Licencia</H2>
+
+<DIV class=cuerpo>La tarjeta <strong>GEYDi</strong> es <B>hardware abierto</B>, por lo que se
+
+  
+
+permite su copia, modificación y distribución, siempre y cuando se mantenga esta
+
+
+
+nota. </DIV>
+
+<!-- DOWNLOAD: Archivos -->
+
+<p>&nbsp;</p>
+
+<HR>
+
+
+
+<H2 id=historia>Historia </H2>
+
+<DIV class=cuerpo>
+
+<P>La GEYDi nace como la necesidad de un proyecto de comunicaciones en el cual
+
+  se necesita un sistema hardware m&iacute;nimo, para obtener comunicacion entre varios
+
+  m&oacute;dulos, comunicaci&oacute;n con el exterior, sistemas configurables y con memoria.
+
+  Todo esto, en una primera versi&oacute;n, se consigue de la mano de los siguientes
+
+  componentes:<BR>
+
+<LI>Max232 integrado en la propia placa 
+
+<LI>Memoria 24LC32 o superiores<BR>
+
+    <h6>Poco mas se puede contar de la corta vida de este proyecto. Pero seguro
+
+      que ir&aacute; aumentando poco a poco.</h6>
+
+</LI>
+
+</DIV>
+
+<DIV class=lista></DIV>
+
+<!-- Puertos de expansion -->
+
+<HR>
+
+
+
+<H2 id=puertos>Puertos de expansión</H2>
+
+<DIV class=cuerpo>
+
+<P>La tarjeta GEYDi saca al exterior todos los pines del PIC, a través de 
+
+conectores acodados para <B>cable de tipo bus de 10 hilos</B>. En todos los 
+
+conectores se encuentran <B>VCC</B> y <B>GND</B>. Esto
+
+
+
+es muy útil porque permite conectar periféricos y que se alimenten directamente
+
+
+
+a través del cable de BUS, sin tener que tirar otro cable. </P>
+
+<P>
+
+<CENTER><IMG src="Tarjeta%20GEYDi_archivos/puertos.jpg" width="493" height="432">
+
+</CENTER>
+
+<P></P><BR><BR>
+
+<P>Los pines del los puertos del PIC tienen otras funciones, no sólo de 
+
+entrada/salida digital. En la secci&oacute;n de links os podeis descargar la hoja de
+
+  caracter&iacute;sticas de &eacute;ste y de otros PIC.</P>
+
+<P>
+
+<CENTER>
+
+</CENTER>
+
+</DIV>
+
+<HR>
+
+
+
+<H2 id=alimentacion>Alimentación </H2>
+
+<DIV class=cuerpo>
+
+<P>La GEYDi se alimenta a través de un conector de <B>tipo Jack</B>. La alimentación
+
+  nominal es de 9 - 15 voltios, aunque estos valores pueden variar. </P>
+
+<CENTER><IMG src="Tarjeta%20GEYDi_archivos/ali-jack.jpg" width="504" height="142">
+
+</CENTER></DIV><BR>
+
+<HR>
+
+
+
+<H2 id=software>Software </H2>
+
+<DIV class=cuerpo>
+
+  <p>Para trabajar con la tarjeta GEYDi, existe  una serie de aplicaciones,
+
+    que se citan a continuación y que se 
+
+  pueden descargar en la p&aacute;gina de <a href="http://www.microchip.com">MICROCHIP</a>: </p>
+
+</DIV>
+
+<DIV class=lista>
+
+  <UL>
+
+  <LI><A 
+
+  href="http://www.microchip.com">MPLAB
+
+      IDE</A>:
+
+    Programación, emulacion y control de la tarjeta GEYDi atrav&eacute;s de un dispositivo
+
+    ICD2 de Microchip.<BR>
+
+  </UL>
+
+</DIV>
+
+<DIV class=cuerpo>
+
+  <p>Espero que este apartado, pronto, vaya aumentando, para no tener que depender
+
+    de software ni hardware de terceros.</p>
+
+</DIV>
+
+<HR>
+
+<!-- DOWNLOAD -->
+
+<H2 id=download>Download </H2>
+
+<P>
+
+<TABLE cellPadding=4 width="80%" align=center bgColor=#abbeeb border=0>
+
+  <TBODY>
+
+  <TR>
+
+    <TD align=middle colSpan=2><B>TARJETA GEYDi para PIC de 40 pines</B> </TD>
+
+  </TR></TBODY></TABLE>
+
+<TABLE width="80%" align=center border=0>
+
+  <TBODY>
+
+  <TR bgColor=#abbeeb>
+
+    <TD><A 
+
+      href="Tarjeta%20GEYDi_archivos/GEYDi_SCH.pdf">GEYDi_SCH.pdf</A> (30KB)</TD>
+
+    <TD>Esquem�tico, en PDF</TD></TR>
+
+  <TR bgColor=#cabeeb>
+
+    <TD><A 
+
+      href="Tarjeta%20GEYDi_archivos/GEYDi_brd1.pdf">GEYDi_brd1.pdf
+
+      </A>(95KB)</TD>
+
+  <TD>Serigraf�as, en PDF</TD>
+
+  </TR>
+  <TR bgColor=#abbeeb>
+
+    <TD><A 
+
+      href="Tarjeta%20GEYDi_archivos/GEYDi_brd2.pdf">GEYDi_brd2.pdf</A> (382KB)</TD>
+
+    <TD> PCB. Cara de los componentes. Formato PDF</TD></TR>
+    <TR bgColor=#cabeeb>
+
+    <TD><A 
+
+      href="Tarjeta%20GEYDi_archivos/GEYDi_brd3.pdf">GEYDi_brd3.pdf</A>(368KB)</TD>
+
+  <TD> PCB. Cara inferior. Formato PDF</TD>
+
+  </TR>
+  <TR bgColor=#abbeeb>
+
+    <TD><A 
+
+      href="Tarjeta%20GEYDi_archivos/GEYDi_SCH.sch">GEYDi_SCH.sch</A> (256KB)</TD>
+
+    <TD>Esquem�tico para EAGLE Versión 4.09r2</TD></TR>
+    <TR bgColor=#cabeeb>
+
+    <TD><A 
+
+      href="Tarjeta%20GEYDi_archivos/GEYDi_BRD.brd">GEYDi_BRD.brd</A>(233KB)</TD>
+
+  <TD> PCB para EAGLE, Versión 4.09r2</TD>
+
+  </TR>
+    
+  </TBODY></TABLE>
+
+</P>
+
+<BR>
+
+<BR>
+
+<BR>
+
+<BR>
+
+<HR>
+
+
+
+<H2 id=links>Links</H2>
+
+<DIV class=lista>
+
+<UL>
+
+  <LI><a href="http://www.microchip.com">Microchip</a>
+
+  <LI><a href="http://iespana.casitodoelectronica.es">CasitodoElectronica</a>.- En esta web encontrareis varias hojas de caracteristicas
+
+    y ejemplos para PIC.
+
+</UL>
+
+<p>&nbsp;</p>
+
+</DIV><!-- Noticias -->
+
+<HR>
+
+
+
+<H2 id=noticias>Noticias</H2>
+
+<DIV class=lista>
+
+<UL>
+  <li><b>29/Nov/2003</b>: A�adidos nuevos ficheros en PDF. Corregidos algunos enlaces rotos</li>
+
+  <LI><B>17/Nov/2003</B>: Ve la luz esta p&aacute;gina web. Espero que os sea de ayuda
+
+    y que hagais muchas preguntas para que pueda evolucionar poco a poco.
+
+</UL>
+
+</DIV><!-- Agradecimientos -->
+
+<HR>
+
+
+
+<H2 id=agradecimientos>Agradecimientos</H2>
+
+<DIV class=lista>
+
+<UL>
+
+  <LI>A <B>Juan y Andres </B>por hacer realidad esta publicaci&oacute;n.
+
+  </UL>
+
+</DIV>
+
+<HR>
+
+</BODY></HTML>
+
