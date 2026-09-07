@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>&quot;Simulaci&oacute;n de Dise&ntilde;os VHDL con Software Libre: La Herramienta GHDL&quot;, JCRA04, UAB. Septiembre 2004.</TITLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>&quot;Simulaci&oacute;n
+				de Dise&ntilde;os VHDL con Software Libre: La Herramienta GHDL&quot;</B>.
+				Universidad Aut&oacute;noma de Barcelona, Septiembre 2004<FONT SIZE=2>.</FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<DL>
+	<DD>
+	<TABLE WIDTH=796 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=788>
+		<THEAD>
+			<TR>
+				<TD WIDTH=788 VALIGN=TOP>
+					<P ALIGN=CENTER><IMG SRC="../conf10/images/charla2.jpg" NAME="Imagen9" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</DL>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<UL>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>T&iacute;tulo</B>:
+	&ldquo;Simulaci&oacute;n de Dise&ntilde;os VHDL con Software Libre:
+	La Herramienta GHDL&rdquo;</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Actividad</B>:
+	Exposici&oacute;n del art&iacute;culo con el mismo nombre. <A HREF="../../publicaciones/art6/index.html">Art&iacute;culo
+	disponible aqu&iacute;</A>.</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Duraci&oacute;n</B>:
+	15 minutos</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Evento</B>:
+	IV Jornadas sobre Computaci&oacute;n Reconfigurable y Aplicaciones,
+	</FONT></FONT><A HREF="http://cephis.uab.es/es/jcra04/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">JCRA04</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+	</FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Lugar</B>:
+	Escuela T&eacute;cnica Superior de Ingenier&iacute;as. Universidad
+	Aut&oacute;noma de Barcelona (UAB).</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Fecha</B>:
+	13 de Septiembre de 2004</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Ponentes</B>:
+	</FONT></FONT>
+	</P>
+	<UL>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><A HREF="../../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+		Gonz&aacute;lez G&oacute;mez</FONT></FONT></A><FONT FACE="Arial, sans-serif">
+		<FONT SIZE=2>(</FONT><A HREF="http://www.eps.uam.es/"><FONT SIZE=2>Escuela
+		Polit&eacute;cnica Superior</FONT></A><FONT SIZE=2>, UAM)</FONT></FONT></P>
+	</UL>
+</UL>
+<HR>
+<H2><FONT SIZE=5>Resumen</FONT></H2>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2><I>En
+este tutorial se explica el funcionamiento de la herramienta GHDL, un
+compilador libre de VHDL basado en el GCC. Permite generar
+directamente ejecutables a partir de fuentes en VHDL. Al tratarse de
+software libre, se puede utilizar y distribuir sin ninguna
+restricci&oacute;n. Primero se presentan dos ejemplos muy sencillos,
+que se compilan con GHDL y se visualizan los resultados con GTKWAVE.
+A continuaci&oacute;n se muestra c&oacute;mo trabajar con proyectos
+m&aacute;s complejos, constituidos por m&uacute;ltiples ficheros y
+entidades. El compilador genera el fichero Makefile, que permite
+automatizar la compilaci&oacute;n mediante el uso de la herramienta
+Make. Por &uacute;ltimo, se desarrolla un ejemplo de c&oacute;mo
+invocar funciones escritas en C, desde c&oacute;digo VHDL.</I></FONT></FONT></P>
+<HR>
+<H2>Download</H2>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=753 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+			<COL WIDTH=745>
+			<TR>
+				<TD WIDTH=745>
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Descargas</B></FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+		<DD>
+		<TABLE WIDTH=753 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=329>
+			<COL WIDTH=416>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=329 BGCOLOR="#ccccff">
+					<P><A HREF="../../publicaciones/art6/pres-ghdl.sxi"><FONT SIZE=2><FONT FACE="Arial, sans-serif">pres-ghdl.sxi</FONT></FONT></A>
+					<FONT SIZE=2><FONT FACE="Arial, sans-serif">(58KB)</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=416 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Presentaci&oacute;n
+					para OpenOffice 1.1.3</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=329>
+					<P><A HREF="../../publicaciones/art6/pres-ghdl.pdf"><FONT SIZE=2><FONT FACE="Arial, sans-serif">pres-ghdl.pdf</FONT></FONT></A>
+					<FONT SIZE=2><FONT FACE="Arial, sans-serif">(263KB)</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=416>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Presentaci&oacute;n
+					en PDF</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=329 BGCOLOR="#ccccff">
+					<P><A HREF="../../publicaciones/art6/ghdl.pdf"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ghdl.pdf</FONT></FONT></A>
+					(36KB)</P>
+				</TD>
+				<TD WIDTH=416 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Art&iacute;culo
+					en PDF</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=329>
+					<P><A HREF="../../publicaciones/art6/ghdl.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ghdl.tgz</FONT></FONT></A>
+					(82KB)</P>
+				</TD>
+				<TD WIDTH=416>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Fuentes del
+					art&iacute;culo para Lyx (Dibujos en Xfig)</FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2>Licencia</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Se condecen permisos
+para usar, modificar y/o distribuir esta presentaci&oacute;n, siempre
+que se mantenga esta nota.</FONT></FONT></P>
+<HR>
+<H2><A NAME="alimentacion"></A>Informaci&oacute;n adicional</H2>
+<UL>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Art&iacute;culo
+	completo: [<A HREF="../../publicaciones/art6/ghdl.pdf">PDF</A>]
+	[<A HREF="../../publicaciones/art6/html/index.html">HTML</A>] [<A HREF="../../publicaciones/art6/index.html">M&aacute;s
+	informaci&oacute;n</A>]</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Las
+	<A HREF="../../publicaciones/art6/html/node15.html">referencias del
+	art&iacute;culo</A></FONT></FONT></P>
+</UL>
+<HR>
+<H2><A NAME="bitacora"></A><A NAME="historia"></A>Cuaderno de
+bit&aacute;cora 
+</H2>
+<P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Accesible
+en este enlace: <A HREF="../conf10/index.html#bitacora">[Cuaderno
+bit&aacute;cora JCRA04]</A></FONT></FONT> 
+</P>
+<HR>
+<H2><A NAME="noticias"></A>Noticias</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>17/Mayo/2005</B>:
+	Publicada informaci&oacute;n en esta web. Con mucho retraso, lo s&eacute;
+	;-)</FONT></FONT></P>
+</UL>
+
+<hr>
+<p STYLE="margin-bottom: 0cm"><a href="../index.html">[&Iacute;ndice
+de conferencias]</a> 
+</p>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="../../index.html">Juan
+Gonz&aacute;lez</A>
+</ADDRESS>
+<P><A HREF="/iearobotics-site/wiki">IEAROBOTICS</A> 
+</P>
+</BODY>
+</HTML>
+
