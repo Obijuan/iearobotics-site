@@ -1,0 +1,1166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Tarjeta GPBOT: Gu&iacute;a r&aacute;pida</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.1  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGED" CONTENT="20040527;9570100">
+	<META NAME="KEYWORDS" CONTENT="rob&oacute;tica electr&oacute;nica tarjeta entrenadora documentaci&oacute;n">
+	<STYLE>
+	<!--
+		@page { size: 21cm 29.7cm }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B><FONT FACE="Arial, sans-serif">Tarjeta GPBOT:
+				Gu&iacute;a R&aacute;pida</FONT> </B>
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<DL>
+	<DD>
+	<TABLE WIDTH=872 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=98>
+		<COL WIDTH=94>
+		<COL WIDTH=58>
+		<COL WIDTH=82>
+		<COL WIDTH=64>
+		<COL WIDTH=132>
+		<COL WIDTH=86>
+		<COL WIDTH=42>
+		<COL WIDTH=58>
+		<COL WIDTH=118>
+		<TR>
+			<TD WIDTH=98>
+				<P><A HREF="#Introducci&oacute;n|outline"><FONT SIZE=2>[Introducci&oacute;n]</FONT></A></P>
+			</TD>
+			<TD WIDTH=94>
+				<P><A HREF="#Caracter&iacute;sticas|outline"><FONT SIZE=2>[caracter&iacute;sticas]</FONT></A></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><A HREF="#Puertos de expansi&oacute;n|outline"><FONT SIZE=2>[Puertos]</FONT></A></P>
+			</TD>
+			<TD WIDTH=82>
+				<P><A HREF="#Alimentaci&oacute;n |outline"><FONT SIZE=2>[Alimentaci&oacute;n]</FONT></A></P>
+			</TD>
+			<TD WIDTH=64>
+				<P><A HREF="#Software |outline"><FONT SIZE=2>[Software]</FONT></A></P>
+			</TD>
+			<TD WIDTH=132>
+				<P><A HREF="#Ejemplos ASM|outline"><FONT SIZE=2>[Ejemplos ASM]</FONT></A></P>
+			</TD>
+			<TD WIDTH=86>
+				<P><A HREF="#Ejemplos C|outline"><FONT SIZE=2>[Ejemplos C]</FONT></A></P>
+			</TD>
+			<TD WIDTH=42>
+				<P><A HREF="#links"><FONT SIZE=2>[Links]</FONT></A></P>
+			</TD>
+			<TD WIDTH=58>
+				<P><A HREF="#noticias"><FONT SIZE=2>[Noticias]</FONT></A></P>
+			</TD>
+			<TD WIDTH=118>
+				<P><A HREF="#Cr&eacute;ditos|outline"><FONT SIZE=2>[Cr&eacute;ditos]</FONT></A></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/gpbot2.jpg" NAME="Imagen1" ALIGN=MIDDLE WIDTH=320 HEIGHT=240 BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H1><A NAME="Introducci&oacute;n|outline"></A><FONT FACE="Arial, sans-serif">Introducci&oacute;n</FONT></H1>
+<P><FONT FACE="Arial, sans-serif">La <B>tarjeta GPBOT</B>, dise&ntilde;ada
+por el profesor <A HREF="http://www.ii.uam.es/~gdrivera/">Guillermo
+Gonz&aacute;lez de Rivera</A>, se emplea en el laboratorio de la
+<A HREF="http://www.ii.uam.es/~gdrivera/robotica/inicio.htm">asignatura
+de Rob&oacute;tica</A> de la <A HREF="http://www.ii.uam.es/">Escuela
+T&eacute;cnica Superior</A> de la Universidad Aut&oacute;noma de
+Madrid (EPS-UAM). </FONT>
+</P>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif">En esta
+p&aacute;gina se recopila <B>informaci&oacute;n</B> sobre la tarjeta,
+se muestran <B>ejemplos de programaci&oacute;n</B> en ensamlador y C
+y se presentan las diferentes herramientas software, para trabajar
+desde entornos <B>Linux</B> y <B>Windows</B>.</FONT></P>
+<HR>
+<H1><A NAME="Caracter&iacute;sticas|outline"></A><FONT FACE="Arial, sans-serif">Caracter&iacute;sticas</FONT></H1>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Microcontrolador</B>
+	<B>MC68HC908GP32</B> de Motorola (8 bits), que incorpora entre otras
+	cosas:</FONT></P>
+</UL>
+<UL>
+	<UL>
+		<LI><P><FONT FACE="Arial, sans-serif">4 puertos de E/S, de 8 bits
+		(Puertos A,B,C y D)</FONT></P>
+	</UL>
+</UL>
+<UL>
+	<UL>
+		<LI><P><FONT FACE="Arial, sans-serif">32KB de memoria Flash</FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif">512B de RAM</FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif">Unidad de comunicaciones
+		serie as&iacute;ncronas (SCI)</FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif">Unidad de comunicaciones
+		serie s&iacute;ncrona (SPI)</FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif">Dos temporizadores de 16 bits</FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif">8 canales A/D de 8 bits</FONT></P>
+	</UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Bus de expansi&oacute;n</B>
+	dividido en 4 conectores para cable plano de bus (puertos A, B, C y
+	D)</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Conector para cable monitor</B></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Alimentaci&oacute;n</B>:
+	Entre 5.5 y 13.5 voltios, a trav&eacute;s de clemas o conector tipo
+	jack (alimentaci&oacute;n regulada)</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Velocidad de
+	funcionamiento</B>: Cristal de 9.8304 Mhz, con el que se consigue
+	una velocidad de bus de <B>2.45MHz</B></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Conexi&oacute;n directa con
+	la tarjeta GP_IFAZ</B>, para controlar hasta 4 motores de corriente
+	continua y conectar 4 sensores de infrarrojos</FONT></P>
+</UL>
+<P ALIGN=CENTER><IMG SRC="images/gpbot-carac1.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=320 HEIGHT=308 BORDER=0><BR><BR><BR>
+</P>
+<HR>
+<H1><A NAME="Puertos de expansi&oacute;n|outline"></A><FONT FACE="Arial, sans-serif">Puertos
+de expansi&oacute;n</FONT></H1>
+<P><FONT FACE="Arial, sans-serif">Tres puertos (A,B y D) son
+conectores para cable plano de bus, de 10 v&iacute;as. Hay un cuarto
+conector de 16 v&iacute;as, por donde sale el puerto C, E y algunas
+se&ntilde;ales de control</FONT></P>
+<P><BR><BR>
+</P>
+<P ALIGN=CENTER><IMG SRC="images/puertos.png" NAME="Imagen3" ALIGN=MIDDLE WIDTH=580 HEIGHT=282 BORDER=0></P>
+<P ALIGN=CENTER><BR><BR>
+</P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif">Algunos de los pines
+tienen otras funciones. Si adem&aacute;s se usa la tarjeta <B>GP_IFAZ</B>,
+se usan 4 pines de entrada para los sensores y 8 pines de salida para
+los motores:</FONT></P>
+<P ALIGN=CENTER><IMG SRC="images/pines-func.png" NAME="Imagen4" ALIGN=MIDDLE WIDTH=676 HEIGHT=298 BORDER=0><BR><BR><BR><BR>
+</P>
+<HR>
+<H1><A NAME="alimentacion"></A><A NAME="Alimentaci&oacute;n |outline"></A>
+<FONT FACE="Arial, sans-serif">Alimentaci&oacute;n</FONT> 
+</H1>
+<P>La GPBOT se alimenta a trav&eacute;s de un conector de <B>tipo
+Jack</B> o conectando los cables a la <B>clema</B> de alimentaci&oacute;n.
+La alimentaci&oacute;n puede estar comprendida entre 5.5 &ndash; 13.5
+voltios (est&aacute; regulada).</P>
+<P ALIGN=CENTER><IMG SRC="images/ali-jack.jpg" NAME="Imagen5" ALIGN=MIDDLE WIDTH=504 HEIGHT=142 BORDER=0><BR><BR><BR>
+</P>
+<HR>
+<H1><A NAME="software"></A><A NAME="Software |outline"></A><FONT FACE="Arial, sans-serif">Software</FONT>
+</H1>
+<P><FONT FACE="Arial, sans-serif">Existen diferentes entornos para
+trabajar con la GPBOT</FONT>:</P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><A HREF="http://www.pemicro.com/ics08/">Entorno
+	de desarrollo M68ICS08</A> de la empresa <B>P&amp;E Microcomputer
+	Systems</B>. Disponible s&oacute;lo para <B>plataformas Windows</B>.
+	Descarga gratuita. Incluye un editor, ensamblador, programador y
+	depurador, todo integrado.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><A HREF="http://www.metrowerks.com/MW/Develop/Embedded/HC08/Default.htm">Entorno
+	CodeWarrior</A>, de la empresa MetroWerks. Entorno integrado para
+	desarrollo de aplicaciones en C. S&oacute;lo <B>plataformas Windows</B>.
+	Permiten descargar una versi&oacute;n de evaluaci&oacute;n,
+	limitada.</FONT></P>
+	<LI><P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif"><A HREF="http://sdcc.sourceforge.net/">Compilador
+	cruzado SDCC</A>(RECOMENDADO). Herramienta libre y multiplataforma
+	(disponible para Windows, Linux, MAC, etc), distribuida bajo
+	<B>licencia GPL</B>. Es un <B>compilador de C</B> para
+	microcontroladores de 8 bits, entre ellos el 68hc08, pero tambi&eacute;n
+	es v&aacute;lido para los PIC, 8051, Z80, y algunos otros. Se
+	utiliza en la consola, pero se integra perfectamente con otros IDEs,
+	como por ejemplo Anjuta. Tambi&eacute;n incluye el ensamblador
+	<B>as-hc08</B>. Est&aacute; disponible en Debian.</FONT></FONT></P>
+	<LI><P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Sofware
+	de grabaci&oacute;n <A HREF="../gpbot-down/gpbot-down.html">GPBOT-DOWN</A>.
+	Permite programar la GPBOT desde <B>plataformas Linux</B>.
+	Disponible bajo licencia GPL.</FONT></FONT></P>
+</UL>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>NOTA</B>:
+Las directivas del ensamblador empleado por el <B>M68ICS08</B> y por
+el <B>as-hc08</B> son diferentes, por ello los programas .asm no se
+pueden llevar directamente de una a otra herramienta (los cambios, no
+obstante, son m&iacute;nimos).</FONT></FONT></P>
+<P><BR><BR>
+</P>
+<HR>
+<H1><FONT FACE="Arial, sans-serif">Documentaci&oacute;n</FONT></H1>
+<UL>
+	<LI><P><SPAN STYLE="text-decoration: none"><FONT SIZE=2><FONT FACE="Verdana"><A HREF="http://www.ii.uam.es/~gdrivera/robotica/hc08/mc68hc908gp32.pdf">Datasheet
+	del 68HC08GP32</A>: Especificaciones t&eacute;cnicas del
+	microcontrolador 6808. Motorola.</FONT></FONT></SPAN></P>
+	<LI><P><SPAN STYLE="text-decoration: none"><FONT SIZE=2><FONT FACE="Verdana"><A HREF="http://www.ii.uam.es/~gdrivera/robotica/gp_bot/gp_bot_13.pdf"><SPAN STYLE="text-decoration: none"><U><FONT SIZE=2><FONT FACE="Verdana">Manual
+	de usuario del sistema GPBOT</FONT></FONT></U></SPAN></A>. Guillermo
+	Gonz&aacute;lez de Rivera. 2002.</FONT></FONT></SPAN></P>
+	<LI><P STYLE="margin-bottom: 0cm"><SPAN STYLE="text-decoration: none"><FONT SIZE=2><FONT FACE="Verdana"><A HREF="http://crm.ii.uam.es/web/documentos/mprog_gp_bot_02.pdf"><SPAN STYLE="text-decoration: none"><U><FONT SIZE=2><FONT FACE="Verdana">Manual
+	de programaci&oacute;n del sistema GPBOT</FONT></FONT></U></SPAN></A>:
+	Ejemplos de programaci&oacute;n, set de instrucciones, etc... Se
+	utiliza el entorno M68ICS08. Guillermo Gonz&aacute;lez de Rivera,
+	Ivan Gonz&aacute;lez, Carlos Jes&uacute;s Venegas. 2003.</FONT></FONT></SPAN></P>
+</UL>
+<HR>
+<H1><A NAME="download"></A><A NAME="Ejemplos ASM|outline"></A><!-- DOWNLOAD --><FONT FACE="Arial, sans-serif">Ejemplos
+ASM</FONT></H1>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif">En la
+siguiente tabla se muestran ejemplos en <B>ensamblador</B> para el
+<B>as-hc08</B> y el entorno <B>M68ICS08</B> de Windows. Son ejemplos
+muy b&aacute;sicos, para a partir de ellos hacer cosas m&aacute;s
+complejas.</FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=858 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+		<COL WIDTH=848>
+		<TR>
+			<TD WIDTH=848>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>Ejemplos en
+				ensamblador</B></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+	<DD>
+	<TABLE WIDTH=858 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=COLS>
+		<COL WIDTH=127>
+		<COL WIDTH=149>
+		<COL WIDTH=122>
+		<COL WIDTH=426>
+		<TBODY>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>AS-HC08</B></FONT></P>
+				</TD>
+				<TD WIDTH=149>
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>M68ICS08</B></FONT></P>
+				</TD>
+				<TD WIDTH=122>
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>Ejecutable</B></FONT></P>
+				</TD>
+				<TD WIDTH=426>
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>Descripci&oacute;n</B></FONT></P>
+				</TD>
+			</TR>
+		</TBODY>
+		<TBODY>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><A HREF="download/m68ics08/modelo.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">modelo.tgz</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=149>
+					<P><A HREF="download/m68ics08/modelo.zip"><FONT SIZE=2><FONT FACE="Arial, sans-serif">modelo.zip</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><FONT SIZE=2>--------</FONT></P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Plantilla para
+					la realizaci&oacute;n de otros programas</B>. Contiene los
+					ficheros con la definici&oacute;n de los registros del 6808,
+					mapa de memoria para la GPBOT, ficheros makefiles de ejemplo,
+					etc.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/modelo.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">modelo.asm</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=149>
+					<P><A HREF="download/m68ics08/modelo.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">modelo.asm</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>----------</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Plantilla
+					modelo</B> para hacer programas en ensamblador</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/porta-sal.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">porta-sal.asm</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=149>
+					<P><A HREF="download/m68ics08/porta-sal.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">porta-sal.asm</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/porta-sal.S19"><FONT SIZE=2><FONT FACE="Arial, sans-serif">porta-sal.S19</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PUERTO A</B>.
+					Ejemplo de configuraci&oacute;n del puerto A para salida. Se
+					configuran todos los pines para salida y se env&iacute;a un
+					valor. Si se conectan leds se puede visualizar el dato.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/porta-salent.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">porta-salent.asm</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=149>
+					<P><A HREF="download/m68ics08/porta-salent.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">porta-salent.asm</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/porta-salent.S19"><FONT SIZE=2><FONT FACE="Arial, sans-serif">porta-salent.S19</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PUERTO A</B>.
+					Ejemplo de configuraci&oacute;n de pines para entrada y salida.
+					Los 4 bits de mayor peso del puerto A se configuran para salida
+					y los 4 de menor peso para entrada</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><A HREF="download/as-hc08/portb-sal.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">portb-sal.asm</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=149>
+					<P><A HREF="download/m68ics08/portb-sal.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">portb-sal.asm</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><A HREF="download/as-hc08/portb-sal.S19"><FONT SIZE=2><FONT FACE="Arial, sans-serif">portb-sal.S19</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PUERTO B</B>.
+					Ejemplo de configuraci&oacute;n del puerto B para salida. Se
+					configuran todos los pines para salida y se env&iacute;a un
+					valor. Si se conectan leds se puede visualizar el dato.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P><A HREF="download/as-hc08/portb-salent.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">portb-salent.asm</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=149>
+					<P><A HREF="download/m68ics08/portb-salent.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">portb-salent.asm</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><A HREF="download/as-hc08/portb-salent.S19"><FONT SIZE=2><FONT FACE="Arial, sans-serif">portb-salent.S19</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PUERTO B</B>.
+					Ejemplo de configuraci&oacute;n de pines para entrada y salida.
+					Los 4 bits de mayor peso del puerto B se configuran para salida
+					y los 4 de menor peso para entrada</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><A HREF="download/as-hc08/portd-sal.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">portd-sal.asm</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=149>
+					<P><A HREF="download/m68ics08/portd-sal.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">portd-sal.asm</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><A HREF="download/as-hc08/portd-sal.S19"><FONT SIZE=2><FONT FACE="Arial, sans-serif">portd-sal.S19</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PUERTO D</B>.
+					Ejemplo de configuraci&oacute;n del puerto D para salida. Se
+					configuran todos los pines para salida y se env&iacute;a un
+					valor. Si se conectan leds se puede visualizar el dato.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P><A HREF="download/as-hc08/tim-delay.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tim-delay.asm</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=149>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/m68ics08/tim-delay.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tim-delay.asm</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/tim-delay.S19"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tim-delay.S19</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TEMPORIZADOR
+					1</B>. Ejemplo de c&oacute;mo realizar una pausa por espera
+					activa (sin interrupciones), utilizando el temporizador 1. Se
+					pueden hacer esperas desde 100ms hasta 25 segundos.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/tim-ov-ledp.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tim-ov-ledp.asm</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=149>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/tim-ov-ledp.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tim-ov-ledp.asm</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/tim-ov-ledp.S19"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tim-ov-ledp.S19</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TEMPORIZADOR
+					1</B>. Se hace parpadear un led conectado al Bit 0 del puerto B,
+					usando la interrupcion de overflow del TIM1</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/tim-cmp0-ledp.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tim-cmp0-ledp.asm</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=149>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/m68ics08/tim-cmp0-ledp.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tim-cmp0-ledp.asm</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/tim-cmp0-ledp.S19"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tim-cmp0-ledp.S19</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TEMPORIZADOR
+					1</B>. Se hace parpadear un led conectado al Bit 0 del puerto B,
+					usando la interrupcion del comparador 0 del TIM1</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><A HREF="download/as-hc08/tim-cmp01-ledp.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tim-cmp01-ledp.asm</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=149>
+					<P><A HREF="download/m68ics08/tim-cmp01-ledp.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tim-cmp01-ledp.asm</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/tim-cmp01-ledp.S19">tim-cmp01-ledp.S19</A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TEMPORIZADOR
+					1</B>. Con el canal 0 se hace parpadear un led conectado al bit
+					PB0 y con el 1 otro conectado al bit PB1, mediante
+					interrupciones.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/tim-cap0.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tim-cap0.asm</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=149>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/m68ics08/tim-cap0.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tim-cap0.asm</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/tim-cap0.S19">tim-cap0.S19</A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TEMPORIZADOR
+					1</B>. Ejemplo para el capturador 0, que est&aacute; asociado al
+					PIN PTD4. Cada vez que hay una transici&oacute;n en ese pin
+					(paso de 0-1 o de 1-0) se incrementar el valor sacado por el
+					puerto B</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/tim-pwm-fut.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tim-pwm-fut.asm</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=149>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/m68ics08/tim-pwm-fut.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tim-pwm-fut.asm</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/tim-pwm-fut.S19">tim-pwm-fut.S19</A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TEMPORIZADOR
+					1</B>. Ejemplo de posicionamiento de servos del tipo FUTABA
+					3003. Se utiliza el temporizador 1 (TIM 1). El posicionamiento
+					se hace por interrupciones. Se usa la interrupcion de overflow
+					para determinar el periodo de la senal PWM (20ms) y el
+					comparador 0 para calcular el ancho del pulso</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P><A HREF="download/as-hc08/tim-pwm-fut8.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tim-pwm-fut8.asm</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=149>
+					<P><A HREF="download/m68ics08/tim-pwm-fut8.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tim-pwm-fut8.asm</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/tim-pwm-fut8.S19">tim-pwm-fut8.S19</A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TEMPORIZADOR
+					1</B>. Posicionamiento de 8 servos del tipo FUTABA 3003.
+					utilizando el TIM1.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/sci-eco.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sci-eco.asm</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=149>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/m68ics08/sci-eco.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sci-eco.asm</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/sci-eco.S19">sci-eco.S19</A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>SCI</B>.
+					Ejemplo de uso de las comunicaciones serie. Se hace eco de todo
+					lo recibido</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/ad-test1.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ad-test1.asm</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=149>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/m68ics08/ad-test1.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ad-test1.asm</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/ad-test1.S19">ad-test1.S19</A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>CONVERSOR A/D</B>.
+					Prueba del conversor analogico/digital .Se leen muestras del
+					CANAL 0 (PB0) y se sacan por el puerto A</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/sensor1.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sensor1.asm</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=149>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/m68ics08/sensor1.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sensor1.asm</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/sensor1.S19">sensor1.S19</A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>SENSORES
+					CNY70</B>. Ejemplo de manejo del sensor CNY70, en modo digital.
+					Se lee el sensor IR1 (Conectado al pin PTC5) y se saca su estado
+					por el puerto B</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P><A HREF="download/as-hc08/sensor3.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sensor3.asm</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=149>
+					<P><A HREF="download/m68ics08/sensor3.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sensor3.asm</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/sensor3.S19">sensor3.S19</A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>SENSORES
+					CNY70</B>. Ejemplo de manejo del sensor CNY70, en modo digital.
+					Se lee el sensor IR3 (Conectado al pin PTA5) y se saca su estado
+					por el puerto B</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/sensores.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sensores.asm</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=149>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/m68ics08/sensores.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sensores.asm</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/sensores.S19">sensores.S19</A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>SENSORES
+					CNY70</B>. Ejemplo de manejo de los 4 sensores CNY70, en modo
+					digital. Su estado se refleja en los bits PB0-PB4 del puerto B</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/motor-on.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">motor-on.asm</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=149>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/m68ics08/motor-on.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">motor-on.asm</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/motor-on.S19">motor-on.S19</A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Verdana, sans-serif"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>MOTORES</B>.</FONT>
+					<FONT FACE="Arial, sans-serif">Ejemplo de activaci&oacute;n de
+					los motores 1 y 2. El programa los pone en marcha y se queda en
+					un bucle infinito</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/motor-sec.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">motor-sec.asm</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=149>
+					<P><A HREF="download/m68ics08/motor-sec.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">motor-sec.asm</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/as-hc08/motor-sec.S19">motor-sec.S19</A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>MOTORES</B>.
+					Ejemplo para los motores 1 y 2. Se hace que vayan hacia
+					adelante, atr&aacute;s, derecha, izquierda y finalmente se
+					paran.</FONT></FONT></P>
+				</TD>
+			</TR>
+		</TBODY>
+		<TBODY>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/ejemplos-as-hc08.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ejemplos-as-hc08.tgz</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=149>
+					<P><A HREF="download/ejemplos-m68ics08.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ejemplos-m68ics08.tgz</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>---------------</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TODOS LOS
+					EJEMPLOS ANTERIORES</B></FONT></FONT></P>
+				</TD>
+			</TR>
+		</TBODY>
+	</TABLE>
+</DL>
+<H1><A NAME="Ejemplos C|outline"></A>Ejemplos C</H1>
+<P><FONT FACE="Arial, sans-serif">Ejemplos para el compilador SDCC,
+probados en una m&aacute;quina Linux</FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<DL>
+	<DD>
+	<TABLE WIDTH=858 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+		<COL WIDTH=848>
+		<TR>
+			<TD WIDTH=848>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>Ejemplos en c</B></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+	<DD>
+	<TABLE WIDTH=858 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=COLS>
+		<COL WIDTH=127>
+		<COL WIDTH=713>
+		<TBODY>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>Fichero</B></FONT></P>
+				</TD>
+				<TD WIDTH=713>
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>Descripci&oacute;n</B></FONT></P>
+				</TD>
+			</TR>
+		</TBODY>
+		<TBODY>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><A HREF="download/c/modelo-c.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">modelo-c.tgz</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Plantilla para
+					la realizaci&oacute;n de otros programas</B>. Contiene los
+					ficheros con la definici&oacute;n de los registros del 6808,
+					ficheros makefiles de ejemplo, etc.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/c/modelo.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">modelo.c</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Plantilla
+					modelo</B> para hacer programas en C</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/c/porta-sal.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">porta-sal.c</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PUERTO A</B>.
+					Ejemplo de configuraci&oacute;n del puerto A para salida. Se
+					configuran todos los pines para salida y se env&iacute;a un
+					valor. Si se conectan leds se puede visualizar el dato.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/c/porta-salent.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">porta-salent.c</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PUERTO A</B>.
+					Ejemplo de configuraci&oacute;n de pines para entrada y salida.
+					Los 4 bits de mayor peso del puerto A se configuran para salida
+					y los 4 de menor peso para entrada</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/c/portb-sal.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">portb-sal.c</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PUERTO B</B>.
+					Ejemplo de configuraci&oacute;n del puerto B para salida. Se
+					configuran todos los pines para salida y se env&iacute;a un
+					valor. Si se conectan leds se puede visualizar el dato.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/c/portb-salent.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">portb-salent.c</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PUERTO B</B>.
+					Ejemplo de configuraci&oacute;n de pines para entrada y salida.
+					Los 4 bits de mayor peso del puerto B se configuran para salida
+					y los 4 de menor peso para entrada</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/c/portd-sal.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">portd-sal.c</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PUERTO D</B>.
+					Ejemplo de configuraci&oacute;n del puerto D para salida. Se
+					configuran todos los pines para salida y se env&iacute;a un
+					valor. Si se conectan leds se puede visualizar el dato.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/c/tim-delay.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tim-delay.c</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TEMPORIZADOR
+					1</B>. Ejemplo de c&oacute;mo realizar una pausa por espera
+					activa (sin interrupciones), utilizando el temporizador 1. Se
+					pueden hacer esperas desde 100ms hasta 25 segundos.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/c/tim-ov-ledp.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tim-ov-ledp.c</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TEMPORIZADOR
+					1</B>. Se hace parpadear un led conectado al Bit 0 del puerto B,
+					usando la interrupcion de overflow del TIM1</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/c/tim-cmp0-ledp.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tim-cmp0-ledp.c</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TEMPORIZADOR
+					1</B>. Se hace parpadear un led conectado al Bit 0 del puerto B,
+					usando la interrupcion del comparador 0 del TIM1</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/c/tim-cmp01-ledp.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tim-cmp01-ledp.c</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TEMPORIZADOR
+					1</B>. Con el canal 0 se hace parpadear un led conectado al bit
+					PB0 y con el 1 otro conectado al bit PB1, mediante
+					interrupciones.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/c/tim-cap0.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tim-cap0.c</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TEMPORIZADOR
+					1</B>. Ejemplo para el capturador 0, que est&aacute; asociado al
+					PIN PTD4. Cada vez que hay una transici&oacute;n en ese pin
+					(paso de 0-1 o de 1-0) se incrementar el valor sacado por el
+					puerto B</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/c/tim-pwm-fut.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tim-pwm-fut.c</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TEMPORIZADOR
+					1</B>. Ejemplo de posicionamiento de servos del tipo FUTABA
+					3003. Se utiliza el temporizador 1 (TIM 1). El posicionamiento
+					se hace por interrupciones. Se usa la interrupcion de overflow
+					para determinar el periodo de la senal PWM (20ms) y el
+					comparador 0 para calcular el ancho del pulso</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/c/tim-pwm-fut8.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tim-pwm-fut8.c</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TEMPORIZADOR
+					1</B>. Posicionamiento de 8 servos del tipo FUTABA 3003.
+					utilizando el TIM1.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/c/delay.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">delay.c</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>DELAY. M&oacute;dulo
+					para hacer pausas, mediante espera activa.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/c/delay.h"><FONT SIZE=2><FONT FACE="Arial, sans-serif">delay.h</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>DELAY. Prototipos
+					y definiciones para el m&oacute;dulo delay.c</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/c/sci.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sci.c</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>SCI</B>.
+					M&oacute;dulo para comunicaciones serie. Funciones para enviar,
+					recibir y configurar el SCI</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P><A HREF="download/c/sci.h"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sci.h</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>SCI</B>.
+					Prototipos y definiciones para el m&oacute;dulo sci.c</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><A HREF="download/c/sci-eco.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sci-eco.c</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>SCI</B>.
+					Ejemplo de uso de las comunicaciones serie. Se hace eco de todo
+					lo recibido</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/c/sci-menu.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sci-menu.c</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>SCI</B>. Se
+					env&iacute;a un men&uacute; por el SCI para que el usuario pueda
+					interactuar</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/c/ad-test1.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ad-test1.c</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>CONVERSOR A/D</B>.
+					Prueba del conversor analogico/digital .Se leen muestras del
+					CANAL 0 (PB0) y se sacan por el puerto A</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/c/sensor1.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sensor1.c</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>SENSORES
+					CNY70</B>. Ejemplo de manejo del sensor CNY70, en modo digital.
+					Se lee el sensor IR1 (Conectado al pin PTC5) y se saca su estado
+					por el puerto B</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/c/sensor3.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sensor3.c</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>SENSORES
+					CNY70</B>. Ejemplo de manejo del sensor CNY70, en modo digital.
+					Se lee el sensor IR3 (Conectado al pin PTA5) y se saca su estado
+					por el puerto B</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/c/sensores.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sensores.c</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>SENSORES
+					CNY70</B>. Ejemplo de manejo de los 4 sensores CNY70, en modo
+					digital. Su estado se refleja en los bits PB0-PB4 del puerto B</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/c/motor-on.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">motor-on.c</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Verdana, sans-serif"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>MOTORES</B>.</FONT>
+					<FONT FACE="Arial, sans-serif">Ejemplo de activaci&oacute;n de
+					los motores 1 y 2. El programa los pone en marcha y se queda en
+					un bucle infinito</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/c/motor-sec.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">motor-sec.c</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>MOTORES</B>.
+					Ejemplo para los motores 1 y 2. Se hace que vayan hacia
+					adelante, atr&aacute;s, derecha, izquierda y finalmente se
+					paran.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/c/uambot-linea.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">uambot-linea.c</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>ROBOT</B>.
+					Programa para hacer que el robot siga una l&iacute;nea negra</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=127>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/ejemplos-c.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ejemplos-c.tgz</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=713>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TODOS LOS
+					EJEMPLOS ANTERIORES</B></FONT></FONT></P>
+				</TD>
+			</TR>
+		</TBODY>
+	</TABLE>
+</DL>
+<P><BR><BR>
+</P>
+<HR>
+<H1><A NAME="links"></A><FONT FACE="Arial, sans-serif">Links</FONT></H1>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><A HREF="http://www.ii.uam.es/~gdrivera/robotica/inicio.htm"><FONT FACE="Arial, sans-serif">Asignatura
+	de Rob&oacute;tica</FONT></A>, en la EPS de la Universidad Aut&oacute;noma
+	de Madrid. </FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><A HREF="http://crm.ii.uam.es/web/"><FONT FACE="Arial, sans-serif">Club
+	de Rob&oacute;tica-Mecatr&oacute;nica</FONT></A>,de la EPS (UAM) </FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><A HREF="http://sdcc.sourceforge.net/">SDCC</A>.
+	Compilador cruzado de C para el 68hc08, Libre y multiplataforma.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><A HREF="http://www.pemicro.com/ics08/"><FONT FACE="Arial, sans-serif">Entorno
+	de desarrollo M68ICS08</FONT></A>, de la empresa <B>P&amp;E
+	Microcomputer Systems. </B>S&oacute;lo para Windows.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><A HREF="http://www.metrowerks.com/MW/Develop/Embedded/HC08/Default.htm">Entorno
+	CodeWarrior</A>, de la empresa MetroWerks. Entorno integrado para
+	desarrollo de aplicaciones en C. S&oacute;lo <B>plataformas Windows</B>.</FONT></P>
+	<LI><P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><A HREF="../gpbot-down/gpbot-down.html">GPBOT-DOWN</A>.
+	Programaci&oacute;n de la GPBOT desde entornos Linux.</FONT></FONT></P>
+</UL>
+<HR>
+<H1><A NAME="noticias"></A><FONT FACE="Arial, sans-serif">Noticias</FONT></H1>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>27/Mayo/2004</B>:
+	Publicada p&aacute;gina en la web </FONT>
+	</P>
+</UL>
+<HR>
+<H1><A NAME="Cr&eacute;ditos|outline"></A><FONT FACE="Arial, sans-serif">Cr&eacute;ditos</FONT></H1>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><A HREF="http://www.ii.uam.es/~gdrivera/"><FONT FACE="Arial, sans-serif">Guillermo
+	Gonz&aacute;lez de Rivera</FONT></A>. Dise&ntilde;ador del sistema
+	de desarrollo GPBOT.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><A HREF="http://www.ii.uam.es/~igonzale/">Iv&aacute;n
+	Gonz&aacute;lez</A>. Coautor del manual de programaci&oacute;n de la
+	GPBOT. Parte de los ejemplos de esta p&aacute;gina est&aacute;n
+	basados en sus programas.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Carlos Jes&uacute;s
+	Venegas</B>. Coautor del manual de programaci&oacute;n de la GPBOT.
+	Parte de los ejemplos de esta p&aacute;gina est&aacute;n basados en
+	sus programas.</FONT></P>
+</UL>
+<HR>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="http://www.iearobotics.com/personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A><A HREF="http://www.iearobotics.com/">
+</A><FONT SIZE=2><FONT FACE="Arial, sans-serif">. 2004</FONT></FONT></ADDRESS>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Se
+conceden permisos para copiar, distribuir y modificar la informaci&oacute;n
+contenida en esta p&aacute;gina, siempre y cuando se mantenga esta
+nota</FONT></FONT></ADDRESS>
+<P STYLE="margin-bottom: 0cm"><A HREF="http://www.iearobotics.com/"><FONT SIZE=2>IEAROBOTICS</FONT></A>
+</P>
+</BODY>
+</HTML>
