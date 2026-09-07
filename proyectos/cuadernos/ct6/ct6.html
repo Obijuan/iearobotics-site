@@ -1,0 +1,579 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>Cuaderno t&eacute;cnico 6: Desarrollo de aplicaciones multiplataforma Linux/Windows, para consola, con Cygwin</TITLE>
+	<META NAME="KEYWORDS" CONTENT="microcontrolador, PIC, ct6811, grabaci&oacute;n, hardware">
+
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>Cuaderno t&eacute;cnico 6: Desarrollo de
+				aplicaciones multiplataforma Linux/Windows, para consola, con
+				Cygwin</B></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=728 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=90>
+			<COL WIDTH=79>
+			<COL WIDTH=68>
+			<COL WIDTH=58>
+			<COL WIDTH=76>
+			<COL WIDTH=62>
+			<COL WIDTH=44>
+			<COL WIDTH=64>
+			<COL WIDTH=62>
+			<COL WIDTH=83>
+			<TR>
+				<TD WIDTH=90>
+					<P><A HREF="#Introducci&oacute;n|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Introducci&oacute;n</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">]</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=79>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="#Motivaci&oacute;n|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Motivacion]</FONT></FONT></A>]</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=68>
+					<P><A HREF="#Metodolog&iacute;a de desarrollo|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[desarrollo]</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=58>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="#CYGWIN|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Cygwin]</FONT></FONT></A>]</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=76>
+					<P><A HREF="#Instalaci&oacute;n de Cygwin (s&oacute;lo para desarrolladores)|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Instalaci&oacute;n]</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=62>
+					<P><A HREF="#Ejemplo completo|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Ejemplo]</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=44>
+					<P><A HREF="#Autor|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Autor</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">]</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=64>
+					<P><A HREF="#Licencia|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Licencia]</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=62>
+					<P><A HREF="#Noticias|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Noticias]</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=83>
+					<P><A HREF="#Download|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Download]</FONT></FONT></A></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/WinTux.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=125 HEIGHT=129 BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="Introducci&oacute;n|outline"></A>Introducci&oacute;n</H2>
+<P><FONT FACE="Arial, sans-serif">Las <SPAN STYLE="text-decoration: none"><B>aplicaciones
+multiplataforma</B></SPAN> son aquellas que pueden funcionar en
+<B>diferentes sistemas operativos y/o ordenadores</B>, pero el c&oacute;digo
+fuente es el mismo. Los programadores tendemos a escribir programas
+s&oacute;lo v&aacute;lidos para nuestra plataforma, olvid&aacute;ndonos
+de que hay usuarios que trabajan en otras.</FONT></P>
+<P><FONT FACE="Arial, sans-serif">Una de las <B>grandes ventajas</B>
+de las aplicaciones multiplataformas es que dan la <B>libertad</B> al
+usuario de poder <B>utilizar la m&aacute;quina que m&aacute;s le
+guste</B>. Unos usuarios prefieren Linux (como es mi caso), otros
+prefieren Windows, otros MAC, etc. El usuario debe poder elegir.
+Normalmente, son los fabricantes los que deciden por nosotros: cuando
+sacan un nuevo software, s&oacute;lo est&aacute; disponible para las
+m&aacute;quinas que ellos decidan. </FONT>
+</P>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif">En este
+cuaderno t&eacute;cnico se explica <B>c&oacute;mo desarrollar
+aplicaciones para consola</B> (no gr&aacute;ficas) <B>en entornos
+Linux</B> <B>que se puedan compilar para m&aacute;quinas Windows</B>,
+<SPAN STYLE="background: #ffff00"><FONT COLOR="#000000">sin tener que
+cambiar ni una sola l&iacute;nea de c&oacute;digo fuente</FONT></SPAN><SPAN STYLE="background: #ffffff">.</SPAN></FONT></P>
+<TABLE WIDTH=429 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=331>
+	<COL WIDTH=82>
+	<THEAD>
+		<TR>
+			<TD WIDTH=331>
+				<P><FONT FACE="Arial, sans-serif">Para ello utilizaremos la
+				herramienta <A HREF="http://www.cygwin.com/">CYGWIN</A>. </FONT>
+				</P>
+			</TD>
+			<TD WIDTH=82 VALIGN=TOP>
+				<P ALIGN=LEFT><A HREF="http://www.cygwin.com/"><IMG SRC="images/cygwin-icon.png" NAME="HTTP://WWW.CYGWIN.COM/" ALIGN=LEFT WIDTH=37 HEIGHT=37 BORDER=0><BR CLEAR=LEFT></A><BR>
+				</P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2><A NAME="Motivaci&oacute;n|outline"></A>Motivaci&oacute;n</H2>
+<P><FONT FACE="Arial, sans-serif">Las aplicaciones para consola que
+hab&iacute;a desarrollado hasta ahora <B>s&oacute;lo funcionaban en
+m&aacute;quinas Linux</B>, como por ejemplo el programa <A HREF="../../../personal/juan/proyectos/skypic-down/skypic.html">skypic-down</A>,
+para grabar programas en la <A HREF="../../skypic/skypic.html">tarjeta
+SKYPIC</A>, o el <A HREF="../../../personal/juan/proyectos/gpbot-down/gpbot-down.html">gpbot-down</A>,
+para hacer lo propio con la <A HREF="../../../personal/juan/proyectos/gpbot/gpbot.html">tarjeta
+GPBOT</A>. </FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif">Estos programas, junto con la
+<A HREF="../../stargate/clientes/libstargate/libstargate.html">librer&iacute;a
+stargate</A>, los utilizo para la programaci&oacute;n y el control de
+Robots. Con la idea de hacerlos multiplataforma, para que tambi&eacute;n
+los usuarios de Windows los pudiesen utilizar, empec&eacute; a
+realizar pruebas con <A HREF="http://www.cygwin.com/">CYGWIN</A>.</FONT></P>
+<P><FONT FACE="Arial, sans-serif">La experiencia result&oacute;
+positiva, as&iacute; que he decidido hacer este cuaderno t&eacute;cnico
+para que no se me olviden los detalles y para que otros puedan
+tambi&eacute;n hacer aplicaciones portables.</FONT></P>
+<HR>
+<H2><A NAME="Metodolog&iacute;a de desarrollo|outline"></A>Metodolog&iacute;a
+de desarrollo</H2>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif">Sin duda existen otras
+maneras de hacer c&oacute;digo portable. La metodolog&iacute;a que
+aqu&iacute; emplearemos se basa en <B>las herramientas de desarrollo
+de GNU</B> (GCC, make, etc) y en la idea de disponer de <B>un &uacute;nico
+c&oacute;digo fuente</B>, para no tener que estar manteniendo dos
+versiones de nuestra aplicaci&oacute;n (la de Linux y la de Windows).</FONT></P>
+<P ALIGN=CENTER><IMG SRC="images/figura1.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=590 HEIGHT=154 BORDER=0></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif">Las aplicaciones que
+programemos deben cumplir el est&aacute;ndar <A HREF="http://www.knosof.co.uk/posix.html">POSIX</A>
+(Portable Operating System Interface), donde est&aacute;n definidas
+las llamadas al sistema y funciones que podemos utilizar para que el
+programa sea portable a cualquier sistema operativo compatible con
+<A HREF="http://www.knosof.co.uk/posix.html"><FONT FACE="Arial, sans-serif">POSIX</FONT></A>.</FONT></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><B>Los sistemas
+Linux/Unix cumplen con este est&aacute;ndar</B>, por eso es sencillo
+hacer aplicaciones portables entre ellos. Pero como el lector podr&aacute;
+adivinar, Windows no lo es, aunque anunciaron que el NT s&iacute; lo
+ser&iacute;a (pero desgraciadamente no fue as&iacute;. Microsoft no
+est&aacute; por la compatibilidad. Al menos de momento, dado su
+monopolio).</FONT></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif">Para solucionar esto, se
+cre&oacute; el proyecto <A HREF="http://www.cygwin.com/"><FONT FACE="Arial, sans-serif">CYGWIN
+</FONT></A>, que implementa una capa <A HREF="http://www.knosof.co.uk/posix.html">POSIX</A>
+sobre Windows, de manera que cualquier aplicaci&oacute;n que cumpla
+con ese est&aacute;ndar se podr&aacute; ejecutar bajo Windows. Con
+ello se logra el objetivo de la portabilidad, a partir de un c&oacute;digo
+fuente &uacute;nico.</FONT></P>
+<HR>
+<H2><A NAME="CYGWIN|outline"></A>CYGWIN</H2>
+<P><FONT FACE="Arial, sans-serif">El proyecto <A HREF="http://www.cygwin.com/"><FONT FACE="Arial, sans-serif">CYGWIN</FONT></A>
+consta de dos partes:</FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Una API <A HREF="http://www.knosof.co.uk/posix.html"><FONT FACE="Arial, sans-serif">POSIX</FONT></A></B><A HREF="http://www.knosof.co.uk/posix.html">
+	</A>, para que Windows cumpla con este est&aacute;ndar. Es una DLL
+	(<A HREF="download/cygwin1.dll">cygwin1.dll</A>)</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Las herramientas de GNU y
+	otras utilidades</B> compiladas para funcionar bajo Windows/Cygwin.
+	Con ellas compilaremos nuestras aplicaciones, de la misma manera que
+	lo hacemos en Linux.</FONT></P>
+</UL>
+<P><FONT FACE="Arial, sans-serif">En el siguiente dibujo se han
+esquematizado las <B>partes de Cygwin</B>. La <A HREF="download/cygwin1.dll">cygwin1.dll</A>
+(gris oscuro) es la que ofrece la capa <A HREF="http://www.knosof.co.uk/posix.html"><FONT FACE="Arial, sans-serif">POSIX
+</FONT></A>. Cualquier aplicaci&oacute;n que utilice exclusivamente
+esta API, ser&aacute; una <B>aplicaci&oacute;n portable</B> (<I>color
+amarillo</I>). Cualquier aplicaci&oacute;n que use la API nativa de
+Windows, no lo ser&aacute; (<I>color azul</I>). Para compilar las
+aplicaciones portables desde una m&aacute;quina Windows, necesitamos
+las herramientas GNU para cygwin (<I>color verde</I>).</FONT></P>
+<P ALIGN=CENTER><IMG SRC="images/figura2.png" NAME="Imagen11" ALIGN=MIDDLE WIDTH=455 HEIGHT=140 BORDER=0></P>
+<P ALIGN=CENTER><BR><BR>
+</P>
+<P ALIGN=LEFT><A HREF="http://www.cygwin.com/"><FONT FACE="Arial, sans-serif">Cygwin
+</FONT></A><FONT FACE="Arial, sans-serif">, por tanto, <B>NO ES UN
+EMULADOR</B>. Es una capa intermedia que convierte las llamadas <A HREF="http://www.knosof.co.uk/posix.html"><FONT FACE="Arial, sans-serif">POSIX
+</FONT></A>a llamadas de la API nativa de Windows.</FONT></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif">Adem&aacute;s, permite
+que las aplicaciones <A HREF="http://www.knosof.co.uk/posix.html"><FONT FACE="Arial, sans-serif">POSIX
+</FONT></A>&ldquo;vean&rdquo; un <B>sistema de ficheros igual al de
+los sistemas Linux/Unix</B>. Por ejemplo, para abrir el puerto serie
+se utilizar&aacute; la llamada OPEN sobre el dispositivo &ldquo;/dev/ttyS0&rdquo;
+(que es el equivalente al COM1 de Windows).</FONT></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif">Existen muchas
+utilidades de <A HREF="http://www.cygwin.com/"><FONT FACE="Arial, sans-serif">Cygwin</FONT></A>,
+como por ejemplo una Shell (la bash de Linux portada), lo que permite
+trabajar en las m&aacute;quinas Windows como si de sistemas
+Linux/Unix se tratase.</FONT></P>
+<HR>
+<H2>Usuarios finales</H2>
+<P><FONT FACE="Arial, sans-serif">Supongamos que hemos desarrollado
+una aplicaci&oacute;n para consola que cumple la norma <A HREF="http://www.knosof.co.uk/posix.html"><FONT FACE="Arial, sans-serif">POSIX</FONT></A>
+y que por tanto es Multiplataforma. <B>&iquest;Qu&eacute; tiene que
+hacer el usuario final para ejecutarla?</B>. Muy sencillo, basta con
+entregarle el fichero ejecutable .exe y la DLL de Cygwin:
+cygwin1.dll. Ya est&aacute;:</FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><I>mi_aplicaci&oacute;n.exe</I></FONT></P>
+	<LI><P><A HREF="download/cygwin1.dll"><FONT FACE="Arial, sans-serif">cygwin1.dll</FONT></A></P>
+</UL>
+<P><FONT FACE="Arial, sans-serif">Con s&oacute;lo esos dos ficheros,
+el usuario final podr&aacute; ejecutar el programa <I>mi_aplicaci&oacute;n.exe</I>.
+<B>NO SERA NECESARIA NINGUNA OTRA INSTALACI&Oacute;N</B>.</FONT></P>
+<HR>
+<H2><A NAME="historia"></A>Desarrolladores</H2>
+<P><TT><FONT FACE="Arial, sans-serif">Normalmente, <B>desarrollaremos
+las aplicaciones bajo Linux</B>. Una vez que est&eacute;n
+funcionando, comenzamos a portarlas a <A HREF="http://www.cygwin.com/"><FONT FACE="Arial, sans-serif">Cygwin
+</FONT></A>. Si hemos hecho que sea una aplicaci&oacute;n 100% <A HREF="http://www.knosof.co.uk/posix.html"><FONT FACE="Arial, sans-serif">POSIX
+</FONT></A>, no surgir&aacute; ning&uacute;n problema. Si no es as&iacute;,
+al compilar bajo <TT><A HREF="http://www.cygwin.com/"><FONT FACE="Arial, sans-serif">Cygwin
+</FONT></A></TT>saldr&aacute;n mensajes de error que tendremos que
+solucionar.</FONT></TT></P>
+<P><TT><FONT FACE="Arial, sans-serif">Supongamos que ya tenemos
+nuestra aplicaci&oacute;n hecha en Linux. <B>Para compilarla para
+</B><TT><A HREF="http://www.cygwin.com/"><B><FONT FACE="Arial, sans-serif">Cygwin</FONT></B></A></TT>
+<B>necesitamos instalar las herramientas GNU para Cygwin</B>, as&iacute;
+como todos los ficheros necesarios para el desarrollo: librerias,
+ficheros .h, etc. Habr&aacute; que instalar bastantes paquetes, sin
+embargo, esto s&oacute;lo es necesario para el desarrollador. <B>El
+usuario final no tiene que hacer nada de esto</B>.</FONT></TT></P>
+<P><TT><FONT FACE="Arial, sans-serif">El proceso de instalaci&oacute;n
+se describe en la siguiente secci&oacute;n</FONT></TT></P>
+<HR>
+<H2><A NAME="alimentacion"></A><A NAME="Instalaci&oacute;n de Cygwin (s&oacute;lo para desarrolladores)|outline"></A>
+Instalaci&oacute;n de Cygwin (s&oacute;lo para desarrolladores)</H2>
+<P><FONT FACE="Arial, sans-serif">Hay muchos paquetes que se pueden
+instalar. Aqu&iacute; instalaremos los que vienen por defecto y los
+necesarios para poder trabajar con nuestro programa de ejemplo. <B>En
+total la instalaci&oacute;n ocupar&aacute; aproximadamente 90 MB</B>.
+Se puede conseguir una instalaci&oacute;n mucho m&aacute;s reducida,
+eliminado parte de los paquetes que se instalan por defecto, que son
+muchos y la mayor&iacute;a no se usan, pero por simplicidad hemos
+preferido dejarlo as&iacute;. No es el objetivo de este cuaderno
+t&eacute;cnico el describir para qu&eacute; sirven todos los
+paquetes.</FONT></P>
+<P><FONT FACE="Arial, sans-serif">La instalaci&oacute;n aqu&iacute;
+mostrada se ha probado en una m&aacute;quina Windows XP. Se ha
+empleado el usuario (obijuan) sin permisos de administrador. Los
+pasos para realizar la instalaci&oacute;n son:</FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Ir a la p&aacute;gina del</B>
+	<A HREF="http://www.cygwin.com/">proyecto Cygwin</A> y ejecutar el
+	programa <SPAN STYLE="text-decoration: none"><B>setup.exe</B></SPAN>,
+	pulsando sobre el icono:</FONT></P>
+</UL>
+<P ALIGN=CENTER><IMG SRC="images/cygwin-icon.png" NAME="Imagen4" ALIGN=MIDDLE WIDTH=37 HEIGHT=37 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-left: 2cm"><FONT FACE="Arial, sans-serif">Este
+programa es el que se utiliza para instalar nuevos paquetes as&iacute;
+como eliminarlos. Al ejecutarlos aparecer&aacute; una ventana como la
+siguiente:</FONT></P>
+<P ALIGN=CENTER><IMG SRC="images/pant1.jpg" NAME="Imagen3" ALIGN=MIDDLE WIDTH=512 HEIGHT=395 BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-left: 2cm"><BR><BR>
+</P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Seleccionar la forma de
+	instalaci&oacute;n.</B> La manera m&aacute;s c&oacute;moda es la
+	primera, en la que los paquetes seleccionados se bajar&aacute;n y se
+	instalar&aacute;n autom&aacute;ticamente. Podemos, si queremos, s&oacute;lo
+	bajar los paquetes para luego instalarlos localmente.</FONT></P>
+</UL>
+<P ALIGN=CENTER><IMG SRC="images/pant2.jpg" NAME="Imagen5" ALIGN=MIDDLE WIDTH=512 HEIGHT=395 BORDER=0></P>
+<P STYLE="margin-left: 2cm"><BR><BR>
+</P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Seleccionar el directorio
+	de instalaci&oacute;n</B>. Este ser&aacute; el directorio raiz (/)
+	que ver&aacute;n las aplicaciones de Cygwin. En nuestra instalaci&oacute;n
+	hemos utilizado la unidad D:, y el directorio cygwin. La instalaci&oacute;n
+	la hemos hecho s&oacute;lo para el usuario Obijuan (opci&oacute;n
+	just Me activada) y queremos que los ficheros de tipo texto los
+	trate como ficheros Unix.</FONT></P>
+</UL>
+<P ALIGN=CENTER><IMG SRC="images/pant3.jpg" NAME="Imagen6" ALIGN=MIDDLE WIDTH=512 HEIGHT=395 BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-left: 2cm"><BR><BR>
+</P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Seleccionar el directorio
+	donde se guardar&aacute;n los paquetes bajados</B>. En el proceso de
+	instalaci&oacute;n, se seleccionar&aacute;n paquetes. Antes de
+	instalarse se almacenar&aacute;n en ese directorio, por si m&aacute;s
+	adelante los queremos re-instalar. (Al finalizar el programa
+	setup.exe, no se borrar&aacute;n). <B>Es muy importante que este
+	directorio no se encuentre dentro del empleado para la instalaci&oacute;n
+	de Cygwin</B> (en nuestro caso D:\cygwin).</FONT></P>
+</UL>
+<P ALIGN=CENTER><IMG SRC="images/pant4.jpg" NAME="Imagen7" ALIGN=MIDDLE WIDTH=512 HEIGHT=395 BORDER=0></P>
+<P STYLE="margin-left: 2cm"><BR><BR>
+</P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Seleccionar el m&eacute;todo
+	de conexi&oacute;n a Internet</B>. En nuestro caso, tenemos conexi&oacute;n
+	directa (no hay ning&uacute;n PROXY).</FONT></P>
+</UL>
+<P ALIGN=CENTER><IMG SRC="images/pant5.jpg" NAME="Imagen8" ALIGN=MIDDLE WIDTH=512 HEIGHT=395 BORDER=0></P>
+<P STYLE="margin-left: 2cm"><BR><BR>
+</P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Selecci&oacute;n del
+	servidor de donde descargar los paquetes</B>. El que hemos utilizado
+	es: <B>rediris</B>.</FONT></P>
+</UL>
+<P ALIGN=CENTER><IMG SRC="images/pant6.jpg" NAME="Imagen9" ALIGN=MIDDLE WIDTH=512 HEIGHT=395 BORDER=0></P>
+<P STYLE="margin-left: 2cm"><BR><BR>
+</P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Selecci&oacute;n de los
+	paquetes</B>. Por simplicidad, instalaremos todos los paquetes que
+	vienen por defecto (aunque algunos no son necesarios) y adem&aacute;s
+	instalarmos los siguientes, que se encuentran <B>en la secci&oacute;n
+	de desarrollo</B> (<B>devel</B>):</FONT></P>
+</UL>
+<UL>
+	<UL>
+		<LI><P><FONT FACE="Arial, sans-serif"><B>binutils</B></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><B>gcc</B></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><B>gcc-mingw</B></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><B>make</B></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><B>pkgconfig</B> (no
+		necesario en para este ejemplo, pero siempre viene bien tenerlo
+		instalado)</FONT></P>
+	</UL>
+</UL>
+<P STYLE="margin-left: 2cm"><FONT FACE="Arial, sans-serif">Al
+seleccionarlos, autom&aacute;ticamente se auto-seleccionar&aacute;n
+los paquetes de los que dependen. </FONT>
+</P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Instalaci&oacute;n de los
+	paquetes</B>. pulsamos OK. Setup.exe comenzar&aacute; a bajarse los
+	paquetes y posteriormente descomprimirlos e instalarlos. Esto puede
+	llevar su tiempo, sobre todo si la conexi&oacute;n a internet no es
+	muy r&aacute;pida.</FONT></P>
+</UL>
+<P ALIGN=CENTER><IMG SRC="images/pant8.jpg" NAME="Imagen10" ALIGN=MIDDLE WIDTH=512 HEIGHT=395 BORDER=0></P>
+<P STYLE="margin-left: 2cm"><BR><BR>
+</P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Indicar que a&ntilde;ada el
+	icono de Cygwin</B>. Una vez finalizada la descarga e instalaci&oacute;n
+	de paquetes, aparecer&aacute; la ventana de abajo, donde marcaremos
+	la opci&oacute;n &ldquo;create icon on Desktop&rdquo;. Esto s&oacute;lo
+	hay que indicarlo la primera vez que se ejecuta Setup.exe. Las
+	siguientes veces, si ya est&aacute; el icono creado, dejamos la
+	casilla en blanco. </FONT>
+	</P>
+</UL>
+<P ALIGN=CENTER><IMG SRC="images/pant9.jpg" NAME="Imagen12" ALIGN=MIDDLE WIDTH=512 HEIGHT=395 BORDER=0></P>
+<P STYLE="margin-left: 2cm"><BR><BR>
+</P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Finalizaci&oacute;n de la
+	instalaci&oacute;n</B>. Pulsamos Finalizar y se nos crear&aacute; un
+	icono en nuestro escritorio desde el que tendremos acceso a la shell
+	de Cygwin. <A HREF="images/pant10.jpg">Aqu&iacute; puedes ver un
+	pantallazo</A> de un escritorio en el que se ha abierto la shell. La
+	instalaci&oacute;n de cygwin ha finalizado.</FONT></P>
+</UL>
+<HR>
+<H2><A NAME="software"></A>Probando la shell de Cygwin</H2>
+<P><FONT FACE="Arial, sans-serif"><A HREF="images/pant10.jpg">Aqu&iacute;
+puedes ver un pantallazo</A> de la shell en acci&oacute;n. Se trata
+de la Bash de Linux, portada para Cygwin. Desde ella se pueden
+ejecutar los comandos t&iacute;picos de los sistemas Linux/Unix:</FONT></P>
+<P><FONT FACE="Arial, sans-serif"><I>$ ls</I></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><I>$ mkdir desarrollo</I></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><I>$ cd desarrollo</I></FONT></P>
+<P><FONT FACE="Arial, sans-serif">etc...</FONT></P>
+<HR>
+<H2><A NAME="Ejemplo completo|outline"></A>Ejemplo completo</H2>
+<P><FONT FACE="Arial, sans-serif">Una vez instaladas las cygwin y
+comprobado que la shell funciona correctamente vamos a descargarnos
+las fuentes de un programa de ejemplo, para compilarlo y generar el
+ejecutable .exe.</FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Bajar el paquete</B>
+	<A HREF="../../../personal/juan/proyectos/consola_io/download/consola_io-1.0.tar.gz">consola_io-1.0.tar.gz</A>.
+	Se trata de un ejemplo muy sencillo para manejo de la consola en
+	Linux. La p&aacute;gina original es: <A HREF="../../../personal/juan/proyectos/consola_io/consola_io.html">consola_io</A></FONT>.
+	<FONT FACE="Arial, sans-serif">El programa de ejemplo que
+	compilaremos mostrar&aacute; un men&uacute; por la pantalla.
+	Mientras el usuario no escoja ninguna opci&oacute;n, habr&aacute;
+	una barrita giratoria en la parte inferior. </FONT>
+	</P>
+</UL>
+<P STYLE="margin-left: 2cm"><FONT FACE="Arial, sans-serif">El paquete
+lo podemos colocar en cualquier directorio dentro de nuestro &ldquo;home&rdquo;
+de cygwin. Nosotros lo hemos colocado en <I>~/desarrollo</I>, que se
+corresponde con el directorio Windows: &ldquo;<I>D:\Documents and
+Settings\obijuan\desarrollo</I>&rdquo;. En &ldquo;D:\Documents and
+Settings&rdquo; es el que cygwin a tomado como nuestro &ldquo;home&rdquo;.</FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Descomprimir el paquete</B>:
+	Dentro de la shell de Cygwin, nos situamos en ~/desarrollo y
+	descomprimimos el paquete:</FONT></P>
+</UL>
+<P STYLE="margin-left: 2cm"><FONT FACE="Arial, sans-serif"><I>$ cd
+desarrollo</I></FONT></P>
+<P STYLE="margin-left: 2cm"><FONT FACE="Arial, sans-serif"><I>$ tar
+vzxf consola_io-1.0.tar.gz</I></FONT></P>
+<P STYLE="margin-left: 2cm"><FONT FACE="Arial, sans-serif">Esto nos
+crea el directorio <I>consola_io-1.0</I> en donse se encuentran las
+fuentes.</FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><SPAN STYLE="text-decoration: none"><B>Compilar
+	con make</B></SPAN>: Usamos la herramienta make de GNU para
+	compilar:</FONT></P>
+</UL>
+<P STYLE="margin-left: 2cm"><FONT FACE="Arial, sans-serif">$ cd
+consola_io-1.0</FONT></P>
+<P STYLE="margin-left: 2cm"><FONT FACE="Arial, sans-serif">$ make</FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Ejecutar el programa de
+	ejemplo</B>. Si las herramientas de desarrollo est&aacute;n
+	correctamente instaladas, las fuentes se habr&aacute;n compilado y
+	habr&aacute; aparecido el fichero ejecutable test-consola-io.exe. Lo
+	ejecutamos:</FONT></P>
+</UL>
+<P STYLE="margin-left: 2cm"><FONT FACE="Arial, sans-serif"><I>$
+./test-consola-io.exe</I></FONT></P>
+<P STYLE="margin-left: 2cm"><FONT FACE="Arial, sans-serif">En el
+siguiente pantallazo podemos ver los procesos de comilaci&oacute;n y
+ejecuci&oacute;n del programa:</FONT></P>
+<P ALIGN=CENTER><IMG SRC="images/pant11.jpg" NAME="Imagen13" ALIGN=MIDDLE WIDTH=669 HEIGHT=384 BORDER=0></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Ejecutar desde MS/DOS</B>.
+	Si ya tengo el programa .exe generado y se lo quiero dar a un
+	usuario de Windows para que lo ejecute, tendr&eacute; que entregarle
+	el fichero <A HREF="download/test-consola-io.exe">test-consola-io.exe</A>
+	y <A HREF="download/cygwin1.dll">cygwin1.dll</A>. Se ponen en un
+	directorio cualquier de Windows y se ejecutan el exe. Tambi&eacute;n
+	es posible poner <A HREF="download/cygwin1.dll">cygwin1.dll</A> en
+	el PATH, o en el directorio en el que se encuentren las DLL's de
+	windows. Aqu&iacute; podemos ver un pantallazo del programa ejemplo
+	ejecutado desde una ventana de ms-dos:</FONT></P>
+</UL>
+<P ALIGN=CENTER><IMG SRC="images/pant12.jpg" NAME="Imagen14" ALIGN=MIDDLE WIDTH=669 HEIGHT=384 BORDER=0></P>
+<HR>
+<H2>Conclusiones</H2>
+<P><FONT FACE="Arial, sans-serif">Es muy importante desarrollar
+aplicaciones portables, a otros sistemas operativos. De esa forma
+damos libertad al usuario para que pueda escoger la plataforma que
+mejor se adapte a sus necesidades.</FONT></P>
+<P><FONT FACE="Arial, sans-serif">Conseguir que sean portables no es
+f&aacute;cil. En este cuaderno t&eacute;cnico hemos explicado <B>c&oacute;mo
+programar aplicaciones de consola para que funcionen en sistemas
+Linux</B> y c&oacute;mo es posible <B>compilarlos para plataformas
+Windows</B>, <SPAN STYLE="background: #ffff00">sin modificar las
+fuentes</SPAN>. S&oacute;lo hay que hacer programas que cumplan con
+la norma <A HREF="http://www.knosof.co.uk/posix.html"><FONT FACE="Arial, sans-serif">POSIX
+</FONT></A>. </FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif">La herramienta <A HREF="http://www.cygwin.com/"><FONT FACE="Arial, sans-serif">CYGWIN</FONT></A>
+<B>NO ES UN EMULADOR</B>. Es una capa software que implementa la
+norma <A HREF="http://www.knosof.co.uk/posix.html"><FONT FACE="Arial, sans-serif">POSIX</FONT></A></FONT>,
+<FONT FACE="Arial, sans-serif">para los sistemas operativos Windows.
+Adem&aacute;s, incluye las herramientas de GNU y otras utilidades ya
+portadas para Windows.</FONT></P>
+<P><FONT FACE="Arial, sans-serif">Este cuaderno t&eacute;cnico est&aacute;
+restringido a <B>aplicaciones de consola</B>. La mayor&iacute;a de
+aplicaciones son gr&aacute;ficas, pero nos puede interesar usar la
+consola para el desarrollo de: <I>compiladores</I>, <I>ensambladores</I>,
+<I>grabadores de microcontroladores</I>, <I>servidores</I>, etc.
+Tenemos la certeza de que estas aplicaciones, si son POSIX, van a
+funcionar para Windows. </FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif"><B>Por el precio de un desarrollo
+para Linux, tenemos gratis la aplicaci&oacute;n en Windows :-) </B></FONT>
+</P>
+<P><BR><BR>
+</P>
+<HR>
+<H2>Documentaci&oacute;n y referencias</H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif">P&aacute;gina principal del
+	<A HREF="http://www.cygwin.com/">proyecto Cygwin</A>. Aqu&iacute; se
+	puede encontrar la lista de paquetes oficial y desde donse se puede
+	instalar la &uacute;ltima versi&oacute;n. Tambi&eacute;n hay
+	disponible mucha documentaci&oacute;n.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><A HREF="http://www.cygwin.com/cygwin-ug-net/">Gu&iacute;a
+	del usuario</A>, en ingl&eacute;s. Es la &ldquo;gu&iacute;a&rdquo;
+	oficial de Cygwin. Muy completa.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><A HREF="../../../personal/juan/proyectos/consola_io/consola_io.html">consola_io</A>.
+	P&aacute;gina principal del programa ejemplo utilizado en este
+	cuaderno. </FONT>
+	</P>
+	<LI><P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><A HREF="http://www.knosof.co.uk/posix.html"><FONT FACE="Arial, sans-serif">POSIX</FONT></A>,
+	(Portable Operating System Interface). Norma que describe las
+	llamadas al sistemas para que las aplicaciones sean portables.</FONT></P>
+</UL>
+<HR>
+<H2><A NAME="Download|outline"></A>Download</H2>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+		<COL WIDTH=256*>
+		<TR>
+			<TD WIDTH=100%>
+				<P ALIGN=CENTER><B>Ficheros para descargar</B> 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=80*>
+		<COL WIDTH=176*>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=31%>
+				<P><A HREF="download/cygwin1.dll">cygwin1.dll</A> (1.1MB)</P>
+			</TD>
+			<TD WIDTH=69%>
+				<P>DLL con la API de Cygwin. Necesaria para ejecutar los ficheros
+				.exe generados. Versi&oacute;n 1.5.10-3.</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=31%>
+				<P><A HREF="download/test-consola-io.exe">test-consola-io.exe</A>
+				(15KB)</P>
+			</TD>
+			<TD WIDTH=69%>
+				<P>Fichero ejemplo ejecutable, utilizado en este cuaderno t&eacute;cnico</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="Autor|outline"></A>Autor</H2>
+<UL>
+	<LI><P><A HREF="../../../personal/juan/index.html"><FONT FACE="Arial, sans-serif">Juan
+	Gonz&aacute;lez G&oacute;mez</FONT></A></P>
+</UL>
+<HR>
+<H2><A NAME="Licencia|outline"></A>Licencia</H2>
+<P><FONT FACE="Arial, sans-serif">Este <B>documento</B> se
+distribuyen bajo </FONT><A HREF="http://gugs.sindominio.net/licencias/fdl-es.html"><FONT FACE="Arial, sans-serif">licencia
+FDL</FONT></A> <FONT FACE="Arial, sans-serif">por lo que se permite
+su copia, modificaci&oacute;n y distribuci&oacute;n, siempre y cuando
+se mantenga esta nota.</FONT></P>
+<HR>
+<H2><A NAME="noticias"></A><A NAME="Noticias|outline"></A>Noticias</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>1/Oct/2004:
+	</B><SPAN STYLE="font-weight: medium">A&ntilde;adido enlace al
+	<A HREF="../index.html"><FONT FACE="Arial, sans-serif">&Iacute;ndice
+	de cuadernos t&eacute;cnicos</FONT></A></SPAN></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>23/Agosto/2004</B>:
+	Publicado cuaderno t&eacute;cnico en la web </FONT>
+	</P>
+</UL>
+<hr>
+<p><a href="../index.html"><b>[Indice de cuadernos técnicos]</b></a></p>
+<p><a href="/iearobotics-site/wiki">IEAROBOTICS</a> </P>
+<a href="../../../personal/juan/index.html">Juan González</a>
+</address>
+</body>
+</html>
