@@ -1,0 +1,591 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>Microbot SkyBot</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20080617;17023400">
+	<META NAME="CHANGEDBY" CONTENT="juan">
+	<META NAME="CHANGED" CONTENT="20080617;17044800">
+	<META NAME="KEYWORDS" CONTENT="robotica, microcontroladores, pic, hardware">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>MICROBOT SKYBOT</B> 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P><A HREF="#historia">[Historia]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#dos">[Caracter&iacute;sticas]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#mecanica">[Mec&aacute;nica]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#electronica">[Electr&oacute;nica]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#software">[Software]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#documentacion">[Documentaci&oacute;n]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#download">[Download]</A></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P><A HREF="#tres">[Autores]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#licencia">[Licencia]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#comercializa">[Comercializa]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#agradecimientos">[Agradecimientos]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#links">[Links]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#noticias">[Noticias]</A></P>
+			</TD>
+			<TD VALIGN=TOP></TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR><IMG SRC="images/skybot-3.jpg" NAME="gr&aacute;ficos1" ALIGN=BOTTOM WIDTH=320 HEIGHT=302 BORDER=0>
+</P>
+<P STYLE="border-top: none; border-bottom: 1.10pt double #808080; border-left: none; border-right: none; padding: 0cm">
+<!-- IntroducciÃ³n --><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=24*>
+	<COL WIDTH=232*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=9% BGCOLOR="#ffcc99">
+				<P ALIGN=CENTER><IMG SRC="../../personal/juan/Icono_aviso.png" NAME="gr&aacute;ficos6" ALIGN=MIDDLE WIDTH=24 HEIGHT=24 BORDER=0></P>
+			</TD>
+			<TD WIDTH=91% VALIGN=TOP BGCOLOR="#ffcc99">
+				<P ALIGN=CENTER><FONT FACE="Bitstream Vera Sans, sans-serif"><FONT SIZE=2><B>Esta
+				p&aacute;gina ya no se mantiene m&aacute;s (17/Junio/2008)</B></FONT></FONT></P>
+				<P ALIGN=CENTER><A HREF="http://www.iearobotics.com/wiki/index.php?title=Skybot"><B><FONT SIZE=2><FONT FACE="Bitstream Vera Sans, sans-serif">Acceso
+				a la nueva p&aacute;gina del Skybot en el wiki</FONT></FONT></B></A></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<H2><A NAME="uno"></A>Introducci&oacute;n 
+</H2>
+<P><B>SKYBOT</B> es una evoluci&oacute;n del robot <A HREF="../tritt/tritt.html">Tritt</A>.
+Tritt ten&iacute;a una estructura basada en kits de LEGO y una
+electr&oacute;nica basada en el microcontrolador 68hc11. <A HREF="../ct6811/ct6811.html">(Tarjeta
+CT6811)</A>. Estos dos componentes se han quedado obsoletos y nos
+hemos visto en la necesidad de sustituirlos por otros, pero
+manteniendo la filosof&iacute;a con la que se cre&oacute; Tritt: Ser
+un robot sencillo pensado para aquellos que se quieren <B>iniciar en
+el mundo de la micro rob&oacute;tica</B>. 
+</P>
+<P>SKYBOT tiene una estructura hecha a medida, son piezas de
+metacrilato cortadas industrialmente por l&aacute;ser. De esta forma
+dejamos de depender de los kits de LEGO, que cada a&ntilde;o
+cambiaban y nos obligaban a cambiar a nosotros tambi&eacute;n. La
+electr&oacute;nica de control utiliza la tarjeta <A HREF="../skypic/skypic.html">SKYPIC</A>,
+y en este caso sobre ella montamos el microcontrolador PIC16F876A de
+Michochip. La tarjeta de potencia en la versi&oacute;n 1.0 era la
+<A HREF="../ct293/ct293.html">tarjeta CT293+</A>, pero en la versi&oacute;n
+1.3 se ha cambiado por la <A HREF="../sky293/sky293.html">SKY293</A>
+la cual a&ntilde;ade un rele a la etapa de potencia y mejora la
+conexi&oacute;n de ambas tarjetas. 
+</P>
+<P>En SKYBOT se han a&ntilde;adido m&aacute;s sensores, en concreto
+lleva 4 sensores de infrarrojos de corta distancia, dos sensores de
+contacto y un sensor de luz. Los motores siguen siendo los <B>servos
+Futaba 3003</B>, trucados para poder funcionar como motores de
+corriente continua normales. 
+</P>
+<P STYLE="border-top: none; border-bottom: 1.10pt double #808080; border-left: none; border-right: none; padding: 0cm">
+<!-- historia --><BR><BR>
+</P>
+<H2><A NAME="historia"></A>Historia 
+</H2>
+<P>El nombre de <B>SKYBOT</B> surge de SKY, obtenido de la pel&iacute;cula
+Terminator, y usado en los nombre de la familia de tarjetas SKYPIC,
+SKY293, SKYNET, y de BOT en relaci&oacute;n a roBOT. La idea de
+SKYBOT surge como ya hemos comentado antes por la necesidad de seguir
+teniendo un robot b&aacute;sico con el cual poder seguir impartiendo
+cursos de rob&oacute;tica. 
+</P>
+<P>La Universidad Pontificia de Salamanca en Madrid y la CampusBot
+(CampusParty 2005) han sido dos factores determinantes para el
+desarrollo de SKYBOT. Las fechas m&aacute;s importantes en la
+historia del robot son: 
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><B>[Jul 2007]</B>: Taller de
+	Rob&oacute;tica en la Campus Bot. Campus Party 2007. 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>[Jul 2007]</B>: Taller de
+	Rob&oacute;tica en la Universidad Aut&oacute;noma de Madrid para
+	Institutos. UAM 2007. 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>[Feb 2007]</B>: II Taller de
+	Rob&oacute;tica en la Universidad Aut&oacute;noma de Madrid. UAM
+	2007. 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>[Jul 2006]</B>: Taller de
+	Rob&oacute;tica en la Campus Bot. Campus Party 2006. 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>[Feb 2006]</B>: I Taller de
+	Rob&oacute;tica en la Universidad Aut&oacute;noma de Madrid. UAM
+	2006. 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>[Nov 2005]</B>: Taller de
+	Rob&oacute;tica en la Universidad de C&aacute;diz. UCA 2005. 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>[Jul 2005]</B>: Taller de
+	Rob&oacute;tica de la Campus Bot. Campus Party 2005. 
+	</P>
+	<LI><P><B>[nov 2004]</B>: IV Semana de la Ciencia en Madrid.
+	Universidad Pontificia de Salamanca. 
+	</P>
+</UL>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="dos"></A>Caracter&iacute;sticas 
+</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm">Estructura mec&aacute;nica con
+	<B>piezas de metacrilato</B> 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm">Motores: <B>servos Futaba 3003
+	trucados</B> para girar 360 grados 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../sky293/sky293.html">tarjeta
+	SKY293</A> para controlar dos motores, 4 sensores de infrarrojos del
+	tipo CNY70 , hasta 6 bumpers y un rele 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../skypic/skypic.html">tarjeta
+	SKYPIC</A> para la programaci&oacute;n del robot 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>Alimentaci&oacute;n</B>: entre
+	4.5 - 6 voltios. Se utilizan 4 pilas AA. Opcionalmente se puede
+	utilizar una alimentaci&oacute;n separada para los motores,
+	comprendida entre 4-12 voltios. (Por ejemplo una pila de 9v). Para
+	m&aacute;s infromaci&oacute;n de como hacer esto consultar la p&aacute;gina
+	de la SKY293 
+	</P>
+	<LI><P><B>Robot abierto</B>. Est&aacute;n disponibles los esquemas
+	de la estructura y la electr&oacute;nica y se permite su copia y
+	modificaci&oacute;n 
+	</P>
+</UL>
+<P STYLE="border-top: none; border-bottom: 1.10pt double #808080; border-left: none; border-right: none; padding: 0cm">
+<!-- mecanica --><BR><BR>
+</P>
+<H2><A NAME="mecanica"></A>Mec&aacute;nica</H2>
+<P STYLE="margin-bottom: 0cm">La estructura mec&aacute;nica est&aacute;
+compuesta por 7 piezas de metacrilato, dos servos Futaba 3003
+trucados y una rueda loca. Ha sido dise&ntilde;ada por <A HREF="%20http://www.iearobotics.com/personal/andres/index.html">Andr&eacute;s
+Prieto-Moreno Torres</A> en base a su experiencia con otros robots
+anteriores. Se ha perseguido el objetivo de hacer una estructura
+f&aacute;cilmente replicable en diferentes materiales como por
+ejemplo madera, PVC Expandido, etc. Las piezas de la estructura se
+unen entre ellas con pegamento (se pueden utilizar varios tipos como
+Plastic-Ceys, Loctite, Epoxy,..) y los motores se sujetan mediante
+tornillos normales de m&eacute;trica 4. Todas la torniller&iacute;a
+inclu&iacute;da la rueda loca se encuentra f&aacute;cilmente en
+ferreter&iacute;as. 
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/estructura.png" NAME="gr&aacute;ficos2" ALIGN=BOTTOM WIDTH=310 HEIGHT=209 BORDER=0>
+</P>
+<HR>
+<H2><A NAME="electronica"></A>Electr&oacute;nica</H2>
+<P>SKYBOT v1.2 utiliza las tarjetas <A HREF="../skypic/skypic.html">SKYPIC</A>
+como procesadora y <A HREF="../sky293/sky293.html">SKY293</A> como
+tarjeta de potencia. Ambas se unen formando una <B>torre</B>,
+coloc&aacute;ndose encima de la <B>estructura de metacrilato</B>.
+Esta electr&oacute;nica es independiente de la estructura. Es decir,
+podemos utilizar la estructura del robot con otro tipo de
+controladores electr&oacute;nicos, y al contrario , adaptar la
+estructura o cambiarla por otra y mantener la electr&oacute;nica. 
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/electronica.png" NAME="gr&aacute;ficos3" ALIGN=BOTTOM WIDTH=322 HEIGHT=247 BORDER=0>
+</P>
+<P STYLE="border-top: none; border-bottom: 1.10pt double #808080; border-left: none; border-right: none; padding: 0cm">
+<!-- software --><BR><BR>
+</P>
+<H2><A NAME="software"></A>Software</H2>
+<P>El n&uacute;mero de aplicaciones para programar los
+microcontroladores PIC ha proliferado mucho. Desde la propia
+Microchip, fabricante del PIC, hasta numerosas personas
+independientes han desarrollado compiladores, editores, cargadores,
+etc. Nosotros hemos seleccionado algunas de ellas y realizado
+nuestros propios programas para completar un entorno de desarrollo
+f&aacute;cil de usar. El gran artifice de todo este despliegue ha
+sido, una vez m&aacute;s, <A HREF="%20http://www.iearobotics.com/personal/juan/index.html">Juan
+Gonz&aacute;lez G&oacute;mez</A>. 
+</P>
+<P>SKYBOT cuenta con un entorno v&aacute;lido para <B>Linux</B> y
+<B>Windows XP</B>. Todos los programas son Software Libre y se
+encuentran en internet, las referencias las podemos encontrar m&aacute;s
+abajo en la documentaci&oacute;n del robot y en concreto en la <A HREF="../../talleres/generico-v14/sesion-3/index.html">sesi&oacute;n
+3</A>. Entre todas las alternativas hemos optado por programar el
+robot en C y usar un bootloader previamente grabado en el
+microcontrolador para descargar los programas en &eacute;l. Pero
+tambi&eacute;n se puede programar en ensamblador y si no queremos
+usar el bootloader se puede grabar el programa con la gran mayor&iacute;a
+de grabadores para PICs. Incluyendo la propia SKYPIC e incluso la
+grabaci&oacute;n directa mediante el puerto paralelo y programas como
+el ICPROG o el PICDEV. 
+</P>
+<P>Todo el software est&aacute; bajo licencia GPL, por lo que las
+fuentes est&aacute;n disponibles. 
+</P>
+<P STYLE="border-top: none; border-bottom: 1.10pt double #808080; border-left: none; border-right: none; padding: 0cm">
+<!-- DocumentaciÃ³n --><BR><BR>
+</P>
+<H2><A NAME="documentacion"></A>Documentaci&oacute;n 
+</H2>
+<P><B>La versi&oacute;n actual del robot es la v1.3. </B><BR><BR>La
+diferencia con respecto a la v1.2. son las ruedas que se han cambiado
+por unas a medida que en lugar de usar el globo llevan una junta
+t&oacute;rica para mejorar el agarre. Para todos aquellos que querais
+construiros el robot artesanalmente sigue siendo recomendable y m&aacute;s
+f&aacute;cil usar el m&eacute;todo anterior. <BR>La documentaci&oacute;n
+de la versi&oacute;n v1.3. la podeis encontrar aqu&iacute;.
+<A HREF="../../talleres/generico-v14"><B>Documentaci&oacute;n V1.4</B></A>
+<BR><BR><B>Versiones anteriores del SKYBOT</B><BR><BR>Todos aquellos
+que tengais la version 1.2 del SKYBOT, todos los posteriores a
+Noviembre 2005 y anteriores a Febrero 2006, teneis la documentacion
+dividida en cuatro sesiones que se corresponden con el taller de
+rob&oacute;tica de la Universidad de Cadiz en 2005.<A HREF="http://www.iearobotics.com/talleres/uca-2005/index.html">Taller
+UCA 2005</A> La podemos dividir en los siguientes cap&iacute;tulos o
+sesiones: 
+</P>
+<UL>
+	<LI><P><A HREF="http://www.iearobotics.com/talleres/uca-2005/sesion-1/index.html">Sesi&oacute;n
+	1</A>: Comenzar la construcci&oacute;n de la estructura y trucar los
+	servos</P>
+	<LI><P><A HREF="http://www.iearobotics.com/talleres/uca-2005/sesion-2/index.html">Sesi&oacute;n
+	2</A>: Finalizar la estructura, conectar los sensores y probar el
+	robot</P>
+	<LI><P><A HREF="http://www.iearobotics.com/talleres/uca-2005/sesion-3/index.html">Sesi&oacute;n
+	3</A>: Instalaci&oacute;n del software. Programa Hola
+	mundo.Programaci&oacute;n del robot</P>
+	<LI><P><A HREF="http://www.iearobotics.com/talleres/uca-2005/sesion-4/index.html">Sesi&oacute;n
+	4</A>: Seguimiento de l&iacute;nea, montaje de los sensores de
+	contacto y programaci&oacute;n para el concurso del mogoll&oacute;n</P>
+</UL>
+<P>Los SKYBOTs anteriores a Noviembre 2005 son la versi&oacute;n 1.0.
+Su lanzamiento coincidi&oacute; con el taller de la CampusBot (Campus
+Party 2005), por lo tanto la documentaci&oacute;n de montaje es la
+propia del taller. En el siguiente enlace podemos encontrar toda la
+<A HREF="http://www.iearobotics.com/talleres/campusbot-2005"><B>Informaci&oacute;n
+del taller</B></A>. La podemos dividir en los siguientes cap&iacute;tulos
+o sesiones: 
+</P>
+<UL>
+	<LI><P><A HREF="http://www.iearobotics.com/talleres/campusbot-2005/sesion-1/index.html">Sesi&oacute;n
+	1</A>: Comenzar la construcci&oacute;n de la estructura y trucar los
+	servos</P>
+	<LI><P><A HREF="http://www.iearobotics.com/talleres/campusbot-2005/sesion-2/index.html">Sesi&oacute;n
+	2</A>: Finalizar la estructura, conectar los sensores y probar el
+	robot</P>
+	<LI><P><A HREF="http://www.iearobotics.com/talleres/campusbot-2005/sesion-3/index.html">Sesi&oacute;n
+	3</A>: Instalaci&oacute;n del software. Programa Hola
+	mundo.Programaci&oacute;n del robot</P>
+	<LI><P><A HREF="http://www.iearobotics.com/talleres/campusbot-2005/sesion-4/index.html">Sesi&oacute;n
+	4</A>: Seguimiento de l&iacute;nea, montaje de los sensores de
+	contacto y programaci&oacute;n para el concurso del mogoll&oacute;n</P>
+</UL>
+<P>Tambi&eacute;n hay documentaci&oacute;n disponible en el <A HREF="http://www.iearobotics.com/wiki/index.php?title=Taller_CAMPUS_2007">Wiki</A>
+</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="download"></A><!-- DOWNLOAD -->Download 
+</H2>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>RECORRIDOS DE PRUEBA</B> 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=2 CELLSPACING=2>
+		<TR BGCOLOR="#cabeeb">
+			<TD>
+				<P><A HREF="download/circuito-skybot-1.pdf">circuito-skybot-1.pdf</A>(8KB)
+								</P>
+			</TD>
+			<TD>
+				<P><B>Circuito de pruebas 1</B> para que SkyBot lo recorra.
+				Imprimir en papel A4 con impresora L&aacute;ser</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD>
+				<P><A HREF="download/circuito-skybot-1.fig">circuito-skybot-1.fig</A>(0'6KB)
+								</P>
+			</TD>
+			<TD>
+				<P>Circuito de pruebas 1. Fuentes para Xfig</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#cabeeb">
+			<TD>
+				<P><A HREF="download/circuito-skybot-2.pdf">circuito-skybot-2.pdf</A>(1KB)
+								</P>
+			</TD>
+			<TD>
+				<P><B>Circuito de pruebas 2</B> para que Skybot lo recorra.
+				Imprimir en papel A4 con impresora L&aacute;ser</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD>
+				<P><A HREF="download/circuito-skybot-2.fig">circuito-skybot-2.fig</A>(0'6KB)
+								</P>
+			</TD>
+			<TD>
+				<P>Circuito de pruebas 2. Fuentes para Xfig</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>PLANOS DEL ROBOT</B> 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=2 CELLSPACING=2>
+		<TR BGCOLOR="#cabeeb">
+			<TD>
+				<P><A HREF="download/skybot-I.dxf">skybot-I.dxf</A></P>
+			</TD>
+			<TD>
+				<P>Plano Skybot en formato DXF, compatible Autocad y QCAD</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD>
+				<P><A HREF="download/skybot-I.pdf">skybot-I.pdf</A></P>
+			</TD>
+			<TD>
+				<P>Plano Skybot en formato PDF</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P><BR><BR>
+</P>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>EJEMPLOS PARA SKYBOT V1.4</B> 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=2 CELLSPACING=2>
+		<TR BGCOLOR="#abbeeb">
+			<TD>
+				<P><A HREF="../../talleres/generico-v14/sesion-3/ejemplos/ejemplos-skybot-1.html#descargas">Ejemplos
+				de programaci&oacute;n en C</A></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>MULTIMEDIA</B> 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=2 CELLSPACING=2>
+		<TR BGCOLOR="#cabeeb">
+			<TD>
+				<P><A HREF="images/skybot-1.jpg">skybot-1.jpg</A></P>
+			</TD>
+			<TD>
+				<P>Foto lateral del robot v1.0</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD>
+				<P><A HREF="images/skybot-2.jpg">skybot-2.jpg</A></P>
+			</TD>
+			<TD>
+				<P>Foto frontal del robot v1.0</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD>
+				<P><A HREF="images/skybot-3.jpg">skybot-3.jpg</A></P>
+			</TD>
+			<TD>
+				<P>Otra foto lateral del robot v1.0</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#cabeeb">
+			<TD>
+				<P><A HREF="images/skybot-4.jpg">skybot-4.jpg</A></P>
+			</TD>
+			<TD>
+				<P>Foto de cerca del robot v1.0</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#cabeeb">
+			<TD>
+				<P><A HREF="images/skybot-pre.jpg">skybot-pre.jpg</A></P>
+			</TD>
+			<TD>
+				<P>Maqueta preliminar de SKYBOT</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<HR>
+<H2><A NAME="tres"></A>Autores</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="%20http://www.iearobotics.com/personal/andres/index.html">Andr&eacute;s
+	Prieto-Moreno Torres</A>. 
+	</P>
+	<LI><P><A HREF="http://www.iearobotics.com/personal/juan/index.html">Juan
+	Gonz&aacute;lez G&oacute;mez</A> 
+	</P>
+</UL>
+<HR>
+<H2><A NAME="licencia"></A>Licencia</H2>
+<P STYLE="margin-bottom: 0cm">El Robot SkyBot esta publicada bajo la
+licencia <A HREF="http://creativecommons.org/licenses/by-sa/2.5/es/"><B>Creative
+Commons</B></A> en la versi&oacute;n <B>Attribution</B> and <B>Share
+Alike</B>. Es decir se permite copiar, modificar y distribuir este
+material siempre que se reconozca al autor y se mantenga la misma
+licencia 
+</P>
+<P STYLE="border-top: none; border-bottom: 1.10pt double #808080; border-left: none; border-right: none; padding: 0cm">
+<!-- comercializa --><BR><BR>
+</P>
+<H2><A NAME="comercializa"></A>Comercializa 
+</H2>
+<TABLE WIDTH=90% BORDER=0 CELLPADDING=2 CELLSPACING=2>
+	<TR>
+		<TD>
+
+		Ponerse en contacto con Ricardo G&oacute;mez en ricardo@iearobotics.com	</P>
+		</TD>
+	</TR>
+</TABLE>
+<HR>
+<H2><A NAME="agradecimientos"></A>Agradecimientos</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif">A
+	<A HREF="http://www.iearobotics.com/personal/juan/index.html">Juan
+	Gonz&aacute;lez G&oacute;mez </A>por la m&aacute;gnifica
+	documentaci&oacute;n del robot, por las pruebas realizadas y por el
+	entorno de desarrollo que ha montado. </FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif">A <A HREF="http://www.mundobot.com/">Alejandro
+	Alonso</A> por confiar en el SkyBot y por todas las sugerencias para
+	mejorar el concepto inicial.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif">A <B>todo el equipo de</B>
+	<A HREF="http://www.ifara.com/">Ifara Tecnolog&iacute;as</A>, por
+	financiar y comercializar el SkyBot v1.0, v1.2 y v1.3</FONT></P>
+</UL>
+<HR>
+<H2><A NAME="links"></A><FONT FACE="Arial, sans-serif">Links</FONT></H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><A HREF="../skypic/skypic.html">tarjeta
+	SKYPIC</A> </FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><A HREF="../sky293/sky293.html">tarjeta
+	SKY293</A> </FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><A HREF="../tritt/tritt.html">Robot
+	Tritt</A> </FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><A HREF="../ct6811/ct6811.html">tarjeta
+	CT6811</A> </FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><A HREF="../ct293/ct293.html">Tarjeta
+	CT293+</A> </FONT>
+	</P>
+</UL>
+<P STYLE="border-top: none; border-bottom: 1.10pt double #808080; border-left: none; border-right: none; padding: 0cm">
+<!-- Noticias --><BR><BR>
+</P>
+<H2><A NAME="noticias"></A><FONT FACE="Arial, sans-serif">Noticias</FONT></H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>13/feb/2006</B>:
+	Actualizada la WEB para ajustarse al SKYBOT v1.3. </FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>12/dic/2005</B>:
+	Actualizada la WEB para ajustarse al SKYBOT v1.2. </FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>11/dic/2005</B>:
+	La nueva versi&oacute;n del SKYBOT es la 1.2. Su manual se
+	corresponde con el taller de Cadiz 2005. </FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>23/jul/2005</B>: Publicada
+	informaci&oacute;n de SKYBOT v1.0 en esta web </FONT>
+	</P>
+</UL>
+<HR>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><A HREF="http://www.iearobotics.com/">IEA
+ROBOTICS</A> </FONT>
+</P>
+<ADDRESS><FONT FACE="Arial, sans-serif">P&aacute;gina creada por
+<A HREF="http://www.iearobotics.com/personal/andres/index.html">Andr&eacute;s
+Prieto-Moreno Torres</A> </FONT>
+</ADDRESS>
+</BODY>
+</HTML>
