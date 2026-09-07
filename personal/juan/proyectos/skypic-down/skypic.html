@@ -1,0 +1,330 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>SKYPIC-DOWN</TITLE>
+	<META NAME="KEYWORDS" CONTENT="microcontroladores pic software grabaci&oacute;n">
+</HEAD>
+
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>SKYPIC-DOWN: Software de grabaci&oacute;n para
+				los microcontroladores PIC<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css"><!-- t�tulo de la p�gina --></B></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=785 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=81>
+			<COL WIDTH=87>
+			<COL WIDTH=55>
+			<COL WIDTH=55>
+			<COL WIDTH=78>
+			<COL WIDTH=50>
+			<COL WIDTH=60>
+			<COL WIDTH=74>
+			<COL WIDTH=40>
+			<COL WIDTH=55>
+			<COL WIDTH=106>
+			<TR>
+				<TD WIDTH=81>
+					<P><A HREF="#Introducci&oacute;n|outline"><FONT SIZE=2>[Introducci&oacute;n]</FONT></A></P>
+				</TD>
+				<TD WIDTH=87>
+					<P><A HREF="#Caracter&iacute;sticas|outline"><FONT SIZE=2>[caracter&iacute;sticas]</FONT></A></P>
+				</TD>
+				<TD WIDTH=55>
+					<P><A HREF="#Autor|outline"><FONT SIZE=2>[Autor]</FONT></A></P>
+				</TD>
+				<TD WIDTH=55>
+					<P><A HREF="#Licencia|outline"><FONT SIZE=2>[Licencia]</FONT></A></P>
+				</TD>
+				<TD WIDTH=78>
+					<P><A HREF="#Instalaci&oacute;n|outline"><FONT SIZE=2>[Instalaci&oacute;n]</FONT></A></P>
+				</TD>
+				<TD WIDTH=50>
+					<P><A HREF="#Funcionamiento |outline"><FONT SIZE=2>[Funcionamiento]</FONT></A></P>
+				</TD>
+				<TD WIDTH=60>
+					<P><A HREF="#Errores|outline"><FONT SIZE=2>[Errores]</FONT></A></P>
+				</TD>
+				<TD WIDTH=74>
+					<P><A HREF="#download"><FONT SIZE=2>[Download]</FONT></A></P>
+				</TD>
+				<TD WIDTH=40>
+					<P><A HREF="#Links|outline"><FONT SIZE=2>[Links]</FONT></A></P>
+				</TD>
+				<TD WIDTH=55>
+					<P><A HREF="#Noticias|outline"><FONT SIZE=2>[Noticias]</FONT></A></P>
+				</TD>
+				<TD WIDTH=106>
+					<P><A HREF="#Agradecimientos|outline"><FONT SIZE=2>[Agradecimientos]</FONT></A></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/pic-linux.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=324 HEIGHT=265 BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="Introducci&oacute;n|outline"></A>Introducci&oacute;n</H2>
+<P><FONT FACE="Arial, sans-serif">Software de grabaci&oacute;n para
+los <B>microcontroladores PIC</B>. Se utiliza con grabadores basados
+en el <A HREF="../../../../proyectos/stargate/index.html">proyecto
+Stargate</A>, en los que hay un microcontrolador con el <A HREF="../../../../proyectos/stargate/servidores/sg-picp/sg-picp.html">servidor
+PICP</A>. El programa <B>skypic-down</B> es un cliente para el
+<A HREF="../../../../proyectos/stargate/servidores/sg-picp/sg-picp.html">servidor
+PICP </A>, que corre en plataformas Linux y en la consola.</FONT></P>
+<P><FONT FACE="Arial, sans-serif">Aunque permite grabar cualquiera de
+los pics soportados por el <A HREF="../../../../proyectos/stargate/servidores/sg-picp/sg-picp.html">servidor
+PICP </A>(Familias 16F8X y 16F87X) en cualquier tarjeta, se ha
+dise&ntilde;ado para la <B>tarjeta entrenadora SKYPIC</B>, de ah&iacute;
+el nombre de skypic-down.</FONT></P>
+<HR>
+<H2><A NAME="Caracter&iacute;sticas|outline"></A>Caracter&iacute;sticas</H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif">Permite grabar los pics de las
+	familias 16F8X y 16F87X</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif">Licencia GPL</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif">Plataformas Linux</FONT></P>
+</UL>
+<HR>
+<H2><A NAME="tres"></A><A NAME="Autor|outline"></A>Autor</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../index.html"><FONT FACE="Arial, sans-serif">Juan
+	Gonz&aacute;lez G&oacute;mez</FONT></A> 
+	</P>
+</UL>
+<HR>
+<H2><A NAME="Licencia|outline"></A>Licencia</H2>
+<P><FONT FACE="Arial, sans-serif"><B>Licencia GPL</B>. Se conceden
+permisos para copiar, distribuir, modificar y redistribuir las
+modificaciones.</FONT></P>
+<HR>
+<H2><A NAME="Instalaci&oacute;n|outline"></A>Instalaci&oacute;n</H2>
+<P><FONT FACE="Arial, sans-serif">Los pasos a seguir para instalar el
+skypic-down son:</FONT></P>
+<OL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Bajarse el paquete</B>
+	</FONT><A HREF="download/skypic-down-0.2.tgz"><FONT FACE="Arial, sans-serif">skypic-down-x.x.tgz</FONT></A>
+		</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Descomprimirlo</B></FONT></P>
+</OL>
+<P STYLE="margin-left: 2cm"><FONT FACE="Arial, sans-serif">$ tar vzxf
+skypic-down-x.x.tgz</FONT></P>
+<OL START=3>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Entrar en el directorio
+	skypic-down y compilar</B></FONT></P>
+</OL>
+<P STYLE="margin-left: 2cm"><FONT FACE="Arial, sans-serif">$ cd
+skypic-down</FONT></P>
+<P STYLE="margin-left: 2cm"><FONT FACE="Arial, sans-serif">$ make</FONT></P>
+<P STYLE="margin-left: 2cm"><FONT FACE="Arial, sans-serif">La
+compilaci&oacute;n no es obligatoria. Dentro del paquete se incluye
+una versi&oacute;n ya compilada.</FONT></P>
+<OL START=4>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Copiar el fichero
+	ejecutable skypic-down</B> a un directorio dentro del PATH, como por
+	ejemplo el /usr/local/bin</FONT></P>
+</OL>
+<P><BR><BR>
+</P>
+<HR>
+<H2><A NAME="alimentacion"></A><A NAME="Funcionamiento |outline"></A>Funcionamiento
+</H2>
+<P><FONT FACE="Arial, sans-serif">El proceso de grabaci&oacute;n es
+muy sencillo:</FONT></P>
+<OL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Conectar el stargate al PC</B>
+	y a la placa donde est&aacute; el PIC que queremos grabar (por
+	ejemplo la skypic). Asegurarse que el stargate tenga grabado el
+	<A HREF="../../../../proyectos/stargate/servidores/sg-picp/sg-picp.html"><FONT FACE="Arial, sans-serif">servidor
+	PICP</FONT></A>. La configuraci&oacute;n de cada stargate depende de
+	la tarjeta que estemos empleando (una CT6811, skypic, etc)</FONT></P>
+</OL>
+<P STYLE="margin-left: 2cm"><FONT FACE="Arial, sans-serif">En la
+siguiente foto se muestra un ejemplo de utilizaci&oacute;n. Como
+grabador se usa una <A HREF="../../../../proyectos/ct6811/ct6811.html">tarjeta
+CT6811</A> con el <A HREF="../../../../proyectos/stargate/servidores/sg-picp/sg-picp.html"><FONT FACE="Arial, sans-serif">servidor
+PICP</FONT></A>. A trav&eacute;s de un cable plano de bus se conecta
+la <B>tarjeta SKYPIC</B>, que lleva el pic16F876A que se quiere
+grabar.</FONT></P>
+<P ALIGN=CENTER><IMG SRC="images/ejemplo.png" NAME="Imagen3" ALIGN=MIDDLE WIDTH=441 HEIGHT=331 BORDER=0><BR><BR><BR>
+</P>
+<OL START=2>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Ejecutar el programa
+	skypic-down</B> desde una consola:</FONT></P>
+</OL>
+<P STYLE="margin-left: 2cm"><FONT FACE="Arial, sans-serif"><I>$
+skypic-down ledon.hex -p -com1</I></FONT></P>
+<P STYLE="margin-left: 2cm"><FONT FACE="Arial, sans-serif">El
+par&aacute;metro <B>-com1</B> indica el puerto serie empleado. El
+<B>par&aacute;metro -p</B> se utiliza para grabar los pics 16F876A,
+que tienen un protocolo de grabaci&oacute;n diferente al de los
+16F876. En futuras versiones se autodetectar&aacute; el tipo de PIC y
+se seleccionar&aacute; el protocolo m&aacute;s adecuado.</FONT></P>
+<OL START=3>
+	<LI><P><FONT FACE="Arial, sans-serif">A continuaci&oacute;n se
+	muestra un <B>pantallazo</B> de la grabaci&oacute;n del programa
+	ledon.hex, utiliz&aacute;ndose un stargate en una <A HREF="../../../../proyectos/ct6811/ct6811.html">CT6811
+	</A></FONT>
+	</P>
+	<P ALIGN=CENTER><IMG SRC="images/pantallazo1.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=662 HEIGHT=463 BORDER=0></P>
+</OL>
+<HR>
+<H2><A NAME="Errores|outline"></A>Errores</H2>
+<P>Los errores que nos podemos encontrar al grabar son:</P>
+<UL>
+	<LI><P>&ldquo;<FONT FACE="Arial, sans-serif"><B>---&gt; [ERROR],
+	Verificaci&oacute;n incorrecta</B>&rdquo;. No se ha conseguido
+	verificar la grabaci&oacute;n del programa. Es debido a que el PIC a
+	grabar no ha entrado en modo monitor. Las causas de este problema
+	pueden ser:</FONT></P>
+	<UL>
+		<LI><P><FONT FACE="Arial, sans-serif">La placa no est&aacute;
+		configurada en modo programaci&oacute;n. En el caso de la Skypic,
+		revisar el jumper JP3, que es el que configura la placa para ello.
+		Si se usan otras placas, asegurarse de que llegan correctamente los
+		12v a la pata MCLR.</FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif">Protocolo de grabaci&oacute;n
+		no correcto. Se est&aacute; intentado grabar un pic 16F876A y no se
+		ha especificado el par&aacute;metro -p, o a la inversa, se est&aacute;
+		intentado grabar otro PIC y se ha puesto este par&aacute;metro.</FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif">Placa no conectada al
+		stargate</FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif">Placa no alimentada</FONT></P>
+	</UL>
+	<LI><P>&ldquo;<FONT FACE="Arial, sans-serif"><B>---&gt; ERROR: No se
+	estable conexi&oacute;n con el grabador</B>&rdquo;. No hay conexi&oacute;n
+	con el stargate grabador. Revisar:</FONT></P>
+	<UL>
+		<LI><P><FONT FACE="Arial, sans-serif">Que el stargate est&eacute;
+		correctamente conectado al puerto serie del PC</FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif">Que est&eacute; alimentado</FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif">Que se haya especificado el
+		puerto serie adecuado (com1 &oacute; com2)</FONT></P>
+	</UL>
+</UL>
+<HR>
+<P><BR><BR>
+</P>
+<H2><A NAME="download"></A><!-- DOWNLOAD -->Download 
+</H2>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=742 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+			<COL WIDTH=734>
+			<TR>
+				<TD WIDTH=734>
+					<P ALIGN=CENTER><B>Descarga de ficheros</B></P>
+				</TD>
+			</TR>
+		</TABLE>
+		<DD>
+		<TABLE WIDTH=741 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=150>
+			<COL WIDTH=583>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=150>
+					<P><A HREF="download/skypic-down-0.3.tgz">skypic-down-0.3.tgz</A>
+										</P>
+				</TD>
+				<TD WIDTH=583>
+					<P>Fuentes y ejecutable. Versi&oacute;n 0.3.</P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=150>
+					<P><A HREF="download/skypic-down-0.2.tgz">skypic-down-0.2.tgz</A>
+										</P>
+				</TD>
+				<TD WIDTH=583>
+					<P>Fuentes y ejecutable. Versi&oacute;n 0.2.</P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="todo"></A>Lista de cosas por hacer</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif">Autodetecci&oacute;n
+	del PIC</FONT></P>
+</UL>
+<HR>
+<H2><A NAME="links"></A><A NAME="Links|outline"></A>Links</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><A HREF="../../../../proyectos/skypic/skypic.html"><SPAN STYLE="text-decoration: none"><FONT FACE="Arial, sans-serif">Tarjeta
+	SKYPIC: </FONT></SPAN></A>Tarjeta entrenadora para los
+	microcontroladores de </FONT><FONT FACE="Arial, sans-serif">las
+	familias de PICs 16f87x y 18fxxx de 28 pines</FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../../../proyectos/stargate/servidores/sg-picp/sg-picp.html"><FONT FACE="Arial, sans-serif">Servidor
+	PICP</FONT></A><FONT FACE="Arial, sans-serif">: Servidor PICP, para
+	grabaci&oacute;n de PICs</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><A HREF="../../../../proyectos/cuadernos/ct4/ct4.html"><FONT FACE="Arial, sans-serif">Cuaderno
+	t&eacute;cnico 4:</FONT></A> Grabaci&oacute;n de microcontroladores
+	PIC</FONT></P>
+	<LI><P><A HREF="../../../../proyectos/stargate/index.html"><FONT FACE="Arial, sans-serif">Proyecto
+	Stargate</FONT></A></P>
+	<LI><P><A HREF="../../../andres/proyectos/picmin/pic1.html"><FONT FACE="Arial, sans-serif">Tarjeta
+	PICMIN:</FONT></A> <FONT FACE="Arial, sans-serif">Tarjeta m&iacute;nima
+	para trabajar con los PIC</FONT></P>
+	<LI><P><A HREF="../../../../proyectos/ct6811/ct6811.html"><FONT FACE="Arial, sans-serif">Tarjeta
+	CT6811 </FONT></A>
+	</P>
+</UL>
+<HR>
+<H2><A NAME="noticias"></A><A NAME="Noticias|outline"></A>Noticias</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>02/Junio/2004:</B><SPAN STYLE="font-weight: medium">
+	Liberada Version 0.3</SPAN></FONT></P>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0cm; font-weight: medium"><FONT FACE="Arial, sans-serif">Ya
+		no se produce error al cargar ficheros .hex generados con el
+		compilador de C SDCC.</FONT></P>
+	</UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>03/Junio/2004</B>:
+	Publicada la versi&oacute;n 0.2 del Skypic-down</FONT></P>
+</UL>
+<HR>
+<H2><A NAME="agradecimientos"></A><A NAME="Agradecimientos|outline"></A>
+Agradecimientos</H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif">A <B>Andr&eacute;s
+	Prieto-Moreno Torres, </B>de <A HREF="http://www.ifara.com/">Ifara
+	Tecnolog&iacute;as</A>, por las pruebas realizadas y por el dise&ntilde;o
+	libre del PCB de la tarjeta SKYPIC. Muchas gracias.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif">A <B>todo el equipo de</B>
+	<A HREF="http://www.ifara.com/">Ifara Tecnolog&iacute;as</A>, por
+	financiar la primera tirada de la Skypic y regalarme dos placas
+	montadas y dos PCB. Much&iacute;simas gracias ;-)</FONT></P>
+</UL>
+<HR>
+<H2>Cr&eacute;ditos</H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif">Alvaro Mar&iacute;n
+	&lt;<A HREF="mailto:alvaro@rigel.deusto.es">alvaro@rigel.deusto.es</A>&gt;.
+	Es el autor del modulo intelHex.c que he utilizado y adaptado para
+	este proyecto.</FONT></P>
+</UL>
+
+<hr>
+<a href="/iearobotics-site/wiki">IEA ROBOTICS</a>
+<address>
+<a href="../../index.html">Juan González</a>
+</address>
+</body>
+</html>
