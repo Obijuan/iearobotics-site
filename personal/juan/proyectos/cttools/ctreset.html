@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta name="generator" content="groff -Thtml, see www.gnu.org" />
+<meta name="Content-Style" content="text/css" />
+<link rel="stylesheet" href="estilo.css" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>CTRESET</title>
+</head>
+
+<body>
+
+<h1 class="txtcentro">CTRESET</h1>
+<p><a href="#NAME">NAME</a><br />
+<a href="#SYNOPSIS">SYNOPSIS</a><br />
+<a href="#DESCRIPTION">DESCRIPTION</a><br />
+<a href="#SEE_ALSO">SEE ALSO</a><br />
+<a href="#AUTHOR">AUTHOR</a></p>
+
+<hr />
+<!-- Creator     : groff version 1.17.2 -->
+<!-- CreationDate: Sat Aug 17 09:35:27 2002 -->
+<!-- Converted to XHTML: José Jaime Ariza (jariza@ieee.org) Fri Mar 11 2005 -->
+
+<h2><a name="NAME">NAME</a></h2>
+<p class="margen6">ctreset - Reset software de la tarjeta CT6811</p>
+
+<h2><a name="SYNOPSIS">SYNOPSIS</a></h2>
+<p class="margen6"><span class="negrita">ctreset</span> [-erh][-noansi][-com{1,2}]</p>
+
+<h2><a name="DESCRIPTION">DESCRIPTION</a></h2>
+<p class="margen6">Realizar un reset software de la tarjeta CT6811. Es
+necesario que el jumper JP7 se encuentre en la posici&oacute;n ON,
+o de lo contrario s&oacute;lo se podr&aacute; realizar un reset manual.
+Tambi&eacute;n se debe encontrar la CT6811 en modo
+bootstrap.<br />
+Tambi&eacute;n es posible con el <span class="negrita">CTRESET</span> saltar a la memoria
+<acronym xml:lang="en" lang="en" title="Random Access Memory">RAM</acronym> o a la <acronym xml:lang="en" lang="en" title="Electrically Erasable Programmable Read Only Memory">EEPROM</acronym>, seg&uacute;n el par&aacute;metro empleado</p>
+
+
+<h3 class="margen1y5">PA<acronym xml:lang="en" lang="en" title="Random Access Memory">RAM</acronym>ETROS</h3>
+<dl class="manuales">
+<dt>-e</dt>
+<dd>Saltar a la <acronym xml:lang="en" lang="en" title="Electrically Erasable Programmable Read Only Memory">EEPROM</acronym></dd>
+<dt>-r</dt>
+<dd>Saltar a la <acronym xml:lang="en" lang="en" title="Random Access Memory">RAM</acronym></dd>
+<dt>-h</dt>
+<dd>Mostrar la ayuda</dd>
+<dt>-noansi</dt>
+<dd>Se emplea un terminal no ansi. (Los colores se pierden)</dd>
+<dt>-com1, -com2</dt>
+<dd>Seleccionar el puerto serie a emplear: COM1 o COM2.</dd>
+</dl>
+
+<h3 class="margen1y5">EJEMPLO DE UTILIZACION</h3>
+<dl class="manuales">
+<dt>ctreset -com2</dt>
+<dd>Realizar un reset software de la CT6811 conectada en el COM2</dd>
+<dt>ctreset -e -com1</dt>
+<dd>Ejecutar el programa que se encuentra en la <acronym xml:lang="en" lang="en" title="Electrically Erasable Programmable Read Only Memory">EEPROM</acronym> de la
+CT6811 conectada al puerto serie COM1</dd>
+</dl>
+
+<h2><a name="SEE_ALSO">SEE ALSO</a></h2>
+<p class="margen6"><span class="negrita">ctreset</span>(1), <span class="negrita">ctdetect</span>(1), <span class="negrita">ctdialog</span>(1),
+<span class="negrita">donwmcu</span>(1), <span class="negrita">ct294</span>(1), <span class="negrita">cteeprom</span>(1),
+<span class="negrita">mcboot</span>(1),
+<span class="negrita">ctload</span>(1),<span class="negrita">cts19toc</span>(1),<span class="negrita">downmcu_e</span>(1),
+<span class="negrita">cts</span>(3)</p>
+
+<h2><a name="AUTHOR">AUTHOR</a></h2>
+<p class="margen6">Juan Gonz&aacute;lez G&oacute;mez<br />
+Microb&oacute;tica, 1999</p>
+<hr />
+
+</body>
+</html>

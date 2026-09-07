@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta name="generator" content="groff -Thtml, see www.gnu.org" />
+<meta name="Content-Style" content="text/css" />
+<link rel="stylesheet" href="estilo.css" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>CTDIALOG</title>
+</head>
+
+<body>
+
+<h1 class="txtcentro">CTDIALOG</h1>
+<p><a href="#NAME">NAME</a><br />
+<a href="#SYNOPSIS">SYNOPSIS</a><br />
+<a href="#DESCRIPTION">DESCRIPTION</a><br />
+<a href="#SEE_ALSO">SEE ALSO</a><br />
+<a href="#BUGS">BUGS</a><br />
+<a href="#AUTHOR">AUTHOR</a></p>
+
+<hr />
+<!-- Creator     : groff version 1.17.2 -->
+<!-- CreationDate: Sat Aug 17 09:35:57 2002 -->
+<!-- Converted to XHTML: José Jaime Ariza (jariza@ieee.org) Fri Mar 11 2005 -->
+
+<h2><a name="NAME">NAME</a></h2>
+<p class="margen6">ctdialog - Dialogar con la tarjeta CT6811</p>
+
+<h2><a name="SYNOPSIS">SYNOPSIS</a></h2>
+<p class="margen6"><span class="negrita">ctdialog</span> [-com{1,2}] [-noansi] [-e]</p>
+
+<h2><a name="DESCRIPTION">DESCRIPTION</a></h2>
+<p class="margen6">Programa para dialogar con la tarjeta CT6811 y acceder a
+todos sus recursos. Mediante un conjunto sencillo de
+comandos, el CTDIALOG permite acceder al mapa de memoria del
+6811, tanto en lectura como en escritura, modificar el
+contenido de la <acronym xml:lang="en" lang="en" title="Electrically Erasable Programmable Read Only Memory">EEPROM</acronym>: grabaci&oacute;n de bytes individuales,
+grabado de programas y borrado completo, y algunos servicios
+adicionales.</p>
+
+<h3 class="margen1y5">ARGUMENTOS</h3>
+<dl class="manuales">
+<dt>-com1,-com2</dt>
+<dd>Especificar el puerto en donde se encuentra la tarjeta CT6811</dd>
+<dt>-noansi</dt>
+<dd>Emplear un terminal no ansi</dd>
+<dt>-e</dt>
+<dd>El servidor se encuentra grabado en la memoria <acronym xml:lang="en" lang="en" title="Electrically Erasable Programmable Read Only Memory">EEPROM</acronym> y por tanto no se carga en la <acronym xml:lang="en" lang="en" title="Random Access Memory">RAM</acronym> interna</dd>
+</dl>
+
+<h3 class="margen1y5">EJEMPLO</h3>
+<dl class="manuales">
+<dt>ctdialog -com2</dt>
+<dd>Ejecutar el ctdialog con la tarjeta CT6811 en el puerto COM2</dd>
+<dt>ctdialog -com2 -e</dt>
+<dd>Ejecutar el ctdialog con la tarjeta CT6811 en el puerto COM2, pero el ctserver no se carga porque ya est&aacute; en la <acronym xml:lang="en" lang="en" title="Electrically Erasable Programmable Read Only Memory">EEPROM</acronym>.</dd>
+</dl>
+
+<h3 class="margen1y5">COMANDOS</h3>
+<p class="margen6">El ctdialog es un programa para la consola y funciona con
+una serie de comandos, que se describen a continuaci&oacute;n. En
+cualquier momento se puede emplear el comando <span class="negrita">HELP</span>
+para obtener ayuda.<br />
+Todas las direcci&oacute;nes como el resto de parametros num&eacute;ricos
+a pasar a los comandos se toman en hexadecimal. Por ello si
+se pasa el valor 10 a un comando se interpretar&aacute; en
+hexadecimal, es decir, el valor 16 decimal.</p>
+
+<dl class="manuales">
+<dt>HELP [comando]</dt>
+<dd>Obtener ayuda sobre un comando o mostrar todos los comandos
+disponibles si no se utiliza ning&uacute;n par&aacute;metro.<br />
+Ejemplos:<br />
+<span class="negrita">HELP MD</span> --&gt; Obtener ayuda sobre el comando MD<br />
+<span class="negrita">HELP</span> --&gt; Obtener lista de todos los comandos disponibles</dd>
+
+<dt>MD &lt;direcci&oacute;n&gt; [Bloques]</dt>
+<dd>Volcado de memoria. Se muestran tantos bloques de memoria
+como especifique el par&aacute;metro Bloques a partir de la
+direcci&oacute;n indicada. Un bloque de memoria son 16 Bytes. Si no
+se especifica el n&uacute;mero de bloques se toman por defecto 16<br />
+Ejemplos:<br />
+<span class="negrita">MD B600</span> --&gt; Visualizar 16 bloques de memoria a partir de la direcci&oacute;n B600<br />
+<span class="negrita">MD 1000 1</span> --&gt; Visualizar 1 bloque de memoria a partir de la direcion 1000. Se visualiza por tanto desde la direcci&oacute;n 1000 hasta la 100F<br />
+<span class="negrita">MD 8000 FF</span> --&gt; Visualizar 256 bloques(4<acronym title="Kilobytes">Kb</acronym>).
+</dd>
+
+<dt>MS &lt;direcci&oacute;n&gt; &lt;byte&gt;</dt>
+<dd>Introducir un byte en una direcci&oacute;n de memoria. Esta
+operacion s&oacute;lo se puede realizar si en la direcci&oacute;n indicada
+hay memoria <acronym xml:lang="en" lang="en" title="Random Access Memory">RAM</acronym> o algun recurso interno del 68HC11.<br />
+Ejemplos:<br />
+<span class="negrita">MS 1000 40</span> --&gt; Almacenar el valor hexadecimal 40 en
+la direcci&oacute;n 1000. Como esta direcci&oacute;n se corresponde con el
+puerto A, este comando envia el valor 40 al puerto A del
+6811. Si se tiene conectado el jumper JP3 de la CT6811 se
+encender&aacute; el led.
+</dd>
+
+<dt>MSE &lt;direcci&oacute;n&gt; &lt;byte&gt;</dt>
+<dd>Grabar un byte en la memoria <acronym xml:lang="en" lang="en" title="Electrically Erasable Programmable Read Only Memory">eeprom</acronym>.<br />
+Ejemplos:<br />
+<span class="negrita">MSE B600 AA</span> --&gt; Almacenar el valor hexadecimal AA en
+el primer byte de la memoria <acronym xml:lang="en" lang="en" title="Electrically Erasable Programmable Read Only Memory">EEPROM</acronym> interna del micro 6811A1.
+</dd>
+
+<dt>CONFIG &lt;byte&gt;</dt>
+<dd>Configurar el registro CONFIG. Para que el cambio se haga
+efectivo habr&aacute; que realizar un reset.</dd>
+<dt>DASM &lt;direcci&oacute;n&gt;</dt>
+<dd>Desensamblar a partir de la direcci&oacute;n especificada. (Este
+comando no funciona correctamente, el listado obtenido puede
+no ser fiable). En futuras versiones se solucionar&aacute;.</dd>
+
+<dt><acronym xml:lang="en" lang="en" title="Electrically Erasable Programmable Read Only Memory">EEPROM</acronym> &lt;fichero&gt;</dt>
+<dd>Grabar un programa en formato .S19 en la memoria <acronym xml:lang="en" lang="en" title="Electrically Erasable Programmable Read Only Memory">EEPROM</acronym>. Si
+el fichero no tiene extensi&oacute;n se toma por defecto .s19.</dd>
+
+<dt>G &lt;direcci&oacute;n&gt;</dt>
+<dd>Saltar a la direcci&oacute;n especificada y comenzar a ejecutar el
+programa que all&iacute; se encuentre. Si se ejecuta este comando
+se pierde la conexion con el CTSERVER y no se podr&aacute;n seguir
+ejecutando comandos del CTDIALOG.</dd>
+
+<dt>CKC</dt>
+<dd>Comprobar estado de la conexi&oacute;n con el CTSERVER</dd>
+
+<dt>CLS</dt>
+<dd>Borrar la pantalla</dd>
+
+<dt>INFO</dt>
+<dd>Informaci&oacute;n sobre el microcontrolador</dd>
+
+<dt>BULK</dt>
+<dd>Borrar toda la <acronym xml:lang="en" lang="en" title="Electrically Erasable Programmable Read Only Memory">EEPROM</acronym> interna</dd>
+
+<dt>QUIT</dt>
+<dd>Salir del ctdialog</dd>
+</dl>
+
+<h3 class="margen1y5">EL SERVIDOR CTSERVER</h3>
+<p class="margen6">El programa para el 6811 ctserver es un peque&ntilde;o servidor que
+se ejecuta en la <acronym xml:lang="en" lang="en" title="Random Access Memory">RAM</acronym> o <acronym xml:lang="en" lang="en" title="Electrically Erasable Programmable Read Only Memory">EEPROM</acronym> del 6811 y que permite a un
+cliente situado en el <acronym xml:lang="en" lang="en" title="Personal Computer">PC</acronym> ejecutar una serie de comandos,
+como leer la memoria o escribir en ella. Por defecto este
+servidor se carga en la <acronym xml:lang="en" lang="en" title="Random Access Memory">RAM</acronym> interna del 6811 al ejecutar
+ctdialog. Una vez establecida la conexi&oacute;n con el ctserver,
+el ctdialog comienza a funcionar.<br />
+Si durante la transmision del ctserver se produjese alg&uacute;n
+error, o la tarjeta CT6811 se resetease, el ctdialog no
+podr&aacute; establecer la conexion e informar&aacute; de
+ello.<br />
+El servidor de proposito general CTSERVER ha sido
+dise&ntilde;ado para poder controlar la CT6811 desde
+programas escritos en C en el <acronym xml:lang="en" lang="en" title="Personal Computer">PC</acronym>, utilizando la librer&iacute;a
+<span class="negrita">CTS</span>. Si se conecta por ejemplo un <acronym xml:lang="en" lang="en" title="Liquid Cristal Display">LCD</acronym> a la CT6811, se
+puede escribir un programa en C que se ejecute en el <acronym xml:lang="en" lang="en" title="Personal Computer">PC</acronym> que
+controle el <acronym xml:lang="en" lang="en" title="Liquid Cristal Display">LCD</acronym>, en vez de tener que escribir una aplicaci&oacute;n
+en ensamblador del 6811. El control a traves del CTSERVER
+s&oacute;lo tiene sentido para aplicaciones no
+aut&oacute;nomas.</p>
+
+<h2><a name="SEE_ALSO">SEE ALSO</a></h2>
+<p class="margen6"><span class="negrita">ctreset</span>(1), <span class="negrita">ctdetect</span>(1), <span class="negrita">ctdialog</span>(1),
+<span class="negrita">donwmcu</span>(1), <span class="negrita">ct294</span>(1), <span class="negrita">cteeprom</span>(1),
+<span class="negrita">mcboot</span>(1),<span class="negrita">ctload</span>(1),
+<span class="negrita">ctmap</span>(1),<span class="negrita">ctdialog</span>(1),<span class="negrita">cts19toc</span>(1),
+<span class="negrita">cts</span>(3)</p>
+
+<h2><a name="BUGS">BUGS</a></h2>
+<p class="margen6">La versi&oacute;n 1.4.0 del ctdialog puede trabajar con la familia
+de micros A0, A1 y E2. No trabaja con los micros E1 ni E9.</p>
+
+<h2><a name="AUTHOR">AUTHOR</a></h2>
+<p class="margen6">Juan Gonz&aacute;lez G&oacute;mez<br />
+Andr&eacute;s Prieto-Moreno Torres<br />
+Microb&oacute;tica, 1999</p>
+
+<hr />
+</body>
+</html>

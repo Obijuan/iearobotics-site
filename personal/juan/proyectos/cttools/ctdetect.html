@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta name="generator" content="groff -Thtml, see www.gnu.org" />
+<meta name="Content-Style" content="text/css" />
+<link rel="stylesheet" href="estilo.css" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>CTDETECT</title>
+</head>
+
+<body>
+
+<h1 class="txtcentro">CTDETECT</h1>
+<p><a href="#NAME">NAME</a><br />
+<a href="#SYNOPSIS">SYNOPSIS</a><br />
+<a href="#DESCRIPTION">DESCRIPTION</a><br />
+<a href="#SEE_ALSO">SEE ALSO</a><br />
+<a href="#BUGS">BUGS</a><br />
+<a href="#AUTHOR">AUTHOR</a></p>
+
+<hr />
+<!-- Creator     : groff version 1.17.2 -->
+<!-- CreationDate: Sat Aug 17 09:35:01 2002 -->
+<!-- Converted to XHTML: José Jaime Ariza (jariza@ieee.org) Fri Mar 11 2005 -->
+
+<h2><a name="NAME">NAME</a></h2>
+<p class="margen6">ctdetect - Autodetecci&oacute;n de la tarjeta CT6811</p>
+
+<h2><a name="SYNOPSIS">SYNOPSIS</a></h2>
+<p class="margen6"><span class="negrita">ctdetect</span></p>
+
+<h2><a name="DESCRIPTION">DESCRIPTION</a></h2>
+<p class="margen6">Programa para detectar la tarjeta CT6811. Se exploran los
+puertos COM1 y COM2. (<acronym xml:lang="en" lang="en" title="Terminal Type Serial 0">ttyS0</acronym> y <acronym xml:lang="en" lang="en" title="Terminal Type Serial 1">ttyS1</acronym>). La tarjeta CT6811 se
+debe encontrar conectada a uno de los puertos, debe estar
+alimentada y se debe encontrar en modo bootstrap. (Todos los
+switches hacia abajo). Los jumpers deben estar colocados tal
+y como vienen de fabrica.<br />
+Normalmente se utiliza para comprobar el puerto en el que se
+tiene conectada la CT6811 o bien averiguar si est&aacute;
+correctamente alimentada.<br />
+Es necesaria la librer&iacute;a CTS para funcionar. Debe estar
+instalada.</p>
+
+<h2><a name="SEE_ALSO">SEE ALSO</a></h2>
+<p class="margen6"><span class="negrita">ctreset</span>(1), <span class="negrita">ctdialog</span>(1), <span class="negrita">donwmcu</span>(1),
+<span class="negrita">ct294</span>(1), <span class="negrita">cteeprom</span>(1),
+<span class="negrita">mcboot</span>(1),<span class="negrita">ctdetect</span>(1),
+<span class="negrita">ctmap</span>(1),<span class="negrita">downmcu_e</span>(1),<span class="negrita">cts19toc</span>(1),<span class="negrita">ctload</span>(1),
+<span class="negrita">cts</span>(3)</p>
+
+<h2><a name="BUGS">BUGS</a></h2>
+<p class="margen6">El CTDETECT abre los dos puertos serie. Por ello, si se
+tiene conectado un raton en uno de los puertos, puede dejar
+de funcionar temporalmente. Por ejemplo si se est&aacute;
+utilizando <acronym xml:lang="en" lang="en" title="General Purpose Mouse">GPM</acronym>.<br />
+CTDETECT se basa en el modo bootstrap del 6811 para
+detectarlo, de tal forma que al hacer un reset, el 68hc11
+env&iacute;a una se&ntilde;al de BREAK que es detectada.
+Debido a la implementaci&oacute;n de la deteccion de los BREAKS en
+la librer&iacute;a CTS.1.4, es posible que en alg&uacute;n intento se
+obtenga una respuesta OK cuando realmente no hay conectada
+ninguna CT6811. Por ello se realizan tres intentos por cada
+puerto serie.</p>
+
+<h2><a name="AUTHOR">AUTHOR</a></h2>
+<p class="margen6">Juan Gonz&aacute;lez G&oacute;mez<br />
+Micr&oacute;botica, 1999</p>
+<hr />
+
+</body>
+</html>

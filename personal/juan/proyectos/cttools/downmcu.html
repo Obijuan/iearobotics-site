@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta name="generator" content="groff -Thtml, see www.gnu.org" />
+<meta name="Content-Style" content="text/css" />
+<link rel="stylesheet" href="estilo.css" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>DOWNMCU</title>
+</head>
+<body>
+
+<h1 class="txtcentro">DOWNMCU</h1>
+<p><a href="#NAME">NAME</a><br />
+<a href="#SYNOPSIS">SYNOPSIS</a><br />
+<a href="#DESCRIPTION">DESCRIPTION</a><br />
+<a href="#SEE_ALSO">SEE ALSO</a><br />
+<a href="#AUTHOR">AUTHOR</a></p>
+
+<hr />
+
+<!-- Creator     : groff version 1.17.2 -->
+<!-- CreationDate: Sat Aug 17 09:35:17 2002 -->
+<!-- Converted to XHTML: José Jaime Ariza (jariza@ieee.org) Fri Mar 11 2005 -->
+
+<h2><a name="NAME">NAME</a></h2>
+<p class="margen6">downmcu - Carga de programas en la <acronym xml:lang="en" lang="en" title="Random Access Memory">RAM</acronym> interna de la tarjeta CT6811</p>
+
+<h2><a name="SYNOPSIS">SYNOPSIS</a></h2>
+<p class="margen6"><span class="negrita">downmcu fichero.s19
+[-h][-com{1,2}][-noansi]</span></p>
+
+<h2><a name="DESCRIPTION">DESCRIPTION</a></h2>
+<p class="margen6">Programa para cargar ficheros .S19 en la <acronym xml:lang="en" lang="en" title="Random Access Memory">RAM</acronym> interna de la
+CT6811. La tarjeta debe estar configurada en modo Bootstrap
+y con el reset software activado. (Jumper JP7 colocado en la
+posici&oacute;n ON).<br />
+S&oacute;lo se pueden cargar programas de 256bytes, por lo que este
+programa s&oacute;lo se puede utilizar con los microcontroladores
+6811 de las familias que tengan esta capacidad de la memoria
+<acronym xml:lang="en" lang="en" title="Random Access Memory">RAM</acronym>. Es v&aacute;lido para los modelos A0, A1, A7, A8 y
+E2.</p>
+
+<h3 class="margen1y5">ARGUMENTOS</h3>
+<dl class="manuales">
+<dt>-h</dt>
+<dd>Mostrar ayuda adicional</dd>
+<dt>-noansi</dt>
+<dd>Terminal no ansi</dd>
+<dt>-com1, -com2</dt>
+<dd>Especificar el puerto al que est&aacute; conectado la CT6811</dd>
+</dl>
+
+<h3 class="margen1y5">EJEMPLO</h3>
+<dl class="manuales">
+<dt>downmcu ledp -com2</dt>
+<dd>Cargar el programa ledp.s19 en la CT6811 conectada al puerto COM2</dd>
+</dl>
+
+<h3 class="margen1y5">FICHEROS .S19</h3>
+<p class="margen6">Los fichero .S19 contienen c&oacute;digo ejecutable para los micros
+de Motorola. Se generan a partir de un fichero fuente con un
+ensamblador. En concreto para el 6811 se puede utilizar el
+ensamblador <span class="negrita">as11</span> de motorola.</p>
+
+<h3 class="margen1y5">LIMITACIONES</h3>
+<p class="margen6">El DOWNMCU est&aacute; limitado a los modelos de micro A0, A1, A7,
+A8 y E2. No es posible cargar programas en los modelos E1 y
+E9. Para estos modelos se ha desarrollado el programa
+DOWNMCU_E.</p>
+
+<h3 class="margen1y5">LA ENTRENADORA CT6811</h3>
+<p class="margen6">El programa DOWNMCU junto con la tarjeta CT6811, el
+ensamblador as11 y el programa ctdialog constituyen el
+n&uacute;cleo m&iacute;nimo indispensable para empezar a desarrollar
+aplicaciones con el microcontrolador 68HC11. Estas
+herramientas facilitan sobre todo la labor de aprendizaje,
+permitiendo a los estudiantes y profesionales aprender de
+una forma r&aacute;pida los fundamentos de los microcontroladores,
+el control y la rob&oacute;tica.</p>
+
+<h2><a name="SEE_ALSO">SEE ALSO</a></h2>
+<p class="margen6"><span class="negrita">ctreset</span>(1), <span class="negrita">ctdetect</span>(1), <span class="negrita">ctdialog</span>(1),
+<span class="negrita">donwmcu</span>(1), <span class="negrita">ct294</span>(1), <span class="negrita">cteeprom</span>(1),
+<span class="negrita">mcboot</span>(1),
+<span class="negrita">ctmap</span>(1),<span class="negrita">downmcu_e</span>(1),<span class="negrita">ctload</span>(1),<span class="negrita">cts19toc</span>(1),
+<span class="negrita">cts</span>(3)</p>
+
+<h2><a name="AUTHOR">AUTHOR</a></h2>
+<p class="margen6">Juan Gonz&aacute;lez G&oacute;mez<br />
+Microb&oacute;tica, 1999</p>
+<hr />
+
+</body>
+</html>

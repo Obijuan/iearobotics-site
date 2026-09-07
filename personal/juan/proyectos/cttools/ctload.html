@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta name="generator" content="groff -Thtml, see www.gnu.org" />
+<meta name="Content-Style" content="text/css" />
+<link rel="stylesheet" href="estilo.css" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>CTLOAD</title>
+</head>
+
+<body>
+
+<h1 class="txtcentro">CTLOAD</h1>
+<p><a href="#NAME">NAME</a><br />
+<a href="#SYNOPSIS">SYNOPSIS</a><br />
+<a href="#DESCRIPTION">DESCRIPTION</a><br />
+<a href="#SEE_ALSO">SEE ALSO</a><br />
+<a href="#AUTHOR">AUTHOR</a></p>
+
+<hr />
+<!-- Creator     : groff version 1.17.2 -->
+<!-- CreationDate: Sat Aug 17 09:35:43 2002 -->
+<!-- Converted to XHTML: José Jaime Ariza (jariza@ieee.org) Fri Mar 11 2005 -->
+
+<h2><a name="NAME">NAME</a></h2>
+<p class="margen6">ctload - Carga de programas en la <acronym xml:lang="en" lang="en" title="Random Access Memory">ram</acronym> interna o externa</p>
+
+<h2><a name="SYNOPSIS">SYNOPSIS</a></h2>
+<p class="margen6"><span class="negrita">ctload fichero.s19 [-h] [-t] [-com{1,2}]</span></p>
+
+<h2><a name="DESCRIPTION">DESCRIPTION</a></h2>
+<p class="margen6">Programa para cargar programas en la <acronym xml:lang="en" lang="en" title="Random Access Memory">RAM</acronym> interna o externa
+de la CT6811. CTLOAD analiza el fichero .S19 y comprueba si
+est&aacute; creado para la <acronym xml:lang="en" lang="en" title="Random Access Memory">RAM</acronym> interna o externa, carg&aacute;ndolo en la
+direcci&oacute;n correspondiente. La tarjeta CT6811 debe estar
+configurada en modo bootstrap y con el reset software
+activado.<br />
+CTLOAD puede situarse en modo terminal despu&eacute;s de cargarse
+un programa en la <acronym xml:lang="en" lang="en" title="Random Access Memory">RAM</acronym>. En este modo todo lo que el usuario
+teclea se env&iacute;a por el puerto serie a la CT6811 y todo lo
+que se recibe se presenta en pantalla. Se puede considerar
+que CTLOAD es la uni&oacute;n de los programas downmcu y mcboot,
+adem&aacute;s de poder cargar programas en la <acronym xml:lang="en" lang="en" title="Random Access Memory">RAM</acronym>
+externa.</p>
+
+<h3 class="margen1y5">ARGUMENTOS</h3>
+<dl class="manuales">
+<dt>-h</dt>
+<dd>Mostrar ayuda adicional</dd>
+<dt>-com1, -com2</dt>
+<dd>Especificar el puerto al que est&aacute; conectada la CT6811</dd>
+<dt>-t</dt>
+<dd>Activar el modo terminal</dd>
+</dl>
+
+<h3 class="margen1y5">EJEMPLO</h3>
+<dl class="manuales">
+<dt>ctload menu -com2 -t</dt>
+<dd>Cargar el programa menu (en <acronym xml:lang="en" lang="en" title="Random Access Memory">ram</acronym> interna o externa) y
+arrancar el modo terminal. La CT6811 se encuentra en el
+puerto serie COM2.</dd>
+</dl>
+
+<h2><a name="SEE_ALSO">SEE ALSO</a></h2>
+<p class="margen6"><span class="negrita">ctreset</span>(1), <span class="negrita">ctdetect</span>(1), <span class="negrita">ctdialog</span>(1),
+<span class="negrita">donwmcu</span>(1), <span class="negrita">ct294</span>(1), <span class="negrita">cteeprom</span>(1),
+<span class="negrita">mcboot</span>(1),<span class="negrita">downmcu_e</span>(1),
+<span class="negrita">ctload</span>(1),<span class="negrita">cts19toc</span>(1),<span class="negrita">cts</span>(3)</p>
+
+<h2><a name="AUTHOR">AUTHOR</a></h2>
+<p class="margen6">Juan Gonz&aacute;lez G&oacute;mez<br />
+Microb&oacute;tica, 1999</p>
+<hr/>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="estilo.css" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>CT294</title>
+</head>
+
+<body>
+
+<h1 class="txtcentro">CT294</h1>
+<p><a href="#NAME">NAME</a><br />
+<a href="#SYNOPSIS">SYNOPSIS</a><br />
+<a href="#DESCRIPTION">DESCRIPTION</a><br />
+<a href="#EL_MICROBOT_TRITT">EL MICROBOT TRITT</a><br />
+<a href="#SEE_ALSO">SEE ALSO</a><br />
+<a href="#BUGS">BUGS</a><br />
+<a href="#AUTHOR">AUTHOR</a></p>
+
+<hr />
+<!-- Creator     : groff version 1.17.2 -->
+<!-- CreationDate: Sat Aug 17 09:36:04 2002 -->
+<!-- Converted to XHTML: Jos� Jaime Ariza (jariza@ieee.org) Fri Mar 11 2005 -->
+
+<h2><a name="NAME">NAME</a></h2>
+<p class="margen6">ct294 - Control de la tarjeta CT293+ y dEL_MICROBOT_TRITT</p>
+
+<h2><a name="SYNOPSIS">SYNOPSIS</a></h2>
+<p class="margen6"><span class="negrita">ct294</span></p>
+
+<h2><a name="DESCRIPTION">DESCRIPTION</a></h2>
+<p class="margen6">El programa ct294 est&aacute; pensado para funcionar con la tarjeta
+CT293+ y EL_MICROBOT_TRITT. Muestra en pantalla el estado
+del puerto A, tanto los bits de entrada como los de salida,
+y el estado del puerto E, que es anal&oacute;gico. Los bits de
+salida del puerto A se pueden activar individualmente.
+Tambi&eacute;n se puede mover EL_MICROBOT_TRITT.<br />
+Los bits marcados con color amarillo representan los bits de
+entrada y los que tienen color blanco son los bits de
+salida.</p>
+
+<h3 class="margen1y5">TECLAS</h3>
+<dl class="manuales">
+<dt>O</dt>
+<dd>Mover EL_MICROBOT_TRITT hacia la izquierda</dd>
+<dt>P</dt>
+<dd>Mover Tritt a la derecha</dd>
+<dt>Q</dt>
+<dd>Mover Tritt hacia adelante</dd>
+<dt>A</dt>
+<dd>Mover Tritt hacia atr&aacute;s</dd>
+<dt>ESPACIO</dt>
+<dd>Parar los motores de Tritt</dd>
+<dt>C</dt>
+<dd>Seleccionar el puerto A o el Puerto E. Por defecto est&aacute;
+seleccionado el puerto A. Cuando un puerto se encuentra
+seleccionado las teclas 1-8 actuan sobre &eacute;l.</dd>
+<dt>1-8</dt>
+<dd>Con los n&uacute;meros del 1 al 8 se act&uacute;a sobre el puerto
+seleccionado. Si se tiene seleccionado el puerto A, estas
+teclas cambian el estado de los bits de salida y muestran el
+bit seleccionado en grande en la parte de la derecha. Si se
+tiene seleccionado el puerto E, se muestra el canal
+anal&oacute;gico escogido.</dd>
+<dt>ESC</dt>
+<dd>Salir del programa</dd>
+</dl>
+
+<h3 class="margen1y5">EL SERVIDOR CTSERVER</h3>
+<p class="margen6">CT294 esta programado para el servidor CTSERVER que se
+ejecuta en la <acronym xml:lang="en" lang="en" title="Random Access Memory">RAM</acronym> interna del 6811. Al ejecutar CT294 lo
+primero que se hace es cargar este servidor y luego comienza
+el di&aacute;logo.<br />
+El servidor de prop&oacute;sito general CTSERVER ha sido
+dise&ntilde;ado para poder controlar la CT6811 desde
+programas escritos en C en el <acronym xml:lang="en" lang="en" title="Personal Computer">PC</acronym>, utilizando la librer&iacute;a
+<span class="negrita">CTS</span>. Si se conecta por ejemplo un <acronym xml:lang="en" lang="en" title="Liquid Cristal Display">LCD</acronym> a la CT6811, se
+puede escribir un programa en C que se ejecute en el <acronym xml:lang="en" lang="en" title="Personal Computer">PC</acronym> que
+controle el <acronym xml:lang="en" lang="en" title="Liquid Cristal Display">LCD</acronym>, en vez de tener que escribir una aplicaci&oacute;n
+en ensamblador del 6811. El control a trav&eacute;s del CTSERVER
+s&oacute;lo tiene sentido para aplicaciones no
+aut&oacute;nomas.</p>
+
+<h3 class="margen1y5">LA TARJETA CT293+</h3>
+<p class="margen6">Se trata de una tarjeta que se conecta la tarjeta CT6811 que
+permite:</p>
+<ul class="manuales">
+<li>Mover dos motores de continua o uno paso a paso, por medio del puerto A.</li>
+<li>Leer el estado de cuatro sensores de infrarrojos binarios a trav&eacute;s del puerto A.</li>
+<li>Leer hasta 8 entradas anal&oacute;gicas o digitales a trav&eacute;s del puerto E.</li>
+</ul>
+<p class="margen6">La CT293+ se ha desarrollado para unirse a la CT6811, aunque
+se puede conectar a cualquier sistema digital.</p>
+
+<h2><a name="EL_MICROBOT_TRITT">EL MICROBOT TRITT</a></h2>
+<p class="margen6">Con las tarjetas CT6811 y CT293+ se ha
+dise&ntilde;ado un pequeno microbot de aprendizaje
+llamado Tritt. Dispone de dos motores de continua que le
+permiten moverse y girar y se pueden integrar hasta 4
+sensores de infrarrojos para detectar colores en la
+superficie que va recorriendo. Una de las aplicaciones
+clasicas de este microbot es la de recorrer una l&iacute;nea negra
+que destaca sobre una superficie blanca. Tambi&eacute;n se le
+pueden conectar bumpers (sensores de contacto) para detectar
+colisiones.</p>
+
+<h2><a name="SEE_ALSO">SEE ALSO</a></h2>
+<p  class="margen6"><span class="negrita">ctreset</span>(1), <span class="negrita">ctdetect</span>(1), <span class="negrita">ctdialog</span>(1),
+<span class="negrita">donwmcu</span>(1), <span class="negrita">donwmcu_e</span>(1),<span class="negrita">ct294</span>(1),
+<span class="negrita">cteeprom</span>(1), <span class="negrita">mcboot</span>(1),
+<span class="negrita">ctmap</span>(1),<span class="negrita">ctload</span>(1),<span class="negrita">cts19toc</span>(1),
+<span class="negrita">cts</span>(3)</p>
+
+<h2><a name="BUGS">BUGS</a></h2>
+
+<h2><a name="AUTHOR">AUTHOR</a></h2>
+<p class="margen6">Andr&eacute;s Prieto-Moreno Torres<br />
+Juan Gonz&aacute;lez G&oacute;mez<br />
+Micr&oacute;botica, 1999</p>
+<hr />
+
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>CTTOOLS: Herramientras para la tarjeta CT6811</TITLE>
+</HEAD>
+
+<BODY LANG="en-US" DIR="LTR">
+<TABLE WIDTH=95% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+	<TR>
+		<TD COLSPAN=2>
+			<P ALIGN=CENTER><B>CTTOOLS: Herramientras para la tarjeta CT6811</B>
+						</P>
+		</TD>
+	</TR>
+</TABLE>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4><B>INTRODUCCI&Oacute;N</B>
+</FONT></FONT>
+</P>
+<P><FONT FACE="Albany, sans-serif"><FONT SIZE=2>Las <B>CTTOOLS</B>
+son herramientas b&aacute;sicas de trabajo para la </FONT><A HREF="../../../../proyectos/ct6811/ct6811.html"><FONT SIZE=2>tarjeta
+CT6811</FONT></A><FONT SIZE=2> de </FONT><A HREF="http://www.microbotica.com/"><FONT SIZE=2>Microb&oacute;tica</FONT></A><FONT SIZE=2>.
+Se trata de peque&ntilde;os programas para la consola que permiten
+cargar programas en la RAM interna, grabar la EEPROM, manejar la
+tarjeta <B>CT293+</B>, manejar ficheros .S19, etc... Todas las
+CTTOOLS se basan en la </FONT><A HREF="../cts/cts.html"><B><FONT SIZE=2>librer&iacute;a
+CTS</FONT></B></A><FONT SIZE=2><BR><BR>Los programas que componen las
+<B>CTTOOLS</B> se listan a continuaci&oacute;n. Haga click para
+acceder a su p&aacute;gina man: </FONT></FONT>
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="ctdetect.html"><B><FONT SIZE=2><FONT FACE="Arial, sans-serif">ctdetect</FONT></FONT></B></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">:
+	Detectar el puerto en el que se encuentra conectada la tarjeta
+	CT6811 </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="ctreset.html"><B><FONT SIZE=2><FONT FACE="Arial, sans-serif">ctreset</FONT></FONT></B></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">:
+	Hacer un reset de la CT6811, saltar a la EEPROM o a la RAM interna </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="ctmap.html"><B><FONT SIZE=2><FONT FACE="Arial, sans-serif">ctmap</FONT></FONT></B></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">:
+	visualziar el mapa de memoria de un fichero .S19 </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="downmcu.html"><B><FONT SIZE=2><FONT FACE="Arial, sans-serif">downmcu</FONT></FONT></B></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">:
+	Cargar un programa en la RAM interna de la CT6811. Micros A0, A1 y
+	E2 </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="downmcu_e.html"><B><FONT SIZE=2><FONT FACE="Arial, sans-serif">downmcu_e</FONT></FONT></B></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">:
+	Versi&oacute;n del downmcu para micros E9 </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="mcboot.html"><B><FONT SIZE=2><FONT FACE="Arial, sans-serif">mcboot</FONT></FONT></B></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">:
+	Terminal de comunicaciones para la CT6811 </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="ctdialog.html"><B><FONT SIZE=2><FONT FACE="Arial, sans-serif">ctdialog</FONT></FONT></B></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">:
+	Dialogar con la tarjeta CT6811 </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="ct294.html"><B><FONT SIZE=2><FONT FACE="Arial, sans-serif">ct294</FONT></FONT></B></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">:
+	Control de la tarjeta CT293+ y del microbot Tritt </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="ctload.html"><B><FONT SIZE=2><FONT FACE="Arial, sans-serif">ctload</FONT></FONT></B></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">:
+	Carga de programas en la RAM interna y EXTERNA </FONT></FONT>
+	</P>
+	<LI><P><A HREF="cts19toc.html"><B><FONT SIZE=2><FONT FACE="Arial, sans-serif">cts19toc</FONT></FONT></B></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">:
+	Convertir un fichero .S19 para la RAM interna en una matriz en C.
+	Esta utilidad s&oacute;lo la utilizan los desarrolladores </FONT></FONT>
+	</P>
+</UL>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><BR>Aqu&iacute; se
+muestran algunas <B>capturas de pantalla</B>: </FONT></FONT>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="ct294.png" NAME="Imagen1" ALIGN=BOTTOM WIDTH=529 HEIGHT=395 BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm">Programa CT294, para el
+control del microbot Tritt</P>
+<P><BR><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="ctdialog.png" NAME="Imagen2" ALIGN=BOTTOM WIDTH=511 HEIGHT=369 BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm">Programa ctdialog</P>
+<P><BR><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="ctmap.png" NAME="Imagen3" ALIGN=BOTTOM WIDTH=529 HEIGHT=395 BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm">Programa ctmap</P>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4><B>AUTORES:</B>
+</FONT></FONT>
+</P>
+<UL>
+	<LI><P><A HREF="../../index.html">Juan Gonz&aacute;lez G&oacute;mez</A>
+	(a.k.a. Obijuan), (<A HREF="http://www.microbotica.com/">Microb&oacute;tica</A>,
+	1999) 
+	</P>
+</UL>
+<UL>
+	<LI><P><A HREF="../../../andres">Andr&eacute;s Prieto-Moreno Torres</A>,
+	(<A HREF="http://www.microbotica.com/">Microb&oacute;tica</A>, 1999)
+		</P>
+</UL>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT SIZE=4><FONT FACE="Albany, sans-serif"><B>LICENCIA</B>:
+<A HREF="http://gugs.sindominio.net/gnu-gpl/gples.html">GPL</A> </FONT></FONT>
+</P>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4><B>PLATAFORMA</B>:
+Linux </FONT></FONT>
+</P>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4><B>DOWNLOAD:</B>
+</FONT></FONT>
+</P>
+<TABLE WIDTH=95% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb">
+	<TR>
+		<TD COLSPAN=2>
+			<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>FICHEROS PARA
+			DESCARGAR</B> </FONT>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<TABLE WIDTH=95% BORDER=0 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=112*>
+	<COL WIDTH=144*>
+	<TR BGCOLOR="#cabeeb">
+		<TD WIDTH=44%>
+			<P><A HREF="cttools-1.5.tar.gz"><FONT FACE="Arial, sans-serif">cttools-1.5.tar.gz</FONT></A></P>
+		</TD>
+		<TD WIDTH=56%>
+			<P><FONT FACE="Arial, sans-serif">CTTOOLS. Version 1.5. Fuentes</FONT></P>
+		</TD>
+	</TR>
+	<TR BGCOLOR="#abbeeb">
+		<TD WIDTH=44%>
+			<P><A HREF="cttools_1.5-1_i386.deb"><FONT FACE="Arial, sans-serif">cttools_1.5-1_i386.deb</FONT></A></P>
+		</TD>
+		<TD WIDTH=56%>
+			<P><FONT FACE="Arial, sans-serif">CTTOOLS. 1.5 Binarios. Versi&oacute;n
+			para Debian/Sarge</FONT></P>
+		</TD>
+	</TR>
+	<TR BGCOLOR="#cabeeb">
+		<TD WIDTH=44%>
+			<P><A HREF="cttools_1.5-1.src.tar.gz"><FONT FACE="Arial, sans-serif">cttools_1.5-1.src.tar.gz</FONT></A></P>
+		</TD>
+		<TD WIDTH=56%>
+			<P><FONT FACE="Arial, sans-serif">CTTOOLS. 1.5. Fuentes para
+			Debian/Sarge (Desarrolladores)</FONT></P>
+		</TD>
+	</TR>
+	<TR BGCOLOR="#abbeeb">
+		<TD WIDTH=44%>
+			<P><A HREF="cttools-1.4.tgz"><FONT FACE="Arial, sans-serif">cttools-1.4.tgz
+			(168KB)</FONT></A> 
+			</P>
+		</TD>
+		<TD WIDTH=56%>
+			<P><FONT FACE="Arial, sans-serif">Cttools Versi&oacute;n 1.4.
+			Fuentes y ejecutables</FONT></P>
+		</TD>
+	</TR>
+	<TR BGCOLOR="#cabeeb">
+		<TD WIDTH=44%>
+			<P><A HREF="cttools-1.4-1.i386.rpm"><FONT FACE="Arial, sans-serif">cttools-1.4.-1.i386.rpm
+			(86KB)</FONT></A> 
+			</P>
+		</TD>
+		<TD WIDTH=56%>
+			<P><FONT FACE="Arial, sans-serif">Cttools Versi&oacute;n 1.4.
+			Ejecutables</FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT SIZE=4><FONT FACE="Albany, sans-serif"><B>NOTICIAS</B>
+</FONT></FONT>
+</P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>28/Marzo/2005:
+	</B><SPAN STYLE="font-weight: medium">Documentaci&oacute;n de las
+	CTTOOLS pasadas a XHMTL 1.0. Autor: <B>Jos&eacute; Jaime Ariza</B>,
+	Universidad de M&aacute;laga. &iexcl;Muchas gracias!</SPAN></FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>5/Julio/2004:
+	Versi&oacute;n 1.5</B> de las CTTOOLS.</FONT></FONT></P>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Dependen
+		de la librer&iacute;a <B>cts 1.5</B></FONT> </FONT>
+		</P>
+		<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">A&ntilde;adidos
+		paquetes para Debian/Sarge</FONT> </FONT>
+		</P>
+		<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Estas
+		herramientas ya no se van a mantener m&aacute;s. <B>La </B></FONT><A HREF="../../../../proyectos/ct6811/ct6811.html"><B><FONT SIZE=2><FONT FACE="Albany, sans-serif">tarjeta
+		CT6811</FONT></FONT></B></A><FONT SIZE=2> <B>ha quedado obsoleta</B>.
+		Ahora utilizamos la </FONT><A HREF="../../../../proyectos/skypic/skypic.html"><FONT SIZE=2>Tarjeta
+		Skypic</FONT></A><FONT SIZE=2>.</FONT></FONT><FONT SIZE=2> </FONT>
+		</P>
+	</UL>
+</UL>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>16/Agosto/2002:</B>
+	<B>Versi&oacute;n 1.4</B> de las CTTOOLS puesta en esta web </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<P><A HREF="../../index.html"><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez G&oacute;mez</FONT></A><BR><A HREF="/iearobotics-site/wiki">IEAROBOTICS</A><BR><BR><BR>
+</P>
+</BODY>
+</HTML>
