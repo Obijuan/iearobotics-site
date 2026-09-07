@@ -1,0 +1,447 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>Cuaderno t&eacute;cnico 5: Grabaci&oacute;n de microcontroladores PIC usando la tarjeta CT6811</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.2  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGED" CONTENT="20041017;20035000">
+	<META NAME="KEYWORDS" CONTENT="microcontrolador, PIC, ct6811, grabaci&oacute;n, hardware">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>Cuaderno t&eacute;cnico 5: Grabaci&oacute;n de
+				microcontroladores PIC usando la tarjeta CT6811</B></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=785 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=90>
+			<COL WIDTH=66>
+			<COL WIDTH=67>
+			<COL WIDTH=137>
+			<COL WIDTH=50>
+			<COL WIDTH=116>
+			<COL WIDTH=44>
+			<COL WIDTH=64>
+			<COL WIDTH=54>
+			<COL WIDTH=55>
+			<TR>
+				<TD WIDTH=90>
+					<P><A HREF="#Introducci&oacute;n|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Introducci&oacute;n</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">]</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=66>
+					<P><A HREF="#Esquema de grabaci&oacute;n|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Esquema
+					grabaci&oacute;n</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">]</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=67>
+					<P><A HREF="#Grabador m&iacute;nimo|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Grabador
+					m&iacute;nimo]</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=137>
+					<P><A HREF="#Tarjeta entrenadora/grabadora m&iacute;nima|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Tarjeta
+					entrenadora/grabadora m&iacute;nima</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">]</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=50>
+					<P><A HREF="#La tarjeta Skypic|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[skypic]</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=116>
+					<P><A HREF="#Documentaci&oacute;n y referencias|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Documentaci&oacute;n]</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=44>
+					<P><A HREF="#Autor|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Autor</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">]</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=64>
+					<P><A HREF="#Licencia|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Licencia]</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=54>
+					<P><A HREF="#Noticias|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Noticias]</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=55>
+					<P><A HREF="#Cr&eacute;ditos|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Cr&eacute;ditos]</FONT></FONT></A></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/ctpic2.jpg" NAME="Imagen1" ALIGN=MIDDLE WIDTH=320 HEIGHT=240 BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="Introducci&oacute;n|outline"></A>Introducci&oacute;n</H2>
+<P><FONT FACE="Arial, sans-serif">Existen diferentes procedimientos
+para grabar programas en los <B>microcontroladores PIC</B>. Uno de
+ellos es a trav&eacute;s de la <A HREF="../../ct6811/ct6811.html">tarjeta
+ct6811</A>.</FONT></P>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif">En este
+cuaderno t&eacute;cnico se describen los pasos a seguir para ello,
+as&iacute; como la arquitectura del grabador y el esquema m&iacute;nimo
+para su construcci&oacute;n, v&aacute;lido para las familias <B>16F87X</B>
+y <B>16F8X</B>.</FONT></P>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif">Tambi&eacute;n
+se proporcionan enlaces para que el usuario pueda profundizar en los
+detalles t&eacute;cnicos de c&oacute;mo se realiza esta grabaci&oacute;n.</FONT></P>
+<HR>
+<H2>Motivaci&oacute;n</H2>
+<P><FONT FACE="Arial, sans-serif">La <A HREF="../../ct6811/ct6811.html"><FONT FACE="Arial, sans-serif">tarjeta
+ct6811 </FONT></A>es muy &uacute;til para la construcci&oacute;n y
+prototipado r&aacute;pido de robots. El principal inconveniente
+reside en la dificultad para encontrar estos micros, que ya se han
+dejado de fabricar. Hemos tenido que migrar la tecnolog&iacute;a
+hacia otros microcontroladores, como los <B>PIC</B>, que est&aacute;n
+ampliamente difundidos. Con este cuaderno t&eacute;cnico se pretende
+facilitar esta migraci&oacute;n. Si disponemos de una <A HREF="../../ct6811/ct6811.html"><FONT FACE="Arial, sans-serif">tarjeta
+ct6811</FONT></A>, <B>la podremos reutilizar como grabadora de micros
+PIC</B>.</FONT></P>
+<HR>
+<H2><A NAME="Esquema de grabaci&oacute;n|outline"></A>Esquema de
+grabaci&oacute;n</H2>
+<P><FONT FACE="Arial, sans-serif">La grabaci&oacute;n se esquematiza
+en la figura inferior. Los elementos necesarios son:</FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Un PC con puerto serie</B></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif">Una <A HREF="../../ct6811/ct6811.html"><FONT FACE="Arial, sans-serif">tarjeta
+	ct6811</FONT></A>, con un micro <B>modelo E2</B>, en el que debe
+	estar grabado el <A HREF="../../stargate/servidores/sg-picp/sg-picp.html">servidor
+	PICP</A>. El ejecutable (.S19) lo puedes bajar directamente desde
+	<A HREF="../../stargate/servidores/sg-picp/download/sg-picp-6811e2-ct-0.s19">este
+	enlace</A>.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>La tarjeta entrenadora que
+	contiene el PIC a grabar</B>. Un esquema, utilizado en el
+	laboratorio de Arquitectura de computadores de la UPSAM, lo puedes
+	<A HREF="http://www.iearobotics.com/personal/andres/proyectos/picmin/download/planos/picupsam.pdf">encontrar
+	aqu&iacute;</A>. El conector CT1 de este esquema es por el que se
+	realiza la conexi&oacute;n al puerto A de la CT6811. M&aacute;s
+	informaci&oacute;n en <A HREF="http://www.iearobotics.com/personal/andres/proyectos/picmin/pic1.html">esta
+	p&aacute;gina</A>.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Un cable plano de bus</B>
+	de 10 v&iacute;as para conectar la <A HREF="../../ct6811/ct6811.html"><FONT FACE="Arial, sans-serif">ct6811
+	</FONT></A>(<B>PUERTO A</B>) con la tarjeta entrenadora.</FONT></P>
+</UL>
+<P><BR><BR>
+</P>
+<P ALIGN=CENTER><IMG SRC="images/esquema1.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=511 HEIGHT=293 BORDER=0><BR><BR><BR>
+</P>
+<HR>
+<H2><A NAME="Grabador m&iacute;nimo|outline"></A>Grabador m&iacute;nimo</H2>
+<P><FONT FACE="Arial, sans-serif">En la siguiente figura se muestra
+un esquema de la <A HREF="../../ct6811/ct6811.html"><FONT FACE="Arial, sans-serif">tarjeta
+ct6811 </FONT></A>conectada a un <B>grabador m&iacute;nimo</B>. Los
+bits <B>PA7</B> y <B>PA3</B> de la CT6811 se conectan a los bits <B>RB7</B>
+y <B>RB6</B>, respectivamente, del PIC.</FONT></P>
+<P ALIGN=CENTER><IMG SRC="images/esq_min1.png" NAME="Imagen3" ALIGN=MIDDLE WIDTH=373 HEIGHT=194 BORDER=0></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif">El bit <B>PA4</B> se
+utiliza para hacer un <B>reset</B> del PIC, para situarlo en modo
+monitor. Est&aacute; conectado a la base de un <B>trasistor NPN</B>
+(por ejemplo un SC107 &oacute; un BC237B) a trav&eacute;s de una
+resistencia de 10K.</FONT></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><B>Este grabador m&iacute;nimo
+precisa de dos tipos de alimentaciones diferentes</B>. Una de 5v para
+el PIC y otra de 12v para entrar en modo monitor. Los 5v y masa se
+pueden sacar de la alimentaci&oacute;n de la CT6811 (disponibles en
+el propio PUERTO A, y por tanto, se podr&aacute;n llevar por el cable
+de bus que conecta la <A HREF="../../ct6811/ct6811.html"><FONT FACE="Arial, sans-serif">ct6811
+</FONT></A>con el grabador m&iacute;nimo).</FONT></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif">Es un grabador gen&eacute;rico,
+v&aacute;lido para las familias de PICs <B>16F8X</B> y <B>16F87X</B></FONT></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif">En la siguiente foto se
+muestra un ejemplo de este grabador m&iacute;nimo, para un <B>PIC16F84A</B>.
+Para la obtenci&oacute;n de los 12v se ha utlizado una pila peque&ntilde;a,
+de las empleadas en muchos mandos a distancia de los garajes</FONT></P>
+<P ALIGN=CENTER><IMG SRC="images/grab_16f84.png" NAME="Imagen4" ALIGN=MIDDLE WIDTH=320 HEIGHT=240 BORDER=0></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif">Incluye, adem&aacute;s,
+una clema para introducir los 12v de otra fuente que no sea la pila.
+Tambi&eacute;n se coloc&oacute; un pulsador para hacer un reset
+manual. S&oacute;lo es necesario para el desarrollo del software.
+Este fue el primer grabador de PICs que construimos, que se puede
+conectar directamente a una <A HREF="../../ct6811/ct6811.html"><FONT FACE="Arial, sans-serif">CT6811
+</FONT></A>.</FONT></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif">En esta foto aparece una
+CT6811 conectada al grabador m&iacute;nimo para el PIC16F84A. La
+alimentaci&oacute;n de 5v se le introduce a la <A HREF="../../ct6811/ct6811.html"><FONT FACE="Arial, sans-serif">CT6811
+</FONT></A>y llega hasta el pic por el cable de bus conectado al
+puerto A.</FONT></P>
+<P ALIGN=CENTER><IMG SRC="images/ct6811-grabmin.png" NAME="Imagen5" ALIGN=MIDDLE WIDTH=328 HEIGHT=246 BORDER=0><BR><BR><BR>
+</P>
+<HR>
+<H2><A NAME="historia"></A>Tensi&oacute;n de grabaci&oacute;n</H2>
+<P><FONT FACE="Arial, sans-serif">Uno de los problemas en la
+grabaci&oacute;n de PICs es que se necesitan 2 tensiones: una de 5 y
+otra de 12v. Esto lo podemos solucionar de las siguientes maneras:</FONT></P>
+<OL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Introducir los 12v
+	externamente</B> en la tarjeta entrenadora. Para no utilizar otro
+	transformardor o una fuente de alimentaci&oacute;n se puede usar una
+	pila de 12v, como la empleada en el grabador m&iacute;nimo anterior.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Obtener los 12v a trav&eacute;s
+	del chip MAX232</B>. Podemos tener construida una placa entrenadora
+	que tenga conexi&oacute;n al puerto serie, que use el chip MAX232.
+	Para las comunicaciones serie s&oacute;lo utilizaremos las se&ntilde;ales
+	tx y rx. Quedan libres pines del MAX por los que es posible obtener
+	los 12v (realmente no son 12 voltios, es un poco menos, pero es
+	suficiente para grabar los pics). Esta es la soluci&oacute;n
+	empleada en la <B>tarjeta SKYPIC</B>.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Utilizar alg&uacute;n otro
+	chip que convierta de 5 a 12v</B>, como por ejemplo el </FONT><TT><B>ST662A</B><FONT FACE="Arial, sans-serif">.</FONT></TT></P>
+</OL>
+<HR>
+<H2><A NAME="alimentacion"></A><A NAME="Tarjeta entrenadora/grabadora m&iacute;nima|outline"></A>
+Tarjeta entrenadora/grabadora m&iacute;nima</H2>
+<P><FONT FACE="Arial, sans-serif">Lo m&aacute;s normal es construirse
+una <B>tarjeta entrenadora</B> para PICs, que adem&aacute;s <B>permita
+grabarlos</B>. En ese caso, necesitamos colocar un <B>jumper triple</B>
+para selecionar la tensi&oacute;n que se introducir&aacute; por la
+pata <B>MCLR</B>. Si es de 5v, el PIC funcionar&aacute; en modo
+normal. Si es de 12v, entrar&aacute; en modo monitor y se podr&aacute;
+grabar desde la <A HREF="../../ct6811/ct6811.html"><FONT FACE="Arial, sans-serif">CT6811</FONT></A>.
+Para los 12v se pueden emplear las soluciones comentadas en el
+apartado anterior.</FONT></P>
+<P ALIGN=CENTER><IMG SRC="images/esq_min2.png" NAME="Imagen6" ALIGN=MIDDLE WIDTH=488 HEIGHT=222 BORDER=0></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif">El esquema es casi igual
+al del grabador m&iacute;nimo. Se ha a&ntilde;adido el <B>jumper
+triple</B>, un <B>pulsador de reset</B> y el <B>circuito de reloj</B>.
+Cuando se sit&uacute;a el jumper entre las posiciones <B>2 y 3</B>,
+el micro entra en <B>modo monitor</B> y se puede grabar el PIC a
+trav&eacute;s de la <A HREF="../../ct6811/ct6811.html"><FONT FACE="Arial, sans-serif">CT6811</FONT></A>,
+como se describe en este cuaderno. Colocando el jumper en las
+posiciones <B>1 y 2</B>, el PIC funciona normalmente, ejecutando el
+programa grabado.</FONT></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif">En la foto de la derecha
+se muestra la placa <B>PICUPSAM</B>, que adem&aacute;s del esquema
+anterior incluye un led y un pulsador para hacer pruebas. Se ha
+a&ntilde;adido un MAX232, para las comunicaciones serie con el PC y
+para la obtenci&oacute;n de los 12 voltios para la grabaci&oacute;n.
+Esta placa es la que se han construido los alumnos del <B>laboratorio
+de Arquitectura de Computadores de la UPSAM</B>, durante el curso
+2003/2004 (El max232 era opcional). El esquema b&aacute;sico est&aacute;
+disponible <A HREF="http://www.iearobotics.com/personal/andres/proyectos/picmin/download/planos/picupsam.pdf">aqu&iacute;</A>.
+M&aacute;s informaci&oacute;n en <A HREF="http://www.iearobotics.com/personal/andres/proyectos/picmin/pic1.html">esta
+p&aacute;gina</A>.</FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<THEAD>
+		<TR VALIGN=BOTTOM>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/ctpic2.jpg" NAME="Imagen7" ALIGN=BOTTOM WIDTH=320 HEIGHT=240 BORDER=0></P>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><I>La CT6811
+				grabando la placa entrenadora PICUPSAM</I></FONT></P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/picupsam1.png" NAME="Imagen8" ALIGN=MIDDLE WIDTH=381 HEIGHT=344 BORDER=0></P>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><I>La tarjeta
+				entrenadora PICUPSAM, con algunas ampliaciones</I></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=CENTER><BR><BR>
+</P>
+<HR>
+<H2><A NAME="software"></A><A NAME="La tarjeta Skypic|outline"></A>La
+tarjeta Skypic</H2>
+<P><FONT FACE="Arial, sans-serif">La <A HREF="../../skypic/skypic.html">tarjeta
+Skypic</A> es equivalente a la </FONT><A HREF="../../ct6811/ct6811.html"><FONT FACE="Arial, sans-serif">CT6811</FONT></A>
+<FONT FACE="Arial, sans-serif">pero para microcontroladores PIC.
+Tiene exactamente las mismas dimensiones. Los conectores de bus son
+compatibles y el cable de conexi&oacute;n al PC es tambi&eacute;n el
+mismo.</FONT></P>
+<P><FONT FACE="Arial, sans-serif"><B>Algunas caracter&iacute;sticas
+son</B>:</FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif">Grabaci&oacute;n desde un ICD2
+	de Microchip</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif">Grabaci&oacute;n desde una
+	CT6811 o desde otra <A HREF="../../skypic/skypic.html">Skypic</A> </FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif">Conmunicaciones serie con el
+	PC</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif">Conexi&oacute;n directa de
+	hasta 8 servos del tipo Futaba 3003 o compatibles</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif">Compatible con la <A HREF="../../ct293/ct293.html">tarjeta
+	CT293+</A>.</FONT></P>
+</UL>
+<P><FONT FACE="Arial, sans-serif">En la foto de la izquierda se
+muestra la <A HREF="../../skypic/skypic.html">tarjeta Skypic</A> . En
+la de la derecha se est&aacute; grabando desde una CT6811.</FONT></P>
+<CENTER>
+	<TABLE WIDTH=777 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=387>
+		<COL WIDTH=374>
+		<THEAD>
+			<TR VALIGN=TOP>
+				<TD WIDTH=387>
+					<P><IMG SRC="images/skypic-peq.jpg" NAME="Imagen9" ALIGN=MIDDLE WIDTH=320 HEIGHT=240 BORDER=0></P>
+					<P><FONT FACE="Arial, sans-serif">La <A HREF="../../skypic/skypic.html">tarjeta
+					entrenadora Skypic</A> </FONT>
+					</P>
+				</TD>
+				<TD WIDTH=374>
+					<P><IMG SRC="images/skypic-ct.jpg" NAME="Imagen10" ALIGN=MIDDLE WIDTH=320 HEIGHT=240 BORDER=0></P>
+					<P><FONT FACE="Arial, sans-serif">La <A HREF="../../skypic/skypic.html">Skypic</A>
+					grabada desde una CT6811</FONT></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</CENTER>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif">El esquema de grabaci&oacute;n
+es el mostrado en este cuaderno. Los 12v se obtienen de una de las
+patas del MAX232.</FONT></P>
+<HR>
+<H2>Grabando desde la CT6811</H2>
+<P><FONT FACE="Arial, sans-serif">Independientemente de la tarjeta
+entrenadora usada (<A HREF="../../skypic/skypic.html"><FONT FACE="Arial, sans-serif">Skypic</FONT></A>,
+picupsam o cualquier otra), el proceso de grabaci&oacute;n desde una
+<A HREF="../../ct6811/ct6811.html"><FONT FACE="Arial, sans-serif">CT6811</FONT></A>
+es el siguiente:</FONT></P>
+<OL>
+	<LI><P><FONT FACE="Arial, sans-serif">Tomar una <A HREF="../../ct6811/ct6811.html"><FONT FACE="Arial, sans-serif">CT6811</FONT></A>
+	con un micro <B>modelo E2</B></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif">Grabar el <A HREF="../../stargate/servidores/sg-picp/sg-picp.html"><FONT FACE="Arial, sans-serif">Servidor
+	PICP</FONT></A> en la CT6811. El ejecutable (.S19) lo puedes bajas
+	de <A HREF="../../stargate/servidores/sg-picp/download/sg-picp-6811e2-ct-0.s19"><FONT FACE="Arial, sans-serif">aqu&iacute;</FONT></A>.
+	</FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif">Colocar los jumpers de la
+	CT6811 como se indica:</FONT></P>
+</OL>
+<UL>
+	<UL>
+		<LI><P><FONT FACE="Arial, sans-serif">Jumper <B>JP5</B> quitado </FONT>
+		</P>
+		<LI><P><FONT FACE="Arial, sans-serif">Jumper <B>JP3</B> puesto (Led
+		activado)</FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif">Jumper <B>JP7</B> en posici&oacute;n
+		OFF</FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif">Jumper <B>JP8</B> puesto</FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif">Jumper <B>JP4</B> en posici&oacute;n
+		RST</FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><B>Switch 2</B> a ON, resto a
+		OFF (Modo single chip)</FONT></P>
+	</UL>
+</UL>
+<OL START=4>
+	<LI><P><FONT FACE="Arial, sans-serif">Alimentar la CT6811,
+	conectarla al PC y a la tarjeta entrenadora a grabar (mediante un
+	cable plano de bus de 10 v&iacute;as)</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif">En el PC deberemos tener
+	instalado el software <A HREF="http://www.iearobotics.com/personal/juan/proyectos/skypic-down/skypic.html"><FONT FACE="Arial, sans-serif">Skypic-down</FONT></A>.
+	En la p&aacute;gina se muestra c&oacute;mo instalarlo y usarlo.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif">Puedes realizar pruebas de
+	grabaci&oacute;n con <A HREF="download/ledp.hex">este fichero</A>.</FONT></P>
+</OL>
+<HR>
+<H2>Otras tarjetas grabadoras</H2>
+<P><FONT FACE="Arial, sans-serif">La <A HREF="../../ct6811/ct6811.html"><FONT FACE="Arial, sans-serif">tarjeta
+CT6811</FONT></A> se utiliza como un <A HREF="../../stargate/index.html"><FONT FACE="Arial, sans-serif">Stargate</FONT></A>.
+Es una puerta de enlace que nos permite grabar los PICs desde el PC.
+Sin embargo, podemos utilizar cualquier otra tarjeta que implemente
+el servidor PICP. Por ejemplo, podemos usar una entrenadora con un
+PIC16F876A, como la <B>Skypic</B>, la <B>picupsam</B> o cualquier
+otra. Desde ellas grabaremos los PICs.</FONT></P>
+<HR>
+<H2><A NAME="Documentaci&oacute;n y referencias|outline"></A>Documentaci&oacute;n
+y referencias</H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><A HREF="../../skypic/skypic.html">Tarjeta
+	Skypic</A>: entrenadora para microcontroladores PIC.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif">En <A HREF="http://www.iearobotics.com/personal/andres/proyectos/picmin/pic1.html"><FONT FACE="Arial, sans-serif">esta
+	p&aacute;gina </FONT></A>hay informaci&oacute;n sobre los
+	microcontroladores PIC y en concreto sobre las placas <A HREF="http://www.iearobotics.com/personal/andres/proyectos/picmin/download/planos/picmin.pdf"><FONT FACE="Arial, sans-serif">PICMIN</FONT></A>
+	y <A HREF="http://www.iearobotics.com/personal/andres/proyectos/picmin/download/planos/picupsam.pdf"><FONT FACE="Arial, sans-serif">UPSAM</FONT></A>,
+	que las han tenido que construir los alumnos del <SPAN STYLE="text-decoration: none"><B>Laboratorio
+	de Arquitectura de Computadores de la UPSAM</B></SPAN>, en los
+	cursos 2002/2003 y 2003/2004 respectivamente.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif">Toda la informaci&oacute;n
+	necesaria sobre la tarjeta <B>CT6811</B> <A HREF="../../ct6811/ct6811.html"><FONT FACE="Arial, sans-serif">est&aacute;
+	disponible aqu&iacute;</FONT></A>. </FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><A HREF="../ct4/ct4.html">Cuaderno
+	t&eacute;cnico 4</A>: Grabaci&oacute;n de microcontroladres PIC.
+	Explicaci&oacute;n detallada del protocolo ICSP de Microchip, para
+	la grabaci&oacute;n de los PIC.</FONT></P>
+	<LI><P><A HREF="../../stargate/servidores/sg-picp/sg-picp.html"><FONT FACE="Arial, sans-serif">Servidor
+	PICP</FONT></A>. <FONT FACE="Arial, sans-serif">Servidor de
+	programaci&oacute;n de PICs. Software que implementa el protocolo
+	ICSP de grabaci&oacute;n de PICS, para diferentes
+	microcontroladores, entre ellos el 6811. Forma parte del <A HREF="../../stargate/index.html">proyecto
+	Stargate</A></FONT>.</P>
+	<LI><P><A HREF="http://www.iearobotics.com/personal/juan/proyectos/skypic-down/skypic-down.html"><FONT FACE="Arial, sans-serif">Skypic-down</FONT></A>.
+	<FONT FACE="Arial, sans-serif">Software de grabaci&oacute;n de PICs,
+	que se ejecuta en el PC.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><A HREF="../../charlas-irc/pic-linux/log-26-oct-2003.html">Charla
+	en el Chat</A> sobre microcontroladores PIC y Linux. Se muestra el
+	manejo de algunas herramientas para el ensamblador y simulaci&oacute;n
+	de aplicaciones para los PICs, en entornos Linux.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><A HREF="http://www.iearobotics.com/personal/juan/publicaciones/art5/index.html">Art&iacute;culo</A>:
+	&quot;Herramientas hardware y software para el desarrollo de
+	aplicaciones con Microcontroladores PIC bajo plataformas GNU/Linux&quot;</FONT></P>
+</UL>
+<HR>
+<H2><A NAME="Autor|outline"></A>Autor</H2>
+<UL>
+	<LI><P><A HREF="http://www.iearobotics.com/personal/juan/index.html"><FONT FACE="Arial, sans-serif">Juan
+	Gonz&aacute;lez G&oacute;mez</FONT></A></P>
+</UL>
+<HR>
+<H2><A NAME="Licencia|outline"></A>Licencia</H2>
+<P><FONT FACE="Arial, sans-serif">Este <B>documento</B> se
+distribuyen bajo </FONT><A HREF="http://gugs.sindominio.net/licencias/fdl-es.html"><FONT FACE="Arial, sans-serif">licencia
+FDL</FONT></A> <FONT FACE="Arial, sans-serif">por lo que se permite
+su copia, modificaci&oacute;n y distribuci&oacute;n, siempre y cuando
+se mantenga esta nota.</FONT></P>
+<HR>
+<H2><A NAME="noticias"></A><A NAME="Noticias|outline"></A>Noticias</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>17/Oct/2004:</B><SPAN STYLE="font-weight: medium">
+	Corregido enlace roto hacia programa  <A HREF="http://www.iearobotics.com/personal/juan/proyectos/skypic-down/skypic.html"><FONT FACE="Arial, sans-serif">skypic-down</FONT></A></SPAN></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>1/Oct/2004:
+	</B></FONT>
+	</P>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif">A&ntilde;adido
+		enlace hacia la <A HREF="../../skypic/skypic.html">tarjeta Skypic.</A></FONT></P>
+		<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif">A&ntilde;adido
+		enlace hacia el <A HREF="../index.html"><FONT FACE="Arial, sans-serif">&Iacute;ndice
+		de cuadernos t&eacute;cnicos</FONT></A></FONT></P>
+	</UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>15/Junio/2004</B>:
+	Publicado cuaderno t&eacute;cnico en la web </FONT>
+	</P>
+</UL>
+<HR>
+<H2><A NAME="agradecimientos"></A><A NAME="Cr&eacute;ditos|outline"></A>
+Cr&eacute;ditos</H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><A HREF="http://www.iearobotics.com/personal/andres/index.html">Andr&eacute;s
+	Prieto-Moreno Torres</A>. Tarjetas Picmin, Picupsam y Skypic</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><A HREF="http://www.elalejandre.net/">Alfonso
+	Alejandre</A>. Coordinador del Laboratorio de Arquitectura de
+	Computadores de la UPSAM. Coautor de la tarjeta PICUPSAM.</FONT></P>
+</UL>
+
+
+
+<hr>
+<p><a href="../index.html"><b>[Indice de cuadernos técnicos]</b></a></p>
+<p><a href="iearobotics-site/wiki">IEAROBOTICS</A> </P>
+<a href="../../../personal/juan/index.html">Juan González</A>
+</address>
+</body>
+</html>
