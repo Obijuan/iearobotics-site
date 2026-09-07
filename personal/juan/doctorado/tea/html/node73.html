@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>4.3 Pruebas con la FPGA</TITLE>
+<META NAME="description" CONTENT="4.3 Pruebas con la FPGA">
+<META NAME="keywords" CONTENT="tea">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tea.css">
+
+<LINK REL="previous" HREF="node69.html">
+<LINK REL="up" HREF="node67.html">
+<LINK REL="next" HREF="node74.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1174"
+  HREF="node74.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1170"
+  HREF="node67.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1166"
+  HREF="node72.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1172"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1175"
+  HREF="node74.html">5. Conclusiones y líneas</A>
+<B> Up:</B> <A NAME="tex2html1171"
+  HREF="node67.html">4. Experimentos y resultados</A>
+<B> Previous:</B> <A NAME="tex2html1167"
+  HREF="node72.html">4.2.3 Un circuito de</A>
+ &nbsp <B>  <A NAME="tex2html1173"
+  HREF="node3.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00830000000000000000">
+4.3 Pruebas con la FPGA</A>
+</H1>
+
+<P>
+La implementación del circuito de control presentado en el apartado
+<A HREF="node63.html#sub:fpga_alt_cableada"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A> se ha implementando en una FPGA Spartan
+I, en la placa JPS, con un oscilador de 1MHZ. La tabla de control
+empleada se corresponde con una onda sinusoidal periódica de amplitud
+20. 
+
+<P>
+La solución con CPU empotrada también se ha sintetizado, sin embargo
+todavía no se ha probado. Los resultados se muestran en la tabla <A HREF="#tab:controladores-fpga"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>:
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="2332"></A>
+<TABLE>
+<CAPTION><STRONG>Table:</STRONG>
+Resultados de la implementación de los controladores en una FPGA</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1" ALIGN="CENTER">
+<TR><TH ALIGN="CENTER"><B>Controlador</B></TH>
+<TH ALIGN="CENTER"><B>CLBs</B></TH>
+<TH ALIGN="CENTER"><B>% </B></TH>
+</TR>
+<tr>
+  <TD><B>Lógica comb+sec</B></TD>
+  <td>78</td>
+  <td>39</td>
+  </tr>
+  <tr>
+  <TD><B>CPU empotrada</B></TD>
+  <td>212</td>
+  <td>108</td>
+  </tr>
+</TABLE>
+</DIV>
+
+<P>
+</TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<P>
+La solución con la CPU ocupa más recursos y no cabe en la Spartan
+I. Esta solución incluye la CPU, la memoria con las tablas de control
+y el programa y las 4 unidades PWM. Es necesario utilizar dos tarjetas
+JPS, particionando el diseño de la siguiente manera: una FPGA con
+la CPU y la memoria de programa y la segunda con los datos y las unidades
+PWM, ya que estas últimas comparten con la memoria los buses de datos
+y dirección.
+
+<P>
+Se ha considerado probar esta alternativa en la placa Digilab2E, que
+posee una XC200E. En este dispositivo el diseño ocupa 285 slices (12%)
+sin aprovechamiento de las BRAM.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1174"
+  HREF="node74.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1170"
+  HREF="node67.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1166"
+  HREF="node72.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1172"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1175"
+  HREF="node74.html">5. Conclusiones y líneas</A>
+<B> Up:</B> <A NAME="tex2html1171"
+  HREF="node67.html">4. Experimentos y resultados</A>
+<B> Previous:</B> <A NAME="tex2html1167"
+  HREF="node72.html">4.2.3 Un circuito de</A>
+ &nbsp <B>  <A NAME="tex2html1173"
+  HREF="node3.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-20
+</ADDRESS>
+</BODY>
+</HTML>

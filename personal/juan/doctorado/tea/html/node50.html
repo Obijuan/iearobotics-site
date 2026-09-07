@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.2.3 Control</TITLE>
+<META NAME="description" CONTENT="3.2.3 Control">
+<META NAME="keywords" CONTENT="tea">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tea.css">
+
+<LINK REL="next" HREF="node51.html">
+<LINK REL="previous" HREF="node49.html">
+<LINK REL="up" HREF="node47.html">
+<LINK REL="next" HREF="node51.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html892"
+  HREF="node51.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html888"
+  HREF="node47.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html882"
+  HREF="node49.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html890"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html893"
+  HREF="node51.html">3.2.4 Limitaciones</A>
+<B> Up:</B> <A NAME="tex2html889"
+  HREF="node47.html">3.2 Trabajo previo: CUBE</A>
+<B> Previous:</B> <A NAME="tex2html883"
+  HREF="node49.html">3.2.2 Eletrónica</A>
+ &nbsp <B>  <A NAME="tex2html891"
+  HREF="node3.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00723000000000000000">
+3.2.3 Control</A>
+</H2>
+
+<P>
+Existen varios niveles de control:
+
+<P>
+
+<UL>
+<LI><B>Nivel de servo</B>: El posicionamiento de los servos lo realiza
+la tarjeta BT6811, generando la <B>señal PWM</B> en función de la
+posición deseada. En ellas se está ejecutando un servidor que realiza
+esta tarea.
+</LI>
+<LI><B>Tablas de control</B>: En el siguiente nivel se recorren las
+tablas de control, similares a las de <B>Polypod</B> y <B>Polybot</B>.
+Las entradas de la tablase envían consecutivamente al servo. Es un
+controlador muy sencillo, en el que el tiempo que transcurre desde
+que se envía una entrada hasta que hay que enviar la siguiente se
+estima.
+
+<P>
+Las tablas de control se almacenan en un fichero y mediante la aplicación
+<B>cube-físico</B>[<A
+ HREF="node84.html#cube-fisico">44</A>] se cargan y envían al gusano.
+También es posible posicionar los servos desde este programa, usando
+unas barras de desplazamiento, lo que permie realizar pruebas mecánicas
+y generar tablas de control (secuencias de movimiento) manualmente,
+guardándolas en un fichero.
+
+<P>
+</LI>
+<LI><B>Generación automática de secuencias</B>: Las tablas de control
+para mover el gusano se pueden generar usando la aplicación <B>cube-virtual</B>[<A
+ HREF="node84.html#cube-virtual">45</A>],
+en la que se especifica la amplitud y la longid de onda que se quiere
+para realizar el movimiento (ver figura <A HREF="node50.html#fig:cube-virtual"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>).
+Esta tabla se almacena en un fichero y puede ser reproducida por el
+programa <I>cube-fisico</I>. Sólo se generan secuencias para un gusano
+de 4 articulaciones.
+</LI>
+</UL>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:cube-virtual"></A><A NAME="2307"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Las tablas de control se calculan usando un gusano virtual que se
+ajusta a una función de onda</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="511" HEIGHT="166" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="\includegraphics[]{ps/cv-ajuste.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html892"
+  HREF="node51.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html888"
+  HREF="node47.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html882"
+  HREF="node49.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html890"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html893"
+  HREF="node51.html">3.2.4 Limitaciones</A>
+<B> Up:</B> <A NAME="tex2html889"
+  HREF="node47.html">3.2 Trabajo previo: CUBE</A>
+<B> Previous:</B> <A NAME="tex2html883"
+  HREF="node49.html">3.2.2 Eletrónica</A>
+ &nbsp <B>  <A NAME="tex2html891"
+  HREF="node3.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-20
+</ADDRESS>
+</BODY>
+</HTML>

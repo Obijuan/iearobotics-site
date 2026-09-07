@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2.5.6 Generación G2</TITLE>
+<META NAME="description" CONTENT="2.5.6 Generación G2">
+<META NAME="keywords" CONTENT="tea">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tea.css">
+
+<LINK REL="next" HREF="node43.html">
+<LINK REL="previous" HREF="node41.html">
+<LINK REL="up" HREF="node35.html">
+<LINK REL="next" HREF="node43.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html773"
+  HREF="node43.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html769"
+  HREF="node35.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html763"
+  HREF="node41.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html771"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html774"
+  HREF="node43.html">2.5.7 Generación G3</A>
+<B> Up:</B> <A NAME="tex2html770"
+  HREF="node35.html">2.5 Polybot</A>
+<B> Previous:</B> <A NAME="tex2html764"
+  HREF="node41.html">2.5.5 Generación G1v4</A>
+ &nbsp <B>  <A NAME="tex2html772"
+  HREF="node3.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00656000000000000000">
+2.5.6 Generación G2</A>
+</H2>
+
+<P>
+Estos son los primeros módulos que son autoreconfigurables, capaces
+de unirse y soltarse. Al igual que en polybot, hay dos tipos de módulos:
+nodos y segmentos. Tienen un tamaño de 11x7x6 cmm y utilizan un motor
+de corriente contínua sin escobillas en lugar de un servomecanismos
+como en los anteriores (ver figura <A HREF="node42.html#fig:polybot-g2-foto1"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>). El
+rango de giro es de -90 a 90 grados. La estructura es metálica, mucho
+más robusta.
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:polybot-g2-foto1"></A><A NAME="2299"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Aspecto de los módulos G2</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="384" HEIGHT="287" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="\includegraphics[%%
+scale=0.5]{ps/g2-foto1.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+Dispone de <B>dos placas de conexión</B> iguales, en caras opuestas
+para la conexión de unos módulos con otros. Por los conectores metálicos
+va la alimentación y las comunicaciones. La conexión se puede realizar
+en fase o desfasada y es del tipo ``enganchar y listo'', no hay
+que atornillar nada. El propio robot puede enganchar y desenganchar
+los módulos.
+
+<P>
+Cada módulo dispone de un <B>PowerPc 555</B> de motorola mas <B>1MB
+de RAM</B>, lo que le confiere una gran capacidad de cálculo. No se está
+utilizando toda esta capacidad, pero se reserva para futuros experimentos.
+
+<P>
+Todos los módulos se comunican a través del <B>BUS CAN</B>, lo que
+permite que el sistema sea más distribuido y más fiable.
+
+<P>
+Se han realizado experimentos en el campo de la locomoción, configurando
+el robot como un gusano, una araña y desplazándose tipo rueda. Pero
+el experimento más interesante es el de la configuración dinámica[<A
+ HREF="node84.html#Polybot-G2-demo">35</A>],
+en el que Polybot, desplazándose inicialmente como una rueda de 12
+módulos , se convierte en un gusano, moviéndose mediante ondas sinusoidales
+y finalmente se transforma en una araña, en dos fases. Primero la
+cabeza y la cola del gusano se enganchan al módulo central (que es
+un nodo) adquierindo una forma de ``8''. Dos pares de módulos
+opuestos se sultan, tomando una forma de ``X''. Las patas se apoyan
+en el suelo y el bicho se levanta (ver figura <A HREF="node42.html#fig:G2-demo-foto1"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>).
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:G2-demo-foto1"></A><A NAME="2300"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Ejemplo de autorreconfiguración probado con Polybot G2. (1) El robot
+avanza tipo rueda. (2) Se convierte en una serpiente y continúa avanzando.
+(3) La cabeza y la cola se unen al nodo central y dos pares demódulos
+opuestos se sueltan, formando una X. (4) El robot se levanta, ahora
+se ha convertido en una araña de 4 ptas.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="625" HEIGHT="542" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="\includegraphics[]{ps/polybot-g2-1.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html773"
+  HREF="node43.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html769"
+  HREF="node35.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html763"
+  HREF="node41.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html771"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html774"
+  HREF="node43.html">2.5.7 Generación G3</A>
+<B> Up:</B> <A NAME="tex2html770"
+  HREF="node35.html">2.5 Polybot</A>
+<B> Previous:</B> <A NAME="tex2html764"
+  HREF="node41.html">2.5.5 Generación G1v4</A>
+ &nbsp <B>  <A NAME="tex2html772"
+  HREF="node3.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-20
+</ADDRESS>
+</BODY>
+</HTML>

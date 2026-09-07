@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>1.1.3.1 Modularidad</TITLE>
+<META NAME="description" CONTENT="1.1.3.1 Modularidad">
+<META NAME="keywords" CONTENT="tea">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tea.css">
+
+<LINK REL="next" HREF="node15.html">
+<LINK REL="previous" HREF="node13.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node15.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html407"
+  HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html403"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html397"
+  HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html405"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html408"
+  HREF="node15.html">1.1.3.2 Reconfigurabilidad</A>
+<B> Up:</B> <A NAME="tex2html404"
+  HREF="node13.html">1.1.3 Robótica Modular Reconfigurable</A>
+<B> Previous:</B> <A NAME="tex2html398"
+  HREF="node13.html">1.1.3 Robótica Modular Reconfigurable</A>
+ &nbsp <B>  <A NAME="tex2html406"
+  HREF="node3.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00513100000000000000">
+1.1.3.1 Modularidad</A>
+</H3>
+
+<P>
+Característica de estar construido a partir de unos componentes estandarizados
+que se pueden intercambiar. Según el número de módulos distintos,
+el robot puede ser 1-modular, 2-modular, etc. 
+
+<P>
+En el <B>Hirose &amp; Yoneda Lab</B>[<A
+ HREF="node84.html#HY-Lab">19</A>] fueron pioneros
+en el estudio y construcción de robots tipo serpiente (<I>snake-like</I>
+robots)[<A
+ HREF="node84.html#HY-snake">20</A>], que están constituidos por módulos similares.
+Un prototipo es el <B>ACM III</B> (Active Cord Mechanism)[<A
+ HREF="node84.html#ACMIII">21</A>].
+Está compuesto por 20 módulos iguales, cada uno de los cuales dispone
+de un servomecanismo para girar a derecha o izquierda con respecto
+al módulo siguiente (figura <A HREF="node14.html#fig:acmIII-1"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>) . El contacto con
+el suelo se realiza mediante unas ruedecillas, que permiten que los
+módulos se deslicen hacia delante fácilmente, ofreciendo mucha resistencia
+al deslizamiento lateral, lo que permite que la serpiente se impulse
+hacia adelante. La cabeza describe un movimiento sinusoidal, que se
+va propagando hacia el resto de articulaciones a una velocidad constante.
+Las carácterísticas del ACM III son:
+
+<P>
+
+<UL>
+<LI><B>Velocidad</B>: 40cm/sec
+</LI>
+<LI><B>Longitud</B>: 2m
+</LI>
+<LI><B>Número de secciones</B>: 20
+</LI>
+</UL>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:acmIII-1"></A><A NAME="2267"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+ACM III (1972-1975). Izquierda: aspecto del robot serpeiente ACM.
+Derecha: ACM atravesando un camino tortuoso</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="650" HEIGHT="219" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.png"
+ ALT="\includegraphics[]{ps/acm-comp.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+Se puede encontrar más información en [<A
+ HREF="node84.html#Shigeo-93">22</A>,<A
+ HREF="node84.html#Yoji-76">23</A>]
+
+<P>
+
+<P><P>
+<BR>
+Otro prototipo es <B>OBLIX</B>[<A
+ HREF="node84.html#Oblix">25</A>] (figura <A HREF="node14.html#fig:oblix"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>),
+que se puede mover en las tres dimensiones utilizando articulaciones
+oblicuas (<B>oblique swivel joints</B>).
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:oblix"></A><A NAME="2268"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Robot serpiente OBLIX</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="313" HEIGHT="179" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="\includegraphics[]{ps/oblix.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+También han empleado robots serpiente para crear <B>manipuladores</B>,
+como el <B>SG</B>[<A
+ HREF="node84.html#SG">24</A>], constituidos también por módulos iguales.
+Se trata de una ``pinza'' o ``agarrador mecánico'' que adopta
+la forma del objeto que va a coger (fig <A HREF="node14.html#fig:soft_gripper-SG-1"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>),
+creando una fuerza que se reparte uniformemente por todo el objeto.
+El prototipo es capaz de levantar cuerpos humanos, sin que estos sufran
+ningún daño (fig <A HREF="node14.html#fig:soft_gripper-SG-1"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>). Si se utilizasen los
+manipuladores clásico, como pinzas, podrían hacer daño al humano en
+las zonas de contacto. 
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:soft_gripper-SG-1"></A><A NAME="2269"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Izquierda: el manipulador SG agarrando un objeto. Derecha, SG levantando
+a un niño. La presión se reparte uniformemente por toda la superficie
+de contacto, por lo que no se provoca ningún daño</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="564" HEIGHT="213" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="\includegraphics[]{ps/sg-comp.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html407"
+  HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html403"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html397"
+  HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html405"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html408"
+  HREF="node15.html">1.1.3.2 Reconfigurabilidad</A>
+<B> Up:</B> <A NAME="tex2html404"
+  HREF="node13.html">1.1.3 Robótica Modular Reconfigurable</A>
+<B> Previous:</B> <A NAME="tex2html398"
+  HREF="node13.html">1.1.3 Robótica Modular Reconfigurable</A>
+ &nbsp <B>  <A NAME="tex2html406"
+  HREF="node3.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-20
+</ADDRESS>
+</BODY>
+</HTML>

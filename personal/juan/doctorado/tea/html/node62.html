@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.6.1 Microcontrolador 6811 y PC</TITLE>
+<META NAME="description" CONTENT="3.6.1 Microcontrolador 6811 y PC">
+<META NAME="keywords" CONTENT="tea">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tea.css">
+
+<LINK REL="next" HREF="node63.html">
+<LINK REL="previous" HREF="node61.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node63.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1039"
+  HREF="node63.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1035"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1029"
+  HREF="node61.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1037"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1040"
+  HREF="node63.html">3.6.2 Lógica combinacional y</A>
+<B> Up:</B> <A NAME="tex2html1036"
+  HREF="node61.html">3.6 Control</A>
+<B> Previous:</B> <A NAME="tex2html1030"
+  HREF="node61.html">3.6 Control</A>
+ &nbsp <B>  <A NAME="tex2html1038"
+  HREF="node3.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00761000000000000000">
+3.6.1 Microcontrolador 6811 y PC</A>
+</H2>
+
+<P>
+La tabla de control se encuentra en el PC y se envía a través del
+puerto serie al 6811 donde se ejecuta un programa servidor que genera
+las señales PWM en función de las posiciones indicadas. Es interesante
+que este servidor pueda mover cuantos más servos mejor. En Cube 2.0,
+el servidor sólo controlaba 4 servos, usando en total 5 comparadores.
+Uno común para generar una señal de 50Hz y uno medir la anchura del
+pulso de cada una de las señales PWM.
+
+<P>
+Esta solución tiene un error en su concepción. Todas las señales PWM
+están en fase por lo que cuando las posiciones de los servos son las
+mismas, se producen todas las interrupciones a la vez (4) lo que ocasiona
+un retraso en las últimas que se ejecutan, haciendo que su anchura
+del pulso sea un poco mayor, por lo que se observa cómo esos servos
+tienen de vez en cuando unos ``espasmos'' de pequeña amplitud.
+
+<P>
+La idea para controlar muchos servos es generar las señales PWM desfasadas,
+que se puede hacer con un único comparador, evitándose el problema
+anterior además de poderse controlar el doble de servos con la quinta
+parte de los recursos del microcontrolador. Todos los detalles así
+como el código que se ejecuta en el 6811 se pueden encontrara en el
+apéndice <A HREF="node79.html#cap:apendice-control-servos"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1039"
+  HREF="node63.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1035"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1029"
+  HREF="node61.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1037"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1040"
+  HREF="node63.html">3.6.2 Lógica combinacional y</A>
+<B> Up:</B> <A NAME="tex2html1036"
+  HREF="node61.html">3.6 Control</A>
+<B> Previous:</B> <A NAME="tex2html1030"
+  HREF="node61.html">3.6 Control</A>
+ &nbsp <B>  <A NAME="tex2html1038"
+  HREF="node3.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-20
+</ADDRESS>
+</BODY>
+</HTML>

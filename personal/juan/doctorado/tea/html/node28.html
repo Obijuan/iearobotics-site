@@ -1,0 +1,224 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2.3.4 Control</TITLE>
+<META NAME="description" CONTENT="2.3.4 Control">
+<META NAME="keywords" CONTENT="tea">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tea.css">
+
+<LINK REL="next" HREF="node29.html">
+<LINK REL="previous" HREF="node27.html">
+<LINK REL="up" HREF="node24.html">
+<LINK REL="next" HREF="node29.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html599"
+  HREF="node29.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html595"
+  HREF="node24.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html589"
+  HREF="node27.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html597"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html600"
+  HREF="node29.html">2.3.5 Resumen</A>
+<B> Up:</B> <A NAME="tex2html596"
+  HREF="node24.html">2.3 Polypod</A>
+<B> Previous:</B> <A NAME="tex2html590"
+  HREF="node27.html">2.3.3 Distintas formas de</A>
+ &nbsp <B>  <A NAME="tex2html598"
+  HREF="node3.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00634000000000000000"></A><A NAME="sub:polypod-control"></A>
+<BR>
+2.3.4 Control
+</H2>
+
+<P>
+Según el número de grados de libertad (DOF) controlables, en relación
+con los DOF del robot, tenemos los siguientes tipos de robots:
+
+<P>
+
+<UL>
+<LI><B>no-holonómicos</B>: DOF controlables &lt; DOF. Por ejemplo un coche. 
+</LI>
+<LI><B>Holonómicos</B>: DOF Controlables = DOF (ejemplo: brazo robot
+con 6 grados libertad).
+</LI>
+<LI><B>Redundante</B>: DOF Controlables &gt; DOF. (ejemplo: brazo robot
+con más de 6 articulaciones, un gusano robot). No sólo importa el
+punto final, sino la ``forma'' que tiene el robot.
+</LI>
+<LI><B>Hiper-redundantes</B>: DOF Controlables &gt;&gt;
+DOF.
+</LI>
+</UL>
+En general, <B>los robots modulares reconfigurables pertenecen
+a la categoría de Hiper-redundantes</B>. Por ello el elemento clave que
+se va buscando en el control es la <B>simplicidad</B> y también
+es muy importante la <B>escalabilidad</B> (y ser lo más independiente
+posible del número de módulos). 
+
+<P>
+
+<P>
+<BR>
+El control de Polypod se realiza a tres niveles:
+
+<P>
+
+<OL>
+<LI><B>Nivel bajo</B>: Control PID de la posición de ambos motores de
+los segmentos. A este nivel se le pasa la posición deseada y éste
+actúa sobre sobre los motores.
+</LI>
+<LI><B>Nivel de comportamiento</B>. Se definen tres comportamientos
+para cada grado de libertad del módulo. Son:
+
+<P>
+
+<OL>
+<LI><B>Modo fin</B> (<I>end mode</I>): Moverse en un sentido u otro
+(+/-) hasta llegar al final. Si un segmento está en modo <I>+end</I>,
+se expanderá lo máximo posible e informará al nivel superior cuando
+termine. Si está en modo <I>-end</I> hará lo mismo pero contrayéndose.
+(Lo mismo para el otro DOF). Obsérvese que el nivel superior no especifica
+la posición, sino el comportamiento.
+</LI>
+<LI><B>Modo muelle</B> (<I>spring mode</I>): Se mueve a una posición
+u otra en función de la fuerza/par medidos. Por ejemplo, si está en
+modo <I>+spring</I> y no se le aplica fuerza permanecerá expandido.
+Si se sitúa carga se contraerá un determinado valor (determinado por
+la constante k del muelle que se está simulando). El modo <I>-spring</I>
+se comporta de forma contrario a como lo hace un muelle. Lo mismo
+es válido para el otro grado de libertad.
+</LI>
+<LI><B>Modo NO</B> (<I>no mode</I>). El módulo permanece en la misma
+posición.
+</LI>
+</OL>
+</LI>
+<LI><B>Nivel Alto</B>. <B>Tablas de control</B>, que definen la secuencia
+de comportamientos que se aplicarán a los módulos, así como el instante
+en el que pasar de una fila a otra. Por ejemplo, imaginemos un comportamiento
+muy sencillo. 4 segmentos unidos formando una cadena. Se quiere que
+se expandan y que luego se contraigan, todos a la vez. La tabla de
+control tendrá dos filas por 4 columnas. Se añade una quinta columna
+para indicar la condición de ``disparo'' que es la que determina
+cuando se pasa a ejecutar la siguiente fila. Una condición de disparo
+podría ser que todos los modulos se hayan expandido. Sólo se está
+utilizando el grado de libertado correspondiente a la contracción-expansión,
+por lo que el DOF restante de todos los módulos se pone en el <I>no
+mode</I>.
+
+<P>
+En la primera fila, todos los módulos tendrían el comportamiento <I>+end</I>
+y en la segunda fila el <I>-end</I>. La tabla de control sería de
+esta manera:
+
+<P>
+
+<P>
+<BR>
+
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+  <TR>
+    <TD ALIGN="CENTER"><b>Paso</b></TD>
+    <TD ALIGN="CENTER" COLSPAN=4><B>Segmentos</B><br>
+    1 2 3 4</TD>
+    <TD ALIGN="CENTER" COLSPAN=1>
+    <B>Condición de disparo</B></TD>
+  </TR>
+  <tr>
+    <td>0</td>
+    <td>+end</td>
+    <td>+end</td>
+    <td>+end</td>
+    <td>+end</td>
+    <td>1,2,3,4</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>-end</td>
+    <td>-end</td>
+    <td>-end</td>
+    <td>-end</td>
+    <td>1,2,3,4</td>
+  </tr>
+</TABLE>
+</DIV>
+
+<P>
+<BR>
+
+
+<P>
+El controlador de este nivel sólo tiene que ir a la primera fila,
+enviar el comportamiento al nivel inferior y esperar a que se cumpla
+la condición de disparo. A continuación se leen los valores de la
+siguiente fila y se repite la operación. Al llegar al final de la
+tabla se vuelve a comenzar.
+
+<P>
+</LI>
+</OL>
+Este sistema de control tan sencillo ha servido para implementar en
+Polypod todos los patrones de movimiento descritos en el apartado
+<A HREF="node27.html#sub:locomotion-gaits"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>, salvo el de la araña.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html599"
+  HREF="node29.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html595"
+  HREF="node24.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html589"
+  HREF="node27.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html597"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html600"
+  HREF="node29.html">2.3.5 Resumen</A>
+<B> Up:</B> <A NAME="tex2html596"
+  HREF="node24.html">2.3 Polypod</A>
+<B> Previous:</B> <A NAME="tex2html590"
+  HREF="node27.html">2.3.3 Distintas formas de</A>
+ &nbsp <B>  <A NAME="tex2html598"
+  HREF="node3.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-20
+</ADDRESS>
+</BODY>
+</HTML>

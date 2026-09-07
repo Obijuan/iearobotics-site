@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2.3.3 Distintas formas de locomoción</TITLE>
+<META NAME="description" CONTENT="2.3.3 Distintas formas de locomoción">
+<META NAME="keywords" CONTENT="tea">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tea.css">
+
+<LINK REL="next" HREF="node28.html">
+<LINK REL="previous" HREF="node26.html">
+<LINK REL="up" HREF="node24.html">
+<LINK REL="next" HREF="node28.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html587"
+  HREF="node28.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html583"
+  HREF="node24.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html577"
+  HREF="node26.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html585"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html588"
+  HREF="node28.html">2.3.4 Control</A>
+<B> Up:</B> <A NAME="tex2html584"
+  HREF="node24.html">2.3 Polypod</A>
+<B> Previous:</B> <A NAME="tex2html578"
+  HREF="node26.html">2.3.2 Electrónica y sensores</A>
+ &nbsp <B>  <A NAME="tex2html586"
+  HREF="node3.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00633000000000000000"></A><A NAME="sub:locomotion-gaits"></A>
+<BR>
+2.3.3 Distintas formas de locomoción
+</H2>
+
+<P>
+En Polypod se han implementado y probado diferentes patrones de locomoción
+(<I>Gaits</I>) en línea recta, tanto simples como compuestos[<A
+ HREF="node84.html#polypod-loco">18</A>][<A
+ HREF="node84.html#Tesis-Yim">15</A>]
+(apartado <A HREF="node30.html#sec:taxonomia-locomocion"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>). Todos ellos se caracterizan
+porque se pueden implementar mediante <B>tablas de control</B> (apartado
+<A HREF="node28.html#sub:polypod-control"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>).
+
+<P>
+
+<UL>
+<LI><B>Patrones simples</B> (ver figura <A HREF="node27.html#fig:polypod-gaits1"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>)
+
+<P>
+
+<OL>
+<LI><B>Tipo rueda</B> (<I>Rolling-track</I>, <I>loop</I>). <B>RCB</B>.
+16 segmentos. Cadena de 16 módulos en la que el primero se une con
+el último, formando una rueda. Este movimiento es el que presenta
+una <B>mayor eficiencia</B> en el aprovechamiento de la energía.
+</LI>
+<LI><B>Slinky</B>. <B>RDB</B>. Cadena de módulos formando una ``U''
+invertida. La parte trasera se eleva sobre la delantera, que permanece
+fija, y se sitúa delante, fomando una nueva ``U'' invertida. El
+movimiento es parecido a las palomas que realizan los gimnastas, pero
+mucho más lento y con el centro de gravedad cayendo siempre dentro
+de la base de apoyo.
+</LI>
+<LI><B>Voltereta lateral</B> (<I>Cartwheel</I>). <B>RDB</B>. Se dispone
+de 4 miembros, de los cuales 3 están apoyados (en línea) y uno en
+el aire. El robot gira de manera que el que estaba en el aire pasar
+a ser punto de apoyo y el de apoyo más retrasdo pasa a estar al aire.
+Es parecido a las volteretas laterales de los gimnastas, pero más
+lento.
+</LI>
+<LI><B>Lombriz</B>. <B>SCB</B>. Movimiento típico de las lombrices.
+Ondas longitudinales (de compresión-expansión) se propagan desde la
+cola hasta la cabeza. <B>Es el mejor patrón para atravesar obstáculos</B>.
+</LI>
+<LI><B>Oruga</B> (<I>Carterpillar</I>). <B>SDB</B>. Tira de nodos
+con patas formadas por 2 segmentos. Mínimo tres nodos con tres patas
+para que ande. 
+</LI>
+<LI><B>Araña</B> (<I>Spider</I>). <B>SDL</B>. Araña con 5 patas. Es
+el más estable de todos.
+</LI>
+</OL>
+</LI>
+</UL>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:polypod-gaits1"></A><A NAME="2277"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Algunos patrones simples de movimiento implementados en Polypod</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="734" HEIGHT="914" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="\includegraphics[]{ps/polypod-loc2.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+
+<UL>
+<LI><B>Patrones compuestos</B> (ver figura <A HREF="node27.html#fig:polypod-gaits2"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>)
+
+<P>
+
+<OL>
+<LI><B>cater-cater</B> (articulado). Es la combinación del patrón oruga,
+en un array de 2D. Es un ejemplo de una combinación articulada. Especialmente
+útil para transporte de carga.
+</LI>
+<LI><B>Moonwalk</B> (jerárquico). Es la combinación de la rueda y la
+oruga (el propio autor lo califica como movimiento exótico)
+</LI>
+</OL>
+</LI>
+</UL>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:polypod-gaits2"></A><A NAME="2278"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Algunos patrones compuestos implementados en Polypod. Izquierda:
+Monwalker, derecha: oruga-oruga (cater-cater)</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="720" HEIGHT="139" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.png"
+ ALT="\includegraphics[]{ps/polypod-loc3.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html587"
+  HREF="node28.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html583"
+  HREF="node24.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html577"
+  HREF="node26.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html585"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html588"
+  HREF="node28.html">2.3.4 Control</A>
+<B> Up:</B> <A NAME="tex2html584"
+  HREF="node24.html">2.3 Polypod</A>
+<B> Previous:</B> <A NAME="tex2html578"
+  HREF="node26.html">2.3.2 Electrónica y sensores</A>
+ &nbsp <B>  <A NAME="tex2html586"
+  HREF="node3.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-20
+</ADDRESS>
+</BODY>
+</HTML>

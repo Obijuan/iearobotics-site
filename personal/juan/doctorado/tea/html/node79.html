@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>C. Control de 8 servos con un único comparador</TITLE>
+<META NAME="description" CONTENT="C. Control de 8 servos con un único comparador">
+<META NAME="keywords" CONTENT="tea">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tea.css">
+
+<LINK REL="next" HREF="node80.html">
+<LINK REL="previous" HREF="node78.html">
+<LINK REL="up" HREF="tea.html">
+<LINK REL="next" HREF="node80.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1246"
+  HREF="node80.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1242"
+  HREF="tea.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1236"
+  HREF="node78.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1244"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1247"
+  HREF="node80.html">D. Unidad hardware de</A>
+<B> Up:</B> <A NAME="tex2html1243"
+  HREF="tea.html">DISEÑO DE ROBOTS ÁPODOS</A>
+<B> Previous:</B> <A NAME="tex2html1237"
+  HREF="node78.html">B. Montaje de los</A>
+ &nbsp <B>  <A NAME="tex2html1245"
+  HREF="node3.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION001200000000000000000"></A><A NAME="cap:apendice-control-servos"></A>
+<BR>
+C. Control de 8 servos con un único comparador
+</H1>
+
+<P>
+En este apéndice describimos el funcionamiento del programa servidor
+que se ejecuta en un 6811 y que permite controlar hasta 8 servos usando
+un único comparador. Este es el servidor que se está usando para Cube
+Reloaded. Las ideas son las siguientes:
+
+<P>
+
+<OL>
+<LI>El intervalo de 20ms (50Hz) se divide en 8 ``ventanas'' de 2.5ms
+(400Hz). En cada ventana se genera la señal para controlar un servo.
+El ancho máximo de la señal del servo es 2.3ms por lo que cabe perfectamente
+en la ventana. Cada vez que se produce una interrupción que te indica
+el comienzo de una nueva ventana, hay que temporizar la anchura (que
+se puede hacer con otro comparador diferente). Así, la primera interrupción
+te indica que hay que actualiar el servo 1, la segunda interrupción
+el servo 2... así hasta el servo 8 y vuelta a empezar.
+</LI>
+<LI>Cada ventana de 2.5ms se puede dividir en dos partes, una en la que
+la señal PWM está a nivel alto (la anchura es la posición POSI) y
+otra en la que la señal está a nivel bajo (2.5ms - POSI). La anchura
+total es de 2.5ms, pero entre medias se ha producido otra interrupción
+que te marca el paso del PWM del servo actual a 0.
+</LI>
+</OL>
+En la figura <A HREF="node79.html#cap:pwm8-ventanas"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A> se muestran las 8 ventanas de
+tiempo en las que se divide el periodo de la señal PWM. Cada ventana
+está asociada a un servo, en la que se genera la anchura del pulso.
+Obsérvese que en cada ventana sólo hay una señal activa.
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="cap:pwm8-ventanas"></A><A NAME="2336"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Periodo de 20ms dividido en 8 ventanas de tiempo</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="669" HEIGHT="1001" ALIGN="BOTTOM" BORDER="0"
+ SRC="img66.png"
+ ALT="\includegraphics[]{ps/pwm8-1.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+En la figura <A HREF="node79.html#cap:tabla_pwm"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A> se muestran las dos partes en las
+que se divide una ventana. En la parte de la izquierda la señal PWM
+está a 1 (Estado S1) y en la parte de la izquierda está a 0 (S0).
+La anchura de cada parte está perfectamente determinada, ya que al
+ser la anchura de la ventana fija (2.5ms) si la anchura del pulso
+es de Ton, entonces la duración del estado S0 es de 2.5ms - Ton. Las
+duraciones de cada pulso se encuentra almacenadas en una tabla. Cada
+fila de la tabla indica el anchu del pulso dentro de la ventana de
+tiempo correspondiente. Así la primera fila de la tabla indica la
+duración del pulso para la ventana 1, la fila 2 para la ventana 2,
+etc.
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="cap:tabla_pwm"></A><A NAME="2337"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Las dos partes dentro de cada ventana y la tabla de PWM</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="816" HEIGHT="549" ALIGN="BOTTOM" BORDER="0"
+ SRC="img67.png"
+ ALT="\includegraphics[]{ps/pwm8-2.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+La programación del microcontrolador para poder generar las 8 señales
+PWM se puede hacer con una única interrupción, que tiene que hacer
+lo siguiente:
+
+<P>
+
+<UL>
+<LI><B>Llega interrupción del comparador</B>
+</LI>
+<LI><B>Si estamos en el estado S1</B>:
+
+<P>
+
+<UL>
+<LI>Poner la señal correspondiente al servo actual (ventana actual) a
+1
+</LI>
+<LI>Activar el comparador para que la siguiente interrupción sea dentro
+de Ton_1 ms
+</LI>
+<LI>Pasar al estado S0.
+</LI>
+<LI>Terminar
+</LI>
+</UL>
+</LI>
+<LI><B>Si estamos en el estado S0</B>
+
+<P>
+
+<UL>
+<LI>Poner señal correspondiente al servo actual (ventana actual) a 0
+</LI>
+<LI>Activar comparador para interrumpir dentro de 2.5 - Ton_1
+</LI>
+<LI>Incrementar puntero de la tabla PWM, para apuntar a la posición del
+siguiente servo
+</LI>
+<LI>Pasar al estado S1.
+</LI>
+<LI>Terminar
+</LI>
+</UL>
+</LI>
+</UL>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1246"
+  HREF="node80.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1242"
+  HREF="tea.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1236"
+  HREF="node78.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1244"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1247"
+  HREF="node80.html">D. Unidad hardware de</A>
+<B> Up:</B> <A NAME="tex2html1243"
+  HREF="tea.html">DISEÑO DE ROBOTS ÁPODOS</A>
+<B> Previous:</B> <A NAME="tex2html1237"
+  HREF="node78.html">B. Montaje de los</A>
+ &nbsp <B>  <A NAME="tex2html1245"
+  HREF="node3.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-20
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>1.1.1 Locomoción</TITLE>
+<META NAME="description" CONTENT="1.1.1 Locomoción">
+<META NAME="keywords" CONTENT="tea">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tea.css">
+
+<LINK REL="next" HREF="node9.html">
+<LINK REL="previous" HREF="node7.html">
+<LINK REL="up" HREF="node7.html">
+<LINK REL="next" HREF="node9.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html332"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html328"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html322"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html330"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html333"
+  HREF="node9.html">1.1.2 El problema de</A>
+<B> Up:</B> <A NAME="tex2html329"
+  HREF="node7.html">1.1 Encuadre</A>
+<B> Previous:</B> <A NAME="tex2html323"
+  HREF="node7.html">1.1 Encuadre</A>
+ &nbsp <B>  <A NAME="tex2html331"
+  HREF="node3.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00511000000000000000">
+1.1.1 Locomoción</A>
+</H2>
+
+<P>
+En la robótica existen dos grandes áreas: <B>manipulación</B> y
+<B>Locomoción</B>. La manipulación es la capacidad de actuar sobre
+los objetos, trasladándolos o modificándolos. Esta área se centra
+en la construcción de manipuladores y brazos robóticos. La locomoción
+es la facultad de un robot para poder desplazarse de un lugar a otro.
+Los robots con capacidad locomotiva se llaman <B>robots móviles</B>.
+
+<P>
+Dentro de la locomoción hay tres puntos claves:
+
+<P>
+
+<OL>
+<LI><B>Desplazarse un incremento en línea recta</B>
+
+<P>
+La complejidad depende del tipo de robot. Es muy sencillo que un robot
+con ruedas avance en línea recta, pero no es tan sencillo que lo haga
+un robot con patas.
+
+<P>
+</LI>
+<LI><B>Giros y traslaciones en múltiples direcciones</B>
+
+<P>
+Nuevamente depende del tipo de robot. El hacer que un robot ápodo
+pueda desplazarse por un plano es más complejo que en un robot con
+ruedas.
+
+<P>
+</LI>
+<LI><B>Planificación de trayectorias y navegación</B>
+
+<P>
+Que el robot sepa qué camino elegir para llegar a un determinado lugar.
+
+<P>
+</LI>
+</OL>
+Según los <B>efectores empleados</B> para conseguir la locomoción,
+tradicionalmente se ha establecido la siguiente <B>clasificación</B>:
+
+<P>
+
+<UL>
+<LI><B>Con ruedas</B>. Los efectores son ruedas. Por ejemplo, el microbot
+tritt[<A
+ HREF="node84.html#tritt">1</A>] (figura <A HREF="node8.html#fig:robot_tritt"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>), tiene tres ruedas,
+dos motrices y una loca.
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:robot_tritt"></A><A NAME="2262"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+A la izquierda Tritt, un ejemplo de robot móvil con ruedas, a la
+derecha el robot de docencia, con orugas</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="761" HEIGHT="329" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="\includegraphics[]{ps/tritt-rdocencia.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+</LI>
+<LI><B>Con orugas</B>. Por ejemplo los robots tipo ``carro de combate'',
+como el Robot de Docencia[<A
+ HREF="node84.html#Robot-docencia">2</A>] (Figura <A HREF="node8.html#fig:robot_tritt"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>),
+desarrollado en la EPS de la UAM.
+</LI>
+<LI><B>Con patas</B>. Cualquier robot que use patas para conseguir la
+locomoción: perros, gatos, hexápodos, arañas... Normalmente se trata
+de robots bio-inspirados. Por ejemplo el robot perro Puchobot[<A
+ HREF="node84.html#Pucho">3</A>]
+(figura <A HREF="node8.html#fig:pucho"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>), o como el Hexápodo Sheila[<A
+ HREF="node84.html#Sheila">4</A>]
+(figura <A HREF="node8.html#fig:pucho"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>).
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:pucho"></A><A NAME="2263"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+A la izquierda,Puchobot, un robot que usa cuatro patas para su locomoción.
+A la derecha, Sheila, un hexápodo</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="763" HEIGHT="317" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="\includegraphics[]{ps/pucho-sheila.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+</LI>
+<LI><B>Otros</B>. Aquí se sitúa cualquier otro tipo de locomoción no
+clasificable en niguna de las anteriores categorías, como por ejemplo
+el robot gusano <B>Cube 2.0</B> [<A
+ HREF="node84.html#PFC-CUBE">5</A>][<A
+ HREF="node84.html#Cube-web">6</A>]
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:robot_cube_2.0"></A><A NAME="2264"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+El robot ápodo CUBE 2.0</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="453" HEIGHT="274" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="\includegraphics[%%
+scale=0.5]{ps/cube2-0.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+</LI>
+</UL>
+Esta clasificación no es del todo satisfactoria porque existen demasiados
+robots que se pueden introducir en la categoría <I>otros</I>. Mark
+Yim introdujo una nueva taxonomía[<A
+ HREF="node84.html#Tesis-Yim">15</A>], que se describe
+en el apartado <A HREF="node30.html#sec:taxonomia-locomocion"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>.
+
+<P>
+
+<P>
+<BR>
+Según cómo se realice la locomoción, existen dos tipos:
+
+<P>
+
+<OL>
+<LI><B>Locomoción estáticamente estable</B> (statically stable locomotion)
+
+<P>
+El robot debe tener suficientes puntos de apoyo, que conforman el
+<B>polígono de apoyo</B>. El centro de gravedad (CG) debe caer siempre
+dentro de este polígono.
+
+<P>
+</LI>
+<LI><B>Locomoción dinámicamente estable</B> (dinamically stable locomotion)
+
+<P>
+El robot tiene que ser estable en movimiento (no caerse) aunque puede
+no ser estable en reposo (ejemplo, un robot unípodo). Este tipo de
+locomoción requiere más control pero aporta mayor velocidad.
+
+<P>
+</LI>
+</OL>
+<BLOCKQUOTE>
+<BR>
+<BR> <HR>width <BR>
+<BR>
+<BR>
+<I>En este trabajo nos centraremos en la locomoción estáticamente
+estable aplicada a un robot ápodo, que no usa ni ruedas, ni orugas,
+ni patas para desplazarse</I>. <I>El movimiento se restinge al desplamiento
+en línea recta</I>.
+  <BR>
+<BR> <HR>width <BR>
+<BR>
+
+</BLOCKQUOTE>
+<P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html332"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html328"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html322"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html330"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html333"
+  HREF="node9.html">1.1.2 El problema de</A>
+<B> Up:</B> <A NAME="tex2html329"
+  HREF="node7.html">1.1 Encuadre</A>
+<B> Previous:</B> <A NAME="tex2html323"
+  HREF="node7.html">1.1 Encuadre</A>
+ &nbsp <B>  <A NAME="tex2html331"
+  HREF="node3.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-20
+</ADDRESS>
+</BODY>
+</HTML>

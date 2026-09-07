@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2.4.2 Patrones simples</TITLE>
+<META NAME="description" CONTENT="2.4.2 Patrones simples">
+<META NAME="keywords" CONTENT="tea">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tea.css">
+
+<LINK REL="next" HREF="node33.html">
+<LINK REL="previous" HREF="node31.html">
+<LINK REL="up" HREF="node30.html">
+<LINK REL="next" HREF="node33.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html649"
+  HREF="node33.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html645"
+  HREF="node30.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html639"
+  HREF="node31.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html647"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html650"
+  HREF="node33.html">2.4.3 Patrones compuestos</A>
+<B> Up:</B> <A NAME="tex2html646"
+  HREF="node30.html">2.4 Taxonomía de los</A>
+<B> Previous:</B> <A NAME="tex2html640"
+  HREF="node31.html">2.4.1 Definiciones</A>
+ &nbsp <B>  <A NAME="tex2html648"
+  HREF="node3.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00642000000000000000">
+2.4.2 Patrones simples</A>
+</H2>
+
+<P>
+Para cada patrón de moviento simple se caracteriza mediante tres componentes
+binarias ortogonales. A cada valor de las componentes se le asigna
+una letra.
+
+<P>
+
+<OL>
+<LI><B>R-S</B> (<B><I>R</I></B><I>oll-</I><B><I>S</I></B><I>wing</I>).
+Esta componente describe si un G-pie rota (<I>Roll</I>) o bien realiza
+un movimiento de vaivén (<I>Swing</I>). En general, siempre que ningún
+G-pie rote se consirará que es <B>S</B>.
+
+<P>
+Cualquier vehículo con ruedas tiene la componente R, puesto que las
+ruedas (sus G-pies) rotan respecto a un eje. Lo mismo ocurre con los
+vehículos tipo tanque, que tiene orugas. También es de tipo R el movimiento
+de rueda (<I>loop</I>) que puede realizar Polypod, ya que en ese caso
+el robot está constituido por un único G-pie que rota.
+
+<P>
+Un robot tipo perro se clasifica como S, al igual que el movimiento
+de un gusano (el único G-pie que tiene no rota).
+
+<P>
+</LI>
+<LI><B>C</B>-<B>D</B> (<B>C</B>ontinuo-<B>D</B>iscreto). Determina
+cómo es el contacto que realizan los G-pies con el suelo. Si nunca
+se pierde el contacto con el suele, es de tipo Continuo (<B>C</B>).
+Si en algunos instantes sí se pierde, es de tipo Discreto (<B>D</B>).
+
+<P>
+Un vehículo con ruedas es de tipo C, puesto que las rudas nunca pierden
+contacto con el suelo (o al menos voluntariamente). Un robot gusano
+también es de tipo C, puesto que su único G-pie simpre está en contacto
+con el suelo. Un robot araña es de tipo D, ya que las patas se levantan
+para llegar a la nueva posición (pierden contacto con el suelo).
+
+<P>
+</LI>
+<LI><B>B</B>-<B>L</B> (<B>B</B>ig, <B>L</B>ittle). Esta componente
+tiene que ver con el ``tamaño'' del pie. Siempre que al menos
+sean necesarios tres G-pies para conseguir la estabilidad (y que el
+GC caiga dentro del polígoono de apoyo) se dicen que es de tipo <B>L</B>
+(Little, pies pequeños). Si sólo son necesarios 2 o más puntos de
+apoyo de un G-pie, se dice que es de tipo <B>B</B> (Big, pies grandes)
+
+<P>
+Un coche con cuatro ruedas es de tipo L, porque necesita que al menos
+tres estén apoyadas. Un gusano es de tipo B porque sólo necesita que
+haya al menos dos puntos de su cuerpo apoyados en el suelo (tiene
+un único G-pie).
+
+<P>
+</LI>
+</OL>
+Teniendo en cuenta estas componentes, se pueden clasificar todos los
+movimientos que Polypod es capaz de realizar. Así por ejemplo, el
+movimiento de tipo rueda (<I>loop</I>) pertenece a la familia <B>RCB</B>. 
+
+<P>
+<B>Los robots gusanos que se mueven utilizando ondas que recorren
+su cuerpo pertenecen a la familia</B> SCB<B>.</B>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html649"
+  HREF="node33.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html645"
+  HREF="node30.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html639"
+  HREF="node31.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html647"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html650"
+  HREF="node33.html">2.4.3 Patrones compuestos</A>
+<B> Up:</B> <A NAME="tex2html646"
+  HREF="node30.html">2.4 Taxonomía de los</A>
+<B> Previous:</B> <A NAME="tex2html640"
+  HREF="node31.html">2.4.1 Definiciones</A>
+ &nbsp <B>  <A NAME="tex2html648"
+  HREF="node3.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-20
+</ADDRESS>
+</BODY>
+</HTML>

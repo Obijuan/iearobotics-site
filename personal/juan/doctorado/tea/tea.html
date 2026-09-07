@@ -1,0 +1,482 @@
+<html>
+<head>
+	<meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DISEñO DE ROBOTS ÁPODOS</title>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+
+<table align="center" width="100%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>DISEÑO DE ROBOTS ÁPODOS</b>
+ </td>
+</tr>
+</tbody></table> 
+
+
+ <table align="center">
+<tr>
+<td><a href="#introduccion">[Introducción]</a></td>
+<td><a href="#resumen">[Resumen]</a></td>
+<td><a href="#autores">[Autores]</a></td>
+<td><a href="#licencia">[Licencia]</a></td>
+<td><a href="#resumen_ii">[Resumen Ampliado]</a></td>
+<td><a href="#conclusiones">[Conclusiones]</a></td>
+<td><a href="#download">[Download]</a></td>
+<td><a href="#links">[Links]</a></td>
+</tr>
+</table>
+  
+<center>
+<img src="../cube-reloaded/images/circuito6.png">
+</center>
+
+<!-- Introducción -->
+<HR>
+<h2 id="introduccion"> Introducción </h2>
+
+<!-- texto -->
+<div class="cuerpo">
+<p>
+  Trabajo de iniciación a la investigación realizado en el segundo año de mi doctorado, para la obtención del DEA
+  (Diploma de Estudios Avanzados). El trabajo fue expuesto en la 
+  <a href="http://www.ii.uam.es/">E.P.S</a> de la <a href="http://www.uam.es/">UAM</a>
+  ante un primer tribunal compuesto por lo profesores
+  <a href="http://www.ii.uam.es/~ivan/">D. Eduardo Boemo Scalvinoni</a>,
+  <a href="http://www.ii.uam.es/~fjgomez/">D. Francisco Gómez Arribas</a> y 
+  <a href="http://www.ii.uam.es/~jmartine/">D. Javier Martínez Rodríguez</a>,
+   en Junio de 2003, y ante un 
+  segundo tribunal en Julio de 2003.
+ </p>
+ <p>
+   En esta página se puede encontrar el trabajo realizado así como las dos presentaciones realizadas y los 
+   resúmenes y otros informes que se entregaron.
+ </p>
+ </div>
+
+<!-- Sección 1 -->
+<HR>
+<H2 id="resumen">Resumen</H2>
+<div class="cuerpo">
+<p>
+En este trabajo se realiza un estudio teórico sobre los <b>robots
+ápodos</b> existentes, centrándose en la <b>robótica modular reconfigurable</b>
+aplicada al <b>problema de la locomoción</b>. Se diseña un módulo
+pequeño y sencillo, con un servomecanismo, que permite construir robots
+ápodos que se puedan mover bien en línea recta o bien en un plano.
+Con cuatro de estos módulos, se construye el robot ápodo <b>Cube
+Reloaded</b> y se adapta el software y la electrónica desarrolados en
+Cube 2.0, un gusano ápodo previamente diseñado. Se proponen dos maneras
+alternativas de controlar el gusano, usando <b>FPGAs</b>, una mediante
+lógica combinación y secuencial y otra con una <b>CPU empotrada</b>.
+Finalmente se realizan pruebas de movimiento y se consigue que Cube
+Reloaded pueda superar un <b>circuito de pruebas</b> constituido
+por un cilindro de 8 cm de diámetro y un escalón de 3.5 cm de alto,
+lo que pone de manifiesto la <b>versatilidad en la locomoción</b>. 
+</p>
+</div>
+<br>
+
+<!-- Sección 2 -->
+<HR>
+<H2 id="autores"> Autores</H2>
+
+<div class="lista">
+<ul>
+  <li><a HREF="../../index.html">Juan González</a></li>
+  <li><a href="http://www.ii.uam.es/~ivan/">D. Eduardo Boemo Scalvinoni</a></li>
+</ul>
+
+</div>
+
+<!-- Sección 3 -->
+<HR>
+<H2 id="licencia">Licencia</H2>
+
+<div class="cuerpo">
+
+<blockquote>
+<img src="../cube-reloaded/images/tux.png"  align="left">
+<p>
+  Este proyecto tiene una <b>licencia GPL</b>. Todo el software, documentación, hardware
+  y estructuras mecónicas se puede copiar, modificar y distribuir siempre y cuando se mantenga esta nota.<br>
+  <b>Descargo de Responsabilidad</b>. No me hago responsable en ningún caso de los posibles daños o
+  pérdidas de garantía que pueda ocasionar el uso, debido o indebido de la información contenida en
+  este proyecto.
+</p>
+</blockquote>
+</div>
+
+<!-- DOWNLOAD: Archivos -->
+<HR>
+<H2 id="resumen_ii">Resumen ampliado</H2>
+<H3>Introducción</H3>
+<div class="cuerpo">
+<p>
+ En la robótica existen dos grandes áreas: <b>manipulación</b> y <b>locomoción</b>.
+ La manipulación es la capacidad de actuar sobre los objetos, trasladándolos o modificándolos. Este área se
+ centra en la construcción de manipuladores y brazos robóticos.
+  La locomoción es la facultad de un robot para poder desplazarse de un lugar a otro. Los robots con
+  capacidad locomotiva se llaman <b>Robots móviles</b>.
+ </p>
+
+ <p>
+   Uno de los grandes retos en el área de la locomoción es el de <b>desarrollar un robot que sea capaz de
+moverse por cualquier tipo de entorno</b>, por muy escarpado que sea. Esto tiene especial interés en la
+exploración de otros planetas, en los que no se sabe qué tipo de terreno nos podemos encontrar.
+ </p>
+
+<p>
+ Hasta 1993, se diseñaban robots para cada tipo de terreno. En <b>1994</b> apareció el primer robot basado en los
+ paradigmas de la 
+ <a href="http://www2.parc.com/spl/projects/modrobots/index.html">robótica modular reconfigurable</a>
+
+ : <a href="http://www2.parc.com/spl/projects/modrobots/chain/polybot/index.html"><b>Polybot</b></a>.
+ <i>¿Por qué no trabajar en una nueva línea de investigación en la que no se diseñen robots específicos para
+ cada terreno, sino que el propio robot se adapte al terreno, modificando su forma y su manera de 
+ de desplazarse?</i>
+ </p>
+ <p>
+ <a href="http://robotics.stanford.edu/users/mark/bio.html">Mark Yim</a>
+  se puede considerar como el padre de esta disciplina. Actualmente está en el 
+  <a href="http://www.parc.com/">PARC</a>, trabajando en la
+ <a href="http://www2.parc.com/spl/projects/modrobots/chain/polybot/g3.html">tercera generación</a>
+
+  de módulos para Polybot.
+ </p>
+  <p>
+  El diseño de robots ápodos se puede abordar desde esta perspectiva. En vez de diseñar un robot ápodo 
+  específico, es mejor diseñar un <b>módulo sencillo</b> que se pueda unir formando cadenas. Este mismo
+  módulo también servirá para construir otros robots diferentes.
+  </p>
+  <p>
+  Este trabajo se encuadra dentro del campo de la <b>robótica modular reconfigurable</b>, con aplicación
+  a la <b>locomoción estóticamente estable</b>, centrándose en el movimiento en línea recta 
+  de los robots ápodos, que son
+  un subconjunto de los <b>robots tipo cadena</b>.
+  </p>
+</div>
+
+<H3>Caso de estudio I: POLYPOD</H3>
+<div class="lista">
+<ul>
+<li><a href="http://www-db.stanford.edu/TR/CS-TR-95-1536.html">Tesis doctoral</a>
+ de 
+ <a href="http://robotics.stanford.edu/users/mark/">Mark Yim</a>.
+  Stanford. 1994. Primer robot modular y manualmente reconfigurable</li>
+ <li><b>Robot 2-modular</b>. Hay dos tipos de módulos diferentes: los nodos y los segmentos</li>
+ <li>Los segmentos tienen <b>2 grados</b> de libertad</li>
+ <li>Implementados diferentes <b>patrones de locomoción</b> tanto simples como compuestos</li>
+ <li>Los módulos son <b>mecónicamente complejos</b></li>
+ <li>El control es sencillo, utilizando <b>tablas de control</b></li>
+</ul>
+</div>
+
+<H3>Caso de estudio II: POLYBOT</H3>
+<div class="lista">
+  <ul>
+  <li>Desarrollado en el 
+  <a href="http://www.parc.com/">PARC</a>. Continuación de los trabajos de 
+  <a href="http://robotics.stanford.edu/users/mark/">Mark Yim</a></li>
+  <li>Tres generaciones: 
+  <a href="http://www2.parc.com/spl/projects/modrobots/chain/polybot/g1.html">G1</a>,
+   <a href="http://www2.parc.com/spl/projects/modrobots/chain/polybot/g1v4.html">G1v4</a>,
+   <a href="http://www2.parc.com/spl/projects/modrobots/chain/polybot/g2.html">G2</a> y
+   <a href="http://www2.parc.com/spl/projects/modrobots/chain/polybot/g3.html">G3</a>.</li>
+  <li><a href="http://www2.parc.com/spl/projects/modrobots/chain/polybot/g1.html">Generación G1</a></li>
+    <ul>
+      <li>Un único grado de libertad por módulo</li>
+      <li>Conexión de los módulos <b>en fase y desfase</b></li>
+      <li>Piezas de plástico</li>
+      <li><b>Servomecanismos</b> de Radiocontrol</li>
+      <li>Bases cuadradas, de 5x5cm</li>
+      <li>CPU: 68HC11E2</li>
+      <li>Control en bucle abierto</li>
+      <li>Tablas de control</li>
+      <li>Alimentación y electrónica off-board</li>
+      <li>Experimentos: Primer ejemplo de reconfiguración simple para la locomoción</li>
+    </ul>
+    <li><a href="http://www2.parc.com/spl/projects/modrobots/chain/polybot/g1v4.html">Generación G1v4</a></li>
+    <ul>
+      <li>Alimentación + electrónica dentro de cada módulo</li>
+      <li>4 placas de conexión por módulo</li>
+      <li>Microcontrolador PIC16F877</li>
+      <li>Bus de comunicación: RS-232, 485</li>
+      <li>Servos RC</li>
+      <li>Control en bucle cerrado</li>
+      <li>Experimentos: montar en triciclo, superación escalones, trepar...</li>
+    </ul>
+    <li><a href="http://www2.parc.com/spl/projects/modrobots/chain/polybot/g2.html">Generación G2</a></li>
+    <ul>
+      <li>Motor DC sin escobillas</li>
+      <li>Dimensiones: 11x7x6 cm</li>
+      <li>Estructura metálica</li>
+      <li>CPU: <b>Power PC 555</b></li>
+      <li>1 MB RAM</li>
+      <li>BUS CAN</li>
+      <li>Experimentos: Reconfiguración dinámica</li>
+    </ul>
+    <li><a href="http://www2.parc.com/spl/projects/modrobots/chain/polybot/g3.html">Generación G3</a></li>
+    <ul>
+      <li>Dimensiones: 5x5x4.5cm</li>
+      <li>Más sensores</li>
+      <li>Motores maxon</li>
+      <li>Actualmente en desarrollo</li>
+    </ul>
+  </ul>
+</div>
+
+<H3>Cube Reloaded</H3>
+<div class="lista">
+  <ul>
+    <li>Trabajo previo: <a href="../../proyectos/cube-2.0/cube.html">Cube 2.0</a></li>
+    <li>Robot ápodo, construido a partir de 4 
+    <a href="../Modulos-Y1/modulos-y1.html">Módulos Y1</a> <b>conectados en fase</b></li>
+    <li><b>Patrón de movimiento sinusoidal</b>: ondas que se transmiten de la cola a la cabeza</li>
+    <li>Modelo 3D, hecho con Blender</li>
+    <li>Pruebas de control: Con 
+   <a href="../../../../proyectos/ct6811/ct6811.html">tarjeta CT6811</a> y FPGA
+   <a href="../jps-xpc84/jps-xpc84.html">tarjeta JPS</a></li>
+    <li>Experimentos: </li>
+    <ul>
+      <li>Pruebas de locomoción en línea recta</li>
+      <ul>
+        <li>Onda sinusoidal, con K=1</li>
+        <li>Onda sinusoidal, con K=2</li>
+        <li>Semionda</li>
+      </ul>
+      <li>Circuito de pruebas</li>
+        <ul>
+          <li>Avance a través de un tubo de 8 cm de diámetro</li>
+          <li>Superación de un escalón de 3.5cm de alto</li>
+        </ul>
+    </ul>
+  </ul>
+</div>
+
+<HR>
+<H2 id="conclusiones">Conclusiones</H2>
+
+<div class="cuerpo">
+<p>Al estudiar los orígenes, características y prototipos de robots ápodos
+construidos en diferentes centros de investigación se ha descubierto
+una nueva área de investigación en robótica: los <b>robots modulares
+y reconfigurables</b>. Se han estudiado los dos robots más importantes
+dentro de esta área: 
+<a href="http://www2.parc.com/spl/projects/modrobots/chain/polypod/index.html"><b>Polypod</b></a>, 
+el precursor, creado por 
+<a href="http://robotics.stanford.edu/users/mark/">Mark Yim</a>
+ en Stanford y 
+ <a href="http://www2.parc.com/spl/projects/modrobots/chain/polybot/index.html"><b>Polybot</b></a>,
+ desarrollado en el 
+ <a href="http://www.parc.com/">PARC</a> y sobre
+el que se están realizando nuevas investigaciones. Ambos robots ponen
+de manifiesto una de las características más importantes: la <b>versatilidad</b>.
+Fundametalmente se han orientado hacia el <b>problema de la locomoción</b>.
+</p>
+
+<p>
+En vez de diseñar robots específicios, lo que se pretende es diseñar
+unos módulos a partir de los cuales poder construir robots muy diferentes.
+Además estos robots se pueden <b>reconfigurar</b>, tomando una u
+otra forma en función del terreno por el que se desplacen.
+
+<p>
+Siguiendo este enfoque, hemos diseñado y construido el 
+<a href="../Modulos-Y1/modulos-y1.html"><b>módulo Y1</b></a>.
+ Tienen una característica muy importante: la posibilidad de unirse
+dos módulos en <b>fase</b> o <b>desfasados</b>, lo que permite
+construir robots ápodos que bien se desplacen solo por una línea recta
+(todos los módulos en fase) o bien que se puedan mover por un plano
+(desfasados).
+
+<p>
+Uniendo cuatro módulos Y en fase se ha construido la estructura de
+<a href="../cube-reloaded/index.html"><b>Cube Reloaded</b></a>,
+ y junto con el software y la electrónica de
+control constituyen una <b>plataforma para realizar investigaciónes
+en esta área de la robótica</b>, aplicada fundamentalmente a la locomoción.
+
+
+<p>
+La electrónica de control se ha mejorado, usándose un microcontrolador
+específico, igual que en 
+<a href="../../proyectos/cube-2.0/cube.html">Cube 2.0</a>,
+ pero usando un servidor más óptimo,
+capaz de controlar el doble de servos usando solo un único comparador.
+Asimimos se han evaluado dos <b>alternativas nuevas</b>, basadas
+en <b>FPGA</b>. Una de ellas empleando <b>lógica combinacional
+y secuencial</b> para la implementación de las <b>tablas de control</b>
+y lograr la locomoción de Cube Reloaded en línea recta. Se ha implementado
+en la 
+<a href="../jps-xpc84/jps-xpc84.html">placa JPS</a>.
+ Otra alternativa basada en una <b>CPU específica,
+empotrada en la FPGA</b>, que necesita más recursos y no se puede implementar
+en una Spartan I. Se ha simulado pero no se ha aplicado al todavía
+al control del gusano.
+
+<p>
+Finalmente hemos realizado <b>experimentos de locomoción</b>, generándose
+diferentes <b>patrones de movimiento</b> a partir de ondas sinusoidales
+y semiondas. Las medidas tomadas indican que la velocidad del robot
+ápodo depende de la amplitud y la longitud de la onda empleadas, así
+como la estabilidad en el movimiento. Para demostrar la versatilidad
+en la locomoción, hemos hecho que Cube Reloaded pase por un circuito
+de pruebas y cambiando las características de la onda generadora,
+consigue superarlos.
+
+
+</div>
+<br>
+
+<HR>
+<H2 id="trabajo">Trabajo ON-LINE</H2>
+
+<div class="cuerpo">
+<p>
+
+<table>
+
+<tr>
+<td>Disponible on-line: 
+  [<a href="../cube-reloaded/download/tea.pdf">PDF</a>]
+  [<a href="html/tea.html">HTML</a>]
+</td>
+</tr>
+<tr>
+<td>Transparencias de la presentación: 
+[<a href="../cube-reloaded/download/tea-presentacion.pdf">PDF</a>]
+[<a href="../cube-reloaded/download/tea-presentacion.sxi">OpenOffice</a>]
+</td>
+</tr>
+</table>
+</p>
+</div>
+
+<br>
+
+<HR>
+<H2 id="ref">Referencias</H2>
+<div class="cuerpo">
+  Todas las referencias están disponibles <a href="html/node84.html">aqué</a>.
+</div> 
+
+<HR>
+<!-- DOWNLOAD -->
+<H2 id="download">Download</H2>
+
+<p>
+<table width=80% bgcolor="#abbeeb" border="0" align="center" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>TEA I (Primer tribunal)</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=80%  border="0" align="center">
+<tbody>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="../cube-reloaded/download/tea.pdf">tea.pdf</a> (2,4MB)</td>
+  <td>"Diseño de robots ápodos". Trabajo de iniciación a la investigación. Julio 2003.
+  </td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="../cube-reloaded/download/tea-presentacion.pdf">tea-presentacion.pdf</a> (1,8MB)</td>
+  <td>Presentación del trabajo de iniciación a la investigación, en PDF </td>
+</tr>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="../cube-reloaded/download/tea-presentacion.sxi">tea-presentacion.sxi</a>  (4,3MB)</td>
+  <td>Presentación del trabajo de iniciación a la investigación, para OpenOffice</td>
+</tr>
+
+</tbody></table>
+
+<br><br>
+<table width=80% bgcolor="#abbeeb" border="0" align="center" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>TEA II (Segundo tribunal)</b>
+ </td>
+</tr>
+</tbody></table>
+
+
+<table width=80%  border="0" align="center">
+<tbody>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="download/resumen-tea.pdf">resumen-tea.pdf</a> (50KB)</td>
+  <td>Resumen del trabajo de iniciación a la investigación</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="download/tray-academica-juan.pdf">tray-academica-juan.pdf</a> (59KB) </td>
+  <td>Resumen de la trayectoria acadámica</td>
+</tr>    
+
+<tr bgcolor="#cabeeb">
+  <td><a href="download/tea-ii-presentacion.pdf">tea-ii-presentacion.pdf</a> (1.4MB)  </td>
+  <td>Presentación con resumen de la trayectoria acadámica y trabajo de investigación, en PDF</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="download/tea-ii-presentacion.sxi">tea-ii-presentacion.sxi</a> (3,7MB) </td>
+  <td>Presentación con resumen de la trayectoria acadámica y trabajo de investigación, para OpenOffice</td>
+</tr>
+
+</tbody></table>                
+</p>
+<br>           
+
+<HR>
+<H2 id="links">Links</H2>
+<div class="lista">
+<ul>
+  <li><a href="../../proyectos/cube-2.0/cube.html">Cube 2.0</a>, Robot ápodo construido como 
+  proyecto fin de carrera</li>
+  <li><a href="../Modulos-Y1/modulos-y1.html">Módulos Y1</a>, módulos mecúnicos
+   para la construcción de robots modulares</li>
+   <li><a href="../cube-reloaded/index.html">Cube Reloaded</a>, Robot ápodo mejorado,
+   desarrollado como parte de este trabajo de iniciación a la investigación.</li>
+   <li><a href="../Robots_apodos/estudio_apodos.html">Principales líneas de investigación
+    en robots ápodos</a>. En este trabajo se muestran los modelos más significativos 
+    que se están desarrollando en los principales centros de investigación, 
+    analizando las tecnologías y los problemas que se resuelven </li>
+   <li><a href="../../../../proyectos/ct6811/ct6811.html">tarjeta CT6811</a>, entrenadora
+   basada en el microcontrolador 6811 de Motorola</li>
+   <li><a href="../jps-xpc84/jps-xpc84.html">tarjeta JPS</a>, entrenadora para FPGA</li>
+  <li><a href="../../../../proyectos/stargate/index.html">Proyecto Stargate</a>, control de dispositivos
+  desde el PC</li>
+
+  <li><a href="../../../../proyectos/stargate/servidores/sg-servos8/sg-servos8.html">Servidor Servos8</a>
+  [Proyecto Stargate], movimiento de 8 servos desde el PC</li>
+</ul>
+</div>
+
+<!-- Noticias -->
+<HR>
+<H2 id="noticias">Noticias</H2>
+<div class="lista">
+<ul>
+  <li><b>22/Dic/2003</b>: Publicado trabajo en la web</li>
+</ul>
+</div>
+
+
+<hr>
+<p style="margin-bottom: 0cm"><a href="/iearobotics-site/wiki">IEA
+ROBOTICS</a> 
+</p>
+<adrress><a href="../../index.html">Juan González</a> 
+</address>
+</body>
+</html>

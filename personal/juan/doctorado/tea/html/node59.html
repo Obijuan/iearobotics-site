@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.5.1 Microcontrolador específico</TITLE>
+<META NAME="description" CONTENT="3.5.1 Microcontrolador específico">
+<META NAME="keywords" CONTENT="tea">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tea.css">
+
+<LINK REL="next" HREF="node60.html">
+<LINK REL="previous" HREF="node58.html">
+<LINK REL="up" HREF="node58.html">
+<LINK REL="next" HREF="node60.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1002"
+  HREF="node60.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html998"
+  HREF="node58.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html992"
+  HREF="node58.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1000"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1003"
+  HREF="node60.html">3.5.2 FPGA</A>
+<B> Up:</B> <A NAME="tex2html999"
+  HREF="node58.html">3.5 Electrónica</A>
+<B> Previous:</B> <A NAME="tex2html993"
+  HREF="node58.html">3.5 Electrónica</A>
+ &nbsp <B>  <A NAME="tex2html1001"
+  HREF="node3.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00751000000000000000">
+3.5.1 Microcontrolador específico</A>
+</H2>
+
+<P>
+Una manera de controlar Cube Reloaded es utilizando un microcontrolador
+determinado para generar las señales de PWM (control de servos). El
+problema de la escalabilidad se resuelve poniendo estos micros en
+red.
+
+<P>
+Para Cube Reloaded se ha seguido utilizando el microcontrolador 6811,
+con la tarjeta CT6811. El servidor de control se ha optimizado y ahora
+es posible controlar hasta 8 servos con un único comparador. <B>Consultar
+el apéndice <A HREF="node79.html#cap:apendice-control-servos"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A> para más información</B>.
+El 6811 dispone de 5 comparadores, por lo que teóricamente se podrían
+controlar hasta 40 servos. La tarjeta BT6811 sólo tiene conectores
+para controlar 4 servos, por lo que se ha dejado de utilizar. 
+
+<P>
+El cable de bus de 10 hilos que viene de la tarjeta pct-servos situada
+en uno de los módulos se lleva directamente al puerto B de la CT6811.
+El gusano puede tener hasta 8 módulos, sin necesidad de realizar ningún
+cambio. Si se quieren realizar robots con un número mayor de módulos,
+sólo hay que conectar las tarjetas CT6811 que sean necesarias a través
+del SPI (puerto D).
+
+<P>
+La <B>tabla de control</B> se puede almacenar en la memoria EEPROM,
+sin embargo, para hacer pruebas de locomoción es mejor generar las
+secuencias de movimiento desde el PC, con el programa <B>cube-virtual</B>[<A
+ HREF="node84.html#cube-virtual">45</A>],
+y descargarlas al gusano usando el programa <B>cube-fisico</B>[<A
+ HREF="node84.html#cube-fisico">44</A>],
+el mismo que se ha usado para Cube 2.0.
+
+<P>
+En la figura <A HREF="node59.html#fig:cube-electronica"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A> se muestra a Cube Reloaded
+controlado desde una tarjeta CT6811. El cable de bus se conecta al
+puerto B. La CT6811 está conectada a la alimentación (5v) y a un PC.
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:cube-electronica"></A><A NAME="2317"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Cube Reloaded con diferente electrónica. Izquierda, controlado con
+una CT6811. Derecha, conectado a una tarjeta JSP, con FPGA</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="711" HEIGHT="289" ALIGN="BOTTOM" BORDER="0"
+ SRC="img37.png"
+ ALT="\includegraphics[]{ps/cube-electronica.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+<I>El usar un microcontrolador es una solución viable y sencilla,
+sin embargo, si necesitamos más potencia de cálculo o queremos usar
+un microcontrolador más avanzado tendremos que rediseñar toda la electrónica.
+Nosotros nos tenemos que adaptar al microcontrolador y solucionar
+los problemas con él. Es una solución poco flexible.</I>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1002"
+  HREF="node60.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html998"
+  HREF="node58.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html992"
+  HREF="node58.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1000"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1003"
+  HREF="node60.html">3.5.2 FPGA</A>
+<B> Up:</B> <A NAME="tex2html999"
+  HREF="node58.html">3.5 Electrónica</A>
+<B> Previous:</B> <A NAME="tex2html993"
+  HREF="node58.html">3.5 Electrónica</A>
+ &nbsp <B>  <A NAME="tex2html1001"
+  HREF="node3.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-20
+</ADDRESS>
+</BODY>
+</HTML>

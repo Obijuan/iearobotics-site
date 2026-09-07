@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2.5.5 Generación G1v4</TITLE>
+<META NAME="description" CONTENT="2.5.5 Generación G1v4">
+<META NAME="keywords" CONTENT="tea">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tea.css">
+
+<LINK REL="next" HREF="node42.html">
+<LINK REL="previous" HREF="node40.html">
+<LINK REL="up" HREF="node35.html">
+<LINK REL="next" HREF="node42.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html761"
+  HREF="node42.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html757"
+  HREF="node35.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html751"
+  HREF="node40.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html759"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html762"
+  HREF="node42.html">2.5.6 Generación G2</A>
+<B> Up:</B> <A NAME="tex2html758"
+  HREF="node35.html">2.5 Polybot</A>
+<B> Previous:</B> <A NAME="tex2html752"
+  HREF="node40.html">2.5.4 Experimentos</A>
+ &nbsp <B>  <A NAME="tex2html760"
+  HREF="node3.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00655000000000000000">
+2.5.5 Generación G1v4</A>
+</H2>
+
+<P>
+Todavía no son autoreconfigurables, pero son muy fácilmente ensamblables
+a mano (no hay que atornillar). Por las conexiones se pasa la alimentación
+y las líneas de comunicaciones. Tanto la alimentación como la electrónica
+se encuentran dentro del propio módulo, por lo que son un poco más
+grandes que los G1 (ver figura <A HREF="node41.html#fig:polybot-g1v4-1"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>). Se siguen
+utilizando <B>servos de RC</B>, pero ahora se manejan en <B>bucle
+cerrado</B>. Además de leer el potenciómetro del servo, tiene sensores
+de fuerza. El objetivo es el estudio de la locomoción.
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:polybot-g1v4-1"></A><A NAME="2296"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+aspecto de un módulos G1v4</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="478" HEIGHT="372" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.png"
+ ALT="\includegraphics[%%
+scale=0.5]{ps/g1v4.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+Los módulos tienen <B>4 placas de conexión</B> en cada módulo, lo
+que permite conectarlo con otros cuatro módulos. O bien se pueden
+enganchar para formar una cadena y utilizar las placas restantes para
+conectar elementos pasivos, como pies o ganchos.
+
+<P>
+Como alimentación utilizan se utilizan 6v proporcionados por pilas
+AAA recargables (para cada módulo). 10 módulos conectados formando
+una rueda (patrón de movimiento más eficiente), fueron capaces de
+recorrer 0.5Km en 45 minutos.
+
+<P>
+Cada módulo dispone de un microcontrolador <B>PIC16F877</B> y se
+comunican entre sí mediante un bus serie RS232 (o 485).
+
+<P>
+Todas las aplicaciones de estos módulos se han orientado hacia el
+estudio de la locomoción. Los experimentos realizados son los siguientes:
+
+<P>
+
+<UL>
+<LI><B>Montar en triciclo</B>. Este uno de los experimentos más interesantes
+y fue portada la revista IEEE Spectrum[<A
+ HREF="node84.html#Polybot-IEEE">29</A>]. Es un
+ejemplo de cómo los robots modulares se pueden utilizar para manipular
+objetos humanos. Un total de 20 módulos G1v4 se unieron formando dos
+piernas y una cintura y se apoyaron en los pedales de un triciclo.
+El movimiento coordinado de estas piernas hace que el triciclo avance,
+con el robot encima (figura <A HREF="node41.html#fig:g1v4-demo-1"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>).
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:g1v4-demo-1"></A><A NAME="2297"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+El experimento del triciclo, movido por módulos de tipo G1v4</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="279" HEIGHT="304" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="\includegraphics[%%
+scale=0.5]{ps/g1v4-demo1.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+</LI>
+<LI><B>Adaptación al terreno</B>: Al disponer de sensores de fuerza,
+los módulos pueden detectar la presión ejercida sobre la superficie
+por la que avanzan, pudiéndo adoptar su misma forma. Los experimentos
+se han realizado con una configuración tipo rueda, de 10 módulos y
+los resultados han sido impresionantes. Es capaz de atravesar obstáculos
+de lo más diverso así como subir escaleras (ver figura <A HREF="node41.html#fig:g1v4-demo-2"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>)
+</LI>
+<LI><B>Trepar</B> : Otra interesante aplicación es la habilidad para
+trepar por vayas y meteriales porosos, usando bien unos ganchos o
+bien unos pinchos. Mientras una parte del gusano permanece enganchada,
+otra parte se se sitúa en la nueva posición, generándose una onda
+que se propaga de la cola hasta la cabeza (ver figura <A HREF="node41.html#fig:g1v4-demo-2"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>).
+Se puede encontrar información en [<A
+ HREF="node84.html#Polybot-trepar">34</A>].
+</LI>
+</UL>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:g1v4-demo-2"></A><A NAME="2298"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Esperimentos con los módulos G1v4. En la foto superior izquierda,
+el robot con forma de rueda se adapta a la forma del terreno para
+atravesarlo. Arriba a la derecha el mismo robot subiendo una escalera.
+En las fotos de abajo está trepando, en la izquierda sobre un material
+poroso y en la derecha sobre una verja.</CAPTION>
+<TR><TD><IMG
+ WIDTH="749" HEIGHT="525" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.png"
+ ALT="\includegraphics[]{ps/polybot-g1v4-1.eps}">
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html761"
+  HREF="node42.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html757"
+  HREF="node35.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html751"
+  HREF="node40.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html759"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html762"
+  HREF="node42.html">2.5.6 Generación G2</A>
+<B> Up:</B> <A NAME="tex2html758"
+  HREF="node35.html">2.5 Polybot</A>
+<B> Previous:</B> <A NAME="tex2html752"
+  HREF="node40.html">2.5.4 Experimentos</A>
+ &nbsp <B>  <A NAME="tex2html760"
+  HREF="node3.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-20
+</ADDRESS>
+</BODY>
+</HTML>

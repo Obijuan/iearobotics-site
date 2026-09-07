@@ -1,0 +1,303 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Contador.vhd:</TITLE>
+<META NAME="description" CONTENT="Contador.vhd:">
+<META NAME="keywords" CONTENT="tea">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tea.css">
+
+<LINK REL="next" HREF="node82.html">
+<LINK REL="previous" HREF="node80.html">
+<LINK REL="up" HREF="node80.html">
+<LINK REL="next" HREF="node82.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1273"
+  HREF="node82.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1269"
+  HREF="node80.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1263"
+  HREF="node80.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1271"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1274"
+  HREF="node82.html">Comparador.vhd:</A>
+<B> Up:</B> <A NAME="tex2html1270"
+  HREF="node80.html">D. Unidad hardware de</A>
+<B> Previous:</B> <A NAME="tex2html1264"
+  HREF="node80.html">D. Unidad hardware de</A>
+ &nbsp <B>  <A NAME="tex2html1272"
+  HREF="node3.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001301000000000000000">
+Contador.vhd:</A>
+</H2>
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD><FONT SIZE="-1">------------------------------</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">-&nbsp;contador.vhd.&nbsp;&nbsp;Juan&nbsp;Gonzalez.&nbsp;Feb-2002&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">-&nbsp;Licencia&nbsp;GPL.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">------------------------------</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">-&nbsp;PROYECTO&nbsp;LABOBOT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">------------------------------</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">-&nbsp;Contador&nbsp;de&nbsp;11&nbsp;bits&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">-&nbsp;Entradas:&nbsp;clk&nbsp;&nbsp;&nbsp;:&nbsp;Reloj&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reset&nbsp;:&nbsp;Puesta&nbsp;a&nbsp;cero&nbsp;asíncrona&nbsp;(Nivel&nbsp;bajo)&nbsp;-</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">-&nbsp;Salidas:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-q&nbsp;&nbsp;:&nbsp;Datos&nbsp;de&nbsp;salida&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">------------------------------</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">library&nbsp;ieee;</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">use&nbsp;ieee.std_logic_1164.all;</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">use&nbsp;ieee.std_logic_unsigned.all;</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">entity&nbsp;contador&nbsp;is</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;port&nbsp;(</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clk&nbsp;&nbsp;&nbsp;:&nbsp;in&nbsp;std_logic;&nbsp;-&nbsp;Reloj</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reset&nbsp;:&nbsp;in&nbsp;std_logic;</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;out&nbsp;std_logic_vector&nbsp;(10&nbsp;downto&nbsp;0));&nbsp;-Salida&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">end&nbsp;contador;</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">architecture&nbsp;beh&nbsp;of&nbsp;contador&nbsp;is</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;signal&nbsp;cuenta&nbsp;:&nbsp;std_logic_vector(10&nbsp;downto&nbsp;0);</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">begin</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;output:&nbsp;process(clk,reset)</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Actualizar&nbsp;la&nbsp;cuenta</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(reset='0')&nbsp;then&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Reset&nbsp;asíncrono</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cuenta&nbsp;&lt;=&nbsp;(others=&gt;'0');&nbsp;&nbsp;&nbsp;-&nbsp;Inicializar&nbsp;contador</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elsif&nbsp;(clk'event&nbsp;and&nbsp;clk='1')&nbsp;then&nbsp;&nbsp;-&nbsp;Flanco&nbsp;de&nbsp;subida&nbsp;en&nbsp;reloj</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cuenta&nbsp;&lt;=&nbsp;(cuenta+1);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Incrementar&nbsp;contador</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end&nbsp;if;&nbsp;</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end&nbsp;process;</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;q&nbsp;&lt;=&nbsp;cuenta;</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">end&nbsp;beh;</FONT>
+<P>
+
+</DD>
+</DL>
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1273"
+  HREF="node82.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1269"
+  HREF="node80.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1263"
+  HREF="node80.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1271"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1274"
+  HREF="node82.html">Comparador.vhd:</A>
+<B> Up:</B> <A NAME="tex2html1270"
+  HREF="node80.html">D. Unidad hardware de</A>
+<B> Previous:</B> <A NAME="tex2html1264"
+  HREF="node80.html">D. Unidad hardware de</A>
+ &nbsp <B>  <A NAME="tex2html1272"
+  HREF="node3.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-20
+</ADDRESS>
+</BODY>
+</HTML>

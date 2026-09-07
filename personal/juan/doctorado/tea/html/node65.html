@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.6.3.1 La CPU Pandabear</TITLE>
+<META NAME="description" CONTENT="3.6.3.1 La CPU Pandabear">
+<META NAME="keywords" CONTENT="tea">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tea.css">
+
+<LINK REL="next" HREF="node66.html">
+<LINK REL="previous" HREF="node64.html">
+<LINK REL="up" HREF="node64.html">
+<LINK REL="next" HREF="node66.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1075"
+  HREF="node66.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1071"
+  HREF="node64.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1065"
+  HREF="node64.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1073"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1076"
+  HREF="node66.html">3.6.3.2 Componentes adicionales y</A>
+<B> Up:</B> <A NAME="tex2html1072"
+  HREF="node64.html">3.6.3 CPU empotrada en</A>
+<B> Previous:</B> <A NAME="tex2html1066"
+  HREF="node64.html">3.6.3 CPU empotrada en</A>
+ &nbsp <B>  <A NAME="tex2html1074"
+  HREF="node3.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00763100000000000000">
+3.6.3.1 La CPU Pandabear</A>
+</H3>
+
+<P>
+La CPU diseñada presenta una arquitectura muy sencilla, con la intención
+de ir adaptándola a las necesidades que puedan surgir a lo largo del
+desarrollo del problema planteado, el control del robot ápodo. Las
+carácterísticas más relevante son:
+
+<P>
+
+<UL>
+<LI>Arquitectura de 16 bits.
+</LI>
+<LI>Arquitectura Harvard, con memorias separadas para datos y programa.
+</LI>
+<LI>Arquitectura LOAD-STORE. Los accesos a la memoria de datos se harán
+sólo con estas instrucciones.
+</LI>
+<LI>Cuatro registros internos de propósito general.
+</LI>
+<LI>Cuatro registros internos de propósito general / indexación.
+</LI>
+<LI>Direccionamiento indexado.
+</LI>
+<LI>Un bit de flag para saltos condicionales.
+</LI>
+<LI>8 instrucciones básicas (ver tabla <A HREF="#tab:set-instrucciones"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>).
+</LI>
+</UL>
+<BR><P></P>
+
+<DIV ALIGN="CENTER"><A NAME="2320"></A>
+<TABLE>
+<CAPTION><STRONG>Table:</STRONG>
+Set de instrucciones de la CPU</CAPTION>
+  <TR><TD>
+  <DIV ALIGN="CENTER">
+  <TABLE CELLPADDING=3 BORDER="1" ALIGN="CENTER">
+  <TR><TH ALIGN="CENTER"><B>Instrucción</B></TH>
+  <TH ALIGN="CENTER"><B>Función</B>
+  <BR>
+  LOAD</TH>
+  </TR>
+  <tr>
+    <td>LOAD</td>
+    <td>Rd:=Md[Ri+offset]</td>
+  </tr>
+  <tr>
+    <td>STORE</td>
+    <td>MD[Ri+Offset]:=Rs1</td>
+  </tr>
+  <tr>
+    <td>MOVE</td>
+    <td>Rd:=Rs</td>
+  </tr>
+  <tr>
+    <td>ADD</td>
+    <td>Rd:=Rs1+Rs2</td>
+  </tr>
+  <tr>
+    <td>SUB</td>
+    <td>Rd:=Rs1-Rs2</td>
+  </tr>
+  <tr>
+    <td>CMP</td>
+    <td>If Rs1=Rs2 flag:=1 else flag:=0</td>
+  </tr>
+  <tr>
+    <td>BF,BNF</td>
+    <td>if (flag xor c)=1 then PC:=PC+offset</td>
+  </tr>
+  <tr>
+    <td>JMP</td>
+    <td>PC:=PC+offset</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+</TABLE>
+</DIV>
+
+<P>
+</TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<P>
+Para cumplir con el set de instrucciones, se ha diseñado una arquitectura
+basada en una máquina Mealy de tres estados: captura, decodificación/ejecución
+y almacenamiento. Las salidas de la máquina son las señales de control
+que se envían a los distintos elementos que la acompañan. Un diagrama
+de está arquitectura se muestra en la figura <A HREF="node65.html#fig:arquitectura"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>.
+Además, se ha añadido un interface de comunicación con dos memorias
+de 16 bits de datos y 8 bits de dirección, síncronas. La memoria de
+programa es una ROM, mientras que la de datos es SRAM, y ambas están
+implementadas dentro del dispositivo.
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:arquitectura"></A><A NAME="2321"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Diagrama de bloques de la CPU (alternativa II). La interface con
+el exterior se realiza a través de dos buses de datos y dos buses
+de direcciones (arquitectura Hardvard). Además se han añadido señales
+de control para el manejo de memorias externas.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="583" HEIGHT="505" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.png"
+ ALT="\includegraphics[]{ps/arq_cpu.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1075"
+  HREF="node66.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1071"
+  HREF="node64.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1065"
+  HREF="node64.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1073"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1076"
+  HREF="node66.html">3.6.3.2 Componentes adicionales y</A>
+<B> Up:</B> <A NAME="tex2html1072"
+  HREF="node64.html">3.6.3 CPU empotrada en</A>
+<B> Previous:</B> <A NAME="tex2html1066"
+  HREF="node64.html">3.6.3 CPU empotrada en</A>
+ &nbsp <B>  <A NAME="tex2html1074"
+  HREF="node3.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-20
+</ADDRESS>
+</BODY>
+</HTML>

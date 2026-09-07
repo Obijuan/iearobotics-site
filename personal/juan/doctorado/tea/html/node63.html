@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.6.2 Lógica combinacional y secuencial en FPGA</TITLE>
+<META NAME="description" CONTENT="3.6.2 Lógica combinacional y secuencial en FPGA">
+<META NAME="keywords" CONTENT="tea">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tea.css">
+
+<LINK REL="next" HREF="node64.html">
+<LINK REL="previous" HREF="node62.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node64.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1051"
+  HREF="node64.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1047"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1041"
+  HREF="node62.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1049"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1052"
+  HREF="node64.html">3.6.3 CPU empotrada en</A>
+<B> Up:</B> <A NAME="tex2html1048"
+  HREF="node61.html">3.6 Control</A>
+<B> Previous:</B> <A NAME="tex2html1042"
+  HREF="node62.html">3.6.1 Microcontrolador 6811 y</A>
+ &nbsp <B>  <A NAME="tex2html1050"
+  HREF="node3.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00762000000000000000"></A><A NAME="sub:fpga_alt_cableada"></A>
+<BR>
+3.6.2 Lógica combinacional y secuencial en FPGA
+</H2>
+
+<P>
+La idea de este controlador es la de implementar por hardware la tabla
+de control, que se introduce en una memoria ROM y se direcciona mediante
+un contador.
+
+<P>
+Uno de los principales problemas es la temporización. Por un lado
+hay que generar una señal de reloj de 102KHZ para obtener un PWM de
+exactamente 50Hz. En la tarjeta JPS[<A
+ HREF="node84.html#JPS-hispabot">40</A>][<A
+ HREF="node84.html#JPS-web">41</A>],
+empleada para la implementación de este controlador, se tiene un reloj
+de 1MHZ. A partir de él hay que obtener la señal de 102KHZ. Utilizando
+un divisor entre 10, se consigue una frecuencia de 100KHZ, lo que
+proporciona una frecuencia de PWM de 48.8HZ, que entra dentro de los
+límites de tolerancia del servo.
+
+<P>
+Por otro lado, el control de los servos es en bucle abierto y el tiempo
+que tarda el servo en alcanzar la posición indicada es indeterminado.
+Es necesario estimarlo. En la solución usando un microcontrolador,
+este tipo se estima en función de el ángulo que tiene que recorrer
+para llegar a la nueva posición (la velocidad angular nominal del
+servo es constante y conocida). Se estima el tiempo que le llevará
+al servo recorrer este ángulo y se realiza una espera, que es variable
+(unas veces se espera más, otras veces menos).
+
+<P>
+En el caso de la implementación por hardware se ha simplificado y
+se utiliza un tiempo de espera igual para todas las entradas de la
+tabla. Si el incremento angular de los servos es pequeño al pasar
+de una posición a otra, y dado que todos los servos están recorridos
+por la misma onda sinusoidal, el tiempo de espera se puede aproximar
+a una constante para todos los servos.
+
+<P>
+Es decir, en el caso de esta solución hardware, el tiempo entre el
+envío de una entrada a los servos y otra es constante e igual para
+todas las entrada. Esto se podría mejorar incluyendo en la tabla un
+campo que indicase el tiempo a esperar, sin embargo, por lo comentando
+anteriormente de tener unos incrementos angulares pequeños, no es
+necesario.
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:fpga-alt-1"></A><A NAME="2319"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Controlador hardware basado en lógica combinacional y secuencial</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="725" HEIGHT="565" ALIGN="BOTTOM" BORDER="0"
+ SRC="img38.png"
+ ALT="\includegraphics[]{ps/fpga-alt1.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+El diagrama de bloques se muestra en la figura <A HREF="node63.html#fig:fpga-alt-1"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>.
+Está constituido por dos partes: las unidades de PWM y el secuenciador
+que devuelve consecutivamente las filas de la tabla de control. Esta
+tabla se encuentra en una ROM de 32x32, direccionada mediante un contador
+módulo 30.
+
+<P>
+El periodo de la señal de reloj del secuenciador (<IMG
+ WIDTH="48" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.png"
+ ALT="$T_{CLK}$">) determina
+el tiempo que se tardará en enviar la siguiente posición a los servos.
+Cada servo tarda un tiempo <IMG
+ WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$t_{Ser}$"> en alcanzar la nueva posición.
+Si <!-- MATH
+ $T_{CLK}>t_{Ser}$
+ -->
+<IMG
+ WIDTH="99" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img41.png"
+ ALT="$T_{CLK}&gt;t_{Ser}$">, el servo permanecerá un tiempo <!-- MATH
+ $T_{CLK}-t_{Ser}$
+ -->
+<IMG
+ WIDTH="98" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.png"
+ ALT="$T_{CLK}-t_{Ser}$">
+en reposo en la nueva posición, antes de que llegue la siguiente.
+Si esta diferencia es del orden de las centenas de ms, se apreciará
+un movimiento ``a saltos'' (no continuo). Por el contrario, si
+<!-- MATH
+ $T_{CLK}<t_{Ser}$
+ -->
+<IMG
+ WIDTH="99" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img43.png"
+ ALT="$T_{CLK}&lt;t_{Ser}$">, se enviará la nueva posición al servo antes de
+que haya alcanzado la anterior, por lo que los servos nunca llegarán
+a alcanzar las posiciones indicadas en la tabla de control.
+
+<P>
+Mediante un multiplexor de 8 a 1, con sus entradas de selección conectadas
+a tres <I>switches</I> de la tarjeta JPS, se selecciona una señal
+de reloj de entre 8 posibles, con los siguientes periodos: 1000, 524,
+262, 131, 66, 33, 16 y 8 ms. Si se utiliza la de 1000 ms, los servos
+cambian de posición aproximadamente cada segundo. Si se utiliza la
+última el cambio es demasiado rápido.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1051"
+  HREF="node64.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1047"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1041"
+  HREF="node62.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1049"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1052"
+  HREF="node64.html">3.6.3 CPU empotrada en</A>
+<B> Up:</B> <A NAME="tex2html1048"
+  HREF="node61.html">3.6 Control</A>
+<B> Previous:</B> <A NAME="tex2html1042"
+  HREF="node62.html">3.6.1 Microcontrolador 6811 y</A>
+ &nbsp <B>  <A NAME="tex2html1050"
+  HREF="node3.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-20
+</ADDRESS>
+</BODY>
+</HTML>

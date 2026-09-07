@@ -1,0 +1,293 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Comparador.vhd:</TITLE>
+<META NAME="description" CONTENT="Comparador.vhd:">
+<META NAME="keywords" CONTENT="tea">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tea.css">
+
+<LINK REL="next" HREF="node83.html">
+<LINK REL="previous" HREF="node81.html">
+<LINK REL="up" HREF="node80.html">
+<LINK REL="next" HREF="node83.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1285"
+  HREF="node83.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1281"
+  HREF="node80.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1275"
+  HREF="node81.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1283"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1286"
+  HREF="node83.html">presmod10.vhd:</A>
+<B> Up:</B> <A NAME="tex2html1282"
+  HREF="node80.html">D. Unidad hardware de</A>
+<B> Previous:</B> <A NAME="tex2html1276"
+  HREF="node81.html">Contador.vhd:</A>
+ &nbsp <B>  <A NAME="tex2html1284"
+  HREF="node3.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001302000000000000000">
+Comparador.vhd:</A>
+</H2>
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD><FONT SIZE="-1">---------------------------</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">-&nbsp;comparador.vhdl.&nbsp;&nbsp;Juan&nbsp;Gonzalez.&nbsp;Mayo-2003&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">-&nbsp;Licencia&nbsp;GPL.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">---------------------------</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">-&nbsp;PROYECTO&nbsp;CUBE-FPGA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">---------------------------</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">-&nbsp;Comparador&nbsp;para&nbsp;la&nbsp;implementacion&nbsp;de&nbsp;una&nbsp;unidad&nbsp;&nbsp;-</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">-&nbsp;de&nbsp;PWM.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">---------------------------</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">-&nbsp;Comparador&nbsp;de&nbsp;8&nbsp;bits&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">---------------------------</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">library&nbsp;ieee;</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">use&nbsp;ieee.std_logic_1164.all;</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">entity&nbsp;comparador&nbsp;is</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;port&nbsp;(opa&nbsp;:&nbsp;in&nbsp;std_logic_vector(10&nbsp;downto&nbsp;0);&nbsp;&nbsp;-&nbsp;Operador&nbsp;A</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opb&nbsp;:&nbsp;in&nbsp;std_logic_vector(7&nbsp;downto&nbsp;0);&nbsp;&nbsp;&nbsp;-&nbsp;Operador&nbsp;B</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;o&nbsp;&nbsp;&nbsp;:&nbsp;out&nbsp;std_logic);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Salida&nbsp;pwm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">end&nbsp;comparador;</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">architecture&nbsp;beh&nbsp;of&nbsp;comparador&nbsp;is</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">signal&nbsp;sg&nbsp;&nbsp;:&nbsp;std_logic;</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">signal&nbsp;pos&nbsp;:&nbsp;std_logic_vector(7&nbsp;downto&nbsp;0);</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">signal&nbsp;msb&nbsp;:&nbsp;std_logic_vector(2&nbsp;downto&nbsp;0);</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">begin</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">-&nbsp;Obtener&nbsp;los&nbsp;8&nbsp;bits&nbsp;menos&nbsp;significativos&nbsp;de&nbsp;la&nbsp;entrada&nbsp;a</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">-&nbsp;(la&nbsp;posicion&nbsp;en&nbsp;la&nbsp;que&nbsp;se&nbsp;quiere&nbsp;poner&nbsp;el&nbsp;servo)</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;pos&lt;=opa(7&nbsp;downto&nbsp;0);</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">-&nbsp;Este&nbsp;es&nbsp;el&nbsp;comparador</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;process&nbsp;(pos,&nbsp;opb)</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;begin</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;if&nbsp;(pos&lt;opb)&nbsp;then</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sg&nbsp;&lt;=&nbsp;'0';&nbsp;</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;else</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sg&nbsp;&lt;=&nbsp;'1';</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;end&nbsp;if;</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;end&nbsp;process;</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;-&nbsp;Señal&nbsp;PWM&nbsp;de&nbsp;salida</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;o&lt;=&nbsp;(not&nbsp;opa(8))&nbsp;and&nbsp;(not&nbsp;opa(9))&nbsp;and&nbsp;(not&nbsp;opa(10))&nbsp;</FONT>
+<P>
+
+
+<P>
+&nbsp;<FONT SIZE="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;(not&nbsp;sg);</FONT>
+<P>
+
+
+<P>
+<FONT SIZE="-1">end&nbsp;beh;</FONT>
+<P>
+
+</DD>
+</DL>
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1285"
+  HREF="node83.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1281"
+  HREF="node80.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1275"
+  HREF="node81.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1283"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1286"
+  HREF="node83.html">presmod10.vhd:</A>
+<B> Up:</B> <A NAME="tex2html1282"
+  HREF="node80.html">D. Unidad hardware de</A>
+<B> Previous:</B> <A NAME="tex2html1276"
+  HREF="node81.html">Contador.vhd:</A>
+ &nbsp <B>  <A NAME="tex2html1284"
+  HREF="node3.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-20
+</ADDRESS>
+</BODY>
+</HTML>

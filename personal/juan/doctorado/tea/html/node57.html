@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.4 Mecánica</TITLE>
+<META NAME="description" CONTENT="3.4 Mecánica">
+<META NAME="keywords" CONTENT="tea">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tea.css">
+
+<LINK REL="next" HREF="node58.html">
+<LINK REL="previous" HREF="node52.html">
+<LINK REL="up" HREF="node45.html">
+<LINK REL="next" HREF="node58.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html976"
+  HREF="node58.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html972"
+  HREF="node45.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html966"
+  HREF="node56.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html974"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html977"
+  HREF="node58.html">3.5 Electrónica</A>
+<B> Up:</B> <A NAME="tex2html973"
+  HREF="node45.html">3. El robot ápodo</A>
+<B> Previous:</B> <A NAME="tex2html967"
+  HREF="node56.html">3.3.4 Pruebas</A>
+ &nbsp <B>  <A NAME="tex2html975"
+  HREF="node3.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00740000000000000000">
+3.4 Mecánica</A>
+</H1>
+
+<P>
+La estructura mecánica de <B>Cube Reloaded</B> está compuesta por
+cuatro <B>módulos Y1</B>, <B>conectados en fase</B>. En la figura
+<A HREF="node57.html#fig:Cube-Reloaded-foto1"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A> se muestra una foto, junto a una pluma
+para hacerse una idea del tamaño. Cuando todos los módulos están en
+reposo, la longitud es de 29cm y la altura y anchura de 51mm. El módulo
+situado en la cola se le asigna el número 1 (el situado más a la izquierda
+según se mira la foto de la figura <A HREF="node57.html#fig:Cube-Reloaded-foto1"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>)
+y el de la cabeza el número 4.
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:Cube-Reloaded-foto1"></A><A NAME="2313"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Cube Reloaded</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="511" HEIGHT="383" ALIGN="BOTTOM" BORDER="0"
+ SRC="img34.png"
+ ALT="\includegraphics[%%
+scale=0.5]{ps/cube-reloaded1.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+Para las conexiones de los servos se ha construido una pequeña placa
+pasiva que tiene 4 conectores macho de 3 pines para los servos y un
+conector para cable plano de 10 vías, por el que viene la alimentación
+y las señales de control de los servos de la electrónica externa.
+Su aspecto se puede ver en la figura <A HREF="node57.html#fig:pct-servos-1"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>. El reducido
+tamaño es debido a que se tiene que situar dentro de uno de los módulos,
+pegada con velcro sobre un servo. Los cables de todos los servos se
+llevan a esa placa y ahí sale un cable de bus de 10 líneas que se
+conecta a la electrónica externa. Debido a que los módulos Y1 tienen
+huecos en sus bases, los cables puede pasar de un módulo a otro ningún
+tipo de problemas.
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:pct-servos-1"></A><A NAME="2314"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Placa pasiva pct-servos, para la conexión de los servos de los módulos
+a un cable de bus. En la foto de la izquierda se aprecia el reducido
+tamaño, necesario para entrar dentro de un módulo. En la foto central
+hay conectado un servo y el cable de bus. En la fogo de la derecha
+se indica dónde se conecta cada uno de los servos, considerando que
+el 1 es el de la cola</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="761" HEIGHT="187" ALIGN="BOTTOM" BORDER="0"
+ SRC="img35.png"
+ ALT="\includegraphics[]{ps/pct-servos.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+En total se han construido 8 módulo Y1. Cuatro se han empleado para
+construir a <B>Cube Reloaded</B> y hacer pruebas de locomoción.
+Los otros cuatro se han empleado para conectarlos desfasados y hacer
+pruebas tanto mecánicas como de control. Nos referiremos a este robot
+como <B>Cube larva</B>, puesto que las pruebas de movimiento realizadas
+daban la impresión de tratarse de una larva que estaba viva. Se puede
+ver en la figura <A HREF="node57.html#fig:cube-larva"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>.
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:cube-larva"></A><A NAME="2315"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Cube larva, en dos posiciones</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="689" HEIGHT="255" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="\includegraphics[]{ps/cube-larva.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html976"
+  HREF="node58.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html972"
+  HREF="node45.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html966"
+  HREF="node56.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html974"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html977"
+  HREF="node58.html">3.5 Electrónica</A>
+<B> Up:</B> <A NAME="tex2html973"
+  HREF="node45.html">3. El robot ápodo</A>
+<B> Previous:</B> <A NAME="tex2html967"
+  HREF="node56.html">3.3.4 Pruebas</A>
+ &nbsp <B>  <A NAME="tex2html975"
+  HREF="node3.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-20
+</ADDRESS>
+</BODY>
+</HTML>

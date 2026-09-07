@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.6.3.2 Componentes adicionales y aplicación</TITLE>
+<META NAME="description" CONTENT="3.6.3.2 Componentes adicionales y aplicación">
+<META NAME="keywords" CONTENT="tea">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tea.css">
+
+<LINK REL="previous" HREF="node65.html">
+<LINK REL="up" HREF="node64.html">
+<LINK REL="next" HREF="node67.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1085"
+  HREF="node67.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1081"
+  HREF="node64.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1077"
+  HREF="node65.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1083"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1086"
+  HREF="node67.html">4. Experimentos y resultados</A>
+<B> Up:</B> <A NAME="tex2html1082"
+  HREF="node64.html">3.6.3 CPU empotrada en</A>
+<B> Previous:</B> <A NAME="tex2html1078"
+  HREF="node65.html">3.6.3.1 La CPU Pandabear</A>
+ &nbsp <B>  <A NAME="tex2html1084"
+  HREF="node3.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00763200000000000000">
+3.6.3.2 Componentes adicionales y aplicación</A>
+</H3>
+
+<P>
+Para permitir que la CPU pueda controlar el robot se ha añadido al
+sistema formado por la CPU y las memorias, el conjunto de unidades
+pwm usadas en el apartado <A HREF="node63.html#sub:fpga_alt_cableada"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>. Los cuatro
+comparadores que forman parte de esta unidad tienen cada uno un registro
+asociado que es mapeado en la memoria de datos, de modo que el manejo
+de las unidades PWM es completamente transparente.
+
+<P>
+Para poder comparar esta alternativa con la presentada en <A HREF="node63.html#sub:fpga_alt_cableada"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>,
+se emplea la CPU diseñada para reproducir exactamente la misma secuencia
+de movimientos por lo que en la memoria de datos asociada al sistema
+se almacena la tabla de control. El programa a ejecutar consiste en
+una rutina de lectura de las posiciones consecutivas de la memoria
+de datos y escritura de esos datos en las posiciones de memoria correspondientes
+a las unidades pwm.
+
+<P>
+Para el desarrollo del programa, y complementando al diseño VHDL de
+la CPU, se ha diseñado un ensamblador para esta arquitectura de modo
+que sea más sencilla su programación. Un breve estracto del programa
+se muestra a continuación:
+<BR>
+<P>
+<TT>inicio: </TT>
+
+<P>
+<TT>&nbsp;&nbsp;&nbsp;; Capturamos secuencias </TT>
+
+<P>
+<TT>&nbsp;&nbsp;&nbsp;; (indexacion mediante registro i1 e i2)</TT>
+
+<P>
+<TT>&nbsp;&nbsp;&nbsp;load r1,sec1_2,i1</TT>
+
+<P>
+<TT>&nbsp;&nbsp;&nbsp;load r2,sec1_2,i2</TT>
+
+<P>
+<TT>&nbsp;&nbsp;&nbsp;; Enviamos secuencias a pwm</TT>
+
+<P>
+<TT>&nbsp;&nbsp;&nbsp;store pwm1_2,r1</TT>
+
+<P>
+<TT>&nbsp;&nbsp;&nbsp;store pwm3_4,r2</TT>&nbsp;
+<BR>
+<P>
+<TT>&nbsp;&nbsp;&nbsp;; Retardo</TT>
+
+<P>
+<TT>&nbsp;&nbsp;&nbsp;load r1,cero</TT>
+
+<P>
+<TT>&nbsp;&nbsp;&nbsp;load r2,uno</TT>
+
+<P>
+<TT>&nbsp;&nbsp;&nbsp;load r3,contador</TT>
+
+<P>
+<TT>retardo:</TT>
+
+<P>
+<TT>&nbsp;&nbsp;&nbsp;add r1,r1,r2</TT>
+
+<P>
+<TT>&nbsp;&nbsp;&nbsp;cmp r1,r3</TT>
+
+<P>
+<TT>&nbsp;&nbsp;&nbsp;bnf retardo</TT>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1085"
+  HREF="node67.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1081"
+  HREF="node64.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1077"
+  HREF="node65.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1083"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1086"
+  HREF="node67.html">4. Experimentos y resultados</A>
+<B> Up:</B> <A NAME="tex2html1082"
+  HREF="node64.html">3.6.3 CPU empotrada en</A>
+<B> Previous:</B> <A NAME="tex2html1078"
+  HREF="node65.html">3.6.3.1 La CPU Pandabear</A>
+ &nbsp <B>  <A NAME="tex2html1084"
+  HREF="node3.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-20
+</ADDRESS>
+</BODY>
+</HTML>

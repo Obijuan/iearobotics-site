@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.5.2 FPGA</TITLE>
+<META NAME="description" CONTENT="3.5.2 FPGA">
+<META NAME="keywords" CONTENT="tea">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tea.css">
+
+<LINK REL="previous" HREF="node59.html">
+<LINK REL="up" HREF="node58.html">
+<LINK REL="next" HREF="node61.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1012"
+  HREF="node61.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1008"
+  HREF="node58.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1004"
+  HREF="node59.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1010"
+  HREF="node3.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1013"
+  HREF="node61.html">3.6 Control</A>
+<B> Up:</B> <A NAME="tex2html1009"
+  HREF="node58.html">3.5 Electrónica</A>
+<B> Previous:</B> <A NAME="tex2html1005"
+  HREF="node59.html">3.5.1 Microcontrolador específico</A>
+ &nbsp <B>  <A NAME="tex2html1011"
+  HREF="node3.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00752000000000000000">
+3.5.2 FPGA</A>
+</H2>
+
+<P>
+Cube Reloaded también se puede controlar con una FPGA (figura <A HREF="node59.html#fig:cube-electronica"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>),
+usando la <B>tarjeta JPS</B>[<A
+ HREF="node84.html#JPS-hispabot">40</A>][<A
+ HREF="node84.html#JPS-web">41</A>].
+Esta alternativa permite nuevas posibilidades como son la de diseñar
+una CPU específica o de la hacer un control puramente <I>hardware</I>,
+basado en lógica combinación y secuencia.
+
+<P>
+En ambos casos es necesario disponer de una unidad de PWM, que permita
+posionar el servo a partir de la información depositada en un registro
+de 8 bits. Se ha diseñado esta unidad en VHDL, adaptada del proyecto
+Labobot[<A
+ HREF="node84.html#Labobot">42</A>][<A
+ HREF="node84.html#Labobot-labomat">43</A>], usando un oscilador
+de 1MHZ.
+
+<P>
+<BR><HR>
+<ADDRESS>
+Juan Gonzalez
+2003-12-20
+</ADDRESS>
+</BODY>
+</HTML>
