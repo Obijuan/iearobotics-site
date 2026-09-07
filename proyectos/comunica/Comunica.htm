@@ -1,0 +1,292 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body lang=ES link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:20.0pt;font-family:"Comic Sans MS"'>Aplicación
+<i>"Comunica"</i></span></b><span style='font-family:"Comic Sans MS"'><o:p></o:p></span></p>
+
+<center><b>Autor</b>: Alberto Caballero (kavan@ya.com)</center>
+
+<h1>1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>Introducción</h1>
+
+<h2>1.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>Descripción del proyecto</h2>
+
+<p class=MsoNormal>La aplicación <b><i>"Comunica"</i></b> surge dentro de un
+proyecto en el que se pretende dotar de un cerebro electrónico a un coche solar
+teledirigido, utilizando para ello la tarjeta 
+<a href="../ct6811/ct6811.html">CT6811</a> de <a href="http://www.microbotica.es">Microbótica</a>.
+El propósito principal es la toma de medidas de diferentes magnitudes durante
+un recorrido del coche solar. Estas magnitudes serían carga de los paneles
+solares y de baterías auxiliares, número de revoluciones de los ejes,.... Una
+descripción más detallada de este proyecto se puede encontrar en la referencia
+[1].</p>
+
+<h1>2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>Diseño de <i>"Comunica"</i></h1>
+
+<p class=MsoNormal>El diseño de esta aplicación es bastante sencillo. Se
+compone de un programa principal que se almacena en la EEPROM de la 
+<a href="../ct6811/ct6811.html">CT6811</a>
+y un programa cliente que se ejecuta en el PC.</p>
+
+<h2>2.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>Programa principal EEPROM</h2>
+
+<p class=MsoNormal>En este programa es donde se lleva a cabo el núcleo
+principal de la aplicación. Hay tres grandes bloques: comunicaciones serie,
+temporizador y toma de datos del conversor A/D.</p>
+
+<p class=MsoNormal>Las <b>comunicaciones serie</b> se efectúan a través del
+puerto SCI de la tarjeta. Una peculiaridad es que el jumper JP5 se encuentra
+abierto, de forma que no se cortocircuitan Rx y Tx. Debido a esto, se debe
+realizar un RESET software y un salto a la EEPROM desde el programa cliente en
+el PC.</p>
+
+<p class=MsoNormal>Se ha utilizado el <b>temporizador</b> principal del <b>68HC11</b>.
+Como se verá más adelante, se toman 239 valores desde el conversor A/D. A parte
+de dividir la señal y comparar con el bit más alto del temporizador, por
+encima de todo esto se ejecuta un bucle de 65535 iteraciones, para lograr un
+espaciado mayor en la toma de medidas. En las pruebas se ha medido un tiempo
+total de 6 minutos 18 segundos en la toma de las 239 medidas. </p>
+
+<p class=MsoNormal>Para el muestreo del <b>conversor A/D</b> se ha conectado un
+potenciómetro a la entrada PE0 del puerto E, tomando como tensiones de
+referencia la VCC y GND del propio puerto. En cada intervalo de temporización
+se toma una muestra y se almacena en la RAM, en posiciones consecutivas.</p>
+
+<h2>2.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>Programa cliente</h2>
+
+<p class=MsoNormal>La funcionalidad del programa cliente que se ejecuta en el
+PC es bastante sencilla. Se encarga de hacer un RESET software de la tarjeta 
+<a href="../ct6811/ct6811.html">CT6811</a>
+y de saltar a la EEPROM del micro. Para ello hace uso de las funciones
+definidas en la librería 
+<a href="../../personal/juan/proyectos/cts/cts.html">CTS</a> (ver referencia [2]). Una vez que el
+programa en la tarjeta ha finalizado, envía el carácter 'K' al cliente,
+solicitando este la confirmación de descarga de resultados. Una vez confirmada,
+se descargan los 239 datos, visualizándose en pantalla así como almacenándose
+en el fichero 'data.txt' junto con la fecha y hora de la realización de la
+descarga.</p>
+
+
+<h2>2.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>Arquitectura de la memoria RAM</h2>
+<br>
+<center>
+<img src="Comunica_archivos/imagen1.png">
+</center>
+<br>
+<p class=MsoNormal>Como se muestra en la figura anterior, en las primeras 239
+posiciones de memoria se irán almacenando los valores leídos del conversor A/D.
+En la posición <b>F0</b> se almacenará el puntero que indica la siguiente
+posición de almacenamiento. Desde la posición <b>F1</b> hasta la posición <b>FF</b>,
+se reservarán para el almacenamiento de los datos de la pila.</p>
+
+<h2>2.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>Protocolo de comunicación</h2>
+
+<p class=MsoNormal>A continuación se muestra esquemóticamente el protocolo de
+comunicación implementado en <i>"Comunica"</i>:</p>
+
+<p class=MsoNormal>
+
+ <img width=357 height=444
+ src="./Comunica_archivos/image004.gif" v:shapes="_x0000_s1159 _x0000_s1140 _x0000_s1141 _x0000_s1142 _x0000_s1143 _x0000_s1144 _x0000_s1145 _x0000_s1146 _x0000_s1147 _x0000_s1148 _x0000_s1149 _x0000_s1150 _x0000_s1151 _x0000_s1152 _x0000_s1153 _x0000_s1154 _x0000_s1155 _x0000_s1156 _x0000_s1157 _x0000_s1158"><![endif]><!--[if gte vml 1]></o:wrapblock><![endif]--><br
+clear=ALL>
+
+<br clear=ALL>
+
+<h1>3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>Instalación y compilación</h1>
+
+<p class=MsoNormal>La instalación se reduce a descomprimir el fichero (<b>comunica.zip</b>
+o <b>comunica.tgz</b>) en el directorio deseado. Una vez hecho esto solo hay
+que ir al directorio <b>comunica/src</b> y hacer <b>make</b>. El fichero fuente
+en ensamblador se encuentra en el directorio <b>comunica/src/asembler</b>, y se
+llama <b>comunica.asm</b>.</p>
+
+<p class=MsoNormal>El desarrollo se ha realizado utilizando las funciones de la
+librería 
+<a href="../../personal/juan/proyectos/cts/cts.html">CTS</a>
+ y sobre <b>Red Hat 8.0</b>.</p>
+
+<h1>4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>Mejoras</h1>
+
+<p class=MsoNormal>Durante el periodo de pruebas se han llevado a cabo diversas
+mejoras y modificaciones:</p>
+
+<p class=MsoNormal>Debido al funcionamiento del sistema, se ha probado una
+versión en la que la tarjeta se resetea con el jumper JP5 puesto y a
+continuación se quita. El coche efectúa su recorrido y después se efectúa la
+descarga al PC, sin enviar la tarjeta el carácter 'K' como en el caso general.
+Esto se hace así para evitar el tener que 'arrancar' la tarjeta conectada al PC
+(para que el programa cliente efectúe el RESET software).</p>
+
+<p class=MsoNormal>Otra mejora realizada ha sido la ampliación del programa de
+la EEPROM para permitir la conversión de varios canales (hasta los 4
+permitidos). En este caso el número total de medidas será menor, ya que en cada
+iteración se guardan cuatro valores en lugar de uno.</p>
+
+<p class=MsoNormal>Otra mejora que se está estudiando es la descarga de datos a
+una calculadora HP, para permitir descarga de datos en varias sesiones si tener
+que estar cerca de un PC (en el caso de no tener un PC portátil).</p>
+
+<h1>5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>Referencias</h1>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<div align=center>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;'>
+ <tr>
+  <td width=42 valign=top style='width:31.85pt;border:solid white 2.25pt;
+  background:#CC99FF;padding:0cm 3.5pt 0cm 3.5pt'>
+  <p class=MsoNormal>[1]</p>
+  </td>
+  <td width=534 valign=top style='width:400.35pt;border:solid white 2.25pt;
+  border-left:none;background:#CC99FF;
+  padding:0cm 3.5pt 0cm 3.5pt'>
+  <p class=MsoNormal>Proyecto coche solar <a href="http://www.naranjai.com/">www.naranjai.com</a>
+  </p>
+  </td>
+ </tr>
+ <tr>
+  <td width=42 valign=top style='width:31.85pt;border:solid white 2.25pt;
+  border-top:none;background:#99CCFF;
+  padding:0cm 3.5pt 0cm 3.5pt'>
+  <p class=MsoNormal>[2]</p>
+  </td>
+  <td width=534 valign=top style='width:400.35pt;border-top:none;border-left:
+  none;border-bottom:solid white 2.25pt;border-right:solid white 2.25pt;
+  background:#99CCFF;padding:0cm 3.5pt 0cm 3.5pt'>
+  <p class=MsoNormal>
+  <a href="../../personal/juan/proyectos/cts/cts.html">Librería CTS</a>
+  </p>
+  </td>
+ </tr>
+ <tr>
+  <td width=42 valign=top style='width:31.85pt;border:solid white 2.25pt;
+  border-top:none;background:#CC99FF;
+  padding:0cm 3.5pt 0cm 3.5pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=534 valign=top style='width:400.35pt;border-top:none;border-left:
+  none;border-bottom:solid white 2.25pt;border-right:solid white 2.25pt;
+  background:#CC99FF;padding:0cm 3.5pt 0cm 3.5pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=42 valign=top style='width:31.85pt;border:solid white 2.25pt;
+  border-top:none;background:#99CCFF;
+  padding:0cm 3.5pt 0cm 3.5pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=534 valign=top style='width:400.35pt;border-top:none;border-left:
+  none;border-bottom:solid white 2.25pt;border-right:solid white 2.25pt;
+  background:#99CCFF;padding:0cm 3.5pt 0cm 3.5pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<h1>6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>Descargas</h1>
+
+<div align=center>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;'>
+ <tr>
+  <td width=576 colspan=2 valign=top style='width:432.2pt;border:solid white 2.25pt;
+  background:#CC99FF;padding:0cm 3.5pt 0cm 3.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b>SOFTWARE PARA
+  LINUX<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=192 valign=top style='width:143.7pt;border:solid white 2.25pt;
+  border-top:none;background:#99CCFF;
+  padding:0cm 3.5pt 0cm 3.5pt'>
+  <p class=MsoNormal><a href="Comunica_archivos/comunica.pdf">comunica.pdf (130
+  Kb)</a></p>
+  </td>
+  <td width=385 valign=top style='width:288.5pt;border-top:none;border-left:
+  none;border-bottom:solid white 2.25pt;border-right:solid white 2.25pt;
+  background:#99CCFF;padding:0cm 3.5pt 0cm 3.5pt'>
+  <p class=MsoNormal>Este documento en versión PDF</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=192 valign=top style='width:143.7pt;border:solid white 2.25pt;
+  border-top:none;background:#CC99FF;
+  padding:0cm 3.5pt 0cm 3.5pt'>
+  <p class=MsoNormal><a href="Comunica_archivos/comunica_v1.0.tgz">comunica_v1.0.tgz
+  (21 Kb)</a></p>
+  </td>
+  <td width=385 valign=top style='width:288.5pt;border-top:none;border-left:
+  none;border-bottom:solid white 2.25pt;border-right:solid white 2.25pt;
+  background:#CC99FF;padding:0cm 3.5pt 0cm 3.5pt'>
+  <p class=MsoNormal>Fuentes comunica, versión 1.0</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=192 valign=top style='width:143.7pt;border:solid white 2.25pt;
+  border-top:none;
+  padding:0cm 3.5pt 0cm 3.5pt'>
+  <p class=MsoNormal><a href="Comunica_archivos/comunica_v1.0.zip">comunica_v1.0.zip
+  (26 Kb)</a></p>
+  </td>
+  <td width=385 valign=top style='width:288.5pt;border-top:none;border-left:
+  none;border-bottom:solid white 2.25pt;border-right:solid white 2.25pt;
+  background:#99CCFF;padding:0cm 3.5pt 0cm 3.5pt'>
+  <p class=MsoNormal>Fuentes comunica, versión 1.0</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=192 valign=top style='width:143.7pt;border:solid white 2.25pt;
+  border-top:none;background:#CC99FF;
+  padding:0cm 3.5pt 0cm 3.5pt'>
+  <p class=MsoNormal><span lang=EN-GB><a
+  href="Comunica_archivos/data.txt">data.txt (1 Kb)</a><o:p></o:p></span></p>
+  </td>
+  <td width=385 valign=top style='width:288.5pt;border-top:none;border-left:
+  none;border-bottom:solid white 2.25pt;border-right:solid white 2.25pt;
+  background:#CC99FF;padding:0cm 3.5pt 0cm 3.5pt'>
+  <p class=MsoNormal>Ejemplo de descarga de datos (4 canales, 20 medidas)</p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+</div>
+
+<hr>
+Enero-2004<br>
+<b>Alberto Caballero</b> (kavan@ya.com)
+<br>
+<a href="/iearobotics-site/wiki">IEA ROBOTICS</a>
+
+</body>
+
+</html>
