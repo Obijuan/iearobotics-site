@@ -1,0 +1,276 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.3&nbsp;&nbsp;Un segundo ejemplo</TITLE>
+<META NAME="description" CONTENT="3.3&nbsp;&nbsp;Un segundo ejemplo">
+<META NAME="keywords" CONTENT="ghdl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ghdl.css">
+
+<LINK REL="next" HREF="node9.html">
+<LINK REL="previous" HREF="node7.html">
+<LINK REL="up" HREF="node5.html">
+<LINK REL="next" HREF="node9.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html107"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html105"
+  HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html99"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html108"
+  HREF="node9.html">3.4&nbsp;&nbsp;Parámetros de interés</A>
+<B> Up:</B> <A NAME="tex2html106"
+  HREF="node5.html">3&nbsp;&nbsp;Compilador/Simulador GHDL</A>
+<B> Previous:</B> <A NAME="tex2html100"
+  HREF="node7.html">3.2&nbsp;&nbsp;Modos de funcionamiento</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00033000000000000000">
+3.3&nbsp;&nbsp;Un segundo ejemplo</A>
+</H2>
+
+<P>
+Con los ficheros del primer ejemplo, utilizaremos los diferentes modos
+del GHDL:
+
+<P>
+
+<table WIDTH=100%>
+<tr>
+<td BGCOLOR="#e6e6e6">
+<br>
+<TT>$ ls</TT>
+<br>
+<TT>hola_mundo.vhdl inversor.vhdl tb_inversor.vhdl</TT>
+<br>
+&nbsp;
+</td>
+</tr>
+</table>
+
+<P>
+Sin necesidad de abrir ning&#250;n fichero, podemos conocer qu&#233; entidades
+y arquitecturas est&#225;n definidas:
+
+<P>
+
+<table WIDTH=100%>
+<tr>
+<td BGCOLOR="#e6e6e6">
+<br>
+<TT>$ ghdl -f inversor.vhdl</TT>
+<P>
+<TT>entity inversor</TT>
+<br>
+<TT>architecture beh of inversor </TT>
+<br>
+&nbsp;
+</td>
+</tr>
+</table>
+
+<P>
+Importamos todas las unidades de dise&#241;o en la librer&#237;a. No tenemos
+que conocer el dise&#241;o:
+
+<P>
+
+<table WIDTH=100%>
+<tr>
+<td BGCOLOR="#e6e6e6">
+<br>
+<TT>$ ghdl -i *.vhdl</TT>
+<br>
+&nbsp;
+</td>
+</tr>
+</table>
+
+<P>
+Visualizamos todas las unidades que hay en la librer&#237;a:
+<P>
+
+<table WIDTH=100%>
+<tr>
+<td BGCOLOR="#e6e6e6">
+<br>
+<TT>$ ghdl -d </TT>
+<p>
+<TT>entity hola_mundo</TT>
+<br>
+<TT>architecture beh of hola_mundo</TT>
+<br>
+<TT>entity inversor </TT>
+<br>
+<TT>architecture beh of inversor</TT>
+<br>
+<TT>entity tb_inv </TT>
+<br>
+<TT>architecture beh of tb_inv</TT>
+<br>
+&nbsp;
+</td>
+</tr>
+</table>
+
+
+<P>
+En nuestro dise&#241;o, sabemos que la entidad superior (<SPAN  CLASS="textit">top level</SPAN>)
+es <SPAN  CLASS="textit">tb_inv</SPAN>. No obstante, si el dise&#241;o no lo hemos hecho nosotros,
+podemos intentar descubrir cu&#225;l es la entidad superior utilizando
+el modo de b&#250;squeda:
+
+<P>
+
+<table WIDTH=100%>
+<tr>
+<td BGCOLOR="#e6e6e6">
+<br>
+<TT>$ ghdl -f *.vhdl</TT>
+
+<P>
+<TT>entity hola_mundo **</TT>
+<br>
+<TT>architecture beh of hola_mundo</TT>
+<br>
+<TT>entity inversor </TT>
+<br>
+<TT>architecture beh of inversor</TT>
+<br>
+<TT>entity tb_inv **</TT>
+<br>
+<TT>architecture beh of tb_inv</TT>
+<br>
+&nbsp;
+</td>
+</tr>
+</table>
+
+
+<P>
+Las entidades superiores son las que se indican con doble asterisco. 
+
+<P>
+En vez de analizar ``a mano'' (usando la opci&#243;n -a), es mejor
+utilizar el modo <SPAN  CLASS="textit">make</SPAN>, que hace todo lo necesario para elaborar
+la entidad indicada:
+
+<P>
+<table WIDTH=100%>
+<tr>
+<td BGCOLOR="#e6e6e6">
+<br>
+<TT>$ ghdl -m tb_inv</TT>
+<P>
+<TT>analyze tb_inversor.vhdl</TT>
+<br>
+<TT>analyze inversor.vhdl</TT>
+<br>
+<TT>elaborate tb_inv</TT>
+<br>
+&nbsp;
+</td>
+</tr>
+</table>
+
+
+
+<P>
+Se analizan las dependencias, se hace el an&#225;lisis y finalmente la
+elaboraci&#243;n. Sin embargo, es mucho m&#225;s c&#243;modo generar un fichero <SPAN  CLASS="textit">Makefile</SPAN>
+y trabajar directamente con <SPAN  CLASS="textit">make</SPAN>:
+
+<P>
+
+<table WIDTH=100%>
+<tr>
+<td BGCOLOR="#e6e6e6">
+<br>
+<TT>$ ghdl -gen-makefile tb_inv &gt; Makefile</TT>
+<br>
+&nbsp;
+</td>
+</tr>
+</table>
+
+<P>
+Ahora, podemos modificar cualquier de los ficheros <SPAN  CLASS="textit">.vhdl</SPAN> con
+un editor de texto, y al hacer <SPAN  CLASS="textit">make,</SPAN> autom&#225;ticamente se analizar&#225;n
+s&#243;lo los ficheros actualizados y se realizar&#225; la elaboraci&#243;n de la
+nueva entidad:
+
+<P>
+
+
+<table WIDTH=100%>
+<tr>
+<td BGCOLOR="#e6e6e6">
+<br>
+<TT>$ make </TT>
+
+<P>
+<TT>ghdl -a tb_inversor.vhdl</TT>
+<br>
+<TT>ghdl -a inversor.vhdl</TT>
+<br>
+<TT>ghdl -e tb_inv</TT>
+<br>
+&nbsp;
+</td>
+</tr>
+</table>
+
+<P>
+El comando <SPAN  CLASS="textit">make</SPAN> se puede invocar directamente desde entornos
+de trabajo como <SPAN  CLASS="textit">Emacs</SPAN> o <SPAN  CLASS="textit">Anjuta</SPAN>.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html107"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html105"
+  HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html99"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html108"
+  HREF="node9.html">3.4&nbsp;&nbsp;Parámetros de interés</A>
+<B> Up:</B> <A NAME="tex2html106"
+  HREF="node5.html">3&nbsp;&nbsp;Compilador/Simulador GHDL</A>
+<B> Previous:</B> <A NAME="tex2html100"
+  HREF="node7.html">3.2&nbsp;&nbsp;Modos de funcionamiento</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2004-10-01
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.2&nbsp;&nbsp;Modos de funcionamiento</TITLE>
+<META NAME="description" CONTENT="3.2&nbsp;&nbsp;Modos de funcionamiento">
+<META NAME="keywords" CONTENT="ghdl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ghdl.css">
+
+<LINK REL="next" HREF="node8.html">
+<LINK REL="previous" HREF="node6.html">
+<LINK REL="up" HREF="node5.html">
+<LINK REL="next" HREF="node8.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html97"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html95"
+  HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html89"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html98"
+  HREF="node8.html">3.3&nbsp;&nbsp;Un segundo ejemplo</A>
+<B> Up:</B> <A NAME="tex2html96"
+  HREF="node5.html">3&nbsp;&nbsp;Compilador/Simulador GHDL</A>
+<B> Previous:</B> <A NAME="tex2html90"
+  HREF="node6.html">3.1&nbsp;&nbsp;Características</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00032000000000000000">
+3.2&nbsp;&nbsp;Modos de funcionamiento</A>
+</H2>
+
+<P>
+
+<UL>
+<LI><b>An&#225;lisis:</b> <SPAN  CLASS="textit">ghdl -a ficheros.vhdl</SPAN>. Realiza el an&#225;lisis sint&#225;ctico
+y genera los correspondientes ficheros objetos.
+</LI><br>
+<LI><b>Elaboraci&#243;n:</b> <SPAN  CLASS="textit">ghdl -e entidad</SPAN>. Realiza la elaboraci&#243;n y genera
+el fichero ejecutable.
+</LI><br>
+<LI><b>Directorio: </b><SPAN  CLASS="textit">ghdl -d</SPAN>. Muestra todas las unidades de dise&#241;o que
+se encuentran en la librer&#237;a de trabajo: entidades, arquitecturas
+y configuraciones. 
+</LI><br>
+<LI><b>Importaci&#243;n:</b> <SPAN  CLASS="textit">ghdl -i ficheros.vhdl</SPAN>. Incluye las unidades en
+la librer&#237;a de trabajo. No se generan ficheros ejecutables.
+</LI><br>
+<LI><b>Modo Make: </b><SPAN  CLASS="textit">ghdl -m entidad</SPAN>. Analiza autom&#225;ticamente las entidades
+obsoletas y elabora el dise&#241;o.
+</LI><br>
+<LI><b>Generaci&#243;n de Makefile:</b> <SPAN  CLASS="textit">ghdl -gen-makefile entidad</SPAN>. Construye
+una fichero <SPAN  CLASS="textit">Makefile</SPAN> con todas las dependencias necesarias
+para la construcci&#243;n de la entidad especificada. Luego se genera el
+ejecutable utilizando la herramienta <SPAN  CLASS="textit">make</SPAN>. Esta opci&#243;n es muy
+&#250;til, ya que permite realizar la compilaci&#243;n desde diferentes entornos
+de trabajo integrados (IDE's) como <SPAN  CLASS="textit">Anjuta</SPAN> o <SPAN  CLASS="textit">Emacs</SPAN>.
+</LI><br>
+<LI><b>Modo de b&#250;squeda: </b><SPAN  CLASS="textit">ghdl -f ficheros.vhdl</SPAN>. Indica las unidades
+de dise&#241;o presentes en los ficheros especificados. Junto a las entidades
+superiores se imprimen dos asteriscos.
+</LI><br>
+<LI><SPAN  CLASS="textit"><b>Clean mode</b></SPAN>: <SPAN  CLASS="textit">ghdl -clean</SPAN>. Elimina los ficheros .o y
+los ejecutables, pero la librer&#237;a se mantiene.
+</LI><br>
+<LI><SPAN  CLASS="textit"><b>Remove mode</b></SPAN>: <SPAN  CLASS="textit">ghdl -remove</SPAN>. Similar al <SPAN  CLASS="textit">clean mode</SPAN>
+pero eliminando adem&#225;s la librer&#237;a de trabajo.
+</LI><br>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html97"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html95"
+  HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html89"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html98"
+  HREF="node8.html">3.3&nbsp;&nbsp;Un segundo ejemplo</A>
+<B> Up:</B> <A NAME="tex2html96"
+  HREF="node5.html">3&nbsp;&nbsp;Compilador/Simulador GHDL</A>
+<B> Previous:</B> <A NAME="tex2html90"
+  HREF="node6.html">3.1&nbsp;&nbsp;Características</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2004-10-01
+</ADDRESS>
+</BODY>
+</HTML>

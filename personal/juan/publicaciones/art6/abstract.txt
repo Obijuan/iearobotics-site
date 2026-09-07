@@ -1,0 +1,21 @@
+Simulación de Diseños VHDL con Software Libre: La Herramienta GHDL 
+
+Juan González-Gómez ^{1} , 
+
+Septiembre-2004
+
+ ^{1} Escuela Politécnica Superior, Universidad Autónoma de Madrid
+
+Resumen
+
+En este tutorial se explica el funcionamiento de la herramienta GHDL, un
+compilador libre de VHDL basado en el GCC. Permite generar directamente
+programas ejecutables a partir de fuentes en VHDL. Al tratarse de software
+libre, se puede utilizar y distribuir sin ninguna restricción. Primero se
+presentan dos ejemplos muy sencillos, que se compilan con GHDL y se
+visualizan sus resultados con GTKWAVE. A continuación se muestran cómo
+trabajar con proyectos más complejos, constituidos por múltiples ficheros y
+entidades. El compilador genera el fichero Makefile, que permite automatizar
+la compilación mediante el uso de la herramienta Make. Por último, se
+desarrolla un ejemplo de cómo invocar funciones escritas en C, desde código
+VHDL.

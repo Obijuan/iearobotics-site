@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>1&nbsp;&nbsp;Introducción</TITLE>
+<META NAME="description" CONTENT="1&nbsp;&nbsp;Introducción">
+<META NAME="keywords" CONTENT="ghdl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ghdl.css">
+
+<LINK REL="next" HREF="node2.html">
+<LINK REL="previous" HREF="ghdl.html">
+<LINK REL="up" HREF="ghdl.html">
+<LINK REL="next" HREF="node2.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html30"
+  HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html28"
+  HREF="ghdl.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html22"
+  HREF="ghdl.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html31"
+  HREF="node2.html">2&nbsp;&nbsp;Primeros ejemplos</A>
+<B> Up:</B> <A NAME="tex2html29"
+  HREF="ghdl.html">Simulaci&#243;n de Dise&#241;os VHDL</A>
+<B> Previous:</B> <A NAME="tex2html23"
+  HREF="ghdl.html">Simulaci&#243;n de Dise&#241;os VHDL</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00010000000000000000">
+1&nbsp;&nbsp;Introducci&#243;n</A>
+</H1>
+
+<P>
+Existen aplicaciones comerciales muy potentes para trabajar con <SPAN  CLASS="textit">VHDL</SPAN>,
+como <SPAN  CLASS="textit">ModelSim</SPAN>[<A
+ HREF="node15.html#modelsim">1</A>], de la compa&#241;&#237;a ModelTech, o
+<SPAN  CLASS="textit">Active-HDL</SPAN>[<A
+ HREF="node15.html#Activehdl">2</A>], de Aldec. Las herramientas libres
+disponibles no son tan completas y no se pueden emplear todav&#237;a en
+dise&#241;os profesionales. Sin embargo, est&#225;n lo suficientemente maduras
+para su utilizaci&#243;n en docencia, donde los dise&#241;os no son excesivamente
+complejos y las simulaciones son cortas. Adem&#225;s, el software libre
+no tiene restricciones de uso y de distribuci&#243;n, pudi&#233;ndose instalar
+en cualquier n&#250;mero de ordenadores sin tener que pagar licencias.
+
+<P>
+En este tutorial explicamos c&#243;mo simular dise&#241;os VHDL utilizando la
+herramienta GHDL[<A
+ HREF="node15.html#ghdl">3</A>], un <SPAN  CLASS="textit">front-end</SPAN> del compilador <SPAN  CLASS="textit">GCC</SPAN>[<A
+ HREF="node15.html#GCC">4</A>]
+para el lenguaje VHDL, disponible bajo licencia GPL. Para la edici&#243;n
+del c&#243;digo fuente se puede emplear cualquier editor de textos ASCII,
+como por ejemplo <SPAN  CLASS="textit">EMACs</SPAN>[<A
+ HREF="node15.html#EMACs">5</A>], que resalta la sintaxis
+y dispone de un asistente que auto-completa las palabras clave y muestra
+plantillas de las diferentes construcciones sint&#225;cticas del VHDL.
+Con las aplicaciones <SPAN  CLASS="textit">GTKWAVE</SPAN>[<A
+ HREF="node15.html#GTKWAVE">6</A>] o <SPAN  CLASS="textit">IVI</SPAN>[<A
+ HREF="node15.html#IVI">7</A>]
+se pueden visualizar los resultados de las simulaciones y exportar
+los diagramas de ondas a formato <SPAN  CLASS="textit">postcript</SPAN>, para incluirlos
+en las documentaciones.
+
+<P>
+Primero veremos dos ejemplos sencillos, el cl&#225;sico ``hola mundo''
+y un inversor. Los compilaremos y mostraremos los resultados de la
+simulaci&#243;n. Luego nos centraremos en la herramienta GHDL, describiendo
+todas su opciones y dando un ejemplo de c&#243;mo realizar llamadas a funciones
+en C, desde el c&#243;digo VHDL.
+
+<P>
+Todas los ejemplos de este tutorial se han probado en una m&#225;quina
+<SPAN  CLASS="textit">GNU/Linux</SPAN> con la distribuci&#243;n <SPAN  CLASS="textit">Debian/Sarge</SPAN>.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html30"
+  HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html28"
+  HREF="ghdl.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html22"
+  HREF="ghdl.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html31"
+  HREF="node2.html">2&nbsp;&nbsp;Primeros ejemplos</A>
+<B> Up:</B> <A NAME="tex2html29"
+  HREF="ghdl.html">Simulaci&#243;n de Dise&#241;os VHDL</A>
+<B> Previous:</B> <A NAME="tex2html23"
+  HREF="ghdl.html">Simulaci&#243;n de Dise&#241;os VHDL</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2004-10-01
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,265 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2.2&nbsp;&nbsp;Un inversor</TITLE>
+<META NAME="description" CONTENT="2.2&nbsp;&nbsp;Un inversor">
+<META NAME="keywords" CONTENT="ghdl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ghdl.css">
+
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="node2.html">
+<LINK REL="next" HREF="node5.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html60"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html58"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html54"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html61"
+  HREF="node5.html">3&nbsp;&nbsp;Compilador/Simulador GHDL</A>
+<B> Up:</B> <A NAME="tex2html59"
+  HREF="node2.html">2&nbsp;&nbsp;Primeros ejemplos</A>
+<B> Previous:</B> <A NAME="tex2html55"
+  HREF="node3.html">2.1&nbsp;&nbsp;Programa ``hola mundo''</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00022000000000000000">
+2.2&nbsp;&nbsp;Un inversor</A>
+</H2>
+
+<P>
+El siguiente ejemplo es un inversor y su banco de pruebas. En el fichero
+<SPAN  CLASS="textit">inversor.vhdl</SPAN> est&#225; la entidad <SPAN  CLASS="textit">inversor</SPAN>: 
+
+<P>
+
+<P>
+<BR>
+
+<table WIDTH=100%>
+<tr>
+<td BGCOLOR="#e6e6e6">
+<br>
+
+<TT>library ieee;</TT>
+<br>
+<TT>use ieee.std_logic_1164.all;</TT>&nbsp;
+<P>
+<TT>entity inversor is</TT>
+<br>
+<TT>&nbsp;&nbsp;port (entrada : in std_logic;</TT>
+<br>
+<TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;salida : out std_logic);</TT>
+<br>
+<TT>end inversor;</TT>&nbsp;
+<BR>
+<P>
+<TT>architecture beh of inversor is</TT>
+<br>
+<TT>begin </TT>
+<br>
+<TT>&nbsp;&nbsp;salida &lt;= not entrada;</TT>
+<br>
+<TT>end beh;</TT>
+
+<br>
+&nbsp;
+</td>
+</tr>
+</table>
+
+<P>
+y el banco de pruebas en el fichero <SPAN  CLASS="textit">tb_inversor.vhdl</SPAN>:
+
+<P>
+
+
+<table WIDTH=100%>
+<tr>
+<td BGCOLOR="#e6e6e6">
+<br>
+<TT>library ieee;</TT>
+
+<P>
+<TT>use ieee.std_logic_1164.all;</TT>&nbsp;
+<P>
+<TT>entity tb_inv is</TT>
+<br>
+<TT>end tb_inv;</TT>&nbsp;
+<P>
+<TT>architecture beh of tb_inv is</TT>
+<P>
+<TT>component inversor</TT>
+<br>
+<TT>&nbsp;&nbsp;port (entrada : in std_logic;</TT>
+<br>
+<TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;salida : out std_logic);</TT>
+<br>
+<TT>end component;</TT>&nbsp;
+<P>
+<TT>signal entrada : std_logic:='0';</TT>
+<br>
+<TT>signal salida : std_logic;</TT>&nbsp;
+<P>
+<TT>begin </TT>
+
+<P>
+<TT>INV: inversor port map (</TT>
+<br>
+<TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entrada =&gt; entrada,</TT>
+<br>
+<TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;salida =&gt; salida);</TT>
+<P>
+<TT>-- Generar una senal cuadrada</TT>
+<br>
+<TT>-- por la entrada del inversor</TT>
+
+<P>
+<TT>&nbsp;&nbsp;process</TT>
+<br>
+<TT>&nbsp;&nbsp;begin</TT>
+<br>
+<TT>&nbsp;&nbsp;&nbsp;&nbsp;wait for 100 ns;</TT>
+<br>
+<TT>&nbsp;&nbsp;&nbsp;&nbsp;entrada&lt;= not entrada; </TT>
+
+<br>
+<TT>&nbsp;&nbsp;end process;</TT>
+
+<P>
+<TT>end beh;</TT>
+<br>
+&nbsp;
+</td>
+</tr>
+</table>
+
+<P>
+Los pasos para realizar el an&#225;lisis y la elaboraci&#243;n son:
+
+<P>
+
+<table WIDTH=100%>
+<tr>
+<td BGCOLOR="#e6e6e6">
+<br>
+<TT>$ ghdl -a inversor.vhdl tb_inversor.vhdl</TT>
+<br>
+<TT>$ ghdl -e tb_inv</TT>
+<br>
+&nbsp;
+</td>
+</tr>
+</table>
+
+<P>
+Se genera el fichero <SPAN  CLASS="textit">tb_inv</SPAN> y al ejecutarlo comienza la simulaci&#243;n.
+Hay que especificar su duraci&#243;n y el archivo en el que se volcar&#225;n
+los resultados (fichero <SPAN  CLASS="textit">tb_inv.vcd</SPAN>): 
+
+<P>
+
+<table WIDTH=100%>
+<tr>
+<td BGCOLOR="#e6e6e6">
+<br>
+<TT>$ ./tb_inv --stop-time=1000ns --vcd=tb_inv.vcd</TT>
+<br>
+<TT>./tb_inv:info: simulation stopped by -stop-time </TT>
+<br>
+&nbsp;
+</td>
+</tr>
+</table>
+
+<P>
+Para visualizar los resultados usamos el programa <SPAN  CLASS="textit">GTKWAVE</SPAN>:
+
+<P>
+
+<table WIDTH=100%>
+<tr>
+<td BGCOLOR="#e6e6e6">
+<br>
+<TT>$ gtkwave tb_inv.vcd</TT>
+<br>
+&nbsp;
+</td>
+</tr>
+</table>
+
+<P>
+Este programa nos permite seleccionar qu&#233; se&#241;ales queremos visualizar,
+establecer el sistema de representaci&#243;n, buscar patrones, etc. Tenemos
+la opci&#243;n de volcar los resultados a un fichero <SPAN  CLASS="textit">postcript</SPAN> para
+incluirlas en las documentaciones (figura<A HREF="#fig:simulacion_inv"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:simulacion_inv"></A><A NAME="407"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Resultado de la simulaci&#243;n del inversor</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+>
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html60"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html58"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html54"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html61"
+  HREF="node5.html">3&nbsp;&nbsp;Compilador/Simulador GHDL</A>
+<B> Up:</B> <A NAME="tex2html59"
+  HREF="node2.html">2&nbsp;&nbsp;Primeros ejemplos</A>
+<B> Previous:</B> <A NAME="tex2html55"
+  HREF="node3.html">2.1&nbsp;&nbsp;Programa ``hola mundo''</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2004-10-01
+</ADDRESS>
+</BODY>
+</HTML>

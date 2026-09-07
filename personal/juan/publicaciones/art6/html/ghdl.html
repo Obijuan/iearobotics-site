@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Simulaci&#243;n de Dise&#241;os VHDL con Software Libre: La Herramienta GHDL</TITLE>
+<META NAME="description" CONTENT="Simulaci&#243;n de Dise&#241;os VHDL con Software Libre: La Herramienta GHDL">
+<META NAME="keywords" CONTENT="ghdl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ghdl.css">
+
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html4"
+  HREF="node1.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2"
+  HREF="../../index.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev_g.png">   
+<BR>
+<B> Next:</B> <A NAME="tex2html5"
+  HREF="node1.html">1&nbsp;&nbsp;Introducción</A>
+<B> Up:</B> <A NAME="tex2html3"
+  HREF="../../index.html">Publicaciones</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<P>
+
+
+
+
+<P>
+
+<P>
+
+<P>
+
+<P>
+<H1 ALIGN="CENTER">Simulaci&#243;n de Dise&#241;os VHDL con Software Libre: La Herramienta GHDL</H1>
+<DIV CLASS="author_info">
+
+<P ALIGN="CENTER"><STRONG>Juan Gonz&#225;lez G&#243;mez</STRONG></P>
+<P ALIGN="CENTER"><SMALL><SMALL CLASS="FOOTNOTESIZE">Escuela Polit&#233;cnica Superior, Universidad Aut&#243;noma
+de Madrid, Espa&#241;a,</SMALL>
+<BR><SMALL CLASS="FOOTNOTESIZE">{Juan.Gonzalez}@ii.uam.es</SMALL>
+<BR><SMALL CLASS="FOOTNOTESIZE">http://www.eps.uam.es</SMALL></SMALL></P>
+</DIV>
+
+<H3>Resumen:</H3>
+<DIV CLASS="ABSTRACT">
+En este tutorial se explica el funcionamiento de la herramienta <SPAN  CLASS="textit">GHDL</SPAN>,
+un compilador libre de VHDL basado en el <SPAN  CLASS="textit">GCC</SPAN>. Permite generar
+directamente programas ejecutables a partir de fuentes en <SPAN  CLASS="textit">VHDL</SPAN>.
+Al tratarse de <SPAN  CLASS="textit">software</SPAN> libre, se puede utilizar y distribuir
+sin ninguna restricci&#243;n. Primero se presentan dos ejemplos muy sencillos,
+que se compilan con GHDL y se visualizan sus resultados con GTKWAVE.
+A continuaci&#243;n se muestran c&#243;mo trabajar con proyectos m&#225;s complejos,
+constituidos por m&#250;ltiples ficheros y entidades. El compilador genera
+el fichero <SPAN  CLASS="textit">Makefile</SPAN>, que permite automatizar la compilaci&#243;n
+mediante el uso de la herramienta <SPAN  CLASS="textit">Make</SPAN>. Por &#250;ltimo, se desarrolla
+un ejemplo de c&#243;mo invocar funciones escritas en C, desde c&#243;digo <SPAN  CLASS="textit">VHDL</SPAN>.
+</DIV>
+<P>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html6"
+  HREF="node1.html">1&nbsp;&nbsp;Introducción</A>
+<LI><A NAME="tex2html7"
+  HREF="node2.html">2&nbsp;&nbsp;Primeros ejemplos</A>
+<UL>
+<LI><A NAME="tex2html8"
+  HREF="node3.html">2.1&nbsp;&nbsp;Programa ``hola mundo''</A>
+<LI><A NAME="tex2html9"
+  HREF="node4.html">2.2&nbsp;&nbsp;Un inversor</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html10"
+  HREF="node5.html">3&nbsp;&nbsp;Compilador/Simulador GHDL</A>
+<UL>
+<LI><A NAME="tex2html11"
+  HREF="node6.html">3.1&nbsp;&nbsp;Características</A>
+<LI><A NAME="tex2html12"
+  HREF="node7.html">3.2&nbsp;&nbsp;Modos de funcionamiento</A>
+<LI><A NAME="tex2html13"
+  HREF="node8.html">3.3&nbsp;&nbsp;Un segundo ejemplo</A>
+<LI><A NAME="tex2html14"
+  HREF="node9.html">3.4&nbsp;&nbsp;Parámetros de interés</A>
+<LI><A NAME="tex2html15"
+  HREF="node10.html">3.5&nbsp;&nbsp;Parámetros de simulación</A>
+<LI><A NAME="tex2html16"
+  HREF="node11.html">3.6&nbsp;&nbsp;Librerías</A>
+<LI><A NAME="tex2html17"
+  HREF="node12.html">3.7&nbsp;&nbsp;Invocación desde otros lenguajes</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html18"
+  HREF="node13.html">4&nbsp;&nbsp;Conclusiones</A>
+<LI><A NAME="tex2html19"
+  HREF="node14.html">Agradecimientos</A>
+<LI><A NAME="tex2html20"
+  HREF="node15.html">Bibliography</A>
+<LI><A NAME="tex2html21"
+  HREF="node16.html">About this document ...</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Juan Gonzalez
+2004-10-01
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,278 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.7&nbsp;&nbsp;Invocación desde otros lenguajes</TITLE>
+<META NAME="description" CONTENT="3.7&nbsp;&nbsp;Invocación desde otros lenguajes">
+<META NAME="keywords" CONTENT="ghdl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ghdl.css">
+
+<LINK REL="previous" HREF="node11.html">
+<LINK REL="up" HREF="node5.html">
+<LINK REL="next" HREF="node13.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html145"
+  HREF="node13.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html143"
+  HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html139"
+  HREF="node11.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html146"
+  HREF="node13.html">4&nbsp;&nbsp;Conclusiones</A>
+<B> Up:</B> <A NAME="tex2html144"
+  HREF="node5.html">3&nbsp;&nbsp;Compilador/Simulador GHDL</A>
+<B> Previous:</B> <A NAME="tex2html140"
+  HREF="node11.html">3.6&nbsp;&nbsp;Librerías</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00037000000000000000">
+3.7&nbsp;&nbsp;Invocaci&#243;n desde otros lenguajes</A>
+</H2>
+
+<P>
+Una caracter&#237;stica muy interesante del <SPAN  CLASS="textit">GHDL</SPAN> es la posibilidad
+de invocar funciones o procedimientos definidos en otros lenguajes,
+como por ejemplo C o ADA. Tambi&#233;n se puede llamar a una simulaci&#243;n
+desde un programa externo.
+
+<P>
+Esto permite que los bancos de pruebas puedan utilizar funciones no
+disponibles en VHDL, como por ejemplo funciones matem&#225;ticas (senos,
+cosenos...) o funciones para la generaci&#243;n de n&#250;meros aleatorios.
+
+<P>
+El proceso para realizarlo lo mostraremos con un ejemplo. En el fichero
+<SPAN  CLASS="textit">holac.c</SPAN> est&#225; definida la funci&#243;n <SPAN  CLASS="textit">holac()</SPAN>, que imprime
+el mensaje ``hola desde C''.
+
+<P>
+
+<table WIDTH=100%>
+<tr>
+<td BGCOLOR="#e6e6e6">
+<br>
+<TT>#include &lt;stdio.h&gt;</TT>
+
+<P>
+<TT>int holac(void)</TT>
+<br>
+<TT>{</TT>
+<br>
+<TT>&nbsp;&nbsp;printf (&#34;Hola desde C...&#92;n&#34;);</TT>
+<br>
+<TT>&nbsp;&nbsp;return 1;</TT>
+<br>
+<TT>} </TT>
+<br>
+&nbsp;
+</td>
+</tr>
+</table>
+
+
+<P>
+El programa <SPAN  CLASS="textit">VHDL</SPAN> es el <SPAN  CLASS="textit">hola mundo</SPAN> modificado. Adem&#225;s
+de sacar el mensaje, llamar&#225; a la funci&#243;n <SPAN  CLASS="textit">holac()</SPAN>. Creamos
+el paquete <SPAN  CLASS="textit">test</SPAN>, que contiene la definici&#243;n de la funci&#243;n <SPAN  CLASS="textit">holac.</SPAN>
+Mediante el atributo <SPAN  CLASS="textit">foreign</SPAN> se indica que es externa. Todo
+ello est&#225; en el fichero <SPAN  CLASS="textit">hola_mundo.vhdl</SPAN>:
+
+<P>
+
+<table WIDTH=100%>
+<tr>
+<td BGCOLOR="#e6e6e6">
+<br>
+<TT>package test is</TT>
+<br>
+<TT>&nbsp;&nbsp;function holac return integer;</TT>
+<br>
+<TT>&nbsp;&nbsp;attribute foreign of holac : function is</TT>
+<br>
+<TT>&nbsp;&nbsp;&nbsp;&nbsp;&#34;VHPIDIRECT holac&#34;;</TT>
+<br>
+<TT>end test;</TT>&nbsp;
+<P>
+<TT>package body test is</TT>
+<br>
+<TT>&nbsp;&nbsp;function holac return integer is</TT>
+<br>
+<TT>&nbsp;&nbsp;begin</TT>
+<br>
+<TT>&nbsp;&nbsp;&nbsp;&nbsp;assert false severity failure;</TT>
+<br>
+<TT>&nbsp;&nbsp;end holac;</TT>
+<br>
+<TT>end test;</TT>
+
+<P>
+<br>
+<TT>use std.textio.all;</TT>
+<br>
+<TT>use work.test.holac;</TT>&nbsp;
+<P>
+<TT>entity hola_mundo is</TT>
+<br>
+<TT>end hola_mundo;</TT>&nbsp;
+<P>
+<TT>architecture beh of hola_mundo is</TT>
+<br>
+<TT>begin</TT>
+<br>
+<TT>&nbsp;&nbsp;process</TT>
+<br>
+<TT>&nbsp;&nbsp;&nbsp;&nbsp;variable l : line;</TT>
+<br>
+<TT>&nbsp;&nbsp;&nbsp;&nbsp;variable v : integer;</TT>
+<br>
+<TT>&nbsp;&nbsp;begin</TT>
+<br>
+<TT>&nbsp;&nbsp;&nbsp;&nbsp;l := new string'(&#34;Hola desde VHDL...&#34;);</TT>
+<br>
+<TT>&nbsp;&nbsp;&nbsp;&nbsp;writeline (output, l);</TT>
+<br>
+<TT>&nbsp;&nbsp;&nbsp;&nbsp;-Invocar a la funcion de C</TT>
+<br>
+<TT>&nbsp;&nbsp;&nbsp;&nbsp;v:=holac;</TT>
+<br>
+<TT>&nbsp;&nbsp;&nbsp;&nbsp;wait;</TT>
+<br>
+<TT>&nbsp;&nbsp;end process;</TT>
+<br>
+<TT>end beh;</TT>
+<br>
+&nbsp;
+</td>
+</tr>
+</table>
+
+
+<P>
+Para la compilaci&#243;n utilizamos el siguiente <SPAN  CLASS="textit">Makefile</SPAN>:
+
+<P>
+
+<table WIDTH=100%>
+<tr>
+<td BGCOLOR="#e6e6e6">
+<br>
+<TT>GHDL=ghdl</TT>
+<br>
+<TT>CC=gcc</TT>
+
+<P>
+<TT>all: hola_mundo</TT>&nbsp;
+<BR>
+<P>
+<TT>hola_mundo: test.o holac.o</TT>
+<br>
+<TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(GHDL) -e -Wl,holac.o hola_mundo</TT>&nbsp;
+<BR>
+<P>
+<TT>test.o: hola_mundo.vhdl</TT>
+<br>
+<TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(GHDL) -a $&lt;</TT>&nbsp;
+<BR>
+<P>
+<TT>clean:</TT>
+<br>
+<TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rm -f hola_mundo *.o *.cf *~</TT>
+<br>
+&nbsp;
+</td>
+</tr>
+</table>
+
+
+<P>
+A continuaci&#243;n compilamos con <SPAN  CLASS="textit">make</SPAN> 
+
+<P>
+
+<table WIDTH=100%>
+<tr>
+<td BGCOLOR="#e6e6e6">
+<br>
+<TT>$ make</TT>
+
+<P>
+<TT>ghdl -a hola_mundo.vhdl</TT>
+<br>
+<TT>gcc -c -o holac.o holac.c</TT>
+<br>
+<TT>ghdl -e -Wl,holac.o hola_mundo</TT>
+<br>
+&nbsp;
+</td>
+</tr>
+</table>
+
+<P>
+y ejecutamos el programa:
+
+<P>
+
+<table WIDTH=100%>
+<tr>
+<td BGCOLOR="#e6e6e6">
+<br>
+<TT>$ ./hola_mundo</TT>
+<br>
+<TT>Hola desde VHDL...</TT>
+<br>
+<TT>Hola desde C...</TT>
+<br>
+<TT>$</TT>
+<br>
+&nbsp;
+</td>
+</tr>
+</table>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html145"
+  HREF="node13.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html143"
+  HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html139"
+  HREF="node11.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html146"
+  HREF="node13.html">4&nbsp;&nbsp;Conclusiones</A>
+<B> Up:</B> <A NAME="tex2html144"
+  HREF="node5.html">3&nbsp;&nbsp;Compilador/Simulador GHDL</A>
+<B> Previous:</B> <A NAME="tex2html140"
+  HREF="node11.html">3.6&nbsp;&nbsp;Librerías</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2004-10-01
+</ADDRESS>
+</BODY>
+</HTML>

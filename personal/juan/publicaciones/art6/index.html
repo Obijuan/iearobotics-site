@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>Simulaci&oacute;n de Dise&ntilde;os VHDL con Software Libre: La Herramienta GHDL</TITLE>
+</HEAD>
+
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>Art&iacute;culo 6: Simulaci&oacute;n de
+				Dise&ntilde;os VHDL con Software Libre: La Herramienta GHDL</B></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/tux_fpga.jpg" NAME="Imagen1" ALIGN=MIDDLE WIDTH=120 HEIGHT=136 BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<UL>
+	<LI><P ALIGN=JUSTIFY><A HREF="../../index.html"><FONT SIZE=2>Gonz&aacute;lez-G&oacute;mez,
+	J</FONT></A>, <FONT SIZE=2><B>&quot;Simulaci&oacute;n de Dise&ntilde;os
+	VHDL con Software Libre: La herramienta GHDL&rdquo;</B>, IV Jornadas
+	sobre Computaci&oacute;n Reconfigurable y Aplicaciones, 
+	<A HREF="http://cephis.uab.es/es/jcra04/">
+	<FONT SIZE=2>JCRA04</FONT></A>,
+	Escuela T&eacute;cnica Superior de Ingenier&iacute;as. Universidad
+	Aut&oacute;noma de Barcelona, Septiembre 2004.</FONT> <BR><BR><I>En
+	este tutorial se explica el funcionamiento de la herramienta GHDL,
+	un compilador libre de VHDL basado en el GCC. Permite generar
+	directamente ejecutables a partir de fuentes en VHDL. Al tratarse de
+	software libre, se puede utilizar y distribuir sin ninguna
+	restricci&oacute;n. Primero se presentan dos ejemplos muy sencillos,
+	que se compilan con GHDL y se visualizan los resultados con GTKWAVE.
+	A continuaci&oacute;n se muestra c&oacute;mo trabajar con proyectos
+	m&aacute;s complejos, constituidos por m&uacute;ltiples ficheros y
+	entidades. El compilador genera el fichero Makefile, que permite
+	automatizar la compilaci&oacute;n mediante el uso de la herramienta
+	Make. Por &uacute;ltimo, se desarrolla un ejemplo de c&oacute;mo
+	invocar funciones escritas en C, desde c&oacute;digo VHDL.</I></P>
+</UL>
+<HR>
+<TABLE CELLPADDING=2 CELLSPACING=2>
+	<TR>
+		<TD>
+			<P>Disponible on-line: [<A HREF="ghdl.pdf">PDF</A>] [<A HREF="html/index.html">HTML</A>]
+						</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Transparencias de la presentaci&oacute;n: [<A HREF="pres-ghdl.pdf">PDF</A>]
+			[<A HREF="pres-ghdl.sxi">OpenOffice</A>] 
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<HR>
+<H2><A NAME="tres"></A>Autores</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../index.html"><FONT SIZE=2>Juan
+	Gonz&aacute;lez</FONT></A> 
+	</P>
+</UL>
+<HR>
+<H2><A NAME="licencia"></A>Licencia</H2>
+<P>Se condecen permisos para usar, modificar y/o distribuir este
+art&iacute;culo, siempre que se mantenga esta nota. 
+</P>
+<HR>
+<H2>Download 
+</H2>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb">
+		<TR BGCOLOR="#2300dc">
+			<TD COLSPAN=2 BGCOLOR="#ccccff">
+				<P ALIGN=CENTER><B>Documentos para descargar</B> 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=86*>
+		<COL WIDTH=170*>
+		<TR BGCOLOR="#99ccff">
+			<TD WIDTH=33% BGCOLOR="#99ccff">
+				<P><A HREF="ghdl.pdf">ghdl.pdf</A> (36KB) 
+				</P>
+			</TD>
+			<TD WIDTH=67% BGCOLOR="#99ccff">
+				<P>Art&iacute;culo en formato PDF</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#ccccff">
+			<TD WIDTH=33% BGCOLOR="#ccccff">
+				<P><A HREF="ghdl.tgz">ghdl.tgz</A> (82KB) 
+				</P>
+			</TD>
+			<TD WIDTH=67% BGCOLOR="#ccccff">
+				<P>Fuentes del art&iacute;culo para Lyx y dibujos para Xfig</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#99ccff">
+			<TD WIDTH=33% BGCOLOR="#99ccff">
+				<P><A HREF="pres-ghdl.pdf">pres-ghdl.pdf</A> (263KB) 
+				</P>
+			</TD>
+			<TD WIDTH=67% BGCOLOR="#99ccff">
+				<P>Presentaci&oacute;n en formato PDF</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#ccccff">
+			<TD WIDTH=33%>
+				<P><A HREF="pres-ghdl.sxi">pres-ghdl.sxi</A> (58KB) 
+				</P>
+			</TD>
+			<TD WIDTH=67%>
+				<P>Presentaci&oacute;n en OpenOffice</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=33% BGCOLOR="#99ccff">
+				<P><A HREF="ejemplos.tgz">ejemplos.tgz</A> (108KB)</P>
+			</TD>
+			<TD WIDTH=67% BGCOLOR="#99ccff">
+				<P>Todos los ejemplos en VHDL descritos en el art&iacute;culo</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+		<COL WIDTH=256*>
+		<TR BGCOLOR="#ccccff">
+			<TD WIDTH=100% BGCOLOR="#ccccff">
+				<P ALIGN=CENTER><B>Ejemplos sueltos</B></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=86*>
+		<COL WIDTH=170*>
+		<TR BGCOLOR="#99ccff">
+			<TD WIDTH=33%>
+				<P><A HREF="ejemplos/hola_mundo.vhdl">hola_mundo.vhdl</A> 
+				</P>
+			</TD>
+			<TD WIDTH=67%>
+				<P><B>Ejemplo 1</B>: Hola mundo en VHDL</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#ccccff">
+			<TD WIDTH=33%>
+				<P><A HREF="ejemplos/inversor.vhdl">inversor.vhdl</A> 
+				</P>
+			</TD>
+			<TD WIDTH=67%>
+				<P><B>Ejemplo 2</B>: Un inversor</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#99ccff">
+			<TD WIDTH=33%>
+				<P><A HREF="ejemplos/tb_inversor.vhdl">tb_inversor.vhdl</A> 
+				</P>
+			</TD>
+			<TD WIDTH=67%>
+				<P><B>Ejemplo 2</B>: Banco de pruebas para el inversor</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#ccccff">
+			<TD WIDTH=33%>
+				<P><A HREF="ejemplos/hola_mundo2.vhdl">hola_mundo2.vhdl</A> 
+				</P>
+			</TD>
+			<TD WIDTH=67%>
+				<P><B>Ejemplo 3</B>: Hola mundo en vhdl que invoca a una funci&oacute;n
+				en C</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#ccccff">
+			<TD WIDTH=33% BGCOLOR="#99ccff">
+				<P><A HREF="ejemplos/holac.c">holac.c</A> 
+				</P>
+			</TD>
+			<TD WIDTH=67% BGCOLOR="#99ccff">
+				<P><B>Ejemplo 3</B>: Funci&oacute;n en C, que se invoca desde
+				VHDL</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#ccccff">
+			<TD WIDTH=33%>
+				<P><A HREF="ejemplos/Makefile">Makefile</A> 
+				</P>
+			</TD>
+			<TD WIDTH=67%>
+				<P><B>Ejemplo 3</B>: Fichero Makefile, para compilar el ejemplo 3</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="links"></A>Enlaces</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm">Todas las referencias de este
+	art&iacute;culo <A HREF="html/node15.html">est&aacute;n disponibles
+	aqu&iacute;</A></P>
+</UL>
+
+<hr>
+<a href="/iearobotics-site/wiki">IEA ROBOTICS</a>
+<address>
+<a HREF="../../../../personal/juan/index.html">Juan González</a>
+<br>
+[<a href="../index.html">Indice de artículos</a>]
+
+</body>
+</html>
