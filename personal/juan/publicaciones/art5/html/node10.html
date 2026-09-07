@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>4.2 Tipos de grabadores</TITLE>
+<META NAME="description" CONTENT="4.2 Tipos de grabadores">
+<META NAME="keywords" CONTENT="piclinux">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="piclinux.css">
+
+<LINK REL="next" HREF="node11.html">
+<LINK REL="previous" HREF="node9.html">
+<LINK REL="up" HREF="node8.html">
+<LINK REL="next" HREF="node11.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html135"
+  HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html133"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html127"
+  HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html136"
+  HREF="node11.html">4.3 Protocolo de grabación</A>
+<B> Up:</B> <A NAME="tex2html134"
+  HREF="node8.html">4 Grabación</A>
+<B> Previous:</B> <A NAME="tex2html128"
+  HREF="node9.html">4.1 Introducción</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00042000000000000000">
+<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">2</SPAN> Tipos de grabadores</A>
+</H2>
+
+<P>
+En el mercado existen diferentes grabadores para los microcontroladores
+<SPAN  CLASS="textit">PIC</SPAN>. Los esquemas de muchos de ellos est&#225;n disponibles para
+que los usuarios los puedan construir. Nos encontramos con tres tipos:
+
+<P>
+
+<OL>
+<LI><SPAN  CLASS="textbf">Grabadores por el puerto paralelo</SPAN>. Como por ejemplo el EPIC+[<A
+ HREF="node18.html#EPIC+">26</A>].
+En Estos programadores, el software de grabaci&#243;n tiene que acceder
+al puerto paralelo, a bajo nivel, para implementar el protocolo de
+grabaci&#243;n. No hay una forma est&#225;ndar de hacerlo y depende del sistema
+operativo utilizado. El <SPAN  CLASS="textit">software</SPAN> no es portable. Adem&#225;s, existe
+el riesgo de que funcione correctamente en unos ordenadores, pero
+no en otros que vayan a otra velocidad.
+</LI>
+<LI><SPAN  CLASS="textbf">Grabadores por el puerto serie</SPAN>. Por ejemplo el JDM[<A
+ HREF="node18.html#JDM">27</A>].
+Est&#225;n m&#225;s extendidos, son m&#225;s peque&#241;os y toman la alimentaci&#243;n del
+propio PC. Aunque se conectan por el puerto serie, la comunicaci&#243;n
+<SPAN  CLASS="textbf">NO sigue el est&#225;ndar RS-232</SPAN>, sino que se utilizan las se&#241;ales
+auxiliares <SPAN  CLASS="textit">CTS</SPAN> y <SPAN  CLASS="textit">DTR</SPAN> para la transmisi&#243;n de los datos
+y el reloj. El inconveniente es que <SPAN  CLASS="textbf">es muy dependiente del
+ordenador</SPAN>, tanto del <SPAN  CLASS="textit">software</SPAN> como del propio equipo (En los
+port&#225;tiles normalmente no funciona).
+</LI>
+<LI><SPAN  CLASS="textbf">Grabador aut&#243;nomo</SPAN>. Como por ejemplo el <SPAN  CLASS="textit">ICD</SPAN> de Microchip.
+El protocolo de grabaci&#243;n se implementa en un microcontrolador, dentro
+del grabador y NO en el PC. El <SPAN  CLASS="textit">software</SPAN> del PC env&#237;a los datos
+a grabador y &#233;ste gestiona el protocolo con el <SPAN  CLASS="textit">PIC</SPAN>.
+</LI>
+</OL>
+El grabador construido es de tipo aut&#243;nomo. El protocolo de grabaci&#243;n
+se implementa en un microcontrolador, que se comunica con el PC a
+trav&#233;s de comunicaciones serie RS-232 est&#225;ndares, a 9600 baudios.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html135"
+  HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html133"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html127"
+  HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html136"
+  HREF="node11.html">4.3 Protocolo de grabación</A>
+<B> Up:</B> <A NAME="tex2html134"
+  HREF="node8.html">4 Grabación</A>
+<B> Previous:</B> <A NAME="tex2html128"
+  HREF="node9.html">4.1 Introducción</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2004-06-04
+</ADDRESS>
+</BODY>
+</HTML>

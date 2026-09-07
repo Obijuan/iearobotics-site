@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2 ¿Por qué plataforma Linux?</TITLE>
+<META NAME="description" CONTENT="2 ¿Por qué plataforma Linux?">
+<META NAME="keywords" CONTENT="piclinux">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="piclinux.css">
+
+<LINK REL="next" HREF="node3.html">
+<LINK REL="previous" HREF="node1.html">
+<LINK REL="up" HREF="piclinux.html">
+<LINK REL="next" HREF="node3.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html47"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html45"
+  HREF="piclinux.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html39"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html48"
+  HREF="node3.html">3 Herramientas en GNU/Linux</A>
+<B> Up:</B> <A NAME="tex2html46"
+  HREF="piclinux.html">Herramientas hardware y software</A>
+<B> Previous:</B> <A NAME="tex2html40"
+  HREF="node1.html">1 Introducción</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00020000000000000000">
+<SPAN CLASS="arabic">2</SPAN> &#191;Por qu&#233; plataforma Linux?</A>
+</H1>
+
+<P>
+Al desarrollar sistemas basados en microcontroladores, lo importante
+es el sistema dise&#241;ado y no tanto las herramientas o plataformas empleadas
+para su dise&#241;o. El dise&#241;ador selecciona un microcontrolador por sus
+caracter&#237;sticas, precio, etc, pero no tiene sentido que el fabricante
+nos oblique a usar una determinada plataforma. Para programar los
+<SPAN  CLASS="textit">PIC</SPAN>s se utiliza el programa <SPAN  CLASS="textbf">MPLAB</SPAN>, que se ejecuta
+sobre <SPAN  CLASS="textit">Windows</SPAN>, por lo que habr&#225; que adquirir, adem&#225;s, una licencia
+de este sistema operativo. O dicho de otra manera, ``<SPAN  CLASS="textit">o eres
+usuario de Windows o no podr&#225;s utilizar los PICs</SPAN>''. Y es precisamente
+esto lo que ha provocado que los autores de este art&#237;culo nos centr&#225;semos
+en analizar las herramientas disponibles para Linux, de manera que
+el dise&#241;ador elija lo que m&#225;s le convenga y no venga impuesto por
+el fabricante, cuya decisi&#243;n de utilizar una plataforma u otra puede
+deberse a acuerdos comerciales y quiz&#225;s no t&#233;cnicos.
+
+<P>
+<SPAN  CLASS="textbf">Las ventajas</SPAN> que se obtienen al utilizar <SPAN  CLASS="textit">software</SPAN>
+libre para trabajar con los <SPAN  CLASS="textit">PICs</SPAN>, en entornos docentes, son:
+
+<P>
+
+<UL>
+<LI><SPAN  CLASS="textbf">Multiplataforma</SPAN>. El dise&#241;ador puede elegir entre una gran
+variedad de plataformas. Por ejemplo, la distribuci&#243;n <SPAN  CLASS="textbf">Debian</SPAN>
+de Linux est&#225; disponible para micros <SPAN  CLASS="textit">Alpha</SPAN>, <SPAN  CLASS="textit">Arm</SPAN>, <SPAN  CLASS="textit">HP
+PA-RISC</SPAN>, <SPAN  CLASS="textit">Intel x86</SPAN>, <SPAN  CLASS="textit">Intel IA-64</SPAN>, <SPAN  CLASS="textit">Motorola 680x0</SPAN>,
+<SPAN  CLASS="textit">MIPS</SPAN>, <SPAN  CLASS="textit">MIPS</SPAN> (<SPAN  CLASS="textit">DEC</SPAN>), <SPAN  CLASS="textit">PowerPC</SPAN>, <SPAN  CLASS="textit">IBM S/390</SPAN>
+y <SPAN  CLASS="textit">SPARC</SPAN>, en total <SPAN  CLASS="textbf">11 arquitecturas diferentes</SPAN>. 
+</LI>
+<LI><SPAN  CLASS="textbf">Independencia del fabricante</SPAN>. No estamos atados a los caprichos
+del fabricante. Si nos conviene utilizaremos su <SPAN  CLASS="textit">software</SPAN>, pero
+tenemos la opci&#243;n de usar otras plataforma que no est&#233;n soportadas
+por &#233;l. Hoy puedo estar utilizando una m&#225;quina <SPAN  CLASS="textit">Windows</SPAN>, pero
+quiz&#225;s ma&#241;ana use una estaci&#243;n de trabajo. En cualquier caso, puedo
+seguir programandos los <SPAN  CLASS="textit">PICs</SPAN>. Nosotros decidimos, no el fabricante.
+</LI>
+<LI><SPAN  CLASS="textbf">Creaci&#243;n de</SPAN> <SPAN  CLASS="textbf"><SPAN  CLASS="textit">un LIVE CDs</SPAN></SPAN>. Podemos incluir
+las herramientas libres de desarrollo para el <SPAN  CLASS="textit">PIC</SPAN> en una distribuci&#243;n
+<SPAN  CLASS="textit">LIVE</SPAN><A NAME="tex2html2"
+  HREF="footnode.html#foot407"><SUP><SPAN CLASS="arabic">2</SPAN></SUP></A>, que puede servir como demostraci&#243;n, para impartir talleres y seminarios
+o para que los alumnos dispongan del mismo entorno de trabajo que
+en laboratorio y puedan hacer las pr&#225;cticas sin tener que instalar
+nada en sus ordenadores.
+</LI>
+<LI><SPAN  CLASS="textbf">Pr&#225;cticas avanzadas</SPAN>. Posibilidad de proponer pr&#225;cticas para
+mejorar el propio entorno de trabajo o adaptarlo a las necesidades
+concretas de una asignatura. Tanto profesores como alumnos lo podr&#237;an
+realizar.
+</LI>
+<LI><SPAN  CLASS="textbf">Libertad de elecci&#243;n</SPAN>. La mayor ventaja, y un poco como resumen
+de todas, es la de que el dise&#241;ador tenga la <SPAN  CLASS="textbf">libertad para
+poder elegir la plataforma que m&#225;s le guste</SPAN>. Si utiliza <SPAN  CLASS="textit">Windows</SPAN>,
+entonces podr&#225; usar el MPLAB. Pero si usa otro sistema operativo,
+tambi&#233;n tendr&#225; opci&#243;n a utilizar estos microcontroladores.
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html47"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html45"
+  HREF="piclinux.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html39"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html48"
+  HREF="node3.html">3 Herramientas en GNU/Linux</A>
+<B> Up:</B> <A NAME="tex2html46"
+  HREF="piclinux.html">Herramientas hardware y software</A>
+<B> Previous:</B> <A NAME="tex2html40"
+  HREF="node1.html">1 Introducción</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2004-06-04
+</ADDRESS>
+</BODY>
+</HTML>

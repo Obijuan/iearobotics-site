@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Herramientas hardware y software para el desarrollo de aplicaciones
+con Microcontroladores PIC bajo plataformas GNU/Linux</TITLE>
+<META NAME="description" CONTENT="Herramientas hardware y software para el desarrollo de aplicaciones
+con Microcontroladores PIC bajo plataformas GNU/Linux">
+<META NAME="keywords" CONTENT="piclinux">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="piclinux.css">
+
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html8"
+  HREF="node1.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html6"
+  HREF="../../index.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev_g.png">   
+<BR>
+<B> Next:</B> <A NAME="tex2html9"
+  HREF="node1.html">1 Introducción</A>
+<B> Up:</B> <A NAME="tex2html7"
+  HREF="../../index.html">Publicaciones</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<P>
+
+<P>
+
+<P>
+
+<P>
+<H1 ALIGN="CENTER">Herramientas hardware y software para el desarrollo de aplicaciones
+con Microcontroladores PIC bajo plataformas GNU/Linux</H1>
+<DIV CLASS="author_info">
+
+<P ALIGN="CENTER"><STRONG>Juan Gonz&#225;lez G&#243;mez<SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$^{1}$"></SPAN>,</STRONG></P>
+<P ALIGN="CENTER"><STRONG>Andr&#233;s Prieto-Moreno Torres<SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$^{2}$"></SPAN></STRONG></P>
+<P ALIGN="CENTER"><STRONG>29-Enero-2004</STRONG></P>
+</DIV>
+
+<P>
+
+<P>
+<DIV ALIGN="CENTER">
+<SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$^{1}$"></SPAN>Escuela Polit&#233;cnica Superior, Universidad Aut&#243;noma
+de Madrid
+<BR><SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$^{2}$"></SPAN>Ifara Tecnolog&#237;as
+</DIV> 
+   <BR>
+<BR>
+   
+<P>
+
+
+<P>
+
+<H3>Abstract:</H3>
+<DIV CLASS="ABSTRACT">
+Los microcontroladores <SPAN  CLASS="textit">PIC</SPAN> est&#225;n muy extendidos. Microchip,
+la empresa que los fabrica y distribuye, s&#243;lo ofrece herramientas
+de desarrollos para plataformas <SPAN  CLASS="textit">Windows</SPAN>. En este art&#237;culo describimos
+algunas de las herramientas libres que nos permiten trabajar con ellos
+desde <SPAN  CLASS="textit">GNU/Linux</SPAN> y presentamos la arquitectura del grabador
+que hemos desarrollado, as&#237; como el <SPAN  CLASS="textit">software</SPAN> creado para realizar
+la descarga. Toda la informaci&#243;n est&#225; publicada en la web. Se pueden
+encontrar todos los detalles en los enlaces que se indican.
+</DIV>
+<P>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html10"
+  HREF="node1.html"><SPAN CLASS="arabic">1</SPAN> Introducción</A>
+<LI><A NAME="tex2html11"
+  HREF="node2.html"><SPAN CLASS="arabic">2</SPAN> ¿Por qué plataforma Linux?</A>
+<LI><A NAME="tex2html12"
+  HREF="node3.html"><SPAN CLASS="arabic">3</SPAN> Herramientas en GNU/Linux</A>
+<UL>
+<LI><A NAME="tex2html13"
+  HREF="node4.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">1</SPAN> Introducción</A>
+<LI><A NAME="tex2html14"
+  HREF="node5.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">2</SPAN> Ensamblador y simulador</A>
+<LI><A NAME="tex2html15"
+  HREF="node6.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN> Software de descarga: skypic-down</A>
+<LI><A NAME="tex2html16"
+  HREF="node7.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">4</SPAN> Otras herramientas</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html17"
+  HREF="node8.html"><SPAN CLASS="arabic">4</SPAN> Grabación</A>
+<UL>
+<LI><A NAME="tex2html18"
+  HREF="node9.html"><SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">1</SPAN> Introducción</A>
+<LI><A NAME="tex2html19"
+  HREF="node10.html"><SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">2</SPAN> Tipos de grabadores</A>
+<LI><A NAME="tex2html20"
+  HREF="node11.html"><SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">3</SPAN> Protocolo de grabación</A>
+<LI><A NAME="tex2html21"
+  HREF="node12.html"><SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">4</SPAN> Diagrama de bloques</A>
+<LI><A NAME="tex2html22"
+  HREF="node13.html"><SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">5</SPAN> <SPAN  CLASS="textit">Máster</SPAN> de grabación</A>
+<LI><A NAME="tex2html23"
+  HREF="node14.html"><SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">6</SPAN> Ventajas e inconvenientes</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html24"
+  HREF="node15.html"><SPAN CLASS="arabic">5</SPAN> El proyecto Stargate</A>
+<LI><A NAME="tex2html25"
+  HREF="node16.html"><SPAN CLASS="arabic">6</SPAN> Conclusiones</A>
+<LI><A NAME="tex2html26"
+  HREF="node17.html"><SPAN CLASS="arabic">7</SPAN> Trabajo futuro</A>
+<LI><A NAME="tex2html27"
+  HREF="node18.html">Bibliography</A>
+<LI><A NAME="tex2html28"
+  HREF="node19.html">About this document ...</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Juan Gonzalez
+2004-06-04
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,24 @@
+Herramientas hardware y software para el desarrollo de 
+aplicaciones con Microcontroladores PIC bajo 
+plataformas GNU/Linux
+
+Juan González Gómez ^{1} , 
+Andrés Prieto-Moreno Torres ^{2} 
+
+29-Enero-2004
+
+ ^{1} Escuela Politécnica Superior, Universidad Autónoma de Madrid
+ ^{2} Ifara Tecnologías
+
+Resumen
+
+Los microcontroladores PIC están muy extendidos. 
+Microchip, la empresa que los fabrica y distribuye, 
+sólo ofrece herramientas de desarrollos para 
+plataformas Windows. En este artículo describimos 
+algunas de las herramientas libres que nos permiten 
+trabajar con ellos desde GNU/Linux y presentamos la 
+arquitectura del grabador que hemos desarrollado, así 
+como el software creado para realizar la descarga. Toda 
+la información está publicada en la web. Se pueden 
+encontrar todos los detalles en los enlaces que se indican.

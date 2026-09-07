@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>4.3 Protocolo de grabación</TITLE>
+<META NAME="description" CONTENT="4.3 Protocolo de grabación">
+<META NAME="keywords" CONTENT="piclinux">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="piclinux.css">
+
+<LINK REL="next" HREF="node12.html">
+<LINK REL="previous" HREF="node10.html">
+<LINK REL="up" HREF="node8.html">
+<LINK REL="next" HREF="node12.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html145"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html143"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html137"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html146"
+  HREF="node12.html">4.4 Diagrama de bloques</A>
+<B> Up:</B> <A NAME="tex2html144"
+  HREF="node8.html">4 Grabación</A>
+<B> Previous:</B> <A NAME="tex2html138"
+  HREF="node10.html">4.2 Tipos de grabadores</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00043000000000000000">
+<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">3</SPAN> Protocolo de grabaci&#243;n</A>
+</H2>
+
+<P>
+Los microcontroladores <SPAN  CLASS="textit">PIC</SPAN> se graban mediante el protocolo
+<SPAN  CLASS="textit">ICSP</SPAN> (<SPAN  CLASS="textit">in circuit serial programing</SPAN>), que permite el
+acceso a la memoria de programa, la <SPAN  CLASS="textit">eeprom</SPAN> de datos y la palabra
+de configuraci&#243;n. Para realizar esta graci&#243;n, el <SPAN  CLASS="textit">PIC</SPAN> debe entrar
+en <SPAN  CLASS="textbf">modo monitor</SPAN>.
+
+<P>
+Es un protocolo <SPAN  CLASS="textbf">serie s&#237;ncrono</SPAN>, con un hilo para los <SPAN  CLASS="textbf">datos</SPAN>
+y otro para la se&#241;al de <SPAN  CLASS="textbf">reloj</SPAN>. La frecuencia m&#225;xima de transmisi&#243;n
+de los bits es de 5MHz. Mediante el env&#237;o de comandos, se puede leer
+el contenido de la memoria de progama, almacenar nuevos valores, acceder
+a la palabra de configuraci&#243;n, lectura de la <SPAN  CLASS="textit">eeprom</SPAN>, escritura
+en ella, etc. Se puede encontrar m&#225;s informaci&#243;n sobre la grabaci&#243;n
+de <SPAN  CLASS="textit">PICs</SPAN> en [<A
+ HREF="node18.html#ct4">28</A>].
+
+<P>
+<BR><HR>
+<ADDRESS>
+Juan Gonzalez
+2004-06-04
+</ADDRESS>
+</BODY>
+</HTML>

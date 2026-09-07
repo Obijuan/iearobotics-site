@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><title>XBT6811: Manejo de 4 servos conectados a la tarjeta BT6811</title></head>
+
+
+<!-- A partir de aquí viene el contenido real de la pagina>-->
+
+
+<table width="95%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>XBT6811: Manejo de 4 servos conectados a la tarjeta BT6811</b>
+ </td>
+</tr>
+</tbody></table>
+
+<br>
+<blockquote>
+<li>
+<b>INTRODUCCIÓN</b>
+</li>
+<br>
+  La tarjeta <b>BT6811</b>, desarrollada por <a href="http://www.iearobotics.com/andres">Andrés Prieto-Moreno Torres</a>, permite controlar
+  la posición de 4 servos del tipo <b>Futaba 3003</b> o compatibles, y se puede conectar en red con otras BT6811 para ampliar el número de servos a mover.<br>
+  <br>
+  Todas las <b>tarjetas BT6811</b> conectadas en red se comportan como <b>nodos esclavos</b>,
+   gobernadas por un <b>nodo maestro</b>, que puede ser cualquier micro
+  que disponga de <b>SPI</b>. La conexión de una <b>CT6811</b> como nodo maestro es inmediata. Las aplicaciones que se desarrollan con esta red de microcontroladores
+  pueden ser autónomas o pueden estar controladas desde el PC.
+  <br>
+  <br>
+  Este es el caso del <b>programa XBT6811</b> que permite controlar la posición de 4 servos de una BT6811 conectada por el SPI a una CT6811 que a su vez
+  está conectada al PC por el <b>puerto serie</b>. Mediante una interfaz muy simple se pueden generar secuencias de movimiento, que se almacenan en ficheros
+  para su posterior reproducción. Esto permite realizar prototipos de robots o sistemas articulados de una manera muy rápida. <br><br>
+  Aquí puedes ver una <b>captura de pantalla</b> de la version 1.0:
+ <br><br>
+<center><img src="xbt6811.png" alt="" border="0"></center><br>
+<br><br>
+ <li>
+<b>AUTOR:</b> Juan González Gómez (a.k.a. Obijuan), Marzo 2001<br>
+</li>
+<br>
+<li><b>LICENCIA</b>: <a href="http://gugs.sindominio.net/gnu-gpl/gples.html"> GPL</a> </li>
+ <br>
+<li>
+<b>DESCRIPCIÓN</b> <br><br>
+</li>
+   El interfaz del programa fue realizado usando las librerías <a href="http://www.gtk.org">GTK-1.2</a>. Para las comunicaciones serie se
+emplea la librería <a href="http://www.iearobotics.com/personal/juan/proyectos/cts/cts.html"> <b>CTS-1.4</b></a>.
+La configuración para poner en marcha el sistema es la siguiente:
+<br><br>
+<blockquote>
+<li><b>HARDWARE</b>: </li>
+<ul>
+  <li>Tarjeta BT6811 conectada a una tarjeta CT6811 por el SPI</li>
+  <li>Tarjeta CT6811 conectada al puerto serie COM1 del PC (dispositivo /dev/ttyS0)</li>
+</ul>
+<br>
+<li><b>SOFTWARE</b>: </li>
+<ul>
+  <li>Programa servidor <a href="futA.asm">FutA</a> grabado en la BT6811. Recibe comandos por el SPI y modifica la posición de los servos.</li>
+  <li>El programa <a href="btserver.asm">btserver</a> se carga en la CT6811 y hace de pasarela entre el PC y la tarjeta BT6811. Todo lo que se recibe
+        por el puerto serie se envía por el SPI hacia la BT6811</li>
+</ul>
+</blockquote>
+<br>
+Una vez realizadas las conexiones y ejecutado el programa <b>XBT6811</b>, hay que pulsar la tecla <b>"LOAD"</b> para cargar el programa
+<a href="btserver.s19">btserver</a> en la CT6811. A partir de ese momento, y si la carga se ha realizado correctamente, se podrá controlar la posición de los
+servos mediante las barras de desplazamiento.
+<br><br>
+<li><b>PLATAFORMA</b>: Linux</li>
+<br>
+<li>
+<b>DOWNLOAD:</b>
+</li>
+<br>
+<table width=95% bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>FICHEROS PARA DESCARGAR</b>
+ </td>
+</tr>
+</tbody></table>
+
+<table width=95%  border="0" >
+<tbody>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="xbt6811-1.0-2.tgz">xbt6811-1.0-2.tgz (52KB)</a>  </td>
+  <td>Programa XBT6811. Versión 1.0. Fuentes y ejecutable</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="futA.asm">futA.asm (12KB)</a>  </td>
+  <td> Programa servidor para la BT6811. Fichero fuente</td>
+</tr>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="futA.s19">futA.s19 (696 Bytes)</a>  </td>
+  <td> Programa servidor para la BT6811. Ejecutable</td>
+</tr>
+
+<tr bgcolor="#abbeeb">
+  <td><a href="btserver.asm">btserver.asm (3KB)</a>  </td>
+  <td> Programa maestro para la CT6811. Fichero fuente</td>
+</tr>
+
+<tr bgcolor="#cabeeb">
+  <td><a href="btserver.s19">btserver.s19 (303 Bytes)</a>  </td>
+  <td> Programa maestro para la CT6811. Ejecutable</td>
+</tr>
+
+</tbody></table>
+<br>
+
+<li>
+<b>NOTICIAS</b>
+</li>
+<blockquote>
+<li><strong>18/Sep/2002:</strong> Puesta version 1.0-2, que soluciona un problema de compilación</li>
+<li><b>16/Agosto/2002:</b> Publicado programa XBT6811 en esta web</li>
+<br><br>
+</blockquote>
+
+<li>
+<b>AGRADECIMIENTOS:</b>
+</li>
+<ul>
+  <li>La parte del programa encargada de la grabación y reproducción de secuencias de movimiento
+    está inspirado en el programa de control de <b>PUCHOBOT</b> realizado por <a href="http://www.iearobotics.com/andres">Andrés Prieto-Moreno Torres</a>
+  </li>
+</ul>
+ <br>
+<li>
+<b>CRÉDITOS:</b>
+</li>
+<blockquote>
+<li><b>Tarjeta BT6811</b> y los programas <b>futA.asm</b> y <b>btserver.asm</b> han sido desarrollados por
+<a href="http://www.iearobotics.com/andres">Andrés Prieto-Moreno Torres</a></li><br>
+<li><b>Tarjeta CT6811</b>,  <a href="http://www.microbotica.com">Microbótica</a></li>
+<br>
+<br>
+
+<br><br>
+</blockquote>
+
+
+</blockquote>
+
+</body></html>

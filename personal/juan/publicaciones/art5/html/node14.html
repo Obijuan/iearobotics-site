@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>4.6 Ventajas e inconvenientes</TITLE>
+<META NAME="description" CONTENT="4.6 Ventajas e inconvenientes">
+<META NAME="keywords" CONTENT="piclinux">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="piclinux.css">
+
+<LINK REL="previous" HREF="node13.html">
+<LINK REL="up" HREF="node8.html">
+<LINK REL="next" HREF="node15.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html173"
+  HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html171"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html167"
+  HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html174"
+  HREF="node15.html">5 El proyecto Stargate</A>
+<B> Up:</B> <A NAME="tex2html172"
+  HREF="node8.html">4 Grabación</A>
+<B> Previous:</B> <A NAME="tex2html168"
+  HREF="node13.html">4.5 Máster de grabación</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00046000000000000000">
+<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">6</SPAN> Ventajas e inconvenientes</A>
+</H2>
+
+<P>
+Las <SPAN  CLASS="textbf">ventajas</SPAN> se deben a la utilizaci&#243;n de comunicaciones
+serie est&#225;ndar, a 9600 baudios. El grabador se puede utilizar desde
+cualquier ordenador o dispositivo que disponga de este tipo de comunicaciones:
+un PC, una PDA, otro microcontrolador, etc. El m&#233;todo de grabaci&#243;n
+tambi&#233;n es independiente del sistema operativo empleado y del <SPAN  CLASS="textit">software</SPAN>
+de grabaci&#243;n.
+
+<P>
+La programaci&#243;n del <SPAN  CLASS="textit">software</SPAN> de grabaci&#243;n es sencilla, porque
+no requiere que el desarrollador tenga que conocer los detalles de
+bajo nivel de la grabaci&#243;n de los PICs. La aplicaci&#243;n debe leer el
+fichero ejecutable, construir las tramas necesarias y enviarlas por
+el puerto serie.
+
+<P>
+El principal <SPAN  CLASS="textbf">inconveniente</SPAN> es la velocidad de grabaci&#243;n,
+que es m&#225;s lenta que en otros grabadores. Est&#225; limitada por los 9600
+baudios de las comunicaciones serie y por las tramas que se tienen
+que enviar y recibir. Por cada palabra a grabar (de 2 bytes), se intercambian
+8 bytes (en el caso peor), por lo que para grabar un programa de 1K
+palabras, se intercambiar&#225;n 8192 Bytes, que a una velocidad de 9600
+Baudios tardar&#225;n aproximadamente 7 segundos. Si a&#241;adimos verificaci&#243;n,
+el tiempo se duplicar&#225;: unos 14seg por K palabra.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html173"
+  HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html171"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html167"
+  HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html174"
+  HREF="node15.html">5 El proyecto Stargate</A>
+<B> Up:</B> <A NAME="tex2html172"
+  HREF="node8.html">4 Grabación</A>
+<B> Previous:</B> <A NAME="tex2html168"
+  HREF="node13.html">4.5 Máster de grabación</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2004-06-04
+</ADDRESS>
+</BODY>
+</HTML>
