@@ -1,0 +1,62 @@
+<html>
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cube Reloaded: Control I</title>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+
+<table align="center" width="100%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>CUBE RELOADED: CONTROL I</b>
+ </td>
+</tr>
+</tbody></table> 
+
+<div class="cuerpo">
+<p>
+  Se ha creado la <b>versión 2.1</b> del programa <b>cube-físico</b>. Tiene la misma funcionalidad
+  que la <a href="../../proyectos/cube-2.0/control_i.html">versión 2.0</a>, sin embargo ahora se
+  conecta con el 
+  <a href="../../../../proyectos/stargate/servidores/sg-servos8/sg-servos8.html">Stargate servos8</a>,
+   que puede estar implementado en diferentes microcontroladores y
+  no solo en un 6811.  
+ </p>
+ <center>
+    <img src="images/cube-fisico.png">
+    </center>
+<p>
+  está programado en C, bajo Linux, usando las librerías GTK 1.2.  Para más información sobre su funcionamiento
+  y las cosas que se pueden hacer con él,
+  <a href="../../proyectos/cube-2.0/control_i.html">consultar aquí</a>.
+</p>
+</div>
+<div class="lista">
+<p>
+  Las ventajas que se consiguen con esta nueva versión son:
+</p>
+<li><b>Independencia del microcontrolador</b>. La versión 2.1 está basada en el 
+<a href="../../../../proyectos/stargate/index.html">Proyecto Stargate</a>, en el que se han
+definido servidores y los servicios que ofrecen, de manera que se puedan implementar desde
+cualquier otro microcontrolador. Por ejemplo, es posible controlar a Cube Reloaded desde un 
+microcontrolador PIC que incluya puerto serie.</li><br>
+<li><b>Control de hasta 8 servos</b>. El 
+<a href="../../../../proyectos/stargate/servidores/sg-servos8/sg-servos8.html">Stargate servos8</a>
+permite mover hasta 8 servos, aunque en la versión 2.1 de Cube-físico el interfaz solo permita mover 4.</li>
+</div>
+<br>
+
+<hr>
+<a href="index.html">[Cube Reloaded]</a><br>
+<a href="/iearobotics_site/wiki">IEA ROBOTICS</a>
+<address>
+<a HREF="../../index.html">Juan González</a>
+</address>
+</body>
+</html>
+

@@ -1,0 +1,122 @@
+<html>
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cube Reloaded: Electrónica</title>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+
+<table align="center" width="100%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>CUBE RELOADED: ELECTRÓNICA</b>
+ </td>
+</tr>
+</tbody></table> 
+
+
+<table align="center">
+<tr>
+<td><a href="#cableado">[Cableado]</a></td>
+<td><a href="#ct6811">[Tarjeta CT6811]</a></td>
+<td><a href="#jps">[Tarjeta JPS]</a></td>
+</tr>
+</table>
+
+<hr>
+<H2 id="cableado">Cableado</H2>
+
+<div class="cuerpo">
+<p>
+  Una vez construidos los
+  <a href="../Modulos-Y1/modulos-y1.html">Módulos Y1</a>
+    y unidos mediante tornillos, 
+    <a href="index.html">Cube Reloaded</a> tiene este aspecto:
+    <center>
+    <img src="images/cube-pre1.png">
+    </center>
+ </p>
+ <p>
+   Para organizar los cables y que sea mas fácil la conexión entre los servos y la electrónica, se ha 
+   construido la <b>placa PCT-servos</b>, que por un lado tiene un conector acodado para cable de bus y
+   por el otro tiene unos pines para la conexión de los 4 servos. Es una <b>placa pasiva</b> y no se ha realizado
+   ningún PCB.
+ </p>
+ <center>
+    <img src="images/pct-servos.png">
+    </center>
+ <p>
+  Los pines utilizados del <b>conector de bus</b> se muestran en la siguiente figura. 
+  Están dispuestos de forma que se
+puedan conectar directamente al puerto B de la 
+<a href="../../../../proyectos/ct6811/ct6811.html">tarjeta CT6811</a>.
+ La alimentación de lo servos también se
+lleva por el propio cable de Bus.
+ </p>
+ <center>
+    <img src="images/pct-servos-conector.png">
+    </center>
+</div>     
+<br>
+<hr>
+<H2 id="ct6811">Tarjeta CT6811</H2>
+
+<div class="cuerpo">
+<p>
+  <a href="index.html">Cube Reloaded</a> se puede controlar usando una 
+  <a href="../../../../proyectos/ct6811/ct6811.html">tarjeta CT6811</a>, conectada a un PC
+  a través del <b>puerto serie</b> (RS-232).
+   La alimentación tanto para la electrónica como para los servos se
+  toma de una <b>fuente de alimentación externa</b> (5v). Mediante un cable de bus se conecta la
+   <a href="../../../../proyectos/ct6811/ct6811.html">CT6811</a>
+  con la <b>PCT-SERVOS</b>, situada en el interior de uno de los módulos de 
+   <a href="index.html">Cube Reloaded</a>. 
+  El esquema se puede ver aquí:
+ </p>
+ <center>
+    <img src="images/elec-ct6811.png">
+    </center>
+</div>    
+<br>
+<hr>
+<H2 id="jps">Tarjeta JPS</H2>
+
+<div class="cuerpo">
+<p>
+  También se puede utilizar la 
+ <a href="../jps-xpc84/jps-xpc84.html">tarjeta JPS</a> 
+   para el control de <a href="index.html">Cube Reloaded</a>,
+    lo que permite utilizar la tecnología
+  de las <b>FPGAs</b>. En este caso no hay conexión con el PC, sino que hay
+  implementado un controlador hardware, en VHDL.
+</p>
+<center>
+    <img src="images/elec-jps.png">
+    </center>
+</div>
+
+<hr>
+<H2 id="otras">Otras tarjetas</H2>
+
+<div class="cuerpo">
+<p>
+  En <a href="index.html">Cube Reloaded</a>
+   se ha elegido <b>situar la electrónica externamente</b> para
+  poder controlarlo con diversas tecnologías: microcontroladores, FPGA's, PC, etc...
+</p>
+</div>
+
+<hr>
+<a href="index.html">[Cube Reloaded]</a><br>
+<a href="/iearobotics_site/wiki">IEA ROBOTICS</a>
+<address>
+<a HREF="../../index.html">Juan González</a>
+</address>
+</body>
+</html>
+
+

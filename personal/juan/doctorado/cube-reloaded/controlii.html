@@ -1,0 +1,105 @@
+<html>
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cube Reloaded: Control II</title>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<table align="center" width="100%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>CUBE RELOADED: CONTROL II</b>
+ </td>
+</tr>
+</tbody></table> 
+
+<div class="cuerpo">
+<p>
+ Con el programa <b>cube-virtual</b> se pueden <b>generar secuencias</b> de movimiento 
+ <b>automáticamente</b>,
+  utilizando un modelo de propagación de ondas sinusoidales. Aquí puedes ver un pantallazo:
+ </p>
+ <center>
+    <img src="images/cube-virtual.png">
+    </center>
+<p>
+  La versión utilizada para 
+  <a href="index.html">Cube Reloaded</a>
+  es la <b>1.4.2</b> que incorpora las siguientes <b>mejoras</b>:
+</p>
+</div>
+<div class="lista">
+<li><b>Corrección de BUGS</b>. Arreglados algunos BUGs que hacían que determinadas
+secuencias no se grabasen correctamente</li><br>
+<li><b>Secuencias basadas en semiondas</b>. Se ha incluido una función de contorno sinusoidal, no
+periódica (semionda), que permite generar secuencias de movimiento en las que únicamente un 
+"lóbulo" atraviesa el gusano. El movimiento conseguido es muy similar al de los gusanos de seda.</li>
+</div>
+
+<div class="cuerpo">
+<p>
+  El resto de funciones son las mismas que en la versión utilizada para 
+  <a href="../../proyectos/cube-2.0/cube.html">Cube 2.0</a>. Se puede encontrar 
+  más información <a href="../../proyectos/cube-2.0/control_ii.html">en este enlace</a>.
+</p>
+</div>
+<br>
+<hr>
+
+<h2 id="locomocion">Tipos de locomoción</h2>
+<div class="cuerpo">
+<p>
+  La generación automática de secuencias utilizando el programa Cube-virtual permite <b>estudiar la
+  locomoción</b> en función de las <b>características de las ondas</b> que recorren
+   el gusano desde la cola a la cabeza.
+</p>
+
+<p>
+  Una <b>onda sinusoidal con una amplitud pequeña</b> permite que Cube Reloaded pueda
+   <b>pasar por debajo</b>
+  de obstáculos o introducirse en tubos de pocos centímetros de diámetro. El avance del gusano es más lento.
+</p>
+<p>
+  Una <b>onda sinusoidal de mayor amplitud</b> hace que el avance se haga <b>más rápidamente</b> 
+  y que pueda superar
+  escalones de mayor tamaño.
+</p>
+<p>
+  Una <b>semionda</b> hace que el movimiento sea <b>más estable</b>, 
+  porque en cada instante de tiempo hay un mayor
+  número de puntos de apoyo con el suelo. Este movimiento es el empleado por los gusanos de seda y 
+  resulta muy útil para superar obstáculos.
+</p>
+
+<table>
+<tr>
+<td>Onda sinusoidal de 6 unidades de amplitud</td>
+<td><img src="images/cv-onda6.png"></td>
+<td><img src="images/cv-anim6.gif"></td>
+</tr>
+<tr>
+<td>Onda sinusoidal de 15 unidades de amplitud</td>
+<td><img src="images/cv-onda15.png"></td>
+<td><img src="images/cv-anim15.gif"></td>
+</tr>
+<tr>
+<td>Semionda de 25 unidades de amplitud</td>
+<td><img src="images/cv-onda-semi.png"></td>
+<td><img src="images/cv-anim-semionda.gif"></td>
+</tr>
+</table>
+
+</div>
+
+<hr>
+<a href="index.html">[Cube Reloaded]</a><br>
+<a href="/iearobotics_site/wiki">IEA ROBOTICS</a>
+<address>
+<a HREF="../../index.html">Juan González</a>
+</address>
+</body>
+</html>
