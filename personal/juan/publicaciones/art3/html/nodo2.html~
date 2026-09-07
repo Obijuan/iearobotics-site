@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>JCRA 2003: Laboratorio Web para Prototipado y Verificaci&oacute;n
+de Sistemas Hardware/Software</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Linux)">
+	<meta name="author" content="Juan Gonzalez">
+	<META NAME="CREATED" CONTENT="20030709;18220000">
+	<META NAME="CHANGED" CONTENT="20031230;21215900">
+	<STYLE>
+	<!--
+		@page { size: 21cm 29.7cm; margin-left: 4cm; margin-right: 4cm; margin-top: 5cm; margin-bottom: 5cm }
+		P { text-indent: 0.4cm; margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: justify; widows: 2; orphans: 2 }
+		P.western { font-family: "Times", serif; font-size: 10pt; so-language: es-ES }
+		P.cjk { font-family: "Times New Roman", serif; font-size: 10pt }
+		P.ctl { font-family: "Times New Roman", serif; font-size: 10pt; so-language: ar-SA }
+		A:link { color: #0000ff }
+		A:visited { color: #800080 }
+		A.sdfootnotesym-western { font-size: 6pt }
+		A.sdfootnotesym-cjk { font-size: 6pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" TEXT="#000000" LINK="#0000ff" VLINK="#800080" DIR="LTR">
+
+
+Siguiente: <a href="nodo3.html">Introducción</a>. Anterior: <a href="nodo1.html">Contenido</a>
+<hr>
+
+<H2>Resumen</H2> 
+<p>
+En este trabajo
+se presenta un laboratorio <I>Web</I> basado en plataformas
+reconfigurables. El usuario s&oacute;lo necesita un ordenador
+personal con acceso a Web para implementar un prototipo de un sistema
+digital, siendo posible adem&aacute;s verificar su funcionamiento.<SPAN LANG="es-ES">
+El entorno permite trabajar en remoto con las herramientas de
+s&iacute;ntesis e implementaci&oacute;n de un dise&ntilde;o digital
+en un circuito FPGA desde una descripci&oacute;n VHDL. Tambi&eacute;n
+es posible la compilaci&oacute;n en remoto de c&oacute;digo fuente
+descrito en C para ser ejecutado en el procesador embebido de la
+plataforma.</SPAN> El laboratorio se ha probado con &eacute;xito para
+complementar los contenidos te&oacute;ricos de un curso de postgrado.
+Los experimentos incluyen la realizaci&oacute;n de sistemas
+especializados que involucran: el estudio de la interface de los
+componentes hardware espec&iacute;ficos y el procesador con el que
+intercambian datos, la verificaci&oacute;n de un prototipo de
+procesador implementado en FPGA y el desarrollo de m&oacute;dulos
+hardware para aplicaciones en rob&oacute;tica. En todos los casos el
+usuario consigue una implementaci&oacute;n de un prototipo del
+sistema completamente operativo para su utilizaci&oacute;n directa en
+aplicaciones pr&aacute;cticas.</P>
+
+<hr>
+Siguiente: <a href="nodo3.html">Introducción</a>. Anterior: <a href="nodo1.html">Contenido</a>
+

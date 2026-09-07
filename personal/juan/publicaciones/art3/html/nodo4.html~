@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>JCRA 2003: Laboratorio Web para Prototipado y Verificaci&oacute;n
+de Sistemas Hardware/Software</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Linux)">
+	<meta name="author" content="Juan Gonzalez">
+	<META NAME="CREATED" CONTENT="20030709;18220000">
+	<META NAME="CHANGED" CONTENT="20031230;21215900">
+	<STYLE>
+	<!--
+		@page { size: 21cm 29.7cm; margin-left: 4cm; margin-right: 4cm; margin-top: 5cm; margin-bottom: 5cm }
+		P { text-indent: 0.4cm; margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: justify; widows: 2; orphans: 2 }
+		P.western { font-family: "Times", serif; font-size: 10pt; so-language: es-ES }
+		P.cjk { font-family: "Times New Roman", serif; font-size: 10pt }
+		P.ctl { font-family: "Times New Roman", serif; font-size: 10pt; so-language: ar-SA }
+		A:link { color: #0000ff }
+		A:visited { color: #800080 }
+		A.sdfootnotesym-western { font-size: 6pt }
+		A.sdfootnotesym-cjk { font-size: 6pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" TEXT="#000000" LINK="#0000ff" VLINK="#800080" DIR="LTR">
+
+Siguiente: <a href="nodo5.html">3 Iniciación al codiseño con Labomatweb</a>. 
+Anterior: <a href="nodo3.html">1 Introducción</a>
+<hr>
+
+<P LANG="es-ES" STYLE="text-indent: 0cm; margin-top: 0.71cm; margin-bottom: 0.49cm; page-break-inside: avoid; page-break-after: avoid">
+<FONT SIZE=3><B>2   <SPAN LANG="es-ES">Un Laboratorio Web basado en
+plataformas reconfigurables</SPAN></B></FONT></P>
+<P LANG="es-ES" STYLE="text-indent: 0cm; margin-bottom: 0cm">El sitio
+Web desarrollado, http://www.ii.uam.es/~laboweb/LabWeb/index.php3,
+integra hasta el momento 2 plataformas reconfigurables de tipo
+Labomat3 [1] con una parte reconfigurable basada en circuitos FPGA y
+un procesador MC68360 embebido que permite la ejecuci&oacute;n de
+programas de usuario, desarrollados en lenguajes de alto nivel.</P>
+<P>Una
+descripci&oacute;n del resultado de la integraci&oacute;n de todo un
+conjunto de servicios para  permitir su operaci&oacute;n en remoto,
+consiguiendo que todos los recursos de la plataforma sean accesible
+desde un navegador Web, ya fue presentada en un trabajo previo [2].
+La soluci&oacute;n desarrollada est&aacute; basada en una
+arquitectura cliente-servidor que permite el funcionamiento en remoto
+del compilador de c&oacute;digo fuente para aplicaciones a ejecutar
+en el procesador embebido, la carga de m&oacute;dulos HW dise&ntilde;ados
+con las herramientas del fabricante en los recursos configurables y
+la monitorizaci&oacute;n del funcionamiento conjunto de la parte HW y
+SW del sistema. Adicionalmente como mejora respecto a la versi&oacute;n
+anterior, el entorno de trabajo integra la operaci&oacute;n en remoto
+de las herramientas de s&iacute;ntesis e implementaci&oacute;n de un
+dise&ntilde;o digital en un circuito FPGA desde una descripci&oacute;n
+VHDL.</P>
+<P><SPAN LANG="es-ES">La
+principal raz&oacute;n de la elecci&oacute;n para que Labomat3 sea
+parte integrante de laboratorio Web es su independencia, ya que
+dispone de su propio sistema operativo incluido con posibilidades de
+ejecuci&oacute;n multitarea de programas SW y resuelve el interfaz de
+comunicaci&oacute;n a trav&eacute;s de Internet. </SPAN>Otra raz&oacute;n
+que hace de esta plataforma un candidato para su integraci&oacute;n
+se debe a que los circuitos FPGA presentes en la misma, con el paso
+de los a&ntilde;os, van quedando sin soporte en las &uacute;ltimas
+versiones del fabricante. Esto hace que al instalar nuevas versiones
+de las herramientas de dise&ntilde;o, la plataforma deja de ser
+v&aacute;lida como destino del dise&ntilde;o final. No obstante es
+indudable que mantiene su vigencia para la mayor&iacute;a de las
+aplicaciones y en particular para su utilizaci&oacute;n docente. Esto
+se consigue solucionar sin demasiado coste de recursos ya que se
+puede mantener como servicios las diferentes versiones de los &uacute;tiles
+de dise&ntilde;o en el servidor o servidores web y se utilizan estos
+servicios de compilaci&oacute;n y s&iacute;ntesis de manera remota. 
+</P>
+<P>Se
+mantiene por tanto la filosof&iacute;a de los laboratorios web
+descritos en la introducci&oacute;n, de tal manera que el usuario
+final accede a todas la posibilidades de la plataforma reconfigurable
+con solo disponer de un navegador Web. 
+</P>
+
+<hr>
+Siguiente: <a href="nodo5.html">3 Iniciación al codiseño con Labomatweb</a>. 
+Anterior: <a href="nodo3.html">1 Introducción</a>
+</BODY>
+</HTML>

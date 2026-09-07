@@ -1,0 +1,19 @@
+Laboratorio Web para Prototipado y Verificación de Sistemas Hardware/Software  
+Gómez-Arribas F. J., González I., González J. y Martínez J.
+
+Resumen. En este trabajo se presenta un laboratorio Web basado en plataformas
+reconfigurables. El usuario sólo necesita un ordenador personal con acceso a
+Web para implementar un prototipo de un sistema digital, siendo posible además
+verificar su funcionamiento. El entorno permite trabajar en remoto con las
+herramientas de síntesis e implementación de un diseño digital en un circuito
+FPGA desde una descripción VHDL. También es posible la compilación en remoto
+de código fuente descrito en C para ser ejecutado en el procesador embebido de
+la plataforma. El laboratorio se ha probado con éxito para complementar los
+contenidos teóricos de un curso de postgrado. Los experimentos incluyen la
+realización de sistemas especializados que involucran: el estudio de la
+interface de los componentes hardware específicos y el procesador con el que
+intercambian datos, la verificación de un prototipo de procesador implementado
+en FPGA y el desarrollo de módulos hardware para aplicaciones en robótica. En
+todos los casos el usuario consigue una implementación de un prototipo del
+sistema completamente operativo para su utilización directa en aplicaciones
+prácticas.

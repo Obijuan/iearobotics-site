@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>JCRA 2003: Laboratorio Web para Prototipado y Verificaci&oacute;n
+de Sistemas Hardware/Software</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Linux)">
+	<meta name="author" content="Juan Gonzalez">
+	<META NAME="CREATED" CONTENT="20030709;18220000">
+	<META NAME="CHANGED" CONTENT="20031230;21215900">
+	<STYLE>
+	<!--
+		@page { size: 21cm 29.7cm; margin-left: 4cm; margin-right: 4cm; margin-top: 5cm; margin-bottom: 5cm }
+		P { text-indent: 0.4cm; margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: justify; widows: 2; orphans: 2 }
+		P.western { font-family: "Times", serif; font-size: 10pt; so-language: es-ES }
+		P.cjk { font-family: "Times New Roman", serif; font-size: 10pt }
+		P.ctl { font-family: "Times New Roman", serif; font-size: 10pt; so-language: ar-SA }
+		A:link { color: #0000ff }
+		A:visited { color: #800080 }
+		A.sdfootnotesym-western { font-size: 6pt }
+		A.sdfootnotesym-cjk { font-size: 6pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" TEXT="#000000" LINK="#0000ff" VLINK="#800080" DIR="LTR">
+
+Siguiente: <a href="nodo10.html">6 Conclusiones y trabajo futuro</a>. 
+Anterior: <a href="nodo8.html">4 Labo-micro: Entorno para verificar prototipos de procesadores</a>
+<hr>
+
+<P>
+<h2>5   Labobot: Prototipado de sistemas de control</h2></P>
+<P>El
+objetivo principal de la aplicaci&oacute;n Labobot es convertir la
+plataforma Labomat3 en un sistema de desarrollo para trabajar en
+rob&oacute;tica, y m&aacute;s concretamente aplicado al dise&ntilde;o
+de robots articulados. Para crear las articulaciones se emplean
+servomecanismos que se posicionan mediante se&ntilde;ales PWM de
+50Hz. Estas se&ntilde;ales de control se suelen generar con
+microcontroladores de 8 bits. Mediante una plataforma reconfigurable,
+como la tarjeta Labomat3, se pretende delegar esta tarea en un
+hardware espec&iacute;fico, liberando al microprocesador para
+realizar otros c&aacute;lculos de m&aacute;s alto nivel.</P>
+<P>Se propone
+como ejercicio el desarrollo un m&oacute;dulo en VHDL para la
+generaci&oacute;n de las se&ntilde;ales PWM para servos del tipo
+Futaba 3003. A trav&eacute;s de un interfaz, el software que se
+ejecuta en el microprocesador debe posicionar los servos. Mediante
+unas librer&iacute;as, el usuario debe poder controlar robots
+articulados sin tener que conocer los detalles de bajo nivel. Otro de
+los objetivos es optimizar el dise&ntilde;o hardware para determinar
+la cantidad m&aacute;ximo de servos que se pueden llegar a controlar,
+y as&iacute; conocer el n&uacute;mero m&aacute;ximo de articulaciones
+que pueden tener los robots dise&ntilde;ados.</P>
+<P>Como
+aplicaci&oacute;n pr&aacute;ctica, se controlan 4 servos que permiten
+a dos minic&aacute;maras describir una secuencia de movimiento fija.
+Las especificaciones que debe satisfacer el prototipo son: 
+</P>
+<P>- Las
+se&ntilde;ales de control de los servos son de 50Hz y una anchura del
+pulso comprendida entre 0.3 y 2.3ms (ver figura 2). Para su
+generaci&oacute;n se emplea la unidad de PWM mostrada en la figura 3.</P>
+<P>- El rango
+de movimiento del servo es de 180 grados. Se utilizan 8 bits para la
+posici&oacute;n, que est&aacute; comprendida entre los valores 31 (un
+extremo) y 236 (el otro extremo). La precisi&oacute;n es de 0.88
+grados.</P>
+<P>- La
+posici&oacute;n deseada se almacena en un registro y se compara con
+el valor de un contador que determina el tiempo que la se&ntilde;al
+PWM permanece a nivel alto. La se&ntilde;al de reloj del sistema debe
+ser de 102.4 KHZ.<FONT SIZE=2 STYLE="font-size: 9pt"> </FONT>
+</P>
+<P LANG="es-ES" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0cm">
+<FONT SIZE=2 STYLE="font-size: 9pt"><BR></FONT>
+<center>
+<IMG SRC="pwm.png" NAME="Imagen2" ALIGN=BOTTOM BORDER=0></P>
+</center>
+<P><BR>
+</P>
+<P><center><B>Fig 2.</B>
+Se&ntilde;ales PWM para controlar servos del tipo Futaba 3003</center></P>
+<P>
+<p><br>
+</p>
+<center>
+<IMG SRC="esquema_pwm2.png" NAME="Imagen3" ALIGN=BOTTOM BORDER=0>
+</center></P>
+<P>
+<center><B>Fig 3.</B> Esquema de una
+unidad PWM</center></P>
+<P>El
+hardware y software desarrollado se ha aplicado al control y
+posicionamiento de los servos de un sistema compuesto por dos
+minic&aacute;maras (ver figura 4). Cada una con dos grados de
+libertad. En el software hay una tabla de control que contiene las
+posiciones en las que situar los servos as&iacute; como el tiempo que
+deben permanecer en ellas. El programa recorre la tabla y cuando
+termina vuelve a comenzar desde el principio. Las c&aacute;maras
+describen una secuencia de movimiento que se repite   
+</P>
+<P>Como
+principal resultado obtenido cabe destacar que se ha dise&ntilde;ado
+el software y hardware m&iacute;nimo necesario para poder trabajar
+con robots articulados. El n&uacute;mero m&aacute;ximo de servos que
+se pueden conectar es de 28, lo que permite controlar robots bastante
+complejos. Se dispone del hardware en VHDL para la generaci&oacute;n
+de las se&ntilde;ales PWM y de las librer&iacute;as en C para
+permitir que el usuario pueda controlar los servos sin conocer los
+detalles de bajo nivel.</P>
+<P>Para
+trabajar remotamente a trav&eacute;s de la web con aplicaciones
+rob&oacute;ticas, el usuario necesita ver el robot para saber si se
+est&aacute; moviendo correctamente, y para ello se ha utilizado una
+webcam. Aunque el n&uacute;mero de im&aacute;genes no permite un
+seguimiento en tiempo real, si consigue dar una idea del correcto
+funcionamiento de la secuencia de movimientos. 
+</P>
+
+<hr>
+Siguiente: <a href="nodo10.html">6 Conclusiones y trabajo futuro</a>. 
+Anterior: <a href="nodo8.html">4 Labo-micro: Entorno para verificar prototipos de procesadores</a>
+
+</BODY>
+</HTML>

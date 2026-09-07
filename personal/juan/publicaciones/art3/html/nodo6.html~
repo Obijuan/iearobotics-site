@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>JCRA 2003: Laboratorio Web para Prototipado y Verificaci&oacute;n
+de Sistemas Hardware/Software</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Linux)">
+	<meta name="author" content="Juan Gonzalez">
+	<META NAME="CREATED" CONTENT="20030709;18220000">
+	<META NAME="CHANGED" CONTENT="20031230;21215900">
+	<STYLE>
+	<!--
+		@page { size: 21cm 29.7cm; margin-left: 4cm; margin-right: 4cm; margin-top: 5cm; margin-bottom: 5cm }
+		P { text-indent: 0.4cm; margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: justify; widows: 2; orphans: 2 }
+		P.western { font-family: "Times", serif; font-size: 10pt; so-language: es-ES }
+		P.cjk { font-family: "Times New Roman", serif; font-size: 10pt }
+		P.ctl { font-family: "Times New Roman", serif; font-size: 10pt; so-language: ar-SA }
+		A:link { color: #0000ff }
+		A:visited { color: #800080 }
+		A.sdfootnotesym-western { font-size: 6pt }
+		A.sdfootnotesym-cjk { font-size: 6pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" TEXT="#000000" LINK="#0000ff" VLINK="#800080" DIR="LTR">
+
+Siguiente: <a href="nodo7.html">3.2 Módulo coprocesador para multiplicación en coma flotante</a>. 
+Anterior: <a href="nodo5.html">3 Iniciación al codiseño con Labomatweb</a>
+<hr>
+
+<h3>3.1 Caracterizaci&oacute;n de los tiempos de acceso a los recursos
+		de la plataforma. </h3>
+
+<P LANG="es-ES" STYLE="text-indent: 0cm; margin-bottom: 0cm">Este
+ejercicio tiene como objetivo estudiar el tiempo empleado por el
+microprocesador para acceder a las distintas memorias disponibles en
+la plataforma y el acceso como perif&eacute;rico al dispositivo
+reconfigurable XC4013E, cuando realiza funciones de elemento de
+memoria. 
+</P>
+<P LANG="es-ES" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<CENTER>
+	<TABLE WIDTH=483 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=5 CELLSPACING=0 FRAME=HSIDES RULES=GROUPS>
+		<COL WIDTH=118>
+		<COL WIDTH=94>
+		<COL WIDTH=136>
+		<COL WIDTH=95>
+		<TBODY>
+			<TR VALIGN=TOP>
+				<TD WIDTH=118>
+					<P LANG="es-ES" ALIGN=LEFT STYLE="text-indent: 0cm">Tipo de 
+					Memoria</P>
+				</TD>
+				<TD WIDTH=94>
+					<P LANG="es-ES" ALIGN=CENTER STYLE="text-indent: 0cm">Ciclos
+					/operaci&oacute;n</P>
+				</TD>
+				<TD WIDTH=136>
+					<P LANG="es-ES" ALIGN=CENTER STYLE="text-indent: 0cm">Tiempo
+					(us)/operaci&oacute;n</P>
+				</TD>
+				<TD WIDTH=95>
+					<P LANG="es-ES" ALIGN=CENTER STYLE="text-indent: 0cm">Valor
+					relativo</P>
+				</TD>
+			</TR>
+		</TBODY>
+		<TBODY>
+			<TR VALIGN=TOP>
+				<TD WIDTH=118>
+					<P LANG="es-ES" ALIGN=LEFT STYLE="text-indent: 0cm">DRAM</P>
+				</TD>
+				<TD WIDTH=94>
+					<P LANG="es-ES" ALIGN=CENTER STYLE="text-indent: 0cm">2.5</P>
+				</TD>
+				<TD WIDTH=136>
+					<P LANG="es-ES" ALIGN=CENTER STYLE="text-indent: 0cm">0.1</P>
+				</TD>
+				<TD WIDTH=95>
+					<P LANG="es-ES" ALIGN=CENTER STYLE="text-indent: 0cm">1 
+					</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=118>
+					<P LANG="es-ES" ALIGN=LEFT STYLE="text-indent: 0cm">4KB DPSRAM</P>
+				</TD>
+				<TD WIDTH=94>
+					<P LANG="es-ES" ALIGN=CENTER STYLE="text-indent: 0cm">24</P>
+				</TD>
+				<TD WIDTH=136>
+					<P LANG="es-ES" ALIGN=CENTER STYLE="text-indent: 0cm">0.9</P>
+				</TD>
+				<TD WIDTH=95>
+					<P LANG="es-ES" ALIGN=CENTER STYLE="text-indent: 0cm">9</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=118>
+					<P LANG="es-ES" ALIGN=LEFT STYLE="text-indent: 0cm">Registros en
+					 FPGA</P>
+				</TD>
+				<TD WIDTH=94>
+					<P LANG="es-ES" ALIGN=CENTER STYLE="text-indent: 0cm">10</P>
+				</TD>
+				<TD WIDTH=136>
+					<P LANG="es-ES" ALIGN=CENTER STYLE="text-indent: 0cm">0.4</P>
+				</TD>
+				<TD WIDTH=95>
+					<P LANG="es-ES" ALIGN=CENTER STYLE="text-indent: 0cm">4</P>
+				</TD>
+			</TR>
+		</TBODY>
+	</TABLE>
+</CENTER>
+<P LANG="de-DE" STYLE="text-indent: 0cm; margin-top: 0.14cm; page-break-inside: avoid; page-break-after: avoid">
+<FONT SIZE=2 STYLE="font-size: 9pt"><B>Tabla 1.</B> Tiempo medio de
+un acceso 32 bit a memoria tanto en lectura como en escritura</FONT></P>
+<P>Para
+llevar a cabo este experimento se sugiere implementar en la FPGA un
+contador con el objetivo de almacenar el n&uacute;mero de ciclos de
+reloj empleados en la operaci&oacute;n de escritura o lectura del
+dispositivo que se elija como elemento de memoria. En la FPGA como
+elemento de almacenamiento se a&ntilde;aden un par de registros en
+l&oacute;gica reconfigurable, a los que se puede acceder como
+perif&eacute;rico del procesador. Se propone realizar tres pruebas
+considerando los accesos de lectura y escritura para cada tipo de
+memoria: DRAM, DPSRAM y FPGA. Como datos de entrada, el programa de
+usuario permite seleccionar el n&uacute;mero de operaciones de acceso
+a realizar y el tipo de operaci&oacute;n, es decir, si se trata de
+lecturas o escrituras. El funcionamiento del programa consta de los
+siguientes pasos: activaci&oacute;n del contador, realizaci&oacute;n
+el n&uacute;mero de operaciones indicadas y parada del contador. El
+usuario recibe como informaci&oacute;n el n&uacute;mero de ciclos de
+reloj empleados en ejecutar todas las operaciones, almacenado en el
+contador, y su valor medio. En la tabla 1 se muestran los resultados
+obtenidos para los diferentes recursos disponibles en la plataforma
+Labomat3. Los valores medios coinciden para las operaciones de
+lectura y escritura considerando un n&uacute;mero de accesos
+suficientemente grande. A partir de estos valores, se debe estimar en
+los siguientes ejercicios la penalizaci&oacute;n en rendimiento de
+los distintos dise&ntilde;os cuando se realicen con m&oacute;dulos
+hardware que intercambian datos con el procesador, y tambi&eacute;n
+se debe evaluar el coste en t&eacute;rminos de rendimiento de las
+operaciones de acceso a memoria.</P>
+
+<hr>
+Siguiente: <a href="nodo7.html">3.2 Módulo coprocesador para multiplicación en coma flotante</a>. 
+Anterior: <a href="nodo5.html">3 Iniciación al codiseño con Labomatweb</a>
+
+
+
+</BODY>
+</HTML>

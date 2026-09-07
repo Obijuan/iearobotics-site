@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>JCRA 2003: Laboratorio Web para Prototipado y Verificaci&oacute;n
+de Sistemas Hardware/Software</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Linux)">
+	<meta name="author" content="Juan Gonzalez">
+	<META NAME="CREATED" CONTENT="20030709;18220000">
+	<META NAME="CHANGED" CONTENT="20031230;21215900">
+	<STYLE>
+	<!--
+		@page { size: 21cm 29.7cm; margin-left: 4cm; margin-right: 4cm; margin-top: 5cm; margin-bottom: 5cm }
+		P { text-indent: 0.4cm; margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: justify; widows: 2; orphans: 2 }
+		P.western { font-family: "Times", serif; font-size: 10pt; so-language: es-ES }
+		P.cjk { font-family: "Times New Roman", serif; font-size: 10pt }
+		P.ctl { font-family: "Times New Roman", serif; font-size: 10pt; so-language: ar-SA }
+		A:link { color: #0000ff }
+		A:visited { color: #800080 }
+		A.sdfootnotesym-western { font-size: 6pt }
+		A.sdfootnotesym-cjk { font-size: 6pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" TEXT="#000000" LINK="#0000ff" VLINK="#800080" DIR="LTR">
+
+Siguiente: <a href="nodo4.html">2 Un Laboratorio Web basado en plataformas reconfigurables</a>. 
+Anterior: <a href="nodo2.html">Resumen</a>
+<hr>
+
+<P LANG="es-ES" STYLE="text-indent: 0cm; margin-top: 0.71cm; margin-bottom: 0.49cm; page-break-inside: avoid; page-break-after: avoid">
+<H2>1   Introducci&oacute;n</B></H2</P>
+<P LANG="es-ES" STYLE="text-indent: 0cm; margin-bottom: 0cm">La gran
+difusi&oacute;n alcanzada por Internet y la evoluci&oacute;n de las
+tecnolog&iacute;as para el desarrollo de aplicaciones <I>Web</I> ha
+hecho viable que un laboratorio experimental accesible en remoto a
+trav&eacute;s de <I>Internet</I> sea un complemento ideal para el
+aprendizaje a distancia en materias con un fuerte componente
+pr&aacute;ctico. Un laboratorio <I>Web</I> no pretende sustituir de
+ning&uacute;n modo las pr&aacute;cticas de laboratorio <I>in situ,</I>
+que siguen siendo imprescindible en los cursos de ingenier&iacute;a y
+ciencias, sino mas bien descongestionar el laboratorio presencial y
+ofrecer experimentos adicionales. Otra ventaja radica en ofrecer una
+nueva perspectiva de ense&ntilde;anza tanto a profesores como a los
+alumnos, ya que las pr&aacute;cticas se pueden realizar con un
+horario de trabajo personalizado por cada alumno, promovi&eacute;ndose
+de esta manera la responsabilidad en la organizaci&oacute;n del
+estudio y favoreciendo el autoaprendizaje. Las pr&aacute;cticas
+elegidas para este tipo de laboratorio pueden ser muy variadas. En
+este trabajo se propone la utilizaci&oacute;n de una plataforma
+reconfigurable accesible a trav&eacute;s de un navegador Web para
+prototipar dise&ntilde;os digitales y verificar su funcionamiento. 
+</P>
+<P>El
+prototipado es una t&eacute;cnica de uso com&uacute;n en todas las
+ingenier&iacute;as cuando los desarrollos son complejos, laboriosos y
+caros, o no est&aacute;n completamente especificados. Centr&aacute;ndonos
+en los dominios de aplicaci&oacute;n de los sistemas digitales, un
+prototipo permite evaluar la viabilidad de diferentes soluciones
+propuestas para un problema. Pueden plantearse subsistemas formados
+por m&oacute;dulos <I>hardware</I> espec&iacute;ficos, o por m&oacute;dulos
+programables que se adapten mediante software a la funcionalidad de
+las especificaciones. Un ejemplo de sistema digital que baraja ambas
+aproximaciones son los sistemas embebidos, formados por un procesador
+y circuitos FPGA. Desarrollando un prototipo en estas plataformas, se
+puede estudiar las ventajas de una soluci&oacute;n completamente
+<I>hardware</I> frente a otra puramente <I>softwar</I>e en t&eacute;rminos
+de dificultad de dise&ntilde;o, recursos necesarios, tiempo de
+implementaci&oacute;n, escalabilidad del dise&ntilde;o y adaptaci&oacute;n
+al problema. Tambi&eacute;n se puede comparar con  una soluci&oacute;n
+heterog&eacute;nea basadas en codise&ntilde;o <I>hardware-software</I>,
+siendo importante en este caso evaluar la interfaz entre ambas
+partes.</P>
+<P>Las nuevas
+herramientas de dise&ntilde;o de circuitos digitales y los lenguajes
+de descripci&oacute;n de hardware, como por ejemplo VHDL y Handel-C,
+aproximan cada vez m&aacute;s la manera de dise&ntilde;ar a la
+programaci&oacute;n. Aunque estas herramientas suelen utilizarse de
+manera interactiva, nada impide su operaci&oacute;n en remoto ya que
+dise&ntilde;ar se basa en la correcta escritura de un c&oacute;digo
+fuente de igual manera que en la programaci&oacute;n tradicional, y
+por tanto solo se necesita para integrar su funcionamiento en un
+laboratorio Web controlar el env&iacute;o de los ficheros de
+descripci&oacute;n del circuito y la devoluci&oacute;n de errores de
+manera remota. En un laboratorio de sistemas digitales, este tipo de
+experimentos hab&iacute;an sido considerados hasta ahora
+impracticables para su realizaci&oacute;n remota y en t&eacute;rminos
+docentes eran inviables para un aprendizaje a distancia. <SPAN LANG="es-ES">En
+este trabajo se presenta un sitio Web, junto con un conjunto de
+servicios y utilidades asociadas, que permiten el empleo en remoto de
+los recursos disponibles en la plataforma reconfigurable Labomat3 y
+se muestra de una manera pr&aacute;ctica como se han realizado
+prototipos de sistemas digitales para complementar los contenidos de
+un curso de postgrado que trata sobre prototipado r&aacute;pido de
+sistemas digitales y t&eacute;cnicas de codise&ntilde;o.</SPAN></P>
+
+<hr>
+Siguiente: <a href="nodo4.html">2 Un Laboratorio Web basado en plataformas reconfigurables</a>. 
+Anterior: <a href="nodo2.html">Resumen</a>
+
+
+</BODY>
+</HTML>

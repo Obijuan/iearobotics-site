@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>JCRA 2003: Laboratorio Web para Prototipado y Verificaci&oacute;n
+de Sistemas Hardware/Software</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Linux)">
+	<meta name="author" content="Juan Gonzalez">
+	<META NAME="CREATED" CONTENT="20030709;18220000">
+	<META NAME="CHANGED" CONTENT="20031230;21215900">
+	<STYLE>
+	<!--
+		@page { size: 21cm 29.7cm; margin-left: 4cm; margin-right: 4cm; margin-top: 5cm; margin-bottom: 5cm }
+		P { text-indent: 0.4cm; margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: justify; widows: 2; orphans: 2 }
+		P.western { font-family: "Times", serif; font-size: 10pt; so-language: es-ES }
+		P.cjk { font-family: "Times New Roman", serif; font-size: 10pt }
+		P.ctl { font-family: "Times New Roman", serif; font-size: 10pt; so-language: ar-SA }
+		A:link { color: #0000ff }
+		A:visited { color: #800080 }
+		A.sdfootnotesym-western { font-size: 6pt }
+		A.sdfootnotesym-cjk { font-size: 6pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" TEXT="#000000" LINK="#0000ff" VLINK="#800080" DIR="LTR">
+
+Siguiente: <a href="nodo9.html">5 Labobot: Prototipado de sistemas de control</a>. 
+Anterior: <a href="nodo7.html">3.2 Módulo coprocesador para multiplicación en coma flotante</a>
+<hr>
+
+<h2>4 Labo-micro: Entorno para verificar prototipos de
+	&mu;procesadores</h2>
+	
+<P LANG="es-ES" STYLE="text-indent: 0cm; margin-bottom: 0cm">El
+entorno Labo-micro es una de las aplicaciones m&aacute;s interesantes
+que se pueden plantear en este tipo de plataformas: la verificaci&oacute;n
+del dise&ntilde;o de un &mu;procesador dise&ntilde;ado en VHDL e
+implementado en una FPGA. Para ello se utiliza un  microcontrolador,
+concretamente el MC68360 embebido en la plataforma. Para facilitar la
+tarea de test se fijan las siguientes especificaciones: el
+&mu;procesador experimental se basa en una arquitectura Hardvard y
+para implementar la memoria se utiliza la DPSRAM disponible en la
+plataforma que al mismo tiempo es accesible por el microprocesador
+embebido. Con ellos se permite conocer en todo momento el contenido
+de las distintas memorias que maneja el &mu;procesador a verificar.
+Por simplicidad conviene dividir los 4KB de DPSRAM en dos mitades de
+2KB, una para la memoria de datos y otra para la memoria de programa.</P>
+<P LANG="es-ES" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="es-ES" CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="./62-Gomez-Arribas et al _html_56a8a4a3.png" NAME="Imagen1" ALIGN=BOTTOM BORDER=0></P>
+<P LANG="es-ES" ALIGN=CENTER STYLE="text-indent: 0cm; margin-top: 0.21cm; margin-bottom: 0.42cm; page-break-inside: avoid; page-break-after: avoid">
+<FONT SIZE=2 STYLE="font-size: 9pt"><center><B>Fig 1.</B> Entorno de
+verificaci&oacute;n de microprocesadores implementados en FPGA.</center></FONT></P>
+<P>La
+secuencia de operaciones a realizar una vez dise&ntilde;ado el
+prototipo es la siguiente:</P>
+<P>-     
+Cargar el dise&ntilde;o reconfigurando remotamente en la FPGA.</P>
+<UL>
+	<LI><P>
+	Desarrollar un programa de test para ejecutarlo en el
+	microcontrolador embebido que realice la carga de la DPSRAM con los
+	valores correspondientes a la memoria de datos y de instrucciones
+	que utiliza el procesador que va a ser verificado.</P>
+	<LI><P>
+	Controlar la se&ntilde;al de reset y de reloj correspondientes al
+	&mu;procesador implementado en la FPGA y generar la se&ntilde;al de
+	reloj paso a paso.</P>
+	<LI><P>
+	Comprobar los resultados de la ejecuci&oacute;n del c&oacute;digo a
+	trav&eacute;s de los valores que se modifican de la memoria de datos
+	implementada en la memoria de doble puerto 
+	</P>
+</UL>
+<P>
+</P>
+<P>Estas opciones son
+accesibles mediante un men&uacute; y en la figura 1 se presenta el
+resultado mostrado remotamente en un applet despu&eacute;s de
+realizar la secuencia que produce un reset al &mu;procesador, ejecuta
+paso a paso un programa que suma los valores de las dos primeras
+posiciones de memoria, y almacena el resultado en la siguiente
+posici&oacute;n. El programa de test es una aplicaci&oacute;n en modo
+texto muy efectiva aunque poco intuitiva. Para una descripci&oacute;n
+mas detallada del &mu;procesador implementado y del interfaz de
+control, el enunciado del ejercicio y la descripci&oacute;n del
+interfaz de control se encuentra en la pagina Web [3] y en la
+referencia [4].</P>
+
+<hr>
+Siguiente: <a href="nodo9.html">5 Labobot: Prototipado de sistemas de control</a>. 
+Anterior: <a href="nodo7.html">3.2 Módulo coprocesador para multiplicación en coma flotante</a>
+
+
+</BODY>
+</HTML>

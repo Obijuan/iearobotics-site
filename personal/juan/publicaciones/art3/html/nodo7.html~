@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>JCRA 2003: Laboratorio Web para Prototipado y Verificaci&oacute;n
+de Sistemas Hardware/Software</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Linux)">
+	<meta name="author" content="Juan Gonzalez">
+	<META NAME="CREATED" CONTENT="20030709;18220000">
+	<META NAME="CHANGED" CONTENT="20031230;21215900">
+	<STYLE>
+	<!--
+		@page { size: 21cm 29.7cm; margin-left: 4cm; margin-right: 4cm; margin-top: 5cm; margin-bottom: 5cm }
+		P { text-indent: 0.4cm; margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: justify; widows: 2; orphans: 2 }
+		P.western { font-family: "Times", serif; font-size: 10pt; so-language: es-ES }
+		P.cjk { font-family: "Times New Roman", serif; font-size: 10pt }
+		P.ctl { font-family: "Times New Roman", serif; font-size: 10pt; so-language: ar-SA }
+		A:link { color: #0000ff }
+		A:visited { color: #800080 }
+		A.sdfootnotesym-western { font-size: 6pt }
+		A.sdfootnotesym-cjk { font-size: 6pt }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" TEXT="#000000" LINK="#0000ff" VLINK="#800080" DIR="LTR">
+
+Siguiente: <a href="nodo8.html">4 Labo-micro: Entorno para verificar prototipos de procesadores</a>. 
+Anterior: <a href="nodo6.html">3.1 Caracterización de los tiempos de acceso a los recursos de la plataforma</a>
+<hr>
+
+<P LANG="es-ES" STYLE="text-indent: 0cm; margin-top: 0.28cm; page-break-inside: avoid; page-break-after: avoid">
+<B>3.2    M&oacute;dulo coprocesador para multiplicaci&oacute;n en
+coma flotante</B></P>
+<P LANG="es-ES" STYLE="text-indent: 0cm; margin-bottom: 0cm">El
+primer prototipo que se propone para verificar su operatividad es una
+versi&oacute;n simplificada de un coprocesador que realice una
+operaci&oacute;n de multiplicaci&oacute;n en coma flotante y
+complemente el juego de instrucciones del procesador MC68360. Se
+propone un formato de n&uacute;meros en coma flotante de 16 bits
+simplificado y el multiplicador recibe dos operandos como entrada en
+un registro. El dise&ntilde;o es completamente combinacional, y debe
+estar dividido en varios bloques que operen en paralelo implementados
+en la FPGA XC4013E para realizar las siguientes funciones:</P>
+<UL>
+	<LI><P LANG="es-ES" STYLE="text-indent: 0cm; margin-bottom: 0cm">Normalizaci&oacute;n
+	de las entradas: ambos operandos necesitan ser normalizados.</P>
+	<LI><P LANG="es-ES" STYLE="text-indent: 0cm; margin-bottom: 0cm">Multiplicaci&oacute;n
+	de mantisas: el resultado de la multiplicaci&oacute;n de mantisas
+	(cada una de 10 bits) se guarda en un registro de 20 bits, con lo
+	que no se produce <I>overflow.</I></P>
+	<LI><P LANG="es-ES" STYLE="text-indent: 0cm; margin-bottom: 0cm">Suma
+	de exponentes: los exponentes ya normalizados de cada uno de los
+	operandos se sumar&aacute;n en un registro de 4 bits, aunque
+	finalmente pasar&aacute;n a uno de 5 bits, por el posible carry de
+	la suma.&nbsp; 
+	</P>
+	<LI><P LANG="es-ES" STYLE="text-indent: 0cm; margin-bottom: 0cm">C&aacute;lculo
+	del signo: el signo se calcular&aacute; simplemente haciendo un XOR
+	de la posici&oacute;n 15 de las entradas, y ser&aacute; guardado en
+	la salida.&nbsp; 
+	</P>
+	<LI><P LANG="es-ES" STYLE="text-indent: 0cm; margin-bottom: 0cm">Normalizaci&oacute;n
+	de la salida. 
+	</P>
+</UL>
+<P LANG="es-ES" CLASS="western" STYLE="margin-bottom: 0cm">El
+programa de verificaci&oacute;n que se ejecuta en el microprocesador
+consta de un bucle principal que solicita al usuario los dos
+operandos de entrada, los env&iacute;a al multiplicador, lee el
+resultado y lo muestra al usuario. Para la verificaci&oacute;n del
+correcto funcionamiento se compara tambi&eacute;n con el resultado de
+un programa codificado en lenguaje C, que implementa el algoritmo de
+multiplicaci&oacute;n de dos n&uacute;meros en como flotante.</P>
+
+<hr>
+Siguiente: <a href="nodo8.html">4 Labo-micro: Entorno para verificar prototipos de procesadores</a>. 
+Anterior: <a href="nodo6.html">3.1 Caracterización de los tiempos de acceso a los recursos de la plataforma</a>
+
+
+</BODY>
+</HTML>
