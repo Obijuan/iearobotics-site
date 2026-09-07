@@ -1,0 +1,357 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>&rdquo;Locomotion of a Modular Worm-like Robot using a FPGA-based embedded MicroBlaze Soft-processor&quot;, CLAWAR 2004.CSIC. Septiembre-2004</TITLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER>&rdquo;<B><FONT FACE="Arial, sans-serif">Locomotion
+				of a Modular Worm-like Robot using a FPGA-based embedded
+				MicroBlaze Soft-processor&rdquo;. CLAWAR 2004. CSIC.
+				Septiembre-2004</FONT></B></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<DL>
+	<DD>
+	<TABLE WIDTH=796 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=397>
+		<COL WIDTH=383>
+		<THEAD>
+			<TR VALIGN=TOP>
+				<TD WIDTH=397>
+					<P ALIGN=CENTER><IMG SRC="images/cube-rev1-peq.png" NAME="Imagen9" ALIGN=MIDDLE WIDTH=320 HEIGHT=240 BORDER=0></P>
+				</TD>
+				<TD WIDTH=383>
+					<P ALIGN=CENTER><IMG SRC="images/javi-alejandro-juan.png" NAME="Imagen17" ALIGN=MIDDLE WIDTH=320 HEIGHT=240 BORDER=0></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</DL>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<UL>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>T&iacute;tulo</B>:
+	&ldquo;Locomotion of a Modular Worm-like Robot using a FPGA-based
+	embedded MicroBlaze Soft-processor&rdquo;</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Actividad</B>:
+	Exposici&oacute;n del art&iacute;culo con el mismo nombre. <A HREF="../../publicaciones/art8/index.html">Art&iacute;culo
+	disponible aqu&iacute;</A>.</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Duraci&oacute;n</B>:
+	15 minutos</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Evento</B>:
+	7th International Conference on Climbing and Walking Robots, </FONT><A HREF="http://www.iai.csic.es/clawar04/"><FONT FACE="Arial, sans-serif">CLAWAR
+	2004</FONT></A><FONT FACE="Arial, sans-serif">. </FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Organiza</B>:Instituto
+	de autom&aacute;tica industrial, CSIC</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Lugar</B>:
+	CSIC, Madrid.</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Fecha</B>:
+	22 de Septiembre de 2004</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Ponentes</B>:
+	</FONT></FONT>
+	</P>
+	<UL>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><A HREF="http://www.iearobotics.com/personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+		Gonz&aacute;lez G&oacute;mez</FONT></FONT></A> <FONT SIZE=2>(</FONT><A HREF="http://www.eps.uam.es/"><FONT SIZE=2>Escuela
+		Polit&eacute;cnica Superior</FONT></A><FONT SIZE=2>, UAM)</FONT></FONT></P>
+	</UL>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/clawarito.png" NAME="Imagen12" ALIGN=MIDDLE WIDTH=167 HEIGHT=155 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2><FONT SIZE=5>Resumen</FONT></H2>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2><I>Modular
+reconfigurable robots offer the promise of more versatility,
+robustness, and low cost. They are composed of simple and small
+modules, capable of attach and detach one to each other. In this
+paper, a modular worm-like robot composed of a chain of 8 similar
+modules is presented. A travelling wave, that moves from the tail to
+the head, propels the robot forward. The positions of the
+articulations are calculated using the following parameters:
+waveform, amplitude, and wavelength. Instead of a conventional
+architecture, a FPGA-based softprocessor core is utilized. It
+includes a set of custom peripheral cores, written in VHDL. FPGAs
+make modular robots more versatile, adding some new featureas to the
+design of robots like reconfigurable control, hardware reuse, lower
+cost, fault-recovering, and software/hardware co-design.</I></FONT></FONT></P>
+<HR>
+<H2>Download 
+</H2>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=753 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+			<COL WIDTH=745>
+			<TR>
+				<TD WIDTH=745>
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Descargas</B></FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+		<DD>
+		<TABLE WIDTH=753 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=329>
+			<COL WIDTH=416>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=329 BGCOLOR="#ccccff">
+					<P><A HREF="../../publicaciones/art8/pres-cube-rev.sxi"><FONT SIZE=2><FONT FACE="Arial, sans-serif">pres-cube-rev.sxi</FONT></FONT></A>
+					<FONT SIZE=2><FONT FACE="Arial, sans-serif">(1,4 MB)</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=416 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Presentaci&oacute;n
+					para OpenOffice 1.1.3</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=329>
+					<P><A HREF="../../publicaciones/art8/pres-cube-rev.pdf"><FONT SIZE=2><FONT FACE="Arial, sans-serif">pres-cube-rev.pdf</FONT></FONT></A>
+					<FONT SIZE=2><FONT FACE="Arial, sans-serif">(600KB)</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=416>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Presentaci&oacute;n
+					en PDF</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=329 BGCOLOR="#ccccff">
+					<P><A HREF="../../publicaciones/art8/cube-clawar04.pdf"><FONT SIZE=2><FONT FACE="Arial, sans-serif">cube-clawar04.pdf</FONT></FONT></A>
+					(150KB)</P>
+				</TD>
+				<TD WIDTH=416 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Art&iacute;culo
+					en PDF</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=329>
+					<P><A HREF="../../publicaciones/art8/cube-clawar04.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">cube-clawar04.tgz</FONT></FONT></A>
+					(1.4MB)</P>
+				</TD>
+				<TD WIDTH=416>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Fuentes del
+					art&iacute;culo para Lyx (Dibujos en Xfig)</FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2>Licencia</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Se condecen permisos
+para usar, modificar y/o distribuir esta presentaci&oacute;n, siempre
+que se mantenga esta nota.</FONT></FONT></P>
+<HR>
+<H2><A NAME="alimentacion"></A>Informaci&oacute;n adicional</H2>
+<UL>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Art&iacute;culo
+	completo: [<A HREF="../../publicaciones/art8/cube-clawar04.pdf">PDF</A>]
+	[<A HREF="../../publicaciones/art8/html/index.html">HTML</A>] [<A HREF="../../publicaciones/art8/index.html">M&aacute;s
+	informaci&oacute;n</A>]</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Las
+	<A HREF="../../publicaciones/art8/html/node12.html">referencias del
+	art&iacute;culo</A></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Robot
+	<A HREF="../../doctorado/cube-revolutions/index.html"><SPAN STYLE="font-weight: medium"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cube
+	Revolutions</FONT></FONT></SPAN></A></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><A HREF="../../doctorado/Modulos-Y1/modulos-y1.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">M&oacute;dulos
+	Y1</FONT></FONT></A></P>
+</UL>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Robot &aacute;podo
+	</FONT><A HREF="../../doctorado/cube-reloaded"><FONT SIZE=2>Cube
+	Reloaded</FONT></A> <FONT SIZE=2>(Versi&oacute;n anterior a Cube
+	Revolutions)</FONT></FONT></P>
+</UL>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Aplicaci&oacute;n
+	libre </FONT><A HREF="http://www.ribbonsoft.com/qcad.html"><FONT SIZE=2>QCAD</FONT></A><FONT SIZE=2>,
+	para dise&ntilde;o en 2D. Disponible en </FONT><A HREF="http://www.debian.org/"><FONT SIZE=2>Debian</FONT></A>
+	<FONT SIZE=2>(apt-get install qcad)</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Aplicaci&oacute;n
+	libre </FONT><A HREF="http://www.blender3d.com/cms/Home.2.0.html"><FONT SIZE=2>Blender</FONT></A><FONT SIZE=2>,
+	para dise&ntilde;o en 3D. Disponible en </FONT><A HREF="http://www.debian.org/"><FONT SIZE=2>Debian</FONT></A>
+	<FONT SIZE=2>(apt-get install blender)</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Librer&iacute;as
+	gr&aacute;ficas </FONT><A HREF="http://www.gtk.org/"><FONT SIZE=2>GTK</FONT></A></FONT></P>
+</UL>
+<HR>
+<H2><A NAME="historia"></A>Cuaderno de bit&aacute;cora 
+</H2>
+<P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">El
+<A HREF="http://www.iai.csic.es/clawar04/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">CLAWAR</FONT></FONT></A>
+fue el primer congreso internacional de Rob&oacute;tica al que he
+asistido. Por ello, estaba muy nervioso. Adem&aacute;s era en Ingl&eacute;s
+y yo nunca hab&iacute;a hablado en Ingl&eacute;s en p&uacute;blico.
+&iexcl;&iexcl;Ten&iacute;a que exponer mi art&iacute;culo al resto de
+cient&iacute;ficos!!, estaba aterrorizado. Tuve la suerte de que se
+celebr&oacute; en Madrid y adem&aacute;s asistieron <A HREF="http://jdlope.tripod.com/index.html">Javier
+de Lope</A> y <A HREF="http://www.mundobot.com/"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Alejandro
+Alonso </FONT></FONT></A>, por lo que me sent&iacute; mucho m&aacute;s
+arropado. Al menos tendr&iacute;a a algui&eacute;n con quien hablar
+en Espa&ntilde;ol ;-)</FONT></FONT></P>
+<P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">El
+congreso comenz&oacute; el mi&eacute;rcoles 22 de septiembre, a las 9
+de la ma&ntilde;ana, pero yo desde las 8:15 ya estaba por all&iacute;,
+para irme familiarizando. La primera persona con la que me encontr&eacute;
+fue con </FONT></FONT><TT><B><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Houxiang
+Zhang</FONT></FONT></B></TT><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">,
+un investigador Chino que actualmente est&aacute; en la <A HREF="http://www.uni-hamburg.de/index_e.html">Universidad
+de Hamburgo</A>. Era la primera vez que ven&iacute;a a Espa&ntilde;a.
+Empezamos a hablar (chapurreando ingl&eacute;s por mi parte, claro) y
+al final nos hicimos muy amigos. Acabamos el Viernes 24 tapeando por
+la zona centro de Madrid :-)</FONT></FONT></P>
+<P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">El
+primer d&iacute;a hubo demostraciones. Llev&eacute; a <A HREF="../../doctorado/cube-revolutions/index.html"><SPAN STYLE="font-weight: medium"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cube
+Revolutions</FONT></FONT></SPAN></A> y lo mostr&eacute; a los
+asistentes. Fue bastante distendido porque era la hora del caf&eacute;
+y hab&iacute;a otras demostraciones, en ellas, el robot hex&aacute;podo
+<A HREF="http://www.mundobot.com/projects/melanie/v3/spmelanie3.htm">Melanie
+III</A> de <A HREF="http://www.mundobot.com/"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Alejandro
+Alonso</FONT></FONT></A>. Justo cuando estaba haciendo algunas
+demostraciones, aparecieron por sorpresa los medios de comunicaci&oacute;n
+y me sacaron en el informativo de Tele-5 de por la noche y en el del
+d&iacute;a siguiente por la ma&ntilde;ana :-)</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<THEAD>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/demo1.jpg" NAME="Imagen1" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+			<TD WIDTH=50%>
+				<P><IMG SRC="images/juan-tv.jpg" NAME="Imagen2" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Las
+ponencias se daban en paralelo en tres salas. En las fotos de abajo
+se ve la sala principal. &iexcl;&iexcl;Menos mal que a m&iacute; no
+me toc&oacute; hablar en ella!!!</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<THEAD>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/sala-grande1.jpg" NAME="Imagen3" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/sala-grande2.jpg" NAME="Imagen4" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">El
+jueves por la noche tuvimos la cena de gala en el Casino de Madrid.
+En la foto de la izquierda estamos Houxiang, Alejandro, Juan y un
+estudiante alem&aacute;n que no recuerdo el nombre :-(</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=50% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/cena-gala1.jpg" NAME="Imagen5" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/cena-gala2.jpg" NAME="Imagen6" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Durante
+el congreso pudimos conocer a mucha gente y hacernos fotos con muchos
+robots :-). En la foto de la izquierda estamos delante de un robot
+caminante (no recuerdo el nombre) que anda como si fuese una persona
+con muletas. Algo curios&iacute;simo. En la foto estamos Alejadro,
+Martijn Wise (el dise&ntilde;ador del robot), Nera Gonz&aacute;lez,
+una estudiante de Industriales muy interesada en la rob&oacute;tica,
+el profesor Javier de Lope y yo. En la foto de la derecha estoy
+posando delante de <B>RoboClimber</B>.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<THEAD>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/otras1.jpg" NAME="Imagen7" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/otras2.jpg" NAME="Imagen8" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">...Y
+el viernes lleg&oacute; el d&iacute;a de mi charla... Intent&eacute;
+hacerlo lo mejor que pude, pero los nervios no los pod&iacute;a
+controlar. Espero hacerlo mejor la pr&oacute;xima vez ;-). En la foto
+de la izquierda estoy junto a Houxiang. Nos hicimos muy amigos y sigo
+manteniendo contacto con &eacute;l. Me est&aacute; ayudando mucho con
+mi tesis, d&aacute;ndome consejos muy &uacute;tiles.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/charla-cube.jpg" NAME="Imagen10" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+			<TD WIDTH=50% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/houxiang-juan.jpg" NAME="Imagen11" ALIGN=MIDDLE WIDTH=300 HEIGHT=400 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2><A NAME="todo"></A>Agradecimientos</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">A
+	<A HREF="http://www.mundobot.com/"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Alejandro
+	Alonso</FONT></FONT></A> por las fotos.</FONT></FONT></P>
+</UL>
+<HR>
+<H2><A NAME="noticias"></A>Noticias</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>1/Enero/2005:
+	</B><SPAN STYLE="font-weight: medium">A&ntilde;adido enlace a </SPAN><A HREF="../../doctorado/cube-revolutions/index.html"><SPAN STYLE="font-weight: medium"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cube
+	Revolutions</FONT></FONT></SPAN></A></FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>11/Mayo/2005</B>:
+	Publicada informaci&oacute;n en esta web. Con mucho retraso, lo se
+	;-)</FONT></FONT></P>
+</UL>
+
+<hr>
+<p STYLE="margin-bottom: 0cm"><a href="../index.html">[&Iacute;ndice
+de conferencias]</a> 
+</p>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="../../index.html">Juan
+Gonz&aacute;lez</A>
+</ADDRESS>
+<P><A HREF="/iearobotics-site/wiki">IEAROBOTICS</A> 
+</P>
+</BODY>
+</HTML>
+
