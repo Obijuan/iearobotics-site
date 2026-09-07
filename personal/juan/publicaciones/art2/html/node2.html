@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2 El robot ápodo Cube Reloaded</TITLE>
+<META NAME="description" CONTENT="2 El robot ápodo Cube Reloaded">
+<META NAME="keywords" CONTENT="51-Gonzalez_et_al">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="51-Gonzalez_et_al.css">
+
+<LINK REL="next" HREF="node3.html">
+<LINK REL="previous" HREF="node1.html">
+<LINK REL="up" HREF="51-Gonzalez_et_al.html">
+<LINK REL="next" HREF="node3.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html39"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html37"
+  HREF="51-Gonzalez_et_al.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html31"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html40"
+  HREF="node3.html">3 Tabla de control</A>
+<B> Up:</B> <A NAME="tex2html38"
+  HREF="51-Gonzalez_et_al.html">Alternativas Hardware para la</A>
+<B> Previous:</B> <A NAME="tex2html32"
+  HREF="node1.html">1 Introducción</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00020000000000000000"></A><A NAME="sec:cube-reloaded"></A>
+<BR>
+<SPAN CLASS="arabic">2</SPAN> El robot &#225;podo <SPAN  CLASS="textit">Cube Reloaded</SPAN>
+</H1>
+
+<P>
+El robot &#225;podo Cube Reloaded (figura <A HREF="#fig:cube-reloaded1">1</A>)
+est&#225; siendo dise&#241;ado en la UAM como una versi&#243;n mejorada de <SPAN  CLASS="textbf"></SPAN>Cube[<A
+ HREF="node10.html#CUBE-PFC">12</A>,<A
+ HREF="node10.html#Cube-web">13</A>].
+La primera versi&#243;n est&#225; constituida por 4 m&#243;dulos iguales cada uno
+con un servomecanismo Futaba 3003 muy comunes en aplicaciones de aeromodelismo.
+En conjunto, los cuatro m&#243;dulos se asemejan a un gusano. Estos servos
+se controlan mediante una se&#241;al PWM de 50Hz y anchuras de pulsos comprendidas
+entre 0.3 y 2.3ms. La electr&#243;nica y la alimentaci&#243;n se encuentran
+fuera del gusano. Los m&#243;dulos est&#225;n conectados de manera que todos
+pertenecen al mismo plano, por lo que el gusano s&#243;lo puede moverse
+en l&#237;nea recta. Para conseguir el movimiento se utilizan tablas de
+<SPAN  CLASS="textbf"></SPAN>control, igual que en Polypod y Polybot, que son generadas
+mediante un software de simulaci&#243;n[<A
+ HREF="node10.html#Cube-web">13</A>] (figura <A HREF="#fig:cube-virtual">2</A>)
+. Cada fila contiene la posici&#243;n de todos los servos, en un instante
+de tiempo. Las posiciones de los servos se calculan aplicando ondas
+sinusoidales que recorren el gusano desde la cola hasta la cabeza.
+El movimiento se consigue recorriendo la tabla y enviando las posiciones
+a los servos. Se trata de un m&#233;todo de control sencillo y eficaz,
+que se puede implementar muy f&#225;cilmente en microcontroladores de 8
+bits. El control es en bucle abierto. Para el control de Cube Reloaded
+se ha empleado una tarjeta CT6811[<A
+ HREF="node10.html#CT6811">11</A>], que genera las se&#241;ales
+<SPAN  CLASS="textit">PWM</SPAN> a partir de la tabla de control que tiene almacenada en
+la memoria <SPAN  CLASS="textit">eeprom</SPAN> o que recibe desde el PC a trav&#233;s del <SPAN  CLASS="textit">RS-232</SPAN>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:cube-reloaded1"></A><A NAME="193"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1:</STRONG>
+El robot &#225;podo Cube Reloaded, constituido por 4 m&#243;dulos iguales,
+en cada uno de los cuales hay un servo del tipo Futaba 3003. La alimentaci&#243;n
+y la electr&#243;nica se encuentran situados fuera de la estructura.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="\includegraphics[%
+scale=0.4]{ps/cube-reload1.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:cube-virtual"></A><A NAME="194"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2:</STRONG>
+La generaci&#243;n de movimiento se hace usando ondas sinusoidales que
+recorren el gusano desde la cola hasta la cabeza. El software desarrollado
+para Cube calcula las tablas de control en funci&#243;n de los par&#225;metros
+de la onda (amplitud y longitud de onda)</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="\includegraphics{ps/cube-virtual.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html39"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html37"
+  HREF="51-Gonzalez_et_al.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html31"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html40"
+  HREF="node3.html">3 Tabla de control</A>
+<B> Up:</B> <A NAME="tex2html38"
+  HREF="51-Gonzalez_et_al.html">Alternativas Hardware para la</A>
+<B> Previous:</B> <A NAME="tex2html32"
+  HREF="node1.html">1 Introducción</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-29
+</ADDRESS>
+</BODY>
+</HTML>

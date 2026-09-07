@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Alternativas Hardware para la Locomoci&#243;n de un Robot &#193;podo</TITLE>
+<META NAME="description" CONTENT="Alternativas Hardware para la Locomoci&#243;n de un Robot &#193;podo">
+<META NAME="keywords" CONTENT="51-Gonzalez_et_al">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="51-Gonzalez_et_al.css">
+
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html8"
+  HREF="node1.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html6"
+  HREF="../../index.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev_g.png">   
+<BR>
+<B> Next:</B> <A NAME="tex2html9"
+  HREF="node1.html">1 Introducción</A>
+<B> Up:</B> <A NAME="tex2html7"
+  HREF="../../index.html">Publicaciones</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<P>
+
+
+
+
+<P>
+
+<P>
+
+<P>
+<H1 ALIGN="CENTER">Alternativas Hardware para la Locomoci&#243;n de un Robot &#193;podo</H1>
+<DIV CLASS="author_info">
+
+<P ALIGN="CENTER"><STRONG>Gonz&#225;lez J., Gonz&#225;lez I. y Boemo E.</STRONG></P>
+<P ALIGN="CENTER"><I><SMALL CLASS="FOOTNOTESIZE">{Juan.Gonzalez, Ivan.Gonzalez, Eduardo.Boemo}@ii.uam.es</SMALL></I></P>
+<P ALIGN="LEFT"><SMALL><SMALL CLASS="FOOTNOTESIZE">http://www.ii.uam.es</SMALL></SMALL></P>
+</DIV>
+<DIV CLASS="author_info">
+
+<P ALIGN="CENTER"><STRONG><SMALL CLASS="FOOTNOTESIZE">Escuela Polit&#233;cnica Superior, Universidad Aut&#243;noma
+de Madrid, Espa&#241;a,</SMALL></STRONG></P>
+</DIV>
+
+<H3>Abstract:</H3>
+<DIV CLASS="ABSTRACT">
+<SMALL CLASS="FOOTNOTESIZE">La rob&#243;tica modular reconfigurable es una alternativa
+que ofrece gran versatilidad para la locomoci&#243;n de robots. En este
+art&#237;culo se presenta una unidad de control de robots basada en</SMALL> <SPAN  CLASS="textit"><SMALL CLASS="FOOTNOTESIZE">FPGA</SMALL></SPAN><SMALL CLASS="FOOTNOTESIZE">,
+en lugar de un microprocesador espec&#237;fico. Para ello se han realizado
+dos implementaciones de un sistema de control de locomoci&#243;n para el
+robot &#225;podo</SMALL> <SPAN  CLASS="textit"><SMALL CLASS="FOOTNOTESIZE">Cube Reloaded</SMALL></SPAN><SMALL CLASS="FOOTNOTESIZE">, siguiendo
+dos enfoques distintos: l&#243;gica combinacional y secuencial por un lado
+y una</SMALL> <SPAN  CLASS="textit"><SMALL CLASS="FOOTNOTESIZE">CPU</SMALL></SPAN> <SMALL CLASS="FOOTNOTESIZE">empotrada por otro.
+Se ha restringido el &#225;mbito de estudio a la locomoci&#243;n est&#225;ticamente
+estable con un desplazamiento en l&#237;nea recta generado a partir de
+ondas sinusoidales que recorren el gusano desde la cola hasta la cabeza.</SMALL>
+<P>
+
+</DIV>
+<P>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html10"
+  HREF="node1.html"><SPAN CLASS="arabic">1</SPAN> Introducción</A>
+<LI><A NAME="tex2html11"
+  HREF="node2.html"><SPAN CLASS="arabic">2</SPAN> El robot ápodo <SPAN  CLASS="textit">Cube Reloaded</SPAN></A>
+<LI><A NAME="tex2html12"
+  HREF="node3.html"><SPAN CLASS="arabic">3</SPAN> Tabla de control y señales PWM</A>
+<LI><A NAME="tex2html13"
+  HREF="node4.html"><SPAN CLASS="arabic">4</SPAN> Alternativa I: lógica combinacional y secuencial</A>
+<LI><A NAME="tex2html14"
+  HREF="node5.html"><SPAN CLASS="arabic">5</SPAN> Alternativa II: CPU empotrada</A>
+<UL>
+<LI><A NAME="tex2html15"
+  HREF="node6.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">1</SPAN> La CPU</A>
+<LI><A NAME="tex2html16"
+  HREF="node7.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">2</SPAN> Componentes adicionales y aplicación</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html17"
+  HREF="node8.html"><SPAN CLASS="arabic">6</SPAN> Resultados y conclusiones</A>
+<LI><A NAME="tex2html18"
+  HREF="node9.html">Agradecimientos</A>
+<LI><A NAME="tex2html19"
+  HREF="node10.html">Bibliography</A>
+<LI><A NAME="tex2html20"
+  HREF="node11.html">About this document ...</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Juan Gonzalez
+2003-12-29
+</ADDRESS>
+</BODY>
+</HTML>

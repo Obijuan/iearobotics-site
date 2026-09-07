@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>6 Resultados y conclusiones</TITLE>
+<META NAME="description" CONTENT="6 Resultados y conclusiones">
+<META NAME="keywords" CONTENT="51-Gonzalez_et_al">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="51-Gonzalez_et_al.css">
+
+<LINK REL="next" HREF="node9.html">
+<LINK REL="previous" HREF="node5.html">
+<LINK REL="up" HREF="51-Gonzalez_et_al.html">
+<LINK REL="next" HREF="node9.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html99"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html97"
+  HREF="51-Gonzalez_et_al.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html91"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html100"
+  HREF="node9.html">Agradecimientos</A>
+<B> Up:</B> <A NAME="tex2html98"
+  HREF="51-Gonzalez_et_al.html">Alternativas Hardware para la</A>
+<B> Previous:</B> <A NAME="tex2html92"
+  HREF="node7.html">5.2 Componentes adicionales y</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00060000000000000000">
+<SPAN CLASS="arabic">6</SPAN> Resultados y conclusiones</A>
+</H1>
+
+<P>
+El dise&#241;o planteado como alternativa I presenta una ocupaci&#243;n
+de 78 CLBs, lo que supone un 39% de la FPGA XS10 disponible en la
+placa JPS. La frecuencia m&#225;xima de operaci&#243;n no es cr&#237;tica porque
+la velocidad de los servos es muy baja. Por otro lado, el sistema
+de CPU embebida planteado como <SPAN  CLASS="textbf"></SPAN>alternativa II consiste en
+la CPU, la memoria con el programa de carga de secuencias, la memoria
+con las secuencias y las 4 unidades PWM<SPAN  CLASS="textit">,</SPAN> emplea 212 CLBs, <SPAN  CLASS="textbf"></SPAN>por
+lo que no cabe en la FPGA disponible en la plataforma hardware. Es
+necesario utilizar dos placas JPS. Como mejor opci&#243;n a la hora de
+particionar el dise&#241;o se ha planteado que la primera contenga la CPU
+y la memoria de programa y la segunda la memoria de datos y las unidades
+PWM, ya que estas &#250;ltimas comparten con la memoria los buses de datos
+y direcci&#243;n. Posteriormente, se ha planteado migrar el sistema a otra
+plataforma con m&#225;s recursos: la placa Digilab2E, que posee una XC2S200E,
+cuya capacidad es suficiente para el dise&#241;o. Para este dispositivo,
+el sistema ocupa 285 slices (12%) sin aprovechamiento de las BRAM.
+
+<P>
+La implementaci&#243;n del sistema de locomoci&#243;n para <SPAN  CLASS="textit">Cube Reloaded</SPAN>
+usando una FPGA es viable. La alternativa I, basada exclusivamente
+en l&#243;gica combinacional y secuencial, consume un 63% menos de recursos
+que la alternativa II, basada en una CPU empotrada. Es el dise&#241;ador
+el que puede elegir entre una u otra alternativa, seg&#250;n lo que prefiera:
+mayor flexibilidad o menor consumo de recursos. La utilizaci&#243;n de
+microprocesadores/microcontroladores espec&#237;ficos, implica tener que
+adaptarse a las instrucciones y perif&#233;ricos previstos por el fabricante.
+En tal caso, puede ser interesante utilizar una CPU empotrada y a&#241;adir
+el <SPAN  CLASS="textit">hardware</SPAN> estrictamente necesario, lo que ahorra recursos
+y facilita la programaci&#243;n.
+
+<P>
+Por otra parte, la rob&#243;tica modular reconfigurable es la opci&#243;n m&#225;s
+vers&#225;til para la locomoci&#243;n. Si a&#241;adimos la posibilidad de que los
+m&#243;dulos est&#233;n constituidos por <SPAN  CLASS="textit"></SPAN>FPGA<SPAN  CLASS="textit">s</SPAN> en vez de por microprocesadores
+espec&#237;ficos, la versatilidad en el dise&#241;o es todav&#237;a mayor, pudi&#233;ndose
+implementar nuevas arquitecturas y permitiendo reconfiguraci&#243;n din&#225;mica
+del <SPAN  CLASS="textit">hardware</SPAN> seg&#250;n las necesidades de locomoci&#243;n, un campo
+todav&#237;a no explorado.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html99"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html97"
+  HREF="51-Gonzalez_et_al.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html91"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html100"
+  HREF="node9.html">Agradecimientos</A>
+<B> Up:</B> <A NAME="tex2html98"
+  HREF="51-Gonzalez_et_al.html">Alternativas Hardware para la</A>
+<B> Previous:</B> <A NAME="tex2html92"
+  HREF="node7.html">5.2 Componentes adicionales y</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-29
+</ADDRESS>
+</BODY>
+</HTML>

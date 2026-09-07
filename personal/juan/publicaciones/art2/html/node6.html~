@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>5.1 La CPU</TITLE>
+<META NAME="description" CONTENT="5.1 La CPU">
+<META NAME="keywords" CONTENT="51-Gonzalez_et_al">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="51-Gonzalez_et_al.css">
+
+<LINK REL="next" HREF="node7.html">
+<LINK REL="previous" HREF="node5.html">
+<LINK REL="up" HREF="node5.html">
+<LINK REL="next" HREF="node7.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html81"
+  HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html79"
+  HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html73"
+  HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html82"
+  HREF="node7.html">5.2 Componentes adicionales y</A>
+<B> Up:</B> <A NAME="tex2html80"
+  HREF="node5.html">5 Alternativa II: CPU</A>
+<B> Previous:</B> <A NAME="tex2html74"
+  HREF="node5.html">5 Alternativa II: CPU</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00051000000000000000">
+<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">1</SPAN> La CPU</A>
+</H2>
+
+<P>
+La CPU dise&#241;ada presenta una arquitectura muy sencilla,
+con la intenci&#243;n de ir adapt&#225;ndola a las necesidades que puedan surgir
+a lo largo del desarrollo del proyecto. Las caracter&#237;sticas m&#225;s relevante
+son:
+
+<P>
+
+<UL>
+<LI>Arquitectura de 16 bits.
+</LI>
+<LI>Arquitectura Harvard, con memorias separadas para datos y programa.
+</LI>
+<LI>Arquitectura LOAD-STORE. Los accesos a la memoria de datos se har&#225;n
+s&#243;lo con estas instrucciones.
+</LI>
+<LI>Cuatro registros internos de prop&#243;sito general.
+</LI>
+<LI>Cuatro registros internos de prop&#243;sito general / indexaci&#243;n.
+</LI>
+<LI>Direccionamiento indexado.
+</LI>
+<LI>Un bit de <SPAN  CLASS="textit">flag</SPAN> para saltos condicionales.
+</LI>
+<LI>8 instrucciones b&#225;sicas: LOAD, STORE, MOVE, ADD, SUB, CMP, BF/BNF
+y JMP.
+</LI>
+</UL>
+Para la implementaci&#243;n de la unidad de control se ha dise&#241;ado una
+m&#225;quina Mealy de tres estados: captura, decodificaci&#243;n/ejecuci&#243;n y
+almacenamiento. Las salidas de la m&#225;quina son las se&#241;ales de control
+que se env&#237;an a los distintos elementos que la acompa&#241;an. Un diagrama
+de esta arquitectura se muestra en la figura <A HREF="#fig:arquitectura">4</A>.
+Adem&#225;s, se ha a&#241;adido un interface de comunicaci&#243;n con dos memorias
+de 256x16 bits, s&#237;ncronas. La memoria de programa es una ROM, mientras
+que la de datos es SRAM, y ambas est&#225;n implementadas dentro del dispositivo.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:arquitectura"></A><A NAME="201"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4:</STRONG>
+Diagrama de bloques de la CPU (alternativa II).</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="350" HEIGHT="306" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.png"
+ ALT="\includegraphics[%
+scale=0.9]{ps/arq_cpu.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html81"
+  HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html79"
+  HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html73"
+  HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html82"
+  HREF="node7.html">5.2 Componentes adicionales y</A>
+<B> Up:</B> <A NAME="tex2html80"
+  HREF="node5.html">5 Alternativa II: CPU</A>
+<B> Previous:</B> <A NAME="tex2html74"
+  HREF="node5.html">5 Alternativa II: CPU</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-29
+</ADDRESS>
+</BODY>
+</HTML>

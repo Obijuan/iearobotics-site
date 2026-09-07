@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Bibliography</TITLE>
+<META NAME="description" CONTENT="Bibliography">
+<META NAME="keywords" CONTENT="51-Gonzalez_et_al">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="51-Gonzalez_et_al.css">
+
+<LINK REL="next" HREF="node11.html">
+<LINK REL="previous" HREF="node9.html">
+<LINK REL="up" HREF="51-Gonzalez_et_al.html">
+<LINK REL="next" HREF="node11.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html119"
+  HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html117"
+  HREF="51-Gonzalez_et_al.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html111"
+  HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html120"
+  HREF="node11.html">About this document ...</A>
+<B> Up:</B> <A NAME="tex2html118"
+  HREF="51-Gonzalez_et_al.html">Alternativas Hardware para la</A>
+<B> Previous:</B> <A NAME="tex2html112"
+  HREF="node9.html">Agradecimientos</A>
+<BR><BR></DIV>
+<!--End of Navigation Panel-->
+ 
+<H2><A NAME="SECTION00080000000000000000">
+Bibliography</A>
+</H2><DL COMPACT><DD><P></P><DT><A NAME="Ambler-CMU"><b>1</b></A>
+<a href="http://www.ri.cmu.edu/projects/project_362.html">Robot Ambler en el CMU</a>. 
+
+
+<P></P><DT><A NAME="Bares-89"><b>2</b> </A>
+J. Bares, M. Hebert, T. Kanade, E. Krotkov, T. Mitchell, R. Simmons,
+and W.L. Whittaker, &#34;Ambler: An Autonomous Rover for Planetary
+Exploration,&#34; IEEE Computer, Vol. 22, No. 6, June, 1989,
+pp. 18-26. Disponible on-line <a href="http://www.ri.cmu.edu/pubs/pub_1431.html#abstract">aquí</a>
+
+<P></P><DT><A NAME="Dante_II"><b>3</b> </A>
+<a href="http://www.ri.cmu.edu/projects/project_163.html">Robot Dante II</a>. 
+
+
+<P></P><DT><A NAME="DanteII_paper"><b>4</b> </A>
+J. Bares and D. Wettergreen, &#34;Dante II: Technical Description,
+Results and Lessons Learned,&#34; International Journal of Robotics
+Research, Vol. 18, No. 7, July, 1999, pp. 621-649.
+
+<P></P><DT><A NAME="MARK_YIM"><b>5</b></A>
+<a href="http://robotics.stanford.edu/users/mark/">P&#225;gina personal de Mark Yim</a>. 
+
+<P></P><DT><A NAME="Tesis-Yim"><b>6</b></A>
+Mark Yim. ``Locomotion with a unit-modular reconfigurable robot''.
+Stanfofd University. Dic,1994. Disponible on-line <a href="http://www-db.stanford.edu/TR/CS-TR-95-1536.html ">aquí</a> 
+
+<P></P><DT><A NAME="PolyPod-Stanford"><b>7</b></A>
+<a href="http://robotics.stanford.edu/people/mark/polypod.html">PolyPod</a>. P&#225;gina en Stanford. 
+
+<P></P><DT><A NAME="Polypod-PARC"><b>8</b></A>
+<a href="http://www2.parc.com/spl/projects/modrobots/chain/polypod/index.html">PolyPod</a>. 
+P&#225;gina del Parc
+
+<P></P><DT><A NAME="Polybot"><b>9</b></A>
+Mark Yim, David G. Duff, Kimon D. Roufas,&#34;PolyBot: a Modular
+Reconfigurable Robot&#34;, IEEE Intl. Conf. on Robotics and Automation
+(ICRA), San Francisco, CA, April 2000. Disponible on-line 
+<a href="http://www2.parc.com/spl/projects/modrobots/publications/index.html
+">aquí</a>
+
+<P></P><DT><A NAME="Polybot-PARC"><b>10</b></A>
+<a href="http://www2.parc.com/spl/projects/modrobots/chain/polybot/index.html">PolyBot</a>.
+ P&#225;gina del PARC.
+
+<P></P><DT><A NAME="CT6811"><b>11</b></A>
+<a href="../../../../../proyectos/ct6811/ct6811.html">Tarjeta CT6811</a>. 
+
+<P></P><DT><A NAME="CUBE-PFC"><b>12</b></A>
+J. Gonz&#225;lez,``Dise&#241;o y construcci&#243;n de un robot articulado que
+emula modelos animales: aplicaci&#243;n a un gusano''. Proyecto fin de
+carrera. ETSIT-UPM. 2001. 
+
+<P></P><DT><A NAME="Cube-web"><b>13</b></A>
+<a href="../../../proyectos/cube-2.0/cube.html">Robot &#225;podo Cube 2.0</a>. 
+
+<P></P><DT><A NAME="JPS"><b>14</b></A>
+J. Gonzalez, P. Haya, S. Lopez-Buerdo, and E. Boemo, &#34;Tarjeta
+entrenadora para FPGA, basada en hardware abierto&#34;, Seminario
+Hispabot 2003, Alcal&#225; de Henares, Mayo 2003. Disponible on-line
+<a href="../../art1/index.html">aquí</a>
+
+<P></P><DT><A NAME="JPS-web"><b>15</b></A>
+<a href="../../../doctorado/jps-xpc84/jps-xpc84.html">Tarjeta JPS</a>
+
+<P></P><DT><A NAME="ghdl"><b>16</b></A>
+<a href=" http://ghdl.free.fr/">GHDL</a>: Compilador/simulador libre de VHDL basado en el GCC.
+
+<P></P><DT><A NAME="wine"><b>17</b></A>
+<a href="http://www.winehq.com/">Wine</a>. Implementaci&#243;n de la API de Windows para X y Unix. 
+
+<P></P><DT><A NAME="Labobot"><b>18</b></A>
+<a href="../../../doctorado/labobot/labobot.html">Proyecto Labobot</a>. 
+
+<P></P><DT><A NAME="Labobot-labomat"><b>19</b></A>
+El proyecto labobot en la <a href="http://www.ii.uam.es/~laboweb/LabWeb/index.php3?seccion=1&amp;pagina=5">web de Labomat</a>. 
+
+<P></P><DT><A NAME="XS40"><b>20</b></A>
+XS40, XSP Board V1.4 User Manual, <a href="http://www.xess.com/">XESS Corp</a>, Apex, NC, 1999. 
+<P></P><DT><A NAME="digilab"><b>21</b></A>
+Tarejta Digitalb 2E. http://www.digilentinc.com/Catalog/digilab_2.html</DL>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Juan Gonzalez
+2003-12-29
+</ADDRESS>
+</BODY>
+</HTML>

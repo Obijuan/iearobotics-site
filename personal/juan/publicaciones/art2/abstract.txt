@@ -1,0 +1,20 @@
+Alternativas Hardware para la Locomoción de un Robot Ápodo
+
+González J., González I. y Boemo E.
+
+Resumen
+
+La robótica modular reconfigurable es una alternativa 
+que ofrece gran versatilidad para la locomoción de 
+robots. En este artículo se presenta una unidad de 
+control de robots basada en FPGA, en lugar de un 
+microprocesador específico. Para ello se han realizado 
+dos implementaciones de un sistema de control de 
+locomoción para el robot ápodo Cube Reloaded, siguiendo 
+dos enfoques distintos: lógica combinacional y 
+secuencial por un lado y una CPU empotrada por otro. Se 
+ha restringido el ámbito de estudio a la locomoción 
+estáticamente estable con un desplazamiento en línea 
+recta generado a partir de ondas sinusoidales que 
+recorren el gusano desde la cola hasta la cabeza.
+

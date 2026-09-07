@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3 Tabla de control y señales PWM</TITLE>
+<META NAME="description" CONTENT="3 Tabla de control y señales PWM">
+<META NAME="keywords" CONTENT="51-Gonzalez_et_al">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="51-Gonzalez_et_al.css">
+
+<LINK REL="next" HREF="node4.html">
+<LINK REL="previous" HREF="node2.html">
+<LINK REL="up" HREF="51-Gonzalez_et_al.html">
+<LINK REL="next" HREF="node4.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html49"
+  HREF="node4.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html47"
+  HREF="51-Gonzalez_et_al.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html41"
+  HREF="node2.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html50"
+  HREF="node4.html">4 Alternativa I: lógica</A>
+<B> Up:</B> <A NAME="tex2html48"
+  HREF="51-Gonzalez_et_al.html">Alternativas Hardware para la</A>
+<B> Previous:</B> <A NAME="tex2html42"
+  HREF="node2.html">2 El robot ápodo</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00030000000000000000"></A><A NAME="sec:Se_F1ales-PWM"></A>
+<BR>
+<SPAN CLASS="arabic">3</SPAN> Tabla de control y se&#241;ales PWM
+</H1>
+
+<P>
+Para la locomoci&#243;n del robot es necesario generar las se&#241;ales
+PWM a partir de la informaci&#243;n que se encuentra en la tabla de control,
+tal como se muestra en el cuadro <A HREF="#tab:tabla-control">1</A>. Cada posici&#243;n
+de los servos se codifica con 8 bits y en cada fila hay 32 bits. En
+total la tabla tiene 30 filas.
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="196"></A>
+<TABLE>
+<CAPTION><STRONG>Table 1:</STRONG>
+Aspecto de la tabla de control. Cada fila contiene las posiciones
+de los 4 servos en un instante de tiempo</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1" ALIGN="CENTER">
+<TR><TH ALIGN="CENTER"><SPAN  CLASS="textbf">Instante</SPAN></TH>
+<TH ALIGN="CENTER"><SPAN  CLASS="textbf">Servo 1</SPAN></TH>
+<TH ALIGN="CENTER"><SPAN  CLASS="textbf">Servo 2</SPAN></TH>
+<TH ALIGN="CENTER"><SPAN  CLASS="textbf">Servo 3</SPAN></TH>
+<TH ALIGN="CENTER"><SPAN  CLASS="textbf">Servo 4</SPAN>
+<BR>
+</TH>
+</TR>
+<tr>
+  <td>0</td><td>98</td><td>51</td><td>6B</td><td>9B</td>
+</tr>
+<tr>
+  <td>1</td><td>9D</td><td>56</td><td>62</td><td>9D</td>
+</tr>
+<tr>
+  <td>2</td><td>9B</td><td>61</td><td>59</td><td>9D</td>
+</tr>
+<tr>
+  <td>...</td><td>...</td><td>...</td><td>...</td><td>...</td>
+</tr>
+</TABLE>
+</DIV>
+
+<P>
+</TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<P>
+Las unidades PWM se ha tomado del proyecto Labobot[<A
+ HREF="node10.html#Labobot">18</A>,<A
+ HREF="node10.html#Labobot-labomat">19</A>]
+y se han optimizado, usando un &#250;nico contador de 11 bits para todas
+ellas. El dise&#241;o se puede ver en la figura <A HREF="node4.html#fig:alternativa_1">3</A>
+(``Hardware para PWM''). El contador de 11 bits se incrementa
+a una frecuencia de 100KHz, volviendo al estado inicial cada 48.8Hz.
+Se obtienen unas se&#241;ales PWM de frecuencia 48.8Hz, que entran dentro
+de los m&#225;rgenes de tolerancia del servo (la frecuencia nominal es
+de 50Hz). Los comparadores establecen el nivel de salida del PWM,
+seg&#250;n que la posici&#243;n deseada sea mayor o menor que el valor del contador.
+
+<P>
+La plataforma <SPAN  CLASS="textit">software</SPAN> de desarrollo se basa en el sistema
+operativo Linux y el flujo de dise&#241;o se ha realizado empleando la
+herramienta libre Ghdl[<A
+ HREF="node10.html#ghdl">16</A>], basada en el compilador <SPAN  CLASS="textit">GCC</SPAN>,
+para el compilado/simulado de los dise&#241;os en <SPAN  CLASS="textit">VHDL</SPAN>, el sintetizador
+Synplify Pro 7.1.1 a trav&#233;s de Wine[<A
+ HREF="node10.html#wine">17</A>] y el entorno ISE 4.2
+de Xilinx, tambi&#233;n a trav&#233;s de Wine, para la parte de implementaci&#243;n.
+
+<P>
+La plataforma <SPAN  CLASS="textit">hardware</SPAN> de desarrollo es la tarjeta JPS[<A
+ HREF="node10.html#JPS">14</A>,<A
+ HREF="node10.html#JPS-web">15</A>]
+con una <SPAN  CLASS="textit">FPGA Spartan I</SPAN>, y un oscilador de 1MHZ para la se&#241;al
+de reloj. Los <SPAN  CLASS="textit">bitstreams</SPAN> generados se descargan en ella conect&#225;ndola
+al puerto serie del PC, a trav&#233;s de un interfaz desarrollado con la
+tarjeta CT6811 y un software bajo Linux. Los dise&#241;os finales se han
+grabado en una memoria <SPAN  CLASS="textit">eeprom</SPAN> serie (AT17C128), que se inserta
+en la tarjeta JPS y al alimentar el sistema o pulsar el bot&#243;n de programaci&#243;n,
+la FPGA se configura y el gusano comienza a moverse.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html49"
+  HREF="node4.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html47"
+  HREF="51-Gonzalez_et_al.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html41"
+  HREF="node2.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html50"
+  HREF="node4.html">4 Alternativa I: lógica</A>
+<B> Up:</B> <A NAME="tex2html48"
+  HREF="51-Gonzalez_et_al.html">Alternativas Hardware para la</A>
+<B> Previous:</B> <A NAME="tex2html42"
+  HREF="node2.html">2 El robot ápodo</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-29
+</ADDRESS>
+</BODY>
+</HTML>

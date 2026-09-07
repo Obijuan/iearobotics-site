@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>1 Introducción</TITLE>
+<META NAME="description" CONTENT="1 Introducción">
+<META NAME="keywords" CONTENT="51-Gonzalez_et_al">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="51-Gonzalez_et_al.css">
+
+<LINK REL="next" HREF="node2.html">
+<LINK REL="previous" HREF="51-Gonzalez_et_al.html">
+<LINK REL="up" HREF="51-Gonzalez_et_al.html">
+<LINK REL="next" HREF="node2.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html29"
+  HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html27"
+  HREF="51-Gonzalez_et_al.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html21"
+  HREF="51-Gonzalez_et_al.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html30"
+  HREF="node2.html">2 El robot ápodo</A>
+<B> Up:</B> <A NAME="tex2html28"
+  HREF="51-Gonzalez_et_al.html">Alternativas Hardware para la</A>
+<B> Previous:</B> <A NAME="tex2html22"
+  HREF="51-Gonzalez_et_al.html">Alternativas Hardware para la</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00010000000000000000">
+<SPAN CLASS="arabic">1</SPAN> Introducci&#243;n</A>
+</H1>
+
+<P>
+La locomoci&#243;n es la capacidad de los robots para desplazarse
+de un punto a otro. Engloba varios aspectos: desplazamiento de un
+incremento en l&#237;nea recta, movimientos en cualquier direcci&#243;n dentro
+de un plano, planificaci&#243;n de trayectorias y navegaci&#243;n. La locomoci&#243;n
+es especialmente importante en la exploraci&#243;n de terrenos desconocidos.
+Tradicionalmente se han dise&#241;ado robots espec&#237;ficos para desplazarse
+en entornos conocidos. Las caracter&#237;sticas del medio se fijan como
+par&#225;metros de dise&#241;o del robot. Tal es el caso del CMU Ambler[<A
+ HREF="node10.html#Ambler-CMU">1</A>,<A
+ HREF="node10.html#Bares-89">2</A>],
+dise&#241;ado para la exploraci&#243;n de la superficie de Marte, o de Dante
+II[<A
+ HREF="node10.html#Dante_II">3</A>,<A
+ HREF="node10.html#DanteII_paper">4</A>], utilizado en Julio de 1994 para
+descender al interior del cr&#225;ter del Monte Spurr en Alaska. Ambos
+proyectos fueron subvencionados por la NASA. 
+
+<P>
+En 1994, Mark Yim[<A
+ HREF="node10.html#MARK_YIM">5</A>] dise&#241;&#243; y construy&#243; el robot Polypod[<A
+ HREF="node10.html#Tesis-Yim">6</A>,<A
+ HREF="node10.html#PolyPod-Stanford">7</A>,<A
+ HREF="node10.html#Polypod-PARC">8</A>],
+aportando un nuevo enfoque al problema de la locomoci&#243;n: el dise&#241;o
+de robots modulares y reconfigurables, capaces de cambiar su forma
+para desplazarse de una manera u otra, seg&#250;n el terreno. En 1998 se
+desarroll&#243; en el Park la primera versi&#243;n del robot Polybot[<A
+ HREF="node10.html#Polybot">9</A>,<A
+ HREF="node10.html#Polybot-PARC">10</A>],
+constituido por m&#243;dulos mec&#225;nicamente m&#225;s simples. Se implementaron
+diferentes formas de locomoci&#243;n, consolidando la rob&#243;tica modular
+<SPAN  CLASS="textbf"></SPAN>reconfigurable como una opci&#243;n viable y muy prometedora,
+aunque todav&#237;a lejos de poderse utilizar en aplicaciones pr&#225;cticas.
+
+<P>
+Un robot modular reconfigurable est&#225; constituido por varias clases
+de m&#243;dulos iguales. Cada m&#243;dulo se puede considerar como un robot
+aut&#243;nomo. Tiene todos los elementos necesarios: estructura mec&#225;nica,
+<SPAN  CLASS="textit">hardware</SPAN>, <SPAN  CLASS="textit">software</SPAN> y alimentaci&#243;n. El robot se puede
+reconfigurar, cambiando su aspecto y utilizar as&#237; unos ``andares''
+(<SPAN  CLASS="textit">gaits</SPAN>) diferentes. Para un terreno se puede mover como un
+gusano y para otro se puede transformar en una ara&#241;a. La caracter&#237;stica
+buscada con estos robots es la versatilidad. Al cambiar de forma,
+se pueden desplazar por terrenos muy dispares. El hardware incorporado
+tiene que ser tambi&#233;n lo m&#225;s vers&#225;til posible. En los m&#243;dulos de &#250;ltima
+generaci&#243;n de Polybot (G2 y G3), se utiliza un procesador Power PC
+555 con 1MB de RAM, aunque su potencia no est&#225; totalmente utilizada. 
+
+<P>
+Existe una alternativa, todav&#237;a no explorada, para lograr que los
+m&#243;dulos sean m&#225;s vers&#225;tiles: que su <SPAN  CLASS="textit">hardware</SPAN> est&#233; constituido
+por una <SPAN  CLASS="textit">FPGA</SPAN> que tambi&#233;n se pueda reconfigurar din&#225;micamente,
+gener&#225;ndose el <SPAN  CLASS="textit">hardware</SPAN> necesario para cada ocasi&#243;n. Si el
+robot se reconfigura y cambia su forma, parece l&#243;gico permitir que
+su <SPAN  CLASS="textit">hardware</SPAN> tambi&#233;n se pueda modificar. 
+
+<P>
+En este art&#237;culo exploramos la viabilidad de utilizar <SPAN  CLASS="textit">FPGAs</SPAN>
+para conseguir la locomoci&#243;n del robot &#225;podo Cube Reloaded en lugar
+de emplear un microprocesador dedicado. Nos restringiremos a la locomoci&#243;n
+est&#225;ticamente estable y al desplazamiento del robot en l&#237;nea recta.
+Se estudiar&#225;n dos alternativas: una basada en l&#243;gica combinacional
+y secuencial y otra utilizando una CPU empotrada.
+
+<P>
+Este trabajo se ha organizado de la siguiente manera. Primero, se
+presenta el robot &#225;podo <SPAN  CLASS="textit">Cube Reloaded</SPAN>. A continuaci&#243;n, se describen
+las herramientas <SPAN  CLASS="textit">software</SPAN> y <SPAN  CLASS="textit">hardware</SPAN> empleadas en los
+desarrollos. Se muestra el dise&#241;o de las unidades <SPAN  CLASS="textit">hardware</SPAN>
+necesarias para el control de servomecanismos y presentan las dos
+alternativas para la locomoci&#243;n de <SPAN  CLASS="textit">Cube Reloaded</SPAN>. Finalmente,
+se resumen los principales resultados y conclusiones.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html29"
+  HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html27"
+  HREF="51-Gonzalez_et_al.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html21"
+  HREF="51-Gonzalez_et_al.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html30"
+  HREF="node2.html">2 El robot ápodo</A>
+<B> Up:</B> <A NAME="tex2html28"
+  HREF="51-Gonzalez_et_al.html">Alternativas Hardware para la</A>
+<B> Previous:</B> <A NAME="tex2html22"
+  HREF="51-Gonzalez_et_al.html">Alternativas Hardware para la</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-29
+</ADDRESS>
+</BODY>
+</HTML>
