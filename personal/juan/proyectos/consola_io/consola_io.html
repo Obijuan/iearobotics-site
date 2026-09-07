@@ -1,0 +1,268 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>RECURSOS I: RUTINA CONSOLA_IO</TITLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>RECURSOS I: RUTINA CONSOLA_IO</B> 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=785 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=81>
+			<COL WIDTH=87>
+			<COL WIDTH=55>
+			<COL WIDTH=55>
+			<COL WIDTH=53>
+			<COL WIDTH=61>
+			<COL WIDTH=74>
+			<COL WIDTH=62>
+			<COL WIDTH=219>
+			<TR>
+				<TD WIDTH=81>
+					<P><A HREF="#Introducci&oacute;n|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Introducci&oacute;n]</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=87>
+					<P><A HREF="#Caracter&iacute;sticas|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[caracter&iacute;sticas]</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=55>
+					<P><A HREF="#tres"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Autores]</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=55>
+					<P><A HREF="#Licencia|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Licencia]</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=53>
+					<P><A HREF="#historia"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Historia]</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=61>
+					<P><A HREF="#Ejemplo|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Ejemplo]</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=74>
+					<P><A HREF="#download"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Download]</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=62>
+					<P><A HREF="#Enlaces|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Enlaces]</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=219>
+					<P><A HREF="#Noticias|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Noticias]</FONT></FONT></A></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/terminal.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=353 HEIGHT=154 BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="Introducci&oacute;n|outline"></A><FONT FACE="Arial, sans-serif">Introducci&oacute;n</FONT></H2>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Consola_io</B>
+son un conjunto de funciones <B>escritas en C</B> para <B>acceder al
+teclado</B>. En los sistemas Linux/Unix, la consola por defecto est&aacute;
+configurada para ser “bloqueante”. Cada vez que una aplicaci&oacute;n
+quiere leer informaci&oacute;n del teclado, se quedar&aacute;
+bloqueada hasta que el usuario haya introducido los datos y pulsado
+la tecla Enter. <B>Con las rutinas de Consola_io se podra acceder
+directamente al teclado, sin tener necesidad de “bloquearnos”</B>.</FONT></FONT></P>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En
+aplicaciones que utilizan la consola, sobre todo en programas de
+prueba, resulta muy &uacute;til poder leer directamente las teclas,
+sin esperar a la pulsaci&oacute;n de Enter. O bien, detectar si
+alguna tecla (la que sea) ha sido apretada.</FONT></FONT></P>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Yo
+utilizo estas rutinas para hacer programas de prueba para el manejo
+de robots. Por ejemplo, una aplicaci&oacute;n de prueba que me
+permita mover un robot utilizando las teclas (Normalmente usando las
+teclas O,P,Q,A, a las que me acostumbre cuando jugaba con el Spectrum
+:-)</FONT></FONT></P>
+<HR>
+<H2><A NAME="Caracter&iacute;sticas|outline"></A><FONT FACE="Arial, sans-serif">Caracter&iacute;sticas</FONT></H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Lenguaje
+	programaci&oacute;n</B>: C</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Sistema
+	operativo</B>: Multiplataforma. Las fuentes compilan tanto para
+	m&aacute;quinas Linux como Windows (con </FONT><A HREF="http://www.cygwin.com/"><FONT SIZE=2>Cygwin</FONT></A><FONT SIZE=2>)</FONT></FONT></P>
+</UL>
+<HR>
+<H2><A NAME="Ejemplo|outline"></A><FONT FACE="Arial, sans-serif">Ejemplo</FONT></H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El ejemplo completo se
+encuentra en el fichero <B>test-consola-io.c</B>, incluido en el
+paquete fuente. Aqu&iacute; se reproduce un fragmento (modificado por
+simplicidad), en el que se comprueba si hay una tecla pulsada. Si es
+as&iacute;, se lee y se imprime en pantalla. Sino, el programa
+contin&uacute;a.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P STYLE="margin-bottom: 0cm"><FONT FACE="Courier, monospace"><FONT SIZE=1 STYLE="font-size: 8pt">if
+				(consola_io_kbhit()) //-- &iquest;Tecla pulsada?</FONT></FONT></P>
+				<P>&nbsp;&nbsp;<FONT SIZE=1 STYLE="font-size: 8pt"><FONT FACE="Courier, monospace">{
+				//-- Si, leerla</FONT></FONT></P>
+				<P>&nbsp;&nbsp;&nbsp;&nbsp;<FONT SIZE=1 STYLE="font-size: 8pt"><FONT FACE="Courier, monospace">c=consola_io_getch();</FONT></FONT></P>
+				<P>&nbsp;&nbsp;&nbsp;&nbsp;<FONT SIZE=1 STYLE="font-size: 8pt"><FONT FACE="Courier, monospace">printf
+				(“Tecla: %c\n”,c);</FONT></FONT></P>
+				<P>&nbsp;&nbsp;<FONT SIZE=1 STYLE="font-size: 8pt"><FONT FACE="Courier, monospace">}
+				//-- No, continuar</FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El programa
+<B>test-consola_io.c</B> muestra un men&uacute; con dos opciones (que
+no hacen nada). El usuario selecciona la opci&oacute;n apretando las
+teclas 1 &oacute; 2. Mientras no haya tecla pulsada, el programa
+principal rotar&aacute; una “barrita” (para mostrar que no est&aacute;
+bloqueado).</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Aqu&iacute; se muestra
+un pantallazo de su funcionamiento en una <B>consola Linux</B>:</FONT></FONT></P>
+<P ALIGN=CENTER><IMG SRC="images/consola_linux.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=544 HEIGHT=259 BORDER=0></P>
+<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">Exactamente
+el mismo programa, <B>sin hacer ninguna modificaci&oacute;n en el
+c&oacute;digo fuente</B>, se puede compilar directamente para
+<B>Windows</B>, utilizando </FONT></FONT><A HREF="http://www.cygwin.com/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cygwin</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+Aqu&iacute; se puede ver un pantallazo de su funcionamiento en una
+<B>consola de MS-DOS</B>, en una m&aacute;quina con <B>Windows XP</B>:</FONT></FONT></P>
+<P ALIGN=CENTER><IMG SRC="images/consola_msdos.png" NAME="Imagen3" ALIGN=MIDDLE WIDTH=669 HEIGHT=384 BORDER=0></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para
+compilar test-consola-io, bajar el paquete consola_io-x.x.tar.gz y
+hacer:</FONT></FONT></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>$ tar vzxf
+consola_io-x.x.tar.gz</FONT></FONT></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>$ cd
+consola_io-x.x</FONT></FONT></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>$ make</FONT></FONT></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>y para
+ejecutar:</FONT></FONT></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>$
+./test-consola-io</FONT></FONT></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Se hace
+exactamente igual desde una Shell Cygwin en Windows (pero tienen que
+estar instaladas todas las herramientas de desarrollo: make, gcc,
+etc.)</FONT></FONT></P>
+<HR>
+<H2><A NAME="tres"></A><FONT FACE="Arial, sans-serif">Autores</FONT></H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+	Gonz&aacute;lez G&oacute;mez</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+	</FONT></FONT>
+	</P>
+</UL>
+<HR>
+<H2><A NAME="Licencia|outline"></A><FONT FACE="Arial, sans-serif">Licencia</FONT></H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Licencia GPL</B>.
+Se conceden permisos para copiar, distribuir, modificar y
+redistribuir las modificaciones.</FONT></FONT></P>
+<HR>
+<H2><A NAME="historia"></A><FONT FACE="Arial, sans-serif">Historia </FONT>
+</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Las rutinas de
+Consola_io las tengo escritas desde hace much&iacute;simos a&ntilde;os
+y las he estado empleando para hacer programas de pruebas,
+normalmente de otras rutinas. Sin embargo, siempre que las intento
+buscar para utilizarlas, nunca las encuentro. Al final me tengo que
+acordar de los programas en las que las he usado. Para que no me
+vuelva a ocurrir, he decidido colgarlas en la web. As&iacute; adem&aacute;s,
+le pueden resultar &uacute;tiles a otras personas.</FONT></FONT></P>
+<HR>
+<H2><A NAME="download"></A><!-- DOWNLOAD --><FONT FACE="Arial, sans-serif">Download
+</FONT>
+</H2>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=742 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+			<COL WIDTH=734>
+			<TR>
+				<TD WIDTH=734>
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>Software para
+					descargar</B> </FONT>
+					</P>
+				</TD>
+			</TR>
+		</TABLE>
+		<DD>
+		<TABLE WIDTH=741 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=150>
+			<COL WIDTH=583>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=150>
+					<P><A HREF="download/consola_io-1.0.tar.gz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">consola_io-1.0.tar.gz</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=583>
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Paquete
+					con las fuentes y el programa de ejemplo test-consola-io. Para
+					Linux y Windows (Cygwin). Versi&oacute;n 1.0.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=150>
+					<P><BR>
+					</P>
+				</TD>
+				<TD WIDTH=583>
+					<P><BR>
+					</P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="links"></A><A NAME="Enlaces|outline"></A><FONT FACE="Arial, sans-serif">Enlaces</FONT></H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="../python/pyconsola_io/pyconsola_io.html">M&oacute;dulo
+	Pyconsola_io</A>: Rutinas para consola en Python</FONT></FONT></P>
+</UL>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><A HREF="http://www.cygwin.com/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cygwin</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">:
+	Entorno de desarrollo de aplicaciones POSIX para Windows. Incluye
+	una DLL que ofrece una capa POSIX, de forma que cualquier aplicaci&oacute;n
+	que cumpla esa norma se podr&aacute; ejecutar en m&aacute;quinas
+	Windows. Adem&aacute;s incluye todas las herramientas de GNU para
+	windows, para poder realizar la compilaci&oacute;n.</FONT></FONT></FONT></P>
+	<P STYLE="margin-bottom: 0cm"></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="../../../../proyectos/cuadernos/ct6/ct6.html">Cuaderno
+	t&eacute;cnico 6</A>: Desarrollo de aplicaciones multiplataforma
+	Linux/Windows, para consola, con Cygwin</FONT></FONT></P>
+</UL>
+<HR>
+<H2><A NAME="noticias"></A><A NAME="Noticias|outline"></A><FONT FACE="Arial, sans-serif">Noticias</FONT></H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>8/Abril/2007:
+	</B><SPAN STYLE="font-weight: medium">Anadido enlace hacia el
+	<A HREF="../../../../proyectos/cuadernos/ct6/ct6.html"><FONT SIZE=2>Cuaderno
+	t&eacute;cnico 6</FONT></A>  y al <A HREF="../python/pyconsola_io/pyconsola_io.html"><FONT SIZE=2>M&oacute;dulo
+	Pyconsola_io</FONT></A>   </SPAN></FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>18/Agosto/2004</B>:
+	Publicada versi&oacute;n 1.0 de Consola_io</FONT></FONT></P>
+</UL>
+
+
+<HR>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="../../index.html">Juan
+Gonz&aacute;lez</A><A HREF=""> </A>
+</ADDRESS>
+<P STYLE="margin-bottom: 0cm"><A HREF="/iearobotics-site/wiki">IEAROBOTICS</A>
+</P>
+</BODY>
+</HTML>
