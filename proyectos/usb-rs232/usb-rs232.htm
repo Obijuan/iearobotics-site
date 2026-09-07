@@ -1,0 +1,323 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Conversor USB-RS232</TITLE>
+	<meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<META content="Conversor USB-serie" name=KEYWORDS>
+<STYLE>H2 {
+	BORDER-RIGHT: medium none; PADDING-RIGHT: 0cm; BORDER-TOP: medium none; MARGIN-TOP: 0.26cm; PADDING-LEFT: 0cm; PADDING-BOTTOM: 0cm; MARGIN-LEFT: 0.66cm; BORDER-LEFT: medium none; COLOR: #000000; MARGIN-RIGHT: 0.66cm; PADDING-TOP: 0cm; BORDER-BOTTOM: medium none; FONT-FAMILY: "Times", "Arial"; TEXT-ALIGN: left
+}
+</STYLE>
+
+</HEAD>
+<BODY lang=en-US dir=ltr>
+<CENTER>
+<TABLE style="PAGE-BREAK-BEFORE: always" cellSpacing=2 cellPadding=4 
+width="100%" bgColor=#abbeeb border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2>
+      <P align=center><B>Conversor USB-RS232 
+      <META http-equiv=Content-Style-Type content=text/css><!-- t&iacute;tulo de la página --></B></P></TD></TR></TBODY></TABLE></CENTER>
+<DL>
+  <DL>
+    <DD>
+    <TABLE cellSpacing=0 cellPadding=2 width=785 border=0>
+      <TBODY>
+      <TR>
+        <TD width=90>
+          <P><A 
+          href="#Introducción|outline"><FONT 
+          size=2>[Introducción]</FONT></A></P></TD>
+        <TD width=90>
+          <P><A 
+          href="#Características|outline"><FONT 
+          size=2>[Características]</FONT></A></P></TD>
+        <TD width=90>
+          <P><A 
+          href="#Autor|outline"><FONT 
+          size=2>[Autor]</FONT></A></P></TD>
+        <TD width=90>
+          <P><A 
+          href="#Licencia|outline"><FONT 
+          size=2>[Licencia]</FONT></A></P></TD>
+        <TD width=90>
+          <P><A 
+          href="#Componentes |outline"><FONT 
+          size=2>[Componentes]</FONT></A></P></TD>
+        <TD width=90>
+          <P><A 
+          href="#Puertos"><FONT 
+          size=2>[Puertos]</FONT></A></P></TD></TR>
+      <TR>
+        <TD width=90>
+          <P><A 
+          href="#documentos"><FONT 
+          size=2>[Documentos]</FONT></A></P></TD>
+        <TD width=90>
+          <P><A 
+          href="#download"><FONT 
+          size=2>[Download]</FONT></A></P></TD>
+        <TD width=90>
+          <P><A 
+          href="#Links|outline"><FONT 
+          size=2>[Links]</FONT></A></P></TD>
+        <TD width=90>
+          <P><A 
+          href="#Noticias|outline"><FONT 
+          size=2>[Noticias]</FONT></A></P></TD>
+</TR></TBODY></TABLE></DD></DL></DL>
+<P style="MARGIN-BOTTOM: 0cm" align=center><BR></P>
+<TABLE align=center>
+  <TBODY>
+  <TR>
+    <TD><IMG SRC="imagenes/usb-serie.jpg" NAME="Imagen1" ALIGN=MIDDLE BORDER=0></TD>
+    <TD> </TD></TR></TBODY></TABLE>
+<HR>
+
+<H2><A name=Introducción|outline></A>Introducción</H2>
+<P><FONT face="Arial, sans-serif">
+La tarjeta USB-RS232 es un conversor de USB a la norma RS232. El objetivo ha sido desarrollar una tarjeta facil de usar para
+evaluar el chip de conversion FT232BM, para su posterior uso en otros sistemas para reemplazar el uso del puerto serie 
+por el del USB y ademas que se pudiese usar tanto en plataformas Windows como Linux.
+</FONT></P>
+<HR>
+
+<H2><A name=Características|outline></A>Características</H2>
+<UL>
+  <LI>
+  <P><FONT face="Arial, sans-serif">Compatible USB 1.1 y USB 2.0.</FONT></P>
+  <LI>
+  <P><FONT face="Arial, sans-serif">Tensi&oacute;n &uacute;nica de alimentaci&oacute;n 4,35V a 5,25V.</FONT></P>
+  <LI>
+  <P><FONT face="Arial, sans-serif">Descripcion del producto, numero de serie, PID y USB VID almacenados en 
+  una memoria EEPROM externa.</FONT></P>
+  <LI>
+  <P><FONT face="Arial, sans-serif">EEPROM programable en placa directamente desde USB.</FONT></P>
+  <LI>
+  <P><FONT face="Arial, sans-serif">Disponibilidad de las señales Tx, Rx, RTS y CTS.</FONT></P>
+  <LI>
+  <P><FONT face="Arial, sans-serif">Indicadores de transmisi&oacute;n y recepci&oacute;n independientes.</FONT></P>
+</UL>
+<HR>
+
+<H2><A name=tres></A><A name=Autor|outline></A>Autor</H2>
+<UL>
+  <LI>
+  <P style="MARGIN-BOTTOM: 0cm"><A 
+  href="../../personal/ricardo/index.html"><FONT 
+  face="Arial, sans-serif">Ricardo G&oacute;mez Gonz&aacute;lez</A> :Esquema, PCB y 
+  primeras pruebas</FONT></P></LI>
+</UL>
+<HR>
+
+<H2><A name=Licencia|outline></A>Licencia</H2>
+<P><FONT face="Arial, sans-serif">La tarjeta USB-RS232 es HARDWARE LIBRE y tiene 
+una licencia GPL (o lo mas parecido pero en versión Hardware). Esto quiere decir 
+que se distribuye junto con TODOS sus esquemas (esquemáticos, rutado y ficheros 
+de fabricación). Cualquiera tiene derecho a fabricarla, copiarla, modificarla, 
+distribuirla o venderla siempre y cuando vaya acompañada de TODOS los esquemas. 
+</FONT></P>
+<HR>
+
+<H2><A name=Componentes></A><A name="Componentes |outline"></A>Disposición de 
+Componentes</H2><IMG src="imagenes/usb-serie-map.jpg">&nbsp;&nbsp;<IMG src="imagenes/usb-serie-bottom.jpg">
+<UL>
+  <LI><B>Serie</B> Puerto Serie, niveles RS232
+  <LI><B>USB</B> Puerto USB. Conecxi&oacute;n con el PC
+  <LI><B>EEPROM</B> EEPROM externa (opcional) 
+<BR>
+</UL>
+<HR>
+
+<H2><A name=Puertos></A>Puertos </H2>
+<TABLE border=0>
+<TBODY>
+<TR>
+   <TD>Puerto Serie</td>
+   <td>&nbsp;</td>
+   <td>Puerto USB</td>
+</tr>
+
+<tr>
+   <td><IMG src="imagenes/subd9.jpg"></td>
+   <td>&nbsp;</td>
+   <td><IMG src="imagenes/usb-a.jpg"></td>
+</tr>
+</tbody>
+</table>
+
+<P>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE border=1>
+        <TBODY>
+        <TR bgColor=#00e0>
+          <TD>Puerto Serie</TD>
+          <TD>Señal</TD></TR>
+        <TR>
+          <TD>1</TD>
+          <TD>---</TD></TR>
+        <TR>
+          <TD>2</TD>
+          <TD>Tx</TD></TR>
+        <TR>
+          <TD>3</TD>
+          <TD>Rx</TD></TR>
+        <TR>
+          <TD>4</TD>
+          <TD>---</TD></TR>
+        <TR>
+          <TD>5</TD>
+          <TD>GND</TD></TR>
+        <TR>
+          <TD>6</TD>
+          <TD>---</TD></TR>
+        <TR>
+          <TD>7</TD>
+          <TD>RTS</TD></TR>
+        <TR>
+          <TD>8</TD>
+          <TD>CTS</TD></TR>
+        <TR>
+          <TD>9</TD>
+          <TD>---</TD></TR></TBODY></TABLE></TD>
+    <TD>&nbsp;</TD>
+    <TD>
+      <TABLE border=1>
+        <TBODY>
+        <TR bgColor=#00e0>
+          <TD>Puerto USB</TD>
+          <TD>Señal</TD></TR>
+        <TR>
+          <TD>1</TD>
+          <TD>+5VDC</TD></TR>
+        <TR>
+          <TD>2</TD>
+          <TD>USBDM</TD></TR>
+        <TR>
+          <TD>3</TD>
+          <TD>USBDP</TD></TR>
+        <TR>
+          <TD>4</TD>
+          <TD>GND</TD></TR>
+</TBODY></TABLE></TD>
+</TR></TBODY></TABLE>
+<HR>
+
+<H2><A name=documentos></A>Documentos</H2>
+<DL>
+  <DL>
+    <DD>
+    <TABLE cellSpacing=0 cellPadding=4 width=742 bgColor=#abbeeb border=0>
+      <COLGROUP>
+      <COL width=734>
+      <TBODY>
+      <TR>
+        <TD width=734>
+          <P align=center><B>Documentaci&oacute;n</B></P></TD></TR></TBODY></TABLE>
+    <DD>
+    <TABLE cellSpacing=0 cellPadding=2 width=741 border=0>
+      <TBODY>
+      <TR bgColor=#cabeeb>
+        <TD><A 
+          href="docs/ds232b17.pdf">Datasheet del FT232BM</A></TD></TR>
+      <TR bgColor=#abbeeb>
+        <TD><A 
+          href="ft232bm.htm">Caracter&iacute;sticas del FT232BM.</A></TD></TR>
+     <TR bgColor=#cabeeb>
+        <TD><A 
+          href="instalacion_driver.htm">Gu&iacute;a de instalaci&oacute;n y configuraci&oacute;n 
+          del driver en Windows (98, 2000 y XP).</A></TD></TR>
+</TBODY></TABLE></DD></DL></DL>
+<HR>
+
+<H2><A name=download></A>Download</H2>
+<DL>
+  <DL>
+    <DD>
+    <TABLE cellSpacing=0 cellPadding=4 width=742 bgColor=#abbeeb border=0>
+      <COLGROUP>
+      <COL width=734>
+      <TBODY>
+      <TR>
+        <TD width=734>
+          <P align=center><B>Descarga de ficheros</B></P></TD></TR></TBODY></TABLE>
+    <DD>
+    <TABLE cellSpacing=0 cellPadding=2 width=741 border=0>
+      <COLGROUP>
+      <COL width=150>
+      <COL width=583>
+      <TBODY>
+      <TR bgColor=#cabeeb>
+        <TD width=150><A 
+          href="download/FTDI.lbr">FTDI.lbr</A></TD>
+        <TD width=583>Librer&iacute;a para el EAGLE</TD></TR>
+      <TR bgColor=#abbeeb>
+        <TD width=150><A 
+          href="download/R9052154.zip">R9052154.zip</A></TD>
+        <TD width=583>Driver para crear el puerto COM virtual en sistemas Windows</TD></TR>
+      <TR bgColor=#cabeeb>
+        <TD width=150><A 
+          href="download/usb-serie.sch">usb-serie.sch</A></TD>
+        <TD width=583>Esquem&aacute;tico de la placa en formato EAGLE</TD></TR>
+      <TR bgColor=#abbeeb>
+        <TD width=150><A 
+          href="download/usb-serie.pdf">usb-serie.pdf</A></TD>
+        <TD width=583>Esquem&aacute;tico de la placa en PDF</TD></TR>
+      <TR bgColor=#cabeeb>
+        <TD width=150><A 
+          href="download/usb-serie.bmp">usb-serie.bmp</A></TD>
+        <TD width=583>Esquem&aacute;tico de la placa en formato BMP</TD></TR>
+      <TR bgColor=#abbeeb>
+        <TD width=150><A 
+          href="download/usb-serie.brd">usb-serie.brd</A></TD>
+        <TD width=583>PCB de la placa en formato EAGLE</TD></TR>
+      <TR bgColor=#cabeeb>
+        <TD width=150><A 
+          href="download/usb-serie.xls">usb-serie.xls</A></TD>
+        <TD width=583>Lista de componentes en formato excel</TD></TR>
+</TBODY></TABLE></DD></DL></DL>
+<P style="MARGIN-BOTTOM: 0cm"><BR></P>
+<HR>
+
+<H2><A name=links></A><A name=Links|outline></A>Links</H2>
+<UL>
+  <LI>
+  <P style="MARGIN-BOTTOM: 0cm"><A 
+  href="http://www.ftdichip.com"><FONT 
+  face="Arial, sans-serif">Future Technology Devices International Ltd.</FONT></A><FONT 
+  face="Arial, sans-serif">: P&aacute;gina del fabricante del integrado FT232BM</FONT></P>
+</UL>
+<HR>
+
+<H2><A name=noticias></A><A name=Noticias|outline></A>Noticias</H2>
+<UL>
+ <LI>
+  <P style="MARGIN-BOTTOM: 0cm"><FONT 
+  face="Arial, sans-serif"><B>18/julio/2007</B>: Añadido el fichero con el listado de componentes.
+  </FONT></P>
+  </LI>
+ <LI>
+  <P style="MARGIN-BOTTOM: 0cm"><FONT 
+  face="Arial, sans-serif"><B>19/Mayo/2005</B>: Corregido error en los enlaces de los ficheros
+  usb-serie.sch y usb-serie.pdf. (Gracias <a href="http://www.utpinux.org">Crhistian</a>)</FONT></P>
+  </LI>
+  <LI>
+  <P style="MARGIN-BOTTOM: 0cm"><FONT 
+  face="Arial, sans-serif"><B>19/Abril/2005</B>: Publicada la versión 1.0 del conversor
+  USB-RS232</FONT></P></LI>
+  </UL>
+
+
+<HR>
+<ADDRESS style="MARGIN-BOTTOM: 0.5cm"><A 
+href="../../personal/ricardo/index.html">Ricardo G&oacute;mez Gonz&aacute;lez </A></ADDRESS>
+<ADDRESS 
+style="MARGIN-BOTTOM: 0.5cm; FONT-STYLE: normal; TEXT-DECORATION: none"><FONT 
+face="Arial, sans-serif"><FONT size=2>Se conceden permisos para copiar, 
+distribuir y modificar la información contenida en esta página, siempre y cuando 
+se mantenga esta nota</FONT></FONT></ADDRESS>
+<P style="MARGIN-BOTTOM: 0cm"><A 
+href="/iearobotics-site/wiki">IEAROBOTICS</A> </P></FONT></BODY></HTML>
