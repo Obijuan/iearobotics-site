@@ -1,0 +1,33 @@
+
+Locomoción de un Robot Ápodo Modular con el Procesador MicroBlaze
+
+González-Gómez J., Aguayo E. y Boemo E.
+
+Escuela Politécnica Superior, Universidad Autónoma de 
+Madrid, España,
+{Juan.Gonzalez, Estanislao.Aguayo, Eduardo.Boemo}@ii.uam.es
+http://www.eps.uam.es
+
+Resumen
+
+Los robots modulares reconfigurables prometen ofrecer 
+mayor versatilidad, robustez y menor coste. Están 
+construidos a partir de módulos pequeños y sencillos, 
+capaces de unirse y separarse entre ellos. Cada módulo 
+está controlado por un procesador convencional. En este 
+artículo presentamos un prototipo de un robot ápodo 
+modular (cube revolutions), constituido por la unión en 
+cadena de 8 módulos iguales. Se desplaza en línea 
+recta, por medio de ondas que recorren su cuerpo desde 
+la cola hasta la cabeza. El robot calcula las 
+posiciones de las articulaciones a partir de los 
+parámetros de la onda: forma, amplitud y longitud de 
+onda. Por flexibilidad, se ha utilizado el 
+soft-processor Microblaze, empotrado en una FPGA 
+Xilinx. Las FPGAs dotan a los robots Modulares de mayor 
+versatilidad, al no depender de un procesador 
+convencional concreto ni de una arquitectura hardware 
+determinada.
+
+
+

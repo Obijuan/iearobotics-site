@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>1&nbsp;&nbsp; Introducción</TITLE>
+<META NAME="description" CONTENT="1&nbsp;&nbsp; Introducción">
+<META NAME="keywords" CONTENT="cube-rev2">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cube-rev2.css">
+
+<LINK REL="next" HREF="node2.html">
+<LINK REL="previous" HREF="cube-rev2.html">
+<LINK REL="up" HREF="cube-rev2.html">
+<LINK REL="next" HREF="node2.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html33"
+  HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html31"
+  HREF="cube-rev2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html25"
+  HREF="cube-rev2.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html34"
+  HREF="node2.html">2&nbsp;&nbsp;Mecánica</A>
+<B> Up:</B> <A NAME="tex2html32"
+  HREF="cube-rev2.html">Locomoci&#243;n de un Robot</A>
+<B> Previous:</B> <A NAME="tex2html26"
+  HREF="cube-rev2.html">Locomoci&#243;n de un Robot</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00010000000000000000">
+1&nbsp;&nbsp; Introducci&#243;n</A>
+</H1>
+
+<P>
+Los Robots modulares y reconfigurables ofrecen mayor versatilidad,
+robustez y menor coste[<A
+ HREF="node12.html#IEEE-Spect-Yim">1</A>]. Est&#225;n constituidos por
+m&#243;dulos capaces de separarse y unirse, cambiando la forma del robot.
+Se pueden desplazar por terrenos muy dispares y superar diversos obst&#225;culos,
+logrando mayor versatilidad en la locomoci&#243;n. Se est&#225; estudiando su
+empleo en aplicaciones espaciales[<A
+ HREF="node12.html#Space-applications">3</A>] y de b&#250;squeda
+y rescate en entornos urbanos[<A
+ HREF="node12.html#Yim-2000">2</A>].
+
+<P>
+Un robot modular que tiene N tipos diferentes de m&#243;dulos se denomina
+N-modular. Se intenta reducir la heterogeneidad, disminuyendo la relaci&#243;n
+entre N y el n&#250;mero total de m&#243;dulos. En los &#250;ltimos a&#241;os, se est&#225;n
+desarrollando robots que siguen este enfoque[<A
+ HREF="node12.html#Polybot-IEEE">4</A>][<A
+ HREF="node12.html#will-99">5</A>][<A
+ HREF="node12.html#Kotay-98">6</A>][<A
+ HREF="node12.html#Murata-98">7</A>].
+
+<P>
+Uno de los m&#225;s avanzados es Polybot[<A
+ HREF="node12.html#Polybot-IEEE">4</A>], de tipo 2-modular,
+capaz de realizar reconfiguraciones din&#225;micas de rueda a serpiente
+y de &#233;sta a ara&#241;a. Actualmente est&#225;n trabajando en la tercera generaci&#243;n
+de m&#243;dulos[<A
+ HREF="node12.html#Polybot-G3">8</A>], los G3, que integran cada uno su propio
+procesador <SPAN  CLASS="textit">powerPC</SPAN> 555.
+
+<P>
+En este art&#237;culo estudiamos la viabilidad de utilizar FPGAs para el
+control de los m&#243;dulos, en vez de procesadores convencionales. No
+disponen, a priori, de un procesador espec&#237;fico ni de una arquitectura
+concreta. El dise&#241;ador decide qu&#233; partes se realizar&#225;n en hardware
+y cuales en software. 
+
+<P>
+En [<A
+ HREF="node12.html#Cube-jcra03">9</A>] estudiamos diferentes alternativas para la
+locomoci&#243;n del robot &#225;podo <SPAN  CLASS="textit">Cube Reloaded</SPAN>[<A
+ HREF="node12.html#cube-reloaded">10</A>],
+utilizando FPGAs. En la nueva versi&#243;n, <SPAN  CLASS="textit">Cube Revolutions</SPAN> (figura
+<A HREF="#fig:cube_revolutions"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>), hemos dise&#241;ado un controlador de locomoci&#243;n
+empleando el <SPAN  CLASS="textit">soft-processor</SPAN> Microblaze[<A
+ HREF="node12.html#xilinx-microblaze">11</A>],
+junto con perif&#233;ricos para el movimiento de los servos.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:cube_revolutions"></A><A NAME="216"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+El robot &#225;podo <SPAN  CLASS="textit">Cube Revolutions</SPAN>. Construido a partir de la
+uni&#243;n en cadena de 8 m&#243;dulos iguales, conectados en fase.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="307" HEIGHT="230" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="\includegraphics[%
+scale=0.3]{ps/cube-rev1.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html33"
+  HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html31"
+  HREF="cube-rev2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html25"
+  HREF="cube-rev2.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html34"
+  HREF="node2.html">2&nbsp;&nbsp;Mecánica</A>
+<B> Up:</B> <A NAME="tex2html32"
+  HREF="cube-rev2.html">Locomoci&#243;n de un Robot</A>
+<B> Previous:</B> <A NAME="tex2html26"
+  HREF="cube-rev2.html">Locomoci&#243;n de un Robot</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2004-10-05
+</ADDRESS>
+</BODY>
+</HTML>

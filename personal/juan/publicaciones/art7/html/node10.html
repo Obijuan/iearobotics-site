@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>5&nbsp;&nbsp;Conclusiones y trabajo futuro</TITLE>
+<META NAME="description" CONTENT="5&nbsp;&nbsp;Conclusiones y trabajo futuro">
+<META NAME="keywords" CONTENT="cube-rev2">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cube-rev2.css">
+
+<LINK REL="next" HREF="node11.html">
+<LINK REL="previous" HREF="node7.html">
+<LINK REL="up" HREF="cube-rev2.html">
+<LINK REL="next" HREF="node11.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html124"
+  HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html122"
+  HREF="cube-rev2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html116"
+  HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html125"
+  HREF="node11.html">Agradecimientos</A>
+<B> Up:</B> <A NAME="tex2html123"
+  HREF="cube-rev2.html">Locomoci&#243;n de un Robot</A>
+<B> Previous:</B> <A NAME="tex2html117"
+  HREF="node9.html">4.2 Resultados obtenidos</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00050000000000000000">
+5&nbsp;&nbsp;Conclusiones y trabajo futuro</A>
+</H1>
+
+<P>
+Se ha construido un prototipo de un robot &#225;podo para estudiar
+la locomoci&#243;n en l&#237;nea recta. El controlador de locomoci&#243;n usa tablas
+que se generan autom&#225;ticamente a partir de la propagaci&#243;n de una onda
+a lo largo del gusano, que lo recorre desde la cola hasta la cabeza.
+Los tres par&#225;metros de la onda (forma, amplitud y longitud de onda)
+determinan el movimiento. El software de m&#225;s alto nivel s&#243;lo tiene
+que especificar estos par&#225;metros para conseguir la locomoci&#243;n.
+
+<P>
+El controlador de locomoci&#243;n est&#225; implementando en una FPGA. Para
+la ejecuci&#243;n de los algoritmos, se utiliza el procesador MicroBlaze.
+Se han dise&#241;ado <SPAN  CLASS="textit">cores hardware</SPAN>, accesibles desde el mapa de
+memoria, para el posicionamiento de los servos.
+
+<P>
+La utilizaci&#243;n de FPGAs permite dise&#241;ar robots m&#225;s vers&#225;tiles, donde
+se puede seleccionar la arquitectura m&#225;s adecuada para el experimento
+a realizar. La &#250;nica limitaci&#243;n son los recursos disponibles en la
+FPGA.
+
+<P>
+Dentro de los trabajos futuros, se estudiar&#225; la locomoci&#243;n, analizando
+sus caracter&#237;sticas en funci&#243;n de los par&#225;metros de la onda aplicada
+y relacion&#225;ndolos con la velocidad, estabilidad y consumo del robot.
+Uno de los enfoques ser&#225; utilizar algoritmos gen&#233;ticos, para determinar
+cuales son los par&#225;metros &#243;ptimos, fijados unos requisitos de estabilidad,
+consumo y velocidad. M&#225;s adelante se abordar&#225; el movimiento en un
+plano, implementando los controladores en FPGA y finalmente se desarrollar&#225;
+una nueva generaci&#243;n de m&#243;dulos, cada uno con su propia FPGA.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html124"
+  HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html122"
+  HREF="cube-rev2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html116"
+  HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html125"
+  HREF="node11.html">Agradecimientos</A>
+<B> Up:</B> <A NAME="tex2html123"
+  HREF="cube-rev2.html">Locomoci&#243;n de un Robot</A>
+<B> Previous:</B> <A NAME="tex2html117"
+  HREF="node9.html">4.2 Resultados obtenidos</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2004-10-05
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Locomoci&oacute;n de un Robot &Aacute;podo Modular con el Procesador MicroBlaze</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.2  (Linux)">
+	<META NAME="CREATED" CONTENT="20041006;10010900">
+	<META NAME="CHANGED" CONTENT="20041006;10123000">
+	<META NAME="DESCRIPTION" CONTENT="Locomoci&oacute;n de un Robot &Aacute;podo Modular con el Procesador MicroBlaze">
+	<META NAME="KEYWORDS" CONTENT="cube-rev2">
+	<META NAME="resource-type" CONTENT="document">
+	<META NAME="distribution" CONTENT="global">
+	<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!--Navigation Panel-->
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<P><A NAME="tex2html10"></A><A NAME="tex2html8"></A><A HREF="node1.html" NAME="tex2html10"><IMG SRC="next.png" NAME="Imagen1" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="../../index.html" NAME="tex2html8"><IMG SRC="up.png" NAME="Imagen2" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<IMG SRC="prev_g.png" NAME="Imagen3" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0>
+<BR><B>Next:</B> <A HREF="node1.html" NAME="tex2html11">1&nbsp;&nbsp;
+Introducci&oacute;n</A> <B>Up:</B> <A HREF="../../index.html" NAME="tex2html9">Publicaciones</A>
+</P>
+<H1 ALIGN=CENTER><!--End of Navigation Panel-->Locomoci&oacute;n de
+un Robot &Aacute;podo Modular con el Procesador MicroBlaze</H1>
+<P ALIGN=CENTER><STRONG>Gonz&aacute;lez-G&oacute;mez J., Aguayo E. y
+Boemo E.</STRONG></P>
+<P ALIGN=CENTER><FONT SIZE=2><FONT SIZE=1>Escuela Polit&eacute;cnica
+Superior, Universidad Aut&oacute;noma de Madrid, Espa&ntilde;a,</FONT>
+<BR><FONT SIZE=1>{Juan.Gonzalez, Estanislao.Aguayo,
+Eduardo.Boemo}@ii.uam.es</FONT> <BR><FONT SIZE=1>http://www.eps.uam.es</FONT></FONT></P>
+<H3>Resumen:</H3>
+<P><FONT SIZE=2>Los robots modulares reconfigurables prometen ofrecer
+mayor versatilidad, robustez y menor coste. Est&aacute;n construidos
+a partir de m&oacute;dulos peque&ntilde;os y sencillos, capaces de
+unirse y separarse entre ellos. Cada m&oacute;dulo est&aacute;
+controlado por un procesador convencional. En este art&iacute;culo
+presentamos un prototipo de un robot &aacute;podo modular (cube
+revolutions), constituido por la uni&oacute;n en cadena de 8 m&oacute;dulos
+iguales. Se desplaza en l&iacute;nea recta, por medio de ondas que
+recorren su cuerpo desde la cola hasta la cabeza. El robot calcula
+las posiciones de las articulaciones a partir de los par&aacute;metros
+de la onda: forma, amplitud y longitud de onda. Por flexibilidad, se
+ha utilizado el</FONT> <FONT SIZE=2>soft-processor</FONT> <FONT SIZE=2>Microblaze,
+empotrado en una FPGA Xilinx. Las FPGAs dotan a los robots Modulares
+de mayor versatilidad, al no depender de un procesador convencional
+concreto ni de una arquitectura hardware determinada.</FONT> 
+</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A NAME="CHILD_LINKS"></A><!--Table of Child-Links--><A HREF="node1.html" NAME="tex2html12">1&nbsp;&nbsp;
+	Introducci&oacute;n</A> 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="node2.html" NAME="tex2html13">2&nbsp;&nbsp;Mec&aacute;nica</A>
+		</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="node3.html" NAME="tex2html14">3&nbsp;&nbsp;Locomoci&oacute;n</A>
+		</P>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0cm"><A HREF="node4.html" NAME="tex2html15">3.1
+		Tablas de control</A> 
+		</P>
+		<LI><P STYLE="margin-bottom: 0cm"><A HREF="node5.html" NAME="tex2html16">3.2
+		Generaci&oacute;n autom&aacute;tica de tablas de control</A> 
+		</P>
+		<LI><P STYLE="margin-bottom: 0cm"><A HREF="node6.html" NAME="tex2html17">3.3&nbsp;&nbsp;Controlador
+		de locomoci&oacute;n</A> 
+		</P>
+	</UL>
+	<P STYLE="margin-bottom: 0cm"></P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="node7.html" NAME="tex2html18">4&nbsp;&nbsp;Implementaci&oacute;n
+	en FPGA</A> 
+	</P>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0cm"><A HREF="node8.html" NAME="tex2html19">4.1
+		El procesador software Microblaze</A> 
+		</P>
+		<LI><P STYLE="margin-bottom: 0cm"><A HREF="node9.html" NAME="tex2html20">4.2
+		Resultados obtenidos</A> 
+		</P>
+	</UL>
+	<P STYLE="margin-bottom: 0cm"></P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="node10.html" NAME="tex2html21">5&nbsp;&nbsp;Conclusiones
+	y trabajo futuro</A> 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="node11.html" NAME="tex2html22">Agradecimientos</A>
+		</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="node12.html" NAME="tex2html23">Referencias</A>
+		</P>
+	<LI><P><A HREF="node13.html" NAME="tex2html24">About this document
+	...</A> 
+	</P>
+</UL>
+<P STYLE="border-top: none; border-bottom: 1.10pt double #808080; border-left: none; border-right: none; padding: 0cm">
+<!--End of Table of Child-Links--><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><A NAME="tex2html101"></A><A NAME="tex2html81"></A>
+<!--Navigation Panel--><A HREF="node1.html" NAME="tex2html10"><IMG SRC="next.png" NAME="Imagen4" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="../../index.html" NAME="tex2html8"><IMG SRC="up.png" NAME="Imagen5" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<IMG SRC="prev_g.png" NAME="Imagen6" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0>
+<BR><B>Next:</B> <A HREF="node1.html" NAME="tex2html11">1&nbsp;&nbsp;
+Introducci&oacute;n</A> <B>Up:</B> <A HREF="../../index.html" NAME="tex2html9">Publicaciones</A></P>
+<ADDRESS><!--End of Navigation Panel-->Juan Gonzalez 2004-10-05 
+</ADDRESS>
+</BODY>
+</HTML>

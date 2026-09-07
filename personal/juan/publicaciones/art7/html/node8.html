@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>4.1 El procesador software Microblaze</TITLE>
+<META NAME="description" CONTENT="4.1 El procesador software Microblaze">
+<META NAME="keywords" CONTENT="cube-rev2">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cube-rev2.css">
+
+<LINK REL="next" HREF="node9.html">
+<LINK REL="previous" HREF="node7.html">
+<LINK REL="up" HREF="node7.html">
+<LINK REL="next" HREF="node9.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html106"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html104"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html98"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html107"
+  HREF="node9.html">4.2 Resultados obtenidos</A>
+<B> Up:</B> <A NAME="tex2html105"
+  HREF="node7.html">4&nbsp;&nbsp;Implementación en FPGA</A>
+<B> Previous:</B> <A NAME="tex2html99"
+  HREF="node7.html">4&nbsp;&nbsp;Implementación en FPGA</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00041000000000000000">
+4.1 El procesador software Microblaze</A>
+</H2>
+
+<P>
+El MicroBlaze[<A
+ HREF="node12.html#xilinx-microblaze">11</A>] es un soft-procesor de 32 bits
+y arquitectura <SPAN  CLASS="textit">Harvard</SPAN>, dise&#241;ado por Xilinx. En la figura <A HREF="#fig:arq-controlador"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>
+se muestra el dise&#241;o cargado en la FPGA. Los <SPAN  CLASS="textit">buses</SPAN> siguen el
+est&#225;ndar <SPAN  CLASS="textit">Core</SPAN> <SPAN  CLASS="textit">Connect</SPAN> de IBM[<A
+ HREF="node12.html#IBM-OPB">13</A>]. Tambi&#233;n
+se ha incluido un m&#243;dulo de depuraci&#243;n, para poder emplear la herramienta
+gdb de GNU[<A
+ HREF="node12.html#GNU">14</A>].
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:arq-controlador"></A><A NAME="227"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Arquitectura del controlador de locomoci&#243;n</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="584" HEIGHT="359" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="\includegraphics[%
+scale=0.6]{ps/fpga-system.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+El &#225;rea ocupada por este procesador es de aproximadamente un 10%
+en una Spartan IIE400, lo que deja un 90% de espacio libre para a&#241;adir
+el <SPAN  CLASS="textit">hardware</SPAN> necesario.
+
+<P>
+<BR><HR>
+<ADDRESS>
+Juan Gonzalez
+2004-10-05
+</ADDRESS>
+</BODY>
+</HTML>

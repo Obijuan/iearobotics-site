@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.2 Generación automática de tablas de control</TITLE>
+<META NAME="description" CONTENT="3.2 Generación automática de tablas de control">
+<META NAME="keywords" CONTENT="cube-rev2">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cube-rev2.css">
+
+<LINK REL="next" HREF="node6.html">
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html76"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html74"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html68"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html77"
+  HREF="node6.html">3.3&nbsp;&nbsp;Controlador de locomoción</A>
+<B> Up:</B> <A NAME="tex2html75"
+  HREF="node3.html">3&nbsp;&nbsp;Locomoción</A>
+<B> Previous:</B> <A NAME="tex2html69"
+  HREF="node4.html">3.1 Tablas de control</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00032000000000000000"></A><A NAME="sub:Generaci_F3n-autom_E1tica"></A>
+<BR>
+3.2 Generaci&#243;n autom&#225;tica de tablas de control
+</H2>
+
+<P>
+En el prototipo desarrollado, las tablas de control se generan autom&#225;ticamente,
+a partir de un modelo de propagaci&#243;n de onda. El algoritmo empleado
+se describe a continuaci&#243;n (figura <A HREF="#fig:ajuste"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>). Partimos de
+una onda en el instante inicial, <SPAN CLASS="MATH"><IMG
+ WIDTH="72" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$f(x,t_{0})$"></SPAN> (en el dibujo se utilizan
+ondas sinusoidales pero podr&#237;an tener cualquier otra forma) y de un
+modelo de gusano en el que todas sus articulaciones est&#225;n sobre el
+eje x (estado inicial. Fig <A HREF="#fig:ajuste"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>-1). Sean <SPAN CLASS="MATH"><IMG
+ WIDTH="66" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$(x_{i},y_{i})$"></SPAN>
+las coordenadas de la articulaci&#243;n i-&#233;sima, en ese instante. El vector
+de posici&#243;n angular para ese instante, <!-- MATH
+ $\overrightarrow{\varphi(t_{o})}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$overrightarrow{varphi(t_{o})}$"></SPAN>,
+se calcula haciendo que todas las articulaciones cumplan la funci&#243;n
+de onda <SPAN CLASS="MATH"><IMG
+ WIDTH="72" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$f(x,t_{0})$"></SPAN>, de manera que <!-- MATH
+ $y_{i}=f(x_{i},t_{0})$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="122" HEIGHT="26" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$y_{i}=f(x_{i},t_{0})$"></SPAN>, siempre
+manteni&#233;ndose la restricci&#243;n de que la distancia entre dos articulaciones
+sea <SPAN  CLASS="textit">L</SPAN>. Es decir, que el gusano se ``ajusta'' a la funci&#243;n
+de onda (<A HREF="#fig:ajuste"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>-2). A continuaci&#243;n se desplaza la onda
+(instante t1. Figura <A HREF="#fig:ajuste"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>-3) y se vuelve a realizar
+el ``ajuste'', obteni&#233;ndose <!-- MATH
+ $\overrightarrow{\varphi(t_{1})}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$overrightarrow{varphi(t_{1})}$"></SPAN>
+(Figura <A HREF="#fig:ajuste"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>-4). Se repiten los puntos 3 y 4 hasta que
+la onda llegue a su fase inicial. Al cabo de <SPAN  CLASS="textit">m</SPAN> instantes de
+tiempo, se tienen todos los vectores que componen la tabla de control.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:ajuste"></A><A NAME="225"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Algoritmo empleado para generar autom&#225;ticamente las tablas de control.
+1) Estado inicial. 2) Las articulaciones cumplen la ecuaci&#243;n de la
+onda (el gusano se ``ajusta'' a la onda). 3) La onda se desplaza.
+4) Se vuelve a ``ajustar'' el gusano a la onda</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="671" HEIGHT="300" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="\includegraphics[%
+scale=0.6]{ps/ajuste1.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Mediante este algoritmo, se obtienen las tablas de control, con independencia
+de la forma de la onda usada. Se puede emplear para cualquier onda
+<SPAN CLASS="MATH"><IMG
+ WIDTH="62" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$f(x,t)$"></SPAN>. Las pruebas de locomoci&#243;n las hemos realizado utilizando
+ondas sinusoidales y semiondas (usando s&#243;lo la parte positiva de un
+periodo de una onda sinusoidal).
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html76"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html74"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html68"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html77"
+  HREF="node6.html">3.3&nbsp;&nbsp;Controlador de locomoción</A>
+<B> Up:</B> <A NAME="tex2html75"
+  HREF="node3.html">3&nbsp;&nbsp;Locomoción</A>
+<B> Previous:</B> <A NAME="tex2html69"
+  HREF="node4.html">3.1 Tablas de control</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2004-10-05
+</ADDRESS>
+</BODY>
+</HTML>

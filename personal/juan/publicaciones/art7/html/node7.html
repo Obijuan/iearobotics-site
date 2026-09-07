@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>4&nbsp;&nbsp;Implementación en FPGA</TITLE>
+<META NAME="description" CONTENT="4&nbsp;&nbsp;Implementación en FPGA">
+<META NAME="keywords" CONTENT="cube-rev2">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cube-rev2.css">
+
+<LINK REL="next" HREF="node10.html">
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="cube-rev2.html">
+<LINK REL="next" HREF="node8.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html94"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html92"
+  HREF="cube-rev2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html86"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html95"
+  HREF="node8.html">4.1 El procesador software</A>
+<B> Up:</B> <A NAME="tex2html93"
+  HREF="cube-rev2.html">Locomoci&#243;n de un Robot</A>
+<B> Previous:</B> <A NAME="tex2html87"
+  HREF="node6.html">3.3&nbsp;&nbsp;Controlador de locomoción</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00040000000000000000">
+4&nbsp;&nbsp;Implementaci&#243;n en FPGA</A>
+</H1>
+
+<P>
+El controlador completo de locomoci&#243;n, basado en <SPAN  CLASS="textit">soft-processor</SPAN>
+Microblaze se mapea en una FPGA SpartanIIE 400[<A
+ HREF="node12.html#spartanIIE">12</A>].
+Tanto el generador de movimiento como las tablas de control est&#225;n
+implementadas en <SPAN  CLASS="textit">software</SPAN>. Los algoritmos est&#225;n programados
+en C. El compilador empleado es un <SPAN  CLASS="textit">port</SPAN> del GCC (GNU C Compiler),
+proporcionado por el fabricante de la FPGA.
+
+<P>
+El controlador de posici&#243;n est&#225; descrito en VHDL. Se accede como un
+perif&#233;rico de Microblaze, a trav&#233;s de puertos. El <SPAN  CLASS="textit">software</SPAN>
+sit&#250;a las posiciones de los servos, y el controlador genera las se&#241;ales
+PWM. 
+
+<P>
+Una ventaja es que el sistema es muy escalable en relaci&#243;n al n&#250;mero
+de servos que se pueden llegar a controlar. La &#250;nica limitaci&#243;n es
+la cantidad de &#225;rea y el n&#250;mero de pines disponibles en la FPGA.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html96"
+  HREF="node8.html">4.1 El procesador software Microblaze</A>
+<LI><A NAME="tex2html97"
+  HREF="node9.html">4.2 Resultados obtenidos</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Juan Gonzalez
+2004-10-05
+</ADDRESS>
+</BODY>
+</HTML>
