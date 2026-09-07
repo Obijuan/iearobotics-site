@@ -1,0 +1,293 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>GPBOT-DOWN</TITLE>
+	<META NAME="KEYWORDS" CONTENT="microcontroladores 68hc08 gpbot tarjeta entrenadora">
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+</HEAD>
+
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>GPBOT-DOWN: Descarga de programas en la
+				tarjeta GPBOT</B></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=726 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=90>
+		<COL WIDTH=46>
+		<COL WIDTH=62>
+		<COL WIDTH=74>
+		<COL WIDTH=82>
+		<COL WIDTH=86>
+		<COL WIDTH=80>
+		<COL WIDTH=48>
+		<COL WIDTH=123>
+		<TR>
+			<TD WIDTH=90>
+				<P><A HREF="#Introducci&oacute;n|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Introducci&oacute;n]</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=46>
+				<P><A HREF="#Autor|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Autor]</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=62>
+				<P><A HREF="#licencia"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Licencia]</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=74>
+				<P><A HREF="#Download |outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Download]</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=82>
+				<P><A HREF="#Instalaci&oacute;n|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Instalaci&oacute;n]</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=86>
+				<P><A HREF="#Compilaci&oacute;n|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Compilaci&oacute;n]</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=80>
+				<P><A HREF="#Utilizaci&oacute;n|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Utilizaci&oacute;n]</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=48>
+				<P><A HREF="#Links|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Links]</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=123>
+				<P><A HREF="#Noticias|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Noticias]</FONT></FONT></A></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<DL>
+	<DL>
+		<DL>
+			<DL>
+				<DD>
+				<TABLE WIDTH=438 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+					<COL WIDTH=320>
+					<COL WIDTH=102>
+					<THEAD>
+						<TR>
+							<TD WIDTH=320 VALIGN=TOP>
+								<P ALIGN=CENTER><IMG SRC="images/gpbot-mon.jpg" NAME="Imagen1" ALIGN=MIDDLE WIDTH=300 HEIGHT=225 BORDER=0></P>
+							</TD>
+							<TD WIDTH=102 VALIGN=BOTTOM>
+								<P ALIGN=CENTER><IMG SRC="images/tux.png" NAME="Imagen2" ALIGN=LEFT WIDTH=100 HEIGHT=110 BORDER=0><BR CLEAR=LEFT><BR>
+								</P>
+							</TD>
+						</TR>
+					</THEAD>
+				</TABLE>
+			</DL>
+		</DL>
+	</DL>
+</DL>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="Introducci&oacute;n|outline"></A>Introducci&oacute;n</H2>
+<P><FONT FACE="Arial, sans-serif">En el <B>curso 2003/2004</B>
+comenc&eacute; a impartir el laboratorio de la <A HREF="http://www.ii.uam.es/~gdrivera/robotica/inicio.htm">asignatura
+de Rob&oacute;tica</A>, en la <A HREF="http://www.eps.uam.es/">EPS</A>
+de la UAM. La placa microcontroladora que se emplea es la <A HREF="../gpbot/gpbot.html">tarjeta
+GPBOT</A>, dise&ntilde;ada por el profesor <A HREF="http://www.ii.uam.es/~gdrivera/">Guillermo
+Gonz&aacute;lez de Rivera</A>, basada en el <B>microcontrolador
+68hc08</B> de Motorola. Todo el software estaba disponible para
+plataformas Windows. Lo primero que hice fue buscar herramientas para
+poder trabajar desde <B>Linux</B>. Como no encontr&eacute; ning&uacute;n
+programa para grabar, decid&iacute; hacerlo yo y publicarlo bajo una
+<B>licencia GPL</B>. Ahora los alumnos pueden utilizar la plataforma
+que prefieran, Linux o Windows, para realizar las pr&aacute;cticas.</FONT></P>
+<HR>
+<H2><A NAME="tres"></A><A NAME="Autor|outline"></A>Autor</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../index.html">Juan
+	Gonz&aacute;lez G&oacute;mez</A> 
+	</P>
+</UL>
+<HR>
+<H2><A NAME="licencia"></A>Licencia</H2>
+<P STYLE="border-top: none; border-bottom: 1.10pt double #808080; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+<FONT FACE="Arial, sans-serif">Este programa se distribuye bajo
+licencia GPL. Se conceden permisos para copiarlo, modificarlo y/o
+redistribuir las modificaciones</FONT></P>
+<HR>
+<H2><A NAME="download"></A><A NAME="Download |outline"></A><!-- DOWNLOAD -->Download
+</H2>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=742 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+			<COL WIDTH=734>
+			<TR>
+				<TD WIDTH=734>
+					<P ALIGN=CENTER><B>Descarga de ficheros</B></P>
+				</TD>
+			</TR>
+		</TABLE>
+		<DD>
+		<TABLE WIDTH=741 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=196>
+			<COL WIDTH=537>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=196>
+					<P><A HREF="download/gpbot-tools-0.1.tgz">gpbot-tools-0.1.tgz</A><A HREF="../../../../modelos/fichero1">
+					</A>
+					</P>
+				</TD>
+				<TD WIDTH=537>
+					<P>GPBOT-DOWN. Versi&oacute;n 0.1. Febrero 2004</P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="todo"></A><A NAME="Instalaci&oacute;n|outline"></A>Instalaci&oacute;n</H2>
+<OL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>Bajar el paquete</B>
+	</FONT><A HREF="download/gpbot-tools-0.1.tgz"><FONT FACE="Arial, sans-serif">gpbot-tools-0.1.tgz</FONT></A></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>Descomprimirlo</B></FONT></FONT></P>
+</OL>
+<P STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><I>$
+tar vzxf gpbot-tools-0.1.tgz</I></FONT></FONT></P>
+<OL START=3>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>Instalaci&oacute;n.
+	</B>S&oacute;lo hay que copiar el fichero <I>gpbot-down</I> (situado
+	en gpbot-tools/gpbot-down/) a un directorio que se encuentre en el
+	path. Por ejemplo en el /usr/bin. O si lo preferimos, desde alguno
+	de nuestra cuenta.</FONT></FONT></P>
+</OL>
+<P STYLE="margin-left: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="Compilaci&oacute;n|outline"></A>Compilaci&oacute;n</H2>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif">El
+programa gpbot-down ya viene pre-compilado en el paquete
+</FONT><A HREF="download/gpbot-tools-0.1.tgz"><FONT FACE="Arial, sans-serif">gpbot-tools-0.1.tgz</FONT></A>,
+<FONT FACE="Arial, sans-serif">por lo que para usarlo no es necesario
+compilarlo. Los pasos a seguir son:</FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<OL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>Bajar
+	el paquete</B> </FONT><A HREF="download/gpbot-tools-0.1.tgz"><FONT FACE="Arial, sans-serif">gpbot-tools-0.1.tgz</FONT></A></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>Descomprimirlo</B></FONT></FONT></P>
+</OL>
+<P STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><I>$
+tar vzxf gpbot-tools-0.1.tgz</I></FONT></FONT></P>
+<OL START=3>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>Compilar
+	las librer&iacute;as</B></FONT></FONT></P>
+</OL>
+<P STYLE="margin-left: 2cm; margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><I>$
+cd gpbot-tools/gpbot-dev/src</I></FONT></FONT></P>
+<P STYLE="margin-left: 2cm; margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><I>$
+make</I></FONT></FONT></P>
+<P STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Con
+esto se generan los ficheros .o necesarios. Tambi&eacute;n se compila
+el programa gpbot-dev, que se usa para depurar las librerias de
+monitorizaci&oacute;n. S&oacute;lo tiene utilidad para
+desarrolladores.</FONT></FONT></P>
+<OL START=4>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>Compilar
+	el programa gpbot-down</B></FONT></FONT></P>
+</OL>
+<P STYLE="margin-left: 2cm; margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><I>$
+cd ../../gpbot-down</I></FONT></FONT></P>
+<P STYLE="margin-left: 2cm; margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><I>$
+make</I></FONT></FONT></P>
+<P STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><I>Si
+todo ha ido bien, se nos habr&aacute; creado el programa gpbot-down</I></FONT></FONT></P>
+<P STYLE="margin-left: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="Utilizaci&oacute;n|outline"></A>Utilizaci&oacute;n</H2>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif">La
+descarga de programas en la gpbot es muy sencilla:</FONT></P>
+<OL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>Conectar
+	la gpbot al puerto serie</B> del PC, a trav&eacute;s del cable
+	monitor</FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>Alimentarla</B></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>Situarnos
+	en el directorio</B> donde se encuentre el fichero .S19 a descargar</FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif">Si
+	el programa a descargar fuese ejemplo.S19, <B>ejecutar&iacute;amos</B>:</FONT></P>
+</OL>
+<P STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2><I>$ gpbot-down
+ejemplo.S19</I></FONT></FONT></P>
+<P STYLE="margin-left: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm; text-decoration: none"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>Si
+todo ha ido bien, aparecer&aacute; lo siguiente:</B></FONT></FONT></P>
+<P STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2><I>GPBOT-DOWN. (c) Juan
+Gonzalez. Febrero 2004. Licencia GPL</I></FONT></FONT></P>
+<P STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2><I>Grabaci&oacute;n de
+programas en la Flash de la tarjeta GPBOT</I></FONT></FONT></P>
+<P STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2><I>Tama&ntilde;o: 49
+bytes</I></FONT></FONT></P>
+<P STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2><I>Borrando Flash...OK</I></FONT></FONT></P>
+<P STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2><I>Vector de RESET: 8000</I></FONT></FONT></P>
+<P STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2><I>Grabando bloque de
+datos...OK</I></FONT></FONT></P>
+<P STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2><I>Vectores de
+interrupcion...OK</I></FONT></FONT></P>
+<P STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2><I>FINALIZADO</I></FONT></FONT></P>
+<P STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2><I>--&gt;EJECUTANDO!!!</I></FONT></FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=3>Por defecto se toma el
+COM1. Se puede especificar otro puerto de la siguiente manera:</FONT></FONT></P>
+<P STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2><I>$ gpbot-down
+ejemplo.S19 -com2</I></FONT></FONT></P>
+<P STYLE="margin-left: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=3>Aqu&iacute; se puede ver
+un pantallazo:</FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm; text-decoration: none"><IMG SRC="images/pantallazo1.png" NAME="Imagen3" ALIGN=MIDDLE WIDTH=664 HEIGHT=463 BORDER=0></P>
+<HR>
+<H2><A NAME="links"></A><A NAME="Links|outline"></A>Links</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><A HREF="http://www.ii.uam.es/~gdrivera/robotica/gp_bot/gp_bot.htm">Tarjeta
+	GPBOT</A>: P&aacute;gina oficial del sistema de desarrollo GPBOT.</FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../gpbot/gpbot.html"><FONT FACE="Arial, sans-serif">Tarjeta
+	GPBOT</FONT></A>: <FONT FACE="Arial, sans-serif">Gu&iacute;a r&aacute;pida
+	de la tarjeta GPBOT. Ejemplos de programaci&oacute;n en ensamblador
+	y C.</FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><A HREF="http://crm.ii.uam.es/web/">Club
+	de Rob&oacute;tica-Mecatr&oacute;nica</A> de la EPS UAM.</FONT></P>
+</UL>
+<HR>
+<H2><A NAME="noticias"></A><A NAME="Noticias|outline"></A>Noticias</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>01/Junio/2004</B>:
+	Publicada p&aacute;gina en la web </FONT>
+	</P>
+</UL>
+
+<hr>
+<a href="/iearobotics-site/wiki">IEA ROBOTICS</a>
+<address>
+<a href="../../index.html">Juan González</a>
+</address>
+</body>
+</html>
