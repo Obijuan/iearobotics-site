@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>8 Cerrando el ciclo de diseño en Linux</TITLE>
+<META NAME="description" CONTENT="8 Cerrando el ciclo de diseño en Linux">
+<META NAME="keywords" CONTENT="hispalinux-articulo">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="hispalinux-articulo.css">
+
+<LINK REL="previous" HREF="node24.html">
+<LINK REL="up" HREF="node11.html">
+<LINK REL="next" HREF="node26.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html314"
+  HREF="node26.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html312"
+  HREF="node11.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html308"
+  HREF="node24.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html315"
+  HREF="node26.html">3 Aplicaciones y Conclusiones</A>
+<B> Up:</B> <A NAME="tex2html313"
+  HREF="node11.html">2 Hardware reconfigurable</A>
+<B> Previous:</B> <A NAME="tex2html309"
+  HREF="node24.html">7 Plataformas hardware</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION02050000000000000000">
+<SPAN CLASS="arabic">8</SPAN> Cerrando el ciclo de dise&#241;o en Linux</A>
+</H1>
+
+<P>
+El problema hasta ahora es que no existen herramientas que nos permitan
+cerrar el ciclo de dise&#241;o de <SPAN  CLASS="textit">hardware</SPAN> reconfigurable bajo m&#225;quinas
+GNU/Linux. No ya que no haya herramientas libres, sino que ni siquiera
+las hay propietarias. Mostraremos la soluci&#243;n que hemos empleado.
+Recapitulando:
+
+<P>
+
+<UL>
+<LI><SPAN  CLASS="textbf">Existen herramientas libres de edici&#243;n</SPAN>, para editar los ficheros
+fuentes. Cualquier editor ASCII nos valdr&#237;a. En concreto, EMACS, tiene
+un modo de resaltado de sintaxis para los ficheros en VHDL.
+</LI>
+<LI><SPAN  CLASS="textbf">Existen herramientas de simulaci&#243;n libres</SPAN>. Las que hemos
+empleado con &#233;xito son el GHDL y el GTKWAVE
+</LI>
+<LI><SPAN  CLASS="textbf">Existen herramientas de s&#237;ntesis, pero no son libres</SPAN>. Al
+menos las hay para Linux.
+</LI>
+<LI>No hay herramientas para la implementaci&#243;n. Pero lo peor es que no
+puede haberlas libres. Existen varias soluciones:
+
+<P>
+
+<UL>
+<LI>Usar VMWARE, una m&#225;quina virtual, sobre la que se instala Windows
+y las herramientas de dise&#241;o.
+</LI>
+<LI>Utilizar WINE. Esta es la opci&#243;n que hemos empleado con &#233;xito y que
+permite ejecutar el entorno de dise&#241;o ISE 4.1 enteramente bajo Linux
+y es bastante ``usable''. Esta herramienta nos permite editar,
+sintetizar, implementar y configurar el dispositivo.
+</LI>
+</UL>
+</LI>
+<LI>En el caso de trabajar con la placa JPS (hardware est&#225;tico libre,
+tipo MML), se dispone de un software para Linux que permite descargar
+los <SPAN  CLASS="textit">bitstreams</SPAN> en ella, utilizando un cable constituido por
+la tarjeta CT6811.
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html314"
+  HREF="node26.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html312"
+  HREF="node11.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html308"
+  HREF="node24.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html315"
+  HREF="node26.html">3 Aplicaciones y Conclusiones</A>
+<B> Up:</B> <A NAME="tex2html313"
+  HREF="node11.html">2 Hardware reconfigurable</A>
+<B> Previous:</B> <A NAME="tex2html309"
+  HREF="node24.html">7 Plataformas hardware</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-31
+</ADDRESS>
+</BODY>
+</HTML>

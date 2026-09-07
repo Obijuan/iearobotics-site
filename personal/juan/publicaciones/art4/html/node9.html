@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2.2 Clasificación según las restricciones impuestas por el programa de
+diseño</TITLE>
+<META NAME="description" CONTENT="2.2 Clasificación según las restricciones impuestas por el programa de
+diseño">
+<META NAME="keywords" CONTENT="hispalinux-articulo">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="hispalinux-articulo.css">
+
+<LINK REL="previous" HREF="node8.html">
+<LINK REL="up" HREF="node7.html">
+<LINK REL="next" HREF="node10.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html141"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html139"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html135"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html142"
+  HREF="node10.html">3 Un ejemplo de</A>
+<B> Up:</B> <A NAME="tex2html140"
+  HREF="node7.html">2 Clasificación</A>
+<B> Previous:</B> <A NAME="tex2html136"
+  HREF="node8.html">2.1 El formato de</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION01022000000000000000">
+<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">2</SPAN> Clasificaci&#243;n seg&#250;n las restricciones impuestas por el programa de
+dise&#241;o</A>
+</H2>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:ct6811-jps"></A><A NAME="543"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2:</STRONG>
+Fotos de las placas libres CT6811 y JPS</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="\includegraphics{ps/placas.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Se pretende que al conocer el tipo de dise&#241;o libre, sepamos a qu&#233;
+restricciones estamos sometidos. Para ello a los dise&#241;o se le dota
+de tres componentes, cada una asociada a uno de los tres planos electr&#243;nicos:
+X para el esquem&#225;tico, Y para el PCB y Z para el fichero de fabricaci&#243;n. 
+
+<P>
+La componente Z s&#243;lo puede tomar dos valores: '<SPAN  CLASS="textbf">L</SPAN>' si est&#225;
+disponible y '<SPAN  CLASS="textbf">X</SPAN>' si no. Si est&#225; disponible tiene que estar
+en <SPAN  CLASS="textbf">formato Gerber</SPAN>. Las componentes X e Y pueden tener los
+siguientes valores:
+
+<P>
+
+<UL>
+<LI><SPAN  CLASS="textbf">L</SPAN>. <SPAN  CLASS="textbf">El Programa con el que se ha dise&#241;ado el plano
+es libre</SPAN>. Por tanto, no hay ninguna restricci&#243;n. Por ejemplo si se
+han usado las herramientas gEDA.
+</LI>
+<LI><SPAN  CLASS="textbf">P</SPAN>. <SPAN  CLASS="textbf">El Programa es propietario</SPAN> y s&#243;lo es se puede
+ejecutar en <SPAN  CLASS="textbf">sistemas operativos propietarios</SPAN>. Por ejemplo
+si se ha empleado el programa Orcad o Tango, que s&#243;lo est&#225;n disponibles
+para plataformas Windows (al menos de momento).
+</LI>
+<LI><SPAN  CLASS="textbf">M</SPAN>. <SPAN  CLASS="textbf">El programa es propietario</SPAN>, pero es <SPAN  CLASS="textbf">multiplataforma</SPAN>,
+siendo alguna de las plataformas un <SPAN  CLASS="textbf">sistema operativo libre</SPAN>.
+Por ejemplo el programa Eagle[<A
+ HREF="node33.html#Eagle">11</A>], disponible de forma nativa
+para Windows y Linux.
+</LI>
+</UL>
+Seg&#250;n esta clasificaci&#243;n podemos tener dise&#241;os LLL, PPL, PML... Vamos
+a analizar tres de los tipos m&#225;s importantes:
+
+<P>
+
+<UL>
+<LI><SPAN  CLASS="textbf">Dise&#241;os LLL</SPAN>. Son <SPAN  CLASS="textbf">hardware libre ``pura sangre''</SPAN>.
+No hay restricciones. Tanto el esquem&#225;tico como el PCB se han creado
+con programas libres. Cualquier persona los puede ver/modificar usando
+el programa libre con el que se han dise&#241;ado. Adem&#225;s, el fichero GERBER
+est&#225; disponible. S&#243;lo hay que pagar los costes de fabricaci&#243;n, para
+disponer del dise&#241;o. Los autores no conocen ning&#250;n dise&#241;o de este
+tipo, pero eso no quiere decir que no los haya. <SPAN  CLASS="textbf">Es hacia lo
+que deben tender los dise&#241;adores de</SPAN> <SPAN  CLASS="textbf"><SPAN  CLASS="textit">hardware</SPAN></SPAN> <SPAN  CLASS="textbf">libre</SPAN>.
+</LI>
+<LI><SPAN  CLASS="textbf">Dise&#241;os MML</SPAN>. Es <SPAN  CLASS="textbf">lo m&#225;s pr&#225;ctico para el dise&#241;ador</SPAN>,
+al d&#237;a de hoy. Para el esquem&#225;tico y el PCB se emplea un programa
+propietario multiplataforma. Cualquiera lo puede fabricar, por estar
+disponible el fichero GERBER. Para verlo/modificarlo hay que obtener
+una licencia del programa en cuesti&#243;n, pero al menos se puede usar
+un sistema operativo libre. Por ejemplo el programa Eagle, de la casa
+cadsoft. Adem&#225;s se puede descargar gratuitamente una versi&#243;n para
+estudiantes, ilimitada en el tiempo, que restringe el tama&#241;o y la
+complejidad de los dise&#241;os que se pueden realizar. La placa JPS[<A
+ HREF="node33.html#JPS-hispabot">12</A>,<A
+ HREF="node33.html#JPS-web">13</A>]
+es de este tipo.
+</LI>
+<LI><SPAN  CLASS="textbf">Dise&#241;os PPX</SPAN>. Es <SPAN  CLASS="textbf">lo m&#225;s restrictivo</SPAN>. Tanto el esquem&#225;tico
+como el PCB se han dise&#241;ado usando programas propietarios s&#243;lo disponibles
+para sistemas operativos propietarios, como por ejemplo los programas
+OrCad, Tango, Protel, etc, s&#243;lo disponibles para plataformas Windows.
+Adem&#225;s no est&#225; disponible el fichero de fabricaci&#243;n, bien por ser
+un prototipo o bien porque al fabricante se le ha dado directamente
+el PCB, y tiene un programa que le permite leerlo y fabricar. Por
+ejemplo las tarjetas CT6811[<A
+ HREF="node33.html#CT6811">14</A>] (ver figura <A HREF="#fig:ct6811-jps">2</A>)
+y CT293[<A
+ HREF="node33.html#ct293">15</A>], que son las empleadas para el microbot Tritt[<A
+ HREF="node33.html#Tritt">16</A>].
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html141"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html139"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html135"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html142"
+  HREF="node10.html">3 Un ejemplo de</A>
+<B> Up:</B> <A NAME="tex2html140"
+  HREF="node7.html">2 Clasificación</A>
+<B> Previous:</B> <A NAME="tex2html136"
+  HREF="node8.html">2.1 El formato de</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-31
+</ADDRESS>
+</BODY>
+</HTML>

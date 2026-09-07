@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Introducción</TITLE>
+<META NAME="description" CONTENT="Introducción">
+<META NAME="keywords" CONTENT="hispalinux-articulo">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="hispalinux-articulo.css">
+
+<LINK REL="previous" HREF="hispalinux-articulo.html">
+<LINK REL="up" HREF="hispalinux-articulo.html">
+<LINK REL="next" HREF="node2.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html52"
+  HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html50"
+  HREF="hispalinux-articulo.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html46"
+  HREF="hispalinux-articulo.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html53"
+  HREF="node2.html">1 Hardware estático</A>
+<B> Up:</B> <A NAME="tex2html51"
+  HREF="hispalinux-articulo.html">Hardware libre: clasificaci&#243;n y</A>
+<B> Previous:</B> <A NAME="tex2html47"
+  HREF="hispalinux-articulo.html">Hardware libre: clasificaci&#243;n y</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00010000000000000000">
+Introducci&#243;n</A>
+</H1>
+
+<P>
+El <SPAN  CLASS="textbf"><SPAN  CLASS="textit">software</SPAN></SPAN> <SPAN  CLASS="textbf">libre</SPAN>[<A
+ HREF="node33.html#sw-fsf">1</A>] ofrece al
+usuario <SPAN  CLASS="textbf">cuatro libertades</SPAN>: libertad de uso, de estudio y
+modificaci&#243;n, de distribuci&#243;n, y de redistribuci&#243;n de las mejoras.
+Existen licencias que las garantizan y que dan una cobertura legal,
+como por ejemplo la GPL[<A
+ HREF="node33.html#GPL">2</A>].
+
+<P>
+El <SPAN  CLASS="textbf"><SPAN  CLASS="textit">hardware</SPAN></SPAN> <SPAN  CLASS="textbf">abierto o libre</SPAN><A NAME="tex2html1"
+  HREF="footnode.html#foot538"><SUP><SPAN CLASS="arabic">1</SPAN></SUP></A> toma estas mismas ideas para aplicarlas en su campo. Es una propuesta
+casi tan antigua como la del <SPAN  CLASS="textit">software</SPAN> libre[<A
+ HREF="node33.html#Graham-Seaman">3</A>],
+sin embargo su empleo no es tan directo. <SPAN  CLASS="textbf">Compartir dise&#241;os</SPAN>
+<SPAN  CLASS="textbf"><SPAN  CLASS="textit">hardware</SPAN></SPAN> <SPAN  CLASS="textbf">es m&#225;s complicado</SPAN>. No hay una definici&#243;n
+exacta (se pueden encontrar referencias a distintos art&#237;culos en [<A
+ HREF="node33.html#def-hw-libre">4</A>]).
+Incluso el propio Richard Stallman afirma[<A
+ HREF="node33.html#Stallman">5</A>] que las
+ideas del <SPAN  CLASS="textit">software</SPAN> libre se pueden aplicar a los ficheros necesarios
+para su dise&#241;o y especificaci&#243;n (esquemas, PCB, etc), pero no al circuito
+f&#237;sico en s&#237;.
+
+<P>
+Al no existir una definici&#243;n clara de <SPAN  CLASS="textit">hardware</SPAN> abierto, cada
+autor lo interpreta a su manera. Se han creado licencias[<A
+ HREF="node33.html#licencias_HA">6</A>],
+algunas de las cuales est&#225;n todav&#237;a en desarrollo. 
+
+<P>
+Para abordar el estudio comenzaremos estableciendo una primera clasificaci&#243;n,
+seg&#250;n su naturaleza. Existen los siguientes tipos:
+
+<P>
+
+<UL>
+<LI><SPAN  CLASS="textbf"><SPAN  CLASS="textit">Hardware</SPAN></SPAN> <SPAN  CLASS="textbf">est&#225;tico</SPAN>. Conjunto de elementos
+materiales de los sistemas electr&#243;nicos. Tiene una existencia f&#237;sica
+(se puede ``tocar''). Esta propiedad no la tiene el software,
+por lo que surgen una serie de problemas que se discuten en el apartado
+<A HREF="node4.html#ap:problemas-ha">1.1</A>. En la primera parte de este art&#237;culo revisaremos
+y ampliaremos las ideas del <SPAN  CLASS="textbf">proyecto hardware abierto</SPAN>[<A
+ HREF="node33.html#HA">7</A>],
+comenzado en 1997 por Microb&#243;tica S.L. Se propone una definici&#243;n pr&#225;ctica
+de <SPAN  CLASS="textit">hardware</SPAN> est&#225;tico libre y se establece una clasificaci&#243;n
+de los dise&#241;os, en funci&#243;n de las herramientas de desarrollo empleadas,
+que limitan en mayor o menor medida las libertades ofrecidas por el
+autor. 
+</LI>
+<LI><SPAN  CLASS="textbf">Hardware reconfigurable</SPAN>. Es el que se describe mediante un
+lenguaje HDL, (<SPAN  CLASS="textit">Hardware Description Language</SPAN>, lenguaje de descripci&#243;n
+hardware) y que permite especificar con todo detalle su estructura
+y funcionalidad. A partir de este c&#243;digo se generan unos ficheros
+de configuraci&#243;n (<SPAN  CLASS="textit">bitstreams</SPAN>) para que los dispositivos del
+tipo FPGA se reconfiguren, funcionando seg&#250;n lo descrito. En la segunda
+parte se describe con m&#225;s detalle este <SPAN  CLASS="textit">hardware</SPAN> y c&#243;mo lo podemos
+desarrollar en plataformas GNU/Linux, utilizando el lenguaje VHDL
+y las FPGAs de la empresa Xilinx[<A
+ HREF="node33.html#Xilinx">8</A>].
+</LI>
+</UL>
+Dada su diferente naturaleza, al hablar de <SPAN  CLASS="textit">hardware</SPAN> libre hay
+que especificar de qu&#233; tipo de hardware se est&#225; hablando. Para hacer
+que el <SPAN  CLASS="textit">hardware</SPAN> reconfigurable sea libre, s&#243;lo hay que aplicar
+una licencia GPL a su c&#243;digo. Sin embargo, no est&#225; tan claro qu&#233; se
+entiende por <SPAN  CLASS="textit">hardware</SPAN> libre cuando nos referimos al <SPAN  CLASS="textit">hardware</SPAN>
+est&#225;tico. 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html52"
+  HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html50"
+  HREF="hispalinux-articulo.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html46"
+  HREF="hispalinux-articulo.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html53"
+  HREF="node2.html">1 Hardware estático</A>
+<B> Up:</B> <A NAME="tex2html51"
+  HREF="hispalinux-articulo.html">Hardware libre: clasificaci&#243;n y</A>
+<B> Previous:</B> <A NAME="tex2html47"
+  HREF="hispalinux-articulo.html">Hardware libre: clasificaci&#243;n y</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-31
+</ADDRESS>
+</BODY>
+</HTML>

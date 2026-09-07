@@ -1,0 +1,287 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>5.2 Un ejemplo</TITLE>
+<META NAME="description" CONTENT="5.2 Un ejemplo">
+<META NAME="keywords" CONTENT="hispalinux-articulo">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="hispalinux-articulo.css">
+
+<LINK REL="previous" HREF="node18.html">
+<LINK REL="up" HREF="node17.html">
+<LINK REL="next" HREF="node20.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html255"
+  HREF="node20.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html253"
+  HREF="node17.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html249"
+  HREF="node18.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html256"
+  HREF="node20.html">6 Síntesis/Implementación</A>
+<B> Up:</B> <A NAME="tex2html254"
+  HREF="node17.html">5 Simulación en GNU/Linux</A>
+<B> Previous:</B> <A NAME="tex2html250"
+  HREF="node18.html">5.1 GHDL y GTKWAVE</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION02022000000000000000">
+<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">2</SPAN> Un ejemplo</A>
+</H2>
+
+<P>
+A continuaci&#243;n se muestra un ejemplo de un contador de 8 bits:
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD><P>
+<SMALL CLASS="FOOTNOTESIZE">library&nbsp;ieee;</SMALL>
+<P>
+
+
+<P>
+<SMALL CLASS="FOOTNOTESIZE">use&nbsp;ieee.std_logic_1164.all;</SMALL>
+<P>
+
+
+<P>
+<SMALL CLASS="FOOTNOTESIZE">use&nbsp;ieee.std_logic_unsigned.all;</SMALL>&nbsp;
+<BR>&nbsp;
+<BR>
+<P>
+
+
+<P>
+<SMALL CLASS="FOOTNOTESIZE">entity&nbsp;cont8&nbsp;is</SMALL>
+<P>
+
+
+<P>
+&nbsp;<SMALL CLASS="FOOTNOTESIZE">&nbsp;port&nbsp;(clk&nbsp;&nbsp;&nbsp;:&nbsp;in&nbsp;std_logic;&nbsp;-&nbsp;Reloj</SMALL>
+<P>
+
+
+<P>
+&nbsp;<SMALL CLASS="FOOTNOTESIZE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clear&nbsp;:&nbsp;in&nbsp;std_logic;</SMALL>
+<P>
+
+
+<P>
+&nbsp;<SMALL CLASS="FOOTNOTESIZE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;out&nbsp;std_logic_vector&nbsp;(7&nbsp;downto&nbsp;0));&nbsp;-Salida&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SMALL>
+<P>
+
+
+<P>
+<SMALL CLASS="FOOTNOTESIZE">end&nbsp;cont8;</SMALL>&nbsp;
+<BR>&nbsp;
+<BR>
+<P>
+
+
+<P>
+<SMALL CLASS="FOOTNOTESIZE">architecture&nbsp;beh&nbsp;of&nbsp;cont8&nbsp;is</SMALL>
+<P>
+
+
+<P>
+<SMALL CLASS="FOOTNOTESIZE">signal&nbsp;cuenta&nbsp;:&nbsp;std_logic_vector&nbsp;(7&nbsp;downto&nbsp;0);</SMALL>&nbsp;
+<BR>&nbsp;
+<BR>
+<P>
+
+
+<P>
+<SMALL CLASS="FOOTNOTESIZE">begin</SMALL>
+<P>
+
+
+<P>
+&nbsp;<SMALL CLASS="FOOTNOTESIZE">&nbsp;output:&nbsp;process(clk,clear)</SMALL>
+<P>
+
+
+<P>
+&nbsp;<SMALL CLASS="FOOTNOTESIZE">&nbsp;begin</SMALL>
+<P>
+
+
+<P>
+&nbsp;<SMALL CLASS="FOOTNOTESIZE">&nbsp;&nbsp;&nbsp;if&nbsp;(clear='0')&nbsp;then</SMALL>
+<P>
+
+
+<P>
+&nbsp;<SMALL CLASS="FOOTNOTESIZE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;q&lt;=&#34;00000000&#34;;</SMALL>
+<P>
+
+
+<P>
+&nbsp;<SMALL CLASS="FOOTNOTESIZE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cuenta&lt;=&#34;00000000&#34;;</SMALL>
+<P>
+
+
+<P>
+&nbsp;<SMALL CLASS="FOOTNOTESIZE">&nbsp;&nbsp;&nbsp;elsif&nbsp;(clk'event&nbsp;and&nbsp;clk='1')&nbsp;then</SMALL>
+<P>
+
+
+<P>
+&nbsp;<SMALL CLASS="FOOTNOTESIZE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cuenta&lt;=(cuenta+1);</SMALL>
+<P>
+
+
+<P>
+&nbsp;<SMALL CLASS="FOOTNOTESIZE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;q&lt;=cuenta;</SMALL>
+<P>
+
+
+<P>
+&nbsp;<SMALL CLASS="FOOTNOTESIZE">&nbsp;&nbsp;&nbsp;end&nbsp;if;&nbsp;</SMALL>
+<P>
+
+
+<P>
+&nbsp;<SMALL CLASS="FOOTNOTESIZE">&nbsp;end&nbsp;process;</SMALL>
+<P>
+
+
+<P>
+<SMALL CLASS="FOOTNOTESIZE">end&nbsp;beh;</SMALL>
+<P>
+
+</DD>
+</DL>Este contador se encuentra en el fichero <SPAN  CLASS="textit">cont8.vhdl</SPAN>. Para simularlo
+es necesario crear un banco de pruebas (testbench) que introduzca
+la se&#241;al de reloj y coloque un valor adecuado en la entrada de <SPAN  CLASS="textit">reset</SPAN>.
+Lo llamamos <SPAN  CLASS="textit">tb_cont8.vhdl</SPAN>. El proceso para realizar la simulaci&#243;n
+completa es el siguiente:
+
+<P>
+
+<OL>
+<LI><SPAN  CLASS="textbf">Realizar el an&#225;lisis</SPAN>. A partir de los ficheros tb_cont8.vhdl
+y cont8.vhdl se obtendr&#225;n los ficheros objeto .o:
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>$&nbsp;ghdl&nbsp;-a&nbsp;-ieee=synopsys&nbsp;*.vhdl
+</DD>
+</DL>
+</LI>
+<LI><SPAN  CLASS="textbf">Elaboraci&#243;n</SPAN>. A partir de los ficheros objeto obtenemos el
+ejecutable (tb_cont8):
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>$&nbsp;ghdl&nbsp;-e&nbsp;-ieee=synopsys&nbsp;tb_cont8
+</DD>
+</DL>
+</LI>
+<LI><SPAN  CLASS="textbf">Simulaci&#243;n</SPAN>. Ejecutamos el programa y obtenemos el fichero
+de simulaci&#243;n (simulaci&#243;n.vcd). Especificamos el tiempo que queremos
+simular.
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>$&nbsp;./tb_cont8&nbsp;-vcd=simulacion.vcd&nbsp;-stop-time=200ns
+</DD>
+</DL>
+</LI>
+<LI><SPAN  CLASS="textbf">Visualizaci&#243;n</SPAN>. Con el programa gtkwave vemos los resultados
+de la simulaci&#243;n
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>$&nbsp;gtkwave&nbsp;simulacion.vcd
+</DD>
+</DL>
+</LI>
+</OL>
+Todos los pasos anteriores se realizan m&#225;s f&#225;cilmente creando un fichero
+<SPAN  CLASS="textit">Makefile</SPAN>, pero se ha dejado as&#237; por claridad. En la figura
+<A HREF="#fig:simulacion-gtkwave">4</A> se muestra una parte de los resultados
+obtenidos con GTKWAVE. 
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>
+<DIV ALIGN="CENTER"><A NAME="fig:simulacion-gtkwave"></A><A NAME="552"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4:</STRONG>
+Resultados de la simulaci&#243;n con GTKWAVE</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="\includegraphics{ps/gtkwave-pantallazo4.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+</DD>
+</DL>
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html255"
+  HREF="node20.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html253"
+  HREF="node17.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html249"
+  HREF="node18.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html256"
+  HREF="node20.html">6 Síntesis/Implementación</A>
+<B> Up:</B> <A NAME="tex2html254"
+  HREF="node17.html">5 Simulación en GNU/Linux</A>
+<B> Previous:</B> <A NAME="tex2html250"
+  HREF="node18.html">5.1 GHDL y GTKWAVE</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2003-12-31
+</ADDRESS>
+</BODY>
+</HTML>

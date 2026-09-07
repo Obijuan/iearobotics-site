@@ -1,0 +1,23 @@
+Hardware libre: clasificación y desarrollo de hardware 
+reconfigurable en entornos GNU/Linux
+
+Ivan González, Juan González, Francisco Gómez-Arribas
+
+Resumen
+
+En este artículo se aborda el hardware libre, 
+proponiéndose definiciones en función de su naturaleza. 
+Se estudian los dos tipos, el estático, que tiene 
+existencia física, y el reconfigurable, descrito 
+mediante lenguajes HDL, centrándose en los criterios 
+para considerarlos libres. En la primera parte se 
+revisan y amplían las ideas del proyecto hardware 
+abierto de Microbótica, dando una definición de 
+hardware estático libre y proponiendo una clasificación 
+según los programas de diseño empleados. En la segunda 
+se aborda el hardware reconfigurable, centrándose en 
+las herramientas de desarrollo para GNU/Linux. 
+Finalmente se muestran ejemplos de sistemas diseñados 
+enteramente bajo GNU/Linux, tanto de hardware estático 
+como reconfigurable.
+
