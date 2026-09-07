@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>LIBRERIA CTS: Programaci&oacute;n y control de la CT6811</TITLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<TABLE WIDTH=95% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+	<TR>
+		<TD COLSPAN=2>
+			<P ALIGN=CENTER><B>LIBRERIA CTS: Programaci&oacute;n y control de
+			la tarjeta CT6811</B> 
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=4><B>INTRODUCCI&Oacute;N</B>
+</FONT></FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif">La <B>librer&iacute;a CTS</B> son
+un conjunto de m&oacute;dulos que ofrecen una API para poder <B>realizar
+aplicaciones de control de la tarjeta </B></FONT><A HREF="../../../../proyectos/ct6811/ct6811.html"><FONT FACE="Arial, sans-serif">CT6811</FONT></A><FONT FACE="Arial, sans-serif">,
+de </FONT><A HREF="http://www.microbotica.es/"><FONT FACE="Arial, sans-serif">Microb&oacute;tica</FONT></A><FONT FACE="Arial, sans-serif">,
+desde el PC. En muchas aplicaciones es necesario controlar un
+hardware externo desde un PC, como por ejemplo un robot. Existen
+muchas alternativas para ello.<BR><BR>Una de ellas consiste en
+utilizar una </FONT><A HREF="../../../../proyectos/ct6811/ct6811.html"><B><FONT FACE="Arial, sans-serif">tarjeta
+CT6811</FONT></B></A> <FONT FACE="Arial, sans-serif">conectada al PC
+por el <B>puerto serie</B> y utilizar la <B>librer&iacute;a CTS</B>
+para el software desarrollado en el PC. Uno de los m&oacute;dulos de
+la CTS gestiona todas las comunicaciones de bajo nivel con un
+servidor previamente cargado en el microcontrolador, de manera que
+<B>realizando simples llamadas a la API se puede interactuar con el
+hardware</B> de una manera muy sencilla: leer el estado de los
+puertos, del conversor A/D, escritura en puertos, grabaci&oacute;n de
+datos en la EEPROM... <BR><BR>Ejemplos de aplicaciones realizadas con
+esta librer&iacute;a son: </FONT>
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../cttools/cttools.html"><B><FONT FACE="Arial, sans-serif">CTTOOLS</FONT></B></A><FONT FACE="Arial, sans-serif">.
+	Utilidades de manejo de la <A HREF="../../../../proyectos/ct6811/ct6811.html"><B><FONT FACE="Arial, sans-serif">tarjeta
+	CT6811</FONT></B></A>: carga, grabaci&oacute;n, movimiento de
+	<A HREF="../../../../proyectos/tritt/tritt.html">Tritt</A>,etc... </FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../../../personal/juan/proyectos/XBT6811/xbt6811.html"><B><FONT FACE="Arial, sans-serif">XBT6811</FONT></B></A><FONT FACE="Arial, sans-serif">.
+	Control de la posici&oacute;n de 4 servos desde el PC, a trav&eacute;s
+	de la <B>tarjeta BT6811</B> </FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../cube-2.0/control_i.html"><B><FONT FACE="Arial, sans-serif">CUBE-FISICO</FONT></B></A><FONT FACE="Arial, sans-serif">.
+	Movimiento de los servos y reproducci&oacute;n de secuencias para el
+	<B>robot gusano </B></FONT><A HREF="../cube-2.0/cube.html"><B><FONT FACE="Arial, sans-serif">CUBE</FONT></B></A>
+		</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>INTPCBOT</B>. Int&eacute;rprete
+	de comandos para la <A HREF="../../../../proyectos/pcbot/pcbot.html">tarjeta
+	PCBOT</A>, para el control de los rel&eacute;s, pulsadores y motores
+	</FONT>
+	</P>
+</UL>
+<HR>
+<P><FONT FACE="Arial, sans-serif"><B>AUTOR:</B> <A HREF="../../index.html">Juan
+Gonz&aacute;lez G&oacute;mez</A> (a.k.a. Obijuan), (</FONT><A HREF="http://www.microbotica.es/"><FONT FACE="Arial, sans-serif">Microb&oacute;tica</FONT></A><FONT FACE="Arial, sans-serif">,
+1999)</FONT> 
+</P>
+<HR>
+<P><FONT FACE="Arial, sans-serif"><B>LICENCIA</B>: </FONT><A HREF="http://gugs.sindominio.net/gnu-gpl/gples.html"><FONT FACE="Arial, sans-serif">GPL</FONT></A>
+</P>
+<HR>
+<P><FONT FACE="Albany, sans-serif"><FONT SIZE=4><B>DESCRIPCI&Oacute;N</B>
+</FONT></FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif">La librer&iacute;a est&aacute;
+compuesta por 4 m&oacute;dulos: </FONT>
+</P>
+<OL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>M&oacute;dulo
+	serie</B>. Funciones necesarias para la comunicaci&oacute;n con
+	cualquier dispositivo conectado al puerto serie </FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>M&oacute;dulo
+	S19</B>. Manejo de fichero en formato .S19 de Motorola </FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>M&oacute;dulo
+	Bootstrap</B>. Gesti&oacute;n del modo bootstrap de la <A HREF="../../../../proyectos/ct6811/ct6811.html"><FONT FACE="Arial, sans-serif">CT6811</FONT></A></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>M&oacute;dulo Ctserver</B>.
+	Funciones de alto nivel para acceder a los recursos de la <A HREF="../../../../proyectos/ct6811/ct6811.html"><FONT FACE="Arial, sans-serif">CT6811</FONT></A>
+	</FONT>
+	</P>
+</OL>
+<P><FONT FACE="Arial, sans-serif">Seg&uacute;n la aplicaci&oacute;n
+se usar&aacute;n unos u otros m&oacute;dulos (o todos). El m&oacute;dulo
+m&aacute;s interesante es el <B>CTSERVER</B> que es el permite
+acceder a los recursos del 6811 desde nuestras aplicaciones en el PC.
+Este m&oacute;dulo se basa en la idea de <B>cliente-servidor</B>. En
+el 6811 se ejecuta un <B>programa servidor</B>, el CTSERVER, que
+recibe comandos por el puerto serie y act&uacute;a en consecuencia.
+En el PC se ejecutan los <B>programas clientes</B> que mediante la
+API del m&oacute;dulo CTSERVER acceden a los servicios del
+servidor.<BR><BR>El <B>servidor CTSERVER es de prop&oacute;sito
+general</B>, y nos permite acceder a TODOS los recursos del 6811. Es
+el que viene por defecto en la librer&iacute;a CTS. Es posible
+programarse otros servidores m&aacute;s espec&iacute;ficos, pero
+tendr&aacute;n que ser controlados por un nuevo m&oacute;dulo cliente
+que creemos. </FONT>
+</P>
+<HR>
+<P><FONT FACE="Arial, sans-serif"><B>PLATAFORMA</B>: Linux </FONT>
+</P>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4><B>DOWNLOAD</B>
+</FONT></FONT>
+</P>
+<DL>
+	<DD>
+	<TABLE WIDTH=95% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>FICHEROS PARA
+				DESCARGAR</B> </FONT>
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<DD>
+	<TABLE WIDTH=95% BORDER=0 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=77*>
+		<COL WIDTH=179*>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=30%>
+				<P><A HREF="cts-1.5.tar.gz"><FONT FACE="Arial, sans-serif">cts-1.5.tar.gz</FONT></A></P>
+			</TD>
+			<TD WIDTH=70%>
+				<P><FONT FACE="Arial, sans-serif">Librer&iacute;a CTS. Version
+				1.5. Fuentes.</FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=30% BGCOLOR="#abbeeb">
+				<P><A HREF="cts_1.5-1_i386.deb"><FONT FACE="Arial, sans-serif">cts_1.5-1_i386.deb</FONT></A></P>
+			</TD>
+			<TD WIDTH=70% BGCOLOR="#abbeeb">
+				<P><FONT FACE="Arial, sans-serif">Librer&iacute;a CTS. Paquete
+				para Debian/Sarge</FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=30%>
+				<P><A HREF="cts-dev_1.5-1_i386.deb"><FONT FACE="Arial, sans-serif">cts-dev_1.5-1_i386.deb</FONT></A></P>
+			</TD>
+			<TD WIDTH=70%>
+				<P><FONT FACE="Arial, sans-serif">Desarrollo con la CTS. Ficheros
+				.h. Paquete para Debian/Sarge</FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=30% BGCOLOR="#abbeeb">
+				<P><A HREF="cts_1.5-1.src.tar.gz"><FONT FACE="Arial, sans-serif">cts_1.5-1.src.tar.gz</FONT></A></P>
+			</TD>
+			<TD WIDTH=70% BGCOLOR="#abbeeb">
+				<P><FONT FACE="Arial, sans-serif">Paquete Fuente para
+				Debian/Sarge</FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=30%>
+				<P><A HREF="cts-1.4-1.i386.rpm"><FONT FACE="Arial, sans-serif">cts-1.4-1.i386.rpm
+				(121KB)</FONT></A> 
+				</P>
+			</TD>
+			<TD WIDTH=70%>
+				<P><FONT FACE="Arial, sans-serif">Librer&iacute;a CTS. Versi&oacute;n
+				1.4</FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=30%>
+				<P><A HREF="cts-1.4.tgz"><FONT FACE="Arial, sans-serif">cts-1.4.tgz
+				(136KB)</FONT></A> 
+				</P>
+			</TD>
+			<TD WIDTH=70%>
+				<P><FONT FACE="Arial, sans-serif">Librer&iacute;a CTS. Fuentes.
+				Versi&oacute;n 1.4</FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=30%>
+				<P><A HREF="cts-1.4.pdf"><FONT FACE="Arial, sans-serif">cts-1.4.pdf
+				(154KB)</FONT></A> 
+				</P>
+			</TD>
+			<TD WIDTH=70%>
+				<P><FONT FACE="Arial, sans-serif">Documentaci&oacute;n de la
+				librer&iacute;a CTS-1.4. API y ejemplos de uso</FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD WIDTH=30%>
+				<P><A HREF="ctserver.asm"><FONT FACE="Arial, sans-serif">ctserver.asm
+				(4KB)</FONT></A> 
+				</P>
+			</TD>
+			<TD WIDTH=70%>
+				<P><FONT FACE="Arial, sans-serif">Servidor CTSERVER. Versi&oacute;n
+				para la RAM interna. 9600 baudios</FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=30%>
+				<P><A HREF="ctserver.s19"><FONT FACE="Arial, sans-serif">ctserver.s19
+				(584 Bytes)</FONT></A> 
+				</P>
+			</TD>
+			<TD WIDTH=70%>
+				<P><FONT FACE="Arial, sans-serif">Servidor CTSERVER. Ejecutable</FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P><BR><BR>
+</P>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4><B>NOTICIAS</B>
+</FONT></FONT>
+</P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>4/Jul/2004: </B>Nueva
+	<B>versi&oacute;n 1.5</B>.</FONT></P>
+	<UL>
+		<LI><P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif">Modificada
+		para funcionar con el <B>kernel 2.6.x</B>. No obstante, es
+		necesario disponer de privilegios de root para utilizarla algunas
+		de sus funciones. La comunicaci&oacute;n con la tarjeta CT6811 se
+		hace a una velocidad serie NO est&aacute;ndar. En los kernels 2.6.x
+		es necesario tener privilegios de root para ello.</FONT></P>
+		<LI><P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif">A&ntilde;adidos
+		paquetes .deb para Debian/Sarge</FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><B>La librer&iacute;a CTS ha
+		quedado obsoleta</B>. Para el control de la CT6811 desde el PC,
+		ahora se utiliza el <A HREF="../../../../proyectos/stargate/index.html">proyecto
+		stargate</A>.</FONT></P>
+	</UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>24/Feb/2003:</B> Modificado
+	paquete cts-1.4.tgz. Solucionado error en compilaci&oacute;n </FONT>
+	</P>
+</UL>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>10/Feb/2003:</B> A&ntilde;adidos
+	enlaces directos al servidor CTSERVER, para su f&aacute;cil descarga
+	</FONT>
+	</P>
+</UL>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B>15/Agosto/2002:</B> Versi&oacute;n
+	1.4 de la Librer&iacute;a CTS puesta en esta web </FONT>
+	</P>
+</UL>
+<HR>
+<P><FONT FACE="Arial, sans-serif"><A HREF="../../index.html">Juan
+Gonz&aacute;lez</A><BR><A HREF="/iearobotics-site/wiki">IEAROBOTICS</A><BR></FONT><BR><BR>
+</P>
+</BODY>
+</HTML>
