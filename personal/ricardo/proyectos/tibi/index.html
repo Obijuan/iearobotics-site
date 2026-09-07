@@ -1,0 +1,335 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Tarjeta Interface Bus ISA (TIBI)</TITLE>
+<META http-equiv=CONTENT-TYPE content="text/html; charset=iso-8859-15">
+<META content="Tarjeta Interface Bus ISA (TIBI)" name=KEYWORDS>
+<STYLE>H2 {
+	BORDER-RIGHT: medium none; PADDING-RIGHT: 0cm; BORDER-TOP: medium none; MARGIN-TOP: 0.26cm; PADDING-LEFT: 0cm; PADDING-BOTTOM: 0cm; MARGIN-LEFT: 0.66cm; BORDER-LEFT: medium none; COLOR: #000000; MARGIN-RIGHT: 0.66cm; PADDING-TOP: 0cm; BORDER-BOTTOM: medium none; FONT-FAMILY: "Times", "Arial"; TEXT-ALIGN: left
+}
+</STYLE>
+
+<style type="text/css">
+table.sample {
+	font-family: sans-serif;
+	font-size: small;
+}
+</style>
+
+<META content="MSHTML 6.00.2900.2722" name=GENERATOR></HEAD>
+<BODY lang=en-US dir=ltr>
+<CENTER>
+<TABLE style="PAGE-BREAK-BEFORE: always" cellSpacing=2 cellPadding=4 
+width="100%" bgColor=#abbeeb border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2>
+      <P align=center><B>Tarjeta Interface Bus ISA (TIBI) 
+      <META http-equiv=Content-Style-Type content=text/css><!-- t&iacute;tulo de la p&aacute;gina --></B></P></TD></TR></TBODY></TABLE></CENTER>
+<DL>
+  <DL>
+    <DD>
+    <TABLE cellSpacing=0 cellPadding=2 width=785 border=0>
+      <TBODY>
+      <TR>
+        <TD width=90>
+          <P><A 
+          href="#Introducci&oacute;n|outline"><FONT 
+          size=2>[Introducci&oacute;n]</FONT></A></P></TD>
+        <TD width=90>
+          <P><A 
+          href="#Descripci&oacute;n|outline"><FONT 
+          size=2>[Descripci&oacute;n]</FONT></A></P></TD>
+        <TD width=90>
+          <P><A 
+          href="#Software|outline"><FONT 
+          size=2>[Software]</FONT></A></P></TD>
+        <TD width=90>
+          <P><A 
+          href="#Autor|outline"><FONT 
+          size=2>[Autor]</FONT></A></P></TD>
+        <TD width=90>
+          <P><A 
+          href="#Licencia|outline"><FONT 
+          size=2>[Licencia]</FONT></A></P></TD></TR>
+      <TR>
+        <TD width=90>
+          <P><A 
+          href="#download"><FONT 
+          size=2>[Download]</FONT></A></P></TD>
+        <TD width=90>
+          <P><A 
+          href="#Noticias|outline"><FONT 
+          size=2>[Noticias]</FONT></A></P></TD>
+        <TD width=90>
+          <P><A 
+          href="#Agradecimientos|outline"><FONT 
+          size=2>[Agradecimientos]</FONT></A></P></TD>
+        <TD width=90>
+          <P><A 
+          href="#Disclaimer|outline"><FONT 
+          size=2>[Disclaimer]</FONT></A></P></TD></TBODY></TABLE></DD></DL></DL>
+<P style="MARGIN-BOTTOM: 0cm" align=center><BR></P>
+<TABLE align=center>
+  <TBODY>
+  <TR>
+    <TD><IMG src="tibi.jpg" align=middle 
+      border=0 name=Imagen1></TD>
+    <TD></TD></TR></TBODY></TABLE>
+<HR>
+
+<H2><A name=Introducci&oacute;n|outline></A>Introducci&oacute;n</H2>
+<P><FONT size=2 face="Arial, sans-serif">Este circuito es una interface de E/S para PC dise&ntilde;ada como una tarjeta ISA est&aacute;ndar. El dise&ntilde;o es lo m&aacute;s sencillo posible ya que &uacute;nicamente consta de un comparador, un buffer, un circuito NAND, resistencias y condensadores. </FONT></P>
+<HR>
+
+<H2><A name=Descripci&oacute;n|outline></A>Descripci&oacute;n Hardware</H2>
+<P><FONT size=2 face="Arial, sans-serif">El circuito no hace m&aacute;s que actuar como un simple buffer de entrada/salida
+entre el conector externo y el bus ISA del ordenador. La tarjeta deber&aacute;
+direccionarse como cualquier otra tarjeta est&aacute;ndar, por lo que habr&aacute;
+que asignarle una direcci&oacute;n base de E/S. esta funci&oacute;n se
+realizar&aacute; a trav&eacute;s del dip switch que se ve en el dise&ntilde;o
+y sus valores corresponden con los de la <a href="#tabla">tabla 1</a>.
+El conector externo proporciona 8 se&ntilde;ales de E/S (IO0 a IO7), dos
+l&iacute;neas de direcci&oacute;n (A0 y A1), una se&ntilde;al de habilitaci&oacute;n
+activa a nivel bajo (/ENABLE), una se&ntilde;al de lectura activa a nivel
+bajo (/RD) y una se&ntilde;al de escritura activa tambi&eacute;n a nivel
+bajo (/WR). Adem&aacute;s de estas se&ntilde;ales se tienen l&iacute;neas
+de alimentaci&oacute;n de +5V y se&ntilde;ales de tierra.
+<p><a NAME="tabla"></a>
+<table class="sample" BORDER COLS=9 align="center">
+	<tr>
+		<td></td>
+		<td>300</td>
+		<td>304</td>
+		<td>308</td>
+		<td>30C</td>
+		<td>310</td>
+		<td>314</td>
+		<td>318</td>
+		<td>31C</td>
+	</tr>
+	<tr>
+		<td>A</td>
+		<td>ON</td>
+		<td>OFF</td>
+		<td>ON</td>
+		<td>OFF</td>
+		<td>ON</td>
+		<td>OFF</td>
+		<td>ON</td>
+		<td>OFF</td>
+	</tr>
+	<tr>
+		<td>B</td>
+		<td>ON</td>
+		<td>ON</td>
+		<td>OFF</td>
+		<td>OFF</td>
+		<td>ON</td>
+		<td>ON</td>
+		<td>OFF</td>
+		<td>OFF</td>
+	</tr>
+	<tr>
+		<td>C</td>
+		<td>ON</td>
+		<td>ON</td>
+		<td>ON</td>
+		<td>ON</td>
+		<td>OFF</td>
+		<td>OFF</td>
+		<td>OFF</td>
+		<td>OFF</td>
+	</tr>
+</table>
+<center>
+<p><font size=2><b>Tabla 1</b></font></center>
+
+<p><FONT size=2 face="Arial, sans-serif">Con el dip switch se selecciona el estado l&oacute;gico que tendr&aacute;n
+las se&ntilde;ales P0, P1 y P2 del comparador. Las resistencias, actuando
+como resistencias de pull-up, proporcionan un nivel l&oacute;gico alto
+cuando alguna de estas entradas est&eacute; abierta en el interruptor.
+El resto de entradas P del comparador se mantienen a un nivel l&oacute;gico
+fijo (todos a bajo, menos P6 que est&aacute; a alto). Este tinglado de
+que unas est&eacute;n a nivel bajo y alto de forma fija es por el rango
+de direcciones que estamos codificando. La tarjeta pude tomar direcciones
+entre la 0x300 y la 0x31C. Esto implica que las se&ntilde;ales A8 y A9
+del bus siempre estar&aacute;n a 1 ya que si el resto est&aacute;n a 0
+estariamos codificando la direcci&oacute;n 0x300. Para direccionar el resto
+de valores posibles del rango &uacute;nicamente es necesario modificar
+los valores de los 3 bits de menor peso, es decir, A2, A3 y A4 del bus
+ISA.Las se&ntilde;ales A0 y A1 del bus ISA se puentean directamente con
+las se&ntilde;ales A0 y A1 del conector, por si se quiere direccionar dentro
+del dispositivo que conectemos (crear nuestro propio bus externo).
+</font></p>
+<p><FONT size=2 face="Arial, sans-serif">Por tanto, las l&iacute;neas de direcci&oacute;n del bus ISA van al
+comparador, las l&iacute;neas del dip switch, junto con las l&iacute;neas
+de estado fijo comentadas anteriormente van al comparador, activando la
+se&ntilde;al a nivel bajo P=Q cuando la direcci&oacute;n programada y la
+del bus ISA coincidan, esto implica que estamos direccionando la tarjeta
+de interface. Se supone por tanto, que querremos hacer alg&uacute;n tipo
+de operaci&oacute;n de entrada salida sobre la misma, por lo que se activa
+la se&ntilde;al de ENABLE del buffer, para permitir la transferencia en
+un sentido o en otro. El sentido, depender&aacute; del estado de las se&ntilde;ales
+RD y WR. Cuando RD se activa (a nivel bajo) estamos indicando una transferencia
+desde el conector al PC. La activaci&oacute;n (a nivel bajo) de WR, implica
+una transferencia desde el PC al conector. </FONT></P>
+<HR>
+
+<H2><A name=Software|outline></A>Software</H2>
+<P><FONT size=2 face="Arial, sans-serif">El manejo de la tarjeta de interface se ha realizado bajo Linux. Nuestra
+religi&oacute;n y creencias personales nos impiden realizar este trabajo
+bajo otros entornos ;) pero vamos, la idea es la misma que vamos a comentar
+aqu&iacute;...
+</font></p>
+<p><FONT size=2 face="Arial, sans-serif">Empecemos por la m&aacute;s sencilla a la par que cutre :) que ser&iacute;a
+utilizar la tarjeta directamente, es decir, accediendo directamente desde
+el programa a la direcci&oacute;n base codificada en el dip switch. Pero
+esta opci&oacute;n tiene algunas desventajas, quiz&aacute;s la m&aacute;s
+grande es que para poder acceder a los puertos el programa debe ejecutarse
+como root, o en caso de que lo ejecute otro usuario, deber&aacute; pertenecer
+a root y tener activado el suid, cosa que es muy, muy, muy mala .)
+</font></p>
+<p><FONT size=2 face="Arial, sans-serif">Aqu&iacute; tienes un&nbsp; <a href="download/ejemplo1.c">ejemplo</a>&nbsp;
+de un programa de este tipo hecho en C. Como ves la idea es obtener acceso
+al puerto mediante ioperm() y a partir de aqu&iacute; realizar la entrada/salida
+con inb() y outb().
+</font></p>
+<p><FONT size=2 face="Arial, sans-serif">Pero como somos unos machotes, hemos pensado que lo m&aacute;s divertido
+es hacerse un driver para el inventillo y darle m&aacute;s gracia a asunto,
+as&iacute; que te dejamos disponible tambi&eacute;n el c&oacute;digo fuente
+en C de un m&oacute;dulo para Linux que act&uacute;a como driver para la
+tarjeta de interface. El m&oacute;dulo registra un nuevo dispositivo /dev/tibi
+sobre el cual se puede realizar toda la entrada/salida. Las funciones capturadas
+por el driver son open(), close(), read() y write(). Las entradas/salidas
+se hacen con datos de 1 byte.
+<br>El dise&ntilde;o del driver se ha mantenido lo m&aacute;s simple posible
+a falta de quiz&aacute;s un poco m&aacute;s de robustez, pero vamos, es
+algo experimental y sobre el cual tienes total libertad para mejorarlo
+si te apetece. M&aacute;ndanos las mejoras que nunca est&aacute; de m&aacute;s
+aprender :)
+</font></p>
+<p><FONT size=2 face="Arial, sans-serif">El m&oacute;dulo lo tienes&nbsp; <a href="download/tibi.c">aqu&iacute;</a>
+. Para compilarlo debes hacer algo similar a lo siguiente:
+<p><tt>cc -D__KERNEL__ -DMODULE -Wall -O2 -o tibi.o tibi.c</tt>
+<p>Luego lo cargas con un t&iacute;pico:
+<p><tt>insmod tibi.o io=0x31c</tt>
+<p>En este caso la direcci&oacute;n es 0x31c pero deber&aacute;s poner
+la que hayas codificado en el dip switch, claro est&aacute; :)
+<p>Si quieres hacer las cosas ya ca&ntilde;eras, ca&ntilde;eras ;) puedes
+hacer que el driver se cargue autom&aacute;ticamente cuando se acceda al
+dispositivo /dev/tibi, para ello deber&aacute;s modificar tu fichero /etc/modules.conf
+y a&ntilde;adir unas l&iacute;neas como las siguientes:
+<p><tt>alias char-major-254 tibi</tt>
+<br><tt>options tibi io=0x31c</tt>
+<p>Un peque&ntilde;o detallito... en este caso, el dispositivo se ha registrado
+con un major number de 254, si ves e c&oacute;digo fuente del m&oacute;dulo,
+te dar&aacute;s cuenta de que al registrar el dispositivo se obtiene el
+major de forma din&aacute;mica, no se usa un major fijo, por lo que debes
+estar atento a este tema. Cuando el dispositivo se carga, obtienes informaci&oacute;n
+del major asignado y de c&oacute;mo crear el dispositivo en tu fichero
+<tt>/var/log/messages:</tt>
+<p><tt>Sep 24 02:06:57 gibson kernel: Registrado el major 254</tt>
+<br><tt>Sep 24 02:06:57 gibson kernel: Ahora hay que hacer: mknod tibi
+c 254</tt>
+<p>Una vez que se ha cargado el m&oacute;dulo, indicando la direcci&oacute;n
+base de E/S como par&aacute;metro (el hardware tal y como est&aacute; dise&ntilde;ado
+no permite la autodetecci&oacute;n), &uacute;nicamente resta hacer un programa
+de usuario que maneje el dispositivo. Un ejemplo de tal programa de usuario
+lo tienes&nbsp; <a href="download/ejemplo2.c">aqu&iacute;</a> </FONT></P>
+<HR>
+
+<H2><A name=tres></A><A name=Autor|outline></A>Autores</H2>
+<H4>Los culpables de todo esto</H4>
+<P><FONT size=2 face="Arial, sans-serif">Respecto al driver, los programillas y dem&aacute;s parafernalia, son
+cosa de FuTuR3 (angel at futur3 dot com)&nbsp; que es un manazas
+y se dedica al soft ;)
+<br>
+El hardware se lo ha currado EagleMan que es un manitas ;) as&iacute; que cualquier duda al respecto mejor a
+&eacute;l. </FONT></P>
+<HR>
+
+<H2><A name=download></A>Download</H2>
+<DL>
+  <DL>
+    <DD>
+    <TABLE cellSpacing=0 cellPadding=4 width=742 bgColor=#abbeeb border=0>
+      <COLGROUP>
+      <COL width=734>
+      <TBODY>
+      <TR>
+        <TD width=734>
+          <P align=center><FONT size=2 face="Arial, sans-serif"><B>Descarga de ficheros</B></font></P></TD></TR></TBODY></TABLE>
+    <DD>
+    <TABLE cellSpacing=0 cellPadding=2 width=741 border=0>
+      <COLGROUP>
+      <COL width=150>
+      <COL width=583>
+      <TBODY>
+      <TR bgColor=#cabeeb>
+        <TD width=150><FONT size=2 face="Arial, sans-serif"><A 
+          href="download/ejemplo1.c">ejemplo1.c</A></font></TD>
+        <TD width=583><FONT size=2 face="Arial, sans-serif">Ejemplo en C de acceso directo a TIBI</font></TD></TR>
+      <TR bgColor=#abbeeb>
+        <TD width=150><FONT size=2 face="Arial, sans-serif"><A 
+          href="download/ejemplo2.c">ejemplo2.c</A></font></TD>
+        <TD width=583><FONT size=2 face="Arial, sans-serif">Ejemplo en C de acceso mediante el driver TIBI</font></TD></TR>
+      <TR bgColor=#cabeeb>
+        <TD width=150><FONT size=2 face="Arial, sans-serif"><A 
+          href="download/tibi.c">tibi.c</A></font></TD>
+        <TD width=583><FONT size=2 face="Arial, sans-serif">Ejemplo en C de un driver para TIBI</font></TD></TR>
+      <TR bgColor=#abbeeb>
+        <TD width=150><FONT size=2 face="Arial, sans-serif"><A 
+          href="download/esquema.png">esquema.png</A></font></TD>
+        <TD width=583><FONT size=2 face="Arial, sans-serif">Esquem&aacute;tico de la Tarjeta Interface Bus ISA</font></TD></TR>
+      <TR bgColor=#cabeeb>
+        <TD width=150><FONT size=2 face="Arial, sans-serif"><A 
+          href="download/tibi_src.zip">tibi_src.zip</A></font></TD>
+        <TD width=583><FONT size=2 face="Arial, sans-serif">Archivo con todas las fuentes en C</font></TD></TR>
+	  </TBODY></TABLE></DD></DL></DL>
+<P style="MARGIN-BOTTOM: 0cm"><BR></P>
+<HR>
+
+<H2>Licencia</H2>
+<P><FONT size=2 face="Arial, sans-serif">La tarjeta <b>Opto-triac</b> esta publicada bajo 
+la licencia <a href="http://creativecommons.org/licenses/by-sa/2.5/es/"><B>Creative Commons</B>
+</a> en la versi&oacute;n <B>Attribution</B> and <B>Share Alike</B>. 
+Es decir se permite copiar, modificar y distribuir este material siempre que se reconozca 
+al autor y se mantenga la misma licencia.</FONT></P>
+<HR>
+
+<H2><A name=noticias></A><A name=Noticias|outline></A>Noticias</H2>
+<UL>
+  <LI>
+  <P style="MARGIN-BOTTOM: 0cm"<FONT size=2 face="Arial, sans-serif"><B>01/Septiembre/2005</B>: Publicaci&oacute;n en la web IEARobotics.</FONT></P>
+  <LI>
+  <P style="MARGIN-BOTTOM: 0cm"><FONT size=2 face="Arial, sans-serif"><B>11/Enero/2003</B>: Primera publicaci&oacute;n de la versi&oacute;n 1.0 de la Tarjeta Interface Bus ISA (TIBI)</FONT></P></LI></UL>
+<HR>
+
+<H2><A name=agradecimientos></A><A 
+name=Agradecimientos|outline></A>Agradecimientos</H2>
+<UL>
+  <LI>
+  <P><FONT size=2 face="Arial, sans-serif">A <b>Angel L&oacute;pez Gonz&aacute;lez</b>, por el software de este proyecto.</FONT></P></LI></UL>
+<HR>
+
+<H2><A name=DISCLAIMER></A><A 
+name=Disclaimer|outline></A>Disclaimer ;)</H2>
+  <P><FONT size=2 face="Arial, sans-serif">Esto es puramente experimental, as&iacute; que si al hacer la tarjeta quemas
+las cortinas con el soldador, te envenenas por los efluvios gaseosos del
+esta&ntilde;o, te provocas quemaduras de tercer grado al prenderte fuego
+los pantalones, o algo a&uacute;n peor, no nos vengas luego llorando de
+que lo has hecho porque has visto esto en nuestra p&aacute;gina... se un
+hombre y afronta la vida tronco...
+<p>Por otro lado... si cargas el driver y se te formatea espont&aacute;neamente
+el sistema, te revienta el nuevo DVD que te acababas de comprar ayer mismito,
+o el Linux te empieza a soltar core dumps... pues lo mismo... no me llores
+que te doy... afronta la vida como un hombre de pelo en pecho...
+<p>Por otro lado... comentarios constructivos, donaciones, o palmaditas
+(virtuales o no) en la espalda ser&aacute;n bienvenidas :)
+<p>A disfrutarlo con salud... :)
+<br>&nbsp;</FONT></P>
+<HR>
+
+<ADDRESS style="MARGIN-BOTTOM: 0.5cm"><A 
+href="http://www.iearobotics.com/">Ricardo G&oacute;mez Gonz&aacute;lez </A></ADDRESS>
+<P style="MARGIN-BOTTOM: 0cm"><A 
+href="http://www.iearobotics.com/">IEAROBOTICS</A> </P></FONT></BODY></HTML>

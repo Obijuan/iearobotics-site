@@ -1,0 +1,324 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>STAR-SERVOS8 (Versi&oacute;n Windows)</TITLE>
+<META http-equiv=CONTENT-TYPE content="text/html; charset=iso-8859-15">
+<STYLE>@page  {size: 21.59cm 27.94cm; }
+H2 {
+	BORDER-RIGHT: medium none; PADDING-RIGHT: 0cm; BORDER-TOP: medium none; MARGIN-TOP: 0.26cm; PADDING-LEFT: 0cm; PADDING-BOTTOM: 0cm; MARGIN-LEFT: 0.66cm; BORDER-LEFT: medium none; COLOR: #000000; MARGIN-RIGHT: 0.66cm; PADDING-TOP: 0cm; BORDER-BOTTOM: medium none; FONT-FAMILY: "Times", "Arial"; TEXT-ALIGN: left
+}
+</STYLE>
+</HEAD>
+<BODY lang=en-US dir=ltr>
+<CENTER>
+<TABLE style="PAGE-BREAK-BEFORE: always" cellSpacing=2 cellPadding=4 
+width="100%" bgColor=#abbeeb border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2>
+      <P align=center><FONT face="Arial, sans-serif"><B>STAR-SERVOS8: CONTROL DE 
+      SERVOS DESDE EL PC (Versi&oacute;n Windows)</B> </FONT></P></TD></TR></TBODY></TABLE></CENTER>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=2 width=514 border=0>
+  <COLGROUP>
+  <COL width=87>
+  <COL width=84>
+  <COL width=50>
+  <COL width=68>
+  <COL width=74>
+  <COL width=48>
+  <COL width=75>
+  <TBODY>
+  <TR>
+    <TD width=87>
+      <P><A 
+      href="#Introducción |outline"><FONT 
+      style="FONT-SIZE: 11pt" size=2>[Introducción]</FONT></A></P></TD>
+    <TD width=84>
+      <P><A 
+      href="#Pantallazos|outline"><FONT 
+      style="FONT-SIZE: 11pt" size=2>[Pantallazos]</FONT></A></P></TD>
+    <TD width=50>
+      <P><A 
+      href="#Autores|outline"><FONT 
+      style="FONT-SIZE: 11pt" size=2>[Autor]</FONT></A></P></TD>
+    <TD width=68>
+      <P><A 
+      href="#licencia"><FONT 
+      style="FONT-SIZE: 11pt" size=2>[Licencia]</FONT></A></P></TD>
+    <TD width=74>
+      <P><A 
+      href="#Download |outline"><FONT 
+      style="FONT-SIZE: 11pt" size=2>[Download]</FONT></A></P></TD>
+    <TD width=48>
+      <P><A 
+      href="#links"><FONT 
+      style="FONT-SIZE: 11pt" size=2>[Links]</FONT></A></P></TD>
+    <TD width=75>
+      <P><A 
+      href="#noticias"><FONT 
+      style="FONT-SIZE: 11pt" 
+size=2>[Noticias]</FONT></A></P></TD></TR></TBODY></TABLE></CENTER>
+<P style="MARGIN-BOTTOM: 0cm"><BR></P>
+<TABLE borderColor=#000000 cellSpacing=0 cellPadding=2 rules=none width="100%" 
+border=1>
+  <TBODY>
+  <TR>
+    <TD>
+      <P align=center><IMG height=100 src="futaba.png" 
+      width=100 align=middle border=0 name=Imagen1></P></TD>
+    <TD width="85%">
+      <DL>
+        <DD><FONT face="Arial, sans-serif"><FONT style="FONT-SIZE: 11pt" 
+        size=2><B>Nombre: </B>star-servos8 </FONT></FONT>
+        <DD><FONT style="FONT-SIZE: 11pt" size=2><FONT 
+        face="Arial, sans-serif"><B>Servicio</B>: Cliente para el 
+        </FONT></FONT><A 
+        href="http://www.iearobotics.com/proyectos/stargate/servidores/sg-servos8/sg-servos8.html"><FONT 
+        style="FONT-SIZE: 11pt" size=2><FONT face="Arial, sans-serif">Stargate 
+        servos8</FONT></FONT></A> 
+        <DD><FONT face="Arial, sans-serif"><FONT style="FONT-SIZE: 11pt" 
+        size=2><B>Lenguaje: </B>Visual Basic </FONT></FONT>
+        <DD><FONT face="Arial, sans-serif"><FONT style="FONT-SIZE: 11pt" 
+        size=2><B>Plataforma: </B>Windows </FONT></FONT>
+        <DD><FONT face="Arial, sans-serif"><FONT style="FONT-SIZE: 11pt" 
+        size=2><B>Tipo</B>: Convencional </FONT></FONT>
+        <DD><FONT face="Arial, sans-serif"><FONT style="FONT-SIZE: 11pt" 
+        size=2><B>Descripción</B>: Control de servos del tipo Futaba 3003 o 
+        compatibles desde el PC. Movimiento mediante barras deslizantes.
+</FONT></FONT>
+        <DD><FONT face="Arial, sans-serif"><FONT style="FONT-SIZE: 11pt" 
+        size=2><B>Aplicaciones</B>: Prototipado rápido de sistemas articulados. 
+        Por ejemplo robots. </FONT></FONT></DD></DL></TD></TR></TBODY></TABLE>
+<H2><A name=introduccion></A><A name="Introducción |outline"></A>Introducción 
+</H2>
+<P><FONT style="FONT-SIZE: 11pt" size=2><FONT face="Arial, sans-serif">Cuando se 
+están desarrollando <B>prototipos de robots articulados</B>, como <A 
+href="http://www.iearobotics.com/personal/andres/proyectos/pucho/pucho.html">PuchoBot</A>, 
+<A href="http://www.iearobotics.com/personal/juan/conferencias/conf1">Cube 
+Revolutions</A> o <A 
+href="http://www.iearobotics.com/personal/juan/proyectos/sheila/sheila.html">Sheila</A>, 
+resulta muy útil poder <B>controlar los servos desde el PC</B>, utilizando una 
+interfaz gráfica. De esta forma se pueden definir secuencias sencillas de 
+movimiento sin tener que programar ningún microcontrolador y así poder validar 
+la estructura mecánica o el diseño del robot. </FONT></FONT></P>
+<P><FONT style="FONT-SIZE: 11pt" size=2><FONT face="Arial, sans-serif">El 
+programa <B>star-servos8</B> permite manejar hasta 8 <A 
+href="http://www.iearobotics.com/proyectos/cuadernos/ct3/ct3.html">servos del 
+tipo Futaba 3003</A> o compatibles. El posicionamiento se puede hacer mediante 
+barras de desplazamiento. </FONT></FONT></P>
+<P><FONT style="FONT-SIZE: 11pt" size=2><FONT face="Arial, sans-serif">Esta 
+aplicación forma parte del <A 
+href="http://www.iearobotics.com/proyectos/stargate/index.html">proyecto 
+Stargate</A>, y es un cliente para el servidor <A 
+href="http://www.iearobotics.com/proyectos/stargate/servidores/sg-servos8/sg-servos8.html"><FONT 
+style="FONT-SIZE: 11pt" size=2><FONT 
+face="Arial, sans-serif">servos8</FONT></FONT></A>. </FONT></FONT></P>
+<HR>
+
+<H2><A name=caracteristicas></A><FONT face="Arial, sans-serif">Características 
+</FONT></H2>
+<UL>
+  <LI>
+  <P style="MARGIN-BOTTOM: 0cm"><FONT face="Arial, sans-serif"><FONT 
+  style="FONT-SIZE: 11pt" size=2><B>Plataforma</B>: Windows </FONT></FONT></P>
+  <LI>
+  <P style="MARGIN-BOTTOM: 0cm"><FONT face="Arial, sans-serif"><FONT 
+  style="FONT-SIZE: 11pt" size=2><B>Lenguaje</B>: Visual Basic </FONT></FONT></P>
+  <LI>
+  <P><FONT style="FONT-SIZE: 11pt" size=2><FONT 
+  face="Arial, sans-serif"><B>Licencia</B>: </FONT></FONT><A 
+  href="http://gugs.sindominio.net/gnu-gpl/gples.html"><FONT 
+  style="FONT-SIZE: 11pt" size=2><FONT 
+  face="Arial, sans-serif">GPL</FONT></FONT></A> </P></LI></UL>
+<HR>
+
+<H2><FONT face="Arial, sans-serif">Conexión de los servos</FONT></H2>
+<P><FONT style="FONT-SIZE: 11pt" size=2><FONT face="Arial, sans-serif">Los 
+servos se conectan a una placa con un microcontrolador (<A 
+href="http://www.iearobotics.com/proyectos/stargate/index.html">Stargate</A>), y 
+se graba el servidor <A 
+href="http://www.iearobotics.com/proyectos/stargate/servidores/sg-servos8/sg-servos8.html"><FONT 
+style="FONT-SIZE: 11pt" size=2><FONT 
+face="Arial, sans-serif">servos8</FONT></FONT></A>. Los microcontroladores 
+soportados actualmente son: <B>PIC16F87X</B>, <B>68HC11</B> y <B>68HC08</B>. El 
+usuario puede fabricarse su propia placa o bien utilizar alguna de las 
+siguientes, en las que se ha probado su funcionamiento:</FONT></FONT></P>
+<UL>
+  <LI>
+  <P><FONT style="FONT-SIZE: 11pt" size=2><FONT face="Arial, sans-serif"><A 
+  href="http://www.iearobotics.com/proyectos/skypic/skypic.html">Tarjeta 
+  Skypic</A>. La conexión de los servos es inmediata, ya que dispone de 
+  conectores específicos. Se trata de <B>hardware libre</B> y por tanto todos lo 
+  esquemas están disponibles.</FONT></FONT></P>
+  <LI>
+  <P><FONT style="FONT-SIZE: 11pt" size=2><FONT face="Arial, sans-serif"><A 
+  href="http://www.iearobotics.com/proyectos/ct6811/ct6811.html">Tarjeta 
+  CT6811</A>. Para conectar los servos hay que utilizar una plaquita que tenga 
+  conectores de servos por un lado y conector para cable plano de bus por otro. 
+  También es <B>hardware libre</B>.</FONT></FONT></P>
+  <LI>
+  <P><FONT style="FONT-SIZE: 11pt" size=2><FONT face="Arial, sans-serif"><A 
+  href="http://www.iearobotics.com/personal/juan/proyectos/gpbot/gpbot.html">Tarjeta 
+  GPBOT</A>. Hay que construirse también una plaquita de adaptación. Esta placa 
+  NO es hardware libre.</FONT></FONT></P></LI></UL>
+<P><FONT style="FONT-SIZE: 11pt" size=2><FONT face="Arial, sans-serif">El <A 
+href="http://www.iearobotics.com/proyectos/stargate/index.html">Stargate</A> se 
+conecta al PC a través de un cable serie.</FONT></FONT></P>
+<HR>
+
+<H2><A name=Pantallazos|outline></A>Pantallazos</H2>
+<DL>
+  <DD>
+  <TABLE borderColor=#000000 cellSpacing=0 cellPadding=4 width=786 border=1>
+    <COLGROUP>
+    <COL width=401>
+    <COL width=367>
+    <THEAD>
+    <TR vAlign=top>
+      <TH width=401>
+        <P align=center><IMG height=321 src="servos8.jpg" 
+        width=366 align=middle border=0 name=Imagen6></P></TH>
+      <TH width=367>
+        <P><IMG height=321 src="sondeo.jpg" width=366 
+        align=middle border=0 name=Imagen7></P></TH></TR></THEAD>
+    <TBODY>
+    <TR vAlign=top>
+      <TD width=401>
+        <P align=justify><FONT face="Arial, sans-serif"><FONT 
+        style="FONT-SIZE: 11pt" size=2><B>Ventana inicial,</B> que da acceso al 
+        resto de ventanas de control. Permite configurar el dispositivo serie en 
+        el que está conectado el stargate. Muestra en todo comento el 
+        identificador del stargate y el estado de la 
+      conexión.</FONT></FONT></P></TD>
+      <TD width=367>
+        <P><FONT face="Arial, sans-serif"><FONT style="FONT-SIZE: 11pt" 
+        size=2>En todo momento se está comprobando la conexión con el stargate. 
+        Si se desconecta se 
+indica.</FONT></FONT></P></TD></TR></TBODY></TABLE></DD></DL>
+<P><BR><BR></P>
+
+<DL>
+  <DD>
+  <TABLE borderColor=#000000 cellSpacing=0 cellPadding=4 width=786 border=1>
+    <COLGROUP>
+    <COL width=401>
+    <COL width=367>
+    <THEAD>
+    <TR vAlign=top>
+      <TH width=401>
+        <P align=center><IMG height=309 src="conf_puerto.jpg" 
+        width=415 align=middle border=0 name=Imagen6></P></TH>
+      <TH width=367>
+        <P><IMG height=240 src="conf_hw.jpg" width=320 
+        align=middle border=0 name=Imagen7></P></TH></TR></THEAD>
+    <TBODY>
+    <TR vAlign=top>
+      <TD width=401>
+        <P align=justify><FONT face="Arial, sans-serif"><FONT 
+        style="FONT-SIZE: 11pt" size=2>Ventana de configuraci&oacute;n de los par&aacute;metros del puerto de comunicaciones.</FONT></FONT></P></TD>
+      <TD width=367>
+        <P><FONT face="Arial, sans-serif"><FONT style="FONT-SIZE: 11pt" 
+        size=2>Pantalla de configuraci&oacute;n del tipo de servo que usaremos.</FONT></FONT></P></TD></TR></TBODY></TABLE></DD></DL>
+<HR>
+
+<H2><A name="Download |outline"></A><FONT face="Arial, sans-serif">Download 
+</FONT></H2>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=4 width="90%" bgColor=#abbeeb border=0>
+  <COLGROUP>
+  <COL width=256>
+  <TBODY>
+  <TR>
+    <TD width="100%" bgColor=#cccccc>
+      <P align=center><FONT face="Arial, sans-serif"><B>Ultima versión 
+      (1.0)</B></FONT></P></TD></TR></TBODY></TABLE></CENTER>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=2 width="90%" border=0>
+  <COLGROUP>
+  <COL width=84>
+  <COL width=172>
+  <TBODY>
+  <TR bgColor=#cabeeb>
+    <TD width="33%" bgColor=#ffffcc>
+      <P><FONT face="Arial, sans-serif"><A 
+      href="download/servos8.zip"><FONT 
+      face="Arial, sans-serif">servos8.zip</FONT></A> 
+    </FONT></P></TD>
+    <TD width="67%" bgColor=#ffffcc>
+      <P><FONT face="Arial, sans-serif">Paquete para windows 98,2000,XP.</B></FONT></P></TD></TR>
+  <TR bgColor=#abbeeb>
+    <TD width="33%" bgColor=#e6e6e6>
+      <P><FONT face="Arial, sans-serif"><A 
+      href="download/servos8-src.zip"><FONT 
+      face="Arial, sans-serif">servos8-src.zip</FONT></A> </FONT></P></TD>
+    <TD width="67%" bgColor=#e6e6e6>
+      <P><FONT face="Arial, sans-serif">Fuentes</FONT></P></TD></TR>
+</TBODY></TABLE></CENTER>
+<P style="MARGIN-BOTTOM: 0cm"><BR></P>
+
+<HR>
+<H2><A name=links></A><FONT face="Arial, sans-serif">Links</FONT></H2>
+<UL>
+  <LI>
+  <P style="MARGIN-BOTTOM: 0cm"><A 
+  href="http://www.iearobotics.com/proyectos/stargate/index.html"><FONT 
+  style="FONT-SIZE: 11pt" size=2><FONT face="Arial, sans-serif">Proyecto 
+  Stargate</FONT></FONT></A><FONT style="FONT-SIZE: 11pt" size=2><FONT 
+  face="Arial, sans-serif">: Página principal del proyecto </FONT></FONT></P>
+  <LI>
+  <P style="MARGIN-BOTTOM: 0cm"><FONT face="Arial, sans-serif"><FONT 
+  style="FONT-SIZE: 11pt" size=2><A 
+  href="http://www.iearobotics.com/proyectos/skypic/skypic.html"><FONT 
+  style="FONT-SIZE: 11pt" size=2><FONT face="Arial, sans-serif">Tarjeta 
+  Skypic</FONT></FONT></A></FONT></FONT></P>
+  <LI>
+  <P style="MARGIN-BOTTOM: 0cm"><A href="http://www.iearobotics.com/proyectos/ct6811/ct6811.html"><FONT 
+  style="FONT-SIZE: 11pt" size=2><FONT face="Arial, sans-serif">tarjeta 
+  CT6811</FONT></FONT></A></P>
+  <LI>
+  <P style="MARGIN-BOTTOM: 0cm"><A href="http://www.iearobotics.com/personal/juan/proyectos/gpbot/gpbot.html"><FONT 
+  style="FONT-SIZE: 11pt" size=2><FONT face="Arial, sans-serif">Tarjeta 
+  GPBOT</FONT></FONT></A></FONT></FONT></P></LI></UL>
+<HR>
+
+<H2><A name=autores></A><A name=Autores|outline></A><FONT 
+face="Arial, sans-serif">Autores</FONT></H2>
+<UL>
+  <LI>
+  <P><A href="http://www.iearobotics.com/personal/juan/index.html"><FONT 
+  style="FONT-SIZE: 11pt" size=2><FONT face="Arial, sans-serif">Juan González 
+  Gómez</FONT></FONT></A> </P></LI>
+  <LI>
+  <P><A href="http://www.iearobotics.com/personal/ricardo/index.html"><FONT 
+  style="FONT-SIZE: 11pt" size=2><FONT face="Arial, sans-serif">Ricardo G&oacute;mez Gonz&aacute;lez 
+  </FONT></FONT></A> </P></LI>
+
+</UL>
+<HR>
+
+<H2><A name=licencia></A><FONT face="Arial, sans-serif">Licencia</FONT></H2>
+<P style="MARGIN-BOTTOM: 0cm"><FONT style="FONT-SIZE: 11pt" size=2><FONT 
+face="Arial, sans-serif">Este programa se distribuye bajo </FONT></FONT><A 
+href="http://gugs.sindominio.net/gnu-gpl/gples.html"><FONT 
+style="FONT-SIZE: 11pt" size=2><FONT face="Arial, sans-serif">licencia GPL 
+</FONT></FONT></A></P>
+<HR>
+
+<H2><A name=noticias></A><FONT face="Arial, sans-serif">Noticias</FONT></H2>
+<UL>
+  <LI>
+  <P style="MARGIN-BOTTOM: 0cm"><FONT face="Arial, sans-serif"><FONT 
+  style="FONT-SIZE: 11pt" size=2><B>06/Febrero/2006: </B>Publicada versión 
+  1.0</FONT></FONT></P></LI></UL>
+<HR>
+
+<P style="MARGIN-BOTTOM: 0cm">
+<p><ADDRESS><A href="http://www.iearobotics.com/personal/juan/index.html"><FONT 
+style="FONT-SIZE: 11pt" size=2><FONT face="Arial, sans-serif">Juan Gonz&aacute;lez G&oacute;mez</FONT></FONT></A></ADDRESS></P>
+<p><ADDRESS><A href="http://www.iearobotics.com/personal/ricardo/index.html"><FONT 
+style="FONT-SIZE: 11pt" size=2><FONT face="Arial, sans-serif">Ricardo G&oacute;mez
+Gonz&aacute;lez</FONT></FONT></A></ADDRESS></p>
+<FONT style="FONT-SIZE: 11pt" size=2><FONT 
+face="Arial, sans-serif"><BR></FONT></FONT><A 
+href="http://www.iearobotics.com/"><FONT style="FONT-SIZE: 11pt" size=2><FONT 
+face="Arial, sans-serif">IEA ROBOTICS</FONT></FONT></A> </P>
+</BODY></HTML>

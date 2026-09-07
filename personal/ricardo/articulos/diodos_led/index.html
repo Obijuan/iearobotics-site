@@ -1,0 +1,732 @@
+<html>
+<head>
+   <title>Los Diodos Led</title>
+</head>
+
+<body>
+
+<center>
+<H1>Los Diodos Led</H1>Versión 0.1 (30 sep 
+2002)<BR>Ricardo Gómez González aka EagleMan<BR>ricardo at eagleman dot 
+org<BR><A 
+href="http://www.iearobotics.com/">http://www.iearobotics.com/</A><BR>Copyright © 
+2002. Ricardo Gómez González.<BR>Distribuido bajo Licencia GPL 
+</CENTER>
+<br>
+
+<h3>Introducci&oacute;n</h3>
+<p>&nbsp;&nbsp;&nbsp; Los diodos emisores de luz visible son utilizados
+en grandes cantidades como indicadores piloto, dispositivos de presentaci&oacute;n
+num&eacute;rica y dispositivos de presentaci&oacute;n de barras, tanto
+para aplicaciones dom&eacute;sticas como para equipos industriales, esto
+es debido a sus grandes ventajas que son: peso y espacio insignificantes,
+precio moderado, y en cierta medida una peque&ntilde;a inercia, que permite
+visualizar no solamente dos estados l&oacute;gicos sino tambi&eacute;n
+fen&oacute;menos cuyas caracter&iacute;sticas var&iacute;an progresivamente.
+<p>Sus siglas provienen del Ingles (Light Emitting Diode) : Led.
+<p>Como otros dispositivos de presentaci&oacute;n, los Leds pueden proporcionar
+luz en color rojo, verde y azul. El material de un Led est&aacute; compuesto
+principalmente por una combinaci&oacute;n semiconductora.
+<br>El GaP se utiliza en los Leds emisores de luz roja o verde; el GaAsP
+para los emisores de luz roja, anaranjada o amarilla y el GaAlAs para los
+Leds de luz roja. Para los emisores azules se han estado usando materiales
+como SiC, GaN, ZnSe y ZnS.
+<br>&nbsp;
+<br>&nbsp;
+<h3>
+Principio f&iacute;sico</h3>
+&nbsp;&nbsp;&nbsp; El fen&oacute;meno de emisi&oacute;n de luz est&aacute;
+basado en la <a href="#bandas">teor&iacute;a de bandas</a>, por la cual,
+una tensi&oacute;n externa aplicada a una uni&oacute;n p-n polarizada directamente,
+excita los electrones, de manera que son capaces de atravesar la banda
+de energ&iacute;a que separa las dos regiones.
+<br>Si la energ&iacute;a es suficiente los electrones escapan del material
+en forma de fotones.
+<br>Cada material semiconductor tiene unas determinadas caracter&iacute;sticas
+que y por tanto una longitud de onda de la luz emitida.
+<br>&nbsp;
+<br>&nbsp;
+<center><table BORDER CELLSPACING=2 CELLPADDING=4 WIDTH="311" BORDERCOLOR="#008000" >
+<tr>
+<td VALIGN=TOP WIDTH="33%">
+<center><b>Material</b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="42%">
+<center><b>Longitud de onda</b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="26%">
+<center><b>Color</b></center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="33%">GaAs : Zn</td>
+
+<td VALIGN=TOP WIDTH="42%">
+<center>9000 <font face="Arial">&Aring;</font></center>
+</td>
+
+<td VALIGN=TOP WIDTH="26%">Infrarrojo</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="33%">GaAsP.<sub>4</sub></td>
+
+<td VALIGN=TOP WIDTH="42%">
+<center>6600 <font face="Arial">&Aring;</font></center>
+</td>
+
+<td VALIGN=TOP WIDTH="26%">Rojo</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="33%">GaAsP.<sub>5</sub></td>
+
+<td VALIGN=TOP WIDTH="42%">
+<center>6100 <font face="Arial">&Aring;</font></center>
+</td>
+
+<td VALIGN=TOP WIDTH="26%">Ambar</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="33%">GaAsP.<sub>85</sub> : N</td>
+
+<td VALIGN=TOP WIDTH="42%">
+<center>5900 <font face="Arial">&Aring;</font></center>
+</td>
+
+<td VALIGN=TOP WIDTH="26%">Amarillo</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="33%">GaP : N</td>
+
+<td VALIGN=TOP WIDTH="42%">
+<center>5600 <font face="Arial">&Aring;</font></center>
+</td>
+
+<td VALIGN=TOP WIDTH="26%">Verde</td>
+</tr>
+</table></center>
+
+<center>
+<p><b>Tabla 1. Longitudes de onda de algunos</b>
+<br><b>compuestos de Galio</b></center>
+
+<p>A diferencia de la l&aacute;mparas de incandescencia cuyo funcionamiento
+es por una determinada tensi&oacute;n, los Led funcionan por la corriente
+que los atraviesa. Su conexi&oacute;n a una fuente de tensi&oacute;n constante
+debe estar protegida por una resistencia limitadora, veremos m&aacute;s
+adelante algunos ejemplos.
+<br>&nbsp;
+<br>&nbsp;
+<h3>
+<a NAME="bandas"></a>Teor&iacute;a de bandas</h3>
+&nbsp;&nbsp;&nbsp; En un &aacute;tomo aislado los electrones pueden ocupar
+determinados niveles energ&eacute;ticos pero cuando los &aacute;tomos se
+unen para formar un cristal, las interacciones entre ellos modifican su
+energ&iacute;a, de tal manera que cada nivel inicial se desdobla en numerosos
+niveles, que constituyen una banda, existiendo entre ellas huecos, llamados
+bandas energ&eacute;ticas prohibidas, que s&oacute;lo pueden salvar los
+electrones en caso de que se les comunique la energ&iacute;a suficiente.
+(<a href="Image1.gif">figura 1</a>)
+<p>En los aislantes la banda inferior menos energ&eacute;tica (banda de
+valencia) est&aacute; completa con los e- m&aacute;s internos de los &aacute;tomos,
+pero la superior (banda de conducci&oacute;n) est&aacute; vac&iacute;a
+y separada por una banda prohibida muy ancha (~ 10 eV), imposible de atravesar
+por un e-. En el caso de los conductores las bandas de conducci&oacute;n
+y de valencia se encuentran superpuestas, por lo que cualquier aporte de
+energ&iacute;a es suficiente para producir un desplazamiento de los electrones.
+<br>Entre ambos casos se encuentran los semiconductores, cuya estructura
+de bandas es muy semejante a los aislantes, pero con la diferencia de que
+la anchura de la banda prohibida es bastante peque&ntilde;a. Los semiconductores
+son, por lo tanto, aislantes en condiciones normales, pero una elevaci&oacute;n
+de temperatura proporciona la suficiente energ&iacute;a a los electrones
+para que, saltando la banda prohibida, pasen a la de conducci&oacute;n,
+dejando en la banda de valencia el hueco correspondiente. (<a href="Image2.gif">figura
+2</a>)
+<p>En el caso de los diodos Led los electrones consiguen saltar fuera de
+la estructura en forma de radiaci&oacute;n que percibimos como luz (fotones).
+<br>&nbsp;
+<br>&nbsp;
+
+<h3>Composici&oacute;n de los Leds</h3>
+<ul>
+<li>
+<u>Led Rojo</u></li>
+</ul>
+<font size=+2>&nbsp;&nbsp;&nbsp; </font>Formado por GaP consiste en una
+uni&oacute;n p-n obtenida por el m&eacute;todo de crecimiento epitaxial
+del cristal en su fase l&iacute;quida, en un substrato.
+<br>La fuente luminosa est&aacute; formada por una capa de cristal p junto
+con un complejo de ZnO, cuya m&aacute;xima concentraci&oacute;n est&aacute;
+limitada, por lo que su luminosidad se satura a altas densidades de corriente.
+Este tipo de Led funciona con baja densidades de corriente ofreciendo una
+buena luminosidad, utiliz&aacute;ndose como dispositivo de visualizaci&oacute;n
+en equipos port&aacute;tiles.
+<p>El constituido por GaAsP consiste en una capa p obtenida por difusi&oacute;n
+de Zn durante el crecimiento de un cristal n de GaAsP, formado en un substrato
+de GaAs, por el m&eacute;todo de crecimiento epitaxial en fase gaseosa.
+<br>Actualmente se emplea los Led de GaAlAs debido a su mayor luminosidad.
+<br>El m&aacute;ximo de radiaci&oacute;n se halla en la longitud de onda
+660 nm. (<a href="Image3.gif">figura 3</a>)
+<br>&nbsp;
+<ul>
+<li>
+<u>Led anaranjado y amarillo</u></li>
+</ul>
+&nbsp;&nbsp;&nbsp; Est&aacute;n compuestos por GaAsP al igual que sus hermanos
+los rojos pero en este caso para conseguir luz anaranjada y amarilla as&iacute;
+como luz de longitud de onda m&aacute;s peque&ntilde;a, lo que hacemos
+es ampliar el ancho de la “banda prohibida” mediante el aumento de f&oacute;sforo
+en el semiconductor.
+<br>Su fabricaci&oacute;n es la misma que se utiliza para los diodos rojos,
+por crecimiento epitaxial del cristal en fase gaseosa, la formaci&oacute;n
+de la uni&oacute;n p-n se realiza por difusi&oacute;n de Zn.
+<br>Como novedad importante en estos Leds se mezcla el &aacute;rea emisora
+con una trampa isoelectr&oacute;nica de nitr&oacute;geno con el fin de
+mejorar el rendimiento
+<br>&nbsp;
+<ul>
+<li>
+<u>Led Verde</u></li>
+</ul>
+&nbsp;&nbsp;&nbsp; El Led verde est&aacute; compuesto por GaP. Se utiliza
+el m&eacute;todo de crecimiento epitaxial del cristal en fase l&iacute;quida
+para formar la uni&oacute;n p-n.
+<br>Al igual que los Leds amarillos, tambi&eacute;n se utiliza una trampa
+isoelectr&oacute;nica de nitr&oacute;geno para mejorar el rendimiento.
+Debido a que este tipo de Led posee una baja probabilidad de transici&oacute;n
+fot&oacute;nica, es importante mejorar la cristalinidad de la capa n.&nbsp;
+La disminuci&oacute;n de impurezas a larga la vida de los portadores, mejorando
+la cristalinidad.
+<br>Su m&aacute;xima emisi&oacute;n se consigue en la longitud de onda
+555 nm
+<br>&nbsp;
+<br>&nbsp;
+
+<h3>Criterios de elecci&oacute;n</h3>
+<p><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1. <u>Dimensiones y color
+del diodo</u>
+<p>Actualmente los Leds tienen diferentes tama&ntilde;os, formas y colores.
+Tenemos Leds redondos, cuadrados, rectangulares, triangulares y con diversas
+formas.
+<br>Los colores b&aacute;sicos son rojo, verde y azul, aunque podemos encontrarlos
+naranjas, amarillos incluso hay un Led de luz blanca.
+<br>Las dimensiones en los Led redondos son 3mm, 5mm, 10mm y uno gigante
+de 20mm. Los de formas poli&eacute;dricas suelen tener unas dimensiones
+aproximadas de 5x5mm.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. <u>&Aacute;ngulo de vista</u>
+<p>Esta caracter&iacute;stica es importante, pues de ella depende el modo
+de observaci&oacute;n del Led, es decir, el empleo pr&aacute;ctico de aparato
+realizado.
+<br>Cuando el Led es puntual la emisi&oacute;n de luz sigue la ley de Lambert,
+permite tener un &aacute;ngulo de vista relativamente grande y el punto
+luminoso se ve bajo todos los &aacute;ngulos. (<a href="Image4.gif">figura
+4</a>)
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. <u>Luninosidad</u>
+<p>La intensidad luminosa en el eje y el brillo est&aacute;n intensamente
+relacionados. Tanto si el Led es puntual o difusor, el brillo es proporcional
+a la superficie de emisi&oacute;n.
+<br>Si el Led es puntual, el punto ser&aacute; m&aacute;s brillante, al
+ser una superficie demasiado peque&ntilde;a. En uno difusor la intensidad
+en el eje es superior al modelo puntual.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. <u>Consumo</u>
+<p>El consumo depende mucho del tipo de Led que elijamos:
+<br>&nbsp;
+<center><table BORDER CELLPADDING=4 WIDTH="571" BORDERCOLOR="#000080" >
+<tr>
+<td VALIGN=TOP WIDTH="32%" HEIGHT="18" BGCOLOR="#000080">
+<center><b><font color="#FFFFFF">Color</font></b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="19%" HEIGHT="18" BGCOLOR="#000080">
+<center><b><font color="#FFFFFF">Luminosidad</font></b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="14%" HEIGHT="18" BGCOLOR="#000080">
+<center><b><font color="#FFFFFF">Consumo</font></b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="21%" HEIGHT="18" BGCOLOR="#000080">
+<center><b><font color="#FFFFFF">Longitud onda</font></b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="14%" HEIGHT="18" BGCOLOR="#000080">
+<center><b><font color="#FFFFFF">Di&aacute;metro</font></b></center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="32%" HEIGHT="18">Rojo</td>
+
+<td VALIGN=TOP WIDTH="19%" HEIGHT="18">
+<center>1,25 mcd</center>
+</td>
+
+<td VALIGN=TOP WIDTH="14%" HEIGHT="18">
+<center>10 mA</center>
+</td>
+
+<td VALIGN=TOP WIDTH="21%" HEIGHT="18">
+<center>660 nm</center>
+</td>
+
+<td VALIGN=TOP WIDTH="14%" HEIGHT="18">
+<center>3 y 5 mm</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="32%" HEIGHT="18">Verde, amarillo y naranja</td>
+
+<td VALIGN=TOP WIDTH="19%" HEIGHT="18">
+<center>8 mcd</center>
+</td>
+
+<td VALIGN=TOP WIDTH="14%" HEIGHT="18">
+<center>10 mA</center>
+</td>
+
+<td VALIGN=TOP WIDTH="21%" HEIGHT="18"></td>
+
+<td VALIGN=TOP WIDTH="14%" HEIGHT="18">
+<center>3 y 5 mm</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="32%" HEIGHT="18">Rojo (alta luminosidad)</td>
+
+<td VALIGN=TOP WIDTH="19%" HEIGHT="18">
+<center>80 mcd</center>
+</td>
+
+<td VALIGN=TOP WIDTH="14%" HEIGHT="18">
+<center>10 mA</center>
+</td>
+
+<td VALIGN=TOP WIDTH="21%" HEIGHT="18">
+<center>625 nm</center>
+</td>
+
+<td VALIGN=TOP WIDTH="14%" HEIGHT="18">
+<center>5 mm</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="32%" HEIGHT="18">Verde (alta luminosidad)</td>
+
+<td VALIGN=TOP WIDTH="19%" HEIGHT="18">
+<center>50 mcd</center>
+</td>
+
+<td VALIGN=TOP WIDTH="14%" HEIGHT="18">
+<center>10 mA</center>
+</td>
+
+<td VALIGN=TOP WIDTH="21%" HEIGHT="18">
+<center>565 nm</center>
+</td>
+
+<td VALIGN=TOP WIDTH="14%" HEIGHT="18">
+<center>5 mm</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="32%" HEIGHT="18">Hiper Rojo</td>
+
+<td VALIGN=TOP WIDTH="19%" HEIGHT="18">
+<center>3500 mcd</center>
+</td>
+
+<td VALIGN=TOP WIDTH="14%" HEIGHT="18">
+<center>20 mA</center>
+</td>
+
+<td VALIGN=TOP WIDTH="21%" HEIGHT="18">
+<center>660 nm</center>
+</td>
+
+<td VALIGN=TOP WIDTH="14%" HEIGHT="18">
+<center>5 mm</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="32%" HEIGHT="18">Hiper Rojo</td>
+
+<td VALIGN=TOP WIDTH="19%" HEIGHT="18">
+<center>1600 mcd</center>
+</td>
+
+<td VALIGN=TOP WIDTH="14%" HEIGHT="18">
+<center>20 mA</center>
+</td>
+
+<td VALIGN=TOP WIDTH="21%" HEIGHT="18">
+<center>660 nm</center>
+</td>
+
+<td VALIGN=TOP WIDTH="14%" HEIGHT="18">
+<center>5 mm</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="32%" HEIGHT="18">Hiper Verde</td>
+
+<td VALIGN=TOP WIDTH="19%" HEIGHT="18">
+<center>300 mcd</center>
+</td>
+
+<td VALIGN=TOP WIDTH="14%" HEIGHT="18">
+<center>20 mA</center>
+</td>
+
+<td VALIGN=TOP WIDTH="21%" HEIGHT="18">
+<center>565 nm</center>
+</td>
+
+<td VALIGN=TOP WIDTH="14%" HEIGHT="18">
+<center>5 mm</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="32%" HEIGHT="18">Azul difuso</td>
+
+<td VALIGN=TOP WIDTH="19%" HEIGHT="18">
+<center>1 mcd 60&ordm;</center>
+</td>
+
+<td VALIGN=TOP WIDTH="14%" HEIGHT="18"></td>
+
+<td VALIGN=TOP WIDTH="21%" HEIGHT="18">
+<center>470</center>
+</td>
+
+<td VALIGN=TOP WIDTH="14%" HEIGHT="18">
+<center>5 mm</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="32%" HEIGHT="4">Rojo y verde</td>
+
+<td VALIGN=TOP WIDTH="19%" HEIGHT="4">
+<center>40 mcd</center>
+</td>
+
+<td VALIGN=TOP WIDTH="14%" HEIGHT="4">
+<center>20 mA</center>
+</td>
+
+<td VALIGN=TOP WIDTH="21%" HEIGHT="4"></td>
+
+<td VALIGN=TOP WIDTH="14%" HEIGHT="4">
+<center>10 mm</center>
+</td>
+</tr>
+</table></center>
+
+<center>
+<p><b>Tabla 2. Caracter&iacute;sticas de los Leds.</b></center>
+
+<p><br>
+<h3>
+Estructura de un Led</h3>
+
+<p><br>&nbsp;&nbsp;&nbsp; Los Led est&aacute;n formados por el material
+semiconductor que est&aacute; envuelto en un pl&aacute;stico trasl&uacute;cido
+o transparente seg&uacute;n los modelos. En la figura podemos observar
+la distribuci&oacute;n interna.
+<br>El electrodo interno de menor tama&ntilde;o es el &aacute;nodo y el
+de mayor tama&ntilde;o es el c&aacute;todo
+<br>Los primeros Leds se dise&ntilde;aron para permitir el paso de la m&aacute;xima
+cantidad de luz en direcci&oacute;n perpendicular a la superficie de montaje,
+m&aacute;s tarde se dise&ntilde;aron para difundir la luz sobre un &aacute;rea
+m&aacute;s amplia gracias al aumento de la producci&oacute;n de luz por
+los Leds. (<a href="Image5.gif">figura 5</a>)
+<br>&nbsp;
+<br>&nbsp;
+<h3>
+<font size=+1>Algunas consideraciones</font></h3>
+
+<p><br>&nbsp;&nbsp;&nbsp; Si la corriente aplicada es suficiente para que
+entre en conducci&oacute;n el diodo emitir&aacute; una cierta cantidad
+de luz que depender&aacute; de la cantidad de corriente y la temperatura
+del Led.
+<p>La luminosidad aumentar&aacute; seg&uacute;n aumentemos la intensidad
+pero habr&aacute; que tener en cuenta la m&aacute;xima intensidad que soporta
+el Led.
+<p>Antes de insertar un diodo en un montaje tendremos que tener el color
+del diodo para saber la ca&iacute;da de tensi&oacute;n par&aacute;metro
+necesario para los c&aacute;lculos posteriores:
+<br>&nbsp;
+<center><table BORDER CELLPADDING=4 WIDTH="463" >
+<tr>
+<td VALIGN=TOP WIDTH="16%">Color</td>
+
+<td VALIGN=TOP WIDTH="27%">Ca&iacute;da de tensi&oacute;n
+<p>( VLED ) V</td>
+
+<td VALIGN=TOP WIDTH="30%">Intensidad m&aacute;xima
+<p>( ILED ) mA</td>
+
+<td VALIGN=TOP WIDTH="27%">Intensidad media
+<p>( ILED )mA</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="16%">Rojo</td>
+
+<td VALIGN=TOP WIDTH="27%">
+<center>1.6</center>
+</td>
+
+<td VALIGN=TOP WIDTH="30%">
+<center>20</center>
+</td>
+
+<td VALIGN=TOP WIDTH="27%">
+<center>5 – 10</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="16%">Verde</td>
+
+<td VALIGN=TOP WIDTH="27%">
+<center>2.4</center>
+</td>
+
+<td VALIGN=TOP WIDTH="30%">
+<center>20</center>
+</td>
+
+<td VALIGN=TOP WIDTH="27%">
+<center>5 – 10</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="16%">Amarillo</td>
+
+<td VALIGN=TOP WIDTH="27%">
+<center>2.4</center>
+</td>
+
+<td VALIGN=TOP WIDTH="30%">
+<center>20</center>
+</td>
+
+<td VALIGN=TOP WIDTH="27%">
+<center>5 – 10</center>
+</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="16%">Naranja</td>
+
+<td VALIGN=TOP WIDTH="27%">
+<center>1.7</center>
+</td>
+
+<td VALIGN=TOP WIDTH="30%">
+<center>20</center>
+</td>
+
+<td VALIGN=TOP WIDTH="27%">
+<center>5 – 10</center>
+</td>
+</tr>
+</table></center>
+
+<center>
+<p><b>Tabla 3. Ca&iacute;da de tensi&oacute;n e intensidad.</b></center>
+
+<p><br>
+<h3>
+<a NAME="continua"></a>Circuito b&aacute;sico en continua</h3>
+
+<p><br>&nbsp;&nbsp;&nbsp; La resistencia de limitaci&oacute;n de la <a href="Image6.gif">figura
+6</a> puede calcularse a partir de la f&oacute;rmula:
+<center>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i>V - V<sub>led</sub></i>
+<br>R = ------------
+<br>&nbsp;&nbsp;&nbsp;&nbsp; <i>I</i></center>
+
+<p>Si expresamos V en voltios e I en miliamperios el valor de la resistencia
+vendr&aacute; directamente expresado en kiloohmios.
+<br>Tambi&eacute;n hay que tener en cuenta el calor disipado por en la
+resistencia, se calcula por la <a href="#Joule">Ley de Joule</a>. (<a href="Image6.gif">figura
+6</a>)
+<br>&nbsp;
+<br>&nbsp;
+<h3>
+<a NAME="Joule"></a>Ley de Joule:</h3>
+
+<center><i>Potencia = I<sup>2</sup> R</i></center>
+
+<p>Donde <i>I</i> es la intensidad que atravesar&aacute; al diodo y <i>R</i>
+la resistencia calculada en el apartado anterior.
+<br>&nbsp;
+<br>&nbsp;
+<h3>
+<font size=+1>Asociaci&oacute;n de Leds</font></h3>
+&nbsp;
+<ul>
+<li>
+<u>Serie</u></li>
+</ul>
+&nbsp;&nbsp;&nbsp; Los diodos se pueden conectar en serie siempre que la
+suma de las ca&iacute;das de tensi&oacute;n sea menor que la tensi&oacute;n
+de alimentaci&oacute;n.
+<br>La f&oacute;rmula a utilizar para el c&aacute;lculo de la resistencia
+limitadora es :
+<center>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i>V - NV<sub>led</sub></i>
+<br><i>R =</i> ---------------
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i>I</i></center>
+Donde N es el n&uacute;mero de Leds conectados en serie.
+<br>Ver <a href="Image7.gif">figura 7</a> para su interconexi&oacute;n.
+<br>&nbsp;
+<ul>
+<li>
+<u>Paralelo</u></li>
+</ul>
+
+<p><br>&nbsp;&nbsp;&nbsp;&nbsp; Para conectar varios Leds en paralelo solo
+tendremos que calcular el valor para un Leds y luego los ponemos como en
+la (<a href="Image8.gif">figura 8</a>).
+<br>En este caso habr&aacute; que tener cuidado con la intensidad de la
+fuente de alimentaci&oacute;n que deber&aacute; ser superior a la suma
+de todos los Leds.
+<br>&nbsp;
+<p><u><font size=+1>Ejemplo</font></u>
+<p>Supongamos que la tensi&oacute;n de alimentaci&oacute;n es de 12 voltios
+y vamos a utilizar un diodo Led de color rojo por el que circular&aacute;
+una corriente de 5 mA.
+<br>La resistencia limitadora ser&aacute;:
+<center>12 - 1,3
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; R = ---------
+= 2,14 K
+<br>&nbsp;5</center>
+
+<p>Utilizaremos un resistencia normalizada (ver lista normalizada) de valor
+2K2, con esta resistencia la intensidad real que circular&aacute; es de
+4,86 mA. Valor lo m&aacute;s pr&oacute;ximo al te&oacute;rico.
+<br>El c&aacute;lculo de la potencia lo vamos a realizar con la Ley de
+joule con lo que resultado queda P = 0.055 W, es decir, 55 mW; por tanto,
+basta con utilizar una resistencia de &frac14;&nbsp; de vatio (250 mW)
+de 2K2 en serie con el diodo Led.
+<br>&nbsp;
+<br>&nbsp;
+<h3>
+Circuito en alterna</h3>
+
+<p><br>&nbsp;&nbsp;&nbsp; Si queremos conectar un Led a un circuito en
+alterna tendremos que tener en cuenta que en la corriente alterna existen
+tensiones positivas y negativas que se van alternado en una duraci&oacute;n
+que ser&aacute; la mitad de la frecuencia, este punto es importante debido
+a que los diodo tienen una tensi&oacute;n de funcionamiento en polarizaci&oacute;n
+directa y otra en la inversa y podremos sobrepasarla para no destruir la
+uni&oacute;n semiconductora.
+<br>Para ello tenemos dos opciones:
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&ordf; <u>Soluci&oacute;n</u>
+<p>&nbsp;&nbsp;&nbsp; Consiste en colocar un diodo en oposici&oacute;n
+al Led, de forma que cuando no conduzca el Led conduzca el diodo, y ala
+inversa, lo que supone una ca&iacute;da de tensi&oacute;n de 0,7 voltios
+en el diodo, no superando los 3 voltios de ruptura del Led.
+<br>Con esto evitamos la destrucci&oacute;n cuando est&aacute; polarizado
+inversamente pero tendremos que limitar la tensi&oacute;n y eso lo podremos
+conseguir con una resistencia en serie que calcularemos con la f&oacute;rmula
+que utilizamos en el apartado <a href="#continua">Circuito b&aacute;sico
+en continua</a>.
+<br>La potencia podremos calcularla con la <a href="#Joule">Ley de Joule</a>
+(<a href="Image9.gif">figura 9</a>)
+<br>&nbsp;
+<p>Vamos a calcular un peque&ntilde;o ejemplo pr&aacute;ctico:
+<br>Sea un diodo Led con una ca&iacute;da de tensi&oacute;n de 1,2 voltios
+y un intensidad m&aacute;xima de 20 mA, que se desea conectar a una tensi&oacute;n
+alterna de 220 voltios.
+<p><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+220 - V<sub>dl1</sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+220 - 1,2</i>
+<br><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+R= -----------------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+R = -------------- <font face="Symbol">&raquo;</font> 22 K<font face="Symbol">W</font></i>
+<br><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I<sub>dl1</sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+10</i>
+<br>La potencia de
+<center>
+<p><i>R1 = V<sub>R1</sub> x I<sub>l1</sub> = (220 -1,2) x 10 <font face="Symbol">&raquo;</font>
+3W</i></center>
+
+<p>Un inconveniente de esta soluci&oacute;n es que la resistencia ser&aacute;
+muy voluminosa al tener una potencia considerable.
+<br>&nbsp;
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&ordf; <u>Soluci&oacute;n</u>
+<p>&nbsp;&nbsp;&nbsp; Para evitar poner un resistencia de 3W podremos colocar
+un condensador que se comportar&aacute; como un resistencia al estar frente
+a una tensi&oacute;n alterna.
+<br>Al igual que en el circuito anterior tendremos que limitar la intensidad
+del circuito, como ejemplo vamos a utilizar los datos anteriores.
+<br>En este caso Rs nos sirve para limitar la intensidad cuando el condensador
+est&aacute; descargado ya que se producir&iacute;a un pico considerable
+que no soportar&iacute;a el Led, como valor m&aacute;ximo de pico que puede
+soportar el Led tenemos:
+<br>I<sub>pico</sub> = 220 / 1 <font face="Symbol">&raquo;</font> 220 mA.
+<br>Por tanto el valor de la resistencia ser&aacute;:
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+220&nbsp; V
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+RS = ------------ = 1 K&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+VRS = 1K x 10 mA = 10V
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+220 mA
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+RS = 1K<font face="Symbol">W</font> - 1/4 W
+<p>Para calcular el valor del condensador se tendr&aacute; en cuenta que
+la tensi&oacute;n en el condensador est&aacute; desfasada 90&ordm; con
+respecto a la tensi&oacute;n en la resistencias y en el diodo as&iacute;
+que aplicando Pit&aacute;goras (ver la figura) tendremos que:
+<center>
+<p><i>V<sub>C</sub> = ( 220<sup>2</sup> - (V<sub>R</sub> + V<sub>LED</sub>)<sup>2</sup>
+)<sup>1/2</sup> = ( 220<sup>2</sup> - (11,2)<sup>2</sup> )<sup>1/2</sup><font face="Symbol">&raquo;</font>
+219,7 V</i></center>
+
+<p>Siendo la intensidad del condensador Ic = 10 mA.
+<br>La resistencia capacitiva ser&aacute;:
+<br>Tomando un valor normalizado Xc = 22 K<font face="Symbol">W</font>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+219,7 V</i>
+<br><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+X<sub>C</sub> = --------------- = 21,9 K<font face="Symbol">W</font></i>
+<br><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+10 mA</i>
+<p>La capacidad del condensador ser&aacute;:
+<br>&nbsp;
+<p><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1</i>
+<br><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C = ---------------- = ----------------------- &raquo; 150 nF</i>
+<br><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2<font face="Symbol">P</font>f x X<sub>C</sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+100<font face="Symbol">P</font> x 22.10<sub>3</sub></i>
+<p>Podemos ver que con esta soluci&oacute;n reducimos el valor de la resistencia
+sustituy&eacute;ndola por un condensador de 150 nF que tenga una tensi&oacute;n
+de trabajo de 400V al ser los 220 eficaces.
+<br>Como ventajas tenemos que no es tan voluminoso y al haber sustituido
+la resistencia de 3W no tendremos una disipaci&oacute;n de calor tan grande.(<a href="Image10.gif">figura 10</a>)
+<br>&nbsp;
+</body>
+</html>
