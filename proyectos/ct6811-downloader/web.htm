@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>Aplicaci&oacute;n &ldquo;Comunica&rdquo;</TITLE>
+</HEAD>
+
+<BODY LANG="es-ES" TEXT="#000000" LINK="#0000ff" VLINK="#800080" DIR="LTR">
+<P ALIGN=CENTER><FONT FACE="Comic Sans MS"><FONT SIZE=5 STYLE="font-size: 20pt"><B>Aplicaci&oacute;n
+&ldquo;<I>CT6811 Downloader tool v1.0&rdquo;</I></B></FONT></FONT></P>
+<P>&nbsp;</P>
+<P ALIGN=CENTER><B>Autor</B>: Alberto Caballero (<A HREF="mailto:kavan@ya.com">kavan@ya.com</A>)</P>
+<P ALIGN=CENTER>&nbsp;</P>
+<P ALIGN=CENTER>&nbsp;</P>
+<H1>1 Introducci&oacute;n</H1>
+<P>&nbsp;</P>
+<P>Una aplicaci&oacute;n sencilla para la <A HREF="../ct6811/ct6811.html">CT6811</A>
+es programarla para que realice captura de datos en un entorno
+determinado, para su posterior descarga a nuestro PC. La aplicaci&oacute;n
+CT6811 Downloader pretende ser una herramienta sencilla de descarga
+de los datos de la <A HREF="../ct6811/ct6811.html">CT6811</A>  para
+entornos Windows.</P>
+<P>&nbsp;</P>
+<H1>2 Dise&ntilde;o de &ldquo;<I>CT6811 Downloader&rdquo;</I></H1>
+<P>&nbsp;</P>
+<P>El dise&ntilde;o de esta aplicaci&oacute;n es bastante sencillo.
+Se encuentra estructurado en clases. Para su desarrollo se ha
+utilizado Microsoft Visual C++ 6.0. Se parti&oacute; de una
+aplicaci&oacute;n basada en un cuadro de di&aacute;logo al que se
+a&ntilde;adieron las funcionalidades apropiadas.</P>
+<P>&nbsp;</P>
+<P STYLE="margin-left: 1.38cm; text-indent: -0.64cm"><FONT FACE="Courier New">o
+</FONT><B>Clase CSerial:</B> Es la clase que realiza las funciones de
+interfaz con el puerto serie del PC. Ofrece m&eacute;todos de
+lectura, escritura y configuraci&oacute;n de los puertos.</P>
+<P STYLE="margin-left: 1.38cm; text-indent: -0.64cm"><FONT FACE="Courier New">o
+</FONT><B>Clase CDumpFile:</B> Esta clase se encarga de almacenar la
+informaci&oacute;n le&iacute;da desde el puerto para su posterior
+volcado a fichero. El nombre dado al fichero es la fecha y hora del
+momento de su escritura, para su f&aacute;cil clasificaci&oacute;n.</P>
+<P>&nbsp;</P>
+<P>El funcionamiento de la aplicaci&oacute;n es el siguiente:</P>
+<OL>
+	<LI><P>Selecci&oacute;n del puerto de comunicaciones y del n&uacute;mero
+	de bytes a leer</P>
+	<LI><P>Env&iacute;o del car&aacute;cter iniciador del protocolo
+	(configurable a trav&eacute;s de la constante ACK_CHAR en el fichero
+	stdafx.h).</P>
+	<LI><P>Recepci&oacute;n de los bytes indicados y escritura en
+	fichero.</P>
+</OL>
+<DL>
+	<DD STYLE="margin-left: 0cm; margin-bottom: 0.5cm"><BR><BR>
+	</DD></DL>
+<P>
+Un ejemplo de servidor grabado en la <A HREF="../ct6811/ct6811.html">CT6811</A>
+ puede ser el servidor de la aplicaci&oacute;n &ldquo;Comunica&rdquo;
+(ver referencia [1]).</P>
+<P>&nbsp;</P>
+<H1>3 Referencias</H1>
+<P>&nbsp;</P>
+<CENTER>
+	<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+		<TR VALIGN=TOP>
+			<TD WIDTH=52 BGCOLOR="#cc99ff">
+				<P STYLE="border: 2.50pt solid #ffffff; padding: 0.05cm 0.12cm">[1]</P>
+			</TD>
+			<TD WIDTH=654 BGCOLOR="#cc99ff">
+				<P STYLE="border-top: 2.50pt solid #ffffff; border-bottom: 2.50pt solid #ffffff; border-left: none; border-right: 2.50pt solid #ffffff; padding-top: 0.05cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0.12cm">
+				<A HREF="../comunica/Comunica.htm">Art&iacute;culo
+				Aplicaci&oacute;n Comunica</A></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=52 BGCOLOR="#99ccff">
+				<P STYLE="border-top: none; border-bottom: 2.50pt solid #ffffff; border-left: 2.50pt solid #ffffff; border-right: 2.50pt solid #ffffff; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.12cm; padding-right: 0.12cm">
+				&nbsp;</P>
+			</TD>
+			<TD WIDTH=654 BGCOLOR="#99ccff">
+				<P STYLE="border-top: none; border-bottom: 2.50pt solid #ffffff; border-left: none; border-right: 2.50pt solid #ffffff; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0.12cm">
+				&nbsp;</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=52 BGCOLOR="#cc99ff">
+				<P STYLE="border-top: none; border-bottom: 2.50pt solid #ffffff; border-left: 2.50pt solid #ffffff; border-right: 2.50pt solid #ffffff; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.12cm; padding-right: 0.12cm">
+				&nbsp;</P>
+			</TD>
+			<TD WIDTH=654 BGCOLOR="#cc99ff">
+				<P STYLE="border-top: none; border-bottom: 2.50pt solid #ffffff; border-left: none; border-right: 2.50pt solid #ffffff; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0.12cm">
+				&nbsp;</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=52 BGCOLOR="#99ccff">
+				<P STYLE="border-top: none; border-bottom: 2.50pt solid #ffffff; border-left: 2.50pt solid #ffffff; border-right: 2.50pt solid #ffffff; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.12cm; padding-right: 0.12cm">
+				&nbsp;</P>
+			</TD>
+			<TD WIDTH=654 BGCOLOR="#99ccff">
+				<P STYLE="border-top: none; border-bottom: 2.50pt solid #ffffff; border-left: none; border-right: 2.50pt solid #ffffff; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0.12cm">
+				&nbsp;</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<H1><SPAN LANG="en-GB">4</SPAN> <SPAN LANG="en-GB">Descargas</SPAN></H1>
+<P>&nbsp;</P>
+<CENTER>
+	<TABLE WIDTH=700 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=2 CELLSPACING=0 RULES=COLS>
+		<COL WIDTH=292>
+		<COL WIDTH=398>
+		<TR>
+			<TD COLSPAN=2 WIDTH=694 VALIGN=TOP BGCOLOR="#cc99ff">
+				<P LANG="en-GB" ALIGN=CENTER><B>SOFTWARE</B></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=292 BGCOLOR="#99ccff">
+				<P STYLE="border: none; padding: 0cm"><A HREF="web_archivos/CT6811_Downloader.pdf"><SPAN LANG="en-GB">CT6811
+				Downloader.pdf (172 Kb)</SPAN></A></P>
+			</TD>
+			<TD WIDTH=398 BGCOLOR="#99ccff">
+				<P STYLE="border: none; padding: 0cm">Este documento en versi&oacute;n
+				PDF</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=292 BGCOLOR="#cc99ff">
+				<P STYLE="border: none; padding: 0cm"><A HREF="web_archivos/Downloader.zip"><SPAN LANG="en-GB">Downloader.zip
+				(16 Kb)</SPAN></A></P>
+			</TD>
+			<TD WIDTH=398 BGCOLOR="#cc99ff">
+				<P LANG="en-GB" STYLE="border: none; padding: 0cm">Fuentes y
+				ejecutable &ldquo;CT6811 Downloader tool&rdquo;, versi&oacute;n
+				1.0</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=292 BGCOLOR="#99ccff">
+				<P STYLE="border: none; padding: 0cm">&nbsp;</P>
+			</TD>
+			<TD WIDTH=398 BGCOLOR="#99ccff">
+				<P STYLE="border: none; padding: 0cm">&nbsp;</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=292 BGCOLOR="#cc99ff">
+				<P STYLE="border: none; padding: 0cm">&nbsp;</P>
+			</TD>
+			<TD WIDTH=398 BGCOLOR="#cc99ff">
+				<P STYLE="border: none; padding: 0cm">&nbsp;</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P>&nbsp;</P>
+<HR SIZE=1>
+<P ALIGN=LEFT>Mayo-2004<BR><B>Alberto Caballero</B> (kavan@ya.com)
+<BR><A HREF="/iearobotics-site/wiki">IEAROBOTICS</A> 
+</P>
+</BODY>
+</HTML>
