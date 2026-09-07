@@ -1,0 +1,558 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Cuaderno t&eacute;cnico 8: Instalaci&oacute;n del ISE 7.1 en una m&aacute;quina GNU/Linux con Debian/Sarge</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGED" CONTENT="20050623;15295100">
+	<META NAME="KEYWORDS" CONTENT="FPGA, Xilinx, hardware, ISE, electr&oacute;nica">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<TABLE WIDTH=917 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+	<COL WIDTH=909>
+	<TR>
+		<TD WIDTH=909>
+			<P ALIGN=CENTER><B>Cuaderno t&eacute;cnico 8: (Tutorial)
+			Instalaci&oacute;n de ISE 7.1 y EDK 7.1 en una m&aacute;quina
+			GNU/Linux con Debian/Sarge</B></P>
+		</TD>
+	</TR>
+</TABLE>
+<TABLE WIDTH=916 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=86>
+	<COL WIDTH=64>
+	<COL WIDTH=72>
+	<COL WIDTH=42>
+	<COL WIDTH=43>
+	<COL WIDTH=49>
+	<COL WIDTH=114>
+	<COL WIDTH=109>
+	<COL WIDTH=81>
+	<COL WIDTH=66>
+	<COL WIDTH=72>
+	<COL WIDTH=68>
+	<TR>
+		<TD WIDTH=86>
+			<P ALIGN=CENTER><A HREF="#Introducci&oacute;n|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Introducci&oacute;n</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">]</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=64>
+			<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="#Caracter&iacute;sticas de la m&aacute;quina|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[M&aacute;quina]</FONT></FONT></A>]</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=72>
+			<P><A HREF="#Requisitos previos|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Requisitos]</FONT></FONT></A></P>
+		</TD>
+		<TD WIDTH=42>
+			<P ALIGN=CENTER><A HREF="#Instalaci&oacute;n del CD 1|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[CD
+			1]</FONT></FONT></A></P>
+		</TD>
+		<TD WIDTH=43>
+			<P ALIGN=CENTER><A HREF="ct8-2.html#cd2"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[CD
+			2]</FONT></FONT></A></P>
+		</TD>
+		<TD WIDTH=49>
+			<P ALIGN=CENTER><A HREF="ct8-3.html#cd3"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[CD
+			3]</FONT></FONT></A></P>
+		</TD>
+		<TD WIDTH=114>
+			<P ALIGN=CENTER><A HREF="ct8-3.html#ejecutando_ise"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Ejecutando
+			ISE]</FONT></FONT></A></P>
+		</TD>
+		<TD WIDTH=109>
+			<P ALIGN=CENTER><A HREF="ct8-3.html#edk"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Instalaci&oacute;n
+			EDK]</FONT></FONT></A></P>
+		</TD>
+		<TD WIDTH=81>
+			<P ALIGN=CENTER><A HREF="ct8-3.html#enlaces"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Enlaces]</FONT></FONT></A></P>
+		</TD>
+		<TD WIDTH=66>
+			<P ALIGN=CENTER><A HREF="ct8-3.html#autor"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Autor]</FONT></FONT></A></P>
+		</TD>
+		<TD WIDTH=72>
+			<P ALIGN=CENTER><A HREF="ct8-3.html#licencia"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Licencia]</FONT></FONT></A></P>
+		</TD>
+		<TD WIDTH=68>
+			<P ALIGN=CENTER><A HREF="ct8-3.html#noticias"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Noticias]</FONT></FONT></A></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/logo-ise.png" NAME="Imagen17" ALIGN=MIDDLE WIDTH=109 HEIGHT=85 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="Introducci&oacute;n|outline"></A>Introducci&oacute;n</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>La herramienta ISE de
+<A HREF="http://www.xilinx.com/">Xilinx</A>, un entorno integrado
+para sintentizar dise&ntilde;os y generar los bitstream para su
+descarga en FPGAs, fue portada a Linux. Sin embargo, oficialmente
+s&oacute;lo ofrecen soporte para distribuciones <A HREF="http://www.redhat.com/software/rhel/">Red
+Hat Enterprise</A>. En los ordenadores de la <A HREF="http://www.eps.uam.es/">Escuela
+Polit&eacute;cnica Superior</A> de la Universidad Aut&oacute;noma de
+Madrid (UAM) lo que tenemos instalado es una distribuci&oacute;n
+<A HREF="http://www.debian.org/">Debian</A>/Sarge. </FONT></FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En este tutorial se
+describe c&oacute;mo es posible instalar el ISE y el EDK 7.1 en una
+<A HREF="http://www.debian.org/">Debian</A>/Sarge. Todav&iacute;a la
+versi&oacute;n de Linux es bastante peor que la de Windows: funciona
+m&aacute;s lento y a veces se cuelga. Sin embargo los que usamos
+GNU/Linux ya podemos sintentizar en nuestros ordenadores.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Los drivers de los
+cables para descargar los bitstreams en las FPGAs no he conseguido
+que funcionen, eso lo dejar&eacute; para otro tutorial :-)</FONT></FONT></P>
+<HR>
+<H2><A NAME="Caracter&iacute;sticas de la m&aacute;quina|outline"></A>
+Caracter&iacute;sticas de la m&aacute;quina</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>La m&aacute;quina en
+la que se ha hecho la instalaci&oacute;n es la siguiente:</FONT></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Ordenador</B>:
+	Dell Optiplex GX280, con partici&oacute;n Linux de 20Gb y 512MB de
+	Memoria RAM</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Sistema
+	operativo</B>: GNU/Linux</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Distribuci&oacute;n
+	de GNU/Linux</B>: <A HREF="http://www.debian.org/">Debian</A> 3.1
+	(Sarge)</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Kernel</B>:
+	2.6.8-2.686-smp</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Entorno
+	gr&aacute;fico</B>: <A HREF="http://www.gnome.org/">Gnome</A> 2.8</FONT></FONT></P>
+</UL>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El disco duro est&aacute;
+asociado al dispositivo /dev/sda y el cdrom al /dev/hda</FONT></FONT></P>
+<HR>
+<H2><A NAME="Requisitos previos|outline"></A>Requisitos previos</H2>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Instalar el
+	paquete <A HREF="http://packages.debian.org/stable/libs/libmotif3">libmotif3</A>,
+	que est&aacute; en <I>non-free</I>. (<I>apt-get install libmotif3</I>).
+	La versi&oacute;n que yo tengo es la 2.2.3-1</FONT></FONT></P>
+</UL>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Si no estuviese
+instalado este paquete, aparecer&iacute;a un error como el siguiente:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffcc99">
+				<P><FONT FACE="Courier, monospace"><FONT SIZE=2>/cdrom/platform/lin/xilsetup:
+				error while loading shared libraries: libXm.so.3: cannot open
+				shared object file: No such file or directory</FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Instalar el
+	paquete <A HREF="http://packages.debian.org/stable/libs/libcurl3">libcurl3</A>
+	(<I>apt-get install libcurl3</I>). La versi&oacute;n que yo tengo es
+	la 7.13.2-2.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejecutar los
+	siguientes comandos, como root:</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P><FONT FACE="Courier, monospace"><FONT SIZE=2>juan@montu:~# ln
+				-s /usr/lib/libcurl.so.3 /usr/lib/libcurl.so.2</FONT></FONT></P>
+				<P><FONT FACE="Courier, monospace"><FONT SIZE=2>juan@montu:~#
+				ldconfig</FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Si no est&aacute;n
+establecidos o no est&aacute; instalado el paquete <A HREF="http://packages.debian.org/stable/libs/libcurl3">libcurl3</A></FONT></FONT>
+<FONT SIZE=2><FONT FACE="Arial, sans-serif">aparecer&aacute; un error
+como el siguiente:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffcc99">
+				<P><FONT FACE="Courier, monospace"><FONT SIZE=2>/cdrom/platform/lin/xilsetup:
+				error while loading shared libraries: libcurl.so.2: cannot open
+				shared object file: No such file or directory</FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2><A NAME="Instalaci&oacute;n del CD 1|outline"></A>Instalaci&oacute;n
+del CD 1</H2>
+<UL>
+	<LI><P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Una
+	vez cumplidos los requisitos previos <B>abrimos un terminal</B> de
+	gnome y nos metemos como root:</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P ALIGN=LEFT><FONT FACE="Courier, monospace"><FONT SIZE=2>juan@montu:~$
+				su</FONT></FONT></P>
+				<P ALIGN=LEFT><FONT FACE="Courier, monospace"><FONT SIZE=2>Password:</FONT></FONT></P>
+				<P ALIGN=LEFT><FONT FACE="Courier, monospace"><FONT SIZE=2>montu:/home/juan#</FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Introducir
+	el CD 1</B>: &ldquo;<I>ISE 7.1i &ndash; Linux 32-bit. Disc 1 of 3.
+	Design Environment and Documentation</I>&rdquo;. Es posible que el
+	CD se automonte (en el gnome que tengo instalado se automonta nada
+	m&aacute;s introducirlo). Si es as&iacute; hay que desmontarlo y
+	montarlo manualmente con permisos de ejecuci&oacute;n, o de lo
+	contrario no nos dejar&aacute; ejecutar el script de arranque <B>setup</B>.
+	</FONT></FONT>
+	</P>
+</UL>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejecutar el
+comando <B>mount</B> para ver el estado actual de c&oacute;mo est&aacute;
+montado el CDROM.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P ALIGN=LEFT><FONT FACE="Courier, monospace"><FONT SIZE=2>montu:/home/juan#
+				mount</FONT></FONT></P>
+				<P ALIGN=LEFT><FONT FACE="Courier, monospace"><FONT SIZE=2>[...]</FONT></FONT></P>
+				<P ALIGN=LEFT><FONT FACE="Courier, monospace"><FONT SIZE=2>/dev/hda
+				on /media/cdrom0 type iso9660 (ro,noexec,nosuid,nodev,user=juan)</FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En este
+caso el CD se ha automontado y el usuario no tiene permisos de
+ejecuci&oacute;n. En este caso hay que desmontar el CD y montarlo
+como root:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P ALIGN=LEFT><FONT FACE="Courier, monospace"><FONT SIZE=2>montu:/home/juan#
+				umount /media/cdrom0</FONT></FONT></P>
+				<P ALIGN=LEFT><FONT FACE="Courier, monospace"><FONT SIZE=2>montu:/home/juan#
+				mount /dev/hda -t iso9660 /cdrom</FONT></FONT></P>
+				<P ALIGN=LEFT><FONT FACE="Courier, monospace"><FONT SIZE=2>mount:
+				dispositivo de bloques /dev/hda est&aacute; protegido contra
+				escritura; se monta como s&oacute;lo lectura</FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En mi
+ordenador el CD es el dispositivo /dev/hda y lo estoy montando sobre
+el directorio /cdrom. (un enlace simb&oacute;lico a /dev/cdrom0) Si
+ahora ejecutamos el comando mount aparecer&aacute; lo siguiente:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P ALIGN=LEFT><FONT FACE="Courier, monospace"><FONT SIZE=2>montu:/home/juan#
+				mount</FONT></FONT></P>
+				<P ALIGN=LEFT><FONT FACE="Courier, monospace"><FONT SIZE=2>[...]</FONT></FONT></P>
+				<P ALIGN=LEFT><FONT FACE="Courier, monospace"><FONT SIZE=2>/dev/hda
+				on /media/cdrom0 type iso9660 (ro)</FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ahora ya s&iacute;
+tenemos permisos de ejecuci&oacute;n.</FONT></FONT></P>
+<UL>
+	<LI><P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Exportar
+	el display</B>:</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P ALIGN=LEFT><FONT FACE="Courier, monospace"><FONT SIZE=2>montu:/home/juan#
+				export DISPLAY=:0</FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Entrar
+	en el CD y ejecutar el script</B> <B><I>setup</I></B>:</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P ALIGN=LEFT><FONT FACE="Courier, monospace"><FONT SIZE=2>montu:/home/juan#
+				cd /cdrom</FONT></FONT></P>
+				<P ALIGN=LEFT><FONT FACE="Courier, monospace"><FONT SIZE=2>montu:/cdrom#
+				./setup</FONT></FONT></P>
+				<P ALIGN=LEFT><FONT FACE="Courier, monospace"><FONT SIZE=2>/cdrom/platform/lin/bin/lin</FONT></FONT></P>
+				<P ALIGN=LEFT><FONT FACE="Courier, monospace"><FONT SIZE=2>Wind/U
+				Error (294): Unable to install Wind/U ini file
+				(/cdrom/platform/lin/data/WindU).</FONT></FONT></P>
+				<P ALIGN=LEFT><FONT FACE="Courier, monospace"><FONT SIZE=2>See
+				the Wind/U manual for more details on the &ldquo;.WindU&rdquo;
+				file and the &ldquo;WINDU&rdquo; environment variable</FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Aunque
+aparece un mensaje de error, al cabo de unos segundos aparecer&aacute;
+la ventana de bienvenida del ISE 7.1:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/ise1-inicio.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=600 HEIGHT=421 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Si no
+estuviese exportado el display, aparecer&iacute;a el siguente mensaje
+de error:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffcc99">
+				<P ALIGN=LEFT><FONT FACE="Courier, monospace"><FONT SIZE=2>montu:/cdrom#
+				./setup</FONT></FONT></P>
+				<P ALIGN=LEFT><FONT FACE="Courier, monospace"><FONT SIZE=2>/cdrom/platform/lin/bin/lin</FONT></FONT></P>
+				<P ALIGN=LEFT><FONT FACE="Courier, monospace"><FONT SIZE=2>Wind/U
+				X-toolkit Error: wuDisplay: Can't open display</FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Pinchar
+	en Next</B>. Apareceren tres pantallas con las licencias, que hay
+	que aceptar y pinchar en Next. Aqu&iacute; pongo un pantallazo de la
+	primera de ellas:</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/ise2-licencia.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=600 HEIGHT=421 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Introducir
+	el n&uacute;mero de registro</B>, facilitado al adquirir el ISE y
+	continuar (Next)</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/ise3-id.png" NAME="Imagen3" ALIGN=MIDDLE WIDTH=600 HEIGHT=421 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Seleccionar
+	el directorio</B> donde instalar el ISE. Yo lo pondr&eacute; en
+	<B>/usr/local/Xilinx</B></FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/ise4-directorio.png" NAME="Imagen4" ALIGN=MIDDLE WIDTH=600 HEIGHT=421 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Seleccionar
+	qu&eacute; m&oacute;dulos se instalar&aacute;n</B>. Yo he puesto
+	todos.</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/ise5-modules.png" NAME="Imagen5" ALIGN=MIDDLE WIDTH=600 HEIGHT=421 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Seleccionar
+	las variables</B> de entorno que se quieren instalar. Yo las tengo
+	puestas todas:</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/ise6-environment.png" NAME="Imagen6" ALIGN=MIDDLE WIDTH=600 HEIGHT=421 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Comprobaci&oacute;n
+	final</B>. Aparece una ventana con todo lo que hemos seleccionaro.
+	Pulsamos en Install</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/ise7-begin.png" NAME="Imagen7" ALIGN=MIDDLE WIDTH=600 HEIGHT=421 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Comienza
+	la instalaci&oacute;n del CD 1</B>. Se empiezan a instalar todos los
+	ficheros en el disco duro. La duraci&oacute;n depende del ordenador.
+	En mi caso ha tardado unos 4 minutos.</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/ise8-progress.png" NAME="Imagen8" ALIGN=MIDDLE WIDTH=600 HEIGHT=421 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Al
+	llegar la barra de progreso al 100% comienza a instalar los drivers
+	de los cables para descargar los dise&ntilde;os en la FPGA. Estos
+	drivers est&aacute;n compilados para la versi&oacute;n del kernel
+	que viene con Red Hat Enterprise por lo que se producen una serie de
+	errores encadenados:</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=983 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=560>
+	<COL WIDTH=407>
+	<THEAD>
+		<TR VALIGN=TOP>
+			<TH WIDTH=560>
+				<P><IMG SRC="images/ise9-error-driver.png" NAME="Imagen9" ALIGN=MIDDLE WIDTH=560 HEIGHT=133 BORDER=0></P>
+			</TH>
+			<TH WIDTH=407>
+				<P><IMG SRC="images/ise10-error-file.png" NAME="Imagen10" ALIGN=MIDDLE WIDTH=229 HEIGHT=133 BORDER=0></P>
+			</TH>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR VALIGN=TOP>
+			<TD WIDTH=560>
+				<P ALIGN=CENTER><IMG SRC="images/ise11-error-rclocal.png" NAME="Imagen11" ALIGN=MIDDLE WIDTH=441 HEIGHT=133 BORDER=0></P>
+			</TD>
+			<TD WIDTH=407>
+				<P ALIGN=LEFT><IMG SRC="images/ise12-error-windrvr6.png" NAME="Imagen12" ALIGN=MIDDLE WIDTH=391 HEIGHT=149 BORDER=0></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=560>
+				<P ALIGN=CENTER><IMG SRC="images/ise14-error-installscript.png" NAME="Imagen14" ALIGN=MIDDLE WIDTH=560 HEIGHT=133 BORDER=0></P>
+			</TD>
+			<TD WIDTH=407>
+				<P ALIGN=CENTER><IMG SRC="images/ise13-error-xpc4drv.png" NAME="Imagen13" ALIGN=MIDDLE WIDTH=334 HEIGHT=149 BORDER=0></P>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Estos
+drivers est&aacute;n compilados para un kernel 2.4.x... as&iacute;
+que no valen para un 2.6.8 que es el que yo tengo... tal vez
+instalando ISE en una Debian/Sarge con Kernel 2.4 no salgan estos
+mensajes de error... no lo he probado todav&iacute;a.</FONT></FONT></P>
+<UL>
+	<LI><P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Fin
+	de la instalaci&oacute;n del CD 1</B>. Pide si quieremos bajar las
+	actualizaciones disponibles. Yo he puesto que no</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=50% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/ise15-completed.png" NAME="Imagen15" ALIGN=MIDDLE WIDTH=466 HEIGHT=212 BORDER=0></P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/ise16-disk1-installed.png" NAME="Imagen16" ALIGN=LEFT WIDTH=373 HEIGHT=149 BORDER=0><BR>
+				</P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>P&aacute;gina 1 de
+3</B></FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<THEAD>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50% BGCOLOR="#ffffcc">
+				<P ALIGN=CENTER><BR>
+				</P>
+			</TD>
+			<TD WIDTH=50% BGCOLOR="#ccccff">
+				<P ALIGN=CENTER><FONT SIZE=2><FONT FACE="Arial, sans-serif">[</FONT></FONT><A HREF="ct8-2.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">P&aacute;gina
+				siguiente</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">]</FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<P><A HREF="../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[&Iacute;ndice
+de cuadernos t&eacute;cnicos]</FONT></FONT></A></P>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="http://www.iearobotics.com/personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A><A HREF="http://www.iearobotics.com/">
+</A>
+</ADDRESS>
+<P STYLE="margin-bottom: 0cm"><A HREF="http://www.iearobotics.com"><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEAROBOTICS</FONT></FONT></A>
+</P>
+</BODY>
+</HTML>
