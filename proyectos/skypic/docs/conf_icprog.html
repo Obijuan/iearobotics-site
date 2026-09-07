@@ -1,0 +1,279 @@
+<html>
+<head>
+<title>Instalaci&oacute;n y configuraci&oacute;n IC-Prog</title>
+<STYLE>
+<style type="text/css">
+<!--
+  H1 {
+    font-family: Current Schoolbook, Arial;
+    background-color: blue;
+    color: rgb(192,192,192);
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    border: thin outset rgb(192,192,192);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    padding: 2px;
+  }
+  H2 {
+    font-family: Times,Arial;
+    color: rgb(0,0,0);
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: left;
+    border: medium none;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    padding: 5px;   
+  }
+  H3 {
+    font-family: Times,Arial;
+    color: rgb(0,0,0);
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: left;
+    border: medium none;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    padding: 5px;   
+  }
+  DIV.cuerpo {
+    font-family: Book Antiqua, Arial;
+    color: rgb(20,20,20);
+    text-indent: 50px;
+    line-height: 20px;
+    text-align: justify;
+    margin-left: 25px;
+    margin-right: 25px;
+  }    
+  SPAN.cursiva { 
+    font-style: oblique;
+  }
+  DIV.autor { 
+    font-family: Arial;
+    font-style: oblique;
+    color: rgb(20,20,20);
+    font-size: 10pt;
+    text-align: left;
+    margin-right: 25px;
+    margin-left: 25px;
+  }
+  
+  DIV.lista {
+    font-family: Book Antiqua, Arial;
+    color: rgb(20,20,20);
+    line-height: 20px;
+    text-align: justify;
+    margin-left: 25px;
+    margin-right: 25px;
+  }    
+
+  TABLE.margen {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+  }
+  
+  TABLE.links {
+    color: rgb(55,0,0);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+    background-color: rgb(255,255,128);
+    border: thin outset rgb(192,192,192);    
+  }
+   
+  TABLE.down {
+    color: rgb(55,0,0);
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom:25px;
+    background-color: rgb(255,255,128);
+    border: thin outset rgb(192,192,192);    
+  }
+  
+  TD.indice {
+    fo<TR><TD><a href="#noticias">Noticias</a></TD></TR>nt-size:15pt;
+    text-align: center;
+    color="blue";
+  }
+  
+-->
+</style>
+</STYLE>
+</head>
+<body>
+<table align="center" width="100%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>Instalaci&oacute;n y configuraci&oacute;n IC-Prog</b>
+ </td>
+</tr>
+</tbody></table>
+<table align="center">
+<tr>
+<td><a href="#introduccion">[Introducción]</a></td>
+<td><a href="#configuracion">[Configuraci&oacute;n]</a></td>
+<td><a href="#grabacion">[Grabaci&oacute;n]</a></td>
+<td><a href="#tres">[Autores]</a></td>
+<td><a href="#licencia">[Licencia]</a></td>
+<td><a href="#links">[Links]</a></td>
+<td><a href="#noticias">[Noticias]</a></td>
+<td><a href="#agradecimientos">[Agradecimientos]</a></td>
+</tr>
+</table>
+<TABLE align=CENTER>
+<TR>
+	<TD>
+		<IMG SRC=image1.jpg NAME="Imagen1" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0>	
+	</TD>
+</TR>
+</TABLE>
+<hr>
+<!-- Introducción -->
+<h2 id="introduccion"> Introducción </h2>
+
+<!-- texto -->
+<div class="cuerpo">
+<p>
+El software lo podemos obtener de <a href="http://www.ic-prog.com">www.ic-prog.com</a>. La instalaci&oacute;n es sencilla, ya que basta descomprimir el archivo en el directorio que se quiera y ejecutar el programa directamente pues esta compilado de forma est&aacute;tica por lo que no requiere de ningun archivo ni libreria adicional si se est&aacute; usando los sistemas operativos Windows 9X o Me, si se esta usando Windows NT, Windows 2000 o Windows XP que ser&aacute; es necesario descargase el driver "IC-Prog NT/2000 driver" que podemos obtener de la misma p&aacute;gina. Tambi&eacute;n se puede obtener el fichero de ayuda, este se tendr&aacute; que guardar en el mismo directorio que el programa.
+</p>
+</div>
+<hr>
+<h2 id="configuracion"> Configuraci&oacute;n </h2>
+<h3>Programador</h3>
+<div class="cuerpo">
+<p>
+La primera vez que ejecutemos el programa se nos pedir&aacute; que configuremos el tipo de programador que vamos a usar, en nuestro caso deberemos seleccionar la opci&oacute;n <b>ProPic 2 Programmer</b>.</p>
+<p>Despu&eacute;s deberemos configurar el tipo de intefaz para ello seleccionaremos <b>Direct I/O</b> si usamos Windows 9x o Windows Me, si por el contrario usamos Windows NT, Windows 2000 o Windows XP seleccionaremos <b>Windows API</b>, en los par&aacute;metros de conmunicaci&oacute;n activaremos las opciones <b>Invertir MCLR e Invertir VCC</b>.</p>
+<p>En cuanto al tiempo de retardo, si tuvi&eacute;semos problemas se pueden probar con tiempos mas largos. En ordenadores de &uacute;ltima generaci&oacute;n estos tiempos se podr&aacute;n reducir, ahorrando tiempo en el grabado.
+</p>
+</div>
+<center>
+<table>
+<tr>
+<td><img src=image2.jpg></td>
+</tr>
+<tr>
+<td ALIGN=CENTER>Figura 2</td>
+</tr>
+</table>
+</center>
+<h3>Programaci&oacute;n</h3>
+<div class="cuerpo">
+<p>
+En el men&uacute; <b>Ajustes / Opciones</b> seleccionamos la pestanna <b>Programaci&oacute;n</b> en la que desactivaremos las opciones de  verificaci&oacute;n de la programaci&oacute;n. Ver figura 3</p>
+<p>En el caso de trabajar con los sistemas operativos Windows NT, Windows 2000 o Windows XP, se deber&aacute; descargar el driver en el mismo directorio que el programa y en la pestanna <b>Miscel&aacute;nea</b> activar la opci&oacute;n <b>Habilitar Driver NT/2000</b>. En sistemas operativos anteriores a estos la opci&oacute;n esta desactivada al no ser necesaria. Ver figura 4
+</p>
+</div>
+<div align="center">
+<table border=0>
+<tr>
+<td ALIGN=CENTER><img src=image3.jpg></td>
+<td ALIGN=CENTER><img src=image4.jpg></td>
+</tr>
+<tr>
+<td ALIGN=CENTER>Figura 3</td>
+<td ALIGN=CENTER>Figura 4</td>
+</tr>
+</table>
+</div>
+<hr>
+<h2 id="grabacion"> Grabaci&oacute;n de un PIC 16F876A </h2>
+<div class="cuerpo">
+<p>
+El proceso de grabaci&oacute;n lo podemos esquematizar en los siguientes pasos:
+</p>
+</div>
+<div class="lista">
+<ul>
+<li>Seleccionar el dispositivo a programar PIC 16F876A.
+<li>Abrir el archivo que contiene los datos a programar en el PIC.
+<li>Ajustar la palabra de configuraci&oacute;n y el tipo de oscilador.
+<li>Programar el dispositivo.
+</ul>
+</div>
+<h3>Seleccionar el dispositivo</h3>
+<div class="cuerpo">
+<p>
+En el desplegable de la barra de herramientas tenemos todos los dispositivos que es capaz de grabar el IC-Prog, en el seleccionaremos el PIC 16F876A.
+</p>
+</div>
+<h3>Abrir el archivo .hex</h3>
+<div class="cuerpo">
+<p>
+En el men&uacute; <b>Archivo</b> seleccionamos <b>Abrir archivo</b> en el cuadro de di&aacute;logo que nos aparece seleccionamos el fichero que deseamos grabar en el PIC.
+</p>
+</div>
+<h3>Ajuste de los bits de configuraci&oacute;n</h3>
+<div class="cuerpo">
+<p>
+Los tipos de oscilador que se pueden elejir son (RC, LP, XT, HS).<br>
+En Protecci&oacute;n de codigo, podemos seleccionar la protecci&oacute;n de todo el codigo, por p&aacute;ginas o no proteger el c&oacute;digo.<br>
+El resto de los bits de configuraci&oacute;n se pueden activar directamente, normalmente los tendremos desactivados.<br>
+Si al ensamblar o compilar el archivo fuente se activaron los bits de configuraci&oacute;n, cuando se carga el archivo .hex se marcara los bits seleccionados autom&aacute;ticamente.
+</p>
+</div>
+<br>
+<h3>Programar el dispositivo</h3>
+<div class="cuerpo">
+<p>
+Lo &uacute;nico que nos resta es programarlo, para ello seleccionamos <b>Programar todo</b> del men&uacute; <b>Comando</b>. Con ello comenzar&aacute; la grabaci&oacute;n.
+</p>
+</div>
+<br>
+<!-- Sección 2 -->
+<HR>
+<H2 id="tres">Autor</H2>
+
+<div class="lista">
+<ul>
+  <li><a href="http://www.eagleman.org/entrar.php">Ricardo G&oacute;mez Gonz&aacute;lez</a></li>
+</ul>
+
+</div>
+<!-- Sección 3 -->
+<HR>
+<H2 id="licencia"> Licencia</H2>
+
+<div class="cuerpo">
+  Este <b>documento</b> se distribuyen bajo
+  <a href="http://gugs.sindominio.net/licencias/fdl-es.html">licencia FDL</a>
+   por lo que se permite su copia, modificación y distribución, 
+  siempre y cuando se mantenga esta nota. 
+</div>
+<br>
+<HR>
+<H2 id="links">Links</H2>
+<div class="lista">
+<ul>
+  <li><a href="http://www.ic-prog.com">IC-Prog</a>, p&aacute;gina oficial del programa IC-Prog</li>
+</ul>
+</div>
+<!-- Noticias -->
+<HR>
+<H2 id="noticias">Noticias</H2>
+<div class="lista">
+<ul>
+   <li><b>9/Jul/2003</b>: Publicado en la web</li>
+</ul>
+</div>
+<HR>
+
+<H2 id="agradecimientos"> Agradecimientos </H2>
+<div class="lista">
+<ul>
+   <li>A Ignacio Vara, por las pruebas realizadas en el puerto paralelo de su portatil, la verdad es que fue realmente valiente :)</li>
+</ul>
+</div>
+<HR>
+<a href="http://www.iearobotics.com">IEA ROBOTICS</a>
+<ADDRESS>
+Ricardo G&oacute;mez
+</ADDRESS>
+</body>
+</html>

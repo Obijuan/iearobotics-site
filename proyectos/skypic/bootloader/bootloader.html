@@ -1,0 +1,274 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//ES">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>M&eacute;todos de grabación de la SkyPic</TITLE>
+	<META NAME="KEYWORDS" CONTENT="robotica, microcontroladores, pic, hardware">
+	<STYLE>
+		<!--
+		  H1 {
+			font-family: Current Schoolbook, Arial;
+			background-color: blue;
+			color: rgb(192,192,192);
+			letter-spacing: 2px;
+			font-weight: bold;
+			text-align: center;
+			border: thin outset rgb(192,192,192);
+			margin-left: 25px;
+			margin-right: 25px;
+			margin-top: 10px;
+			padding: 2px;
+		  }
+		  H2 {
+			font-family: Times,Arial;
+			color: rgb(0,0,0);
+			letter-spacing: 2px;
+			font-weight: bold;
+			text-align: left;
+			border: medium none;
+			margin-left: 25px;
+			margin-right: 25px;
+			margin-top: 10px;
+			padding: 5px;   
+		  }
+		  DIV.cuerpo {
+			font-family: Book Antiqua, Arial;
+			color: rgb(20,20,20);
+			text-indent: 50px;
+			line-height: 20px;
+			text-align: justify;
+			margin-left: 25px;
+			margin-right: 25px;
+		  }    
+		  SPAN.cursiva { 
+			font-style: oblique;
+		  }
+		  
+		  DIV.lista {
+			font-family: Book Antiqua, Arial;
+			color: rgb(20,20,20);
+			line-height: 20px;
+			text-align: justify;
+			margin-left: 25px;
+		  }    
+
+		  TABLE.margen {
+			margin-left: 25px;
+			margin-right: 25px;
+			margin-bottom:25px;
+		  }
+		  
+		  TABLE.links {
+			color: rgb(55,0,0);
+			margin-left: 25px;
+			margin-right: 25px;
+			margin-bottom:25px;
+			background-color: rgb(255,255,128);
+			border: thin outset rgb(192,192,192);    
+		  }
+		   
+		  TABLE.down {
+			color: rgb(55,0,0);
+			margin-left: 25px;
+			margin-right: 25px;
+			margin-bottom:25px;
+			background-color: rgb(255,255,128);
+			border: thin outset rgb(192,192,192);    
+		  }
+		  
+		  TD.indice {
+			fo<TR><TD><a href="#noticias">Noticias</a></TD></TR>nt-size:15pt;
+			text-align: center;
+			color="blue";
+		  }
+		  
+		-->
+		</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+
+<!-- Titulo -->
+<table align="center" width="100%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tr>
+	<td colspan="2" align="center"><b>M&eacute;todos de grabación de la SkyPic</b></td>
+</tr>
+</table> 
+
+<!-- Menu -->
+<table align="center">
+<tr>
+	<td><a href="#introduccion">[Introducci&oacute;n]</a></td>
+	<td><a href="#metodos">[M&eacute;todos grabaci&oacute;n]</a></td>
+	<td><a href="#descripcion">[Descripci&oacute;n m&eacute;todos]</a></td>
+	<td><a href="#links">[Links]</a></td>
+	<td><a href="#autor">[Autor]</a></td>
+	<td><a href="#licencia">[Licencia]</a></td>
+	<td><a href="#noticias">[Noticias]</a></td>
+</tr>
+</table>
+
+<!-- Imagen encabezamiento -->
+<center>
+<br>
+<img src="images/esquema.png" width="320" height="122">
+</center>
+
+<!-- Introduccion -->
+<hr>
+<h2 id="introduccion"> Introducci&oacute;n </h2>
+
+<!-- texto -->
+<div class="cuerpo">
+<p>
+El objetivo de este manual es mostrar los métodos que existen para poder descargar/grabar los programas que hagamos a nuestra placa SkyPic.<br>
+Los m&eacute;todos descritos en esta p&aacute;gina son principalmente para el sistema operativo Windows&trade; ya que es el m&aacute;s extendido.<br>
+Tambi&eacute;n para quien desee usar Linux casi todos los m&eacute;todos tienen su equivalente.<br><br>
+</div>
+
+<hr>
+<H2 id="metodos">Métodos de grabación de la SkyPic</H2>
+<div class="lista">
+<ul>
+	<li>Usando el BootLoader
+	<li>Usando el programador ICD2
+	<li>Usando el puerto paralelo
+	<LI>Usando otra SkyPic como programadora
+	<LI>Usando un programador genérico
+</ul>
+</div>
+
+<hr>
+<H2 id="descripcion">Descripción de los métodos de grabación</H2>
+<h3>1.- Usando el BootLoader</h3>
+<div class="cuerpo">
+<p>
+	Para poder usar este método, la SkyPic debe tener grabado el programa BootLoader que será el encargado de obtener nuestro programa y grabarlo en la memoria del microcontrolador.<br>
+	Si no se tiene grabado el BootLoader, se puede usar cualquiera de los métodos siguientes para grabarlo.<br><br>
+
+	Para descargar nuestros programas compilados usaremos el cargador <b>PIC Downloader</b> desarrollado por <a href="http://www.microchipc.com/PIC16bootload/">Shane Tolmie</a>, la instalación del PIC Downloader es sencilla tan sólo es necesario descargarlo desde la web <a href="http://www.iearobotics.com/talleres/uca-2005/sesion-3/windows/download/PIC_downloader.zip"> PIC_downloader.zip</a> descomprimirlo en el directorio deseado y ejecutar directamente el fichero <b>PIC_downloader.exe</b>.<br><br>
+
+	Para configurarlo marcamos el puerto serie que usemos, seleccionamos la velocidad del puerto a 38400 baudios. Con el botón <b>Search</b> seleccionamos el archivo <b>.hex</b> que deseamos grabar.<br>
+	Aquí puede ver una captura del programa:<br><br>
+	<center>
+		<IMG SRC="images/pic_loader_window_pant.png" ALT="PIC Downloader"><br><br>
+	</center>
+	Una vez que ya tengamos configurados todos los parámetros y seleccionado el fichero .hex pulsamos el botón <b>Write</b>, el programa nos pedirá que pulsemos el botón <B>reset</B> de la SkyPic. Una vez terminada la grabación, el programa nos indicará si la grabación se ha realizado con éxito o si por el contrario se han producido un error.<br><br>
+</div>
+
+<h3>2.- Usando el programador ICD2</h3>
+<div class="cuerpo">
+<p>
+	Para usar este método necesitamos disponer del programador ICD2 de <a HREF="http://www.microchip.com">Microchip</a> un PC con un puerto USB disponible y tener el programa MPLAB instalado. Toda la información sobre la descarga, instalación y configuración se puede obtener de la web del fabricante.<br><br>
+	Aquí mostraremos los pasos necesarios para grabar una SkyPic, no entraremos en como se realizan los programas al ser bastante extenso y quedar fuera del &aacute;mbito de este manual.<br><br>
+	
+	<h4>Conexionado de los dispositivos</h4>
+	<center>
+		<img src="images/esquema.png" ALT="Conexionado de los dispositivos">
+	</center>
+
+	<h4>Entorno MPLAB</h4>
+	Con el MPLAB tenemos dos opciones trabajar con todo el entorno, esto incluye tanto la escritura, compilación o ensamblado del código y posterior grabación o usarlo únicamente para grabar un programa ya compilado o ensamblado.<br>
+
+	<h4>Slección y configuración del entorno y programador</h4>
+		<div class="lista">
+		<ul>
+		<li>Seleccionamos como programador "MPLAB ICD 2".<br>
+		<li>Bits de configuración:<br>
+		<div class="lista">
+		<ul>
+			<li>Oscilador = HS<br>
+			<li>Watchdog  Timer = Off<br>
+			<li>Power Up Timer = Off<br>
+			<li>Brown Out Detect = Off<br>
+			<li>Low Voltage Program = Disabled<br>
+			<li>Flash Program Write = Write Protection Off<br>
+			<li>Data EE Read Protect = Off<br>
+			<li>Code Project = Off<br>
+		</ul>
+		</div>
+		</ul>
+		</div>
+</div>	
+
+<h3>3.- Usando el puerto paralelo</h3>
+<div class="cuerpo">
+<p>
+	Si no se puede usar ningún método de los dos m&eacute;todos anteriores se puede usar el puerto paralelo de PC y el software ICProg como se describe en los siguientes dos documentos:<br>
+	<div class="lista">
+	<ul>
+		<li><a href="../imagenes/esquema-cable.png">Cable paralelo para grabar la SKYPIC desde el puerto paralelo con el ICPROG</a>
+		<li><a href="../docs/conf_icprog.html">Manual para grabar la SKYPIC desde el puerto paralelo con el ICPROG</a>
+	</ul>
+	</div>
+</div>
+
+<h3>4.- Usando otra SkyPic como programadora</h3>
+<div class="cuerpo">
+<p>	
+	Con este método necesitaremos otra SkyPic que debe tener grabado el servidor PICP.<br>
+	En el siguiente enlace se describe todo el proceso de grabaci&oacute;n de este m&eacute;todo<br>
+	<div class="lista">
+	<ul>
+		<li><a href="../../cuadernos/ct7/ct7.html">Grabación de la tarjeta Skypic usando otra Skypic</a></li>
+	</ul>
+	</div>
+</div>
+
+<h3>5.- Usando un programador genérico</h3>
+<div class="cuerpo">
+<p>
+	Estos programadores normalmente están disennados para insertar el microcontrador en el programador retirándolo de la placa controladora, en nuestro caso la SkyPic.<br><br>
+
+	Para no tener que realizar esta operación un tanto engorrosa, podemos hacernos un cable de tipo telefónico que en un extremo pondremos una clavija de teléfono y en el otro extremo conectaremos los pines de programación que dispone el programador.<br><br>
+
+	Esta opción no está documentada ya que depende de cada programador, pero al disponer de los esquemas el&eacute;ctricos de la SkyPic no es demasiado complejo de realizar.<br><br>
+</div>
+	
+<!-- Links -->
+<HR>
+<H2 id="links">Links</H2>
+<div class="lista">
+<ul>
+  <li><a href="../skypic.html">Tarjeta SKYPIC</a></li>
+  <li><a href="http://www.microchipc.com/PIC16bootload/">PIC Downloader desarrollado por Shane Tolmie</a></li>
+  <li><a href="http://www.microchip.com">Microchip</a></li>
+</ul>
+</div>
+
+<!-- Autor -->
+<HR>
+<H2 id="autor"> Autor</H2>
+
+<div class="lista">
+<ul>
+  <li><a href="http://www.iearobotics.com/personal/ricardo/index.html">Ricardo G&oacute;mez Gonz&aacute;lez</a>. 
+  </li>
+</ul>
+</div>
+
+<!-- Licencia -->
+<HR>
+<H2 id="licencia"> Licencia</H2>
+
+<div class="cuerpo">
+Este <B>documento</B> se distribuyen bajo <A HREF="http://gugs.sindominio.net/licencias/fdl-es.html">licencia FDL</a> por lo que se permite su copia, modificaci&oacute;n y distribuci&oacute;n, siempre y cuando se mantenga esta nota.<br><br>
+</div>  
+
+<!-- Noticias -->
+<HR>
+<H2 id="noticias">Noticias</H2>
+<div class="lista">
+<ul>
+<li><b>23/dic/2005</b>: Publicado enlace en esta web</li> 
+</ul>
+</div>
+
+<!-- Pie de página -->
+<hr>
+<a href="http://www.iearobotics.com">IEA ROBOTICS</a>
+<address>
+P&aacute;gina creada por
+<a HREF="http://www.iearobotics.com/personal/ricardo/index.html">Ricardo G&oacute;mez Gonz&aacute;lez</a>
+
+</body>
+</html>

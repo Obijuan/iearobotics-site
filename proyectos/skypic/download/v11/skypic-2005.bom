@@ -1,0 +1,31 @@
+
+Qty     Descriptioni	        	Parts         
+1   Condensador electrolitico 1uF 50v   C3            
+4   RESISTENCIA 5% 1/4W de 4K7		R4, R6, R7, R8
+3   RESISTENCIA 5% 1/4W de 10K		R1, R2, R3
+1   RESISTENCIA 5% 1/4W de 330 ohmios 	R5            
+1   Cristal de 20Mhz	         	X1            
+2   Condensador ceramico de 22pF      	C1, C2        
+4   Condensadr electrolitico 22uF 63v 	C5, C6, C7, C8
+1   Condensador multicapa de 100n     	C4            
+1   JACK alimentacion  C.I.         	JACK          
+1   LED verde 3mm	          	L1            
+1   MAX232SDIP + zocalo 2x8   		U2            
+2   Conector telefonico acodado 6 vias	PC, ICD2            
+1   CLEMA circuito impreso 3 vias     	CT5           
+4   Conector acodado 10 vias tipo bus   CT1, CT2, CT3, CT4           
+2   pulsador circuito impreso   	S1, S2            
+2   transistor SC107 NPN o equivalente  TRT1, TRT2    
+1   CLEMA circuito impreso 2 vias	CT6 (Vext)          
+1   tira 4 pines rectos para I2C     	I2C           
+3   tira 3 pines rectos  (jumper)   	JP3, JP4, JP5           
+4   tira 2 pines rectos  (jumper)   	JP1, JP2, JP6, JP7          
+1   tira 3x8 pines rectos		Servos8          
+1   PIC16F876A + zocalo 2x14 Estrecho	U1        
+7   Capuchones para jumper             
+
+1   1.5 metr Cable telefónico 4 vias
+2   clemas para cable telefonico 4 vias
+1   Adaptador cable telefonico 4 vias a SUBD9 (PC)
+1   Portapilas de 4 unidades plano (pilas tipo AA)
+1   Jack aereo de alimentacion para cable 

@@ -1,0 +1,812 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>SKYPIC</TITLE>
+	<META NAME="KEYWORDS" CONTENT="tarjetas entrenadoras con PIC">
+</HEAD>
+
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>Tarjeta Entrenadora SKYPIC para
+				microcontroladores PIC<!-- t&iacute;tulo de la página --><META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+				</B>
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=785 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<TR>
+				<TD WIDTH=90>
+					<P><A HREF="#Introducción|outline"><FONT SIZE=2>[Introducción]</FONT></A></P>
+				</TD>
+				<TD WIDTH=90>
+					<P><A HREF="#Características|outline"><FONT SIZE=2>[Características]</FONT></A></P>
+				</TD>
+				<TD WIDTH=90>
+					<P><A HREF="#Autor|outline"><FONT SIZE=2>[Autor]</FONT></A></P>
+				</TD>
+				<TD WIDTH=90>
+					<P><A HREF="#Licencia|outline"><FONT SIZE=2>[Licencia]</FONT></A></P>
+				</TD>
+				<TD WIDTH=90>
+					<P><A HREF="#Componentes |outline"><FONT SIZE=2>[Componentes]</FONT></A></P>
+				</TD>
+				<TD WIDTH=90>
+					<P><A HREF="#Puertos"><FONT SIZE=2>[Puertos]</FONT></A></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=90>
+					<P><A HREF="#documentos"><FONT SIZE=2>[Documentos]</FONT></A></P>
+				</TD>
+				<TD WIDTH=90>
+					<P><A HREF="#download"><FONT SIZE=2>[Download]</FONT></A></P>
+				</TD>
+				<TD WIDTH=90>
+					<P><A HREF="#comercializa"><FONT SIZE=2>[Comercializa]</FONT></A></P>
+				</TD>
+				<TD WIDTH=90>
+					<P><A HREF="#Links|outline"><FONT SIZE=2>[Links]</FONT></A></P>
+				</TD>
+				<TD WIDTH=90>
+					<P><A HREF="#Noticias|outline"><FONT SIZE=2>[Noticias]</FONT></A></P>
+				</TD>
+				<TD WIDTH=90>
+					<P><A HREF="#Agradecimientos|outline"><FONT SIZE=2>[Agradecimientos]</FONT></A></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P><IMG SRC="imagenes/skypic-peq.jpg" NAME="Imagen1" ALIGN=MIDDLE WIDTH=324 HEIGHT=265 BORDER=0>
+								</P>
+			</TD>
+			<TD>
+				<P><IMG SRC="imagenes/skypic_big.jpg" NAME="Imagen2" ALIGN=MIDDLE WIDTH=200 HEIGHT=165 BORDER=0><BR><A HREF="http://www.ifara.com/"><IMG SRC="imagenes/ifara-peq.jpg" NAME="Imagen3" ALIGN=MIDDLE WIDTH=246 HEIGHT=82 BORDER=0></A>
+								</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=24*>
+	<COL WIDTH=232*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=9% BGCOLOR="#ffcc99">
+				<P ALIGN=CENTER><IMG SRC="../../personal/juan/Icono_aviso.png" NAME="gráficos6" ALIGN=MIDDLE WIDTH=24 HEIGHT=24 BORDER=0></P>
+			</TD>
+			<TD WIDTH=91% VALIGN=TOP BGCOLOR="#ffcc99">
+				<P ALIGN=CENTER><FONT FACE="Bitstream Vera Sans, sans-serif"><FONT SIZE=2><B>Esta
+				página ya no se mantiene más (11/Mayo/2007)</B></FONT></FONT></P>
+				<P ALIGN=CENTER><A HREF="http://www.iearobotics.com/wiki/index.php?title=Skypic"><FONT FACE="Bitstream Vera Sans, sans-serif"><FONT SIZE=2><B>Acceso
+				a la nueva página de la Skypic en el wiki</B></FONT></FONT></A></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<H2><A NAME="Introducción|outline"></A>Introducción</H2>
+<P><FONT FACE="Arial, sans-serif">La SKYPIC es una tarjeta
+entrenadora para las familias de PICs 16f87x y 18fxxx de 28 pines. El
+objetivo ha sido desarrollar una tarjeta fácil de usar, compatible
+con otras tarjetas anteriormente desarrolladas, como por ejemplo la
+CT6811 o la CT293, y que se pueda utilizar con las herramientas
+estándar de Microchip y con otras desarrolladas a medida para Linux.
+</FONT>
+</P>
+<HR>
+<H2><A NAME="Características|outline"></A>Características</H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif">Soporta los micros de 28 pines
+	de las familias 16F8X y 18FXXX.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif">Conector teléfonico para
+	grabación desde el ICD2 de Microchip.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif">Conector teléfonico para
+	conexión a puerto serie RS232.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif">LED de pruebas en circuito.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif">Pulsador de pruebas en
+	circuito.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif">Botón de Reset.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif">Conector acodado para
+	programación directa desde CT6811.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif">Puertos A, B y C disponibles
+	en el exterior.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif">Conexión directa de hasta 8
+	servomecanimos tipo Futaba, Hitec, ...</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif">Licencia Hardware Abierto.</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif">Compatible con Linux y
+	Windows.</FONT></P>
+</UL>
+<HR>
+<H2><A NAME="tres"></A><A NAME="Autor|outline"></A>Autores</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><A HREF="../../../personal/personal/andres/index.html">Andrés
+	Prieto-Moreno Torres</A> :Esquema, PCB y pruebas</FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><A HREF="../../../personal/juan/index.html">Juan
+	González Gómez</A> :Esquema, software grabación y pruebas</FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><A HREF="http://www.ifara.com/">Ifara
+	Tecnologías</A> :Financiación primera tirada PCBs</FONT></P>
+</UL>
+<HR>
+<H2><A NAME="Licencia|outline"></A>Licencia</H2>
+<P><FONT FACE="Arial, sans-serif">La tarjeta Skypic es HARDWARE LIBRE
+y tiene una licencia GPL (o lo mas parecido pero en versión
+Hardware). Esto quiere decir que se distribuye junto con TODOS sus
+esquemas (esquemáticos, rutado y ficheros de fabricación).
+Cualquiera tiene derecho a fabricarla, copiarla, modificarla,
+distribuirla o venderla siempre y cuando vaya acompañada de TODOS
+los esquemas. </FONT>
+</P>
+<HR>
+<H2><A NAME="Componentes"></A>Disposición de Componentes</H2>
+<P><IMG SRC="imagenes/skypic-map.jpg" NAME="gráficos1" ALIGN=BOTTOM WIDTH=636 HEIGHT=329 BORDER=0>
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><B>Puerto A</B> Puerto A del
+	microcontrolador PIC 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>Puerto B</B> Puerto B del
+	microcontrolador PIC 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>Puerto C</B> Puerto C del
+	microcontrolador PIC 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>Puerto Prog</B> Conector
+	acodado con los pines de grabación del PIC ( RB6, RB7) 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>Servomecanismos</B> 8
+	conectores triples para conectar directamente hasta 8
+	servomecanismos 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>Vmot</B> Entrada de
+	alimentación externa para los servomotores 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>Pulsador de pruebas</B>
+	conectado a la entrada RB0 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>Led de PruebasA</B> conectado a
+	la salida RB1 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>Alimentación</B> de la
+	tarjeta. Entre <B>5 y 6 voltios</B> 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>ICD2</B> Conexión con el ICD2
+	de Microchipctor 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>RS232</B> Puerto serie del PIC.
+	Conexión con el PC. 
+	</P>
+</UL>
+<DL>
+	<DD>
+	<TABLE BORDER=1 CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P><B>Alimentación</B></P>
+			</TD>
+			<TD>
+				<P><B>Puertos A,B,C y Prog</B></P>
+			</TD>
+			<TD>
+				<P><B>Vmot</B></P>
+			</TD>
+			<TD>
+				<P><B>Servos</B></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P><IMG SRC="imagenes/clema.jpg" NAME="gráficos2" ALIGN=BOTTOM WIDTH=290 HEIGHT=131 BORDER=0></P>
+			</TD>
+			<TD>
+				<P><IMG SRC="imagenes/ctcon.jpg" NAME="gráficos3" ALIGN=BOTTOM WIDTH=153 HEIGHT=62 BORDER=0></P>
+			</TD>
+			<TD>
+				<P><IMG SRC="imagenes/vmot.jpg" NAME="gráficos4" ALIGN=BOTTOM WIDTH=96 HEIGHT=118 BORDER=0></P>
+			</TD>
+			<TD>
+				<P><IMG SRC="imagenes/servo.jpg" NAME="gráficos5" ALIGN=BOTTOM WIDTH=190 HEIGHT=128 BORDER=0></P>
+			</TD>
+		</TR>
+	</TABLE>
+	<HR WIDTH=642 ALIGN=RIGHT>
+</DL>
+<H2>Disposición de Jumpers</H2>
+<P><IMG SRC="imagenes/skypic-jum.jpg" NAME="gráficos6" ALIGN=BOTTOM WIDTH=469 HEIGHT=302 BORDER=0>
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><B>JP1</B> Jumper quitado
+	desconecta el Pulsador de pruebas 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>JP2</B> Jumper quitado
+	desconecta el LED de pruebas 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>JP3</B> Jumper (1,2) modo
+	grabación. Jumper (2,3) modo entrenador 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>JP4</B> Jumper (1,2) modo
+	Skypic (entrenadora). Jumper (2,3) modo ICD (grabadora). 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>JP5</B> Jumper (1,2) modo
+	Skypic (entrenadora). Jumper (2,3) modo ICD (grabadora). 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>JP6</B> Jumper (1,2) DTR OFF.
+	Jumper (2,3) DTR ON 
+	</P>
+	<LI><P><B>JP7</B> Jumper (1,2) alimentación de servos interna.
+	Jumper (2,3) alimentación de servos externa <BR>Aunque en la foto
+	aparezcan en JP4 y JP5 un interruptor triple, no es necesario
+	ponerlos, tan solo con poner tres pines macho y un jumper basta, ya
+	que generalmente vamos a usar el modo SKYPIC entrenadora. Por lo
+	tanto el jumper triple ponerlo en JP3 ya que es más cómodo para
+	pasar a modo grabación. Los conectores triples funcionan de la
+	siguiente forma: Los pines cortocircuitados son el central y el que
+	esta debajo de la zona gris. Los pines que se desconectan son los
+	que estan debajo de la parte roja. Ver siguiente figura.</P>
+</UL>
+<DL>
+	<DD>
+	<TABLE BORDER=1 CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P><B>Jumper triple</B></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P><IMG SRC="imagenes/triple.jpg" NAME="gráficos7" ALIGN=BOTTOM WIDTH=107 HEIGHT=153 BORDER=0></P>
+			</TD>
+		</TR>
+	</TABLE>
+	<HR WIDTH=642 ALIGN=RIGHT>
+</DL>
+<H2><A NAME="Puertos"></A>Puertos 
+</H2>
+<P><IMG SRC="imagenes/puertos.jpg" NAME="gráficos8" ALIGN=BOTTOM WIDTH=510 HEIGHT=219 BORDER=0>
+</P>
+<TABLE CELLPADDING=2 CELLSPACING=2>
+	<TR>
+		<TD>
+			<TABLE BORDER=1 CELLPADDING=2 CELLSPACING=2>
+				<TR BGCOLOR="#00e000">
+					<TD>
+						<P>Puerto A</P>
+					</TD>
+					<TD>
+						<P>PIC 16F876</P>
+					</TD>
+					<TD>
+						<P>PIC 18F252</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P>A0</P>
+					</TD>
+					<TD>
+						<P>RA0/AN0</P>
+					</TD>
+					<TD>
+						<P>RA0/AN0</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P>A1</P>
+					</TD>
+					<TD>
+						<P>RA1/AN1</P>
+					</TD>
+					<TD>
+						<P>RA1/AN1</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P>A2</P>
+					</TD>
+					<TD>
+						<P>RA2/AN2/Vref-/CVref</P>
+					</TD>
+					<TD>
+						<P>RA2/AN2/Vref-</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P>A3</P>
+					</TD>
+					<TD>
+						<P>RA3/AN3/Vref+</P>
+					</TD>
+					<TD>
+						<P>RA3/AN3/Vref+</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P>A4</P>
+					</TD>
+					<TD>
+						<P>RA4/TOCKI/C1OUT</P>
+					</TD>
+					<TD>
+						<P>RA4/TOCKI</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P>A5</P>
+					</TD>
+					<TD>
+						<P>RA5/AN4/#SS/C2OUT</P>
+					</TD>
+					<TD>
+						<P>RA5/AN4/#SS/LVDIN</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P>---</P>
+					</TD>
+					<TD>
+						<P>---</P>
+					</TD>
+					<TD>
+						<P>---</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P>---</P>
+					</TD>
+					<TD>
+						<P>---</P>
+					</TD>
+					<TD>
+						<P>---</P>
+					</TD>
+				</TR>
+			</TABLE>
+			<P><BR><BR>
+			</P>
+		</TD>
+		<TD>
+			<P STYLE="margin-bottom: 0cm">&nbsp;</P>
+			<TABLE BORDER=1 CELLPADDING=2 CELLSPACING=2>
+				<TR BGCOLOR="#00e000">
+					<TD>
+						<P>Puerto B</P>
+					</TD>
+					<TD>
+						<P>PIC 16F876</P>
+					</TD>
+					<TD>
+						<P>PIC 18F252</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P>B0</P>
+					</TD>
+					<TD>
+						<P>RB0/INT</P>
+					</TD>
+					<TD>
+						<P>RB0/INT0</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P>B1</P>
+					</TD>
+					<TD>
+						<P>RB1</P>
+					</TD>
+					<TD>
+						<P>RB1/INT1</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P>B2</P>
+					</TD>
+					<TD>
+						<P>RB2</P>
+					</TD>
+					<TD>
+						<P>RB2/INT2</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P>B3</P>
+					</TD>
+					<TD>
+						<P>RB3/PGM</P>
+					</TD>
+					<TD>
+						<P>RB3</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P>B4</P>
+					</TD>
+					<TD>
+						<P>RB4</P>
+					</TD>
+					<TD>
+						<P>RB4</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P>B5</P>
+					</TD>
+					<TD>
+						<P>RB5</P>
+					</TD>
+					<TD>
+						<P>RB5/PGM</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P>B6</P>
+					</TD>
+					<TD>
+						<P>RB6/PGC</P>
+					</TD>
+					<TD>
+						<P>RB6/PGC</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P>B7</P>
+					</TD>
+					<TD>
+						<P>RB7/PGD</P>
+					</TD>
+					<TD>
+						<P>RB7/PGD</P>
+					</TD>
+				</TR>
+			</TABLE>
+			<P><BR><BR>
+			</P>
+		</TD>
+		<TD></TD>
+		<TD>
+			<P STYLE="margin-bottom: 0cm">&nbsp;</P>
+			<TABLE BORDER=1 CELLPADDING=2 CELLSPACING=2>
+				<TR BGCOLOR="#00e000">
+					<TD>
+						<P>Puerto C</P>
+					</TD>
+					<TD>
+						<P>PIC 16F876</P>
+					</TD>
+					<TD>
+						<P>PIC 18F252</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P>C0</P>
+					</TD>
+					<TD>
+						<P>RC0/T1OSO/T1CKI</P>
+					</TD>
+					<TD>
+						<P>RC0/T1OSO/T1CKI</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P>C1</P>
+					</TD>
+					<TD>
+						<P>RC1/T1OSI/CCP2</P>
+					</TD>
+					<TD>
+						<P>RC1/T1OSI/CCP2</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P>C2</P>
+					</TD>
+					<TD>
+						<P>RC2/CCP1</P>
+					</TD>
+					<TD>
+						<P>RC2/CCP1</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P>C3</P>
+					</TD>
+					<TD>
+						<P>RC3/SCK/SCL</P>
+					</TD>
+					<TD>
+						<P>RC3/SCK/SCL</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P>C4</P>
+					</TD>
+					<TD>
+						<P>RC4/SDI/SDA</P>
+					</TD>
+					<TD>
+						<P>RC4/SDI/SDA</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P>C5</P>
+					</TD>
+					<TD>
+						<P>RC5/SD0</P>
+					</TD>
+					<TD>
+						<P>RC5/SD0</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P>C6</P>
+					</TD>
+					<TD>
+						<P>RC6/TX/CK</P>
+					</TD>
+					<TD>
+						<P>RC6/TX/CK</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P>C7</P>
+					</TD>
+					<TD>
+						<P>RC7/RX/DT</P>
+					</TD>
+					<TD>
+						<P>RC7/RX/DT</P>
+					</TD>
+				</TR>
+			</TABLE>
+			<P><BR><BR>
+			</P>
+		</TD>
+		<TD></TD>
+	</TR>
+</TABLE>
+<HR>
+<H2><A NAME="documentos"></A>Documentos</H2>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=742 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+			<COL WIDTH=734>
+			<TR>
+				<TD WIDTH=734>
+					<P ALIGN=CENTER><B>Documentacion</B></P>
+				</TD>
+			</TR>
+		</TABLE>
+		<DD>
+		<TABLE WIDTH=741 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<TR BGCOLOR="#cabeeb">
+				<TD>
+					<P><A HREF="docs/conf_icprog.html">Manual para grabar la SKYPIC
+					desde el puerto paralelo con el ICPROG</A></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD>
+					<P><A HREF="docs/cable_paralelo.jpg">Cable paralelo para grabar
+					la SKYPIC desde el puerto paralelo con el ICPROG</A></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD>
+					<P><A HREF="docs/cable_plano.jpg">Asignacion de pines en los
+					cables de BUS de la SKYPIC</A></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD>
+					<P><A HREF="../cuadernos/ct1/ct1.html">Construcción cable serie
+					para la conexion al PC (compatible con CT6811)</A></P>
+				</TD>
+			</TR>
+		</TABLE>
+		<HR WIDTH=605 ALIGN=RIGHT>
+	</DL>
+</DL>
+<H2 STYLE="margin-left: 2cm; margin-right: 0cm"><A NAME="download"></A>
+Download</H2>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=742 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+			<COL WIDTH=734>
+			<TR>
+				<TD WIDTH=734>
+					<P ALIGN=CENTER><B>Descarga de ficheros</B></P>
+				</TD>
+			</TR>
+		</TABLE>
+		<DD>
+		<TABLE WIDTH=741 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=150>
+			<COL WIDTH=583>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=150>
+					<P><A HREF="download/skypic.zip">skypic.zip</A></P>
+				</TD>
+				<TD WIDTH=583>
+					<P>Planos en formato GERBER Extendido</P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=150>
+					<P><A HREF="download/skypic.sch">skypic.sch</A></P>
+				</TD>
+				<TD WIDTH=583>
+					<P>Esquematico de la placa en formato EAGLE</P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=150>
+					<P><A HREF="download/skypic.pdf">skypic.pdf</A></P>
+				</TD>
+				<TD WIDTH=583>
+					<P>Esquematico de la placa en PDF</P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=150>
+					<P><A HREF="download/skypic.brd">skypic.brd</A></P>
+				</TD>
+				<TD WIDTH=583>
+					<P>PCB de la placa en formato EAGLE</P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=150>
+					<P><A HREF="download/skypic-layer.pdf">skypic-layer.pdf</A></P>
+				</TD>
+				<TD WIDTH=583>
+					<P>Serigrafias de la placa en PDF</P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=150>
+					<P><A HREF="download/lista-skypic.html">lista-skypic</A></P>
+				</TD>
+				<TD WIDTH=583>
+					<P>Lista de componentes de la SKYPIC</P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="comercializa"></A>Comercializa 
+</H2>
+<TABLE WIDTH=90% BORDER=0 CELLPADDING=2 CELLSPACING=2>
+	<TR>
+		<TD>
+			<P><FONT COLOR="#000080"><FONT COLOR="#000080"><IMG SRC="imagenes/ifara-peq.jpg" NAME="gráficos9" ALIGN=BOTTOM WIDTH=246 HEIGHT=82 BORDER=1></FONT></FONT>
+						</P>
+		</TD>
+		<TD>
+			<P>&nbsp;</P>
+		</TD>
+		<TD>
+			<P STYLE="margin-bottom: 0cm">La empresa <A HREF="http://www.ifara.com/">Ifara
+			Tecnologías</A> está comercializando los siguientes productos
+			relacionados con la SKYPIC: 
+			</P>
+			<UL>
+				<LI><P STYLE="margin-bottom: 0cm">Tarjeta montada con el
+				PIC16F876A. <B>( 90 Euros IVA incluido)</B> 
+				</P>
+			</UL>
+			<UL>
+				<LI><P>PCB. <B>(12 Euros IVA incluido)</B> 
+				</P>
+			</UL>
+		</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=3>
+			<P ALIGN=CENTER><BR>Ifara Tecnologías <BR>P.A.E. Casablanca -
+			Edificio A4 <BR>C/ Jose Echegaray 18 - Planta 1 <BR>28100
+			Alcobendas, Madrid <BR><A HREF="mailto:pedidos@ifara.com">pedidos@ifara.com</A>
+						</P>
+		</TD>
+	</TR>
+</TABLE>
+<HR>
+<H2><A NAME="links"></A><A NAME="Links|outline"></A>Links</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><A HREF="../../../../proyectos/stargate/servidores/sg-picp/sg-picp.html">Servidor
+	PICP</A>: Servidor PICP, para grabación de PICs</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><A HREF="../../../../proyectos/cuadernos/ct4/ct4.html">Cuaderno
+	técnico 4:</A> Grabación de microcontroladores PIC</FONT></P>
+	<LI><P><A HREF="../../../../proyectos/stargate/index.html"><FONT FACE="Arial, sans-serif">Proyecto
+	Stargate</FONT></A></P>
+	<LI><P><A HREF="../../../personal//personal/andres/proyectos/picmin/pic1.html"><FONT FACE="Arial, sans-serif">Tarjeta
+	PICMIN:</FONT></A> <FONT FACE="Arial, sans-serif">Tarjeta mínima
+	para trabajar con los PIC</FONT></P>
+	<LI><P><A HREF="../../../../proyectos/ct6811/ct6811.html"><FONT FACE="Arial, sans-serif">Tarjeta
+	CT6811 </FONT></A>
+	</P>
+</UL>
+<HR>
+<H2><A NAME="noticias"></A><A NAME="Noticias|outline"></A>Noticias</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>27/Mayo/2005</B>:
+	Actualizada la lista de componentes. Cambio de valor en R3, ha
+	pasado de valer 1K a valer 10K</FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>23/Agosto/2004</B>:
+	Publicado el manual de configuración del ICPROG para grabar la
+	SKYPIC directamente desde el puerto paralelo.</FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><B>18/Junio/2004</B>:
+	Publicada la versión 1.0 de la Skypic</FONT></P>
+</UL>
+<HR>
+<H2><A NAME="agradecimientos"></A><A NAME="Agradecimientos|outline"></A>
+Agradecimientos</H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif">A <A HREF="../../../personal/personal/juan/index.html">Juan
+	González Gómez </A>por las pruebas realizadas y por todo el
+	software desarrollado para poder grabar la tarjeta desde Linux</FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-weight: normal">A
+	</SPAN></FONT><FONT FACE="Arial, sans-serif"><B>todo el equipo de</B></FONT>
+	<FONT FACE="Arial, sans-serif"><SPAN STYLE="font-weight: normal"><A HREF="http://www.ifara.com/">Ifara
+	Tecnologías</A>, por financiar la primera tirada de la Skypic</SPAN></FONT></P>
+</UL>
+
+
+
+
+
+<HR>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="../../personal/andres/index.html"><FONT FACE="Arial, sans-serif">Andrés
+Prieto-Moreno </FONT></A>
+</ADDRESS>
+<ADDRESS STYLE="margin-bottom: 0.5cm; font-style: normal; text-decoration: none">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2>Se conceden permisos para
+copiar, distribuir y modificar la información contenida en esta
+página, siempre y cuando se mantenga esta nota</FONT></FONT></ADDRESS>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><a href="/iearobotics-site/wiki">IEAROBOTICS</a>
+</FONT>
+</P>
+</BODY>
+</HTML>
