@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>1 Gait control tables</TITLE>
+<META NAME="description" CONTENT="1 Gait control tables">
+<META NAME="keywords" CONTENT="cube-clawar04">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cube-clawar04.css">
+
+<LINK REL="next" HREF="node5.html">
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node5.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html67"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html65"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html59"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html68"
+  HREF="node5.html">2 Automatic generation of</A>
+<B> Up:</B> <A NAME="tex2html66"
+  HREF="node3.html">3 Locomotion</A>
+<B> Previous:</B> <A NAME="tex2html60"
+  HREF="node3.html">3 Locomotion</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00031000000000000000"></A><A NAME="sub:Gait-control-tables"></A>
+<BR>
+<SPAN CLASS="arabic">1</SPAN> Gait control tables
+</H2>
+
+<P>
+Each articulation is characterized by the angle between the two segments
+it links. The shape of the worm, at a given instant <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$t$"></SPAN>, is determined
+by the angular position vector <!-- MATH
+ $\overrightarrow{\varphi(t)}=(\varphi_{1},\varphi_{2},...,\varphi_{n})$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="143" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$\overrightarrow{\varphi(t)}=(\varphi_{1},\varphi_{2},...,\varphi_{n})$"></SPAN>.
+Figure <A HREF="#fig:angular_position_vector"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A> shows a six articulations
+worm-like robot and the angular position vector at a given time.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:angular_position_vector"></A><A NAME="191"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Angular position vector for a
+worm-like robot composed of 6 articulations: <!-- MATH
+ $\protect\overrightarrow{v}=(\varphi_{1},\varphi_{2},\varphi_{3},\varphi_{4},\varphi_{5,}\varphi_{6})$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="177" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$\protect\overrightarrow{v}=(\varphi_{1},\varphi_{2},\varphi_{3},\varphi_{4},\varphi_{5,}\varphi_{6})$"></SPAN></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="370" HEIGHT="105" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.png"
+ ALT="\includegraphics[%
+scale=0.8]{ps/vector_angular.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+For every instant, an angular position vector there exist, determining
+the shape of the worm: <!-- MATH
+ $\overrightarrow{\varphi(t_{0})},\overrightarrow{\varphi(t_{1})},...,\overrightarrow{\varphi(t_{m})}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="136" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$\overrightarrow{\varphi(t_{0})},\overrightarrow{\varphi(t_{1})},...,\overrightarrow{\varphi(t_{m})}$"></SPAN>.
+The control table is a matrix, which rows contains the angular position
+vectors for every instant. In order to generate the movement, the
+controller has to read the table, row by row, positioning the servos. 
+
+<P>
+In robots like Polybot, this tables are pre-calculated and downloaded
+into the modules. Each table represents one gait. It is not possible
+to calculate or store all the possible tables for all the different
+gaits. Those tables are generated automatically in <SPAN  CLASS="textit">Cube</SPAN>.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html67"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html65"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html59"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html68"
+  HREF="node5.html">2 Automatic generation of</A>
+<B> Up:</B> <A NAME="tex2html66"
+  HREF="node3.html">3 Locomotion</A>
+<B> Previous:</B> <A NAME="tex2html60"
+  HREF="node3.html">3 Locomotion</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2004-10-08
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>1 The Microblaze soft-processor</TITLE>
+<META NAME="description" CONTENT="1 The Microblaze soft-processor">
+<META NAME="keywords" CONTENT="cube-clawar04">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cube-clawar04.css">
+
+<LINK REL="next" HREF="node9.html">
+<LINK REL="previous" HREF="node7.html">
+<LINK REL="up" HREF="node7.html">
+<LINK REL="next" HREF="node9.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html107"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html105"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html99"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html108"
+  HREF="node9.html">2 Implementation results</A>
+<B> Up:</B> <A NAME="tex2html106"
+  HREF="node7.html">4 Implementation on FPGA</A>
+<B> Previous:</B> <A NAME="tex2html100"
+  HREF="node7.html">4 Implementation on FPGA</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00041000000000000000">
+<SPAN CLASS="arabic">1</SPAN> The Microblaze soft-processor</A>
+</H2>
+
+<P>
+The MicroBlaze is soft-core 32 bit Harvard-style processor described
+in HDL (Hardware Description Language). It was released by Xilinx
+recently[<A
+ HREF="node12.html#xilinx-microblaze">10</A>]. Figures <A HREF="#fig:locomotion-controller-fpga"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>
+shows the design loaded in the FPGA. The buses of the processor follow
+the Core Connect standard from IBM[<A
+ HREF="node12.html#Core-connect">14</A>]. Also, a debug
+module has been included in order to be able to perform an intrusive
+debug of the processor using the GNU tool gdb[<A
+ HREF="node12.html#gnu">13</A>]. 
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:locomotion-controller-fpga"></A><A NAME="201"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Locomotion controller scheme loaded in the FPGA</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="584" HEIGHT="359" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="\includegraphics[%
+scale=0.6]{ps/fpga-system.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+C language can be used to design both the controller and the position
+computing algorithms. As the whole system (memory, buses, peripherals
+and processor) is being described in HDL, the hardware architecture
+is much simpler than traditional processor board architectures. A
+modification of the controller system, only needs the loading a new
+design into the FPGA. No PCB modification is necesary. Thus, testing
+and debugging stages of the design are a much simpler task. This is
+a fundamental feature, since robotics is a field where testing is
+not only a simulating task, when a modification to the hardware system
+is made. The Cube prototype can loads the new system in microseconds. 
+
+<P>
+Traditional robotic systems have separated hardware and software design
+stages, the hardware system is constructed once and then the software
+is loaded as many times as needed to make it work. The use of an FPGA
+in Cube gives this robot the facility to have many hardware and software
+design stages so achieving desired results. It adds more flexibility
+in the design stages. 
+
+<P>
+Finally, as the Microblaze is being designed to use very little space
+in the FPGA (near a 10% of a SpartanIIE400 chip is used for the Cube
+controlling system), all the space left can be used to implement extra
+hardware. 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html107"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html105"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html99"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html108"
+  HREF="node9.html">2 Implementation results</A>
+<B> Up:</B> <A NAME="tex2html106"
+  HREF="node7.html">4 Implementation on FPGA</A>
+<B> Previous:</B> <A NAME="tex2html100"
+  HREF="node7.html">4 Implementation on FPGA</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2004-10-08
+</ADDRESS>
+</BODY>
+</HTML>

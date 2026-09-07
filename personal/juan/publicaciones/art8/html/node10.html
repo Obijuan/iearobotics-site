@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>5 Conclusions and future work</TITLE>
+<META NAME="description" CONTENT="5 Conclusions and future work">
+<META NAME="keywords" CONTENT="cube-clawar04">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cube-clawar04.css">
+
+<LINK REL="next" HREF="node11.html">
+<LINK REL="previous" HREF="node7.html">
+<LINK REL="up" HREF="cube-clawar04.html">
+<LINK REL="next" HREF="node11.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html125"
+  HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html123"
+  HREF="cube-clawar04.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html117"
+  HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html126"
+  HREF="node11.html">Acknowledgements</A>
+<B> Up:</B> <A NAME="tex2html124"
+  HREF="cube-clawar04.html">Locomotion of a Modular</A>
+<B> Previous:</B> <A NAME="tex2html118"
+  HREF="node9.html">2 Implementation results</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00050000000000000000">
+<SPAN CLASS="arabic">5</SPAN> Conclusions and future work</A>
+</H1>
+
+<P>
+A modular worm-like robot has been constructed, capable of moving
+in a straight line, using a wave propagation gait. Locomotion controller
+is based on control tables, automatically generated from the parameters
+of the waves applied: waveform, amplitude and wavelength. Locomotion
+is achieved by means of the propagation of these waves along the worm,
+from the tail to the head. Higher level software just need to specify
+this parameters to locomote the robot.
+
+<P>
+The controller has been implemented on a low cost FPGA using custom
+cores, described in VHDL, together with the MicroBlaze soft-processor,
+where the algorithms are executed. FPGAs increases the robot versatility
+so that the designer can select the architecture that better fix the
+requirements. Main limitations of this approach are the memory and
+FPGA resource availability. The main advandages are: possibility of
+implementing new architectures, faster control algorithms, dinamyc
+hardware modification, hardware/software codesign, and remote hardware
+reconfiguration.
+
+<P>
+A working platform has been developed. Current research is focused
+on worm locomotion, studying its characteristics as a function of
+the wave parameters, getting insights of its relation with velocity,
+stability, and consumption. One approach will be the use of genetic
+algorithms to find the optimal parameters of the wave, given an stability,
+velocity, and power consumption restriction. We also are planning
+to study locomotion in a plane, not restricted only to straight lines.
+Finally, a new generation of modules, with embeded FPGAs are being
+constructed.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html125"
+  HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html123"
+  HREF="cube-clawar04.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html117"
+  HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html126"
+  HREF="node11.html">Acknowledgements</A>
+<B> Up:</B> <A NAME="tex2html124"
+  HREF="cube-clawar04.html">Locomotion of a Modular</A>
+<B> Previous:</B> <A NAME="tex2html118"
+  HREF="node9.html">2 Implementation results</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2004-10-08
+</ADDRESS>
+</BODY>
+</HTML>

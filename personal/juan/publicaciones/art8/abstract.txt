@@ -1,0 +1,30 @@
+Locomotion of a Modular Worm-like Robot using a 
+FPGA-based embedded MicroBlaze Soft-processor
+
+González-Gómez J., Aguayo E., and Boemo E.
+
+Escuela Politécnica Superior, Universidad Autónoma de 
+Madrid, Spain
+{Juan.Gonzalez, Estanislao.Aguayo, Eduardo.Boemo}@uam.es
+
+Abstract
+
+Modular reconfigurable robots offer the promise of more 
+versatility, robustness, and low cost. They are 
+composed of simple and small modules, capable of attach 
+and detach one to each other. In this paper, a modular 
+worm-like robot composed of a chain of 8 similar 
+modules is presented. A travelling wave, that moves 
+from the tail to the head, propels the robot forward. 
+The positions of the articulations are calculated using 
+the following parameters: waveform, amplitude, and 
+wavelength. Instead of a conventional architecture, a 
+FPGA-based soft-processor core is utilized. It includes 
+a set of custom peripheral cores, written in VHDL. 
+FPGAs make modular robots more versatile, adding some 
+new featureas to the design of robots like 
+reconfigurable control, hardware reuse, lower cost, 
+fault-recovering, and software/hardware co-design.
+
+
+

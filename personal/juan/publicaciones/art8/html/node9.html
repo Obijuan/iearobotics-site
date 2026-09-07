@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>2 Implementation results</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.2  (Linux)">
+	<META NAME="CREATED" CONTENT="20041017;21085900">
+	<META NAME="CHANGED" CONTENT="20041017;21174800">
+	<META NAME="DESCRIPTION" CONTENT="2 Implementation results">
+	<META NAME="KEYWORDS" CONTENT="cube-clawar04">
+	<META NAME="resource-type" CONTENT="document">
+	<META NAME="distribution" CONTENT="global">
+	<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!--Navigation Panel-->
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<P><A NAME="tex2html115"></A><A NAME="tex2html113"></A><A NAME="tex2html109"></A>
+<A HREF="node10.html" NAME="tex2html115"><IMG SRC="next.png" NAME="Imagen1" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="node7.html" NAME="tex2html113"><IMG SRC="up.png" NAME="Imagen2" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node8.html" NAME="tex2html109"><IMG SRC="prev.png" NAME="Imagen3" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node10.html" NAME="tex2html116">5
+Conclusions and future</A> <B>Up:</B> <A HREF="node7.html" NAME="tex2html114">4
+Implementation on FPGA</A> <B>Previous:</B> <A HREF="node8.html" NAME="tex2html110">1
+The Microblaze soft-processor</A> 
+</P>
+<H2><A NAME="SECTION00042000000000000000"></A><!--End of Navigation Panel-->2
+Implementation results 
+</H2>
+<P>The implementation of the controlling system has been developed
+using the latest released Xilinx software for HDL synthesis, mapping
+and implementation, ISE 6.1. And the processor system developer tool,
+also from Xilinx EDK 6.1. The FPGA used in Cube is a SpartanIIE 400,
+a low cost FPGA that maintains the objective of a low cost robot. The
+obtained results for the final place and route of the hardware system
+are shown in table 
+<A HREF="#tab:results"><FONT COLOR="#000080"><IMG SRC="crossref.png" NAME="Imagen4" ALT="[*]" ALIGN=BOTTOM WIDTH=13 HEIGHT=13 BORDER=1></FONT></A>.
+</P>
+<P><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><A NAME="202"></A><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><STRONG>Table:</STRONG>
+Implementations results using an SpartanIIE 400 FPGA</P>
+<DL>
+	<DL>
+		<DL>
+			<DL>
+				<DL>
+					<DL>
+						<DD>
+						<TABLE WIDTH=336 BORDER=1 CELLPADDING=3 CELLSPACING=3>
+							<COL WIDTH=128>
+							<COL WIDTH=37>
+							<COL WIDTH=36>
+							<COL WIDTH=94>
+							<TR>
+								<TD WIDTH=128>
+									<P ALIGN=CENTER>&nbsp;</P>
+								</TD>
+								<TH WIDTH=37>
+									<P ALIGN=CENTER>Total</P>
+								</TH>
+								<TH WIDTH=36>
+									<P ALIGN=CENTER>Used</P>
+								</TH>
+								<TH WIDTH=94>
+									<P ALIGN=CENTER>Available <BR>BRAMs</P>
+								</TH>
+							</TR>
+							<TR>
+								<TD WIDTH=128>
+									<P ALIGN=CENTER><B>BRAMS</B></P>
+								</TD>
+								<TH WIDTH=37 SDVAL="14" SDNUM="1034;">
+									<P ALIGN=RIGHT STYLE="font-weight: medium">14</P>
+								</TH>
+								<TH WIDTH=36 SDVAL="8" SDNUM="1034;">
+									<P ALIGN=RIGHT STYLE="font-weight: medium">8</P>
+								</TH>
+								<TH WIDTH=94>
+									<P ALIGN=RIGHT STYLE="font-weight: medium">6(43%)</P>
+								</TH>
+							</TR>
+							<TR>
+								<TD WIDTH=128>
+									<P ALIGN=CENTER><B>Slices (Area)</B></P>
+								</TD>
+								<TH WIDTH=37 SDVAL="2352" SDNUM="1034;">
+									<P ALIGN=RIGHT STYLE="font-weight: medium">2352</P>
+								</TH>
+								<TH WIDTH=36 SDVAL="1312" SDNUM="1034;">
+									<P ALIGN=RIGHT STYLE="font-weight: medium">1312</P>
+								</TH>
+								<TH WIDTH=94>
+									<P ALIGN=RIGHT STYLE="font-weight: medium">1040 (44%)</P>
+								</TH>
+							</TR>
+							<TR>
+								<TD WIDTH=128>
+									<P ALIGN=CENTER><B>I/O Pins</B></P>
+								</TD>
+								<TH WIDTH=37 SDVAL="146" SDNUM="1034;">
+									<P ALIGN=RIGHT STYLE="font-weight: medium">146</P>
+								</TH>
+								<TH WIDTH=36 SDVAL="10" SDNUM="1034;">
+									<P ALIGN=RIGHT STYLE="font-weight: medium">10</P>
+								</TH>
+								<TH WIDTH=94>
+									<P ALIGN=RIGHT STYLE="font-weight: medium">136 (93%)</P>
+								</TH>
+							</TR>
+							<TR>
+								<TD WIDTH=128>
+									<P ALIGN=CENTER><B>System Clock frequency (MHZ)</B></P>
+								</TD>
+								<TH WIDTH=37>
+									<P ALIGN=RIGHT>--</P>
+								</TH>
+								<TH WIDTH=36 SDVAL="50" SDNUM="1034;">
+									<P ALIGN=RIGHT STYLE="font-weight: medium">50</P>
+								</TH>
+								<TH WIDTH=94>
+									<P ALIGN=CENTER STYLE="font-weight: medium">--</P>
+								</TH>
+							</TR>
+						</TABLE>
+					</DL>
+				</DL>
+			</DL>
+		</DL>
+	</DL>
+</DL>
+<P><BR><BR>
+</P>
+<P>The 8 BRAM are configured to build a 32 bit words memory, having
+each BRAM a 4Kx4 bit capacity sharing the address bus. The results
+obtained for the controller leave a 44% of space and 93% of the pins
+free in the FPGA. So that, the system still has a remarkable amount
+of resources available for future improvements. The board uses a 50
+MHz clock generator, even considering that no optimization of the
+design has been carried out. 
+</P>
+<P>The average robot power comsuption depends on the movement
+performed and will be analized in detail in future work. A Typical
+value is 8W (1.6A, 5v). 
+</P>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A NAME="tex2html1151"></A><A NAME="tex2html1131"></A><A NAME="tex2html1091"></A>
+<!--Navigation Panel--><A HREF="node10.html" NAME="tex2html115"><IMG SRC="next.png" NAME="Imagen5" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="node7.html" NAME="tex2html113"><IMG SRC="up.png" NAME="Imagen6" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node8.html" NAME="tex2html109"><IMG SRC="prev.png" NAME="Imagen7" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node10.html" NAME="tex2html116">5
+Conclusions and future</A> <B>Up:</B> <A HREF="node7.html" NAME="tex2html114">4
+Implementation on FPGA</A> <B>Previous:</B> <A HREF="node8.html" NAME="tex2html110">1
+The Microblaze soft-processor</A></P>
+<ADDRESS><!--End of Navigation Panel-->Juan Gonzalez 2004-10-08 
+</ADDRESS>
+</BODY>
+</HTML>

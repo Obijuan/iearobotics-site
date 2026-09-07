@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>1 Introduction</TITLE>
+<META NAME="description" CONTENT="1 Introduction">
+<META NAME="keywords" CONTENT="cube-clawar04">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cube-clawar04.css">
+
+<LINK REL="next" HREF="node2.html">
+<LINK REL="previous" HREF="cube-clawar04.html">
+<LINK REL="up" HREF="cube-clawar04.html">
+<LINK REL="next" HREF="node2.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html34"
+  HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html32"
+  HREF="cube-clawar04.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html26"
+  HREF="cube-clawar04.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html35"
+  HREF="node2.html">2 Mechanical description</A>
+<B> Up:</B> <A NAME="tex2html33"
+  HREF="cube-clawar04.html">Locomotion of a Modular</A>
+<B> Previous:</B> <A NAME="tex2html27"
+  HREF="cube-clawar04.html">Locomotion of a Modular</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00010000000000000000">
+<SPAN CLASS="arabic">1</SPAN> Introduction</A>
+</H1>
+
+<P>
+Modular self-reconfigurable robots offer the promise of more versatility,
+robustness and low cost[<A
+ HREF="node12.html#IEEE-Spect-Yim">1</A>]. They are composed of
+modules, capable of attach and detach one to each other, changing
+the shape of the robot. This scheme allows them to perform unusual
+actions like to traverse through any kind of terrain as well as climbing
+over obstacles or crawling inside tubes. Utilities outside the research
+world has not been seen yet, but they are planned to be used in space
+applications[<A
+ HREF="node12.html#Space-applications">3</A>] and urban search and rescue[<A
+ HREF="node12.html#Yim-2000">2</A>]. 
+
+<P>
+A modular robot with N different types of modules is called N-modular.
+Heterogeneity is tend to be reduced, decreasing the ratio between
+N and the total number of modules. In the last years, the number of
+robot following this approach has growth substantially[<A
+ HREF="node12.html#Polybot-IEEE">5</A>][<A
+ HREF="node12.html#will-99">6</A>][<A
+ HREF="node12.html#Kotay-98">7</A>][<A
+ HREF="node12.html#Murata-98">8</A>].
+
+<P>
+One of the most advanced systems is Polybot[<A
+ HREF="node12.html#IEEE-Spect-Yim">1</A>][<A
+ HREF="node12.html#Polybot-Evolution">4</A>],
+a 2-modular reconfigurable robot. Different reconfigurations and gaits
+has been probed; for example, from a loop, that uses a rolling gait,
+to a snake, with a sinusoidal gait, and finally to an spider. Currently,
+the third generation of modules (G3) is being developed[<A
+ HREF="node12.html#Polybot-G3">9</A>].
+Each module has its own embebed PowerPC 555 processor with a traditional
+processor architecture.
+
+<P>
+An addtional step on moduratity is the use of FPGA technology instead
+of a conventional microprocessor chip. It gives the designer the possibility
+of implementing new architectures, faster control algorithms, or dinamically
+modify the hardware to adapt it to a new situation. In summary, Modular
+Reconfigurable Robot controlled by a FPGA not only are able to change
+their shapes, but also their hardware, so that, complete versatility
+can be achieved.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:cube_revolutions"></A><A NAME="187"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+The worm-like modular robot Cube. It
+is composed of 8 similar linked modules, connected in phase.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="307" HEIGHT="230" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="\includegraphics[%
+scale=0.3]{ps/cube-rev1.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+In this paper, a modular worm-like robot (figure <A HREF="#fig:cube_revolutions"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>),
+named Cube is presented. This is the simplest kind of modular robot,
+composed of 8 equal linked modules (1-modular robot). The locomotion
+is achieved by the propagation of waves that travel through the robot,
+from tail to the head. The entirely locomotion controller is embedded
+into an FPGA. 
+
+<P>
+In this first prototype, the problem of worms locomotion and FPGA-based
+control has been solved. The control system is centralized; an unique
+custom FPGA processor can control the 8 modules. 
+
+<P>
+The MicroBlaze soft-processor[<A
+ HREF="node12.html#xilinx-microblaze">10</A>] has been selected
+as core processor. Additional hardware units has been implemented
+as VHDL modules. MicroBlaze is a powerful 32-bit processor, that offers
+new capabilities not available on conventional processors, like the
+addition of custom peripheral, duplicated modules to increase reliability,
+or the use of dynamic reconfiguration to adapt the control to a new
+enviroment. This soft-processor can also run operating systems like
+uC/OS-II[<A
+ HREF="node12.html#xcell">11</A>], a real time OS, or uCLinux[<A
+ HREF="node12.html#uclinux">12</A>]. 
+
+<P>
+The organization of the paper is as follows. Firstly, the mechanics
+and the modules is presented. Secondly, the robot locomotion, algorithms,
+and the locomotion controller is addressed. Finally, the implementation
+on FPGA is explained and the results are presented.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html34"
+  HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html32"
+  HREF="cube-clawar04.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html26"
+  HREF="cube-clawar04.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html35"
+  HREF="node2.html">2 Mechanical description</A>
+<B> Up:</B> <A NAME="tex2html33"
+  HREF="cube-clawar04.html">Locomotion of a Modular</A>
+<B> Previous:</B> <A NAME="tex2html27"
+  HREF="cube-clawar04.html">Locomotion of a Modular</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2004-10-08
+</ADDRESS>
+</BODY>
+</HTML>

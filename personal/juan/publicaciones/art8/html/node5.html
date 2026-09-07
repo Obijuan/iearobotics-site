@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2 Automatic generation of gait control tables</TITLE>
+<META NAME="description" CONTENT="2 Automatic generation of gait control tables">
+<META NAME="keywords" CONTENT="cube-clawar04">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cube-clawar04.css">
+
+<LINK REL="next" HREF="node6.html">
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html77"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html75"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html69"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html78"
+  HREF="node6.html">3 Locomotion controller</A>
+<B> Up:</B> <A NAME="tex2html76"
+  HREF="node3.html">3 Locomotion</A>
+<B> Previous:</B> <A NAME="tex2html70"
+  HREF="node4.html">1 Gait control tables</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00032000000000000000"></A><A NAME="sub:Automatic-generation-of-control-tables"></A>
+<BR>
+<SPAN CLASS="arabic">2</SPAN> Automatic generation of gait control tables
+</H2>
+
+<P>
+Control tables are generated using a wave propagation model. The algorithm
+is as follows (figure <A HREF="#fig:ajuste"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>). Having a waveform in its
+initial state, <SPAN CLASS="MATH"><IMG
+ WIDTH="50" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$f(x,t_{0})$"></SPAN> (in the figure, sinusoidal waves are
+drawn, but other waveforms could be used) and a worm with all its
+articulations over the <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$x$"></SPAN> axis (figure <A HREF="#fig:ajuste"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>-1). Let
+<SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$(x_{i},y_{i})$"></SPAN> be the coordinates of the articulation <SPAN CLASS="MATH"><IMG
+ WIDTH="8" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$i$"></SPAN>, at some
+instant <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$t$"></SPAN>. The angular position vector for the initial time, <!-- MATH
+ $\overrightarrow{\varphi(t_{o})}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$\overrightarrow{\varphi(t_{o})}$"></SPAN>,
+is calculated fitting the articulations to the wave, so that <!-- MATH
+ $y_{i}=f(x_{i},t_{0})$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="84" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$y_{i}=f(x_{i},t_{0})$"></SPAN>
+for all i. The distance L between articulations is maintained. It
+could be said that ``the worm fits the wave'' (figure <A HREF="#fig:ajuste"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>-2).
+Next, the wave is shifted (instant <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.png"
+ ALT="$t_{1}$"></SPAN>. Figure <A HREF="#fig:ajuste"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>-3)
+and the worm fits the wave again, obtaining <!-- MATH
+ $\overrightarrow{\varphi(t_{1})}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$\overrightarrow{\varphi(t_{1})}$"></SPAN>
+(figure <A HREF="#fig:ajuste"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>-4). Points 3 and 4 are repeated until the
+wave reach its initial phase. After <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$m$"></SPAN> instant of time, all the
+vector that comprises the table are generated.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:ajuste"></A><A NAME="198"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+The algorithm used to generate the control tables</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="671" HEIGHT="300" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="\includegraphics[%
+scale=0.55]{ps/ajuste1.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+By means of this algorithm, control tables are obtained, regardless
+of the waveform used, <SPAN CLASS="MATH"><IMG
+ WIDTH="44" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$f(x,t)$"></SPAN>. In the locomotion test, sinusoidal
+and semi-sinusoidal waves (just the positive part of the sinusoidal
+wave) have been used.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html77"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html75"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html69"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html78"
+  HREF="node6.html">3 Locomotion controller</A>
+<B> Up:</B> <A NAME="tex2html76"
+  HREF="node3.html">3 Locomotion</A>
+<B> Previous:</B> <A NAME="tex2html70"
+  HREF="node4.html">1 Gait control tables</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2004-10-08
+</ADDRESS>
+</BODY>
+</HTML>

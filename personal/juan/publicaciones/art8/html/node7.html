@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>4 Implementation on FPGA</TITLE>
+<META NAME="description" CONTENT="4 Implementation on FPGA">
+<META NAME="keywords" CONTENT="cube-clawar04">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cube-clawar04.css">
+
+<LINK REL="next" HREF="node10.html">
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="cube-clawar04.html">
+<LINK REL="next" HREF="node8.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html95"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html93"
+  HREF="cube-clawar04.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html87"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html96"
+  HREF="node8.html">1 The Microblaze soft-processor</A>
+<B> Up:</B> <A NAME="tex2html94"
+  HREF="cube-clawar04.html">Locomotion of a Modular</A>
+<B> Previous:</B> <A NAME="tex2html88"
+  HREF="node6.html">3 Locomotion controller</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00040000000000000000">
+<SPAN CLASS="arabic">4</SPAN> Implementation on FPGA</A>
+</H1>
+
+<P>
+Mainly two different approaches can be used for the implementation
+of the locomotion controller:
+
+<P>
+
+<OL>
+<LI>Using a conventional microprocessor system, either centralized (a
+CPU that controls all the modules) or distributed (every module has
+its own embedded CPU, connected by a network). All the functionality
+is implemented in software. In order to add a hardware controller,
+a new printed circuit board design would be needed.
+</LI>
+<LI>Using an FPGA system. Different hardware/software architectures can
+be designed and tested. Some subsystems could be implemented by hardware,
+while others by software. 
+</LI>
+</OL>
+We have focused on the second approach: a centralized FPGA systems.
+All the locomotion controller is embebed on the FPGA. The movement
+generator, as well as the control tables, are implemented by software.
+We have used the soft-processor Microblaze. Algorithms are coded in
+C language, first tested on a Linux PC and then ported to Microblaze,
+using the GCC Cross compiler[<A
+ HREF="node12.html#gnu">13</A>], supplied by the FPGA manufacturer.
+
+<P>
+The position controller is a hardware unit, written in VHDL, that
+acts as a peripheral for the MicroBlaze. Software can access to this
+unit through ports, mapped on the main memory. The positions for the
+8 servos are stored in the corresponding ports, where the position
+controller read them and generates the PWM signal. Then main advantage
+of this hardware devices is its scalability. In order to control more
+servos, new controllers can be mapped, without physical redesign of
+the board, always limited to the resources available on the FPGA:
+the area and pins available.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html97"
+  HREF="node8.html"><SPAN CLASS="arabic">1</SPAN> The Microblaze soft-processor</A>
+<LI><A NAME="tex2html98"
+  HREF="node9.html"><SPAN CLASS="arabic">2</SPAN> Implementation results</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html95"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html93"
+  HREF="cube-clawar04.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html87"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html96"
+  HREF="node8.html">1 The Microblaze soft-processor</A>
+<B> Up:</B> <A NAME="tex2html94"
+  HREF="cube-clawar04.html">Locomotion of a Modular</A>
+<B> Previous:</B> <A NAME="tex2html88"
+  HREF="node6.html">3 Locomotion controller</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2004-10-08
+</ADDRESS>
+</BODY>
+</HTML>

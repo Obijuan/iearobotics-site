@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3 Locomotion controller</TITLE>
+<META NAME="description" CONTENT="3 Locomotion controller">
+<META NAME="keywords" CONTENT="cube-clawar04">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cube-clawar04.css">
+
+<LINK REL="previous" HREF="node5.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node7.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html85"
+  HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html83"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html79"
+  HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html86"
+  HREF="node7.html">4 Implementation on FPGA</A>
+<B> Up:</B> <A NAME="tex2html84"
+  HREF="node3.html">3 Locomotion</A>
+<B> Previous:</B> <A NAME="tex2html80"
+  HREF="node5.html">2 Automatic generation of</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00033000000000000000"></A><A NAME="sub:Locomotion-controller"></A>
+<BR>
+<SPAN CLASS="arabic">3</SPAN> Locomotion controller
+</H2>
+
+<P>
+The locomotion controller generates the PWM signals for positioning
+the servos from the wave parameters: waveform, amplitude, and wavelength.
+Higher level systems could move the robot just specifying this parameters.
+Furthermore, at this stage, the movement of the robot is independent
+of the number of articulations. The planificator algorithm will determine
+the best wave and its parameters based on the terrain characteristics.
+For example, if the robot had to pass through a tube, an amplitude
+smaller than the section of the tube will be needed. If the obstacle
+is an step, a bigger amplitude will be used.
+
+<P>
+The architecture is shown in figure <A HREF="#fig:locomotion_controller"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>.
+The controller is composed of three subsystems. <SPAN  CLASS="textit">Control table</SPAN>
+is the central part, where the angular position vectors are stored.
+The contents of this table determines the movement (section <A HREF="node4.html#sub:Gait-control-tables"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>).
+The <SPAN  CLASS="textit">position controller</SPAN> generates the PWM signals that are
+applied to the servos to set their angular position.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:locomotion_controller"></A><A NAME="200"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Architecture of the locomotion controller</CAPTION>
+<TR><TD><IMG
+ WIDTH="546" HEIGHT="142" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.png"
+ ALT="\includegraphics[%
+scale=0.7]{ps/controlador_loc.eps}">
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Finally, the <SPAN  CLASS="textit">movement generator</SPAN> obtain the gait control table
+from the parameter of the wave (waveform, amplitude and wavelength).
+It is implemented by software, using the algorithm described in section
+<A HREF="node5.html#sub:Automatic-generation-of-control-tables"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html85"
+  HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html83"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html79"
+  HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html86"
+  HREF="node7.html">4 Implementation on FPGA</A>
+<B> Up:</B> <A NAME="tex2html84"
+  HREF="node3.html">3 Locomotion</A>
+<B> Previous:</B> <A NAME="tex2html80"
+  HREF="node5.html">2 Automatic generation of</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2004-10-08
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2 Mechanical description</TITLE>
+<META NAME="description" CONTENT="2 Mechanical description">
+<META NAME="keywords" CONTENT="cube-clawar04">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cube-clawar04.css">
+
+<LINK REL="next" HREF="node3.html">
+<LINK REL="previous" HREF="node1.html">
+<LINK REL="up" HREF="cube-clawar04.html">
+<LINK REL="next" HREF="node3.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html44"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html42"
+  HREF="cube-clawar04.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html36"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html45"
+  HREF="node3.html">3 Locomotion</A>
+<B> Up:</B> <A NAME="tex2html43"
+  HREF="cube-clawar04.html">Locomotion of a Modular</A>
+<B> Previous:</B> <A NAME="tex2html37"
+  HREF="node1.html">1 Introduction</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00020000000000000000">
+<SPAN CLASS="arabic">2</SPAN> Mechanical description</A>
+</H1>
+
+<P>
+The current version of the prototype is a chain of 8 similar linked
+modules called Y1. In figure <A HREF="#fig:modulos_y1"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>, a CAD rendering
+is showed. They have just one degree of freedom, actuated by a Futaba
+3003 RC servo. The design is based on generation G1 Polybot modules[<A
+ HREF="node12.html#Polybot-Evolution">4</A>].
+In this first version, no sensors are included. Our main interest
+was focused on the study of locomotion, and its implementation on
+FPGA.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:modulos_y1"></A><A NAME="188"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+CAD rendering of two Y1 modules. On the left,
+Two isolate modules In the middle, connection in phase. On the right,
+they are connected out of phase.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="543" HEIGHT="126" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="\includegraphics[%
+scale=0.75]{ps/modulos_y1.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Y1 modules are simple and cheap: it is very easy to build prototypes
+of worm-like robots with them. These modules can be connected in two
+different ways, as shown in figure <A HREF="#fig:modulos_y1"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>. One way
+is the connection in phase, in which two adjacent modules have the
+same orientation. Robots constructed using this link have all the
+articulations in the same plane, perpendicular to the ground (figure
+<A HREF="#fig:conexion_fase_desfase"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>). Cube comprises 8 Y1 modules, connected
+in phase, so that it can only move along a line, forward or backwards.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:conexion_fase_desfase"></A><A NAME="189"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Two schemes of worm-like robots.
+On the left, all the articulations are connected in phase so that
+they all are on the same plane. On the right, the connection is out
+of phase. With this configuration, the modules can be on different
+planes.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="546" HEIGHT="138" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="\includegraphics[%
+scale=0.7]{ps/conexion.eps}">
+</DIV>
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The other way of connecting the modules is out of phase. Two adjacent
+modules are rotated 90 degrees one to each other, obtaining two degrees
+of freedom. One articulation moves on the ground plane (yaw) and the
+other does perpendicularly (pitch). The right image of figure <A HREF="#fig:conexion_fase_desfase"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>
+shows a worm with this kind of links. Black circles represent articulations
+that moves on the ground plane and grey circles represents articulations
+that moves perpendicular. This kind of robot can turn and move on
+different directions, not just in straight line.
+
+<P>
+The dimensions of each module, in its initial position (0 degrees
+angle), are 52 x 52 x 72mm, and the weight is 50gr. They are made
+out of PVC. The rotations range is between -90 and 90 degrees. The
+robot is 576mm in length and 400gr in weight. The electronic and power
+supply are located off-board.
+
+<P>
+The consumption depends on the gaits, but typically it is 200mA per
+servo, giving a total of 1.6A. All the locomotion experiment at this
+first stage are realized using an off-board power supply.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html44"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html42"
+  HREF="cube-clawar04.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html36"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html45"
+  HREF="node3.html">3 Locomotion</A>
+<B> Up:</B> <A NAME="tex2html43"
+  HREF="cube-clawar04.html">Locomotion of a Modular</A>
+<B> Previous:</B> <A NAME="tex2html37"
+  HREF="node1.html">1 Introduction</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Juan Gonzalez
+2004-10-08
+</ADDRESS>
+</BODY>
+</HTML>
