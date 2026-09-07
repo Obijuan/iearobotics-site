@@ -1,0 +1,260 @@
+<html>
+
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protocolo ICSP: comandos</title>
+</head>
+
+
+<body>
+
+<table align="center" width="100%" bgcolor="#abbeeb" border="0" cellpadding="4">
+<tbody><tr>
+ <td colspan="2" align="center">
+   <b>Protocolo ICSP: comandos</b>
+ </td>
+</tr>
+</tbody></table> 
+
+<br>
+
+<HR>
+
+
+<!-- Introducción -->
+
+<h2 id="load_conf">Load Configuration (00h)</h2>
+
+
+
+<!-- texto -->
+
+<div class="lista">
+
+<ul>
+  <li><b>Descripción</b>: 
+    Acceso a la memoria de configuración. Una vez ejecutado el contador de programa toma el valor
+    2000h. <b>Para volver a la memoria de programa es necesario hacer un reset</b>. En la memoria de
+    configuración se encuentra la identificación del PIC y la palabra de configuración, valores que 
+    dependen del tipo de PIC empleado.
+  </li><br>
+  <li><b>Datos</b>: Para que se ejecute este comando hay que enviar un dato, aunque será ignorado
+  (da igual su valor).</li><br>
+  <li><b>Ejemplo</b>: Hacer reset, enviar el comando 00h y enviar el dato 00h. Ya nos encontramos
+  en la memoria de configuración (pc=2000h). Ahora podemos utilizar otros comandos para movernos
+  por ella así como leer y modificar los valores de sus posiciones</li>
+</ul>
+</div>
+
+
+<HR>
+
+<!-- Introducción -->
+
+<h2 id="load_data_prog">Load Data for Program Memory (02h)</h2>
+
+
+
+<!-- texto -->
+
+<div class="lista">
+
+<ul>
+  <li><b>Descripción</b>: 
+   Enviar un dato para su almacenamiento en la dirección actual del contador de programa. El dato sólo se
+   envía, pero no se graba (se deja almacenado internamente hasta que se mande el comando de grabación.
+   La forma de grabar depende del tipo de PIC).
+  </li><br>
+  <li><b>Datos</b>: Despues de enviar el comando hay que transmitir el dato</li><br>
+  <li><b>Ejemplo</b>: Enviar comando 02h y luego un dato de 14 bits. El dato quedará 
+  almacenado en un registro interno del PIC</li>
+</ul>
+</div>  
+  
+<HR>
+
+<h2 id="read_data_prog">Read Data from Program Memory (04h)</h2>
+
+
+
+<!-- texto -->
+
+<div class="lista">
+
+<ul>
+  <li><b>Descripción</b>: 
+   Lectura del dato que se encuentra en la dirección actual del PC. Se puede leer tanto información de
+   la memoria de programa como de la memoria de configuración.
+  </li><br>
+  <li><b>Datos</b>: Despues de enviar el comando el PIC transmite el dato que se encuentra
+  en esa posición de memoria</li><br>
+  <li><b>Ejemplo</b>: Enviar comando 04h y luego leer el dato de 14 bits.</li>
+</ul>
+</div>    
+
+<HR>
+
+<h2 id="increment">Increment Address (06h)</h2>
+
+
+
+<div class="lista">
+
+<ul>
+  <li><b>Descripción</b>: 
+   Incrementar el contador de programa (PC=PC+1)
+  </li><br>
+  <li><b>Datos</b>: No hay transferencia de datos</li><br>
+  <li><b>Ejemplo</b>: Enviar el comando 06h</li>
+</ul>
+</div>    
+
+<HR>
+
+<h2 id="programming">Begin Erase/Programming Cycle (08h)</h2>
+
+
+
+<div class="lista">
+
+<ul>
+  <li><b>Descripción</b>: 
+   Grabación en la memoria de los datos previamente enviados (con el comando 02h). La forma de
+   realizar la grabación depende del tipo de PIC.</li>
+   <ul>
+     <li><b>Familia 16F8X</b> y <b>16F876</b>: 
+     Se envía un dato con el comando 02h y luego se realiza la programación
+     (programación byte a byte)</li>
+     <li><b>Familia PIC16F87XA</b>: Se envían 8 datos con el comando 02h y luego se realiza la programación
+     (Programación de 8 en 8 bytes)</li>
+   </ul>
+   <br>
+  <li><b>Datos</b>: No hay transferencia de datos. <b>La grabación tarda 4ms en realizarse</b></li><br>
+  <li><b>Ejemplo</b>: </li>
+   <ul>
+     <li><b>Familia 16F8X</b> y <b>16F876</b>: 
+       Comando 02h, enviar dato a grabar y por último el comando 08h</li>
+      <li><b>Familia 16F87XA</b>: comando 02h, dato1, cmd 06h, cmd 02h, dato2, cmd 06h,
+      cmd 02h, dato3, cmd 06h,..., cmd 02h, dato8 y por último el comando 08h. Esto graba los
+      8 datos enviados en las 8 direcciones de memoria consecutivas</li>
+   </ul>
+</ul>
+</div>  
+
+<HR>
+
+<h2 id="bulk_prog">Bulk Erase Program Memory (09h)</h2>
+
+
+
+<div class="lista">
+
+<ul>
+  <li><b>Descripción</b>: 
+   Borrar todo el contenido de la memoria de programa. Si el contador de programa está apuntando a la 
+   memoria de configuración (2000h-200Fh), Ésta también se borrará (además de la de programa). <b>La 
+   palabra de configuración no se borra</b>. Esta operación depende del microcontrolador PIC, pero en la
+   mayoría de los casos hay que enviar primero el valor 3fff usando el comando 02h. Para que se realice
+   el borrado hay que enviar el comando "Begin Erase/program cicle (08h)".
+  </li><br>
+  <li><b>Datos</b>: No hay transferencia de datos. El borrado tarda unos 10ms en realizarse</li><br>
+  <li><b>Ejemplo</b>: Para las familias 16F87X y 16F8X el borrado se hace de la siguiente manera.
+  comando 02, dato 3fffh, comando 09h, comando 08h.</li><br>
+  <li><b>Notas</b>: Comando <b>NO PROBADO</b> <a href="#notas">[1]</a></li>
+</ul>
+</div>    
+
+<HR>
+
+<h2 id="bulk_data">Bulk Erase Data Memory (0BH)</h2>
+
+
+
+<div class="lista">
+
+<ul>
+  <li><b>Descripción</b>: 
+   Borrar toda la memoria de datos. Una vez enviado el comando es necesario enviar el comando 08h 
+   (Begin Erase/program cicle)
+  </li><br>
+  <li><b>Datos</b>:  No hay transferencia de datos. El borrado tarda unos 10ms.</li><br>
+  <li><b>Ejemplo</b>: Enviar comando 0Bh seguido por el comando 08h.</li><br>
+  <li><b>Notas</b>: Comando <b>NO PROBADO</b> <a href="#notas">[1]</a></li>
+</ul>
+</div>  
+
+<HR>
+
+<h2 id="load_data_data">Load Data for Data Memory (03H)</h2>
+
+
+
+<div class="lista">
+
+<ul>
+  <li><b>Descripción</b>: 
+   Enviar un dato para su almacenamiento en la memoria de datos, direccionada
+   por los bits menos significativos del PC (Esto depende del tipo de PIC). 
+   Por ejemplo, para el caso
+   del PIC16F876A, que tiene 256 bytes de eeprom, se utilizan los 8 bits menos significativos del PC para
+   acceder a esta memoria.<br>
+   La memoria de datos es de 8 bits de ancho, pero la escritura se hace
+   igual que si se estuviese escribiendo en la memoria de programa, por lo que será necesario aplicar 16 pulsos
+   de reloj (14 para los datos + 1 bit de start + 1 bit de stop). sólo los primeros 8 bits enviados, después
+   del bit de start, son los correctos. El resto son bits "basura" que será ignorados por el PIC.
+  </li><br>
+  <li><b>Datos</b>: Después de transmitir este comando hay que enviar el dato.i></LI><br>
+  <li><b>Ejemplo</b>: Este comando <b>NO SE HA PROBADO</b>. No hay suficiente información
+  en las hojas de datos de Microchip. Es previsible que después de enviar este comando haya que
+  ejecutar el comando 08h.</li><br>
+  <li><b>Notas</b>: Comando <b>NO PROBADO</b> <a href="#notas">[1]</a></li>
+</ul>
+</div>        
+
+<HR>
+
+<h2 id="read_data_data">Read Data for Data Memory (05H)</h2>
+
+
+
+<div class="lista">
+
+<ul>
+  <li><b>Descripción</b>: 
+   Leer un dato de la memoria de datos. Esta memoria es de 8 bits de ancho, pero la lectura se hace
+   igual que si se estuviese leyendo la memoria de programa, por lo que será necesario aplicar 16 pulsos
+   de reloj (14 para los datos + 1 bit de start + 1 bit de stop). sólo los primeros 8 bits recibidos, después
+   del bit de start son los correctos. El resto es "basura" que se puede eliminar.<br>
+   Dependiendo del modelo de PIC, la memoria EEPROM tendrá un tamaño u otro. La dirección de acceso
+   se toma de los bits menos significativos del contador de programa. Por ejemplo, para el caso
+   del PIC16F876A, que tiene 256 bytes de eeprom, se utilizan los 8 bits menos significativos del PC para
+   acceder a esta memoria.
+  </li><br>
+  <li><b>Datos</b>: Despues de enviar el comando ,el PIC transmite el dato que se encuentra
+  en esa posición de memoria.</li><br>
+  <li><b>Ejemplo</b>: Leer un dato de la primera posición de memoria de la eeprom: 
+  Hacer un reset, con lo que el PC=0000H. Enviar el comando 05h. Leer el dato de 14 bits. sólo los
+  8 primeros bits son los correctos (Recordad que primero se envían los bits menos significativos)</li><br>
+  <li><b>Notas</b>: Comando <b>NO PROBADO</b> <a href="#notas">[1]</a></li>
+</ul>
+</div>          
+
+<HR>
+<h2 id="notas">Notas</h2>
+<div class="cuerpo">
+<p><b>[1]</b> Comando no probado. A la fecha de escribir esta documentación (29/Dic/2003) ese comando
+no se ha probado en ningún PIC. El resto de comandos han sido implementados con éxito.
+</p>
+</div>
+
+
+<hr>
+<a href="/iearobotics-site/wiki">IEA ROBOTICS</a>
+<address>
+<A href="../../../personal/juan/index.html">Juan González</A>
+</address>
+</body>
+</html>
+
+

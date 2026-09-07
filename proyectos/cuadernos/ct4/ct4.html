@@ -1,0 +1,601 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>Cuaderno t&eacute;cnico 4: Grabaci&oacute;n de microcontroladores PIC</TITLE>
+</HEAD>
+
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>Cuaderno t&eacute;cnico 4: Grabaci&oacute;n de
+				microcontroladores PIC</B> 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P><A HREF="#introduccion">[Introducci&oacute;n]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#monitor">[Modo monitor]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#arquitectura">[Arquitectura]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#tres">[Autores]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#licencia">[Licencia]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#download">[Download]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#links">[Links]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#noticias">[Noticias]</A></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/pics.png" NAME="Imagen1" ALIGN=BOTTOM WIDTH=300 HEIGHT=225 BORDER=0>
+</P>
+<HR>
+<H2>Introducci&oacute;n 
+</H2>
+<P>Los <B>microcontroladores PIC</B> se graban mediante un m&eacute;todo
+llamado <B>ICSP</B> (<I>in circuit serial programing</I>), por el
+cual se puede grabar la memoria de programa, la memoria de datos y la
+palabra de configuraci&oacute;n. 
+</P>
+<P>En este cuaderno t&eacute;cnico se explican los principios de
+grabaci&oacute;n, para las familias <B>16F8X</B> y <B>16F87X</B>.
+Esta informaci&oacute;n puede resultar &uacute;til si se quiere
+construir un programador de pics, o bien si se quiere programar un
+microcontrolador o un PC para realizar esta grabaci&oacute;n (M&aacute;ster
+de grabaci&oacute;n). Se puede encontrar mucha m&aacute;s informaci&oacute;n
+en los manuales de Microchip, disponibles <A HREF="#download">aqu&iacute;</A>.
+</P>
+<HR>
+<H2><A NAME="monitor"></A>Modo monitor</H2>
+<P>Para realizar la grabaci&oacute;n, el PIC debe estar en <B>modo
+monitor</B>. Existen varias maneras de entrar en este modo, que
+dependen del PIC usado. Aqu&iacute; utilizaremos el m&eacute;todo m&aacute;s
+general, que consisten en introducir una <B>tensi&oacute;n de 12
+voltios</B> por la pata <B>MCLR</B>. (El otro m&eacute;todo es el
+denominado de bajo voltaje. Hay que introducir 5 voltios por la pata
+RB3. Consultar el manual de programaci&oacute;n para m&aacute;s
+informaci&oacute;n) 
+</P>
+<P>En esta figura se muestra un ejemplo de un circuito para hacer que
+el pic entre en modo monitor. Hay que introducir 12v por la pata
+MCLR. Cada vez que se pulse (y suelte) el bot&oacute;n de reset, el
+pic entrar&aacute; en modo monitor, por lo que se tendr&aacute;
+acceso a los servicios de grabaci&oacute;n. 
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/monitor.png" NAME="Imagen2" ALIGN=BOTTOM WIDTH=161 HEIGHT=200 BORDER=0></P>
+<HR>
+<H2><A NAME="arquitectura"></A>Arquitectura</H2>
+<P>Un vez en modo monitor, se tiene acceso a una serie de servicios,
+a trav&eacute;s del <B>protocolo ICSP</B>. Este protocolo se describe
+a dos niveles: <B>nivel f&iacute;sico</B> y <B>nivel de comandos</B>.
+En el <B>nivel f&iacute;sico</B> se especifica c&oacute;mo se
+transmiten los bits (temporizaciones, sincronismo, etc) y en el <B>de
+comandos</B> qu&eacute; tramas hay que enviar para tener acceso a los
+diferentes servicios. 
+</P>
+<P ALIGN=CENTER><IMG SRC="images/niveles.png" NAME="Imagen3" ALIGN=BOTTOM WIDTH=280 HEIGHT=52 BORDER=0></P>
+<H3>Nivel f&iacute;sico</H3>
+<P>Para realizar la comunicaci&oacute;n se utiliza un <B>protocolo
+serie s&iacute;ncrono</B>. Son necesarios dos hilos, del <B>puerto B</B>,
+uno para llevar <B>los datos</B> (conectado a <B>RB7</B>) y otro para
+<B>el reloj</B> (conectado a <B>RB6</B>). 
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/grabacion1.png" NAME="Imagen4" ALIGN=BOTTOM WIDTH=289 HEIGHT=200 BORDER=0></P>
+<P><BR><BR>
+</P>
+<P><B>Los detalles son los siguientes</B>: 
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm">Primero se transmiten los <B>bits
+	menos significativos</B> 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm">Los datos se capturan en el <B>flanco
+	de bajada</B> del reloj 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm">El periodo m&iacute;nimo del reloj
+	es de <B>200ns</B> (frec m&aacute;xima de 5MHz) 
+	</P>
+	<LI><P>El <B>tiempo de setup</B> (tiempo que deben estar los datos
+	antes de que llegue el flanco de bajada) y el <B>tiempo de hold</B>
+	(el que deben estar despu&eacute;s de producirse el flanco de
+	bajada) son de <B>100ns</B> 
+	</P>
+</UL>
+<P>Ejemplo de env&iacute;o del <B>comando 000010</B> (6 bits): 
+</P>
+<P ALIGN=CENTER><IMG SRC="images/crono1.png" NAME="Imagen5" ALIGN=BOTTOM WIDTH=304 HEIGHT=129 BORDER=0></P>
+<P>Al PIC se env&iacute;an <B>comandos</B>, de 6 bits, como en el
+ejemplo anterior, y <B>datos</B> de 14 bits. Los datos son
+bidireccionales, se pueden enviar al PIC o leerlos desde &eacute;l.
+En la transmisi&oacute;n de los datos hay que colocar un <B>bit de
+start </B>y un <B>bit de stop</B>, que tienen el valor 0. En total se
+necesitan 16 flancos de bajada para el env&iacute;o de los datos, y 6
+flancos de bajada para los comandos. 
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><B>Env&iacute;o de comandos</B>: 6
+	flancos de bajada (6 bits) 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>Env&iacute;o de datos</B>: 16
+	flancos de bajada. (14 bits + 1 bit start + 1 bit stop). 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>Los datos son bidireccionales</B>:
+	se pueden enviar al pic o recibirlos de &eacute;l 
+	</P>
+	<LI><P>El <B>tiempo m&iacute;nimo</B> entre el env&iacute;o de un
+	comando y la lectura o escritura de un dato, debe ser de <B>1
+	micro-segundo</B> 
+	</P>
+</UL>
+<P>A continuaci&oacute;n se muestra un <B>ejemplo de env&iacute;o de
+un dato</B>. El cronograma sirve tanto para env&iacute;o como
+lectura. En el primer caso los datos los deposita el dispositivo
+grabador y en el segundo salen del pic. 
+</P>
+<P ALIGN=CENTER><IMG SRC="images/crono2.png" NAME="Imagen6" ALIGN=BOTTOM WIDTH=472 HEIGHT=170 BORDER=0></P>
+<H3>Nivel de comandos</H3>
+<P>El acceso a los servicios del modo monitor se realiza enviando
+primero <B>comandos</B> y a continuaci&oacute;n <B>datos</B>, si
+fueran precisos. 
+</P>
+<P>En la siguiente tabla se encuentra informaci&oacute;n sobre los
+comandos m&aacute;s comunes, disponibles en casi todos los PICs.
+Existen m&aacute;s servicios, espec&iacute;ficos para determinadas
+familias de PICs. (Consultar las <A HREF="#download">hojas de datos</A>
+para m&aacute;s informaci&oacute;n): 
+</P>
+<TABLE BORDER=1 BORDERCOLOR="#000000" CELLPADDING=2 CELLSPACING=0>
+	<TR>
+		<TD>
+			<P><B>Comando</B></P>
+		</TD>
+		<TD>
+			<P><B>Valor</B></P>
+		</TD>
+		<TD>
+			<P><B>Datos</B></P>
+		</TD>
+		<TD>
+			<P><B>Direcci&oacute;n</B></P>
+		</TD>
+		<TD>
+			<P><B>Descripci&oacute;n</B></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P><A HREF="comandos.html#load_conf">Load Configuration</A></P>
+		</TD>
+		<TD>
+			<P>0 0 0 0 0 (00H)</P>
+		</TD>
+		<TD>
+			<P>Si</P>
+		</TD>
+		<TD>
+			<P>Entrada</P>
+		</TD>
+		<TD>
+			<P>Saltar a la memoria de configuraci&oacute;n</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P><A HREF="comandos.html#load_data_prog">Load Data for Program
+			Memory</A></P>
+		</TD>
+		<TD>
+			<P>0 0 0 1 0 (02H)</P>
+		</TD>
+		<TD>
+			<P>Si</P>
+		</TD>
+		<TD>
+			<P>Entrada</P>
+		</TD>
+		<TD>
+			<P>Enviar un dato para la memoria de programa</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P><A HREF="comandos.html#read_data_prog">Read Data from Program
+			Memory</A></P>
+		</TD>
+		<TD>
+			<P>0 0 1 0 0 (04H)</P>
+		</TD>
+		<TD>
+			<P>Si</P>
+		</TD>
+		<TD>
+			<P>Salida</P>
+		</TD>
+		<TD>
+			<P>Leer un dato de la memoria de programa</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P><A HREF="comandos.html#increment">Increment Address</A></P>
+		</TD>
+		<TD>
+			<P>0 0 1 1 0 (06H)</P>
+		</TD>
+		<TD>
+			<P>No</P>
+		</TD>
+		<TD>
+			<P>----</P>
+		</TD>
+		<TD>
+			<P>Apuntar a la siguiente direcci&oacute;n</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P><A HREF="comandos.html#programming">Begin Erase/Programming
+			Cycle</A></P>
+		</TD>
+		<TD>
+			<P>0 1 0 0 0 (08H)</P>
+		</TD>
+		<TD>
+			<P>No</P>
+		</TD>
+		<TD>
+			<P>-----</P>
+		</TD>
+		<TD>
+			<P>Comenzar un ciclo de borrado/grabaci&oacute;n</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P><A HREF="comandos.html#bulk_prog">Bulk Erase Program Memory</A></P>
+		</TD>
+		<TD>
+			<P>0 1 0 0 1 (09H)</P>
+		</TD>
+		<TD>
+			<P>No</P>
+		</TD>
+		<TD>
+			<P>---</P>
+		</TD>
+		<TD>
+			<P>Borrado completo de la memoria de programa</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P><A HREF="comandos.html#bulk_data">Bulk Erase Data Memory</A></P>
+		</TD>
+		<TD>
+			<P>0 1 0 1 1 (0BH)</P>
+		</TD>
+		<TD>
+			<P>No</P>
+		</TD>
+		<TD>
+			<P>----</P>
+		</TD>
+		<TD>
+			<P>Borrado completo de la memoria de datos</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P><A HREF="comandos.html#load_data_data">Load Data for Data
+			Memory</A></P>
+		</TD>
+		<TD>
+			<P>0 0 0 1 1 (03H)</P>
+		</TD>
+		<TD>
+			<P>Si</P>
+		</TD>
+		<TD>
+			<P>Entrada</P>
+		</TD>
+		<TD>
+			<P>Enviar un dato para la memoria de datos</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P><A HREF="comandos.html#read_data_data">Read Data for Data
+			Memory</A></P>
+		</TD>
+		<TD>
+			<P>0 0 1 0 1 (05H)</P>
+		</TD>
+		<TD>
+			<P>Si</P>
+		</TD>
+		<TD>
+			<P>Salida</P>
+		</TD>
+		<TD>
+			<P>Leer un dato de la memoria de Datos</P>
+		</TD>
+	</TR>
+</TABLE>
+<P>En la <B>primera columna</B> se encuentra el <B>nombre del comando</B>
+en ingl&eacute;s, utilizando la nomenclatura de Microchip. En la
+siguiente est&aacute; el <B>valor del comando</B> en binario y en
+hexadecimal. El bit de la izquierda es el m&aacute;s significativo.
+La <B>tercera columna</B> indica si hay <B>transferencia de datos</B>
+y la cuarta el <B>sentido de esta transferencia</B>: si es desde el
+PIC hacia el exterior (salida) o desde el exterior hacia el pic
+(entrada). La &uacute;ltima columna describe qu&eacute; hace el
+comando. 
+</P>
+<P>Cuando se hace un reset y se entra en modo monitor, el contador de
+programa (PC) apunta a la direcci&oacute;n 0000h. (Memoria de
+programa). Cualquier comando enviado actuar&aacute; sobre la
+direcci&oacute;n que indique el PC. 
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm">Si se env&iacute;a el comando
+	<B>increment-address</B> (0x06), se incrementa el contador de
+	programa, aput&aacute;ndose a la siguiente direcci&oacute;n
+	(pc=pc+1)</P>
+	<LI><P STYLE="margin-bottom: 0cm">Si se env&iacute;a el comando <B>Load
+	Configuration</B> (0x00) (Hay que enviar un dato, que se ignora), el
+	contador apuntar&aacute; a la direcci&oacute;n 2000h (PC=2000H),
+	donde se encuentra el bloque de configuraci&oacute;n, con la palabra
+	de configuraci&oacute;n y la identificaci&oacute;n del PIC. <B>Para
+	volver al bloque de memoria de programa es necesario hacer un reset</B>.</P>
+	<LI><P>Se puede encontrar <A HREF="comandos.html">m&aacute;s
+	informaci&oacute;n aqu&iacute;</A> 
+	</P>
+</UL>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="memoria"></A>Mapa de memoria</H2>
+<P>Cuando se entra en modo monitor, la memoria se divide en dos
+partes: la <B>memoria de programa</B> (0000h-1FFFh) y la <B>memoria
+de configuraci&oacute;n </B>(2000h-3FFFh). 
+</P>
+<P>Dentro de la memoria de configuraci&oacute;n, existe una regi&oacute;n,
+comprendida entre las direcciones 2000h y 2007h, que tiene
+informaci&oacute;n importante. Primero se encuentran 4 posiciones
+disponibles para que el usuario guarde informaci&oacute;n de
+identificaci&oacute;n (Direcciones 2000h-2003h). En la direcci&oacute;n
+2006h hay una identificaci&oacute;n del PIC, grabada por el
+fabricante y que permite conocer de qu&eacute; modelo de PIC se
+trata. Finalmente en la direcci&oacute;n 2007h se encuentra la
+<B>palabra de configuraci&oacute;n</B>. 
+</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/mapa_mem.png" NAME="Imagen7" ALIGN=BOTTOM WIDTH=504 HEIGHT=380 BORDER=0></P>
+<P><BR><BR>
+</P>
+<P>Al hacer un <B>reset</B> el contador de programa apunta a la
+direcci&oacute;n 0000h. Cuando se env&iacute;a el comando &quot;Load
+Configuration&quot; (00h) se pasa a la memoria de configuraci&oacute;n
+(2000h). Para volver a la memoria de programa hay que volver a hacer
+un reset. 
+</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="cto_grabacion"></A>Un circuito b&aacute;sico de
+grabaci&oacute;n</H2>
+<P>El circuito <B>m&aacute;s simple</B> para realizar la grabaci&oacute;n
+de un pic se muestra a continuaci&oacute;n: 
+</P>
+<P ALIGN=CENTER><IMG SRC="images/cto_grabacion1.png" NAME="Imagen8" ALIGN=BOTTOM WIDTH=451 HEIGHT=234 BORDER=0></P>
+<P>En vez de utilizarse un pulsador para hacer reset, se utiliza un
+<B>transistor PNP</B>. Cuando la se&ntilde;al de <B>reset</B> se pone
+a '1', el transistor se satura y entran 0v (aprox) por la pata <B>MCLR</B>.
+Cuando <B>reset</B> est&aacute; a '0', el transistor est&aacute; al
+corte y por <B>MCLR</B> entran 12v (aprox). En vez de un pulsador
+manual, ahora tenemos un <B>pulsador electr&oacute;nico</B>, que se
+abre y cierra en funci&oacute;n del valor de la se&ntilde;al <B>reset</B>.
+</P>
+<P>El pic adem&aacute;s debe estar alimentado a 5v. <B>Son necesarias
+dos alimentaciones</B>, una de <B>5v</B> y otra de <B>12v</B>. 
+</P>
+<HR>
+<H2><A NAME="alternativas"></A>Alternativas para la grabaci&oacute;n</H2>
+<P>La grabaci&oacute;n del pic se realiza desde un sistema que
+llamaremos <B>M&aacute;ster de grabaci&oacute;n</B>, que es el que
+transmite los <B>datos</B> y <B>comandos</B>, la se&ntilde;al de
+<B>reloj</B> y la de <B>reset</B>. Este M&aacute;ster puede ser
+cualquier sistema digital, por ejemplo: 
+</P>
+<OL>
+	<LI><P STYLE="margin-bottom: 0cm"><B>Un ordenador PC</B>, que
+	utilice 3 pines del <B>puerto paralelo</B> para las se&ntilde;ales
+	de datos, reloj y reset. En este caso es el software en el PC el que
+	debe implementar el protocolo ICSP</P>
+	<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/master1.png" NAME="Imagen9" ALIGN=BOTTOM WIDTH=272 HEIGHT=124 BORDER=0></P>
+	<P STYLE="margin-bottom: 0cm"></P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>Un ordenador PC</B>, que
+	utilice los pines de control del <B>puerto serie</B> (ej. DTR, CTS,
+	RTS, DSR...). Esto es lo que emplean algunos grabadores, como el
+	<B>TE20</B>. N&oacute;tese que se utilizan pines del puerto serie
+	pero <B>NO se trata de las cl&aacute;sicas comunicaciones RS-232</B>
+	(ser&iacute;a as&iacute;ncronas). El protocolo ICSP se implementa
+	por software, usando los pines de control como si fuesen pines de
+	entrada/salida normales (Las se&ntilde;ales <B>TX y RX NO SE USAN</B>
+	para el protocolo. El TE20 las utiliza para la obtenci&oacute;n de
+	los 12v necesarios para la grabaci&oacute;n)</P>
+	<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="images/master1.png" NAME="Imagen10" ALIGN=BOTTOM WIDTH=272 HEIGHT=124 BORDER=0></P>
+	<P STYLE="margin-bottom: 0cm"></P>
+	<LI><P STYLE="margin-bottom: 0cm"><B>Un microcontrolador</B>, por
+	ejemplo un 6811 o un PIC. Esta forma de grabaci&oacute;n es la m&aacute;s
+	fiable y la que permite una mayor <B>independencia del PC</B> y del
+	<B>sistema operativo</B> usado (grabador universal). Es necesario
+	programar el microcontrolador M&aacute;ster para que implemente el
+	protocolo ICSP y adem&aacute;s conectarlo a un PC o similar por el
+	puerto serie (o USB), por donde se transmitir&aacute; el fichero a
+	grabar. Este es el sistema empleado por el <B>ICD</B> de Microchip.</P>
+	<P ALIGN=CENTER><IMG SRC="images/master3.png" NAME="Imagen11" ALIGN=BOTTOM WIDTH=291 HEIGHT=211 BORDER=0></P>
+</OL>
+<P><B>La alternativa 3 es la que se recomienda</B>, ya que es la m&aacute;s
+portable e independiente tanto de la m&aacute;quina como del Sistema
+Operativo. Con ella hemos realizado pruebas de grabaci&oacute;n de
+PICs, utilizando como m&aacute;ster de grabaci&oacute;n la <A HREF="../../ct6811/ct6811.html">tarjeta
+CT6811</A> y una tarjeta prototipo con el PIC16F876A. 
+</P>
+<HR>
+<H2><A NAME="tres"></A>Autor</H2>
+<UL>
+	<LI><P><A HREF="../../../personal/juan/index.html">Juan
+	Gonz&aacute;lez G&oacute;mez</A> 
+	</P>
+</UL>
+<HR>
+<H2><A NAME="licencia"></A>Licencia</H2>
+<P STYLE="margin-bottom: 0cm">Este <B>documento</B> se distribuyen
+bajo <A HREF="http://gugs.sindominio.net/licencias/fdl-es.html">licencia
+FDL</A> por lo que se permite su copia, modificaci&oacute;n y
+distribuci&oacute;n, siempre y cuando se mantenga esta nota. 
+</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="download"></A>Download</H2>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>Documentaci&oacute;n de referencia</B> 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=2 CELLSPACING=2>
+		<TR BGCOLOR="#cabeeb">
+			<TD>
+				<P><A HREF="download/16f87x-flash-programming.pdf">16f87x-flash-programming.pdf</A>
+				(247KB)</P>
+			</TD>
+			<TD>
+				<P>Hoja de datos de Microchip, con las especificaciones para la
+				grabaci&oacute;n de la familia PIC16F87x</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD>
+				<P><A HREF="download/16f8x-serial-prog.pdf">16f8x-serial-prog.pdf</A>
+				(158KB)</P>
+			</TD>
+			<TD>
+				<P>Hoja de datos de Micrichip, con las especificaciones para la
+				grabaci&oacute;n de la familia PIC16F8X</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>Cuaderno t&eacute;cnico 4</B> 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=2 CELLSPACING=2>
+		<TR BGCOLOR="#cabeeb">
+			<TD>
+				<P><A HREF="download/figuras.tgz">figuras.tgz</A> (10KB)</P>
+			</TD>
+			<TD>
+				<P>Todas las figuras de este cuaderno, para el programa Xfig
+				(3.2.4)</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#abbeeb">
+			<TD>
+				<P><A HREF="download/ct4.pdf">ct4.pdf</A> (106KB)</P>
+			</TD>
+			<TD>
+				<P>Cuaderno t&eacute;cnico 4, en PDF</P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#cabeeb">
+			<TD>
+				<P><A HREF="download/comandos.pdf">comandos.pdf</A> (12KB)</P>
+			</TD>
+			<TD>
+				<P>Resumen de agunos comandos del protocolo ICSP</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="links"></A>Links</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../skypic/skypic.html">Tarjeta
+	SKYPIC</A>, tarjeta entrenadora para Microcontroladores PIC</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="http://www.iearobotics.com/personal/andres/proyectos/picmin/pic1.html">Tarjeta
+	PICUPSAM,</A> un entrenadora para el PIC16F87X 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../GEYDi/GEYDi.htm">Tarjeta
+	GEYDi</A>, entrenadora para PICs de 40 pines 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../ct1/ct1.html">Cuaderno
+	t&eacute;cnico 1</A>, comunicaciones serie (HW) 
+	</P>
+	<LI><P><A HREF="../../ct6811/ct6811.html">tarjeta CT6811</A> 
+	</P>
+</UL>
+<HR>
+<H2><A NAME="noticias"></A>Noticias</H2>
+<UL>
+	<LI><P><B>26/Sep/2004: </B>
+	</P>
+	<UL>
+		<LI><P STYLE="font-weight: medium">A&ntilde;adido enlace a la
+		<A HREF="../../skypic/skypic.html">Tarjeta SKYPIC</A>.</P>
+		<LI><P><SPAN STYLE="font-weight: medium">A&ntilde;adido enlace al
+		<A HREF="../index.html"><SPAN STYLE="font-weight: medium"><U>&iacute;ndice
+		de cuadernos t&eacute;cnicos</U></SPAN></A></SPAN></P>
+	</UL>
+	<LI><P><B>28/Dic/2003</B>: Publicado en la web 
+	</P>
+</UL>
+
+<hr>
+<a href="/iearobotics-site/wiki">IEA ROBOTICS</a>
+<address>
+<a href="../../../personal/juan/index.html">Juan González</a>
+</address>
+</body>
+</html>
