@@ -1,0 +1,295 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>Cuaderno t&eacute;cnico 7: Grabaci&oacute;n de la tarjeta Skypic usando otra Skypic</TITLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>Cuaderno t&eacute;cnico 7: Grabaci&oacute;n de
+				la tarjeta Skypic usando otra Skypic</B></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=671 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=90>
+			<COL WIDTH=79>
+			<COL WIDTH=68>
+			<COL WIDTH=71>
+			<COL WIDTH=63>
+			<COL WIDTH=62>
+			<COL WIDTH=51>
+			<COL WIDTH=68>
+			<COL WIDTH=81>
+			<TR>
+				<TD WIDTH=90>
+					<P><A HREF="#Introducci&oacute;n|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Introducci&oacute;n</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">]</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=79>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="#Motivaci&oacute;n|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Motivacion]</FONT></FONT></A>]</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=68>
+					<P><A HREF="#Esquema de grabaci&oacute;n|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Esquema]</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=71>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="#Grabando|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Grabando]</FONT></FONT></A>]</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=63>
+					<P><A HREF="#Ejemplo|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Ejemplo]</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=62>
+					<P><A HREF="#Documentaci&oacute;n y referencias|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Enlaces]</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=51>
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="#Autor|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Autor]</FONT></FONT></A>]</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=68>
+					<P><A HREF="#Licencia|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Licencia]</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=81>
+					<P><A HREF="#Noticias|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Noticias]</FONT></FONT></A></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/skypic-skypic1.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="Introducci&oacute;n|outline"></A>Introducci&oacute;n</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>La tarjeta <A HREF="../../skypic/skypic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Skypic</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+tiene un <B>PIC16F876A</B> que se puede grabar <I>in-circuit</I> de
+diferentes maneras:</FONT></FONT></FONT></FONT></P>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Mediante un cable
+	paralelo, usando en Linux el </FONT></FONT><A HREF="http://pikdev.free.fr/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">PiKdev</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+	y en Windows el </FONT></FONT><A HREF="http://www.ic-prog.com/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ICPROG</FONT></FONT></A></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Utilizando la
+	</FONT></FONT><A HREF="../../ct6811/ct6811.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tarjeta
+	CT6811</FONT></FONT></A></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Mediante el ICD2
+	de Microchip</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Utilizando otra
+	</FONT></FONT><A HREF="../../skypic/skypic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Skypic</FONT></FONT></A></P>
+</UL>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En este cuaderno
+t&eacute;cnico describiremos el &uacute;ltimo m&eacute;todo.</FONT></FONT></P>
+<HR>
+<H2><A NAME="Motivaci&oacute;n|outline"></A>Motivaci&oacute;n</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cuando
+se dise&ntilde;&oacute; la </FONT></FONT><A HREF="../../skypic/skypic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Skypic</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+no conoc&iacute;amos todav&iacute;a ning&uacute;n m&eacute;todo
+sencillo para grabarla desde plataformas Linux. Como lo que hab&iacute;amos
+usado hasta entonces era el microcontrolador 6811, desarrollamos un
+sencillo grabador utilizando la <A HREF="../../ct6811/ct6811.html">tarjeta
+CT6811</A>. Una vez que se valid&oacute; su funcionamiento y que ya
+podr&iacute;amos grabar programas en la <A HREF="../../skypic/skypic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Skypic</FONT></FONT></A>,
+migramos el software del 6811 al PIC16F876A, lo que nos permiti&oacute;
+utilizar una <A HREF="../../skypic/skypic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Skypic</FONT></FONT></A>
+como grabadora de otra Skypic. De esta manera completamos la
+transici&oacute;n a los micros PIC us&aacute;ndolos desde entornos
+GNU/Linux. </FONT></FONT></FONT>
+</P>
+<HR>
+<H2><A NAME="Esquema de grabaci&oacute;n|outline"></A>Esquema de
+grabaci&oacute;n</H2>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>La
+grabaci&oacute;n se esquematiza en la figura inferior. Los elementos
+necesarios son:</FONT></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Un PC con
+	puerto serie</B></FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Una <A HREF="../../skypic/skypic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Tarjeta
+	Skypic</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,</FONT></FONT>
+	con un PIC16F876A y un reloj de 4MHz. Debe tener grabado el </FONT></FONT><A HREF="../../stargate/servidores/sg-picp/sg-picp.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">servidor
+	PICP</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+	El ejecutable (.hex) lo puedes bajar directamente desde </FONT></FONT><A HREF="../../stargate/servidores/sg-picp/download/sg-picp-pic16f876-skypic-0.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">este
+	enlace</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>La skypic que
+	se quiere grabar</B>. </FONT></FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Un cable plano
+	de bus</B> de 10 v&iacute;as para conectar la skypic grabadora
+	(Puerto B, conector CT2) con la que queremos grabar (Conector CT4)</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/esquema1.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=498 HEIGHT=238 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=LEFT><BR><BR>
+</P>
+<P ALIGN=LEFT><BR><BR>
+</P>
+<HR>
+<H2><A NAME="Grabando|outline"></A>Grabando</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>La grabaci&oacute;n se
+realiza de la siguiente manera:</FONT></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Como grabadora
+	tomar una <A HREF="../../skypic/skypic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Skypic</FONT></FONT></A>
+	que tenga grabado el <A HREF="../../stargate/servidores/sg-picp/sg-picp.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">servidor
+	PICP</FONT></FONT></A>. &iquest;C&oacute;mo grabar la Skypic
+	grabadora? Bueno, esto es como el problema del huevo y la gallina
+	:-). Hay que utilizar cualquiera de los otros m&eacute;todos de
+	grabaci&oacute;n.</FONT></FONT></P>
+</UL>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>La configuraci&oacute;n
+	de los jumpers de la grabadora es la siguiente:</FONT></FONT></P>
+</UL>
+<UL>
+	<UL>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>J1</B> puesto</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>J2</B> puesto</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Switch <B>JP3</B>
+		en modo normal (con el capuch&oacute;n rojo hacia la izquierda, en
+		las posiciones 1 y 2)</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>JP4</B> y <B>JP5</B>
+		en las posiciones 1 y 2</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>JP6</B> en
+		las posiciones 1 y 2</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>JP7</B> en
+		posiciones 1 y 2</FONT></FONT></P>
+	</UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Conectar la
+	grabadora al puerto serie del PC</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Alimentarla
+	(realmente la alimentaci&oacute;n se puede poner en la grabadora o
+	en la otra skypic, ya que se transmite de una a otra a trav&eacute;s
+	del cable de bus)</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Colocar el cable
+	de bus en el <B>conector CT2</B></FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Configurar los
+	jumpers de la skypic a grabar de la misma manera que la grabadora,
+	excepto el <B>JP3</B>. Este Switch se situar&aacute; en el extermo
+	contrario (hacia la derecha, en las posiciones 2 y 3)</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Conectar el otro
+	extremo del cable de bus al <B>conector CT4</B></FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">En el PC
+	deberemos tener instalado el software </FONT></FONT>
+	<A HREF="../../../personal/juan/proyectos/skypic-down/skypic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Skypic-down</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+	En la p&aacute;gina se muestra c&oacute;mo instalarlo y usarlo</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Puedes realizar
+	pruebas de grabaci&oacute;n con </FONT></FONT><A HREF="../ct5/download/ledp.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">este
+	fichero</FONT></FONT></A></P>
+</UL>
+<DL>
+	<DD STYLE="margin-bottom: 0.5cm"><BR><BR>
+	</DD></DL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/grabacion.png" NAME="Imagen3" ALIGN=MIDDLE WIDTH=418 HEIGHT=345 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2><A NAME="Ejemplo|outline"></A>Ejemplo</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Aqu&iacute; hay un
+pantallazo de la grabaci&oacute;n del programa <A HREF="../ct5/download/ledp.hex">ledp.hex</A>,
+que hace parpadear el led de la <A HREF="../../skypic/skypic.html">Skypic</A>.
+Se ha utilizado la versi&oacute;n 0.2 del <A HREF="http://www.iearobotics.com/personal/juan/proyectos/skypic-down/skypic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Skypic-down</FONT></FONT></A>:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/pantallazo1.png" NAME="Imagen4" ALIGN=MIDDLE WIDTH=667 HEIGHT=473 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2><A NAME="Documentaci&oacute;n y referencias|outline"></A>Documentaci&oacute;n
+y referencias</H2>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Tarjeta </FONT></FONT><A HREF="../../skypic/skypic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Skypic</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+	</FONT></FONT>
+	</P>
+	<LI><P><A HREF="http://pikdev.free.fr/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">PiKdev
+	</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	entorno de desarrollo para pics en Linux </FONT></FONT>
+	</P>
+	<LI><P><A HREF="http://www.ic-prog.com/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ICPROG</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	grabaci&oacute;n de PICs en entornos Windows</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Servidor para
+	programaci&oacute;n de PICS: </FONT></FONT><A HREF="../../stargate/servidores/sg-picp/sg-picp.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">servidor
+	PICP</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">  </FONT></FONT>
+	</P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Programa
+	<A HREF="http://www.iearobotics.com/personal/juan/proyectos/skypic-down/skypic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Skypic-down</FONT></FONT></A></FONT></FONT><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	para la grabaci&oacute;n de PICs usando otro microcontroaldor.</FONT></FONT></P>
+	<LI><P><A HREF="../ct5/ct5.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cuaderno
+	t&eacute;cnico 5</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">:
+	<SPAN STYLE="font-weight: medium">Grabaci&oacute;n de
+	microcontroladores PIC usando la tarjeta CT6811</SPAN></FONT></FONT></P>
+	<LI><P STYLE="font-weight: medium"><A HREF="../ct4/ct4.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cuaderno
+	t&eacute;cnica 4</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">:
+	Grabaci&oacute;n de microcontroladores PIC. </FONT></FONT>
+	</P>
+	<LI><P STYLE="font-weight: medium"><A HREF="../../skypic/docs/conf_icprog.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Manual
+	para grabar la SKYPIC desde el puerto paralelo con el ICPROG</FONT></FONT></A></P>
+	<LI><P><A HREF="../../skypic/docs/cable_paralelo.jpg"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cable
+	paralelo para grabar la SKYPIC desde el puerto paralelo con el
+	ICPROG</FONT></FONT></A></P>
+</UL>
+<HR>
+<H2><A NAME="Autor|outline"></A>Autor</H2>
+<UL>
+	<LI><P><A HREF="http://www.iearobotics.com/personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+	Gonz&aacute;lez G&oacute;mez</FONT></FONT></A></P>
+</UL>
+<HR>
+<H2><A NAME="Licencia|outline"></A>Licencia</H2>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Este <B>documento</B>
+se distribuyen bajo </FONT></FONT><A HREF="http://gugs.sindominio.net/licencias/fdl-es.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">licencia
+FDL</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif"> por
+lo que se permite su copia, modificaci&oacute;n y distribuci&oacute;n,
+siempre y cuando se mantenga esta nota.</FONT></FONT></P>
+<HR>
+<H2><A NAME="noticias"></A><A NAME="Noticias|outline"></A>Noticias</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>15/Junio/2005:
+	</B><SPAN STYLE="font-weight: medium">Publicado enlace en esta web</SPAN></FONT></FONT></P>
+</UL>
+
+<hr>
+<p><a href="../index.html"><b>[Indice de cuadernos técnicos]</b></a></p>
+<p><a href="/iearobotics-site/wiki">IEAROBOTICS</a> </P>
+<a href="../../../personal/juan/index.html">Juan González</a>
+</address>
+</body>
+</html>
