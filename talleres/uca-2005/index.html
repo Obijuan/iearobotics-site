@@ -1,0 +1,324 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Taller de robotica UCA 2005</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGED" CONTENT="20051016;21175100">
+	<META NAME="KEYWORDS" CONTENT="robotica, microcontroladores, pic, hardware">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<TABLE WIDTH=917 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+	<COL WIDTH=909>
+	<TR>
+		<TD WIDTH=909>
+			<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Taller
+			de Rob&oacute;tica UCA 2005</B></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/taller-ini.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=337 HEIGHT=253 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Introducci&oacute;n</FONT></H2>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Taller
+de <B>iniciaci&oacute;n a la rob&oacute;tica</B>. Est&aacute; pensado
+para todos aquellos que les gusta la rob&oacute;tica y quieren
+construirse <B>su propio robot</B>. No son necesarios ning&uacute;n
+tipo de conocimientos previos. El taller ser&aacute; eminentemente
+pr&aacute;ctico y habr&aacute; que soldar, trucar servos, montar la
+estructura, programar en C... Se construir&aacute; un robot partiendo
+desde cero. </FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El
+taller lo encontrar&aacute;n especialmente &uacute;til los
+estudiantes de carreras t&eacute;cnicas como inform&aacute;tica,
+telecomunicaciones o industriales, donde ver&aacute;n c&oacute;mo se
+aplican los conocimientos te&oacute;ricos que les ense&ntilde;an. </FONT></FONT>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">El robot Skybot</FONT></H2>
+<P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">El robot
+que se construir&aacute; en el taller es el <a href="../../proyectos/skybot/skybot.html"><B>Skybot v1.2.</B></A>,
+comercializado por la empresa </FONT></FONT><A HREF="http://www.ifara.com/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Ifara
+Tecnolog&iacute;as</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+Es un robot sencillo,econ&oacute;mico, did&aacute;ctico y abierto.
+Permite que todos aquellos que tengan inter&eacute;s por la rob&oacute;tica
+puedan iniciarse en ella de una manera r&aacute;pida y sencilla. </FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Se trata
+de un <B>robot abierto</B>: los planos de la estructura mec&aacute;nica,
+los esquemas hardware y el c&oacute;digo fuente de los programas
+est&aacute;n disponibles. Cualquiera puede construirse el robot o
+estudiar con m&aacute;s detalle cualquiera de sus partes. As&iacute;,
+adem&aacute;s, queda garantizada su perdurabilidad en el tiempo,
+estando al margen de decisiones comerciales, y permite a todos
+aquellos que no puedan adquirirlo,otra alternativa para tenerlo.</FONT></FONT></P>
+<P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">El
+Skybot ha sido dise&ntilde;ado por <A HREF="http://www.iearobotics.com/personal/andres/">Andr&eacute;s
+Prieto-Moreno</A>, de <A HREF="http://www.ifara.com/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Ifara
+Tecnolog&iacute;as</FONT></FONT></A>.</FONT></FONT></P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Instructores</FONT></H2>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="http://www.iearobotics.com/personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+	Gonz&aacute;lez</FONT></FONT></A>. Profesor ayudante en la <A HREF="http://www.eps.uam.es/">Escuela
+	Polit&eacute;cnica Superior </A>de la Universidad Aut&oacute;noma de
+	Madrid (<A HREF="http://www.uam.es/">UAM</A>)</FONT></FONT></P>
+	
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="http://www.iearobotics.com/personal/andres/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Andr&eacute;s Prieto-Moreno Torres</FONT></FONT></A>, Ifara Tecnolog&iacute;as. </FONT></FONT></P>
+	
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Ricardo G&oacute;mez, Ifara Tecnolog&iacute;as.  </FONT></FONT></P>
+
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Colaboradores</FONT></H2>
+<UL>
+	<LI><P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><A HREF="mailto:Jose Pichardo &lt;tartesos2@telefonica.net&gt;"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Jose
+	Pichardo Gallardo</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+	Presidente de AMUCA, Asociaci&oacute;n de Microb&oacute;tica de la
+	<A HREF="http://www.uca.es/">Univesidad de C&aacute;diz</A>. Trabaja
+	en <A HREF="http://www.codenet.es/">CODENET</A> </FONT></FONT></FONT>
+	</P>
+
+	<LI><P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Daniel Quintero</FONT></FONT><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	<A HREF="http://www.itoosoft.com/motorolos/">Itoosoft</A></FONT></FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Francisco Cord&oacute;n Gonz&aacute;lez </FONT></FONT></P>
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Temario</FONT></H2>
+<UL>
+	<LI><P><A HREF="sesion-1/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Sesi&oacute;n
+	1</FONT></FONT></A> <FONT SIZE=2><FONT FACE="Arial, sans-serif">:
+	Comenzar la construcci&oacute;n de la estructura y trucar los servos</FONT></FONT></P>
+	<LI><P><A HREF="sesion-2/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Sesi&oacute;n
+	2</FONT></FONT></A> <FONT SIZE=2><FONT FACE="Arial, sans-serif">:
+	Finalizar la estructura, conectar los sensores y probar el robot</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="sesion-3/index.html">Sesi&oacute;n
+	3</A>: Instalaci&oacute;n del software. Programa &ldquo;hola mundo&rdquo;.
+	Programaci&oacute;n del robot</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="sesion-4/index.html">Sesion
+	4</A>: Seguimiento de l&iacute;nea, montaje de los sensores de
+	contacto y programaci&oacute;n para el concurso del mogoll&oacute;n</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Sesi&oacute;n
+	5</B>: El concurso del Mogoll&oacute;n.</FONT></FONT></P>
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Programas actualizados</FONT>
+</H2>
+Debido a que ahora estamos usando la versi&oacute;n 1.2. del Skybot para probar el correcto funcionamiento del robot podemos usar los siguientes programas. El primero es el que se graba en el PIC y el segundo se ejecuta en Windows. En la sesi&oacute;n 3 encontramos el equivalente en Linux.
+<UL>
+	<LI><P><A HREF="./skybot-monitor-sky293.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">SKYBOT-MONITOR-SKY293 </A>: Programa monitor para grabar en el SKYBOT</FONT></FONT>
+	<LI><P><A HREF="./BotControl-1.3.exe"><FONT SIZE=2><FONT FACE="Arial, sans-serif">BOTCONTROL-1.3</A>: Programa BotControl para probar el Robot con la SKY293 en Windows</FONT></FONT></A>
+	<LI><P><A HREF="./Skybot-test-sky293"><FONT SIZE=2><FONT FACE="Arial, sans-serif">SKYBOT-TEST</A>: Programa SkyBot-Test para probar el Robot con la SKY293 en Linux </FONT></FONT></A>
+
+</UL>
+En la nueva SKY293 los sensores de infrarrojos (CNY70) se  conectan como indica la figura siguiente:
+<ul><LI><P><A HREF="./conexion-cny.png"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Foto conexion CNY70</FONT></FONT></A></UL>
+Durante el taller los ordenadores eran Windows y los usuarios no ten&iacute;n permisos de Administrador. El entorno de trabajo no ejecutaba correctamente el MAKE, por eso se utiliz&oacute; este archivo BAT que simulaba al MAKE por defecto.
+<ul><LI><P><A HREF="./make.bat"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Programa MAKE.BAT</FONT></FONT></A></UL>
+
+
+
+
+</UL>
+
+
+
+
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Material entregado </FONT>
+</H2>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/taller-material-robot.png" NAME="Imagen3" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+			<TD WIDTH=50%>
+				<UL>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Piezas de
+					Metacrilato negro para la estructura mec&aacute;nica</FONT></FONT></P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Tornillos
+					necesarios para el montaje de la estructura</FONT></FONT></P>
+					<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Dos servos
+					del tipo <A HREF="http://www.iearobotics.com/proyectos/cuadernos/ct3/ct3.html">Futaba
+					3003</A></FONT></FONT></P>
+					<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="http://www.iearobotics.com/proyectos/skypic/skypic.html">Tarjeta
+					Skypic</A>, con el micro 16F876A de Microchip</FONT></FONT></P>
+					<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="http://www.iearobotics.com/proyectos/sky293/sky293.html">Tarjeta
+					sky293</A>, con los drivers de potencia y circuitos para los
+					sensores se infrarrojos</FONT></FONT></P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Portapilas
+					(para 4 pilas de tipo AA) con cables y conector jack macho</FONT></FONT></P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>4 sensores de
+					infrarrojos del tipo CNY70</FONT></FONT></P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Dos sensores
+					de contacto (Bumpers)</FONT></FONT></P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Un sensor de
+					luz (LDR)</FONT></FONT></P>
+					<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Un cable
+					serie para la conexion al PC</FONT></FONT></P>
+				</UL>
+				<UL>
+					<LI><P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Dos
+					encoders impresos en papel, para pegar a las ruedas</FONT></FONT></P>
+				</UL>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Material adicional </FONT>
+</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Material adicional (no
+incluido en el kit del robot) que se va a necesitar para el taller:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=144*>
+	<COL WIDTH=112*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=56%>
+				<P ALIGN=CENTER><IMG SRC="images/taller-material-adicional.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=485 HEIGHT=364 BORDER=0></P>
+			</TD>
+			<TD WIDTH=44% VALIGN=TOP>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>1) </B>Soporte
+				para soldador</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>2)</B>
+				Pol&iacute;metro (opcional)</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>3)</B> Soldador
+				de punta fina (11W)</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>4) </B>Pelacables
+				(opcional)</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>5)</B> 4 pilas
+				tama&ntilde;o AA</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>6) </B>Alicates
+				para cortar</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>7)</B> Alicates
+				de cabeza plana</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>8)</B> Lima</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>9)</B>
+				Destornillador peque&ntilde;o de cabeza plana</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>10)</B>
+				Destornillador peque&ntilde;o de cabeza en estrella</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>11)</B>
+				Pegamento para pl&aacute;sticos r&iacute;gidos (por ejemplo
+				PlasticCeys)</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>12)</B> Tijeras</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>13)</B> Rollo
+				de esta&ntilde;o de 1mm</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>14)</B> Rollo
+				ce cinta aislante negro</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>15)</B>
+				Ordenador con puerto serie</FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Al finalizar el taller </FONT>
+</H2>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Al
+finalizar el taller, todos los grupos tendr&aacute;n funcionando su
+primer robot y con &eacute;l podr&aacute;n empezar a profundizar en
+los temas que m&aacute;s les interesen: electr&oacute;nica,
+programaci&oacute;n, mec&aacute;nica... Una vez que se ha construido
+el primer robot, se tienen los conocimientos pr&aacute;cticos
+necesarios para empezar a modificarlo y personalizarlo.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/taller-skybots-formacion.png" NAME="Imagen4" ALIGN=MIDDLE WIDTH=296 HEIGHT=222 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=JUSTIFY><BR><BR>
+</P>
+<HR>
+<H2>Enlaces</H2>
+<UL>
+	<LI><P><A HREF="http://www.iearobotics.com/proyectos/skybot/skybot.html"><SPAN STYLE="text-decoration: none"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Robot Skybot</FONT></FONT></SPAN></A></P>
+	<LI><P><A HREF="http://www.iearobotics.com/proyectos/skypic/skypic.html"><SPAN STYLE="text-decoration: none"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Tarjeta
+	Skypic</FONT></FONT></SPAN></A></P>
+	<LI><P><SPAN STYLE="text-decoration: none"><A HREF="http://www.iearobotics.com/proyectos/sky293/sky293.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Tarjeta
+	sky293</FONT></FONT></A> </SPAN>
+	</P>
+	<LI><P><SPAN STYLE="text-decoration: none"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Servomecanismos
+	</FONT></FONT><A HREF="http://www.iearobotics.com/proyectos/cuadernos/ct3/ct3.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Futaba
+	3003</FONT></FONT></A></SPAN></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><A HREF="http://www.ifara.com/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Ifara
+	Tecnolog&iacute;as</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.</FONT></FONT></FONT></P>
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Noticias</FONT></H2>
+<UL>
+
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>11/Diciembre/2005</B>:
+	Actualizada la informaci&oacute;n de esta p&aacute;gina</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>10/Noviembre/2005</B>:
+	Publicada primera versi&oacute;n de esta p&aacute;gina</FONT></FONT></P>
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Agradecimientos</FONT></H2>
+<UL>
+
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>A <B>Arturo Morgado</B> por encargarse de coordinar las jornadas de rob&oacute;tica y el taller.
+	Gracias!</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>A la asociaci&oacute;n <B>UCABOT</B> por organizar estar jornadas</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>A <B>Jose
+	Pichardo Gallardo</B>, uno de los colaboradores, por su gran
+	aportaci&oacute;n a esta documentaci&oacute;n, todas las pruebas
+	realizadas, las horas de sue&ntilde;o que le he quitado y por ayudar
+	en la docencia. &iexcl;Muchas gracias!</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>A <B>Daniel Quintero y a Francisco Cord&oacute;n</B></FONT></FONT></P> 
+</UL>
+<HR>
+<TABLE WIDTH=819 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=158>
+	<COL WIDTH=645>
+	<THEAD>
+		<TR>
+			<TD WIDTH=158>
+				<P ALIGN=CENTER><IMG SRC="images/patro_mec.gif" NAME="Imagen5" ALIGN=LEFT WIDTH=250 HEIGHT=50 BORDER=0><BR>
+				</P>
+			</TD>
+			<TD WIDTH=645>
+				<P ALIGN=LEFT><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Taller patrocinado por <A href="http://www.mec.es">El Ministerio de Educaci&oacute;n y Ciencia.</A>
+</TD>
+</TR>
+</THEAD>
+</TABLE>
+<HR>
+<P><A HREF="../../../personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A><A HREF="http://www.iearobotics.com/">
+</A>
+</P>
+<P STYLE="margin-bottom: 0cm"><A HREF="../../../web-iearobotics"><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEAROBOTICS</FONT></FONT></A>
+</P>
+</BODY>
+</HTML>

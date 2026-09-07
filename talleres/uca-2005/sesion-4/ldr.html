@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Taller Robotica - Sesi&oacute;n 4</TITLE>
+	<META NAME="KEYWORDS" CONTENT="robotica, microcontroladores, pic, hardware">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>Taller de Rob&oacute;tica UCA 2005. SESION 4. Preparaci&oacute;n del  sensor de luz</B> 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P><A HREF="#introduccion">[Introducci&oacute;n]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#materiales">[Materiales]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#herramientas">[Herramientas]</A></P>
+			</TD>
+			
+			<TD>
+				<P><A HREF="#construccion">[Construcci&oacute;n]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#cable">[Cable conexi&oacute;n]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#software">[Software]</A></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR><IMG SRC="images/skybot-ldr.jpg" NAME="Imagen1" >
+</P>
+
+<!-- Introducción --><BR><BR>
+<H2><A NAME="introduccion"></A>Introducci&oacute;n </H2>
+<P STYLE="margin-bottom: 0cm">Vamos a colocar el sensores de
+luz o <B>LDR</B> en el robot. Los situaremos a modo de antena en el robot y nos servir&aacute; para detectar objetos luminosos.
+Una LDR proporciona un voltaje dependiente de la  intensidad de luz, por lo tanto es un sensor anal&oacute;gico y lo tendremos que manejar
+usando una entrada anal&oacute;gica de la SKYPIC, situadas en el Puerto A, el mismo que hemos usado para los bumpers.
+</P>
+<br>
+
+<hr>
+<!-- materiales -->
+<TABLE>
+<TR>
+<TD>
+<H2><A NAME="materiales"></A>Materiales </H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm">1 LDR
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm">1 cable rojo de 25 cm de longitud 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm">1 cable negro de 25 cm de longitud
+		</P>
+	<LI><P STYLE="margin-bottom: 0cm">Alambre para hacer la antena (no inclu&iacute;do en el kit)
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm">Tornillo y tuerca m&eacute;trica 4
+	</P>
+</UL>
+</TD>
+<TD><IMG SRC="images/materiales-ldr.jpg" NAME="materiales-ldr" align="right"></IMG></TD>
+</TR>
+</TABLE>
+
+<hr>
+<!-- herramientas -->
+<TABLE>
+<TR>
+<TD>
+<H2><A NAME="herramientas"></A>Herramientas </H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm">Soldador y esta&ntilde;o</P>
+	<LI><P STYLE="margin-bottom: 0cm">Pelacables y soporte soldador (opcionales)</P>
+	<LI><P STYLE="margin-bottom: 0cm">Alicate</P>
+</UL>
+</TD>
+<TD><IMG SRC="images/herramientas.jpg" NAME="Herramientas"></IMG></TD>
+</TR>
+</TABLE>
+
+
+<hr>
+<!-- Construcción -->
+<H2><A NAME="construccion"></A>Construcci&oacute;n</H2>
+<P ALIGN=CENTER><IMG SRC="images/ldr-1.jpg" NAME="Imagen2" ALIGN=BOTTOM ></P>
+<P>Como se puede apreciar en la figura, una LDR tiene dos patas. Vamos a soldar el cable rojo a una de ellas y el negro a la otra. No importa la polaridad
+por lo que podemos poner cada cable en la pata que queramos. Luego protegeremos la soldadura con un poco de cinta aislante y montaremos la LDR en el lugar que
+queramos, una opci&oacute;n es ponerla como si fuera una antena.
+</P>
+<P>Finalmente conectaremos el cable <b>negro</b> a la <b>clema 1</b> de la CT293+ y el cable <b>rojo</b> a la <b>clema 6</b>.  Si necesitamos que la LDR detecte la luz de forma direccional conviene
+encapsularla de tal forma que s&oacute;lo podamos recibir la luz por un peque&ntilde;o orificio.
+<P>El proceso se muestra en las siguientes figuras:
+</P>
+<TABLE border=1>
+<TR>
+<TD><B>Paso 1) </B>Soldamos el cable rojo a una de las patas</TD>
+<TD><B>Paso 2) </B>Soldamos el cable negro a la otra pata</TD>
+</TR>
+<TR>
+<TD align="center"><IMG SRC="images/ldr-2.jpg" NAME="Imagen2" ></TD>
+<TD align="center"><IMG SRC="images/ldr-3.jpg" NAME="Imagen3"></TD>
+</TR>
+<TR>
+<TD><B>Paso 3) </B>Protegemos la soldadura</TD>
+<TD><B>Paso 4) </B>Hacemos la antena</TD>
+</TR>
+<TR>
+<TD align="center"><IMG SRC="images/ldr-4.jpg" NAME="Imagen4" ><IMG SRC="images/ldr-4bis.jpg" NAME="Imagen4bis" ></TD>
+<TD align="center"><IMG SRC="images/ldr-5.jpg" NAME="Imagen5"></TD>
+</TR>
+<TR>
+<TD><B>Paso 5) </B>Montamos la LDR</TD>
+<TD><B>Paso 6) </B>Atornillamos la antena</TD>
+</TR>
+<TR>
+<TD align="center"><IMG SRC="images/ldr-6.jpg" NAME="Imagen6" ></TD>
+<TD align="center"><IMG SRC="images/ldr-7.jpg" NAME="Imagen7"></TD>
+</TR>
+<TR>
+<TD><B>Paso 7) </B>Conectamos a la CT293</TD>
+<TD><B>Paso 8) </B>Encapsulamos la antena</TD>
+</TR>
+<TR>
+<TD align="center"><IMG SRC="images/ldr-8.jpg" NAME="Imagen8" ></TD>
+<TD align="center"><IMG SRC="images/ldr-9.jpg" NAME="Imagen9"></TD>
+</TR>
+</TABLE>
+<BR>
+
+
+<!-- cable -->
+<HR>
+<H2><A NAME="cable"></A>Cable de conexi&oacute;n</H2>
+<P>Vamos a utilizar el cable de bus paralelo cruzado, que esta marcado como CT1. Lo vamos a conectar por un extremo al Puerto A de la SKYPIC (etiquetado como CT1), y 
+por el otro al puerto E de la CT293+.
+</P>
+<BR>
+<TABLE border=1>
+<TR>
+<TD><B>Paso 14)</B> Foto cable</TD>
+<TD><B>Paso 15)</B> Foto cable colocado</TD>
+</TR>
+<TR>
+<TD align="center"><IMG SRC="images/bumper-14.jpg" NAME="Imagen14" ></TD>
+<TD align="center"><IMG SRC="images/bumper-15.jpg" NAME="Imagen15"></TD>
+</TR>
+</TABLE>
+
+
+<!-- software -->
+<HR>
+</P>
+<H2><A NAME="software"></A>Software</H2>
+<P>En la siguiente tabla vemos la correspondencia entre las clemas de la CT293+ y el Puerto A de la SKYPIC. Nosotros vamos a leer el estado de la LDR
+por el <b>puerto A</B> del PIC. En ese puerto hay 6 entradas que se pueden configurar como entradas anal&oacute;gicas o como IOs digitales. <b>La LDR es un sensor de entrada anal&oacute;gico</B>.
+</P>
+<Table border=1>
+<TR>
+	<TD><B>CT293+ Puerto E</B></TD>
+	<TD><B>SKYPIC Puerto A</B></TD>
+	<TD><B>Descripci&oacute;n</B></TD>
+</TR>
+<TR>
+	<TD>Clema 1</TD>
+	<TD>GND</TD>
+	<TD>Cable negro Bumpers<BR><B>Cable negro LDR</B></BR></TD>
+</TR>
+<TR>
+	<TD>Clema 2</TD>
+	<TD>PA1</TD>
+	<TD>Cable rojo bumper 2</TD>
+</TR>
+<TR>
+	<TD>Clema 3</TD>
+	<TD>PA3</TD>
+	<TD>---</TD>
+</TR>
+<TR>
+	<TD>Clema 4</TD>
+	<TD>PA4</TD>
+	<TD>---</TD>
+</TR>
+<TR>
+	<TD>Clema 5</TD>
+	<TD>NC</TD>
+	<TD>---</TD>
+</TR>
+
+<TR>
+	<TD>Clema 6</TD>
+	<TD>PA0</TD>
+	<TD><B>Cable rojo LDR</B></TD>
+</TR>
+<TR>
+	<TD>Clema 7</TD>
+	<TD>PA2</TD>
+	<TD>Cable rojo bumper 1</TD>
+</TR>
+<TR>
+	<TD>Clema 8</TD>
+	<TD>PA5</TD>
+	<TD>---</TD>
+</TR>
+<TR>
+	<TD>Clema 9</TD>
+	<TD>NC</TD>
+	<TD>---</TD>
+</TR>
+<TR>
+	<TD>Clema 10</TD>
+	<TD>VCC</TD>
+	<TD>---</TD>
+</TR>
+</TABLE>
+
+<HR>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><A HREF="http://www.iearobotics.com/">IEA
+ROBOTICS</A> </FONT>
+</P>
+<ADDRESS><FONT FACE="Arial, sans-serif">P&aacute;gina creada por
+<A HREF="http://www.iearobotics.com/personal/andres/index.html">Andr&eacute;s
+Prieto-Moreno Torres</A> </FONT>
+</ADDRESS>
+</BODY>
+</HTML>

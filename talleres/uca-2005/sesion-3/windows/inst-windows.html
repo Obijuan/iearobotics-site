@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Taller de robotica UCA 2005. Sesion 3. Software para Windows</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGED" CONTENT="20050721;8430000">
+	<META NAME="KEYWORDS" CONTENT="robotica, microcontroladores, pic, hardware">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<TABLE WIDTH=917 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+	<COL WIDTH=909>
+	<TR>
+		<TD WIDTH=909>
+			<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Taller
+			de Rob&oacute;tica UCA 2005. SESION 3. Software para Windows</B></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/inst-wind-ini.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Introducci&oacute;n</FONT></H2>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>A
+continuaci&oacute;n instalaremos las herramienta que vamo a utilizar
+desde Windows. No utilizaremos las herramientas proporcionadas por
+Microchip, sino que emplearemos <B>software es libre</B>, por lo que
+se puede usar, copiar, distribuir, modificar y redistribuir las
+modificaciones. Las fuentes de todos los programas est&aacute;n
+disponibles.</FONT></FONT></P>
+<UL>
+	<LI><P><A HREF="#Editor"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Editor
+	de textos</FONT></FONT></A></P>
+	<LI><P><A HREF="#gputils"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Utilidades
+	para el PIC</FONT></FONT></A></P>
+	<LI><P><A HREF="#Compilador"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Compilador
+	de C</FONT></FONT></A></P>
+	<LI><P><A HREF="#Cargador"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cargador</FONT></FONT></A></P>
+	<LI><P><A HREF="#Otras"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Otras
+	herramientas</FONT></FONT></A></P>
+</UL>
+<HR>
+<H2><A NAME="Editor"></A><A NAME="Editor de textos"></A><FONT FACE="Arial, sans-serif">Editor
+de textos</FONT></H2>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">El editor que vamos a
+utilizar es el <A HREF="http://www.pnotepad.org/">Programmers
+Notepad</A>, que tiene licencia BSD. <A HREF="editor.html">Una
+descripci&oacute;n completa de su instalaci&oacute;n est&aacute;
+disponible aqu&iacute;</A>.</FONT></FONT></P>
+<HR>
+<H2><A NAME="gputils"></A><FONT FACE="Arial, sans-serif">Herramientas
+GPUTILS</FONT></H2>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Las herramientas
+<A HREF="http://gputils.sourceforge.net/">gputils</A> son necesarias
+para que funcione el compilador. Incluyen un ensamblador,
+desensamblador, enlazador, etc. <A HREF="inst-gputils.html">seguir
+los pasos indicados aqu&iacute;</A>.</FONT></FONT></P>
+<HR>
+<H2><A NAME="Compilador"></A>Compilador de C</H2>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">El compilador que
+utilizararemos es el <A HREF="http://sdcc.sourceforge.net/">SDCC</A>.
+Para su instalaci&oacute;n </FONT></FONT><A HREF="inst-sdcc.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">seguir
+los pasos indicados aqu&iacute;</FONT></FONT></A>.</P>
+<HR>
+<H2><A NAME="Cargador"></A>Cargador 
+</H2>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Para cargar los
+archivos compilados (fichero de c&oacute;digo m&aacute;quina, con
+extensi&oacute;n .hex) en el microcontrolador PIC utilizaremos el <A HREF="http://www.microchipc.com/PIC16bootload/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">PIC
+Downloader</FONT></FONT></A> de Shane Tolmie. Su instalaci&oacute;n
+es muy sencilla: s&oacute;lo es necesario un fichero fichero
+ejecutable.</FONT></FONT></P>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Descargar el
+	paquete <A HREF="download/PIC_downloader.zip">PIC_downloader.zip</A>.
+	Contiene el fichero ejecutable <B>PIC_downloader.exe</B>. Est&aacute;
+	escrito en Delphi. <A HREF="download/PIC_downloader_delphi_src.zip">Las
+	fuentes est&aacute;n aqu&iacute;</A>.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Descomprimir el
+	paquete y colocar en fichero PIC_downloader.exe en el directorio que
+	queramos. Crear un icono en el escritorio para acceder directamente
+	a &eacute;l.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Al ejecutarlo
+	aparecer&aacute; una pantalla como esta:</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/pic_loader_window_pant.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=283 HEIGHT=289 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Configurar el puerto
+serie y establecer una velocidad de <B>38400 baudios</B>. Ya tenemos
+el software listo para trabajar con el robot!!</FONT></FONT></P>
+<HR>
+<H2><A NAME="Otras"></A>Otras herramientas</H2>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Para mover el
+	robot y hacer pruebas de los sensores utilizaremos el programa
+	</FONT></FONT><A HREF="../../software/botcontrol/index.htm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">BotControl</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+	</FONT></FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Tambi&eacute;n
+	utilizaremos el <B>hyperterminal</B>, que es un terminal de
+	comunicaciones. Configurarlo para trabajar a <B>9600 baudios</B>.</FONT></FONT></P>
+</UL>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A HREF="../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Sesion
+III]</FONT></FONT></A> 
+</P>
+<P STYLE="margin-bottom: 0cm"><A HREF="mailto:Jose Pichardo &lt;tartesos2@telefonica.net&gt;"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Jose
+Pichardo Gallardo</FONT></FONT></A></P>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="../../../personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A><BR><A HREF="../../../../../desarrollo"><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEAROBOTICS</FONT></FONT></A>
+</ADDRESS>
+</BODY>
+</HTML>
