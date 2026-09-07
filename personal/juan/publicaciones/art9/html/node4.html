@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>4 Software</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20050708;16342300">
+	<META NAME="CHANGED" CONTENT="20050708;16375000">
+	<META NAME="DESCRIPTION" CONTENT="4 Software">
+	<META NAME="KEYWORDS" CONTENT="skypic">
+	<META NAME="resource-type" CONTENT="document">
+	<META NAME="distribution" CONTENT="global">
+	<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!--Navigation Panel-->
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<P><A NAME="tex2html59"></A><A NAME="tex2html57"></A><A NAME="tex2html51"></A>
+<A HREF="node5.html" NAME="tex2html59"><IMG SRC="next.png" NAME="Imagen1" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="skypic.html" NAME="tex2html57"><IMG SRC="up.png" NAME="Imagen2" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node3.html" NAME="tex2html51"><IMG SRC="prev.png" NAME="Imagen3" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node5.html" NAME="tex2html60">5
+Aplicaciones</A> <B>Up:</B> <A HREF="skypic.html" NAME="tex2html58">Hardware
+Libre: la Tarjeta</A> <B>Previous:</B> <A HREF="node3.html" NAME="tex2html52">3
+Planos</A> 
+</P>
+<H1><A NAME="SECTION00040000000000000000"></A><A NAME="sec:Software"></A>
+<!--End of Navigation Panel--><BR>4 Software 
+</H1>
+<P ALIGN=JUSTIFY>Para la programaci&oacute;n de aplicaciones en la
+Skypic se puede utilizar cualquiera de las herramientas de desarrollo
+para Pics. Microchip ofrece las aplicaciones ``oficiales'', que son
+propietarias y s&oacute;lo est&aacute;n disponibles para plataformas
+Windows. 
+</P>
+<P ALIGN=JUSTIFY>La comunidad ha creado sus propias <B>herramientas
+libres</B>, compatibles con las de Microchip. Entre ellas destacan
+las utilidades de GNU: <B>gputils</B>[<A HREF="node10.html#GPUTILS">16</A>],
+que incluye un ensamblador y un enlazador entre otras. Para la
+simulaci&oacute;n se puede emplear <B>gpsim</B>[<A HREF="node10.html#GPSIM">17</A>]
+y para la programaci&oacute;n en C el compilador <B>sdcc</B>[<A HREF="node10.html#SDCC">18</A>].
+Tambi&eacute;n existe un entorno de programaci&oacute;n <B>PikDev</B>[<A HREF="node10.html#PIKDEV">19</A>],
+en el que est&aacute; todo integrado (editor, ensamblador, enlazador,
+programador, etc). 
+</P>
+<P>La Skypic se ha dise&ntilde;ado para que la grabaci&oacute;n
+in-circuit de los programa ejecutables en la memoria flash del PIC se
+pueda realizar de diferentes maneras: 
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm">Entorno Mplab y programador ICD2,
+	de Microchip 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm">Programa Icprog, para Windows, y
+	cable de conexi&oacute;n paralelo para la Skypic [<A HREF="node10.html#Icprog-skypic">20</A>].
+		</P>
+	<LI><P>Entorno PikDev, para Linux, y cable de conexi&oacute;n
+	paralelo para la Skypic 
+	</P>
+</UL>
+<P ALIGN=JUSTIFY>En [<A HREF="node10.html#PIC-LINUX">21</A>]
+planteamos un m&eacute;todo de grabaci&oacute;n alternativo, a trav&eacute;s
+del puerto serie est&aacute;ndar del PC, que permite utilizar la
+propia Skypic como si fuese un grabador, similar al ICD2 de Microchip
+(aunque sin la opci&oacute;n de depuraci&oacute;n). Para ello son
+necesarias dos tarjetas Skypic. Una que funcionar&aacute; como
+grabadora, con el servidor picp[<A HREF="node10.html#PICP">22</A>] en
+la flash, y la otra es la que se graba. La herramienta
+skypic-down[<A HREF="node10.html#Skypic-down">23</A>], disponible
+para Linux bajo licencia GPL, permite escribir los programas en la
+flash. 
+</P>
+<P ALIGN=JUSTIFY>Este sistema de grabaci&oacute;n tiene la ventaja de
+ser totalmente independiente de las caracter&iacute;sticas del PC
+empleado. La temporizaci&oacute;n se realiza en el pic del grabador.
+El PC s&oacute;lo tiene que enviar la informaci&oacute;n a trav&eacute;s
+del puerto serie, a una velocidad est&aacute;ndar de 9600 baudios. 
+</P>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A NAME="tex2html591"></A><A NAME="tex2html571"></A><A NAME="tex2html511"></A>
+<!--Navigation Panel--><A HREF="node5.html" NAME="tex2html59"><IMG SRC="next.png" NAME="Imagen4" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="skypic.html" NAME="tex2html57"><IMG SRC="up.png" NAME="Imagen5" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node3.html" NAME="tex2html51"><IMG SRC="prev.png" NAME="Imagen6" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node5.html" NAME="tex2html60">5
+Aplicaciones</A> <B>Up:</B> <A HREF="skypic.html" NAME="tex2html58">Hardware
+Libre: la Tarjeta</A> <B>Previous:</B> <A HREF="node3.html" NAME="tex2html52">3
+Planos</A></P>
+<ADDRESS><!--End of Navigation Panel-->Juan Gonzalez 2005-07-07 
+</ADDRESS>
+</BODY>
+</HTML>

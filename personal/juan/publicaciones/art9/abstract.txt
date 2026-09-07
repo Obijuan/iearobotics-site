@@ -1,0 +1,17 @@
+Hardware Libre: la Tarjeta Skypic, una Entrenadora para Microcontroladores PIC
+
+Juan González-Gómez y Andrés Prieto-Moreno Torres 
+
+Resumen
+
+
+Las ideas del software libre se están extendiendo a otros ámbitos. Uno de 
+ellos es el hardware. En este artículo presentamos una tarjeta libre, para
+ desarrollo de proyectos con microcontroladores PIC. Es hardware libre, por
+ lo que cualquiera la puede utilizar, estudiar, fabricar, modificar, distribuir 
+y redistribuir las modificaciones. Las aplicaciones principales son la robótica 
+y la docencia, aunque se puede utilizar en cualquier proyecto donde se requiera
+ un microcontrolador. Los diseños de hardware libre presentan muchas ventajas
+ para la sociedad, siendo la mayor de ellas el aumento del conocimiento 
+tecnológico: están ahí no sólo para ser usados, sino para que cualquiera pueda
+ comprender su funcionamiento interno.
