@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+		 <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>5 Conclusion and further work</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20060401;14313100">
+	<META NAME="CHANGED" CONTENT="20060401;14322400">
+	<META NAME="DESCRIPTION" CONTENT="5 Conclusion and further work">
+	<META NAME="KEYWORDS" CONTENT="arc-cube-rev">
+	<META NAME="resource-type" CONTENT="document">
+	<META NAME="distribution" CONTENT="global">
+	<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!--Navigation Panel-->
+</HEAD>
+<BODY LANG="en-GB" DIR="LTR">
+<P><A NAME="tex2html109"></A><A NAME="tex2html107"></A><A NAME="tex2html101"></A>
+<A HREF="node10.html" NAME="tex2html109"><IMG SRC="next.png" NAME="gr&aacute;ficos1" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="arc-cube-rev.html" NAME="tex2html107"><IMG SRC="up.png" NAME="gr&aacute;ficos2" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node8.html" NAME="tex2html101"><IMG SRC="prev.png" NAME="gr&aacute;ficos3" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node10.html" NAME="tex2html110">Bibliography</A>
+<B>Up:</B> <A HREF="arc-cube-rev.html" NAME="tex2html108">Evaluation
+of a locomotion</A> <B>Previous:</B> <A HREF="node8.html" NAME="tex2html102">2
+Algorithm execution time</A> 
+</P>
+<H1><A NAME="SECTION00050000000000000000"></A><!--End of Navigation Panel-->5
+Conclusion and further work 
+</H1>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>The worm like-robot
+locomotion can be realized by means of the propagation of waves
+through the body of the robot. The algorithm generates the gait
+control tables from the wave applied. The gait recalculation time is
+the key parameter in order to achieve an autonomous robot with
+real-time reactions. </FONT></FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>The algorithm has been
+<B>successfully implemented and executed</B> on three different
+embedded processors in FPGA: LEON2, MicroBlaze and PowerPC. The GRT
+has been measured in four architectures, as a function of 
+<IMG SRC="img5.png" NAME="gr&aacute;ficos4" ALT="$n$" ALIGN=BOTTOM WIDTH=14 HEIGHT=13 BORDER=0>,
+the number of total articulations. Results show that <B>GRT can be
+drastically improved by means of the use of an FPU unit</B>. A 25MHz
+LEON2 with an Meiko FPU is almost one order of magnitude faster than
+an PowerPC working at 100Mhz. This makes evident one of the
+advantages of the use of a FPGA instead of a traditional processor:
+designers and researchers can improve the robot by introduction
+architectural changes and adding custom hardware cores. </FONT></FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>The LEON2 with an FPU
+is a very good option when a low GRT is required. In not critical
+applications the use of the MicroBlaze saves about the 75% of the
+area, leaving this percentage free for the implementation of new
+hardware cores. </FONT></FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>The current worm
+like-robot prototype, ``Cube Revolutions'', can only move on a
+straight line. The movement on a plane will be studied in further
+works. The same locomotion algorithm will be used, but calculating
+two gait control tables from two different waves: one for the
+articulations in the plane parallel to the ground and the other in
+the perpendicular plane. The final locomotion will be generated as a
+composition of the two waves. </FONT></FONT>
+</P>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A NAME="tex2html1091"></A><A NAME="tex2html1071"></A><A NAME="tex2html1011"></A>
+<!--Navigation Panel--><A HREF="node10.html" NAME="tex2html109"><IMG SRC="next.png" NAME="gr&aacute;ficos5" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="arc-cube-rev.html" NAME="tex2html107"><IMG SRC="up.png" NAME="gr&aacute;ficos6" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node8.html" NAME="tex2html101"><IMG SRC="prev.png" NAME="gr&aacute;ficos7" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node10.html" NAME="tex2html110">Bibliography</A>
+<B>Up:</B> <A HREF="arc-cube-rev.html" NAME="tex2html108">Evaluation
+of a locomotion</A> <B>Previous:</B> <A HREF="node8.html" NAME="tex2html102">2
+Algorithm execution time</A></P>
+<ADDRESS><!--End of Navigation Panel-->juan 2006-03-31 
+</ADDRESS>
+</BODY>
+</HTML>

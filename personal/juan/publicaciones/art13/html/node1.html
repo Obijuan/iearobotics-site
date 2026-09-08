@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+		 <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>1 Introduction</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20060401;14045500">
+	<META NAME="CHANGED" CONTENT="20060401;14111000">
+	<META NAME="DESCRIPTION" CONTENT="1 Introduction">
+	<META NAME="KEYWORDS" CONTENT="arc-cube-rev">
+	<META NAME="resource-type" CONTENT="document">
+	<META NAME="distribution" CONTENT="global">
+	<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!--Navigation Panel-->
+</HEAD>
+<BODY LANG="en-GB" DIR="LTR">
+<P><A NAME="tex2html29"></A><A NAME="tex2html27"></A><A NAME="tex2html21"></A>
+<A HREF="node2.html" NAME="tex2html29"><IMG SRC="next.png" NAME="gr&aacute;ficos1" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="arc-cube-rev.html" NAME="tex2html27"><IMG SRC="up.png" NAME="gr&aacute;ficos2" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="arc-cube-rev.html" NAME="tex2html21"><IMG SRC="prev.png" NAME="gr&aacute;ficos3" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node2.html" NAME="tex2html30">2 Locomotion
+algorithm for</A> <B>Up:</B> <A HREF="arc-cube-rev.html" NAME="tex2html28">Evaluation
+of a locomotion</A> <B>Previous:</B> <A HREF="arc-cube-rev.html" NAME="tex2html22">Evaluation
+of a locomotion</A> 
+</P>
+<H1><A NAME="SECTION00010000000000000000"></A><!--End of Navigation Panel-->1
+Introduction 
+</H1>
+<P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Modular
+self-reconfigurable robots</B> offer the promise of more versatility,
+robustness and low cost[</FONT></FONT><A HREF="node10.html#IEEE-Spect-Yim"><FONT SIZE=2><FONT FACE="Arial, sans-serif">1</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">].
+They are composed of modules, capable of attach and detach one to
+each other, changing the shape of the robot. In this context, the
+word ``reconfigurable'' means the ability of the robot to change its
+form, not a hardware reconfigurable system. In the last years, the
+number of robot following this approach has growth substantially[</FONT></FONT><A HREF="node10.html#Polybot-IEEE"><FONT SIZE=2><FONT FACE="Arial, sans-serif">2</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">].
+</FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">One of
+the most advanced systems is <B>Polybot</B>[</FONT></FONT><A HREF="node10.html#IEEE-Spect-Yim"><FONT SIZE=2><FONT FACE="Arial, sans-serif">1</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">][</FONT></FONT><A HREF="node10.html#Polybot-Evolution"><FONT SIZE=2><FONT FACE="Arial, sans-serif">3</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">],
+designed at Palo Alto Research Center (PARC). This robot has the
+capability to achieve different reconfigurations, such as moving as a
+wheel, using a rolling gait, then transforming itself into a snake
+and finally becoming a spider. Currently, the third generation of
+modules (G3) is being developed[</FONT></FONT><A HREF="node10.html#Polybot-G3"><FONT SIZE=2><FONT FACE="Arial, sans-serif">4</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">].
+Each module has its own embedded PowerPC 555 processor with a
+traditional processor architecture. </FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>An
+additional step on versatility is the use of Field Programming Gate
+Array (FPGA) technology instead of a conventional microprocessor
+chip. It gives the designer the possibility of implementing new
+architectures, faster control algorithms, or dynamically modify the
+hardware to adapt it to a new situation. In summary, <B>modular
+reconfigurable robot controlled by a FPGA are not just able to change
+their shapes, but also their hardware and therefore, complete
+versatility can be achieved</B>. </FONT></FONT>
+</P><A NAME="fig:cube-rev"></A><A NAME="145"></A><CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P ALIGN=CENTER><IMG SRC="img1.png" NAME="gr&aacute;ficos4" ALT="\includegraphics[%scale=0.7]{ps/figura-cube-modulos.eps}" ALIGN=BOTTOM WIDTH=434 HEIGHT=155 BORDER=0>
+								</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><STRONG><I><FONT SIZE=2><FONT FACE="Arial, sans-serif">Figure
+1:</FONT></FONT></I></STRONG><I><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+<B>a)</B> ``Cube revolutions'' worm-like robot, composed of eight
+similar linked modules, connected in phase. <B>b)</B> A CAD rendering
+of two unconnected Y1 modules.</FONT></FONT></I></P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">As previous work, an
+implementation of a FPGA-based worm-like robot locomotion was
+successfully carried out[</FONT></FONT><A HREF="node10.html#cube-clawar"><FONT SIZE=2><FONT FACE="Arial, sans-serif">5</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">].
+The Xilinx MicroBlaze[</FONT></FONT><A HREF="node10.html#MicroBlaze"><FONT SIZE=2><FONT FACE="Arial, sans-serif">6</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">]
+soft-processor was used for the algorithm execution and custom cores
+were added for servo positioning. </FONT></FONT>
+</P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">In this paper the
+locomotion algorithm for an eight modules worm-like robot (figure </FONT></FONT><A HREF="#fig:cube-rev"><FONT SIZE=2><FONT FACE="Arial, sans-serif">1</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">a)
+is evaluated in different FPGA embedded processors: <B>MicroBlaze</B>,
+<B>PowerPC</B>[</FONT></FONT><A HREF="node10.html#PPC"><FONT SIZE=2><FONT FACE="Arial, sans-serif">7</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">]
+and <B>LEON2</B>[</FONT></FONT><A HREF="node10.html#LEON"><FONT SIZE=2><FONT FACE="Arial, sans-serif">8</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">].
+The time this algorithm takes to complete the movement generation is
+calculated as a function of the number of nodes of the robot, giving
+information about the scalability. This experimental results will be
+used in future work to select the architectures that fit best a
+particular application. </FONT></FONT>
+</P>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A NAME="tex2html291"></A><A NAME="tex2html271"></A><A NAME="tex2html211"></A>
+<!--Navigation Panel--><A HREF="node2.html" NAME="tex2html29"><IMG SRC="next.png" NAME="gr&aacute;ficos5" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="arc-cube-rev.html" NAME="tex2html27"><IMG SRC="up.png" NAME="gr&aacute;ficos6" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="arc-cube-rev.html" NAME="tex2html21"><IMG SRC="prev.png" NAME="gr&aacute;ficos7" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node2.html" NAME="tex2html30">2 Locomotion
+algorithm for</A> <B>Up:</B> <A HREF="arc-cube-rev.html" NAME="tex2html28">Evaluation
+of a locomotion</A> <B>Previous:</B> <A HREF="arc-cube-rev.html" NAME="tex2html22">Evaluation
+of a locomotion</A></P>
+<ADDRESS><!--End of Navigation Panel-->juan 2006-03-31 
+</ADDRESS>
+</BODY>
+</HTML>

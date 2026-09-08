@@ -1,0 +1,23 @@
+Evaluation of a locomotion algorithm for worm-like robots 
+on FPGA-embedded processors
+
+J. Gonzalez-Gomez, I. Gonzalez , F. Gomez-Arribas and E. Boemo
+
+Computer Engineering School, Universidad Autonoma de Madrid, Spain
+{Juan.Gonzalez, Ivan.Gonzalez, Francisco.Gomez, Eduardo.Boemo}@uam.es
+
+Abstract:
+
+In this paper, a locomotion algorithm designed for an eight modules worm-like 
+robot has been successfully tested on three different FPGA-embedded 
+processors: MicroBlaze, PowerPC and LEON2. The locomotion of worm-like robots,
+composed of a chain of equal linked modules, is achieved by means of
+wave propagation that traverse the body of the worm. The time the robot needs 
+to generate a new motion wave, also known as the gait recalculation time,
+is the key to achieve an autonomous robot with real-time reactions. 
+Algorithm execution time for four different architectures, as a function of
+the total number of articulations of the robot, are presented. The results
+show that a huge improvement of the gait recalculation time can be
+achieved by using a float point unit. The performance achieved using the
+LEON2 with FPU is 40 times better than LEON2 without FPU, using only 6% 
+of additional resources.

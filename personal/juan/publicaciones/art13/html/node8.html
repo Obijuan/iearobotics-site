@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+		 <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>2 Algorithm execution time</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20060401;14301100">
+	<META NAME="CHANGED" CONTENT="20060401;14311200">
+	<META NAME="DESCRIPTION" CONTENT="2 Algorithm execution time">
+	<META NAME="KEYWORDS" CONTENT="arc-cube-rev">
+	<META NAME="resource-type" CONTENT="document">
+	<META NAME="distribution" CONTENT="global">
+	<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!--Navigation Panel-->
+</HEAD>
+<BODY LANG="en-GB" DIR="LTR">
+<P><A NAME="tex2html99"></A><A NAME="tex2html97"></A><A NAME="tex2html93"></A>
+<A HREF="node9.html" NAME="tex2html99"><IMG SRC="next.png" NAME="gr&aacute;ficos1" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="node6.html" NAME="tex2html97"><IMG SRC="up.png" NAME="gr&aacute;ficos2" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node7.html" NAME="tex2html93"><IMG SRC="prev.png" NAME="gr&aacute;ficos3" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node9.html" NAME="tex2html100">5 Conclusion
+and further</A> <B>Up:</B> <A HREF="node6.html" NAME="tex2html98">4
+Results</A> <B>Previous:</B> <A HREF="node7.html" NAME="tex2html94">1
+Synthesis results</A> 
+</P>
+<H2><A NAME="SECTION00042000000000000000"></A><!--End of Navigation Panel-->2
+Algorithm execution time 
+</H2><A NAME="fig:speed-results"></A><A NAME="151"></A><CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P ALIGN=CENTER><IMG SRC="img4.png" NAME="gr&aacute;ficos4" ALT="\includegraphics[%scale=0.6]{ps/graficas.eps}" ALIGN=BOTTOM WIDTH=793 HEIGHT=311 BORDER=0>
+								</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=2><FONT FACE="Arial, sans-serif">Figure
+3:</FONT></FONT></STRONG><I><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+<B>a)</B> GRT comparison for the four architectures evaluated, as a
+function of the number of articulations.<B> b)</B> Normalized results
+supposing a 50MHz system clock frequency for all architectures.</FONT></FONT></I></P>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>The
+algorithm has been compiled for the different architectures and it is
+loaded from external memory and executed. The execution of the
+algorithm determines the time the robot needs to generate a new kind
+of movement. This time is called gait recalculation time (GRT). If a
+worm-like robot capable of having a fast reaction is needed for a
+particular applications, a low GRT is required. </FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">Figure
+</FONT></FONT><A HREF="#fig:speed-results"><FONT SIZE=2><FONT FACE="Arial, sans-serif">3</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">a
+shows the GRT for the four architectures, as a function of the
+numbers of articulations. Figure </FONT></FONT><A HREF="#fig:speed-results"><FONT SIZE=2><FONT FACE="Arial, sans-serif">3</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">b
+compares the different architectures working at 50MHz. Due to the
+limitations of the chosen architecture FPGA device, the 50Mhz data
+for the LEON2 processor has been estimated supposing a half cycle
+time. </FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>As it
+was expected, the GRT increases with the number of articulation of
+the robot. Also, the PowerPC reaches a significantly better result
+than the other two processors, because it is a hard core with
+specific hardware functional units. </FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>The most
+outstanding result is obtained with architecture 2 (LEON + FPU). For
+an 8 articulations worm-like robot, the performance achieved using
+the LEON2 with FPU is 40 times better than LEON2 without FPU, using a
+6% additional resources. This performance is 6.5 times better than
+the obtained with the 100Mhz PowerPC implementation. </FONT></FONT>
+</P>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A NAME="tex2html991"></A><A NAME="tex2html971"></A><A NAME="tex2html931"></A>
+<!--Navigation Panel--><A HREF="node9.html" NAME="tex2html99"><IMG SRC="next.png" NAME="gr&aacute;ficos5" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="node6.html" NAME="tex2html97"><IMG SRC="up.png" NAME="gr&aacute;ficos6" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node7.html" NAME="tex2html93"><IMG SRC="prev.png" NAME="gr&aacute;ficos7" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node9.html" NAME="tex2html100">5 Conclusion
+and further</A> <B>Up:</B> <A HREF="node6.html" NAME="tex2html98">4
+Results</A> <B>Previous:</B> <A HREF="node7.html" NAME="tex2html94">1
+Synthesis results</A></P>
+<ADDRESS><!--End of Navigation Panel-->juan 2006-03-31 
+</ADDRESS>
+</BODY>
+</HTML>

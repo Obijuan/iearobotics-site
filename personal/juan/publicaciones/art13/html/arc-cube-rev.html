@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+		 <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>Evaluation of a locomotion algorithm for worm-like robots on FPGA-embedded processors</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20060401;13595300">
+	<META NAME="CHANGED" CONTENT="20060401;14044500">
+	<META NAME="DESCRIPTION" CONTENT="Evaluation of a locomotion algorithm for worm-like robots on FPGA-embedded
+processors">
+	<META NAME="KEYWORDS" CONTENT="arc-cube-rev">
+	<META NAME="resource-type" CONTENT="document">
+	<META NAME="distribution" CONTENT="global">
+	<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!--Navigation Panel-->
+</HEAD>
+<BODY LANG="en-GB" DIR="LTR">
+<P><A NAME="tex2html8"></A><A NAME="tex2html6"></A><A HREF="node1.html" NAME="tex2html8"><IMG SRC="next.png" NAME="gr&aacute;ficos1" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="../../index.html" NAME="tex2html6"><IMG SRC="up.png" NAME="gr&aacute;ficos2" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<IMG SRC="prev_g.png" NAME="gr&aacute;ficos3" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0>
+<BR><B>Next:</B> <A HREF="node1.html" NAME="tex2html9">1 Introduction</A>
+<B>Up:</B> <A HREF="../../index.html" NAME="tex2html7">Publicaciones</A>
+</P>
+<H1 ALIGN=CENTER><!--End of Navigation Panel-->Evaluation of a
+locomotion algorithm for worm-like robots on FPGA-embedded processors</H1>
+<P ALIGN=CENTER><STRONG>J. Gonzalez-Gomez, I. Gonzalez , F.
+Gomez-Arribas and E. Boemo</STRONG></P>
+<P ALIGN=CENTER><FONT SIZE=2>Computer Engineering School, Universidad
+Autonoma de Madrid, Spain <BR><TT>{Juan.Gonzalez, Ivan.Gonzalez,
+Francisco.Gomez, Eduardo.Boemo}@uam.es</TT></FONT></P>
+<H3>Abstract:</H3>
+<P ALIGN=JUSTIFY>In this paper, a <B>locomotion algorithm</B>
+designed for an <B>eight modules worm-like robot</B> has been
+successfully tested on three different FPGA-embedded processors:
+<B>MicroBlaze</B>, <B>PowerPC</B> and <B>LEON2</B>. The locomotion of
+worm-like robots, composed of a chain of equal linked modules, is
+achieved by means of wave propagation that traverse the body of the
+worm. The time the robot needs to generate a new motion wave, also
+known as the gait recalculation time, is the key to achieve an
+autonomous robot with real-time reactions. Algorithm execution time
+for four different architectures, as a function of the total number
+of articulations of the robot, are presented. The results show that a
+huge improvement of the gait recalculation time can be achieved by
+using a <B>float point unit</B>. The performance achieved using the
+LEON2 with FPU is 40 times better than LEON2 without FPU, using only
+6% of additional resources. 
+</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A NAME="CHILD_LINKS"></A><!--Table of Child-Links--><A HREF="node1.html" NAME="tex2html10">1
+	Introduction</A> 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="node2.html" NAME="tex2html11">2
+	Locomotion algorithm for worm-like robots</A> 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="node3.html" NAME="tex2html12">3
+	Implementation on embedded FPGA processors</A> 
+	</P>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0cm"><A HREF="node4.html" NAME="tex2html13">1
+		Algorithm operation analysis</A> 
+		</P>
+	</UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="node5.html" NAME="tex2html14">2
+	Target architectures </A>
+	</P>
+	<P STYLE="margin-bottom: 0cm"></P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="node6.html" NAME="tex2html15">4
+	Results</A> 
+	</P>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0cm"><A HREF="node7.html" NAME="tex2html16">1
+		Synthesis results</A> 
+		</P>
+	</UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="node8.html" NAME="tex2html17">2
+	Algorithm execution time</A> 
+	</P>
+	<P STYLE="margin-bottom: 0cm"></P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="node9.html" NAME="tex2html18">5
+	Conclusion and further work</A> 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="node10.html" NAME="tex2html19">Bibliography</A>
+		</P>
+	<LI><P><A HREF="node11.html" NAME="tex2html20">About this document
+	...</A> 
+	</P>
+</UL>
+<P STYLE="border-top: none; border-bottom: 1.10pt double #808080; border-left: none; border-right: none; padding: 0cm">
+<!--End of Table of Child-Links--><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><A NAME="tex2html81"></A><A NAME="tex2html61"></A>
+<!--Navigation Panel--><A HREF="node1.html" NAME="tex2html8"><IMG SRC="next.png" NAME="gr&aacute;ficos4" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="../../index.html" NAME="tex2html6"><IMG SRC="up.png" NAME="gr&aacute;ficos5" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<IMG SRC="prev_g.png" NAME="gr&aacute;ficos6" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0>
+<BR><B>Next:</B> <A HREF="node1.html" NAME="tex2html9">1 Introduction</A>
+<B>Up:</B> <A HREF="../../index.html" NAME="tex2html7">Publicaciones</A></P>
+<ADDRESS><!--End of Navigation Panel-->juan 2006-03-31 
+</ADDRESS>
+</BODY>
+</HTML>

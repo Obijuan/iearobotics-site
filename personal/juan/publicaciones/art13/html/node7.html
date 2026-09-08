@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+		 <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>1 Synthesis results</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20060401;14240000">
+	<META NAME="CHANGED" CONTENT="20060401;14261900">
+	<META NAME="DESCRIPTION" CONTENT="1 Synthesis results">
+	<META NAME="KEYWORDS" CONTENT="arc-cube-rev">
+	<META NAME="resource-type" CONTENT="document">
+	<META NAME="distribution" CONTENT="global">
+	<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!--Navigation Panel-->
+</HEAD>
+<BODY LANG="en-GB" DIR="LTR">
+<P><A NAME="tex2html91"></A><A NAME="tex2html89"></A><A NAME="tex2html83"></A>
+<A HREF="node8.html" NAME="tex2html91"><IMG SRC="next.png" NAME="gr&aacute;ficos1" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="node6.html" NAME="tex2html89"><IMG SRC="up.png" NAME="gr&aacute;ficos2" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node6.html" NAME="tex2html83"><IMG SRC="prev.png" NAME="gr&aacute;ficos3" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node8.html" NAME="tex2html92">2 Algorithm
+execution time</A> <B>Up:</B> <A HREF="node6.html" NAME="tex2html90">4
+Results</A> <B>Previous:</B> <A HREF="node6.html" NAME="tex2html84">4
+Results</A> 
+</P>
+<H2><A NAME="SECTION00041000000000000000"></A><!--End of Navigation Panel-->1
+Synthesis results 
+</H2>
+<P><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><A NAME="150"></A><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=2><FONT FACE="Arial, sans-serif">Table
+2:</FONT></FONT></STRONG><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+<I>Implementation results for architectures 1,2 and 3.</I></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<CENTER>
+	<TABLE WIDTH=252 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=0>
+		<COL WIDTH=109>
+		<COL WIDTH=65>
+		<COL WIDTH=56>
+		<COL WIDTH=0>
+		<TR>
+			<TD COLSPAN=5 WIDTH=246></TD>
+		</TR>
+		<TR>
+			<TD ROWSPAN=4 VALIGN=TOP></TD>
+			<TH WIDTH=109>
+				<P ALIGN=CENTER><FONT SIZE=2>Processor</FONT></P>
+			</TH>
+			<TH WIDTH=65>
+				<P ALIGN=CENTER><FONT SIZE=2>Slices</FONT></P>
+			</TH>
+			<TH WIDTH=56>
+				<P ALIGN=CENTER><FONT SIZE=2>BRAM</FONT></P>
+			</TH>
+			<TD ROWSPAN=4 VALIGN=TOP></TD>
+		</TR>
+		<TR>
+			<TH WIDTH=109>
+				<P ALIGN=CENTER><FONT SIZE=2>MicroBlaze</FONT></P>
+			</TH>
+			<TD WIDTH=65>
+				<P ALIGN=CENTER><FONT SIZE=2>1321 (6%)</FONT></P>
+			</TD>
+			<TD WIDTH=56>
+				<P ALIGN=CENTER><FONT SIZE=2>74 (46%)</FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TH WIDTH=109>
+				<P ALIGN=CENTER><FONT SIZE=2>LEON</FONT></P>
+			</TH>
+			<TD WIDTH=65>
+				<P ALIGN=CENTER><FONT SIZE=2>4883 (25%)</FONT></P>
+			</TD>
+			<TD WIDTH=56>
+				<P ALIGN=CENTER><FONT SIZE=2>43 (26%)</FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TH WIDTH=109>
+				<P ALIGN=CENTER><FONT SIZE=2>LEON+Meiko FPU</FONT></P>
+			</TH>
+			<TD WIDTH=65>
+				<P ALIGN=CENTER><FONT SIZE=2>6064 (31%)</FONT></P>
+			</TD>
+			<TD WIDTH=56>
+				<P ALIGN=CENTER><FONT SIZE=2>40 (25%)</FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD COLSPAN=5 WIDTH=246></TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">The results are shown
+in table </FONT></FONT><A HREF="#table:area"><FONT SIZE=2><FONT FACE="Arial, sans-serif">2</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+Since MicroBlaze processor is highly optimized for Xilinx FPGA
+circuit the resources used are lower than for the LEON2 processor.
+LEON2 is written not only for FPGA circuit so it is very difficult
+for a synthesis tool to synthesize LEON2 with the same low FPGA
+resource optimization as MicroBlaze. Also, as can be seen in table </FONT></FONT><A HREF="#tabla:arquitectures"><FONT SIZE=2><FONT FACE="Arial, sans-serif">1</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+the maximum clock frequency achieved for MicroBlaze is 50Mhz, whereas
+LEON2 runs at 25Mhz in the selected FPGA device. </FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>The
+improved architecture LEON2 with FPU unit only suppose a 6% of
+additional resources </FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<ADDRESS>juan 2006-03-31 
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+		 <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>2 Locomotion algorithm for worm-like robots</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20060401;14142000">
+	<META NAME="CHANGED" CONTENT="20060401;14154100">
+	<META NAME="DESCRIPTION" CONTENT="2 Locomotion algorithm for worm-like robots">
+	<META NAME="KEYWORDS" CONTENT="arc-cube-rev">
+	<META NAME="resource-type" CONTENT="document">
+	<META NAME="distribution" CONTENT="global">
+	<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!--Navigation Panel-->
+</HEAD>
+<BODY LANG="en-GB" DIR="LTR">
+<P><A NAME="tex2html39"></A><A NAME="tex2html37"></A><A NAME="tex2html31"></A>
+<A HREF="node3.html" NAME="tex2html39"><IMG SRC="next.png" NAME="gr&aacute;ficos1" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="arc-cube-rev.html" NAME="tex2html37"><IMG SRC="up.png" NAME="gr&aacute;ficos2" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node1.html" NAME="tex2html31"><IMG SRC="prev.png" NAME="gr&aacute;ficos3" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node3.html" NAME="tex2html40">3
+Implementation on embedded</A> <B>Up:</B> <A HREF="arc-cube-rev.html" NAME="tex2html38">Evaluation
+of a locomotion</A> <B>Previous:</B> <A HREF="node1.html" NAME="tex2html32">1
+Introduction</A> 
+</P>
+<H1><A NAME="SECTION00020000000000000000"></A><!--End of Navigation Panel-->2
+Locomotion algorithm for worm-like robots 
+</H1><A NAME="fig:ajuste2"></A><A NAME="146"></A><CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P ALIGN=CENTER><IMG SRC="img2.png" NAME="gr&aacute;ficos4" ALT="\includegraphics[%scale=0.5]{ps/ajuste2.eps}" ALIGN=BOTTOM WIDTH=671 HEIGHT=300 BORDER=0>
+								</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><STRONG><I><FONT SIZE=2><FONT FACE="Arial, sans-serif">Figure
+2:</FONT></FONT></I></STRONG><I><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+An example of the algorithm used to generate the control tables. The
+first two rows of the gait control table are calculated</FONT></FONT></I></P>
+<P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">The
+prototype of the worm-like robot, called ``Cube Revolutions'', is
+shown in figure </FONT></FONT><A HREF="node1.html#fig:cube-rev"><FONT SIZE=2><FONT FACE="Arial, sans-serif">1</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">a.
+It is composed of 8 similar linked modules, connected in phase.
+Therefore it can only move in a straight line, forward and backward.
+The first generation of the modules created, named Y1 (</FONT></FONT><A HREF="node1.html#fig:cube-rev"><FONT SIZE=2><FONT FACE="Arial, sans-serif">1</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">b),
+were made of PVC and contains only one degree of freedom, actuated by
+a servo. Technical details and aditional information can be found in
+[</FONT></FONT><A HREF="node10.html#cube-clawar"><FONT SIZE=2><FONT FACE="Arial, sans-serif">5</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">].
+</FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">The
+locomotion of the robot is achieved by means of precalculated data
+matrix, that store the position of all the articulations at different
+time slots. This control data arrangement is denominated gait control
+table[</FONT></FONT><A HREF="node10.html#IEEE-Spect-Yim"><FONT SIZE=2><FONT FACE="Arial, sans-serif">1</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">])
+(GCT). </FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Each row
+of the table contains the position of the articulations at instant 
+<IMG SRC="img3.png" NAME="gr&aacute;ficos5" ALT="$t_{i}$" ALIGN=MIDDLE WIDTH=15 HEIGHT=30 BORDER=0>,
+that is, the shape of the robot at 
+<IMG SRC="img3.png" NAME="gr&aacute;ficos6" ALT="$t_{i}$" ALIGN=MIDDLE WIDTH=15 HEIGHT=30 BORDER=0>.
+The whole matrix determines the evolution of the shape of the robot
+in time.The robot will move correctly if the GCT is well calculated.
+In order to achieve locomotion, the controller reads the table, row
+by row, producing the pulse width modulations (PWM) signals that
+actuate the servos. </FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>The
+proposed locomotion algorithm generates well-constructed gait control
+tables that allow the robot to move forward and backward. A wave
+propagation model is used for its calculation, building the tables
+from the parameters of the wave: amplitude, waveform, wavelength and
+frequency. </FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">Figure </FONT></FONT><A HREF="#fig:ajuste2"><FONT SIZE=2><FONT FACE="Arial, sans-serif">2</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+shows an example of how the algorithm calculates the first and second
+rows of the gait control table. It consist of two stages. First, the
+angles of the articulations are calculated by ``fitting the worm to
+the wave''. Then, the wave is shifted (that is, the time is
+incremented) and the robot is fitted to the wave again. These steps
+are repeated until the wave has move a distance equal to the
+wavelength. </FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>The
+algorithm has a geometric approach and is based on rotations of 2D
+points, therefore, sine, cosine and arctan function are widely used. </FONT></FONT>
+</P>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A NAME="tex2html391"></A><A NAME="tex2html371"></A><A NAME="tex2html311"></A>
+<!--Navigation Panel--><A HREF="node3.html" NAME="tex2html39"><IMG SRC="next.png" NAME="gr&aacute;ficos7" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="arc-cube-rev.html" NAME="tex2html37"><IMG SRC="up.png" NAME="gr&aacute;ficos8" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node1.html" NAME="tex2html31"><IMG SRC="prev.png" NAME="gr&aacute;ficos9" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node3.html" NAME="tex2html40">3
+Implementation on embedded</A> <B>Up:</B> <A HREF="arc-cube-rev.html" NAME="tex2html38">Evaluation
+of a locomotion</A> <B>Previous:</B> <A HREF="node1.html" NAME="tex2html32">1
+Introduction</A></P>
+<ADDRESS><!--End of Navigation Panel-->juan 2006-03-31 
+</ADDRESS>
+</BODY>
+</HTML>

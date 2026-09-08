@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+		 <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>1 Algorithm operation analysis</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20060401;14162100">
+	<META NAME="CHANGED" CONTENT="20060401;14165800">
+	<META NAME="DESCRIPTION" CONTENT="1 Algorithm operation analysis">
+	<META NAME="KEYWORDS" CONTENT="arc-cube-rev">
+	<META NAME="resource-type" CONTENT="document">
+	<META NAME="distribution" CONTENT="global">
+	<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!--Navigation Panel-->
+</HEAD>
+<BODY LANG="en-GB" DIR="LTR">
+<P><A NAME="tex2html61"></A><A NAME="tex2html59"></A><A NAME="tex2html53"></A>
+<A HREF="node5.html" NAME="tex2html61"><IMG SRC="next.png" NAME="gr&aacute;ficos1" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="node3.html" NAME="tex2html59"><IMG SRC="up.png" NAME="gr&aacute;ficos2" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node3.html" NAME="tex2html53"><IMG SRC="prev.png" NAME="gr&aacute;ficos3" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node5.html" NAME="tex2html62">2 Target
+architectures</A> <B>Up:</B> <A HREF="node3.html" NAME="tex2html60">3
+Implementation on embedded</A> <B>Previous:</B> <A HREF="node3.html" NAME="tex2html54">3
+Implementation on embedded</A> 
+</P>
+<H2><A NAME="SECTION00031000000000000000"></A><!--End of Navigation Panel-->1
+Algorithm operation analysis 
+</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>The whole algorithm
+has been implemented in C language, using double precision floating
+point. The profiling analysis of the algorithm shows that the <B>71.4%</B>
+of the execution time is spent in <B>float point operations</B>. The
+<B>21.23%</B> is used for integers operations and the final <B>7.37%</B>
+for remainder operations, including trigonometric ones. The profile
+suggests the use of a float point unit (FPU) for improving the
+execution time. </FONT></FONT>
+</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<ADDRESS>juan 2006-03-31 
+</ADDRESS>
+</BODY>
+</HTML>
