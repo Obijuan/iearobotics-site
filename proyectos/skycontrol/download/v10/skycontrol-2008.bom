@@ -1,0 +1,78 @@
+
+Part   Value            Device            Package          Description                 
+C1                      CON-MUL           C0805K           Condensadores multicapa     
+C2     22pF             CON-MUL           C0805K           Condensadores multicapa     
+C3     22pF             CON-MUL           C0805K           Condensadores multicapa     
+C4     1uF / 16v        CON-ELE-2.5       C2                                           
+C5     100nF            CON-MUL           C0805K           Condensadores multicapa     
+C6     47pF             CON-MUL5          C5               Condensadores multicapa     
+C7     47pF             CON-MUL5          C5               Condensadores multicapa     
+C8     100nF            CON-MUL           C0805K           Condensadores multicapa     
+C9     100nF            CON-MUL           C0805K           Condensadores multicapa     
+CL1    Alimentacion     CLEMA2P           C2P              Clema doble                 
+CL2    CLEMA2P          CLEMA2P           C2P              Clema doble                 
+CL3    Vmotor Ext       CLEMA2P           C2P              Clema doble                 
+CL4    Motor 1          CLEMA2P           C2P              Clema doble                 
+CL5    Motor 2          CLEMA2P           C2P              Clema doble                 
+CL6    LDR1 & 2         CLEMA2P           C2P              Clema doble                 
+CL7    Bumper1 & 2      CLEMA2P           C2P              Clema doble                 
+CL8    CLEMA2P          CLEMA2P           C2P              Clema doble                 
+CL9    Salida Rele      CLEMA3P           C3P              clema 3 entradas            
+CL10   CLEMA2P          CLEMA2P           C2P              Clema doble                 
+CL11   CLEMA2P          CLEMA2P           C2P              Clema doble                 
+CP1    CON-POWER-5RECTO CON-POWER-5RECTO  CON-POWER-5                                  
+CT1                     CTCONA            CTCON            Conector compatible CT      
+CT2    Sensor 3:4       CTCONA            CTCON            Conector compatible CT      
+D1     SM4007           1N4148-DO213AC    DO213AC          Diodo                       
+D2     SM4007           1N4148-DO213AC    DO213AC          Diodo                       
+D3     SM4007           1N4148-DO213AC    DO213AC          Diodo                       
+D4     SM4007           1N4148-DO213AC    DO213AC          Diodo                       
+D5     SM4007           1N4148-DO213AC    DO213AC          Diodo                       
+D6     SM4007           1N4148-DO213AC    DO213AC          Diodo                       
+D7     SM4007           1N4148-DO213AC    DO213AC          Diodo                       
+D8     SM4007           1N4148-DO213AC    DO213AC          Diodo                       
+D9     SM4007           1N4148-DO213AC    DO213AC          Diodo                       
+IC1    FT232RL          FT232RL           SSOP-28                                      
+IC2    PIC16F877PT      PIC16F877PT       TQFP44           MICROCONTROLLER             
+IC3    40106D           40106D            SO14             Hex SCHMITT TRIGGER         
+IC4                     L298-P            POWERSO20                                    
+JACK                    JACKP             JACK             Jack alimentacion           
+JP1                     JUMPER3R          JP3R             jumper triple               
+JP2                     JUMPER3R          JP3R             jumper triple               
+JP3                     JUMPER3R          JP3R             jumper triple               
+JP4                     JUMPER3R          JP3R             jumper triple               
+JP5                     JUMPER3R          JP3R             jumper triple               
+JP6                     JUMPER5R          1X05                                         
+JP7                     JUMPER4R          1X04                                         
+JP8                     JUMPER3R          JP3R             jumper triple               
+JP9                     JUMPER3R          JP3R             jumper triple               
+JP10   Sensor 1         JUMPER3R          JP3R             jumper triple               
+JP11   Sensor 2         JUMPER3R          JP3R             jumper triple               
+L1     VK200            RESISTENCIA-10    R207/10          Resistencia de paso 10mm    
+LED1                    LED_SMD-SMT1206   LED-1206         Diodo LED                   
+LED2                    LED_SMD-SMT1206   LED-1206         Diodo LED                   
+LED3                    LED_SMD-SMT1206   LED-1206         Diodo LED                   
+Q1     BC847CLT1SMD     BC847CLT1SMD      SOT23            NPN Transistor              
+Q2     BC847CLT1SMD     BC847CLT1SMD      SOT23            NPN Transistor              
+R1     10K              RESISTENCIA-R0805 R0805            Resistencia de paso 10mm    
+R2     330R             RESISTENCIA-R0805 R0805            Resistencia de paso 10mm    
+R3     330R             RESISTENCIA-R0805 R0805            Resistencia de paso 10mm    
+R4     330R             RESISTENCIA-R0805 R0805            Resistencia de paso 10mm    
+R5     4K7              RESISTENCIA-R0805 R0805            Resistencia de paso 10mm    
+R6     1K               RESISTENCIA-R0805 R0805            Resistencia de paso 10mm    
+R7     4K7              RESISTENCIA-R0805 R0805            Resistencia de paso 10mm    
+R8     4K7              RESISTENCIA-R0805 R0805            Resistencia de paso 10mm    
+R9     0.5R             RESISTENCIA-R0805 R0805            Resistencia de paso 10mm    
+R10                     RESISTENCIA-R0805 R0805            Resistencia de paso 10mm    
+R11    0.5R             RESISTENCIA-R0805 R0805            Resistencia de paso 10mm    
+R12                     RESISTENCIA-R0805 R0805            Resistencia de paso 10mm    
+R13    1K               RESISTENCIA-R0805 R0805            Resistencia de paso 10mm    
+R14    4K7              ARRAY4            RED4                                         
+R15    47K              ARRAY4            RED4                                         
+R16    220R             ARRAY4            RED4                                         
+RL1    RELE             RELE              RELE                                         
+S1                      PULSADORP         PULSADOR-PEQUEÑO Pulsador de circuito impreso
+S2                      PULSADORP         PULSADOR-PEQUEÑO Pulsador de circuito impreso
+SERVOS SERVOS3          SERVOS3           PAD3X3                                       
+USB                     PN61729           PN61729          BERG USB connector          
+X1     20MHz            XTALR             XTAL-R           XTAL                        
