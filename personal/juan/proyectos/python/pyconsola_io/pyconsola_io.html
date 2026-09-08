@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>RECURSOS I: RUTINA CONSOLA_IO</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGEDBY" CONTENT="juan">
+	<META NAME="CHANGED" CONTENT="20070405;18354400">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>M&oacute;dulo pyconsola_io (Python)</B> 
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="../../consola_io/images/terminal.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=353 HEIGHT=154 BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Introducci&oacute;n</FONT></H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Peque&ntilde;o m&oacute;dulo
+en python que implementa la funci&oacute;n <B>getkey()</B> para poder
+leer una tecla del teclado sin tener que esperar a pulsar enter. Esta
+funci&oacute;n es muy &uacute;til para implementar men&uacute;es en
+la consola.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Yo utilizo estas
+rutinas para hacer programas de prueba para el manejo de robots. Por
+ejemplo, una aplicaci&oacute;n de prueba que me permita mover un
+robot utilizando las teclas (Normalmente usando las teclas O, P, Q,
+A, a las que me acostumbr&eacute; cuando jugaba con el Spectrum ;-)</FONT></FONT></P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">El m&oacute;dulo
+console_io <A HREF="../../consola_io/consola_io.html">tambi&eacute;n
+est&aacute; disponible en C</A> </FONT></FONT>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Caracter&iacute;sticas</FONT></H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><B><FONT SIZE=2>Lenguaje de
+	programaci&oacute;n: </FONT></B><A HREF="http://www.python.org/"><FONT SIZE=2>Python</FONT></A>
+	</FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Sistema
+	operativo</B>: Multiplataforma. Probado en Linux y Windows</FONT></FONT></P>
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Ejemplo</FONT></H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El siguiente ejemplo
+muestra c&oacute;mo hacer un men&uacute; con 2 opciones:</FONT></FONT></P>
+<CENTER>
+	<TABLE WIDTH=567 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=559>
+		<TR>
+			<TD WIDTH=559 VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE><A NAME="101"></A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><FONT COLOR="#804000">import</FONT> consola_io</FONT></FONT>
+<A NAME="111"></A> 
+<A NAME="121"></A> <FONT COLOR="#800000">#-- Caracter de escape</FONT>
+<A NAME="131"></A> ESC = '<FONT COLOR="#006000">\x1B</FONT>'
+<A NAME="141"></A> 
+<A NAME="151"></A> <FONT COLOR="#800000">#-----------------</FONT>
+<A NAME="161"></A> <FONT COLOR="#800000">#-- Sacar el menu</FONT>
+<A NAME="171"></A> <FONT COLOR="#800000">#-----------------</FONT>
+<A NAME="181"></A> <FONT COLOR="#804000">def</FONT> <FONT COLOR="#000080">menu</FONT>():
+<A NAME="191"></A>   <FONT COLOR="#804000">print</FONT> &quot;&quot;&quot;
+<A NAME="201"></A> <FONT COLOR="#006000">  </FONT>
+<A NAME="211"></A> <FONT COLOR="#006000">     Menu de opciones</FONT>
+<A NAME="221"></A> <FONT COLOR="#006000">     ----------------</FONT>
+<A NAME="231"></A> <FONT COLOR="#006000">     </FONT>
+<A NAME="241"></A> <FONT COLOR="#006000">     1.- Opcion 1</FONT>
+<A NAME="251"></A> <FONT COLOR="#006000">     2.- Opcion 2</FONT>
+<A NAME="261"></A> <FONT COLOR="#006000">     </FONT>
+<A NAME="271"></A> <FONT COLOR="#006000">  SP.- Volver a sacar el menu</FONT>
+<A NAME="281"></A> <FONT COLOR="#006000">  ESC.- Terminar</FONT>
+<A NAME="291"></A> <FONT COLOR="#006000">  </FONT>&quot;&quot;&quot;
+<A NAME="301"></A> 
+<A NAME="311"></A> <FONT COLOR="#800000">#---------------------</FONT>
+<A NAME="321"></A> <FONT COLOR="#800000">#- Comienzo programa</FONT>
+<A NAME="331"></A> <FONT COLOR="#800000">#---------------------</FONT>
+<A NAME="341"></A> 
+<A NAME="351"></A> <FONT COLOR="#800000">#-- Sacar menu</FONT>
+<A NAME="361"></A> menu()
+<A NAME="371"></A> 
+<A NAME="381"></A> <FONT COLOR="#800000">#-- bucle principal</FONT>
+<A NAME="391"></A> <FONT COLOR="#804000">while</FONT> 1:
+<A NAME="401"></A> 
+<A NAME="411"></A>   <FONT COLOR="#800000">#-- Leer tecla</FONT>
+<A NAME="421"></A>   c = consola_io.getkey()
+<A NAME="431"></A>   
+<A NAME="441"></A>   <FONT COLOR="#800000">#-- Procesar tecla</FONT>
+<A NAME="451"></A>   <FONT COLOR="#804000">if</FONT>   c=='<FONT COLOR="#006000">1</FONT>': <FONT COLOR="#804000">print</FONT> &quot;<FONT COLOR="#006000">Opcion 1</FONT>&quot;
+<A NAME="461"></A>   <FONT COLOR="#804000">elif</FONT> c=='<FONT COLOR="#006000">2</FONT>': <FONT COLOR="#804000">print</FONT> &quot;<FONT COLOR="#006000">Opcion 2</FONT>&quot;
+<A NAME="471"></A>   <FONT COLOR="#804000">elif</FONT> c=='<FONT COLOR="#006000"> </FONT>': menu()
+<A NAME="481"></A>   <FONT COLOR="#804000">elif</FONT> c==ESC: <FONT COLOR="#804000">break</FONT>   <FONT COLOR="#800000">#-- Salir del bucle</FONT>
+<A NAME="491"></A>  
+<A NAME="501"></A> <FONT COLOR="#800000">#-- Terminar </FONT>
+ <FONT FACE="Arial, sans-serif"><FONT COLOR="#804000">print</FONT> &quot;<FONT COLOR="#006000">-- FIN --</FONT>&quot;</FONT></PRE>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Aqu&iacute; se muestra
+un pantallazo de su funcionamiento en una <B>consola Linux</B>:</FONT></FONT></P>
+<P ALIGN=CENTER><IMG SRC="images/menu_pant.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=667 HEIGHT=294 BORDER=0></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Y aqu&iacute;
+funcionando en una ventana de ms-dos en un Windows XP:</FONT></FONT></P>
+<P ALIGN=CENTER><IMG SRC="images/python_menu_windows.png" NAME="Imagen3" ALIGN=MIDDLE WIDTH=668 HEIGHT=211 BORDER=0></P>
+<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">Para
+probarlo descomprimir el fichero <A HREF="download/pyconsola_io.zip"><FONT SIZE=2><FONT FACE="Arial, sans-serif">pyconsola_io.zip</FONT></FONT></A>
+en el directorio de trabajo y ejecutar:</FONT></FONT></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><I>python
+menu.py</I></FONT></FONT></P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif"><B>Autores</B></FONT></H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Chris Liechti</B></FONT></FONT></P>
+	<LI><P><A HREF="http://www.iearobotics.com/personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+	Gonz&aacute;lez G&oacute;mez</FONT></FONT></A> 
+	</P>
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Licencia</FONT></H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Licencia GPL</B>.
+Se conceden permisos para copiar, distribuir, modificar y
+redistribuir las modificaciones.</FONT></FONT></P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif"><B>Notas </B></FONT>
+</H2>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">El m&oacute;dulo
+consola_io se han creado a partir de los ejemplos escritos por <B>Chris
+Liechti </B>para el modulo <A HREF="http://pyserial.sourceforge.net/">pyserial</A>.
+</FONT></FONT>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Download </FONT>
+</H2>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=742 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+			<COL WIDTH=734>
+			<TR>
+				<TD WIDTH=734>
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>Software para
+					descargar</B> </FONT>
+					</P>
+				</TD>
+			</TR>
+		</TABLE>
+		<DD>
+		<TABLE WIDTH=741 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=178>
+			<COL WIDTH=555>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=178 BGCOLOR="#e6e6ff">
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/pyconsola_io.zip"><FONT SIZE=2><FONT FACE="Arial, sans-serif">pyconsola_io.zip</FONT></FONT></A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=555 BGCOLOR="#e6e6ff">
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>M&oacute;dulo
+					consola_io.py y ejemplo menu.py</FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Enlaces</FONT></H2>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="http://pyserial.sourceforge.net/">M&oacute;dulo
+	Pyserial</A> del que se ha partido</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="../../consola_io/consola_io.html">Versi&oacute;n
+	de concola_io escrita en C</A> </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Noticias</FONT></H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>05/Abril/2007</B>:
+	Publicada primera versi&oacute;n pyConsola_io</FONT></FONT></P>
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Agradecimientos</FONT></H2>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">A <A HREF="../../../../ricardo/index.html">Ricardo
+	G&oacute;mez</A> y <A HREF="../../../../andres/index.html">Andr&eacute;s
+	Prieto-Moreno</A> por probar los ejemplos en Windows. Muchas gracias</FONT></FONT></P>
+</UL>
+<HR>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="../../../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A><A HREF="http://www.iearobotics.com/">
+</A>
+</ADDRESS>
+<P STYLE="margin-bottom: 0cm"><A HREF="../../../../../index.php"><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEAROBOTICS</FONT></FONT></A>
+</P>
+</BODY>
+</HTML>
