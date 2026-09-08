@@ -1,0 +1,75 @@
+
+<html>
+<head>
+<title>motor.c</title>
+<meta name="generator" content="c2html 0.9.5">
+<meta name="date" content="2005-09-15T10:57:23+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/*
+        Andres Prieto-Moreno &lt;andres@ifara.com&gt;
+        Juan Gonzalez &lt;juan@iearobotics.com&gt;
+        LICENCIA GPL
+*/</font>
+
+// Especificar el pic a emplear
+<strong><font color="#228B22">#define __16f877</font></strong>
+
+// Especificamos las librerias necesarias
+<font color="#A020F0">#include </font><font color="#666666">"pic16f877.h"</font><font color="#A020F0"></font>
+<font color="#A020F0">#include </font><font color="#666666">"sci.h"</font><font color="#A020F0"></font>
+
+
+//----------------------------
+//- Comienzo del programa  
+//----------------------------
+
+<strong><font color="#4169E1"><a name="main"></a>void main(void)</font></strong>
+{
+        unsigned char tecla;
+        //-- Configurar pin del led como salida
+        TRISB = 0xE1;
+        
+        //-- Configurar AN4 como IO de salida
+        TRISA =0x0;
+        
+        //-- Configurar el puerto serie
+        sci_conf();
+
+        <font color="#4169E1">while</font> (1) {
+                
+                <font color="#4169E1">if</font> (RCIF) {  // ha llegado dato                
+                        tecla = RCREG;
+                
+                        <font color="#4169E1">switch</font> (tecla) {
+                                <font color="#4169E1">case</font> '1':  // cambio sentido  motor 1
+                                                                PORTB =PORTB ^ 0x02;
+                                                                
+                                                                  <font color="#4169E1">break</font>;
+                                <font color="#4169E1">case</font> '2':  // enciendo motor1
+                                                                PORTB=PORTB ^ 0x04;
+                                                                
+                                                                  <font color="#4169E1">break</font>;
+                                <font color="#4169E1">case</font> '3':  // cambio sentido motor 2
+                                                                PORTB=PORTB ^ 0x08;
+                                                                
+                                                                  <font color="#4169E1">break</font>;
+                                <font color="#4169E1">case</font> '4':  // enciendo motor 2
+                                                                PORTB=PORTB ^ 0x10;
+                                                                
+                                                                  <font color="#4169E1">break</font>;
+<strong><font color="#FF0000">                                default:</font></strong>
+                                                        // parar motor
+                                                                PORTB = PORTB &amp; 0xEB;
+                                                                  <font color="#4169E1">break</font>;
+                        }
+                }
+                
+                
+        }
+}
+</pre>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+
+<html>
+<head>
+<title>contacto.c</title>
+<meta name="generator" content="c2html 0.9.5">
+<meta name="date" content="2006-02-20T17:44:59+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/*************************************************************************** */</font>
+<font color="#B22222">/* contacto.c      Julio-2005                                                */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Ejemplo para el skybot                                                    */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  Ejemplo de prueba para los bumpers. El robot se convierte en una "lapa"  */</font>
+<font color="#B22222">/*  y tiendo a pegarse a las objetos. Si los dos bumpers estan activados     */</font>
+<font color="#B22222">/*  el robot se para. Cuando estan sueltos avanza. Si se activa el derecho   */</font>
+<font color="#B22222">/*  gira a la derecha y si lo hace el izquierdo gira a la izquierda          */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  Andres Prieto-Moreno &lt;andres@ifara.com&gt;                                  */</font>
+<font color="#B22222">/*  Juan Gonzalez &lt;juan@iearobotics.com&gt;                                     */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  LICENCIA GPL                                                             */</font>
+<font color="#B22222">/*****************************************************************************/</font>
+
+//-- Especificar el pic a emplear
+<strong><font color="#228B22">#define __16f877</font></strong>
+<font color="#A020F0">#include </font><font color="#666666">"pic16f877.h"</font><font color="#A020F0"></font>
+
+//-- Definiciones para los motores. Estos valores define
+//-- los movimientos del robot
+<strong><font color="#228B22">#define   AVANZA     0x1C</font></strong>
+<strong><font color="#228B22">#define   ATRAS      0x16</font></strong>
+<strong><font color="#228B22">#define   IZQUIERDA  0x1E </font></strong>
+<strong><font color="#228B22">#define   DERECHA    0x14 </font></strong>
+<strong><font color="#228B22">#define   STOP       0x00</font></strong>
+
+<strong><font color="#228B22">#define DERECHO   0x02 //Bumper 1  Derecho desde arriba</font></strong>
+<strong><font color="#228B22">#define IZQUIERDO 0x04 //Bumper 2  Iquierdo desde arriba</font></strong>
+
+//----------------------------
+//- Comienzo del programa  
+//----------------------------
+
+unsigned char bumpers;
+<strong><font color="#4169E1"><a name="main"></a>void main(void)</font></strong>
+{
+  //-- Configurar el puerto B para trabajar con el Skybot
+  //-- RB0, RB5, RB6 y RB7 como entradas
+  //-- RB1, RB2, RB3 y RB4 como salidas
+  TRISB=0xE1;
+  
+  //-- Configurar el puerto A para trabajar con los bumpers
+  ADCON1=0x0E;
+  
+  <font color="#4169E1">for</font>(;;) {
+    bumpers=PORTA &amp; (IZQUIERDO | DERECHO); // Leer sensores
+ 
+    <font color="#4169E1">switch</font>(bumpers) {
+      <font color="#4169E1">case</font> IZQUIERDO:       //-- Contacto - Libre
+        PORTB=IZQUIERDA;
+        <font color="#4169E1">break</font>;
+      <font color="#4169E1">case</font> DERECHO:
+        PORTB=DERECHA;   //-- Libre - Contacto
+        <font color="#4169E1">break</font>;
+      <font color="#4169E1">case</font> 0x00:         //-- Libre - libre
+        PORTB=AVANZA;
+        <font color="#4169E1">break</font>;
+      <font color="#4169E1">case</font> (IZQUIERDO | DERECHO):         //-- Contacto - Contacto
+        PORTB=STOP;
+        <font color="#4169E1">break</font>;
+    }
+  }
+
+}
+</pre>
+</body>
+
+</html>

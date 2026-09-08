@@ -1,0 +1,31 @@
+
+Qty Value      Device        Parts                      	Descripción
+1              CLEMA2P       VMOTOR                      	Clema doble circuito impreso
+6              JUMPER2JPR2   JP2, JP3, JP4, JP5, JP6, JP7	Jumpers dobles con capucha
+1              JUMPER2R      JP8                         	Jumper doble con capucha
+1              JUMPER3R      JP1                         	Jumper triple
+1   1N4148     1N4148        D1                          	Diodo
+2   1K         RESISTENCIA10 R1, R2                      	Resistencia 1/4w 5%
+1   1uF        CPOL-EUTT2D6  C5                         	Condensador electrol&iacute;tico 63v 
+1   4K7        ARRAY8        R5                          	Array de 8+1 de 4K7
+1   5v         CLEMA2P       CL4                         	Clema doble para circuito impreso
+1   47K        ARRAY4        R3                          	Array de 4+1 de 47K
+2   47p        CON-MUL5      C1, C2                      	Condensador multicapa de 47pF
+1   100        RESISTENCIA10 R6                          	Resistencia 1/4w 5%
+2   100n       CON-MUL5      C3, C4                      	condensador multicapa de desacoplo
+1   220        ARRAY4        R4                          	Array de 4+1 de 220 ohmios
+1   40106D     40106D        U2                          	Circuito integrado
+1   A0         CLEMA2P       CL1                         	Clema doble circuito impreso
+1   A2         CLEMA2P       CL2                         	Clema doble circuito impreso
+1   A4         CLEMA2P       CL3                         	Clema doble circuito impreso
+1   L293DIP    L293DIP       U1                           	Circuito integrado (driver potencia)
+1   Motor1     CLEMA2P       M1                          	Clema doble para circuito impreso
+1   Motor2     CLEMA2P       M2                          	Clema doble para circuito impreso
+1   Puerto A   CTCONA        CT2                         	Conector acodado de 2x5 vias para CI
+1   Puerto B   CTCONA        CT1                         	Conector acodado de 2x5 vias para CI
+1   RELE       CLEMA3P       CL5                         	Clema triple para circuito impreso
+1   RELE       RELE          RELE                        	Rele activacion  a 5v
+1   SC107NPN   SC107NPN      TRT                         	Transistor NPN equivalente al SC107
+1   SENSOR 1:2 CTCONA        CT3                         	Conector acodado de 2x5 vias para CI
+1   SENSOR 3:4 CTCONA        CT4                         	Conector acodado de 2x5 vias para CI
+1   SWITCH4    SWITCH4       U$1                         	Micro interruptor cuatro canales acodado

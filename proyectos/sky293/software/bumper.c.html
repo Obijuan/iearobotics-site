@@ -1,0 +1,96 @@
+
+<html>
+<head>
+<title>bumper.c</title>
+<meta name="generator" content="c2html 0.9.5">
+<meta name="date" content="2005-09-15T14:29:54+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/*
+        Andres Prieto-Moreno &lt;andres@ifara.com&gt;
+        Juan Gonzalez &lt;juan@iearobotics.com&gt;
+        LICENCIA GPL
+*/</font>
+
+// Especificar el pic a emplear
+<strong><font color="#228B22">#define __16f877</font></strong>
+
+// Especificamos las librerias necesarias
+<font color="#A020F0">#include </font><font color="#666666">"pic16f877.h"</font><font color="#A020F0"></font>
+<font color="#A020F0">#include </font><font color="#666666">"sci.h"</font><font color="#A020F0"></font>
+<font color="#A020F0">#include </font><font color="#666666">"delay0.h"</font><font color="#A020F0"></font>
+
+char bumper[6];
+
+//----------------------------
+//- Comienzo del programa  
+//----------------------------
+
+<strong><font color="#4169E1"><a name="main"></a>void main(void)</font></strong>
+{
+
+        //-- Configurar Puerto A entrada
+        TRISA =0xFF;
+        
+        //-- Configurar el puerto serie
+        sci_conf();
+        
+        //-- configura timer para hacer pausas
+        timer0_configurar();
+        
+        ADCON0=0x00;
+        ADCON1=0x06;
+        
+        <font color="#4169E1">while</font> (1) {
+                bumper[0]=PORTA &amp; 0x01;
+                bumper[1]=PORTA &amp; 0x02;
+                bumper[2]=PORTA &amp; 0x04;
+                bumper[3]=PORTA &amp; 0x08;                        
+                bumper[4]=PORTA &amp; 0x10;
+                bumper[5]=PORTA &amp; 0x20;
+                
+                <font color="#4169E1">if</font> ( bumper[0]==0 ) {
+                        sci_cad(<font color="#666666">"0 "</font>);
+                } <font color="#4169E1">else</font> {
+                        sci_cad(<font color="#666666">"1 "</font>);
+                }
+                
+                <font color="#4169E1">if</font> ( bumper[1]==0 ) {
+                        sci_cad(<font color="#666666">"0 "</font>);
+                } <font color="#4169E1">else</font> {
+                        sci_cad(<font color="#666666">"1 "</font>);
+                }
+                
+                <font color="#4169E1">if</font> ( bumper[2]==0 ) {
+                        sci_cad(<font color="#666666">"0 "</font>);
+                } <font color="#4169E1">else</font> {
+                        sci_cad(<font color="#666666">"1 "</font>);
+                }
+                
+                <font color="#4169E1">if</font> ( bumper[3]==0 ) {
+                        sci_cad(<font color="#666666">"0 "</font>);
+                } <font color="#4169E1">else</font> {
+                        sci_cad(<font color="#666666">"1 "</font>);
+                }
+                
+                <font color="#4169E1">if</font> ( bumper[4]==0 ) {
+                        sci_cad(<font color="#666666">"0 "</font>);
+                } <font color="#4169E1">else</font> {
+                        sci_cad(<font color="#666666">"1 "</font>);
+                }
+                
+                <font color="#4169E1">if</font> ( bumper[5]==0 ) {
+                        sci_cad(<font color="#666666">"0 \n\r"</font>);
+                } <font color="#4169E1">else</font> {
+                        sci_cad(<font color="#666666">"1 \n\r"</font>);
+                }
+                
+                delay0(100);
+                
+        }
+}
+</pre>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+
+<html>
+<head>
+<title>cny70.c</title>
+<meta name="generator" content="c2html 0.9.5">
+<meta name="date" content="2005-09-15T12:25:06+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/*
+        Andres Prieto-Moreno &lt;andres@ifara.com&gt;
+        Juan Gonzalez &lt;juan@iearobotics.com&gt;
+        LICENCIA GPL
+*/</font>
+
+// Especificar el pic a emplear
+<strong><font color="#228B22">#define __16f877</font></strong>
+
+// Especificamos las librerias necesarias
+<font color="#A020F0">#include </font><font color="#666666">"pic16f877.h"</font><font color="#A020F0"></font>
+<font color="#A020F0">#include </font><font color="#666666">"sci.h"</font><font color="#A020F0"></font>
+<font color="#A020F0">#include </font><font color="#666666">"delay0.h"</font><font color="#A020F0"></font>
+
+    char sensor[4];
+
+//----------------------------
+//- Comienzo del programa  
+//----------------------------
+
+<strong><font color="#4169E1"><a name="main"></a>void main(void)</font></strong>
+{
+
+        
+        //-- Configurar pin del led como salida
+        TRISB = 0xE1;
+        
+        //-- Configurar AN4 como IO de salida
+        TRISA =0x0;
+        
+        //-- Configurar el puerto serie
+        sci_conf();
+        
+        //-- configura timer para hacer pausas
+        timer0_configurar();
+
+        <font color="#4169E1">while</font> (1) {
+                sensor[0]=PORTB &amp; 0x01;
+                sensor[1]=PORTB &amp; 0x20;
+                sensor[2]=PORTB &amp; 0x40;
+                sensor[3]=PORTB &amp; 0x80;                        
+                
+                <font color="#4169E1">if</font> ( sensor[0]==0 ) {
+                        sci_cad(<font color="#666666">"0 "</font>);
+                } <font color="#4169E1">else</font> {
+                        sci_cad(<font color="#666666">"1 "</font>);
+                }
+                
+                <font color="#4169E1">if</font> ( sensor[1]==0 ) {
+                        sci_cad(<font color="#666666">"0 "</font>);
+                } <font color="#4169E1">else</font> {
+                        sci_cad(<font color="#666666">"1 "</font>);
+                }
+                
+                <font color="#4169E1">if</font> ( sensor[2]==0 ) {
+                        sci_cad(<font color="#666666">"0 "</font>);
+                } <font color="#4169E1">else</font> {
+                        sci_cad(<font color="#666666">"1 "</font>);
+                }
+                
+                <font color="#4169E1">if</font> ( sensor[3]==0 ) {
+                        sci_cad(<font color="#666666">"0 \n\r"</font>);
+                } <font color="#4169E1">else</font> {
+                        sci_cad(<font color="#666666">"1 \n\r"</font>);
+                }
+                
+                delay0(100);
+                
+        }
+}
+</pre>
+</body>
+
+</html>
