@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Taller de robotica b&aacute;sico. Sesion 3. Introducci&oacute;n</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGED" CONTENT="20050719;11072200">
+	<META NAME="KEYWORDS" CONTENT="robotica, microcontroladores, pic, hardware">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+
+<TABLE WIDTH=917 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+	<COL WIDTH=909>
+	<TR>
+		<TD WIDTH=909>
+			<P ALIGN=CENTER><FONT FACE="Arial, sans-serif">Taller de
+			Rob&oacute;tica B&aacute;sico - Skybot v1.3. - SESION 3 - <B> Introducci&oacute;n
+			</B></FONT></P>
+
+		</TD>
+	</TR>
+</TABLE>
+
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/intro-ini.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=653 HEIGHT=253 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2>Objetivos</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En esta introducci&oacute;n
+explicaremos en qu&eacute; consiste la programaci&oacute;n
+microcontrolador para que se tengan las ideas claras y se conozca la
+terminolog&iacute;a. Se muestran las herramientas que utilizaremos
+con sus enlaces. En cap&iacute;tulos posteriores se dar&aacute;n m&aacute;s
+detalles de c&oacute;mo instalar todo el software y c&oacute;mo
+ponerlo en marcha.</FONT></FONT></P>
+<HR>
+<H2>Introducci&oacute;n a la programaci&oacute;n</H2>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El robot
+est&aacute; controlado por un &ldquo;cerebro&rdquo;: <B>el
+microcontrolador</B>. Es como un peque&ntilde;o ordenador que ejecuta
+las instrucciones que nosotros le digamos. En nuestro robot, este
+microcontrolador es el PIC16F876A de Microchip, que est&aacute; en la
+tarjeta Skypic (es el chip m&aacute;s largo).</FONT></FONT></P>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Los
+microcontroladores s&oacute;lo son capaces de entender instrucciones
+en binario. Es lo que se llama c&oacute;digo m&aacute;quina. El
+programa &ldquo;hola mundo&rdquo; es el programa m&aacute;s sencillo
+que ejecutaremos. Lo &uacute;nico que hace es encender un led. En
+c&oacute;digo m&aacute;quina tiene esta pinta, con las instrucciones
+escritas en notaci&oacute;n hexadecimal en vez de binario:</FONT></FONT></P>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>0183
+3000 008a 2804 1683 1086 1283 1486 2808</B></FONT></FONT></P>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Nosotros
+no entendemos nada, pero el microcontrolador s&iacute;.</FONT></FONT></P>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para que
+los humanos podamos indicar al microprocesador qu&eacute;
+instrucciones queremos que ejecute, se han inventado los <B>lenguajes
+de programaci&oacute;n</B>, que son ficheros de texto con
+instrucciones legibles por los humanos. En este taller emplearemos el
+<B>Lenguaje C</B>.</FONT></FONT></P>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Sin
+embargo, a los micros les pasa lo contrario: no entienden los
+lenguajes de programaci&oacute;n, s&oacute;lo el c&oacute;digo
+m&aacute;quina. Por ello es necesario utilizar un software que
+traduzca nuestros ficheros escritos en C al c&oacute;digo m&aacute;quina:
+esta es la misi&oacute;n del <B>Compilador de C</B>. Un programa que
+&ldquo;entiende&rdquo; el C y genera el c&oacute;digo m&aacute;quina
+correspondiente.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/intro-prog1.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=556 HEIGHT=438 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>As&iacute;,
+los pasos para que el micro ejecute lo que nosotros queremos son los
+siguientes:</FONT></FONT></P>
+<OL>
+	<LI><P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Crear
+	el programa</B> con instrucciones en C. Ser&aacute; un fichero de
+	texto con extensi&oacute;n .c. Por ejemplo <I>ledon.c</I>.
+	Necesitaremos un <B>Editor de textos</B>.</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Traducir
+	ese programa a c&oacute;digo m&aacute;quina</B>, para que el
+	microcontrolador lo pueda enter. Usamos un <B>Compilador de C</B>.
+	El fichero con el c&oacute;digo m&aacute;quina tiene extensi&oacute;n
+	.hex. En este ejemplo se generar&iacute;a el fichero <I>ledon.hex</I></FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Cargar
+	el programa</B> en la memoria del microcontrolador para que lo
+	ejecute. Necesitamos un <B>Cargador</B>.</FONT></FONT></P>
+</OL>
+<HR>
+<H2>Herramientas</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para realizar el
+taller necesitaremos las siguientes herramientas:</FONT></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Un <B>editor de
+	texto</B> ASCII, o entorno integrado. Seg&uacute;n la plataforma
+	(Linux, Windows) utilizaremos uno u otro.</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Un <B>compilador
+	de C</B>. Nosotros utilizaremos el <A HREF="http://sdcc.sourceforge.net/">SDCC</A>,
+	que es libre. Para que funcione tenemos que instalar adem&aacute;s
+	las herramientas <A HREF="http://gputils.sourceforge.net/">GPUTILS</A>,
+	tambi&eacute;n libres. (Realmente el SDCC traduce de lenguaje C a
+	lenguaje ensamblador y las gputils de lenguaje ensamblador a c&oacute;digo
+	m&aacute;quina)</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Un <B>cargador</B>.
+	Utilizaremos el <A HREF="http://www.microchipc.com/PIC16bootload/">PICBOOTLOADER</A>,
+	de <B>Shane Tolmie</B>, que tambi&eacute;n es libre. Tiene dos
+	partes, una que ya est&aacute; grabada en el microcontrolador y la otra es el propio cargador que se ejecuta en el PC. La parte que est&aacute; en el microcontrolador (<I>bootloader</I>) se ha grabado previamente al taller siguiendo estas <a href="http://www.iearobotics.com/proyectos/skypic/bootloader/bootloader.html">intrucciones</a>. </FONT></FONT></P>
+</UL>
+<DL>
+	<DL>
+		<DL>
+			<DL>
+				<DD>
+				<TABLE WIDTH=570 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+					<COL WIDTH=560>
+					<THEAD>
+						<TR>
+							<TD WIDTH=560 VALIGN=TOP BGCOLOR="#ff0000">
+								<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=3>La
+								carga de programas en el microcontrolador la realizaremos a
+								trav&eacute;s del <B>puerto serie</B>. Por ello es muy
+								importante disponer de un ordenador con puerto serie o si no
+								se dispone de &eacute;l, tener un conversor USB-serie con los
+								drivers instalados.</FONT></FONT></P>
+							</TD>
+						</TR>
+					</THEAD>
+				</TABLE>
+			</DL>
+		</DL>
+	</DL>
+</DL>
+<P><BR><BR>
+</P>
+<HR>
+<P><A HREF="index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Sesion
+3]</FONT></FONT></A></P>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="../../../personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A><A HREF="http://www.iearobotics.com/">
+</A>
+</ADDRESS>
+<P STYLE="margin-bottom: 0cm"><A HREF="http://www.iearobotics.com"><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEAROBOTICS</FONT></FONT></A>
+</P>
+</BODY>
+</HTML>

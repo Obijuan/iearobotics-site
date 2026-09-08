@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Taller de robotica b&aacute;sico - Skybot v1.3. - Sesion 2</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGED" CONTENT="20050718;18491900">
+	<META NAME="KEYWORDS" CONTENT="robotica, microcontroladores, pic, hardware">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<TABLE WIDTH=917 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+	<COL WIDTH=909>
+	<TR>
+		<TD WIDTH=909>
+			<P ALIGN=CENTER>Taller de Rob&oacute;tica B&aacute;sico - Skybot v1.3. - <B>
+			SESION 2</B></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/sesion2-ini.png" NAME="Imagen1" ALIGN=MIDDLE  BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2>Objetivos</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Terminar la
+estructura, preparar lo sensores, montar la electr&oacute;nica y
+probar el robot</FONT></FONT></P>
+<HR>
+<H2>Temario</H2>
+<UL>
+	<LI><P><A HREF="mecanica-2.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Estructura
+	mec&aacute;nica II</FONT></FONT></A></P>
+	<LI><P><A HREF="motores.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Etapa
+	de potencia y conexi&oacute;n de los motores</FONT></FONT></A></P>
+	<LI><P><A HREF="sensores.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Preparaci&oacute;n
+	de los sensores infrarrojos</FONT></FONT></A></P>
+	<LI><P><A HREF="skypic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Conexi&oacute;n
+	de la Skypic</FONT></FONT></A></P>
+	<LI><P><A HREF="test.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Probando
+	el robot</FONT></FONT></A></P>
+	<LI><P><A HREF="sensores-2.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Protegiendo
+	los sensores</FONT></FONT></A></P>
+	<LI><P><A HREF="sensores3.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Colocaci&oacute;n
+	de los sensores</FONT></FONT></A></P>
+</UL>
+<HR>
+<H2>Material adicional 
+</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Material adicional (no
+incluido en el kit del robot) que se va a necesitar para esta sesi&oacute;n:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/sesion2-material.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=337 HEIGHT=253 BORDER=0></P>
+			</TD>
+			<TD WIDTH=50% VALIGN=TOP>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>1)</B> Soporte
+				para soldador </FONT></FONT>
+				</P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>2)</B> Soldador
+				</FONT></FONT>
+				</P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>3)</B> Un folio
+				en blanco</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>4)</B> Rollo de
+				cinta aislante negra</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>5) </B>Rollo de
+				esta&ntilde;o de 1mm</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>6) </B>Alicates
+				de cabeza plana</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>7)</B>
+				Destornilladores de cabeza plana</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>8)</B> Tijeras</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>9)</B>
+				Pelacables (opcional)</FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2>Manos a la obra</H2>
+<UL>
+	<LI><P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">Primero
+	finalizaremos la estructura del robot, montando los servos sobre el
+	ch&aacute;sis, terminando las ruedas y colocando la rueda loca
+	trasera. </FONT></FONT><A HREF="mecanica-2.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Seguir
+	los pasos descritos aqu&iacute;</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+	</FONT></FONT>
+	</P>
+	<LI><P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">Para
+	poder mover los motores desde el microcontrolador necesitamos una
+	etapa de potencia: una electr&oacute;nica que &ldquo;amplifique&rdquo;
+	las se&ntilde;ales que env&iacute;a el cerebro (el
+	microcontrolador). Tambi&eacute;n necesitamos una electr&oacute;nica
+	que adapta las se&ntilde;ales enviadas por los sensores a unas
+	adecuadas para ser le&iacute;das por el cerebro. Esto es lo que hace
+	la <A HREF="../../../proyectos/sky293/sky293.html">tarjeta sky293+</A>.
+	Colocaremos esta tarjeta en la estructura y conectaremos los motores
+	a ella. <A HREF="motores.html">Aqu&iacute; est&aacute;n las
+	instrucciones</A>.</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">Los
+	sensores de infrarrojos que utilizaremos para diferencias el color
+	blanco del negro son los CNY70, muy utilizados en este tipo de
+	robots. Estos sensores vienen integrados en un encapsulado con forma
+	de cubo y con cuatro patas. En su interior hay un led emisor de luz
+	infrarroja y un fototransistor sensible a esta luz. Soldaremos los
+	cables a las patas de los sensores para conectarlos a la <A HREF="../../../proyectos/sky293/sky293.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tarjeta
+	SKY293</FONT></FONT></A>. Esta adaptar&aacute; las se&ntilde;ales
+	recibidas para que el microcontrolador los pueda leer.
+	<A HREF="sensores.html">Instrucciones</A>.</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">Ahora
+	es el momento de incluir el &ldquo;cerebro&rdquo;, constituido por
+	la <A HREF="../../../proyectos/skypic/skypic.html">tarjeta Skypic</A>,
+	que tiene un microcontrolador PIC17F876A de Microchip. Es como un
+	&ldquo;peque&ntilde;o ordenador&rdquo; en el que se ejecutar&aacute;n
+	nuestros programas. Los sensores env&iacute;an se&ntilde;ales
+	el&eacute;ctricas que el microcontrolador lee como unos y ceros.
+	Procesa esta informaci&oacute;n y hace que se muevan los motores. La
+	<A HREF="../../../proyectos/skypic/skypic.html"><FONT FACE="Arial, sans-serif">Skypic</FONT></A>
+	se conecta a la <A HREF="../../../proyectos/sky293/sky293.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">SKY293</FONT></FONT></A>
+	mediante unos cables planos, por donde pasan todas las se&ntilde;ales
+	digitales. <A HREF="skypic.html">Seguir estos pasos</A>.</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">Llega
+	la hora de probar el robot. Vamos a comprobar si los sensores est&aacute;n
+	correctamente montados y si los motores se mueven. La Skypic estar&aacute;
+	constantemente monitorizando los sensores y enviando su valor al PC,
+	donde ejecutaremos un programa de prueba que nos permitir&aacute;
+	ver el valor de estos sensores. Tambi&eacute;n podremos mover el
+	robot. &iexcl;Empieza la diversi&oacute;n!. <A HREF="test.html">Seguir
+	estos pasos</A>.</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">Una
+	vez que veamos que los sensores funcionan bien, vamos a protegerlos
+	poniendo cinta aislate, evitando que se cortocircuiten las patas.
+	<A HREF="sensores-2.html">Instrucciones</A>.</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">Finalmente,
+	colocaremos los sensores en la parte frontal del robot para m&aacute;s
+	adelante programar el robot para seguir una l&iacute;nea negra.
+	<A HREF="sensores3.html">Instrucciones</A>.</FONT></FONT></P>
+</UL>
+<HR>
+<H2>Al finalizar la sesion 
+</H2>
+<UL>
+	<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Al terminar la sesi&oacute;n
+	2 tendremos nuestro robot casi listo, capaz de moverse y de leer los
+	dos sensores de infrarrojos. &iexcl;&iexcl; Ahora toca programarlo
+	para que haga lo que nosotros queramos!!</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/skypic-final.png" NAME="Imagen3" ALIGN=MIDDLE WIDTH=337 HEIGHT=253 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2>Informaci&oacute;n adicional</H2>
+<UL>
+	<LI><P STYLE="text-decoration: none"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="http://www.mundobot.com/links/librogordo.htm">El
+	libro gordo de la rob&oacute;tica</A>. <B>Gu&iacute;a INDISPENSABLE</B>
+	con multitud de enlaces clasificados con informaci&oacute;n sobre
+	rob&oacute;tica y dom&oacute;tica en Internet. (<B>Alejandro Alonso</B>)</FONT></FONT></FONT></FONT></P>
+</UL>
+<UL>
+	<LI><P STYLE="text-decoration: none"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="../../../proyectos/skypic/skypic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Tarjeta
+	Skypic </FONT></FONT></A>, el &ldquo;cerebro&rdquo; utilizado en el
+	Skybot</FONT></FONT></P>
+	<LI><P STYLE="text-decoration: none"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="../../../proyectos/sky293/sky293.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tarjeta
+	SKY293</FONT></FONT></A>. La etapa de potencia del Skybot</FONT></FONT></P>
+	<LI><P><A HREF="http://xpic.freestarthost.com/x-pic_ds.htm"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><SPAN STYLE="text-decoration: none">X-PIC</SPAN>
+	Development System</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+	un sistema de desarrollo de prop&oacute;sito general para
+	microcontroladores PICmicro&reg; de Microchip. (<B>Alberto Calvo,
+	Daniel &Aacute;lvarez</B>)</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><SPAN STYLE="text-decoration: none"><FONT FACE="Arial, sans-serif"><A HREF="http://www.rbzrobotdesign.com/index.php?module=3&amp;id=19">TCEPI2</A>.
+	</FONT><FONT FACE="Arial, sans-serif">P</FONT></SPAN><FONT FACE="Arial, sans-serif">lataforma
+	de desarrollo de sistemas hardware/software empotrados basados en el
+	microcontrolador PIC18F452 de Microchip (<B>RBZ Robot Design</B>).</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><SPAN STYLE="text-decoration: none"><FONT FACE="Arial, sans-serif"><A HREF="http://www.terra.es/personal5/cuchomen1/Micros/placa_fast.htm">Placa
+	Fast-PIC</A>.</FONT><FONT FACE="Arial, sans-serif"> </FONT></SPAN><FONT FACE="Arial, sans-serif">Tarjeta
+	de desarrollo para microcontroladores PIC 16f876 ,18f258 y pin
+	compatibles<SPAN STYLE="text-decoration: none">. (<B>V&iacute;ctor
+	Ap&eacute;stigue</B>)</SPAN></FONT></FONT></P>
+	<LI><P><SPAN STYLE="text-decoration: none"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="http://www.terra.es/personal5/cuchomen1/Micros/powerpic.htm">Placa
+	Power-PIC</A>. Entrenadora para pics </FONT></FONT></SPAN>PIC 16F877
+	y 16F877A<SPAN STYLE="text-decoration: none"><FONT SIZE=2><FONT FACE="Arial, sans-serif">.</FONT></FONT></SPAN></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><SPAN STYLE="text-decoration: none"><FONT SIZE=2><A HREF="http://www.iearobotics.com/proyectos/GEYDi/GEYDi.htm">Tarjeta
+	GEYDi</A>. </FONT></SPAN><FONT SIZE=2 STYLE="font-size: 11pt">Tarjeta
+	entrenadora para las familias de PICs </FONT></FONT><STRONG><SPAN STYLE="font-weight: medium"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">P18F452
+	y</FONT></FONT></SPAN></STRONG><SPAN STYLE="font-weight: medium">
+	</SPAN><STRONG><SPAN STYLE="font-weight: medium"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">P16F87XA</FONT></FONT></SPAN></STRONG>
+	<FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">de
+	40 pinesm (<B>Diego Jim&eacute;nez</B>)</FONT></FONT></P>
+</UL>
+<UL>
+	<LI><P><A HREF="http://www.iearobotics.com/proyectos/tritt/tritt.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Microbot
+	Tritt</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	un robot abierto y sencillo para iniciarse en la rob&oacute;tica.
+	Hecho con piezas de Lego (<B>Iearobotics</B>, <B>Microb&oacute;tica</B>).</FONT></FONT></P>
+	<LI><P><A HREF="http://www.iearobotics.com/proyectos/siko/Microbot_Siko.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Microbot
+	Siko</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	robot-oruga de muy bajo coste para iniciarse en la rob&oacute;tica
+	(<B>Jose Pichardo</B>)</FONT></FONT></P>
+	<LI><P><A HREF="images/Slayer-1.jpg"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Rastreador
+	Slayer</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	con tracci&oacute;n delantera y cabeza giratoria. (<A HREF="http://www.x-pic-system.tk/">Daniel
+	Alvarez y Alberto Calvo</A>)</FONT></FONT></P>
+	<LI><P><A HREF="images/QueenMary.png"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Queen-Mary</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	otro rastreador que usa Cds como ruedas (<A HREF="http://www.x-pic-system.tk/">Daniel
+	&Aacute;lvarez y Alberto Calvo</A>)</FONT></FONT></P>
+	<LI><P><A HREF="http://www.rbzrobotdesign.com/index.php?module=3&amp;id=21"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Robot
+	PI</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	comercializado por <B>RBZ</B>. Plataforma muy buena para iniciarse y
+	profundizar en los algoritmos de navegaci&oacute;n y cooperaci&oacute;n.</FONT></FONT></P>
+</UL>
+<HR>
+<P><A HREF="../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[pagina
+principal]</FONT></FONT></A></P>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="../../../personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A><A HREF="http://www.iearobotics.com/">
+</A>
+</ADDRESS>
+<P STYLE="margin-bottom: 0cm"><A HREF="http://www.iearobotics.com"><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEAROBOTICS</FONT></FONT></A>
+</P>
+</BODY>
+</HTML>

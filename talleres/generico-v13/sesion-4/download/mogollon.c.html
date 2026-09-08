@@ -1,0 +1,117 @@
+
+<html>
+<head>
+<title>mogollon.c</title>
+<meta name="generator" content="c2html 0.9.5">
+<meta name="date" content="2006-02-17T11:32:28+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/*************************************************************************** */</font>
+<font color="#B22222">/* mogollon.c.c  Julio-2005                                                  */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Ejemplo para el skybot                                                    */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Programa modelo para el concurso del "mogollon"                           */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  Andres Prieto-Moreno &lt;andres@ifara.com&gt;                                  */</font>
+<font color="#B22222">/*  Juan Gonzalez &lt;juan@iearobotics.com&gt;                                     */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  LICENCIA GPL                                                             */</font>
+<font color="#B22222">/*****************************************************************************/</font>
+
+//-- Especificar el pic a emplear
+<strong><font color="#228B22">#define __16f877</font></strong>
+<font color="#A020F0">#include </font><font color="#666666">"pic16f877.h"</font><font color="#A020F0"></font>
+
+//-- Para usar temporizaciones con el timer 0
+<font color="#A020F0">#include </font><font color="#666666">"delay0.h"</font><font color="#A020F0"></font>
+
+//-- Definiciones para los motores. Estos valores definen
+//-- los movimientos del robot
+<strong><font color="#228B22">#define   ROBOT_AVANZA      0x1C</font></strong>
+<strong><font color="#228B22">#define   ROBOT_ATRAS       0x16</font></strong>
+<strong><font color="#228B22">#define   ROBOT_IZQUIERDA   0x1E </font></strong>
+<strong><font color="#228B22">#define   ROBOT_DERECHA     0x14 </font></strong>
+<strong><font color="#228B22">#define   ROBOT_STOP        0x00</font></strong>
+
+//-- Definiciones de los sensores
+<strong><font color="#228B22">#define   SENSOR1  0x01</font></strong>
+<strong><font color="#228B22">#define   SENSOR2  0x20</font></strong>
+<strong><font color="#228B22">#define   SENSOR3  0x40</font></strong>
+<strong><font color="#228B22">#define   SENSOR4  0x80</font></strong>
+
+//-- Pulsador de la Skypic
+<strong><font color="#228B22">#define PULSADOR 0x01</font></strong>
+
+//-- MOdificar esto para indicar la colocacion de los sensores
+<strong><font color="#228B22">#define SENSOR_IZQUIERDO SENSOR4</font></strong>
+<strong><font color="#228B22">#define SENSOR_DERECHO   SENSOR3</font></strong>
+
+//-- Tiempo en segundos para esperar a que el algoritmo arranque
+<strong><font color="#228B22">#define TIEMPO  2</font></strong>
+
+unsigned char sensores; 
+<strong><font color="#4169E1"><a name="main"></a>void main(void)</font></strong>
+{
+  unsigned char i;
+  
+  //-- Configurar puerto B
+  TRISB=0xE1;
+  
+  //-- Inicialmente robot parado
+  PORTB=ROBOT_STOP;
+  
+  //-- Configurar temporizador
+  timer0_configurar();
+  
+  //-- Esperar 300ms y encender led
+  delay0(50);
+  
+  //-- Encender el led
+  PORTB=0x02;
+  
+  //-- Esperar a que se apriete el pulsador
+  <font color="#4169E1">while</font> ((PORTB &amp; PULSADOR)!=0);
+  
+  //-- Hacer que el led parpadee durante 5 segundos
+  <font color="#4169E1">for</font> (i=0; i&lt;TIEMPO*2; i++) {
+    PORTB^=0x02;  //-- Cambiar el led de estado
+    delay0(50);
+  }  
+  
+  
+  //-- Si blanco-blanco --&gt; recto
+  
+  //-- Si blanco-negro --&gt; Girar izquierda durante un tiempo
+  
+  //-- Si negro-blanco --&gt; Girar derecha durante un tiempo
+  
+  //-- Si negro-negro --&gt; atras durante un tiempo
+  
+  
+  
+  <font color="#4169E1">for</font> (;;) {
+      sensores=PORTB&amp; (SENSOR_IZQUIERDO | SENSOR_DERECHO); // Leer sensores
+      <font color="#4169E1">switch</font> (sensores) {
+      <font color="#4169E1">case</font> SENSOR_DERECHO:      //-- Caso blanco-negro
+        PORTB=ROBOT_IZQUIERDA;
+        delay0(50);
+        <font color="#4169E1">break</font>;
+      <font color="#4169E1">case</font> SENSOR_IZQUIERDO:    //-- Caso negro-blanco
+        PORTB=ROBOT_DERECHA;
+        delay0(50);
+        <font color="#4169E1">break</font>;
+      <font color="#4169E1">case</font> (SENSOR_IZQUIERDO | SENSOR_DERECHO):  //-- Caso negro-negro
+        PORTB=ROBOT_ATRAS;
+        delay0(50);
+        <font color="#4169E1">break</font>;
+      <font color="#4169E1">default:</font></strong>  //-- Caso blanco-blanco
+        PORTB=ROBOT_AVANZA;
+      }
+  }  
+}
+</pre>
+</body>
+
+</html>

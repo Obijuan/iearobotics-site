@@ -1,0 +1,65 @@
+
+<html>
+<head>
+<title>ledp.c</title>
+<meta name="generator" content="c2html 0.9.5">
+<meta name="date" content="2006-02-16T11:34:26+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/*************************************************************************** */</font>
+<font color="#B22222">/* ledp.c      Junio-2005                                                    */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Ejemplo para la tarjeta SKYPIC                                            */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Hacer parpear el led de la Skypic. No se utilizan los temporizadores      */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  Andres Prieto-Moreno &lt;andres@ifara.com&gt;                                  */</font>
+<font color="#B22222">/*  Juan Gonzalez &lt;juan@iearobotics.com&gt;                                     */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  LICENCIA GPL                                                             */</font>
+<font color="#B22222">/*****************************************************************************/</font>
+//-- Especificar el pic a emplear
+<strong><font color="#228B22">#define __16f877</font></strong>
+<font color="#A020F0">#include </font><font color="#666666">"pic16f877.h"</font><font color="#A020F0"></font>
+
+//-- Definiciones
+<strong><font color="#228B22">#define LED       0x02     // Pin del led de la Skypic</font></strong>
+<strong><font color="#228B22">#define CONFIG_B  ~LED     // Configuracion para el puerto B.</font></strong>
+                           // RB1 salida, resto entradas
+
+//-- Cambiando este valor se modifica el tiempo de pausa
+//-- 0xFFFF es la maxima y 0x0000 la minima
+<strong><font color="#228B22">#define RETRASO 0xFFFF</font></strong>
+
+//-- Contador para la pausa
+unsigned int contador;
+
+<font color="#B22222">/**************************************************************************/</font>
+<font color="#B22222">/* Rutina de pausa. Se hace que el contador vaya desde 0000 hasta retraso */</font>
+<font color="#B22222">/* ENTRADAS:                                                              */</font>
+<font color="#B22222">/*   -retraso: Indica el valor de la pausa. 0xFFFF es el valor maximo     */</font>        
+<font color="#B22222">/**************************************************************************/</font>
+<strong><font color="#4169E1"><a name="pausa"></a>void pausa(unsigned int retraso)</font></strong>
+{
+        <font color="#4169E1">while</font> (retraso&gt;0) {
+          retraso--;
+  }  
+}
+
+<strong><font color="#4169E1"><a name="main"></a>void main(void)</font></strong>
+{
+  //-- Configurar puerto B
+  TRISB=CONFIG_B;
+
+  //-- Bucle infinito
+  <font color="#4169E1">for</font> (;;) {
+    PORTB^=LED;        //-- Cambiar led de estado
+    pausa(RETRASO);    //-- Pausa
+  }
+
+}
+</pre>
+</body>
+
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+kybot-test
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGED" CONTENT="20050718;16255500">
+	<META NAME="KEYWORDS" CONTENT="robotica, microcontroladores, pic, hardware">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<TABLE WIDTH=917 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+	<COL WIDTH=909>
+	<TR>
+		<TD WIDTH=909>
+			<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Skybot-test:
+			Prueba del robot Skybot desde Linux</B></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/skybot-tux.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=337 HEIGHT=253 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2>Introducci&oacute;n</H2>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">El programa
+<B>skybot-test</B> es un cliente para el <A HREF="../skybot-monitor/index.html">servidor
+skybot-monitor</A>, basado en el <A HREF="../../../../proyectos/stargate/servidores/sg-generic/sg-generic.html">servidor
+gen&eacute;rico</A> (<A HREF="../../../../proyectos/stargate/index.html">proyecto
+Stargate</A>) que permite manejar el robot <B>skybot</B> desde el PC
+y leer el estado de los cuatro sensores</FONT></FONT>. <FONT SIZE=2><FONT FACE="Arial, sans-serif">Es
+muy &uacute;til para detectar problemas y hacer pruebas. Tambi&eacute;n
+sirve de base para crear otros programas m&aacute;s complejos, como
+por ejemplo uno que tenga una interfaz gr&aacute;fica en GTK.</FONT></FONT></P>
+<HR>
+<H2>Caracter&iacute;sticas</H2>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Plataforma:
+	Linux, aunque ser&iacute;a muy f&aacute;cil portarlo a windows con
+	<A HREF="http://www.cygwin.com/">Cygwin</A></FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Creado para el
+	skybot, pero se puede adaptar facilmente para cualquier otro robot
+	que use un microcontrolador PIC.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Programa para
+	consola</FONT></FONT></P>
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Autor</FONT></H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><A HREF="../../../../personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+	Gonz&aacute;lez G&oacute;mez</FONT></FONT></A> </FONT>
+	</P>
+</UL>
+<HR>
+<H2>Licencia</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Licencia GPL</B>.
+Se conceden permisos para copiar, distribuir, modificar y
+redistribuir las modificaciones.</FONT></FONT></P>
+<HR>
+<H2>Instalaci&oacute;n</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Es un &uacute;nico
+fichero ejecutable, compilado est&aacute;ticamente por lo que no es
+necesario instalar ninguna librer&iacute;a. Los pasos para instalarlo
+son:</FONT></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Bajar el
+	fichero compilado</B>: skybot-test-bin-xx.tgz</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Descomprimirlo</B>:
+	tar vzxf skybot-test-bin-xx.tgz</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Como root, <B>copiar
+	el fichero ejecutable al directorio /usr/local/bin</B>: cp
+	skybot-test /usr/local/bin</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Dar permisos
+	de lectura y escritura</B> en el dispositivo serie que utilizaremos:
+	chmod a+rw /dev/ttySX, donde X depende del puerto serie a usar. Lo
+	normal es utilizar el dispositivo /dev/ttyS0</FONT></FONT></P>
+</UL>
+<HR>
+<H2>Funcionamiento</H2>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Para que funcione
+	es necesario que est&eacute; cargado el programa </FONT></FONT><A HREF="../skybot-monitor/download/skybot-monitor.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">skybot-monitor</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+	en la <A HREF="../../../../proyectos/skypic/skypic.html">tarjeta
+	Skypic</A>. Viene cargado por defecto, por lo que no har&aacute;
+	falta cargarlo si no se ha grabado antes ning&uacute;n programa.</FONT></FONT></P>
+</UL>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Alimentar el
+	skybot y conectarlo al puerto serie del PC.</FONT></FONT></P>
+</UL>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejecutar el
+	<B>skybot-test</B>, indicando el dispositivo serie. Si no se
+	especifica ninguno se toma por defecto el <B>/dev/ttyS0</B></FONT></FONT></P>
+</UL>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><I>$ skybot-test
+/dev/ttyS0</I></FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Aparecer&aacute; lo
+siguiente:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/skybot-test-pant1.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=595 HEIGHT=338 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Mediante las teclas
+o,p,q y a podremos mover el robot. En la parte inferior se muestra el
+estado de los 4 sensores de infrarrojos (S1, S2, S3 y S4) y de los dos bumpers (B1 y B2). En los sensores infrarrojos un 0 indica que est&aacute; leyendo blanco
+y un 1 negro. En los bumpers un 1 indica que se esta aprentando el pulsador del mismo, un 0 indica que esta en estado normal</FONT></FONT></P>
+<HR>
+<H2>Compilaci&oacute;n</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para compilar el
+<B><SPAN STYLE="text-decoration: none">skybot-test</SPAN></B>:</FONT></FONT></P>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Es necesario
+	tener instalada la libstargate (versi&oacute;n 1.0.1) y el paqute de
+	desarrollo libstargate-dev (1.0.1). </FONT></FONT><A HREF="../../../../proyectos/stargate/clientes/libstargate/libstargate.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Ir
+	a esta p&aacute;gina</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Bajar el paquete
+	con las fuentes (skybot-test-xx.tgz)</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Descomprimirlas
+	(tar vzxf skybot-test-xx.tgz)</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Entrar en el
+	directorio creado</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Por un BUG en el
+	paquete de la librer&iacute;a 1.0.1, hay que establecer el siguiente
+	enlace simb&oacute;lico, como root:</FONT></FONT></P>
+</UL>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><I># ln -s
+/usr/libstargate-1.0.1.a /usr/lib/libstargate.a</I></FONT></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejecutar make</FONT></FONT></P>
+</UL>
+<HR>
+<H2>Download</H2>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=742 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+			<TR>
+				<TD WIDTH=734>
+					<P ALIGN=CENTER><B>Descarga de ficheros</B></P>
+				</TD>
+			</TR>
+		</TABLE>
+		<DD>
+		<TABLE WIDTH=741 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=150>
+			<COL WIDTH=583>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=150>
+					<P><A HREF="download/skybot-test-bin-0.2.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">skybot-test-bin-0.2.tgz</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=583>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Version compilada
+					para i686. Compilaci&oacute;n est&aacute;tica. Version 0.2</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=150>
+					<P><A HREF="download/skybot-test-0.2.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">skybot-test-0.2.tgz</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=583>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Fuentes y
+					ejecutable. Version 0.2</FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="todo"></A>Links</H2>
+<UL>
+	<LI><P><A HREF="../../../uam-2006/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Taller
+	de rob&oacute;tica</FONT></FONT></A> <FONT SIZE=2><FONT FACE="Arial, sans-serif">en
+	la Universidad Aut&oacute;noma de Madrid</FONT></FONT></P>
+	<LI><P><A HREF="../../../uca-2005/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Taller
+	de rob&oacute;tica</FONT></FONT></A> <FONT SIZE=2><FONT FACE="Arial, sans-serif">en
+	la Universidad de C&aacute;diz</FONT></FONT></P>
+	<LI><P><A HREF="../../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Taller
+	de rob&oacute;tica</FONT></FONT></A> <FONT SIZE=2><FONT FACE="Arial, sans-serif">en
+	la Campus Party 2005 de Valencia</FONT></FONT></P>
+	<LI><P><A HREF="../../../../proyectos/stargate/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Proyecto
+	Stargate</FONT></FONT></A></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Servidor
+	<A HREF="../skybot-monitor/index.html">skybot-monitor</A>, basado en
+	el </FONT></FONT><A HREF="../../../../proyectos/stargate/servidores/sg-generic/sg-generic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">servidor
+	gen&eacute;rico</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.</FONT></FONT></P>
+</UL>
+<HR>
+<H2>Noticias</H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>14/Feb/2006</B>.
+	Versi&oacute;n 0.1 revisada para el taller de rob&oacute;tica de la Universidad Aut&oacute;noma de Madrid.</FONT></FONT>
+	<LI><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>18/Jul/2005</B>.
+	Versi&oacute;n 0.1 creada para el taller del &aacute;rea de
+	Campusbot, en la Campus Party de Valencia</FONT></FONT></P>
+</UL>
+<HR>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="../../../personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A><BR><A HREF="../../../../../desarrollo"><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEAROBOTICS</FONT></FONT></A>
+</ADDRESS>
+</BODY>
+</HTML>

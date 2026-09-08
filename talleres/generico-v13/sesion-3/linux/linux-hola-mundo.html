@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Taller de robotica. Sesion 3. &quot;Hola mundo&quot; en Linux</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGED" CONTENT="20050720;11070200">
+	<META NAME="KEYWORDS" CONTENT="robotica, microcontroladores, pic, hardware, linux">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+
+<TABLE WIDTH=917 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+	<COL WIDTH=909>
+	<TR>
+		<TD WIDTH=909>
+			<P ALIGN=CENTER><FONT FACE="Arial, sans-serif">Taller de
+			Rob&oacute;tica B&aacute;sico - Skybot v1.3. - SESION 3 - <B> &ldquo;Hola mundo&ldquo; en Linux</B></FONT></P>
+
+		</TD>
+	</TR>
+</TABLE>
+
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/skybot-portatil-linux.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Introducci&oacute;n</FONT></H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En este capitulo
+editaremos, compilaremos y cargaremos en el robot el programa mas
+sencillo posible: el famoso &ldquo;<B>hola mundo</B>&rdquo;. Cuando
+programamos un ordenador, el programa &ldquo;hola mundo&rdquo; es el
+programa m&aacute;s sencillo que imprime por pantalla la frase &ldquo;Hola
+mundo!&rdquo;.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En nuestro caso, vamos
+a programar un microcontrolador, que no tiene pantalla. Tampoco tiene
+teclado. Pero tiene otros perif&eacute;ricos, como por ejemplo un
+led. El programa &ldquo;hola mundo&rdquo; lo &uacute;nico que har&aacute;
+ser&aacute; <B>enceder el led</B> de la Skypic. Es la manera en la
+que el micro nos dir&aacute;: &ldquo;Estoy vivo y he ejecutado tu
+programa&rdquo;.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En este ejemplo no
+vamos a mover el robot. <B>Desconectar el cable</B> que unen las
+tarjetas skypic y ct293. S&oacute;lo trabajaremos con el &ldquo;cerebro&rdquo;.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Nos centraremos en que
+el programa hola mundo funcione en nuestro robot. En los siguiente
+cap&iacute;tulos veremos c&oacute;mo funciona.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/hola_mundo_skybot_led.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2><A NAME="Editor"></A><A NAME="Editor de textos"></A><FONT FACE="Arial, sans-serif">Editando
+el c&oacute;digo y compilando</FONT></H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>&iexcl;Manos a la
+obra! Vamos a cacharrear. Primero nos decargarmos el programa &ldquo;hola
+mundo&rdquo;.</FONT></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Bajar
+	el paquete </FONT></FONT><A HREF="download/hola-mundo-linux.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">hola-mundo-linux.tgz</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+	</FONT></FONT></FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Descomprimirlo,
+	entrar en el directorio y ver los ficheros que hay:</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P><FONT FACE="Courier, monospace"><FONT SIZE=2>$ tar vzxf
+				hola-mundo-linux.tgz </FONT></FONT>
+				</P>
+				<P><FONT FACE="Courier, monospace"><FONT SIZE=2>$ cd
+				hola-mundo-linux</FONT></FONT></P>
+				<P><FONT FACE="Courier, monospace"><FONT SIZE=2>$ ls</FONT></FONT></P>
+				<P><FONT FACE="Courier, monospace"><FONT SIZE=2>ledon.c Makefile
+				pic16f877.h skybot-hola-mundo.prj</FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Se proporciona el
+fichero Makefile para poder compilar facilmente. S&oacute;lo hay que
+ejecutar make.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Editar el fichero
+ledon.c. Como ya comentamos, se puede usar cualquier editor. Nosotros
+proponemos el anjuta.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Lanzar el anjuta y
+darle a la opci&oacute;n <B>Archivo/Abrir proyecto</B> y seleccionar
+<B>skybot-hola-mundo.prj.</B></FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En la zona de la
+derecha tenemos acceso a todos los archivos del proyecto. Desplegar
+la carpeta que pone <B>source</B> y pinchar en <B>ledon.c</B>. Este
+es nuestro programa hola mundo en c. Se nos abrir&aacute; en el
+editor de la derecha.</FONT></FONT></P>
+<P><A HREF="images/inst-linux-anjuta.png"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Aqu&iacute;
+puedes ver un pantallazo del anjuta 1.2.2 en acci&oacute;n!</FONT></FONT></A></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para compilarlo bien
+ponemos salir a una consola y ejecutar make (desde el directorio
+donde est&aacute; el programa) o bien desde el anjuta podemos darle a
+la tecla <B>F11</B> (o ir a la opci&oacute;n de men&uacute;
+<B>Construir/Construir</B>)</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ya tenemos el programa
+compilado. Vamos a descargarlo en la skypic.</FONT></FONT></P>
+<HR>
+<H2><A NAME="gputils"></A><FONT FACE="Arial, sans-serif">Descargando
+en el robot</FONT></H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Conectar el robot
+	al puerto serie del PC</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Alimentarlo</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/hola_mundo_skybot_ready.png" NAME="Imagen3" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Abrir una consola
+	e ir al directorio donde se encuentre el programa ejecutable
+	ledon.hex</FONT></FONT></P>
+</UL>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejecutar el
+	cargador:</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P><FONT FACE="Courier, monospace"><FONT SIZE=2>$ skybot-down
+				ledon.hex</FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Al arrancar se
+mostrar&aacute;n unos &ldquo;puntitos&rdquo; que se van imprimirndo.
+Est&aacute; esperando a que se pulse el reset del robot.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Apretar el bot&oacute;n
+de reset</B> y el ledon.hex se cargar&aacute;. <B>&iexcl;Ahora el led
+est&aacute; encendido!</B>. Si quitamos la alimentaci&oacute;n y la
+volvemos a poner, es decir, reiniciamos a nuestro micro, se volver&aacute;
+a ejecutar el &uacute;ltimo programa cargado. Los programas se graban
+en la memoria flash, que es <B>no vol&aacute;til.</B></FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/hola-mundo-download.png" NAME="Imagen4" ALIGN=MIDDLE WIDTH=666 HEIGHT=413 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>&iexcl;&iexcl;Ya
+hemos programado el robot!!</B><BR><BR>
+
+Si en este proceso nos sale un mesaje de error diciendo que <B>no se encuentra el Bootloader</B> hay que revisar tres cosas:<BR>
+1. Que el robot esta alimentado a 5v o 6v.<BR>
+2. Que estamos dando al pulsador correcto, es decir al de <B>Reset</B><BR>
+3. Que esta conectado el cable serie al conector telef&oacute;nico marcado como PC (el de la derecha junto a la clema de alimentaci&oacute;n).
+<BR><BR>Si todav&iacute;a sigue fallando es muy probable que se <B>haya desprogramado</B> el bootloader interno. El Skybot lo trae grabado por defecto pero en caso de no tenerlo se tiene que volver a grabar. Las instrucciones para ello est&aacute;n <a href="http://www.iearobotics.com/proyectos/skypic/bootloader/bootloader.html">aqu&iacute;</a>.Si estamos en un taller comentarlo a alg&uacute;n instructor para que lo haga.
+</P></FONT></FONT>
+
+<HR>
+<P STYLE="margin-bottom: 0cm"><A HREF="../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Sesion
+III]</FONT></FONT></A> 
+</P>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="../../../personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A><BR><A HREF="../../../../.."><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEAROBOTICS</FONT></FONT></A>
+</ADDRESS>
+</BODY>
+</HTML>

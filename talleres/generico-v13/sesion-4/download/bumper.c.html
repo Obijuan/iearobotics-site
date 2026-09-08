@@ -1,0 +1,60 @@
+
+<html>
+<head>
+<title>bumper.c</title>
+<meta name="generator" content="c2html 0.9.5">
+<meta name="date" content="2006-02-17T23:39:56+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/*************************************************************************** */</font>
+<font color="#B22222">/* bumpers.c      Febrero-2006                                               */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Ejemplo para el skybot                                                    */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  Ejemplo de prueba para los bumpers.                                      */</font>
+<font color="#B22222">/*  Al apretar el Bumper1 (Derecho) se apaga el LED                          */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  Andres Prieto-Moreno &lt;andres@ifara.com&gt;                                  */</font>
+<font color="#B22222">/*  Juan Gonzalez &lt;juan@iearobotics.com&gt;                                     */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  LICENCIA GPL                                                             */</font>
+<font color="#B22222">/*****************************************************************************/</font>
+
+//-- Especificar el pic a emplear
+<strong><font color="#228B22">#define __16f877</font></strong>
+<font color="#A020F0">#include </font><font color="#666666">"pic16f877.h"</font><font color="#A020F0"></font>
+
+<strong><font color="#228B22">#define DERECHO   0x02 //Bumper 1  Derecho desde arriba</font></strong>
+<strong><font color="#228B22">#define IZQUIERDO 0x04 //Bumper 2  Iquierdo desde arriba</font></strong>
+
+//----------------------------
+//- Comienzo del programa  
+//----------------------------
+
+unsigned char bumper;
+<strong><font color="#4169E1"><a name="main"></a>void main(void)</font></strong>
+{
+  //-- Configurar el puerto B para trabajar con el Skybot
+  //-- RB0, RB5, RB6 y RB7 como entradas
+  //-- RB1, RB2, RB3 y RB4 como salidas
+  TRISB=0xE1;
+  
+  //-- Configurar el puerto A para trabajar con los bumpers
+  ADCON1=0x0E;
+  
+  <font color="#4169E1">for</font>(;;) {
+    bumper=PORTA &amp; DERECHO; // Leer bumper 1
+        <font color="#4169E1">if</font> ( bumper==0) { 
+                PORTB=0x02;
+        } <font color="#4169E1">else</font> {    // al apretar el bumper leemos 1
+                PORTB=0;
+        }
+        
+  }
+
+}
+</pre>
+</body>
+
+</html>

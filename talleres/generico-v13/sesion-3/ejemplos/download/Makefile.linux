@@ -1,0 +1,45 @@
+# **************************************************************************
+# Fichero makefile.
+# --------------------------------------------------------------------------
+# Licencia GPL. Juan Gonzalez Gomez
+# --------------------------------------------------------------------------
+#
+#***************************************************************************
+
+#-- Compilador
+CC = sdcc
+
+#-- En la version 2.5 del SDCC el pic 16f876a todavi no esta
+#-- soportado. Sin embargo, es casi equivalente al 16f877
+CFLAGS = -mpic14 -p16f877
+
+#-- Ejemplos para el PUERTO B
+NAME1=ledon
+
+all: $(NAME1).hex 
+
+
+#---------------------------
+#       OBJETIVOS
+#---------------------------
+#-- Para programas que tengan mas de un fichero fuente
+#$(NAME1).hex: $(OBJ1)
+#	    gplink -o $(NAME1).hex $(OBJ1)
+			
+
+#--------------------
+#- LIMPIEZA
+#--------------------
+clean:
+	  rm -f *.o *.hex *.lst *.p *.d *.asm *.cod
+
+#-----------------------
+# REGLAS GENERICAS
+#-----------------------
+#-- Obtencion de los ficheros objeto .o
+.c.o: 
+	        $(CC) -S $(CFLAGS) $<  
+	        gpasm -c $*.asm 
+					
+#-- Obtencion de los ficheros ejecutables
+%.hex : %.o; gplink -o $@ -a inhx8m $<

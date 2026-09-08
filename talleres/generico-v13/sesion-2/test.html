@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Taller de robotica basico - Skybot v1.3. -  Sesion 2. Primera prueba del robot</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGED" CONTENT="20050718;19200500">
+	<META NAME="KEYWORDS" CONTENT="robotica, microcontroladores, pic, hardware">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<TABLE WIDTH=917 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+	<COL WIDTH=909>
+	<TR>
+		<TD WIDTH=909>
+			<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Taller
+			de Rob&oacute;tica B&aacute;sica - Skybot v1.3. - SESION 2 <B>Probando el robot</B></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/test-inicio.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=337 HEIGHT=253 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Introducci&oacute;n</FONT></H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>
+Vamos a probar el funcionamiento de las partes b&aacute;sicas del robot, es decir, los motores y los sensores de infrarrojos CNY70. Para esta prueba vamos a necesitar un PC, el cable de conexi&oacute;n serie del Skybot, al menos un sensor de infrarrojos y 4 pilas tipo AA.<br><br>
+Para realizar la prueba es necesario que la tarjeta SKYPIC tenga grabada el programa <A href="../software/skybot-monitor/index.htm"><b>skybot-monitor</b></a>. Salvo que el usuario haya grabado otro programa la tarjeta de fabrica ya viene con dicho programa grabado, por lo que podemos seguir adelante. En caso contrario tendremos que volver a grabar el programa <b>skybot-monitor</b> en ella. Para ello seguir los pasos que se indican <A href="../software/skybot-monitor/index.htm">aqui</a>.<br> 
+
+
+</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/test-partes.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=337 HEIGHT=253 BORDER=0></P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>1)</B>
+				Skybot</FONT></FONT></P>
+				<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>2)</B>
+				Cable de conexi&oacute;n serie. Por un lado tiene un conector
+				telef&oacute;nico (RJ11) que se enchufa a la Skypic y por el otro
+				un DB9 que va al PC</FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Material adicional </FONT>
+</H2>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=50% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/test-materiales.png" NAME="Imagen3" ALIGN=MIDDLE WIDTH=344 HEIGHT=253 BORDER=0></P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>1)</B>
+				Rollo de cinta aislante NEGRO</FONT></FONT></P>
+				<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>2)</B>
+				Papel blanco</FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Conexi&oacute;n del sensor de infrarrojos CNY70</FONT></H2>
+<UL>
+	<LI><P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Paso
+	1</B>. Conectar los sensores a probar. En este ejemplo hemos
+	conectado uno a la entrada sensor 3 de la SKY293. El sensor 3 se encuentra en la clema de la derecha de la SKY293. En la foto y en el diagrama mostrados abajo se muestra como hacer esta conexi&oacute;n.</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/test-paso1b.png" NAME="Imagen4" ALIGN=MIDDLE BORDER=0></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/conexion-cny.png" NAME="Imagen4b" ALIGN=MIDDLE BORDER=0></P>
+			</TD>
+
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Paso
+	2</B>. Conectar el robot al puerto serie del PC y alimentarlo con las 4 pilas tipo AA (+6v). La
+	skypic tiene dos conectores telef&oacute;nicos. Uno es para la
+	conexi&oacute;n del ICD2 de Microchip y no se utilizar&aacute; en
+	este taller. El otro es para conectarlo al PC. Fijarse en la foto de
+	la izquierda. </FONT></FONT>
+	</P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/test-paso2.png" NAME="Imagen5" ALIGN=MIDDLE WIDTH=702 HEIGHT=253 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Probando el Robot </FONT>
+</H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>
+	Como hemos dicho antes el robot se suministra con un peque&ntilde;o programa grabado en el microcontrolador (componente principal de la SKYPIC). Este programa, llamado <b>skybot-monitor</b>, lo vamos a utilizar para probar el robot sin necesidad de aprender nada m&aacute;s. En la siguiente sesi&oacute;n aprenderemos a crear nuestros propios programas y a grabarlos en la tarjeta SKYPIC, o lo que es lo mismo en el microcontrolador PIC. Las fuentes del programa skybot-monitor y el fichero ya compilado lo podeis descargar de <a href="../software/skybot-monitor/index.html"> aqui</a>. 
+	
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para hacer las
+	pruebas ejecutaremos <B>un programa en el PC</B> que se comunica con
+	el robot, es decir con el skybot-monitor,  y nos permite moverlo y ver el estado de los sensores. Esta
+	aplicaci&oacute;n depende de la plataforma que estemos utilizando:
+	Linux, Windows (Usuarios de MAC, seguramente os sirva la misma
+	aplicaci&oacute;n que la de Linux, pero habr&aacute; que compilarla.
+	Desgraciadamente no tengo un MAC para probar)</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Los usuarios de
+	<B>Windows</B> utilizar&eacute;is el programa <B>BotControl</B>.<A HREF="../software/botcontrol/index.htm">
+	Instalarlo como se indica en la p&aacute;gina</A></FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Los usuarios de
+	<B>Linux</B> utilizar&eacute;is el programa <B>Skybot-test</B>.<A HREF="../software/skybot-test/skybot-test.html">
+	Instalarlo como se indica en la p&aacute;gina</A>.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Arrancar el
+	programa de prueba y probar a mover el robot.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Colocar un papel
+	blanco con un trozo de cinta aislante negra y pasar el robot por
+	encima. Comprobar que los el valor de los sensores que se muestran
+	en pantalla cambian.</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/test-robot-linea.png" NAME="Imagen6" ALIGN=MIDDLE WIDTH=337 HEIGHT=253 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>A juguetear con
+	el robot!!!!!! :-)</FONT></FONT></P>
+</UL>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A HREF="index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Sesion
+II]</FONT></FONT></A> 
+</P>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="../../../personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A>
+<br><A HREF="../../../personal/andres/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Andr&eacute;s
+Prieto-Moreno </FONT></FONT></A>
+
+
+<BR><A HREF="http://www,iearobotics.com"><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEAROBOTICS</FONT></FONT></A>
+</ADDRESS>
+</BODY>
+</HTML>

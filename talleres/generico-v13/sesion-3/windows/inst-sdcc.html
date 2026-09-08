@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Taller de robotica. Sesion 3. Windows</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGED" CONTENT="20050719;23551500">
+	<META NAME="KEYWORDS" CONTENT="robotica, microcontroladores, pic, hardware">
+	<!-- saved from url=(0075)http://www.iearobotics.com/talleres/campusbot-2005/sesion-1/mecanica-1.html -->
+	<STYLE>
+	<!--
+		@page { size: 21cm 29.7cm }
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+
+<TABLE WIDTH=917 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+	<COL WIDTH=909>
+	<TR>
+		<TD WIDTH=909>
+			<P ALIGN=CENTER>Taller de Rob&oacute;tica B&aacute;sico - Skybot v1.3. -
+			SESION 3 - Windows. <B>Compilador SDCC</B></P>
+
+		</TD>
+	</TR>
+</TABLE>
+
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Descripci&oacute;n</FONT></H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En este cap&iacute;tulo
+Instalaremos el compilador <B>SDCC</B>. </FONT></FONT>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Instalaci&oacute;n</FONT></H2>
+<UL>
+
+
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><FONT FACE="Arial, sans-serif">El software del taller para Windows se ha probado con la versi&oacute;n del compilador <B>SDCC-2.5.1</B>. Esta versi&oacute;n era una intermedia por lo que recomendamos instalar la SDCC-2.5.0 y luego aplicar el siguiente parche <B>SDCC_parche_2.5.1.zip</B> siguiendo los pasos descritos en esta p&aacute;gina. <B>Es importante actualizarse a la 2.5.1 ya que los programas compilados con la 2.5.0 no funcionan correctamente</B>
+
+
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Para
+	la instalacion del SDCC-2.5.0 necesitaremos descargarlo de esta </FONT></FONT><A HREF="http://sourceforge.net/project/showfiles.php?group_id=599"><FONT SIZE=2><FONT FACE="Arial, sans-serif">p&aacute;gina</FONT></FONT></A>. Hay que usar la versi&oacute;n SDCC-WIN32 2.5.0 que es para windows. </FONT></P>
+	
+	<LI><P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para
+	comenzar la instalaci&oacute;n ejecutaremos el archivo
+	<B>SDCC-2.5.0SETUP.EXE</B>, desde la ubiaci&oacute;n donde lo hayais
+	descargado, con lo que se nos abrir&aacute; la siguiente ventana:</FONT></FONT></P>
+</UL>
+<UL>
+	<UL>
+		<UL>
+			<UL>
+				<UL>
+					<UL>
+						<P><IMG SRC="InstalacionSDCC/unoSdcc.png" NAME="Imagen1" ALIGN=BOTTOM WIDTH=505 HEIGHT=395 BORDER=0></P>
+					</UL>
+				</UL>
+			</UL>
+		</UL>
+	</UL>
+</UL>
+<UL>
+	<LI><P ALIGN=LEFT STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Pulsamos
+	el bot&oacute;n &ldquo;<B>Next</B>&rdquo; y nos aparece la siguiente
+	ventana:</FONT></FONT></P>
+</UL>
+<P ALIGN=LEFT><BR><BR>
+</P>
+<UL>
+	<UL>
+		<UL>
+			<UL>
+				<UL>
+					<UL>
+						<P ALIGN=LEFT><IMG SRC="InstalacionSDCC/dosSdcc.JPG" NAME="Imagen2" ALIGN=MIDDLE WIDTH=504 HEIGHT=395 BORDER=0></P>
+					</UL>
+				</UL>
+			</UL>
+		</UL>
+	</UL>
+</UL>
+<UL>
+	<LI><P ALIGN=LEFT STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Pinchamos
+	en la bot&oacute;n &ldquo;<B>I Agree</B>&rdquo; . Y esta es la
+	ventana siguiente:</FONT></FONT></P>
+	<UL>
+		<UL>
+			<UL>
+				<UL>
+					<UL>
+						<P ALIGN=LEFT><IMG SRC="InstalacionSDCC/tresSdcc.JPG" NAME="Imagen3" ALIGN=MIDDLE WIDTH=504 HEIGHT=395 BORDER=0></P>
+					</UL>
+				</UL>
+			</UL>
+		</UL>
+	</UL>
+	<LI><P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Volvemos
+	a Pulsar &ldquo;<B>Next&rdquo; </B>tras verificar el nombre que
+	queremos ponerle al grupo de carpetas para el compilador<B>.</B></FONT></FONT></P>
+	<UL>
+		<UL>
+			<UL>
+				<UL>
+					<UL>
+						<P ALIGN=LEFT><IMG SRC="InstalacionSDCC/cincoSdcc.JPG" NAME="Imagen4" ALIGN=MIDDLE WIDTH=504 HEIGHT=395 BORDER=0></P>
+					</UL>
+				</UL>
+			</UL>
+		</UL>
+	</UL>
+	<LI><P ALIGN=LEFT STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ahora
+	decidimosque tipo de instalaci&oacute;n queremos hacer. Si queremos
+	cambiar la que figura por defecto, pulsaremos en el bot&oacute;n
+	desplegable donde elegiremos entre las opciones <B>Full</B>, <B>Medium</B>
+	y <B>Compact</B> o <B>Custom</B>, nosotros elegiremos la que viene
+	por defecto &ldquo;<B>Full</B>&rdquo; y as&iacute; seleccionaremos
+	todas las librerias que trae el compiador.Tras pulsar &ldquo;<B>Next</B>&rdquo;,
+	tenemos:</FONT></FONT></P>
+	<UL>
+		<UL>
+			<UL>
+				<UL>
+					<UL>
+						<P ALIGN=LEFT><IMG SRC="InstalacionSDCC/seisSdcc.JPG" NAME="Imagen5" ALIGN=MIDDLE WIDTH=504 HEIGHT=395 BORDER=0></P>
+					</UL>
+				</UL>
+			</UL>
+		</UL>
+	</UL>
+	<LI><P ALIGN=LEFT STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ahora
+	podemos elegir la ruta de instalaci&oacute;n. Nosotros hemos dejado
+	la que viene por defecto, y pulsamos &rdquo;<B>Install</B>&rdquo;.</FONT></FONT></P>
+	<UL>
+		<UL>
+			<UL>
+				<UL>
+					<UL>
+						<P ALIGN=LEFT><IMG SRC="InstalacionSDCC/sieteSdcc.JPG" NAME="Imagen6" ALIGN=BOTTOM WIDTH=504 HEIGHT=395 BORDER=0></P>
+						<P ALIGN=LEFT><IMG SRC="InstalacionSDCC/ochoSdcc.JPG" NAME="Imagen9" ALIGN=BOTTOM WIDTH=504 HEIGHT=395 BORDER=0></P>
+					</UL>
+				</UL>
+			</UL>
+		</UL>
+	</UL>
+</UL>
+<UL>
+	<LI><P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Inmediatamente
+	comenzar&aacute; la descompresion e instalaci&oacute;n del
+	compilador, al finalizar nos pedir&aacute;la confirmaci&oacute;n
+	para a&ntilde;adir la ruta de instalaci&oacute;n al PATH del
+	compilador. Pulsamos &ldquo;<B>S&iacute;</B>&rdquo;. </FONT></FONT>
+	</P>
+</UL>
+<UL>
+	<UL>
+		<UL>
+			<UL>
+				<UL>
+					<UL>
+						<P ALIGN=LEFT><IMG SRC="InstalacionSDCC/nueveSdcc.JPG" NAME="Imagen7" ALIGN=MIDDLE WIDTH=505 HEIGHT=395 BORDER=0></P>
+					</UL>
+				</UL>
+			</UL>
+		</UL>
+	</UL>
+	<LI><P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Con
+	esto hemos finalizado la instalaci&oacute;n. Tras pulsar el bot&oacute;n
+	&ldquo;<B>Finish</B>&rdquo; completamos el proceso. Importante
+	recodar que el compilador no crea un icono de acceso directo ni nada
+	por el estilo. Sin embargo podemos acceder a determinadas opciones
+	de configuraci&oacute;n as&iacute; como un acceso para desinstalarlo
+	a traves de la ruta <B>Inicio -&gt; Programas -&gt;SDCC</B>.</FONT></FONT></P>
+</UL>
+</FONT>
+</FONT>
+
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Actualizaci&oacute;n a la versi&oacute;n 2.5.1</FONT></H2>
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=2>Una vez instalada la versi&oacute;n 2.5.0 del compilador SDCC necesitamos <B>actualizar a la 2.5.1</B>. Para ello teneis que descargaros este archivo <a href="download/sdcc_parche_2.5.1.zip">sdcc_parche_2.5.1.zip</a>, descomprimirlo y sustituir o copiar los nuevos archivos en el &aacute;rbol de directorios de la versi&oacute;n 2.5.0.
+<br><br>Una vez hecho esto podemos comprobar que tenemos la versi&oacute;n correcta ejecutando el siguiente comando desde una Shell de DOS (cmd en ejecutar programa):
+<br><br><B>
+>sdcc -v
+</B>
+<BR><BR>
+Aparece una l&iacute;nea en la pantall, en ella veremos la versi&oacute;n actual del compilador, si aparece 2.5.1 tenemos todo instalado correctamente. En caso contrario revisar la sustitituci&oacute;n de archivos.
+
+
+</FONT></FONT>
+
+<HR>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="inst-windows.html">Software
+para Windows</A>]</FONT></FONT></P>
+
+<ADDRESS STYLE="margin-bottom: 0.5cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Jose
+Pichardo Gallardo</FONT></FONT>
+<A HREF="mailto:Jose Pichardo &lt;tartesos2@telefonica.net&gt;"><U><FONT SIZE=2><FONT FACE="Arial, sans-serif">tartesos2@telefonica.net</FONT></FONT></U></A>
+<br><FONT SIZE=2><a href="http://www.iearobotics.com/personal/andres/index.html">Andr&eacute;s Prieto-Moreno</a><BR>
+<a href="../../../..">IEAROBOTICS</a></FONT>
+
+</ADDRESS>
+</BODY>
+</HTML>
