@@ -1,0 +1,179 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1 (Latin-1)" >
+<title>gravedad.py</title>
+<style type="text/css">
+    h1 {    color: green;
+            position: center;
+        }
+    .python_code {  font-family: monospace;
+                font-size: 10pt;
+                }
+    .py_key {color: black;}
+    .py_num color: black;{}
+    .py_str { color: #00AA00;}
+    .py_op {color: black; }
+    .py_com { color: red;}
+    .py_res { color: #FF7700;}
+    .py_def { color: blue;}
+    .py_brk { color: black;}
+</style>
+</head>
+<body>
+<h1>#### Source code for gravedad.py ####</h1>
+<hr>
+<pre class="python_code" id="pycode"><span class="py_com">#!/usr/bin/python
+</span><span class="py_com"># -*- coding: iso-8859-15 -*-
+</span>
+<span class="py_com">#***********************************************************************#
+</span><span class="py_com">#* gravedad.py.  Rafael Treviño. Junio 2006                            *#
+</span><span class="py_com">#*---------------------------------------------------------------------*#
+</span><span class="py_com">#* LICENCIA GPL                                                        *#
+</span><span class="py_com">#*---------------------------------------------------------------------*#
+</span><span class="py_com">#* Ejemplo "hola mundo" del motor fisico ODE (Open Dynamics Engine)    *#
+</span><span class="py_com">#* Es un programa para consola, no utiliza representacion en 3D        *#
+</span><span class="py_com">#* Se crea un mundo virtual y se situa en el una "caja" de una cierta  *#
+</span><span class="py_com">#* masa y a una cierta altura                                          *#
+</span><span class="py_com">#* Como salida del programa se obtiene una funcion que indica como     *#
+</span><span class="py_com">#* varia la altura de la caja con el tiempo, es decir, como cae        *#
+</span><span class="py_com">#* En el mundo virtual creado NO HAY SUELO, por lo que no hay ninguna  *#
+</span><span class="py_com">#* colision. El objeto caera infinitamente...                          *#
+</span><span class="py_com">#*---------------------------------------------------------------------*#
+</span><span class="py_com">#* Los datos devueltos se pueden visualizar con Octave#Matlab          *#
+</span><span class="py_com">#* Ejemplo de uso:                                                     *#
+</span><span class="py_com">#*   $ gravedad.py &gt; func.m                                            *#
+</span><span class="py_com">#*   $ octave func.m                                                   *#
+</span><span class="py_com">#***********************************************************************#
+</span>
+<span class="py_res">import</span><span class="py_key"> ode</span>
+<span class="py_res">from</span><span class="py_key"> sys</span><span class="py_res"> import</span><span class="py_key"> stdout</span>
+
+<span class="py_com">#*********************************************#
+</span><span class="py_com">#* Algunas constantes usadas en el programa  *#
+</span><span class="py_com">#*********************************************#
+</span><span class="py_com">##-- Numero de instantes que queremos simular. Este valor se puede
+</span><span class="py_com">##-- cambiar.
+</span><span class="py_key">TICKS</span><span class="py_op"> = </span><span class="py_num">200</span>
+
+<span class="py_com">##********************************************#
+</span><span class="py_com">## VARIABLES GLOBALES DEL PROGRAMA           *#
+</span><span class="py_com">##********************************************#
+</span>
+<span class="py_com">##-- Identificador para el mundo.
+</span><span class="py_key">world</span><span class="py_op"> = </span><span class="py_key">None</span>
+
+<span class="py_com">##-- El objeto que vamos a colocar.
+</span><span class="py_key">body</span><span class="py_op"> = </span><span class="py_key">None</span>
+
+<span class="py_com">#***********************************************************************#
+</span><span class="py_com">#*  CODIGO                                                             *#
+</span><span class="py_com">#***********************************************************************#
+</span>
+<span class="py_com">#*********************************************#
+</span><span class="py_com">#* Crear la "caja"                           *#
+</span><span class="py_com">#* Se define la "caja" usando la API de ODE  *#
+</span><span class="py_com">#* y se asocia al "mundo"                    *#
+</span><span class="py_com">#*********************************************#
+</span><span class="py_res">def</span><span class="py_def"> Crear_objeto</span><span class="py_brk">(</span><span class="py_brk">)</span><span class="py_op">: </span>
+	<span class="py_res">global</span><span class="py_key"> body</span><span class="py_op">, </span><span class="py_key">world</span>
+	<span class="py_com">##-- Identificador para la masa.
+</span>	<span class="py_key">m</span><span class="py_op"> = </span><span class="py_key">ode</span><span class="py_op">.</span><span class="py_key">Mass</span><span class="py_brk">(</span><span class="py_brk">)</span>
+
+	<span class="py_com">##-- Crear el Cuerpo y asociarlo al mundo
+</span>	<span class="py_key">body</span><span class="py_op"> = </span><span class="py_key">ode</span><span class="py_op">.</span><span class="py_key">Body</span><span class="py_brk">(</span><span class="py_key">world</span><span class="py_brk">)</span>
+
+	<span class="py_com">##-- Establecer la posicion inicial. Se pasan las coordenadas x,y,z
+</span>	<span class="py_com">##-- En este ejemplo el objeto esta en el origen, a una altura de 
+</span>	<span class="py_com">##-- 4 unidades
+</span>	<span class="py_key">body</span><span class="py_op">.</span><span class="py_key">setPosition</span><span class="py_brk">(</span><span class="py_brk">(</span><span class="py_num">0</span><span class="py_op">, </span><span class="py_num">0</span><span class="py_op">, </span><span class="py_num">4</span><span class="py_brk">)</span><span class="py_brk">)</span>
+  
+	<span class="py_com">##-- Establecer la masa del cuerpo
+</span>	<span class="py_com">##-- Hay que especificar la masa total y las dimensiones
+</span>	<span class="py_com">##-- del cubo. Como masa se toma 0.5 y las dimensiones de la caja
+</span>	<span class="py_com">##-- son 0.5 x 0.5 x 0.1. Se pueden poner las que se quiera
+</span>	<span class="py_key">m</span><span class="py_op">.</span><span class="py_key">setBox</span><span class="py_brk">(</span><span class="py_num">0.5</span><span class="py_op">, </span><span class="py_num">0.5</span><span class="py_op">, </span><span class="py_num">0.5</span><span class="py_op">, </span><span class="py_num">0.1</span><span class="py_brk">)</span>
+	<span class="py_key">body</span><span class="py_op">.</span><span class="py_key">setMass</span><span class="py_brk">(</span><span class="py_key">m</span><span class="py_brk">)</span>
+
+<span class="py_com">#***********************************************************************#
+</span><span class="py_com">#* MAIN                                                                *#
+</span><span class="py_com">#* Primero se crea el mundo (esto es como ser Dios). El mundo es       *#
+</span><span class="py_com">#* un "contenedor" de objetos                                          *#
+</span><span class="py_com">#* El mundo no sabe nada de como se dibujan los objetos                *#
+</span><span class="py_com">#* En este ejemplo el mundo solo tiene una "caja"                      *#
+</span><span class="py_com">#***********************************************************************#
+</span><span class="py_res">if</span><span class="py_key"> __name__</span><span class="py_op"> == </span><span class="py_str">'__main__'</span><span class="py_op">: </span>
+	<span class="py_com">##-- Variable de posicion
+</span>	<span class="py_key">pos</span><span class="py_op"> = </span><span class="py_key">None</span>
+	<span class="py_com">##-- Crear mundo
+</span>	<span class="py_key">world</span><span class="py_op"> = </span><span class="py_key">ode</span><span class="py_op">.</span><span class="py_key">World</span><span class="py_brk">(</span><span class="py_brk">)</span>
+
+	<span class="py_com">##-- Establecer la gravedad (gravedad terrestres: -9.81)
+</span>	<span class="py_key">world</span><span class="py_op">.</span><span class="py_key">setGravity</span><span class="py_brk">(</span><span class="py_brk">(</span><span class="py_num">0</span><span class="py_op">, </span><span class="py_num">0</span><span class="py_op">, </span><span class="py_op">-</span><span class="py_num">9.81</span><span class="py_brk">)</span><span class="py_brk">)</span>
+
+	<span class="py_com">##-- Establecer parametro CFM
+</span>	<span class="py_com">##-- Normalmente se deja siempre a este valor
+</span>	<span class="py_key">world</span><span class="py_op">.</span><span class="py_key">setCFM</span><span class="py_brk">(</span><span class="py_num">1e-5</span><span class="py_brk">)</span>
+
+	<span class="py_com">##-- Establecer el modo auto-disabled por defecto
+</span>	<span class="py_com">##-- Cualquier objeto que se encuentre en reposo se deshabilitara
+</span>	<span class="py_com">##-- y no consumira recursos en la simulacion. Normalmente
+</span>	<span class="py_com">##-- siempre se activara
+</span>	<span class="py_key">world</span><span class="py_op">.</span><span class="py_key">setAutoDisableFlag</span><span class="py_brk">(</span><span class="py_num">1</span><span class="py_brk">)</span>
+  
+	<span class="py_com">##-- Crear la "Caja" y ponerla en el "mundo"
+</span>	<span class="py_key">Crear_objeto</span><span class="py_brk">(</span><span class="py_brk">)</span>
+
+	<span class="py_com">##-- Salida para Octave:
+</span>	<span class="py_com">##-- La matriz z es la que se ira rellenando con los valores de
+</span>	<span class="py_com">##-- la altura de la caja
+</span>	<span class="py_key">stdout</span><span class="py_op">.</span><span class="py_key">write</span><span class="py_brk">(</span><span class="py_str">'z = ['</span><span class="py_brk">)</span>
+
+	<span class="py_com">#*************************************#
+</span>	<span class="py_com">#** COMENZAR LA SIMULACION!!!!       *#
+</span>	<span class="py_com">#*************************************#
+</span>	<span class="py_com">##-- Este es el bucle principal. 
+</span>
+	<span class="py_com">##-- Se haran tantos pasos de simulacion como se indican en la 
+</span>	<span class="py_com">##-- constante TICKS
+</span>	<span class="py_res">for</span><span class="py_key"> ticks</span><span class="py_res"> in</span><span class="py_key"> range</span><span class="py_brk">(</span><span class="py_key">TICKS</span><span class="py_op">, </span><span class="py_num">0</span><span class="py_op">, </span><span class="py_op">-</span><span class="py_num">1</span><span class="py_brk">)</span><span class="py_op">: </span>
+
+		<span class="py_com">##-- Realizar un paso de simulacion.
+</span>		<span class="py_com">##-- Se especifica que resolucion
+</span>		<span class="py_com">##-- en unidades de tiempo se quiere para la simulacion
+</span>		<span class="py_key">world</span><span class="py_op">.</span><span class="py_key">step</span><span class="py_brk">(</span><span class="py_num">0.01</span><span class="py_brk">)</span>
+
+		<span class="py_com">##-- Leer la altura del objeto e imprimirla
+</span>		<span class="py_com">##-- Pos es el vector de posicion, que tiene 3 componentes:
+</span>		<span class="py_com">##-- pos[0] --&gt; x;  pos[1]--&gt; y; pos[2] --&gt; z
+</span>		<span class="py_com">##-- Solo nos interesa la altura a la que esta la caja
+</span>		<span class="py_com">##-- (pos [2])
+</span>		<span class="py_key">pos</span><span class="py_op"> = </span><span class="py_key">body</span><span class="py_op">.</span><span class="py_key">getPosition</span><span class="py_brk">(</span><span class="py_brk">)</span>
+		<span class="py_key">stdout</span><span class="py_op">.</span><span class="py_key">write</span><span class="py_brk">(</span><span class="py_str">'%f, '</span><span class="py_op">%</span><span class="py_key">pos</span><span class="py_brk">[</span><span class="py_num">2</span><span class="py_brk">]</span><span class="py_brk">)</span>
+
+	<span class="py_com">##-- Simulacion finalizada:
+</span>	<span class="py_com">##-- Imprimir la ultima posicion e
+</span>	<span class="py_com">##-- Imprimir comandos octave para sacar grafica
+</span>	<span class="py_key">pos</span><span class="py_op"> = </span><span class="py_key">body</span><span class="py_op">.</span><span class="py_key">getPosition</span><span class="py_brk">(</span><span class="py_brk">)</span>
+	<span class="py_res">print</span><span class="py_str"> '%f];'</span><span class="py_op">%</span><span class="py_key">pos</span><span class="py_brk">[</span><span class="py_num">2</span><span class="py_brk">]</span>
+	<span class="py_res">print</span><span class="py_str"> 't = 0:1:%d;'</span><span class="py_op">%</span><span class="py_key">TICKS</span>
+	<span class="py_res">print</span><span class="py_str"> 'plot (t, z);'</span>
+	<span class="py_res">print</span><span class="py_str"> 'grid on;'</span>
+	<span class="py_res">print</span><span class="py_str"> 'pause;'</span>
+
+	<span class="py_com">#*************************************#
+</span>	<span class="py_com">#* FIN DE LA SIMULACION              *#
+</span>	<span class="py_com">#*************************************#
+</span>
+	<span class="py_com">##-- Destruir el mundo con todos sus objetos (apocalipsis?)
+</span>	<span class="py_com">##-- Implícita por Python
+</span></pre>
+<hr>
+[Created with py2html Ver:0.62]
+<p>
+      <a href="http://validator.w3.org/check/referer"><img border="0"
+          src="http://www.w3.org/Icons/valid-html401"
+          alt="Valid HTML 4.01!" height="31" width="88"></a>
+</p></body>
+</html>

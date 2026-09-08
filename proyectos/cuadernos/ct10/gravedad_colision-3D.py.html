@@ -1,0 +1,364 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1 (Latin-1)" >
+<title>gravedad_colision-3D.py</title>
+<style type="text/css">
+    h1 {    color: green;
+            position: center;
+        }
+    .python_code {  font-family: monospace;
+                font-size: 10pt;
+                }
+    .py_key {color: black;}
+    .py_num color: black;{}
+    .py_str { color: #00AA00;}
+    .py_op {color: black; }
+    .py_com { color: red;}
+    .py_res { color: #FF7700;}
+    .py_def { color: blue;}
+    .py_brk { color: black;}
+</style>
+</head>
+<body>
+<h1>#### Source code for gravedad_colision-3D.py ####</h1>
+<hr>
+<pre class="python_code" id="pycode"><span class="py_com">#!/usr/bin/python
+</span><span class="py_com"># -*- coding: iso-8859-15 -*-
+</span>
+<span class="py_com">#***********************************************************************#
+</span><span class="py_com">#* gravedad_colision-3D.py.  Rafael Treviño. Junio 2006                *#
+</span><span class="py_com">#*---------------------------------------------------------------------*#
+</span><span class="py_com">#* LICENCIA GPL                                                        *#
+</span><span class="py_com">#* Programa derivado del ejemplo test_boxstack.cpp que viene con las   *#
+</span><span class="py_com">#* fuentes del ODE. Por Russell L. Smith                               *#
+</span><span class="py_com">#*---------------------------------------------------------------------*#
+</span><span class="py_com">#* Ejemplo "hola mundo" del motor fisico ODE (Open Dynamics Engine)    *#
+</span><span class="py_com">#* Es similar al programa gravedad_colision, pero se ha anadido        *#
+</span><span class="py_com">#* representacion en 3D, de manera que se puede ver el objeto          *#
+</span><span class="py_com">#* cayendo.                                                            *#
+</span><span class="py_com">#* Se ha realizado a partir del ejemplo test_boxstack.cpp que viene    *#
+</span><span class="py_com">#* en el directorio ode/test de las fuentes del ODE.                   *#
+</span><span class="py_com">#*   Se ha simplificado al maximo y se han anadido comentarios para    *#
+</span><span class="py_com">#*  que se entienda.                                                   *#
+</span><span class="py_com">#*---------------------------------------------------------------------*#
+</span><span class="py_com">#* Es un ejemplo "hola_mundo" que incluye representacion en 3D.        *#
+</span><span class="py_com">#* Se coloca una "caja" a una altura, y al comenzar la simulacion      *#
+</span><span class="py_com">#* se puede ver como cae.                                              *#
+</span><span class="py_com">#* Los unicos objetos que hay en el mundo son la caja y un plano       *#
+</span><span class="py_com">#* que hace de suelo                                                   *#
+</span><span class="py_com">#***********************************************************************#
+</span>
+<span class="py_res">import</span><span class="py_key"> sys</span>
+<span class="py_res">import</span><span class="py_key"> time</span>
+<span class="py_res">import</span><span class="py_key"> ode</span>
+<span class="py_res">from</span><span class="py_key"> sys</span><span class="py_res"> import</span><span class="py_key"> stdout</span>
+
+<span class="py_com">#***********************************************************************#
+</span><span class="py_com">#* Sobre la libreria DRAWSTUFF.                                        *#
+</span><span class="py_com">#*---------------------------------------------------------------------*#
+</span><span class="py_com">#* Esta libreria no es parte del motor fisico ODE. Se utiliza para     *#
+</span><span class="py_com">#* hacer mas facil el dibujo en 3D                                     *#
+</span><span class="py_com">#* Inicialmente se dibuja una reticula (grid) que tiene 9 puntos.      *#
+</span><span class="py_com">#* El punto central (amarillo) es el origen (0,0,0).                   *#
+</span><span class="py_com">#* El rojo indica la direccion positiva de las Xs                      *#
+</span><span class="py_com">#* El azul la direccion positiva de las Ys                             *#
+</span><span class="py_com">#* Estos puntos estan separados una distancia de 1                     *#
+</span><span class="py_com">#***********************************************************************#
+</span>
+<span class="py_com">#*********************************************#
+</span><span class="py_com">#* Algunas constantes usadas en el programa  *#
+</span><span class="py_com">#*********************************************#
+</span>
+<span class="py_com">##-- Numero maximo de puntos de contacto. Es para la deteccion de 
+</span><span class="py_com">##-- colisiones.
+</span><span class="py_key">MAX_CONTACTS</span><span class="py_op"> = </span><span class="py_num">4</span>
+
+<span class="py_com">##-- Numero de instantes que queremos simular. Este valor se puede
+</span><span class="py_com">##-- cambiar
+</span><span class="py_key">TICKS</span><span class="py_op"> = </span><span class="py_num">200</span>
+
+<span class="py_com">##-- Estructura que representa los objetos del universo
+</span><span class="py_com">##-- Hay dos tipos de elementos:
+</span><span class="py_com">##--    * Cuerpos (bodys): Tienen la informacion sobre posicion,
+</span><span class="py_com">##--      orientacion, velocidad lineal y velocidad de rotacion
+</span><span class="py_com">##--    * Elementos geometricos: Determinal la forma y se usan para
+</span><span class="py_com">##--      las colisiones
+</span><span class="py_com">##-- Un objeto esta formado por el cuerpo y su geometria (o la 
+</span><span class="py_com">##-- composicion de varias geometrias.
+</span><span class="py_com">##-- Se usará una tupla de la forma MyObject = (body, geom)
+</span>
+<span class="py_com">##********************************************#
+</span><span class="py_com">## VARIABLES GLOBALES DEL PROGRAMA           *#
+</span><span class="py_com">##********************************************#
+</span>
+<span class="py_com">##-- Identificador para el mundo
+</span><span class="py_key">world</span><span class="py_op"> = </span><span class="py_key">None</span>
+
+<span class="py_com">##-- Identificador del espacio (para colisiones)
+</span><span class="py_com">##-- Para detectar las colisiones hay que crear un espacio con los
+</span><span class="py_com">##-- elementos que pueden colisionar.
+</span><span class="py_key">space</span><span class="py_op"> = </span><span class="py_key">None</span>
+
+<span class="py_com">##-- Identificador del grupo de articulaciones de los puntos de contactos
+</span><span class="py_com">##-- Cuando hay una colision, se crean puntos de contacto entre las 
+</span><span class="py_com">##-- superficies y actuan como articulaciones: los objetos rotaran con
+</span><span class="py_com">##-- respecto a estos puntos de contacto.
+</span><span class="py_key">contactgroup</span><span class="py_op"> = </span><span class="py_key">None</span><span class="py_op">; </span>
+
+<span class="py_com">##-- El objeto que situamos en el mundo: la caja
+</span><span class="py_key">obj</span><span class="py_op"> = </span><span class="py_brk">(</span><span class="py_key">None</span><span class="py_op">, </span><span class="py_key">None</span><span class="py_brk">)</span><span class="py_op">; </span>
+
+<span class="py_com">#***********************************************************************#
+</span><span class="py_com">#*  CODIGO                                                             *#
+</span><span class="py_com">#***********************************************************************#
+</span>
+<span class="py_com">#*********************************************#
+</span><span class="py_com">#* Crear la "caja"                           *#
+</span><span class="py_com">#* Se define la "caja" usando la API de ODE  *#
+</span><span class="py_com">#* y se asocia al "mundo"                    *#
+</span><span class="py_com">#*********************************************#
+</span><span class="py_res">def</span><span class="py_def"> Crear_objeto</span><span class="py_brk">(</span><span class="py_brk">)</span><span class="py_op">: </span>
+	<span class="py_res">global</span><span class="py_key"> obj</span><span class="py_op">, </span><span class="py_key">world</span><span class="py_op">, </span><span class="py_key">space</span>
+	<span class="py_com">##-- Identificador para la masa.
+</span>	<span class="py_key">m</span><span class="py_op"> = </span><span class="py_key">ode</span><span class="py_op">.</span><span class="py_key">Mass</span><span class="py_brk">(</span><span class="py_brk">)</span>
+
+	<span class="py_com">##-- Crear el Cuerpo y asociarlo al mundo
+</span>	<span class="py_key">body</span><span class="py_op"> = </span><span class="py_key">ode</span><span class="py_op">.</span><span class="py_key">Body</span><span class="py_brk">(</span><span class="py_key">world</span><span class="py_brk">)</span>
+
+	<span class="py_com">##-- Establecer la posicion inicial. Se pasan las coordenadas x,y,z
+</span>	<span class="py_com">##-- En este ejemplo el objeto esta en el origen, a una altura de 
+</span>	<span class="py_com">##-- 4 unidades
+</span>	<span class="py_key">body</span><span class="py_op">.</span><span class="py_key">setPosition</span><span class="py_brk">(</span><span class="py_brk">(</span><span class="py_num">0</span><span class="py_op">, </span><span class="py_num">0</span><span class="py_op">, </span><span class="py_num">4</span><span class="py_brk">)</span><span class="py_brk">)</span>
+
+	<span class="py_com">##-- Establecer la rotacion
+</span>	<span class="py_com">##-- Cada objeto puede estar rotado. Se crea una matriz de
+</span>	<span class="py_com">##-- rotacion pasandole como parametros el vector que hace de
+</span>	<span class="py_com">##-- eje de giro y el angulo que se rota. En este ejemplo se pasa
+</span>	<span class="py_com">##-- el eje z y se rota '0' grados con respecto a el.
+</span>	<span class="py_com">##-- Probar este mismo ejemplo con los parametros (R, 0, 0, 1, 45)
+</span>	<span class="py_com"># dRFromAxisAndAngle (R, 0, 0, 1, 0)
+</span>	<span class="py_com"># obj [0].setRotation (R)
+</span>  
+	<span class="py_com">##-- Establecer la masa del cuerpo
+</span>	<span class="py_com">##-- Hay que especificar la masa total y las dimensiones
+</span>	<span class="py_com">##-- del cubo. Como masa se toma 0.5 y las dimensiones de la caja
+</span>	<span class="py_com">##-- son 0.5 x 0.5 x 0.1. Se pueden poner las que se quiera
+</span>	<span class="py_key">m</span><span class="py_op">.</span><span class="py_key">setBox</span><span class="py_brk">(</span><span class="py_num">0.5</span><span class="py_op">, </span><span class="py_num">0.5</span><span class="py_op">, </span><span class="py_num">0.5</span><span class="py_op">, </span><span class="py_num">0.1</span><span class="py_brk">)</span>
+	<span class="py_key">body</span><span class="py_op">.</span><span class="py_key">setMass</span><span class="py_brk">(</span><span class="py_key">m</span><span class="py_brk">)</span>
+
+	<span class="py_com">##-- Crear la geometria: un cubo que se anadira al espacio
+</span>	<span class="py_com">##-- para detectar las colisiones. Las dimensiones son
+</span>	<span class="py_com">##-- 0.5 x 0.5 x 0.1
+</span>	<span class="py_key">geom</span><span class="py_op"> = </span><span class="py_key">ode</span><span class="py_op">.</span><span class="py_key">GeomBox</span><span class="py_brk">(</span><span class="py_key">space</span><span class="py_op">, </span><span class="py_brk">(</span><span class="py_num">0.5</span><span class="py_op">, </span><span class="py_num">0.5</span><span class="py_op">, </span><span class="py_num">0.1</span><span class="py_brk">)</span><span class="py_brk">)</span>
+
+	<span class="py_com">##-- Asociar el cuerpo con la geometria
+</span>	<span class="py_key">geom</span><span class="py_op">.</span><span class="py_key">setBody</span><span class="py_brk">(</span><span class="py_key">body</span><span class="py_brk">)</span><span class="py_op">; </span>
+
+	<span class="py_com">##-- Creamos el objeto
+</span>	<span class="py_key">obj</span><span class="py_op"> = </span><span class="py_brk">(</span><span class="py_key">body</span><span class="py_op">, </span><span class="py_key">geom</span><span class="py_brk">)</span>
+
+<span class="py_com">#****************************************************************#
+</span><span class="py_com">#* Funcion de retrollamada invocada por dSpaceCollide cuando    *#
+</span><span class="py_com">#* dos objetos del espacio estan a punto de colisionar          *#
+</span><span class="py_com">#* El ODE permite que los usuarios avanzados puedan implementar *#
+</span><span class="py_com">#* su propia rutina de colision. Para los usuarios no expertos  *#
+</span><span class="py_com">#* que simplemente quieren una colision estandar, esta es la    *#
+</span><span class="py_com">#* rutina que SIEMPRE deberan usar. No es solo valida para este *#
+</span><span class="py_com">#* ejemplo, vale para cualquiera. Pero no esta incluida en la   *#
+</span><span class="py_com">#* libreria del ODE para que se pueda adaptar a otras           *#
+</span><span class="py_com">#* necesidades.                                                 *#
+</span><span class="py_com">#****************************************************************#
+</span><span class="py_res">def</span><span class="py_def"> nearCallback</span><span class="py_brk">(</span><span class="py_key">data</span><span class="py_op">, </span><span class="py_key">o1</span><span class="py_op">, </span><span class="py_key">o2</span><span class="py_brk">)</span><span class="py_op">: </span>
+	<span class="py_res">global</span><span class="py_key"> world</span><span class="py_op">, </span><span class="py_key">contactgroup</span>
+	<span class="py_com">##-- Obtener los cuerpos asociados
+</span>	<span class="py_key">b1</span><span class="py_op"> = </span><span class="py_key">o1</span><span class="py_op">.</span><span class="py_key">getBody</span><span class="py_brk">(</span><span class="py_brk">)</span>
+	<span class="py_key">b2</span><span class="py_op"> = </span><span class="py_key">o2</span><span class="py_op">.</span><span class="py_key">getBody</span><span class="py_brk">(</span><span class="py_brk">)</span>
+
+	<span class="py_com">##-- Si ya estan conectados por una articulacion, terminar
+</span>	<span class="py_res">if</span><span class="py_key"> b1</span><span class="py_res"> and</span><span class="py_key"> b2</span><span class="py_res"> and</span><span class="py_key"> ode</span><span class="py_op">.</span><span class="py_key">areConnected</span><span class="py_brk">(</span><span class="py_key">b1</span><span class="py_op">, </span><span class="py_key">b2</span><span class="py_brk">)</span><span class="py_op">: </span>
+		<span class="py_res">return</span>
+ 
+	<span class="py_com">##-- Obtener los puntos de contacto, que en realidad son
+</span>	<span class="py_com">##-- articulaciones (devuelve una lista)
+</span>	<span class="py_com">##-- Para mas informacion consultar la documentacion de ODE
+</span>	<span class="py_com">##-- Aqui se puede especificar el tipo de superficies, los
+</span>	<span class="py_com">##-- coeficientes de rozamiento (mu), etc...
+</span>	<span class="py_key">contacts</span><span class="py_op"> = </span><span class="py_key">ode</span><span class="py_op">.</span><span class="py_key">collide</span><span class="py_brk">(</span><span class="py_key">o1</span><span class="py_op">, </span><span class="py_key">o2</span><span class="py_brk">)</span>
+
+    	<span class="py_com">##-- Para cada punto de contacto crear una articulacion
+</span>	<span class="py_res">for</span><span class="py_key"> c</span><span class="py_res"> in</span><span class="py_key"> contacts</span><span class="py_op">: </span>
+		<span class="py_com">##-- Crear articulacion y meterla en el grupo contactgroup
+</span>		<span class="py_key">c</span><span class="py_op">.</span><span class="py_key">setMode</span><span class="py_brk">(</span><span class="py_key">ode</span><span class="py_op">.</span><span class="py_key">ContactBounce</span><span class="py_op">|</span><span class="py_key">ode</span><span class="py_op">.</span><span class="py_key">ContactSoftCFM</span><span class="py_brk">)</span>
+		<span class="py_key">c</span><span class="py_op">.</span><span class="py_key">setMu</span><span class="py_brk">(</span><span class="py_key">ode</span><span class="py_op">.</span><span class="py_key">Infinity</span><span class="py_brk">)</span>
+		<span class="py_key">c</span><span class="py_op">.</span><span class="py_key">setMu2</span><span class="py_brk">(</span><span class="py_num">0</span><span class="py_brk">)</span>
+		<span class="py_key">c</span><span class="py_op">.</span><span class="py_key">setBounce</span><span class="py_brk">(</span><span class="py_num">0.1</span><span class="py_brk">)</span>
+		<span class="py_key">c</span><span class="py_op">.</span><span class="py_key">setBounceVel</span><span class="py_brk">(</span><span class="py_num">0.1</span><span class="py_brk">)</span>
+		<span class="py_key">c</span><span class="py_op">.</span><span class="py_key">setSoftCFM</span><span class="py_brk">(</span><span class="py_num">0.01</span><span class="py_brk">)</span>
+		<span class="py_key">j</span><span class="py_op"> = </span><span class="py_key">ode</span><span class="py_op">.</span><span class="py_key">ContactJoint</span><span class="py_brk">(</span><span class="py_key">world</span><span class="py_op">, </span><span class="py_key">contactgroup</span><span class="py_op">, </span><span class="py_key">c</span><span class="py_brk">)</span>
+		<span class="py_com">##-- Establecer la articulacion entre los dos cuerpos
+</span>		<span class="py_key">j</span><span class="py_op">.</span><span class="py_key">attach</span><span class="py_brk">(</span><span class="py_key">b1</span><span class="py_op">, </span><span class="py_key">b2</span><span class="py_brk">)</span><span class="py_op">; </span>
+
+<span class="py_com">#****************************************************************#
+</span><span class="py_com">#* Funcion de retrollamada de comienzo de la simulacion         *#
+</span><span class="py_com">#* Se utiliza principalmente para establecer el punto de vista  *#
+</span><span class="py_com">#* inicial (posicion de la camara en el universo)               *#
+</span><span class="py_com">#****************************************************************#
+</span><span class="py_res">def</span><span class="py_def"> start</span><span class="py_brk">(</span><span class="py_brk">)</span><span class="py_op">: </span>
+	<span class="py_com"># print 'Llamada a start ()'
+</span>	<span class="py_com">##-- Esta es la posicion de la camara. Se pasan las coordenadas x,y,z
+</span>	<span class="py_key">xyz</span><span class="py_op"> = </span><span class="py_brk">(</span><span class="py_op">-</span><span class="py_num">6.0</span><span class="py_op">, </span><span class="py_num">0.3</span><span class="py_op">, </span><span class="py_num">2.0</span><span class="py_brk">)</span>
+	
+	<span class="py_com">##-- Esta es la orientacion de la camara.
+</span>	<span class="py_com">##-- Las componentes son Pan, Tilt (inclinacion) y Roll
+</span>	<span class="py_com">##-- El valor (0,0,0) indica que la camara esta apuntando en 
+</span>	<span class="py_com">##-- direccion positiva de las X, paralelamente al suelo.
+</span>	<span class="py_key">hpr</span><span class="py_op"> = </span><span class="py_brk">(</span><span class="py_num">0.0</span><span class="py_op">, </span><span class="py_op">-</span><span class="py_num">19.0</span><span class="py_op">, </span><span class="py_num">0.0</span><span class="py_brk">)</span>
+	
+	<span class="py_com">##-- Establecer la posicion de la camara
+</span>	<span class="py_key">drawstuff</span><span class="py_op">.</span><span class="py_key">dsSetViewport</span><span class="py_brk">(</span><span class="py_key">xyz</span><span class="py_op">, </span><span class="py_key">hpr</span><span class="py_brk">)</span>
+
+<span class="py_com">#*********************************************#
+</span><span class="py_com">#* FUNCION DE RETROLLAMADA.                  *#
+</span><span class="py_com">#* Se invoca cuando se pulsa una tecla       *#
+</span><span class="py_com">#*********************************************#
+</span><span class="py_res">def</span><span class="py_def"> command</span><span class="py_brk">(</span><span class="py_key">cmd</span><span class="py_brk">)</span><span class="py_op">: </span>
+	<span class="py_com"># print 'Llamada a command ()'
+</span>	<span class="py_com">##-- En este ejemplo no se usan las teclas
+</span>	<span class="py_res">print</span><span class="py_str"> 'Tecla pulsada: %c'</span><span class="py_op">%</span><span class="py_key">cmd</span>
+
+<span class="py_com">#**************************#
+</span><span class="py_com">#* DIBUJAR una geometria  *#
+</span><span class="py_com">#**************************#
+</span><span class="py_res">def</span><span class="py_def"> drawGeom</span><span class="py_brk">(</span><span class="py_key">g</span><span class="py_brk">)</span><span class="py_op">: </span>
+	<span class="py_key">pos</span><span class="py_op"> = </span><span class="py_key">g</span><span class="py_op">.</span><span class="py_key">getPosition</span><span class="py_brk">(</span><span class="py_brk">)</span>
+	<span class="py_key">R</span><span class="py_op"> = </span><span class="py_key">g</span><span class="py_op">.</span><span class="py_key">getRotation</span><span class="py_brk">(</span><span class="py_brk">)</span>
+	<span class="py_key">sides</span><span class="py_op"> = </span><span class="py_key">g</span><span class="py_op">.</span><span class="py_key">getLengths</span><span class="py_brk">(</span><span class="py_brk">)</span>
+	<span class="py_key">drawstuff</span><span class="py_op">.</span><span class="py_key">dsDrawBoxD</span><span class="py_brk">(</span><span class="py_key">pos</span><span class="py_op">, </span><span class="py_key">R</span><span class="py_op">, </span><span class="py_key">sides</span><span class="py_brk">)</span>
+
+<span class="py_com">#***********************************************************************#
+</span><span class="py_com">#* Realizar un paso de simulacion. Primero se comprueba colisiones. Si *#
+</span><span class="py_com">#* hay alguna, se crean automaticamente (por medio de la funcion       *#
+</span><span class="py_com">#* nearCallback, puntos de contactos que en realidad son articulaciones*#
+</span><span class="py_com">#* Despues se realiza un paso de la simulacion. Los objetos rotaran en *#
+</span><span class="py_com">#* contacto rotaran sobre los nuevos puntos de contacto creados.       *#
+</span><span class="py_com">#* Finalmente se eliminan. Si esta en pausa solo de dibuja el universo.*#
+</span><span class="py_com">#***********************************************************************#
+</span><span class="py_res">def</span><span class="py_def"> simLoop</span><span class="py_brk">(</span><span class="py_key">pause</span><span class="py_brk">)</span><span class="py_op">: </span>
+	<span class="py_res">global</span><span class="py_key"> world</span><span class="py_op">, </span><span class="py_key">space</span><span class="py_op">, </span><span class="py_key">contactgroup</span>
+	<span class="py_com"># print 'Llamada a simLoop (%d)' % pause
+</span>	<span class="py_res">if</span><span class="py_res"> not</span><span class="py_key"> pause</span><span class="py_op">: </span>
+		<span class="py_com">##-- Deteccion de colisiones.
+</span>		<span class="py_com">##-- Determinar que pares de elementos
+</span>		<span class="py_com">##-- geometricos que estan a punto de colisionar.
+</span>		<span class="py_com">##-- Se llama a la funcion de retrollamadanear Callback
+</span>		<span class="py_key">space</span><span class="py_op">.</span><span class="py_key">collide</span><span class="py_brk">(</span><span class="py_key">None</span><span class="py_op">, </span><span class="py_key">nearCallback</span><span class="py_brk">)</span>
+
+		<span class="py_com">##-- Realizar un paso de simulacion
+</span>		<span class="py_key">world</span><span class="py_op">.</span><span class="py_key">step</span><span class="py_brk">(</span><span class="py_num">0.01</span><span class="py_brk">)</span>
+
+		<span class="py_com">## Eliminar todos los puntos de contacto creados.
+</span>		<span class="py_key">contactgroup</span><span class="py_op">.</span><span class="py_key">empty</span><span class="py_brk">(</span><span class="py_brk">)</span>
+	
+	<span class="py_com">##-- Dibujar el objeto
+</span>	<span class="py_com">##-- Establecer el color
+</span>	<span class="py_key">drawstuff</span><span class="py_op">.</span><span class="py_key">dsSetColor</span><span class="py_brk">(</span><span class="py_num">1</span><span class="py_op">, </span><span class="py_num">1</span><span class="py_op">, </span><span class="py_num">0</span><span class="py_brk">)</span>
+
+	<span class="py_com">##-- Especificar la textura
+</span>	<span class="py_com">##-- Textura DS_WOOD
+</span>	<span class="py_key">drawstuff</span><span class="py_op">.</span><span class="py_key">dsSetTexture</span><span class="py_brk">(</span><span class="py_num">1</span><span class="py_brk">)</span>
+
+	<span class="py_com">##-- Dibujar!
+</span>	<span class="py_key">drawGeom</span><span class="py_brk">(</span><span class="py_key">obj</span><span class="py_brk">[</span><span class="py_num">1</span><span class="py_brk">]</span><span class="py_brk">)</span>
+
+	<span class="py_com">##-- Pequeña pausa para no cargar tanto la CPU
+</span>	<span class="py_com">##-- Si la simulacion va lenta se puede eliminar
+</span>	<span class="py_key">time</span><span class="py_op">.</span><span class="py_key">sleep</span><span class="py_brk">(</span><span class="py_num">0.01</span><span class="py_brk">)</span>
+
+<span class="py_com">#***********************************************************************#
+</span><span class="py_com">#* MAIN                                                                *#
+</span><span class="py_com">#* Crear el mundo. Es un contenedor de todos los objetos a simular     *#
+</span><span class="py_com">#* El mundo no sabe nada de como se dibujan los objetos                *#
+</span><span class="py_com">#* En este ejemplo el mundo solo tiene un suelo y una "caja"           *#
+</span><span class="py_com">#***********************************************************************#
+</span><span class="py_res">if</span><span class="py_key"> __name__</span><span class="py_op"> == </span><span class="py_str">'__main__'</span><span class="py_op">: </span>
+	<span class="py_res">try</span><span class="py_op">: </span>
+		<span class="py_key">fd</span><span class="py_op"> = </span><span class="py_key">open</span><span class="py_brk">(</span><span class="py_str">'drawstuff.so'</span><span class="py_brk">)</span>
+	<span class="py_res">except</span><span class="py_op">: </span>
+		<span class="py_res">print</span><span class="py_str"> 'Antes de ejecutar es necesario hacer "make"'</span>
+		<span class="py_key">sys</span><span class="py_op">.</span><span class="py_key">exit</span><span class="py_brk">(</span><span class="py_op">-</span><span class="py_num">1</span><span class="py_brk">)</span>
+	<span class="py_key">fd</span><span class="py_op">.</span><span class="py_key">close</span><span class="py_brk">(</span><span class="py_brk">)</span>
+	<span class="py_res">import</span><span class="py_key"> drawstuff</span>
+	<span class="py_com">##-- Variable de posicion
+</span>	<span class="py_key">pos</span><span class="py_op"> = </span><span class="py_key">None</span>
+	<span class="py_com">##-- Crear mundo
+</span>	<span class="py_key">world</span><span class="py_op"> = </span><span class="py_key">ode</span><span class="py_op">.</span><span class="py_key">World</span><span class="py_brk">(</span><span class="py_brk">)</span>
+
+	<span class="py_com">##-- Establecer la gravedad (gravedad terrestres: -9.81)
+</span>	<span class="py_key">world</span><span class="py_op">.</span><span class="py_key">setGravity</span><span class="py_brk">(</span><span class="py_brk">(</span><span class="py_num">0</span><span class="py_op">, </span><span class="py_num">0</span><span class="py_op">, </span><span class="py_op">-</span><span class="py_num">9.81</span><span class="py_brk">)</span><span class="py_brk">)</span>
+
+	<span class="py_com">##-- Establecer parametro CFM
+</span>	<span class="py_com">##-- Normalmente se deja siempre a este valor
+</span>	<span class="py_key">world</span><span class="py_op">.</span><span class="py_key">setCFM</span><span class="py_brk">(</span><span class="py_num">1e-5</span><span class="py_brk">)</span>
+
+	<span class="py_com">##-- Establecer el modo auto-disabled por defecto
+</span>	<span class="py_com">##-- Cualquier objeto que se encuentre en reposo se deshabilitara
+</span>	<span class="py_com">##-- y no consumira recursos en la simulacion. Normalmente
+</span>	<span class="py_com">##-- siempre se activara
+</span>	<span class="py_key">world</span><span class="py_op">.</span><span class="py_key">setAutoDisableFlag</span><span class="py_brk">(</span><span class="py_num">1</span><span class="py_brk">)</span>
+
+	<span class="py_com">##-- Otros parametros... (consular documentacion)
+</span>	<span class="py_com">##-- En principio siempre tendran esos valores
+</span>	<span class="py_key">world</span><span class="py_op">.</span><span class="py_key">setContactMaxCorrectingVel</span><span class="py_brk">(</span><span class="py_num">0.1</span><span class="py_brk">)</span>
+	<span class="py_key">world</span><span class="py_op">.</span><span class="py_key">setContactSurfaceLayer</span><span class="py_brk">(</span><span class="py_num">0.001</span><span class="py_brk">)</span>
+
+	<span class="py_com">##-- Crear un espacio. Los espacios contienen los elementos
+</span>	<span class="py_com">##-- geometricos sobre las que se quiere comprobar si hay colision
+</span>	<span class="py_com">##-- o no. Se utilizan espacios para que la simulacion sea mas
+</span>	<span class="py_com">##-- rapida
+</span>	<span class="py_key">space</span><span class="py_op"> = </span><span class="py_key">ode</span><span class="py_op">.</span><span class="py_key">HashSpace</span><span class="py_brk">(</span><span class="py_brk">)</span>
+
+	<span class="py_com">##-- Crear un grupo de articulaciones
+</span>	<span class="py_com">##-- Se utiliza para almacenar los puntos de contacto en una
+</span>	<span class="py_com">##-- colision
+</span>	<span class="py_key">contactgroup</span><span class="py_op"> = </span><span class="py_key">ode</span><span class="py_op">.</span><span class="py_key">JointGroup</span><span class="py_brk">(</span><span class="py_brk">)</span>
+
+	<span class="py_com">##-- Crear un plano infinito y meterlo en el espacio
+</span>	<span class="py_com">##-- El plano se determina por su ecuacion del tipo:
+</span>	<span class="py_com">##-- a*x + b*y + c*z = d, donde (a,b,c) es un vector unitario
+</span>	<span class="py_com">##-- normal a su superficie
+</span>	<span class="py_com">##-- En este ejemplo se crea el plano con vector (0,0,1), es
+</span>	<span class="py_com">##-- decir, el plano: z=0
+</span>	<span class="py_com">##-- Este plano sera para nosotros el "suelo"
+</span>	<span class="py_key">floor</span><span class="py_op"> = </span><span class="py_key">ode</span><span class="py_op">.</span><span class="py_key">GeomPlane</span><span class="py_brk">(</span><span class="py_key">space</span><span class="py_op">, </span><span class="py_brk">(</span><span class="py_num">0</span><span class="py_op">, </span><span class="py_num">0</span><span class="py_op">, </span><span class="py_num">1</span><span class="py_brk">)</span><span class="py_op">, </span><span class="py_num">0</span><span class="py_brk">)</span>
+  
+	<span class="py_com">##-- Crear la "Caja" y ponerla en el "mundo"
+</span>	<span class="py_key">Crear_objeto</span><span class="py_brk">(</span><span class="py_brk">)</span>
+
+	<span class="py_com">#*************************************#
+</span>	<span class="py_com">#** COMENZAR LA SIMULACION!!!!       *#
+</span>	<span class="py_com">#*************************************#
+</span>	<span class="py_com">##-- Este es el bucle principal.
+</span>
+	<span class="py_key">fn</span><span class="py_op"> = </span><span class="py_brk">(</span><span class="py_num">2</span><span class="py_op">, </span><span class="py_key">start</span><span class="py_op">, </span><span class="py_key">simLoop</span><span class="py_op">, </span><span class="py_key">command</span><span class="py_op">, </span><span class="py_key">None</span><span class="py_op">, </span><span class="py_str">'./textures'</span><span class="py_brk">)</span>
+
+	<span class="py_key">drawstuff</span><span class="py_op">.</span><span class="py_key">dsSimulationLoop</span><span class="py_brk">(</span><span class="py_key">len</span><span class="py_brk">(</span><span class="py_key">sys</span><span class="py_op">.</span><span class="py_key">argv</span><span class="py_brk">)</span><span class="py_op">, </span><span class="py_key">sys</span><span class="py_op">.</span><span class="py_key">argv</span><span class="py_op">, </span><span class="py_num">400</span><span class="py_op">, </span><span class="py_num">300</span><span class="py_op">, </span><span class="py_key">fn</span><span class="py_brk">)</span>
+
+	<span class="py_com">#*************************************#
+</span>	<span class="py_com">#* FIN DE LA SIMULACION              *#
+</span>	<span class="py_com">#*************************************#
+</span>
+	<span class="py_com">##-- Destruir el grupo de articulaciones
+</span>	<span class="py_com">##-- Destruir el espacio de colisiones
+</span>	<span class="py_com">##-- Destruir el mundo con todos sus objetos (apocalipsis?)
+</span>	<span class="py_com">##-- Implícitas por Python
+</span></pre>
+<hr>
+[Created with py2html Ver:0.62]
+<p>
+      <a href="http://validator.w3.org/check/referer"><img border="0"
+          src="http://www.w3.org/Icons/valid-html401"
+          alt="Valid HTML 4.01!" height="31" width="88"></a>
+</p></body>
+</html>

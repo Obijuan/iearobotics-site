@@ -1,0 +1,418 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>Cuaderno t&eacute;cnico 10: C&oacute;mo utilizar el Motor f&iacute;sico ODE. Ejemplos en Python (I)</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGED" CONTENT="20060627;18271200">
+	<META NAME="KEYWORDS" CONTENT="motor f&iacute;sico, python, ejemplos, hola mundo, ODE">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Cuaderno
+				t&eacute;cnico 10: C&oacute;mo utilizar el Motor f&iacute;sico
+				ODE. Ejemplos en Python (I) </B></FONT></FONT>
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="../ct9/images/pantallazo1.png" NAME="gr&aacute;ficos1" ALIGN=MIDDLE WIDTH=410 HEIGHT=329 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2>Introducci&oacute;n</H2>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Los ejemplos &ldquo;hola
+mundo&rdquo; de manejo del motor f&iacute;sico <A HREF="http://www.ode.org/">Open
+Dynamics Engine</A> (ODE) que se encuentran en el <A HREF="../ct9/ct9.html">cuaderno
+t&eacute;cnico 9</A>, y que est&aacute;n programados en C, ha sido
+reescritos en <B>Python</B> por <A HREF="http://diariodeuningeniero.blogspot.com/"><SPAN STYLE="font-weight: medium">Rafael
+Trevi&ntilde;o</SPAN></A>. </FONT></FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Estos tres ejemplos
+son:</FONT></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Gravedad</B>:
+	Ejemplo para consola. Caida libre de un objeto.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Gravedad +
+	colision</B>: Ejemplo para consola. Caida al suelo del mismo objeto.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Gravedad +
+	colision + 3D</B>: Ejemplo gr&aacute;fico. Mismo ejemplo anterior
+	pero representado en 3D, haciendo uso de la librer&iacute;a
+	<B>drawstuff</B>. Se puede cambiar la posici&oacute;n de la c&aacute;mara
+	para explorar el mundo virtual creado.</FONT></FONT></P>
+</UL>
+<HR>
+<H2>Instalaci&oacute;n en Debian</H2>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Estos
+programas de ejemplo se han probado en una m&aacute;quina con
+Debian/Etch. Para instalar el ODE s&oacute;lo hay que hacer lo
+siguiente:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P ALIGN=LEFT><FONT FACE="Courier New, monospace"><FONT SIZE=2>#
+				apt-get install libode0c2 libode0c2-dev</FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Si se
+quiere probar el ejemplo <B>gravedad_colision-3D</B> que utiliza
+representaci&oacute;n en 3D utilizando OpenGL ser&aacute; necesario
+tener instalados, adem&aacute;s, los siguientes paquetes:</FONT></FONT></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>*
+<I>libx11-dev</I></FONT></FONT></P>
+<UL>
+	<LI><P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><I>xlibmesa-gl-dev</I></FONT></FONT></P>
+	<LI><P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><I>python-opengl</I></FONT></FONT></P>
+</UL>
+<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">Adem&aacute;s
+hay que instalar el <A HREF="http://pyode.sourceforge.net/">PyOde</A>,
+que de momento no est&aacute; disponible en Debian.</FONT></FONT></P>
+<HR>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+				<H2 ALIGN=LEFT>Ejemplo &ldquo;hola mundo&rdquo; 1: Gravedad</H2>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT SIZE=4><FONT FACE="Albany, sans-serif">Programa:
+<FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="gravedad.py.html">Programa
+en Python</A>]</FONT></FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Explicaci&oacute;n:
+</FONT></FONT>
+</P>
+<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">Consultar
+el <A HREF="../ct9/ct9.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">cuaderno
+t&eacute;cnico 9</FONT></FONT></A>. </FONT></FONT>
+</P>
+<P ALIGN=LEFT><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Ejemplo de
+utilizaci&oacute;n:</FONT></FONT></P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Descargar el paquete
+<A HREF="download/gravedad-python.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">gravedad-python.tgz</FONT></FONT></A>,
+descomprimirlo, entrar en el directorio y ejecutar <B>gravedad.py</B>,
+redireccionando la salida a un fichero que luego se visualiza con
+Octave.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE>$ tar vzxf gravedad-python.tgz
+$ cd gravedad-python/ 
+$./gravedad.py &gt; test.m
+$ octave test.m</PRE>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Al ejecutar el
+programa en octave se mostrar&aacute; la gr&aacute;fica de la ca&iacute;da
+de la caja:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="../ct9/images/gravedad.png" NAME="gr&aacute;ficos2" ALIGN=MIDDLE WIDTH=400 HEIGHT=295 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><BR><BR>
+</P>
+<HR>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+				<H2>Ejemplo &ldquo;hola mundo&rdquo; 2: Gravedad y colisi&oacute;n</H2>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT SIZE=4><FONT FACE="Albany, sans-serif">Programa:
+<FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="gravedad_colision.py.html">Programa
+en Python</A>]</FONT></FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Explicaci&oacute;n:
+</FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.42cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Consultar
+el <A HREF="../ct9/ct9.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">cuaderno
+t&eacute;cnico 9</FONT></FONT></A>. </FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Ejemplo
+de utilizaci&oacute;n:</FONT></FONT></P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Descargar el paquete
+<A HREF="download/gravedad_colision-python-src.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">gravedad_colision-python-src.tgz</FONT></FONT></A>,
+descomprimirlo, entrar en el directorio y ejecutar
+<B>gravedad_colisition.py</B>, redireccionando la salida a un fichero
+que luego se visualiza con Octave.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE>$ tar vzxf gravedad_colision-python-src.tgz
+$ cd gravedad_colision-python-src
+$ ./gravedad_colision.py &gt; test.m
+$ octave test.m</PRE>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Al
+ejecutar el programa en octave se mostrar&aacute; la gr&aacute;fica
+de la ca&iacute;da de la caja:</FONT></FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="../ct9/images/gravedad_colision.png" NAME="gr&aacute;ficos3" ALIGN=MIDDLE WIDTH=400 HEIGHT=295 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+				<H2 ALIGN=LEFT>Ejemplo &ldquo;hola mundo&rdquo; 3: Gravedad,
+				colisi&oacute;n y visualizaci&oacute;n en 3D</H2>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT SIZE=4><FONT FACE="Albany, sans-serif">Programa:
+<FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="gravedad_colision-3D.py.html">Programa
+en Python</A>]</FONT></FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Explicaci&oacute;n:
+</FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.42cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Consultar
+el <A HREF="../ct9/ct9.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">cuaderno
+t&eacute;cnico 9</FONT></FONT></A>. </FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Ejemplo
+de compilaci&oacute;n:</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Este ejemplo es
+necesario compilarlo primero, para generar el wrapper de la librer&iacute;a
+<B>drawstuff</B> que permite la visualizaci&oacute;n en 3D.</FONT></FONT></P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Descargar el paquete
+<A HREF="download/gravedad_colision-3D-python-src.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">gravedad_colision-3D-python-src.tgz</FONT></FONT></A>
+, descomprimirlo, entrar en el directorio y compilar con make: </FONT></FONT>
+</P>
+<TABLE WIDTH=903 BORDER=1 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=893>
+	<THEAD>
+		<TR>
+			<TD WIDTH=893 VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE>$ tar vzxf gravedad_colision-3D-python-src.tgz
+$ cd gravedad_colision-3D-python-src
+$ make</PRE>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Ejemplo
+de utilizaci&oacute;n:</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Simplemente ejecutar
+el programa:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE>$./gravedad_colision-3D.py</PRE>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Se abrir&aacute; una
+ventana en la que se ver&aacute; la simulaci&oacute;n:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/gravedad_colision-3D.png" NAME="gr&aacute;ficos4" ALIGN=MIDDLE WIDTH=410 HEIGHT=329 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2>Download</H2>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=789 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+			<COL WIDTH=781>
+			<TR>
+				<TD WIDTH=781 BGCOLOR="#9999ff">
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Fuentes</B></FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+		<DD>
+		<TABLE WIDTH=789 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=234>
+			<COL WIDTH=547>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=234 BGCOLOR="#ccccff">
+					<P><A HREF="download/gravedad-python.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">gravedad-python.tgz</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=547 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Programa &ldquo;hola
+					mundo&rdquo; 1: gravedad. </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=234 BGCOLOR="#e6e6ff">
+					<P><A HREF="download/gravedad_colision-python-src.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">gravedad_colision-python-src.tgz</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=547 BGCOLOR="#e6e6ff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Programa &ldquo;hola
+					mundo&rdquo; 2: gravedad + colisiones.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=234 BGCOLOR="#ccccff">
+					<P><A HREF="download/gravedad_colision-3D-python-src.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">gravedad_colision-3D-python-src.tgz</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=547 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Programa &ldquo;hola
+					mundo&rdquo; 3: gravedad + colisiones + 3D</FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2>Documentaci&oacute;n</H2>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="../ct9/ct9.html">Cuaderno
+	t&eacute;cnico 9</A>: C&oacute;mo utilizar el Motor f&iacute;sico
+	ODE. Ejemplos en C (I) </FONT></FONT>
+	</P>
+</UL>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="http://www.ode.org/">ODE</A>:
+	Open Dynamics Engine.</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Documentaci&oacute;n
+	del ODE: [<A HREF="http://www.ode.org/ode-latest-userguide.html">HTML</A>]
+	[<A HREF="http://www.ode.org/ode-latest-userguide.pdf">PDF</A>]</FONT></FONT>
+		</P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="http://opende.sourceforge.net/wiki/index.php/Main_Page">Wiki
+	sobre ODE</A>.</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="http://pyode.sourceforge.net/">PyODE</A>:
+	Utilizaci&oacute;n del ODE desde Python</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="http://www.taoframework.com/Home">Tao</A>:
+	acceso a diferentes utilidades gr&aacute;ficas y multimedia para
+	.NET/Mono. Incluye acceso a las librer&iacute;as de ODE.</FONT></FONT></P>
+</UL>
+<HR>
+<H2>Autor</H2>
+<UL>
+	<LI><P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="http://diariodeuningeniero.blogspot.com/">Rafael
+	Trevi&ntilde;o</A></FONT></FONT></P>
+</UL>
+<HR>
+<H2>Licencia</H2>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+				<P><BR><!--Creative Commons License--><A HREF="http://creativecommons.org/licenses/by-sa/2.5/es/"><IMG SRC="images/somerights20.png" NAME="Imagen27" ALT="Creative Commons License" ALIGN=BOTTOM WIDTH=88 HEIGHT=31 BORDER=0></A>
+				<FONT SIZE=2><FONT FACE="Arial, sans-serif">This work is licensed
+				under a </FONT></FONT><A HREF="http://creativecommons.org/licenses/by-sa/2.5/es/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Creative
+				Commons Attribution-ShareAlike 2.5 Spain License<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about="">
+			<license rdf:resource="http://creativecommons.org/licenses/by-sa/2.5/es/" />
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by-sa/2.5/es/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/><requires rdf:resource="http://web.resource.org/cc/ShareAlike"/></License></rdf:RDF> --></FONT></FONT></A>
+								</P>
+			</TD>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Este proyecto
+				tiene una <B>licencia libre</B>. Se permite su copia,
+				modificaci&oacute;n y distribuci&oacute;n, bajo los t&eacute;rminos
+				de la licencia Creative commons</FONT></FONT></P>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2>Agradecimientos</H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>A <A HREF="http://diariodeuningeniero.blogspot.com/"><SPAN STYLE="font-weight: medium">Rafael
+	Trevi&ntilde;o</SPAN></A> por haber portado los ejemplos a Python y
+	permitir su publicaci&oacute;n. &iexcl;Gracias! ;-)</FONT></FONT></P>
+</UL>
+<HR>
+<H2><A NAME="noticias"></A>Noticias</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>27/Junio/2006:</B><SPAN STYLE="font-weight: medium">
+	A&ntilde;adidos enlaces al blog de <A HREF="http://diariodeuningeniero.blogspot.com/">Rafael
+	Trevi&ntilde;o</A></SPAN></FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>21/Junio/2006:
+	</B>Publicada primera versi&oacute;n de este cuaderno</FONT></FONT></P>
+</UL>
+<HR>
+<P><A HREF="../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[&Iacute;ndice
+de cuadernos t&eacute;cnicos]</FONT></FONT></A></P>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="http://www.iearobotics.com/personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A><A HREF="http://www.iearobotics.com/">
+</A>
+</ADDRESS>
+<P STYLE="margin-bottom: 0cm"><A HREF="http://www.iearobotics.com"><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEAROBOTICS</FONT></FONT></A>
+</P>
+</BODY>
+</HTML>
