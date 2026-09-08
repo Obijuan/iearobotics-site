@@ -1,0 +1,715 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+ <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>Cuaderno t&eacute;cnico 11: Utilizaci&oacute;n del puerto serie desde Python (M&oacute;dulo pyserial)</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGEDBY" CONTENT="juan">
+	<META NAME="CHANGED" CONTENT="20070411;9125100">
+	<META NAME="KEYWORDS" CONTENT="python, ejemplos, hola mundo, pyserial, puerto serie">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Cuaderno
+				t&eacute;cnico 11: Utilizaci&oacute;n del puerto serie desde
+				Python (M&oacute;dulo Pyserial)</B></FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/logo-pyserial.png" NAME="gr&aacute;ficos1" ALIGN=MIDDLE WIDTH=501 HEIGHT=198 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif"><B>Introducci&oacute;n</B></FONT></H2>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>La
+comunicaci&oacute;n a trav&eacute;s del <B>puerto serie</B> se sigue
+utilizando mucho para conectar el PC con otros dispositivos, como por
+ejemplo <B>microcontroladores</B>. Adem&aacute;s de estar soportado
+en todos los ordenadores y dispositivos, la interfaz software es muy
+f&aacute;cil de utilizar. Actualmente muchos ordenadores port&aacute;tiles
+no vienen con puerto serie incorporado (no traen un conector DB9).
+Esto no es problema, ya que se pueden emplear <B>conversores
+USB-serie</B>.</FONT></FONT></P>
+<P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">Yo
+utilizo much&iacute;simo el puerto serie para <B>controlar los robots</B>
+y comunicarme con los microcontroladores que uso. As&iacute; es como
+naci&oacute; el <A HREF="../../stargate/index.html">proyecto
+stargate</A>, en el que hay definidos unos protocolos muy sencillos
+para comunicar aplicaciones cliente desde el PC con peque&ntilde;os
+servidores que corren en los microcontroladores (los <B>stargates</B>).
+</FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">Un
+ejemplo es el robot <A HREF="../../../personal/juan/doctorado/cube-revolutions/index.html">Cube
+Revolutions</A> que utiliza una <A HREF="../../skypic/skypic.html">tarjeta
+Skypic</A>, basada en el microcontrolador <B>PIC16F876A</B>. </FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">En este
+cuaderno t&eacute;cnico se muestran diferentes ejemplos de uso del
+puerto serie utilizando el <A HREF="http://www.python.org/">lenguaje
+Python</A>. Todos los ejemplos funcionan tanto en <B>Linux como en
+Windows</B>. Para las comunicaciones serie se ha utilizado la
+<A HREF="http://pyserial.sourceforge.net/"><B>librer&iacute;a
+pyserial</B></A> y muchos de los ejemplos son modificaciones de los
+ejemplos que hay en ella.</FONT></FONT></P>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Los
+<B>ejemplos</B> que se muestran son:</FONT></FONT></P>
+<UL>
+	<LI><P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="scan_py.html"><B>scan.py</B></A><B>:
+	</B>Utilidad que escanea los puertos serie mostrando cu&aacute;les
+	est&aacute;n disponibles.</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="sg-eco1_py.html"><B>sg-eco1.py</B></A>
+	: Pruebas de “eco”. Se env&iacute;a una cadena a 9600 baudios y
+	se espera recibir lo mismo (recibir su “eco”). Para ello es
+	necesario tener un microcontrolador con el <A HREF="../../stargate/servidores/sg-echo/sg-echo.html">servidor
+	de eco</A> grabado, o bien unir los pines 2 y 3 (Rx y Tx) del
+	conector serie.</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="sg-eco2_py.html"><B>sg-eco2.py</B></A>
+	: Mismo ejemplo que sg-eco1_py, pero ahora se pasa como par&aacute;metro
+	el dispositivo serie que se quiere emplear, en vez de tenerlo
+	“cableado” en una variable interna.</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="miniterm_py.html"><B>miniterm.py</B></A>:
+	Mini-terminal de comunicaciones. Todo lo que se teclea se env&iacute;a
+	por el puerto serie, y todo lo recibido se imprime en pantalla. Esta
+	aplicaci&oacute;n es fundamental para hacer pruebas con el puerto
+	serie.</FONT></FONT></P>
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Instalaci&oacute;n en Debian
+GNU/Linux</FONT></H2>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Estos
+programas de ejemplo se han probado en una m&aacute;quina con
+<B>Debian/Etch</B>. Hay que tener instalado <B>python</B> y el m&oacute;dulo
+<B>python-serial</B>:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P ALIGN=LEFT><FONT FACE="Courier New, monospace"><FONT SIZE=2>#
+				apt-get install python python-serial</FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">Para probar
+los ejemplos descargar el paquete <A HREF="download/pyserial-ejemplos.zip">pyserial-ejemplos.zip</A>
+y descomprimirlo en un directorio de trabajo.</FONT></FONT></P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Instalaci&oacute;n en Windows</FONT></H2>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Es
+necesario tener instalados estos tres componentes:</FONT></FONT></P>
+<UL>
+	<LI><P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="http://www.python.org/">Lenguaje
+	Python</A>. </FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="http://starship.python.net/crew/mhammond/win32/Downloads.html">Extensiones
+	de Python para Windows</A>.</FONT></FONT></P>
+	<LI><P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="http://pyserial.sourceforge.net/">M&oacute;dulo
+	Pyserial</A>.</FONT></FONT></P>
+</UL>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Aqu&iacute;
+est&aacute;n disponibles los enlaces a los <B>instaladores para
+windows</B>:</FONT></FONT></P>
+<OL>
+	<LI><P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="http://www.python.org/ftp/python/2.5/python-2.5.msi"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Instalador
+	de python 2.5 para Windows</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+	(python-2.5.msi)</FONT></FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT><A HREF="http://sourceforge.net/project/showfiles.php?group_id=78018&amp;package_id=79063"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Instalador
+	de las extensiones de Python para Windows</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+	(</FONT></FONT><TT><FONT SIZE=2><FONT FACE="Arial, sans-serif">pywin32-210.win32-py2.5.exe</FONT></FONT></TT><FONT SIZE=2><FONT FACE="Arial, sans-serif">)</FONT></FONT></P>
+	<LI><P ALIGN=LEFT><A HREF="http://sourceforge.net/project/showfiles.php?group_id=46487&amp;package_id=39324&amp;release_id=346093"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Instalador
+	del m&oacute;dulo Pyserial</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+	(pyserial-2.2.win32.exe). </FONT></FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">Para probar
+los ejemplos descargar el paquete <A HREF="download/pyserial-ejemplos.zip">pyserial-ejemplos.zip</A>
+y descomprimirlo en un directorio de trabajo.</FONT></FONT></P>
+<HR>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+				<H2 ALIGN=LEFT><FONT FACE="Arial, sans-serif">Ejemplo “hola
+				mundo” 1: Escaneo de los puertos serie (scan.py)</FONT></H2>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><B><FONT FACE="Arial, sans-serif">Programa</FONT></B><FONT FACE="Albany, sans-serif">:</FONT>
+<FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="scan_py.html">scan.py</A>]</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm"><FONT FACE="Albany, sans-serif"><FONT SIZE=4><B><FONT SIZE=3><FONT FACE="Arial, sans-serif">Explicaci&oacute;n</FONT></FONT></B>:
+</FONT></FONT>
+</P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejemplo que
+define una funci&oacute;n de escaneo que devuelve una lista con los
+n&uacute;meros y nombres de los puertos serie que se han abierto con
+&eacute;xito (y que por tanto existen en nuestro sistema y los
+podemos usar).</FONT></FONT></P>
+<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">Observar
+que la <A HREF="http://pyserial.sourceforge.net/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">librer&iacute;a
+pyserial</FONT></FONT></A> utiliza los n&uacute;meros del <B>0 al 255</B>
+para referirse a los puerto serie. Esto es as&iacute; para que sea
+multiplataforma. Tambi&eacute;n es posible abrir los puertos serie
+con los nombres t&iacute;picos de cada sistema operativo (/dev/ttyX
+en Linux, COMx en Windows). Pero para que el programa sea
+multiplataforma y corra en ambos sistemas, hay que utilizar los
+n&uacute;meros entre el 0 y 255.</FONT></FONT></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Abrir el
+puerto serie es tan f&aacute;cil como invocar a la <B>clase Serial</B>,
+indicando el n&uacute;mero de puerto serie a abir:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<TR>
+		<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+			<PRE STYLE="text-align: left"><A NAME="411"></A><FONT COLOR="#800000"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>#-- Abrir puerto serie</FONT></FONT></FONT>
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2>s = serial.Serial(i)</FONT></FONT></PRE>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Si el
+puerto no existe, se produce una excepci&oacute;n, que en el ejemplo
+de scan.py se captura y no se hace nada, para seguir probando m&aacute;s
+puertos.</FONT></FONT></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Si no ha
+ocurrido ning&uacute;n error, se mete en la lista <I>dispositivos_serie</I>
+tanto el n&uacute;mero del puerto encontrado como su nombre:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<TR>
+		<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+			<PRE><A NAME="431"></A><A NAME="4411"></A><FONT COLOR="#800000">#-- Si no hay errores, anadir el numero y nombre a la lista</FONT>
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2>dispositivos_serie.append( (i, s.portstr))</FONT></FONT></PRE>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El programa
+principal simplemente invoca a la funci&oacute;n <I>scan() </I>y
+muestra los resultados por pantalla. Se pueden emplear dos par&aacute;metros
+opcionales. Uno es el n&uacute;mero de puertos seriea a probar. Por
+defecto se prueban los 20 primeros. El otro es el modo “verbose”,
+tambi&eacute;n activado por defecto, que muestra informaci&oacute;n
+sobre los puertos que se van escanenando.</FONT></FONT></P>
+<P ALIGN=LEFT><FONT FACE="Albany, sans-serif"><FONT SIZE=4><B><FONT SIZE=3><FONT FACE="Arial, sans-serif">Ejemplo
+de utilizaci&oacute;n</FONT></FONT></B>:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE>python scan.py</PRE>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En linux se pueden
+poner permisos de ejecuci&oacute;n y teclear directamente <I>./scan.py</I>
+para ejecutarlo.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejemplo de
+funcionamiento en <B>GNU/Linux</B>:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/scan_linux.png" NAME="gr&aacute;ficos2" ALIGN=MIDDLE WIDTH=667 HEIGHT=600 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejemplo de
+funcionamiento en <B>Windows</B>:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/scan_windows.jpg" NAME="gr&aacute;ficos5" ALIGN=MIDDLE WIDTH=669 HEIGHT=506 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=LEFT STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4><B><FONT SIZE=3><FONT FACE="Arial, sans-serif">Notas
+sobre el puerto serie en Linux</FONT></FONT></B>:</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-top: 0.42cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">La
+<A HREF="http://pyserial.sourceforge.net/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">librer&iacute;a
+pyserial</FONT></FONT></A> <B>asocia los n&uacute;meros</B> de puerto
+serie <B>0, 1, 2</B>, etc a los dispositivos <B><I>/dev/ttyS0</I>,
+<I>/dev/ttyS1</I>, <I>/dev/ttyS2</I></B>, etc, respectivamente. Sin
+embargo, cuando se utiliza un <B>conversor USB-serie</B>, los
+dispositivos que aparecen son <B>/dev/ttyUSB0</B>, <B>/dev/ttyUSB1</B>,
+etc...</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-top: 0.42cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Para
+hacer que estos nuevos dispositivos se puedan usar con <A HREF="http://pyserial.sourceforge.net/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">pyserial</FONT></FONT></A>
+se pueden hacer dos cosas:</FONT></FONT></P>
+<OL>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.42cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Abrir
+	directamente el puerto serie especificando el dispositivo</B>.
+	Ejemplo: <I>s = serial.Serial(“/dev/ttyUSB0”)</I>. El problema
+	de esto es que no es multiplataforma. Si se ejecuta en Windows se
+	producir&aacute; un error.</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.42cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Hacer
+	un link entre el dispositivo /dev/ttyUSBx y un /dev/ttySz que no se
+	est&eacute; usando</B>. En mi caso utilizo los nombres /dev/ttyS10,
+	/dev/ttyS11... para asignarlos a los /dev/ttyUSB0, /dev/ttyUSB1...
+	respectivamente. Por ejemplo:</FONT></FONT></P>
+</OL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE>$ sudo ln -s /dev/ttyUSB0 /dev/ttyS10</PRE>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=LEFT STYLE="margin-top: 0.42cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>De
+esta forma al ejecutar <I>scan()</I> se detectar&aacute; que est&aacute;
+disponible el dispositivo con n&uacute;mero 10 (es lo que se muestra
+en el pantallazo de Linux)</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-top: 0.42cm"><BR><BR>
+</P>
+<HR>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+				<H2><FONT FACE="Arial, sans-serif">Ejemplo “hola mundo” 2:
+				Prueba de “eco” 1 (sg-eco1.py)</FONT></H2>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><B><FONT FACE="Arial, sans-serif">Programa</FONT></B><FONT SIZE=4><FONT FACE="Albany, sans-serif">:
+<FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="sg-eco1_py.html">sg-eco1.py</A>]</FONT></FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm"><FONT FACE="Albany, sans-serif"><FONT SIZE=4><B><FONT SIZE=3><FONT FACE="Arial, sans-serif">Explicaci&oacute;n</FONT></FONT></B>:
+</FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.42cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para
+realizar pruebas con el puerto serie, lo m&aacute;s recomendable es
+comenzar utilizando un hardware que haga “eco” de todo lo que se
+le env&iacute;a. Se puede realizar de dos maneras:</FONT></FONT></P>
+<OL>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.42cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Utilizar
+	un cable para unir los pines 2 y 3 (RX y TX) del conector DB9 del
+	puerto serie</B>. De esta manera todo lo que el PC env&iacute;a
+	hacia el exterior es autom&aacute;ticamente recibido</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.42cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Conectar
+	un hardware con un microprocesador que tenga grabado un firmware
+	para implementar la funcionalidad de eco</B>. Por ejemplo,
+	utilizando una <A HREF="../../skypic/skypic.html">tarjeta Skypic</A>,
+	(que usa un micro PIC16F876A) con el <A HREF="../../stargate/servidores/sg-echo/sg-echo.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">servidor
+	de eco</FONT></FONT></A> grabado.</FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-top: 0.42cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">El
+programa <A HREF="sg-eco1_py.html">sg-eco1.py</A> abre el puerto
+serie, y si no se produce ning&uacute;n error, env&iacute;a la cadena
+de prueba “<I>Hola como estas</I>” . Para ello se utiliza el
+m&eacute;todo <I>write()</I>:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<TR>
+		<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+			<PRE STYLE="text-align: left"><A NAME="53"></A><FONT COLOR="#800000"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>#-- Enviar la cadena de pruebas</FONT></FONT></FONT>
+<FONT COLOR="#804000">print</FONT> &quot;<FONT COLOR="#006000">ENVIADO : </FONT>&quot; + Cadena
+s.write(Cadena);</PRE>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=LEFT STYLE="margin-top: 0.42cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>La
+cadena sale por el puerto serie y el hardware hace “eco”. El
+programa se queda esperando hasta recibir tantos bytes como los que
+tiene la cadena que ha sido enviada. Para ellos se invoca al m&eacute;todo
+<I>read() </I>pasando como argumentos el n&uacute;mero de bytes que
+se quiere recibir.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<TR>
+		<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+			<PRE STYLE="text-align: left"><FONT COLOR="#800000">#-- Esperar hasta recibir la cadena enviada...</FONT>
+<FONT COLOR="#800000">#-- O hasta que haya un timeout</FONT>
+recibido = s.read(len(Cadena));</PRE>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=LEFT STYLE="margin-top: 0.42cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ahora
+pueden ocurrir dos cosas. Bien que la cadena llegue correctamente (se
+reciben tantos bytes como los que se han enviado) o bien que no
+lleguen todos, produci&eacute;ndose un <I>timeout</I>.</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4><B><FONT SIZE=3><FONT FACE="Arial, sans-serif">Ejemplo
+de utilizaci&oacute;n</FONT></FONT></B>:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE>python sg-eco1.py</PRE>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En linux se pueden
+poner permisos de ejecuci&oacute;n y teclear directamente
+<I>./sg-eco1.py</I> para ejecutarlo.</FONT></FONT></P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Los pantallazos para
+Linux y Windows se muestran con el ejemplo <A HREF="sg-eco2_py.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sg-eco2.py</FONT></FONT></A>,
+que son similares a <A HREF="sg-eco1_py.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sg-eco1.py</FONT></FONT></A>.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Si todo ha ido bien,
+lo que aparecer&aacute; en pantalla ser&aacute;:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<TR>
+		<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+			<PRE>Pruebas del puerto serie
+Puerto (0): /dev/ttyS0
+ENVIADO : Hola como estas
+RECIBIDO: Hola como estas
+OK!</PRE>
+		</TD>
+	</TR>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En windows aparecer&aacute;
+COM1 donde pone /dev/ttyS0</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Si se quiere utilizar
+otro puerto serie diferente del 0, hay que modificar la variable
+<I>Puerto</I>.</FONT></FONT></P>
+<HR>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+				<H2 ALIGN=LEFT><FONT FACE="Arial, sans-serif">Ejemplo “hola
+				mundo” 3: Prueba de “eco” 2 (sg-eco2.py)</FONT></H2>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><B><FONT FACE="Arial, sans-serif">Programa</FONT></B><FONT SIZE=4><FONT FACE="Albany, sans-serif">:
+<FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="sg-eco2_py.html">sg-eco2.py</A>]</FONT></FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm"><FONT FACE="Albany, sans-serif"><FONT SIZE=4><B><FONT SIZE=3><FONT FACE="Arial, sans-serif">Explicaci&oacute;n</FONT></FONT></B>:
+</FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.42cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Este
+ejemplo hace exactamente lo mismo que <FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="sg-eco1_py.html">sg-eco1.py</A>,
+pero ahora se le pasa como argumento el n&uacute;mero de puerto serie
+a emplear. Se ha divido en dos ejemplos para separar la parte de
+comunicaciones serie con la de an&aacute;lisis de los argumentos,
+para que quede m&aacute;s claro. Pero funcionalmente son
+equivalentes.</FONT></FONT> </FONT></FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B><FONT SIZE=3>Ejemplo
+de utilizaci&oacute;n</FONT></B>:</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Se invoca el programa
+pasando como argumento -p x, donde x es el n&uacute;mero o nombre del
+puerto serie a utilizar. </FONT></FONT>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE>python sg-eco2.py -p 0</PRE>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En linux se pueden
+poner permisos de ejecuci&oacute;n y teclear directamente <I>./sg-eco2
+-p 0</I> para ejecutarlo. </FONT></FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejemplo de
+funcionamiento en <B>GNU/Linux</B>:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/sg-eco-linux.png" NAME="gr&aacute;ficos3" ALIGN=MIDDLE WIDTH=667 HEIGHT=243 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Se est&aacute;
+utilizando el puerto /dev/ttyS10 que es un conversor USB-serie
+(/dev/ttyUSB0). Se ha hecho un link simb&oacute;lico al dispositivo
+/dev/ttyS10 para que <A HREF="http://pyserial.sourceforge.net/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">pyserial</FONT></FONT></A>
+lo reconozca.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejemplo de
+funcionamiento en <B>Windows</B>:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/sg-eco-windows.png" NAME="gr&aacute;ficos6" ALIGN=MIDDLE WIDTH=668 HEIGHT=223 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=LEFT STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Se
+est&aacute; utilizando el puerto COM1 que est&aacute; asociado al
+n&uacute;mero 0.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+				<H2 ALIGN=LEFT><FONT FACE="Arial, sans-serif">Ejemplo “hola
+				mundo” 4: Mini-terminal (miniterm.py)</FONT></H2>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><B><FONT FACE="Arial, sans-serif">Programa</FONT></B><FONT SIZE=4><FONT FACE="Albany, sans-serif">:
+</FONT></FONT><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="miniterm_py.html">miniterm.py</A>]</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm"><FONT FACE="Albany, sans-serif"><FONT SIZE=4><B><FONT SIZE=3><FONT FACE="Arial, sans-serif">Explicaci&oacute;n</FONT></FONT></B>:
+</FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.42cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Miniterminal
+de comunicaciones para hacer pruebas r&aacute;pidas. Todo lo que se
+teclea se env&iacute;a por el puerto serie y todo lo que se recibe se
+imprime en la pantalla. Se utiliza un hilo (thread) para leer del
+puerto serie y mostrar en pantalla. El hilo principal est&aacute;
+pendiente de enviar todo lo que el usuario teclea.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-top: 0.42cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Se
+utiliza el <A HREF="../../../personal/juan/proyectos/python/pyconsola_io/pyconsola_io.html">m&oacute;dulo
+pyconsola_io</A> para leer las teclas.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B><FONT SIZE=3>Ejemplo
+de utilizaci&oacute;n</FONT></B>:</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Se invoca de la
+siguiente manera:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE>python miniterm.py -p 0</PRE>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejemplo de
+funcionamiento en <B>GNU/Linux</B>:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/miniterm-linux.png" NAME="gr&aacute;ficos4" ALIGN=MIDDLE WIDTH=667 HEIGHT=311 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejemplo de
+funcionamiento en <B>Windows</B>:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/miniterm_windows.png" NAME="gr&aacute;ficos7" ALIGN=MIDDLE WIDTH=670 HEIGHT=170 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2 STYLE="margin-left: 0cm"><FONT FACE="Arial, sans-serif">La
+librer&iacute;a USPP</FONT></H2>
+<P ALIGN=JUSTIFY STYLE="margin-right: 0.66cm"><FONT SIZE=2>Existen
+otras librer&iacute;as de acceso al puerto serie en Python. Una de
+ellas es la <A HREF="http://ibarona.googlepages.com/uspp">librer&iacute;a
+USPP</A> desarrollada por <B>Isaac Barona</B>. Soporta las
+plataformas Linux,    Windows y MacOS. La raz&oacute;n por la que he
+hecho estos ejemplos utilizando pyserial en vez de USPP es que
+desconoc&iacute;a su existencia hasta hace apenas dos d&iacute;as
+antes de la publicaci&oacute;n de esta documentaci&oacute;n. Tiene la
+ventaja de que permite realizar comunicaciones usando la <B>norma
+RS-485</B>, que es half-duplex. En este modo se gestiona
+autom&aacute;ticamente la direcci&oacute;n de la transferencia usando
+la l&iacute;nea RTS.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-right: 0.66cm"><FONT SIZE=2>Tambi&eacute;n
+es muy f&aacute;cilmente portable a otras plataformas. &iexcl;Impresionante
+trabajo Isaac! Gracias por tu trabajo y por liberarlo para que todos
+lo podamos usar. ;-)</FONT></P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Download</FONT></H2>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=789 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+			<COL WIDTH=781>
+			<TR>
+				<TD WIDTH=781 BGCOLOR="#9999ff">
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Para
+					descargar</B></FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+		<DD>
+		<TABLE WIDTH=789 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=234>
+			<COL WIDTH=547>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=234 BGCOLOR="#ccccff">
+					<P><A HREF="download/pyserial-ejemplos.zip"><FONT SIZE=2><FONT FACE="Arial, sans-serif">pyserial-ejemplos.zip</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=547 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Todos los
+					ejemplos: scan.py, sg-eco1.py, sg-eco2.py y miniterm.py </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Documentaci&oacute;n</FONT></H2>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="http://pyserial.sourceforge.net/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Librer&iacute;a
+	pyserial</FONT></FONT></A>. Muchos ejemplos y documentaci&oacute;n
+	completa de la API </FONT></FONT>
+	</P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="../../../personal/juan/proyectos/python/pyconsola_io/pyconsola_io.html">M&oacute;dulo
+	pyconsola_io</A>: Lectura de teclas sin esperar a que se pulse Enter</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="http://www.python.org/">P&aacute;gina
+	oficial del lenguaje Python</A>.</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="../../stargate/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Proyecto
+	stargate</FONT></FONT></A>: Control de dispositivos externos desde
+	el PC</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="../../stargate/servidores/sg-echo/sg-echo.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Servidor
+	de eco</FONT></FONT></A>: Firmware para que diferentes
+	microcontroladores hagan “eco” de todo lo recibido por su puerto
+	serie</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="../../skypic/skypic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Tarjeta
+	Skypic</FONT></FONT></A>: una tarjeta entrenadora basada en el
+	microcontrolador PIC16F876A</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="../ct1/ct1.html">Cuaderno
+	t&eacute;cnico 1</A>: Comunicaciones serie.</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="../../../personal/juan/doctorado/cube-revolutions/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cube
+	Revolutions</FONT></FONT></A>: Un ejemplo de un robot que se
+	controla por puerto serie desde el PC. Utiliza una <A HREF="../../skypic/skypic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Skypic</FONT></FONT></A>.</FONT></FONT></P>
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Autores</FONT></H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Chris Liechti</B></FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="../../../personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+	Gonz&aacute;lez</FONT></FONT></A> </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Licencia</FONT></H2>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+				<P><BR><!--Creative Commons License--><A HREF="http://creativecommons.org/licenses/by-sa/2.5/es/"><IMG SRC="http://creativecommons.org/images/public/somerights20.png" NAME="Imagen27" ALT="Creative Commons License" ALIGN=BOTTOM WIDTH=88 HEIGHT=31 BORDER=0></A>
+				<FONT SIZE=2><FONT FACE="Arial, sans-serif">This work is licensed
+				under a </FONT></FONT><A HREF="http://creativecommons.org/licenses/by-sa/2.5/es/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Creative
+				Commons Attribution-ShareAlike 2.5 Spain License<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about="">
+			<license rdf:resource="http://creativecommons.org/licenses/by-sa/2.5/es/" />
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by-sa/2.5/es/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/><requires rdf:resource="http://web.resource.org/cc/ShareAlike"/></License></rdf:RDF> --></FONT></FONT></A>
+								</P>
+			</TD>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Este proyecto
+				tiene una <B>licencia libre</B>. Se permite su copia,
+				modificaci&oacute;n y distribuci&oacute;n, bajo los t&eacute;rminos
+				de la licencia Creative commons. </FONT></FONT>
+				</P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Todo el software
+				tiene licencia GPL.</FONT></FONT></P>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Cr&eacute;ditos:</FONT></H2>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Todos los
+	ejemplos est&aacute;n basados en los creados por <B>Chris Liechti
+	</B>para el proyecto <A HREF="http://pyserial.sourceforge.net/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">pyserial</FONT></FONT></A>.
+	</FONT></FONT>
+	</P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">El primer
+	contacto que tuve con el manejo del puerto serie bajo Python fue
+	gracias a <A HREF="http://rafaeltm.wordpress.com/">Rafael Trevi&ntilde;o</A>.
+	</FONT></FONT>
+	</P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">La <A HREF="http://pyserial.sourceforge.net/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Librer&iacute;a
+	pyserial</FONT></FONT></A> la descubr&iacute; gracias a <B>Gede&oacute;n
+	Dominguez</B>, que durante la <A HREF="../../../personal/juan/eventos/evento17/index6.html">campus
+	party 2006 las utilizamos para hacer la Skylamp</A>, un flexo que se
+	pod&iacute;a encender y apagar a trav&eacute;s de internet.</FONT></FONT></P>
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Agradecimientos</FONT></H2>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">A <A HREF="../../../personal/ricardo/index.html">Ricardo
+	G&oacute;mez</A> y <A HREF="../../../personal/andres/index.html">Andr&eacute;s
+	Prieto-Moreno</A> por probar todos los ejemplos en Windows,
+	encontrar errores y generar las capturas de pantallas. Muchas
+	gracias ;-)</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>A <B>Isaac Barona</B>
+	por enviarme el enlace a la <A HREF="http://ibarona.googlepages.com/uspp">librer&iacute;a
+	serie USPP</A>. </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Noticias</FONT></H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>11/Abril/2007:</B>
+	Publicada primera versi&oacute;n de este cuaderno</FONT></FONT></P>
+</UL>
+<HR>
+<P><A HREF="../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[&Iacute;ndice
+de cuadernos t&eacute;cnicos]</FONT></FONT></A></P>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="../../../personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A><A HREF="http://www.iearobotics.com/">
+</A>
+</ADDRESS>
+<P STYLE="margin-bottom: 0cm"><A HREF="http://www.iearobotics.com/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEAROBOTICS</FONT></FONT></A>
+</P>
+</BODY>
+</HTML>
