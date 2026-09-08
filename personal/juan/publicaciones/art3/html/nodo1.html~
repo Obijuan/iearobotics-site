@@ -1,7 +1,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
 <HEAD>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
+		 <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<TITLE>JCRA 2003: Laboratorio Web para Prototipado y Verificaci&oacute;n
 de Sistemas Hardware/Software</TITLE>
 	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Linux)">
@@ -47,8 +48,8 @@ Ivan.Gonzalez, Juan.Gonzalez, Javier.Martinez}@ii.uam.es</FONT></P>
 <a href="nodo4.html">2 Un Laboratorio Web basado en plataformas reconfigurables</a><br>
 <a href="nodo5.html">3 Iniciaci&oacute;n al codise&ntilde;o con Labomatweb</a><br>
 <blockquote>
-<a href="nodo6.html">3.1 Caracterización de los tiempos de acceso a los recursos de la plataforma</a><br>
-<a href="">3.2 Módulo coprocesador para multiplicación en coma flotante</a><br>
+<a href="nodo6.html">3.1 Caracterizaciï¿œn de los tiempos de acceso a los recursos de la plataforma</a><br>
+<a href="">3.2 Mï¿œdulo coprocesador para multiplicaciï¿œn en coma flotante</a><br>
 <a href=""></a>
 </blockquote>
 <a href="">4 Labo-micro: Entorno para verificar prototipos de procesadores</a><br>

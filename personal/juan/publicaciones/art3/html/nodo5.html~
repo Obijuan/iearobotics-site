@@ -1,7 +1,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
 <HEAD>
-	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+		 <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<TITLE>JCRA 2003: Laboratorio Web para Prototipado y Verificaci&oacute;n
 de Sistemas Hardware/Software</TITLE>
 	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Linux)">
@@ -24,7 +25,7 @@ de Sistemas Hardware/Software</TITLE>
 </HEAD>
 <BODY LANG="en-US" TEXT="#000000" LINK="#0000ff" VLINK="#800080" DIR="LTR">
 
-Siguiente: <a href="nodo6.html">3.1 Caracterización de los tiempos de acceso a los recursos de la plataforma</a>. 
+Siguiente: <a href="nodo6.html">3.1 Caracterizaciï¿œn de los tiempos de acceso a los recursos de la plataforma</a>. 
 Anterior: <a href="nodo4.html">2 Un Laboratorio Web basado en plataformas reconfigurables</a>
 <hr>
 

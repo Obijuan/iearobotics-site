@@ -1,7 +1,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
 <HEAD>
-	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+		 <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<TITLE>Taller Robotica B&aacute;sica - Sesi&oacute;n 4</TITLE>
 	<META NAME="KEYWORDS" CONTENT="robotica, microcontroladores, pic, hardware">
 	<STYLE>
@@ -161,7 +162,7 @@ encapsularla de tal forma que s&oacute;lo podamos recibir la luz por un peque&nt
 </P>
 <H2><A NAME="software"></A>Software</H2>
 <P> Como hemos dicho antes, una LDR es un sensor anal&oacute;gico, eso significa que la informaci&oacute;n que nos d&aacute; tiene infinitos estados, en contra de los sensores digitales que s&oacute;lo tienen dos. Esta caracter&iacute;stica hace que necesitemos un conversor anal&oacute;gico-digital (ADC Analog to Digital Converter) para poder trabajar con este tipo de informaci&oacute;n NO DIGITAL. <BR>
-El ADC recibe como entrada la señal anal&oacute;gina y proporciona en su salida una serie de bits proporcionales al valor de la entrada. El PIC16F876A tiene un conversor AD interno con varias entradas situadas en el Puerto A.
+El ADC recibe como entrada la seï¿œal anal&oacute;gina y proporciona en su salida una serie de bits proporcionales al valor de la entrada. El PIC16F876A tiene un conversor AD interno con varias entradas situadas en el Puerto A.
 <br>Nosotros vamos a usar este recurso para leer la informaci&oacute;n de la LDR. Tendremos que configurar el ADC interno para que sea capaz de leer valores anal&oacute;gicos en la entrada AN0 y dejar el resto de entradas como digitales. De esta forma mantendremos la compatibilidad con los bumpers.
 </P>
 
