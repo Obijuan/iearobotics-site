@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Taller de robotica CampusBot 2005. Sesion 2. Primera prueba del robot</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGED" CONTENT="20050718;23370400">
+	<META NAME="KEYWORDS" CONTENT="robotica, microcontroladores, pic, hardware">
+	<!-- saved from url=(0088)http://www.iearobotics.com/talleres/campusbot-2005/software/skybot-test/skybot-test.html -->
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+		P.estilo2 { font-family: "Arial", "Helvetica", sans-serif }
+		H2.estilo2 { font-family: "Arial", "Helvetica", sans-serif }
+		ADDRESS.estilo2 { font-family: "Arial", "Helvetica", sans-serif }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<TABLE WIDTH=917 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+	<COL WIDTH=909>
+	<TR>
+		<TD WIDTH=909>
+			<P ALIGN=CENTER><FONT FACE="Arial, Helvetica, sans-serif"><FONT SIZE=2><B>Bot-Control:
+			Aplicaci&oacute;n para el control del robot skybot </B></FONT></FONT>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P CLASS="estilo2" ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/botc1.jpg" NAME="Imagen1" ALIGN=MIDDLE WIDTH=321 HEIGHT=392 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2 CLASS="estilo2">Introducci&oacute;n</H2>
+<P CLASS="estilo2"><FONT SIZE=2>El programa <B>Bot-Control</B> es un
+cliente para el <A HREF="http://www.iearobotics.com/talleres/campusbot-2005/software/skybot-monitor/index.html">servidor
+skybot-monitor</A>, basado en el <A HREF="http://www.iearobotics.com/proyectos/stargate/servidores/sg-generic/sg-generic.html">servidor
+gen&eacute;rico</A> (<A HREF="http://www.iearobotics.com/proyectos/stargate/index.html">proyecto
+Stargate</A>) que permite manejar el robot <B>skybot</B> desde el PC
+y leer el estado de los cuatro sensores</FONT>. <FONT SIZE=2>Es muy
+&uacute;til para detectar problemas y hacer pruebas.</FONT></P>
+<HR>
+<H2 CLASS="estilo2">Caractersticas</H2>
+<UL>
+	<LI><P><FONT FACE="Arial, Helvetica, sans-serif"><FONT SIZE=2>Plataforma:
+	Windows</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, Helvetica, sans-serif"><FONT SIZE=2>Creado
+	para el skybot, pero se puede adaptar f&aacute;cilmente para
+	cualquier otro robot que use un microcontrolador PIC.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, Helvetica, sans-serif"><FONT SIZE=2>Programa
+	con interfaz gr&aacute;fica </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<H2 CLASS="estilo2">Autores</H2>
+<UL>
+	<LI><P><A HREF="http://xpic.freestarthost.com/about.htm"><FONT SIZE=2><FONT FACE="Arial, Helvetica, sans-serif">Daniel
+	&Aacute;lvarez S&aacute;nchez </FONT></FONT></A>
+	</P>
+	<LI><P><A HREF="http://xpic.freestarthost.com/about.htm"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT FACE="Arial, Helvetica, sans-serif">Alberto
+	Clavo Torrijos </FONT></FONT></A>
+	</P>
+</UL>
+<HR>
+<H2 CLASS="estilo2">Licencia</H2>
+<P CLASS="estilo2"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Licencia
+GPL.</B> Se conceden permisos para copiar, distribuir, modificar y
+redistribuir las modificaciones </FONT></FONT>
+</P>
+<HR>
+<H2 CLASS="estilo2">Instalaci&oacute;n</H2>
+<P CLASS="estilo2"><FONT SIZE=2>Es un &uacute;nico fichero
+ejecutable, compilado est&aacute;ticamente por lo que no es necesario
+instalar ninguna librer&iacute;a. Los pasos para instalarlo son:</FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, Helvetica, sans-serif"><FONT SIZE=2><B>Bajar
+	el fichero compilado</B>: Bot-Control.exe </FONT></FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, Helvetica, sans-serif"><FONT SIZE=2><B>Ejecutarlo</B></FONT></FONT></P>
+</UL>
+<HR>
+<H2 CLASS="estilo2">Funcionamiento</H2>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, Helvetica, sans-serif">Para
+	que funcione es necesario que est&eacute; cargado el programa
+	<A HREF="http://www.iearobotics.com/talleres/campusbot-2005/software/skybot-monitor/download/skybot-monitor.hex">skybot-monitor</A>
+	en la <A HREF="http://www.iearobotics.com/proyectos/skypic/skypic.html">tarjeta
+	Skypic</A>. Viene cargado por defecto, por lo que no har&aacute;
+	falta cargarlo si no se ha grabado antes ning&uacute;n programa.</FONT></FONT></P>
+</UL>
+<UL>
+	<LI><P><FONT FACE="Arial, Helvetica, sans-serif"><FONT SIZE=2>Alimentar
+	el skybot y conectarlo al puerto serie del PC.</FONT></FONT></P>
+</UL>
+<UL>
+	<LI><P><FONT FACE="Arial, Helvetica, sans-serif"><FONT SIZE=2>Ejecutar
+	el <B>Bot-Control</B>, e indicar el dispositivo serie. Si no se
+	especifica ninguno se toma por defecto el COM1 </FONT></FONT>
+	</P>
+</UL>
+<P CLASS="estilo2"><FONT SIZE=2>Aparecer lo siguiente:</FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/botc1.jpg" NAME="Imagen2" ALIGN=MIDDLE WIDTH=321 HEIGHT=394 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P CLASS="estilo2"><FONT SIZE=2>Mediante las flechas del panel de
+control podremos mover el robot. En la parte superior se muestra el
+estado de los 4 sensores. </FONT>
+</P>
+<HR>
+<H2 CLASS="estilo2">Download</H2>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=742 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+			<TR>
+				<TD WIDTH=734>
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Descarga
+					de ficheros</B></FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+		<DD>
+		<TABLE WIDTH=741 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=150>
+			<COL WIDTH=583>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=150>
+					<P><A HREF="BotControl.exe"><FONT SIZE=2><FONT FACE="Arial, sans-serif">BotControl.exe</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=583>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejecutable.
+					Version 1.2</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=150>
+					<P><A HREF="BotControl-1.2.zip"><FONT SIZE=2><FONT FACE="Arial, sans-serif">BotControl-1.2.zip</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=583>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Fuentes para
+					Visual C++ 6.0</FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P CLASS="estilo2" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2>Documentaci&oacute;n</H2>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">La documentaci&oacute;n
+con Doxygen de la <B>clase CSGTramas</B>, que permite acceder a los
+servicios de los servidores cargados en el microcontrolador, <A HREF="doc/index.html">est&aacute;
+accesible aqu&iacute;</A>.</FONT></FONT></P>
+<HR>
+<H2 CLASS="estilo2"><A NAME="todo"></A>Links</H2>
+<UL>
+	<LI><P><FONT FACE="Arial, Helvetica, sans-serif"><A HREF="http://www.iearobotics.com/talleres/campusbot-2005/index.html"><FONT SIZE=2>Taller
+	de rob&oacute;tica</FONT></A> <FONT SIZE=2>en la Campus Party 2005
+	de Valencia</FONT></FONT></P>
+	<LI><P><A HREF="http://www.iearobotics.com/proyectos/stargate/index.html"><FONT SIZE=2><FONT FACE="Arial, Helvetica, sans-serif">Proyecto
+	Stargate</FONT></FONT></A></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, Helvetica, sans-serif">Servidor
+	<A HREF="http://www.iearobotics.com/talleres/campusbot-2005/software/skybot-monitor/index.html">skybot-monitor</A>,
+	basado en el <A HREF="http://www.iearobotics.com/proyectos/stargate/servidores/sg-generic/sg-generic.html">servidor
+	gen&eacute;rico</A>.</FONT></FONT></P>
+</UL>
+<HR>
+<H2 CLASS="estilo2">Noticias</H2>
+<UL>
+	<LI><P><FONT FACE="Arial, Helvetica, sans-serif"><FONT SIZE=2><B>18/Jul/2005</B>.
+	Versin 1.2 creada para el taller del &aacute;rea de Campusbot, en la
+	Campus Party de Valencia</FONT></FONT></P>
+</UL>
+<HR>
+<ADDRESS CLASS="estilo2" STYLE="margin-bottom: 0.5cm"><A HREF="http://xpic.freestarthost.com/about.htm"><FONT SIZE=2>Daniel
+&Aacute;lvarez S&aacute;nchez&nbsp;/&nbsp;Alberto Calvo
+Torrijos</FONT></A><BR><A HREF="http://xpic.freestarthost.com/">X-PIC-SYSTEM</A>
+</ADDRESS>
+</BODY>
+</HTML>

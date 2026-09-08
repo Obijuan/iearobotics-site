@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>sci-sensor.c</title>
+		<meta name="generator" content="c2html 1.1.0" >
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" >
+		<meta http-equiv="Content-Script-Type" content="text/javascript" >
+		<meta http-equiv="Content-Style-Type" content="text/css" >
+	</head>
+	<body text="#000000">
+		<font face="Monospace">
+<font color="#808080"><i>/***************************************************************************&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;sci-sensor.c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Junio-2005&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*---------------------------------------------------------------------------*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;Ejemplo&nbsp;para&nbsp;el&nbsp;skybot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*---------------------------------------------------------------------------*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;&nbsp;Leer&nbsp;el&nbsp;estado&nbsp;de&nbsp;un&nbsp;sensor&nbsp;(se&nbsp;puede&nbsp;definir&nbsp;cual)&nbsp;y&nbsp;enviar&nbsp;su&nbsp;estado&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;&nbsp;por&nbsp;el&nbsp;puerto&nbsp;serie.&nbsp;Si&nbsp;lee&nbsp;negro&nbsp;se&nbsp;manda&nbsp;una&nbsp;'N',&nbsp;si&nbsp;es&nbsp;blanco&nbsp;una&nbsp;'B'&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;&nbsp;Para&nbsp;ver&nbsp;su&nbsp;funcionamiento&nbsp;es&nbsp;necesario&nbsp;ejecutar&nbsp;un&nbsp;terminal&nbsp;de&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;&nbsp;comunicaciones&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*---------------------------------------------------------------------------*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;&nbsp;Andres&nbsp;Prieto-Moreno&nbsp;&lt;andres@ifara.com&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;&nbsp;Juan&nbsp;Gonzalez&nbsp;&lt;juan@iearobotics.com&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*---------------------------------------------------------------------------*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;&nbsp;LICENCIA&nbsp;GPL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*****************************************************************************/</i></font><br>
+<br>
+<font color="#808080"><i>//--&nbsp;Especificar&nbsp;el&nbsp;pic&nbsp;a&nbsp;emplear<br></i></font>
+<font color="#008000">#define&nbsp;__16f877<br></font>
+<font color="#008000">#include&nbsp;&quot;pic16f877.h&quot;<br></font>
+<br>
+<font color="#008000">#include&nbsp;&quot;sci.h&quot;<br></font>
+<br>
+<font color="#808080"><i>//--&nbsp;Definiciones&nbsp;de&nbsp;los&nbsp;sensores<br></i></font>
+<font color="#008000">#define&nbsp;&nbsp;&nbsp;SENSOR1&nbsp;&nbsp;0x01<br></font>
+<font color="#008000">#define&nbsp;&nbsp;&nbsp;SENSOR2&nbsp;&nbsp;0x02<br></font>
+<font color="#008000">#define&nbsp;&nbsp;&nbsp;SENSOR3&nbsp;&nbsp;0x80<br></font>
+<font color="#008000">#define&nbsp;&nbsp;&nbsp;SENSOR4&nbsp;&nbsp;0x04<br></font>
+<br>
+<font color="#808080"><i>//--&nbsp;Indicar&nbsp;el&nbsp;sensor&nbsp;a&nbsp;comprobar.&nbsp;Esto&nbsp;se&nbsp;puede&nbsp;cambiar<br></i></font>
+<font color="#008000">#define&nbsp;&nbsp;&nbsp;SENSOR&nbsp;SENSOR4<br></font>
+<br>
+<font color="#808080"><i>//----------------------------<br></i></font>
+<font color="#808080"><i>//-&nbsp;Comienzo&nbsp;del&nbsp;programa&nbsp;&nbsp;<br></i></font>
+<font color="#808080"><i>//----------------------------<br></i></font>
+<br>
+<font color="#800000">void</font>&nbsp;<font color="#000000">main</font>(<font color="#800000">void</font>)<br>
+{&nbsp;&nbsp;<br>
+&nbsp;&nbsp;<font color="#808080"><i>//--&nbsp;Configurar&nbsp;el&nbsp;puerto&nbsp;B&nbsp;para&nbsp;trabajar&nbsp;con&nbsp;el&nbsp;Skybot<br></i></font>
+&nbsp;&nbsp;<font color="#808080"><i>//--&nbsp;RB0,&nbsp;RB1,&nbsp;RB2&nbsp;y&nbsp;RB7&nbsp;como&nbsp;entradas<br></i></font>
+&nbsp;&nbsp;<font color="#808080"><i>//--&nbsp;RB3,&nbsp;RB4,&nbsp;RB5&nbsp;y&nbsp;RB6&nbsp;como&nbsp;salidas<br></i></font>
+&nbsp;&nbsp;<font color="#000000">TRISB</font>=<font color="#008080">0x87</font>;<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;<font color="#808080"><i>//--&nbsp;Los&nbsp;motores&nbsp;del&nbsp;Skybot&nbsp;parados<br></i></font>
+&nbsp;&nbsp;<font color="#000000">PORTB</font>=<font color="#008080">0x00</font>;<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;<font color="#808080"><i>//--&nbsp;Configurar&nbsp;las&nbsp;comunicaciones&nbsp;serie<br></i></font>
+&nbsp;&nbsp;<font color="#000000">sci_conf</font>();<br>
+<br>
+&nbsp;&nbsp;<font color="#808080"><i>//--&nbsp;Bucle&nbsp;principal<br></i></font>
+&nbsp;&nbsp;<font color="#000000"><b>while</b></font>(<font color="#0000FF">1</font>)&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080"><i>//--&nbsp;Sensor&nbsp;lee&nbsp;blanco?<br></i></font>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000"><b>if</b></font>&nbsp;((<font color="#000000">PORTB</font>&nbsp;&amp;&nbsp;<font color="#000000">SENSOR</font>)==<font color="#0000FF">0</font>)&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">sci_write</font>(<font color="#FF00FF">'B'</font>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080"><i>//--&nbsp;Si,&nbsp;mandar&nbsp;la&nbsp;B<br></i></font>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000"><b>else</b></font>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">sci_write</font>(<font color="#FF00FF">'\N'</font>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080"><i>//--&nbsp;No,&nbsp;manda&nbsp;la&nbsp;N<br></i></font>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080"><i>//--&nbsp;Enviar&nbsp;un&nbsp;caracter&nbsp;de&nbsp;retroceso<br></i></font>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">sci_write</font>(<font color="#FF00FF">'\b'</font>);&nbsp;&nbsp;<br>
+&nbsp;&nbsp;}&nbsp;&nbsp;<br>
+&nbsp;&nbsp;<br>
+}<br>
+		</font>
+	</body>
+</html>

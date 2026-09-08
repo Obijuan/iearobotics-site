@@ -1,0 +1,543 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>pic16f877.h</title>
+		<meta name="generator" content="c2html 1.1.0" >
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" >
+		<meta http-equiv="Content-Script-Type" content="text/javascript" >
+		<meta http-equiv="Content-Style-Type" content="text/css" >
+	</head>
+	<body text="#000000">
+		<font face="Monospace">
+<font color="#808080"><i>//<br></i></font>
+<font color="#808080"><i>//&nbsp;Register&nbsp;Declarations&nbsp;for&nbsp;Microchip&nbsp;16F877&nbsp;Processor<br></i></font>
+<font color="#808080"><i>//<br></i></font>
+<font color="#808080"><i>//<br></i></font>
+<font color="#808080"><i>//&nbsp;This&nbsp;header&nbsp;file&nbsp;was&nbsp;automatically&nbsp;generated&nbsp;by:<br></i></font>
+<font color="#808080"><i>//<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inc2h.pl&nbsp;V1.5<br></i></font>
+<font color="#808080"><i>//<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright&nbsp;(c)&nbsp;2002,&nbsp;Kevin&nbsp;L.&nbsp;Pauba,&nbsp;All&nbsp;Rights&nbsp;Reserved<br></i></font>
+<font color="#808080"><i>//<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDCC&nbsp;is&nbsp;licensed&nbsp;under&nbsp;the&nbsp;GNU&nbsp;Public&nbsp;license&nbsp;(GPL)&nbsp;v2.&nbsp;&nbsp;Note&nbsp;that<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this&nbsp;license&nbsp;covers&nbsp;the&nbsp;code&nbsp;to&nbsp;the&nbsp;compiler&nbsp;and&nbsp;other&nbsp;executables,<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;but&nbsp;explicitly&nbsp;does&nbsp;not&nbsp;cover&nbsp;any&nbsp;code&nbsp;or&nbsp;objects&nbsp;generated&nbsp;by&nbsp;sdcc.<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We&nbsp;have&nbsp;not&nbsp;yet&nbsp;decided&nbsp;on&nbsp;a&nbsp;license&nbsp;for&nbsp;the&nbsp;run&nbsp;time&nbsp;libraries,&nbsp;but<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it&nbsp;will&nbsp;not&nbsp;put&nbsp;any&nbsp;requirements&nbsp;on&nbsp;code&nbsp;linked&nbsp;against&nbsp;it.&nbsp;See:<br></i></font>
+<font color="#808080"><i>//&nbsp;<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.gnu.org/copyleft/gpl/html<br></i></font>
+<font color="#808080"><i>//<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;See&nbsp;http://sdcc.sourceforge.net/&nbsp;for&nbsp;the&nbsp;latest&nbsp;information&nbsp;on&nbsp;sdcc.<br></i></font>
+<font color="#808080"><i>//<br></i></font>
+<font color="#808080"><i>//&nbsp;<br></i></font>
+<font color="#008000">#ifndef&nbsp;P16F877_H<br></font>
+<font color="#008000">#define&nbsp;P16F877_H<br></font>
+<br>
+<font color="#008000">#ifndef&nbsp;BIT_AT<br></font>
+<font color="#008000">#define&nbsp;BIT_AT(base,bitno)&nbsp;sbit&nbsp;at&nbsp;((base&lt;&lt;3)+bitno)<br></font>
+<font color="#008000">#endif<br></font>
+<br>
+<font color="#808080"><i>//<br></i></font>
+<font color="#808080"><i>//&nbsp;Register&nbsp;addresses.<br></i></font>
+<font color="#808080"><i>//<br></i></font>
+<font color="#008000">#define&nbsp;INDF_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0000<br></font>
+<font color="#008000">#define&nbsp;TMR0_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0001<br></font>
+<font color="#008000">#define&nbsp;PCL_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0002<br></font>
+<font color="#008000">#define&nbsp;STATUS_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0003<br></font>
+<font color="#008000">#define&nbsp;FSR_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0004<br></font>
+<font color="#008000">#define&nbsp;PORTA_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0005<br></font>
+<font color="#008000">#define&nbsp;PORTB_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0006<br></font>
+<font color="#008000">#define&nbsp;PORTC_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0007<br></font>
+<font color="#008000">#define&nbsp;PORTD_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0008<br></font>
+<font color="#008000">#define&nbsp;PORTE_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0009<br></font>
+<font color="#008000">#define&nbsp;PCLATH_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x000A<br></font>
+<font color="#008000">#define&nbsp;INTCON_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x000B<br></font>
+<font color="#008000">#define&nbsp;PIR1_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x000C<br></font>
+<font color="#008000">#define&nbsp;PIR2_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x000D<br></font>
+<font color="#008000">#define&nbsp;TMR1L_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x000E<br></font>
+<font color="#008000">#define&nbsp;TMR1H_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x000F<br></font>
+<font color="#008000">#define&nbsp;T1CON_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0010<br></font>
+<font color="#008000">#define&nbsp;TMR2_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0011<br></font>
+<font color="#008000">#define&nbsp;T2CON_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0012<br></font>
+<font color="#008000">#define&nbsp;SSPBUF_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0013<br></font>
+<font color="#008000">#define&nbsp;SSPCON_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0014<br></font>
+<font color="#008000">#define&nbsp;CCPR1L_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0015<br></font>
+<font color="#008000">#define&nbsp;CCPR1H_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0016<br></font>
+<font color="#008000">#define&nbsp;CCP1CON_ADDR&nbsp;&nbsp;&nbsp;&nbsp;0x0017<br></font>
+<font color="#008000">#define&nbsp;RCSTA_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0018<br></font>
+<font color="#008000">#define&nbsp;TXREG_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0019<br></font>
+<font color="#008000">#define&nbsp;RCREG_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x001A<br></font>
+<font color="#008000">#define&nbsp;CCPR2L_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x001B<br></font>
+<font color="#008000">#define&nbsp;CCPR2H_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x001C<br></font>
+<font color="#008000">#define&nbsp;CCP2CON_ADDR&nbsp;&nbsp;&nbsp;&nbsp;0x001D<br></font>
+<font color="#008000">#define&nbsp;ADRESH_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x001E<br></font>
+<font color="#008000">#define&nbsp;ADCON0_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x001F<br></font>
+<font color="#008000">#define&nbsp;OPTION_REG_ADDR&nbsp;0x0081<br></font>
+<font color="#008000">#define&nbsp;TRISA_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0085<br></font>
+<font color="#008000">#define&nbsp;TRISB_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0086<br></font>
+<font color="#008000">#define&nbsp;TRISC_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0087<br></font>
+<font color="#008000">#define&nbsp;TRISD_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0088<br></font>
+<font color="#008000">#define&nbsp;TRISE_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0089<br></font>
+<font color="#008000">#define&nbsp;PIE1_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x008C<br></font>
+<font color="#008000">#define&nbsp;PIE2_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x008D<br></font>
+<font color="#008000">#define&nbsp;PCON_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x008E<br></font>
+<font color="#008000">#define&nbsp;SSPCON2_ADDR&nbsp;&nbsp;&nbsp;&nbsp;0x0091<br></font>
+<font color="#008000">#define&nbsp;PR2_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0092<br></font>
+<font color="#008000">#define&nbsp;SSPADD_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0093<br></font>
+<font color="#008000">#define&nbsp;SSPSTAT_ADDR&nbsp;&nbsp;&nbsp;&nbsp;0x0094<br></font>
+<font color="#008000">#define&nbsp;TXSTA_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0098<br></font>
+<font color="#008000">#define&nbsp;SPBRG_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0099<br></font>
+<font color="#008000">#define&nbsp;ADRESL_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x009E<br></font>
+<font color="#008000">#define&nbsp;ADCON1_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x009F<br></font>
+<font color="#008000">#define&nbsp;EEDATA_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x010C<br></font>
+<font color="#008000">#define&nbsp;EEADR_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x010D<br></font>
+<font color="#008000">#define&nbsp;EEDATH_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x010E<br></font>
+<font color="#008000">#define&nbsp;EEADRH_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x010F<br></font>
+<font color="#008000">#define&nbsp;EECON1_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x018C<br></font>
+<font color="#008000">#define&nbsp;EECON2_ADDR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x018D<br></font>
+<br>
+<font color="#808080"><i>//<br></i></font>
+<font color="#808080"><i>//&nbsp;Memory&nbsp;organization.<br></i></font>
+<font color="#808080"><i>//<br></i></font>
+<font color="#008000">#pragma&nbsp;maxram&nbsp;0x1FF<br></font>
+<br>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;0x0020&nbsp;0x006f&nbsp;RAM&nbsp;0x000<br></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;0x0070&nbsp;0x007f&nbsp;RAM&nbsp;0x180<br></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;0x00a0&nbsp;0x00ef&nbsp;RAM&nbsp;0x000<br></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;0x0110&nbsp;0x016f&nbsp;RAM&nbsp;0x000<br></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;0x0190&nbsp;0x01ef&nbsp;RAM&nbsp;0x000<br></font>
+<br>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;INDF_ADDR&nbsp;INDF_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;INDF<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;TMR0_ADDR&nbsp;TMR0_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;TMR0<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;PCL_ADDR&nbsp;PCL_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;PCL<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;STATUS_ADDR&nbsp;STATUS_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;STATUS<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;FSR_ADDR&nbsp;FSR_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;FSR<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;PORTA_ADDR&nbsp;PORTA_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;PORTA<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;PORTB_ADDR&nbsp;PORTB_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;PORTB<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;PORTC_ADDR&nbsp;PORTC_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;PORTC<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;PORTD_ADDR&nbsp;PORTD_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;PORTD<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;PORTE_ADDR&nbsp;PORTE_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;PORTE<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;PCLATH_ADDR&nbsp;PCLATH_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;PCLATH<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;INTCON_ADDR&nbsp;INTCON_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;INTCON<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;PIR1_ADDR&nbsp;PIR1_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;PIR1<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;PIR2_ADDR&nbsp;PIR2_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;PIR2<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;TMR1L_ADDR&nbsp;TMR1L_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;TMR1L<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;TMR1H_ADDR&nbsp;TMR1H_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;TMR1H<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;T1CON_ADDR&nbsp;T1CON_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;T1CON<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;TMR2_ADDR&nbsp;TMR2_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;TMR2<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;T2CON_ADDR&nbsp;T2CON_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;T2CON<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;SSPBUF_ADDR&nbsp;SSPBUF_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;SSPBUF<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;SSPCON_ADDR&nbsp;SSPCON_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;SSPCON<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;CCPR1L_ADDR&nbsp;CCPR1L_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;CCPR1L<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;CCPR1H_ADDR&nbsp;CCPR1H_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;CCPR1H<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;CCP1CON_ADDR&nbsp;CCP1CON_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;CCP1CON<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;RCSTA_ADDR&nbsp;RCSTA_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;RCSTA<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;TXREG_ADDR&nbsp;TXREG_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;TXREG<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;RCREG_ADDR&nbsp;RCREG_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;RCREG<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;CCPR2L_ADDR&nbsp;CCPR2L_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;CCPR2L<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;CCPR2H_ADDR&nbsp;CCPR2H_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;CCPR2H<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;CCP2CON_ADDR&nbsp;CCP2CON_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;CCP2CON<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;ADRESH_ADDR&nbsp;ADRESH_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;ADRESH<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;ADCON0_ADDR&nbsp;ADCON0_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;ADCON0<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;OPTION_REG_ADDR&nbsp;OPTION_REG_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;OPTION_REG<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;TRISA_ADDR&nbsp;TRISA_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;TRISA<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;TRISB_ADDR&nbsp;TRISB_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;TRISB<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;TRISC_ADDR&nbsp;TRISC_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;TRISC<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;TRISD_ADDR&nbsp;TRISD_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;TRISD<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;TRISE_ADDR&nbsp;TRISE_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;TRISE<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;PIE1_ADDR&nbsp;PIE1_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;PIE1<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;PIE2_ADDR&nbsp;PIE2_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;PIE2<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;PCON_ADDR&nbsp;PCON_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;PCON<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;SSPCON2_ADDR&nbsp;SSPCON2_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;SSPCON2<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;PR2_ADDR&nbsp;PR2_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;PR2<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;SSPADD_ADDR&nbsp;SSPADD_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;SSPADD<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;SSPSTAT_ADDR&nbsp;SSPSTAT_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;SSPSTAT<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;TXSTA_ADDR&nbsp;TXSTA_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;TXSTA<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;SPBRG_ADDR&nbsp;SPBRG_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;SPBRG<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;ADRESL_ADDR&nbsp;ADRESL_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;ADRESL<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;ADCON1_ADDR&nbsp;ADCON1_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;ADCON1<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;EEDATA_ADDR&nbsp;EEDATA_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;EEDATA<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;EEADR_ADDR&nbsp;EEADR_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;EEADR<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;EEDATH_ADDR&nbsp;EEDATH_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;EEDATH<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;EEADRH_ADDR&nbsp;EEADRH_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;EEADRH<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;EECON1_ADDR&nbsp;EECON1_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;EECON1<br></i></font>
+<font color="#008000">#pragma&nbsp;memmap&nbsp;EECON2_ADDR&nbsp;EECON2_ADDR&nbsp;SFR&nbsp;0x000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;EECON2<br></i></font>
+<br>
+<br>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LIST<br></i></font>
+<font color="#808080"><i>//&nbsp;P16F877.INC&nbsp;&nbsp;Standard&nbsp;Header&nbsp;File,&nbsp;Version&nbsp;1.00&nbsp;&nbsp;&nbsp;&nbsp;Microchip&nbsp;Technology,&nbsp;Inc.<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NOLIST<br></i></font>
+<br>
+<font color="#808080"><i>//&nbsp;This&nbsp;header&nbsp;file&nbsp;defines&nbsp;configurations,&nbsp;registers,&nbsp;and&nbsp;other&nbsp;useful&nbsp;bits&nbsp;of<br></i></font>
+<font color="#808080"><i>//&nbsp;information&nbsp;for&nbsp;the&nbsp;PIC16F877&nbsp;microcontroller.&nbsp;&nbsp;These&nbsp;names&nbsp;are&nbsp;taken&nbsp;to&nbsp;match&nbsp;<br></i></font>
+<font color="#808080"><i>//&nbsp;the&nbsp;data&nbsp;sheets&nbsp;as&nbsp;closely&nbsp;as&nbsp;possible.&nbsp;&nbsp;<br></i></font>
+<br>
+<font color="#808080"><i>//&nbsp;Note&nbsp;that&nbsp;the&nbsp;processor&nbsp;must&nbsp;be&nbsp;selected&nbsp;before&nbsp;this&nbsp;file&nbsp;is&nbsp;<br></i></font>
+<font color="#808080"><i>//&nbsp;included.&nbsp;&nbsp;The&nbsp;processor&nbsp;may&nbsp;be&nbsp;selected&nbsp;the&nbsp;following&nbsp;ways:<br></i></font>
+<br>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;Command&nbsp;line&nbsp;switch:<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C:\&nbsp;MPASM&nbsp;MYFILE.ASM&nbsp;/PIC16F877<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;LIST&nbsp;directive&nbsp;in&nbsp;the&nbsp;source&nbsp;file<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LIST&nbsp;&nbsp;&nbsp;P=PIC16F877<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.&nbsp;Processor&nbsp;Type&nbsp;entry&nbsp;in&nbsp;the&nbsp;MPASM&nbsp;full-screen&nbsp;interface<br></i></font>
+<br>
+<font color="#808080"><i>//==========================================================================<br></i></font>
+<font color="#808080"><i>//<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Revision&nbsp;History<br></i></font>
+<font color="#808080"><i>//<br></i></font>
+<font color="#808080"><i>//==========================================================================<br></i></font>
+<br>
+<font color="#808080"><i>//Rev:&nbsp;&nbsp;&nbsp;Date:&nbsp;&nbsp;&nbsp;&nbsp;Reason:<br></i></font>
+<br>
+<font color="#808080"><i>//1.12&nbsp;&nbsp;&nbsp;01/12/00&nbsp;Changed&nbsp;some&nbsp;bit&nbsp;names,&nbsp;a&nbsp;register&nbsp;name,&nbsp;configuration&nbsp;bits<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;match&nbsp;datasheet&nbsp;(DS30292B)<br></i></font>
+<font color="#808080"><i>//1.00&nbsp;&nbsp;&nbsp;08/07/98&nbsp;Initial&nbsp;Release<br></i></font>
+<br>
+<font color="#808080"><i>//==========================================================================<br></i></font>
+<font color="#808080"><i>//<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Verify&nbsp;Processor<br></i></font>
+<font color="#808080"><i>//<br></i></font>
+<font color="#808080"><i>//==========================================================================<br></i></font>
+<br>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IFNDEF&nbsp;__16F877<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MESSG&nbsp;&quot;Processor-header&nbsp;file&nbsp;mismatch.&nbsp;&nbsp;Verify&nbsp;selected&nbsp;processor.&quot;<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ENDIF<br></i></font>
+<br>
+<font color="#808080"><i>//==========================================================================<br></i></font>
+<font color="#808080"><i>//<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register&nbsp;Definitions<br></i></font>
+<font color="#808080"><i>//<br></i></font>
+<font color="#808080"><i>//==========================================================================<br></i></font>
+<br>
+<font color="#008000">#define&nbsp;W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0000<br></font>
+<font color="#008000">#define&nbsp;F&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0001<br></font>
+<br>
+<font color="#808080"><i>//-----&nbsp;Register&nbsp;Files------------------------------------------------------<br></i></font>
+<br>
+<font color="#000000">data</font>&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">INDF_ADDR</font>&nbsp;<font color="#800000">volatile</font>&nbsp;<font color="#800000">char</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">INDF</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">TMR0_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TMR0</font>;<br>
+<font color="#000000">data</font>&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">PCL_ADDR</font>&nbsp;<font color="#800000">volatile</font>&nbsp;<font color="#800000">char</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">PCL</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">STATUS_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">STATUS</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">FSR_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">FSR</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">PORTA_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">PORTA</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">PORTB_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">PORTB</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">PORTC_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">PORTC</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">PORTD_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">PORTD</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">PORTE_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">PORTE</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">PCLATH_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">PCLATH</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">INTCON_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">INTCON</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">PIR1_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">PIR1</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">PIR2_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">PIR2</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">TMR1L_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TMR1L</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">TMR1H_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TMR1H</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">T1CON_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">T1CON</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">TMR2_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TMR2</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">T2CON_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">T2CON</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">SSPBUF_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">SSPBUF</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">SSPCON_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">SSPCON</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">CCPR1L_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">CCPR1L</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">CCPR1H_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">CCPR1H</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">CCP1CON_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">CCP1CON</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">RCSTA_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">RCSTA</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">TXREG_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TXREG</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">RCREG_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">RCREG</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">CCPR2L_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">CCPR2L</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">CCPR2H_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">CCPR2H</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">CCP2CON_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">CCP2CON</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">ADRESH_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">ADRESH</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">ADCON0_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">ADCON0</font>;<br>
+<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">OPTION_REG_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">OPTION_REG</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">TRISA_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TRISA</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">TRISB_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TRISB</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">TRISC_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TRISC</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">TRISD_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TRISD</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">TRISE_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TRISE</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">PIE1_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">PIE1</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">PIE2_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">PIE2</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">PCON_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">PCON</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">SSPCON2_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">SSPCON2</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">PR2_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">PR2</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">SSPADD_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">SSPADD</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">SSPSTAT_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">SSPSTAT</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">TXSTA_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TXSTA</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">SPBRG_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">SPBRG</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">ADRESL_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">ADRESL</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">ADCON1_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">ADCON1</font>;<br>
+<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">EEDATA_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">EEDATA</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">EEADR_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">EEADR</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">EEDATH_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">EEDATH</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">EEADRH_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">EEADRH</font>;<br>
+<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">EECON1_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">EECON1</font>;<br>
+<font color="#000000">sfr</font>&nbsp;&nbsp;<font color="#000000">at</font>&nbsp;<font color="#000000">EECON2_ADDR</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">EECON2</font>;<br>
+<br>
+<font color="#808080"><i>//-----&nbsp;STATUS&nbsp;Bits&nbsp;--------------------------------------------------------<br></i></font>
+<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">STATUS_ADDR</font>,<font color="#0000FF">7</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">IRP</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">STATUS_ADDR</font>,<font color="#0000FF">6</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">RP1</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">STATUS_ADDR</font>,<font color="#0000FF">5</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">RP0</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">STATUS_ADDR</font>,<font color="#0000FF">4</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">NOT_TO</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">STATUS_ADDR</font>,<font color="#0000FF">3</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">NOT_PD</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">STATUS_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">Z</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">STATUS_ADDR</font>,<font color="#0000FF">1</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">DC</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">STATUS_ADDR</font>,<font color="#0000FF">0</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">C</font>;<br>
+<br>
+<font color="#808080"><i>//-----&nbsp;INTCON&nbsp;Bits&nbsp;--------------------------------------------------------<br></i></font>
+<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">INTCON_ADDR</font>,<font color="#0000FF">7</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">GIE</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">INTCON_ADDR</font>,<font color="#0000FF">6</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">PEIE</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">INTCON_ADDR</font>,<font color="#0000FF">5</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">T0IE</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">INTCON_ADDR</font>,<font color="#0000FF">4</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">INTE</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">INTCON_ADDR</font>,<font color="#0000FF">3</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">RBIE</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">INTCON_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">T0IF</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">INTCON_ADDR</font>,<font color="#0000FF">1</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">INTF</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">INTCON_ADDR</font>,<font color="#0000FF">0</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">RBIF</font>;<br>
+<br>
+<font color="#808080"><i>//-----&nbsp;PIR1&nbsp;Bits&nbsp;----------------------------------------------------------<br></i></font>
+<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PIR1_ADDR</font>,<font color="#0000FF">7</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">PSPIF</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PIR1_ADDR</font>,<font color="#0000FF">6</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">ADIF</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PIR1_ADDR</font>,<font color="#0000FF">5</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">RCIF</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PIR1_ADDR</font>,<font color="#0000FF">4</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TXIF</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PIR1_ADDR</font>,<font color="#0000FF">3</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">SSPIF</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PIR1_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">CCP1IF</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PIR1_ADDR</font>,<font color="#0000FF">1</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TMR2IF</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PIR1_ADDR</font>,<font color="#0000FF">0</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TMR1IF</font>;<br>
+<br>
+<font color="#808080"><i>//-----&nbsp;PIR2&nbsp;Bits&nbsp;----------------------------------------------------------<br></i></font>
+<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PIR2_ADDR</font>,<font color="#0000FF">4</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">EEIF</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PIR2_ADDR</font>,<font color="#0000FF">3</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">BCLIF</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PIR2_ADDR</font>,<font color="#0000FF">0</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">CCP2IF</font>;<br>
+<br>
+<font color="#808080"><i>//-----&nbsp;T1CON&nbsp;Bits&nbsp;---------------------------------------------------------<br></i></font>
+<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">T1CON_ADDR</font>,<font color="#0000FF">5</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">T1CKPS1</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">T1CON_ADDR</font>,<font color="#0000FF">4</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">T1CKPS0</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">T1CON_ADDR</font>,<font color="#0000FF">3</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">T1OSCEN</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">T1CON_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">NOT_T1SYNC</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">T1CON_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">T1INSYNC</font>;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080"><i>//&nbsp;Backward&nbsp;compatibility&nbsp;only<br></i></font>
+<font color="#000000">BIT_AT</font>(<font color="#000000">T1CON_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">T1SYNC</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">T1CON_ADDR</font>,<font color="#0000FF">1</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TMR1CS</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">T1CON_ADDR</font>,<font color="#0000FF">0</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TMR1ON</font>;<br>
+<br>
+<font color="#808080"><i>//-----&nbsp;T2CON&nbsp;Bits&nbsp;---------------------------------------------------------<br></i></font>
+<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">T2CON_ADDR</font>,<font color="#0000FF">6</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TOUTPS3</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">T2CON_ADDR</font>,<font color="#0000FF">5</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TOUTPS2</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">T2CON_ADDR</font>,<font color="#0000FF">4</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TOUTPS1</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">T2CON_ADDR</font>,<font color="#0000FF">3</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TOUTPS0</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">T2CON_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TMR2ON</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">T2CON_ADDR</font>,<font color="#0000FF">1</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">T2CKPS1</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">T2CON_ADDR</font>,<font color="#0000FF">0</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">T2CKPS0</font>;<br>
+<br>
+<font color="#808080"><i>//-----&nbsp;SSPCON&nbsp;Bits&nbsp;--------------------------------------------------------<br></i></font>
+<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPCON_ADDR</font>,<font color="#0000FF">7</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">WCOL</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPCON_ADDR</font>,<font color="#0000FF">6</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">SSPOV</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPCON_ADDR</font>,<font color="#0000FF">5</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">SSPEN</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPCON_ADDR</font>,<font color="#0000FF">4</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">CKP</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPCON_ADDR</font>,<font color="#0000FF">3</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">SSPM3</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPCON_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">SSPM2</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPCON_ADDR</font>,<font color="#0000FF">1</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">SSPM1</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPCON_ADDR</font>,<font color="#0000FF">0</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">SSPM0</font>;<br>
+<br>
+<font color="#808080"><i>//-----&nbsp;CCP1CON&nbsp;Bits&nbsp;-------------------------------------------------------<br></i></font>
+<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">CCP1CON_ADDR</font>,<font color="#0000FF">5</font>)&nbsp;&nbsp;<font color="#000000">CCP1X</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">CCP1CON_ADDR</font>,<font color="#0000FF">4</font>)&nbsp;&nbsp;<font color="#000000">CCP1Y</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">CCP1CON_ADDR</font>,<font color="#0000FF">3</font>)&nbsp;&nbsp;<font color="#000000">CCP1M3</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">CCP1CON_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;<font color="#000000">CCP1M2</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">CCP1CON_ADDR</font>,<font color="#0000FF">1</font>)&nbsp;&nbsp;<font color="#000000">CCP1M1</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">CCP1CON_ADDR</font>,<font color="#0000FF">0</font>)&nbsp;&nbsp;<font color="#000000">CCP1M0</font>;<br>
+<br>
+<font color="#808080"><i>//-----&nbsp;RCSTA&nbsp;Bits&nbsp;---------------------------------------------------------<br></i></font>
+<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">RCSTA_ADDR</font>,<font color="#0000FF">7</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">SPEN</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">RCSTA_ADDR</font>,<font color="#0000FF">6</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">RX9</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">RCSTA_ADDR</font>,<font color="#0000FF">6</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">RC9</font>;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080"><i>//&nbsp;Backward&nbsp;compatibility&nbsp;only<br></i></font>
+<font color="#000000">BIT_AT</font>(<font color="#000000">RCSTA_ADDR</font>,<font color="#0000FF">6</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">NOT_RC8</font>;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080"><i>//&nbsp;Backward&nbsp;compatibility&nbsp;only<br></i></font>
+<font color="#000000">BIT_AT</font>(<font color="#000000">RCSTA_ADDR</font>,<font color="#0000FF">6</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">RC8_9</font>;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080"><i>//&nbsp;Backward&nbsp;compatibility&nbsp;only<br></i></font>
+<font color="#000000">BIT_AT</font>(<font color="#000000">RCSTA_ADDR</font>,<font color="#0000FF">5</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">SREN</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">RCSTA_ADDR</font>,<font color="#0000FF">4</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">CREN</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">RCSTA_ADDR</font>,<font color="#0000FF">3</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">ADDEN</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">RCSTA_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">FERR</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">RCSTA_ADDR</font>,<font color="#0000FF">1</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">OERR</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">RCSTA_ADDR</font>,<font color="#0000FF">0</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">RX9D</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">RCSTA_ADDR</font>,<font color="#0000FF">0</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">RCD8</font>;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080"><i>//&nbsp;Backward&nbsp;compatibility&nbsp;only<br></i></font>
+<br>
+<font color="#808080"><i>//-----&nbsp;CCP2CON&nbsp;Bits&nbsp;-------------------------------------------------------<br></i></font>
+<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">CCP2CON_ADDR</font>,<font color="#0000FF">5</font>)&nbsp;&nbsp;<font color="#000000">CCP2X</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">CCP2CON_ADDR</font>,<font color="#0000FF">4</font>)&nbsp;&nbsp;<font color="#000000">CCP2Y</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">CCP2CON_ADDR</font>,<font color="#0000FF">3</font>)&nbsp;&nbsp;<font color="#000000">CCP2M3</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">CCP2CON_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;<font color="#000000">CCP2M2</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">CCP2CON_ADDR</font>,<font color="#0000FF">1</font>)&nbsp;&nbsp;<font color="#000000">CCP2M1</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">CCP2CON_ADDR</font>,<font color="#0000FF">0</font>)&nbsp;&nbsp;<font color="#000000">CCP2M0</font>;<br>
+<br>
+<font color="#808080"><i>//-----&nbsp;ADCON0&nbsp;Bits&nbsp;--------------------------------------------------------<br></i></font>
+<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">ADCON0_ADDR</font>,<font color="#0000FF">7</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">ADCS1</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">ADCON0_ADDR</font>,<font color="#0000FF">6</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">ADCS0</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">ADCON0_ADDR</font>,<font color="#0000FF">5</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">CHS2</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">ADCON0_ADDR</font>,<font color="#0000FF">4</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">CHS1</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">ADCON0_ADDR</font>,<font color="#0000FF">3</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">CHS0</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">ADCON0_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">GO</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">ADCON0_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">NOT_DONE</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">ADCON0_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">GO_DONE</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">ADCON0_ADDR</font>,<font color="#0000FF">0</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">ADON</font>;<br>
+<br>
+<font color="#808080"><i>//-----&nbsp;OPTION_REG&nbsp;Bits&nbsp;-----------------------------------------------------<br></i></font>
+<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">OPTION_REG_ADDR</font>,<font color="#0000FF">7</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">NOT_RBPU</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">OPTION_REG_ADDR</font>,<font color="#0000FF">6</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">INTEDG</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">OPTION_REG_ADDR</font>,<font color="#0000FF">5</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">T0CS</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">OPTION_REG_ADDR</font>,<font color="#0000FF">4</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">T0SE</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">OPTION_REG_ADDR</font>,<font color="#0000FF">3</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">PSA</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">OPTION_REG_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">PS2</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">OPTION_REG_ADDR</font>,<font color="#0000FF">1</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">PS1</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">OPTION_REG_ADDR</font>,<font color="#0000FF">0</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">PS0</font>;<br>
+<br>
+<font color="#808080"><i>//-----&nbsp;TRISE&nbsp;Bits&nbsp;---------------------------------------------------------<br></i></font>
+<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">TRISE_ADDR</font>,<font color="#0000FF">7</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">IBF</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">TRISE_ADDR</font>,<font color="#0000FF">6</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">OBF</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">TRISE_ADDR</font>,<font color="#0000FF">5</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">IBOV</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">TRISE_ADDR</font>,<font color="#0000FF">4</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">PSPMODE</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">TRISE_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TRISE2</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">TRISE_ADDR</font>,<font color="#0000FF">1</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TRISE1</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">TRISE_ADDR</font>,<font color="#0000FF">0</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TRISE0</font>;<br>
+<br>
+<font color="#808080"><i>//-----&nbsp;PIE1&nbsp;Bits&nbsp;----------------------------------------------------------<br></i></font>
+<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PIE1_ADDR</font>,<font color="#0000FF">7</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">PSPIE</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PIE1_ADDR</font>,<font color="#0000FF">6</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">ADIE</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PIE1_ADDR</font>,<font color="#0000FF">5</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">RCIE</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PIE1_ADDR</font>,<font color="#0000FF">4</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TXIE</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PIE1_ADDR</font>,<font color="#0000FF">3</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">SSPIE</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PIE1_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">CCP1IE</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PIE1_ADDR</font>,<font color="#0000FF">1</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TMR2IE</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PIE1_ADDR</font>,<font color="#0000FF">0</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TMR1IE</font>;<br>
+<br>
+<font color="#808080"><i>//-----&nbsp;PIE2&nbsp;Bits&nbsp;----------------------------------------------------------<br></i></font>
+<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PIE2_ADDR</font>,<font color="#0000FF">4</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">EEIE</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PIE2_ADDR</font>,<font color="#0000FF">3</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">BCLIE</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PIE2_ADDR</font>,<font color="#0000FF">0</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">CCP2IE</font>;<br>
+<br>
+<font color="#808080"><i>//-----&nbsp;PCON&nbsp;Bits&nbsp;----------------------------------------------------------<br></i></font>
+<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PCON_ADDR</font>,<font color="#0000FF">1</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">NOT_POR</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PCON_ADDR</font>,<font color="#0000FF">0</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">NOT_BO</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">PCON_ADDR</font>,<font color="#0000FF">0</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">NOT_BOR</font>;<br>
+<br>
+<font color="#808080"><i>//-----&nbsp;SSPCON2&nbsp;Bits&nbsp;--------------------------------------------------------<br></i></font>
+<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPCON2_ADDR</font>,<font color="#0000FF">7</font>)&nbsp;&nbsp;<font color="#000000">GCEN</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPCON2_ADDR</font>,<font color="#0000FF">6</font>)&nbsp;&nbsp;<font color="#000000">ACKSTAT</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPCON2_ADDR</font>,<font color="#0000FF">5</font>)&nbsp;&nbsp;<font color="#000000">ACKDT</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPCON2_ADDR</font>,<font color="#0000FF">4</font>)&nbsp;&nbsp;<font color="#000000">ACKEN</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPCON2_ADDR</font>,<font color="#0000FF">3</font>)&nbsp;&nbsp;<font color="#000000">RCEN</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPCON2_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;<font color="#000000">PEN</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPCON2_ADDR</font>,<font color="#0000FF">1</font>)&nbsp;&nbsp;<font color="#000000">RSEN</font>;&nbsp;&nbsp;&nbsp;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPCON2_ADDR</font>,<font color="#0000FF">0</font>)&nbsp;&nbsp;<font color="#000000">SEN</font>;&nbsp;&nbsp;&nbsp;<br>
+<br>
+<font color="#808080"><i>//-----&nbsp;SSPSTAT&nbsp;Bits&nbsp;-------------------------------------------------------<br></i></font>
+<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPSTAT_ADDR</font>,<font color="#0000FF">7</font>)&nbsp;&nbsp;<font color="#000000">SMP</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPSTAT_ADDR</font>,<font color="#0000FF">6</font>)&nbsp;&nbsp;<font color="#000000">CKE</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPSTAT_ADDR</font>,<font color="#0000FF">5</font>)&nbsp;&nbsp;<font color="#000000">D</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPSTAT_ADDR</font>,<font color="#0000FF">5</font>)&nbsp;&nbsp;<font color="#000000">I2C_DATA</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPSTAT_ADDR</font>,<font color="#0000FF">5</font>)&nbsp;&nbsp;<font color="#000000">NOT_A</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPSTAT_ADDR</font>,<font color="#0000FF">5</font>)&nbsp;&nbsp;<font color="#000000">NOT_ADDRESS</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPSTAT_ADDR</font>,<font color="#0000FF">5</font>)&nbsp;&nbsp;<font color="#000000">D_A</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPSTAT_ADDR</font>,<font color="#0000FF">5</font>)&nbsp;&nbsp;<font color="#000000">DATA_ADDRESS</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPSTAT_ADDR</font>,<font color="#0000FF">4</font>)&nbsp;&nbsp;<font color="#000000">P</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPSTAT_ADDR</font>,<font color="#0000FF">4</font>)&nbsp;&nbsp;<font color="#000000">I2C_STOP</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPSTAT_ADDR</font>,<font color="#0000FF">3</font>)&nbsp;&nbsp;<font color="#000000">S</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPSTAT_ADDR</font>,<font color="#0000FF">3</font>)&nbsp;&nbsp;<font color="#000000">I2C_START</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPSTAT_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;<font color="#000000">R</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPSTAT_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;<font color="#000000">I2C_READ</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPSTAT_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;<font color="#000000">NOT_W</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPSTAT_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;<font color="#000000">NOT_WRITE</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPSTAT_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;<font color="#000000">R_W</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPSTAT_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;<font color="#000000">READ_WRITE</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPSTAT_ADDR</font>,<font color="#0000FF">1</font>)&nbsp;&nbsp;<font color="#000000">UA</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">SSPSTAT_ADDR</font>,<font color="#0000FF">0</font>)&nbsp;&nbsp;<font color="#000000">BF</font>;<br>
+<br>
+<font color="#808080"><i>//-----&nbsp;TXSTA&nbsp;Bits&nbsp;---------------------------------------------------------<br></i></font>
+<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">TXSTA_ADDR</font>,<font color="#0000FF">7</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">CSRC</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">TXSTA_ADDR</font>,<font color="#0000FF">6</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TX9</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">TXSTA_ADDR</font>,<font color="#0000FF">6</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">NOT_TX8</font>;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080"><i>//&nbsp;Backward&nbsp;compatibility&nbsp;only<br></i></font>
+<font color="#000000">BIT_AT</font>(<font color="#000000">TXSTA_ADDR</font>,<font color="#0000FF">6</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TX8_9</font>;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080"><i>//&nbsp;Backward&nbsp;compatibility&nbsp;only<br></i></font>
+<font color="#000000">BIT_AT</font>(<font color="#000000">TXSTA_ADDR</font>,<font color="#0000FF">5</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TXEN</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">TXSTA_ADDR</font>,<font color="#0000FF">4</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">SYNC</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">TXSTA_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">BRGH</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">TXSTA_ADDR</font>,<font color="#0000FF">1</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TRMT</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">TXSTA_ADDR</font>,<font color="#0000FF">0</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TX9D</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">TXSTA_ADDR</font>,<font color="#0000FF">0</font>)&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TXD8</font>;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080"><i>//&nbsp;Backward&nbsp;compatibility&nbsp;only<br></i></font>
+<br>
+<font color="#808080"><i>//-----&nbsp;ADCON1&nbsp;Bits&nbsp;--------------------------------------------------------<br></i></font>
+<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">ADCON1_ADDR</font>,<font color="#0000FF">7</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">ADFM</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">ADCON1_ADDR</font>,<font color="#0000FF">3</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">PCFG3</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">ADCON1_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">PCFG2</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">ADCON1_ADDR</font>,<font color="#0000FF">1</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">PCFG1</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">ADCON1_ADDR</font>,<font color="#0000FF">0</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">PCFG0</font>;<br>
+<br>
+<font color="#808080"><i>//-----&nbsp;EECON1&nbsp;Bits&nbsp;--------------------------------------------------------<br></i></font>
+<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">EECON1_ADDR</font>,<font color="#0000FF">7</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">EEPGD</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">EECON1_ADDR</font>,<font color="#0000FF">3</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">WRERR</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">EECON1_ADDR</font>,<font color="#0000FF">2</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">WREN</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">EECON1_ADDR</font>,<font color="#0000FF">1</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">WR</font>;<br>
+<font color="#000000">BIT_AT</font>(<font color="#000000">EECON1_ADDR</font>,<font color="#0000FF">0</font>)&nbsp;&nbsp;&nbsp;<font color="#000000">RD</font>;<br>
+<br>
+<font color="#808080"><i>//==========================================================================<br></i></font>
+<font color="#808080"><i>//<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RAM&nbsp;Definition<br></i></font>
+<font color="#808080"><i>//<br></i></font>
+<font color="#808080"><i>//==========================================================================<br></i></font>
+<br>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__MAXRAM&nbsp;H'1FF'<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__BADRAM&nbsp;H'8F'-H'90',&nbsp;H'95'-H'97',&nbsp;H'9A'-H'9D'<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__BADRAM&nbsp;H'105',&nbsp;H'107'-H'109'<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__BADRAM&nbsp;H'185',&nbsp;H'187'-H'189',&nbsp;H'18E'-H'18F'<br></i></font>
+<br>
+<font color="#808080"><i>//==========================================================================<br></i></font>
+<font color="#808080"><i>//<br></i></font>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Configuration&nbsp;Bits<br></i></font>
+<font color="#808080"><i>//<br></i></font>
+<font color="#808080"><i>//==========================================================================<br></i></font>
+<br>
+<font color="#008000">#define&nbsp;_CP_ALL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0FCF<br></font>
+<font color="#008000">#define&nbsp;_CP_HALF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x1FDF<br></font>
+<font color="#008000">#define&nbsp;_CP_UPPER_256&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x2FEF<br></font>
+<font color="#008000">#define&nbsp;_CP_OFF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x3FFF<br></font>
+<font color="#008000">#define&nbsp;_DEBUG_ON&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x37FF<br></font>
+<font color="#008000">#define&nbsp;_DEBUG_OFF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x3FFF<br></font>
+<font color="#008000">#define&nbsp;_WRT_ENABLE_ON&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x3FFF<br></font>
+<font color="#008000">#define&nbsp;_WRT_ENABLE_OFF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x3DFF<br></font>
+<font color="#008000">#define&nbsp;_CPD_ON&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x3EFF<br></font>
+<font color="#008000">#define&nbsp;_CPD_OFF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x3FFF<br></font>
+<font color="#008000">#define&nbsp;_LVP_ON&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x3FFF<br></font>
+<font color="#008000">#define&nbsp;_LVP_OFF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x3F7F<br></font>
+<font color="#008000">#define&nbsp;_BODEN_ON&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x3FFF<br></font>
+<font color="#008000">#define&nbsp;_BODEN_OFF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x3FBF<br></font>
+<font color="#008000">#define&nbsp;_PWRTE_OFF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x3FFF<br></font>
+<font color="#008000">#define&nbsp;_PWRTE_ON&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x3FF7<br></font>
+<font color="#008000">#define&nbsp;_WDT_ON&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x3FFF<br></font>
+<font color="#008000">#define&nbsp;_WDT_OFF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x3FFB<br></font>
+<font color="#008000">#define&nbsp;_LP_OSC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x3FFC<br></font>
+<font color="#008000">#define&nbsp;_XT_OSC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x3FFD<br></font>
+<font color="#008000">#define&nbsp;_HS_OSC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x3FFE<br></font>
+<font color="#008000">#define&nbsp;_RC_OSC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x3FFF<br></font>
+<br>
+<font color="#808080"><i>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LIST<br></i></font>
+<font color="#008000">#endif<br></font>
+		</font>
+	</body>
+</html>

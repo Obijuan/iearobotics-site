@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Taller de robotica CampusBot 2005. Sesion 3. &quot;Hola mundo&quot; en Windows</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGED" CONTENT="20050721;8542600">
+	<META NAME="KEYWORDS" CONTENT="robotica, microcontroladores, pic, hardware, linux">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<TABLE WIDTH=917 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+	<COL WIDTH=909>
+	<TR>
+		<TD WIDTH=909>
+			<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Taller
+			de Rob&oacute;tica CampusBot 2005. SESION 3. &ldquo;Hola mundo&rdquo;
+			en Windows</B></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/skybot-portatil-windows.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Introducci&oacute;n</FONT></H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En este capitulo
+editaremos, compilaremos y cargaremos en el robot el programa mas
+sencillo posible: el famoso &ldquo;<B>hola mundo</B>&rdquo;. Cuando
+programamos un ordenador, el programa &ldquo;hola mundo&rdquo; es el
+programa m&aacute;s sencillo que imprime por pantalla la frase &ldquo;Hola
+mundo!&rdquo;.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En nuestro caso, vamos
+a programar un microcontrolador, que no tiene pantalla. Tampoco tiene
+teclado. Pero tiene otros perif&eacute;ricos, como por ejemplo un
+led. El programa &ldquo;hola mundo&rdquo; lo &uacute;nico que har&aacute;
+ser&aacute; <B>enceder el led</B> de la Skypic. Es la manera en la
+que el micro nos dir&aacute;: &ldquo;Estoy vivo y he ejecutado tu
+programa&rdquo;.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En este ejemplo no
+vamos a mover el robot. <B>Desconectar el cable</B> que unen las
+tarjetas skypic y ct293. S&oacute;lo trabajaremos con el &ldquo;cerebro&rdquo;.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Nos centraremos en que
+el programa hola mundo funcione en nuestro robot. En los siguiente
+cap&iacute;tulos veremos c&oacute;mo funciona.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="../linux/images/hola_mundo_skybot_led.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2><A NAME="Editor"></A><A NAME="Editor de textos"></A><FONT FACE="Arial, sans-serif">Editando
+el c&oacute;digo y compilando</FONT></H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>&iexcl;Manos a la
+obra! Vamos a charrear. Primero nos descargamos el programa &ldquo;hola
+mundo&rdquo;.</FONT></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Bajar el paquete
+	<A HREF="download/hola_mundo_windows.zip"><SPAN STYLE="font-weight: medium">hola-mundo-windows.zip</SPAN></A>.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Descomprimelo en
+	la carpeta que has debido crear antes que se llame &ldquo;
+	<B>C:\robotica\programas</B>&rdquo;. Y podeis ver lo que hay.</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Ahora vamos a
+	configurar el <B>Programmer Notepad</B> para su uso. <A HREF="config-PN.html">La
+	guia de configuraci&oacute;n est&aacute; aqu&iacute;</A>.</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Ahora ejecutamos
+	el <B>Programmers Notepad. </B>Si quereis podeis ver un pantallazo
+	del <A HREF="images/PN.JPG">Programmers notepad aqu&iacute;.</A></FONT></FONT></P>
+</UL>
+<UL>
+	<UL>
+		<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Pinchamos en &ldquo;<B>File</B>&rdquo;,
+		y despues en la opci&oacute;n &ldquo;<B>Open</B>&rdquo;, donde nos
+		iremos a la ruta donde hemos almacenado el paquete
+		<B>hola-mundo-windows. Zip( C.\robotica\programas\) </B>. All&iacute;
+		abrimos el archivo que se llama &ldquo;<B>ledon.c</B>&rdquo;</FONT></FONT></P>
+	</UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para compilar el
+	programa, solo tienes que pulsar en el men&uacute; &ldquo;<B>Tools</B>&rdquo;,
+	la opci&oacute;n &ldquo;<B>make</B>&rdquo; que es la que hemos
+	configurado antes. Y ya tenemos nuestro programa compilado y listo
+	para descargar en el robot.</FONT></FONT></P>
+</UL>
+<HR>
+<H2><A NAME="gputils"></A><FONT FACE="Arial, sans-serif">Descargando
+en el robot</FONT></H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Conectar el robot
+	al puerto serie del PC</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Alimentarlo</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="../linux/images/hola_mundo_skybot_ready.png" NAME="Imagen3" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Arrancar el
+	cargador</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Selecionar el
+	fichero <B>ledon.hex</B></FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Seleccionar el
+	puerto serie (<B>COMX</B>) y una configuraci&oacute;n de <B>38400
+	baudios</B></FONT></FONT></P>
+	<LI><P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Pulsar
+	en <B>Write</B>.</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/pic_loader_window_pant.png" NAME="Imagen4" ALIGN=MIDDLE WIDTH=283 HEIGHT=289 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Se quedar&aacute;
+esperando a que se pulse el bot&oacute;n de reset.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Apretar el bot&oacute;n
+de reset</B> y el ledon.hex se cargar&aacute;. <B>&iexcl;Ahora el led
+est&aacute; encendido!</B>. Si quitamos la alimentaci&oacute;n y la
+volvemos a poner, es decir, reiniciamos a nuestro micro, se volver&aacute;
+a ejecutar el &uacute;ltimo programa cargado. Los programas se graban
+en la memoria flash, que es <B>no vol&aacute;til.</B></FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>&iexcl;&iexcl;Ya
+hemos programado el robot!!</B></FONT></FONT></P>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A HREF="../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Sesion
+III]</FONT></FONT></A> 
+</P>
+<P STYLE="margin-bottom: 0cm"><A HREF="mailto:Jose Pichardo &lt;tartesos2@telefonica.net&gt;"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Jose
+Pichardo Gallardo</FONT></FONT></A></P>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="../../../personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A><BR><A HREF="../../../../../desarrollo"><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEAROBOTICS</FONT></FONT></A>
+</ADDRESS>
+</BODY>
+</HTML>

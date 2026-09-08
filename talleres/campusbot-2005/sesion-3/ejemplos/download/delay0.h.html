@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>delay0.h</title>
+		<meta name="generator" content="c2html 1.1.0" >
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" >
+		<meta http-equiv="Content-Script-Type" content="text/javascript" >
+		<meta http-equiv="Content-Style-Type" content="text/css" >
+	</head>
+	<body text="#000000">
+		<font face="Monospace">
+<font color="#808080"><i>/****************************************************************************/</i></font><br>
+<font color="#808080"><i>/*&nbsp;delay0.h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Junio-2004&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*---------------------------------------------------------------------------*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;Ejemplo&nbsp;para&nbsp;el&nbsp;skybot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*---------------------------------------------------------------------------*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;Este&nbsp;fichero&nbsp;esta&nbsp;pensado&nbsp;para&nbsp;ser&nbsp;incluido&nbsp;en&nbsp;el&nbsp;programa&nbsp;principal.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;Antes&nbsp;de&nbsp;utilizar&nbsp;la&nbsp;funcion&nbsp;delay0()&nbsp;es&nbsp;necesario&nbsp;llamar&nbsp;a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;timer0_configurar()&nbsp;para&nbsp;configurar&nbsp;correctamente&nbsp;el&nbsp;timer&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*---------------------------------------------------------------------------*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;Utilizacion&nbsp;del&nbsp;temporizador&nbsp;0&nbsp;para&nbsp;generar&nbsp;una&nbsp;pausa&nbsp;de&nbsp;10ms&nbsp;y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;obtener&nbsp;una&nbsp;rutina&nbsp;de&nbsp;delay&nbsp;en&nbsp;unidades&nbsp;de&nbsp;10ms&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;No&nbsp;se&nbsp;utilizan&nbsp;interrupciones&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;El&nbsp;temporizador&nbsp;0&nbsp;es&nbsp;de&nbsp;8&nbsp;bits&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*---------------------------------------------------------------------------*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;&nbsp;Andres&nbsp;Prieto-Moreno&nbsp;&lt;andres@ifara.com&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;&nbsp;Juan&nbsp;Gonzalez&nbsp;&lt;juan@iearobotics.com&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*---------------------------------------------------------------------------*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;&nbsp;LICENCIA&nbsp;GPL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*****************************************************************************/</i></font><br>
+<br>
+<font color="#808080"><i>//--&nbsp;Definiciones<br></i></font>
+<font color="#008000">#define&nbsp;TICKS10&nbsp;0x3D&nbsp;&nbsp;</font><font color="#808080"><i>//&nbsp;Valor&nbsp;con&nbsp;el&nbsp;que&nbsp;inicializar&nbsp;contador&nbsp;para<br></i></font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080"><i>//&nbsp;conseguir&nbsp;TICKs&nbsp;de&nbsp;10ms<br></i></font>
+<br>
+<font color="#808080"><i>/************************************/</i></font><br>
+<font color="#808080"><i>/*&nbsp;Configurar&nbsp;el&nbsp;temporizador&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/************************************/</i></font><br>
+<font color="#800000">void</font>&nbsp;<font color="#000000">timer0_configurar</font>()<br>
+{<br>
+&nbsp;&nbsp;<font color="#808080"><i>//--&nbsp;Usarlo&nbsp;en&nbsp;modo&nbsp;temporizador,&nbsp;prescaler&nbsp;=&nbsp;256<br></i></font>
+&nbsp;&nbsp;<font color="#000000">OPTION_REG</font>=<font color="#008080">0x87</font>;<br>
+}<br>
+<br>
+<font color="#808080"><i>/************************************************/</i></font><br>
+<font color="#808080"><i>/*&nbsp;Hacer&nbsp;una&nbsp;pausa&nbsp;en&nbsp;unidades&nbsp;de&nbsp;10ms&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;ENTRADA:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;&nbsp;&nbsp;-pausa:&nbsp;Valor&nbsp;de&nbsp;la&nbsp;pausa&nbsp;en&nbsp;decenas&nbsp;de&nbsp;ms&nbsp;*/</i></font><br>
+<font color="#808080"><i>/************************************************/</i></font><br>
+<font color="#800000">void</font>&nbsp;<font color="#000000">delay0</font>(<font color="#800000">unsigned</font>&nbsp;<font color="#800000">char</font>&nbsp;<font color="#000000">pausa</font>)<br>
+{<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;<font color="#808080"><i>//--&nbsp;Esperar&nbsp;hasta&nbsp;que&nbsp;trancurran&nbsp;pausa&nbsp;ticks&nbsp;de&nbsp;reloj<br></i></font>
+&nbsp;&nbsp;<font color="#000000"><b>while</b></font>(<font color="#000000">pausa</font>&gt;<font color="#0000FF">0</font>)&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">TMR0</font>=<font color="#000000">TICKS10</font>;&nbsp;&nbsp;&nbsp;<font color="#808080"><i>//&nbsp;Inicializar&nbsp;contador<br></i></font>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">T0IF</font>=<font color="#0000FF">0</font>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080"><i>//&nbsp;Quitar&nbsp;flag&nbsp;overflow<br></i></font>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080"><i>//--&nbsp;Esperar&nbsp;hasta&nbsp;que&nbsp;bit&nbsp;T0IF&nbsp;se&nbsp;ponga&nbsp;a&nbsp;'1'.&nbsp;Esto<br></i></font>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080"><i>//--&nbsp;indica&nbsp;que&nbsp;han&nbsp;transcurrido&nbsp;10ms<br></i></font>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000"><b>while</b></font>&nbsp;(!<font color="#000000">T0IF</font>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080"><i>//--&nbsp;Ha&nbsp;transcurrido&nbsp;un&nbsp;tick<br></i></font>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">pausa</font>--;<br>
+&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;<br>
+}<br>
+		</font>
+	</body>
+</html>

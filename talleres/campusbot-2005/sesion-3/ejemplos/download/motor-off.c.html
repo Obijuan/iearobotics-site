@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>motor-off.c</title>
+		<meta name="generator" content="c2html 1.1.0" >
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" >
+		<meta http-equiv="Content-Script-Type" content="text/javascript" >
+		<meta http-equiv="Content-Style-Type" content="text/css" >
+	</head>
+	<body text="#000000">
+		<font face="Monospace">
+<font color="#808080"><i>/***************************************************************************&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;motor-off.c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Junio-2005&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*---------------------------------------------------------------------------*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;Ejemplo&nbsp;para&nbsp;el&nbsp;skybot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*---------------------------------------------------------------------------*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;&nbsp;Prueba&nbsp;de&nbsp;los&nbsp;motores.&nbsp;El&nbsp;programa&nbsp;simplemente&nbsp;los&nbsp;para&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*---------------------------------------------------------------------------*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;&nbsp;Andres&nbsp;Prieto-Moreno&nbsp;&lt;andres@ifara.com&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;&nbsp;Juan&nbsp;Gonzalez&nbsp;&lt;juan@iearobotics.com&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*---------------------------------------------------------------------------*/</i></font><br>
+<font color="#808080"><i>/*&nbsp;&nbsp;LICENCIA&nbsp;GPL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</i></font><br>
+<font color="#808080"><i>/*****************************************************************************/</i></font><br>
+<br>
+<font color="#808080"><i>//--&nbsp;Especificar&nbsp;el&nbsp;pic&nbsp;a&nbsp;emplear<br></i></font>
+<font color="#008000">#define&nbsp;__16f877<br></font>
+<font color="#008000">#include&nbsp;&quot;pic16f877.h&quot;<br></font>
+<br>
+<font color="#808080"><i>//--&nbsp;Definiciones&nbsp;para&nbsp;los&nbsp;motores.&nbsp;Estos&nbsp;valores&nbsp;define<br></i></font>
+<font color="#808080"><i>//--&nbsp;los&nbsp;movimientos&nbsp;del&nbsp;robot<br></i></font>
+<font color="#008000">#define&nbsp;&nbsp;&nbsp;AVANZA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x18<br></font>
+<font color="#008000">#define&nbsp;&nbsp;&nbsp;ATRAS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x78<br></font>
+<font color="#008000">#define&nbsp;&nbsp;&nbsp;IZQUIERDA&nbsp;&nbsp;0x58&nbsp;<br></font>
+<font color="#008000">#define&nbsp;&nbsp;&nbsp;DERECHA&nbsp;&nbsp;&nbsp;&nbsp;0x38&nbsp;<br></font>
+<font color="#008000">#define&nbsp;&nbsp;&nbsp;STOP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x00<br></font>
+<br>
+<br>
+<font color="#808080"><i>//----------------------------<br></i></font>
+<font color="#808080"><i>//-&nbsp;Comienzo&nbsp;del&nbsp;programa&nbsp;&nbsp;<br></i></font>
+<font color="#808080"><i>//----------------------------<br></i></font>
+<br>
+<font color="#800000">void</font>&nbsp;<font color="#000000">main</font>(<font color="#800000">void</font>)<br>
+{<br>
+&nbsp;&nbsp;<font color="#808080"><i>//--&nbsp;Configurar&nbsp;el&nbsp;puerto&nbsp;B&nbsp;para&nbsp;trabajar&nbsp;con&nbsp;el&nbsp;Skybot<br></i></font>
+&nbsp;&nbsp;<font color="#808080"><i>//--&nbsp;RB0,&nbsp;RB1,&nbsp;RB2&nbsp;y&nbsp;RB7&nbsp;como&nbsp;entradas<br></i></font>
+&nbsp;&nbsp;<font color="#808080"><i>//--&nbsp;RB3,&nbsp;RB4,&nbsp;RB5&nbsp;y&nbsp;RB6&nbsp;como&nbsp;salidas<br></i></font>
+&nbsp;&nbsp;<font color="#000000">TRISB</font>=<font color="#008080">0x87</font>;<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;<font color="#808080"><i>//--&nbsp;Parar&nbsp;el&nbsp;robot<br></i></font>
+&nbsp;&nbsp;<font color="#000000">PORTB</font>=<font color="#000000">STOP</font>;<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;<font color="#808080"><i>//--&nbsp;Bucle&nbsp;infinito<br></i></font>
+&nbsp;&nbsp;<font color="#000000"><b>while</b></font>(<font color="#0000FF">1</font>);<br>
+<br>
+}<br>
+		</font>
+	</body>
+</html>
