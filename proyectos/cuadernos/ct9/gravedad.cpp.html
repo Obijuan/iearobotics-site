@@ -1,0 +1,161 @@
+
+<html>
+<head>
+<title>gravedad.cpp</title>
+<meta name="generator" content="c2html 0.9.6">
+<meta name="date" content="2006-05-29T19:27:33+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/***********************************************************************/</font>
+<font color="#B22222">/* gravedad.cpp.  Juan Gonzalez. Mayo 2006                             */</font>
+<font color="#B22222">/*---------------------------------------------------------------------*/</font>
+<font color="#B22222">/* LICENCIA GPL                                                        */</font>
+<font color="#B22222">/*---------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Ejemplo "hola mundo" del motor fisico ODE (Open Dynamics Engine)    */</font>
+<font color="#B22222">/* Es un programa para consola, no utiliza representacion en 3D        */</font>
+<font color="#B22222">/* Se crea un mundo virtual y se situa en el una "caja" de una cierta  */</font>
+<font color="#B22222">/* masa y a una cierta altura                                          */</font>
+<font color="#B22222">/* Como salida del programa se obtiene una funcion que indica como     */</font>
+<font color="#B22222">/* varia la altura de la caja con el tiempo, es decir, como cae        */</font>
+<font color="#B22222">/* En el mundo virtual creado NO HAY SUELO, por lo que no hay ninguna  */</font>
+<font color="#B22222">/* colision. El objeto caera infinitamente...                          */</font>
+<font color="#B22222">/*---------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Los datos devueltos se pueden visualizar con Octave/Matlab          */</font>
+<font color="#B22222">/* Ejemplo de uso:                                                     */</font>
+<font color="#B22222">/*   $ gravedad &gt; func.m                                               */</font>
+<font color="#B22222">/*   $ octave func.m                                                   */</font>
+<font color="#B22222">/***********************************************************************/</font>
+
+<font color="#A020F0">#include &lt;ode/ode.h&gt;</font>
+
+<font color="#B22222">/*********************************************/</font>
+<font color="#B22222">/* Algunas constantes usadas en el programa  */</font>
+<font color="#B22222">/*********************************************/</font>
+//-- Numero de instantes que queremos simular. Este valor se puede
+//-- cambiar
+<strong><font color="#228B22">#define TICKS   200</font></strong>
+
+/<font color="#B22222">/*******************************************
+// VARIABLES GLOBALES DEL PROGRAMA
+//*******************************************
+
+//-- Identificador para el mundo
+static dWorldID world;
+
+//-- El objeto que vamos a colocar. Sera una caja
+static dBodyID body;
+
+//-- Contador de cucantos tics de simulacion quedan
+static int ticks = TICKS;
+
+/***************************************************************************/</font>
+<font color="#B22222">/*  CODIGO                                                                 */</font>
+<font color="#B22222">/***************************************************************************/</font>
+
+<font color="#B22222">/********************************************************************/</font>
+<font color="#B22222">/* Crear la "caja"                                                  */</font>
+<font color="#B22222">/* Se define la "caja" usando la API de ODE y se asocia al "mundo"  */</font>
+<font color="#B22222">/********************************************************************/</font>
+<strong><font color="#4169E1"><a name="Crear_objeto"></a>void Crear_objeto()</font></strong>
+{
+  dMass m;
+
+  //-- Crear el Cuerpo y asociarlo al mundo
+  body = dBodyCreate (world);
+
+  //-- Establecer la posicion inicial. Se pasan las coordenadas x,y,z
+  //-- En este ejemplo el objeto esta en el origen, a una altura de 
+  //-- 4 unidades
+  dBodySetPosition(body, 0,0,4);
+  
+  //-- Establecer la masa del cuerpo
+  //-- Hay que especificar la masa total y las dimensiones
+  //-- del cubo. Como masa se toma 0.5 y las dimensiones de la caja
+  //-- son 0.5 x 0.5 x 0.1. Se pueden poner las que se quiera
+  dMassSetBoxTotal (&amp;m,0.5,0.5,0.5,0.1);
+  dBodySetMass (body,&amp;m);
+}
+
+
+<font color="#B22222">/*******************/</font>
+<font color="#B22222">/*     MAIN        */</font>
+<font color="#B22222">/*******************/</font>
+<strong><font color="#4169E1"><a name="main"></a>int main (int argc, char **argv)</font></strong>
+{
+  const dReal *pos;
+
+  <font color="#B22222">/********************************************************************/</font>
+  <font color="#B22222">/* Primero se crea el mundo (esto es como ser Dios). El mundo es    */</font>
+  <font color="#B22222">/* un "contenedor" de objetos                                       */</font>
+  <font color="#B22222">/* El mundo no sabe nada de como se dibujan los objetos             */</font>
+  <font color="#B22222">/* En este ejemplo el mundo solo tiene una "caja"                   */</font>
+  <font color="#B22222">/********************************************************************/</font>
+  //-- Crear mundo
+  world = dWorldCreate();
+
+  //-- Establecer la gravedad (gravedad terrestres: -9.81)
+  dWorldSetGravity (world,0,0,-9.81);
+
+  //-- Establecer parametro CFM
+  //-- Normalmente se deja siempre a este valor
+  dWorldSetCFM (world,1e-5);
+
+  //-- Establecer el modo auto-disabled por defecto
+  //-- Cualquier objeto que se encuentre en reposo se deshabilitara
+  //-- y no consumira recursos en la simulacion. Normalmente siempre se
+  //-- activara
+  dWorldSetAutoDisableFlag (world,1);
+  
+  //-- Crear la <font color="#666666">"Caja"</font> y ponerla en el <font color="#666666">"mundo"</font>
+  Crear_objeto();
+
+  //-- Salida para Octave:
+  //-- La matriz z es la que se ira rellenando con los valores de la altura
+  //-- de la caja
+  printf (<font color="#666666">"z=["</font>);
+
+  <font color="#B22222">/********************************/</font>
+  <font color="#B22222">/** COMENZAR LA SIMULACION!!!!  */</font>
+  <font color="#B22222">/********************************/</font>
+  //-- Este es el bucle principal. 
+
+  //-- Se haran tantos pasos de simulacion como se indican en la 
+  //-- constante TICKS
+  <font color="#4169E1">for</font> (ticks=TICKS; ticks&gt;0; ticks--) {
+
+  //-- Realizar un paso de simulacion. Se especifica que resolucion
+  //-- en unidades de tiempo se quiere para la simulacion
+    dWorldStep(world,0.01);
+
+    //-- Leer la altura del objeto e imprimirla
+    //-- Pos es el vector de posicion, que tiene 3 componentes:
+    //-- pos[0] --&gt; x;  pos[1]--&gt; y; pos[2] --&gt; z
+    //-- Solo nos interesa la altura a la que esta la caja (pos[2])
+    pos=dBodyGetPosition(body);
+    printf (<font color="#666666">"%f,"</font>,pos[2]);
+}
+
+  //-- Simulacion finalizada:
+  //-- Imprimir la ultima posicion e
+  //-- Imprimir comandos octave para sacar grafica
+  pos=dBodyGetPosition(body);
+  printf (<font color="#666666">"%f];\n"</font>,pos[2]);
+  printf (<font color="#666666">"t=0:1:%d;\n"</font>,TICKS);
+  printf (<font color="#666666">"plot(t,z);\n"</font>);
+  printf (<font color="#666666">"grid on;\n"</font>);
+  printf (<font color="#666666">"pause;\n"</font>);
+
+  <font color="#B22222">/************************/</font>
+  <font color="#B22222">/* FIN DE LA SIMULACION */</font>
+  <font color="#B22222">/************************/</font>
+
+  //-- Destruir el mundo con todos sus objetos (apocalipsis?)
+  dWorldDestroy (world);
+
+  <font color="#4169E1">return</font> 0;
+}
+</pre>
+</body>
+
+</html>

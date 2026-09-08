@@ -1,0 +1,309 @@
+
+<html>
+<head>
+<title>gravedad_colision.cpp</title>
+<meta name="generator" content="c2html 0.9.6">
+<meta name="date" content="2006-05-30T09:34:42+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/***********************************************************************/</font>
+<font color="#B22222">/* gravedad_colision.cpp.  Juan Gonzalez. Mayo 2006                    */</font>
+<font color="#B22222">/*---------------------------------------------------------------------*/</font>
+<font color="#B22222">/* LICENCIA GPL                                                        */</font>
+<font color="#B22222">/*---------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Ejemplo "hola mundo" del motor fisico ODE (Open Dynamics Engine)    */</font>
+<font color="#B22222">/* Es similar al ejemplo gravedad, pero se ha anadido deteccion de     */</font>
+<font color="#B22222">/* colisiones. Se crea un mundo virtual, se crea un suelo infinitao,   */</font>
+<font color="#B22222">/* se situa una "caja" a una cierta altura y se comienza la simulacion */</font>
+<font color="#B22222">/* La caja caera hasta que choque con el suelo. La salida del programa */</font>
+<font color="#B22222">/* es la posicion de la caja en los diferentes instantes de tiempo     */</font>
+<font color="#B22222">/*---------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Este programa es para consola, no hay representacion grafica en 3D  */</font>
+<font color="#B22222">/*---------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Los datos devueltos se pueden visualizar con Octave/Matlab          */</font>
+<font color="#B22222">/* Ejemplo de uso:                                                     */</font>
+<font color="#B22222">/*   $ gravedad_colision &gt; func.m                                      */</font>
+<font color="#B22222">/*   $ octave func.m                                                   */</font>
+<font color="#B22222">/***********************************************************************/</font>
+
+<font color="#A020F0">#include &lt;ode/ode.h&gt;</font>
+
+<font color="#B22222">/*********************************************/</font>
+<font color="#B22222">/* Algunas constantes usadas en el programa  */</font>
+<font color="#B22222">/*********************************************/</font>
+
+//-- Numero maximo de puntos de contacto. Es para la deteccion de 
+//-- colisiones.
+<strong><font color="#228B22">#define MAX_CONTACTS 4</font></strong>
+
+//-- Numero de instantes que queremos simular. Este valor se puede
+//-- cambiar
+<strong><font color="#228B22">#define TICKS   200</font></strong>
+
+//-- Estructura que representa los objetos del universo
+//-- Hay dos tipos de elementos:
+//--    * Cuerpos (bodys): Tienen la informacion sobre posicion,
+//--      orientacion, velocidad lineal y velocidad de rotacion
+//--    * Elementos geometricos: Determinal la forma y se usan para
+//--      las colisiones
+//-- Un objeto esta formado por el cuerpo y su geometria (o la 
+//--  composicion de varias geometrias.
+<font color="#4169E1"><a name="MyObject"></a>struct MyObject </font>{
+  dBodyID body;       // Cuerpo
+  dGeomID geom;       // Elemento geometrico
+};
+
+/<font color="#B22222">/*******************************************
+// VARIABLES GLOBALES DEL PROGRAMA
+//*******************************************
+
+//-- Identificador para el mundo
+static dWorldID world;
+
+//-- Identificador del espacio (para colisiones)
+//-- Para detectar las colisiones hay que crear un espacio con los
+//-- elementos que pueden colisionar.
+static dSpaceID space;
+
+//-- Identificador del grupo de articulaciones de los puntos de contactos
+//-- Cuando hay una colision, se crean puntos de contacto entre las 
+//-- superficies y actuan como articulaciones: los objetos rotaran con
+//-- respecto a estos puntos de contacto.
+static dJointGroupID contactgroup;
+
+//-- El objeto que situamos en el mundo: la caja
+static MyObject obj;
+
+//-- Contador de cucantos tics de simulacion quedan
+static int ticks = TICKS;
+
+/***************************************************************************/</font>
+<font color="#B22222">/*  CODIGO                                                                 */</font>
+<font color="#B22222">/***************************************************************************/</font>
+
+<font color="#B22222">/********************************************************************/</font>
+<font color="#B22222">/* Crear la "caja"                                                  */</font>
+<font color="#B22222">/* Se define la "caja" usando la API de ODE y se asocia al "mundo"  */</font>
+<font color="#B22222">/********************************************************************/</font>
+<strong><font color="#4169E1"><a name="Crear_objeto"></a>void Crear_objeto()</font></strong>
+{
+  dMass m;
+  
+  //-- Crear el Cuerpo y asociarlo al mundo
+  obj.body = dBodyCreate (world);
+
+  //-- Establecer la posicion inicial. Se pasan las coordenadas x,y,z
+  //-- En este ejemplo el objeto esta en el origen, a una altura de 
+  //-- 4 unidades
+  dBodySetPosition(obj.body, 0,0,4);
+
+  //-- Establecer la rotacion
+  //-- Cada objeto puede estar rotado. Se crea una matriz de
+  //-- rotacion pasandole como parametros el vector que hace de
+  //-- eje de giro y el angulo que se rota. En este ejemplo se pasa
+  //-- el eje z y se rota '0' grados con respecto a el.
+  //-- Probar este mismo ejemplo con los parametros (R,0,0,1,45)
+  dMatrix3 R;
+  dRFromAxisAndAngle(R,0,0,1,0);
+  dBodySetRotation (obj.body,R);
+  
+  //-- Establecer la masa del cuerpo
+  //-- Hay que especificar la masa total y las dimensiones
+  //-- del cubo. Como masa se toma 0.5 y las dimensiones de la caja
+  //-- son 0.5 x 0.5 x 0.1
+  dMassSetBoxTotal (&amp;m,0.5,0.5,0.5,0.1);
+  dBodySetMass (obj.body,&amp;m);
+
+  //-- Crear la geometria: un cubo que se anadira al espacio para detectar
+  //-- las colisiones. Las dimensiones son 0.5 x 0.5 x 0.1
+  obj.geom = dCreateBox (space,0.5,0.5,0.1);
+
+  //-- Asociar el cuerpo con la geometria
+  dGeomSetBody (obj.geom,obj.body);
+}
+
+<font color="#B22222">/****************************************************************/</font>
+<font color="#B22222">/* Funcion de retrollamada invocada por dSpaceCollide cuando    */</font>
+<font color="#B22222">/* dos objetos del espacio estan a punto de colisionar          */</font>
+<font color="#B22222">/* El ODE permite que los usuarios avanzados puedan implementar */</font>
+<font color="#B22222">/* su propia rutina de colision. Para los usuarios no expertos  */</font>
+<font color="#B22222">/* que simplemente quieren una colision estandar, esta es la    */</font>
+<font color="#B22222">/* rutina que SIEMPRE deberan usar. No es solo valida para este */</font>
+<font color="#B22222">/* ejemplo, vale para cualquiera. Pero no esta incluida en la   */</font>
+<font color="#B22222">/* libreria del ODE para que se pueda adaptar a otras           */</font>
+<font color="#B22222">/* necesidades.
+/****************************************************************/</font>
+<strong><font color="#4169E1"><a name="nearCallback"></a>static void nearCallback (void *data, dGeomID o1, dGeomID o2)</font></strong>   
+{
+  int i;
+ 
+  //-- Obtener los cuerpos asociados
+  dBodyID b1 = dGeomGetBody(o1);
+  dBodyID b2 = dGeomGetBody(o2);
+
+  //-- Si ya estan conectados por una articulacion, terminar
+  <font color="#4169E1">if</font> (b1 &amp;&amp; b2 &amp;&amp; dAreConnectedExcluding (b1,b2,dJointTypeContact)) <font color="#4169E1">return</font>;
+ 
+  //-- Crear los puntos de contacto, que en realidad son articulaciones
+  //-- Para mas informacion consultar la documentacion de ODE
+  //-- Aqui se puede especificar el tipo de superficies, los
+  //-- coeficientes de rozamiento (mu), etc...
+  dContact contact[MAX_CONTACTS]; 
+  <font color="#4169E1">for</font> (i=0; i&lt;MAX_CONTACTS; i++) {
+    contact[i].surface.mode = dContactBounce | dContactSoftCFM;
+    contact[i].surface.mu = dInfinity;
+    contact[i].surface.mu2 = 0;
+    contact[i].surface.bounce = 0.1;
+    contact[i].surface.bounce_vel = 0.1;
+    contact[i].surface.soft_cfm = 0.01;
+  }
+
+  //-- Obtener los puntos de contacto
+  int numc = dCollide (o1,o2,MAX_CONTACTS,&amp;contact[0].geom, <font color="#4169E1">sizeof</font>(dContact));
+
+  //-- Si hay al menos algun punto de contacto...
+  <font color="#4169E1">if</font> (numc!=0) {
+    
+    //-- Para cada punto de contacto crear una articulacion
+    <font color="#4169E1">for</font> (i=0; i&lt;numc; i++) {
+
+      //-- Crear articulacion y meterla en el grupo contactgroup
+      dJointID c = dJointCreateContact (world,contactgroup,&amp;contact[i]);
+
+      //-- Establecer la artiulacion entre los dos cuerpos
+      dJointAttach (c,b1,b2);
+    }
+  }
+}
+
+<font color="#B22222">/************************************************************************/</font>
+<font color="#B22222">/* Realizar un paso de simulacion. Primero se comprueba colisiones. Si  */</font>
+<font color="#B22222">/* hay alguna, se crean automaticamente (por medio de la funcion        */</font>
+<font color="#B22222">/* nearCallback, puntos de contactos que en realidad son articulaciones */</font>
+<font color="#B22222">/* Despues se realiza un paso de la simulacion. Los objetos rotaran en  */</font>
+<font color="#B22222">/* contacto rotaran sobre los nuevos puntos de contacto creados.        */</font>
+<font color="#B22222">/* Finalmente se eliminan.                                              */</font>
+<font color="#B22222">/************************************************************************/</font>
+<strong><font color="#4169E1"><a name="simLoop"></a>static void simLoop()</font></strong>
+{
+  //-- Deteccion de colisiones. Determinar que pares de elementos geometricos
+  //-- estan a punto de colisionar. Se llama a la funcion de retrollamada
+  //-- nearCallback, pasando como argumento los dos elementos.
+  dSpaceCollide (space,0,&amp;nearCallback);
+
+  //-- Realizar un paso de simulacion
+  dWorldStep(world,0.01);
+
+  // Eliminar todos los puntos de contacto (articulaciones) creados.
+  dJointGroupEmpty (contactgroup);
+}
+
+<font color="#B22222">/*******************/</font>
+<font color="#B22222">/*     MAIN        */</font>
+<font color="#B22222">/*******************/</font>
+<strong><font color="#4169E1"><a name="main"></a>int main (int argc, char **argv)</font></strong>
+{
+  const dReal *pos;
+
+  <font color="#B22222">/********************************************************************/</font>
+  <font color="#B22222">/* Crear el mundo. Es un contenedor de todos los objetos a simular  */</font>
+  <font color="#B22222">/* El mundo no sabe nada de como se dibujan los objetos             */</font>
+  <font color="#B22222">/* En este ejemplo el mundo solo tiene un suelo y una "caja"        */</font>
+  <font color="#B22222">/********************************************************************/</font>
+  //-- Crear mundo
+  world = dWorldCreate();
+  
+  //-- Establecer la gravedad (gravedad terrestres: -9.81)
+  dWorldSetGravity (world,0,0,-9.81);
+
+  //-- Establecer parametro CFM
+  //-- Normalmente se deja siempre a este valor
+  dWorldSetCFM (world,1e-5);
+  
+  //-- Establecer el modo auto-disabled por defecto
+  //-- Cualquier objeto que se encuentre en reposo se deshabilitara
+  //-- y no consumira recursos en la simulacion
+  dWorldSetAutoDisableFlag (world,1);
+  
+  //-- Otros parametros... (consular documentacion)
+  //-- En principio siempre tendran esos valores
+  dWorldSetContactMaxCorrectingVel (world,0.1);
+  dWorldSetContactSurfaceLayer (world,0.001);
+  
+  //-- Crear un espacio. Los espacios contienen los elementos geometricos
+  //-- sobre las que se quiere comprobar si hay colision o no
+  //-- Se utilizan espacios para que la simulacion sea mas rapida 
+  space = dHashSpaceCreate (0);
+  
+  //-- Crear un grupo de articulaciones
+  //-- Se utiliza para almacenar los puntos de contacto en una colision
+  contactgroup = dJointGroupCreate (0);
+  
+  //-- Crear un plano infinito y meterlo en el espacio
+  //-- El plano se determina por su ecuacion del tipo:
+  //-- a*x + b*y + c*z = d, donde (a,b,c) es un vector unitario
+  //-- normal a su superficie
+  //-- En este ejemplo se crea el plano con vector (0,0,1), es
+  //-- decir, el plano: z=0
+  //-- Este plano sera para nosotros el <font color="#666666">"suelo"</font>
+  dCreatePlane (space,0,0,1,0);
+  
+  //-- Inicializar los objetos del universo a cero
+  memset (&amp;obj,0,<font color="#4169E1">sizeof</font>(obj));
+
+  //-- Crear la <font color="#666666">"Caja"</font> y ponerla en el <font color="#666666">"mundo"</font>
+  Crear_objeto();
+
+  //-- Salida para Octave:
+  //-- La matriz z es la que se ira rellenando con los valores de la altura
+  //-- de la caja
+  printf (<font color="#666666">"z=["</font>);
+
+  <font color="#B22222">/********************************/</font>
+  <font color="#B22222">/** COMENZAR LA SIMULACION!!!!  */</font>
+  <font color="#B22222">/********************************/</font>
+  //-- Se haran tantos pasos de simulacion como se indican en la 
+  //-- constante TICKS
+  <font color="#4169E1">for</font> (ticks=TICKS; ticks&gt;0; ticks--) {
+
+    //-- Realizar un paso de la simulacion, comprobando colisiones
+    simLoop();
+
+    //-- Leer la altura del objeto e imprimirla
+    //-- Pos es el vector de posicion, que tiene 3 componentes:
+    //-- pos[0] --&gt; x;  pos[1]--&gt; y; pos[2] --&gt; z
+    //-- Solo nos interesa la altura a la que esta la caja (pos[2])
+    pos=dBodyGetPosition(obj.body);
+    printf (<font color="#666666">"%f,"</font>,pos[2]);
+}
+
+  //-- Simulacion finalizada:
+  //-- Imprimir la ultima posicion e
+  //-- Imprimir comandos octave para sacar grafica
+  pos=dBodyGetPosition(obj.body);
+  printf (<font color="#666666">"%f];\n"</font>,pos[2]);
+  printf (<font color="#666666">"t=0:1:%d;\n"</font>,TICKS);
+  printf (<font color="#666666">"plot(t,z);\n"</font>);
+  printf (<font color="#666666">"grid on;\n"</font>);
+  printf (<font color="#666666">"pause;\n"</font>);
+
+  <font color="#B22222">/************************/</font>
+  <font color="#B22222">/* FIN DE LA SIMULACION */</font>
+  <font color="#B22222">/************************/</font>
+
+  //-- Destruir el grupo de articulaciones
+  dJointGroupDestroy (contactgroup);
+
+  //-- Destruir el espacio de colisiones
+  dSpaceDestroy (space);
+
+  //-- Destruir el mundo con todos sus objetos (apocalipsis?)
+  dWorldDestroy (world);
+
+  <font color="#4169E1">return</font> 0;
+}
+</pre>
+</body>
+
+</html>

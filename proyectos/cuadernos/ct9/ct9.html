@@ -1,0 +1,789 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+ <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<TITLE>Cuaderno t&eacute;cnico 9: C&oacute;mo utilizar el Motor f&iacute;sico ODE. Ejemplos en C (I)</TITLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Cuaderno
+				t&eacute;cnico 9: C&oacute;mo utilizar el Motor f&iacute;sico
+				ODE. Ejemplos en C (I) </B></FONT></FONT>
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/pantallazo1.png" NAME="gr&aacute;ficos1" ALIGN=MIDDLE WIDTH=410 HEIGHT=329 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2>Introducci&oacute;n</H2>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">En algunas
+aplicaciones resulta imprescindible disponer de un &ldquo;<B>motor
+f&iacute;sico&rdquo;</B> para calcular lo que est&aacute; pasando en
+tu mundo virtual. Por ejemplo, es muy &uacute;til para la
+programaci&oacute;n de juegos o la simulaci&oacute;n de robots, como
+es mi caso. Existe un motor f&iacute;sico de <B>calidad profesional</B>
+que tiene una <B>licencia libre</B> y que es <B>multiplataforma</B>:
+el <A HREF="http://www.ode.org/">Open Dynamics Engine</A> (ODE). En
+este cuaderno t&eacute;cnico se muestran tres ejemplos de utilizaci&oacute;n
+del <A HREF="http://www.ode.org/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ODE</FONT></FONT></A>,
+escritos en C y para <B>plataformas LINUX</B>.</FONT></FONT></P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Los <B>ejemplos</B>
+que se muestran son los m&aacute;s sencillos posibles, los podr&iacute;amos
+llamar los <B>&ldquo;hola mundo&rdquo;</B> del <A HREF="http://www.ode.org/">ODE</A>
+:</FONT></FONT></P>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Gravedad</B>:
+	Se crea un mundo virtual, se sit&uacute;a una caja a una cierta
+	altura y se obtiene su posici&oacute;n en funci&oacute;n del tiempo
+	(es decir, c&oacute;mo va cayendo). Es un ejemplo para consola. Este
+	ejemplo se recomienda para probar si se tiene bien instalado el <A HREF="http://www.ode.org/">ODE</A>.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Gravedad +
+	colision</B>: Mismo ejemplo anterior pero ampliado para detectar
+	colisiones. Se sit&uacute;a un &ldquo;suelo&rdquo; y se repite el
+	mismo experimentos: situar una caja a cierta altura para que caiga.
+	Es tambi&eacute;n un ejemplo para consola.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Gravedad +
+	colision + 3D</B>: Ejemplo anterior pero con representaci&oacute;n
+	en 3D de manera que se puede ver c&oacute;mo cae la caja y se puede
+	cambiar la posici&oacute;n de la c&aacute;mara para explorar el
+	mundo virtual creado.</FONT></FONT></P>
+</UL>
+<HR>
+<H2>Motivaci&oacute;n</H2>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Para mi tesis doctoral
+necesitaba un motor f&iacute;sico para evaluar el movimiento de mis
+robots &ldquo;gusano&rdquo;. Quer&iacute;a recolectar datos y aplicar
+algoritmos gen&eacute;ticos para optimizar el movimiento de los
+robots. Al principio pens&eacute; en hacerme mi propio motor
+f&iacute;sico... pero descubr&iacute; el <FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="http://www.ode.org/">ODE</A>.
+Aprend&iacute; a usar lo b&aacute;sico y me pareci&oacute; una buena
+idea publicar algunos ejemplos sencillos que le pudiesen servir a
+otras personas.</FONT></FONT></FONT></FONT></P>
+<HR>
+<H2>Instalaci&oacute;n en Debian</H2>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Estos
+programas de ejemplo se han probado en una m&aacute;quina con
+Debian/Etch. Para instalar el ODE s&oacute;lo hay que hacer lo
+siguiente:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P ALIGN=LEFT><FONT FACE="Courier New, monospace"><FONT SIZE=2>#
+				apt-get install libode0c2 libode0c2-dev</FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Si se
+quiere probar el ejemplo <B>gravedad_colision-3D</B> que utiliza
+representaci&oacute;n en 3D utilizando OpenGL ser&aacute; necesario
+tener instalados, adem&aacute;s, los siguientes paquetes:</FONT></FONT></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>*
+<I>libx11-dev</I></FONT></FONT></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>*
+<I>xlibmesa-gl-dev</I></FONT></FONT></P>
+<HR>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+				<H2 ALIGN=LEFT>Ejemplo &ldquo;hola mundo&rdquo; 1: Gravedad</H2>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Explicaci&oacute;n:
+</FONT></FONT>
+</P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Es un
+programa <B>para consola</B>, que no utiliza la representaci&oacute;n
+3D. Se crea un mundo virtual y se sit&uacute;a en &eacute;l una
+&ldquo;caja&rdquo; de una cierta masa y a una determinada altura.
+Como salida del programa se obtiene un vector con las sucesivas
+posiciones de la caja seg&uacute;n transcurre el tiempo, es decir,
+como cae en el mundo virtual. <B>No hay ning&uacute;n suelo</B> por
+lo que el objeto caer&aacute; indefinidamente...</FONT></FONT></P>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>La salida
+del programa es un script para <B>Octave/Matlab</B> que permite
+visualizar la gr&aacute;fica de la ca&iacute;da.</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Ejemplo
+de compilaci&oacute;n:</FONT></FONT></P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Descargar el paquete
+<A HREF="download/gravedad-src.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">gravedad-src.tgz</FONT></FONT></A>
+, descomprimirlo, entrar en el directorio y compilar con make: </FONT></FONT>
+</P>
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE>$ tar vzxf gravedad-src.tgz
+$ cd gravedad-src
+$ make
+g++  -c -o gravedad.o gravedad.cpp
+gcc -o gravedad gravedad.o -lode</PRE>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Ejemplo
+de utilizaci&oacute;n:</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejecutar el programa
+redireccionando la salida a un fichero y ejecutar ese fichero desde
+<B>octave/matlab</B>:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE>$ ./gravedad &gt; test.m
+$ octave test.m</PRE>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Al ejecutar el
+programa en octave se mostrar&aacute; la gr&aacute;fica de la ca&iacute;da
+de la caja:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/gravedad.png" NAME="gr&aacute;ficos2" ALIGN=MIDDLE WIDTH=400 HEIGHT=295 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Programa
+en C:</FONT></FONT></P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Aqu&iacute; puedes
+echar un vistazo al programa: [</FONT></FONT><A HREF="gravedad.cpp.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Programa
+en C</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">]</FONT></FONT></P>
+<HR>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+				<H2>Ejemplo &ldquo;hola mundo&rdquo; 2: Gravedad y colisi&oacute;n</H2>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Explicaci&oacute;n:
+</FONT></FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Este ejemplo es una
+ampliaci&oacute;n del anterior, al que se le han a&ntilde;adido
+detecci&oacute;n de colisiones. Es tambi&eacute;n un programa <B>para
+consola</B>, sin representaci&oacute;n en 3D. </FONT></FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En el mundo virtual
+creado se sit&uacute;an dos objetos: un plano infinito que hace de
+<B>suelo</B> y una <B>&ldquo;caja&rdquo; </B>situada a una cierta
+altura sobre el suelo. Al realizar la simulaci&oacute;n, la caja
+caer&aacute; hasta que llegue al suelo, donde colisionar&aacute; y se
+detendr&aacute;. La salida del programa es un programa para
+<B>Octave/Matlab</B> que permite visualizar la gr&aacute;fica de la
+ca&iacute;da.</FONT></FONT></P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">En el <A HREF="http://www.ode.org/">ODE</A>
+hay que distinguir dos tipos de <B>elementos</B>. Uno son los <B>cuerpos</B>
+(bodies) que tienen una posici&oacute;n en el espacio, una
+orientaci&oacute;n, una velodiad lineal y una velocidad angular. Los
+otros son las <B>geometr&iacute;as</B>, que determinan la &ldquo;forma&rdquo;
+del cuerpo y son sobre las que act&uacute;a el sistema de <B>detecci&oacute;n
+de colisiones</B>. Nuestros objetos, por tanto, tendr&aacute;n dos
+componentes: el cuerpo y su geometr&iacute;a. Si no estamos
+interesados en la colisiones no hace falta utilizar las geometr&iacute;as.</FONT></FONT></P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Para detectar las
+colisiones, es necesario crear un <B>espacio de colisiones</B>, donde
+situaremos todas las geometr&iacute;as que queremos comprobar. Est&aacute;
+implementado de esta manera en <A HREF="http://www.ode.org/">ODE</A>
+para que la detecci&oacute;n sea m&aacute;s r&aacute;pida. </FONT></FONT>
+</P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">El <A HREF="http://www.ode.org/">ODE</A>
+es un motor f&iacute;sico de car&aacute;cter general, que permite a
+los desarrolladores extender sus funcionalidades. El qu&eacute; hacer
+cuando hay una colisi&oacute;n es decisi&oacute;n del programador.
+Cuando se realizan juegos, puede interesar implementar una rutina de
+detecci&oacute;n de colisiones propia. Sin embargo, en este ejemplo y
+en la mayor&iacute;a de los ejemplos que yo he utilizado, lo &uacute;nico
+que se necesita es un &ldquo;comportamiento normal&rdquo;, similar a
+lo que ocurre en la realidad. Eso lo tenemos que programar nosotros y
+se incluye en este ejemplo. Lo interesante es que la rutina
+proporcionada es v&aacute;lida para la mayor&iacute;a de los usos
+normales. No hay que re-escribirla para cada aplicaci&oacute;n. Un
+simple &ldquo;copy &amp; paste&rdquo; nos valdr&aacute;.</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Ejemplo
+de compilaci&oacute;n:</FONT></FONT></P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Descargar el paquete
+<A HREF="download/gravedad_colision-src.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">gravedad_colision-src.tgz</FONT></FONT></A>
+, descomprimirlo, entrar en el directorio y compilar con make: </FONT></FONT>
+</P>
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE>$ tar vzxf gravedad_colision-src.tgz
+$ cd gravedad_colision-src
+$ make
+g++    -c -o gravedad_colision.o gravedad_colision.cpp
+gcc -o gravedad_colision gravedad_colision.o   -lode</PRE>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Ejemplo
+de utilizaci&oacute;n:</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejecutar el programa
+redireccionando la salida a un fichero y ejecutar ese fichero desde
+octave/matlab:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE>$ ./gravedad_colision &gt; test.m
+$ octave test.m</PRE>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Al ejecutar el
+programa en octave se mostrar&aacute; la gr&aacute;fica de la ca&iacute;da
+de la caja:</FONT></FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/gravedad_colision.png" NAME="gr&aacute;ficos3" ALIGN=MIDDLE WIDTH=400 HEIGHT=295 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Se puede observar c&oacute;mo
+la caja se detiene aproximadamente cuando llega a una altura de cero.
+En realidad se puede apreciar que llega a cero y que luego &ldquo;sube&rdquo;
+un poco. El <A HREF="http://www.ode.org/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ODE</FONT></FONT></A>
+est&aacute; dise&ntilde;ado no para obtener valores instant&aacute;neos
+exactos, sino para que el resultado global sea muy parecido a lo que
+ocurre en la realidad. El tiempo empleado en <A HREF="http://www.ode.org/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ODE</FONT></FONT></A>
+es &ldquo;discreto&rdquo; por lo que se van acumulando errores
+durante la simulaci&oacute;n. El propio motor de <A HREF="http://www.ode.org/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ODE</FONT></FONT></A>
+los va corrigiendo, como en este caso. La &ldquo;caja&rdquo; tiene
+una cierta altura y su centro de gravedad no llegar&aacute; a estar
+en la posici&oacute;n cero, sino un poco m&aacute;s elevado. En la
+primera caida, se acumula un error que suelo se va corrigiendo.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Si se realiza una
+simulaci&oacute;n con &ldquo;pasos&rdquo; m&aacute;s peque&ntilde;os,
+los resultados ser&aacute;n m&aacute;s exactos, pero se tardar&aacute;
+m&aacute;s tiempo. Consultar la documentaci&oacute;n para determinar
+c&oacute;mo mejorar la precisi&oacute;n del simulador.</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Programa
+en C:</FONT></FONT></P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Acceso al programa en
+C desde aqu&iacute;: [</FONT></FONT><A HREF="gravedad_colision.cpp.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Programa
+en C</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">]</FONT></FONT></P>
+<HR>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+				<H2 ALIGN=LEFT>Ejemplo &ldquo;hola mundo&rdquo; 3: Gravedad,
+				colisi&oacute;n y visualizaci&oacute;n en 3D</H2>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Explicaci&oacute;n:
+</FONT></FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Este ejemplo hace
+exactamente lo mismo que el anterior, pero <B>la representaci&oacute;n
+se hace en 3D</B>, por lo que se puede ver c&oacute;mo cae la caja y
+choca contra el suelo.</FONT></FONT></P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">El creador del <FONT FACE="Arial, sans-serif"><A HREF="http://www.ode.org/">ODE</A>
+</FONT>ha hecho una librer&iacute;a muy sencilla para poder
+representar los mundos virtuales en 3D y a los objetos sencillos que
+se encuentran en su interior. Es una librer&iacute;a muy b&aacute;sica,
+pero para hacer simulaciones no muy complejas puede resultar muy
+&uacute;til. Es la <B>libdrawstuff</B>. Para hacer representaciones
+3D m&aacute;s complejas podemos optar por utilizar directamente
+OpenGL. </FONT></FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>La librer&iacute;a
+libdrawstuff dibuja un &ldquo;suelo&rdquo; con una textura, a&ntilde;ade
+un cielo, crea la iluminaci&oacute;n necesaria (sol) y sit&uacute;a
+una c&aacute;mara. Adem&aacute;s, con los botones del rat&oacute;n
+podremos mover la c&aacute;mara y su orientaci&oacute;n para ver todo
+lo que est&aacute; pasando en nuestro mundo virtual. Todo ello de una
+manera muy sencilla.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Inicialmente se
+configura y se le pasan las funciones que queremos que se invoquen
+cuando ocurran eventos, como un paso en la simulaci&oacute;n o que se
+ha pulsado una tecla.</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Ejemplo
+de compilaci&oacute;n:</FONT></FONT></P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Para que compile
+correctamente ser&aacute; necesario instalar los paquetes <I>ibx11-dev
+y</I> <I>xlibmesa-gl-dev. </I>Descargar el paquete
+<A HREF="download/gravedad_colision-3D-bin.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">gravedad_colision-3D-bin.tgz</FONT></FONT></A>
+, descomprimirlo, entrar en el directorio y compilar con make: </FONT></FONT>
+</P>
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE>$ tar vzxf gravedad_colision-3D-src.tgz
+$ cd gravedad_colision-3D-src
+$ make
+g++    -c -o gravedad_colision-3D.o gravedad_colision-3D.cpp
+gcc -o gravedad_colision-3D gravedad_colision-3D.o  libdrawstuff.a -L/usr/X11R6/lib -lX11 -lm -lGL -lGLU -lode</PRE>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Ejemplo
+de utilizaci&oacute;n:</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Simplemente ejecutar
+el programa:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE>$./gravedad_colision-3D</PRE>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Se abrir&aacute; una
+ventana en la que se ver&aacute; caer la caja:</FONT></FONT></P>
+<TABLE WIDTH=939 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=304>
+	<COL WIDTH=303>
+	<COL WIDTH=307>
+	<THEAD>
+		<TR VALIGN=TOP>
+			<TD WIDTH=304>
+				<P ALIGN=CENTER><IMG SRC="images/gravedad_colision-3D-1.png" NAME="gr&aacute;ficos4" ALIGN=MIDDLE WIDTH=300 HEIGHT=241 BORDER=0></P>
+			</TD>
+			<TD WIDTH=303>
+				<P ALIGN=CENTER><IMG SRC="images/gravedad_colision-3D-2.png" NAME="gr&aacute;ficos5" ALIGN=MIDDLE WIDTH=300 HEIGHT=241 BORDER=0></P>
+			</TD>
+			<TD WIDTH=307>
+				<P><IMG SRC="images/gravedad_colision-3D-3.png" NAME="gr&aacute;ficos6" ALIGN=MIDDLE WIDTH=300 HEIGHT=241 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">La simulaci&oacute;n
+se puede ver en este v&iacute;deo: [</FONT></FONT><A HREF="download/gravedad_colision-3D.avi"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Video</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">]</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En la consola
+aparecer&aacute; la siguiente informaci&oacute;n:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE>$ ./gravedad_colision-3D
+
+Simulation test environment v0.02
+   Ctrl-P : pause / unpause (or say `-pause' on command line).
+   Ctrl-O : single step when paused.
+   Ctrl-T : toggle textures (or say `-notex' on command line).
+   Ctrl-S : toggle shadows (or say `-noshadow' on command line).
+   Ctrl-V : print current viewpoint coordinates (x,y,z,h,p,r).
+   Ctrl-W : write frames to ppm files: frame/frameNNN.ppm
+   Ctrl-X : exit.
+
+Change the camera position by clicking + dragging in the window.
+   Left button - pan and tilt.
+   Right button - forward and sideways.
+   Left + Right button (or middle button) - sideways and up.</PRE>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Es
+la informaci&oacute;n mostrada cuando se inicializa la librer&iacute;a
+<B>libdrawstuff</B>. Existen una serie de teclas predefinidas que se
+pueden usar durante la simulaci&oacute;n. Una muy interesante es
+<B>Control-P</B>, con la que se realiza una pausa y al apretar
+<B>Control-O</B> se puede simular paso a paso, para ver lentamente lo
+que va ocurriendo.</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Tambi&eacute;n,
+con los botones del rat&oacute;n se puede &ldquo;navegar&rdquo; por
+el mundo virtual, bien moviendo la c&aacute;rama o bien cambiando su
+orientaci&oacute;n.</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Programa
+en C:</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Acceso al programa en
+C desde aqu&iacute;: [<A HREF="gravedad_colision-3D.cpp.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Programa
+en C</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">]</FONT></FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Generando
+v&iacute;deos:</FONT></FONT></P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">La librer&iacute;a <FONT SIZE=2><FONT FACE="Arial, sans-serif">
+<B>libdrawstuff</B></FONT></FONT> tambi&eacute;n permite generar
+im&aacute;genes con los diferentes &ldquo;fotogramas&rdquo; de la
+simulaci&oacute;n, que luego se pueden agrupar formando un v&iacute;deo.
+Para ello necesitaremos tener instaladas los siguientes programas:</FONT></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="http://vento.pi.tu-berlin.de/ppm2fli/main.html">ppm2fli</A>.
+	Utilidad para convertir im&aacute;gnes ppm a v&iacute;deo en formato
+	Fli.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>memcoder</B>.
+	Utilidad que viene con el <B>mplayer</B> y que permite pasar del
+	formato .fli a .avi</FONT></FONT></P>
+</UL>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Los pasos a seguir son
+los siguientes:</FONT></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Desde el
+	directorio donde se encuentre el ejemplo, crear un directorio con el
+	nombre <B>frame</B>:</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE>$ mk frame</PRE>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejecutar el
+	ejemplo en modo pausa. Para ello arrancarla con el par&aacute;metro
+	<B>-pause</B>:</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE>$ ./gravedad_colision-3D -pause</PRE>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Pulsar
+	la tecla <B>Control-W</B> para comenzar la generaci&oacute;n de
+	fotogramas</FONT></FONT></P>
+	<LI><P STYLE="margin-top: 0.42cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Pulsar
+	<B>Control-P</B> para salir del modo pausa. Se comenzar&aacute;n la
+	simulaci&oacute;n y por cada fotograma se guardar&aacute; la imagen
+	en un fichero dentro del directorio frame</FONT></FONT></P>
+	<LI><P STYLE="margin-top: 0.42cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Cuando
+	se ha terminado de simular, salir del ejemplo</FONT></FONT></P>
+	<LI><P STYLE="margin-top: 0.42cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejecutar
+	el script <A HREF="download/video.sh">video.sh</A> desde el mismo
+	directorio donde se encuentra gravedad_colision-3D.</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE>$ ./video.sh
+</PRE>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Al
+	cabo de un rato se habr&aacute; generado el fichero test.avi con el
+	v&iacute;deo de la simulaci&oacute;n. Se encuentra dentro del
+	directorio frame.</FONT></FONT></P>
+</UL>
+<HR>
+<H2>Download</H2>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=789 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+			<COL WIDTH=781>
+			<TR>
+				<TD WIDTH=781 BGCOLOR="#9999ff">
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Fuentes</B></FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+		<DD>
+		<TABLE WIDTH=789 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=209>
+			<COL WIDTH=572>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=209 BGCOLOR="#ccccff">
+					<P><A HREF="download/gravedad-src.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">gravedad-src.tgz</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Programa &ldquo;hola
+					mundo&rdquo; 1: gravedad. </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#e6e6ff">
+					<P><A HREF="download/gravedad_colision-src.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">gravedad_colision-src.tgz</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#e6e6ff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Programa &ldquo;hola
+					mundo&rdquo; 2: gravedad + colisiones.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#ccccff">
+					<P><A HREF="download/gravedad_colision-3D-src.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">gravedad_colision-3D-src.tgz</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Programa &ldquo;hola
+					mundo&rdquo; 3: gravedad + colisiones + 3D</FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=789 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+			<COL WIDTH=781>
+			<TR>
+				<TD WIDTH=781 BGCOLOR="#9999ff">
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Ejectables</B></FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+		<DD>
+		<TABLE WIDTH=789 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=209>
+			<COL WIDTH=572>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=209 BGCOLOR="#ccccff">
+					<P><A HREF="download/gravedad-bin.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">gravedad-bin.tgz</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Programa &ldquo;hola
+					mundo&rdquo; gravedad. </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#e6e6ff">
+					<P><A HREF="download/gravedad_colision-bin.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">gravedad_colision-bin.tgz</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#e6e6ff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Programa &ldquo;hola
+					mundo&rdquo; gravedad + colisiones. </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#ccccff">
+					<P><A HREF="download/gravedad_colision-3D-bin.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">gravedad_colision-bin.tgz</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Programa &ldquo;hola
+					mundo&rdquo; gravedad + colisiones + 3D. </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=789 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+			<COL WIDTH=781>
+			<TR>
+				<TD WIDTH=781 BGCOLOR="#9999ff">
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Scripts
+					Octave/Matlab</B></FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+		<DD>
+		<TABLE WIDTH=789 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=209>
+			<COL WIDTH=572>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=209 BGCOLOR="#ccccff">
+					<P><A HREF="download/gravedad.m"><FONT SIZE=2><FONT FACE="Arial, sans-serif">gravedad.m</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Salida del
+					programa gravedad. Script para Octave/Matlab</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#e6e6ff">
+					<P><A HREF="download/gravedad_colision.m"><FONT SIZE=2><FONT FACE="Arial, sans-serif">gravedad_colision.m</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#e6e6ff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Salida del
+					programa gravedad_colsiones. Script para Octave/Matlab</FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=789 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+			<COL WIDTH=781>
+			<TR>
+				<TD WIDTH=781 BGCOLOR="#9999ff">
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Otros</B></FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+		<DD>
+		<TABLE WIDTH=789 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=209>
+			<COL WIDTH=572>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=209 BGCOLOR="#ccccff">
+					<P><A HREF="download/gravedad_colision-3D.avi"><FONT SIZE=2><FONT FACE="Arial, sans-serif">gravedad_colision-3D.avi</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Video con la
+					simulacion del programa gravedad_colision-3D.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#e6e6ff">
+					<P><A HREF="download/video.sh"><FONT SIZE=2><FONT FACE="Arial, sans-serif">video.sh</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#e6e6ff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Scrip para
+					generar un fichero de video con los fotogramas de la simulaci&oacute;n</FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2>Documentaci&oacute;n</H2>
+<UL>
+	<LI><P> <FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="http://www.ode.org/">ODE</A>:
+	Open Dynamics Engine.</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Documentaci&oacute;n
+	del ODE: [<A HREF="http://www.ode.org/ode-latest-userguide.html">HTML</A>]
+	[<A HREF="http://www.ode.org/ode-latest-userguide.pdf">PDF</A>]</FONT></FONT>
+		</P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="http://opende.sourceforge.net/wiki/index.php/Main_Page">Wiki
+	sobre ODE</A>.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="http://pyode.sourceforge.net/">PyODE</A>:
+	Utilizaci&oacute;n del ODE desde Python</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="http://www.taoframework.com/Home">Tao</A>:
+	acceso a diferentes utilidades gr&aacute;ficas y multimedia para
+	.NET/Mono. Incluye acceso a las librer&iacute;as de ODE.</FONT></FONT></P>
+</UL>
+<HR>
+<H2>Autor</H2>
+<UL>
+	<LI><P><A HREF="http://www.iearobotics.com/personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+	Gonz&aacute;lez G&oacute;mez</FONT></FONT></A></P>
+</UL>
+<HR>
+<H2>Licencia</H2>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+				<P><BR><!--Creative Commons License--><A HREF="http://creativecommons.org/licenses/by-sa/2.5/es/"><IMG SRC="images/somerights20.png" NAME="Imagen27" ALT="Creative Commons License" ALIGN=BOTTOM WIDTH=88 HEIGHT=31 BORDER=0></A>
+				<FONT SIZE=2><FONT FACE="Arial, sans-serif">This work is licensed
+				under a </FONT></FONT><A HREF="http://creativecommons.org/licenses/by-sa/2.5/es/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Creative
+				Commons Attribution-ShareAlike 2.5 Spain License<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about="">
+			<license rdf:resource="http://creativecommons.org/licenses/by-sa/2.5/es/" />
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by-sa/2.5/es/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/><requires rdf:resource="http://web.resource.org/cc/ShareAlike"/></License></rdf:RDF> --></FONT></FONT></A>
+								</P>
+			</TD>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Este proyecto
+				tiene una <B>licencia libre</B>. Se permite su copia,
+				modificaci&oacute;n y distribuci&oacute;n, bajo los t&eacute;rminos
+				de la licencia Creative commons</FONT></FONT></P>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2>Agradecimientos</H2>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">A <B>Javier de
+	Lope</B>, por descubrirme el <A HREF="http://www.ode.org/"><FONT FACE="Arial, sans-serif">ODE</FONT></A>.
+	&iexcl;Gracias! ;-)</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">A <B>Russell
+	Smith</B>, creador del <A HREF="http://www.ode.org/"><FONT FACE="Arial, sans-serif">ODE</FONT></A>.
+	Gracias a gente como &eacute;l nuestra sociedad avanza, haciendo que
+	el conocimiento est&eacute; disponible para todos.</FONT></FONT></P>
+</UL>
+<HR>
+<H2><A NAME="noticias"></A>Noticias</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>30/Mayo/2006:
+	</B>Publicada primera versi&oacute;n de este cuaderno</FONT></FONT></P>
+</UL>
+<HR>
+<P><A HREF="../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[&Iacute;ndice
+de cuadernos t&eacute;cnicos]</FONT></FONT></A></P>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="http://www.iearobotics.com/personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A><A HREF="http://www.iearobotics.com/">
+</A>
+</ADDRESS>
+<P STYLE="margin-bottom: 0cm"><A HREF="http://www.iearobotics.com"><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEAROBOTICS</FONT></FONT></A>
+</P>
+</BODY>
+</HTML>
