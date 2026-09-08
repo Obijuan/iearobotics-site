@@ -1,0 +1,45 @@
+No implementation found for style `clawar'
+No implementation found for style `graphicx'
+
+The clawar-paper.aux file was not found, so sections will not be numbered 
+and cross-references will be shown as icons.
+
+No number for "Generalclassificationofmodularrobots"
+
+No number for "Examplesofthethreesub-typesofchainrobots:a)1Dtopology.Astructurewithonlyonechainofmodules.b)2Dtopology:astarstructure,composedofthreechainoftwomodules.c)3Dtopology.Arobotcomposedofsixchainsoftwomodules."
+
+No number for "Differentconnectionsforasnakerobot.a)Pitchconnecting.Allthemodulesrotatearoundthepitchaxis.b)Yawconnecting.Themodulesrotatearoundtheyawaxis.c)Pitch-yawconnectingmodules.Somemodulesrotatearoundthepitchaxis,andothersaroundtheyaw."
+
+No number for "TheY1module.Averycheapandeasytobuildmodule."
+
+No number for "Thepitch-yaw-connectingmodularrobotbuilttotestitslocomotioncapabilities(Imageontheleft).Itiscomposedof8linkedmodules(imageontheright)."
+
+No number for "a)TwoY1modulesina90degreesconnection.Themodulesrotatesaroundthepitchandyawaxesrespectively.b)Therobotismadeoffourofthisbasicunionsbetweenthemodules."
+
+No number for "a)thePIC16F876basedcontrollerused.b)Theelectronicisconnectedtotherobotbyacable."
+
+No number for "Agraphicalrepresentationofthecontrolapproach.EightsinusoidalCPGsareusedtocontroltherotationangleofeachmodule.Theyaredividedintotwogroups:horizontal(<SPANCLASS="MATH">$H_{i}$</SPAN>)andvertical(<SPANCLASS="MATH"></SPAN>)"
+
+No number for "1Dsinusoidalgait.Theanglesofthearticulations<SPANCLASS="MATH">$V_{1}$</SPAN>,<SPANCLASS="MATH"></SPAN>,<SPANCLASS="MATH"></SPAN>and<SPANCLASS="MATH"></SPAN>arechangedaccordingtothefunctiondepicted"
+
+No number for "Turninggait.Thesamecoordinationisappliedthaninthe1Dsinusoidalgait.Theoffsetofthehorizontaljointsdeterminesthearc."
+
+No number for "Therollinggait.Thesamesinusoidalsignalisappliedtoalltheverticaljointsandaninetydegreesoutofphasesinusoidalsignalisappliedtohorizontaljoints"
+
+No number for "Rotatinggait.EightdifferentsinusoidalCPGsareused.Aphasedifferenceof50degreesisappliedtothehorizontaljointsand120forthevertical"
+
+No number for "Lateralshiftgait.EightdifferentsinusoidalCPGsareused.Aphasedifferenceof100isusedbothforthehorizontalandverticaljoints"
+
+No number for "Areasoflocomotionforthedifferentparameters<SPANCLASS="MATH">$bigtriangleupPhi_{V}$</SPAN>,<SPANCLASS="MATH"></SPAN>when<SPANCLASS="MATH"></SPAN>isset."
+
+No number for "Anexampleof1DSinusoidalgait.Therobotcangothroughatube."
+
+No number for "Anexampleoftheturninggait.Therobotisgoingthroughacurvedtube"
+
+No number for "Experimentsonlateralshiftgaits.Therobotmovesparalleltoitsbodyaxis."
+
+No number for "Rotatinggait.Therobotcanchangeitsbodyorientationintheplane."
+
+No number for "Experimentsoftherollinggait"
+
+No number for "ThefivedifferentgaitstherobotcanperformandtheCPGsparametersrealization"

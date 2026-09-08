@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>6 Experiments</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20061009;18191100">
+	<META NAME="CHANGEDBY" CONTENT="juan">
+	<META NAME="CHANGED" CONTENT="20061009;18550000">
+	<META NAME="DESCRIPTION" CONTENT="6 Experiments">
+	<META NAME="KEYWORDS" CONTENT="clawar-paper">
+	<META NAME="resource-type" CONTENT="document">
+	<META NAME="distribution" CONTENT="global">
+	<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!--Navigation Panel-->
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<P><A NAME="tex2html1821"></A><A NAME="tex2html1761"></A><A NAME="tex2html184"></A><A NAME="tex2html182"></A><A NAME="tex2html176"></A>
+<A HREF="node15.html" NAME="tex2html184"><IMG SRC="next.png" NAME="gr&aacute;ficos1" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="clawar-paper.html" NAME="tex2html182"><IMG SRC="up.png" NAME="gr&aacute;ficos2" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node13.html" NAME="tex2html176"><IMG SRC="prev.png" NAME="gr&aacute;ficos3" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<FONT FACE="Arial, sans-serif"><BR><B>Next:</B> </FONT><A HREF="node15.html" NAME="tex2html185"><FONT FACE="Arial, sans-serif">7
+Conclusion and future</FONT></A> <FONT FACE="Arial, sans-serif"><B>Up:</B>
+</FONT><A HREF="clawar-paper.html" NAME="tex2html183"><FONT FACE="Arial, sans-serif">Locomotion
+Capabilities of a</FONT></A> <FONT FACE="Arial, sans-serif"><B>Previous:</B>
+</FONT><A HREF="node13.html" NAME="tex2html177"><FONT FACE="Arial, sans-serif">6
+Locomotion areas</FONT></A> 
+</P>
+<H1><A NAME="SECTION00060000000000000000"></A><!--End of Navigation Panel--><FONT FACE="Arial, sans-serif">6
+Experiments </FONT>
+</H1>
+<P><FONT FACE="Arial, sans-serif">All the locomotion capabilities
+have been successfully implemented and tested on a real robot. Using
+the 1D sinusoidal gait, the robot is capable of going through a
+narrow pipe (Fig. <FONT COLOR="#000080">
+<A HREF="#fig:exp_1D_sinusoidal"><FONT COLOR="#000080"><IMG SRC="crossref.png" NAME="gr&aacute;ficos4" ALT="[*]" ALIGN=BOTTOM WIDTH=13 HEIGHT=13 BORDER=1></FONT></A></FONT>).
+Also, it can traverse a curved tube by means of the turning gait
+(Fig. <FONT COLOR="#000080">
+<A HREF="#fig:exp_turning_gait"><FONT COLOR="#000080"><IMG SRC="crossref.png" NAME="gr&aacute;ficos5" ALT="[*]" ALIGN=BOTTOM WIDTH=13 HEIGHT=13 BORDER=1></FONT></A></FONT>).
+</FONT>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=256*>
+	<TR>
+		<TD WIDTH=100% VALIGN=TOP>
+			<P ALIGN=CENTER><A NAME="fig:exp_1D_sinusoidal"></A><IMG SRC="sinusoidal-exp.jpg" NAME="gr&aacute;ficos12" ALIGN=MIDDLE WIDTH=658 HEIGHT=321 BORDER=0></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=100% VALIGN=TOP>
+			<P ALIGN=CENTER><STRONG><FONT FACE="Arial, sans-serif">Figure:</FONT></STRONG>
+			<FONT FACE="Arial, sans-serif">An example of 1D Sinusoidal gait.
+			The robot can go through a tube.</FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=256*>
+	<TR>
+		<TD WIDTH=100% VALIGN=TOP>
+			<P ALIGN=CENTER><A NAME="fig:exp_turning_gait"></A><IMG SRC="turnig-exp.jpg" NAME="gr&aacute;ficos13" ALIGN=MIDDLE WIDTH=872 HEIGHT=153 BORDER=0></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=100% VALIGN=TOP>
+			<P ALIGN=CENTER><STRONG><FONT FACE="Arial, sans-serif">Figure:</FONT></STRONG>
+			<FONT FACE="Arial, sans-serif">An example of the turning gait. The
+			robot is going through a curved tube</FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif">The robot can move parallel to its
+body axis using the lateral shift gait (Fig. <FONT COLOR="#000080">
+<A HREF="#fig:exp_lateral_shift"><FONT COLOR="#000080"><IMG SRC="crossref.png" NAME="gr&aacute;ficos6" ALT="[*]" ALIGN=BOTTOM WIDTH=13 HEIGHT=13 BORDER=1></FONT></A></FONT>)
+and also can rotate to change its orientation in the plane (Fig. <FONT COLOR="#000080">
+<A HREF="#fig:exp-rotating-gait"><FONT COLOR="#000080"><IMG SRC="crossref.png" NAME="gr&aacute;ficos7" ALT="[*]" ALIGN=BOTTOM WIDTH=13 HEIGHT=13 BORDER=1></FONT></A></FONT>).
+Both gaits have a little error. When performing lateral shift, the
+body of the robot also experiment a small rotation. It is not moving
+perfectly parallel to its body axis. Also, when performing rotation,
+it has a small displacement. Both effects can be corrected by mixing
+these two gaits. If the robot has to move a long distance parallel to
+its body axis, after some time, a rotating gait can be perform to
+correct the error on the body orientation. </FONT>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=256*>
+	<TR>
+		<TD WIDTH=100% VALIGN=TOP>
+			<P ALIGN=CENTER><A NAME="fig:exp_lateral_shift"></A><IMG SRC="lateral-shift-exp.jpg" NAME="gr&aacute;ficos14" ALIGN=MIDDLE WIDTH=299 HEIGHT=516 BORDER=0></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=100% VALIGN=TOP>
+			<P ALIGN=CENTER><STRONG><FONT FACE="Arial, sans-serif">Figure:</FONT></STRONG>
+			<FONT FACE="Arial, sans-serif">Experiments on lateral shift gaits.
+			The robot moves parallel to its body axis.</FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=256*>
+	<TR>
+		<TD WIDTH=100% VALIGN=TOP>
+			<P ALIGN=CENTER><A NAME="fig:exp-rotating-gait"></A><IMG SRC="rotating-exp.jpg" NAME="gr&aacute;ficos15" ALIGN=MIDDLE WIDTH=228 HEIGHT=522 BORDER=0></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=100% VALIGN=TOP>
+			<P ALIGN=CENTER><STRONG><FONT FACE="Arial, sans-serif">Figure:</FONT></STRONG>
+			<FONT FACE="Arial, sans-serif">Rotating gait. The robot can change
+			its body orientation in the plane.</FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif">Finally, the experiments on the
+rolling gaits are shown in Fig.<FONT COLOR="#000080"><A HREF="#fig:exp_rolling_gait"><FONT COLOR="#000080"><IMG SRC="crossref.png" NAME="gr&aacute;ficos8" ALT="[*]" ALIGN=BOTTOM WIDTH=13 HEIGHT=13 BORDER=1></FONT></A></FONT>.
+The robot moves very smoothly. If an amplitude of 90 is used (Av=90,
+Ah=90 ) the robot has the shape of a square and no global
+displacement is achieve. The four sides roll inside or outside the
+square at the same time. </FONT>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=256*>
+	<TR>
+		<TD WIDTH=100% VALIGN=TOP>
+			<P ALIGN=CENTER><A NAME="fig:exp_rolling_gait"></A><IMG SRC="rolling-exp.jpg" NAME="gr&aacute;ficos16" ALIGN=MIDDLE WIDTH=529 HEIGHT=220 BORDER=0></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=100% VALIGN=TOP>
+			<P ALIGN=CENTER><STRONG><FONT FACE="Arial, sans-serif">Figure:</FONT></STRONG>
+			<FONT FACE="Arial, sans-serif">Experiments of the rolling gait</FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<P STYLE="margin-bottom: 0cm"><!--Navigation Panel--><A HREF="node15.html" NAME="tex2html184"><IMG SRC="next.png" NAME="gr&aacute;ficos9" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="clawar-paper.html" NAME="tex2html182"><IMG SRC="up.png" NAME="gr&aacute;ficos10" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node13.html" NAME="tex2html176"><IMG SRC="prev.png" NAME="gr&aacute;ficos11" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<FONT FACE="Arial, sans-serif"><BR><B>Next:</B> </FONT><A HREF="node15.html" NAME="tex2html185"><FONT FACE="Arial, sans-serif">7
+Conclusion and future</FONT></A> <FONT FACE="Arial, sans-serif"><B>Up:</B>
+</FONT><A HREF="clawar-paper.html" NAME="tex2html183"><FONT FACE="Arial, sans-serif">Locomotion
+Capabilities of a</FONT></A> <FONT FACE="Arial, sans-serif"><B>Previous:</B>
+</FONT><A HREF="node13.html" NAME="tex2html177"><FONT FACE="Arial, sans-serif">6
+Locomotion areas</FONT></A></P>
+<ADDRESS><!--End of Navigation Panel--><FONT FACE="Arial, sans-serif">juan
+2006-10-09 </FONT>
+</ADDRESS>
+</BODY>
+</HTML>

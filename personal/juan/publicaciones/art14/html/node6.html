@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>4 Control approach</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20061009;16574200">
+	<META NAME="CHANGEDBY" CONTENT="juan">
+	<META NAME="CHANGED" CONTENT="20061009;17505100">
+	<META NAME="DESCRIPTION" CONTENT="4 Control approach">
+	<META NAME="KEYWORDS" CONTENT="clawar-paper">
+	<META NAME="resource-type" CONTENT="document">
+	<META NAME="distribution" CONTENT="global">
+	<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!--Navigation Panel-->
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<P><A NAME="tex2html981"></A><A NAME="tex2html921"></A><A NAME="tex2html100"></A><A NAME="tex2html98"></A><A NAME="tex2html92"></A>
+<A HREF="node7.html" NAME="tex2html100"><IMG SRC="next.png" NAME="gr&aacute;ficos1" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="clawar-paper.html" NAME="tex2html98"><IMG SRC="up.png" NAME="gr&aacute;ficos2" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node5.html" NAME="tex2html92"><IMG SRC="prev.png" NAME="gr&aacute;ficos3" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<FONT FACE="Arial, sans-serif"><BR><B>Next:</B> </FONT><A HREF="node7.html" NAME="tex2html101"><FONT FACE="Arial, sans-serif">5
+Locomotion capabilities</FONT></A> <FONT FACE="Arial, sans-serif"><B>Up:</B>
+</FONT><A HREF="clawar-paper.html" NAME="tex2html99"><FONT FACE="Arial, sans-serif">Locomotion
+Capabilities of a</FONT></A> <FONT FACE="Arial, sans-serif"><B>Previous:</B>
+</FONT><A HREF="node5.html" NAME="tex2html93"><FONT FACE="Arial, sans-serif">2
+Control hardware</FONT></A> 
+</P>
+<H1><A NAME="SECTION00040000000000000000"></A><A NAME="sec:Control_approach"></A>
+<!--End of Navigation Panel--><FONT FACE="Arial, sans-serif"><BR>4
+Control approach </FONT>
+</H1>
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=256*>
+	<TR>
+		<TD WIDTH=100% VALIGN=TOP>
+			<P ALIGN=CENTER><A NAME="fig:cpg_approach"></A><IMG SRC="cpgs2.jpg" NAME="gr&aacute;ficos8" ALIGN=MIDDLE WIDTH=406 HEIGHT=191 BORDER=0></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=100% VALIGN=TOP>
+			<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><STRONG><FONT FACE="Arial, sans-serif">Figure:</FONT></STRONG>
+			<FONT FACE="Arial, sans-serif">A graphical representation of the
+			control approach. Eight sinusoidal CPGs are used to control the
+			rotation angle of each module. They are divided into two groups:
+			horizontal() and vertical()</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif">The control of the robot is based
+on CPGs to produce rhythmic motion. One CPG per module is used to
+control the variation of the rotation angle. </FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif">In our previous work with minimal
+configuration[</FONT><A HREF="node16.html#Gonzalez2005"><FONT FACE="Arial, sans-serif">16</FONT></A><FONT FACE="Arial, sans-serif">],
+sinusoidal signals were used for controlling each joint. This
+simplified CPG produce very smooth movements and has the advantage of
+making the controller much simpler. Our model of CPG is described by
+the following equation: </FONT>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=216*>
+	<COL WIDTH=40*>
+	<TR>
+		<TD WIDTH=84% VALIGN=TOP>
+			<P><IMG SRC="equation1.jpg" NAME="gr&aacute;ficos9" ALIGN=LEFT WIDTH=425 HEIGHT=79 BORDER=0><BR>
+			</P>
+		</TD>
+		<TD WIDTH=16%>
+			<P ALIGN=RIGHT>(1)</P>
+		</TD>
+	</TR>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif">Where pi is the position angle of
+the articulation i. For each CPG there are four parameters: the
+amplitude (Ai) , the period (Ti), the phase (Fi) and the offset (Oi)
+. As there are eight CPGs, the total number of parameters is 32. In
+order simplify the study of the locomotion principles, a number of
+assumptions are applied: </FONT>
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif">All
+	the modules move with the same period: Ti=T</FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif">The
+	modules are divided in two groups: vertical and horizontal modules.
+	There are four joints per group (Vi, Hj with i,j in {1,2,3,4}<!-- MATH
+ $i,j\in\left\{ 1,2,3,4\right\}$
+ -->
+	). </FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif">All
+	the vertical and horizontal modules have the same amplitude Av,Ah ,
+	respectively. </FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif">All
+	the vertical and horizontal modules have the same offset Ov, Oh
+	respectively </FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif">All
+	the vertical and horizontal modules have the same phase difference
+	between two adjacent modules Fv,Fh respectively </FONT>
+	</P>
+	<LI><P><FONT FACE="Arial, sans-serif">Between the vertical and
+	horizontal modules the phase difference is Fhv<!-- MATH
+ $\bigtriangleup\Phi_{HV}$
+ -->
+	</FONT>
+	</P>
+</UL>
+<P><FONT FACE="Arial, sans-serif">All these assumptions mean that
+there are two groups of CPGs, one for controlling the pitching
+modules and the other for the yawing modules, as shown in Fig. <FONT COLOR="#000080">
+<A HREF="#fig:cpg_approach"><FONT COLOR="#000080"><IMG SRC="crossref.png" NAME="gr&aacute;ficos4" ALT="[*]" ALIGN=BOTTOM WIDTH=13 HEIGHT=13 BORDER=1></FONT></A></FONT>.
+Therefore, there are only 8 essential parameters for specifying the
+gaits: Av, Ah, Fv, Fh, Fhv, Ov, Oh, and T. The equations for these
+two groups are now: </FONT>
+</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=216*>
+	<COL WIDTH=40*>
+	<TR>
+		<TD WIDTH=84% VALIGN=TOP>
+			<P><IMG SRC="equation2.jpg" NAME="gr&aacute;ficos10" ALIGN=LEFT WIDTH=420 HEIGHT=66 BORDER=0><BR>
+			</P>
+		</TD>
+		<TD WIDTH=16%>
+			<P ALIGN=RIGHT>(2)</P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=216*>
+	<COL WIDTH=40*>
+	<TR>
+		<TD WIDTH=84% VALIGN=TOP>
+			<P><IMG SRC="equation3.jpg" NAME="gr&aacute;ficos11" ALIGN=LEFT WIDTH=475 HEIGHT=66 BORDER=0><BR>
+			</P>
+		</TD>
+		<TD WIDTH=16%>
+			<P ALIGN=RIGHT>(3)</P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<P STYLE="margin-bottom: 0cm"><!--Navigation Panel--><A HREF="node7.html" NAME="tex2html100"><IMG SRC="next.png" NAME="gr&aacute;ficos5" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="clawar-paper.html" NAME="tex2html98"><IMG SRC="up.png" NAME="gr&aacute;ficos6" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node5.html" NAME="tex2html92"><IMG SRC="prev.png" NAME="gr&aacute;ficos7" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node7.html" NAME="tex2html101">5 Locomotion
+capabilities</A> <B>Up:</B> <A HREF="clawar-paper.html" NAME="tex2html99">Locomotion
+Capabilities of a</A> <B>Previous:</B> <A HREF="node5.html" NAME="tex2html93">2
+Control hardware</A></P>
+<ADDRESS><!--End of Navigation Panel-->juan 2006-10-09 
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,22 @@
+Locomotion Capabilities of a Modular Robot with Eight Pitch-Yaw-Connecting Modules
+
+Juan Gonzalez-Gomez, Eduardo Boemo
+{Juan.gonzalez,Eduardo.Boemo}@uam.es
+Computer Engineering School,
+Universidad Autonoma de Madrid, Spain
+
+
+Houxiang Zhang, Jianwei Zhang
+{hzhang,zhang}@informatik.uni-hamburg.de
+TAMS, Department of Informatics, University of Hamburg, Germany
+
+Abstract:
+
+In this paper, a general classification of the modular robots is proposed, based on their
+topology and the type of connection between the modules. The locomotion capabilities of the
+sub-group of pitch-yaw connecting robots are analyzed. Five different gaits have been
+implemented and tested on a real robot composed of eight modules. One of them, rotating,
+has not been previously achieved. All gaits are implemented using a simple and elegant
+central pattern generator (CPG) approach that simplify the algorithms of the controlling
+system.
+

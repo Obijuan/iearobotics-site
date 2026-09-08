@@ -1,0 +1,475 @@
+This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=latex 2006.10.5)  9 OCT 2006 15:48
+entering extended mode
+**./images.tex
+(./images.tex
+LaTeX2e <2003/12/01>
+Babel <v3.8d> and hyphenation patterns for american, french, german, ngerman, b
+ahasa, basque, bulgarian, catalan, croatian, czech, danish, dutch, esperanto, e
+stonian, finnish, greek, icelandic, irish, italian, latin, magyar, norsk, polis
+h, portuges, romanian, russian, serbian, slovak, slovene, spanish, swedish, tur
+kish, ukrainian, nohyphenation, loaded.
+
+(/home/juan/desarrollo/ponencias/Clawar-2006/paper/clawar.cls
+Document Style `clawar' <June-2006>.
+Upgraded to `clawar.cls' <June-2006> !PN
+Rev. <06-June-2006> !PN
+(/usr/share/texmf-tetex/tex/latex/tools/rawfonts.sty
+Package: rawfonts 1994/05/08 Low-level LaTeX 2.09 font compatibility
+(/usr/share/texmf-tetex/tex/latex/tools/somedefs.sty
+Package: somedefs 1994/06/01 v0.03 Toolkit for optional definitions
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 44.
+(/usr/share/texmf-tetex/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)) (/usr/share/texmf-tetex/tex/latex/base/oldlfont.sty
+Package: oldlfont 1994/11/29 v2.2k Standard LaTeX package
+(/usr/share/texmf-tetex/tex/latex/base/tracefnt.sty
+Package: tracefnt 1997/05/29 v3.0j Standard LaTeX package (font tracing)
+\tracingfonts=\count79
+LaTeX Info: Redefining \selectfont on input line 101.
+)
+\symbold=\mathgroup4
+\symsans=\mathgroup5
+\symtypewriter=\mathgroup6
+\symitalic=\mathgroup7
+\symsmallcaps=\mathgroup8
+\symslanted=\mathgroup9
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 71.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 72.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 73.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 79.
+LaTeX Info: Redefining \em on input line 89.
+(/usr/share/texmf-tetex/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup10
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+))
+-- This is a 10 point document
+\tmpitemindent=\dimen102
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\captionindent=\skip41
+\c@figure=\count84
+\c@table=\count85
+) (/usr/share/texmf-tetex/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+) (/usr/share/texmf-tetex/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/share/texmf-tetex/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+) (/usr/share/texmf-tetex/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+(/usr/share/texmf-tetex/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+) (/usr/share/texmf-tetex/tex/latex/graphics/graphics.cfg
+File: graphics.cfg 2005/02/03 v1.3 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 80.
+(/usr/share/texmf-tetex/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+) (/usr/share/texmf-tetex/tex/latex/graphics/color.sty
+Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
+(/usr/share/texmf-tetex/tex/latex/graphics/color.cfg
+File: color.cfg 2005/02/03 v1.3 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: dvips.def on input line 125.
+(/usr/share/texmf-tetex/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+)) (/usr/share/texmf-tetex/tex/latex/base/inputenc.sty
+Package: inputenc 2004/02/05 v1.0d Input encoding file
+)
+\sizebox=\box26
+\lthtmlwrite=\write3
+No file images.aux.
+\openout1 = `images.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+
+latex2htmlLength hsize=168.66718pt
+
+latex2htmlLength vsize=741.81317pt
+
+latex2htmlLength hoffset=0.0pt
+
+latex2htmlLength voffset=0.0pt
+
+latex2htmlLength topmargin=0.0pt
+
+latex2htmlLength topskip=0.00003pt
+
+latex2htmlLength headheight=0.0pt
+
+latex2htmlLength headsep=0.0pt
+
+latex2htmlLength parskip=0.0pt plus 1.0pt
+
+latex2htmlLength oddsidemargin=-17.07164pt
+
+latex2htmlLength evensidemargin=-17.07164pt
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 146.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 146.
+l2hSize :tex2html_wrap_inline401:8.14003pt::0.0pt::4.98616pt.
+[1
+
+
+
+]
+l2hSize :tex2html_wrap_inline403:8.14003pt::0.0pt::4.98616pt.
+[2
+
+
+]
+File: eps/classification.eps Graphic file (type eps)
+<eps/classification.eps>
+l2hSize :tex2html_wrap903:241.82654pt::0.0pt::349.0pt.
+[3
+
+
+]
+File: eps/chain-robots.eps Graphic file (type eps)
+<eps/chain-robots.eps>
+l2hSize :tex2html_wrap907:155.98206pt::0.0pt::349.0pt.
+[4
+
+
+]
+File: eps/snake-robots.eps Graphic file (type eps)
+<eps/snake-robots.eps>
+l2hSize :tex2html_wrap911:155.98206pt::0.0pt::349.0pt.
+[5
+
+
+]
+File: eps/moduloy1-fig.eps Graphic file (type eps)
+<eps/moduloy1-fig.eps>
+l2hSize :tex2html_wrap917:79.79811pt::0.0pt::349.0pt.
+[6
+
+
+]
+File: eps/hypercube1.eps Graphic file (type eps)
+<eps/hypercube1.eps>
+l2hSize :tex2html_wrap921:79.89728pt::0.0pt::349.0pt.
+[7
+
+
+]
+File: eps/hypercube-pitch-yaw.eps Graphic file (type eps)
+<eps/hypercube-pitch-yaw.eps>
+l2hSize :tex2html_wrap925:82.50908pt::0.0pt::349.0pt.
+[8
+
+
+]
+File: eps/hypercube-skypic.eps Graphic file (type eps)
+<eps/hypercube-skypic.eps>
+l2hSize :tex2html_wrap930:79.49644pt::0.0pt::349.0pt.
+[9
+
+
+]
+File: eps/cpgs2.eps Graphic file (type eps)
+<eps/cpgs2.eps>
+l2hSize :tex2html_wrap935:103.58804pt::0.0pt::349.0pt.
+[10
+
+
+]
+l2hSize :tex2html_wrap_inline413:7.33331pt::7.33331pt::12.14182pt.
+[11
+
+
+]
+l2hSize :tex2html_wrap_inline415:7.33331pt::7.33331pt::9.66264pt.
+[12
+
+
+]
+l2hSize :displaymath127:25.00023pt::0.0pt::349.0pt.
+[13
+
+
+]
+l2hSize :tex2html_wrap_inline417:6.95831pt::6.95831pt::8.86057pt.
+[14
+
+
+]
+l2hSize :tex2html_wrap_inline419:7.33331pt::7.33331pt::11.32933pt.
+[15
+
+
+]
+l2hSize :tex2html_wrap_inline421:7.33331pt::7.33331pt::9.67307pt.
+[16
+
+
+]
+l2hSize :tex2html_wrap_inline423:7.33331pt::7.33331pt::11.05154pt.
+[17
+
+
+]
+l2hSize :tex2html_wrap_inline425:7.33331pt::7.33331pt::11.45708pt.
+[18
+
+
+]
+l2hSize :tex2html_wrap_inline427:7.33331pt::7.33331pt::30.23894pt.
+[19
+
+
+]
+l2hSize :tex2html_wrap_inline429:7.33331pt::7.33331pt::26.63312pt.
+[20
+
+
+]
+l2hSize :tex2html_wrap_inline431:8.0pt::8.0pt::68.6355pt.
+[21
+
+
+]
+l2hSize :tex2html_wrap_inline433:7.33331pt::7.33331pt::14.94452pt.
+[22
+
+
+]
+l2hSize :tex2html_wrap_inline435:7.33331pt::7.33331pt::15.58478pt.
+[23
+
+
+]
+l2hSize :tex2html_wrap_inline437:7.33331pt::7.33331pt::15.07227pt.
+[24
+
+
+]
+l2hSize :tex2html_wrap_inline439:7.33331pt::7.33331pt::15.71252pt.
+[25
+
+
+]
+l2hSize :tex2html_wrap_inline441:7.44444pt::7.44444pt::23.55563pt.
+[26
+
+
+]
+l2hSize :tex2html_wrap_inline445:7.44444pt::7.44444pt::30.64037pt.
+[27
+
+
+]
+l2hSize :tex2html_wrap_inline453:7.44444pt::7.44444pt::24.19589pt.
+[28
+
+
+]
+l2hSize :tex2html_wrap_inline461:6.83331pt::0.0pt::7.73268pt.
+[29
+
+
+]
+l2hSize :tex2html_wrap_indisplay968:7.33331pt::7.33331pt::9.66264pt.
+[30
+
+
+]
+l2hSize :tex2html_wrap_indisplay969:6.95831pt::6.95831pt::8.27783pt.
+[31
+
+
+]
+l2hSize :tex2html_wrap_indisplay970:15.0001pt::15.0001pt::153.75066pt.
+[32
+
+
+]
+l2hSize :displaymath170:25.00023pt::0.0pt::349.0pt.
+[33
+
+
+]
+l2hSize :tex2html_wrap_inline469:7.44444pt::7.44444pt::33.27776pt.
+[34
+
+
+]
+l2hSize :tex2html_wrap_inline471:7.33331pt::7.33331pt::33.4055pt.
+[35
+
+
+]
+l2hSize :tex2html_wrap_inline473:7.33331pt::7.33331pt::36.6958pt.
+[36
+
+
+]
+l2hSize :tex2html_wrap_inline475:7.33331pt::7.33331pt::34.04576pt.
+[37
+
+
+]
+l2hSize :tex2html_wrap_inline477:7.44444pt::7.44444pt::51.8889pt.
+[38
+
+
+]
+l2hSize :tex2html_wrap_inline479:7.33331pt::7.33331pt::10.81949pt.
+[39
+
+
+]
+l2hSize :tex2html_wrap_inline481:7.33331pt::7.33331pt::10.81949pt.
+[40
+
+
+]
+l2hSize :tex2html_wrap_inline483:7.33331pt::7.33331pt::10.81949pt.
+[41
+
+
+]
+l2hSize :tex2html_wrap_inline485:7.33331pt::7.33331pt::10.81949pt.
+[42
+
+
+]
+l2hSize :tex2html_wrap_inline487:7.44444pt::7.44444pt::34.04576pt.
+[43
+
+
+]
+File: eps/turning.eps Graphic file (type eps)
+<eps/turning.eps>
+l2hSize :tex2html_wrap996:293.69595pt::0.0pt::349.0pt.
+[44
+
+
+]
+l2hSize :tex2html_wrap_inline491:7.33331pt::7.33331pt::38.27777pt.
+[45
+
+
+]
+l2hSize :tex2html_wrap_inline493:7.33331pt::7.33331pt::38.91803pt.
+[46
+
+
+]
+File: eps/rolling.eps Graphic file (type eps)
+<eps/rolling.eps>
+l2hSize :tex2html_wrap1003:232.56784pt::0.0pt::349.0pt.
+[47
+
+
+]
+File: eps/rotating.eps Graphic file (type eps)
+<eps/rotating.eps>
+l2hSize :tex2html_wrap1008:340.069pt::0.0pt::349.0pt.
+[48
+
+
+]
+File: eps/lateral-shift.eps Graphic file (type eps)
+<eps/lateral-shift.eps>
+l2hSize :tex2html_wrap1013:262.7806pt::0.0pt::349.0pt.
+[49
+
+
+]
+File: eps/locomotion-regions.eps Graphic file (type eps)
+<eps/locomotion-regions.eps>
+l2hSize :tex2html_wrap1022:215.12645pt::0.0pt::349.0pt.
+[50
+
+
+]
+l2hSize :tex2html_wrap_inline507:7.44444pt::7.44444pt::48.9736pt.
+[51
+
+
+]
+File: eps/sinusoidal-exp.eps Graphic file (type eps)
+<eps/sinusoidal-exp.eps>
+l2hSize :tex2html_wrap1033:99.07184pt::0.0pt::349.0pt.
+[52
+
+
+]
+File: eps/turnig-exp.eps Graphic file (type eps)
+<eps/turnig-exp.eps>
+l2hSize :tex2html_wrap1037:41.55566pt::0.0pt::349.0pt.
+[53
+
+
+]
+File: eps/lateral-shift-exp.eps Graphic file (type eps)
+<eps/lateral-shift-exp.eps>
+l2hSize :tex2html_wrap1041:326.7192pt::0.0pt::349.0pt.
+[54
+
+
+]
+File: eps/rotating-exp.eps Graphic file (type eps)
+<eps/rotating-exp.eps>
+l2hSize :tex2html_wrap1045:330.2323pt::0.0pt::349.0pt.
+[55
+
+
+]
+l2hSize :tex2html_wrap_inline509:7.33331pt::7.33331pt::38.27777pt.
+[56
+
+
+]
+l2hSize :tex2html_wrap_inline511:7.33331pt::7.33331pt::38.91803pt.
+[57
+
+
+]
+File: eps/rolling-exp.eps Graphic file (type eps)
+<eps/rolling-exp.eps>
+l2hSize :tex2html_wrap1051:89.8852pt::0.0pt::349.0pt.
+[58
+
+
+]
+File: eps/gaits_vertical.eps Graphic file (type eps)
+<eps/gaits_vertical.eps>
+l2hSize :tex2html_wrap1063:445.665pt::0.0pt::349.0pt.
+[59
+
+
+] (./images.aux) ) 
+Here is how much of TeX's memory you used:
+ 1067 strings out of 94501
+ 13881 string characters out of 1175794
+ 55409 words of memory out of 1000000
+ 4215 multiletter control sequences out of 10000+50000
+ 22498 words of font info for 84 fonts, out of 500000 for 2000
+ 580 hyphenation exceptions out of 8191
+ 30i,5n,24p,272b,214s stack positions out of 1500i,500n,5000p,200000b,5000s
+
+Output written on images.dvi (59 pages, 13868 bytes).
