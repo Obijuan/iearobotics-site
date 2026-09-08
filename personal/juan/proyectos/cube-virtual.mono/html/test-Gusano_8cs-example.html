@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>cube-virtual.mono: test-Gusano.cs</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.4.2 -->
+<div class="qindex"><a class="qindex" href="main.html">Página&nbsp;principal</a> | <a class="qindex" href="hierarchy.html">Jerarquía&nbsp;de&nbsp;la&nbsp;clase</a> | <a class="qindex" href="annotated.html">Lista&nbsp;de&nbsp;componentes</a> | <a class="qindex" href="functions.html">Miembros&nbsp;de&nbsp;las&nbsp;clases</a> | <a class="qindex" href="examples.html">Ejemplos</a></div>
+<h1>test-Gusano.cs</h1>Programa para hacer pruebas de la clase <a class="el" href="classGusano.html">Gusano</a><p>
+<div class="fragment"><pre class="fragment"><span class="comment">//********************************************************************</span>
+<span class="comment">//* test-Gusano       (c) Juan Gonzalez.  Marzo 2005                 *</span>
+<span class="comment">//*------------------------------------------------------------------*</span>
+<span class="comment">//*  Pruebas de la clase Gusano                                      *</span>
+<span class="comment">//*------------------------------------------------------------------*</span>
+<span class="comment">//* Licencia GPL                                                     *</span>
+<span class="comment">//********************************************************************</span>
+<span class="comment">/*-------------------------------------------------------------------------</span>
+<span class="comment"> $Id: test-Gusano.cs,v 1.1 2005/03/20 23:25:45 juan Exp $</span>
+<span class="comment"> $Revision: 1.1 $</span>
+<span class="comment"> $Source: /var/lib/cvs/cube-virtual.mono/test-Gusano.cs,v $</span>
+<span class="comment">---------------------------------------------------------------------------*/</span>
+
+<span class="keyword">using</span> System;
+
+<span class="keyword">class </span>Test_Gusano
+{
+  <span class="keyword">static</span> <span class="keywordtype">void</span> Main()
+  {
+    <span class="comment">//--------------------------------------</span>
+    <span class="comment">//-- Pruebas de construccion </span>
+    <span class="comment">//--------------------------------------</span>
+    Console.WriteLine(<span class="stringliteral">"Pruebas de la clase Gusano"</span>);
+    
+    <span class="comment">//-- Crear un gusano de 8 articulationes</span>
+    <a name="_a24"></a><a class="code" href="classGusano.html">Gusano</a> g1 = <span class="keyword">new</span> <a class="code" href="classGusano.html">Gusano</a>(8);
+    
+    <span class="comment">//-- Crear gusano de 2 articulaciones</span>
+    <a class="code" href="classGusano.html">Gusano</a> g2 = <span class="keyword">new</span> <a class="code" href="classGusano.html">Gusano</a>(2);
+    
+    <span class="comment">//-- Crear un gusano copia de otro</span>
+    <a class="code" href="classGusano.html">Gusano</a> g3 = <span class="keyword">new</span> <a class="code" href="classGusano.html">Gusano</a>(g1);
+    
+    Console.WriteLine(<span class="stringliteral">"Gusano 1: {0}. {1} articulaciones"</span>,g1,g1.<a name="a25"></a><a class="code" href="classGusano.html#00">Nmod</a>);
+    Console.WriteLine(<span class="stringliteral">"Gusano 2: {0}. {1} articulaciones"</span>,g2,g2.<a class="code" href="classGusano.html#00">Nmod</a>);
+    Console.WriteLine(<span class="stringliteral">"Gusano 3: {0}. {1} articulaciones"</span>,g3,g3.<a class="code" href="classGusano.html#00">Nmod</a>);
+    
+    <span class="comment">//--------------------------------------</span>
+    <span class="comment">//-- Rotar articulaciones</span>
+    <span class="comment">//--------------------------------------</span>
+    Console.WriteLine(<span class="stringliteral">"\nRotacion:"</span>);
+    g1.<a name="a26"></a><a class="code" href="classGusano.html#a5">Set_Art</a>(1,<span class="keyword">new</span> <a name="_a27"></a><a class="code" href="classAngulo.html">Angulo</a>(15),<a class="code" href="classGusano.html">Gusano</a>.Sentido.DERECHA);
+    g1.<a class="code" href="classGusano.html#a5">Set_Art</a>(2,<span class="keyword">new</span> <a class="code" href="classAngulo.html">Angulo</a>(-15),<a class="code" href="classGusano.html">Gusano</a>.Sentido.DERECHA);
+    Console.WriteLine(<span class="stringliteral">"Gusano 1: {0}"</span>,g1);
+    
+    <span class="comment">//------------------------------------</span>
+    <span class="comment">//-- Pruebas de ajuste</span>
+    <span class="comment">//------------------------------------</span>
+    <span class="comment">//-- Crear las funciones de ajuste</span>
+    <a name="_a28"></a><a class="code" href="classFuncion.html">Funcion</a> f1 = <span class="keyword">new</span> <a name="_a29"></a><a class="code" href="classFuncionSin.html">FuncionSin</a>(15,100,0,5);
+    <a class="code" href="classFuncion.html">Funcion</a>  f2 = <span class="keyword">new</span> <a class="code" href="classFuncionSin.html">FuncionSin</a>(2,20,0,5);
+    <a class="code" href="classFuncion.html">Funcion</a>  f3 = <span class="keyword">new</span> <a name="_a30"></a><a class="code" href="classFuncionSemiSin.html">FuncionSemiSin</a>(10,20,200,5);
+    
+    <span class="comment">//-- Ajustar</span>
+    g1.<a name="a31"></a><a class="code" href="classGusano.html#a6">Ajustar</a>(f1,0);
+    g2.<a class="code" href="classGusano.html#a6">Ajustar</a>(f2,0);
+    g3.<a class="code" href="classGusano.html#a6">Ajustar</a>(f3,0);
+    
+    Console.WriteLine(<span class="stringliteral">"\nAjuste:"</span>);
+    Console.WriteLine(<span class="stringliteral">"Gusano 1: {0}"</span>,g1);
+    Console.WriteLine(<span class="stringliteral">"Gusano 2: {0}"</span>,g2);
+    Console.WriteLine(<span class="stringliteral">"Gusano 3: {0}"</span>,g3);
+   
+  }
+}
+</pre></div> <hr size="1"><address style="align: right;"><small>Generado el Sat Dec 10 12:19:58 2005 para cube-virtual.mono por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.2 </small></address>
+</body>
+</html>

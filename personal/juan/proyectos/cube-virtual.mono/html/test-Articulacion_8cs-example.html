@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>cube-virtual.mono: test-Articulacion.cs</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.4.2 -->
+<div class="qindex"><a class="qindex" href="main.html">Página&nbsp;principal</a> | <a class="qindex" href="hierarchy.html">Jerarquía&nbsp;de&nbsp;la&nbsp;clase</a> | <a class="qindex" href="annotated.html">Lista&nbsp;de&nbsp;componentes</a> | <a class="qindex" href="functions.html">Miembros&nbsp;de&nbsp;las&nbsp;clases</a> | <a class="qindex" href="examples.html">Ejemplos</a></div>
+<h1>test-Articulacion.cs</h1>Programa para hacer pruebas de la clase <a class="el" href="classArticulacion.html">Articulacion</a><p>
+<div class="fragment"><pre class="fragment"><span class="comment">/****************************************************/</span>
+<span class="comment">/* test-Articulacion.cs  Juan Gonzalez. Marzo 2005  */</span>
+<span class="comment">/*--------------------------------------------------*/</span>
+<span class="comment">/* Pruebas de la clase articulacion                 */</span>
+<span class="comment">/***************************************************/</span>
+<span class="comment">/*-------------------------------------------------------------------------</span>
+<span class="comment"> $Id: test-Articulacion.cs,v 1.1 2005/03/20 11:50:35 juan Exp $</span>
+<span class="comment"> $Revision: 1.1 $</span>
+<span class="comment"> $Source: /var/lib/cvs/cube-virtual.mono/test-Articulacion.cs,v $</span>
+<span class="comment">---------------------------------------------------------------------------*/</span>
+
+<span class="keyword">using</span> System;
+<span class="keyword">class </span>Test_Articulacion 
+{
+  <span class="keyword">static</span> <span class="keywordtype">void</span> Main() {
+  
+    <span class="comment">//---------------------------------</span>
+    <span class="comment">//-- Pruebas de construccion</span>
+    <span class="comment">//---------------------------------</span>
+    <span class="comment">//-- Crear una articulacion inicializada a 0</span>
+    <a name="_a3"></a><a class="code" href="classArticulacion.html">Articulacion</a> a1 = <span class="keyword">new</span> <a class="code" href="classArticulacion.html">Articulacion</a>();
+    
+    <span class="comment">//-- Crear una articulacion a partir de otra</span>
+    <a class="code" href="classArticulacion.html">Articulacion</a> a2 = <span class="keyword">new</span> <a class="code" href="classArticulacion.html">Articulacion</a>(a1);
+    
+    <span class="comment">//-- Crear una articulacion a partir de un angulo y un vector</span>
+    <a class="code" href="classArticulacion.html">Articulacion</a> a3 = <span class="keyword">new</span> <a class="code" href="classArticulacion.html">Articulacion</a>(<span class="keyword">new</span> <a name="_a4"></a><a class="code" href="classAngulo.html">Angulo</a>(30), <span class="keyword">new</span> <a name="_a5"></a><a class="code" href="classVector.html">Vector</a>(3,3));
+    
+    Console.WriteLine(<span class="stringliteral">"Construccion: "</span>);
+    Console.WriteLine(<span class="stringliteral">"a1: {0}"</span>,a1);
+    Console.WriteLine(<span class="stringliteral">"a2: {0}"</span>,a2);
+    Console.WriteLine(<span class="stringliteral">"a3: {0}"</span>,a3);
+    
+    <span class="comment">//-------------------------------------</span>
+    <span class="comment">//-- Cambiar el angulo y el vector</span>
+    <span class="comment">//-------------------------------------</span>
+    a2.<a name="a6"></a><a class="code" href="classArticulacion.html#00">Angulo</a>.<a name="a7"></a><a class="code" href="classAngulo.html#01">Grad</a>=20;
+    a2.<a name="a8"></a><a class="code" href="classArticulacion.html#01">Vector</a>.<a name="a9"></a><a class="code" href="classVector.html#00">x</a>=2;
+    a2.<a class="code" href="classArticulacion.html#01">Vector</a>.<a name="a10"></a><a class="code" href="classVector.html#01">y</a>=2;
+    
+    a1.<a class="code" href="classArticulacion.html#00">Angulo</a>.<a class="code" href="classAngulo.html#01">Grad</a>=10;
+    a1.<a class="code" href="classArticulacion.html#01">Vector</a>.<a class="code" href="classVector.html#00">x</a>=1;
+    a1.<a class="code" href="classArticulacion.html#01">Vector</a>.<a class="code" href="classVector.html#01">y</a>=1;
+    
+    Console.WriteLine(<span class="stringliteral">"\nModificacion de las articulaciones: "</span>);
+    Console.WriteLine(<span class="stringliteral">"a1: {0}"</span>,a1);
+    Console.WriteLine(<span class="stringliteral">"a2: {0}"</span>,a2);
+    Console.WriteLine(<span class="stringliteral">"a3: {0}"</span>,a3);
+    
+  }
+}
+</pre></div> <hr size="1"><address style="align: right;"><small>Generado el Sat Dec 10 12:19:58 2005 para cube-virtual.mono por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.2 </small></address>
+</body>
+</html>

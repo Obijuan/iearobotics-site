@@ -1,0 +1,271 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>cube-virtual.mono: Referencia de la Clase GFuncion</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.4.2 -->
+<div class="qindex"><a class="qindex" href="main.html">Página&nbsp;principal</a> | <a class="qindex" href="hierarchy.html">Jerarquía&nbsp;de&nbsp;la&nbsp;clase</a> | <a class="qindex" href="annotated.html">Lista&nbsp;de&nbsp;componentes</a> | <a class="qindex" href="functions.html">Miembros&nbsp;de&nbsp;las&nbsp;clases</a> | <a class="qindex" href="examples.html">Ejemplos</a></div>
+<h1>Referencia de la Clase GFuncion</h1>Visualizacion de funciones y gestion de sus atributos graficos.  
+<a href="#_details">Más...</a>
+<p>
+<a href="classGFuncion-members.html">Lista de todos los miembros.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Métodos públicos</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGFuncion.html#a0">GFuncion</a> (Gtk.DrawingArea darea)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Crear una GFuncion nueva.  <a href="#a0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGFuncion.html#a1">GFuncion</a> (<a class="el" href="classGFuncion.html">GFuncion</a> gf)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Crear una GFuncion nueva, a partir de otra.  <a href="#a1"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGFuncion.html#a2">Render</a> (Gdk.Drawable drawable, double t)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Dibujar la grafica en un drawable.  <a href="#a2"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Propiedades</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classFuncion.html">Funcion</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGFuncion.html#00">Func</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Acceder a la funcion asociada (Get, Set).  <a href="#00"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classVector.html">Vector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGFuncion.html#01">Origen</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Origen para el dibujo de la grafica.  <a href="#01"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGFuncion.html#02">Visible</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Atributo de visibilidad de la funcion (Get,Set).  <a href="#02"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">Gdk.GC&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGFuncion.html#03">Color</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Color de la grafica (Get,Set).  <a href="#03"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Descripción detallada</h2>
+Visualizacion de funciones y gestion de sus atributos graficos. 
+<p>
+Esta clase permite con Funciones graficas. El metodo principal es <a class="el" href="classGFuncion.html#a2">Render()</a>, dibujar la grafica de la funcion sobre un drawable. Tambien se pueden establecer sus atributos graficos, como el origen en pantalla. <dl compact><dt><b>Ejemplos: </b></dt><dd>
+
+<p>
+<a class="el" href="test-GFuncion_8cs-example.html#_a18">test-GFuncion.cs</a>.</dl>
+<p>
+<hr><h2>Documentación del constructor y destructor</h2>
+<a class="anchor" name="a0" doxytag="GFuncion::GFuncion"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">GFuncion.GFuncion           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">Gtk.DrawingArea&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>darea</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Crear una GFuncion nueva. 
+<p>
+CONSTRUCTOR. Se crea una GFuncion nueva. Hay que especificar el Drawing area asociado. Por defecto, la funcion establacecida es la nula. <dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>darea</em>&nbsp;</td><td>Drawing area donde se dibujara la funcion </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a1" doxytag="GFuncion::GFuncion"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">GFuncion.GFuncion           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="classGFuncion.html">GFuncion</a>&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>gf</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Crear una GFuncion nueva, a partir de otra. 
+<p>
+Constructor de copia. Se crea una GFuncion nueva, copia de la original. <dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>gf</em>&nbsp;</td><td>Objeto GFuncion a copiar </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr><h2>Documentación de las funciones miembro</h2>
+<a class="anchor" name="a2" doxytag="GFuncion::Render"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">void GFuncion.Render           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">Gdk.Drawable&nbsp;</td>
+          <td class="mdname" nowrap> <em>drawable</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>double&nbsp;</td>
+          <td class="mdname" nowrap> <em>t</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Dibujar la grafica en un drawable. 
+<p>
+<a class="el" href="classFuncion.html">Funcion</a> principal de la clase GFuncion. Se dibuja la funcion, teniendo en cuenta el resto de atributos graficos.<br>
+ Lo normal es dibujarlo sobre un pixmap y que se lleve al Drawing area cuando ocurra la funcion de retrollamada expose_event. La grafica se dibuja de forma que ocupa todo el ancho del drawable <br>
+ Las funciones de la clase <a class="el" href="classFuncion.html">Funcion</a> tienen dos parametros: x,t. La x es el parametro espacial y la t el temporal. Al dibujar hay que especificar el parametro t. Si es 0, se toma la funcion en el instante inicial <dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>drawable</em>&nbsp;</td><td>Elemento donde dibujar la grafica </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>Instante en el que dibujar la grafica </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr><h2>Documentación de Propiedades</h2>
+<a class="anchor" name="03" doxytag="GFuncion::Color"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">Gdk.GC GFuncion.Color<code> [get, set]</code>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Color de la grafica (Get,Set). 
+<p>
+Establecer o leer el color de grafica     </td>
+  </tr>
+</table>
+<a class="anchor" name="00" doxytag="GFuncion::Func"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"><a class="el" href="classFuncion.html">Funcion</a> GFuncion.Func<code> [get, set]</code>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Acceder a la funcion asociada (Get, Set). 
+<p>
+Esta propiedad devuelve una referencia a la funcion asociada, para realizar cualquier modificacion. O bien permite especificar otra nueva.     </td>
+  </tr>
+</table>
+<a class="anchor" name="01" doxytag="GFuncion::Origen"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"><a class="el" href="classVector.html">Vector</a> GFuncion.Origen<code> [get, set]</code>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Origen para el dibujo de la grafica. 
+<p>
+Leer o establecer el origen de la grafica. En un drawable, el origen esta en la <b>esquina inferior izquierda</b>, con valor (0,0). Esta propiedad permite situarlo en cualquier otra posicion     </td>
+  </tr>
+</table>
+<a class="anchor" name="02" doxytag="GFuncion::Visible"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">bool GFuncion.Visible<code> [get, set]</code>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Atributo de visibilidad de la funcion (Get,Set). 
+<p>
+Leer o establecer la visibilidad de la grafica. Si esta a true, la grafica se pinta al invocar el metodo Render. Si esta a false no.     </td>
+  </tr>
+</table>
+<hr>La documentación para esta clase fué generada a partir del siguiente archivo:<ul>
+<li>GFuncion.cs</ul>
+<hr size="1"><address style="align: right;"><small>Generado el Sat Dec 10 12:19:59 2005 para cube-virtual.mono por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.2 </small></address>
+</body>
+</html>

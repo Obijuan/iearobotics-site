@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>cube-virtual.mono: test-Funcion.cs</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.4.2 -->
+<div class="qindex"><a class="qindex" href="main.html">Página&nbsp;principal</a> | <a class="qindex" href="hierarchy.html">Jerarquía&nbsp;de&nbsp;la&nbsp;clase</a> | <a class="qindex" href="annotated.html">Lista&nbsp;de&nbsp;componentes</a> | <a class="qindex" href="functions.html">Miembros&nbsp;de&nbsp;las&nbsp;clases</a> | <a class="qindex" href="examples.html">Ejemplos</a></div>
+<h1>test-Funcion.cs</h1>Programa para hacer pruebas de la clase <a class="el" href="classFuncion.html">Funcion</a><p>
+<div class="fragment"><pre class="fragment"><span class="comment">//********************************************************************</span>
+<span class="comment">//* test-Funcion.cs   (c) Juan Gonzalez.  Marzo 2005                 *</span>
+<span class="comment">//*------------------------------------------------------------------*</span>
+<span class="comment">//*  Pruebas de la clase Funcion                                     *</span>
+<span class="comment">//*------------------------------------------------------------------*</span>
+<span class="comment">//* Licencia GPL                                                     *</span>
+<span class="comment">//********************************************************************</span>
+<span class="comment">/*-------------------------------------------------------------------------</span>
+<span class="comment"> $Id: test-Funcion.cs,v 1.1 2005/03/20 23:25:45 juan Exp $</span>
+<span class="comment"> $Revision: 1.1 $</span>
+<span class="comment"> $Source: /var/lib/cvs/cube-virtual.mono/test-Funcion.cs,v $</span>
+<span class="comment">---------------------------------------------------------------------------*/</span>
+
+<span class="keyword">using</span> System;
+
+<span class="keyword">class </span>Test_Funcion
+{
+  <span class="keyword">static</span> <span class="keywordtype">void</span> Main()
+  {
+    <span class="comment">//--------------------------------------------------------</span>
+    <span class="comment">//-- Pruebas de construccion de las funciones primitivas  </span>
+    <span class="comment">//--------------------------------------------------------</span>
+    Console.WriteLine(<span class="stringliteral">"Prueba de la clase Funcion"</span>);
+    Console.WriteLine(<span class="stringliteral">"Construccion de funciones:"</span>);
+    
+    <span class="comment">//-- Crear dos funciones constantes</span>
+    <a name="_a11"></a><a class="code" href="classFuncionCte.html">FuncionCte</a> f1 = <span class="keyword">new</span> <a class="code" href="classFuncionCte.html">FuncionCte</a>(5);
+    <a class="code" href="classFuncionCte.html">FuncionCte</a> f2 = <span class="keyword">new</span> <a class="code" href="classFuncionCte.html">FuncionCte</a>(6);
+    
+    <span class="comment">//-- Crear funcion sinusoidal</span>
+    <a name="_a12"></a><a class="code" href="classFuncionSin.html">FuncionSin</a> f3 = <span class="keyword">new</span> <a class="code" href="classFuncionSin.html">FuncionSin</a>(15,100,0,5);
+    
+    <span class="comment">//-- Crear funcion semisinusoidal</span>
+    <a name="_a13"></a><a class="code" href="classFuncionSemiSin.html">FuncionSemiSin</a> f4 = <span class="keyword">new</span> <a class="code" href="classFuncionSemiSin.html">FuncionSemiSin</a>(15,37,277,8);
+    
+    <span class="comment">//-- Crear funcion cuadrada</span>
+    <a name="_a14"></a><a class="code" href="classFuncionCuadrada.html">FuncionCuadrada</a> f5 = <span class="keyword">new</span> <a class="code" href="classFuncionCuadrada.html">FuncionCuadrada</a>(10,20,40,5);
+    
+    <span class="comment">//-- Imprimir las funciones</span>
+    Console.WriteLine(<span class="stringliteral">"f1: {0}"</span>,f1);
+    Console.WriteLine(<span class="stringliteral">"f2: {0}"</span>,f2);
+    Console.WriteLine(<span class="stringliteral">"f3: {0}"</span>,f3);
+    Console.WriteLine(<span class="stringliteral">"f4: {0}"</span>,f4);
+    Console.WriteLine(<span class="stringliteral">"f5: {0}"</span>,f5);
+    Console.WriteLine(<span class="stringliteral">"f1(0,0)={0}"</span>,f1.<a name="a15"></a><a class="code" href="classFuncionCte.html#a1">Valor</a>(0,0));
+    Console.WriteLine(<span class="stringliteral">"f2(0,0)={0}"</span>,f2.<a class="code" href="classFuncionCte.html#a1">Valor</a>(0,0));
+    
+   
+    <span class="comment">//----------------------------------------</span>
+    <span class="comment">//-- Pruebas de combinacion de funciones</span>
+    <span class="comment">//----------------------------------------</span>
+    Console.WriteLine(<span class="stringliteral">"\nOperaciones con funciones:"</span>);
+    <a name="_a16"></a><a class="code" href="classFuncion.html">Funcion</a> f6 = 2*f2-f1;
+    Console.WriteLine(<span class="stringliteral">"f6: {0}"</span>,f6);
+    Console.WriteLine(<span class="stringliteral">"f6(0,0)={0}"</span>,f6.<a name="a17"></a><a class="code" href="classFuncion.html#a1">Valor</a>(0,0));
+    
+    <a class="code" href="classFuncion.html">Funcion</a> f7 = f4 + f3 + 7;
+    Console.WriteLine(<span class="stringliteral">"f7: {0}"</span>,f7);
+    Console.WriteLine(<span class="stringliteral">"f7(1,0)={0}"</span>,f7.<a class="code" href="classFuncion.html#a1">Valor</a>(1,0));
+    
+  }
+}
+</pre></div> <hr size="1"><address style="align: right;"><small>Generado el Sat Dec 10 12:19:58 2005 para cube-virtual.mono por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.2 </small></address>
+</body>
+</html>

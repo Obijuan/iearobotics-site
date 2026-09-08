@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>cube-virtual.mono: test-Angulo.cs</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.4.2 -->
+<div class="qindex"><a class="qindex" href="main.html">Página&nbsp;principal</a> | <a class="qindex" href="hierarchy.html">Jerarquía&nbsp;de&nbsp;la&nbsp;clase</a> | <a class="qindex" href="annotated.html">Lista&nbsp;de&nbsp;componentes</a> | <a class="qindex" href="functions.html">Miembros&nbsp;de&nbsp;las&nbsp;clases</a> | <a class="qindex" href="examples.html">Ejemplos</a></div>
+<h1>test-Angulo.cs</h1>Programa para hacer pruebas de la clase <a class="el" href="classAngulo.html">Angulo</a><p>
+<div class="fragment"><pre class="fragment"><span class="comment">/***********************************************************/</span>
+<span class="comment">/* test-Angulo.cs.  (c) Juan Gonzalez Gomez. Junio 2004    */</span>
+<span class="comment">/*---------------------------------------------------------*/</span>
+<span class="comment">/* Prueba de la clase Angulo                               */</span>
+<span class="comment">/*---------------------------------------------------------*/</span>
+<span class="comment">/* LICENCIA GPL                                            */</span>
+<span class="comment">/***********************************************************/</span>
+<span class="comment">/*-------------------------------------------------------------------------</span>
+<span class="comment"> $Id: test-Angulo.cs,v 1.1 2005/01/23 22:37:59 juan Exp $</span>
+<span class="comment"> $Revision: 1.1 $</span>
+<span class="comment"> $Source: /var/lib/cvs/cube-virtual.mono/test-Angulo.cs,v $</span>
+<span class="comment">---------------------------------------------------------------------------*/</span>
+
+<span class="keyword">using</span> System;
+
+<span class="keyword">class </span>Test_Angulo
+{
+  <span class="keyword">static</span> <span class="keywordtype">void</span> Main() {
+  
+    <span class="comment">//-- Pruebas de construccion</span>
+    <a name="_a0"></a><a class="code" href="classAngulo.html">Angulo</a> a1 = <span class="keyword">new</span> <a class="code" href="classAngulo.html">Angulo</a>();
+    <a class="code" href="classAngulo.html">Angulo</a> a2 = <span class="keyword">new</span> <a class="code" href="classAngulo.html">Angulo</a>(180);
+    <a class="code" href="classAngulo.html">Angulo</a> a3 = <span class="keyword">new</span> <a class="code" href="classAngulo.html">Angulo</a>(90);
+    
+    <span class="comment">//-- Imprimir los angulos. Por defecto se sacan en grados</span>
+    Console.WriteLine(<span class="stringliteral">"Ang1: {0}, Ang2: {1}, Ang3: {2}"</span>,
+                      a1, a2, a3);
+                      
+    a1 = <span class="keyword">new</span> <a class="code" href="classAngulo.html">Angulo</a>(20);
+    a2 = <span class="keyword">new</span> <a class="code" href="classAngulo.html">Angulo</a>(30);
+    a3 = <span class="keyword">new</span> <a class="code" href="classAngulo.html">Angulo</a>(40);
+    <span class="comment">//-- Si se imprime un angulo se obtiene su valor en grados</span>
+    Console.WriteLine(<span class="stringliteral">"Ang1: {0}, Ang2: {1}, Ang3: {2}"</span>,
+                      a1, a2, a3);
+          
+    <span class="comment">//-- Asignacion de angulos;         </span>
+    a1 = <span class="keyword">new</span> <a class="code" href="classAngulo.html">Angulo</a>(a2);
+    Console.WriteLine(<span class="stringliteral">"Ang1: {0}, Ang2: {1}, Ang3: {2}"</span>,
+                      a1.<a name="a1"></a><a class="code" href="classAngulo.html#00">Rad</a>, a2.<a class="code" href="classAngulo.html#00">Rad</a>, a3.<a class="code" href="classAngulo.html#00">Rad</a>);
+    Console.WriteLine(<span class="stringliteral">"Ang1: {0}, Ang2: {1}, Ang3: {2}"</span>,
+                      a1, a2, a3);
+    
+    <span class="comment">//-- Prueba de las propiedades Rad y Grad</span>
+    a1.<a name="a2"></a><a class="code" href="classAngulo.html#01">Grad</a>=180;
+    Console.WriteLine(<span class="stringliteral">"Grados: {0}, Radianes: {1}"</span>,a1.<a class="code" href="classAngulo.html#01">Grad</a>, a1.<a class="code" href="classAngulo.html#00">Rad</a>);
+    
+    a1.<a class="code" href="classAngulo.html#00">Rad</a>=Math.PI;
+    Console.WriteLine(<span class="stringliteral">"Grados: {0}, Radianes: {1}"</span>,a1.<a class="code" href="classAngulo.html#01">Grad</a>, a1.<a class="code" href="classAngulo.html#00">Rad</a>);
+   
+    a1.<a class="code" href="classAngulo.html#01">Grad</a>=90;
+    Console.WriteLine(<span class="stringliteral">"Grados: {0}, Radianes: {1}"</span>,a1.<a class="code" href="classAngulo.html#01">Grad</a>, a1.<a class="code" href="classAngulo.html#00">Rad</a>);
+    
+    a1.<a class="code" href="classAngulo.html#00">Rad</a>=Math.PI/2;
+    Console.WriteLine(<span class="stringliteral">"Grados: {0}, Radianes: {1}"</span>,a1.<a class="code" href="classAngulo.html#01">Grad</a>, a1.<a class="code" href="classAngulo.html#00">Rad</a>);
+    
+    <span class="comment">//-- Pruebas de la sobrecarga de operadores</span>
+    a1.<a class="code" href="classAngulo.html#01">Grad</a>=45;
+    a2.<a class="code" href="classAngulo.html#01">Grad</a>=45;
+    a3 = a1 + a2;
+    Console.WriteLine(<span class="stringliteral">"Ang1: {0}, Ang2: {1}, Ang3=Ang1+Ang2: {2}"</span>,
+                       a1.<a class="code" href="classAngulo.html#01">Grad</a>, a2.Grad, a3.<a class="code" href="classAngulo.html#01">Grad</a>);             
+    a1.<a class="code" href="classAngulo.html#00">Rad</a>=Math.PI;
+    a2.Grad=30;
+    a3 = a1 - a2;
+    Console.WriteLine(<span class="stringliteral">"Ang1: {0}, Ang2: {1}, Ang3=Ang1-Ang2: {2}"</span>,
+                      a1.<a class="code" href="classAngulo.html#01">Grad</a>, a2.Grad, (a1-a2).Grad);
+    a1.<a class="code" href="classAngulo.html#01">Grad</a>=30;
+    a2 = -a1;
+    a3 = a1*2;
+    Console.WriteLine(<span class="stringliteral">"Ang1: {0}, Ang2=-Ang1: {1}, Ang3=2*Ang1: {2}"</span>,
+                      a1.<a class="code" href="classAngulo.html#01">Grad</a>, a2.Grad, a3.<a class="code" href="classAngulo.html#01">Grad</a>);
+                      
+    <span class="comment">//-- Prueba de la igualdad</span>
+    a1.<a class="code" href="classAngulo.html#01">Grad</a>=50;
+    a2.Grad=50;
+    <span class="keywordflow">if</span> (a1 == a2) {
+      Console.WriteLine(<span class="stringliteral">"Ang1: {0}, Ang2: {1}. IGUALES"</span>,
+                      a1.<a class="code" href="classAngulo.html#01">Grad</a>, a2.Grad);
+    }
+    
+    <span class="comment">//-- Prueba de desigualdad</span>
+    a2.Grad=60;
+    <span class="keywordflow">if</span> (a1 != a2) {
+      Console.WriteLine(<span class="stringliteral">"Ang1: {0}, Ang2=: {1}. DISTINTOS"</span>,
+                      a1.<a class="code" href="classAngulo.html#01">Grad</a>, a2.Grad);
+    }
+    
+  }
+}
+</pre></div> <hr size="1"><address style="align: right;"><small>Generado el Sat Dec 10 12:19:58 2005 para cube-virtual.mono por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.2 </small></address>
+</body>
+</html>

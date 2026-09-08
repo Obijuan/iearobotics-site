@@ -1,0 +1,461 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>CUBE-VIRTUAL.MONO</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20041226;13552200">
+	<META NAME="CHANGED" CONTENT="20051213;9432400">
+	<STYLE>
+	<!--
+		@page { size: 21.59cm 27.94cm }
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>CUBE-VIRTUAL.MONO:
+				Generaci&oacute;n de secuencias para Cube Revolutions</B> </FONT>
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<DL>
+	<DD>
+	<TABLE WIDTH=802 BORDER=0 CELLPADDING=0 CELLSPACING=0>
+		<COL WIDTH=104>
+		<COL WIDTH=90>
+		<COL WIDTH=108>
+		<COL WIDTH=119>
+		<COL WIDTH=60>
+		<COL WIDTH=67>
+		<COL WIDTH=97>
+		<COL WIDTH=46>
+		<COL WIDTH=111>
+		<TR>
+			<TD WIDTH=104>
+				<P ALIGN=CENTER><A HREF="#Introducci&oacute;n |outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Introducci&oacute;n]</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=90>
+				<P ALIGN=CENTER><A HREF="#Pantallazos|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Pantallazos]</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=108>
+				<P ALIGN=CENTER><A HREF="#Caracter&iacute;sticas |outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Caracter&iacute;sticas
+				]</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=119>
+				<P ALIGN=CENTER><FONT SIZE=2><FONT FACE="Arial, sans-serif">[</FONT></FONT><A HREF="#Historia|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Historia</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">]</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=60>
+				<P ALIGN=CENTER><A HREF="#Autores|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Autor]</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=67>
+				<P ALIGN=CENTER><A HREF="#licencia"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Licencia]</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=97>
+				<P ALIGN=CENTER><A HREF="#Descargas |outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Descargas]</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=46>
+				<P ALIGN=CENTER><A HREF="#links"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Links]</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=111>
+				<P ALIGN=CENTER><A HREF="#noticias"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Noticias]</FONT></FONT></A></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/cube-virtual-cobra.jpg" NAME="Imagen1" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2><A NAME="introduccion"></A><A NAME="Introducci&oacute;n |outline"></A>
+Introducci&oacute;n 
+</H2>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Programa para la
+<B>generaci&oacute;n autom&aacute;tica de secuencias de movimiento</B>
+para el robot <A HREF="../../doctorado/cube-revolutions/index.html">Cube
+Revolutions</A>. Mediante un modelo de propagaci&oacute;n de ondas
+sinusoidales se generan las posiciones de los servos en los
+diferentes instantes de tiempo. Estas secuencias se pueden grabar en
+un fichero en <B>formato .f8</B> para luego ser reproducidas en el
+robot utilizando el programa <A HREF="../../../../proyectos/stargate/clientes/star-servos8/star-servos8.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Star-servos8</FONT></FONT></A>.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Mediante una <B>interfaz
+gr&aacute;fica</B> se especifican los tipos de ondas a emplear:
+sinusoides, semisinusoidales o una combinaci&oacute;n de dos
+sinusoidales. El movimiento resultante se puede reproducir en
+pantalla para su estudio.</FONT></FONT></P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Es una versi&oacute;n
+mejorada del programa <A HREF="../../doctorado/cube-reloaded/controlii.html">Cube-virtual</A>
+desarrollado para el control del gusano </FONT></FONT><A HREF="../../doctorado/cube-reloaded/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cube
+reloaded</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.</FONT></FONT></P>
+<HR>
+<H2><A NAME="caracteristicas"></A><A NAME="Caracter&iacute;sticas |outline"></A>
+<FONT FACE="Arial, sans-serif">Caracter&iacute;sticas </FONT>
+</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Lenguaje:
+	</B>C#</FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Plataforma</B>:
+	Desarrollado con <A HREF="http://www.mono-project.com/Main_Page">Mono</A>.
+	Deber&iacute;a ser por tanto un programa multiplataforma, aunque
+	s&oacute;lo se ha probado en Linux</FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Librer&iacute;as
+	gr&aacute;ficas</B>: <A HREF="http://gtk-sharp.sourceforge.net/">GTK#
+	</A></FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Creaci&oacute;n
+	del interfaz</B>: <A HREF="http://glade.gnome.org/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Glade</FONT></FONT></A></FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Generaci&oacute;n
+	de ficheros .f8</FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Par&aacute;metros
+	del gusano actualizables din&aacute;micamente por el usuario: n&uacute;mero
+	de articulaciones, radio, longitud de los segmentos...</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Licencia</B>:
+	</FONT></FONT><A HREF="http://gugs.sindominio.net/gnu-gpl/gples.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">GPL</FONT></FONT></A>
+		</P>
+</UL>
+<HR>
+<H2><A NAME="autores"></A><A NAME="Autores|outline"></A><FONT FACE="Arial, sans-serif">Autores</FONT></H2>
+<UL>
+	<LI><P><A HREF="../../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+	Gonz&aacute;lez G&oacute;mez</FONT></FONT></A> 
+	</P>
+</UL>
+<HR>
+<H2><A NAME="licencia"></A><FONT FACE="Arial, sans-serif">Licencia</FONT></H2>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Este
+programa se distribuye bajo </FONT></FONT><A HREF="http://gugs.sindominio.net/gnu-gpl/gples.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">licencia
+GPL </FONT></FONT></A>
+</P>
+<HR>
+<H2><A NAME="Pantallazos|outline"></A>Pantallazos</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Cube-virtual.mono
+en acci&oacute;n</B>. En la parte de la derecha se muestran las
+<B>articulaciones del gusano</B> (puntos rojos) y los segmentos que
+las unen (l&iacute;neas azules) que est&aacute;n sobre la <B>onda de
+generaci&oacute;n de movimiento</B>. En la parte inferior derecha
+est&aacute;n los botones que permiten hacer las simulaciones. En la
+parte izquierda se definen los par&aacute;metros de la onda y del
+gusano.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/cube-virtual-mono-pant1.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=796 HEIGHT=557 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2>Un ejemplo de funcionamiento</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El manejo del programa
+es muy sencillo. Si se quiere probar, seguir los siguientes pasos:</FONT></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejecutar el
+	programa</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Por defecto est&aacute;
+	seleccionada una funci&oacute;n sinusoidal con unos par&aacute;metros
+	iniciales. <B>Pulsar el bot&oacute;n de &ldquo;Play&rdquo;</B>
+	situado en la parte inferior derecha. La onda comenzar&aacute; a
+	desplazarse y las articulaciones tambi&eacute;n lo har&aacute;n,
+	adoptando la forma de la onda.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Los <B>par&aacute;metros
+	de la onda</B> se pueden cambiar mientras se est&aacute;
+	reproduciendo. Probar por ejemplo a variar la amplitud</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Se puede utilizar
+	otro tipo de onda, por ejemplo una semisinusoidal seleccionado la
+	<B>opci&oacute;n &ldquo;Semi&rdquo;</B> en la parte superior
+	izquierda.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>La onda se puede
+	ocultar pinchando en la <B>opci&oacute;n &ldquo;Visible&rdquo;</B>,
+	en la parte superior izquierda.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Tambi&eacute;n se
+	pueden cambiar los <B>par&aacute;metros del gusano</B>. Por ejemplo,
+	modificar el radio de las articulaciones en la entrada que pone
+	&ldquo;Radio&rdquo; (que por defecto tiene el valor 5)</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Con el <B>bot&oacute;n
+	de Stop</B> se para la simulaci&oacute;n.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Con el <B>bot&oacute;n
+	de Gardar </B>se genera un fichero .f8 con la secuencia de
+	movimiento, en el directorio donde se ejecut&oacute; el programa.</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/pant-anim-gait1.gif" NAME="Imagen3" ALIGN=MIDDLE WIDTH=796 HEIGHT=557 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2>Informaci&oacute;n t&eacute;cnica para desarrolladores</H2>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">La documentaci&oacute;n
+	de las clases se ha realizado con </FONT></FONT><A HREF="http://www.stack.nl/~dimitri/doxygen/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Doxygen</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	La clase principal es </FONT></FONT><A HREF="html/classGusano.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Gusano</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	que representa a un gusano virtual en 2D.</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">La clave de la
+	generaci&oacute;n de secuencias de movimiento es el <B>algoritmo de
+	ajuste</B>, que se emplea en el m&eacute;todo <A HREF="html/classGusano.html#a6">Gusano.Ajustar</A>.
+	Se le pasa una funci&oacute;n y el algoritmo calcula los &aacute;ngulos
+	de las articulaciones para que todas se sit&uacute;en en puntos de
+	la funci&oacute;n. <B>Para m&aacute;s informaci&oacute;n sobre el
+	algoritmo de ajuste consultar</B>:</FONT></FONT></P>
+	<UL>
+		<LI><H1><A HREF="../../publicaciones/art11/html/index.html"><SPAN STYLE="font-weight: medium"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Evaluaci&oacute;n
+		de un Algoritmo de Locomoci&oacute;n de Robots &Aacute;podos en
+		Diferentes Procesadores Embebidos en FPGA</FONT></FONT></SPAN></A></H1>
+		<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="../cube-2.0/doc/cube_2.pdf">Parte
+		I: Teor&iacute;a de Gusanos</A>. En la p&aacute;gina 86 est&aacute;
+		descrito el algoritmo de ajuste.</FONT></FONT></P>
+	</UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Toda la
+	documentaci&oacute;n de las clases y m&eacute;todos</B> <A HREF="html/index.html"><B>est&aacute;
+	disponible aqu&iacute;</B></A></FONT></FONT></P>
+</UL>
+<HR>
+<H2>Versiones</H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Versi&oacute;n
+	1.0</B></FONT></FONT></P>
+	<UL>
+		<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Aplicaci&oacute;n
+		rehecha desde cero, utilizando el lenguaje C# y la plataforma <A HREF="http://www.mono-project.com/Main_Page"><FONT FACE="Arial, sans-serif">Mono</FONT></A>.</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Se puede
+		trabajar con cualquier n&uacute;mero de articulaciones</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Los par&aacute;metros
+		de visualizaci&oacute;n del gusano se pueden cambiar: Longitud de
+		los segmentos, radio de las articulaciones y n&uacute;mero de ellas</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Visualizaci&oacute;n
+		opcional de los n&uacute;meros de las articulaciones, el eje x, el
+		gusano y el panel con la informaci&oacute;n de los &aacute;ngulos
+		de cada articulaci&oacute;n y sus coordenadas (x,y)</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Par&aacute;metros
+		de las ondas sinusoidales: Amplitud, longitud de onda, fase y
+		frecuencia</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Par&aacute;metros
+		de las ondas semisinusoidales: Amplitud, anchura, periodo espacial,
+		fase y frecuencia.</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Se puede
+		trabajar tambi&eacute;n con la suma de dos ondas sinusoidales,
+		aunque la grabaci&oacute;n a ficheros .f8 no est&aacute;
+		implementada</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Grabaci&oacute;n
+		de las sencuencias de movimiento sinusoidales y semisinusoidales a
+		fichero .f8</FONT></FONT></P>
+	</UL>
+</UL>
+<HR>
+<H2><A NAME="Historia|outline"></A>Historia</H2>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>[Junio-2001]</B>
+	La <A HREF="../cube-2.0/control_ii.html">primera versi&oacute;n</A>
+	se realiz&oacute; para el control del robot <A HREF="../cube-2.0/cube.html">Cube
+	2.0</A>. Estaba hecha en lenguaje C y con las librer&iacute;as
+	gr&aacute;ficas GTK 1.0. Las secuencias de movimiento se generaban
+	s&oacute;lo para un gusano de 4 servos.</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>[Junio-2003]</B>
+	La <A HREF="../../doctorado/cube-reloaded/controlii.html">segunda
+	versi&oacute;n</A>, utilizada para <A HREF="../../doctorado/cube-reloaded/index.html">Cube
+	Reloaded</A>, permiti&oacute; el uso de semiondas, pero el interfaz
+	y el funcionamiento eran similares a la versi&oacute;n inicial.</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>[Marzo-2005]
+	Cube-virtual.mono 1.0</B>. Programa reescrito en C#, utilizando
+	<A HREF="http://www.mono-project.com/Main_Page"><FONT FACE="Arial, sans-serif">Mono</FONT></A>.
+	La clase principal creada es Gusano. Ahora es mucho m&aacute;s f&aacute;cil
+	modificar el interfaz as&iacute; como a&ntilde;adir nuevas
+	funcionalidades. Se ha utilizado la versi&oacute;n 1.1.8 de Mono.</FONT></FONT></P>
+</UL>
+<HR>
+<H2><A NAME="Descargas |outline"></A><FONT FACE="Arial, sans-serif">Descargas
+</FONT>
+</H2>
+<CENTER>
+	<TABLE WIDTH=90% BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+		<COL WIDTH=256*>
+		<TR>
+			<TD WIDTH=100% BGCOLOR="#9999cc">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Ultima
+				versi&oacute;n (1.0)</B></FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=90% BORDER=0 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=84*>
+		<COL WIDTH=172*>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=33% BGCOLOR="#e6e6ff">
+				<P><A HREF="download/cube-virtual-mono-1.0.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">cube-virtual-mono-1.0.tgz</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=67% BGCOLOR="#e6e6ff">
+				<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Fuentes
+				y ejecutable del programa cube-virtual.mono</FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<CENTER>
+	<TABLE WIDTH=90% BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+		<COL WIDTH=256*>
+		<TR>
+			<TD WIDTH=100% BGCOLOR="#9999cc">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Secuencias
+				de movimiento</B></FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=90% BORDER=0 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=84*>
+		<COL WIDTH=172*>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=33% BGCOLOR="#e6e6ff">
+				<P><A HREF="download/ejemplo1.f8"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ejemplo1.f8</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=67% BGCOLOR="#e6e6ff">
+				<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Secuencia
+				de movimiento <B>sinusoidal</B>. Ejemplo 1</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=33% BGCOLOR="#ccccff">
+				<P><A HREF="download/ejemplo2.f8"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ejemplo2.f8</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=67% BGCOLOR="#ccccff">
+				<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Secuencia
+				de movimiento <B>sinusoidal</B>. Ejemplo 2</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=33% BGCOLOR="#e6e6ff">
+				<P><A HREF="download/ejemplo3.f8"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ejemplo3.f8</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=67% BGCOLOR="#e6e6ff">
+				<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Secuencia
+				de movimiento <B>sinusoidal</B>. Ejemplo 3</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=33% BGCOLOR="#ccccff">
+				<P><A HREF="download/ejemplo4.f8"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ejemplo4.f8</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=67% BGCOLOR="#ccccff">
+				<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Secuencia
+				de movimiento <B>semisinusoidal</B>. Ejemplo 4</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=33% BGCOLOR="#e6e6ff">
+				<P><A HREF="download/ejemplo5.f8"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ejemplo5.f8</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=67% BGCOLOR="#e6e6ff">
+				<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Secuencia
+				de movimiento <B>semisinusoidal</B>. Ejemplo 5</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#cabeeb">
+			<TD WIDTH=33% BGCOLOR="#ccccff">
+				<P><A HREF="download/ejemplo6.f8"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ejemplo6.f8</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=67% BGCOLOR="#ccccff">
+				<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Secuencia
+				de movimiento <B>semisinusoidal.</B> Ejemplo 6</FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="links"></A><FONT FACE="Arial, sans-serif">Enlaces</FONT></H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="http://www.mono-project.com/Main_Page"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Mono</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	desarrollo de aplicaciones .NET en entornos multiplataforma</FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="http://www.monodevelop.com/Main_Page"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Monodevelop</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	Entorno para desarrollo de aplicaciones en C#</FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="http://gtk-sharp.sourceforge.net/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">GTK#</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	Librer&iacute;a gr&aacute;fica para usar en entornos .NET</FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="http://glade.gnome.org/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Glade</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+	Aplicaci&oacute;n para la creaci&oacute;n de interfaces gr&aacute;ficos
+	</FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="http://www.stack.nl/~dimitri/doxygen/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Doxygen</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+	Generaci&oacute;n de documentaci&oacute;n a partir del c&oacute;digo
+	fuente.</FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../doctorado/cube-revolutions/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cube
+	Revolutions</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+	Robot gusano. Tercera generaci&oacute;n.</FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../doctorado/cube-reloaded/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cube
+	reloaded</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+	Robot gusano. Segunda generaci&oacute;n.</FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../../../proyectos/stargate/clientes/star-servos8/star-servos8.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Star-servos8</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+	Reproducci&oacute;n de secuencias de movimiento en el robot Cube
+	Revolutions.</FONT></FONT></P>
+</UL>
+<HR>
+<H2><A NAME="noticias1"></A><FONT FACE="Arial, sans-serif">Noticias</FONT></H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>13/Diciembre/2005:
+	</B><SPAN STYLE="font-weight: medium">A&ntilde;adido pantallazo
+	animado</SPAN></FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>11/Diciembre/2005:
+	</B>Publicada versi&oacute;n 1.0</FONT></FONT></P>
+</UL>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=87*>
+	<COL WIDTH=63*>
+	<COL WIDTH=106*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=34%>
+				<P ALIGN=CENTER><A HREF="http://www.debian.org/"><IMG SRC="../../doctorado/cube-revolutions/images/debian.gif" NAME="Imagen36" ALIGN=MIDDLE WIDTH=130 HEIGHT=60 BORDER=0></A></P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER><A HREF="http://gtk-sharp.sourceforge.net/"><IMG SRC="../../doctorado/cube-revolutions/images/gtks-logo.png" NAME="Imagen37" ALIGN=LEFT WIDTH=120 HEIGHT=60 BORDER=0></A><BR>
+				</P>
+			</TD>
+			<TD WIDTH=42%>
+				<P><A HREF="http://www.mono-project.com/Main_Page"><IMG SRC="../../doctorado/cube-revolutions/images/mono-logo.jpg" NAME="Imagen38" ALIGN=LEFT WIDTH=73 HEIGHT=78 BORDER=0></A><BR>
+				</P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A HREF="http://www.iearobotics.com/"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">IEA
+ROBOTICS</FONT></FONT></A> 
+</P>
+<ADDRESS><A HREF="../../index.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A> 
+</ADDRESS>
+</BODY>
+</HTML>

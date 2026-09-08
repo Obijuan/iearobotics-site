@@ -1,0 +1,875 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>cube-virtual.mono: Referencia de la Clase Vector</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.4.2 -->
+<div class="qindex"><a class="qindex" href="main.html">Página&nbsp;principal</a> | <a class="qindex" href="hierarchy.html">Jerarquía&nbsp;de&nbsp;la&nbsp;clase</a> | <a class="qindex" href="annotated.html">Lista&nbsp;de&nbsp;componentes</a> | <a class="qindex" href="functions.html">Miembros&nbsp;de&nbsp;las&nbsp;clases</a> | <a class="qindex" href="examples.html">Ejemplos</a></div>
+<h1>Referencia de la Clase Vector</h1>Manejo de Vectores en 2D.  
+<a href="#_details">Más...</a>
+<p>
+<a href="classVector-members.html">Lista de todos los miembros.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Métodos públicos</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVector.html#a0">Vector</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">CONSTRUCTOR. Crear un vector inicializado a 0.  <a href="#a0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVector.html#a1">Vector</a> (double x, double y)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">CONSTRUCTOR. Constructor en cartesianas.  <a href="#a1"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVector.html#a2">Vector</a> (<a class="el" href="classVector.html">Vector</a> v)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">CONSTRUCTOR. Copiar un vector.  <a href="#a2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVector.html#a3">Vector</a> (double modulo, <a class="el" href="classAngulo.html">Angulo</a> arg)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">CONSTRUCTOR. Constructor en la forma modulo-argumento.  <a href="#a3"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVector.html#a4">Rotar</a> (<a class="el" href="classVector.html">Vector</a> centro, <a class="el" href="classAngulo.html">Angulo</a> ang)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Rotar el punto definido por el vector, con respecto a un punto centro.  <a href="#a4"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classAngulo.html">Angulo</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVector.html#a5">Distancia_Angular</a> (<a class="el" href="classVector.html">Vector</a> v)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtener el angulo que forma con otro vector.  <a href="#a5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classVector.html">Vector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVector.html#a6">Unitario</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Devolver vector unitario.  <a href="#a6"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">override string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVector.html#a9">ToString</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Convertir el vector a una cadena (cartesianas).  <a href="#a9"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Métodos públicos estáticos</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVector.html#e0">Calcular_Modulo</a> (double x, double y)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calcular el modulo a partir de coordenadas x,y.  <a href="#e0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static <a class="el" href="classAngulo.html">Angulo</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVector.html#e1">Calcular_Argumento</a> (double x, double y)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calcular el modulo a partir de coordenas x,y.  <a href="#e1"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static <a class="el" href="classVector.html">Vector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVector.html#e2">operator+</a> (<a class="el" href="classVector.html">Vector</a> a, <a class="el" href="classVector.html">Vector</a> b)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Suma de vectores.  <a href="#e2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static <a class="el" href="classVector.html">Vector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVector.html#e3">operator-</a> (<a class="el" href="classVector.html">Vector</a> a, <a class="el" href="classVector.html">Vector</a> b)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Resta de vectores.  <a href="#e3"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static <a class="el" href="classVector.html">Vector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVector.html#e4">operator-</a> (<a class="el" href="classVector.html">Vector</a> a)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtener vector inverso.  <a href="#e4"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static <a class="el" href="classVector.html">Vector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVector.html#e5">operator *</a> (double k, <a class="el" href="classVector.html">Vector</a> v)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Producto de un Vector por constante.  <a href="#e5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static <a class="el" href="classVector.html">Vector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVector.html#e7">operator/</a> (<a class="el" href="classVector.html">Vector</a> v, double k)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Division de un vector por un escalar.  <a href="#e7"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVector.html#e8">operator *</a> (<a class="el" href="classVector.html">Vector</a> v1, <a class="el" href="classVector.html">Vector</a> v2)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Producto escalar.  <a href="#e8"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVector.html#e9">operator==</a> (<a class="el" href="classVector.html">Vector</a> a, <a class="el" href="classVector.html">Vector</a> b)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Igualdad de vecores.  <a href="#e9"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVector.html#e10">operator!=</a> (<a class="el" href="classVector.html">Vector</a> a, <a class="el" href="classVector.html">Vector</a> b)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Desigualdad de vectores.  <a href="#e10"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Propiedades</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVector.html#00">x</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[get,set] Coordenada x  <a href="#00"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVector.html#01">y</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[get,set] Coordenada y  <a href="#01"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVector.html#02">Modulo</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[get,set] Modulo del vector  <a href="#02"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classAngulo.html">Angulo</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVector.html#03">Arg</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[get,set] Argumento del vector  <a href="#03"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Descripción detallada</h2>
+Manejo de Vectores en 2D. 
+<p>
+Permite trabajar con vectores en 2D, tanto en cartesianas como en el formato modulo-argumento. Se pueden realizar todas las operaciones tipicas: combinaciones lineales, producto escalar, etc. <dl compact><dt><b>Ejemplos: </b></dt><dd>
+
+<p>
+<a class="el" href="test-Articulacion_8cs-example.html#_a5">test-Articulacion.cs</a>, <a class="el" href="test-GFuncion_8cs-example.html#_a19">test-GFuncion.cs</a>, <a class="el" href="test-GGusano_8cs-example.html#_a23">test-GGusano.cs</a>, y <a class="el" href="test-Vector_8cs-example.html#_a32">test-Vector.cs</a>.</dl>
+<p>
+<hr><h2>Documentación del constructor y destructor</h2>
+<a class="anchor" name="a0" doxytag="Vector::Vector"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">Vector.Vector           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+CONSTRUCTOR. Crear un vector inicializado a 0. 
+<p>
+Constructor por defecto     </td>
+  </tr>
+</table>
+<a class="anchor" name="a1" doxytag="Vector::Vector"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">Vector.Vector           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">double&nbsp;</td>
+          <td class="mdname" nowrap> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>double&nbsp;</td>
+          <td class="mdname" nowrap> <em>y</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+CONSTRUCTOR. Constructor en cartesianas. 
+<p>
+Se crea un vector nuevo en cartesianas     </td>
+  </tr>
+</table>
+<a class="anchor" name="a2" doxytag="Vector::Vector"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">Vector.Vector           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="classVector.html">Vector</a>&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>v</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+CONSTRUCTOR. Copiar un vector. 
+<p>
+Construccion de un vector nuevo que es una copia de otro     </td>
+  </tr>
+</table>
+<a class="anchor" name="a3" doxytag="Vector::Vector"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">Vector.Vector           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">double&nbsp;</td>
+          <td class="mdname" nowrap> <em>modulo</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap><a class="el" href="classAngulo.html">Angulo</a>&nbsp;</td>
+          <td class="mdname" nowrap> <em>arg</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+CONSTRUCTOR. Constructor en la forma modulo-argumento. 
+<p>
+Construccion en la forma modulo-argumento <dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>modulo</em>&nbsp;</td><td>Modulo del vector </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>arg</em>&nbsp;</td><td>Argumento </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr><h2>Documentación de las funciones miembro</h2>
+<a class="anchor" name="e1" doxytag="Vector::Calcular_Argumento"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">static <a class="el" href="classAngulo.html">Angulo</a> Vector.Calcular_Argumento           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">double&nbsp;</td>
+          <td class="mdname" nowrap> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>double&nbsp;</td>
+          <td class="mdname" nowrap> <em>y</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Calcular el modulo a partir de coordenas x,y. 
+<p>
+Dados dos valores x,y, que representan a un punto, se calcula cual es el argumento (distancia angular con eje x)     </td>
+  </tr>
+</table>
+<a class="anchor" name="e0" doxytag="Vector::Calcular_Modulo"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">static double Vector.Calcular_Modulo           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">double&nbsp;</td>
+          <td class="mdname" nowrap> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>double&nbsp;</td>
+          <td class="mdname" nowrap> <em>y</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Calcular el modulo a partir de coordenadas x,y. 
+<p>
+Dados dos valores x,y, que representan a un punto, se calcula cual es el modulo (distancia al origen)     </td>
+  </tr>
+</table>
+<a class="anchor" name="a5" doxytag="Vector::Distancia_Angular"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"><a class="el" href="classAngulo.html">Angulo</a> Vector.Distancia_Angular           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="classVector.html">Vector</a>&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>v</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Obtener el angulo que forma con otro vector. 
+<p>
+Calcular el angulo que forma el vector con el que se pasa como argumento. El Criterio de signos es:<br>
+ <ul>
+<li>
+Positivo: Si se rota el vector ese angulo en sentido antihorario se obtiene el argumento de v </li>
+<li>
+Negativo: Si se rota el vector ese angulo en sentido horario, se obtiene el argumento de v </li>
+</ul>
+El valor absoluto indica la "distancia angular" y el signo hacia donde esta el otro vector <dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>v</em>&nbsp;</td><td>Vector con respecto al cual calcular la distancia angular </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Ejemplos: </b></dt><dd>
+<a class="el" href="test-Vector_8cs-example.html#a38">test-Vector.cs</a>.</dl>    </td>
+  </tr>
+</table>
+<a class="anchor" name="e8" doxytag="Vector::operator *"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">static double Vector.operator *           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="classVector.html">Vector</a>&nbsp;</td>
+          <td class="mdname" nowrap> <em>v1</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap><a class="el" href="classVector.html">Vector</a>&nbsp;</td>
+          <td class="mdname" nowrap> <em>v2</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Producto escalar. 
+<p>
+Obtener el producto escalar. Ejemplo: a = v1 * v2     </td>
+  </tr>
+</table>
+<a class="anchor" name="e5" doxytag="Vector::operator *"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">static <a class="el" href="classVector.html">Vector</a> Vector.operator *           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">double&nbsp;</td>
+          <td class="mdname" nowrap> <em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap><a class="el" href="classVector.html">Vector</a>&nbsp;</td>
+          <td class="mdname" nowrap> <em>v</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Producto de un Vector por constante. 
+<p>
+Multiplicacion por escalar. Ej: v = a * z. Esta operacion es conmutativa. Se puede realizar v = z * a.     </td>
+  </tr>
+</table>
+<a class="anchor" name="e10" doxytag="Vector::operator!="></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">static bool Vector.operator!=           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="classVector.html">Vector</a>&nbsp;</td>
+          <td class="mdname" nowrap> <em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap><a class="el" href="classVector.html">Vector</a>&nbsp;</td>
+          <td class="mdname" nowrap> <em>b</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Desigualdad de vectores. 
+<p>
+Operador !=. Devuelve true si los vectores son diferentes     </td>
+  </tr>
+</table>
+<a class="anchor" name="e2" doxytag="Vector::operator+"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">static <a class="el" href="classVector.html">Vector</a> Vector.operator+           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="classVector.html">Vector</a>&nbsp;</td>
+          <td class="mdname" nowrap> <em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap><a class="el" href="classVector.html">Vector</a>&nbsp;</td>
+          <td class="mdname" nowrap> <em>b</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Suma de vectores. 
+<p>
+Operador +. Ejemplo: v = w + z     </td>
+  </tr>
+</table>
+<a class="anchor" name="e4" doxytag="Vector::operator-"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">static <a class="el" href="classVector.html">Vector</a> Vector.operator-           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="classVector.html">Vector</a>&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>a</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Obtener vector inverso. 
+<p>
+Operador - unario. Ejemplo: v = -z     </td>
+  </tr>
+</table>
+<a class="anchor" name="e3" doxytag="Vector::operator-"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">static <a class="el" href="classVector.html">Vector</a> Vector.operator-           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="classVector.html">Vector</a>&nbsp;</td>
+          <td class="mdname" nowrap> <em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap><a class="el" href="classVector.html">Vector</a>&nbsp;</td>
+          <td class="mdname" nowrap> <em>b</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Resta de vectores. 
+<p>
+Operador - binario. Ejemplo: v = w - z     </td>
+  </tr>
+</table>
+<a class="anchor" name="e7" doxytag="Vector::operator/"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">static <a class="el" href="classVector.html">Vector</a> Vector.operator/           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="classVector.html">Vector</a>&nbsp;</td>
+          <td class="mdname" nowrap> <em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>double&nbsp;</td>
+          <td class="mdname" nowrap> <em>k</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Division de un vector por un escalar. 
+<p>
+Division de un vector por un escalar. Ej: v = z/a. Esta operacion NO ES CONMUTATIVA.     </td>
+  </tr>
+</table>
+<a class="anchor" name="e9" doxytag="Vector::operator=="></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">static bool Vector.operator==           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="classVector.html">Vector</a>&nbsp;</td>
+          <td class="mdname" nowrap> <em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap><a class="el" href="classVector.html">Vector</a>&nbsp;</td>
+          <td class="mdname" nowrap> <em>b</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Igualdad de vecores. 
+<p>
+Operador ==. Devuelve true si los vectores son iguales     </td>
+  </tr>
+</table>
+<a class="anchor" name="a4" doxytag="Vector::Rotar"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">void Vector.Rotar           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="classVector.html">Vector</a>&nbsp;</td>
+          <td class="mdname" nowrap> <em>centro</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap><a class="el" href="classAngulo.html">Angulo</a>&nbsp;</td>
+          <td class="mdname" nowrap> <em>ang</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Rotar el punto definido por el vector, con respecto a un punto centro. 
+<p>
+El vector define un punto en el plano. El Metodo Rotar permite girar este punto, un angulo determinado, con respecto a otro punto (centro). <dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>centro</em>&nbsp;</td><td>Vector de posicion del punto que hace de centro </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ang</em>&nbsp;</td><td><a class="el" href="classAngulo.html">Angulo</a> a rotar el punto con respecto al centro </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a9" doxytag="Vector::ToString"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">override string Vector.ToString           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Convertir el vector a una cadena (cartesianas). 
+<p>
+Metodo para poder imprimir el vector en cartesianas. Esto permite hacer cosas del tipo: Console.WriteLine("Vector: {0}",v), siendo 'v' un objeto de tipo Vector     </td>
+  </tr>
+</table>
+<a class="anchor" name="a6" doxytag="Vector::Unitario"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"><a class="el" href="classVector.html">Vector</a> Vector.Unitario           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Devolver vector unitario. 
+<p>
+Se crea un nuevo vector, con modulo unidad y argumento el mismo que el vector sobre el que se aplica <dl compact><dt><b>Ejemplos: </b></dt><dd>
+<a class="el" href="test-Vector_8cs-example.html#a39">test-Vector.cs</a>.</dl>    </td>
+  </tr>
+</table>
+<hr><h2>Documentación de Propiedades</h2>
+<a class="anchor" name="03" doxytag="Vector::Arg"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"><a class="el" href="classAngulo.html">Angulo</a> Vector.Arg<code> [get, set]</code>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+[get,set] Argumento del vector 
+<p>
+Leer/establecer el argumento <dl compact><dt><b>Ejemplos: </b></dt><dd>
+<a class="el" href="test-Vector_8cs-example.html#a37">test-Vector.cs</a>.</dl>    </td>
+  </tr>
+</table>
+<a class="anchor" name="02" doxytag="Vector::Modulo"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">double Vector.Modulo<code> [get, set]</code>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+[get,set] Modulo del vector 
+<p>
+Leer/establecer el modulo <dl compact><dt><b>Ejemplos: </b></dt><dd>
+<a class="el" href="test-Vector_8cs-example.html#a36">test-Vector.cs</a>.</dl>    </td>
+  </tr>
+</table>
+<a class="anchor" name="00" doxytag="Vector::x"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">double Vector.x<code> [get, set]</code>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+[get,set] Coordenada x 
+<p>
+Leer/establecer el valor de la coordenada x <dl compact><dt><b>Ejemplos: </b></dt><dd>
+<a class="el" href="test-Articulacion_8cs-example.html#a9">test-Articulacion.cs</a>, y <a class="el" href="test-Vector_8cs-example.html#a34">test-Vector.cs</a>.</dl>    </td>
+  </tr>
+</table>
+<a class="anchor" name="01" doxytag="Vector::y"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">double Vector.y<code> [get, set]</code>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+[get,set] Coordenada y 
+<p>
+Leer/establecer el valor de la coordenada y <dl compact><dt><b>Ejemplos: </b></dt><dd>
+<a class="el" href="test-Articulacion_8cs-example.html#a10">test-Articulacion.cs</a>, y <a class="el" href="test-Vector_8cs-example.html#a35">test-Vector.cs</a>.</dl>    </td>
+  </tr>
+</table>
+<hr>La documentación para esta clase fué generada a partir del siguiente archivo:<ul>
+<li>Vector.cs</ul>
+<hr size="1"><address style="align: right;"><small>Generado el Sat Dec 10 12:19:59 2005 para cube-virtual.mono por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.2 </small></address>
+</body>
+</html>

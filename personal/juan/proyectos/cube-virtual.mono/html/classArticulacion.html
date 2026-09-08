@@ -1,0 +1,241 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>cube-virtual.mono: Referencia de la Clase Articulacion</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.4.2 -->
+<div class="qindex"><a class="qindex" href="main.html">Página&nbsp;principal</a> | <a class="qindex" href="hierarchy.html">Jerarquía&nbsp;de&nbsp;la&nbsp;clase</a> | <a class="qindex" href="annotated.html">Lista&nbsp;de&nbsp;componentes</a> | <a class="qindex" href="functions.html">Miembros&nbsp;de&nbsp;las&nbsp;clases</a> | <a class="qindex" href="examples.html">Ejemplos</a></div>
+<h1>Referencia de la Clase Articulacion</h1>Clase para modelar las articulaciones de los gusanos.  
+<a href="#_details">Más...</a>
+<p>
+<a href="classArticulacion-members.html">Lista de todos los miembros.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Métodos públicos</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classArticulacion.html#a0">Articulacion</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Crear una articulacion.  <a href="#a0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classArticulacion.html#a1">Articulacion</a> (<a class="el" href="classArticulacion.html">Articulacion</a> art)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Crear una articulacion a partir de otra.  <a href="#a1"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classArticulacion.html#a2">Articulacion</a> (<a class="el" href="classAngulo.html">Angulo</a> ang, <a class="el" href="classVector.html">Vector</a> v)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Crear una articulacion a partir de un angulo y un vector.  <a href="#a2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">override string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classArticulacion.html#a3">ToString</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Convertir la articulacion a una cadena.  <a href="#a3"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Propiedades</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classAngulo.html">Angulo</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classArticulacion.html#00">Angulo</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classAngulo.html">Angulo</a> de estado de la articulacion.  <a href="#00"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classVector.html">Vector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classArticulacion.html#01">Vector</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classVector.html">Vector</a> de posicion de la articulacion.  <a href="#01"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Descripción detallada</h2>
+Clase para modelar las articulaciones de los gusanos. 
+<p>
+Los gusanos estan compuestos por articulaciones unidas mediante segmentos. Las articulaciones tienen un angulo (fi) que define el angulo entre las dos partes moviles de la articulacion. Tambien tienen un vector de posicion. <dl compact><dt><b>Ejemplos: </b></dt><dd>
+
+<p>
+<a class="el" href="test-Articulacion_8cs-example.html#_a3">test-Articulacion.cs</a>.</dl>
+<p>
+<hr><h2>Documentación del constructor y destructor</h2>
+<a class="anchor" name="a0" doxytag="Articulacion::Articulacion"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">Articulacion.Articulacion           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Crear una articulacion. 
+<p>
+CONSTRUCTOR. Se crea una nueva articulacion con el vector y el angulo inicializados a cero.     </td>
+  </tr>
+</table>
+<a class="anchor" name="a1" doxytag="Articulacion::Articulacion"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">Articulacion.Articulacion           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="classArticulacion.html">Articulacion</a>&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>art</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Crear una articulacion a partir de otra. 
+<p>
+CONSTRUCTOR. Se crea una nueva articulacion, a partir de otra ya creada. <dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>art</em>&nbsp;</td><td>Articulacion original </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a2" doxytag="Articulacion::Articulacion"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">Articulacion.Articulacion           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="classAngulo.html">Angulo</a>&nbsp;</td>
+          <td class="mdname" nowrap> <em>ang</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap><a class="el" href="classVector.html">Vector</a>&nbsp;</td>
+          <td class="mdname" nowrap> <em>v</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Crear una articulacion a partir de un angulo y un vector. 
+<p>
+CONSTRUCTOR. Se crea una nueva articulacion con el angulo y vector pasados como argumentos <dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ang</em>&nbsp;</td><td><a class="el" href="classAngulo.html">Angulo</a> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>v</em>&nbsp;</td><td><a class="el" href="classVector.html">Vector</a> de posicion </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr><h2>Documentación de las funciones miembro</h2>
+<a class="anchor" name="a3" doxytag="Articulacion::ToString"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">override string Articulacion.ToString           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Convertir la articulacion a una cadena. 
+<p>
+Metodo para imprimir la articulacion.     </td>
+  </tr>
+</table>
+<hr><h2>Documentación de Propiedades</h2>
+<a class="anchor" name="00" doxytag="Articulacion::Angulo"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"><a class="el" href="classAngulo.html">Angulo</a> Articulacion.Angulo<code> [get, set]</code>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+<a class="el" href="classAngulo.html">Angulo</a> de estado de la articulacion. 
+<p>
+Establecer/leer el angulo de estado de la articulacion <dl compact><dt><b>Ejemplos: </b></dt><dd>
+<a class="el" href="test-Articulacion_8cs-example.html#a6">test-Articulacion.cs</a>.</dl>    </td>
+  </tr>
+</table>
+<a class="anchor" name="01" doxytag="Articulacion::Vector"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"><a class="el" href="classVector.html">Vector</a> Articulacion.Vector<code> [get, set]</code>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+<a class="el" href="classVector.html">Vector</a> de posicion de la articulacion. 
+<p>
+Establecer/leer el vector de posicion de la articulacion <dl compact><dt><b>Ejemplos: </b></dt><dd>
+<a class="el" href="test-Articulacion_8cs-example.html#a8">test-Articulacion.cs</a>.</dl>    </td>
+  </tr>
+</table>
+<hr>La documentación para esta clase fué generada a partir del siguiente archivo:<ul>
+<li>Articulacion.cs</ul>
+<hr size="1"><address style="align: right;"><small>Generado el Sat Dec 10 12:19:58 2005 para cube-virtual.mono por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.2 </small></address>
+</body>
+</html>

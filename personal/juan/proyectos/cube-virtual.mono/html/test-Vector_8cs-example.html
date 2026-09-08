@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>cube-virtual.mono: test-Vector.cs</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.4.2 -->
+<div class="qindex"><a class="qindex" href="main.html">Página&nbsp;principal</a> | <a class="qindex" href="hierarchy.html">Jerarquía&nbsp;de&nbsp;la&nbsp;clase</a> | <a class="qindex" href="annotated.html">Lista&nbsp;de&nbsp;componentes</a> | <a class="qindex" href="functions.html">Miembros&nbsp;de&nbsp;las&nbsp;clases</a> | <a class="qindex" href="examples.html">Ejemplos</a></div>
+<h1>test-Vector.cs</h1>Programa para hacer pruebas de la clase <a class="el" href="classVector.html">Vector</a><p>
+<div class="fragment"><pre class="fragment"><span class="comment">/***********************************************************/</span>
+<span class="comment">/* test-Vector.cs.  (c) Juan Gonzalez Gomez. Junio 2004    */</span>
+<span class="comment">/*---------------------------------------------------------*/</span>
+<span class="comment">/* Prueba de la clase Vector                               */</span>
+<span class="comment">/*---------------------------------------------------------*/</span>
+<span class="comment">/* LICENCIA GPL                                            */</span>
+<span class="comment">/***********************************************************/</span>
+<span class="comment">/*-------------------------------------------------------------------------</span>
+<span class="comment"> $Id: test-Vector.cs,v 1.1 2005/01/23 22:37:59 juan Exp $</span>
+<span class="comment"> $Revision: 1.1 $</span>
+<span class="comment"> $Source: /var/lib/cvs/cube-virtual.mono/test-Vector.cs,v $</span>
+<span class="comment">---------------------------------------------------------------------------*/</span>
+
+<span class="keyword">using</span> System;
+
+<span class="keyword">class </span>Test_Vector
+{
+  <span class="keyword">static</span> <span class="keywordtype">void</span> Main()
+  { 
+    Console.WriteLine(<span class="stringliteral">"Pruebas de la clase Vector\n"</span>);
+  
+    <span class="comment">/*--------------------------*/</span>
+    <span class="comment">/* Pruebas de construccion  */</span>
+    <span class="comment">/*--------------------------*/</span>
+    <span class="comment">//-- Constructor normal</span>
+    <a name="_a32"></a><a class="code" href="classVector.html">Vector</a> v1 = <span class="keyword">new</span> <a class="code" href="classVector.html">Vector</a>();
+    
+    <span class="comment">//-- Construccion en cartesianas</span>
+    <a class="code" href="classVector.html">Vector</a> v2 = <span class="keyword">new</span> <a class="code" href="classVector.html">Vector</a>(10,20);
+    
+    <span class="comment">//-- Construccion a partir de otro vector</span>
+    <a class="code" href="classVector.html">Vector</a> v3 = <span class="keyword">new</span> <a class="code" href="classVector.html">Vector</a>(v2);
+    
+    <span class="comment">//-- Construccion del tipo modulo-argumento</span>
+    <a class="code" href="classVector.html">Vector</a> v4 = <span class="keyword">new</span> <a class="code" href="classVector.html">Vector</a>(20,<span class="keyword">new</span> <a name="_a33"></a><a class="code" href="classAngulo.html">Angulo</a>(60));
+        
+    <span class="comment">//-- Mostrar los resultados</span>
+    Console.WriteLine(<span class="stringliteral">"Pruebas construccion:"</span>);
+    Console.WriteLine(<span class="stringliteral">"v1={0}, v2={1}, v3={2}, v4={3}\n"</span>,v1,v2,v3,v4);
+    
+    <span class="comment">/*-----------------------------*/</span>
+    <span class="comment">/* Pruebas de las propiedades  */</span>
+    <span class="comment">/*-----------------------------*/</span>
+    Console.WriteLine(<span class="stringliteral">"Pruebas Propiedades:"</span>);
+    v1=<span class="keyword">new</span> <a class="code" href="classVector.html">Vector</a>(10,20);
+    Console.WriteLine(<span class="stringliteral">"Vector v1={0}"</span>,v1);
+    Console.WriteLine(<span class="stringliteral">"  -Coordenada x:{0}"</span>,v1.<a name="a34"></a><a class="code" href="classVector.html#00">x</a>);
+    Console.WriteLine(<span class="stringliteral">"  -Coordenada y:{0}"</span>,v1.<a name="a35"></a><a class="code" href="classVector.html#01">y</a>);
+    v1.<a class="code" href="classVector.html#00">x</a>=3;
+    v1.<a class="code" href="classVector.html#01">y</a>=4;
+    Console.WriteLine(<span class="stringliteral">"Nuevo vector v1={0}"</span>,v1);
+    Console.WriteLine(<span class="stringliteral">"  -Modulo: {0}"</span>,v1.<a name="a36"></a><a class="code" href="classVector.html#02">Modulo</a>);
+    Console.WriteLine(<span class="stringliteral">"  -Arg:    {0}"</span>,v1.<a name="a37"></a><a class="code" href="classVector.html#03">Arg</a>);
+    v1=<span class="keyword">new</span> <a class="code" href="classVector.html">Vector</a>(1,1);
+    Console.WriteLine(<span class="stringliteral">"Nuevo Vector v1={0}"</span>,v1);
+    Console.WriteLine(<span class="stringliteral">"  -Modulo: {0}"</span>,v1.<a class="code" href="classVector.html#02">Modulo</a>);
+    Console.WriteLine(<span class="stringliteral">"  -Arg:    {0}"</span>,v1.<a class="code" href="classVector.html#03">Arg</a>);
+    
+    <span class="comment">//-- Pruebas de asignacion de modulo y argumento</span>
+    v1=<span class="keyword">new</span> <a class="code" href="classVector.html">Vector</a>(10,<span class="keyword">new</span> <a class="code" href="classAngulo.html">Angulo</a>(60));
+    Console.WriteLine(<span class="stringliteral">"Nuevo vector v1={0}"</span>,v1);
+    Console.WriteLine(<span class="stringliteral">"  -Modulo: {0}"</span>,v1.<a class="code" href="classVector.html#02">Modulo</a>);
+    Console.WriteLine(<span class="stringliteral">"  -Arg:    {0}"</span>,v1.<a class="code" href="classVector.html#03">Arg</a>);
+    
+    <span class="comment">//-- Cambiamos modulo, dejando argumento</span>
+    v1.<a class="code" href="classVector.html#02">Modulo</a>=20;
+    Console.WriteLine(<span class="stringliteral">"Nuevo vector v1={0}"</span>,v1);
+    Console.WriteLine(<span class="stringliteral">"  -Modulo: {0}"</span>,v1.<a class="code" href="classVector.html#02">Modulo</a>);
+    Console.WriteLine(<span class="stringliteral">"  -Arg:    {0}"</span>,v1.<a class="code" href="classVector.html#03">Arg</a>);
+    
+    <span class="comment">//-- Cambiamos argumento, dejando modulo</span>
+    v1.<a class="code" href="classVector.html#03">Arg</a>=<span class="keyword">new</span> <a class="code" href="classAngulo.html">Angulo</a>(30);
+    Console.WriteLine(<span class="stringliteral">"Nuevo vector v1={0}"</span>,v1);
+    Console.WriteLine(<span class="stringliteral">"  -Modulo: {0}"</span>,v1.<a class="code" href="classVector.html#02">Modulo</a>);
+    Console.WriteLine(<span class="stringliteral">"  -Arg:    {0}"</span>,v1.<a class="code" href="classVector.html#03">Arg</a>);
+    
+    <span class="comment">/*--------------------------------*/</span>
+    <span class="comment">/* Pruebas de los metodos         */</span>
+    <span class="comment">/*--------------------------------*/</span>
+    Console.WriteLine();
+    Console.WriteLine(<span class="stringliteral">"Pruebas de METODOS:"</span>);
+    
+    <span class="comment">//-- Angulo entre vectores</span>
+    v1=<span class="keyword">new</span> <a class="code" href="classVector.html">Vector</a>(1,<span class="keyword">new</span> <a class="code" href="classAngulo.html">Angulo</a>(90));
+    v2=<span class="keyword">new</span> <a class="code" href="classVector.html">Vector</a>(1,<span class="keyword">new</span> <a class="code" href="classAngulo.html">Angulo</a>(45));
+    Console.WriteLine(<span class="stringliteral">"Angulo entre v1 y v2: {0}"</span>,v1.<a name="a38"></a><a class="code" href="classVector.html#a5">Distancia_Angular</a>(v2));
+    Console.WriteLine(<span class="stringliteral">"Angulo entre v2 y v1: {0}"</span>,v2.<a class="code" href="classVector.html#a5">Distancia_Angular</a>(v1));
+   
+    <span class="comment">//-- Vectores Unitarios</span>
+    v1=<span class="keyword">new</span> <a class="code" href="classVector.html">Vector</a>(20,<span class="keyword">new</span> <a class="code" href="classAngulo.html">Angulo</a>(50));
+    v2=v1.<a name="a39"></a><a class="code" href="classVector.html#a6">Unitario</a>();
+    Console.WriteLine(<span class="stringliteral">"Vector Unitarios: {0}"</span>,v2);
+    Console.WriteLine(<span class="stringliteral">"  -Modulo: {0}"</span>,v2.<a class="code" href="classVector.html#02">Modulo</a>);
+    Console.WriteLine(<span class="stringliteral">"  -Arg:    {0}"</span>,v2.<a class="code" href="classVector.html#03">Arg</a>);
+    
+    <span class="comment">/*--------------------------------*/</span>
+    <span class="comment">/* Pruebas de operaciones         */</span>
+    <span class="comment">/*--------------------------------*/</span>
+    Console.WriteLine();
+    Console.WriteLine(<span class="stringliteral">"Pruebas de OPERACIONES:"</span>);
+    
+    v1 = <span class="keyword">new</span> <a class="code" href="classVector.html">Vector</a>(10,20);
+    v2 = <span class="keyword">new</span> <a class="code" href="classVector.html">Vector</a>(1,2);
+    <span class="comment">//-- Suma</span>
+    Console.WriteLine(<span class="stringliteral">"{0} + {1} = {2}"</span>,v1,v2,v1+v2);
+    <span class="comment">//-- Resta</span>
+    Console.WriteLine(<span class="stringliteral">"{0} - {1} = {2}"</span>,v1,v2,v1-v2);
+    <span class="comment">//-- Combinacion lineal</span>
+    Console.WriteLine(<span class="stringliteral">"2*{0} + 3*{1} = {2}"</span>,v1,v2,2*v1+3*v2);
+    Console.WriteLine(<span class="stringliteral">"{0}/2 + {1}/4 = {2}"</span>,v1,v2,v1/2 + v2/4);
+    <span class="comment">//-- Producto Escalar</span>
+    Console.WriteLine(<span class="stringliteral">"{0} * {1} = {2}"</span>,v1,v2,v1*v2);
+    
+    <span class="comment">/*---------------------------------*/</span>
+    <span class="comment">/* Pruebas de igualdad             */</span>
+    <span class="comment">/*---------------------------------*/</span>
+    Console.WriteLine();
+    Console.WriteLine(<span class="stringliteral">"Pruebas de Igualdad"</span>);
+    
+    v1 = <span class="keyword">new</span> <a class="code" href="classVector.html">Vector</a>(2,2);
+    v2 = <span class="keyword">new</span> <a class="code" href="classVector.html">Vector</a> (Math.Sqrt(8),<span class="keyword">new</span> <a class="code" href="classAngulo.html">Angulo</a>(45));
+    v3 = <span class="keyword">new</span> <a class="code" href="classVector.html">Vector</a> (2.1,2.1);
+    Console.WriteLine(<span class="stringliteral">"{0},{1},{2}"</span>,v1,v2,v3);
+    <span class="keywordflow">if</span> (v1==v2) {
+      Console.WriteLine(<span class="stringliteral">"{0} y {1} son IGUALES"</span>,v1,v2);
+    }
+    <span class="keywordflow">if</span> (v1!=v3) {
+      Console.WriteLine(<span class="stringliteral">"{0} y {1} son DIFERENTES"</span>,v1,v3);
+    }
+  }
+}
+</pre></div> <hr size="1"><address style="align: right;"><small>Generado el Sat Dec 10 12:19:58 2005 para cube-virtual.mono por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.2 </small></address>
+</body>
+</html>

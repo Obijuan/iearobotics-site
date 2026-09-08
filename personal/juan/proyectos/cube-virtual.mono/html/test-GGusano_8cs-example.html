@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>cube-virtual.mono: test-GGusano.cs</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.4.2 -->
+<div class="qindex"><a class="qindex" href="main.html">Página&nbsp;principal</a> | <a class="qindex" href="hierarchy.html">Jerarquía&nbsp;de&nbsp;la&nbsp;clase</a> | <a class="qindex" href="annotated.html">Lista&nbsp;de&nbsp;componentes</a> | <a class="qindex" href="functions.html">Miembros&nbsp;de&nbsp;las&nbsp;clases</a> | <a class="qindex" href="examples.html">Ejemplos</a></div>
+<h1>test-GGusano.cs</h1>Programa para hacer pruebas de la clase <a class="el" href="classGGusano.html">GGusano</a><p>
+<div class="fragment"><pre class="fragment"><span class="comment">//*******************************************************************</span>
+<span class="comment">//* test-GGusano.cs   (c) Juan Gonzalez.  Marzo 2005                *</span>
+<span class="comment">//*-----------------------------------------------------------------*</span>
+<span class="comment">//* Ejemplo de prueba de la clase GGusano                           *</span>
+<span class="comment">//* Para dibujar se utiliza un doble buffer                         *</span>
+<span class="comment">//*-----------------------------------------------------------------*</span>
+<span class="comment">//* Licencia GPL                                                    *</span>
+<span class="comment">//*******************************************************************</span>
+<span class="comment">/*-------------------------------------------------------------------------</span>
+<span class="comment"> $Id: test-GGusano.cs,v 1.1 2005/03/21 12:47:48 juan Exp $</span>
+<span class="comment"> $Revision: 1.1 $</span>
+<span class="comment"> $Source: /var/lib/cvs/cube-virtual.mono/test-GGusano.cs,v $</span>
+<span class="comment">---------------------------------------------------------------------------*/</span>
+<span class="keyword">using</span> Gtk;
+<span class="keyword">using</span> System;
+
+<span class="keyword">class </span>Test_GGusano
+{
+  <span class="comment">/*-----------------------------*/</span>
+  <span class="comment">/*  PROPIEDADES                */</span>
+  <span class="comment">/*-----------------------------*/</span>
+  <span class="comment">//-- Buffer donde dibujar</span>
+  <span class="keyword">static</span> Gdk.Pixmap pixmap;
+  
+  <span class="comment">//-- Area de dibujo</span>
+  <span class="keyword">static</span> Gtk.DrawingArea darea;
+  
+  <span class="comment">//-- Funcion a dibujar</span>
+  <span class="keyword">static</span> <a name="_a21"></a><a class="code" href="classGGusano.html">GGusano</a> gg1;
+  
+  <span class="comment">//-- Colores</span>
+  <span class="keyword">static</span> Gdk.GC pen_rojo;
+  <span class="keyword">static</span> Gdk.GC pen_azul;
+  
+  <span class="comment">/*------------------------------*/</span>
+  <span class="comment">/*  METODOS                     */</span>
+  <span class="comment">/*------------------------------*/</span>
+  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> Main (string[] args)
+  {
+    <span class="keyword">new</span> Test_GGusano (args);
+  }
+
+  <span class="keyword">public</span> Test_GGusano (string[] args)
+  {
+    <span class="comment">//-- Inicializar las GTK</span>
+    Application.Init();
+    
+    <span class="comment">//-- Crear el interfaz: una ventana y un "Drawing Area"</span>
+    Window window = <span class="keyword">new</span> Window (<span class="stringliteral">"Test-GGusano"</span>);
+    window.DeleteEvent += <span class="keyword">new</span> DeleteEventHandler (OnWindowDeleteEvent);
+    darea = <span class="keyword">new</span> DrawingArea();
+    window.Add(darea);
+    window.SetDefaultSize (400, 200);
+    window.ShowAll();
+    
+    <span class="comment">//-- Funciones de retro-llamada del "Drawing Area"</span>
+    darea.ConfigureEvent+=<span class="keyword">new</span> ConfigureEventHandler (on_configure_event);
+    darea.ExposeEvent+=<span class="keyword">new</span> ExposeEventHandler (on_expose_event);  
+    darea.SetSizeRequest (200, 200);
+    
+    <span class="comment">//-- Configurar los pinceles</span>
+    configurar_colores();
+    
+    <span class="comment">//-- Crear el gusano</span>
+    gg1 = <span class="keyword">new</span> <a class="code" href="classGGusano.html">GGusano</a>(darea, <span class="keyword">new</span> <a name="_a22"></a><a class="code" href="classGusano.html">Gusano</a>(8));
+    gg1.Origen=<span class="keyword">new</span> <a name="_a23"></a><a class="code" href="classVector.html">Vector</a>(100,100);
+    gg1.Origen_panel=<span class="keyword">new</span> <a class="code" href="classVector.html">Vector</a>(10,40);
+    gg1.Radio = 4;
+    gg1.Gusano.Lseg = 15.0;
+    gg1.Ejex_visible=<span class="keyword">true</span>;
+    gg1.Narts_visibles=<span class="keyword">true</span>;
+    gg1.Panel_visible=<span class="keyword">true</span>;
+    gg1.Art_Color = pen_rojo;
+    gg1.Seg_Color = pen_azul;
+    
+    <span class="comment">//-- Que comience la fiesta!!</span>
+    Application.Run();
+  }
+
+  <span class="comment">/**********************************/</span>
+  <span class="comment">/* Configurar las colores a usar  */</span>
+  <span class="comment">/**********************************/</span>
+  <span class="keyword">static</span> <span class="keywordtype">void</span> configurar_colores()
+  {
+    <span class="comment">//-- Configurar los colores</span>
+    Gdk.Color rojo = <span class="keyword">new</span> Gdk.Color(0xff,0,0);
+    Gdk.Color azul  = <span class="keyword">new</span> Gdk.Color(0,0,0xff);
+    
+    Gdk.Colormap colormap = Gdk.Colormap.System;        
+    colormap.AllocColor (ref rojo, <span class="keyword">true</span>, <span class="keyword">true</span>);
+    colormap.AllocColor (ref azul,<span class="keyword">true</span>,<span class="keyword">true</span>);
+    
+    <span class="comment">//-- Configurar los contextos graficos (pinceles)</span>
+    pen_rojo = <span class="keyword">new</span> Gdk.GC(darea.GdkWindow);
+    pen_azul = <span class="keyword">new</span> Gdk.GC(darea.GdkWindow);
+    
+    pen_rojo.Foreground = rojo;
+    pen_azul.Foreground = azul;
+    pen_azul.SetLineAttributes (2, Gdk.LineStyle.Solid,
+                                Gdk.CapStyle.Butt,
+                                Gdk.JoinStyle.Round);
+  }
+
+  <span class="comment">//----------------------------------------------------</span>
+  <span class="comment">//-- Funcion de retrollamada para salir de las GTK</span>
+  <span class="comment">//----------------------------------------------------</span>
+  <span class="keywordtype">void</span> OnWindowDeleteEvent (object o, DeleteEventArgs args) 
+  {
+    Application.Quit ();
+    args.RetVal = <span class="keyword">true</span>;
+  }
+  
+  <span class="comment">//---------------------------------------------------------------</span>
+  <span class="comment">//-- Funcion de retrollamada de cambio de tamaÃ±o</span>
+  <span class="comment">//-- Si el area de dibujo tiene un tamano fijo, no se invocara</span>
+  <span class="comment">//---------------------------------------------------------------</span>
+  <span class="keyword">public</span> <span class="keywordtype">void</span> on_configure_event(object o, 
+                                              ConfigureEventArgs args)
+  {
+    Gdk.EventConfigure ev = args.Event;
+    Gdk.Window window = ev.Window;
+    Gdk.Rectangle allocation = darea.Allocation;
+
+    <span class="comment">//-- Crear un pixmap nuevo, con las nuevas dimensiones</span>
+    pixmap = <span class="keyword">new</span> Gdk.Pixmap (window, allocation.Width, allocation.Height, -1);
+    
+    <span class="comment">//-- Borrar el pixmap</span>
+    pixmap.DrawRectangle (darea.Style.WhiteGC, <span class="keyword">true</span>, 0, 0,
+                          allocation.Width, allocation.Height);
+        
+    <span class="comment">//-- Dibujar la funcion</span>
+    gg1.Render(pixmap);
+    
+    <span class="comment">//-- Solicitar refresco</span>
+    darea.QueueDraw(); 
+
+    args.RetVal = <span class="keyword">true</span>;
+  }                                            
+  
+  <span class="comment">//---------------------------------------------------------------------</span>
+  <span class="comment">//-- Funcion de retrollamada invocada cada vez que hay que dibujar</span>
+  <span class="comment">//---------------------------------------------------------------------</span>
+  <span class="keyword">public</span> <span class="keywordtype">void</span> on_expose_event(object o, ExposeEventArgs args)
+  {
+    <span class="comment">//-- Llevar el buffer pixmap al area de dibujo</span>
+    Gdk.Rectangle area = args.Event.Area;
+    args.Event.Window.DrawDrawable (
+              darea.Style.BlackGC,
+              pixmap,
+              area.X, area.Y,
+              area.X, area.Y,
+              area.Width, area.Height);
+
+    args.RetVal = <span class="keyword">false</span>;  
+  }
+  
+  
+}
+</pre></div> <hr size="1"><address style="align: right;"><small>Generado el Sat Dec 10 12:19:58 2005 para cube-virtual.mono por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.2 </small></address>
+</body>
+</html>

@@ -1,0 +1,609 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>cube-virtual.mono: Referencia de la Clase Gusano</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.4.2 -->
+<div class="qindex"><a class="qindex" href="main.html">Página&nbsp;principal</a> | <a class="qindex" href="hierarchy.html">Jerarquía&nbsp;de&nbsp;la&nbsp;clase</a> | <a class="qindex" href="annotated.html">Lista&nbsp;de&nbsp;componentes</a> | <a class="qindex" href="functions.html">Miembros&nbsp;de&nbsp;las&nbsp;clases</a> | <a class="qindex" href="examples.html">Ejemplos</a></div>
+<h1>Referencia de la Clase Gusano</h1>Clase para el manejo de gusanos.  
+<a href="#_details">Más...</a>
+<p>
+<a href="classGusano-members.html">Lista de todos los miembros.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Tipos públicos</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGusano.html#w2">Sentido</a> { <a class="el" href="classGusano.html#w2w0">IZQUIERDA</a> =  0, 
+<a class="el" href="classGusano.html#w2w1">DERECHA</a> =  1
+ }</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sentido de giro de rotacion.  <a href="classGusano.html#w2">Más...</a><br></td></tr>
+<tr><td colspan="2"><br><h2>Métodos públicos</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGusano.html#a0">Gusano</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">CONSTRUCTOR. Crear un gusano.  <a href="#a0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGusano.html#a1">Gusano</a> (int nmod)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">CONSTRUCTOR. Crear un gusano con un numero de modulos.  <a href="#a1"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGusano.html#a2">Gusano</a> (<a class="el" href="classGusano.html">Gusano</a> g)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Crear un gusano nuevo, copia de otro.  <a href="#a2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGusano.html#a3">Rotar</a> (int centro, <a class="el" href="classAngulo.html">Angulo</a> ang, <a class="el" href="classGusano.html#w2">Sentido</a> sentido)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Rotar una articulacion en el sentido especificado.  <a href="#a3"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classArticulacion.html">Articulacion</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGusano.html#a4">Art</a> (int art)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Devolver la articulacion solicitada.  <a href="#a4"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGusano.html#a5">Set_Art</a> (int art, <a class="el" href="classAngulo.html">Angulo</a> ang, <a class="el" href="classGusano.html#w2">Sentido</a> sentido)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Establecer el angulo de una articulacion.  <a href="#a5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGusano.html#a6">Ajustar</a> (<a class="el" href="classFuncion.html">Funcion</a> contorno, double t)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Ajustar el gusano a la funcion de contorno.  <a href="#a6"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGusano.html#a7">Cadena_estado</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtener la cadena con el estado internos (angulos de los modulos.  <a href="#a7"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGusano.html#a8">Cadena_estado</a> (int Narts)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtener la cadena con el estado internos (angulos de los modulos.  <a href="#a8"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">override string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGusano.html#a9">ToString</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtener la cadena con el estado interno (angulos de los modulos).  <a href="#a9"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGusano.html#a10">XToString</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtener la cadena con el vector de coordenadas X.  <a href="#a10"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGusano.html#a11">YToString</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Obtener la cadena con el vector de coordenadas Y.  <a href="#a11"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Propiedades</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGusano.html#00">Nmod</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Numero de modulos del gusano (get).  <a href="#00"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGusano.html#01">Lseg</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Longitud del segmento de las articulaciones.  <a href="#01"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Descripción detallada</h2>
+Clase para el manejo de gusanos. 
+<p>
+Esta clase permite definir gusanos y trabajar con ellos. Los gusanos son en 2D y estan constituidos por articulaciones (Clase <a class="el" href="classArticulacion.html">Articulacion</a>) unidas mediante segmentos. En el mundo real, cada articulacion se corresponde con un servo. En el modelo virtual del gusano, es util considerar tambien como articulaciones tanto la cola como la cabeza <br>
+<br>
+ <b>Numeracion de las articulaciones</b><br>
+ Las articulaciones se numeran comenzando por la cola (0) y terminado con la cabeza (numero de modulos + 1). Asi por ejemplo, un gusano con 2 modulos (2 servos) tendra en total 4 articulaciones: <br>
+ ---*---*---<br>
+ Los asteriscos son los modulos, que se numeran como 1 y 2. El extermo izquierdo es la cola (articulacion 0) y el extremo derecho es la cabeza (articulacion 3)<br>
+<br>
+ <b><a class="el" href="classAngulo.html">Angulo</a> de las ariculaciones</b> Las articulaciones solo pueden tener un angulo interno comprendido entre [-90,90]<br>
+<br>
+ <b>Origen de coordenadas</b><br>
+ El origen de coordenadas del gusano se toma en la cola. El valor (0,0) se corresponde con la posicion inicial de la cola, cuando el gusano esta apoyado completamente sobre el eje x <dl compact><dt><b>Ejemplos: </b></dt><dd>
+
+<p>
+<a class="el" href="test-GGusano_8cs-example.html#_a22">test-GGusano.cs</a>, y <a class="el" href="test-Gusano_8cs-example.html#_a24">test-Gusano.cs</a>.</dl>
+<p>
+<hr><h2>Documentación de las enumeraciones miembro de la clase</h2>
+<a class="anchor" name="w2" doxytag="Gusano::Sentido"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">enum <a class="el" href="classGusano.html#w2">Gusano::Sentido</a>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Sentido de giro de rotacion. 
+<p>
+Especificar el sentido de giro al rotar: DERECHA o IZQUIERDA <dl compact><dt><b>Valores de la enumeración: </b></dt><dd>
+<table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" name="w2w0" doxytag="IZQUIERDA"></a>IZQUIERDA</em>&nbsp;</td><td>
+Sentido.IZQUIERDA </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="w2w1" doxytag="DERECHA"></a>DERECHA</em>&nbsp;</td><td>
+Sentido.DERECHA </td></tr>
+</table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr><h2>Documentación del constructor y destructor</h2>
+<a class="anchor" name="a0" doxytag="Gusano::Gusano"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">Gusano.Gusano           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+CONSTRUCTOR. Crear un gusano. 
+<p>
+Constructor por defecto. Si no se especifica, se crea uno de 8 articulaciones (las que tiene Cube Revolutions)     </td>
+  </tr>
+</table>
+<a class="anchor" name="a1" doxytag="Gusano::Gusano"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">Gusano.Gusano           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>nmod</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+CONSTRUCTOR. Crear un gusano con un numero de modulos. 
+<p>
+Se crea un gusano nuevo con nmod modulos. El numero minimo de modulos es 1 (una articulacion)     </td>
+  </tr>
+</table>
+<a class="anchor" name="a2" doxytag="Gusano::Gusano"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">Gusano.Gusano           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="classGusano.html">Gusano</a>&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>g</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Crear un gusano nuevo, copia de otro. 
+<p>
+Constructor de Copia. Crear una copia a partir de un original <dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>g</em>&nbsp;</td><td>Objeto de tipo Gusano a copiar </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr><h2>Documentación de las funciones miembro</h2>
+<a class="anchor" name="a6" doxytag="Gusano::Ajustar"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">void Gusano.Ajustar           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="classFuncion.html">Funcion</a>&nbsp;</td>
+          <td class="mdname" nowrap> <em>contorno</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>double&nbsp;</td>
+          <td class="mdname" nowrap> <em>t</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Ajustar el gusano a la funcion de contorno. 
+<p>
+Ajustar el gusano sifnifica calcular los angulos de las articulaciones de manera que cumplan la ecuacion de la funcion de onda en ese instante. Se comienza situando la articulacion de la cola sobre la funcion y se van ajustando el resto de articulaciones de izquierda a derecha (desde la cola a la cabeza) <dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>contorno</em>&nbsp;</td><td><a class="el" href="classFuncion.html">Funcion</a> de contorno a la que ajustar el gusano </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>Instante de tiempo para el ajuste </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Ejemplos: </b></dt><dd>
+<a class="el" href="test-Gusano_8cs-example.html#a31">test-Gusano.cs</a>.</dl>    </td>
+  </tr>
+</table>
+<a class="anchor" name="a4" doxytag="Gusano::Art"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"><a class="el" href="classArticulacion.html">Articulacion</a> Gusano.Art           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>art</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Devolver la articulacion solicitada. 
+<p>
+La articulacion devuelta es una <b>COPIA</b>, de manera que solo puede usar para leer datos, no para modificarlos. Si por ejemplo se cambia el angulo de posicion de la articulacion devuelta, no se vera afectada la articulacion original <dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>art</em>&nbsp;</td><td>Numero de articulacion a obtener. El valor debe estar comprendido entre 0 (cola) y Nmod+1, siendo Nmod el numero de modulos del gusano </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a8" doxytag="Gusano::Cadena_estado"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">string Gusano.Cadena_estado           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>Narts</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Obtener la cadena con el estado internos (angulos de los modulos. 
+<p>
+Devolver una cadena con el vector de posicion angular, que contiene todos los angulos de las articulaciones. Solo se devuelve el estado desde la articulacion 1 hasta Narts. Si el gusano tiene menos de Narts articulaciones, se devuelve 0 en las no existentes <dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>Narts</em>&nbsp;</td><td>Numero de articulaciones a incluir en la cadena </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a7" doxytag="Gusano::Cadena_estado"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">string Gusano.Cadena_estado           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Obtener la cadena con el estado internos (angulos de los modulos. 
+<p>
+Devolver una cadena con el vector de posicion angular, que contiene todos los angulos de las articulaciones     </td>
+  </tr>
+</table>
+<a class="anchor" name="a3" doxytag="Gusano::Rotar"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">void Gusano.Rotar           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname" nowrap> <em>centro</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap><a class="el" href="classAngulo.html">Angulo</a>&nbsp;</td>
+          <td class="mdname" nowrap> <em>ang</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap><a class="el" href="classGusano.html#w2">Sentido</a>&nbsp;</td>
+          <td class="mdname" nowrap> <em>sentido</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Rotar una articulacion en el sentido especificado. 
+<p>
+Con este metodo se especifica el angulo de la articulacion indicada. Se puede aplicar a cualquier articulacion, incluidas la cola y la cabeza. Al rotar la articulacion, se rotan tambien todos los elementos que estan conectados. El parametro sentido especifica cual de los dos brazos de la articulacion es sobre el que se actua. Si se especifica sentido=DERECHA, se mueve el brazo derecho de la articualcion y todo lo que esta conectado. <br>
+ Si el angulo interno de la articulacion supera alguno de los valores extremos (-90,90), se establece el valor tope, de manera que nunca se supere esta restriccion <dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>centro</em>&nbsp;</td><td><a class="el" href="classArticulacion.html">Articulacion</a> a rotar. Esta articulacion permanece fija, ya que es el centro de la rotacion </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ang</em>&nbsp;</td><td><a class="el" href="classAngulo.html">Angulo</a> a rotar la articulacion. Este valor es relativo a la posicion actual. Si se especifica un angulo de 10 grados, significa que la articulacion se rotara 10 grados, es decir, que su angulo interno se incrementara en 10, siempre y cuando no supere el tope de 90 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sentido</em>&nbsp;</td><td>Especificar el brazo de la articulacion a rotar. Los valores pueden ser Sentido.DERECHA, Sentido.IZQUIERDA. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a5" doxytag="Gusano::Set_Art"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">void Gusano.Set_Art           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname" nowrap> <em>art</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap><a class="el" href="classAngulo.html">Angulo</a>&nbsp;</td>
+          <td class="mdname" nowrap> <em>ang</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap><a class="el" href="classGusano.html#w2">Sentido</a>&nbsp;</td>
+          <td class="mdname" nowrap> <em>sentido</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Establecer el angulo de una articulacion. 
+<p>
+Establecer el estado interno de una articulacion. El metodo Rotar hace una rotacion relativa a la posicion actual de la articulacion, incrementando o decrementando el angulo interno. El metodo Set_Art establece un valor para el angulo. <dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>art</em>&nbsp;</td><td>Numero de articulacion a modificar. El valor debe estar comprendeido entre 0 (cola) y Nmod+1 (cabeza), siendo Nmod el numero de modulos del gusano </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ang</em>&nbsp;</td><td>Nuevo angulo para la articulacion </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sentido</em>&nbsp;</td><td>El brazo de la articulacion a rotar. Puede ser el derecho o el izquierdo </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Ejemplos: </b></dt><dd>
+<a class="el" href="test-Gusano_8cs-example.html#a26">test-Gusano.cs</a>.</dl>    </td>
+  </tr>
+</table>
+<a class="anchor" name="a9" doxytag="Gusano::ToString"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">override string Gusano.ToString           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Obtener la cadena con el estado interno (angulos de los modulos). 
+<p>
+Metodo para imprimir. Se obtiene el vector de estado interno     </td>
+  </tr>
+</table>
+<a class="anchor" name="a10" doxytag="Gusano::XToString"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">string Gusano.XToString           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Obtener la cadena con el vector de coordenadas X. 
+<p>
+Metodo para imprimir el vector con las coordenas X's. Se incluyen la cabeza y la cola.     </td>
+  </tr>
+</table>
+<a class="anchor" name="a11" doxytag="Gusano::YToString"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">string Gusano.YToString           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Obtener la cadena con el vector de coordenadas Y. 
+<p>
+Metodo para imprimir el vector con las coordenadas Y's. Se incluyen la cola y la cabeza     </td>
+  </tr>
+</table>
+<hr><h2>Documentación de Propiedades</h2>
+<a class="anchor" name="01" doxytag="Gusano::Lseg"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">double Gusano.Lseg<code> [get, set]</code>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Longitud del segmento de las articulaciones. 
+<p>
+Leer/establecer la longitud del segmento de las articulaciones. Cada articulacion tiene dos segmentos, el derecho y el izquierdo. El parametro Lseg define la longitud de estos brazos. Si hay dos articulaciones unidas, la distancia de sepacion entre ellas sera de 2*Lseg. <br>
+ Al establecer un nuevo valor (SET), se recalcula el gusano. Se respeta el estado interno (angulo de las articulaciones) y la cola se deja en la posicion en la que estaba. El resto de coordenadas (x,y) de las otras articulaciones seran recalculadas     </td>
+  </tr>
+</table>
+<a class="anchor" name="00" doxytag="Gusano::Nmod"></a><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">int Gusano.Nmod<code> [get]</code>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Numero de modulos del gusano (get). 
+<p>
+Devolver el numero de modulos del gusano. No se incluye la cabeza y la cabeza, que no son modulos <dl compact><dt><b>Ejemplos: </b></dt><dd>
+<a class="el" href="test-Gusano_8cs-example.html#a25">test-Gusano.cs</a>.</dl>    </td>
+  </tr>
+</table>
+<hr>La documentación para esta clase fué generada a partir del siguiente archivo:<ul>
+<li>Gusano.cs</ul>
+<hr size="1"><address style="align: right;"><small>Generado el Sat Dec 10 12:19:59 2005 para cube-virtual.mono por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.2 </small></address>
+</body>
+</html>
