@@ -1,0 +1,312 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>Monolito: Libreria de componentes para Kicad</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 3.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGED" CONTENT="20091225;10531100">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Monolito:
+				Librería de componentes para Kicad</B></FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=26*>
+	<COL WIDTH=26*>
+	<COL WIDTH=26*>
+	<COL WIDTH=26*>
+	<COL WIDTH=26*>
+	<COL WIDTH=26*>
+	<COL WIDTH=26*>
+	<COL WIDTH=26*>
+	<COL WIDTH=51*>
+	<THEAD>
+		<TR VALIGN=TOP>
+			<TD WIDTH=10%>
+				<P ALIGN=CENTER><A HREF="#Introducción|outline"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>[Introducción]</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=10%>
+				<P ALIGN=CENTER><A HREF="#Motivación|outline"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>[Motivación]</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=10%>
+				<P ALIGN=CENTER><A HREF="#Autor|outline"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>[Autor]</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=10%>
+				<P ALIGN=CENTER><A HREF="#Licencia|outline"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>[Licencia]</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=10%>
+				<P ALIGN=CENTER><A HREF="#Version 0.2|outline"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>[Versiones</FONT></FONT></A>]</P>
+			</TD>
+			<TD WIDTH=10%>
+				<P ALIGN=CENTER><A HREF="#Download |outline"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>[Download]</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=10%>
+				<P ALIGN=CENTER><A HREF="#Links|outline"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>[Links]</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=10%>
+				<P ALIGN=CENTER><A HREF="#Noticias|outline"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>[Noticias]</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=20%>
+				<P ALIGN=CENTER><A HREF="#Créditos|outline"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>[Créditos]</FONT></FONT></A></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/monolito-logo.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=300 HEIGHT=400 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=24*>
+	<COL WIDTH=232*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=9% BGCOLOR="#ffcc99">
+				<P ALIGN=CENTER><IMG SRC="../../Icono_aviso.png" NAME="gr?icos6" ALIGN=MIDDLE WIDTH=24 HEIGHT=24 BORDER=0></P>
+			</TD>
+			<TD WIDTH=91% VALIGN=TOP BGCOLOR="#ffcc99">
+				<P ALIGN=CENTER><FONT FACE="Bitstream Vera Sans, sans-serif"><FONT SIZE=2><B>Esta
+				página ya no se mantiene más (25/Diciembre/2009)</B></FONT></FONT></P>
+				<P ALIGN=CENTER><A HREF="http://www.iearobotics.com/wiki/index.php?title=Monolito"><FONT FACE="Bitstream Vera Sans, sans-serif"><FONT SIZE=2><B>Acceso
+				a la nueva página en el wiki</B></FONT></FONT></A></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2><A NAME="Introducción|outline"></A>Introducción</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Monolito es una
+</FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>librería
+de componentes</B></FONT></FONT> <FONT FACE="Arial, sans-serif"><FONT SIZE=2>para
+la herramienta libre de diseño electrónico <A HREF="http://www.lis.inpg.fr/realise_au_lis/kicad/">Kicad</A>.
+Hay tanto componentes para el esquemático como módulos para el PCB.
+</FONT></FONT>
+</P>
+<HR>
+<H2><A NAME="Motivación|outline"></A>Motivación</H2>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Siempre
+me ha gustado crearme mis propias librerías de componentes, hechos
+desde cero. Me ha servido para aprender a manejar mejor las
+herramientas de diseño electrónico. Además, me gusta agrupar en
+una librería todos los componentes que suelo utilizar en mis
+diseños, como por ejemplos los conectores acodados de bus, o el
+conector telefónico hembra RJ11.</FONT></FONT></P>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En todas
+las aplicaciones que he manejado, siempre he terminado haciéndome
+mis propios componentes. Y aquí es donde me he encontrado con un
+problema muy grave: he tenido que estar reinventando la rueda
+constantemente debido a los </FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>formatos
+propietarios de las herramientas electrónicas</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>.
+Mis primeros componente los diseñe con el </FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Orcad</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>.
+Luego me pasé al Tango para los PCBs, rehaciendo otra vez los
+componentes necesarios. Más adelante, di el salto definitivo a Linux
+y comencé a utilizar el </FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Eagle</B></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>.
+De nuevo tuve que rehacer los componetes... Estaba cansado de que
+ficheros creados por mí sólo se pudiesen ver con aplicaciones
+propietarias, de unas empresas determinadas, y que no fuesen
+compatibles con los demás. Con la aparición de la herramienta libre
+<A HREF="http://www.lis.inpg.fr/realise_au_lis/kicad/">Kicad</A> lo
+vi muy claro. Ahora mis componentes estaría guardado en un formato
+Abierto. Ya nunca más perdería la información.</FONT></FONT></P>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Así es
+como ha nacido la librería monolito, que espero que sea la
+definitiva, y que poco a poco pueda ir creciendo con más y más
+componentes.</FONT></FONT></P>
+<HR>
+<H2><A NAME="tres"></A><A NAME="Autor|outline"></A>Autor</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../index.html"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Juan
+	González Gómez</FONT></FONT></A> 
+	</P>
+</UL>
+<HR>
+<H2><A NAME="Licencia|outline"></A>Licencia</H2>
+<P ALIGN=LEFT><!--Creative Commons License--><A HREF="http://creativecommons.org/licenses/by/2.5/es/"><IMG SRC="http://creativecommons.org/images/public/somerights20.png" NAME="Imagen5" ALT="Creative Commons License" ALIGN=BOTTOM WIDTH=88 HEIGHT=31 BORDER=0></A>
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2>This work is licensed
+under a <A HREF="http://creativecommons.org/licenses/by/2.5/es/">Creative
+Commons Attribution 2.5 Spain License</A>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about="">
+			<license rdf:resource="http://creativecommons.org/licenses/by/2.5/es/" />
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by/2.5/es/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> --></FONT></FONT></P>
+<HR>
+<H2><A NAME="Version 0.2|outline"></A>Version 0.2</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Estos componentes no
+se han validado todavía en fabricación, porque no han sido
+utilizados para la fabricación industrial.</FONT></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Componentes
+	para el Esquemático</B></FONT></FONT></P>
+	<UL>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>MAX232</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>TEL6: Conector
+		telefónico</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>TEL6_DOC:
+		Documetanción para el conector telefónico</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>CPOL:
+		Condensador electrolítico</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>CONDENSADOR</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>JUMPER</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>JUMPER_TRIPLE</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>PULSADOR</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>PULSADOR_DOC:
+		Documentación del patillaje del pulsador</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>CLEMA3: Clema
+		triple</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>LED_DOC:
+		Documentación para el LED</FONT></FONT></P>
+	</UL>
+</UL>
+<HR>
+<H2><A NAME="historia"></A>Version 0.1</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Esta es la versión
+que se empleó para la <A HREF="../freeleds/index.html">tarjeta
+Freeleds</A>. Por ello están todos validados y se pueden utilizar
+para la fabricación industrial.</FONT></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Componentes
+	para el esquemático (Validados)</B></FONT></FONT></P>
+	<UL>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>CT: Conector
+		tipo CT</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>CT_DOC:
+		Documentación de los pines del conector CT</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Resistencia1</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Resistencia2</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>DIODO_LED</FONT></FONT></P>
+	</UL>
+</UL>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Componentes
+	para el PCB (Validados)</B></FONT></FONT></P>
+	<UL>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>CON2X5A:
+		Conector tipo CT acodado</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>LED3MM: Led de
+		3mm</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>RES14W:
+		Resistencia de 1/4W</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>TALADRO3MM:
+		Taladro para tornillos de 3mm</FONT></FONT></P>
+	</UL>
+</UL>
+<HR>
+<H2><A NAME="Download |outline"></A>Download 
+</H2>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=742 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+			<COL WIDTH=734>
+			<TR>
+				<TD WIDTH=734>
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Monolito-0.2</B></FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+		<DD>
+		<TABLE WIDTH=741 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=215>
+			<COL WIDTH=518>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=215 BGCOLOR="#ccccff">
+					<P><A HREF="download/monolito-0.2.tgz"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>monolito-0.2.tgz</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=518 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Fuentes de la
+					librería. Esquemático y módulos para PCB</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=215>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="download/monolito-0.2-sch.pdf">monolito-0.2-sch.pdf</A>
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=518>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Esquema de los
+					componentes de la version 0.2. En PDF</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=215 BGCOLOR="#ccccff">
+					<P><A HREF="download/monolito-0.2-brd.pdf"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>monolito-0.2-brd.pdf</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=518 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Modulos para PCB
+					de la version 0.2. Formato PDF.</FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P><BR><BR>
+</P>
+<HR>
+<H2><A NAME="links"></A><A NAME="Links|outline"></A>Links</H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Herramienta libre
+	de diseño electrónico, <A HREF="http://www.lis.inpg.fr/realise_au_lis/kicad/">Kicad</A></FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="../freeleds/index.html">Tarjeta
+	Freeleds</A>.</FONT></FONT></P>
+</UL>
+<HR>
+<H2><A NAME="noticias"></A><A NAME="Noticias|outline"></A>Noticias</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>24/Octubre/2005</B>:
+	Publicada primera versión de esta página</FONT></FONT></P>
+</UL>
+<HR>
+<H2><A NAME="Créditos|outline"></A>Créditos</H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Muchos de los
+	componentes están basados en otros de las propias librerías de
+	<A HREF="http://www.lis.inpg.fr/realise_au_lis/kicad/">Kicad</A>.</FONT></FONT></P>
+</UL>
+<HR>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><A HREF="http://www.lis.inpg.fr/realise_au_lis/kicad/"><IMG SRC="images/logokicad.png" NAME="Imagen4" ALIGN=MIDDLE WIDTH=507 HEIGHT=51 BORDER=0></A></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="../../index.html"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Juan
+González</FONT></FONT></A><A HREF="http://www.iearobotics.com/"> </A>
+</ADDRESS>
+<P STYLE="margin-bottom: 0cm"><A HREF="http://www.iearobotics.com/"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>IEAROBOTICS</FONT></FONT></A>
+</P>
+</BODY>
+</HTML>
