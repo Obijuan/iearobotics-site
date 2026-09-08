@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>2 Sistema de medici&oacute;n</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20050804;19505200">
+	<META NAME="CHANGED" CONTENT="20050804;20052400">
+	<META NAME="DESCRIPTION" CONTENT="2 Sistema de medici&oacute;n">
+	<META NAME="KEYWORDS" CONTENT="chronojump">
+	<META NAME="resource-type" CONTENT="document">
+	<META NAME="distribution" CONTENT="global">
+	<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!--Navigation Panel-->
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<P><A NAME="tex2html801"></A><A NAME="tex2html741"></A><A NAME="tex2html82"></A><A NAME="tex2html80"></A><A NAME="tex2html74"></A>
+<A HREF="node7.html" NAME="tex2html82"><IMG SRC="next.png" NAME="Imagen1" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="node4.html" NAME="tex2html80"><IMG SRC="up.png" NAME="Imagen2" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node5.html" NAME="tex2html74"><IMG SRC="prev.png" NAME="Imagen3" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node7.html" NAME="tex2html83">3 Software de
+Gesti&oacute;n</A> <B>Up:</B> <A HREF="node4.html" NAME="tex2html81">4
+Arquitectura del Sistema</A> <B>Previous:</B> <A HREF="node5.html" NAME="tex2html75">1
+Plataforma de contactos</A> 
+</P>
+<H2><A NAME="SECTION00042000000000000000"></A><!--End of Navigation Panel-->2
+Sistema de medici&oacute;n 
+</H2>
+<P ALIGN=JUSTIFY>La electr&oacute;nica para realizar la medici&oacute;n
+la hemos bautizado como Chronopic. Utiliza un microcontrolador
+PIC16F876, de 8 bits, que mide el tiempo transcurrido entre los dos
+eventos posibles: paso de ON a OFF y de OFF a ON. Cada vez que llega
+un evento, se env&iacute;a una trama por el puerto serie indicando el
+estado de la plataforma y el tiempo transcurrido desde el &uacute;ltimo
+evento. 
+</P>
+<P ALIGN=JUSTIFY>La ventaja de tener un sistema de medici&oacute;n
+independiente es que se garantiza la fiabilidad de las mediciones
+aunque se utilicen ordenadores o dispositivos diferentes. La lectura
+de estas mediciones en el PC es tan sencilla como abrir el puerto
+serie y leer las tramas que lleguen. 
+</P><A NAME="fig:chronopic"></A><A NAME="188"></A><CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P ALIGN=CENTER><IMG SRC="img5.png" NAME="Imagen4" ALT="\includegraphics[%scale=0.7]{ps/chronopic.eps}" ALIGN=BOTTOM WIDTH=400 HEIGHT=300 BORDER=0>
+								</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><STRONG>Figure:</STRONG>
+Prototipo de Chronopic a partir de la Skypic y una tarjeta de
+extensi&oacute;n</P>
+<P ALIGN=JUSTIFY>Para el primer prototipo de Chronopic se ha
+utilizado la tarjeta Skypic[<A HREF="node11.html#skypic">11</A>], que
+es hardware libre, a la que se ha a&ntilde;adido una tarjeta de
+extensi&oacute;n, que contiene un circuito antirrebotes, un pulsador
+de pruebas y un par de bornas para conectar los dos cables
+provenientes de la plataforma de contactos. 
+</P>
+<P ALIGN=JUSTIFY>Este prototipo ha permitido desarrollar y depurar el
+software para el PIC, que realiza la medici&oacute;n. 
+</P>
+<P ALIGN=JUSTIFY>La versi&oacute;n final de Chronopic se ha dise&ntilde;ado
+partiendo de los planos de la Skypic, a la que se han a&ntilde;adido
+la electr&oacute;nica de la tarjeta de extensi&oacute;n. Todav&iacute;a
+no se ha creado el PCB (Printed Circuit Board) final. Chronopic ha
+sido derivada a partir de un dise&ntilde;o libre y por tanto es
+libre. La definici&oacute;n de hardware libre que usamos es la
+discutida en [<A HREF="node11.html#hardware-libre">12</A>]: los
+``ficheros fuente'' con los planos del hardware est&aacute;n
+disponibles y se conceden permisos para su uso, estudio,
+modificaci&oacute;n, fabricaci&oacute;n, distribuci&oacute;n y
+redistribuci&oacute;n de las mejoras. Esto, adem&aacute;s, garantiza
+que cualquier pueda validar su funcionamiento. 
+</P>
+<P ALIGN=JUSTIFY>La versi&oacute;n industrial del PCB ser&aacute;
+dise&ntilde;ada con el programa Kicad[<A HREF="node11.html#Kicad">13</A>],
+una herramienta profesional de dise&ntilde;o electr&oacute;nico, con
+licencia GPL. 
+</P>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A NAME="tex2html8011"></A><A NAME="tex2html7411"></A><A NAME="tex2html821"></A><A NAME="tex2html802"></A><A NAME="tex2html742"></A>
+<!--Navigation Panel--><A HREF="node7.html" NAME="tex2html82"><IMG SRC="next.png" NAME="Imagen6" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="node4.html" NAME="tex2html80"><IMG SRC="up.png" NAME="Imagen7" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node5.html" NAME="tex2html74"><IMG SRC="prev.png" NAME="Imagen8" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node7.html" NAME="tex2html83">3 Software de
+Gesti&oacute;n</A> <B>Up:</B> <A HREF="node4.html" NAME="tex2html81">4
+Arquitectura del Sistema</A> <B>Previous:</B> <A HREF="node5.html" NAME="tex2html75">1
+Plataforma de contactos</A></P>
+<ADDRESS><!--End of Navigation Panel-->Juan Gonzalez 2005-08-04 
+</ADDRESS>
+</BODY>
+</HTML>

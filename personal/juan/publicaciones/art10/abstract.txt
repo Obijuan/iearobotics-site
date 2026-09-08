@@ -1,0 +1,9 @@
+En este artículo presentamos el proyecto Chronojump, un sistemas para la
+medición y gestión de la capacidad de salto de los deportistas en el que
+tanto el hardware para realizar la medición como el software de gestión,
+tienen una licencia libre, lo que permite a cualquiera tener acceso al
+código fuente y a los planos, concediéndose libertad para usarlos,
+estudiarlos, modificarlos y distribuirlos. Además, cualquier persona o
+institución puede validar su correcto funcionamiento. Esto es especialmente
+importante por tratarse de un aparato de medida. Aunque el proyecto está en
+desarrollo, ya se dispone de un prototipo que funciona

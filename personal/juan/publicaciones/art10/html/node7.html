@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>3 Software de Gesti&oacute;n</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20050804;20054300">
+	<META NAME="CHANGED" CONTENT="20050804;20060800">
+	<META NAME="DESCRIPTION" CONTENT="3 Software de Gesti&oacute;n">
+	<META NAME="KEYWORDS" CONTENT="chronojump">
+	<META NAME="resource-type" CONTENT="document">
+	<META NAME="distribution" CONTENT="global">
+	<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!--Navigation Panel-->
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<P><A NAME="tex2html90"></A><A NAME="tex2html88"></A><A NAME="tex2html84"></A>
+<A HREF="node8.html" NAME="tex2html90"><IMG SRC="next.png" NAME="Imagen1" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="node4.html" NAME="tex2html88"><IMG SRC="up.png" NAME="Imagen2" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node6.html" NAME="tex2html84"><IMG SRC="prev.png" NAME="Imagen3" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node8.html" NAME="tex2html91">5 Resultados
+obtenidos</A> <B>Up:</B> <A HREF="node4.html" NAME="tex2html89">4
+Arquitectura del Sistema</A> <B>Previous:</B> <A HREF="node6.html" NAME="tex2html85">2
+Sistema de medici&oacute;n</A> 
+</P>
+<H2><A NAME="SECTION00043000000000000000"></A><!--End of Navigation Panel-->3
+Software de Gesti&oacute;n 
+</H2>
+<P ALIGN=JUSTIFY>El software de gesti&oacute;n trabaja con tres
+entidades: saltos, personas y sesiones. Toda la informaci&oacute;n se
+almacena en una base de datos, cuya estructura simplificada se
+muestra en la figura 
+<A HREF="#fig:bbdd"><FONT COLOR="#000080"><IMG SRC="crossref.png" NAME="Imagen4" ALT="[*]" ALIGN=BOTTOM WIDTH=13 HEIGHT=13 BORDER=1></FONT></A>.
+Los datos de un salto se leen de Chronopic a trav&eacute;s del puerto
+serie y se pueden asociar a un saltador y al d&iacute;a que lo ha
+realizado (sesi&oacute;n). As&iacute;, ya que no es necesario ir
+anotando los resultados en un papel para luego introducirlos en el
+ordenador para realizar los c&aacute;lculos, disminuyendo el error
+accidental, que, a diferencia del sistem&aacute;tico, es variable y
+depende de la persona[<A HREF="node11.html#Aguado93">15</A>]. 
+</P><A NAME="fig:bbdd"></A><A NAME="190"></A><CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P ALIGN=CENTER><IMG SRC="img6.png" NAME="Imagen5" ALT="\includegraphics[%scale=0.5]{ps/bbdd.eps}" ALIGN=BOTTOM WIDTH=400 HEIGHT=473 BORDER=0>
+								</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><STRONG>Figure:</STRONG>
+Esquema simplificado de la estructura de la base de datos</P>
+<P ALIGN=JUSTIFY>Los tipos de saltos que est&aacute;n actualmente
+soportados son los del test de Bosco[<A HREF="node11.html#Bosco94">14</A>]:
+SJ, SJ(con carga), CMJ, DJ, ABK y saltos reactivos RJ. 
+</P>
+<P ALIGN=JUSTIFY>El software de gesti&oacute;n se ha dise&ntilde;ado
+para correr sobre Mono[<A HREF="node11.html#mono">16</A>] (versi&oacute;n
+1.0.5), una implementaci&oacute;n libre de la plataforma .NET de
+Microsoft, que est&aacute; disponible para los sistemas operativos
+Linux, Mac OS y Windows, y las arquitecturas x86, PowerPC y Sparc. 
+</P>
+<P ALIGN=JUSTIFY>La mayor parte del c&oacute;digo est&aacute; escrita
+en C#, salvo el m&oacute;dulo de comunicaci&oacute;n serie para el
+acceso a Chronopic, que est&aacute; en C. 
+</P>
+<P ALIGN=JUSTIFY>La implementaci&oacute;n de la base de datos se ha
+hecho con SQLite[<A HREF="node11.html#SQLite">17</A>], una librer&iacute;a
+en C que incorpora un motor SQL. Las estad&iacute;sticas se realizan
+mediante consultas SQL contra la base de datos. Como ejemplo, para
+obtener los 3 mejores valores del &iacute;ndice de potencia en RJ
+descrito por Aguado durante la sessi&oacute;n 7, la consulta ser&iacute;a:
+</P>
+<BLOCKQUOTE STYLE="text-align: justify"><TT>SELECT person.name,
+person.sex, jumpRj.jumps, jumpRj.time, jumpRj.tvAvg, (9.81*9.81 *
+tvavg*jumps * time / ( 4 * jumps * (time - tvavg*jumps) ) ) AS
+potency FROM jumpRj, person WHERE type == 'RJ' AND jumpRj.sessionID
+== 7 AND jumpRj.personID == person.uniqueID ORDER BY potency DESC
+LIMIT 3;</TT> 
+</BLOCKQUOTE>
+<P ALIGN=JUSTIFY>Para la interfaz gr&aacute;fica del programa, se
+utiliza GTK#[<A HREF="node11.html#GTKSharp">19</A>] y el dise&ntilde;o
+se ha realizado con la aplicaci&oacute;n Glade[<A HREF="node11.html#Glade">20</A>],
+lo que permite que sea totalmente independiente del c&oacute;digo. 
+</P>
+<P ALIGN=JUSTIFY>Otras caracter&iacute;sticas son: soporte para la
+internacionalizaci&oacute;n con Gettext y dibujo de gr&aacute;ficas
+con el paquete Nplot[<A HREF="node11.html#NPLOT">18</A>]. 
+</P>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A NAME="tex2html901"></A><A NAME="tex2html881"></A><A NAME="tex2html841"></A>
+<!--Navigation Panel--><A HREF="node8.html" NAME="tex2html90"><IMG SRC="next.png" NAME="Imagen6" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="node4.html" NAME="tex2html88"><IMG SRC="up.png" NAME="Imagen7" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node6.html" NAME="tex2html84"><IMG SRC="prev.png" NAME="Imagen8" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node8.html" NAME="tex2html91">5 Resultados
+obtenidos</A> <B>Up:</B> <A HREF="node4.html" NAME="tex2html89">4
+Arquitectura del Sistema</A> <B>Previous:</B> <A HREF="node6.html" NAME="tex2html85">2
+Sistema de medici&oacute;n</A></P>
+<ADDRESS><!--End of Navigation Panel-->Juan Gonzalez 2005-08-04 
+</ADDRESS>
+</BODY>
+</HTML>
