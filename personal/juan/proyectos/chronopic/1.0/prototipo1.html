@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Prototipo 1. Tarjeta Chronopic 1.0 [Proyecto Chronojump]</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGED" CONTENT="20060522;18113200">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B><FONT SIZE=2>Prototipo
+				1. Tarjeta Chronopic 1.0 [<A HREF="http://www.gnome.org/projects/chronojump/">Proyecto
+				Chronojump</A>]</FONT></B> </FONT>
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2>Introducci&oacute;n</H2>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Para la construcci&oacute;n
+del primero prototipo de <A HREF="index.html">Chronopic</A> se ha
+utilizado la <A HREF="../../../../../proyectos/skypic/skypic.html">tarjeta
+Skypic</A>, que es <B>hardware libre</B>. Todos los esquemas est&aacute;n
+disponibles. Se ha conectado una placa de expansi&oacute;n y se ha
+creado el firmware para que funcione.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/chronopic-prot1-1.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2>Placa de expansi&oacute;n</H2>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">La placa de expansi&oacute;n
+incluye un circuito antirrebotes, un pulsador de pruebas, una clema
+para la conexi&oacute;n de la plataforma y un conector acodado de 10
+pines para la conexi&oacute;n a la <A HREF="../../../../../proyectos/skypic/skypic.html">Skypic</A>.
+Se conecta mediante un cable plano de bus al puerto B de la <A HREF="../../../../../proyectos/skypic/skypic.html">Skypic</A>
+(conector CT2).</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>La se&ntilde;al que
+viene de la plataforma se conecta al Bit 4 (<B>RB4</B>) del puerto B
+del PIC16F876A. El esquema se muestra en la figura de la derecha y el
+aspecto de la placa, una vez montada en la foto de la izquierda:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=50% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/expansion1.png.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/esquema_expansion.png" NAME="Imagen3" ALIGN=MIDDLE WIDTH=426 HEIGHT=208 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El conector acodado
+tiene 10 pines, pero s&oacute;lo se utilizan los dos que est&aacute;n
+marcados en azul. Uno es la masa (GND) y el otro es el pin RB4 del
+PIC16F87A.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Lista de
+componentes</B>:</FONT></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Una resistencia
+	de 147 ohmios y &frac14; W</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Un pulsador</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Una clema para
+	circuito impreso, con dos bornas</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Un condensador
+	electrol&iacute;tico de 1 microfaradio</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Un conector
+	acodado de 5x2 pines (dos filas de 5 pines)</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Un cable plano de
+	bus montado, como se muestra en la siguiente foto:</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/cable-conexion.png" NAME="Imagen4" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2><A NAME="historia"></A>&iquest;C&oacute;mo me construyo el
+prototipo 1 de Chronopic 1.0?</H2>
+<OL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Conseguir una
+	tarjeta skypic</B>. Las opciones que hay son:</FONT></FONT></P>
+</OL>
+<UL>
+	<UL>
+		<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Comprar una
+		skypic ya montada y funcionando</B>. Es una tarjeta libre que est&aacute;
+		comercializada por la empresa <A HREF="http://www.ifara.com/">Ifara
+		Tecnolog&iacute;as</A>. Consultar la web de la <A HREF="../../../../../proyectos/skypic/skypic.html">Skypic</A>
+		para tener m&aacute;s detalles.</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Comprar s&oacute;lo
+		el PCB de la skypic</B>. Esta opci&oacute;n es mucho m&aacute;s
+		barata. El usuario tendr&aacute; que buscar los componentes y
+		soldarlos &eacute;l mismo.</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Fabricarse
+		una Skypic</B>. Es una tarjeta libre por lo que est&aacute;n todos
+		los esquemas disponibles. Se puede optar por hacerse un PCB casero
+		y soldar los componentes o hacerse la placa tirando cables. </FONT></FONT>
+		</P>
+	</UL>
+</UL>
+<OL START=2>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Montar la
+	tarjeta de expansi&oacute;n</B>, utilizando la informaci&oacute;n
+	del apartado anterior.</FONT></FONT></P>
+</OL>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Tiempo estimado</B>:
+Si ya se dispone de la <A HREF="../../../../../proyectos/skypic/skypic.html">Skypic</A>
+y de los componentes necesario para el montaje de la placa de
+expansi&oacute;n, el tiempo estimado de construcci&oacute;n y puesta
+en marcha es de 1 hora.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffcc99">
+				<P><FONT FACE="Arial, sans-serif"><I><B>IMPORTANTE:</B> El
+				cristal de la tarjeta Skypic debe ser de <B>4Mhz</B>. (Existen
+				versiones con uno de 20Mhz. Si es nuestro caso, habr&aacute; que
+				quitarlo y soldar uno de 4Mhz. No hay que cambiar ning&uacute;n
+				otro componente). </I></FONT>
+				</P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2>Jumpers y conexionado</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>La <B>configuraci&oacute;n
+de los jumpers de la skypic</B> para funcionar como una chronopic se
+muestran en la siguiente foto (<B>hacer click para agrandarla </B>y
+verlo con m&aacute;s detalle)</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><A HREF="images/skypic-jumpers.png"><IMG SRC="images/skypic-jumpers-peq.png" NAME="Imagen5" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></A></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">El conexionado se
+muestra en la siguiente foto. Se utilizan 4 pilas AA para la
+alimentaci&oacute;n. La placa de expansi&oacute;n se conecta al
+conector CT2 de la <A HREF="../../../../../proyectos/skypic/skypic.html">Skypic</A>
+y el cable serie al conector RJ11 que se indica.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/chronopic-prot1-conexion.png" NAME="Imagen6" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2><A NAME="noticias"></A>Noticias</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>22/Mayo/2006:
+	</B><SPAN STYLE="font-weight: medium">Cambiados los enlaces para
+	apuntar a la nueva versi&oacute;n de Chronojump albergada en los
+	servidores de Gnome</SPAN></FONT></FONT></P>
+</UL>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>31/Agosto/2005</B>:
+	Publicada primera versi&oacute;n de esta p&aacute;gina</FONT></FONT></P>
+</UL>
+<HR>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="index.html">Chronopic
+1.0</A>] [<A HREF="http://www.gnome.org/projects/chronojump/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Proyecto
+chronojump</FONT></FONT></A>]</FONT></FONT></P>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="../../../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A><A HREF="http://www.iearobotics.com/">
+</A>
+</ADDRESS>
+<P STYLE="margin-bottom: 0cm"><A HREF="../../../../../index.php"><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEAROBOTICS</FONT></FONT></A>
+</P>
+</BODY>
+</HTML>
