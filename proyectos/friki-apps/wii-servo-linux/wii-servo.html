@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>control de un servo usando el mando de la Wii</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGEDBY" CONTENT="juan">
+	<META NAME="CHANGED" CONTENT="20070419;9442500">
+	<META NAME="KEYWORDS" CONTENT="python, ejemplos, hola mundo, pyserial, puerto serie">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Aplicaci&oacute;n
+				Friki: Control de un servo usando el mando de la Wii</B></FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/wii-servo.png" NAME="gr&aacute;ficos1" ALIGN=middle WIDTH=400 HEIGHT=300 BORDER=0><BR>
+				</P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif"><B>Introducci&oacute;n</B></FONT></H2>
+<P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">Aplicaci&oacute;n
+que mueve un servo conectado a un port&aacute;til utilizando <B>el
+mando de la Wii</B>. El sistema operativo empleado es Linux y el
+lenguaje C. Fue desarrollada durante una noche de “frikeo” en la
+<A HREF="http://iparty9.aditel.org/">iParty9</A> :-)</FONT></FONT></P>
+<HR>
+<H2 ALIGN=LEFT><FONT FACE="Arial, sans-serif">V&iacute;deo</FONT></H2>
+<center>
+<P ALIGN=CENTER><EMBED SRC="http://www.youtube.com/v/Jh3A3AR1EeI" TYPE="application/x-shockwave-flash" NAME="Objeto1" ALIGN=MIDDLE WIDTH=425 HEIGHT=350>
+</P>
+</center>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Informaci&oacute;n</FONT></H2>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Todo lo que
+se ha utilizado <B>es libre</B>:</FONT></FONT></P>
+<UL>
+	<LI><P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">La
+	librer&iacute;a usada para la lectura del mando es la <A HREF="http://libwiimote.sourceforge.net/">libwiimote</A>.
+	Versi&oacute;n 0.4</FONT></FONT></P>
+	<LI><P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">El
+	hardware es una tarjeta <A HREF="../../skypic/skypic.html">Skypic</A>.
+	</FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">El
+	firmware que corre en la Skypic es el <A HREF="../../stargate/servidores/sg-servos8/sg-servos8.html">Servos8</A>.</FONT></FONT></P>
+	<LI><P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">Lo que
+	se mueve es un <A HREF="../../../personal/juan/doctorado/Modulos-Y1/modulos-y1.html">M&oacute;dulo
+	Y1</A>. </FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">El
+	software en OpenGL es el que hizo <B>Carlos Gonz&aacute;lez Morzillo</B>
+	que <A HREF="http://crysol.inf-cr.uclm.es/node/636">describe en su
+	Blog</A>.</FONT></FONT></P>
+	<LI><P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">Las
+	fuentes del programa que se estoy utilizando (y m&aacute;s ejemplo):
+	<A HREF="download/wii-lamp.tgz">wii-lamp-servo.tgz</A>. </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Autor</FONT></H2>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="../../../personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+	Gonz&aacute;lez</FONT></FONT></A> </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Licencia</FONT></H2>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+				<P><BR><!--Creative Commons License--><A HREF="http://creativecommons.org/licenses/by-sa/2.5/es/"><IMG SRC="http://creativecommons.org/images/public/somerights20.png" NAME="Imagen27" ALT="Creative Commons License" ALIGN=BOTTOM WIDTH=88 HEIGHT=31 BORDER=0></A>
+				<FONT SIZE=2><FONT FACE="Arial, sans-serif">This work is licensed
+				under a </FONT></FONT><A HREF="http://creativecommons.org/licenses/by-sa/2.5/es/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Creative
+				Commons Attribution-ShareAlike 2.5 Spain License<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about="">
+			<license rdf:resource="http://creativecommons.org/licenses/by-sa/2.5/es/" />
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by-sa/2.5/es/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/><requires rdf:resource="http://web.resource.org/cc/ShareAlike"/></License></rdf:RDF> --></FONT></FONT></A>
+								</P>
+			</TD>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Este proyecto
+				tiene una <B>licencia libre</B>. Se permite su copia,
+				modificaci&oacute;n y distribuci&oacute;n, bajo los t&eacute;rminos
+				de la licencia Creative commons. </FONT></FONT>
+				</P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Todo el software
+				tiene licencia GPL.</FONT></FONT></P>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Cr&eacute;ditos:</FONT></H2>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Para aprender
+	sobre Bluetooth y Linux he utilizado el documento <A HREF="http://acs.barrapunto.org/~acs/LinuxBluetooth.pdf">“Soporte
+	Bluetooth en Linux 2.6”</A> de <A HREF="http://acs.barrapunto.org/">Alvaro
+	del Castillo</A>. &iexcl;Muchas gracias! :-)</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">El Ejemplo en el
+	que me he basado ha sido realizado por <A HREF="http://www.morcy.org/">Carlos
+	Gonz&aacute;lez Morzillo</A>. y que <A HREF="http://crysol.inf-cr.uclm.es/node/636">public&oacute;
+	en su Blog</A>. &iexcl;Muchas gracias! :-)</FONT></FONT></P>
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Noticias</FONT></H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>19/Abril/2007:</B>
+	Publicada primera versi&oacute;n de esta aplicaci&oacute;n</FONT></FONT></P>
+</UL>
+<HR>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="../../../personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A><A HREF="http://www.iearobotics.com/">
+</A>
+</ADDRESS>
+<P STYLE="margin-bottom: 0cm"><A HREF="http://www.iearobotics.com/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEAROBOTICS</FONT></FONT></A>
+</P>
+</BODY>
+</HTML>

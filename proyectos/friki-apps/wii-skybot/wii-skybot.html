@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>Moviendo un skybot con el mando de la Wii</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGEDBY" CONTENT="juan">
+	<META NAME="CHANGED" CONTENT="20070430;9140700">
+	<META NAME="KEYWORDS" CONTENT="robot, python, skybot, wiimote, wii, telecontrol, robotica">
+	<STYLE TYPE="text/css">
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Aplicaci&oacute;n
+				Friki: Moviendo un skybot con el mando de la wii, al estilo
+				“minority report”</B></FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H2><FONT FACE="Arial, sans-serif">Introducci&oacute;n</FONT></H2>
+<P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">El mando
+de la wii tiene muchas aplicaciones en rob&oacute;tica. Y algunas de
+ellas muy frikis :-) Despu&eacute;s de haber <A HREF="../wii-servo-linux/wii-servo.html">controlado
+un servo con el mando de la wii</A>, el siguiente experimento ha sido
+mover un <A HREF="../../skybot/skybot.html">skybot</A>. Pero en vez
+de hacerlo directamente moviendo el mando con la mano, me lo he
+pegado con cinta aislante como si fuese una especie de guante.</FONT></FONT></P>
+<HR>
+<H2 ALIGN=LEFT><FONT FACE="Arial, sans-serif">V&iacute;deo</FONT></H2>
+<center>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><EMBED SRC="http://www.youtube.com/v/UTfLc-VckHw" TYPE="application/x-shockwave-flash" NAME="Objeto1" ALIGN=BOTTOM WIDTH=425 HEIGHT=350>
+</P>
+</center>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Explicaci&oacute;n</FONT></H2>
+<P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">El
+skybot est&aacute; conectado al port&aacute;til por el USB (en
+realidad usando un conversor USB-serie, ya que el skybot est&aacute;
+hecho para el puerto serie). El mando de la wii se conecta por
+bluetooth al port&aacute;til. Se utilizan los m&oacute;dulos <B>pywii</B>
+de <A HREF="http://rafaeltm.wordpress.com/">Rafael Trevi&ntilde;o</A>
+y el <B>pystargate</B> que he hecho yo. El lenguaje de programaci&oacute;n
+es <A HREF="http://www.python.org/">Python</A> y la plataforma en la
+que se ha probado una <A HREF="http://www.debian.org/">Debian
+GNU/Linux</A> (Etch). </FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El
+programa permite el control del skybot utilizando dos grados de
+libertad del mando: <I>pitch</I> (cabeceo) para hacer que vaya hacia
+adelante y atr&aacute;s y <I>roll</I> para girar a la izquierda y
+derecha. Los &aacute;ngulos umbrales del cabeceo son de 30 grados. Es
+decir, que cuando el mando supera un cabecero de 30 grados o de -30
+grados, el robot se mueve. Para el <I>roll</I> se han utilizado
+umbrales de 45 grados. </FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El
+robot, en esta prueba, s&oacute;lo se mueve “todo o nada”. No hay
+control de velocidad. El giro se realiza girando una rueda hacia
+adelante y la otra hacia atr&aacute;s.</FONT></FONT></P>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Resulta
+bastante intuitivo su control, adem&aacute;s de ser muy divertido ;-)</FONT></FONT></P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Informaci&oacute;n</FONT></H2>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Todo lo que
+se ha utilizado <B>es libre</B>:</FONT></FONT></P>
+<UL>
+	<LI><P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">El
+	robot empleado es el <A HREF="../../skybot/skybot.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">skybot</FONT></FONT></A>
+	(un robot libre)</FONT></FONT></P>
+	<LI><P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">El
+	sistema operativo es <A HREF="http://www.debian.org/">Debian
+	GNU/Linux</A> (Etch).</FONT></FONT></P>
+	<LI><P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">La
+	librer&iacute;a para la lectura del mando de la wii es la <B>pywii</B>
+	de <A HREF="http://rafaeltm.wordpress.com/">Rafael Trevi&ntilde;o</A></FONT></FONT></P>
+	<LI><P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">Las
+	fuentes de la aplicaci&oacute;n est&aacute;n aqu&iacute;:
+	<A HREF="download/wii-skybot.tar.gz">wii-skybot.tar.gz</A> (incluyen
+	los m&oacute;dulos pywii y pystargate) </FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="http://www.iearobotics.com/blog/?p=6">Entrada
+	en el blog</A>. </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Descargas</FONT></H2>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<TR>
+		<TD WIDTH=100% VALIGN=TOP BGCOLOR="#0066cc">
+			<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>Descargas</B></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=47*>
+	<COL WIDTH=209*>
+	<TR VALIGN=TOP>
+		<TD WIDTH=18% BGCOLOR="#ccccff">
+			<P ALIGN=LEFT><A HREF="download/wii-skybot.tar.gz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">wii-skybot.tar.gz</FONT></FONT></A></P>
+		</TD>
+		<TD WIDTH=82% BGCOLOR="#ccccff">
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Fuentes de la
+			aplicaci&oacute;n (en python). Incluye los m&oacute;dulos
+			pystargate y pywii.</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Autor</FONT></H2>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="../../../personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+	Gonz&aacute;lez</FONT></FONT></A> </FONT></FONT>
+	</P>
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Licencia</FONT></H2>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+				<P><BR><!--Creative Commons License--><A HREF="http://creativecommons.org/licenses/by-sa/2.5/es/"><IMG SRC="http://creativecommons.org/images/public/somerights20.png" NAME="Imagen27" ALT="Creative Commons License" ALIGN=BOTTOM WIDTH=88 HEIGHT=31 BORDER=0></A>
+				<FONT SIZE=2><FONT FACE="Arial, sans-serif">This work is licensed
+				under a </FONT></FONT><A HREF="http://creativecommons.org/licenses/by-sa/2.5/es/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Creative
+				Commons Attribution-ShareAlike 2.5 Spain License<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about="">
+			<license rdf:resource="http://creativecommons.org/licenses/by-sa/2.5/es/" />
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by-sa/2.5/es/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/><requires rdf:resource="http://web.resource.org/cc/ShareAlike"/></License></rdf:RDF> --></FONT></FONT></A>
+								</P>
+			</TD>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Este proyecto
+				tiene una <B>licencia libre</B>. Se permite su copia,
+				modificaci&oacute;n y distribuci&oacute;n, bajo los t&eacute;rminos
+				de la licencia Creative commons. </FONT></FONT>
+				</P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Todo el software
+				tiene licencia GPL.</FONT></FONT></P>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Cr&eacute;ditos:</FONT></H2>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">La librer&iacute;a
+	<B>pywii</B> ha sido realizada por <A HREF="http://rafaeltm.wordpress.com/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Rafael
+	Trevi&ntilde;o</FONT></FONT></A>. Muchas gracias ;-)</FONT></FONT></P>
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Noticias</FONT></H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>30/Abril/2007:</B>
+	Publicada primera versi&oacute;n de esta aplicaci&oacute;n</FONT></FONT></P>
+</UL>
+<HR>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="../../../personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A><A HREF="http://www.iearobotics.com/">
+</A>
+</ADDRESS>
+<P STYLE="margin-bottom: 0cm"><A HREF="http://www.iearobotics.com/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEAROBOTICS</FONT></FONT></A>
+</P>
+</BODY>
+</HTML>
