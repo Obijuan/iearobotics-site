@@ -1,0 +1,18 @@
+A Novel Modular Climbing Caterpillar Using Low-frequency
+               Vibrating Passive Suckers
+
+Houxiang Zhang, Juan Gonzalez-Gomez, S.Y Chen, W. Wang, R. Lin, D. Li, J.W.Zhang
+
+Abstract: 
+
+  This paper presents a novel modular climbing caterpillar named ZC-I. After a related
+survey on the topic, a systematical summarizing on the basic functions provided by this
+system is given. ZC-I features fast-building mechanical structure and low-frequency 
+vibrating passive attachment principle. Active joints actuated by RC servos endow the 
+connecting modules with the ability of changing shapes in two dimensions. After that
+the discussion focuses on the various locomotion capabilities. Linear movement,
+turning movement, lateral movement, rotating and rolling movement are achived based on
+an inspired control model to produce rhythmic motion. In the end a conclusion and
+future work are given.
+
+   
