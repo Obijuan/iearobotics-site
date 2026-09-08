@@ -1,0 +1,345 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>CUBE REVOLUTION: Software III</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20041226;13552200">
+	<META NAME="CHANGED" CONTENT="20051219;21112100">
+	<META NAME="KEYWORDS" CONTENT="Robot, gusano, rob&oacute;tica modular">
+	<STYLE>
+	<!--
+		@page { size: 21cm 29.7cm; margin: 2cm }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0 STYLE="page-break-before: always">
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>CUBE
+				REVOLUTIONS: SOFTWARE III</B></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Introducci&oacute;n</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-top: 0.42cm; font-style: normal; font-weight: medium; page-break-after: avoid">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2>En este nivel se resuelve
+parcialmente el problema de <B>determinar qu&eacute; tipo de
+movimiento producen en el gusano diferentes secuencias</B>, para
+poder <B>compararlas</B>. El objetivo es <B>seleccionar de entre
+todas las infinitas secuencias de movimiento posibles aquellas que
+hacen que el movimiento sea &oacute;ptimo</B>. Para logarlo
+necesitamos establecer un criterio para poder evaluar los efectos que
+produce cada una de ellas en el gusano. Y pasa eso necesitamos un
+<B>modelo f&iacute;sico del gusano</B>, que nos informe de c&oacute;mo
+se comporta al mover sus servos.</FONT></FONT></P>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Estados
+internos, estables e inestables</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; font-style: normal; font-weight: medium; page-break-after: avoid">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2>El <B>estado interno</B>
+del gusano es el <B>vector de posici&oacute;n angular,</B> que indica
+el &aacute;ngulo de rotaci&oacute;n de cada una de las
+articulaciones. Sin embargo, dado un estado interno, el gusano
+virtual podr&iacute;a estar en muchas posiciones diferentes, pero
+s&oacute;lo una de ellas es la estable.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT SIZE=2><FONT FACE="Arial, sans-serif">En
+la siguiente figura se ilustra con un ejemplo para un gusano de 5
+articulaciones. Partiendo de un estado interno de [0, 45, 0, 0, 0],
+que quiere decir que el servo 1 est&aacute; en su estado inicial (0
+grados), el siguiente rotado 45 grados y todos los dem&aacute;s en
+sus posiciones iniciales, se muestran dos gusanos virtuales con ese
+mismo estado interno. Uno de ellos est&aacute; en una situaci&oacute;n
+<B>intestable</B></FONT></FONT>: <FONT SIZE=2><FONT FACE="Arial, sans-serif">si
+lo coloc&aacute;semos sobre una superficie horizontal no permanecer&iacute;a
+en esa posici&oacute;n, sino que se &ldquo;caer&iacute;a&rdquo; hacia
+la derecha. El otro gusano s&iacute; que est&aacute; en una situaci&oacute;n
+<B>estable</B>.</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El
+modelo f&iacute;sico lo que hace es tomar las secuencias de
+movimiento e ir calculando cuales son los estados estables a partir
+de los estados internos.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/soft3-estabilidad1.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=490 HEIGHT=230 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><BR><BR>
+</P>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Modelo
+f&iacute;sico</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El
+modelo f&iacute;sico calcula los <B>gusanos &ldquo;estables&rdquo; </B>a
+partir del <B>estado interno</B> (secuencias de movimiento) y del
+modelo de rozamiento utilizado. El modelo de rozamiento que se asume
+es el siguiente: al menos habr&aacute; un punto de contacto con el
+suelo que permanecer&aacute; fijo y siempre ser&aacute; el m&aacute;s
+cercano a la cola del gusano. As&iacute;, cuando el punto m&aacute;s
+cercano a la cola entre en contacto con el suelo, se fijar&aacute; su
+posici&oacute;n y se utilizar&aacute; para recalcular las posiciones
+de los otros, consider&aacute;ndose que este punto de apoyo no
+&ldquo;resbala&rdquo;.</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Dada
+una secuencia de movimiento, bien se puede enviar a <A HREF="index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cube
+revolutions</FONT></FONT></A> para que se mueva, utilizando el
+programa cube-play o el <A HREF="../../../../proyectos/stargate/clientes/star-servos8/star-servos8.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Star-servos8</FONT></FONT></A>,
+o bien se puede enviar al gusano virtual con el modelo f&iacute;sico
+implementando, utilizando el programa cube-virtual-play.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P><BR><BR>
+				</P>
+				<P ALIGN=CENTER><IMG SRC="images/soft3-cube-fisico-virtual.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=436 HEIGHT=320 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><BR><BR>
+</P>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><A NAME="implementacionc"></A>
+<FONT FACE="Albany, sans-serif"><FONT SIZE=4>Implementaci&oacute;n
+del modelo f&iacute;sico: M&oacute;dulo cube-fisico.c</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<PRE STYLE="text-align: center"><A NAME="modulo_cube1"></A><A NAME="modulo_cube"></A><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>MODULO CUBE-FISICO</B></FONT></FONT></FONT></PRE>
+			</TD>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE STYLE="margin-bottom: 0.5cm"><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>DESCRIPCI&Oacute;N: </B></FONT></FONT></FONT></PRE><P>
+				<FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Modelo
+				f&iacute;sico en 2D para Cube Revolutions. La funci&oacute;n
+				principal (cube_fisico_vector_posicionar) calcula la nueva
+				posici&oacute;n del gusano a partir de la anterior y de los
+				criterios de rozamientos establecidos. Este modelo es muy
+				experimental y solo funciona con secuencias generadas mediante
+				ondas. Si se introducen secuencias aleatorias, por ejemplo, el
+				modelo puede hacer cualquier cosa.</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffff99">
+				<PRE><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>FUNCIONES DEL INTERFAZ:</B></FONT></FONT></FONT></PRE>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+				<PRE><FONT COLOR="#b22222">/***************************************************/</FONT>
+<FONT COLOR="#b22222">/* cube-fisico.h  (c) Juan Gonzalez. Marzo-2004    */</FONT>
+<FONT COLOR="#b22222">/*-------------------------------------------------*/</FONT>
+<FONT COLOR="#b22222">/* LICENCIA GPL                                    */</FONT>
+<FONT COLOR="#b22222">/***************************************************/</FONT>
+
+<FONT COLOR="#a020f0">#include </FONT><FONT COLOR="#666666">&quot;vectores.h&quot;</FONT>
+
+<FONT COLOR="#b22222">/*--------------------*/</FONT>
+<FONT COLOR="#b22222">/* DEFINICIONES       */</FONT>
+<FONT COLOR="#b22222">/*--------------------*/</FONT>
+<FONT COLOR="#228b22">#define ESTABLE           1</FONT>
+<FONT COLOR="#228b22">#define INESTABLE_IZDA    3</FONT>
+<FONT COLOR="#228b22">#define INESTABLE_DECHA   2</FONT>
+<FONT COLOR="#228b22">#define INESTABLE_UNKNOW  0</FONT>
+
+
+<FONT COLOR="#b22222">/*******************************************************************/</FONT>
+<FONT COLOR="#b22222">/* Hacer que la articulacion especificada se apoye sobre el eje X  */</FONT>
+<FONT COLOR="#b22222">/* Todo el gusano se desplaza                                      */</FONT>
+<FONT COLOR="#b22222">/* Pero el estado sigue siendo el mismo                            */</FONT>
+<FONT COLOR="#b22222">/* ENTRADAS:                                                       */</FONT>
+<FONT COLOR="#b22222">/*   art: Numero de articulacion a apoyar en el suelo              */</FONT>
+<FONT COLOR="#b22222">/*******************************************************************/</FONT>
+<FONT COLOR="#4169e1">void cube_fisico_apoyar_art(int art)</FONT>;
+
+<FONT COLOR="#b22222">/************************************************************************/</FONT>
+<FONT COLOR="#b22222">/* Establecer el estado interno del gusano. El criterio tomado es el de */</FONT>
+<FONT COLOR="#b22222">/* dejar fijada la articulacion de la cola e ir aplicando los angulos   */</FONT>
+<FONT COLOR="#b22222">/* desde la izquierda hasta la derecha. El gusano que se obtiene esta   */</FONT>
+<FONT COLOR="#b22222">/* en une estado externo indeterminado: puede no estar apoyado sobre    */</FONT>
+<FONT COLOR="#b22222">/* el eje X, y ademas seguramente estara en una posicion inestable      */</FONT>
+<FONT COLOR="#b22222">/************************************************************************/</FONT>
+<FONT COLOR="#4169e1">void cube_fisico_estado_interno_inicial(int a1, int a2, int a3, int a4,</FONT>
+<FONT COLOR="#4169e1">                       int a5, int a6, int a7, int a8)</FONT>;
+                                                                                         
+<FONT COLOR="#b22222">/*******************************************************************/</FONT>
+<FONT COLOR="#b22222">/* FUNCION PRINCIPAL!!!. A partir del estado actual del gusano     */</FONT>
+<FONT COLOR="#b22222">/* y del nuevo estado interno (nuevas posiciones de los servos)    */</FONT>
+<FONT COLOR="#b22222">/* se calcula el gusano fisico que tiene ese estado, es estable y  */</FONT>
+<FONT COLOR="#b22222">/* cumple con los criterios de rozamiento establecidos             */</FONT>
+<FONT COLOR="#b22222">/*******************************************************************/</FONT>
+<FONT COLOR="#4169e1">void cube_fisico_estado_interno_set(int a1, int a2, int a3, int a4,</FONT>
+<FONT COLOR="#4169e1">                                    int a5, int a6, int a7, int a8)</FONT>;
+
+<FONT COLOR="#b22222">/***************************************************************/</FONT>
+<FONT COLOR="#b22222">/* Igual que la funcion cube_fisico_estado_interno_set() pero  */</FONT>
+<FONT COLOR="#b22222">/* pasando como parametro un vector de posicion                */</FONT>
+<FONT COLOR="#b22222">/***************************************************************/</FONT>
+<FONT COLOR="#4169e1">void cube_fisico_vector_posicionar(vector_pos_t *v)</FONT>;</PRE>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Programa
+cube-virtual-play.c</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<PRE STYLE="text-align: center"><A NAME="modulo_cube11"></A><A NAME="modulo_cube2"></A><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>PROGRAMA CUBE-VIRTUAL-PLAY</B></FONT></FONT></FONT></PRE>
+			</TD>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE STYLE="margin-bottom: 0.5cm"><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>DESCRIPCI&Oacute;N: </B></FONT></FONT></FONT></PRE><P STYLE="margin-bottom: 0cm">
+				<FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Generaci&oacute;n
+				de un fichero para OCTAVE para visualizar c&oacute;mo se mueve
+				Cube Revolutions cuando se utiliza una determinada secuencia de
+				movimiento.</FONT></FONT></FONT></P>
+				<P STYLE="margin-bottom: 0cm"><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>La
+				salida se saca por la pantalla, por lo que pasa usarlo desde
+				octave habr&aacute; que redireccionarlo a un fichero:</FONT></FONT></FONT></P>
+				<P STYLE="margin-bottom: 0cm"><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>$
+				<B>./cube-virtual-play test.f8 &gt; test2.m</B></FONT></FONT></FONT></P>
+				<P STYLE="margin-bottom: 0cm"><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>$
+				<B>octave test2.m</B></FONT></FONT></FONT></P>
+				<P><BR>
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE STYLE="margin-bottom: 0.5cm"><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>FICHERO PARA OCAVE:</B></FONT></FONT></FONT>
+
+<FONT FACE="Arial, sans-serif"><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif">El fichero de ejemplo generado con cube-play a partir de la secuencia test.f8 se puede descargar de aqu&iacute;: </FONT><A HREF="download/test2.m"><FONT FACE="Arial, sans-serif">test2.m</FONT></A></FONT></FONT></PRE>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+				<PRE><FONT COLOR="#b22222">/************************************************************************/</FONT>
+<FONT COLOR="#b22222">/* cube-virtual-play.   Juan Gonzalez Gomez.   Marzo-2004               */</FONT>
+<FONT COLOR="#b22222">/*----------------------------------------------------------------------*/</FONT>
+<FONT COLOR="#b22222">/* Reproduccion de fichero .f8 para el gusano virtual                   */</FONT>
+<FONT COLOR="#b22222">/*----------------------------------------------------------------------*/</FONT>
+<FONT COLOR="#b22222">/* LICENCIA GPL                                                         */</FONT>
+<FONT COLOR="#b22222">/************************************************************************/</FONT>
+
+<FONT COLOR="#a020f0">#include &lt;stdio.h&gt;</FONT>
+<FONT COLOR="#a020f0">#include &lt;math.h&gt;</FONT>
+<FONT COLOR="#a020f0">#include &lt;unistd.h&gt;</FONT>
+
+<FONT COLOR="#a020f0">#include </FONT><FONT COLOR="#666666">&quot;vectores.h&quot;</FONT>
+<FONT COLOR="#a020f0">#include </FONT><FONT COLOR="#666666">&quot;secuencias.h&quot;</FONT>
+<FONT COLOR="#a020f0">#include </FONT><FONT COLOR="#666666">&quot;cube-fisico.h&quot;</FONT>
+<FONT COLOR="#a020f0">#include </FONT><FONT COLOR="#666666">&quot;cube.h&quot;</FONT>
+
+<FONT COLOR="#b22222">/*-------------------------------------------*/</FONT>
+<FONT COLOR="#b22222">/*    F U N C I O N E S    P R I V A D A S   */</FONT>
+<FONT COLOR="#b22222">/*-------------------------------------------*/</FONT>
+
+<A NAME="inicio"></A><FONT COLOR="#4169e1">void inicio()</FONT>
+{
+  printf (<FONT COLOR="#666666">&quot;\n&quot;</FONT>);
+  printf (<FONT COLOR="#666666">&quot;%%Reproduccion de secuencias para CUBE REVOLUTIONS Virtual\n&quot;</FONT>);
+}
+
+<FONT COLOR="#b22222">/*-----------------------------------------------------------*/</FONT>
+<FONT COLOR="#b22222">/*                M  A   I   N                               */</FONT>
+<FONT COLOR="#b22222">/*-----------------------------------------------------------*/</FONT>
+<A NAME="main"></A><FONT COLOR="#4169e1">int main(int argc, char *argv[])</FONT>
+{
+        FILE *f;
+        int tam;
+        int i;
+        int j;
+        vector_pos_t *v;
+        vector_pos_t *vini;
+
+        inicio();
+        
+  <FONT COLOR="#b22222">/* Abrir el fichero */</FONT>  
+  f = fopen(argv[1],<FONT COLOR="#666666">&quot;r&quot;</FONT>);
+  <FONT COLOR="#4169e1">if</FONT> (f==NULL) {
+    printf (<FONT COLOR="#666666">&quot;%%Error al abrir fichero&quot;</FONT>);
+    <FONT COLOR="#4169e1">return</FONT> 0;
+  }
+  
+  <FONT COLOR="#b22222">/* Leer los vectores de posicion */</FONT>
+  <FONT COLOR="#4169e1">if</FONT> (!sec_load_vectores(f)) {
+    printf (<FONT COLOR="#666666">&quot;%%Fichero NO esta en formato .cube\n&quot;</FONT>);
+  }  
+  fclose(f);
+        
+        tam=sec_num_vectores();
+        printf (<FONT COLOR="#666666">&quot;%%Numero de vectores: %d\n&quot;</FONT>,tam);
+  
+        //-- Iniciar gusano
+        cube_init();
+        
+        <FONT COLOR="#b22222">/* Leeer vector inicial */</FONT>
+  vini = sec_get_vector(0);
+        cube_fisico_vector_posicionar(vini);
+        
+  <FONT COLOR="#b22222">/* Repetir la matriz de movimento unas cuantas veces */</FONT>
+        <FONT COLOR="#4169e1">for</FONT> (j=0; j&lt;4; j++) {
+    
+    <FONT COLOR="#b22222">/* Recorrer la matriz de movimiento */</FONT>
+          <FONT COLOR="#4169e1">for</FONT> (i=1; i&lt;tam; i++) {
+                  <FONT COLOR="#b22222">/* Leer el vector de posicion */</FONT>
+                  v=sec_get_vector(i);
+                
+                  <FONT COLOR="#b22222">/* Mover las articulaciones */</FONT>
+                  cube_fisico_vector_posicionar(v);
+                
+      <FONT COLOR="#b22222">/* Generar comandos para octave */</FONT>
+                  cube_octave(0,1,3);
+          }
+  }
+        printf (<FONT COLOR="#666666">&quot;pause\n&quot;</FONT>);
+  <FONT COLOR="#4169e1">return</FONT> 0;
+}</PRE>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Trabajo
+futuro</FONT></FONT></P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">El modelo f&iacute;sico
+realizado no est&aacute; completo y no es tampoco muy preciso. En los
+siguientes trabajos se va a utilizar un modelo mucho m&aacute;s real
+y para ello se va a utlizar el <A HREF="http://www.ode.org/">Open
+Dinamics Engine</A> (<B>ODE</B>).</FONT></FONT></P>
+<HR>
+<P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">[<A HREF="index.html">Cube
+Revolutions</A>]</FONT></FONT></P>
+<P STYLE="margin-bottom: 0cm"><A HREF="http://www.iearobotics.com/"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">IEA
+ROBOTICS</FONT></FONT></A> 
+</P>
+<ADDRESS><A HREF="../../index.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A> 
+</ADDRESS>
+</BODY>
+</HTML>

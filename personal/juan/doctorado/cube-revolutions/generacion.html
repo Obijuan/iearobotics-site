@@ -1,0 +1,275 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>CUBE REVOLUTION: Generaci&oacute;n autom&aacute;tica de movimiento</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20041226;13552200">
+	<META NAME="CHANGED" CONTENT="20051213;12501200">
+	<META NAME="KEYWORDS" CONTENT="Robot, gusano, rob&oacute;tica modular">
+	<STYLE>
+	<!--
+		@page { size: 21cm 29.7cm; margin: 2cm }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0 STYLE="page-break-before: always">
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>CUBE
+				REVOLUTIONS: GENERACI&Oacute;N AUTOM&Aacute;TICA DE MOVIMIENTO</B></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Introducci&oacute;n</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En
+este nivel se resuelven los siguientes problemas:</FONT></FONT></P>
+<UL>
+	<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><I><B>&iquest;C&oacute;mo
+	coordinar las articulaciones para que el robot ande?</B></I></FONT></FONT></P>
+	<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><I><B>&iquest;C&oacute;mo
+	generar autom&aacute;ticamente las secuencias de movimiento?</B></I></FONT></FONT></P>
+	<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><I><B>&iquest;C&oacute;mo
+	controlar el tipo de movimiento y su velocidad?</B></I></FONT></FONT></P>
+</UL>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Coordinaci&oacute;n
+de las articulaciones</FONT></FONT></P>
+<P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">Uno de
+los problemas de los robots tipo gusano es que para conseguir que se
+desplacen, <B>las articulaciones tienen que estar muy bien
+coordinadas</B>. Si uno intenta generar secuencias de movimiento
+manuales para mover un gusano de 8 articulaciones, como <A HREF="index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cube
+Revolutions</FONT></FONT></A>, comprobar&aacute; que es bastante
+complicado.</FONT></FONT></P>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Una
+soluci&oacute;n es utilizar un <B>modelo de propagaci&oacute;n de
+ondas</B>, de forma que el cuerpo del gusano se comporte como un
+elemento pasivo sobre el que se propagan ondas. Ser&iacute;a muy
+parecido a tener unas boyas unidas por un segmento fijo flotando en
+la superficie del mar o un lago. Al pasar las &ldquo;olas&rdquo;,
+este sistema cambiar&aacute; de forma:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/soft2-cube-anim1.gif" NAME="Imagen1" ALIGN=MIDDLE WIDTH=400 HEIGHT=100 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=JUSTIFY><BR><BR>
+</P>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Generaci&oacute;n
+autom&aacute;tica de las secuencias de movimiento</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>La
+generaci&oacute;n de las secuencias se hace de la siguiente manera</B>:</FONT></FONT></P>
+<UL>
+	<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Mediante
+	el <B>algoritmo de ajuste</B>, se hace que todas las articulaciones
+	del gusano se sit&uacute;en sobre la onda, obteni&eacute;ndose el
+	<B>vector de posici&oacute;n angular </B>(que contiene los &aacute;ngulos
+	de todas las articulaciones en ese instante).</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/soft2-ajuste.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=350 HEIGHT=305 BORDER=0></P>
+				<P ALIGN=LEFT><BR>
+				</P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.42cm; page-break-after: avoid">
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Se desplaza la onda y
+	se vuelve a ajustar el gusano</B>: obteni&eacute;ndose el siguiente
+	vector de posici&oacute;n angular</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/soft2-ajuste2.png" NAME="Imagen3" ALIGN=MIDDLE WIDTH=350 HEIGHT=424 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.42cm; page-break-after: avoid">
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Se repite el ciclo
+	<I>desplazamiento-ajuste</I> hasta que la onda haya recorrido una
+	distancia igual a su longitud de onda</B>. Los vectores de posici&oacute;n
+	angular obtenidos durante el proceso forman la <B>matriz de
+	movimiento</B>, que se puede grabar en un fichero .f8 para luego
+	reproducir la secuencia en el robot. Si se representa en pantalla
+	esta secuencia generada, quedar&iacute;a as&iacute;:</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/soft2-cube-anim2.gif" NAME="Imagen4" ALIGN=MIDDLE WIDTH=280 HEIGHT=100 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.42cm; page-break-after: avoid">
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=2>La clave de la
+	generaci&oacute;n de secuencias de movimiento es el <B>algoritmo de
+	ajuste</B>. Para m&aacute;s informaci&oacute;n consultar:</FONT></FONT></P>
+</UL>
+<UL>
+	<UL>
+		<LI><H1><A HREF="http://www.iearobotics.com/personal/juan/publicaciones/art11/html/index.html"><SPAN STYLE="font-weight: medium"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Evaluaci&oacute;n
+		de un Algoritmo de Locomoci&oacute;n de Robots &Aacute;podos en
+		Diferentes Procesadores Embebidos en FPGA</FONT></FONT></SPAN></A></H1>
+		<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="http://www.iearobotics.com/personal/juan/proyectos/cube-2.0/doc/cube_2.pdf">Parte
+		I: Teor&iacute;a de Gusanos</A>. En la p&aacute;gina 86 est&aacute;
+		descrito el algoritmo de ajuste.</FONT></FONT></P>
+	</UL>
+</UL>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Control
+del tipo de movimiento</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El
+<B>algoritmo </B>empleado para la <B>generaci&oacute;n de las
+secuencias de movimiento es totalmente independiente de la onda
+empleada</B>: funciona igual tanto si son ondas sinusoidales como si
+son triangulares o de cualquier otro tipo. El proceso de generaci&oacute;n
+es el mismo.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<TR>
+		<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+			<P ALIGN=LEFT STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Las
+			<B>caracter&iacute;sticas del movimiento est&aacute;n determinadas
+			por la ONDA</B> <B>empleada</B> y <B>los par&aacute;metros de
+			dicha onda</B>: Amplitud, longitud de onda, frecuencia, fase, etc.</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>La
+<B>selecci&oacute;n de la onda determina el tipo de movimiento del
+robot</B>. As&iacute; por ejemplo, una onda sinusoidal genera un
+movimiento m&aacute;s continuo y uniforme que una semionda. Pero esta
+&uacute;ltima hace que el movimiento sea m&aacute;s estable, puesto
+que hay mayor n&uacute;mero de puntos de contacto con la superficie.
+Ser&iacute;a un movimiento mejor para trepar por superficies
+inclinadas.</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para
+una misma onda empleada, por ejemplo sinusoidal, se pueden variar sus
+diferentes par&aacute;metros: amplitud, longitud de onda, etc.
+Existen, por tanto, infinitos movimientos posibles.</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT SIZE=2><FONT FACE="Arial, sans-serif">En
+<A HREF="index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cube
+Revolutions</FONT></FONT></A> est&aacute;n implementados los
+mecanismos para que se pueda mover de estas diferentes maneras, sin
+embargo, todav&iacute;a no se ha hecho un estudio en profundidad
+sobre las caracter&iacute;sticas del movimiento en funci&oacute;n de
+las ondas empledas y de sus par&aacute;metros.</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Los
+experimentos muestran que <B>la velocidad de desplazamiento es mayor
+cuanto mayor es la amplitud de la onda</B>.</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En
+la tabla inferior se pueden ver diferentes ondas empleadas y una
+animaci&oacute;n del movimiento que producen. En los <B>dos primeros
+casos</B> se est&aacute; empleando una <B>onda sinusoidal</B>, cada
+una con una amplitud diferente. Un amplitud peque&ntilde;a hace que
+el robot avance m&aacute;s despacio y le permitir&iacute;a pasar por
+debajo de obst&aacute;culos de poca altura o moverse por el interior
+de un tubo. Una amplitud mayor hace que el robot avance m&aacute;s
+deprisa y podr&iacute;a adem&aacute;s pasar por encima de peque&ntilde;os
+&ldquo;escalones&rdquo;.</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En
+el tercer caso se est&aacute; usando una <B>semionda</B>. Esta es
+quiz&aacute;s la forma m&aacute;s parecida a como se mueven los
+gusanos de seda. El <B>movimiento es m&aacute;s estable</B>: hay un
+mayor n&uacute;mero de puntos de contactos con el suelo.</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El
+&uacute;ltimo caso es un ejemplo de una onda creada mediante la
+<B>superposici&oacute;n</B> de dos ondas sinusoidales.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<THEAD>
+		<TR>
+			<TH WIDTH=50%>
+				<P><IMG SRC="images/soft2-onda-amp-15.png" NAME="Imagen5" ALIGN=MIDDLE WIDTH=390 HEIGHT=80 BORDER=0></P>
+			</TH>
+			<TH WIDTH=50%>
+				<P><IMG SRC="images/soft2-cube-anim2.gif" NAME="Imagen6" ALIGN=MIDDLE WIDTH=280 HEIGHT=100 BORDER=0></P>
+			</TH>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/soft2-onda-amp-5.png" NAME="Imagen8" ALIGN=MIDDLE WIDTH=384 HEIGHT=79 BORDER=0></P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/soft2-cube-anim3.gif" NAME="Imagen7" ALIGN=MIDDLE WIDTH=280 HEIGHT=100 BORDER=0></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/soft2-semionda-amp-15.png" NAME="Imagen9" ALIGN=MIDDLE WIDTH=398 HEIGHT=80 BORDER=0></P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/soft2-cube-anim4.gif" NAME="Imagen10" ALIGN=MIDDLE WIDTH=280 HEIGHT=100 BORDER=0></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/soft2-comb.png" NAME="Imagen11" ALIGN=MIDDLE WIDTH=395 HEIGHT=80 BORDER=0></P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/soft2-cube-anim5.gif" NAME="Imagen12" ALIGN=MIDDLE WIDTH=280 HEIGHT=100 BORDER=0></P>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<P ALIGN=JUSTIFY STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>NOTA:</B></FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+				<P ALIGN=JUSTIFY STYLE="margin-top: 0.42cm; page-break-after: avoid">
+				<FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Aunque estas
+				secuencias de movimiento se han creado para el robot Cube
+				Revolutions, en el que las articulaciones se mueven
+				perpendicularmente al suelo, ser&iacute;an v&aacute;lidas para un
+				robot tipo serpiente en el que las articulaciones se muevan
+				paralelamente al suelo o incluso para robots tipo anguila, que se
+				desplacen por el agua.</B></FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=JUSTIFY STYLE="margin-top: 0.42cm; page-break-after: avoid"><BR><BR>
+</P>
+<HR>
+<P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">[<A HREF="index.html">Cube
+Revolutions</A>]</FONT></FONT></P>
+<P STYLE="margin-bottom: 0cm"><A HREF="http://www.iearobotics.com/"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">IEA
+ROBOTICS</FONT></FONT></A> 
+</P>
+<ADDRESS><A HREF="../../index.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A> 
+</ADDRESS>
+</BODY>
+</HTML>

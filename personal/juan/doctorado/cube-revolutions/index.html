@@ -1,0 +1,1810 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>CUBE REVOLUTIONS: El robot &aacute;podo modular</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20041226;13552200">
+	<META NAME="CHANGED" CONTENT="20060720;19212100">
+	<META NAME="KEYWORDS" CONTENT="Robot, gusano, rob&oacute;tica modular">
+	<STYLE>
+	<!--
+		@page { size: 21cm 29.7cm; margin: 2cm }
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0 STYLE="page-break-before: always">
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#000000">
+				<P ALIGN=CENTER><IMG SRC="images/cube-rev-banner.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=900 HEIGHT=128 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=45*>
+	<COL WIDTH=43*>
+	<COL WIDTH=47*>
+	<COL WIDTH=37*>
+	<COL WIDTH=47*>
+	<COL WIDTH=37*>
+	<THEAD>
+		<TR VALIGN=TOP>
+			<TH WIDTH=17% BGCOLOR="#000000">
+				<P><A HREF="#Introducci&oacute;n |outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Introducci&oacute;n]</FONT></FONT></A></P>
+			</TH>
+			<TH WIDTH=17% BGCOLOR="#000000">
+				<P><A HREF="#V&iacute;deos|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[V&iacute;deos]</FONT></FONT></A></P>
+			</TH>
+			<TD WIDTH=18% BGCOLOR="#000000">
+				<P ALIGN=CENTER><A HREF="#Licencia|outline"><B><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Licencia]</FONT></FONT></B></A></P>
+			</TD>
+			<TH WIDTH=14% BGCOLOR="#000000">
+				<P><A HREF="#Publicaciones|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Publicaciones]</FONT></FONT></A></P>
+			</TH>
+			<TH WIDTH=19% BGCOLOR="#000000">
+				<P><A HREF="#Historia|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Historia]</FONT></FONT></A></P>
+			</TH>
+			<TH WIDTH=14% BGCOLOR="#000000">
+				<P><A HREF="#Descargas|outline"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Download]</FONT></FONT></A></P>
+			</TH>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR VALIGN=TOP>
+			<TD WIDTH=17% BGCOLOR="#000000">
+				<P ALIGN=CENTER><A HREF="#Caracter&iacute;siticas|outline"><B><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Caracter&iacute;sticas]</FONT></FONT></B></A></P>
+			</TD>
+			<TD WIDTH=17% BGCOLOR="#000000">
+				<P ALIGN=CENTER><A HREF="#Autores|outline"><B><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Autores]</FONT></FONT></B></A></P>
+			</TD>
+			<TD WIDTH=18% BGCOLOR="#000000">
+				<P ALIGN=CENTER><A HREF="#Motivaci&oacute;n|outline"><B><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Motivaci&oacute;n]</FONT></FONT></B></A></P>
+			</TD>
+			<TD WIDTH=14% BGCOLOR="#000000">
+				<P ALIGN=CENTER><A HREF="#Eventos|outline"><B><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Eventos]</FONT></FONT></B></A></P>
+			</TD>
+			<TD WIDTH=19% BGCOLOR="#000000">
+				<P ALIGN=CENTER><A HREF="#Informaci&oacute;n t&eacute;cnica|outline"><B><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Informaci&oacute;n
+				T&eacute;cnica]</FONT></FONT></B></A></P>
+			</TD>
+			<TD WIDTH=14% BGCOLOR="#000000">
+				<P ALIGN=CENTER><A HREF="#Links|outline"><B><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Enlaces]</FONT></FONT></B></A></P>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<HR>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<THEAD>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/cube-cobra.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/cube-juan.png" NAME="Imagen3" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2><A NAME="introduccion"></A><A NAME="Introducci&oacute;n |outline"></A>
+<FONT FACE="Arial, sans-serif">Introducci&oacute;n </FONT>
+</H2>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Cube Revolutions</B>
+es un robot <B>&aacute;podo</B> y <B>modular</B>. No tiene ni ruedas
+ni patas, pero es capaz de desplazarse en l&iacute;nea recta mediante
+ondulaciones de su cuerpo, que se propagan desde la cola hasta
+cabeza. Est&aacute; constituido por la uni&oacute;n en cadena de 8
+<A HREF="../Modulos-Y1/modulos-y1.html">M&oacute;dulos Y1</A>, con la
+misma orientaci&oacute;n. </FONT></FONT>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/cube1.png" NAME="Imagen6" ALIGN=MIDDLE WIDTH=850 HEIGHT=296 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Cube Revolutions</B>
+es una versi&oacute;n mejorada de <A HREF="../cube-reloaded/index.html">Cube
+Reloaded</A>. Una de las caracter&iacute;sticas de este tipo de
+robots es que pueden <B>adoptar diferentes formas</B>:</FONT></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Encogerse y
+	expandirse</B>:</FONT></FONT></P>
+</UL>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=785 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+			<COL WIDTH=388>
+			<COL WIDTH=381>
+			<THEAD>
+				<TR VALIGN=TOP>
+					<TD WIDTH=388>
+						<P ALIGN=CENTER><IMG SRC="images/cube-extendido.png" NAME="Imagen7" ALIGN=MIDDLE WIDTH=300 HEIGHT=225 BORDER=0></P>
+					</TD>
+					<TD WIDTH=381>
+						<P ALIGN=CENTER><IMG SRC="images/cube-encogido.png" NAME="Imagen8" ALIGN=MIDDLE WIDTH=300 HEIGHT=225 BORDER=0></P>
+					</TD>
+				</TR>
+			</THEAD>
+		</TABLE>
+	</DL>
+</DL>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Enrollarse o
+	adoptar forma de cobra</B></FONT></FONT></P>
+</UL>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=785 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+			<COL WIDTH=388>
+			<COL WIDTH=381>
+			<THEAD>
+				<TR VALIGN=TOP>
+					<TD WIDTH=388>
+						<P ALIGN=CENTER><IMG SRC="images/cube-enrollado-tux.png" NAME="Imagen9" ALIGN=MIDDLE WIDTH=300 HEIGHT=225 BORDER=0></P>
+					</TD>
+					<TD WIDTH=381>
+						<P ALIGN=CENTER><IMG SRC="images/cube-cobra-tux.png" NAME="Imagen10" ALIGN=MIDDLE WIDTH=300 HEIGHT=225 BORDER=0></P>
+					</TD>
+				</TR>
+			</THEAD>
+		</TABLE>
+	</DL>
+</DL>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>La
+locomoci&oacute;n</B> la puede realizar de tres maneras diferentes:</FONT></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Por medio de
+	ondas peri&oacute;dicas</B></FONT></FONT></P>
+</UL>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=764 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+			<COL WIDTH=388>
+			<COL WIDTH=358>
+			<THEAD>
+				<TR VALIGN=TOP>
+					<TD WIDTH=388>
+						<P ALIGN=CENTER><IMG SRC="images/sinusoidal.png" NAME="Imagen14" ALIGN=MIDDLE WIDTH=320 HEIGHT=100 BORDER=0></P>
+					</TD>
+					<TD WIDTH=358>
+						<P ALIGN=CENTER><IMG SRC="images/cube-locomocion-ondas2.gif" NAME="Imagen11" ALIGN=MIDDLE WIDTH=320 HEIGHT=100 BORDER=0></P>
+					</TD>
+				</TR>
+			</THEAD>
+		</TABLE>
+	</DL>
+</DL>
+<P><BR><BR>
+</P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Utilizando
+	semiondas</B></FONT></FONT></P>
+</UL>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=766 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+			<COL WIDTH=379>
+			<COL WIDTH=369>
+			<THEAD>
+				<TR VALIGN=TOP>
+					<TD WIDTH=379>
+						<P ALIGN=CENTER><IMG SRC="images/semionda.png" NAME="Imagen15" ALIGN=MIDDLE WIDTH=320 HEIGHT=100 BORDER=0></P>
+					</TD>
+					<TD WIDTH=369>
+						<P ALIGN=CENTER><IMG SRC="images/cube-locomocion-onda3.gif" NAME="Imagen12" ALIGN=MIDDLE WIDTH=320 HEIGHT=100 BORDER=0></P>
+					</TD>
+				</TR>
+			</THEAD>
+		</TABLE>
+	</DL>
+</DL>
+<P><BR><BR>
+</P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Convirti&eacute;ndose
+	en una rueda que rota sobre s&iacute; misma</B></FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/cube-rolling2.png" NAME="Imagen13" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2><A NAME="Caracter&iacute;siticas|outline"></A><FONT FACE="Arial, sans-serif">Caracter&iacute;siticas</FONT></H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>M&oacute;dulo
+	Y1</B>:</FONT></FONT></P>
+</UL>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=729 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+			<COL WIDTH=266>
+			<COL WIDTH=445>
+			<THEAD>
+				<TR>
+					<TD WIDTH=266 VALIGN=TOP>
+						<P ALIGN=CENTER><IMG SRC="images/moduloy1-acotado.png" NAME="Imagen20" ALIGN=MIDDLE WIDTH=240 HEIGHT=176 BORDER=0></P>
+					</TD>
+					<TD WIDTH=445>
+						<UL>
+							<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Dimensiones:
+							52x52x72mm, cuando est&aacute; en posici&oacute;n de reposo (0
+							grados)</FONT></FONT></P>
+						</UL>
+						<UL>
+							<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Peso 50gr</FONT></FONT></P>
+							<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Material:
+							PVC expandido</FONT></FONT></P>
+							<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Rango de
+							movimiento: 180 grados</FONT></FONT></P>
+						</UL>
+					</TD>
+				</TR>
+			</THEAD>
+		</TABLE>
+	</DL>
+</DL>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Cube
+	Revolutions</B> formado por 8 <A HREF="../Modulos-Y1/modulos-y1.html">M&oacute;dulos
+	Y1</A></FONT></FONT></P>
+</UL>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=729 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+			<COL WIDTH=266>
+			<COL WIDTH=445>
+			<THEAD>
+				<TR>
+					<TD WIDTH=266 VALIGN=TOP>
+						<P ALIGN=CENTER><IMG SRC="images/cube-estirado.png" NAME="Imagen21" ALIGN=MIDDLE WIDTH=240 HEIGHT=176 BORDER=0></P>
+					</TD>
+					<TD WIDTH=445>
+						<UL>
+							<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Dimensiones:
+							52x52x576mm</FONT></FONT></P>
+							<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Peso: 400gr</FONT></FONT></P>
+							<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">8 <A HREF="../Modulos-Y1/modulos-y1.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">M&oacute;dulos
+							Y1</FONT></FONT></A> conectados en cadena, con la misma
+							orientaci&oacute;n</FONT></FONT></P>
+						</UL>
+					</TD>
+				</TR>
+			</THEAD>
+		</TABLE>
+	</DL>
+</DL>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Robot abierto</B>:
+	Toda la informaci&oacute;n est&aacute; disponible bajo una licencia
+	libre, para que cualquiera lo pueda construir, distribuir o
+	modificar.</FONT></FONT></P>
+</UL>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=729 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+			<COL WIDTH=266>
+			<COL WIDTH=445>
+			<THEAD>
+				<TR>
+					<TD WIDTH=266 VALIGN=TOP>
+						<P ALIGN=CENTER><IMG SRC="images/tux.png" NAME="Imagen22" ALIGN=MIDDLE WIDTH=160 HEIGHT=176 BORDER=0></P>
+					</TD>
+					<TD WIDTH=445>
+						<UL>
+							<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Robot
+							dise&ntilde;ado s&oacute;lo con herramientas libres</B></FONT></FONT></P>
+							<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Planos</B>:
+							Herramienta <A HREF="http://www.ribbonsoft.com/qcad.html">QCAD</A></FONT></FONT></P>
+							<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Modelado
+							3D</B>: <A HREF="http://www.blender3d.org/">Blender</A></FONT></FONT></P>
+							<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Electr&oacute;nica</B>:
+							S&oacute;lo se ha empleado hardware libre: <A HREF="../../../../proyectos/ct6811/ct6811.html">Tarjeta
+							CT6811</A> y <A HREF="../../../../proyectos/skypic/skypic.html">Tarjeta
+							Skypic</A></FONT></FONT></P>
+							<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Sistema
+							operativo</B>: <A HREF="http://www.debian.org/">Debian
+							GNU/Linux 3.1</A> (Sarge)</FONT></FONT></P>
+							<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Software</B>:
+							Liberado bajo <A HREF="http://es.gnu.org/licencias/">licencia
+							GPL</A></FONT></FONT></P>
+						</UL>
+					</TD>
+				</TR>
+			</THEAD>
+		</TABLE>
+	</DL>
+</DL>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Locomoci&oacute;n</B>:
+	en 1 dimensi&oacute;n (l&iacute;nea recta)</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Alimentaci&oacute;n</B>:
+	5v, tanto para la electr&oacute;nica como para los servos.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Consumo</B>:
+	depende del tipo de locomoci&oacute;n</FONT></FONT></P>
+	<UL>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En reposo: 80mA</FONT></FONT></P>
+		<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En movimiento:
+		1.6A</FONT></FONT></P>
+	</UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Alimentaci&oacute;n
+	y electr&oacute;nica</B>: situadas fuera del robot.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Control</B>:
+	Robot controlado desde el PC, por medio de comunicaci&oacute;n
+	serie.</FONT></FONT></P>
+</UL>
+<HR>
+<H2>Friki-Cube</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Y lo m&aacute;s
+importante es que se puede &ldquo;<B>tunear&rdquo; </B>:-) Tomando un
+par de <B>calcetines viejos</B> para recubrir los m&oacute;dulos, el
+resultado es este:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<THEAD>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/friki-cube1.png" NAME="Imagen29" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+			<TD WIDTH=50%>
+				<P><IMG SRC="images/friki-cube2.png" NAME="Imagen30" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Tengo que reconocer
+que los ingenieros somos p&eacute;simos como artistas jajajajajajjaja</FONT></FONT></P>
+<HR>
+<H2><A NAME="V&iacute;deos|outline"></A><FONT FACE="Arial, sans-serif">V&iacute;deos</FONT></H2>
+<DL>
+	<DD>
+	<TABLE WIDTH=720 BORDER=1 CELLPADDING=4 CELLSPACING=0 RULES=ROWS>
+		<COL WIDTH=104>
+		<COL WIDTH=209>
+		<COL WIDTH=381>
+		<THEAD>
+			<TR>
+				<TH WIDTH=104 VALIGN=TOP BGCOLOR="#ffff99">
+					<P><IMG SRC="images/comp-ext-thumb.png" NAME="Imagen16" ALIGN=MIDDLE WIDTH=104 HEIGHT=79 BORDER=0></P>
+				</TH>
+				<TD WIDTH=209 BGCOLOR="#ffff99">
+					<P ALIGN=CENTER><A HREF="download/comp-ext.avi"><FONT SIZE=2><FONT FACE="Arial, sans-serif">comp-ext.avi</FONT></FONT></A>
+					<FONT SIZE=2><FONT FACE="Arial, sans-serif">(2.0MB)</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=381 BGCOLOR="#ffff99">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Movimientos de
+					compresi&oacute;n y expansi&oacute;n.</FONT></FONT></P>
+				</TD>
+			</TR>
+		</THEAD>
+		<TBODY>
+			<TR>
+				<TD WIDTH=104 VALIGN=TOP BGCOLOR="#ffffcc">
+					<P ALIGN=CENTER><IMG SRC="images/cube-cobra-thumb.png" NAME="Imagen17" ALIGN=MIDDLE WIDTH=102 HEIGHT=79 BORDER=0></P>
+				</TD>
+				<TD WIDTH=209 BGCOLOR="#ffffcc">
+					<P ALIGN=CENTER><A HREF="download/cube-cobra.avi"><FONT SIZE=2><FONT FACE="Arial, sans-serif">cube-cobra.avi</FONT></FONT></A>
+					<FONT SIZE=2><FONT FACE="Arial, sans-serif">(3.8MB)</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=381 BGCOLOR="#ffffcc">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Cube Revolutions
+					adoptando la forma de una cobra.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=104 VALIGN=TOP BGCOLOR="#ffff99">
+					<P ALIGN=CENTER><IMG SRC="images/cube-rollo-thumb.png" NAME="Imagen18" ALIGN=MIDDLE WIDTH=100 HEIGHT=77 BORDER=0></P>
+				</TD>
+				<TD WIDTH=209 BGCOLOR="#ffff99">
+					<P ALIGN=CENTER><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/cube-rollo.avi"><FONT SIZE=2><FONT FACE="Arial, sans-serif">cube-rollo.avi</FONT></FONT></A>
+					(2.4MB)</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=381 BGCOLOR="#ffff99">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Cube Revolutions
+					enroll&aacute;ndose sobre s&iacute; mismo</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=104 VALIGN=TOP BGCOLOR="#ffffcc">
+					<P ALIGN=CENTER><IMG SRC="images/cube-semi-thumb.png" NAME="Imagen19" ALIGN=MIDDLE WIDTH=103 HEIGHT=78 BORDER=0></P>
+				</TD>
+				<TD WIDTH=209 BGCOLOR="#ffffcc">
+					<P ALIGN=CENTER><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="download/cube-semionda.avi"><FONT SIZE=2><FONT FACE="Arial, sans-serif">cube-semionda.avi</FONT></FONT></A>
+					(4.9MB)</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=381 BGCOLOR="#ffffcc">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Movimiento
+					mediante semi-ondas, similar a los gusanos de seda</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=104 VALIGN=TOP BGCOLOR="#ffff99">
+					<P ALIGN=CENTER><IMG SRC="images/cube-seno-thumb.png" NAME="Imagen4" ALIGN=MIDDLE WIDTH=101 HEIGHT=78 BORDER=0></P>
+				</TD>
+				<TD WIDTH=209 BGCOLOR="#ffff99">
+					<P ALIGN=CENTER><A HREF="download/cube-onda-periodica.avi"><FONT SIZE=2><FONT FACE="Arial, sans-serif">cube-onda-periodica.avi</FONT></FONT></A>
+					<FONT SIZE=2><FONT FACE="Arial, sans-serif">(3.0MB)</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=381 BGCOLOR="#ffff99">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Movimiento
+					mediante ondas sinusoidales que se propagan de la cola hasta la
+					cabeza.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=104 VALIGN=TOP BGCOLOR="#ffffcc">
+					<P ALIGN=CENTER><IMG SRC="images/cube-rolling-thumb.png" NAME="Imagen5" ALIGN=MIDDLE WIDTH=101 HEIGHT=78 BORDER=0></P>
+				</TD>
+				<TD WIDTH=209 BGCOLOR="#ffffcc">
+					<P ALIGN=CENTER><A HREF="download/cube-rolling.avi"><FONT SIZE=2><FONT FACE="Arial, sans-serif">cube-rolling.avi</FONT></FONT></A>
+					<FONT SIZE=2><FONT FACE="Arial, sans-serif">(3.1MB)</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=381 BGCOLOR="#ffffcc">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Cube Revolutions
+					adoptando forma de &ldquo;rueda&rdquo; y desplaz&aacute;ndose
+					rodando, hacia un lado y hacia otro</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=104 VALIGN=TOP BGCOLOR="#ffff99">
+					<P ALIGN=CENTER><IMG SRC="images/cube-tux-thumb.png" NAME="Imagen23" ALIGN=MIDDLE WIDTH=101 HEIGHT=78 BORDER=0></P>
+				</TD>
+				<TD WIDTH=209 BGCOLOR="#ffff99">
+					<P ALIGN=CENTER><A HREF="download/cube-tux.avi"><FONT SIZE=2><FONT FACE="Arial, sans-serif">cube-tux.avi</FONT></FONT></A>
+					<FONT SIZE=2><FONT FACE="Arial, sans-serif">(4.1MB)</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=381 BGCOLOR="#ffff99">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Friki-Video</B>:
+					Tux, cansado de mirar a Cube Revolutions, decide pasar a la
+					acci&oacute;n :-)</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=104 VALIGN=TOP BGCOLOR="#ffffcc">
+					<P ALIGN=CENTER><IMG SRC="images/friki-cube1-thumb.png" NAME="Imagen31" ALIGN=MIDDLE WIDTH=101 HEIGHT=78 BORDER=0></P>
+				</TD>
+				<TD WIDTH=209 BGCOLOR="#ffffcc">
+					<P ALIGN=CENTER><A HREF="download/friki-cube1.avi"><FONT SIZE=2><FONT FACE="Arial, sans-serif">friki-cube1.avi</FONT></FONT></A>
+					<FONT SIZE=2><FONT FACE="Arial, sans-serif">(2.1MB)</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=381 BGCOLOR="#ffffcc">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Friki-Video</B>:
+					Friki-cube en acci&oacute;n!!!!</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=104 VALIGN=TOP BGCOLOR="#ffff99">
+					<P ALIGN=CENTER><IMG SRC="images/friki-cube2-thumb.png" NAME="Imagen32" ALIGN=MIDDLE WIDTH=101 HEIGHT=78 BORDER=0></P>
+				</TD>
+				<TD WIDTH=209 BGCOLOR="#ffff99">
+					<P ALIGN=CENTER><A HREF="download/friki-cube2.avi"><FONT SIZE=2><FONT FACE="Arial, sans-serif">friki-cube2.avi</FONT></FONT></A>
+					<FONT SIZE=2><FONT FACE="Arial, sans-serif">(3.6MB)</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=381 BGCOLOR="#ffff99">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Friki-Video</B>:
+					Friki-Cube pasando por una zona complicada, para reunirse con su
+					amigo Tux</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=104 VALIGN=TOP BGCOLOR="#ffffcc">
+					<P ALIGN=CENTER><IMG SRC="images/friki-cube3-thumb.png" NAME="Imagen33" ALIGN=MIDDLE WIDTH=101 HEIGHT=78 BORDER=0></P>
+				</TD>
+				<TD WIDTH=209 BGCOLOR="#ffffcc">
+					<P ALIGN=CENTER><A HREF="download/friki-cube-cobra.avi"><FONT SIZE=2><FONT FACE="Arial, sans-serif">friki-cube-cobra.avi</FONT></FONT></A>
+					<FONT SIZE=2><FONT FACE="Arial, sans-serif">(1.8MB)</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=381 BGCOLOR="#ffffcc">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Friki-Video</B>:
+					Friki-Cube se pone en posici&oacute;n para posar</FONT></FONT></P>
+				</TD>
+			</TR>
+		</TBODY>
+	</TABLE>
+</DL>
+<P><BR><BR>
+</P>
+<HR>
+<H2>Animaciones</H2>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<DL>
+	<DD>
+	<TABLE WIDTH=720 BORDER=1 CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+		<COL WIDTH=104>
+		<COL WIDTH=209>
+		<COL WIDTH=381>
+		<THEAD>
+			<TR>
+				<TH WIDTH=104 VALIGN=TOP BGCOLOR="#ffff99">
+					<P><IMG SRC="images/cube-virtual-cobra-thumb.png" NAME="Imagen28" ALIGN=MIDDLE WIDTH=104 HEIGHT=79 BORDER=0></P>
+				</TH>
+				<TD WIDTH=209 BGCOLOR="#ffff99">
+					<P ALIGN=CENTER><A HREF="download/cube-virtual-cobra.avi"><FONT SIZE=2><FONT FACE="Arial, sans-serif">cube-virtual-cobra.avi</FONT></FONT></A>
+					<FONT SIZE=2><FONT FACE="Arial, sans-serif">(617KB)</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=381 BGCOLOR="#ffff99">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Cube virtual
+					adoptando forma de cobra. Hecha con Blender.</FONT></FONT></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</DL>
+<P><BR><BR>
+</P>
+<HR>
+<H2><A NAME="autores11"></A><A NAME="Autores|outline"></A><FONT FACE="Arial, sans-serif">Autores</FONT></H2>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Autor</B>:
+	</FONT></FONT><A HREF="../../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+	Gonz&aacute;lez G&oacute;mez</FONT></FONT></A> 
+	</P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Director</B>:
+	</FONT></FONT><A HREF="http://www.ii.uam.es/~ivan/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Eduardo
+	Boemo-Scalvinoni</FONT></FONT></A></P>
+</UL>
+<HR>
+<H2><A NAME="licencia11"></A><A NAME="Licencia|outline"></A><FONT FACE="Arial, sans-serif">Licencia</FONT></H2>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+				<P><BR><!--Creative Commons License--><A HREF="http://creativecommons.org/licenses/by-sa/2.5/es/"><IMG SRC="http://creativecommons.org/images/public/somerights20.png" NAME="Imagen27" ALT="Creative Commons License" ALIGN=BOTTOM WIDTH=88 HEIGHT=31 BORDER=0></A>
+				<FONT SIZE=2><FONT FACE="Arial, sans-serif">This work is licensed
+				under a </FONT></FONT><A HREF="http://creativecommons.org/licenses/by-sa/2.5/es/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Creative
+				Commons Attribution-ShareAlike 2.5 Spain License</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about="">
+			<license rdf:resource="http://creativecommons.org/licenses/by-sa/2.5/es/" />
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by-sa/2.5/es/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/><requires rdf:resource="http://web.resource.org/cc/ShareAlike"/></License></rdf:RDF> --></FONT></FONT>
+								</P>
+			</TD>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Este proyecto
+				tiene una <B>licencia libre</B>. El software se distribuye bajo
+				</FONT></FONT><A HREF="http://gugs.sindominio.net/gnu-gpl/gples.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">licencia
+				GPL</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+				y el resto: documentaci&oacute;n, hardware y estructuras
+				mec&aacute;nicas, bajo una licencia Creative-Commons,
+				permiti&eacute;ndose su copia, modificaci&oacute;n y
+				distribuici&oacute;n.<BR><B>Descargo de Responsabilidad</B>. No
+				me hago responsable en ning&uacute;n caso de los posibles da&ntilde;os
+				o p&eacute;rdidas de garant&iacute;a que pueda ocasionar el uso,
+				debido o indebido de la informaci&oacute;n contenida en este
+				proyecto.</FONT></FONT></P>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2><A NAME="Motivaci&oacute;n|outline"></A><FONT FACE="Arial, sans-serif">Motivaci&oacute;n</FONT></H2>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Este
+proyecto lo estoy realizando como parte de mi </FONT></FONT><A HREF="../doctorado.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">tesis
+doctoral</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+El objetivo es crear <B>una plataforma abierta para investigar en
+rob&oacute;tica modular reconfigurable</B>. Cada vez estoy m&aacute;s
+convencido de que la informaci&oacute;n tiene que ser libre. Es la
+&uacute;nica manera de que la sociedad, en su conjunto, avance. Por
+eso <B>este proyecto es libre</B>, para que otros investigadores o
+aficionados por la rob&oacute;tica lo puedan utilizar, modificar,
+mejorar o reutilizar partes. Todo ello sin tener que pedir permiso ni
+ser considerado un &ldquo;pirata&rdquo; por reutilizar las ideas.</FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Y por
+esa raz&oacute;n utilizo <B>Linux</B> y <B>sistemas abierto</B>. No
+quiero que este proyecto, que al fin y al cabo es conocimiento, quede
+atado a una tecnolog&iacute;a controlada &uacute;nicamente por una
+empresa y que est&eacute; a merced de sus decisiones. El software
+libre es de todos.</FONT></FONT></P>
+<HR>
+<H2><A NAME="Publicaciones|outline"></A><FONT FACE="Arial, sans-serif">Publicaciones</FONT></H2>
+<CENTER>
+	<TABLE WIDTH=864 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+		<COL WIDTH=635>
+		<COL WIDTH=211>
+		<THEAD>
+			<TR>
+				<TD WIDTH=635 VALIGN=TOP BGCOLOR="#e6e6ff">
+					<P ALIGN=JUSTIFY><A HREF="../../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">J.
+					Gonz&aacute;lez-G&oacute;mez</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+					<A HREF="http://www.ii.uam.es/~igonzale/"><FONT SIZE=2>I.
+					Gonz&aacute;lez</FONT></A>, <A HREF="http://www.ii.uam.es/~fjgomez/"><FONT SIZE=2>FJ.
+					G&oacute;mez-Arribas</FONT></A> <FONT SIZE=2>y </FONT><A HREF="http://www.ii.uam.es/~ivan/"><FONT SIZE=2>E.
+					Boemo</FONT></A>,&rdquo;<B>Evaluaci&oacute;n de un Algoritmo de
+					Locomoci&oacute;n de Robots &Aacute;podos en Diferentes
+					Procesadores Embebidos en FPGA&rdquo;</B> , V Jornadas de
+					Computaci&oacute;n Reconfigurable y Aplicaciones. JCRA 2005.
+					Dentro del Primer Congreso Espa&ntilde;ol de Inform&aacute;tica,
+					<A HREF="http://cedi2005.ugr.es/">CEDI 2005</A>. Granada,
+					Septiembre 2005.</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=211 BGCOLOR="#e6e6ff">
+					<P ALIGN=CENTER><FONT SIZE=2><FONT FACE="Arial, sans-serif">[</FONT></FONT><A HREF="../../publicaciones/art11/download/cedi-cube.pdf"><FONT SIZE=2><FONT FACE="Arial, sans-serif">PDF</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">]
+					[</FONT></FONT><A HREF="../../publicaciones/art11/html/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">HTML</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">]
+					[</FONT></FONT><A HREF="../../publicaciones/art11/index.html"><B><FONT SIZE=2><FONT FACE="Arial, sans-serif">M&aacute;s
+					informaci&oacute;n</FONT></FONT></B></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">]</FONT></FONT></P>
+				</TD>
+			</TR>
+		</THEAD>
+		<TBODY>
+			<TR>
+				<TD WIDTH=635 VALIGN=TOP BGCOLOR="#ffffcc">
+					<P ALIGN=JUSTIFY><A HREF="../../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Gonz&aacute;lez-G&oacute;mez,
+					J</FONT></FONT></A><FONT FACE="Arial, sans-serif"><FONT SIZE=2>,
+					</FONT><A HREF="mailto:estanislao.aguayo@uam.es"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Aguayo
+					E</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+					and </FONT></FONT><A HREF="http://www.ii.uam.es/~ivan/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Boemo
+					E.</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>,&rdquo;Locomotion
+					of a Modular Worm-like Robot using a FPGA-based embedded
+					MicroBlaze Soft-processor&quot;</B>, 7th International
+					Conference on Climbing and Walking Robots, </FONT></FONT><A HREF="http://www.iai.csic.es/clawar04/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">CLAWAR
+					2004</FONT></FONT></A><FONT SIZE=2>. CSIC, Madrid (spain).
+					September, 2004. Lectures notes in computer science.</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=211 BGCOLOR="#ffffcc">
+					<P ALIGN=CENTER><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="../../publicaciones/art8/cube-clawar04.pdf"><FONT SIZE=2>PDF</FONT></A>]
+					<FONT SIZE=2>[<A HREF="../../publicaciones/art8/html/index.html"><FONT SIZE=2>HTML</FONT></A><FONT SIZE=2>]
+					</FONT>[</FONT><A HREF="../../publicaciones/art8/index.html"><B><FONT SIZE=2>M&aacute;s
+					informaci&oacute;n</FONT></B></A>] </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=635 VALIGN=TOP BGCOLOR="#e6e6ff">
+					<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><A HREF="../../index.html"><FONT SIZE=2>Gonz&aacute;lez-G&oacute;mez,
+					J</FONT></A><FONT SIZE=2>, <A HREF="mailto:estanislao.aguayo@uam.es"><FONT SIZE=2>Aguayo
+					E</FONT></A><FONT SIZE=2>. y </FONT><A HREF="http://www.ii.uam.es/~ivan/"><FONT SIZE=2>Boemo
+					E.</FONT></A><FONT SIZE=2><B>,&rdquo;Locomoci&oacute;n de un
+					Robot &Aacute;podo Modular con el Procesador MicroBlaze&quot;</B>,
+					IV Jornadas sobre Computaci&oacute;n Reconfigurable y
+					Aplicaciones, </FONT><A HREF="http://cephis.uab.es/es/jcra04/"><FONT SIZE=2>JCRA04</FONT></A>,
+					Escuela T&eacute;cnica Superior de Ingenier&iacute;as.
+					Universidad Aut&oacute;noma de Barcelona, Septiembre 2004.</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=211 BGCOLOR="#e6e6ff">
+					<P ALIGN=CENTER><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="../../publicaciones/art7/cube-rev.pdf"><FONT SIZE=2>PDF</FONT></A><FONT SIZE=2>]
+					[</FONT><A HREF="../../publicaciones/art7/html/index.html"><FONT SIZE=2>HTML</FONT></A><FONT SIZE=2>]
+					[</FONT><A HREF="../../publicaciones/art7/index.html"><B><FONT SIZE=2>M&aacute;s
+					informaci&oacute;n</FONT></B></A>] </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=635 VALIGN=TOP BGCOLOR="#ffffcc">
+					<P ALIGN=JUSTIFY><A HREF="../../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">J.
+					Gonz&aacute;lez</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+					<A HREF="http://www.ii.uam.es/~igonzale/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">I.
+					Gonz&aacute;lez</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+					</FONT></FONT><A HREF="http://www.ii.uam.es/~ivan/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">E.
+					Boemo</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+					<B>&quot;Alternativas Hardware para la Locomoci&oacute;n de un
+					Robot &Aacute;podo''</B>, III Jornadas sobre Computaci&oacute;n
+					Reconfigurable y Aplicaciones, </FONT></FONT><A HREF="http://www.ii.uam.es/~jcra03/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">JCRA03</FONT></FONT></A>,
+					Escuela Polit&eacute;cnica Superior, Universidad Aut&oacute;noma
+					de Madrid, Septiembre 2003.</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=211 BGCOLOR="#ffffcc">
+					<P ALIGN=CENTER><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="../../publicaciones/art2/51-Gonzalez_et_al.pdf">PDF</A>]
+					[<A HREF="../../publicaciones/art2/html/index.html">HTML</A>]
+					[<A HREF="../../publicaciones/art2/index.html"><B>M&aacute;s
+					informaci&oacute;n</B></A>] </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+		</TBODY>
+	</TABLE>
+</CENTER>
+<P><BR><BR>
+</P>
+<HR>
+<H2><A NAME="Eventos|outline"></A><A NAME="Eventos|outline"></A><FONT FACE="Arial, sans-serif">Eventos</FONT></H2>
+<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Charlas,
+conferencias, seminarios y eventos en los que se ha mostrado <B>Cube
+Revolutions</B>:</FONT></FONT></P>
+<CENTER>
+	<TABLE WIDTH=733 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+		<COL WIDTH=91>
+		<COL WIDTH=477>
+		<COL WIDTH=139>
+		<THEAD>
+			<TR VALIGN=TOP>
+				<TD WIDTH=91 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B><SPAN STYLE="background: transparent">08/Julio/2006</SPAN></B></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=477 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT>&rdquo;<FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Granja
+					de Micro-Robots&rdquo;</B>, Party-Quijote. Ciudad Real. Julio
+					2006 </FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=139 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="../../conferencias/conf24/index.html"><B>M&aacute;s
+					informaci&oacute;n</B></A>] </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+		</THEAD>
+		<TBODY>
+			<TR VALIGN=TOP>
+				<TD WIDTH=91 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B><SPAN STYLE="background: transparent">19/Enero/2006</SPAN></B></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=477 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT>&rdquo;<FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Rob&oacute;tica
+					Modular y Locomoci&oacute;n: Robots Cube Revolutions y
+					Multicube</B>&rdquo;, Cursos de doctorado. Universidad Rey Juan
+					Carlos. Madrid. Enero 2006 </FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=139 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="../../conferencias/conf21/index.html"><B>M&aacute;s
+					informaci&oacute;n</B></A>] </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=91 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B><SPAN STYLE="background: transparent">27/Nov/2005</SPAN></B></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=477 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Charla
+					en el IRC: &ldquo;<B>Cube Begins...</B>&ldquo; </FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=139 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="../../../../proyectos/charlas-irc/cube-begins/log-27-nov-2005.html"><B>M&aacute;s
+					informaci&oacute;n</B></A>] </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=91 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B><SPAN STYLE="background: transparent">10/Nov/2005</SPAN></B></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=477 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT>&ldquo;<FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Demostraci&oacute;n
+					de Robots articulados</B>&rdquo;. II Jornadas de Rob&oacute;tica
+					en la UCA. Semana de la ciencia y la tecnolog&iacute;a. C&aacute;diz.
+					Noviembre 2005</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=139 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="../../conferencias/conf20/index.html"><B>M&aacute;s
+					informaci&oacute;n</B></A>] </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=91 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B><SPAN STYLE="background: transparent">2/Oct/2005</SPAN></B></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=477 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Presentaci&oacute;n
+					p&uacute;blica de A.R.D.E: Agrupaci&oacute;n de Rob&oacute;tica
+					De Espa&ntilde;a</B>.</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=139 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="../../eventos/evento05/index.html"><B>M&aacute;s
+					informaci&oacute;n</B></A>] </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=91 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B><SPAN STYLE="background: transparent">5/Sep/2005</SPAN></B></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=477 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Grabaci&oacute;n
+					del cap&iacute;tulo sobre &ldquo;Rob&oacute;tica personal&rdquo;
+					de la serie &ldquo;Espa&ntilde;a Innova&rdquo;</B>.</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=139 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="../../eventos/evento04/index.html"><B>M&aacute;s
+					informaci&oacute;n</B></A>] </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=91 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B><SPAN STYLE="background: transparent">27/Julio/2005</SPAN></B></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=477 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT>&rdquo;<FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Dise&ntilde;o
+					de Robots &Aacute;podos: Cube Revolutions&rdquo;</B>, &Aacute;rea
+					de CampusBot. CampusParty. Valencia 2005.</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=139 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="../../conferencias/conf17/index.html"><B>M&aacute;s
+					informaci&oacute;n</B></A>] </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=91 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B><SPAN STYLE="background: transparent">30/Mayo/2005</SPAN></B></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=477 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT>&rdquo;<FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>V
+					Muestra de Microb&oacute;tica&rdquo;</B>, Universidad de M&aacute;laga.
+					Mayo 2005. </FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=139 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="../../eventos/evento02/index.html"><B>M&aacute;s
+					informaci&oacute;n</B></A>] </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=91 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B><SPAN STYLE="background: transparent">9/Abril/2005</SPAN></B></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=477 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT>&rdquo;<FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Sesiones
+					de rob&oacute;tica&rdquo;</B>, Comunidad de Madrid. UPSAM. Abril
+					2005. </FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=139 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="../../conferencias/conf8/index.html"><B>M&aacute;s
+					informaci&oacute;n</B></A>] </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=91 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B><SPAN STYLE="background: transparent">7/Abril/2005</SPAN></B></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=477 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT>&rdquo;<FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Dise&ntilde;o
+					de Robots &aacute;podos: Cube Revolutions&rdquo;</B>, Concurso
+					de rob&oacute;tica Robolid05. ETSII de Valladolid. UVa. Abril
+					2005. </FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=139 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="../../conferencias/conf7/index.html"><B>M&aacute;s
+					informaci&oacute;n</B></A>] </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=91 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B><SPAN STYLE="background: transparent">10/Marzo/2005</SPAN></B></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=477 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT>&rdquo;<FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Rob&oacute;tica
+					y Linux: C&oacute;mo se hizo Cube Revolutions&rdquo;</B>, IV
+					Jornadas de Software libre en la UPSAM. Marzo 2005. </FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=139 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="../../conferencias/conf6/index.html"><B>M&aacute;s
+					informaci&oacute;n</B></A>] </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=91 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B><SPAN STYLE="background: transparent">24/Ene/2005</SPAN></B></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=477 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT>&rdquo;<FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Rob&oacute;tica
+					y Linux&rdquo;</B>, &iexcl;Innovame!. Jornadas de difusi&oacute;n
+					de la innovaci&oacute;n tecnol&oacute;gica. CDTinternet.net.
+					Enero 2005. </FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=139 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="../../conferencias/conf5/index.html"><B>M&aacute;s
+					informaci&oacute;n</B></A>] </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=91 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN STYLE="background: transparent"><B>24/Nov/2004</B>:</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=477 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT>&rdquo;<FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Dise&ntilde;o
+					de Robots &Aacute;podos: Cube Revolutions&rdquo;</B>, IV Semana
+					de la Ciencia en Madrid. Universidad Pontificia de Salamanca en
+					Madrid. UPSAM. Noviembre 2004.</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=139 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="../../conferencias/conf4/index.html"><B>M&aacute;s
+					informaci&oacute;n</B></A>] </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=91 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN STYLE="background: transparent"><B>17/Nov/2004</B>:</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=477 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT>&rdquo;<FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Rob&oacute;tica
+					en la Universidad&rdquo;</B>, IV Semana de la Ciencia en Madrid.
+					Universidad Pontificia de Salamanca en Madrid. UPSAM. Noviembre
+					2004. </FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=139 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="../../conferencias/conf2/index.html"><B>M&aacute;s
+					informaci&oacute;n</B></A>] </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=91 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN STYLE="background: transparent"><B>4/Nov/2004</B>:</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=477 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT>&rdquo;<FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Dise&ntilde;o
+					de Robots Apodos: Cube Revolutions&rdquo;</B>, Semana de la
+					Ciencia y Tecnolog&iacute;a. Escuela Superior de Ingenieria de
+					C&aacute;diz. UCA. Noviembre 2004. </FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=139 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="../../conferencias/conf1/index.html"><B>M&aacute;s
+					informaci&oacute;n</B></A>] </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=91 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN STYLE="background: transparent"><B>22/Sep/2004</B>:</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=477 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT>&rdquo;<FONT SIZE=2><FONT FACE="Arial, sans-serif"><FONT FACE="Arial, sans-serif"><B>Locomotion
+					of a Modular Worm-like Robot using a FPGA-based embedded
+					MicroBlaze Soft-processor&rdquo;</B>, 7<SUP>th</SUP>
+					International Conference on Climbing and Walking Robots, </FONT><A HREF="http://www.iai.csic.es/clawar04/"><FONT FACE="Arial, sans-serif">CLAWAR
+					2004</FONT></A><FONT FACE="Arial, sans-serif">. CSIC. Madrid.
+					Septiembre 2004.</FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=139 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="../../conferencias/conf9/index.html"><B>M&aacute;s
+					informaci&oacute;n</B></A>] </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=91 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN STYLE="background: transparent"><B>13/Sep/2004</B>:</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=477 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT>&rdquo;<FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Locomoci&oacute;n
+					de un Robot &Aacute;podo Modular con el Procesador MicroBlaze&quot;</B>,
+					IV Jornadas sobre Computaci&oacute;n Reconfigurable y
+					Aplicaciones, <A HREF="http://cephis.uab.es/es/jcra04/">JCRA04</A>,
+					Escuela T&eacute;cnica Superior de Ingenier&iacute;as. UAB.
+					Barcelona. Septiembre 2004. </FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=139 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="../../conferencias/conf10/index.html"><B>M&aacute;s
+					informaci&oacute;n</B></A>] </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=91 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B><SPAN STYLE="background: transparent">07/Mayo/2004</SPAN></B></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=477 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT>&rdquo;<FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Rob&oacute;tica
+					y Linux&quot;</B>, III Jornadas de Software Libre en la UPSAM.
+					Mayo 2004.</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=139 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="../../conferencias/conf13/index.html"><B>M&aacute;s
+					informaci&oacute;n</B></A>] </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=91 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B><SPAN STYLE="background: transparent">29/Abril/2004</SPAN></B></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=477 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Participaci&oacute;n
+					en el Concurso Nacional de Robots HISPABOT</B>, Universidad de
+					Alcal&aacute;. Abril 2004.</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=139 BGCOLOR="#ffffcc">
+					<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="../../conferencias/conf14/index.html"><B>M&aacute;s
+					informaci&oacute;n</B></A>] </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=91 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B><SPAN STYLE="background: transparent">25/Marzo/2004</SPAN></B></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=477 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT>&rdquo;<FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>El
+					robot &aacute;podo Cube Revolutions&rdquo;. </B>SICFIMA 2004.
+					Facultad de Inform&aacute;tica. UPM. Marzo 2004</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=139 BGCOLOR="#e6e6ff">
+					<P ALIGN=LEFT><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="../../conferencias/conf15/index.html"><B>M&aacute;s
+					informaci&oacute;n</B></A>] </FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+		</TBODY>
+	</TABLE>
+</CENTER>
+<P ALIGN=LEFT><BR><BR>
+</P>
+<HR>
+<H2><A NAME="Historia|outline"></A><FONT FACE="Arial, sans-serif">Historia</FONT></H2>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=85*>
+	<COL WIDTH=85*>
+	<COL WIDTH=85*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=33%>
+				<P><IMG SRC="images/cube_2_0_historia.png" NAME="Imagen24" ALIGN=MIDDLE WIDTH=300 HEIGHT=181 BORDER=0></P>
+			</TD>
+			<TD WIDTH=33% VALIGN=TOP>
+				<P><IMG SRC="images/cube_reloaded_historia.png" NAME="Imagen25" ALIGN=MIDDLE WIDTH=300 HEIGHT=225 BORDER=0></P>
+			</TD>
+			<TD WIDTH=33% VALIGN=TOP>
+				<P><IMG SRC="images/cube_revolutions_histor.png" NAME="Imagen26" ALIGN=MIDDLE WIDTH=300 HEIGHT=225 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR>
+			<TD WIDTH=33%>
+				<P ALIGN=CENTER><A HREF="../../proyectos/cube-2.0/cube.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">CUBE
+				2.0</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=33% VALIGN=TOP>
+				<P ALIGN=CENTER><A HREF="../cube-reloaded/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">CUBE
+				RELOADED</FONT></FONT></A></P>
+			</TD>
+			<TD WIDTH=33% VALIGN=TOP>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>CUBE
+				REVOLUTIONS</FONT></FONT></P>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<B>Mayo/ 2001</B>]
+	La primera versi&oacute;n del &ldquo;robot gusano&rdquo; la realic&eacute;
+	para mi proyecto fin de carrera: <A HREF="../../proyectos/cube-2.0/cube.html">Cube
+	2.0</A></FONT></FONT></P>
+</UL>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<B>Junio/2003</B>]
+	Segunda versi&oacute;n: <A HREF="../cube-reloaded/index.html">Cube
+	Reloaded</A>. Realizado como <A HREF="../tea/tea.html">trabajo de
+	iniciaci&oacute;n a la investigaci&oacute;n</A>.</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<B>Marzo/2004</B>]
+	Tercera versi&oacute;n: <B>Cube Revolutions</B>. La presentaci&oacute;n
+	&ldquo;p&uacute;blica&rdquo; de Cube Revolutions se hizo en la
+	Facultad de Inform&aacute;tica de la UPM, en la &ldquo;IX semana de
+	la investigaci&oacute;n y la cultura de la Facultad de Inform&aacute;tica
+	de Madrid&rdquo;, SICFIMA 2004.[<A HREF="../../conferencias/conf15/index.html"><B>M&aacute;s
+	informaci&oacute;n</B></A>] </FONT></FONT>
+	</P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<B>Mayo/2004</B>]
+	Participaci&oacute;n en el Concurso Nacional de Robots Hispabot.
+	Obtenci&oacute;n del premio al segundo clasificado, en la prueba
+	libre. [<A HREF="../../conferencias/conf14/index.html"><B>M&aacute;s
+	informaci&oacute;n</B></A>] </FONT></FONT>
+	</P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<B>Septiembre/2004</B>]
+	Demostraci&oacute;n en el Clawar 2004: &ldquo;7<SUP>th</SUP>
+	International Conference on Climbing and Walking Robots&rdquo;. [<A HREF="../../conferencias/conf9/index.html"><B>M&aacute;s
+	informaci&oacute;n</B></A>] </FONT></FONT>
+	</P>
+</UL>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Adem&aacute;s, <B>Cube
+Revolutions</B> ha participado en los eventos indicados en la <A HREF="#Eventos|outline">secci&oacute;n
+de eventos</A>.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El nombre de <B>Cube</B>
+viene de la pel&iacute;cula de terror del mismo nombre. Los apellido
+&quot;<B>Reloaded</B>&quot; y &ldquo;<B>Revolutions</B>&rdquo; se han
+tomado de la II y III parte de la pel&iacute;cula Matrix: Matrix
+Reloaded y Matrix Revolutions. </FONT></FONT>
+</P>
+<P><BR><BR>
+</P>
+<HR>
+<H2><A NAME="Informaci&oacute;n t&eacute;cnica|outline"></A>Informaci&oacute;n
+t&eacute;cnica</H2>
+<UL>
+	<LI><P><A HREF="mecanica.html"><FONT SIZE=4><FONT FACE="Arial, sans-serif">Estructura
+	mec&aacute;nica</FONT></FONT></A>: <FONT SIZE=2><FONT FACE="Arial, sans-serif">M&oacute;dulos
+	Y1, conexi&oacute;n en fase y desfase, y disposici&oacute;n en Cube
+	Revolutions.</FONT></FONT></P>
+	<LI><P><A HREF="cableado.html"><FONT SIZE=4><FONT FACE="Arial, sans-serif">Cableado</FONT></FONT></A>:
+	<FONT SIZE=2><FONT FACE="Arial, sans-serif">Interconexi&oacute;n
+	entre CT6811 y servos. Placa Matrix. Disposici&oacute;n de pines y
+	conectores.</FONT></FONT></P>
+	<LI><P><A HREF="Electronica.html"><FONT SIZE=4><FONT FACE="Arial, sans-serif">Electr&oacute;nica</FONT></FONT></A>:
+	<FONT SIZE=2><FONT FACE="Arial, sans-serif">Esquema general.
+	Tarjetas CT6811 y Skypic</FONT></FONT></P>
+	<LI><P><A HREF="software1.html"><FONT SIZE=4><FONT FACE="Arial, sans-serif">Software
+	I</FONT></FONT></A>: <FONT SIZE=2><FONT FACE="Arial, sans-serif">Control
+	de servos desde el PC, secuencias de movimiento, generaci&oacute;n
+	manual, almacenamiento y reproducci&oacute;n.</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="generacion.html"><FONT SIZE=4><FONT FACE="Arial, sans-serif">Generaci&oacute;n
+	de movimiento</FONT></FONT></A>: Coordinaci&oacute;n, generaci&oacute;n
+	y control</FONT></FONT></P>
+	<LI><P><A HREF="software2.html"><FONT SIZE=4><FONT FACE="Arial, sans-serif">Software
+	II</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">:
+	Implementaci&oacute;n en C y C# de la generaci&oacute;n autom&aacute;tica
+	de secuencias de movimiento.</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="software3.html"><FONT SIZE=4><FONT FACE="Arial, sans-serif">Software
+	III</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">:
+	Modelo f&iacute;sico</FONT></FONT></FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Puedes
+	encontrar transparencias sobre Cube Revolutions en</B> <A HREF="../../conferencias/conf15/index.html">la
+	presentaci&oacute;n que se hizo en SICFIMA</A>, en la UPM. [<A HREF="../../conferencias/conf15/download/sicfima-04-cube-revolutions.pdf">PDF</A>]
+	[<A HREF="../../conferencias/conf15/download/sicfima-04-cube-revolutions.sxi">OpenOffice</A>]</FONT></FONT></P>
+</UL>
+<HR>
+<H2>Album de fotos</H2>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="album-fotos.html">Las
+fotos est&aacute;n disponibles en esta p&aacute;gina</A>.</FONT></FONT></P>
+<HR>
+<H2><A NAME="Descargas|outline"></A><FONT FACE="Arial, sans-serif">Descargas</FONT></H2>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=789 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+			<COL WIDTH=781>
+			<TR>
+				<TD WIDTH=781 BGCOLOR="#9999ff">
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Planos/Modelos
+					3D</B></FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+		<DD>
+		<TABLE WIDTH=789 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=209>
+			<COL WIDTH=572>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=209 BGCOLOR="#ccccff">
+					<P><A HREF="../Modulos-Y1/modulos-y1.html"><SPAN STYLE="text-decoration: none"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[MODULOS
+					Y1</FONT></FONT></SPAN></A>]</P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En este enlace
+					est&aacute; toda la informaci&oacute;n disponible sobre los
+					m&oacute;dulos Y1</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#e6e6ff">
+					<P><A HREF="download/modulo-y1.dxf"><FONT SIZE=2><FONT FACE="Arial, sans-serif">modulo-y1.dxf</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#e6e6ff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Plano de los
+					m&oacute;dulos Y1. Formato DXF</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#ccccff">
+					<P><A HREF="download/modulo-y1.pdf"><FONT SIZE=2><FONT FACE="Arial, sans-serif">modulo-y1.pdf</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Plano de los
+					m&oacute;dulos Y1. Formato PDF</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#e6e6ff">
+					<P><A HREF="download/cube-revolutions.dxf"><FONT SIZE=2><FONT FACE="Arial, sans-serif">cube-revolutions.dxf</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#e6e6ff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Plano de Cube
+					Revolutions. Formato DXF</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#ccccff">
+					<P><A HREF="download/cube-revolutions.pdf"><FONT SIZE=2><FONT FACE="Arial, sans-serif">cube-revolutions.pdf</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Plano de Cube
+					Revolutions. Formato PDF</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#e6e6ff">
+					<P><A HREF="download/Modulo-Y1.blend"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Modulo-Y1.blend</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#e6e6ff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Modelo 3D del
+					m&oacute;dulo Y1. Para Blender.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#ccccff">
+					<P><A HREF="download/modulo-y1-2fase.blend"><FONT SIZE=2><FONT FACE="Arial, sans-serif">modulo-y1-2fase.blend</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Modelo 3D de dos
+					m&oacute;dulos Y1 conectados en fase. Para blender</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#e6e6ff">
+					<P><A HREF="download/Modulo-Y1-2desfase.blend"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Modulo-Y1-2desfase.blend</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#e6e6ff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Modelo 3D de dos
+					m&oacute;dulos Y1 desfasados. Para blender</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#ccccff">
+					<P><A HREF="download/cube-revolutions1.blend"><FONT SIZE=2><FONT FACE="Arial, sans-serif">cube-revolutions1.blend</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Modelo 3D de Cube
+					Revolutions, con los m&oacute;dulos no en reposo. Para blender</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#e6e6ff">
+					<P><A HREF="download/cube-revolutions2.blend"><FONT SIZE=2><FONT FACE="Arial, sans-serif">cube-revolutions2.blend</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#e6e6ff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Modelo 3D de Cube
+					Revolutions, con los m&oacute;dulos en reposo. Para blender</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#ccccff">
+					<P><A HREF="download/cube-revolutions-cobra.blend"><FONT SIZE=2><FONT FACE="Arial, sans-serif">cube-revolutions-cobra.blend</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Animaci&oacute;n
+					3D de Cube Revolutions adoptando forma de cobra. Para Blender</FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=789 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+			<COL WIDTH=781>
+			<TR>
+				<TD WIDTH=781 BGCOLOR="#9999ff">
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Software
+					I</B></FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+		<DD>
+		<TABLE WIDTH=789 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=209>
+			<COL WIDTH=572>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=209 BGCOLOR="#ccccff">
+					<P><A HREF="download/test-servos8.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">test-servos8.tgz</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Programa &ldquo;hola
+					mundo&rdquo; de ejemplo para el control de servos desde el PC.
+					<B>FUENTES</B>.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#e6e6ff">
+					<P><A HREF="download/test-servos8-bin.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">test-servos8-bin.tgz</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#e6e6ff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Programa &ldquo;hola
+					mundo&rdquo; de ejemplo para el control de servos desde el PC.
+					<B>EJECUTABLE</B></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#ccccff">
+					<P><A HREF="download/cube-play.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">cube-play.tgz</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Programas
+					Cube-play y Cube-reverse-play para la reproducci&oacute;n de
+					secuencias de movimiento. <B>FUENTES</B> y <B>EJECUTABLES</B>.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#e6e6ff">
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">[</FONT></FONT><A HREF="../../../../proyectos/stargate/clientes/star-servos8/star-servos8.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">star-servos8</FONT></FONT></A>]</P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#e6e6ff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Enlace al
+					programa star-servos8, que permite controlar los servos mediante
+					una interfaz gr&aacute;fica, as&iacute; como generar/reproducir
+					secuencias.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#ccccff">
+					<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[<A HREF="../../../../proyectos/stargate/clientes/libstargate/libstargate.html">librer&iacute;a
+					stargate</A></FONT></FONT>]</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Enlace a la
+					librer&iacute;a Stargate 1.0.1. Necesaria para ejecutar y
+					compilar los programas anteriores.</FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=789 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+			<COL WIDTH=781>
+			<TR>
+				<TD WIDTH=781 BGCOLOR="#9999ff">
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Software
+					II</B></FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+		<DD>
+		<TABLE WIDTH=789 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=209>
+			<COL WIDTH=572>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=209 BGCOLOR="#ccccff">
+					<P><A HREF="download/cube-generate.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">cube-generate.tgz</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Programas
+					Cube-generate y Cube-octave. <B>Fuentes</B> y <B>Ejecutables</B>.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#e6e6ff">
+					<P><A HREF="download/cube-demo.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">cube-demo.tgz</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#e6e6ff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Programa
+					Cube-demo. <B>Fuentes</B> y <B>Ejecutable</B>.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#ccccff">
+					<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">[</FONT></FONT><A HREF="../../proyectos/cube-virtual.mono/cube-virtual-mono.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">CUBE-VIRTUAL.MONO</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">]</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Enlace al
+					programa cube-virtual.mono</FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=789 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+			<COL WIDTH=781>
+			<TR>
+				<TD WIDTH=781 BGCOLOR="#9999ff">
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Secuencias
+					de movimiento</B></FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+		<DD>
+		<TABLE WIDTH=789 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=209>
+			<COL WIDTH=572>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#e6e6ff">
+					<P><A HREF="download/cobra1.f8"><FONT SIZE=2><FONT FACE="Arial, sans-serif">cobra1.f8</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#e6e6ff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Adoptar forma de
+					cobra</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#ccccff">
+					<P><A HREF="download/enrollarse.f8"><FONT SIZE=2><FONT FACE="Arial, sans-serif">enrollarse.f8</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Enrollarse sobre
+					s&iacute; mismo</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#e6e6ff">
+					<P><A HREF="download/cerrar.f8"><FONT SIZE=2><FONT FACE="Arial, sans-serif">cerrar.f8</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#e6e6ff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Cerrarse sobre s&iacute;
+					mismo</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#ccccff">
+					<P><A HREF="download/onda-sin1.f8"><FONT SIZE=2><FONT FACE="Arial, sans-serif">onda-sin1.f8</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Onda sinusoidal
+					de baja amplitud</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#e6e6ff">
+					<P><A HREF="download/onda-sin2.f8"><FONT SIZE=2><FONT FACE="Arial, sans-serif">onda-sin2.f8</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#e6e6ff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Onda sinusoidal
+					de media amplitud</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#ccccff">
+					<P><A HREF="download/onda-sin3.f8"><FONT SIZE=2><FONT FACE="Arial, sans-serif">onda-sin3.f8</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Onda sinusoidal
+					de gran amplitud</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#e6e6ff">
+					<P><A HREF="download/onda-semi1.f8"><FONT SIZE=2><FONT FACE="Arial, sans-serif">onda-semi1.f8</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#e6e6ff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Semionda de baja
+					amplitud</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#ccccff">
+					<P><A HREF="download/onda-semi2.f8"><FONT SIZE=2><FONT FACE="Arial, sans-serif">onda-semi2.f8</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Semionda de media
+					amplitud</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#e6e6ff">
+					<P><A HREF="download/onda-semi3.f8"><FONT SIZE=2><FONT FACE="Arial, sans-serif">onda-semi3.f8</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#e6e6ff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Semionda de gran
+					amplitud</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=209 BGCOLOR="#ccccff">
+					<P><A HREF="download/loop1.f8"><FONT SIZE=2><FONT FACE="Arial, sans-serif">loop1.f8</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Movimiento tipo
+					&ldquo;rueda&rdquo;</FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=789 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+			<COL WIDTH=781>
+			<TR>
+				<TD WIDTH=781 BGCOLOR="#9999ff">
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Software
+					III</B></FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+		<DD>
+		<TABLE WIDTH=789 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=209>
+			<COL WIDTH=572>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=209 BGCOLOR="#ccccff">
+					<P><A HREF="download/cube-virtual-play.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">cube-virtual-play.tgz</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=572 BGCOLOR="#ccccff">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Programa
+					cube-virtual-play. <B>Fuentes</B> y <B>Ejecutables.</B></FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=789 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+			<COL WIDTH=781>
+			<TR>
+				<TD WIDTH=781 BGCOLOR="#9999ff">
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Ficheros
+					para OCTAVE</B></FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+		<DD>
+		<TABLE WIDTH=788 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+			<COL WIDTH=187>
+			<COL WIDTH=210>
+			<COL WIDTH=367>
+			<THEAD>
+				<TR VALIGN=TOP>
+					<TH WIDTH=187 BGCOLOR="#9999ff">
+						<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Secuencia (.f8)</FONT></FONT></P>
+					</TH>
+					<TH WIDTH=210 BGCOLOR="#9999ff">
+						<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Fichero para
+						Octave</FONT></FONT></P>
+					</TH>
+					<TH WIDTH=367 BGCOLOR="#9999ff">
+						<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Descripci&oacute;n</FONT></FONT></P>
+					</TH>
+				</TR>
+			</THEAD>
+			<TBODY>
+				<TR VALIGN=TOP>
+					<TD WIDTH=187 BGCOLOR="#e6e6ff">
+						<P ALIGN=JUSTIFY><A HREF="download/SIN-A5-L120-FI0-F5.f8"><FONT SIZE=2><FONT FACE="Arial, sans-serif">SIN-A5-L120-FI0-F5.f8</FONT></FONT></A></P>
+					</TD>
+					<TD WIDTH=210 BGCOLOR="#e6e6ff">
+						<P ALIGN=JUSTIFY><A HREF="download/SIN-A5-L120-FI0-F5.m"><FONT SIZE=2><FONT FACE="Arial, sans-serif">SIN-A5-L120-FI0-F5.m</FONT></FONT></A></P>
+					</TD>
+					<TD WIDTH=367 BGCOLOR="#e6e6ff">
+						<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Onda
+						sinusoidal. A=5, Long Onda=120. </FONT></FONT>
+						</P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=187 BGCOLOR="#ccccff">
+						<P ALIGN=JUSTIFY><A HREF="download/SIN-A10-L120-FI0-F5.f8"><FONT SIZE=2><FONT FACE="Arial, sans-serif">SIN-A10-L120-FI0-F5.f8</FONT></FONT></A></P>
+					</TD>
+					<TD WIDTH=210 BGCOLOR="#ccccff">
+						<P ALIGN=JUSTIFY><A HREF="download/SIN-A10-L120-F10-F5.m"><FONT SIZE=2><FONT FACE="Arial, sans-serif">SIN-A10-L120-F10-F5.m</FONT></FONT></A></P>
+					</TD>
+					<TD WIDTH=367 BGCOLOR="#ccccff">
+						<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Onda
+						sinusoidal. A=10, Long onda=120</FONT></FONT></P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=187 BGCOLOR="#e6e6ff">
+						<P ALIGN=JUSTIFY><A HREF="download/SIN-A20-L120-FI0-F5.f8"><FONT SIZE=2><FONT FACE="Arial, sans-serif">SIN-A20-L120-FI0-F5.f8</FONT></FONT></A></P>
+					</TD>
+					<TD WIDTH=210 BGCOLOR="#e6e6ff">
+						<P ALIGN=JUSTIFY><A HREF="download/SIN-A20-L120-FI0-F5.m"><FONT SIZE=2><FONT FACE="Arial, sans-serif">SIN-A20-L120-FI0-F5.m</FONT></FONT></A></P>
+					</TD>
+					<TD WIDTH=367 BGCOLOR="#e6e6ff">
+						<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Onda
+						sinusoidal. A=20. Long onda=120</FONT></FONT></P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=187 BGCOLOR="#ccccff">
+						<P ALIGN=JUSTIFY><A HREF="download/SEMI-A10-L100-S350-F5.f8"><FONT SIZE=2><FONT FACE="Arial, sans-serif">SEMI-A10-L100-S350-F5.f8</FONT></FONT></A></P>
+					</TD>
+					<TD WIDTH=210 BGCOLOR="#ccccff">
+						<P ALIGN=JUSTIFY><A HREF="download/SEMI-A10-L100-S350-F5.m"><FONT SIZE=2><FONT FACE="Arial, sans-serif">SEMI-A10-L100-S350-F5.m</FONT></FONT></A></P>
+					</TD>
+					<TD WIDTH=367 BGCOLOR="#ccccff">
+						<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Semionda.
+						A=10. Long onda=350. Anchura 100.</FONT></FONT></P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=187 BGCOLOR="#e6e6ff">
+						<P ALIGN=JUSTIFY><A HREF="download/SIN-A20-L120-FI0-F5.f8"><FONT SIZE=2><FONT FACE="Arial, sans-serif">SIN-A20-L120-FI0-F5.f8</FONT></FONT></A></P>
+					</TD>
+					<TD WIDTH=210 BGCOLOR="#e6e6ff">
+						<P ALIGN=JUSTIFY><A HREF="download/SIN-A20-L120-FI0-F5.m"><FONT SIZE=2><FONT FACE="Arial, sans-serif">SIN-A20-L120-FI0-F5.m</FONT></FONT></A></P>
+					</TD>
+					<TD WIDTH=367 BGCOLOR="#e6e6ff">
+						<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Semionda.
+						A=20. Long onda=350. Anchura 100.</FONT></FONT></P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=187 BGCOLOR="#ccccff">
+						<P ALIGN=JUSTIFY><A HREF="download/SEMI-A40-L100-S350-F5.f8"><FONT SIZE=2><FONT FACE="Arial, sans-serif">SEMI-A40-L100-S350-F5.f8</FONT></FONT></A></P>
+					</TD>
+					<TD WIDTH=210 BGCOLOR="#ccccff">
+						<P ALIGN=JUSTIFY><A HREF="download/SEMI-A40-L100-S350-F5.m"><FONT SIZE=2><FONT FACE="Arial, sans-serif">SEMI-A40-L100-S350-F5.m</FONT></FONT></A></P>
+					</TD>
+					<TD WIDTH=367 BGCOLOR="#ccccff">
+						<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Semionda.
+						A=40. Long onda=350. Anchura 100.</FONT></FONT></P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=187 BGCOLOR="#e6e6ff">
+						<P ALIGN=JUSTIFY><A HREF="download/SEMI-A40-L70-S350-F5.f8"><FONT SIZE=2><FONT FACE="Arial, sans-serif">SEMI-A40-L70-S350-F5.f8</FONT></FONT></A></P>
+					</TD>
+					<TD WIDTH=210 BGCOLOR="#e6e6ff">
+						<P ALIGN=JUSTIFY><A HREF="download/SEMI-A40-L70-S350-F5.m"><FONT SIZE=2><FONT FACE="Arial, sans-serif">SEMI-A40-L70-S350-F5.m</FONT></FONT></A></P>
+					</TD>
+					<TD WIDTH=367 BGCOLOR="#e6e6ff">
+						<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Semionda.
+						A=40. Long onda=350. Anchura 70</FONT></FONT></P>
+					</TD>
+				</TR>
+			</TBODY>
+		</TABLE>
+	</DL>
+</DL>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="links"></A><FONT FACE="Arial, sans-serif">Enlaces</FONT></H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../Modulos-Y1/modulos-y1.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">M&oacute;dulos
+	Y1 </FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	Primera generaci&oacute;n de m&oacute;dulos mec&aacute;nicos para la
+	construcci&oacute;n de robots modulares</FONT></FONT></P>
+</UL>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif"><A HREF="../cube-reloaded/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cube
+	Reloaded</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	Versi&oacute;n previa a Cube Revolutions</FONT></FONT></FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../tea/tea.html">&ldquo;<FONT SIZE=2><FONT FACE="Arial, sans-serif">Dise&ntilde;o
+	de robots &aacute;podos&rdquo;</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+	Trabajo de iniciaci&oacute;n a la investigaci&oacute;n para
+	obtenci&oacute;n del DEA. Junio 2003.</FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm">&ldquo;<FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif"><A HREF="../Robots_apodos/estudio_apodos.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Principales
+	l&iacute;neas de investigaci&oacute;n en robots &aacute;podos</FONT></FONT></A>&rdquo;<FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+	Trabajo de primer a&ntilde;o de doctorado. Septiembre 2002</FONT></FONT></FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif"><A HREF="../../proyectos/cube-2.0/cube.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">CUBE
+	2.0</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	Versi&oacute;n previa a Cube Reloaded. Junio 2001.</FONT></FONT></FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif"><A HREF="../../../../proyectos/skypic/skypic.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Tarjeta
+	Skypic</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	una entrenadora libre para microcontroladores PIC.</FONT></FONT></FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif"><A HREF="../../../../proyectos/ct6811/ct6811.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Tarjeta
+	CT6811</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	una entrenadora libre para el microcontrolador 68hc11</FONT></FONT></FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif"><A HREF="../../../../proyectos/stargate/clientes/star-servos8/star-servos8.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Star-servos8</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	una aplicaci&oacute;n para controlar servos desde el PC</FONT></FONT></FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="../../../../proyectos/stargate/index.html">proyecto
+	stargate</A> : Control y monitorizaci&oacute;n de dispositivos desde
+	el PC</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.42cm; page-break-after: avoid">
+	<FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="../../../../proyectos/stargate/clientes/libstargate/libstargate.html">librer&iacute;a
+	stargate</A>: Librer&iacute;a para acceder a los &ldquo;Stargates&rdquo;
+	</FONT></FONT>
+	</P>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.42cm; page-break-after: avoid">
+	<FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="../../../../proyectos/cuadernos/ct3/ct3.html"><FONT SIZE=2>Futaba
+	3003</FONT></A><FONT SIZE=2 STYLE="font-size: 11pt">:
+	</FONT><FONT FACE="Arial, sans-serif">Servomecanismos modelo Futaba
+	3003.</FONT></FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.42cm; page-break-after: avoid">
+	<FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="../../proyectos/cube-virtual.mono/cube-virtual-mono.html">Cube-virtual-mono</A>.
+	Generaci&oacute;n autom&aacute;tica de secuencias de movimiento para
+	Cube Revolutions.</FONT></FONT></P>
+</UL>
+<HR>
+<H2><A NAME="noticias"></A><FONT FACE="Arial, sans-serif">Noticias</FONT></H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>20/Jul/2006:
+	</B><SPAN STYLE="font-weight: medium">A&ntilde;adido enlace a la
+	conferencia &ldquo;Granja de Micro-Robots&rdquo;</SPAN></FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>30/Enero/2006:
+	</B>A&ntilde;adidos enlaces a la charla en el irc &ldquo;Cube
+	Begins&rdquo; y a la conferencia &ldquo;Demostraciones de robots
+	articulados&rdquo;</FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>19/Dic/2005:
+	</B>Publicado Cube Revolution en la web</FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>25/Nov/2005:
+	</B>Publicada informaci&oacute;n preliminar en la web</FONT></FONT></P>
+</UL>
+<HR>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=43*>
+	<COL WIDTH=43*>
+	<COL WIDTH=43*>
+	<COL WIDTH=43*>
+	<COL WIDTH=43*>
+	<COL WIDTH=43*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=17%>
+				<P><A HREF="http://www.debian.org/"><IMG SRC="images/debian.gif" NAME="Imagen36" ALIGN=MIDDLE WIDTH=130 HEIGHT=60 BORDER=0></A></P>
+			</TD>
+			<TD WIDTH=17%>
+				<P><A HREF="http://www.openoffice.org/"><IMG SRC="images/oo_logo.gif" NAME="Imagen39" ALIGN=MIDDLE WIDTH=114 HEIGHT=48 BORDER=0></A><A HREF="http://www.openoffice.org/">
+				</A>
+				</P>
+			</TD>
+			<TD WIDTH=17%>
+				<P><A HREF="http://www.blender.org/cms/Home.2.0.html"><IMG SRC="images/blender-logo.png" NAME="Imagen34" ALIGN=MIDDLE WIDTH=127 HEIGHT=45 BORDER=0></A></P>
+			</TD>
+			<TD WIDTH=17%>
+				<P><A HREF="http://www.ribbonsoft.com/qcad.html"><IMG SRC="images/logo-qcad.jpg" NAME="Imagen35" ALIGN=MIDDLE WIDTH=150 HEIGHT=57 BORDER=0></A></P>
+			</TD>
+			<TD WIDTH=17%>
+				<P><A HREF="http://gtk-sharp.sourceforge.net/"><IMG SRC="images/gtks-logo.png" NAME="Imagen37" ALIGN=LEFT WIDTH=120 HEIGHT=60 BORDER=0></A><BR>
+				</P>
+			</TD>
+			<TD WIDTH=17%>
+				<P><A HREF="http://www.mono-project.com/Main_Page"><IMG SRC="images/mono-logo.jpg" NAME="Imagen38" ALIGN=LEFT WIDTH=73 HEIGHT=78 BORDER=0></A><BR>
+				</P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A HREF="www.iearobotics.com"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">IEA
+ROBOTICS</FONT></FONT></A> 
+</P>
+<ADDRESS><A HREF="../../index.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A> 
+</ADDRESS>
+</BODY>
+</HTML>

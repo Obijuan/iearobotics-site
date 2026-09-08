@@ -1,0 +1,755 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>CUBE REVOLUTION: Software II</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20041226;13552200">
+	<META NAME="CHANGED" CONTENT="20051219;21094500">
+	<META NAME="KEYWORDS" CONTENT="Robot, gusano, rob&oacute;tica modular">
+	<STYLE>
+	<!--
+		@page { size: 21cm 29.7cm; margin: 2cm }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0 STYLE="page-break-before: always">
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>CUBE
+				REVOLUTIONS: SOFTWARE II</B></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Introducci&oacute;n</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; font-style: normal; font-weight: medium; page-break-after: avoid">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para la generaci&oacute;n
+autom&aacute;tica del movimiento, utilizando el algoritmo de ajuste,
+se han hecho dos implementaciones:</FONT></FONT></P>
+<UL>
+	<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><A HREF="#implementacionc"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Implementaci&oacute;n
+	en C</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+	Es &uacute;til para poder implementar los algoritmos en procesadores
+	empotrados y hacer que el robot sea aut&oacute;nomo.</FONT></FONT></P>
+	<UL>
+		<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><A HREF="#modulo_cube"><FONT SIZE=2><FONT FACE="Arial, sans-serif">M&oacute;dulo
+		cube.c</FONT></FONT></A></P>
+		<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><A HREF="#modulo_func"><FONT SIZE=2><FONT FACE="Arial, sans-serif">M&oacute;dulo
+		func.c</FONT></FONT></A></P>
+		<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><A HREF="#cube-generate"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Programa
+		Cube-generate.c</FONT></FONT></A></P>
+		<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><A HREF="#cube-octave"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Programa
+		Cube-octave.c</FONT></FONT></A></P>
+		<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><A HREF="#cube-demo"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Programa
+		cube-demo</FONT></FONT></A></P>
+	</UL>
+	<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><A HREF="#implementacion-cs"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Implementaci&oacute;n
+	en C# y Mono</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+	Es mucho m&aacute;s modular y f&aacute;cil de ampliar, pero se tiene
+	que ejecutar desde el PC.</FONT></FONT></P>
+	<UL>
+		<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><A HREF="#test-gusano"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Programa
+		de ejemplo test-gusano</FONT></FONT></A></P>
+		<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><A HREF="#cube-virtual-mono"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Aplicaci&oacute;n
+		Cube-virtual.mono</FONT></FONT></A></P>
+	</UL>
+</UL>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><A NAME="implementacionc"></A>
+<FONT FACE="Albany, sans-serif"><FONT SIZE=4>Implementaci&oacute;n en
+C</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Se
+han creado dos m&oacute;dulos: <B>cube.c</B>, en el que se define un
+gusano virtual y se pueden realizar operaciones sobre &eacute;l, y
+<B>func.c</B> para la definici&oacute;n de las ondas que se
+utilizar&aacute;n para la generaci&oacute;n del movimiento.</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El
+programa <B>cube-generate.c</B> es un ejemplo de utilizaci&oacute;n
+de estos m&oacute;dulos para la generaci&oacute;n de secuencias de
+movimiento.</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Y
+por &uacute;ltimo el programa <B>cube-octave.c</B> es un ejemplo de
+creaci&oacute;n de un fichero en octave para visualizar el gusano.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<PRE STYLE="text-align: center"><A NAME="modulo_cube1"></A><A NAME="modulo_cube"></A><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>MODULO CUBE</B></FONT></FONT></FONT></PRE>
+			</TD>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE STYLE="margin-bottom: 0.5cm"><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>DESCRIPCI&Oacute;N: </B></FONT></FONT></FONT></PRE><P STYLE="margin-bottom: 0cm">
+				<FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>M&oacute;dulo
+				para la creaci&oacute;n y manipulaci&oacute;n del robot Cube
+				Revolutions virtual, de 8 articulaciones. </FONT></FONT></FONT>
+				</P>
+				<PRE><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>S&oacute;lo permite trabajar con ondas sinusoidales y semiondas, y s&oacute;lo para un &uacute;nico gusano.</FONT></FONT></FONT>
+
+<FONT COLOR="#000000">  <FONT FACE="Arial, sans-serif">De todas las funciones de la API, s&oacute;lo unas cuentas se utilizan realmente para la generaci&oacute;n. </FONT></FONT>
+<FONT FACE="Arial, sans-serif"><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif">Para m&aacute;s informaci&oacute;n ver el programa ejemplo de ejemplo </FONT><A HREF="#cube-generate"><FONT FACE="Arial, sans-serif">Cube-generate</FONT></A></FONT></FONT></PRE>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffff99">
+				<PRE><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>FUNCIONES DEL INTERFAZ:</B></FONT></FONT></FONT></PRE>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+				<PRE><FONT COLOR="#b22222">/*********************************************************************/</FONT>
+<FONT COLOR="#b22222">/* Inicializacion del modulo de CUBE. Hay que ejecutarlo antes de    */</FONT>
+<FONT COLOR="#b22222">/* usar cualquier otra funcion.                                      */</FONT>
+<FONT COLOR="#b22222">/*  Se inicializan todas las estructuras de datos y se genera un     */</FONT>
+<FONT COLOR="#b22222">/* CUBE apoyado sobre el eje x, con todos su angulos a 0             */</FONT>
+<FONT COLOR="#b22222">/*********************************************************************/</FONT>
+<FONT COLOR="#4169e1">void cube_init()</FONT>;
+
+<FONT COLOR="#b22222">/***************************************************************************/</FONT>
+<FONT COLOR="#b22222">/* Se inicializa a cube, haciendo que se encuentre en posicion horizontal  */</FONT>
+<FONT COLOR="#b22222">/* con y = 0. Se calculan las coordenadas x,y de cada articulacion en      */</FONT>
+<FONT COLOR="#b22222">/* funcion de las constantes del gusano                                    */</FONT>
+<FONT COLOR="#b22222">/* Usar esta funcion siempre que se quiera volver al estado inicial        */</FONT>
+<FONT COLOR="#b22222">/***************************************************************************/</FONT>
+<FONT COLOR="#4169e1">void cube_reset()</FONT>;
+
+<FONT COLOR="#b22222">/***************************************************************************/</FONT>
+<FONT COLOR="#b22222">/* Ajustar cube a la funcion de contorno activa, desde la articulacion     */</FONT>
+<FONT COLOR="#b22222">/* indicada en adelante.                                                   */</FONT>
+<FONT COLOR="#b22222">/*                                                                         */</FONT>
+<FONT COLOR="#b22222">/* Para cada articulacion primero se calcula el angulo de aproximacion y   */</FONT>
+<FONT COLOR="#b22222">/* luego se aplica el algoritmo de ajuste.                                 */</FONT>
+<FONT COLOR="#b22222">/***************************************************************************/</FONT>
+<FONT COLOR="#4169e1">void cube_ajustar(int art)</FONT>;
+
+<FONT COLOR="#b22222">/*********************************************/</FONT>
+<FONT COLOR="#b22222">/* Establecer la funcion de contorno activa  */</FONT>
+<FONT COLOR="#b22222">/*********************************************/</FONT>
+<A NAME="cube_func_contorno_set2"></A><FONT COLOR="#4169e1">void cube_func_contorno_set(double (*func_contorno)(double)</FONT>);
+
+<FONT COLOR="#b22222">/*******************************************************************/</FONT>
+<FONT COLOR="#b22222">/* Rotar el gusano entero respecto a la articulacion especificada  */</FONT>
+<FONT COLOR="#b22222">/* Se actualiza de izquierda a derecha, o de derecha a izda segun  */</FONT>
+<FONT COLOR="#b22222">/* el valor del parametro sentido.                                 */</FONT>
+<FONT COLOR="#b22222">/*                                                                 */</FONT>
+<FONT COLOR="#b22222">/*  ENTRADA:                                                       */</FONT>
+<FONT COLOR="#b22222">/*    -centro : Articulacion centro                                */</FONT>
+<FONT COLOR="#b22222">/*    -ang    : Angulo a girar.                                    */</FONT>
+<FONT COLOR="#b22222">/*    -sentido: Que parte rotar: DERECHA o IZQUIERDA               */</FONT>
+<FONT COLOR="#b22222">/*                                                                 */</FONT>
+<FONT COLOR="#b22222">/*  La rotacion SE PROPAGA desde la articulacion centro hasta uno  */</FONT>
+<FONT COLOR="#b22222">/*  de los extremos.                                               */</FONT>
+<FONT COLOR="#b22222">/*                                                                 */</FONT>
+<FONT COLOR="#b22222">/*  El angulo de posicion de la articulacion centro se incrementa  */</FONT>
+<FONT COLOR="#b22222">/*  (o decrementa) en el angulo rotado.                            */</FONT>
+<FONT COLOR="#b22222">/*******************************************************************/</FONT>
+<FONT COLOR="#4169e1">void cube_rotar(int centro, int ang, int sentido)</FONT>;
+
+<FONT COLOR="#b22222">/************************************************/</FONT>
+<FONT COLOR="#b22222">/* Obtener el numero de articulaciones de Cube  */</FONT>
+<FONT COLOR="#b22222">/* Se incluyen las articulaciones virtuales, de */</FONT>
+<FONT COLOR="#b22222">/* cola y cabeza                                */</FONT>
+<FONT COLOR="#b22222">/************************************************/</FONT>
+<FONT COLOR="#4169e1">int cube_get_nart()</FONT>;
+
+<FONT COLOR="#b22222">/***********************************************************************/</FONT>
+<FONT COLOR="#b22222">/* Sacar los comandos necesarios de OCTAVE/MATHLAB para dibujar el     */</FONT>
+<FONT COLOR="#b22222">/* gusano y la funcion de contorno actual                              */</FONT>
+<FONT COLOR="#b22222">/* --------------------------------------------------------------------*/</FONT>
+<FONT COLOR="#b22222">/* ENTRADAS:                                                           */</FONT>
+<FONT COLOR="#b22222">/*   -func: Si la funcion de contorno se pinta o no (1/0)              */</FONT>
+<FONT COLOR="#b22222">/*   -gusano: Si el gusano se pinta o no (1/0)                         */</FONT>
+<FONT COLOR="#b22222">/***********************************************************************/</FONT>
+<FONT COLOR="#4169e1">void cube_octave(int func, int gusano, int color)</FONT>;
+
+<FONT COLOR="#b22222">/*********************************************************/</FONT>
+<FONT COLOR="#b22222">/* Devolver informacion sobre la articulacion indicada   */</FONT>
+<FONT COLOR="#b22222">/* Numero de articulaciones, posicion de cada una y      */</FONT>
+<FONT COLOR="#b22222">/* angulo que forma con el eje x                         */</FONT>
+<FONT COLOR="#b22222">/*********************************************************/</FONT>
+<FONT COLOR="#4169e1">void cube_info_art(int num_art)</FONT>;
+
+
+<FONT COLOR="#b22222">/************************************************************/</FONT>
+<FONT COLOR="#b22222">/* Establecer la posicion de una articulacion determinada   */</FONT>
+<FONT COLOR="#b22222">/*                                                          */</FONT>
+<FONT COLOR="#b22222">/* ENTRADAS:                                                */</FONT>
+<FONT COLOR="#b22222">/*   - nart: articulacion centro a rotar.                   */</FONT>
+<FONT COLOR="#b22222">/*   - pos : angulo de posicion del futaba                  */</FONT>
+<FONT COLOR="#b22222">/*                                                          */</FONT>
+<FONT COLOR="#b22222">/* SALIDAS:                                                 */</FONT>
+<FONT COLOR="#b22222">/*   - El angulo de posicion del servo se establece a pos   */</FONT>
+<FONT COLOR="#b22222">/*   - Se propaga el cambio desde la articulacion centro    */</FONT>
+<FONT COLOR="#b22222">/*     hasta un extremo.                                    */</FONT>
+<FONT COLOR="#b22222">/************************************************************/</FONT>
+<FONT COLOR="#4169e1">void cube_articulacion_set_pos(int art, double pos, int sentido)</FONT>;
+
+<FONT COLOR="#b22222">/***********************************************************/</FONT>
+<FONT COLOR="#b22222">/* Leer la posicion de la articulacion especificada        */</FONT>
+<FONT COLOR="#b22222">/***********************************************************/</FONT>
+<FONT COLOR="#4169e1">double cube_articulacion_get_pos(int art)</FONT>;
+
+<FONT COLOR="#b22222">/***********************************************************/</FONT>
+<FONT COLOR="#b22222">/* Establecer las coordenadas x,y de la articulacion       */</FONT>
+<FONT COLOR="#b22222">/* especificada de CUBE. Automaticamente se re-calculan    */</FONT>
+<FONT COLOR="#b22222">/* las coordenadas de las demas articulaciones             */</FONT>
+<FONT COLOR="#b22222">/***********************************************************/</FONT>
+<FONT COLOR="#4169e1">void cube_articulacion_set_xy(int art, double x, double y)</FONT>;
+
+<FONT COLOR="#b22222">/*************************************************************/</FONT>
+<FONT COLOR="#b22222">/* Leer las coordenadas x,y de la articulacion especificada  */</FONT>
+<FONT COLOR="#b22222">/*************************************************************/</FONT>
+<FONT COLOR="#4169e1">void cube_articulacion_get_xy(int art, double *x, double *y)</FONT>;
+
+<FONT COLOR="#b22222">/************************************************************************/</FONT>
+<FONT COLOR="#b22222">/* Obtener el angulo que forma una articulacion con el eje x.           */</FONT>
+<FONT COLOR="#b22222">/*                                                                      */</FONT>
+<FONT COLOR="#b22222">/* ENTRADA:                                                             */</FONT>
+<FONT COLOR="#b22222">/*   -num_art : Numero de articulacion                                  */</FONT>
+<FONT COLOR="#b22222">/*                                                                      */</FONT>
+<FONT COLOR="#b22222">/* DEVUELVE:                                                            */</FONT>
+<FONT COLOR="#b22222">/*   - El angulo en radianes                                            */</FONT>
+<FONT COLOR="#b22222">/************************************************************************/</FONT>
+<FONT COLOR="#4169e1">double cube_articulacion_get_angulo_ejex(int num_art)</FONT>;
+
+<FONT COLOR="#b22222">/**************************************************************************/</FONT>
+<FONT COLOR="#b22222">/* Establecer las coordenadas x,y de la cola de cube. Automaticamente se  */</FONT>
+<FONT COLOR="#b22222">/* re-calculan las coordenadas de las demas articulaciones                */</FONT>
+<FONT COLOR="#b22222">/**************************************************************************/</FONT>
+<FONT COLOR="#4169e1">void cube_cola_set_xy(double x,double y)</FONT>;
+
+<FONT COLOR="#b22222">/****************************************************/</FONT>
+<FONT COLOR="#b22222">/* Obtener las coordenadas x,y de la cola de cube   */</FONT>
+<FONT COLOR="#b22222">/****************************************************/</FONT>
+<FONT COLOR="#4169e1">void cube_cola_get_xy(double *x,double *y)</FONT>;</PRE><P>
+				<BR><BR>
+				</P>
+				<P><BR>
+				</P>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><BR><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TH WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P><A NAME="modulo_func"></A><FONT FACE="Arial, sans-serif"><B>MODULO
+				FUNC</B></FONT></P>
+			</TH>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>DESCRIPCI&Oacute;N:</B></FONT></FONT></FONT>
+
+<FONT COLOR="#000000">  <FONT FACE="Arial, sans-serif">M&oacute;dulo para la utilizaci&oacute;n y modificaci&oacute;n de las ondas para la generaci&oacute;n de las secuencias de movimiento.</FONT></FONT></PRE>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffff99">
+				<PRE><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>FUNCIONES DEL INTERFAZ:</B></FONT></FONT></FONT></PRE>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+				<PRE><FONT COLOR="#b22222">/************************************/</FONT>
+<FONT COLOR="#b22222">/* Establecer el parametro amplitud */</FONT>
+<FONT COLOR="#b22222">/************************************/</FONT>
+<FONT COLOR="#4169e1">void func_amplitud_set(double amp)</FONT>;
+
+<FONT COLOR="#b22222">/*********************************************/</FONT>
+<FONT COLOR="#b22222">/* Establecer el parametro longitud de onda  */</FONT>
+<FONT COLOR="#b22222">/*********************************************/</FONT>
+<FONT COLOR="#4169e1">void func_long_onda_set(double lamda)</FONT>;
+
+<FONT COLOR="#b22222">/*****************************************/</FONT>
+<FONT COLOR="#b22222">/* Establecer el tiempo actual           */</FONT>
+<FONT COLOR="#b22222">/*****************************************/</FONT>
+<FONT COLOR="#4169e1">void func_tiempo_set(double time)</FONT>;
+
+<FONT COLOR="#b22222">/*****************************************/</FONT>
+<FONT COLOR="#b22222">/* Establecer el parametro frecuencia    */</FONT>
+<FONT COLOR="#b22222">/*****************************************/</FONT>
+<FONT COLOR="#4169e1">void func_frec_set(double frecuencia)</FONT>;
+
+<FONT COLOR="#b22222">/*************************************/</FONT>
+<FONT COLOR="#b22222">/* Obtener el periodo                */</FONT>
+<FONT COLOR="#b22222">/*************************************/</FONT>
+<FONT COLOR="#4169e1">double func_periodo_get()</FONT>;
+
+<FONT COLOR="#b22222">/*******************************************************************/</FONT>
+<FONT COLOR="#b22222">/*      FUNCIONES DE CONTORNO DEFINIDAS                            */</FONT>
+<FONT COLOR="#b22222">/*  El parametro tiempo es global para todas                       */</FONT>
+<FONT COLOR="#b22222">/*  y se establece con la funcion func_tiempo_set()                */</FONT>
+<FONT COLOR="#b22222">/*******************************************************************/</FONT>
+
+<FONT COLOR="#b22222">/*  Funcion sinusoidal                 */</FONT>
+<FONT COLOR="#4169e1">double func_onda_sinusoidal(double x)</FONT>;
+
+<FONT COLOR="#b22222">/*  Funcion semisinusoidal      */</FONT>
+<FONT COLOR="#4169e1">double func_F1(double x)</FONT>;
+
+<FONT COLOR="#b22222">/*  Funcion nula                */</FONT>
+<FONT COLOR="#4169e1">double func_nula(double x)</FONT>;
+
+<FONT COLOR="#b22222">/*  Funcion recta               */</FONT>
+<FONT COLOR="#4169e1">double func_recta(double x)</FONT>;
+
+<FONT COLOR="#b22222">/*  Funcion ventana             */</FONT>
+<FONT COLOR="#4169e1">double func_ventana(double x)</FONT>;
+
+<FONT COLOR="#b22222">/*  Funcion para hacer pruebas  */</FONT>
+<FONT COLOR="#4169e1">double func_F2(double x)</FONT>;</PRE><P>
+				<BR>
+				</P>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><BR><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TH WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P><A NAME="cube-generate"></A><FONT FACE="Arial, sans-serif"><B>PROGRAMA
+				EJEMPLO: CUBE-GENERATE</B></FONT></P>
+			</TH>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE STYLE="margin-bottom: 0.5cm"><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>DESCRIPCI&Oacute;N:</B></FONT></FONT></FONT></PRE><P STYLE="margin-bottom: 0cm">
+				<FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejemplo
+				de programa para la generaci&oacute;n de una secuencia de
+				movimiento en formato .f8. Se saca el resultado por la salida
+				est&aacute;ndar. Para generar otras secuencias hay que cambiar
+				los par&aacute;metros de las ondas, volver a compilar y ejecutar.
+				</FONT></FONT></FONT>
+				</P>
+				<PRE><FONT COLOR="#000000">  <FONT FACE="Arial, sans-serif">Para generar un fichero con la secuencia redireccionar la salida:</FONT></FONT>
+
+<FONT COLOR="#000000">  <FONT FACE="Arial, sans-serif">$ <B>./cube-generate &gt; secuencia.f8</B></FONT></FONT>
+<FONT COLOR="#000000">  </FONT></PRE>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+				<P STYLE="margin-bottom: 0cm"><BR>
+				</P>
+				<PRE><FONT COLOR="#b22222">/************************************************************************/</FONT>
+<FONT COLOR="#b22222">/* cube-generate.   Juan Gonzalez Gomez.   Marzo-2004                   */</FONT>
+<FONT COLOR="#b22222">/*----------------------------------------------------------------------*/</FONT>
+<FONT COLOR="#b22222">/* Generacion de secuencias para CUBE REVOLUTIONS                       */</FONT>
+<FONT COLOR="#b22222">/*----------------------------------------------------------------------*/</FONT>
+<FONT COLOR="#b22222">/* LICENCIA GPL                                                         */</FONT>
+<FONT COLOR="#b22222">/************************************************************************/</FONT>
+
+<FONT COLOR="#a020f0">#include &lt;stdio.h&gt;</FONT>
+<FONT COLOR="#a020f0">#include &lt;math.h&gt;</FONT>
+
+<FONT COLOR="#a020f0">#include </FONT><FONT COLOR="#666666">&quot;cube.h&quot;</FONT>
+<FONT COLOR="#a020f0">#include </FONT><FONT COLOR="#666666">&quot;func.h&quot;</FONT>
+
+<FONT COLOR="#b22222">/*-------------------------------------------*/</FONT>
+<FONT COLOR="#b22222">/*    F U N C I O N E S    P R I V A D A S   */</FONT>
+<FONT COLOR="#b22222">/*-------------------------------------------*/</FONT>
+
+<FONT COLOR="#b22222">/*************************************************/</FONT>
+<FONT COLOR="#b22222">/* Imprimir el vector de estado, en formato .f8  */</FONT>
+<FONT COLOR="#b22222">/*************************************************/</FONT>
+<A NAME="print_estado21"></A><FONT COLOR="#4169e1">void print_estado()</FONT>
+{
+  int i;
+  int ang;
+
+  printf(<FONT COLOR="#666666">&quot;[&quot;</FONT>);
+  <FONT COLOR="#4169e1">for</FONT> (i=1; i&lt;=8; i++) {
+    ang=(int)cube_articulacion_get_pos(i);
+    printf (<FONT COLOR="#666666">&quot;%d &quot;</FONT>,ang);
+  }
+  printf (<FONT COLOR="#666666">&quot;],0;\n&quot;</FONT>);
+}
+
+<FONT COLOR="#b22222">/*-----------------------------------------------------------*/</FONT>
+<FONT COLOR="#b22222">/*                M  A   I   N                               */</FONT>
+<FONT COLOR="#b22222">/*-----------------------------------------------------------*/</FONT>
+<A NAME="main121"></A><FONT COLOR="#4169e1">int main(int argc, char *argv[])</FONT>
+{
+  double t;
+  double T;
+  
+  <FONT COLOR="#b22222">/* Inicializar cube */</FONT>
+  cube_init();
+
+  <FONT COLOR="#b22222">/*- Seleccionar una onda sinusoidal  */http://www.iearobotics.com/personal/juan/proyectos/cube-virtual.mono/html/classGusano.html#a6</FONT>
+  cube_func_contorno_set(func_onda_sinusoidal);
+  
+  <FONT COLOR="#b22222">/** Para trabajar con semiondas se descomentaria esto  */</FONT>
+  <FONT COLOR="#b22222">/*  cube_func_contorno_set(func_F1);                   */</FONT>
+  
+  <FONT COLOR="#b22222">/* Establecer los parametros para esta onda */</FONT>
+  func_long_onda_set(100);
+  func_amplitud_set(15);
+  func_frec_set(5.0);
+
+  <FONT COLOR="#b22222">/* Obtener el periodo de la onda, para saber cuantos instantes */</FONT>
+  <FONT COLOR="#b22222">/* de tiempo hay que desplazar la onda para la generacion      */</FONT>
+  T=func_periodo_get();
+
+  <FONT COLOR="#b22222">/* Los ficheros en formato .f8 empiezan asi */</FONT>
+  printf (<FONT COLOR="#666666">&quot;NSERVOS=8\n&quot;</FONT>);
+
+  <FONT COLOR="#b22222">/*-- Generar la secuencia. Se incrementa el tiempo para desplazar la */</FONT>
+  <FONT COLOR="#b22222">/*-- onda y se &quot;ajusta&quot; el gusano a la onda                          */</FONT>
+  <FONT COLOR="#4169e1">for</FONT> (t=0; t&lt;T; t++) {
+    <FONT COLOR="#b22222">/*-- Desplazar la onda --*/</FONT>
+    func_tiempo_set(t);
+    
+    <FONT COLOR="#b22222">/*- Ajusta gusano a la onda -*/</FONT> 
+    cube_ajustar(0);
+    
+    <FONT COLOR="#b22222">/*- Imprimir vector de posicion angular -*/</FONT>
+    print_estado();
+  }
+  
+  printf (<FONT COLOR="#666666">&quot;\n&quot;</FONT>);
+
+  <FONT COLOR="#4169e1">return</FONT> 0;
+}</PRE>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><BR><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TH WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P><A NAME="cube-octave"></A><FONT FACE="Arial, sans-serif"><B>PROGRAMA
+				EJEMPLO: CUBE-OCTAVE</B></FONT></P>
+			</TH>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE STYLE="margin-bottom: 0.5cm"><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>DESCRIPCI&Oacute;N:</B></FONT></FONT></FONT></PRE><P STYLE="margin-bottom: 0cm">
+				<FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejemplo
+				de programa para la visualizaci&oacute;n del gusano virtual con
+				OCTAVE/MATLAB. Se crea e inicializa un gusano, se define una
+				funci&oacute;n de contorno, se ajusta el gusano a la onda y se
+				saca por la salida est&aacute;ndar los comandos para
+				OCTAVE/MATLAB.</FONT></FONT></FONT></P>
+				<PRE><FONT COLOR="#000000">  <FONT FACE="Arial, sans-serif">Para probar el programa ejecutar:</FONT></FONT>
+
+<FONT COLOR="#000000">  <FONT FACE="Arial, sans-serif">$ <B>./cube-octave &gt; test.m</B></FONT></FONT>
+
+<FONT COLOR="#000000">    <FONT FACE="Arial, sans-serif">Y luego se visualiza con Octave:</FONT></FONT>
+
+<FONT COLOR="#000000">    <FONT FACE="Arial, sans-serif">$ <B>octave</B></FONT></FONT>
+<FONT COLOR="#000000">    <B><FONT FACE="Arial, sans-serif">octave:1&gt; test</FONT></B></FONT>
+
+<FONT COLOR="#000000">    <FONT FACE="Arial, sans-serif">El resultado se puede ver en el pantalla inferior:</FONT></FONT>
+<FONT COLOR="#000000">  </FONT></PRE>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE STYLE="margin-bottom: 0.5cm"><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>FICHERO PARA OCTAVE:</B></FONT></FONT></FONT>
+<FONT COLOR="#000000"> </FONT>
+<FONT FACE="Arial, sans-serif"><FONT COLOR="#000000">El fichero de ejemplo generado con cube-octave se puede descargar de aqu&iacute;: <A HREF="download/test.m"><FONT FACE="Arial, sans-serif">test.m</FONT></A></FONT></FONT></PRE>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE STYLE="text-align: center"><IMG SRC="images/cube-octave1.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=650 HEIGHT=478 BORDER=0></PRE>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+				<P STYLE="margin-bottom: 0cm"><BR>
+				</P>
+				<PRE><FONT COLOR="#b22222">/************************************************************************/</FONT>
+<FONT COLOR="#b22222">/* cube-octave.   Juan Gonzalez Gomez.   Marzo-2004                     */</FONT>
+<FONT COLOR="#b22222">/*----------------------------------------------------------------------*/</FONT>
+<FONT COLOR="#b22222">/* Ejemplo de visualizacion de Cube Revolutions en Octave               */</FONT>
+<FONT COLOR="#b22222">/* Generacion de secuencias para CUBE REVOLUTIONS                       */</FONT>
+<FONT COLOR="#b22222">/*----------------------------------------------------------------------*/</FONT>
+<FONT COLOR="#b22222">/* LICENCIA GPL                                                         */</FONT>
+<FONT COLOR="#b22222">/************************************************************************/</FONT>
+
+<FONT COLOR="#a020f0">#include &lt;stdio.h&gt;</FONT>
+<FONT COLOR="#a020f0">#include &lt;math.h&gt;</FONT>
+
+<FONT COLOR="#a020f0">#include </FONT><FONT COLOR="#666666">&quot;cube.h&quot;</FONT>
+<FONT COLOR="#a020f0">#include </FONT><FONT COLOR="#666666">&quot;func.h&quot;</FONT>
+
+<FONT COLOR="#b22222">/*-----------------------------------------------------------*/</FONT>
+<FONT COLOR="#b22222">/*                M  A   I   N                               */</FONT>
+<FONT COLOR="#b22222">/*-----------------------------------------------------------*/</FONT>
+<A NAME="main"></A><FONT COLOR="#4169e1">int main(void)</FONT>
+{
+  
+  <FONT COLOR="#b22222">/* Inicializar cube */</FONT>
+  cube_init();
+
+  <FONT COLOR="#b22222">/*- Seleccionar una onda sinusoidal  */</FONT>
+  cube_func_contorno_set(func_onda_sinusoidal);
+  
+  <FONT COLOR="#b22222">/** Para trabajar con semiondas se descomentaria esto  */</FONT>
+  <FONT COLOR="#b22222">/*  cube_func_contorno_set(func_F1);                   */</FONT>
+  
+  <FONT COLOR="#b22222">/* Establecer los parametros para esta onda */</FONT>
+  func_long_onda_set(100);
+  func_amplitud_set(15);
+  func_frec_set(5.0);
+
+  <FONT COLOR="#b22222">/*-- Ajustar cube a la ONDA --*/</FONT>
+  cube_ajustar(0);
+  
+  <FONT COLOR="#b22222">/*-- Sacar los comandos octave para visualizar el gusano */</FONT>
+  <FONT COLOR="#b22222">/*-- No se visualiza la funcion                          */</FONT>           
+  <FONT COLOR="#b22222">/*-- El color usado es el rojo                           */</FONT>
+  cube_octave(0,1,1);
+
+  <FONT COLOR="#4169e1">return</FONT> 0;
+}</PRE>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><BR><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TH WIDTH=100% VALIGN=TOP BGCOLOR="#9999ff">
+				<P><A NAME="cube-octave111"></A><A NAME="cube-demo"></A><FONT FACE="Arial, sans-serif"><B>APLICACI&Oacute;N:
+				CUBE-DEMO.MONO</B></FONT></P>
+			</TH>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4><B>DESCRIPCI&Oacute;N:
+				</B></FONT></FONT>
+				</P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para hacer
+				demostraciones de Cube Revolutions se desarroll&oacute; la
+				aplicaci&oacute;n Cube-demo, que permite activar los servos de
+				Cube y reproducir diferentes secuencias de movimiento que
+				previamente han sido generadas. Algunas son secuencias manuales:
+				estirarse-encogerse, convertirse en una cobra, enrollarse, etc y
+				las otras son secuencias generadas autom&aacute;ticamente para
+				que Cube se mueva seg&uacute;n diferentes ondas.</FONT></FONT></P>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<THEAD>
+		<TR>
+			<TH WIDTH=50% BGCOLOR="#e6e6ff">
+				<P><IMG SRC="images/soft2-cube-demo-pan1.png" NAME="Imagen3" ALIGN=MIDDLE WIDTH=366 HEIGHT=185 BORDER=0></P>
+			</TH>
+			<TH WIDTH=50% BGCOLOR="#e6e6ff">
+				<P><IMG SRC="images/soft2-cube-demo-pan2.png" NAME="Imagen4" ALIGN=MIDDLE WIDTH=369 HEIGHT=215 BORDER=0></P>
+			</TH>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR>
+			<TD WIDTH=50% BGCOLOR="#e6e6ff">
+				<P ALIGN=CENTER><IMG SRC="images/soft2-cube-demo-pan3.png" NAME="Imagen5" ALIGN=MIDDLE WIDTH=325 HEIGHT=125 BORDER=0></P>
+			</TD>
+			<TD WIDTH=50% BGCOLOR="#e6e6ff">
+				<P><IMG SRC="images/soft2-cube-demo-pan4.png" NAME="Imagen6" ALIGN=MIDDLE WIDTH=445 HEIGHT=117 BORDER=0></P>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><BR><BR>
+</P>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><A NAME="implementacion-cs"></A>
+<FONT FACE="Albany, sans-serif"><FONT SIZE=4>Implementaci&oacute;n en
+C#</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT SIZE=2><FONT FACE="Arial, sans-serif">La
+implementaci&oacute;n en C# es mucho m&aacute;s modular y f&aacute;cilmente
+ampliable. Se han definido dos clases principales, la clase <A HREF="../../proyectos/cube-virtual.mono/html/classGusano.html">Gusano</A>,
+para construir y trabajar con gusanos y la clase <A HREF="../../proyectos/cube-virtual.mono/html/classFuncion.html">Funci&oacute;n</A>,
+para la creaci&oacute;n de las ondas.</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Los
+Gusanos est&aacute;n constituidos por </FONT></FONT><A HREF="../../proyectos/cube-virtual.mono/html/classArticulacion.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Articulaciones</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+que se corresponden con los servos, pero tambi&eacute;n se consideran
+articulaciones la cola (articulaci&oacute;n 0) y la cabeza (la n&uacute;mero
+9 en el caso de Cube Revolutions). El m&eacute;todo m&aacute;s
+importante es </FONT></FONT><A HREF="../../proyectos/cube-virtual.mono/html/classGusano.html#a6"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Ajustar</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+que realiza el algoritmo de ajuste utilizando la funci&oacute;n
+empleada. </FONT></FONT>
+</P>
+<UL>
+	<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><A HREF="../../proyectos/cube-virtual.mono/html/classGusano.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">La
+	documentaci&oacute;n de la case Gusano est&aacute; disponible aqu&iacute;</FONT></FONT></A></P>
+	<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><A HREF="../../proyectos/cube-virtual.mono/html/classFuncion.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">La
+	documentaci&oacute;n de la clase Funci&oacute;n est&aacute;
+	disponible aqu&iacute;.</FONT></FONT></A></P>
+</UL>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TH WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P><A NAME="cube-generate1"></A><A NAME="test-gusano"></A><FONT FACE="Arial, sans-serif"><B>PROGRAMA
+				EJEMPLO: TEST-GUSANO</B></FONT></P>
+			</TH>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE STYLE="margin-bottom: 0.5cm"><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>DESCRIPCI&Oacute;N:</B></FONT></FONT></FONT></PRE><P STYLE="margin-bottom: 0cm; font-weight: medium">
+				<FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejemplo
+				de utilizaci&oacute;n de la Clase Gusano. Se crean tres gusanos
+				diferentes, dos de 8 y uno de 2 articulaciones. Se construyen
+				tres funciones y se ajustan los gusanos a ellas.</FONT></FONT></FONT></P>
+				<PRE><FONT COLOR="#000000">  </FONT></PRE>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ffffcc">
+				<PRE>//********************************************************************
+//* test-Gusano       (c) Juan Gonzalez.  Marzo 2005                 *
+//*------------------------------------------------------------------*
+//*  Pruebas de la clase Gusano                                      *
+//*------------------------------------------------------------------*
+//* Licencia GPL                                                     *
+//********************************************************************
+
+using System;
+
+class Test_Gusano
+{
+  static void Main()
+  {
+    //--------------------------------------
+    //-- Pruebas de construccion 
+    //--------------------------------------
+    Console.WriteLine(&quot;Pruebas de la clase Gusano&quot;);
+    
+    //-- Crear un gusano de 8 articulationes
+<A NAME="_a24"></A>    <A HREF="../../proyectos/cube-virtual.mono/html/classGusano.html">Gusano</A> g1 = new <A HREF="../../proyectos/cube-virtual.mono/html/classGusano.html">Gusano</A>(8);
+    
+    //-- Crear gusano de 2 articulaciones
+    <A HREF="../../proyectos/cube-virtual.mono/html/classGusano.html">Gusano</A> g2 = new <A HREF="../../proyectos/cube-virtual.mono/html/classGusano.html">Gusano</A>(2);
+    
+    //-- Crear un gusano copia de otro
+    <A HREF="../../proyectos/cube-virtual.mono/html/classGusano.html">Gusano</A> g3 = new <A HREF="../../proyectos/cube-virtual.mono/html/classGusano.html">Gusano</A>(g1);
+    
+<A NAME="a25"></A>    Console.WriteLine(&quot;Gusano 1: {0}. {1} articulaciones&quot;,g1,g1.<A HREF="../../proyectos/cube-virtual.mono/html/classGusano.html#00">Nmod</A>);
+    Console.WriteLine(&quot;Gusano 2: {0}. {1} articulaciones&quot;,g2,g2.<A HREF="../../proyectos/cube-virtual.mono/html/classGusano.html#00">Nmod</A>);
+    Console.WriteLine(&quot;Gusano 3: {0}. {1} articulaciones&quot;,g3,g3.<A HREF="../../proyectos/cube-virtual.mono/html/classGusano.html#00">Nmod</A>);
+    
+    //--------------------------------------
+    //-- Rotar articulaciones
+    //--------------------------------------
+    Console.WriteLine(&quot;\nRotacion:&quot;);
+<A NAME="a26"></A><A NAME="_a27"></A>    g1.<A HREF="../../proyectos/cube-virtual.mono/html/classGusano.html#a5">Set_Art</A>(1,new <A HREF="../../proyectos/cube-virtual.mono/html/classAngulo.html">Angulo</A>(15),<A HREF="../../proyectos/cube-virtual.mono/html/classGusano.html">Gusano</A>.Sentido.DERECHA);
+    g1.<A HREF="../../proyectos/cube-virtual.mono/html/classGusano.html#a5">Set_Art</A>(2,new <A HREF="../../proyectos/cube-virtual.mono/html/classAngulo.html">Angulo</A>(-15),<A HREF="../../proyectos/cube-virtual.mono/html/classGusano.html">Gusano</A>.Sentido.DERECHA);
+    Console.WriteLine(&quot;Gusano 1: {0}&quot;,g1);
+    
+    //------------------------------------
+    //-- Pruebas de ajuste
+    //------------------------------------
+    //-- Crear las funciones de ajuste
+<A NAME="_a28"></A><A NAME="_a29"></A>    <A HREF="../../proyectos/cube-virtual.mono/html/classFuncion.html">Funcion</A> f1 = new <A HREF="../../proyectos/cube-virtual.mono/html/classFuncionSin.html">FuncionSin</A>(15,100,0,5);
+    <A HREF="../../proyectos/cube-virtual.mono/html/classFuncion.html">Funcion</A>  f2 = new <A HREF="../../proyectos/cube-virtual.mono/html/classFuncionSin.html">FuncionSin</A>(2,20,0,5);
+<A NAME="_a30"></A>    <A HREF="../../proyectos/cube-virtual.mono/html/classFuncion.html">Funcion</A>  f3 = new <A HREF="../../proyectos/cube-virtual.mono/html/classFuncionSemiSin.html">FuncionSemiSin</A>(10,20,200,5);
+    
+    //-- Ajustar
+<A NAME="a31"></A>    g1.<A HREF="../../proyectos/cube-virtual.mono/html/classGusano.html#a6">Ajustar</A>(f1,0);
+    g2.<A HREF="../../proyectos/cube-virtual.mono/html/classGusano.html#a6">Ajustar</A>(f2,0);
+    g3.<A HREF="../../proyectos/cube-virtual.mono/html/classGusano.html#a6">Ajustar</A>(f3,0);
+    
+    Console.WriteLine(&quot;\nAjuste:&quot;);
+    Console.WriteLine(&quot;Gusano 1: {0}&quot;,g1);
+    Console.WriteLine(&quot;Gusano 2: {0}&quot;,g2);
+    Console.WriteLine(&quot;Gusano 3: {0}&quot;,g3);
+   
+  }
+}</PRE><P>
+				<BR>
+				</P>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<P><BR><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TH WIDTH=100% VALIGN=TOP BGCOLOR="#9999ff">
+				<P><A NAME="cube-octave11"></A><A NAME="cube-virtual-mono"></A><FONT FACE="Arial, sans-serif"><B>APLICACI&Oacute;N:
+				CUBE-VIRTUAL.MONO</B></FONT></P>
+			</TH>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4><B>DESCRIPCI&Oacute;N:
+				</B></FONT></FONT>
+				</P>
+				<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Para la generaci&oacute;n
+				de las secuencias se ha programado la aplicaci&oacute;n
+				</FONT></FONT><A HREF="../../proyectos/cube-virtual.mono/cube-virtual-mono.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif"><FONT COLOR="#000000">Cube-Virtual.mono</FONT></FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.
+				Las secuencias se pueden grabar en un fichero en formato .f8,
+				para luego ser reproducidas.</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P ALIGN=CENTER><IMG SRC="../../proyectos/cube-virtual.mono/images/cube-virtual-mono-pant1.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=796 HEIGHT=557 BORDER=0></P>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><BR><BR>
+</P>
+<HR>
+<P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">[<A HREF="index.html">Cube
+Revolutions</A>]</FONT></FONT></P>
+<P STYLE="margin-bottom: 0cm"><A HREF="http://www.iearobotics.com/"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">IEA
+ROBOTICS</FONT></FONT></A> 
+</P>
+<ADDRESS><A HREF="../../index.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A> 
+</ADDRESS>
+</BODY>
+</HTML>

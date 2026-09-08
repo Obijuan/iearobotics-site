@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>CUBE REVOLUTION: Cableado</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20041226;13552200">
+	<META NAME="CHANGED" CONTENT="20051128;20025900">
+	<META NAME="KEYWORDS" CONTENT="Robot, gusano, rob&oacute;tica modular">
+	<STYLE>
+	<!--
+		@page { size: 21cm 29.7cm; margin: 2cm }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0 STYLE="page-break-before: always">
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>CUBE
+				REVOLUTIONS: CABLEADO</B></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Hay dos
+grupos de 4 servos. Cada grupo se conecta a una <B>placa Matrix</B>,
+que lo &uacute;nico que hace es pasar del conector de tipo servo a un
+conector acodado para cable plano de tipo bus. Es una placa pasiva,
+que s&oacute;lo sirve de interconexi&oacute;n. El cable de bus es el
+que sale del gusano y se conecta a la electr&oacute;nica situada en
+el exterior.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Es una manera de tener
+el cableado un poco m&aacute;s controlado. De otra manera, habr&iacute;a
+que sacar los 8 cables de los servos hacia fuera.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<THEAD>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/cab-matrix1.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/cab-matrix2.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">En la
+foto de la izquierda se puede ver el esquema de conexionado. Un grupo
+de 4 servos se conecta a la <B>tarjeta Matrix 1</B> y el otro a la
+<B>Matrix 2</B>. Tanto las dos <B>tarjetas Matrix</B> como la <A HREF="../../../../proyectos/ct6811/ct6811.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Tarjeta
+CT6811</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,</FONT></FONT>
+est&aacute;n conectadas por un cable plano de bus de 10 hilos (Foto
+de la derecha). 8 hilos se utilizan para llevar la informaci&oacute;n
+de la posici&oacute;n de los servos y dos hilos para la alimentaci&oacute;n
+(vcc y gnd).</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<THEAD>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/cab-distribucion.png" NAME="Imagen3" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/cab-cablebus.png" NAME="Imagen4" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">As&iacute; es como
+queda el gusano cableado. El cable de bus sale al exterior para
+conectarse a la </FONT></FONT><A HREF="../../../../proyectos/ct6811/ct6811.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Tarjeta
+CT6811</FONT></FONT></A>.</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/cab-cube-rev.png" NAME="Imagen5" ALIGN=MIDDLE WIDTH=731 HEIGHT=239 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Las conexi&oacute;n de
+los servos a las placas matrix y los pines del conector de bus usados
+por cada una de ellas se muestran en las figuras de abajo. Este es el
+cableado para conectarlo al puerto B de la <A HREF="../../../../proyectos/ct6811/ct6811.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Tarjeta
+CT6811</FONT></FONT></A>. Para la tarjeta Skypic los pines empleados
+deben ser otros.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<THEAD>
+		<TR VALIGN=TOP>
+			<TH WIDTH=50%>
+				<P><IMG SRC="images/cab-matrix1-con.png" NAME="Imagen6" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TH>
+			<TH WIDTH=50%>
+				<P><IMG SRC="images/cab-matrix2-con.png" NAME="Imagen7" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TH>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/cab-conector-matrix1.png" NAME="Imagen8" ALIGN=MIDDLE WIDTH=225 HEIGHT=114 BORDER=0></P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><IMG SRC="images/cab-conector-matrix2.png" NAME="Imagen9" ALIGN=MIDDLE WIDTH=225 HEIGHT=114 BORDER=0></P>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Las placas Matrix se
+han hecho a mano, soldando cables. No hay un PCB dise&ntilde;ado</FONT></FONT></P>
+<P><BR><BR>
+</P>
+<HR>
+<P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">[<A HREF="index.html">Cube
+Revolutions</A>]</FONT></FONT></P>
+<P STYLE="margin-bottom: 0cm"><A HREF="www.iearobotics.com"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">IEA
+ROBOTICS</FONT></FONT></A> 
+</P>
+<ADDRESS><A HREF="../../index.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A> 
+</ADDRESS>
+</BODY>
+</HTML>

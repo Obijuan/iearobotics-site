@@ -1,0 +1,417 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>CUBE REVOLUTION: Software I</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20041226;13552200">
+	<META NAME="CHANGED" CONTENT="20051209;9170700">
+	<META NAME="KEYWORDS" CONTENT="Robot, gusano, rob&oacute;tica modular">
+	<STYLE>
+	<!--
+		@page { size: 21cm 29.7cm; margin: 2cm }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0 STYLE="page-break-before: always">
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>CUBE
+				REVOLUTIONS: SOFTWARE I</B></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Introducci&oacute;n</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En
+este nivel se solucionan los problemas de <B>controlar los servos del
+robot</B> desde el PC,  <B>caracterizaci&oacute;n de las secuencias
+de movimiento, </B><SPAN STYLE="font-weight: medium">c&oacute;mo</SPAN><B>
+generarlas manualmente</B><SPAN STYLE="font-weight: medium">, su
+<B>almacenamiento </B>en ficheros y su <B>reproducci&oacute;n</B>:</SPAN></FONT></FONT></P>
+<UL>
+	<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><I><B>&iquest;C&oacute;mo
+	puedo controlar servos desde el PC?</B></I></FONT></FONT></P>
+	<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><I><B>&iquest;C&oacute;mo
+	definir una secuencia de movimiento?</B></I></FONT></FONT></P>
+	<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><I><B>&iquest;C&oacute;mo
+	almacenar estas secuencias?</B></I></FONT></FONT></P>
+	<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><I><B>&iquest;C&oacute;mo
+	generar manualmente una secuencia de movimiento para el robot?</B></I></FONT></FONT></P>
+	<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><I><B>&iquest;C&oacute;mo
+	reproducir secuencias previamente creadas en el robot?</B></I></FONT></FONT></P>
+</UL>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Todo
+esto no es espec&iacute;fico del robot <A HREF="index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cube
+Revolutions</FONT></FONT></A>, sino que es v&aacute;lido para
+cualquier otro robot articulado que tenga hasta 8 servos.</FONT></FONT></P>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Control
+de servos desde el PC</FONT></FONT></P>
+<P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="index.html"><FONT SIZE=2>Cube
+Revolutions</FONT></A> es un robot <B>NO aut&oacute;nomo</B>, que se
+conecta al PC a trav&eacute;s del puerto serie. En el PC se programan
+los algoritmo para conseguir la locomoci&oacute;n y estudiar sus
+propiedades.</FONT></FONT></P>
+<P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">Se ha
+creado una <B>API en C</B> para poder posicionar los servos desde el
+PC y trabajar con <A HREF="index.html"><FONT SIZE=2>Cube Revolutions</FONT></A>
+como si fuese un perif&eacute;rico. Al solicitar un servicio, como
+por ejemplo establecer la posici&oacute;n de un servo, se env&iacute;a
+una trama por el puerto serie que llega al microcontrolador y &eacute;ste
+se encarga de generar la se&ntilde;al PWM para el posicionamiento del
+servo. La comunicaci&oacute;n se realiza a <B>9600 Baudios</B>. </FONT></FONT>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/soft1-bloques.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=330 HEIGHT=297 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">Esta
+manera de controlar los servos forma parte del <A HREF="../../../../proyectos/stargate/index.html">proyecto
+stargate</A> y el servidor que se ejecuta en el microcontrolador es
+el <A HREF="../../../../proyectos/stargate/servidores/sg-servos8/sg-servos8.html">servos8</A>.</FONT></FONT></P>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Funciones
+de la API SERVOS8</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Desde cualquier
+aplicaci&oacute;n en C</B> en plataformas Linux, podemos controlar
+los servos utilizando la API definida en el m&oacute;dulos <B>SERVOS8</B>.
+Las funciones son:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<UL>
+					<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Courier New"><FONT SIZE=2><B>void
+					sg_servos8_init(int fd);</B></FONT></FONT></P>
+				</UL>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<UL>
+		<LI><P STYLE="margin-top: 0.42cm; font-weight: medium; page-break-after: avoid">
+		<FONT FACE="Arial, sans-serif"><FONT SIZE=2><I>Inicializar el
+		m&oacute;dulo Servos8. Se le pasa como argumento el descriptor del
+		dispositivo serie, que se debe haber abierto antes</I></FONT></FONT></P>
+	</UL>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<UL>
+					<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Courier New"><FONT SIZE=2 STYLE="font-size: 9pt"><B>void
+					sg_servos8_pos1_grados(int servo, int pos); </B></FONT></FONT>
+					</P>
+				</UL>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<UL>
+		<LI><P STYLE="margin-top: 0.42cm; font-weight: medium; page-break-after: avoid">
+		<FONT FACE="Arial, sans-serif"><FONT SIZE=2><I>Posicionar un servo,
+		especificando el &aacute;ngulo en grados. Los servos se numeran
+		desde el 1 hasta el 8. El rango de la posici&oacute;n de los servos
+		es desde -90 hasta 90 grados.</I></FONT></FONT></P>
+	</UL>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<UL>
+					<LI><P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Courier New"><FONT SIZE=2 STYLE="font-size: 9pt"><B>void
+					sg_servos8_pos8_grados(int s1, int s2, int s3, int s4, int s5,
+					int s6, int s7, int s8);</B></FONT></FONT></P>
+				</UL>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<UL>
+		<LI><P STYLE="margin-top: 0.42cm; font-weight: medium; page-break-after: avoid">
+		<FONT FACE="Arial, sans-serif"><FONT SIZE=2><I>Posicionar los 8
+		servos, especificando el &aacute;ngulo en grados. El rango de
+		posici&oacute;n de los servos es desde -90 hasta 90 grados.</I></FONT></FONT></P>
+	</UL>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<UL>
+					<LI><P><FONT FACE="Courier New"><FONT SIZE=2><B>void
+					sg_servos8_enable(int mask);</B></FONT></FONT></P>
+				</UL>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<UL>
+		<LI><P STYLE="margin-top: 0.42cm; font-weight: medium; page-break-after: avoid">
+		<FONT FACE="Arial, sans-serif"><FONT SIZE=2><I>Habilitar los
+		servos. Se pasa como par&aacute;metro una m&aacute;scara en la que
+		los bits a '1' indican que el servo correspondiente est&aacute;
+		habilitado.</I></FONT></FONT></P>
+	</UL>
+</UL>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Programa
+de ejemplo &ldquo;hola mundo&rdquo;</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El
+siguiente programa es un <B>ejemplo</B> de uso del m&oacute;dulo
+servos8. Se abre el puerto serie, se inicializa el m&oacute;dulo
+servos8, se habilitan los servos y se posiciona el servo 1 en un
+extremo y luego a su posici&oacute;n central.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE STYLE="margin-bottom: 0.1cm"><FONT COLOR="#a020f0">#include &lt;stdio.h&gt;</FONT>
+<FONT COLOR="#a020f0">#include &lt;unistd.h&gt;</FONT>
+
+<FONT COLOR="#a020f0">#include &lt;stargate/stargate.h&gt;</FONT>
+<FONT COLOR="#a020f0">#include </FONT><FONT COLOR="#666666">&quot;sg-tramas-servos8.h&quot;</FONT>
+
+<A NAME="main"></A><FONT COLOR="#4169e1">int main(void)</FONT>
+{
+  int serial_fd;  <FONT COLOR="#b22222">/*-- Descriptor puerto serie */</FONT>
+        
+  printf (<FONT COLOR="#666666">&quot;Test de servos8\n&quot;</FONT>);
+        
+  <FONT COLOR="#b22222">/* Abrir el puerto serie */</FONT>
+  serial_fd=sg_serial_open(<FONT COLOR="#666666">&quot;/dev/ttyS0&quot;</FONT>);
+
+  <FONT COLOR="#b22222">/* Inicializar el modulo servos8 */</FONT>
+  sg_servos8_init(serial_fd);
+ 
+  <FONT COLOR="#b22222">/*-Llevar todos los servos a la posicion inicial  */</FONT>
+  sg_servos8_pos8_grados(0,0,0,0,0,0,0,0);
+  
+  <FONT COLOR="#b22222">/* Habilitar todos los servos  */</FONT>
+  sg_servos8_enable(0xFF);
+  
+  <FONT COLOR="#b22222">/* Llevar servo 1 a un extremo */</FONT>
+  sg_servos8_pos1_grados(1,-90);
+  
+  <FONT COLOR="#b22222">/* Esperar */</FONT> 
+  sleep(1);
+  
+  <FONT COLOR="#b22222">/* Llevar servo a posicion inicial */</FONT>
+  sg_servos8_pos1_grados(1,0);
+  
+  <FONT COLOR="#b22222">/* Esperar */</FONT>
+  sleep(1);
+  
+  <FONT COLOR="#b22222">/* Deshabilitar servos  */</FONT>
+  sg_servos8_enable(0x00);
+ 
+  <FONT COLOR="#b22222">/* Cerrar puerto serie  */</FONT>
+  close(serial_fd);
+        
+  <FONT COLOR="#4169e1">return</FONT> 0;
+}</PRE>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Las
+fuentes de este programa se pueden bajar de aqu&iacute;:
+<A HREF="download/test-servos8.tgz">test-servos8.tgz</A></FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Para
+compilarlo es necesario tener instalada la <A HREF="../../../../proyectos/stargate/clientes/libstargate/libstargate.html">librer&iacute;a
+stargate</A> (<B>1.0.1</B>)</FONT></FONT></P>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Secuencias
+de movimiento</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En
+un instante de tiempo, <B>la forma del gusano est&aacute;
+caracterizada por los &aacute;ngulos de las articulaciones</B>. Esos
+&aacute;ngulos constituyen el <B>vector de posici&oacute;n angular</B>.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/soft1-vector-pos-angular.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=662 HEIGHT=105 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Una
+<B>secuencia de movimiento </B>queda descrita mediante una serie de
+<B>vectores de posici&oacute;n angular,</B> que van determinado la
+forma del gusano en cada instante. As&iacute;, las secuencias se
+pueden representar mediante <B>matrices</B>, cuyas filas son los
+vectores de posici&oacute;n angular. En la siguiente figura se
+muestra un ejemplo de una matriz de 11x8, que representa una
+secuencia de movimiento de 11 pasos para un robot articulado de 8
+articulaciones.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/soft1-matriz.png" NAME="Imagen3" ALIGN=MIDDLE WIDTH=552 HEIGHT=282 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Estas
+matrices de movimiento, s<B>e almacenan en ficheros ASCII,</B> para
+luego ser reproducidas. Los ficheros que guardan las secuencias de
+movimiento de <A HREF="index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cube
+Revolutions</FONT></FONT></A> tienen <B>extensi&oacute;n .f8</B>.
+Aqu&iacute; se muestra un <B>fichero de ejemplo</B>:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#e6e6e6">
+				<PRE STYLE="margin-bottom: 0.1cm">NSERVOS=8
+[0 0 0 0 0 0 0 0 ],0;
+[0 0 0 0 0 0 90 90 ],200;
+[0 0 0 0 0 90 90 90 ],500;
+[0 0 0 -5 90 90 6 -90 ],500;
+[9 0 13 -11 90 24 86 -90 ],300;
+[9 0 13 -11 90 24 -42 -90 ],300;
+[9 0 13 -11 90 48 -89 -46 ],300;
+[-64 82 13 -11 90 48 -89 -46 ],300;</PRE>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT SIZE=2><FONT FACE="Arial, sans-serif">La
+primera l&iacute;nea indica el <B>n&uacute;mero de servos</B>, y por
+tanto el n&uacute;mero de elementos de los vectores de posici&oacute;n
+angular (o el n&uacute;mero de filas de la matriz de movimiento).
+Para el caso de <A HREF="index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cube
+Revolutions</FONT></FONT></A> este n&uacute;mero es 8.</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>A
+continuaci&oacute;n est&aacute;n los <B>vectores de posici&oacute;n
+angular,</B> para los diferentes instantes. El n&uacute;mero situado
+al final de cada vector es el tiempo en milisegundos que los servos
+deben permanecer en esa posici&oacute;n antes de pasar a la
+siguiente.</FONT></FONT></P>
+<HR>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>Reproducci&oacute;n
+de secuencias y generaci&oacute;n manual</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Los
+programas <B>cube-play</B> y <B>cube-reverse-play</B>, ambos en el
+paquete <A HREF="download/cube-play.tgz">cube-play.tgz</A>, leen los
+ficheros de secuencias y los env&iacute;an a <A HREF="index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cube
+Revolutions</FONT></FONT></A> <FONT SIZE=2><FONT FACE="Arial, sans-serif">,</FONT></FONT>
+utilizando la <B>API Servos8</B>. Cube-play reproduce la secuencia en
+el sentido normal (recorre la matriz de arriba hacia abajo) y
+Cube-reverse-play en sentido contrario. </FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Para
+compilarlos y utilizarlos es necesario tener instalada la <A HREF="../../../../proyectos/stargate/clientes/libstargate/libstargate.html">librer&iacute;a
+stargate</A> (<B>1.0.1</B>)</FONT></FONT></P>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Para
+probar los motores de <A HREF="index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Cube
+Revolutions</FONT></FONT></A> y generar secuencias manuales, resulta
+mucho m&aacute;s &uacute;til utilizar el programa <A HREF="../../../../proyectos/stargate/clientes/star-servos8/star-servos8.html">star-servos8</A>,
+que tiene una interfaz gr&aacute;fica. Este programa no es espec&iacute;fico
+de Cube, sino que es v&aacute;lido para generar/reproducir secuencias
+en cualquier robot o sistema que tenga hasta 8 servos.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=2 CELLSPACING=0 RULES=NONE>
+	<TR>
+		<TD>
+			<P ALIGN=CENTER><IMG SRC="../../../../proyectos/stargate/clientes/star-servos8/images/futaba.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=100 HEIGHT=100 BORDER=0></P>
+		</TD>
+		<TD WIDTH=85%>
+			<DL>
+				<DD><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Nombre:
+				</B>star-servos8 </FONT></FONT>
+				</DD><DD>
+				<FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Servicio</B>:
+				Cliente para el </FONT></FONT><A HREF="../../../../proyectos/stargate/servidores/sg-servos8/sg-servos8.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Stargate
+				servos8</FONT></FONT></A> 
+				</DD><DD>
+				<FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Lenguaje: </B>C </FONT></FONT>
+				</DD><DD>
+				<FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Plataforma: </B>Linux
+				</FONT></FONT>
+				</DD><DD>
+				<FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Tipo</B>:
+				Convencional </FONT></FONT>
+				</DD><DD>
+				<FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Descripci&oacute;n</B>:
+				Control de servos del tipo </FONT><A HREF="../../../../proyectos/cuadernos/ct3/ct3.html"><FONT SIZE=2>Futaba
+				3003</FONT></A> <FONT SIZE=2>o compatibles desde el PC.
+				Movimiento mediante barras deslizantes y Canvas. Generaci&oacute;n,
+				grabaci&oacute;n y reproducci&oacute;n de secuencias </FONT></FONT></FONT>
+				</DD><DD>
+				<FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Aplicaciones</B>:
+				Prototipado r&aacute;pido de sistemas articulados. Por ejemplo
+				robots. </FONT></FONT>
+				</DD></DL>
+		</TD>
+	</TR>
+</TABLE>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Entre otras cosas, el
+<A HREF="../../../../proyectos/stargate/clientes/star-servos8/star-servos8.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">star-servos8
+</FONT></FONT></A>permite posicionar manualmente los servos por medio
+de unos deslizadores. Con ello se pueden generar secuencias de
+movimiento sencillas que luego se guardan en un fichero .f8. </FONT></FONT>
+</P>
+<DL>
+	<DD>
+	<TABLE WIDTH=780 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=770>
+		<THEAD>
+			<TR>
+				<TH WIDTH=770 VALIGN=TOP>
+					<P><IMG SRC="../../../../proyectos/stargate/clientes/star-servos8/images/pant3.png" NAME="Imagen8" ALIGN=MIDDLE WIDTH=586 HEIGHT=412 BORDER=0></P>
+				</TH>
+			</TR>
+		</THEAD>
+		<TBODY>
+			<TR>
+				<TD WIDTH=770 VALIGN=TOP>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Ventana
+					principal para el posicionamiento de servos</B>. Movimiento con
+					el raton cada una de las barras deslizante, se act&uacute;a
+					sobre cada uno de los servos. Se pueden habilitar/deshabilitar
+					los servos marcando las casillas de la izquierda. El bot&oacute;n
+					de Reset lleva a todos los servos a la posici&oacute;n inicial.</FONT></FONT></P>
+				</TD>
+			</TR>
+		</TBODY>
+	</TABLE>
+</DL>
+<P><A NAME="introduccion"></A><BR><BR>
+</P>
+<HR>
+<P><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">[<A HREF="index.html">Cube
+Revolutions</A>]</FONT></FONT></P>
+<P STYLE="margin-bottom: 0cm"><A HREF="www.iearobotics.com"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">IEA
+ROBOTICS</FONT></FONT></A> 
+</P>
+<ADDRESS><A HREF="../../index.html"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A> 
+</ADDRESS>
+</BODY>
+</HTML>
