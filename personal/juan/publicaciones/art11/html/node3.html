@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>3 Algoritmo de locomoci&oacute;n</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20051001;9545200">
+	<META NAME="CHANGED" CONTENT="20051001;9572200">
+	<META NAME="DESCRIPTION" CONTENT="3 Algoritmo de locomoci&oacute;n">
+	<META NAME="KEYWORDS" CONTENT="cedi-cube">
+	<META NAME="resource-type" CONTENT="document">
+	<META NAME="distribution" CONTENT="global">
+	<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!--Navigation Panel-->
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<P><A NAME="tex2html56"></A><A NAME="tex2html54"></A><A NAME="tex2html48"></A>
+<A HREF="node4.html" NAME="tex2html56"><IMG SRC="next.png" NAME="Imagen1" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="cedi-cube.html" NAME="tex2html54"><IMG SRC="up.png" NAME="Imagen2" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node2.html" NAME="tex2html48"><IMG SRC="prev.png" NAME="Imagen3" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node4.html" NAME="tex2html57">1 C&aacute;lculo
+del vector</A> <B>Up:</B> <A HREF="cedi-cube.html" NAME="tex2html55">Evaluaci&oacute;n
+de un Algoritmo</A> <B>Previous:</B> <A HREF="node2.html" NAME="tex2html49">2
+El robot &aacute;podo</A> 
+</P>
+<H1><A NAME="SECTION00030000000000000000"></A><!--End of Navigation Panel-->3
+Algoritmo de locomoci&oacute;n 
+</H1>
+<P ALIGN=JUSTIFY>Se emplea un <B>modelo de propagaci&oacute;n de
+ondas</B> para los c&aacute;lculos, construy&eacute;ndose las <B>tablas
+de control de movimiento</B> (gait control tables) a partir de los
+par&aacute;metros de la onda: amplitud, forma de la onda, longitud de
+onda y frecuencia. Estas tablas almacenan la posici&oacute;n de las
+articulaciones en los diferentes instantes. Cada fila de la tabla
+contiene la posici&oacute;n instant&aacute;nea de las articulaciones
+y determina, por tanto, la forma del robot en ese instante. La matriz
+completa especifica la evoluci&oacute;n en el tiempo de la forma que
+va adoptando el robot. 
+</P>
+<P ALIGN=JUSTIFY>S&oacute;lo un subconjunto de todas las matrices
+posibles hacen que el robot se desplace. Mediante el algoritmo de
+locomoci&oacute;n, se generan tablas de control correctas, que
+permiten que el robot se mueva hacia adelante y hacia atr&aacute;s. 
+</P><A NAME="fig:angular_position_vector_ex"></A><A NAME="472"></A><CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P ALIGN=CENTER><IMG SRC="img5.png" NAME="Imagen6" ALT="\includegraphics[%scale=0.5]{ps/vector_angular.eps}" ALIGN=BOTTOM WIDTH=370 HEIGHT=105 BORDER=0>
+								</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=2>Figure
+2:</FONT></STRONG><FONT SIZE=2> Vector de posici&oacute;n angular en
+el instante 
+<IMG SRC="img1.png" NAME="Imagen4" ALT="$t_{i}$" ALIGN=MIDDLE WIDTH=14 HEIGHT=27 BORDER=0>
+para un robot compuesto por 6 articulaciones:<!-- MATH
+ $\protect\overrightarrow{\varphi(t_{i})}=(\varphi_{1},\varphi_{2},\varphi_{3},\varphi_{4},\varphi_{5,}\varphi_{6})$
+ -->
+<IMG SRC="img2.png" NAME="Imagen5" ALT="$\overrightarrow {\varphi (t_{i})}=(\varphi _{1},\varphi _{2},\varphi _{3},\varphi _{4},\varphi _{5,}\varphi _{6})$" ALIGN=MIDDLE WIDTH=194 HEIGHT=37 BORDER=0></FONT></P>
+<P ALIGN=JUSTIFY>La forma del robot en un instante 
+<IMG SRC="img1.png" NAME="Imagen7" ALT="$t_{i}$" ALIGN=MIDDLE WIDTH=14 HEIGHT=27 BORDER=0>
+est&aacute; determinada por su <B>vector de posici&oacute;n angular</B><!-- MATH
+ $\overrightarrow{\varphi(t_{i})}=(\varphi_{1},\varphi_{2},...,\varphi_{n})$
+ -->
+<IMG SRC="img6.png" NAME="Imagen8" ALT="$\overrightarrow{\varphi(t_{i})}=(\varphi_{1},\varphi_{2},...,\varphi_{n})$" ALIGN=MIDDLE WIDTH=148 HEIGHT=37 BORDER=0>,
+donde 
+<IMG SRC="img7.png" NAME="Imagen9" ALT="$\varphi_{j}$" ALIGN=MIDDLE WIDTH=20 HEIGHT=27 BORDER=0>
+con 
+<IMG SRC="img8.png" NAME="Imagen10" ALT="$j\in\{1...n\}$" ALIGN=MIDDLE WIDTH=72 HEIGHT=30 BORDER=0>,
+es el &aacute;ngulo entre los dos segmentos de la articulaci&oacute;n
+<IMG SRC="img9.png" NAME="Imagen11" ALT="$j$" ALIGN=MIDDLE WIDTH=11 HEIGHT=27 BORDER=0>th
+y 
+<IMG SRC="img10.png" NAME="Imagen12" ALT="$n$" ALIGN=BOTTOM WIDTH=13 HEIGHT=12 BORDER=0>
+es el n&uacute;mero total de m&oacute;dulos que componen el robot. 
+</P>
+<P ALIGN=JUSTIFY>La figura <A HREF="#fig:angular_position_vector_ex">2</A>
+muestra un robot de seis articulaciones y su vector de posici&oacute;n
+angular para el instante 
+<IMG SRC="img1.png" NAME="Imagen13" ALT="$t_{i}$" ALIGN=MIDDLE WIDTH=14 HEIGHT=27 BORDER=0>.
+La tabla de control es una matriz de 
+<IMG SRC="img11.png" NAME="Imagen14" ALT="$m$" ALIGN=BOTTOM WIDTH=17 HEIGHT=12 BORDER=0>x<IMG SRC="img10.png" NAME="Imagen15" ALT="$n$" ALIGN=BOTTOM WIDTH=13 HEIGHT=12 BORDER=0>,
+cuyas filas son los vectores de posici&oacute;n angular en diferentes
+instantes:<!-- MATH
+ $\overrightarrow{\varphi(t_{0})},\overrightarrow{\varphi(t_{1})},...,\overrightarrow{\varphi(t_{m})}$
+ -->
+<IMG SRC="img12.png" NAME="Imagen16" ALT="$\overrightarrow{\varphi(t_{0})},\overrightarrow{\varphi(t_{1})},...,\overrightarrow{\varphi(t_{m})}$" ALIGN=MIDDLE WIDTH=139 HEIGHT=37 BORDER=0>
+y 
+<IMG SRC="img11.png" NAME="Imagen17" ALT="$m$" ALIGN=BOTTOM WIDTH=17 HEIGHT=12 BORDER=0>
+es el n&uacute;mero total de instantes en la evoluci&oacute;n del
+movimiento. El valor de 
+<IMG SRC="img11.png" NAME="Imagen18" ALT="$m$" ALIGN=BOTTOM WIDTH=17 HEIGHT=12 BORDER=0>
+depende de la resoluci&oacute;n de tiempo necesaria para la
+aplicaci&oacute;n. Un valor t&iacute;pico, usado en los experimentos
+de este art&iacute;culo es de 20 (el movimiento del robot se describe
+con 20 instantes). 
+</P>
+<P ALIGN=JUSTIFY>El algoritmo tiene dos partes. En la primera se
+calcula<!-- MATH
+ $\overrightarrow{\varphi(t_{i})}$
+ --> 
+<IMG SRC="img13.png" NAME="Imagen19" ALT="$\overrightarrow{\varphi(t_{i})}$" ALIGN=MIDDLE WIDTH=35 HEIGHT=37 BORDER=0>
+a partir de la onda y en la segunda se crea la tabla. 
+</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<P><A NAME="CHILD_LINKS"></A><!--Table of Child-Links--><STRONG>Subsections</STRONG>
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="node4.html" NAME="tex2html58">1
+	C&aacute;lculo del vector de posici&oacute;n angular</A> 
+	</P>
+	<LI><P><A HREF="node5.html" NAME="tex2html59">2 Generaci&oacute;n de
+	tablas de control del movimiento</A> 
+	</P>
+</UL>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A NAME="tex2html561"></A><A NAME="tex2html541"></A><A NAME="tex2html481"></A>
+<!--Navigation Panel--><A HREF="node4.html" NAME="tex2html56"><IMG SRC="next.png" NAME="Imagen20" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="cedi-cube.html" NAME="tex2html54"><IMG SRC="up.png" NAME="Imagen21" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node2.html" NAME="tex2html48"><IMG SRC="prev.png" NAME="Imagen22" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node4.html" NAME="tex2html57">1 C&aacute;lculo
+del vector</A> <B>Up:</B> <A HREF="cedi-cube.html" NAME="tex2html55">Evaluaci&oacute;n
+de un Algoritmo</A> <B>Previous:</B> <A HREF="node2.html" NAME="tex2html49">2
+El robot &aacute;podo</A></P>
+<ADDRESS><!--End of Navigation Panel-->juan 2005-10-01 
+</ADDRESS>
+</BODY>
+</HTML>

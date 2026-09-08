@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>1 C&aacute;lculo del vector de posici&oacute;n angular</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20051001;10004500">
+	<META NAME="CHANGED" CONTENT="20051001;10031900">
+	<META NAME="DESCRIPTION" CONTENT="1 C&aacute;lculo del vector de posici&oacute;n angular">
+	<META NAME="KEYWORDS" CONTENT="cedi-cube">
+	<META NAME="resource-type" CONTENT="document">
+	<META NAME="distribution" CONTENT="global">
+	<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!--Navigation Panel-->
+	<STYLE>
+	<!--
+		@page { size: 21.59cm 27.94cm }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<P><A NAME="tex2html68"></A><A NAME="tex2html66"></A><A NAME="tex2html60"></A>
+<A HREF="node5.html" NAME="tex2html68"><IMG SRC="next.png" NAME="Imagen1" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="node3.html" NAME="tex2html66"><IMG SRC="up.png" NAME="Imagen2" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node3.html" NAME="tex2html60"><IMG SRC="prev.png" NAME="Imagen3" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node5.html" NAME="tex2html69">2 Generaci&oacute;n
+de tablas</A> <B>Up:</B> <A HREF="node3.html" NAME="tex2html67">3
+Algoritmo de locomoci&oacute;n</A> <B>Previous:</B> <A HREF="node3.html" NAME="tex2html61">3
+Algoritmo de locomoci&oacute;n</A> 
+</P>
+<H2><A NAME="SECTION00031000000000000000"></A><A NAME="sub:C_E1lculo-del-vector-posicion-angular"></A>
+<!--End of Navigation Panel--><BR>1 C&aacute;lculo del vector de
+posici&oacute;n angular 
+</H2>
+<P ALIGN=JUSTIFY>Dada una onda en el instante 
+<IMG SRC="img1.png" NAME="Imagen4" ALT="$t_{i}$" ALIGN=MIDDLE WIDTH=14 HEIGHT=27 BORDER=0>,
+<IMG SRC="img14.png" NAME="Imagen5" ALT="$f(x,t_{i})$" ALIGN=MIDDLE WIDTH=49 HEIGHT=30 BORDER=0>,
+<B>el problema es calcular el vector<!-- MATH
+ $\overrightarrow{\varphi(t_{i})}$
+ -->
+<IMG SRC="img13.png" NAME="Imagen6" ALT="$\overrightarrow{\varphi(t_{i})}$" ALIGN=MIDDLE WIDTH=35 HEIGHT=37 BORDER=0>
+que hace que la articulaci&oacute;n cumpla la ecuaci&oacute;n de la
+onda</B>. Si 
+<IMG SRC="img15.png" NAME="Imagen7" ALT="$(x_{j},y_{j})$" ALIGN=MIDDLE WIDTH=50 HEIGHT=30 BORDER=0>
+son las coordenadas de la articulaci&oacute;n 
+<IMG SRC="img9.png" NAME="Imagen8" ALT="$j$" ALIGN=MIDDLE WIDTH=11 HEIGHT=27 BORDER=0>,
+el algoritmo debe encontrar el vector<!-- MATH
+ $\overrightarrow{\varphi(t_{i})}$
+ -->
+<IMG SRC="img13.png" NAME="Imagen9" ALT="$\overrightarrow{\varphi(t_{i})}$" ALIGN=MIDDLE WIDTH=35 HEIGHT=37 BORDER=0>
+que satisfaga la ecuaci&oacute;n<!-- MATH
+ $y_{j}=f(x_{j},t_{i})$
+ -->
+<IMG SRC="img16.png" NAME="Imagen10" ALT="$y_{j}=f(x_{j},t_{i})$" ALIGN=MIDDLE WIDTH=89 HEIGHT=30 BORDER=0><!-- MATH
+ $\forall j\in\{1...n\}$
+ -->
+<IMG SRC="img17.png" NAME="Imagen11" ALT="$\forall j\in\{1...n\}$" ALIGN=MIDDLE WIDTH=80 HEIGHT=30 BORDER=0>,
+esto es, que todas las articulaciones se encuentren sobre la onda. 
+</P><A NAME="fig:ejemplo-ajuste"></A><A NAME="473"></A><CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P ALIGN=CENTER><IMG SRC="img18.png" NAME="Imagen13" ALT="\includegraphics[%scale=0.42]{ps/ajuste1.eps}" ALIGN=BOTTOM WIDTH=468 HEIGHT=437 BORDER=0>
+								</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=2>Figure
+3:</FONT></STRONG><FONT SIZE=2> Pasos realizados para el c&aacute;lculo
+del vector de posici&oacute;n angular<!-- MATH
+ $\protect\overrightarrow{\varphi(t_{0})}=(\varphi_{1},\varphi_{2},\varphi_{3})$
+ -->
+<IMG SRC="img3.png" NAME="Imagen12" ALT="$\overrightarrow {\varphi (t_{0})}=(\varphi _{1},\varphi _{2},\varphi _{3})$" ALIGN=MIDDLE WIDTH=130 HEIGHT=37 BORDER=0>
+a partir de una onda sinusoidal, para un robot de tres
+articulaciones.</FONT></P>
+<P ALIGN=JUSTIFY>El algoritmo utiliza un <B>enfoque geom&eacute;trico</B>,
+basado en la <B>rotaci&oacute;n de puntos 2D</B>. Un ejemplo aplicado
+a un robot de tres articulaciones se muestra en la figura <A HREF="#fig:ejemplo-ajuste">3</A>.
+Inicialmente,<!-- MATH
+ $\overrightarrow{\varphi(t_{0})}=(0,0,0)$
+ -->
+<IMG SRC="img19.png" NAME="Imagen14" ALT="$\overrightarrow{\varphi(t_{0})}=(0,0,0)$" ALIGN=MIDDLE WIDTH=103 HEIGHT=37 BORDER=0>
+y la cola del robot est&aacute; situada en el origen. El primer paso
+es la rotaci&oacute;n del robot respecto de la cola hasta que la
+articulaci&oacute;n 1 est&eacute; sobre la onda (<!-- MATH
+ $y_{1}=f(x_{1},t_{0})$
+ -->
+<IMG SRC="img20.png" NAME="Imagen15" ALT="$y_{1}=f(x_{1},t_{0})$" ALIGN=MIDDLE WIDTH=91 HEIGHT=30 BORDER=0>).
+Esto se realiza iterativamente, rotando un incremento angular (<!-- MATH
+ $\triangle\varphi$
+ -->
+<IMG SRC="img21.png" NAME="Imagen16" ALT="$\triangle\varphi$" ALIGN=MIDDLE WIDTH=26 HEIGHT=28 BORDER=0>)
+y evaluando el error (<IMG SRC="img22.png" NAME="Imagen17" ALT="$\epsilon$" ALIGN=BOTTOM WIDTH=10 HEIGHT=12 BORDER=0>).
+Despu&eacute;s, se rota la articulaci&oacute;n 1 hasta que la
+articulaci&oacute;n 2 satisfaga la ecuaci&oacute;n de la onda.
+Transcurridas cuatro iteraciones, se puede decir que el ``robot se
+ajusta a la onda''. Todas las articulaciones satisfacen la ecuaci&oacute;n
+de la onda, con un error 
+<IMG SRC="img22.png" NAME="Imagen18" ALT="$\epsilon$" ALIGN=BOTTOM WIDTH=10 HEIGHT=12 BORDER=0>.
+En general, si el robot tiene 
+<IMG SRC="img10.png" NAME="Imagen19" ALT="$n$" ALIGN=BOTTOM WIDTH=13 HEIGHT=12 BORDER=0>
+articulaciones, ser&aacute;n necesarias 
+<IMG SRC="img23.png" NAME="Imagen20" ALT="$n+1$" ALIGN=MIDDLE WIDTH=38 HEIGHT=27 BORDER=0>
+iteraciones. <B>La parte central de este algoritmo es la rotaci&oacute;n
+de puntos en 2D</B>, por tanto, se emplean las funciones <B>seno</B>,
+<B>coseno</B> y <B>arco tangente</B>. 
+</P>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A NAME="tex2html681"></A><A NAME="tex2html661"></A><A NAME="tex2html601"></A>
+<!--Navigation Panel--><A HREF="node5.html" NAME="tex2html68"><IMG SRC="next.png" NAME="Imagen21" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="node3.html" NAME="tex2html66"><IMG SRC="up.png" NAME="Imagen22" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node3.html" NAME="tex2html60"><IMG SRC="prev.png" NAME="Imagen23" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node5.html" NAME="tex2html69">2 Generaci&oacute;n
+de tablas</A> <B>Up:</B> <A HREF="node3.html" NAME="tex2html67">3
+Algoritmo de locomoci&oacute;n</A> <B>Previous:</B> <A HREF="node3.html" NAME="tex2html61">3
+Algoritmo de locomoci&oacute;n</A></P>
+<ADDRESS><!--End of Navigation Panel-->juan 2005-10-01 
+</ADDRESS>
+</BODY>
+</HTML>

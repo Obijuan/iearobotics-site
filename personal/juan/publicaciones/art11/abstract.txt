@@ -1,0 +1,22 @@
+Evaluación de un Algoritmo de Locomoción de Robots Ápodos en Diferentes
+Procesadores Embebidos en FPGA
+
+J. Gonzalez-Gomez, I. Gonzalez , F. J. Gomez-Arribas y E. Boemo
+
+Escuela Politécnica Superior, Universidad Autónoma de Madrid
+
+{juan.gonzalez,ivan.gonzalez,francisco.gomez,eduardo.boemo}@uam.es
+Resumen:
+
+La locomoción de robots ápodos modulares se realiza mediante la propagación
+de ondas que recorren su cuerpo desde la cola hasta la cabeza. En este
+artículo se describe la implementación de un algoritmo de locomoción para un
+robot ápodo de 8 módulos en tres plataformas con procesadores empotrados:
+MicroBlaze, PowerPC y LEON2. El objetivo es diseñar una unidad de control
+para un robot autónomo que funcione en tiempo real. El parámetro clave a
+optimizar es el tiempo para generar una nueva secuencia de locomoción, que
+es función del número de articulaciones del robot. Los resultados muestran
+que una unidad de punto flotante es necesaria para garantizar que este
+tiempo esté por debajo de 2 segundos. El rendimiento logrado usando un LEON2
+con una unidad de punto flotante es 40 veces mejor que sin ella, empleando
+sólo un 6% más de recursos. 

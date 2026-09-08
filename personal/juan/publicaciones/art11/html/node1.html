@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>1 Introducci&oacute;n</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20051001;9462000">
+	<META NAME="CHANGED" CONTENT="20051001;9493300">
+	<META NAME="DESCRIPTION" CONTENT="1 Introducci&oacute;n">
+	<META NAME="KEYWORDS" CONTENT="cedi-cube">
+	<META NAME="resource-type" CONTENT="document">
+	<META NAME="distribution" CONTENT="global">
+	<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!--Navigation Panel-->
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<P><A NAME="tex2html36"></A><A NAME="tex2html34"></A><A NAME="tex2html28"></A>
+<A HREF="node2.html" NAME="tex2html36"><IMG SRC="next.png" NAME="Imagen1" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="cedi-cube.html" NAME="tex2html34"><IMG SRC="up.png" NAME="Imagen2" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="cedi-cube.html" NAME="tex2html28"><IMG SRC="prev.png" NAME="Imagen3" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node2.html" NAME="tex2html37">2 El robot
+&aacute;podo</A> <B>Up:</B> <A HREF="cedi-cube.html" NAME="tex2html35">Evaluaci&oacute;n
+de un Algoritmo</A> <B>Previous:</B> <A HREF="cedi-cube.html" NAME="tex2html29">Evaluaci&oacute;n
+de un Algoritmo</A> 
+</P>
+<H1><A NAME="SECTION00010000000000000000"></A><!--End of Navigation Panel-->1
+Introducci&oacute;n 
+</H1>
+<P ALIGN=JUSTIFY>Los robots <B>modulares</B> y <B>reconfigurables
+</B>ofrecen la promesa de una <B>mayor versatilidad</B>, <B>robustez</B>
+y <B>bajo coste</B>[<A HREF="node13.html#IEEE-Spect-Yim">1</A>].
+Est&aacute;n compuestos de m&oacute;dulos capaces de unirse y
+separarse entre ellos, cambiando la forma del robot. Conviene aclarar
+que en este contexto, la palabra ``reconfigurable'' se refiere a la
+habilidad del robot para cambiar su forma. En los &uacute;ltimos
+a&ntilde;os, el n&uacute;mero de robots que siguen este enfoque ha
+crecido considerablemente[<A HREF="node13.html#Polybot-IEEE">2</A>][<A HREF="node13.html#will-99">3</A>][<A HREF="node13.html#Kotay-98">4</A>][<A HREF="node13.html#Murata-98">5</A>].
+</P>
+<P ALIGN=JUSTIFY>Uno de los m&aacute;s avanzados es <B>Polybot</B>[<A HREF="node13.html#IEEE-Spect-Yim">1</A>][<A HREF="node13.html#Polybot-Evolution">6</A>],
+dise&ntilde;ado en el <B>PARC</B> (Palo Alto Research Center). Puede
+adoptar m&uacute;ltiples formas y moverse de diferentes maneras. Por
+ejemplo, puede desplazarse como una rueda, desp&uacute;es
+transformarse en una serpiente, con movimiento sinusoidal y
+finalmente convertirse en una ara&ntilde;a de cuatro patas.
+Actualmente est&aacute;n dise&ntilde;ando la tercera generaci&oacute;n
+de m&oacute;dulos[<A HREF="node13.html#Polybot-G3">7</A>]. Cada uno
+de ellos tiene su propio procesador <B>PowerPC 555</B> en un chip. 
+</P>
+<P ALIGN=JUSTIFY>Un paso m&aacute;s en la versatilidad es el uso de
+una <B>FPGA</B> en vez de un chip convencional. Ofrece al dise&ntilde;ador
+la posibilidad de implementar nuevas arquitecturas, algoritmos de
+control m&aacute;s r&aacute;pidos o incluso modificar din&aacute;micamente
+el hardware para adaptarlo a una nueva situaci&oacute;n. En resumen,
+<B>los robots modulares y reconfigurables controlados por FPGA no
+s&oacute;lo pueden cambiar su forma, sino tambi&eacute;n su hardware,
+con lo que aumentan todav&iacute;a m&aacute;s su versatilidad</B>. 
+</P>
+<P ALIGN=JUSTIFY>Una implementaci&oacute;n de la locomoci&oacute;n de
+un robot &aacute;podo usando FPGA se realiz&oacute; con &eacute;xito[<A HREF="node13.html#cube-clawar">8</A>].
+Se utiliz&oacute; el procesador MicroBlaze[<A HREF="node13.html#MicroBlaze">9</A>]
+para la ejecuci&oacute;n del algoritmo y se a&ntilde;adi&oacute; un
+hardware espec&iacute;fico para posicionar los servos. 
+</P>
+<P ALIGN=JUSTIFY>En este art&iacute;culo se eval&uacute;a el
+<B>algoritmo de locomoci&oacute;n</B> para un robot &aacute;podo de 8
+m&oacute;dulos (figura <A HREF="#fig:cube-rev">1</A>) en diferentes
+procesadores empotrados en FPGA: MicroBlaze, PowerPC[<A HREF="node13.html#PPC">10</A>]
+y LEON2[<A HREF="node13.html#LEON">11</A>]. El tiempo que tarda el
+algoritmo en completar la generaci&oacute;n del movimiento se calcula
+en funci&oacute;n del n&uacute;mero de nodos del robot, obteni&eacute;ndose
+informaci&oacute;n sobre la escalabilidad. Estos resultados
+experimentales se utilizar&aacute;n en los trabajos futuros para
+seleccionar las arquitecturas que mejor se ajusten a una determinada
+aplicaci&oacute;n. 
+</P>
+<P ALIGN=JUSTIFY>La organizaci&oacute;n del art&iacute;culo es la
+siguiente. Primero se introduce brevemente el robot &aacute;podo.
+Despu&eacute;s se describen los detalles del algoritmo para la
+generaci&oacute;n de movimiento y finalmente se muestran los
+resultados de la implementaci&oacute;n. 
+</P><A NAME="fig:cube-rev"></A><A NAME="440"></A><CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P ALIGN=CENTER><IMG SRC="img4.png" NAME="Imagen4" ALT="\includegraphics[%scale=0.45]{ps/figura-cube-modulos.eps}" ALIGN=BOTTOM WIDTH=433 HEIGHT=323 BORDER=0>
+								</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=2><FONT FACE="Arial, sans-serif">Figure
+1:</FONT></FONT></STRONG><FONT SIZE=2><FONT FACE="Arial, sans-serif">
+<B>a)</B> El robot &aacute;podo ``Cube Revolutions'', formado por 8
+m&oacute;dulos iguales, conectados en fase.<B> b) </B>Modelo 3D de
+dos m&oacute;dulos Y1. <B>c) </B>Dos m&oacute;dulos Y1 conectados en
+fase.<B> d)</B> Dos m&oacute;dulos Y1 conectados en desfase. Uno rota
+paralelamente al suelo y el otro perpendicular.</FONT></FONT></P>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A NAME="tex2html361"></A><A NAME="tex2html341"></A><A NAME="tex2html281"></A>
+<!--Navigation Panel--><A HREF="node2.html" NAME="tex2html36"><IMG SRC="next.png" NAME="Imagen5" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="cedi-cube.html" NAME="tex2html34"><IMG SRC="up.png" NAME="Imagen6" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="cedi-cube.html" NAME="tex2html28"><IMG SRC="prev.png" NAME="Imagen7" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node2.html" NAME="tex2html37">2 El robot
+&aacute;podo</A> <B>Up:</B> <A HREF="cedi-cube.html" NAME="tex2html35">Evaluaci&oacute;n
+de un Algoritmo</A> <B>Previous:</B> <A HREF="cedi-cube.html" NAME="tex2html29">Evaluaci&oacute;n
+de un Algoritmo</A></P>
+<ADDRESS><!--End of Navigation Panel-->juan 2005-10-01 
+</ADDRESS>
+</BODY>
+</HTML>

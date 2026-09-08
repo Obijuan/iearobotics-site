@@ -1,0 +1,11 @@
+#% Do not delete the line below; configure depends on this
+#  \DeclareLaTeXClass[cedi]{article - JCRA2005 }
+# cedi (article)
+
+Input stdclass.inc
+Input stdsections.inc
+
+Preamble
+ \usepackage{flushend}
+EndPreamble
+

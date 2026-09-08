@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>1 An&aacute;lisis de las operaciones del algoritmo</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20051001;10093300">
+	<META NAME="CHANGED" CONTENT="20051001;10243900">
+	<META NAME="DESCRIPTION" CONTENT="1 An&aacute;lisis de las operaciones del algoritmo">
+	<META NAME="KEYWORDS" CONTENT="cedi-cube">
+	<META NAME="resource-type" CONTENT="document">
+	<META NAME="distribution" CONTENT="global">
+	<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!--Navigation Panel-->
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<P><A NAME="tex2html98"></A><A NAME="tex2html96"></A><A NAME="tex2html90"></A>
+<A HREF="node8.html" NAME="tex2html98"><IMG SRC="next.png" NAME="Imagen1" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="node6.html" NAME="tex2html96"><IMG SRC="up.png" NAME="Imagen2" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node6.html" NAME="tex2html90"><IMG SRC="prev.png" NAME="Imagen3" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node8.html" NAME="tex2html99">2 Ejecuci&oacute;n
+del algoritmo</A> <B>Up:</B> <A HREF="node6.html" NAME="tex2html97">4
+Implementaci&oacute;n en procesadores</A> <B>Previous:</B> <A HREF="node6.html" NAME="tex2html91">4
+Implementaci&oacute;n en procesadores</A> 
+</P>
+<H2><A NAME="SECTION00041000000000000000"></A><!--End of Navigation Panel-->1
+An&aacute;lisis de las operaciones del algoritmo 
+</H2>
+<P>El <B>algoritmo completo se ha implementado en C</B> usando
+operaciones en coma flotante de <B>doble precisi&oacute;n</B>
+(double). Esto permite portarlo directamente a las diferentes
+arquitecturas sin tener que modificar el c&oacute;digo fuente. El
+an&aacute;lisis (profile) del algoritmo en <B>MicroBlaze</B> muestra
+que el 71,4% del tiempo de ejecuci&oacute;n se gasta en operaciones
+de coma flotante (cuadro <A HREF="#tabla:profile">1</A>). El 21,23%
+se dedica a operaciones con enteros y el 7,37% restante en otras
+operaciones, incluidas las trigonom&eacute;tricas. 
+</P>
+<P STYLE="margin-bottom: 0cm"><A NAME="461"></A><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=2>Table
+1:</FONT></STRONG><FONT SIZE=2> An&aacute;lisis (profile) de la
+ejecuci&oacute;n del algoritmo en MicroBlaze</FONT></P>
+<DL>
+	<DL>
+		<DL>
+			<DL>
+				<DL>
+					<DD>
+					<TABLE WIDTH=487 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+						<COL WIDTH=44>
+						<COL WIDTH=62>
+						<COL WIDTH=91>
+						<COL WIDTH=133>
+						<COL WIDTH=56>
+						<COL WIDTH=51>
+						<THEAD>
+							<TR VALIGN=TOP>
+								<TH COLSPAN=2 WIDTH=114>
+									<P>Punto Flotante</P>
+								</TH>
+								<TH COLSPAN=2 WIDTH=232>
+									<P>Enteros</P>
+								</TH>
+								<TH COLSPAN=2 WIDTH=115>
+									<P>Otras</P>
+								</TH>
+							</TR>
+						</THEAD>
+						<TBODY>
+							<TR>
+								<TD WIDTH=44 VALIGN=TOP>
+									<P ALIGN=CENTER><B>Mult</B></P>
+								</TD>
+								<TD WIDTH=62 VALIGN=TOP>
+									<P ALIGN=CENTER>25.7%</P>
+								</TD>
+								<TD WIDTH=91 VALIGN=TOP>
+									<P ALIGN=CENTER><B>Mult.</B></P>
+								</TD>
+								<TD WIDTH=133 VALIGN=BOTTOM SDVAL="0,2" SDNUM="1034;0;0%">
+									<P ALIGN=CENTER>20%</P>
+								</TD>
+								<TD WIDTH=56 VALIGN=TOP>
+									<P ALIGN=CENTER><B>atan</B></P>
+								</TD>
+								<TD WIDTH=51 VALIGN=TOP>
+									<P ALIGN=CENTER>1.0%</P>
+								</TD>
+							</TR>
+							<TR>
+								<TD WIDTH=44 VALIGN=TOP>
+									<P ALIGN=CENTER><B>Sum.</B></P>
+								</TD>
+								<TD WIDTH=62 VALIGN=BOTTOM SDVAL="0,23" SDNUM="1034;0;0%">
+									<P ALIGN=CENTER>23%</P>
+								</TD>
+								<TD WIDTH=91 VALIGN=TOP>
+									<P ALIGN=CENTER><B>Restas:</B></P>
+								</TD>
+								<TD WIDTH=133 VALIGN=TOP>
+									<P ALIGN=CENTER>1.23%</P>
+								</TD>
+								<TD WIDTH=56 VALIGN=TOP>
+									<P ALIGN=CENTER><B>sin</B></P>
+								</TD>
+								<TD WIDTH=51 VALIGN=TOP>
+									<P ALIGN=CENTER>0.79%</P>
+								</TD>
+							</TR>
+							<TR>
+								<TD WIDTH=44 VALIGN=TOP>
+									<P ALIGN=CENTER><B>Div.</B></P>
+								</TD>
+								<TD WIDTH=62 VALIGN=BOTTOM SDVAL="0,22" SDNUM="1034;0;0%">
+									<P ALIGN=CENTER>22%</P>
+								</TD>
+								<TD WIDTH=91 VALIGN=TOP>
+									<P ALIGN=CENTER><BR>
+									</P>
+								</TD>
+								<TD WIDTH=133 VALIGN=TOP>
+									<P ALIGN=CENTER><BR>
+									</P>
+								</TD>
+								<TD WIDTH=56 VALIGN=TOP>
+									<P ALIGN=CENTER><B>sqrt</B></P>
+								</TD>
+								<TD WIDTH=51 VALIGN=TOP>
+									<P ALIGN=CENTER>0.68%</P>
+								</TD>
+							</TR>
+							<TR>
+								<TD WIDTH=44 VALIGN=TOP>
+									<P ALIGN=CENTER><BR>
+									</P>
+								</TD>
+								<TD WIDTH=62 VALIGN=BOTTOM SDNUM="1034;0;0">
+									<P ALIGN=CENTER><BR>
+									</P>
+								</TD>
+								<TD WIDTH=91 VALIGN=TOP>
+									<P ALIGN=CENTER><BR>
+									</P>
+								</TD>
+								<TD WIDTH=133 VALIGN=TOP>
+									<P ALIGN=CENTER><BR>
+									</P>
+								</TD>
+								<TD WIDTH=56 VALIGN=TOP>
+									<P ALIGN=CENTER><B>cos</B></P>
+								</TD>
+								<TD WIDTH=51 VALIGN=TOP>
+									<P ALIGN=CENTER>0.49%</P>
+								</TD>
+							</TR>
+							<TR VALIGN=TOP>
+								<TD WIDTH=44>
+									<P ALIGN=CENTER><B>Total</B></P>
+								</TD>
+								<TD WIDTH=62>
+									<P ALIGN=CENTER>71.4%</P>
+								</TD>
+								<TD WIDTH=91>
+									<P ALIGN=CENTER><B>Total:</B></P>
+								</TD>
+								<TD WIDTH=133>
+									<P ALIGN=CENTER>21.23%</P>
+								</TD>
+								<TD WIDTH=56>
+									<P ALIGN=CENTER><B>Total:</B></P>
+								</TD>
+								<TD WIDTH=51>
+									<P ALIGN=CENTER>2.96%</P>
+								</TD>
+							</TR>
+						</TBODY>
+					</TABLE>
+				</DL>
+			</DL>
+		</DL>
+	</DL>
+</DL>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P>E<B>l profile sugiere el uso de una unidad en coma flotante (FPU)
+para mejorar el tiempo de ejecuci&oacute;n</B>. 
+</P>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A NAME="tex2html981"></A><A NAME="tex2html961"></A><A NAME="tex2html901"></A>
+<!--Navigation Panel--><A HREF="node8.html" NAME="tex2html98"><IMG SRC="next.png" NAME="Imagen4" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="node6.html" NAME="tex2html96"><IMG SRC="up.png" NAME="Imagen5" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node6.html" NAME="tex2html90"><IMG SRC="prev.png" NAME="Imagen6" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node8.html" NAME="tex2html99">2 Ejecuci&oacute;n
+del algoritmo</A> <B>Up:</B> <A HREF="node6.html" NAME="tex2html97">4
+Implementaci&oacute;n en procesadores</A> <B>Previous:</B> <A HREF="node6.html" NAME="tex2html91">4
+Implementaci&oacute;n en procesadores</A></P>
+<ADDRESS><!--End of Navigation Panel-->juan 2005-10-01 
+</ADDRESS>
+</BODY>
+</HTML>

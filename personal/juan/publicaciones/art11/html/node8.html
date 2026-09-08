@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>2 Ejecuci&oacute;n del algoritmo sobre diferentes arquitecturas</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20051001;10250400">
+	<META NAME="CHANGED" CONTENT="20051001;10335800">
+	<META NAME="DESCRIPTION" CONTENT="2 Ejecuci&oacute;n del algoritmo sobre diferentes arquitecturas">
+	<META NAME="KEYWORDS" CONTENT="cedi-cube">
+	<META NAME="resource-type" CONTENT="document">
+	<META NAME="distribution" CONTENT="global">
+	<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!--Navigation Panel-->
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<P><A NAME="tex2html106"></A><A NAME="tex2html104"></A><A NAME="tex2html100"></A>
+<A HREF="node9.html" NAME="tex2html106"><IMG SRC="next.png" NAME="Imagen1" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="node6.html" NAME="tex2html104"><IMG SRC="up.png" NAME="Imagen2" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node7.html" NAME="tex2html100"><IMG SRC="prev.png" NAME="Imagen3" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node9.html" NAME="tex2html107">5 Resultados</A>
+<B>Up:</B> <A HREF="node6.html" NAME="tex2html105">4 Implementaci&oacute;n
+en procesadores</A> <B>Previous:</B> <A HREF="node7.html" NAME="tex2html101">1
+An&aacute;lisis de las</A> 
+</P>
+<H2><A NAME="SECTION00042000000000000000"></A><!--End of Navigation Panel-->2
+Ejecuci&oacute;n del algoritmo sobre diferentes arquitecturas 
+</H2>
+<P><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><A NAME="467"></A><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=2>Table
+2:</FONT></STRONG><FONT SIZE=2> Arquitecturas usadas para la
+evaluaci&oacute;n del algoritmo</FONT></P>
+<DL>
+	<DL>
+		<DL>
+			<DL>
+				<DL>
+					<DL>
+						<DL>
+							<DD>
+							<TABLE WIDTH=378 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+								<COL WIDTH=78>
+								<COL WIDTH=87>
+								<COL WIDTH=92>
+								<COL WIDTH=87>
+								<THEAD>
+									<TR VALIGN=TOP>
+										<TH WIDTH=78>
+											<P>Arq</P>
+										</TH>
+										<TH WIDTH=87>
+											<P>Procesador</P>
+										</TH>
+										<TH WIDTH=92>
+											<P>Frec.</P>
+										</TH>
+										<TH WIDTH=87>
+											<P>FPGA</P>
+										</TH>
+									</TR>
+								</THEAD>
+								<TBODY>
+									<TR>
+										<TD WIDTH=78 VALIGN=BOTTOM SDVAL="1" SDNUM="1034;">
+											<P ALIGN=CENTER><B>1</B></P>
+										</TD>
+										<TD WIDTH=87 VALIGN=TOP>
+											<P ALIGN=CENTER>LEON</P>
+										</TD>
+										<TD ROWSPAN=2 WIDTH=92 VALIGN=TOP>
+											<P ALIGN=CENTER>25MHz</P>
+										</TD>
+										<TD ROWSPAN=3 WIDTH=87 VALIGN=TOP>
+											<P ALIGN=CENTER>Virtex XC2000E</P>
+										</TD>
+									</TR>
+									<TR>
+										<TD WIDTH=78 VALIGN=BOTTOM SDVAL="2" SDNUM="1034;">
+											<P ALIGN=CENTER><B>2</B></P>
+										</TD>
+										<TD WIDTH=87 VALIGN=TOP>
+											<P ALIGN=CENTER>LEON + FPUdd</P>
+										</TD>
+									</TR>
+									<TR>
+										<TD WIDTH=78 VALIGN=BOTTOM SDVAL="3" SDNUM="1034;">
+											<P ALIGN=CENTER><B>3</B></P>
+										</TD>
+										<TD WIDTH=87 VALIGN=TOP>
+											<P ALIGN=CENTER>MicroBlaze</P>
+										</TD>
+										<TD WIDTH=92 VALIGN=TOP>
+											<P ALIGN=CENTER>50MHz</P>
+										</TD>
+									</TR>
+									<TR VALIGN=TOP>
+										<TD WIDTH=78>
+											<P ALIGN=CENTER><B>4a</B></P>
+										</TD>
+										<TD ROWSPAN=2 WIDTH=87>
+											<P ALIGN=CENTER>PowerPC</P>
+										</TD>
+										<TD WIDTH=92>
+											<P ALIGN=CENTER>50Mhz</P>
+										</TD>
+										<TD ROWSPAN=2 WIDTH=87>
+											<P ALIGN=CENTER>Virtex II Pro</P>
+										</TD>
+									</TR>
+									<TR VALIGN=TOP>
+										<TD WIDTH=78>
+											<P ALIGN=CENTER><B>4b</B></P>
+										</TD>
+										<TD WIDTH=92>
+											<P ALIGN=CENTER>100MHz</P>
+										</TD>
+									</TR>
+								</TBODY>
+							</TABLE>
+						</DL>
+					</DL>
+				</DL>
+			</DL>
+		</DL>
+	</DL>
+</DL>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=JUSTIFY>El cuadro <A HREF="#tabla:arquitecturas">2</A>
+muestra las <B>cuatro arquitecturas empleadas para evaluar el
+algoritmo</B>. Se ejecuta el c&oacute;digo en tres procesadores en
+FPGA: <B>LEON2</B>, <B>MicroBlaze</B> y el core <B>PowerPC</B>
+embebido en la FPGA Xilinx Virtex II Pro. (El PowerPC es el
+procesador empleado en PolyBot G3, el robot modular reconfigurable
+m&aacute;s avanzado desarrollado en el PARC). Los procesadores
+software (Soft Core Processors, SCPs) han sido implementados usando
+arquitecturas similares: sin unidades hardware de multiplicaci&oacute;n
+y divisi&oacute;n y con similares cach&eacute;s para instrucciones y
+datos. En primer lugar, la arquitectura 1 incluye un procesador
+LEON2. En la arquitectura 2 se a&ntilde;ade la unidad en coma
+flotante Meiko [11]. La tercera incluye el procesador Xilinx
+MicroBlaze y finalmente, la arquitectura 4 consiste en un procesador
+embebido PowerPC. Las arquitecturas de la 1 a la 3 han sido
+implementadas en hardware sobre la plataforma RC1000 de Celoxica que
+incluye una FPGA Xilinx Virtex-E. Para la arquitectura 4 se ha
+utilizado la plataforma Alpha Data ADM-XPL que dispone de una Virtex
+II Pro. 
+</P>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A NAME="tex2html1061"></A><A NAME="tex2html1041"></A><A NAME="tex2html1001"></A>
+<!--Navigation Panel--><A HREF="node9.html" NAME="tex2html106"><IMG SRC="next.png" NAME="Imagen4" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="node6.html" NAME="tex2html104"><IMG SRC="up.png" NAME="Imagen5" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node7.html" NAME="tex2html100"><IMG SRC="prev.png" NAME="Imagen6" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node9.html" NAME="tex2html107">5 Resultados</A>
+<B>Up:</B> <A HREF="node6.html" NAME="tex2html105">4 Implementaci&oacute;n
+en procesadores</A> <B>Previous:</B> <A HREF="node7.html" NAME="tex2html101">1
+An&aacute;lisis de las</A></P>
+<ADDRESS><!--End of Navigation Panel-->juan 2005-10-01 
+</ADDRESS>
+</BODY>
+</HTML>

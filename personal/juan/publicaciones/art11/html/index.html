@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Evaluaci&oacute;n de un Algoritmo de Locomoci&oacute;n de Robots &Aacute;podos en Diferentes Procesadores Embebidos en FPGA</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20051001;9351900">
+	<META NAME="CHANGED" CONTENT="20051001;9362500">
+	<META NAME="DESCRIPTION" CONTENT="Evaluaci&oacute;n de un Algoritmo de Locomoci&oacute;n de Robots &Aacute;podos
+en Diferentes Procesadores Embebidos en FPGA">
+	<META NAME="KEYWORDS" CONTENT="cedi-cube">
+	<META NAME="resource-type" CONTENT="document">
+	<META NAME="distribution" CONTENT="global">
+	<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!--Navigation Panel-->
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<P><A NAME="tex2html12"></A><A NAME="tex2html10"></A><A HREF="node1.html" NAME="tex2html12"><IMG SRC="next.png" NAME="Imagen1" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="../../index.html" NAME="tex2html10"><IMG SRC="up.png" NAME="Imagen2" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<IMG SRC="prev_g.png" NAME="Imagen3" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0>
+<BR><B>Next:</B> <A HREF="node1.html" NAME="tex2html13">1
+Introducci&oacute;n</A> <B>Up:</B> <A HREF="../../index.html" NAME="tex2html11">Publicaciones</A>
+</P>
+<H1 ALIGN=CENTER><!--End of Navigation Panel-->Evaluaci&oacute;n de
+un Algoritmo de Locomoci&oacute;n de Robots &Aacute;podos en
+Diferentes Procesadores Embebidos en FPGA</H1>
+<TABLE CELLPADDING=3 CELLSPACING=2>
+	<TR>
+		<TH>
+			<P ALIGN=CENTER><FONT SIZE=2>J. Gonzalez-Gomez, I. Gonzalez , F.
+			J. Gomez-Arribas y E. Boemo</FONT></P>
+		</TH>
+	</TR>
+	<TR>
+		<TD>
+			<P ALIGN=CENTER><FONT SIZE=2>Escuela Polit&eacute;cnica Superior,
+			Universidad Aut&oacute;noma de Madrid</FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P ALIGN=CENTER><TT><FONT SIZE=2>{juan.gonzalez,ivan.gonzalez,francisco.gomez,eduardo.boemo}@uam.es</FONT></TT></P>
+		</TD>
+	</TR>
+</TABLE>
+<H3>Resumen:</H3>
+<P>La locomoci&oacute;n de robots &aacute;podos modulares se realiza
+mediante la propagaci&oacute;n de ondas que recorren su cuerpo desde
+la cola hasta la cabeza. En este art&iacute;culo se describe la
+implementaci&oacute;n de un algoritmo de locomoci&oacute;n para un
+robot &aacute;podo de 8 m&oacute;dulos en tres plataformas con
+procesadores empotrados: MicroBlaze, PowerPC y LEON2. El objetivo es
+dise&ntilde;ar una unidad de control para un robot aut&oacute;nomo
+que funcione en tiempo real. El par&aacute;metro clave a optimizar es
+el tiempo para generar una nueva secuencia de locomoci&oacute;n, que
+es funci&oacute;n del n&uacute;mero de articulaciones del robot. Los
+resultados muestran que una unidad de punto flotante es necesaria
+para garantizar que este tiempo est&eacute; por debajo de 2 segundos.
+El rendimiento logrado usando un LEON2 con una unidad de punto
+flotante es 40 veces mejor que sin ella, empleando s&oacute;lo un 6%
+m&aacute;s de recursos. 
+</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A NAME="CHILD_LINKS"></A><!--Table of Child-Links--><A HREF="node1.html" NAME="tex2html14">1
+	Introducci&oacute;n</A> 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="node2.html" NAME="tex2html15">2
+	El robot &aacute;podo ``Cube Revolutions''</A> 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="node3.html" NAME="tex2html16">3
+	Algoritmo de locomoci&oacute;n</A> 
+	</P>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0cm"><A HREF="node4.html" NAME="tex2html17">1
+		C&aacute;lculo del vector de posici&oacute;n angular</A> 
+		</P>
+		<LI><P STYLE="margin-bottom: 0cm"><A HREF="node5.html" NAME="tex2html18">2
+		Generaci&oacute;n de tablas de control del movimiento</A> 
+		</P>
+	</UL>
+	<P STYLE="margin-bottom: 0cm"></P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="node6.html" NAME="tex2html19">4
+	Implementaci&oacute;n en procesadores embebidos en FPGA</A> 
+	</P>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0cm"><A HREF="node7.html" NAME="tex2html20">1
+		An&aacute;lisis de las operaciones del algoritmo</A> 
+		</P>
+		<LI><P STYLE="margin-bottom: 0cm"><A HREF="node8.html" NAME="tex2html21">2
+		Ejecuci&oacute;n del algoritmo sobre diferentes arquitecturas</A> 
+		</P>
+	</UL>
+	<P STYLE="margin-bottom: 0cm"></P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="node9.html" NAME="tex2html22">5
+	Resultados</A> 
+	</P>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0cm"><A HREF="node10.html" NAME="tex2html23">1
+		Resultados de la s&iacute;ntesis</A> 
+		</P>
+		<LI><P STYLE="margin-bottom: 0cm"><A HREF="node11.html" NAME="tex2html24">2
+		Medida del tiempo de ejecuci&oacute;n</A> 
+		</P>
+	</UL>
+	<P STYLE="margin-bottom: 0cm"></P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="node12.html" NAME="tex2html25">6
+	Conclusiones y trabajos futuros</A> 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="node13.html" NAME="tex2html26">Bibliography</A>
+		</P>
+	<LI><P><A HREF="node14.html" NAME="tex2html27">About this document
+	...</A> 
+	</P>
+</UL>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A NAME="tex2html121"></A><A NAME="tex2html101"></A>
+<!--Navigation Panel--><A HREF="node1.html" NAME="tex2html12"><IMG SRC="next.png" NAME="Imagen4" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="../../index.html" NAME="tex2html10"><IMG SRC="up.png" NAME="Imagen5" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<IMG SRC="prev_g.png" NAME="Imagen6" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0>
+<BR><B>Next:</B> <A HREF="node1.html" NAME="tex2html13">1
+Introducci&oacute;n</A> <B>Up:</B> <A HREF="../../index.html" NAME="tex2html11">Publicaciones</A></P>
+<ADDRESS><!--End of Navigation Panel-->juan 2005-10-01 
+</ADDRESS>
+</BODY>
+</HTML>

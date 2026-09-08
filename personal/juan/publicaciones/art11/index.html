@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Evaluaci&oacute;n de un Algoritmo de Locomoci&oacute;n de Robots &Aacute;podos en Diferentes Procesadores Embebidos en FPGA</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20040604;23155100">
+	<META NAME="CHANGED" CONTENT="20051002;22304600">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+		<TR>
+			<TD COLSPAN=2>
+				<P ALIGN=CENTER><B>Art&iacute;culo 11: &rdquo;<FONT SIZE=2><FONT FACE="Arial, sans-serif">Evaluaci&oacute;n
+				de un Algoritmo de Locomoci&oacute;n de Robots &Aacute;podos en
+				Diferentes Procesadores Embebidos en FPGA</FONT></FONT>&rdquo;</B></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="cube-esquema.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=583 HEIGHT=181 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<UL>
+	<LI><P ALIGN=JUSTIFY><A HREF="../../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">J.
+	Gonz&aacute;lez-G&oacute;mez</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">,
+	<A HREF="http://www.ii.uam.es/~igonzale/"><FONT SIZE=2>I. Gonz&aacute;lez</FONT></A>,
+	<A HREF="http://www.ii.uam.es/~fjgomez/"><FONT SIZE=2>FJ.
+	G&oacute;mez-Arribas</FONT></A> <FONT SIZE=2>y </FONT><A HREF="http://www.ii.uam.es/~ivan/"><FONT SIZE=2>E.
+	Boemo</FONT></A>,&rdquo;<B>Evaluaci&oacute;n de un Algoritmo de
+	Locomoci&oacute;n de Robots &Aacute;podos en Diferentes Procesadores
+	Embebidos en FPGA&rdquo;</B> , V Jornadas de Computaci&oacute;n
+	Reconfigurable y Aplicaciones. JCRA 2005. Dentro del Primer Congreso
+	Espa&ntilde;ol de Inform&aacute;tica, <A HREF="http://cedi2005.ugr.es/">CEDI
+	2005</A>. Granada, Septiembre 2005.</FONT></FONT><BR><BR><I><FONT SIZE=2>La
+	locomoci&oacute;n de robots &aacute;podos modulares se realiza
+	mediante la propagaci&oacute;n de ondas que recorren su cuerpo desde
+	la cola hasta la cabeza. En este art&iacute;culo se describe la
+	implementaci&oacute;n de un algoritmo de locomoci&oacute;n para un
+	robot &aacute;podo de 8 m&oacute;dulos en tres plataformas con
+	procesadores empotrados: MicroBlaze, PowerPC y LEON2. El objetivo es
+	dise&ntilde;ar una unidad de control para un robot aut&oacute;nomo
+	que funcione en tiempo real. El par&aacute;metro clave a optimizar
+	es el tiempo para generar una nueva secuencia de locomoci&oacute;n,
+	que es funci&oacute;n del n&uacute;mero de articulaciones del robot.
+	Los resultados muestran que una unidad de punto flotante es
+	necesaria para garantizar que este tiempo est&eacute; por debajo de
+	2 segundos. El rendimiento logrado usando un LEON2 con una unidad de
+	punto flotante es 40 veces mejor que sin ella, empleando s&oacute;lo
+	un 6% m&aacute;s de recursos. </FONT></I>
+	</P>
+</UL>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<TABLE CELLPADDING=2 CELLSPACING=2>
+	<TR>
+		<TD>
+			<P><FONT SIZE=2>Disponible on-line: [</FONT><A HREF="download/cedi-cube.pdf"><FONT SIZE=2>PDF</FONT></A><FONT SIZE=2>]
+			[</FONT><A HREF="html/index.html"><FONT SIZE=2>HTML</FONT></A><FONT SIZE=2>]
+			</FONT>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P><FONT SIZE=2>Transparencias de la presentaci&oacute;n: [</FONT><A HREF="download/pres-cube-revolutions-fpga.pdf"><FONT SIZE=2>PDF</FONT></A><FONT SIZE=2>]
+			[</FONT><A HREF="download/pres-cube-revolutions-fpga.sxi"><FONT SIZE=2>OpenOffice</FONT></A><FONT SIZE=2>]
+			</FONT>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<HR>
+<H2><A NAME="tres"></A>Autores</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../../index.html"><FONT SIZE=2>Juan
+	Gonz&aacute;lez G&oacute;mez</FONT></A> 
+	</P>
+</UL>
+<UL>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><A HREF="http://www.ii.uam.es/~igonzale/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Ivan
+	Gonz&aacute;lez Mart&iacute;nez</FONT></FONT></A></P>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><A HREF="http://www.ii.uam.es/~fjgomez/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Franciso
+	J. G&oacute;mez Arribas</FONT></FONT></A></P>
+</UL>
+<UL>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><A HREF="http://www.ii.uam.es/~ivan/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Eduardo
+	Boemo</FONT></FONT></A></P>
+</UL>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><A NAME="licencia"></A>Licencia</H2>
+<P><FONT SIZE=2>Se condecen permisos para usar, modificar y/o
+distribuir este art&iacute;culo, siempre que se mantenga esta nota. </FONT>
+</P>
+<HR>
+<H2>Download 
+</H2>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=4 CELLSPACING=2 BGCOLOR="#abbeeb">
+		<TR BGCOLOR="#2300dc">
+			<TD COLSPAN=2 BGCOLOR="#ccccff">
+				<P ALIGN=CENTER><FONT SIZE=2><B>Documentos para descargar</B> </FONT>
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=0 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=86*>
+		<COL WIDTH=170*>
+		<TR BGCOLOR="#99ccff">
+			<TD WIDTH=34% BGCOLOR="#99ccff">
+				<P><A HREF="download/cedi-cube.pdf"><FONT SIZE=2>cedi-cube.pdf</FONT></A>
+				<FONT SIZE=2>(290KB) </FONT>
+				</P>
+			</TD>
+			<TD WIDTH=66% BGCOLOR="#99ccff">
+				<P><FONT SIZE=2>Art&iacute;culo en formato PDF</FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#ccccff">
+			<TD WIDTH=34% BGCOLOR="#ccccff">
+				<P><A HREF="download/cedi-cube.tgz"><FONT SIZE=2>cedi-cube.tgz</FONT></A>
+				<FONT SIZE=2>(1.8 MB) </FONT>
+				</P>
+			</TD>
+			<TD WIDTH=66% BGCOLOR="#ccccff">
+				<P><FONT SIZE=2>Fuentes del art&iacute;culo para Lyx y dibujos
+				para Xfig</FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#ccccff">
+			<TD WIDTH=34% BGCOLOR="#99ccff">
+				<P><A HREF="download/cedi-latex.tgz"><FONT SIZE=2>cedi-latex.tgz</FONT></A>
+				<FONT SIZE=2>(8.5KB)</FONT></P>
+			</TD>
+			<TD WIDTH=66% BGCOLOR="#99ccff">
+				<P><FONT SIZE=2>Clase Latex empleada</FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#ccccff">
+			<TD WIDTH=34% BGCOLOR="#ccccff">
+				<P><A HREF="download/cedi.layout"><FONT SIZE=2>cedi.layout</FONT></A>
+				<FONT SIZE=2>(213 Bytes)</FONT></P>
+			</TD>
+			<TD WIDTH=66% BGCOLOR="#ccccff">
+				<P><FONT SIZE=2>Fichero layout para Lyx</FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#99ccff">
+			<TD WIDTH=34% BGCOLOR="#99ccff">
+				<P><A HREF="download/pres-cube-revolutions-fpga.pdf"><FONT SIZE=2>pres-cube-revolutions-fpga.pdf</FONT></A>
+				<FONT SIZE=2>(1.7MB) </FONT>
+				</P>
+			</TD>
+			<TD WIDTH=66% BGCOLOR="#99ccff">
+				<P><FONT SIZE=2>Presentaci&oacute;n en formato PDF</FONT></P>
+			</TD>
+		</TR>
+		<TR BGCOLOR="#ccccff">
+			<TD WIDTH=34%>
+				<P><A HREF="download/pres-cube-revolutions-fpga.sxi"><FONT SIZE=2>pres-cube-revolutions-fpga.sxi</FONT></A>
+				<FONT SIZE=2>(660KB) </FONT>
+				</P>
+			</TD>
+			<TD WIDTH=66%>
+				<P><FONT SIZE=2>Presentaci&oacute;n en OpenOffice</FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2>Edici&oacute;n con Lyx</H2>
+<P><FONT SIZE=2>Para editar este art&iacute;culo desde <A HREF="http://www.lyx.org/">Lyx</A>
+en una m&aacute;quina Linux, hay que instalar primero las clases de
+latex correspondientes y fichero .layout para Lyx. Descargarse los
+ficheros </FONT><A HREF="download/cedi-latex.tgz"><FONT SIZE=2>cedi-latex.tgz</FONT></A>
+<FONT SIZE=2>y </FONT><A HREF="download/cedi.layout"><FONT SIZE=2>cedi.layout</FONT></A></P>
+<P><FONT SIZE=2>Como root, ir al directorio
+<B>/usr/share/texmf/tex/latex</B>, crear el directorio cedi , entrar
+y descomprimir el fichero </FONT><A HREF="download/cedi-latex.tgz"><FONT SIZE=2>cedi-latex.tgz</FONT></A><FONT SIZE=2>.
+Ejecutar el programa texhash.</FONT></P>
+<P><FONT SIZE=2>Como usuario normal, descargar el fichero </FONT><A HREF="download/cedi.layout"><FONT SIZE=2>cedi.layout</FONT></A>
+<FONT SIZE=2>, y copiarlo en el directorio ~/.lyx/layout/</FONT></P>
+<P><FONT SIZE=2>Ejecutar Lyx y darle a la opci&oacute;n
+Edici&oacute;n/Reconfigurar. Salir de Lyx y volverlo a ejecutar. El
+sistema ya est&aacute; configurado.</FONT></P>
+<P><FONT SIZE=2>Nota: Instrucciones para una distribuci&oacute;n
+Debian/Sarge y versi&oacute;n 1.3.4 de Lyx.</FONT></P>
+<HR>
+<H2><A NAME="links"></A>Enlaces</H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><FONT SIZE=2>Todas las referencias
+	de este art&iacute;culo </FONT><A HREF="html/node13.html"><FONT SIZE=2>est&aacute;n
+	disponibles aqu&iacute;</FONT></A></P>
+</UL>
+<HR>
+<H2>Agradecimientos</H2>
+<UL>
+	<LI><P><FONT SIZE=2>A  </FONT><A HREF="http://www.ii.uam.es/~fjgomez/"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Franciso
+	J. G&oacute;mez Arribas</FONT></FONT></A><FONT SIZE=2> por hacer la
+	presentaci&oacute;n del art&iacute;culo en el congreso, en Granada.
+	&iexcl;Much&iacute;simas gracias!</FONT></P>
+</UL>
+<HR>
+<DL>
+	<DL>
+		<DL>
+			<DL>
+				<DL>
+					<DL>
+						<DD>
+						<TABLE WIDTH=482 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+							<COL WIDTH=218>
+							<COL WIDTH=248>
+							<THEAD>
+								<TR>
+									<TD WIDTH=218 VALIGN=TOP>
+										<P ALIGN=CENTER><a href="http://www.lyx.org">
+										<IMG SRC="lyx_logo.jpg" NAME="Imagen2" ALIGN=center WIDTH=100 HEIGHT=68 BORDER=0></a><BR>
+										</P>
+									</TD>
+									<TD WIDTH=248>
+										<P ALIGN=CENTER>
+										<a href="http://www.openoffice.org/">
+										<IMG SRC="OOo11-logo.png" NAME="Imagen3" ALIGN=MIDDLE WIDTH=240 HEIGHT=68 BORDER=0></a></P>
+									</TD>
+								</TR>
+							</THEAD>
+						</TABLE>
+					</DL>
+				</DL>
+			</DL>
+		</DL>
+	</DL>
+</DL>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A HREF="../../../../../web-iearobotics"><FONT SIZE=2>IEA
+ROBOTICS</FONT></A> 
+</P>
+<ADDRESS><A HREF="../../index.html"><FONT SIZE=2>Juan Gonz&aacute;lez</FONT></A>
+<FONT SIZE=2><BR>[</FONT><A HREF="../index.html"><FONT SIZE=2>Indice
+de art&iacute;culos</FONT></A><FONT SIZE=2>] </FONT>
+</ADDRESS>
+</BODY>
+</HTML>

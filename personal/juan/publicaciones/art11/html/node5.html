@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>2 Generaci&oacute;n de tablas de control del movimiento</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20051001;10034100">
+	<META NAME="CHANGED" CONTENT="20051001;10085800">
+	<META NAME="DESCRIPTION" CONTENT="2 Generaci&oacute;n de tablas de control del movimiento">
+	<META NAME="KEYWORDS" CONTENT="cedi-cube">
+	<META NAME="resource-type" CONTENT="document">
+	<META NAME="distribution" CONTENT="global">
+	<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	<!--Navigation Panel-->
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<P><A NAME="tex2html741"></A><A NAME="tex2html701"></A><A NAME="tex2html76"></A><A NAME="tex2html74"></A><A NAME="tex2html70"></A>
+<A HREF="node6.html" NAME="tex2html76"><IMG SRC="next.png" NAME="Imagen1" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="node3.html" NAME="tex2html74"><IMG SRC="up.png" NAME="Imagen2" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node4.html" NAME="tex2html70"><IMG SRC="prev.png" NAME="Imagen3" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node6.html" NAME="tex2html77">4
+Implementaci&oacute;n en procesadores</A> <B>Up:</B> <A HREF="node3.html" NAME="tex2html75">3
+Algoritmo de locomoci&oacute;n</A> <B>Previous:</B> <A HREF="node4.html" NAME="tex2html71">1
+C&aacute;lculo del vector</A> 
+</P>
+<H2><A NAME="SECTION00032000000000000000"></A><!--End of Navigation Panel-->2
+Generaci&oacute;n de tablas de control del movimiento 
+</H2>
+<P ALIGN=JUSTIFY>Para generar la <B>tabla de control de movimiento</B>,
+son necesarios el periodo 
+<IMG SRC="img24.png" NAME="Imagen4" ALT="$T$" ALIGN=BOTTOM WIDTH=14 HEIGHT=13 BORDER=0>
+de la onda y el par&aacute;metro 
+<IMG SRC="img11.png" NAME="Imagen5" ALT="$m$" ALIGN=BOTTOM WIDTH=17 HEIGHT=12 BORDER=0>.
+Se toma una muestra de la onda cada<!-- MATH
+ $\triangle t=\frac{T}{m}$
+ -->
+<IMG SRC="img25.png" NAME="Imagen6" ALT="$\triangle t=\frac{T}{m}$" ALIGN=MIDDLE WIDTH=56 HEIGHT=33 BORDER=0>
+unidades de tiempo, en los instantes 
+<IMG SRC="img26.png" NAME="Imagen7" ALT="$t_{0}=0$" ALIGN=MIDDLE WIDTH=43 HEIGHT=27 BORDER=0>,<!-- MATH
+ $t_{1}=\frac{T}{m}$
+ -->
+<IMG SRC="img27.png" NAME="Imagen8" ALT="$t_{1}=\frac{T}{m}$" ALIGN=MIDDLE WIDTH=50 HEIGHT=33 BORDER=0>,<!-- MATH
+ $t_{2}=\frac{T}{m}$
+ -->
+<IMG SRC="img28.png" NAME="Imagen9" ALT="$t_{2}=\frac{T}{m}$" ALIGN=MIDDLE WIDTH=50 HEIGHT=33 BORDER=0>,
+...,<!-- MATH
+ $t_{m-1}=\frac{(m-1)T}{m}$
+ --> 
+<IMG SRC="img29.png" NAME="Imagen10" ALT="$t_{m-1}=\frac{(m-1)T}{m}$" ALIGN=MIDDLE WIDTH=102 HEIGHT=36 BORDER=0>.
+</P>
+<P ALIGN=JUSTIFY>La figura <A HREF="#fig:ajuste2">4</A> muestra un
+ejemplo de los pasos necesarios para obtener las dos primeras filas
+de la tabla:<!-- MATH
+ $\overrightarrow{\varphi(t_{0})}$
+ --> 
+<IMG SRC="img30.png" NAME="Imagen11" ALT="$\overrightarrow{\varphi(t_{0})}$" ALIGN=MIDDLE WIDTH=37 HEIGHT=37 BORDER=0>
+y<!-- MATH
+ $\overrightarrow{\varphi(t_{1})}$
+ --> 
+<IMG SRC="img31.png" NAME="Imagen12" ALT="$\overrightarrow{\varphi(t_{1})}$" ALIGN=MIDDLE WIDTH=37 HEIGHT=37 BORDER=0>,
+aplicado a un robot de seis articulaciones. Comenzando con el robot
+situado sobre el eje x y una onda sinusoidal en el instante 
+<IMG SRC="img32.png" NAME="Imagen13" ALT="$t_{0}$" ALIGN=MIDDLE WIDTH=16 HEIGHT=27 BORDER=0>,
+el vector<!-- MATH
+ $\overrightarrow{\varphi(t_{0})}$
+ --> 
+<IMG SRC="img30.png" NAME="Imagen14" ALT="$\overrightarrow{\varphi(t_{0})}$" ALIGN=MIDDLE WIDTH=37 HEIGHT=37 BORDER=0>
+se calcula ``ajustando el robot a la onda'', como se explic&oacute;
+en el apartado <A HREF="node4.html#sub:C_E1lculo-del-vector-posicion-angular">3.1</A>.
+Despu&eacute;s se incrementa el tiempo obteni&eacute;ndose una nueva
+onda desplazada y finalmente se ajusta el robot a esta nueva onda,
+obteni&eacute;ndose<!-- MATH
+ $\overrightarrow{\varphi(t_{1})}$
+ -->
+<IMG SRC="img31.png" NAME="Imagen15" ALT="$\overrightarrow{\varphi(t_{1})}$" ALIGN=MIDDLE WIDTH=37 HEIGHT=37 BORDER=0>.
+Repitiendo sucesivamente los pasos 1 y 2, se obtienen los 
+<IMG SRC="img11.png" NAME="Imagen16" ALT="$m$" ALIGN=BOTTOM WIDTH=17 HEIGHT=12 BORDER=0>
+vectores de posici&oacute;n angular que componen la tabla. 
+</P>
+<P ALIGN=CENTER><A NAME="alg:algorithm2"></A><BR><IMG SRC="img33.png" NAME="Imagen17" ALT="\begin{algorithm}% latex2html id marker 143\textbf{Entradas}: f,n,m,T,$\varep......\par\caption{Una versi&oacute;n simplificada del algoritmo de ajuste}\end{algorithm}" ALIGN=BOTTOM WIDTH=556 HEIGHT=387 BORDER=0>
+</P><A NAME="fig:ajuste2"></A><A NAME="168"></A><CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P ALIGN=CENTER><IMG SRC="img34.png" NAME="Imagen18" ALT="\includegraphics[%scale=0.5]{ps/ajuste2.eps}" ALIGN=BOTTOM WIDTH=322 HEIGHT=545 BORDER=0>
+								</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=2>Figure
+4:</FONT></STRONG><FONT SIZE=2> Ejemplo del algoritmo usado para
+generar las tablas de control. Se calculan las dos primeras filas de
+la tabla.</FONT></P>
+<P>El pseudo c&oacute;digo se muestra en el algoritmo <A HREF="#alg:algorithm2">1</A>.
+Los par&aacute;metros de entrada son: 
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm"><IMG SRC="img35.png" NAME="Imagen19" ALT="$f(x,t)$" ALIGN=MIDDLE WIDTH=44 HEIGHT=30 BORDER=0>:
+	Ecuaci&oacute;n de la onda 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><IMG SRC="img10.png" NAME="Imagen20" ALT="$n$" ALIGN=BOTTOM WIDTH=13 HEIGHT=12 BORDER=0>
+	: N&uacute;mero total de articulaciones 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><IMG SRC="img11.png" NAME="Imagen21" ALT="$m$" ALIGN=BOTTOM WIDTH=17 HEIGHT=12 BORDER=0>:
+	N&uacute;mero de muestras temporales 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm"><IMG SRC="img24.png" NAME="Imagen22" ALT="$T$" ALIGN=BOTTOM WIDTH=14 HEIGHT=13 BORDER=0>:
+	Periodo de la onda 
+	</P>
+	<LI><P><IMG SRC="img36.png" NAME="Imagen23" ALT="$\varepsilon$" ALIGN=BOTTOM WIDTH=11 HEIGHT=12 BORDER=0>:
+	M&aacute;ximo error permitido en la aproximaci&oacute;n 
+	</P>
+</UL>
+<P>La salida es la matriz 
+<IMG SRC="img11.png" NAME="Imagen24" ALT="$m$" ALIGN=BOTTOM WIDTH=17 HEIGHT=12 BORDER=0>x<IMG SRC="img10.png" NAME="Imagen25" ALT="$n$" ALIGN=BOTTOM WIDTH=13 HEIGHT=12 BORDER=0>
+de control del movimiento. <B>El algoritmo se puede emplear para
+cualquier tipo de onda</B>, sin embargo, para las pruebas de
+locomoci&oacute;n se han empleado ondas sinusoidales. 
+</P>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A NAME="tex2html7411"></A><A NAME="tex2html7011"></A><A NAME="tex2html761"></A><A NAME="tex2html742"></A><A NAME="tex2html702"></A>
+<!--Navigation Panel--><A HREF="node6.html" NAME="tex2html76"><IMG SRC="next.png" NAME="Imagen26" ALT="next" ALIGN=BOTTOM WIDTH=37 HEIGHT=24 BORDER=0></A>
+<A HREF="node3.html" NAME="tex2html74"><IMG SRC="up.png" NAME="Imagen27" ALT="up" ALIGN=BOTTOM WIDTH=26 HEIGHT=24 BORDER=0></A>
+<A HREF="node4.html" NAME="tex2html70"><IMG SRC="prev.png" NAME="Imagen28" ALT="previous" ALIGN=BOTTOM WIDTH=63 HEIGHT=24 BORDER=0></A>
+<BR><B>Next:</B> <A HREF="node6.html" NAME="tex2html77">4
+Implementaci&oacute;n en procesadores</A> <B>Up:</B> <A HREF="node3.html" NAME="tex2html75">3
+Algoritmo de locomoci&oacute;n</A> <B>Previous:</B> <A HREF="node4.html" NAME="tex2html71">1
+C&aacute;lculo del vector</A></P>
+<ADDRESS><!--End of Navigation Panel-->juan 2005-10-01 
+</ADDRESS>
+</BODY>
+</HTML>
