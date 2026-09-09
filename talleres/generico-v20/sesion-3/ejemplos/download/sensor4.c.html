@@ -1,0 +1,66 @@
+
+<html>
+<head>
+<title>sensor4.c</title>
+<meta name="generator" content="c2html 0.9.5">
+<meta name="date" content="2006-04-29T19:15:50+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/*************************************************************************** */</font>
+<font color="#B22222">/* sensor4.c      Junio-2005 Version 1.0                                     */</font>
+<font color="#B22222">/*                Mayo-2006  Version 2.0                                     */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Ejemplo para el skybot                                                    */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Prueba del sensor 4. Cuando este sensor lee negro se enciende el led y    */</font>
+<font color="#B22222">/* lo apaga en caso contrario. Es muy util para comprobar si los sensores    */</font>
+<font color="#B22222">/* se han construido correctamente                                           */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  Juan Gonzalez &lt;juan@iearobotics.com&gt;                                     */</font>
+<font color="#B22222">/*  Ricardo Gomez &lt;ricardo@eagleman.org&gt;                                     */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  LICENCIA GPL                                                             */</font>
+<font color="#B22222">/*****************************************************************************/</font>
+
+//-- Especificar el pic a emplear
+<strong><font color="#228B22">#define __18f2580</font></strong>
+<font color="#A020F0">#include </font><font color="#666666">"pic18f2580.h"</font><font color="#A020F0"></font>
+
+//-- Definiciones de los sensores
+<strong><font color="#228B22">#define   SENSOR1  0x01</font></strong>
+<strong><font color="#228B22">#define   SENSOR2  0x20</font></strong>
+<strong><font color="#228B22">#define   SENSOR3  0x40</font></strong>
+<strong><font color="#228B22">#define   SENSOR4  0x80</font></strong>
+
+//-- Indicar el sensor a comprobar. Esto se puede cambiar, pero no se puede
+//-- poner el sensor 2 porque comparte pin con el led
+<strong><font color="#228B22">#define   SENSOR SENSOR4</font></strong>
+
+<strong><font color="#228B22">#define LED       0x02     // Pin del led de la Skypic</font></strong>
+
+
+//----------------------------
+//- Comienzo del programa  
+//----------------------------
+unsigned char sensor;
+<strong><font color="#4169E1"><a name="main"></a>void main(void)</font></strong>
+{
+  //-- Configurar pin del led como salida
+  //-- El resto como entradas
+  TRISB&amp;=~LED;
+  
+  //-- Bucle principal
+  <font color="#4169E1">while</font>(1) {
+    //-- Si el sensor lee blanco
+    <font color="#4169E1">if</font> ((PORTB &amp; SENSOR)==0)
+       PORTB&amp;=~LED;           //-- Apagar el led
+    <font color="#4169E1">else</font>
+       PORTB|=LED;            //-- Sino, encenderlo
+  }
+
+}
+</pre>
+</body>
+
+</html>

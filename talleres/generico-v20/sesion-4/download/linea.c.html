@@ -1,0 +1,77 @@
+
+<html>
+<head>
+<title>linea.c</title>
+<meta name="generator" content="c2html 0.9.5">
+<meta name="date" content="2006-04-29T19:32:21+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/*************************************************************************** */</font>
+<font color="#B22222">/* linea.c  Julio-2005 Version 1.0                                           */</font>
+<font color="#B22222">/*          Mayo-2006  Version 2.0                                           */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Ejemplo para el skybot                                                    */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Programa de seguimiento de linea para el robot Skybot                     */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  Andres Prieto-Moreno &lt;andres@ifara.com&gt;                                  */</font>
+<font color="#B22222">/*  Juan Gonzalez &lt;juan@iearobotics.com&gt;                                     */</font>
+<font color="#B22222">/*  Ricardo Gomez &lt;ricardo@eagleman.org&gt;                                     */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  LICENCIA GPL                                                             */</font>
+<font color="#B22222">/*****************************************************************************/</font>
+
+//-- Especificar el pic a emplear
+<strong><font color="#228B22">#define __18f2580</font></strong>
+<font color="#A020F0">#include </font><font color="#666666">"pic18f2580.h"</font><font color="#A020F0"></font>
+
+//-- Definiciones para los motores. Estos valores define
+//-- los movimientos del robot
+<strong><font color="#228B22">#define   AVANZA     0x1C</font></strong>
+<strong><font color="#228B22">#define   ATRAS      0x16</font></strong>
+<strong><font color="#228B22">#define   IZQUIERDA  0x1E </font></strong>
+<strong><font color="#228B22">#define   DERECHA    0x14 </font></strong>
+<strong><font color="#228B22">#define   STOP       0x00</font></strong>
+
+//-- Definiciones de los sensores
+<strong><font color="#228B22">#define   SENSOR1  0x01</font></strong>
+<strong><font color="#228B22">#define   SENSOR2  0x20</font></strong>
+<strong><font color="#228B22">#define   SENSOR3  0x40</font></strong>
+<strong><font color="#228B22">#define   SENSOR4  0x80</font></strong>
+
+//-- MOdificar esto para indicar la colocacion de los sensores
+<strong><font color="#228B22">#define IZQUIERDO SENSOR4</font></strong>
+<strong><font color="#228B22">#define DERECHO   SENSOR3</font></strong>
+
+unsigned char sensores; 
+<strong><font color="#4169E1"><a name="main"></a>void main(void)</font></strong>
+{
+  
+  //-- Configurar puerto B
+  TRISB=0xE1;
+  
+  //-- Inicialmente robot parado
+  PORTB=STOP;
+  
+  <font color="#4169E1">for</font> (;;) {
+                sensores=PORTB&amp; (IZQUIERDO | DERECHO); // Leer sensores
+                <font color="#4169E1">switch</font> (sensores) {
+                        <font color="#4169E1">case</font> (IZQUIERDO | DERECHO):  //-- Caso negro-negro
+                                PORTB=AVANZA;
+                          <font color="#4169E1">break</font>;
+                        <font color="#4169E1">case</font> DERECHO:  //-- Caso Blanco-negro
+                                PORTB=DERECHA;
+                          <font color="#4169E1">break</font>;
+                        <font color="#4169E1">case</font> IZQUIERDO:  //-- Caso Negro-Blanco
+                                PORTB=IZQUIERDA;
+                                <font color="#4169E1">break</font>;
+<strong><font color="#FF0000">                  default:</font></strong>
+              PORTB=STOP;                 
+           }
+  }  
+}
+</pre>
+</body>
+
+</html>

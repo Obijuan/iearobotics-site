@@ -1,0 +1,57 @@
+
+<html>
+<head>
+<title>Makefile.linux</title>
+<meta name="generator" content="c2html 0.9.5">
+<meta name="date" content="2006-05-03T10:32:03+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#A020F0"># **************************************************************************</font>
+<font color="#A020F0"># Fichero makefile.</font>
+<font color="#A020F0"># --------------------------------------------------------------------------</font>
+<font color="#A020F0"># Licencia GPL. Juan Gonzalez Gomez</font>
+<font color="#A020F0">#                Ricardo Gomez Gonzalez</font>
+<font color="#A020F0"># --------------------------------------------------------------------------</font>
+<font color="#A020F0">#</font>
+<font color="#A020F0">#***************************************************************************</font>
+
+<font color="#A020F0">#-- Compilador</font>
+CC = sdcc
+
+CFLAGS = -mpic16
+
+<font color="#A020F0">#-- Ejemplos para el PUERTO B</font>
+NAME1=ledon
+
+<strong><font color="#FF0000">all:</font></strong> $(NAME1).hex 
+
+
+<font color="#A020F0">#---------------------------</font>
+<font color="#A020F0">#       OBJETIVOS</font>
+<font color="#A020F0">#---------------------------</font>
+<font color="#A020F0">#-- Para programas que tengan mas de un fichero fuente</font>
+<font color="#A020F0">#$(NAME1).hex: $(OBJ1)</font>
+<font color="#A020F0">#            gplink -o $(NAME1).hex $(OBJ1)</font>
+                        
+
+<font color="#A020F0">#--------------------</font>
+<font color="#A020F0">#- LIMPIEZA</font>
+<font color="#A020F0">#--------------------</font>
+<strong><font color="#FF0000">clean:</font></strong>
+          rm -f *.o *.hex *.lst *.p *.d *.asm *.cod
+
+<font color="#A020F0">#-----------------------</font>
+<font color="#A020F0"># REGLAS GENERICAS</font>
+<font color="#A020F0">#-----------------------</font>
+<font color="#A020F0">#-- Obtencion de los ficheros objeto .o</font>
+.c.o: 
+                $(CC) -S $(CFLAGS) $&lt;  
+                gpasm -c $*.asm 
+                                        
+<font color="#A020F0">#-- Obtencion de los ficheros ejecutables</font>
+%.hex : %.o; gplink -o $@ -a inhx8m $&lt;  -o $@ pic18f258.lib
+</pre>
+</body>
+
+</html>

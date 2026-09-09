@@ -1,0 +1,41 @@
+# **************************************************************************
+# Fichero makefile.
+# --------------------------------------------------------------------------
+# Licencia GPL. Juan Gonzalez Gomez
+#               Ricardo Gomez Gonzalez
+# --------------------------------------------------------------------------
+# 
+#***************************************************************************
+
+#-- Compilador
+CC = sdcc
+
+CFLAGS = -mpic16
+
+#-- Ejemplos para el PUERTO B
+#-- Indicar el nombre sin extensión del archivo  compilar
+NAME1=ledon
+
+
+
+all: $(NAME1).hex 
+#$(NAME1).hex : $(SRCS:.c=.o)
+
+
+#--------------------
+#- LIMPIEZA
+#--------------------
+clean:
+	del *.o *.hex *.lst *.p *.d *.asm *.cod
+
+#-----------------------
+# REGLAS GENERICAS
+#-----------------------
+#-- Obtencion de los ficheros objeto .o
+.c.o: 
+		$(CC) -S $(CFLAGS) $<  
+	    gpasm -c $*.asm 
+
+#-- Obtencion de los ficheros ejecutables
+%.hex : %.o 
+	gplink -o $@ -a inhx8m $< -s "C:\Archivos de programa\gputils\lkr\18f258.lkr"  -o $@ pic18f258.lib

@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Taller de robotica B&aacute;sico. Sesion 4</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGED" CONTENT="20050729;11333300">
+	<META NAME="KEYWORDS" CONTENT="robotica, microcontroladores, pic, hardware">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+
+<TABLE WIDTH=917 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+	<COL WIDTH=909>
+	<TR>
+		<TD WIDTH=909>
+			<P ALIGN=CENTER>Taller de Rob&oacute;tica B&aacute;sico - Skybot v2.0. - <B>
+			SESION 4</B></P>
+
+		</TD>
+	</TR>
+</TABLE>
+
+
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><BR>
+				</P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2>Objetivos</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>
+Ya sabemos programar el robot, hemos sido capaces de leer el estado de los sensores de infrarrojos y tomar decisiones de movimiento sobre los motores del robot. Ahora estamos en condiciones para programar un algoritmo que haga que nuestro robot siga una <B>l&iacute;nea negra</B>.<BR>
+<br>Luego programaremos algoritmos m&aacute;s complejos, para lo cual necesitamos m&aacute;s informaci&oacute;n del entorno. 
+Esto es precisamente los que hacen los sensores y es lo que vamos a hacer en esta sesi&oacute;n, es decir, vamos a instalar dos <B><I>bumpers</B></I> y una <B><I>LDR</I></B>. El primer tipo es un sensor que tiene una pestaña de metal y al pulsar sobre ella activa un interruptor, lo usamos para detectar obst&aacute;culos.
+La LDR es un sensor que var&iacute;a su resistencia en funci&oacute;n de la intensidad de luz recibida. Ambos sensores se conectar&aacute;n a la <B>SKY293</B> para que &eacute;sta adapte las se&ntilde;ales antes de enviarlas al <I>Puerto A</I> de la <I>SKYPIC</I>.<BR>
+
+
+</P>
+<HR>
+<H2>Temario</H2>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="bumpers.html">Sensores
+	de contacto</A> (Bumpers)</FONT></FONT></P>
+	
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="ldr.html">Sensor
+	de luz</A> (LDR)</FONT></FONT></P>
+	
+
+
+
+</UL>
+
+<HR>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Programas de
+ejemplo para probar</B>:</FONT></FONT></P>
+<UL>
+	
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Seguimiento de linea: </FONT></FONT><A HREF="download/linea.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">linea.c</FONT></FONT></A>&nbsp;&nbsp;<A href="download/linea.hex"><FONT SIZE=2><FONT FACE="Arial, san-serif">linea.hex</FONT></FONT></A>&nbsp;&nbsp;<A HREF="download/linea.c.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">linea.c.html</FONT></FONT></A></P>
+	
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Ejemplo b&aacute;sico
+	para el concurso del mogoll&oacute;n: </FONT></FONT><A HREF="download/mogollon.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">mogollon.c</FONT></FONT></A>&nbsp;&nbsp;<A href="download/mogollon.hex"><FONT SIZE=2><FONT FACE="Arial, san-serif">mogollon.hex</FONT></FONT></A>&nbsp;&nbsp;<A HREF="download/mogollon.c.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">mogollon.c.html</FONT></FONT></P>
+</UL>
+<HR>
+<P><A HREF="../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[pagina
+principal]</FONT></FONT></A></P>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="../../../personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A><A HREF="http://www.iearobotics.com/">
+</A>
+</ADDRESS>
+<P STYLE="margin-bottom: 0cm"><A HREF="../../../.."><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEAROBOTICS</FONT></FONT></A>
+</P>
+</BODY>
+</HTML>

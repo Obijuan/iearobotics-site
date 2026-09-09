@@ -1,0 +1,247 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Taller de robotica basico - Skybot v2.0. Sesion 1. Estructura mec&aacute;nica I</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGED" CONTENT="20050713;20574300">
+	<META NAME="KEYWORDS" CONTENT="robotica, microcontroladores, pic, hardware">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<TABLE WIDTH=917 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+	<COL WIDTH=909>
+	<TR>
+		<TD WIDTH=909>
+			<P ALIGN=CENTER><FONT FACE="Arial, sans-serif">Taller de
+			Rob&oacute;tica B&aacute;sico - Skybot v2.0. - SESION 1 - <B> Estructura mec&aacute;nica
+			I</B></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/mecanica-inicio-fin.png" NAME="Imagen1" ALIGN=MIDDLE BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Descripci&oacute;n</FONT></H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En este cap&iacute;tulo
+construiremos el <B>ch&aacute;sis </B>del robot y las <B>ruedas</B> ,
+que es la primera parte del montaje de la estrucura mec&aacute;nica.
+Se van a utilizar las piezas que se muestran en la siguiente figura:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/piezas1.png" NAME="Imagen2" ALIGN=MIDDLE BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Pieza A</B>:
+	Base del robot</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Piezas B</B>:
+	Laterales, donde ir&aacute;n atornillados los servos</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Pieza C</B> :
+	Frontal. En ella se situar&aacute;n los sensores de infrarrojos</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Piezas D</B>:
+	Ruedas.</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Piezas E</B>:
+	Coronas circulares peque&ntilde;a de los servos <A HREF="../../../proyectos/cuadernos/ct3/ct3.html">Futaba
+	3003</A>.</FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><B>Piezas F</B>:
+        Juntas t&oacute;ricas para las ruedas. </FONT></FONT></P>
+</UL>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Material adicional </FONT>
+</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para realizar las
+pr&aacute;cticas de este cap&iacute;tulo es necesario disponer de un
+<B>pegamento para pl&aacute;sticos r&iacute;gidos</B>, similar al
+<B>PlasticCeys</B>. Tardan unas horas en que las piezas se peguen
+correctamente y no entra&ntilde;an ning&uacute;n tipo de riesgo.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/pegamento.png" NAME="Imagen9" ALIGN=MIDDLE  BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<DL>
+	<DL>
+		<DL>
+			<DL>
+				<DD>
+				<TABLE WIDTH=660 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+					<COL WIDTH=650>
+					<THEAD>
+						<TR>
+							<TD WIDTH=650 VALIGN=TOP BGCOLOR="#eb613d">
+								<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif">Tambi&eacute;n
+								se pueden emplear <B>pegamentos de contacto</B>, de tipo
+								Super Glue, que pegan en pocos segundos, pero se recuerda que
+								<B>SON MUY PELIGROSOS</B> y que si se usan hay que <B>EXTREMAR
+								LAS PRECAUCIONES</B>. Estos pegamentos se adhieren a la piel
+								y los dedos, que pueden quedar pegados, necesit&aacute;ndose
+								asistencia sanitaria de urgencia para despegarlos. Si nunca
+								los has empleado, te recomendamos que <B>no</B> lo hagas en
+								este taller.</FONT></P>
+							</TD>
+						</TR>
+					</THEAD>
+				</TABLE>
+			</DL>
+		</DL>
+	</DL>
+</DL>
+<P STYLE="margin-left: 4cm"><BR><BR>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Montaje</FONT></H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Quitar los
+	pl&aacute;sticos protectores de las piezas</B>. Las piezas son de
+	metacrilato negro y est&aacute;n cortadas por l&aacute;ser. De la
+	f&aacute;brica vienen con un pl&aacute;stico protector para evitar
+	que se rayen. Est&aacute;n situados por ambas caras de cada pieza.</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/paso1.png" NAME="Imagen3" ALIGN=MIDDLE BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Pegar uno de
+	los laterales</B>. Coger la <B>pieza A</B> (base del robot) y
+	apoyarla sobre la mesa. Una de las dos superficies de la base es m&aacute;s
+	brillante que otra. Es la que pondremos en contacto con la mesa (es
+	la parte que luego m&aacute;s se ver&aacute; cuando est&eacute; el
+	robot construido). Usando el <B>pegamento</B> para pl&aacute;sticos
+	r&iacute;gidos, extenderlo por <B>todas</B> las superficies de
+	contacto entre las <B>piezas B</B> y A, y unirlas como se muestra en
+	la figura.</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/paso2.png" NAME="Imagen4" ALIGN=MIDDLE WIDTH=665 HEIGHT=227 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Pegar la parte
+	frontal</B>. Pegar la <B>pieza C</B> a la <B>A</B> y a la <B>B</B>,
+	como se indica en la figura. Poner pegamento en todos los puntos de
+	contacto entre las tres piezas.</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/paso3.png" NAME="Imagen5" ALIGN=MIDDLE WIDTH=381 HEIGHT=286 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Pegar el otro
+	lateral</B>. Pegar la pieza <B>B</B> que falta, que est&aacute; en
+	contacto con la <B>A</B> y con la <B>C</B>. Con esto finaliza la
+	primera parte de la construcci&oacute;n del ch&aacute;sis del robot.
+	Dejar la estructura reposar al menos durante 2 horas para que el
+	pegamento se seque y las piezas se vayan fijando.</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/paso4.png" NAME="Imagen6" ALIGN=MIDDLE WIDTH=350 HEIGHT=262 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Construcci&oacute;n
+	de las ruedas</B>. Pegar las piezas <B>E</B> a las <B>D</B>. Echar
+	pegamento por toda la superficie de contacto de la pieza E y unir
+	ambas piezas, introduciendo el eje de la pieza E por el orificio
+	central de D. Finalmente poner la junta t&oacute;rica en la hendidura del canto de la rueda.
+En la foto de la derecha se puede ver el aspecto de
+	las ruedas.</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/paso5.png" NAME="Imagen7" ALIGN=MIDDLE BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Resultado final </FONT>
+</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Este es el aspecto que
+tienen el ch&aacute;sis y las rudas. En la figura de la izquierda se
+muestra en su posici&oacute;n normal. Sobre la superfie se colocar&aacute;
+la <B>electr&oacute;nica</B>, en los laterales ir&aacute;n
+atornillados los <B>servos</B> y en la parte trasera se situar&aacute;
+la <B>rueda loca</B>. </FONT></FONT>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/paso6.png" NAME="Imagen8" ALIGN=MIDDLE BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A HREF="index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Sesion
+I]</FONT></FONT></A> 
+</P>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="../../../personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A>
+<br><A HREF="../../../personal/andres/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Andr&eacute;s
+Prieto-Moreno </FONT></FONT></A><BR><A HREF="http://www.iearobotics.com"><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEAROBOTICS</FONT></FONT></A>
+
+</ADDRESS>
+</BODY>
+</HTML>

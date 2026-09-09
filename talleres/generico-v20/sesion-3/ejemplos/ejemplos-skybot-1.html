@@ -1,0 +1,1030 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Taller de robotica. Sesion 3. Ejemplos de programaci&oacute;n del Skybot</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGED" CONTENT="20050722;2204900">
+	<META NAME="KEYWORDS" CONTENT="robotica, microcontroladores, pic, hardware">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+
+<TABLE WIDTH=917 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+	<COL WIDTH=909>
+	<TR>
+		<TD WIDTH=909>
+			<P ALIGN=CENTER><FONT FACE="Arial, sans-serif">Taller de
+			Rob&oacute;tica B&aacute;sico - Skybot v2.0. - SESION 3 - <B> Ejemplos de programaci&oacute;n del Skybot</B></FONT></P>
+
+		</TD>
+	</TR>
+</TABLE>
+
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2>Objetivos</H2>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El
+objetivo de este cap&iacute;tulo es mostrar <B>ejemplos de programas
+en C</B> para manejar diferentes recursos del robot. Editando,
+compilando, probando y modificando los ejemplos se aprender&aacute;
+muy r&aacute;pidamente a manejar el robot y en poco tiempo se podr&aacute;
+dar rienda suelta a la imaginaci&oacute;n para hacer otras cosas...
+<B>&iexcl;Qu&eacute; comience la fiesta!</B></FONT></FONT></P>
+<HR>
+<H2>Contenido</H2>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="#ejemplos_basicos">Ejemplos
+	b&aacute;sicos</A>.</FONT></FONT></P>
+	<LI><P><A HREF="#motores_sensores"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Ejemplos
+	b&aacute;sicos de motores y sensores</FONT></FONT></A></P>
+	<LI><P><A HREF="#temporizacion"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Temporizaci&oacute;n</FONT></FONT></A></P>
+	<LI><P><A HREF="#puerto_serie"><FONT SIZE=2><FONT FACE="Arial, sans-serif">El
+	puerto serie en el PIC</FONT></FONT></A></P>
+	<LI><P><A HREF="#mezclando_todo"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Mezclando
+	todo</FONT></FONT></A></P>
+	<LI><P><A HREF="#descargas"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Descargas
+	de ficheros</FONT></FONT></A></P>
+</UL>
+<HR>
+<H2><A NAME="ejemplos_basicos"></A>Ejemplos b&aacute;sicos</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para los siguientes
+ejemplos <B>desconectar el cable que une la Skypic con la Sky293</B>.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P><FONT FACE="Arial, sans-serif">[</FONT><A HREF="download/ledp.c.html"><FONT FACE="Arial, sans-serif">ledp</FONT></A><FONT FACE="Arial, sans-serif">]
+				<B>Led parpadeante</B>. Hacer que el led de la Skypic parpadee.</FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En la funci&oacute;n
+<FONT FACE="Courier, monospace">main()</FONT> nos encontramos con:</FONT></FONT></P>
+<TABLE WIDTH=682 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=674>
+	<THEAD>
+		<TR>
+			<TD WIDTH=674 VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P>&nbsp;<FONT FACE="Monospace"><FONT COLOR="#000000">PORTB</FONT>^=<FONT COLOR="#000000">LED</FONT>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><FONT COLOR="#808080">//--&nbsp;Cambiar&nbsp;led&nbsp;de&nbsp;estado</FONT></I></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Esta l&iacute;nea
+cambia de estado s&oacute;lo el bit RB1, dejando los dem&aacute;s
+igual. Lo que se consigue es que cada vez que se ejecuta el led pasa
+de un estado al contrario: de encendido a apagado y de apagado a
+encendido. </FONT></FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Es la instrucci&oacute;n
+abreviada de PORTB = PORTB ^ LED, donde ^ es el operador XOR (O
+exclusivo)</FONT></FONT></P>
+<TABLE WIDTH=682 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=674>
+	<THEAD>
+		<TR>
+			<TD WIDTH=674 VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P>&nbsp;<FONT FACE="Monospace"><FONT COLOR="#000000">pausa</FONT>(<FONT COLOR="#000000">RETRASO</FONT>);&nbsp;&nbsp;&nbsp;&nbsp;<I><FONT COLOR="#808080">//--&nbsp;Pausa</FONT></I></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>A continuaci&oacute;n
+se llama una funci&oacute;n que hemos definido para hacer una pausa.
+El microcontrolador ejecuta instrucciones muy r&aacute;pido. Si
+cambiamos de estado el led muy r&aacute;pidamente, nuestro ojo no lo
+apreciar&aacute; y dar&aacute; la impresi&oacute;n de que el led est&aacute;
+siempre encendido. Por ello hay que introducir una pausa. En la
+funci&oacute;n de pausa se decrrementa una variable hasta llegar a 0.
+Cambiando el par&aacute;metro que se le paso conseguimos una pausa
+mayor o menor.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>EXPERIMENTO</B>:
+Modificar el valor de la constante RETRASO. Poniendo diferentes
+valores. Por ejemplo 0x8000, 0x4000... &iquest;Qu&eacute; sucede?</FONT></FONT></P>
+<P><BR><BR>
+</P>
+<HR>
+<H2><A NAME="motores_sensores"></A>Ejemplos b&aacute;sicos de motores
+y sensores</H2>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P><FONT FACE="Arial, sans-serif">[<A HREF="download/motor-on.c.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">motor-on</FONT></FONT></A>]
+				<B>Activar los motores para que el robot vaya hacia adelante</B></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Este
+programa simplemente hace que el robot avance. Para que se par&eacute;
+habr&aacute; que quitar la alimentaci&oacute;n :-). Conseguimos que
+se mueva simplemente enviando.</FONT></FONT></P>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Lo
+primero que se hace es configurar el <B>PUERTO B</B> para trabajar
+con el Skybot.</FONT></FONT></P>
+<TABLE WIDTH=684 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=676>
+	<THEAD>
+		<TR>
+			<TD WIDTH=676 VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P><FONT COLOR="#808080">&nbsp;&nbsp;&nbsp;&nbsp;<I><FONT FACE="Monospace">//--&nbsp;Configurar&nbsp;el&nbsp;puerto&nbsp;B&nbsp;para&nbsp;trabajar&nbsp;con&nbsp;el&nbsp;Skybot<BR>&nbsp;&nbsp;//--&nbsp;RB0,&nbsp;RB5,&nbsp;RB6&nbsp;y&nbsp;RB7&nbsp;como&nbsp;entradas<BR>&nbsp;&nbsp;//--&nbsp;RB1,&nbsp;RB2,&nbsp;RB3&nbsp;y&nbsp;RB4&nbsp;como&nbsp;salidas<BR>&nbsp;&nbsp;<FONT COLOR="#000000">TRISB</FONT>=<FONT COLOR="#008080">0xE1</FONT>;</FONT></I></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>y
+despu&eacute;s se activan los bits correspondientes del puerto B,
+enviado directamente un valor:</FONT></FONT></P>
+<TABLE WIDTH=684 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=676>
+	<THEAD>
+		<TR>
+			<TD WIDTH=676 VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P><FONT COLOR="#808080">&nbsp;&nbsp;<I><FONT FACE="Monospace">//--&nbsp;Activar&nbsp;los&nbsp;bits&nbsp;de&nbsp;los&nbsp;motores&nbsp;para&nbsp;que&nbsp;el&nbsp;robot&nbsp;avance<BR>&nbsp;&nbsp;<FONT COLOR="#000000">PORTB</FONT>=<FONT COLOR="#000000">AVANZA</FONT>;</FONT></I></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P><FONT FACE="Arial, sans-serif">[<A HREF="download/motor-off.c.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">motor-off</FONT></FONT></A>]
+				<B>Parar los motores</B></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Este
+ejemplo es igual que el motor-on, pero en vez de enviar el valor
+AVANZA, se env&iacute;a el valor STOP para que el robot se pare.</FONT></FONT></P>
+<TABLE WIDTH=684 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=676>
+	<THEAD>
+		<TR>
+			<TD WIDTH=676 VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P><FONT COLOR="#808080">&nbsp;&nbsp;<I><FONT FACE="Monospace">//--&nbsp;Parar&nbsp;el&nbsp;robot<BR>&nbsp;&nbsp;<FONT COLOR="#000000">PORTB</FONT>=<FONT COLOR="#000000">STOP</FONT>;</FONT></I></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>EXPERIMENTO</B>:
+Modificar el valor que se env&iacute;a al puerto B para que el robot
+se mueva de diferente manera. Para que el robot gire, los motores se
+activan en sentidos contrarios. Pero tambi&eacute;n girar&aacute; si
+una de las ruedas se para y la otra avanza. Esto permite hacer giros
+de mayor radio y m&aacute;s suaves.</FONT></FONT></P>
+<P><BR><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P><FONT FACE="Arial, sans-serif">[<A HREF="download/sensor4.c.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sensor4</FONT></FONT></A>]
+				<B>Prueba del sensor 4. </B>Leer su estado y mostrarlo por el led</FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Este
+ejemplo es muy &uacute;til para comprobar si los sensores funcionan
+correctamente. El programa s&oacute;lo lee el sensor 4 pero cambiando
+la constante SENSOR podemos leer los otros sensores, reflejando su
+estado por el led. La &uacute;nica excepci&oacute;n es el SENSOR 2
+que comparte pin con el led. Si usamos el led, no podemos leer ese
+sensor :-(</FONT></FONT></P>
+<TABLE WIDTH=811 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=803>
+	<THEAD>
+		<TR>
+			<TD WIDTH=803 VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P><FONT COLOR="#808080"><FONT FACE="Monospace"><I>//--&nbsp;Indicar&nbsp;el&nbsp;sensor&nbsp;a&nbsp;comprobar.&nbsp;Esto&nbsp;se&nbsp;puede&nbsp;cambiar,&nbsp;pero&nbsp;no&nbsp;se&nbsp;puede<BR>//--&nbsp;poner&nbsp;el&nbsp;sensor&nbsp;2&nbsp;porque&nbsp;comparte&nbsp;pin&nbsp;con&nbsp;el&nbsp;led<BR><FONT COLOR="#008000">#define&nbsp;&nbsp;&nbsp;SENSOR&nbsp;SENSOR4</FONT></I></FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Si
+ponemos en esa constante el valor SENSOR3, el programa funcionar&aacute;
+para ese sensor.</FONT></FONT></P>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>EXPERIMENTO</B>:
+Cambiar el valor de la constante SENSOR para hacer pruebas con los
+sensores 1 y 3.</FONT></FONT></P>
+<P><BR><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P><FONT FACE="Arial, sans-serif">[<A HREF="download/sensores.c.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sensores</FONT></FONT></A>]
+				<B>Prueba de todos los sensores. </B>Leer su estado y mostrarlo
+				por 4 leds externos conectados al puerto A</FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Este ejemplo es
+similar al sensor4 pero en este caso se leen todos los sensores y su
+estado se muestra por el PUERTO A. Como la skypic tiene s&oacute;lo
+un led, para poder probar este programa habr&aacute; que conectar 4
+leds externos o bien utilizar alguna placa que ya los lleve, como por
+ejemplo la FREELEDs.</FONT></FONT></P>
+<P><BR><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P><FONT FACE="Arial, sans-serif">[<A HREF="download/motores-sensor3.c.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">motores-sensor3</FONT></FONT></A>]
+				<B>Prueba de motores y sensores. </B>El robot avanza cuando le
+				sensor 3 lee negro. Se para si lee blanco.</FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejemplo de un
+comportamiento muy sencillo del robot. Si el sensor 3 lee negro, el
+robot est&aacute; parado. Pero si lee blanco, se pone a avanzar.
+Cambiando el valor de la constante SENSOR podemos hacer la misma
+prueba con cualquiera de los otros tres sensores.</FONT></FONT></P>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>EXPERIMENTO</B>:
+Colocar el robot sobre una superficie blanca (por ejemplo un folio).
+Colocar en un trozo de papel un trozo de cinta aislante negro. El
+robot avanzar&aacute; pero si le ponemos el trozo negro debajo del
+sensor 3 se parar&aacute;. Si lo desplazamos hacia adelante el robot
+volver&aacute; a avanzar hasta situarse otra vez sobre &eacute;l.
+Dar&aacute; la impresi&oacute;n de que est&aacute; siguiente el trozo
+de papel negro que le estamos poniendo :-). En este ejemplo s&oacute;lo
+se mover&aacute; en l&iacute;nea recta.</FONT></FONT></P>
+<P><BR><BR>
+</P>
+<HR>
+<H2><A NAME="temporizacion"></A>Temporizaci&oacute;n</H2>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P><FONT FACE="Arial, sans-serif">[<A HREF="download/delay0.h.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">delay0.h</FONT></FONT></A>]
+				<B>Librer&iacute;a para temporizaci&oacute;n (timer 0)</B></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Esta librer&iacute;a
+se emplear&aacute; desde otros programas en C (<FONT FACE="Courier, monospace">#include
+&ldquo;delay0.h&rdquo;</FONT>). Tiene una funci&oacute;n llamada
+<FONT FACE="Courier, monospace">delay0()</FONT> que nos permite
+realizar pausas en unidades de 10ms. Para usar esta funci&oacute;n,
+previamente hay que configurar el temporizador, llamando a
+<FONT FACE="Monospace"><FONT COLOR="#000000">timer0_configurar</FONT>().</FONT></FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El microcontrolador
+PIC incluye en su interior una serie de perif&eacute;ricos que son
+muy &uacute;tiles en rob&oacute;tica. Uno de ellos es el temporizador
+0 (timer 0 en ingl&eacute;s). Es una especie de &ldquo;cron&oacute;metro&rdquo;
+que nos permite saber cuanto tiempo ha transcurrido desde la &uacute;ltima
+vez que se emple&oacute;.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Tal y como est&aacute;
+configurado en esta librer&iacute;a, la pausa m&aacute;xima que
+podremos realizar es de 2560 ms, es decir, de 2.5 segundos
+aproximadamente. Y la pausa m&iacute;nima es de 10 ms.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Esta
+es la funci&oacute;n que hay que llamar para configurar el
+temporizador 0.</FONT></FONT></P>
+<TABLE WIDTH=811 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=803>
+	<THEAD>
+		<TR>
+			<TD WIDTH=803 VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P><FONT COLOR="#808080"><FONT FACE="Monospace"><I>/************************************/<BR>/*&nbsp;Configurar&nbsp;el&nbsp;temporizador&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/<BR>/************************************/<BR><FONT COLOR="#800000">void</FONT>&nbsp;<FONT COLOR="#000000">timer0_configurar</FONT>()</I></FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>y
+esta es la funci&oacute;n de pausa:</FONT></FONT></P>
+<TABLE WIDTH=811 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=803>
+	<THEAD>
+		<TR>
+			<TD WIDTH=803 VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P><FONT COLOR="#808080"><FONT FACE="Monospace"><I>/************************************************/<BR>/*&nbsp;Hacer&nbsp;una&nbsp;pausa&nbsp;en&nbsp;unidades&nbsp;de&nbsp;10ms&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/<BR>/*&nbsp;ENTRADA:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/<BR>/*&nbsp;&nbsp;&nbsp;-pausa:&nbsp;Valor&nbsp;de&nbsp;la&nbsp;pausa&nbsp;en&nbsp;decenas&nbsp;de&nbsp;ms&nbsp;*/<BR>/************************************************/<BR><FONT COLOR="#800000">void</FONT>&nbsp;<FONT COLOR="#000000">delay0</FONT>(<FONT COLOR="#800000">unsigned</FONT>&nbsp;<FONT COLOR="#800000">char</FONT>&nbsp;<FONT COLOR="#000000">pausa</FONT>)</I></FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P><FONT FACE="Arial, sans-serif">[<A HREF="download/ledp2.c.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ledp2</FONT></FONT></A>]
+				<B>Led parpadeante con temporizador</B></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Ejemplo de uso de la
+librer&iacute;a <A HREF="download/delay0.h.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">delay0.h</FONT></FONT></A>.
+Se cambia el estado del led cada medio segundo.</FONT></FONT></P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Para usar esta
+librer&iacute;a debemos incluir el fichero <A HREF="download/delay0.h.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">delay0.h</FONT></FONT></A></FONT></FONT></P>
+<TABLE WIDTH=811 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=803>
+	<THEAD>
+		<TR>
+			<TD WIDTH=803 VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P><FONT COLOR="#808080"><FONT FACE="Monospace"><I>//--&nbsp;Para&nbsp;usar&nbsp;temporizaciones&nbsp;con&nbsp;el&nbsp;timer&nbsp;0<BR><FONT COLOR="#008000">#include&nbsp;&quot;delay0.h&quot;</FONT></I></FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>y
+en el programa principal hay que configurar el temporizador 0:</FONT></FONT></P>
+<TABLE WIDTH=811 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=803>
+	<THEAD>
+		<TR>
+			<TD WIDTH=803 VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P><FONT COLOR="#808080"><FONT FACE="Monospace"><I>//--&nbsp;Configurar&nbsp;temporizador<BR>&nbsp;&nbsp;<FONT COLOR="#000000">timer0_configurar</FONT>();</I></FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El
+bucle principal es muy sencillo:</FONT></FONT></P>
+<TABLE WIDTH=811 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=803>
+	<THEAD>
+		<TR>
+			<TD WIDTH=803 VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P><FONT COLOR="#808080">&nbsp;&nbsp;&nbsp;&nbsp;<I><FONT FACE="Monospace"><FONT COLOR="#000000">delay0</FONT>(<FONT COLOR="#0000ff">50</FONT>);&nbsp;&nbsp;&nbsp;&nbsp;//--&nbsp;Pausa&nbsp;de&nbsp;0.5seg<BR>&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#000000">PORTB</FONT>^=<FONT COLOR="#008080">0x02</FONT>;&nbsp;&nbsp;//--&nbsp;Cambiar&nbsp;el&nbsp;led&nbsp;de&nbsp;estado</FONT></I></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Se
+hace una pausa de medio segundo y se cambia el estado del led. Eso se
+repite indefinidamente.</FONT></FONT></P>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>EXPERIMENTO</B>:
+&iquest;Y si queremos hacer una rutina de pausa m&aacute;s larga para
+que el led cambie de estado cada 5 segundos? <B>Ayuda</B>: siempre
+podremos hacer una funci&oacute;n que dentro de un bucle llame a
+delay0()...</FONT></FONT></P>
+<HR>
+<H2><A NAME="puerto_serie"></A>El puerto serie en el PIC</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Mediante el puerto
+serie podemos comuniar el robot con el PC. Para estos ejemplos
+debemos utilizar un terminal de comunicaciones configurado a <B>9600</B>
+baudios, como por ejemplo el <B>minicom</B> en Linux o el
+<B>Hyperterminal </B>en Windows.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P><FONT SIZE=2><FONT SIZE=3><FONT FACE="Arial, sans-serif">[</FONT></FONT><A HREF="download/sci.h.html"><FONT SIZE=3><FONT FACE="Arial, sans-serif">sci.h</FONT></FONT></A><FONT SIZE=3><FONT FACE="Arial, sans-serif">]
+				<B>Librer&iacute;a para enviar y recibir informaci&oacute;n por
+				el puerto serie, a 9600 baudios</B>.</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Esta librer&iacute;a
+permite enviar caracteres y recibir caracteres, y tambi&eacute;n
+incluye una funci&oacute;n para enviar cadenas.</FONT></FONT></P>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Para usar esta
+librer&iacute;a debemos incluir el fichero </FONT></FONT><A HREF="download/sci.h.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sci.h</FONT></FONT></A></P>
+<TABLE WIDTH=811 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=803>
+	<THEAD>
+		<TR>
+			<TD WIDTH=803 VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P><FONT COLOR="#808080"><FONT FACE="Monospace"><I>//--&nbsp;Se&nbsp;usa&nbsp;la&nbsp;libreria&nbsp;de&nbsp;comunicaciones&nbsp;serie<BR><FONT COLOR="#008000">#include&nbsp;&quot;sci.h&quot;</FONT></I></FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>y
+en el programa principal hay que configurar el puerto serie:</FONT></FONT></P>
+<TABLE WIDTH=811 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=803>
+	<THEAD>
+		<TR>
+			<TD WIDTH=803 VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P><FONT COLOR="#808080"><FONT FACE="Monospace"><I>//--&nbsp;Configurar&nbsp;las&nbsp;comunicaciones&nbsp;serie<BR>&nbsp;&nbsp;<FONT COLOR="#000000">sci_conf</FONT>();</I></FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P><FONT FACE="Arial, sans-serif">[<A HREF="download/sci-eco.c.html"><FONT FACE="Arial, sans-serif">sci-eco</FONT></A><FONT FACE="Arial, sans-serif">]</FONT>
+				<B>Hacer eco por el puerto serie de todo lo recibido</B></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejemplo que lee un
+caracter del puerto serie, cambia el estado del led, y lo vuelve a
+enviar.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para
+leer carcteres del puerto serie se utiliza la funci&oacute;n
+<FONT FACE="Courier, monospace">sci_read()</FONT></FONT></FONT></P>
+<TABLE WIDTH=811 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=803>
+	<THEAD>
+		<TR>
+			<TD WIDTH=803 VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P><FONT COLOR="#808080"><FONT FACE="Monospace"><I>//--&nbsp;Esperar&nbsp;a&nbsp;que&nbsp;llegue&nbsp;dato&nbsp;del&nbsp;PC<BR>&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#000000">c</FONT>=<FONT COLOR="#000000">sci_read</FONT>();</I></FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Al
+llamarla, el microcontrolador se queda esperando hasta que llegue un
+car&aacute;cter por el puerto serie. En ese momento lo devuelve la
+funci&oacute;n y se almacena en la variable c.</FONT></FONT></P>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para
+enviar el caracter de vuelta se llama a <FONT FACE="Courier, monospace">sci_write()</FONT>,
+pasando como par&aacute;metro el car&aacute;cter recibido</FONT></FONT></P>
+<TABLE WIDTH=811 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=803>
+	<THEAD>
+		<TR>
+			<TD WIDTH=803 VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P><FONT COLOR="#808080">&nbsp;<I><FONT FACE="Monospace">//--&nbsp;...y&nbsp;enviar&nbsp;de&nbsp;vuelta&nbsp;el&nbsp;caracter&nbsp;por&nbsp;el&nbsp;puerto&nbsp;serie<BR>&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#000000">sci_write</FONT>(<FONT COLOR="#000000">c</FONT>);</FONT></I></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>EXPERIMENTO</B>:
+Hacer que devuelva un car&aacute;cter distinto del recibido. Por
+ejemplo que le sume 1.</FONT></FONT></P>
+<P><BR><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P><FONT FACE="Arial, sans-serif">[<A HREF="download/sci-cad.c.html"><FONT FACE="Arial, sans-serif">sci-cad</FONT></A><FONT FACE="Arial, sans-serif">]</FONT>
+				<B>Enviar una cadena por el puerto serie cada vez que se recibe
+				algo</B></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Es un ejemplo muy
+parecido al sci-eco.c, pero en vez de un caracter se envia una
+cadena. Esto es muy &uacute;til para hacer programas que muestren un
+men&uacute; de opciones al usuario.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para enviar una cadena
+hay que llamar a la funci&oacute;n <FONT FACE="Courier, monospace">sci_cad()</FONT>:</FONT></FONT></P>
+<TABLE WIDTH=811 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=803>
+	<THEAD>
+		<TR>
+			<TD WIDTH=803 VALIGN=TOP BGCOLOR="#e6e6e6">
+				<P><FONT COLOR="#808080"><FONT FACE="Monospace"><I>//--&nbsp;Enviar&nbsp;la&nbsp;cadena&nbsp;por&nbsp;el&nbsp;puerto&nbsp;serie<BR>&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#000000">sci_cad</FONT>(<FONT COLOR="#ff0000">&quot;Hola&nbsp;como&nbsp;estas...&quot;</FONT>);</I></FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Esta
+funci&oacute;n s&oacute;lo es v&aacute;lida para enviar cadenas
+consantes. Si se quieren enviar cadenas localizadas en un array hay
+que invocar a la funci&oacute;n sci_cad2(). En las pr&oacute;ximas
+versiones del SDCC lo corregir&aacute;n.</FONT></FONT></P>
+<P><BR><BR>
+</P>
+<HR>
+<H2><A NAME="mezclando_todo"></A>Mezclando todo</H2>
+<P ALIGN=LEFT STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Lo
+bueno de tener peque&ntilde;os ejemplos sueltos es que se puede
+aplicar la t&eacute;cnica de CYP para programa. Es la t&eacute;cnica
+del COPY Y PASTE :-). Tomando una pieza de aqu&iacute;, otra de all&aacute;
+y a&ntilde;adiendo unas pocas cosillas m&aacute;s se pueden hacer
+programas muy interesantes.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P><FONT FACE="Arial, sans-serif">[<A HREF="download/sci-sensor.c.html"><FONT FACE="Arial, sans-serif">sci-sensor</FONT></A>]
+				<B>Enviar el estado de un sensor por el puerto serie</B></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Este ejemplo lee uno
+de los sensores (se puede especificar cu&aacute;l cambiando la
+constante SENSOR) y env&iacute;a su estado por el puerto serie. Si
+lee negro env&iacute;a la letra 'N' y si lee blanco la 'B'. Es muy
+&uacute;til para probar los sensores.</FONT></FONT></P>
+<P><BR><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P><FONT FACE="Arial, sans-serif">[<A HREF="download/sci-menu.c.html"><FONT FACE="Arial, sans-serif">sci-menu</FONT></A>]
+				<B>Mover el robot desde un men&uacute; de opciones que se ve en
+				un terminal serie</B></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Este es un ejemplo muy
+interesante. Al pulsar el bot&oacute;n de reset y comenzar a
+ejecutarse el programa, env&iacute;a un menu por el puerto serie, que
+se visualiza si tenemos abierto un terminal de comunicaciones a 9600
+baudios. Mediante estas opciones podremos mover el robot. </FONT></FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Las teclas empleadas
+son o,p,q,a y espacio.</FONT></FONT></P>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>EXPERIMENTO</B>:
+Anadir m&aacute;s opciones al programa. Por ejemplo para que el robot
+realice giros en arco, en los que una rueda est&aacute; parada y la
+otra avanzando.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P><FONT FACE="Arial, sans-serif">[<A HREF="download/secuencia.c.html"><FONT FACE="Arial, sans-serif">secuencia</FONT></A>]
+				<B>El robot realiza una secuencia pregrabada</B></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Este es uno de los
+ejemplos m&aacute;s divertidos :-). Ya sabemos c&oacute;mo mover el
+robot. Tambi&eacute;n podemos esperar un determinado tiempo. Tenemos
+todos los elementos para hacer que el robot siga una secuencia de
+movimiento pregrabada, del tipo: ir hacia adelante durante 1 segundo,
+luego girar a la izquierda durante 0.3 segundos, luego ve hacia
+tr&aacute;s...</FONT></FONT></P>
+<P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>EXPERIMENTO</B>:
+Modificar la secuencia para que describa un triangulo y que al
+terminar vuelva al punto inicial.</FONT></FONT></P>
+<P><BR><BR>
+</P>
+<HR>
+<H2><A NAME="descargas"></A>Descarga de ficheros</H2>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<DL>
+	<DD>
+	<TABLE WIDTH=858 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+		<TR>
+			<TD WIDTH=848>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>Ejemplos para
+				el skybot</B></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+	<DD>
+	<TABLE WIDTH=858 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=COLS>
+		<COL WIDTH=136>
+		<COL WIDTH=140>
+		<COL WIDTH=122>
+		<COL WIDTH=426>
+		<TBODY>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=136>
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>Fichero C</B></FONT></P>
+				</TD>
+				<TD WIDTH=140>
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>Ejecutable</B></FONT></P>
+				</TD>
+				<TD WIDTH=122>
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>HTML</B></FONT></P>
+				</TD>
+				<TD WIDTH=426>
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><B>Descripci&oacute;n</B></FONT></P>
+				</TD>
+			</TR>
+		</TBODY>
+		<TBODY>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=136>
+					<P><A HREF="download/ledon.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ledon.c</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=140>
+					<P><A HREF="download/ledon.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ledon.hex</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><A HREF="download/ledon.c.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ledon</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PUERTO B:
+					Programa &ldquo;hola mundo&rdquo;. </B>Encender el led de la
+					Skypic</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=136>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/ledp.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ledp.c</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=140>
+					<P><A HREF="download/ledp.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ledp.hex</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><A HREF="download/ledp.c.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ledp</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PUERTO B:
+					</B>Hacer que el led de la skypic parpadee</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=136>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/motor-on.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">motor-on.c</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=140>
+					<P><A HREF="download/motor-on.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">motor-on.hex</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><A HREF="download/motor-on.c.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">motor-on</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>MOTORES:
+					</B>Activar los dos motores del robot.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=136>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/motor-off.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">motor-off.c</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=140>
+					<P><A HREF="download/motor-off.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">motor-off.hex</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><A HREF="download/motor-off.c.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">motor-off</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>MOTORES:
+					</B>desactivar los dos motores del robot.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=136>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/sensor4.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sensor4.c</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=140>
+					<P><A HREF="download/sensor4.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sensor4.hex</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><A HREF="download/sensor4.c.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sensor4</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>SENSORES:
+					</B>Ejemplo de lectura del sensor 4. Su estado se refleja en el
+					led. Si lee blanco el led se apaga, si lee negro se enciente.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=136>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/sensores.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sensores.c</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=140>
+					<P><A HREF="download/sensores.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sensores.hex</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><A HREF="download/sensores.c.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sensores</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>SENSORES:
+					</B>Prueba de los 4 sensores. Se lee su estado y se env&iacute;a
+					al puerto A. Si se conectan 4 leds externos se podr&aacute; ver
+					en ellos el estado de los sensores.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=136>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/motores-sensor3.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">motores-sensor3.c</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=140>
+					<P><A HREF="download/motores-sensor3.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">motores-sensor3.hex</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><A HREF="download/motores-sensor3.c.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">motores-sensor3</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>SENSORES y
+					MOTORES: </B>Cuando el sensor 3 lee negro el robot est&aacute;
+					parado. Si lee blanco comienza a avanzar.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=136>
+					<P><A HREF="download/delay0.h"><FONT SIZE=2><FONT FACE="Arial, sans-serif">delay0.h</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=140>
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>--------------</FONT></FONT></P>
+				</TD>
+				<TD WIDTH=122>
+					<P><A HREF="download/delay0.h.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">delay0</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TEMPORIZADOR
+					0: </B>Rutina de pausa que usa el temporizador 0 (sin
+					interrupciones). Para se incluido desde nuestros programas en c.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=136>
+					<P><A HREF="download/ledp2.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ledp2.c</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=140>
+					<P><A HREF="download/ledp2.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ledp2.hex</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><A HREF="download/ledp2.c.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ledp2</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TEMPORIZADOR
+					0: </B>Se usa el temporizador 0 para hacer que el led cambie de
+					estado cada medio segundo.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=136>
+					<P><A HREF="download/sci.h"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sci.h</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=140>
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>--------------
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><A HREF="download/sci.h.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sci</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PUERTO SERIE:
+					</B>Librer&iacute;a para enviar y recibir informaci&oacute;n por
+					el puerto serie, a 9600 baudios.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=136>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/sci-eco.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sci-eco.c</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=140>
+					<P><A HREF="download/sci-eco.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sci-eco.hex</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><A HREF="download/sci-eco.c.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sci-eco</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PUERTO SERIE:
+					</B>Se hace eco de todo lo recibido por el puerto serie</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=136>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/sci-cad.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sci-cad.c</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=140>
+					<P><A HREF="download/sci-cad.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sci-cad.hex</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><A HREF="download/sci-cad.c.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sci-cad</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PUERTO SERIE:
+					</B>Enviar una cadena por el puerto serie cuando se recibe un
+					car&aacute;cter</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=136>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/sci-sensor.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sci-sensor.c</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=140>
+					<P><A HREF="download/sci-sensor.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sci-sensor.hex</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><A HREF="download/sci-sensor.c.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sci-sensor</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PUERTO SERIE y
+					SENSORES: </B>Leer el estado de un sensor y enviarlo por el
+					puerto serie</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=136>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/sci-menu.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sci-menu.c</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=140>
+					<P><A HREF="download/sci-menu.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sci-menu.hex</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><A HREF="download/sci-menu.c.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">sci-menu</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PUERTO SERIE y
+					ROBOT: </B>Mover el robot mediante un terminal de comunicaciones
+					serie, a traves de un menu</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=136>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/secuencia.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">secuencia.c</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=140>
+					<P><A HREF="download/secuencia.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">secuencia.hex</FONT></FONT></A>
+										</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><A HREF="download/secuencia.c.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">secuencia</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>ROBOT: </B>El
+					robot realiza una secuencia pregrabada</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=136>
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/pic18f258.h"><FONT SIZE=2><FONT FACE="Arial, sans-serif">pic18f258.h</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=140>
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>--------------
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=122>
+					<P><A HREF="download/pic18f258.h.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">pic18f258</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=426>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Cabecera con
+					todas las definciones de los recursos del PIC</FONT></FONT></P>
+				</TD>
+			</TR>
+
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=136 >
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/Makefile.linux"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Makefile.linux</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=140 >
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2> ..........
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=122 >
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/Makefile.linux.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Makefile.linux</FONT></FONT></A>
+					</P>
+				</TD>
+				<TD WIDTH=426 >
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejemplo de Makefile para Linux</FONT></FONT></P>
+				</TD>
+			</TR>
+
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=136 >
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/Makefile.windows"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Makefile.windows</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=140 >
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2> ..........
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=122 >
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/Makefile.windows.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Makefile.windows</FONT></FONT></A>
+					</P>
+				</TD>
+				<TD WIDTH=426 >
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Ejemplo de Makefile para Windows</FONT></FONT></P>
+				</TD>
+			</TR>
+
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=136 BGCOLOR="#ffffcc">
+					<P><FONT FACE="Arial, sans-serif"><A HREF="download/ejemplos1-linux.tgz"><FONT SIZE=2><FONT FACE="Arial, sans-serif">ejemplos1-linux.tgz</FONT></FONT></A>
+					</FONT>
+					</P>
+				</TD>
+				<TD WIDTH=140 BGCOLOR="#ffffcc">
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2> ..........
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=122 BGCOLOR="#ffffcc">
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2> ..........
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=426 BGCOLOR="#ffffcc">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TODOS LOS
+					EJEMPLOS para Linux</B>. Con Makefile y proyecto para Anjuta.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=136 BGCOLOR="#ffff99">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="download/ejemplos1-windows.zip">ejemplos1-windows.zip</A></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=140 BGCOLOR="#ffff99">
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2> ..........
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=122 BGCOLOR="#ffff99">
+					<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2> ..........
+					</FONT></FONT>
+					</P>
+				</TD>
+				<TD WIDTH=426 BGCOLOR="#ffff99">
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>TODOS LOS
+					EJEMPLOS</B> con Makefile para Windows</FONT></FONT></P>
+				</TD>
+			</TR>
+		</TBODY>
+	</TABLE>
+</DL>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<P><A HREF="../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Sesion
+3]</FONT></FONT></A></P>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="../../../personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A><A HREF="http://www.iearobotics.com/">
+</A>
+</ADDRESS>
+<P STYLE="margin-bottom: 0cm"><A HREF="../../../.."><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEAROBOTICS</FONT></FONT></A>
+</P>
+</BODY>
+</HTML>

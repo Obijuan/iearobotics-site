@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Taller de rob&oacute;tica B&aacute;sico . Sesion 3</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGED" CONTENT="20050721;19195100">
+	<META NAME="KEYWORDS" CONTENT="robotica, microcontroladores, pic, hardware">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<TABLE WIDTH=917 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+	<COL WIDTH=909>
+	<TR>
+		<TD WIDTH=909>
+			<P ALIGN=CENTER>Taller de Rob&oacute;tica B&aacute;sico - Skybot v2.0. - <B>
+			SESION 3</B></P>
+		</TD>
+	</TR>
+</TABLE>
+
+
+
+
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/sesion3-ini-fin.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=630 HEIGHT=205 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2>Objetivos</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En esta sesi&oacute;n
+empezaremos a programar el robot. Instalaremos el software necesario
+y nos familiarizaremos con &eacute;l. Aprenderemos, a base de
+ejemplos, a programar el robot. <B>&iexcl;&iexcl;Aqu&iacute; comienza
+la acci&oacute;n!!</B></FONT></FONT></P>
+<HR>
+<H2>Temario</H2>
+<UL>
+	<LI><P><A HREF="introduccion.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Introducci&oacute;n</FONT></FONT></A><FONT SIZE=2><FONT FACE="Arial, sans-serif">.</FONT></FONT></P>
+</UL>
+<UL>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Instalaci&oacute;n
+	del software necesario. [<A HREF="linux/inst-linux.html">Linux</A>]
+	[<A HREF="windows/inst-windows.html">Windows</A>]</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Probando el
+	programa &ldquo;hola mundo&rdquo;. [<A HREF="linux/linux-hola-mundo.html">Linux</A>]
+	[<A HREF="windows/windows-hola-mundo.html">Windows</A>]</FONT></FONT></P>
+	<LI><P><A HREF="explicacion-hola-mundo.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Explicaci&oacute;n
+	del programa &ldquo;hola mundo&rdquo;</FONT></FONT></A></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="motores-sensores.html">Motores
+	y sensores</A>.</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif"><A HREF="ejemplos/ejemplos-skybot-1.html">Ejemplos
+	de programaci&oacute;n</A>: Programando el Skybot</FONT></FONT></P>
+</UL>
+<HR>
+<H2>Material adicional 
+</H2>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=50% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/sesion3-material.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=357 HEIGHT=268 BORDER=0></P>
+			</TD>
+			<TD WIDTH=50%>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>1)</B>
+				Ordenador con puerto serie (o conversor USB-serie)</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=3><B>2) </B>Cinta
+				aislante negra</FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2>Manos a la obra</H2>
+<UL>
+	<LI><P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">Primero
+	hay que tener claros algunos conceptos del funcionamiento del
+	microcontrolador y de qu&eacute; es eso de la programaci&oacute;n en
+	C. <A HREF="introduccion.html">Ver esta parte de introducci&oacute;n.</A></FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Despu&eacute;s
+	instalaremos las <B>herramientas software</B> para trabajar. Para
+	este taller s&oacute;lo se ha seleccionado <B>software libre</B>,
+	tanto para <B>Linux</B> como para <B>Windows</B>. Existen algunas
+	herramientas propietarias m&aacute;s avanzadas que las que nosotros
+	usaremos, pero el software libre nos permitir&aacute; disponer de
+	las fuentes de todos los programas para poder estudiarlos, as&iacute;
+	como distribuirlos o modificarlos.</FONT></FONT></P>
+	<UL>
+		<LI><P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Usuarios
+		de <B>Linux</B>, <A HREF="linux/inst-linux.html">seguir estas
+		instrucciones</A>.</FONT></FONT></P>
+		<LI><P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Usuarios
+		de <B>Windows</B>, <A HREF="windows/inst-windows.html">seguir estas
+		instrucciones</A>.</FONT></FONT></P>
+	</UL>
+	<LI><P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para
+	comprobar que todo est&aacute; bien instalado y funcionando,
+	probaremos el programa <B>&ldquo;hola mundo&rdquo;</B>. Es el
+	programa m&aacute;s sencillo que podemos cargar en el robot, que lo
+	&uacute;nico que hacer es enceder el led que tiene.</FONT></FONT></P>
+	<UL>
+		<LI><P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Usuarios
+		de <B>Linux</B>, <A HREF="linux/linux-hola-mundo.html">seguir estas
+		instrucciones</A></FONT></FONT></P>
+		<LI><P ALIGN=JUSTIFY><FONT SIZE=2><FONT FACE="Arial, sans-serif">Usuarios
+		de <B>Windows</B>, <A HREF="windows/windows-hola-mundo.html">seguir
+		estas instrucciones</A></FONT></FONT></P>
+	</UL>
+	<LI><P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Despu&eacute;s
+	de comprobar que el <B>&ldquo;hola mundo&rdquo; </B>funciona y ver
+	que se tienen correctamente instaladas todas las herramientas,
+	veremos con un poco m&aacute;s de detalle su funcionamiento.
+	Aprenderemos el funcionamiento del puerto de entrada/salida B que es
+	el que permite conectar el &ldquo;cerebro&rdquo; con los motores y
+	sensores. <A HREF="explicacion-hola-mundo.html">Aqu&iacute; est&aacute;
+	la informaci&oacute;n</A>.</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para
+	poder programar el robot s&oacute;lo nos queda conocer un poco m&aacute;s
+	sobre el manejo de los motores y la lectura de los sensores, desde
+	el punto de vista del programador: c&oacute;mo desde el software
+	podemos controlar el hardware y que haga lo que nosotros queremos.
+	<A HREF="motores-sensores.html">Aqu&iacute; est&aacute; la
+	informaci&oacute;n</A>.</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Finalmente
+	pondremos en pr&aacute;ctica todo lo aprendido, viendo ejemplos en C
+	para programar todos los recursos del microcontrolador y controlar
+	el robot. Daremos muchos ejemplos muy sencillos, para que a partir
+	de ellos se comprenda el funcionamiento y sea muy sencillo construir
+	nuestros propios programas. <A HREF="ejemplos/ejemplos-skybot-1.html">Aqu&iacute;
+	est&aacute;n todos los ejemplos</A>.</FONT></FONT></P>
+</UL>
+<HR>
+<H2>Al finalizar la sesion 
+</H2>
+<UL>
+	<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>...Tendremos el
+	software instalado y probado y ya habremos hecho muchas cosas con el
+	robot. Sabremos c&oacute;mo moverlo y c&oacute;mo leer los sensores.
+	Todo est&aacute; listo para empezar a programar comportamientos...</FONT></FONT></P>
+</UL>
+<HR>
+<H2>Enlaces</H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="www.microchip.com">Microchip</A>,
+	el fabricante de los microcontroladores PIC</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="http://www.iearobotics.com/personal/andres/proyectos/picmin/download/manuales/manual16f87x.pdf">Hoja
+	de datos del pic16f876a</A></FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="http://sdcc.sourceforge.net/">SDCC</A>,
+	compilador de C</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="http://gputils.sourceforge.net/">Gputils</A>,
+	utilidades de GNU para los PICs</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="http://www.pnotepad.org/">Programmers
+	Notepad</A> (PN), un editor libre para Windows.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><A HREF="http://pikdev.free.fr/">Pikdev</A>,
+	un IDE para la programaci&oacute;n de los pics</FONT></FONT></P>
+</UL>
+<HR>
+<P><A HREF="../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[pagina
+principal]</FONT></FONT></A></P>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="../../../personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A><A HREF="http://www.iearobotics.com/">
+</A>
+</ADDRESS>
+<P STYLE="margin-bottom: 0cm"><A HREF="../../../.."><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEAROBOTICS</FONT></FONT></A>
+</P>
+</BODY>
+</HTML>

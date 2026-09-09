@@ -1,0 +1,321 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Taller Robotica B&aacute;sica- Sesi&oacute;n 4</TITLE>
+	<META NAME="KEYWORDS" CONTENT="robotica, microcontroladores, pic, hardware">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<CENTER>
+
+<TABLE WIDTH=917 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+	<COL WIDTH=909>
+	<TR>
+		<TD WIDTH=909>
+			<P ALIGN=CENTER>Taller de Rob&oacute;tica B&aacute;sico - Skybot v2.0. -
+			SESION 4. <B>Preparaci&oacute;n de los sensores de contacto </B></P>
+
+		</TD>
+	</TR>
+</TABLE>
+
+</CENTER>
+<CENTER>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD>
+				<P><A HREF="#introduccion">[Introducci&oacute;n]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#materiales">[Materiales]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#herramientas">[Herramientas]</A></P>
+			</TD>
+			
+			<TD>
+				<P><A HREF="#construccion">[Construcci&oacute;n]</A></P>
+			</TD>
+			<TD>
+				<P><A HREF="#software">[Software]</A></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR><IMG SRC="images/skybot-frontal.jpg" NAME="Imagen1" ALIGN=BOTTOM  BORDER=0>
+</P>
+
+<!-- Introducción --><BR><BR>
+<H2><A NAME="introduccion"></A>Introducci&oacute;n </H2>
+<P STYLE="margin-bottom: 0cm">Vamos a colocar los sensores de
+contacto o <B>bumpers</B> en el robot. Los situaremos en la parte
+frontal y nos servir&aacute;n para detectar obst&aacute;culos delante
+del robot. El funcionamiento de un Bumper es muy sencillo,
+b&aacute;sicamente es un interruptor, de tal manera que al apretar la
+palanca se cierra un circuito. Nosotros utilizaremos esto para
+introducir por uno de los pines del micro un &quot;1&quot; o un &quot;0&quot;
+seg&uacute;n tengamos o no apretado el bumper. 
+</P>
+<br>
+
+<hr>
+<!-- materiales -->
+<TABLE>
+<TR>
+<TD>
+<H2><A NAME="materiales"></A>Materiales </H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm">2 Bumpers 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm">2 cables rojos de 25 cm de
+	longitud 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm">1 cable negro de 25 cm de longitud
+		</P>
+	<LI><P STYLE="margin-bottom: 0cm">4 tornillos de m&eacute;trica 3mm
+	y 20 mm de longitud 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm">4 tuercas de m&eacute;trica 3mm 
+	</P>
+</UL>
+</TD>
+<TD><IMG SRC="images/material.jpg" NAME="materiales" align="right"></IMG></TD>
+</TR>
+</TABLE>
+
+<hr>
+<!-- herramientas -->
+<TABLE>
+<TR>
+<TD>
+<H2><A NAME="herramientas"></A>Herramientas </H2>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm">Soldador y esta&ntilde;o</P>
+	<LI><P STYLE="margin-bottom: 0cm">Pelacables y soporte soldador (opcionales)</P>
+	<LI><P STYLE="margin-bottom: 0cm">Alicate</P>
+</UL>
+</TD>
+<TD><IMG SRC="images/herramientas.jpg" NAME="Herramientas"></IMG></TD>
+</TR>
+</TABLE>
+
+
+<hr>
+<!-- Construcción -->
+<H2><A NAME="construccion"></A>Construcci&oacute;n</H2>
+<P ALIGN=CENTER><IMG SRC="images/bumper-1.jpg" NAME="Imagen2" ALIGN=BOTTOM ></P>
+<P>Como se puede apreciar en la figura, cada bumper tiene tres
+conectores. Si apretamos el pulsador lo que estamos haciendo es
+cortocircuitar el conector 1 (abajo) con el conector 4 (lateral
+inferior). Si no apretamos el pulsador el conector 1 estar&aacute;
+unido con el 2 (lateral superior). 
+</P>
+<P>Nosotros vamos a utilizar un circuito de Pull-UP que lleva
+incorporada la SKY293, por lo que no es necesario utilizar los tres
+conectores, nos bastar&aacute; con dos. Por lo tanto vamos a proceder
+a eliminar el conector 4 (lateral inferior) para que no nos moleste
+al montar los bumpers en la estructura.  Haremos esto en los dos bumpers. <BR>
+Luego, soldaremos en el bumper 1 un cable rojo en el conector 1 y uno  negro en el conector 2. En el bumper 2 s&oacute;lo se soldar&aacute; uno rojo en el conector 1.
+El proceso se muestra en las siguientes figuras:
+</P>
+<TABLE border=1>
+<TR>
+<TD><B>Paso 1) </B>Quitamos el conector 4</TD>
+<TD><B>Paso 2) </B>Bumper con conector 1 y 2</TD>
+</TR>
+<TR>
+<TD align="center"><IMG SRC="images/bumper-2.jpg" NAME="Imagen2" ></TD>
+<TD align="center"><IMG SRC="images/bumper-3.jpg" NAME="Imagen3"></TD>
+</TR>
+<TR>
+<TD><B>Paso 3) </B>Soldamos los cables en los conectores. <BR>El bumper 1 lleva un cable rojo y otro negro.<BR>El bumper 2 solo uno rojo.</TD>
+<TD><B>Paso 4) </B>Detalle soldaduras</TD>
+</TR>
+<TR>
+<TD align="center"><IMG SRC="images/bumper-4.jpg" NAME="Imagen4" ></TD>
+<TD align="center"><IMG SRC="images/bumper-5.jpg" NAME="Imagen5"></TD>
+</TR>
+</TABLE>
+<BR>
+A continuaci&oacute;n montaremos los bumpers en la estructura del robot. El bumper uno lo situamos a la derecha y el dos a la izquierda. Una vez que los hayamos atornillado
+soldaremos el conector 2 de ambos bumpers. El proceso se describe gr&aacute;ficamente a continuaci&oacute;n:
+</P>
+<TABLE border=1>
+<TR>
+<TD><B>Paso 5) </B>Bumper 1 Derecha</TD>
+<TD><B>Paso 6) </B>Bumper 2 Izquierda</TD>
+</TR>
+<TR>
+<TD align="center"><IMG SRC="images/bumper-6.jpg" NAME="Imagen6" ></TD>
+<TD align="center"><IMG SRC="images/bumper-7.jpg" NAME="Imagen7"></TD>
+</TR>
+<TR>
+<TD><B>Paso 7) </B>Unimos el conector 2 de ambos bumpers. <br>Para ello soldamos los conectores.</TD>
+<TD><B>Paso 8) </B>Detalle soldadura</TD>
+</TR>
+<TR>
+<TD align="center"><IMG SRC="images/bumper-8.jpg" NAME="Imagen8" ></TD>
+<TD align="center"><IMG SRC="images/bumper-9.jpg" NAME="Imagen9"></TD>
+</TR>
+</TABLE>
+<BR>
+Para terminar hay que conectar los tres cables a las clemas de la SKY293. Antes de eso, tendremos que pasar los cablecillos por los pasamuros de la estructura mec&aacute;nica.
+Finalmente conectaremos el cable negro a la clema de alimentacion de los bumpers, y en concreto al pin GND.
+Luego el cable rojo del bumper 1 al pin AN1 y el cable rojo del bumper 2 al pin AN2.
+<br>Una vez m&aacute;s podemos ver el proceso gr&aacute;ficamente:
+<p>
+<TABLE border=1>
+<TR>
+<TD colspan=2 align="center"><B>Paso 9) </B>Conexi&oacute;n de los bumpers. </TD>
+</TR>
+<TR>
+<TD colspan=2 align="center"><IMG SRC="images/sky293-analog.png" NAME="Imagen9" ></TD>
+</TR>
+<TR>
+<TD><B>Paso 10) </B>Pasar cables por los pasamuros.</TD>
+<TD><B>Paso 11) </B>Montamos la SKYPIC</TD>
+</TR>
+<TR>
+<TD align="center"><IMG SRC="images/bumper-10.jpg" NAME="Imagen10" ></TD>
+<TD align="center"><IMG SRC="images/bumper-13.jpg" NAME="Imagen13"></TD>
+</TR>
+<TR>
+<TD colspan=2><BR><B>Paso 12) </B>Conectar los <B>PUERTOS A</B> de cada tarjeta mediante el segundo cable de BUS.<BR></TD>
+</TR>
+
+
+
+</TABLE>
+<BR>
+
+<!-- software -->
+<HR>
+</P>
+<H2><A NAME="software"></A>Software</H2>
+<P>En la siguiente tabla vemos la correspondencia entre las clemas de la SKY293 y el Puerto A de la SKYPIC. Nosotros vamos a leer el estado de los bumpers por el <b>puerto A</B> del PIC.
+En ese puerto hay 6 entradas que se pueden configurar como entradas anal&oacute;gicas o como IOs digitales. <b>Los bumpers son un sensor de entrada digital</B>.
+</P>
+<P align=center>
+<Table border=1>
+<TR>
+	<TD><B>SKY293 Puerto A</B></TD>
+	<TD><B>SKYPIC Puerto A</B></TD>
+	<TD><B>Descripci&oacute;n</B></TD>
+</TR>
+<TR>
+	<TD>AN0</TD>
+	<TD>PA0</TD>
+	<TD>---</TD>
+</TR>
+<TR>
+	<TD>AN1</TD>
+	<TD>PA1</TD>
+	<TD>Cable rojo bumper 1 Derecho</TD>
+</TR>
+<TR>
+	<TD>AN2</TD>
+	<TD>PA2</TD>
+	<TD>Cable rojo bumper 2 Izquierdo</TD>
+</TR>
+<TR>
+	<TD>AN3</TD>
+	<TD>PA3</TD>
+	<TD>---</TD>
+</TR>
+<TR>
+	<TD>TO</TD>
+	<TD>PA4</TD>
+	<TD>---</TD>
+</TR>
+
+<TR>
+	<TD>AN4</TD>
+	<TD>PA5</TD>
+	<TD>---</TD>
+</TR>
+<TR>
+	<TD><B>Clema alimentacion</B></TD>
+	<TD></TD>
+	<TD></TD>
+</TR>
+<TR>
+	<TD>GND</TD>
+	<TD>Cable negro bumpers</TD>
+</TR>
+<TR>
+	<TD>VCC</TD>
+	<TD>NC</TD>
+</TR>
+</TABLE>
+</P>
+<BR><BR>
+Para la programaci&oacute;n de los BUMPERS, siempre y cuando hayamos seguido las instrucciones de esta p&aacute;gina, tenemos que considerar los siguientes estados:<BR>
+<BR>
+<P align=center>
+<TABLE border=1>
+<TR><TD><B>Estado<B></TD><TD><B>Significado</B></TD></TR>
+<TR><TD>Apretado</TD><TD>bit de entrada a <B>1</B></TD></TR>
+<TR><TD>Libre</TD><TD>bit de entrada a <B>0</B></TD></TR>
+</TABLE>
+
+<BR><BR>
+<TABLE WIDTH=742 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb">
+<TR>
+	<TD WIDTH=734>
+		<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Ejemplos de utilizaci&oacute;n de los Bumpers</B></FONT></FONT></P>
+	</TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=741 BORDER=0 CELLPADDING=2 CELLSPACING=0><COL WIDTH=150><COL WIDTH=583>
+<TR BGCOLOR="#cabeeb">
+	<TD WIDTH=150>
+	<P><A HREF="./download/bumper.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">bumper.c</FONT></FONT></A></P>
+	</TD>
+	
+	<TD WIDTH=150>
+	<P><A HREF="./download/bumper.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">bumper.hex</FONT></FONT></A></P>
+	</TD>
+	
+	<TD WIDTH=150>
+	<P><A HREF="./download/bumper.c.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">bumper</FONT></FONT></A></P>
+	</TD>
+	
+	<TD WIDTH=583>
+	<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Al pulsar el bumper derecho se apaga el LED</FONT></FONT></P>
+	</TD>
+</TR>
+<TR BGCOLOR="#abbeeb">
+	<TD WIDTH=150>
+	<P><A HREF="./download/contacto.c"><FONT SIZE=2><FONT FACE="Arial, sans-serif">contacto.c</FONT></FONT></A></P>
+	</TD>
+	
+	<TD WIDTH=150>
+	<P><A HREF="./download/contacto.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">contacto.hex</FONT></FONT></A></P>
+	</TD>
+	<TD WIDTH=150>
+	<P><A HREF="./download/contacto.c.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">contacto</FONT></FONT></A></P>
+	</TD>
+	
+	<TD WIDTH=583>
+	<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El robot se mueve hasta que detecta un obst&aacute;culo y lo persigue</FONT></FONT></P>
+	</TD>
+</TR>
+</TABLE>
+</P>
+
+
+
+<HR>
+<A href="index.html">[Sesi&oacute;n 4]</a>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif">
+<A HREF="http://www.iearobotics.com/">IEA ROBOTICS</A> </FONT>
+<ADDRESS><FONT FACE="Arial, sans-serif">P&aacute;gina creada por
+<A HREF="http://www.iearobotics.com/personal/andres/index.html">Andr&eacute;s Prieto-Moreno Torres</A> </P></FONT>
+</ADDRESS>
+</BODY>
+</HTML>

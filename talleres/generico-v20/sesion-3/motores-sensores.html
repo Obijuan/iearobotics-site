@@ -1,0 +1,334 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Taller de robotica b&aacute;sico. Sesion 3. Motores y sensores</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGED" CONTENT="20050720;21225800">
+	<META NAME="KEYWORDS" CONTENT="robotica, microcontroladores, pic, hardware">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+
+<TABLE WIDTH=917 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+	<COL WIDTH=909>
+	<TR>
+		<TD WIDTH=909>
+			<P ALIGN=CENTER><FONT FACE="Arial, sans-serif">Taller de
+			Rob&oacute;tica B&aacute;sico - Skybot v2.0. - SESION 3 - <B> Motores y sensores</B></FONT></P>
+
+		</TD>
+	</TR>
+</TABLE>
+
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Objetivos</FONT></H2>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Conocer
+c&oacute;mo funcionan los motores y los sensores desde un punto de
+vista del programador. A este nivel no nos importan los detalles
+f&iacute;sicos, ni el tipo de motor, ni el tipo de sensores.
+Simplemente necesitamos conocer c&oacute;mo podemos mover los motores
+y c&oacute;mo leer los sensores para programar nuestros algoritmos de
+comportamiento del robot.</FONT></FONT></P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">El PUERTO B en el Skybot</FONT></H2>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>La
+tarjeta SKY293 se conecta a la Skypic a trav&eacute;s del <B>PUERTO B</B>.
+Incluye cuatro sensores y dos motores. Para los sensores s&oacute;lo
+se necesita 1 bit y para los motores cuatro, dos para cada motor. Se
+accede a estos perif&eacute;ricos por los bits del puerto B que se
+indican en esta figura.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/ejemplos_portb_skybot.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=647 HEIGHT=134 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Los bits <B>RB0</B>,
+<B>RB5</B>, <B>RB6</B> y <B>RB7</B> hay que configurarlos como
+<B>entradas</B> para poder leer los sensores. Los bits <B>RB1</B>,
+<B>RB2</B>, <B>RB3</B> y <B>RB4</B> hay que configurarlos como
+<B>salidas</B> para poder mover los motores.</FONT></FONT></P>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En la
+tarjeta SKY293 hay <B>4 switches</B> que permiten desconectar los
+sensores por si se quieren utilizar los bits del puerto B para otros
+prop&oacute;sitos. En la figura se muestra qu&eacute; n&uacute;mero
+de switch est&aacute; asociado a qu&eacute; sensor. Cuando los
+switches est&aacute;n conectado (posi&oacute;n ON, hacia abajo) los
+sensores est&aacute;n conectados al puerto B. En caso contrario est&aacute;n
+desconectados.</FONT></FONT></P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">El control de los motores</FONT></H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Los motores se
+controlan de manera digital. Para cada uno de ellos hay dos bits, uno
+que indica si el motor est&aacute; encendido o apagado (ON/OFF) y el
+otro el sentido de giro.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/ejemplos_motores.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=499 HEIGHT=144 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Seg&uacute;n
+las combinaciones de bits que enviemos al puerto B, cambiaremos el
+estado de los motores. Si las conexiones se han realizado como se ha
+descrito en la documentaci&oacute;n del taller los valores que hay
+que enviar para mover el robot ser&aacute;n los mostrados en la
+siguiente tabla. Si se han hecho otras conexiones entonces los
+valores ser&aacute;n diferentes y el usuario los tendr&aacute; que
+buscar.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=43*>
+	<COL WIDTH=43*>
+	<COL WIDTH=43*>
+	<COL WIDTH=43*>
+	<COL WIDTH=43*>
+	<COL WIDTH=43*>
+	<THEAD>
+		<TR VALIGN=TOP>
+			<TH WIDTH=17% BGCOLOR="#e6e6e6">
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Acci&oacute;n </FONT></FONT>
+				</P>
+			</TH>
+			<TH WIDTH=17% BGCOLOR="#e6e6e6">
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>RB4</FONT></FONT></P>
+			</TH>
+			<TH WIDTH=17% BGCOLOR="#e6e6e6">
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>RB3</FONT></FONT></P>
+			</TH>
+			<TH WIDTH=17% BGCOLOR="#e6e6e6">
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>RB2</FONT></FONT></P>
+			</TH>
+			<TH WIDTH=17% BGCOLOR="#e6e6e6">
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>RB1</FONT></FONT></P>
+			</TH>
+			<TH WIDTH=17% BGCOLOR="#e6e6e6">
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Valor en puerto B</FONT></FONT></P>
+			</TH>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR>
+			<TD WIDTH=17% VALIGN=TOP>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Adelante</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=BOTTOM SDVAL="0" SDNUM="1034;">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=BOTTOM SDVAL="0" SDNUM="1034;">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=BOTTOM SDVAL="1" SDNUM="1034;">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=BOTTOM SDVAL="1" SDNUM="1034;">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=TOP>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>0x1C</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=17% VALIGN=TOP>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Atras</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=BOTTOM SDVAL="1" SDNUM="1034;">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=BOTTOM SDVAL="1" SDNUM="1034;">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=BOTTOM SDVAL="1" SDNUM="1034;">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=BOTTOM SDVAL="1" SDNUM="1034;">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=TOP>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>0x16</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=17% VALIGN=TOP>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Izquierda</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=BOTTOM SDVAL="1" SDNUM="1034;">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=BOTTOM SDVAL="0" SDNUM="1034;">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=BOTTOM SDVAL="1" SDNUM="1034;">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=BOTTOM SDVAL="1" SDNUM="1034;">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=TOP>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>0x1E</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=17% VALIGN=TOP>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Derecha</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=BOTTOM SDVAL="0" SDNUM="1034;">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=BOTTOM SDVAL="1" SDNUM="1034;">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=BOTTOM SDVAL="1" SDNUM="1034;">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=BOTTOM SDVAL="1" SDNUM="1034;">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=TOP>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>0x14</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=17% VALIGN=TOP>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Parado</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=BOTTOM SDVAL="0" SDNUM="1034;">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=BOTTOM SDVAL="0" SDNUM="1034;">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=BOTTOM SDVAL="0" SDNUM="1034;">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=BOTTOM SDVAL="0" SDNUM="1034;">
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=17% VALIGN=TOP>
+				<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>0x00</FONT></FONT></P>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Los sensores de infrarrojos</FONT></H2>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Los
+sensores de infrarrojos <B>CNY70</B> tienen incorporado un emisor y
+un receptor en el mismo encapsulado. Est&aacute;n constantemente
+emitiendo luz infrarroja. Si a poca distancia existe una superficie
+blanca, la luz se refleja y es captada por el receptor. Si la
+superficie es negra, absorbe la mayor parte de la luz y el detector
+no recibe nada.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/ejemplos_sensores.png" NAME="Imagen3" ALIGN=MIDDLE WIDTH=482 HEIGHT=245 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En la siguiente tabla
+se resume el valor leido en el bit correspondiente del puerto B de la
+Skypic seg&uacute;n el color detectado por el sensor:</FONT></FONT></P>
+<DL>
+	<DL>
+		<DL>
+			<DL>
+				<DL>
+					<DL>
+						<DD>
+						<TABLE WIDTH=484 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+							<COL WIDTH=77>
+							<COL WIDTH=389>
+							<THEAD>
+								<TR VALIGN=TOP>
+									<TH WIDTH=77 BGCOLOR="#e6e6e6">
+										<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Color</FONT></FONT></P>
+									</TH>
+									<TH WIDTH=389 BGCOLOR="#e6e6e6">
+										<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Lectura del
+										sensor (Bit del puerto B)</FONT></FONT></P>
+									</TH>
+								</TR>
+							</THEAD>
+							<TBODY>
+								<TR>
+									<TD WIDTH=77 VALIGN=TOP>
+										<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Blanco</FONT></FONT></P>
+									</TD>
+									<TD WIDTH=389 VALIGN=BOTTOM SDVAL="0" SDNUM="1034;">
+										<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>0</FONT></FONT></P>
+									</TD>
+								</TR>
+								<TR>
+									<TD WIDTH=77 VALIGN=TOP>
+										<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Negro</FONT></FONT></P>
+									</TD>
+									<TD WIDTH=389 VALIGN=BOTTOM SDVAL="1" SDNUM="1034;">
+										<P ALIGN=CENTER><FONT FACE="Arial, sans-serif"><FONT SIZE=2>1</FONT></FONT></P>
+									</TD>
+								</TR>
+							</TBODY>
+						</TABLE>
+					</DL>
+				</DL>
+			</DL>
+		</DL>
+	</DL>
+</DL>
+<P><BR><BR>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Programaci&oacute;n del robot</FONT></H2>
+<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para
+mover los motores y por tanto controlar el robot s&oacute;lo hay que
+dar valors a los bits RB4, RB3, RB2 y RB1 del puerto B del PIC. Es
+decir, el robot se mueve escribiendo valores en el puerto B. Para
+leer los sensores, s&oacute;lo hay que leer el puerto B y conocer en
+qu&eacute; estado est&aacute;n los bits RB0, RB5, RB6 y RB7.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>La manera de programar
+comportamientos sencillos del robot es el siguiente:</FONT></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Leer los sensores
+	(lectura del puerto B)</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Procesar su valor
+	(hacer c&aacute;lculos)</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Mover los motores
+	(escritura en el puerto B)</FONT></FONT></P>
+</UL>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>&iexcl;&iexcl;Con
+s&oacute;lo saber c&oacute;mo leer del puerto B y c&oacute;mo
+escribir en &eacute;l ya podremos implementar comportamientos
+sencillos!!!!</B></FONT></FONT></P>
+<HR>
+<P><A HREF="index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Sesion
+3]</FONT></FONT></A></P>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="../../../personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A><A HREF="http://www.iearobotics.com/">
+</A>
+</ADDRESS>
+<P STYLE="margin-bottom: 0cm"><A HREF="../../../.."><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEAROBOTICS</FONT></FONT></A>
+</P>
+</BODY>
+</HTML>

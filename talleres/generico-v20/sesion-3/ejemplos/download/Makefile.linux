@@ -1,0 +1,44 @@
+# **************************************************************************
+# Fichero makefile.
+# --------------------------------------------------------------------------
+# Licencia GPL. Juan Gonzalez Gomez
+#		Ricardo Gomez Gonzalez
+# --------------------------------------------------------------------------
+#
+#***************************************************************************
+
+#-- Compilador
+CC = sdcc
+
+CFLAGS = -mpic16
+
+#-- Ejemplos para el PUERTO B
+NAME1=ledon
+
+all: $(NAME1).hex 
+
+
+#---------------------------
+#       OBJETIVOS
+#---------------------------
+#-- Para programas que tengan mas de un fichero fuente
+#$(NAME1).hex: $(OBJ1)
+#	    gplink -o $(NAME1).hex $(OBJ1)
+			
+
+#--------------------
+#- LIMPIEZA
+#--------------------
+clean:
+	  rm -f *.o *.hex *.lst *.p *.d *.asm *.cod
+
+#-----------------------
+# REGLAS GENERICAS
+#-----------------------
+#-- Obtencion de los ficheros objeto .o
+.c.o: 
+	        $(CC) -S $(CFLAGS) $<  
+	        gpasm -c $*.asm 
+					
+#-- Obtencion de los ficheros ejecutables
+%.hex : %.o; gplink -o $@ -a inhx8m $<  -o $@ pic18f258.lib

@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Taller de robotica. Sesion 3. &quot;Hola mundo&quot; en Windows</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGED" CONTENT="20050721;8542600">
+	<META NAME="KEYWORDS" CONTENT="robotica, microcontroladores, pic, hardware, linux">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+
+<TABLE WIDTH=917 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+	<COL WIDTH=909>
+	<TR>
+		<TD WIDTH=909>
+			<P ALIGN=CENTER>Taller de Rob&oacute;tica B&aacute;sico - Skybot v2.0. -
+			SESION 3 - Windows. <B>&ldquo;Hola mundo&rdquo;</B></P>
+		</TD>
+	</TR>
+</TABLE>
+
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/skybot-portatil-windows.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Introducci&oacute;n</FONT></H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En este capitulo
+editaremos, compilaremos y cargaremos en el robot el programa mas
+sencillo posible: el famoso &ldquo;<B>hola mundo</B>&rdquo;. Cuando
+programamos un ordenador, el programa &ldquo;hola mundo&rdquo; es el
+programa m&aacute;s sencillo que imprime por pantalla la frase &ldquo;Hola
+mundo!&rdquo;.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>En nuestro caso, vamos
+a programar un microcontrolador, que no tiene pantalla. Tampoco tiene
+teclado. Pero tiene otros perif&eacute;ricos, como por ejemplo un
+led. El programa &ldquo;hola mundo&rdquo; lo &uacute;nico que har&aacute;
+ser&aacute; <B>enceder el led</B> de la Skypic. Es la manera en la
+que el micro nos dir&aacute;: &ldquo;Estoy vivo y he ejecutado tu
+programa&rdquo;.</FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Nos centraremos en que
+el programa hola mundo funcione en nuestro robot. En los siguiente
+cap&iacute;tulos veremos c&oacute;mo funciona.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="./images/hola_mundo_skybot_led.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<HR>
+<H2><A NAME="Editor"></A><A NAME="Editor de textos"></A><FONT FACE="Arial, sans-serif">Editando
+el c&oacute;digo y compilando</FONT></H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>&iexcl;Manos a la
+obra! Vamos a charrear. Primero nos descargamos el programa &ldquo;hola
+mundo&rdquo;.</FONT></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Bajar el paquete
+	<A HREF="download/hola_mundo_windows.zip"><SPAN STYLE="font-weight: medium">hola-mundo-windows.zip</SPAN></A>. Al descomprimirlo veremos cuatro archivos: <BR><B>ledon.c</B>: El programa principal escrito en C. <BR><B>Makefile</B>: El fichero con las reglas para compilar el programa. <BR><B>pic18f2580.h</B>: El fichero con la declaraci&oacute;n de puertos y registros del PIC, que os facilita la programaci&oacute;n.<BR><B>pic18f2580.lib</B>: Con las librer&iacute,as necesarias para poder compilar nuestros programas.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Descomprimelo en
+	la carpeta que has debido crear antes que se llame &ldquo;
+	<B>C:\robotica\programas</B>&rdquo;. Y podeis ver lo que hay.</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Ahora vamos a
+	configurar el <B>Programmer Notepad</B> para su uso. <A HREF="config-PN.html">La
+	guia de configuraci&oacute;n est&aacute; aqu&iacute;</A>.</FONT></FONT></P>
+	<LI><P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Ahora ejecutamos
+	el <B>Programmers Notepad. </B>Si quereis podeis ver un pantallazo
+	del <A HREF="images/pn.jpg">Programmers notepad aqu&iacute;.</A></FONT></FONT></P>
+</UL>
+<UL>
+	<UL>
+		<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Pinchamos en &ldquo;<B>File</B>&rdquo;,
+		y despues en la opci&oacute;n &ldquo;<B>Open</B>&rdquo;, donde nos
+		iremos a la ruta donde hemos almacenado el paquete
+		<B>hola-mundo-windows. Zip( C:\robotica\programas\) </B>. All&iacute;
+		abrimos el archivo que se llama &ldquo;<B>ledon.c</B>&rdquo;</FONT></FONT></P>
+	</UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para compilar el
+	programa, solo tienes que pulsar en el men&uacute; &ldquo;<B>Tools</B>&rdquo;,
+	la opci&oacute;n &ldquo;<B>make</B>&rdquo; que es la que hemos
+	configurado antes. Y ya tenemos nuestro programa compilado y listo
+	para descargar en el robot. Si nos fijamos en la carpeta del proyecto veremos que ahora hay bastantes archivos. El que nos interesa es el <B>ledon.hex</B> que contiene el c&oacute;digo ejecutable para el PIC y que ser&aacute; el que descarguemos utilizando el Tiny_PIC_downloader.exe</FONT></FONT></P>
+
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Al ejecutar la opci&oacute;n <b>make</b> estamos 
+	accediendo al fichero <b>Makefile</b> que hay en el directorio del ejemplo y que contiene las instrucciones para compilar el programa. Es importante que los PATHs y nombres que aparecen en ese fichero se coincidan con los del proyecto.<BR><BR> Por ejemplo, en el proyecto <I>Hola Mundo</I> el programa principal se llama <B>ledon.c</B>, por eso en el Makefile aparece <B>NAME1=ledon</B> (sin la extensi&oacute;n). Si queremos compilar otro, tendremos que cambiar el nombre que aparece en NAME1 por el nuevo.
+<BR><BR>Continuando con el fichero destacamos l&iacute;nea del final: <I>%.hex : ... c:\robotica\gputils\lkr\18f2580.lkr -o $@ pic18f258.lib</I>. Si hemos instalado el entorno manteniendo los PATH de la gu&iacute;a de instalaci&oacute;n la direcci&oacute;n que aparece es correcta, en caso contrario tendremos que buscar el PATH al fichero 18f2580.lkr y corregirlo en el Makefile.<BR><BR>
+Por &uacute;ltimo, el proceso de compilaci&oacute;n usa el SDCC, GPASM y GPLINK. Estos programas tienen que estar en el PATH de Windows.
+<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Para <B>crar un proyecto nuevo</B> se recomienda copiar el Makefile del ejemplo <I>Hola Mundo</I> y adem&aacute;s <B>copiar</B> los ficheros <B>pic18f2580.h</B> y <B>pic18f258.lib</B> , que contine todas las declaraciones de los PUERTOS y REGISTROS del PIC. Sin estos archivos no podreis hacer PORTB=0x02 para encender el LED, ya que al compilar os saldr&aacute; un error diciendo que no sabe que es PORTB.
+
+</UL>
+<HR>
+<H2><A NAME="gputils"></A><FONT FACE="Arial, sans-serif">Descargando
+en el robot</FONT></H2>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Conectar el robot
+	al puerto serie del PC</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Alimentarlo</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="../linux/images/hola_mundo_skybot_ready.png" NAME="Imagen3" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Arrancar el
+	cargador</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Selecionar el
+	fichero <B>ledon.hex</B></FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Seleccionar el
+	puerto serie (<B>COMX</B>) y una configuraci&oacute;n de <B>115200
+	baudios</B></FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/tiny_pic_loader_window_pant.png" NAME="Imagen4" ALIGN=MIDDLE WIDTH=423 HEIGHT=220 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Manteniendo pulsado el bot&oacute;n
+de reset</B> pulsar en el bot&oacute;n <B>Write Flash</B> y el ledon.hex se cargar&aacute;. <B>&iexcl;Ahora el led
+est&aacute; encendido!</B>. Si quitamos la alimentaci&oacute;n y la
+volvemos a poner, es decir, reiniciamos a nuestro micro, se volver&aacute;
+a ejecutar el &uacute;ltimo programa cargado. Los programas se graban
+en la memoria flash, que es <B>no vol&aacute;til.</B></FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>&iexcl;&iexcl;Ya
+hemos programado el robot!!</B><BR><BR>
+Si en este proceso nos sale un mesaje de error diciendo que <B>no se encuentra el Bootloader</B> hay que revisar tres cosas:<BR>
+1. Que el robot esta alimentado a 5v o 6v.<BR>
+2. Que estamos dando al pulsador correcto, es decir al de <B>Reset</B><BR>
+3. Que esta conectado el cable serie al conector telef&oacute;nico marcado como PC (el de la derecha junto a la clema de alimentaci&oacute;n).
+<BR><BR>Si todav&iacute;a sigue fallando es muy probable que se <B>haya desprogramado</B> el bootloader interno. El Skybot lo trae grabado por defecto pero en caso de no tenerlo se tiene que volver a grabar. Las instrucciones para ello est&aacute;n <a href="http://www.iearobotics.com/proyectos/skypic/bootloader/bootloader.html">aqu&iacute;</a>.Si estamos en un taller comentarlo a alg&uacute;n instructor para que lo haga.
+
+
+</FONT></FONT></P>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A HREF="../index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Sesion
+III]</FONT></FONT></A> 
+</P>
+<P STYLE="margin-bottom: 0cm"><A HREF="mailto:Jose Pichardo &lt;tartesos2@telefonica.net&gt;"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Jose
+Pichardo Gallardo</FONT></FONT></A></P>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="http://www.iearobotics.com/personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A>
+<BR><A HREF="http://www.iearobotics.com/personal/andres/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Andr&eacute;s Prieto-Moreno
+</FONT></FONT></A> 
+<BR><A HREF="http://www.iearobotics.com/personal/ricardo/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Ricardo G&oacute;mez
+</FONT></FONT></A> 
+<BR><A HREF="http://www.iearobotics.com"><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEAROBOTICS</FONT></FONT></A>
+</ADDRESS>
+</BODY>
+</HTML>

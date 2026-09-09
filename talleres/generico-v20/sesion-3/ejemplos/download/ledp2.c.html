@@ -1,0 +1,69 @@
+
+<html>
+<head>
+<title>ledp2.c</title>
+<meta name="generator" content="c2html 0.9.5">
+<meta name="date" content="2006-04-29T19:07:44+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/*************************************************************************** */</font>
+<font color="#B22222">/* delay0.c      Mayo-2006                                                   */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Ejemplo para la tarjeta SKYPIC                                            */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Utilizacion del temporizador 0 para generar una pausa de 10ms y           */</font>
+<font color="#B22222">/* obtener una rutina de delay en unidades de 10ms                           */</font>
+<font color="#B22222">/* No se utilizan interrupciones                                             */</font>
+<font color="#B22222">/* El temporizador 0 es de 8 bits                                            */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Se hace cambiar el led de estado cada 500ms (medio segundo)               */</font>
+<font color="#B22222">/*  Encender el led, que encuentra en el pin RB1                             */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  Andres Prieto-Moreno &lt;andres@ifara.com&gt;                                  */</font>
+<font color="#B22222">/*  Juan Gonzalez &lt;juan@iearobotics.com&gt;                                     */</font>
+<font color="#B22222">/*  Ricardo Gomez &lt;ricardo@eagleman.org&gt;                                     */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  LICENCIA GPL                                                             */</font>
+<font color="#B22222">/*****************************************************************************/</font>
+
+<strong><font color="#228B22">#define __18f2580</font></strong>
+<font color="#A020F0">#include </font><font color="#666666">"pic18f2580.h"</font><font color="#A020F0"></font>
+
+//-- Para usar temporizaciones con el timer 0
+<font color="#A020F0">#include </font><font color="#666666">"delay0.h"</font><font color="#A020F0"></font>
+
+//----------------------------
+//- Comienzo del programa  
+//----------------------------
+ 
+<strong><font color="#4169E1"><a name="main"></a>void main(void)</font></strong>
+{
+  //-- Configurar el puerto B 
+  //-- Todos los pines de entrada, salvo RB1 de salida, que es
+  //-- donde esta el led
+  TRISB=0xFD;
+  
+  //-- Configurar temporizador
+  timer0_configurar();
+  
+  //-- Encender el led
+  PORTB=0x02;
+
+  //-- Bucle principal
+  <font color="#4169E1">for</font> (;;) {
+    
+    //-- Se utilizan unidades de 10ms
+    //-- Ejemplos de valores:
+    //-- 1   --&gt; 10ms
+    //-- 100 --&gt; 1 segundo
+    //-- Valor maximo: 256 --&gt; 2 segundos y medio
+    delay0(50);    //-- Pausa de 0.5seg
+    PORTB^=0x02;  //-- Cambiar el led de estado
+  }
+ 
+}
+</pre>
+</body>
+
+</html>

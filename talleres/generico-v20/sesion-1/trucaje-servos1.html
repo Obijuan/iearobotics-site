@@ -1,0 +1,294 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Taller de robotica basico - Skybot v2.0. Sesion 1. Trucaje de los servos I</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGED" CONTENT="20050715;8573700">
+	<META NAME="KEYWORDS" CONTENT="robotica, robot, microbot, servomecanismo, servo, futaba, hardware">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<TABLE WIDTH=917 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+	<COL WIDTH=909>
+	<TR>
+		<TD WIDTH=909>
+			<P ALIGN=CENTER><FONT FACE="Arial, sans-serif">Taller de
+			Rob&oacute;tica B&aacute;sico - Skybot v2.0. - SESION 1 - <B> Trucaje de los servos I</B></FONT></P>
+
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/servos-ini-fin.png" NAME="Imagen19" ALIGN=MIDDLE WIDTH=641 HEIGHT=205 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Descripci&oacute;n</FONT></H2>
+<P><FONT SIZE=2><FONT FACE="Arial, sans-serif">Los servos <A HREF="../../../proyectos/cuadernos/ct3/ct3.html">Futaba
+3003</A> o compatibles son un tipo especial de motores que se usan
+para construir articulaciones. Tienen un rango de giro limitado a 180
+grados (comprobarlo girando el eje con las manos hasta llegar a los
+dos extremos). En este cap&iacute;tulo trucaremos los servos para
+convertirlos en motores de corriente continua normales, capaces de
+girar sin ninguna limitaci&oacute;n. </FONT></FONT>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/servos-componentes.png" NAME="Imagen18" ALIGN=MIDDLE WIDTH=369 HEIGHT=277 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Los elementos que
+emplearemos son los <B>dos servos</B> y <B>25 cm</B> de <B>cable
+negro</B> y <B>rojo</B></FONT></FONT></P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Material adicional </FONT>
+</H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El material necesario
+para realizar el trucaje de los servos se muestra en la siguiente
+figura:</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=127*>
+	<COL WIDTH=129*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=50% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/servos-material.png" NAME="Imagen17" ALIGN=MIDDLE WIDTH=420 HEIGHT=315 BORDER=0></P>
+			</TD>
+			<TD WIDTH=50%>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>1)</B>
+				Destornillador peque&ntilde;o de cabeza plana</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>2)</B>
+				Destornillador peque&ntilde;o de cabeza en estrella</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>3)</B> Lima</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>4)</B> Rollo de
+				esta&ntilde;o de 1mm</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>5)</B> Soldador
+				de punta fina</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>6)</B> Alicates
+				para cortar</FONT></FONT></P>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>7)</B>
+				Pelacables (opcional)</FONT></FONT></P>
+				<P ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>8)</B>
+				Soporte para soldador (Opcional)</FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><BR><BR>
+</P>
+<DL>
+	<DL>
+		<DL>
+			<DL>
+				<DD>
+				<TABLE WIDTH=660 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+					<COL WIDTH=650>
+					<THEAD>
+						<TR>
+							<TD WIDTH=650 VALIGN=TOP BGCOLOR="#eb613d">
+								<P ALIGN=JUSTIFY><FONT FACE="Arial, sans-serif"><B>Tened
+								cuidado al emplear el soldador</B>. Conviene que est&eacute;
+								siempre situado sobre un soporte cuando no se est&aacute;
+								utilizando. No dejarlo nunca encendido encima de la mesa.
+								Otra persona se podr&iacute;a quemar sin querer, o el
+								soldador podr&iacute;a entrar en contacto con la propia mesa
+								o alg&uacute;n equipo. <B>Cuando no se vaya a utilizar m&aacute;s,
+								desenchufarlo.</B></FONT></P>
+							</TD>
+						</TR>
+					</THEAD>
+				</TABLE>
+			</DL>
+		</DL>
+	</DL>
+</DL>
+<P STYLE="margin-left: 4cm"><BR><BR>
+</P>
+<HR>
+<H2><FONT FACE="Arial, sans-serif">Trucando los servos</FONT></H2>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>El proceso para trucar
+cada servo se describe en los siguientes pasos:</FONT></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PASO 1</B>.
+	Con un destornillador peque&ntilde;o de estrella quitar la corona
+	del servo, que est&aacute; atornillada al eje. Guardar el tornillo y
+	la corona.</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/servos-paso1.png" NAME="Imagen1" ALIGN=MIDDLE WIDTH=696 HEIGHT=250 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PASO 2</B>.
+	Con el mismo destornillador, quitar los 4 tornillos de la parte
+	inferior y sacar la tapa. La circuiter&iacute;a del servo quedar&aacute;
+	al descubierto.</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/servos-paso2.png" NAME="Imagen2" ALIGN=MIDDLE WIDTH=699 HEIGHT=253 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PASO 3</B>.
+	Retirar la tapa superior. Se ver&aacute;n todos los engranajes.
+	Quitar los engranajes E1 y E2, que se muestran en la figura. En algunas ocasiones al quitar la tapa algunos de los engranajes se quedan dentro de ella, no pasa nada, tan solo teneis que tener en cuenta que est&aacute;n ah&iacute; a la hora de volver a montar el servo. <B>Sobretodo tened cuidado de no perder los dos ejes met&aacute;licos</B> sobre los que giran los engranajes blancos. <B>Recordad que hay veces que se quedan en la tapa del servo</B>.
+
+	</FONT></FONT>
+	</P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/servos-paso3.png" NAME="Imagen3" ALIGN=MIDDLE WIDTH=709 HEIGHT=253 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PASO 4</B>. Quitar
+la circuiter&iacute;a. Para ello apretar con el dedo en el saliente
+negro donde estaba situado el engranaje E1. Utilizando un
+destornillador finito, introducirlo por una de las esquinas de la
+parte inferior y hacer palanca. La circuiter&iacute;a sale tirando y
+no hay que hacer mucha fuerza.</FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/servos-paso4.png" NAME="Imagen4" ALIGN=MIDDLE WIDTH=884 HEIGHT=215 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PASO 5</B>. La
+	electr&oacute;nica lleva soldado un peque&ntilde;o motor de
+	corriente cont&iacute;nua que tendremos que extraer, quitando el
+	esta&ntilde;o con el soldador. Si se realiza entre dos personas
+	resulta m&aacute;s sencillo. Uno coloca el soldador en los puntos de
+	soldadura del motor y el otro tira del motor, con los dedos, sin
+	aplicar mucha fuerza. <B>Intentad que el soldador este poco tiempo en contacto con la pata del motor</B>. Un soldador de 14W JBC con 2 segundos tiene suficente para desoldar la pata.</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/servos-paso5.png" NAME="Imagen5" ALIGN=MIDDLE WIDTH=661 HEIGHT=236 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PASO
+	6</B>. Soldar los cables. Tomar un cable rojo y negro de unos 25cm
+	de longitud cada uno y soldarlos a los pines del motor. Primero
+	<B>pelar unos 2mm</B>  los cables y <B>esta&ntilde;arlos</B> (significa poner un poco de
+	esta&ntilde;o en la zona pelada calent&aacute;ndolo con el
+	soldador). Despu&eacute;s soldarlos <B>en direcci&oacute;n horizontal</B> a los pines. Soldar el cable
+	rojo al pine que tiene un punto rojo y el negro al otro. Recordad lo mismo de antes, el tiempo de soldadura tiene que ser el m&aacute;s peque&ntilde;o posible para evitar da&ntilde;os en el motor.</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/servos-paso6.png" NAME="Imagen6" ALIGN=MIDDLE WIDTH=715 HEIGHT=253 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PASO
+	7</B>. Introducir el motor en la caja del servo.</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/servos-paso7.png" NAME="Imagen7" ALIGN=MIDDLE WIDTH=661 HEIGHT=236 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<LI><P STYLE="font-weight: medium"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>PASO
+	8</B>. Hacer un nudo en los cables. Quedar&aacute; en el interior
+	del servo e impedir&aacute; que las soldaduras de los cables se
+	suelten si hay un tir&oacute;n.</FONT></FONT></P>
+</UL>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR>
+			<TD WIDTH=100% VALIGN=TOP>
+				<P ALIGN=CENTER><IMG SRC="images/servos-paso8-1-orig.png" NAME="Imagen8" ALIGN=MIDDLE WIDTH=400 HEIGHT=300 BORDER=0></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<UL>
+	<P></P>
+</UL>
+<HR>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>P&aacute;gina 1 de
+2</B></FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<THEAD>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50% BGCOLOR="#ffff99">
+				<P><BR>
+				</P>
+			</TD>
+			<TD WIDTH=50% BGCOLOR="#ccccff">
+				<P ALIGN=CENTER>[<A HREF="trucaje-servos2.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">P&aacute;gina
+				siguiente</FONT></FONT></A>]</P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<HR>
+<P STYLE="margin-bottom: 0cm"><A HREF="index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">[Sesion
+I]</FONT></FONT></A> 
+</P>
+<ADDRESS STYLE="margin-bottom: 0.5cm"><A HREF="../../../personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Juan
+Gonz&aacute;lez</FONT></FONT></A><BR><A HREF="http://www.iearobotics.com"><FONT SIZE=2><FONT FACE="Arial, sans-serif">IEAROBOTICS</FONT></FONT></A>
+</ADDRESS>
+</BODY>
+</HTML>

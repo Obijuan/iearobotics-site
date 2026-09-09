@@ -1,0 +1,84 @@
+
+<html>
+<head>
+<title>conversor.c</title>
+<meta name="generator" content="c2html 0.9.5">
+<meta name="date" content="2006-04-29T19:31:33+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/*****************************************************************************/</font>
+<font color="#B22222">/* conversor.c     Junio-2005 Version 1.0                                    */</font>
+<font color="#B22222">/*                 Mayo-2006  Version 2.0                                    */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Ejemplo para el skybot                                                    */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  Ejemplo para el conversor A/D. Se utiliza el canal 0 (PA0) donde esta    */</font>
+<font color="#B22222">/*  conectado el sensor de luz. El valor leido (nivel de luz) se             */</font>
+<font color="#B22222">/*  se compara con un umbral. Si no se supera se apaga el LED.               */</font>
+<font color="#B22222">/*  Es un ejemplo de como leer el conversor, para adaptarlo a cualquier      */</font>
+<font color="#B22222">/*  aplicacion                                                               */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  Andres Prieto-Moreno &lt;andres@ifara.com&gt;                                  */</font>
+<font color="#B22222">/*  Juan Gonzalez &lt;juan@iearobotics.com&gt;                                     */</font>
+<font color="#B22222">/*  Ricardo Gomez &lt;ricardo@eagleman.org&gt;                                     */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  LICENCIA GPL                                                             */</font>
+<font color="#B22222">/*****************************************************************************/</font>
+
+//-- Especificar el pic a emplear
+<strong><font color="#228B22">#define __18f2580</font></strong>
+<font color="#A020F0">#include </font><font color="#666666">"pic18f2580.h"</font><font color="#A020F0"></font>
+
+//-- Definiciones
+<strong><font color="#228B22">#define LED       0x02     // Pin del led de la Skypic</font></strong>
+
+//----------------------------
+//- Comienzo del programa  
+//----------------------------
+
+unsigned char ad;
+<strong><font color="#4169E1"><a name="main"></a>void main(void)</font></strong>
+{
+  
+  //-- Configurar conversor analogico/digital
+  //-- Entrada analogica: PA0 (Clema 2 de la CT293)
+  //-- Resto de entradas del puerto A: digitales
+  ADCON0 = 0x01;  // enciendo el conversor
+  ADCON1 = 0x0E;  // configuro AN0 como entrada analogica, resto digital
+  
+ 
+  //-- Configurar puerto B para salida
+  TRISB=0x00;  
+  
+  <font color="#4169E1">for</font>(;;) {
+    //-- Activar la conversion
+        //-- Hay que hacerlo cada vez que se termina la anterior
+    ADCON0 |= 0x04;
+    
+    //-- Esperar a que se haga la conversion
+    <font color="#4169E1">while</font> ((ADCON0&amp;0x04)==0x04);
+    
+        <font color="#B22222">/* el dato se encuentra en el registro ADRESH. Se corresponde
+           con un valor entre 0 y 255, y me indica el nivel de intensidad
+           de luz recibida por el sensor.
+           Debido al circuito de polarizacion de la SKY293 y al propio sensor
+           el umbral ha de situarse cerca del 200. Cuando se ilumina el sensor
+           el valor leido disminuye.
+           
+           El UMBRAL depende mucho de las condiciones de iluminacion, se
+           recomienda adaparlo a cada entorno.
+           
+        */</font>
+    <font color="#4169E1">if</font> (ADRESH&gt;=250) {  // En ADRESH esta el dato le&iacute;<font color="#4169E1">do</font>
+                PORTB=LED;
+        }
+        <font color="#4169E1">else</font> {
+                PORTB=0;
+        }
+   }
+}
+</pre>
+</body>
+
+</html>
