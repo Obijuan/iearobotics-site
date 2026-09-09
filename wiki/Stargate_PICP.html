@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Stargate:PICP - WikiRobotics</title>
+  	<link rel="stylesheet" href="load.css">
+</head>
+
+<body style="margin: 10px; font-size: 12px;">
+<h1 id="firstHeading" class="firstHeading" lang="es">Stargate:PICP</h1>
+<div id="bodyContent" class="mw-body-content"></div>
+
+<!-- start content -->
+<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><p>
+	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:Stargate_logo1.png" class="image" 
+	title="Logo del PICP"><img alt="Logo del PICP" 
+	src="Stargate_PICP_files/Stargate_logo1_jc4O.png" width="200" height="136"></a>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Funcionamiento"><span class="tocnumber">2</span> <span class="toctext">Funcionamiento</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Implementaciones"><span class="tocnumber">3</span> <span class="toctext">Implementaciones</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Versi.C3.B3n_3"><span class="tocnumber">3.1</span> <span class="toctext">Versión 3</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Versi.C3.B3n_2"><span class="tocnumber">3.2</span> <span class="toctext">Versión 2</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Versi.C3.B3n_1"><span class="tocnumber">3.3</span> <span class="toctext">Versión 1</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Noticias"><span class="tocnumber">4</span> <span class="toctext">Noticias</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Enlaces"><span class="tocnumber">5</span> <span class="toctext">Enlaces</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>Servidor de <b>programación/verificación de microcontroladores PIC</b>. Implementa parte de los servicios del 
+	<a rel="nofollow" class="external text" href="../proyectos/cuadernos/ct4/ct4.html">protocolo ICSP</a>, de Microchip, además de los 
+	<a rel="nofollow" class="external text" href="../proyectos/stargate/serv-basicos/serv-basicos.html">servicios básicos</a>.
+</p><p>Todos los servicios específicos, salvo el de reset, son los mismos que los del 
+	<a rel="nofollow" class="external text" href="../proyectos/cuadernos/ct4/ct4.html">protocolo ICSP</a>. El servidor PICP ofrece una interfaz serie para la mayoría de los servicios ofrecidos por este protocolo.
+</p>
+<h2><span class="mw-headline" id="Funcionamiento">Funcionamiento</span></h2>
+<p>El funcionamiento del servidor es el siguiente:
+</p>
+<ul><li> Implementación de los <a rel="nofollow" class="external text" 
+	     href="../proyectos/stargate/serv-basicos/serv-basicos.html">servicios básicos</a></li>
+<li> Implementación de 6 servicios específicos</li>
+<li> Si recibe un byte que no reconoce, lo ignora</li>
+<li> Inicialmente NO se hace reset del PIC</li></ul>
+<h2><span class="mw-headline" id="Implementaciones">Implementaciones</span></h2>
+<h3><span class="mw-headline" id="Versi.C3.B3n_3">Versión 3</span></h3>
+<ul><li> <b>Tarjeta</b>: <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> a 20Mhz</li>
+<li> <b>Autores</b>: 
+<ul><li> <a rel="nofollow" class="external text" href="../personal/juan/">Juan González</a></li>
+<li> <a rel="nofollow" class="external text" href="http://rafael.trevino.menendez.googlepages.com/">Rafael Treviño</a></li></ul></li>
+<li> <b>Lenguaje</b>: C</li>
+<li> <b>Licencia</b>: <a rel="nofollow" class="external text" href="http://www.gnu.org/licenses/gpl-3.0.txt">GNU General Public License v3.0</a></li>
+<li> <b>Notas</b>:
+<ul><li> La vesión 3 implementa el servicio de <b>CHIP-ERASE</b> para borrar el chip aunque esté protegido</li></ul></li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th>Fichero</th>
+<th>Descripción
+</th></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="images/8/88/Picp-pic16f876-skypic.hex">Picp-pic16f876-skypic.hex</a>
+</td>
+<td> Fichero ejecutable
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="images/f/fc/Picp_pic16f876-skypic-3.tgz">Picp_pic16f876-skypic-3.tgz</a>
+</td>
+<td> Fuentes
+</td></tr></tbody></table>
+<p>Acceso al repositorio:
+</p>
+<pre>svn co <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/Stargate/servidores/picp/skypic/picp-pic16f876-skypic-3/">http://svn.iearobotics.com/Stargate/servidores/picp/skypic/picp-pic16f876-skypic-3/</a>
+</pre>
+<h3><span class="mw-headline" id="Versi.C3.B3n_2">Versión 2</span></h3>
+<ul><li> <b>Tarjeta</b>: <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> a 20Mhz</li>
+<li> <b>Autores</b>: 
+<ul><li> <a rel="nofollow" class="external text" href="../personal/juan/">Juan González</a></li>
+<li> <a rel="nofollow" class="external text" href="http://rafael.trevino.menendez.googlepages.com/">Rafael Treviño</a></li></ul></li>
+<li> <b>Lenguaje</b>: C</li>
+<li> <b>Licencia</b>: <a rel="nofollow" class="external text" href="http://www.gnu.org/licenses/gpl-3.0.txt">GNU General Public License v3.0</a></li>
+<li> <b>Notas</b>:
+<ul><li> Los pines asignados para realizar la grabación son: Reset--&gt; RB4, Datos--&gt; RB7, Reloj--&gt; RB3</li>
+<li> La versión 2 implementa un <b>nuevo servicio de JUMP</b> que permite que la grabación del <a href="https://iearobotics.com/wiki/index.php?title=PIC_Bootloader" title="PIC Bootloader">PIC_Bootloader</a> sea más rápida</li></ul></li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th>Fichero</th>
+<th>Descripción
+</th></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="images/4/4c/Picp-pic16f876-skypic-2.hex">Picp-pic16f876-skypic-2.hex</a>
+</td>
+<td> Fichero ejecutable
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="images/f/f7/Picp-pic16f876-skypic-2.zip">Picp-pic16f876-skypic-2.zip</a>
+</td>
+<td> Fuentes
+</td></tr></tbody></table>
+<p>Acceso al repositorio:
+</p>
+<pre>svn co <a rel="nofollow" class="external free" 
+	href="http://svn.iearobotics.com/Stargate/servidores/picp/skypic/picp-pic16f876-skypic-2/">http://svn.iearobotics.com/Stargate/servidores/picp/skypic/picp-pic16f876-skypic-2/</a>
+</pre>
+<h3><span class="mw-headline" id="Versi.C3.B3n_1">Versión 1</span></h3>
+<ul><li> <b>Tarjeta</b>: <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> a 20Mhz</li>
+<li> <b>Autor</b>: <a rel="nofollow" class="external text" href="../personal/juan/">Juan González</a></li>
+<li> <b>Lenguaje</b>: Ensamblador del PIC</li>
+<li> <b>Licencia</b>: <a rel="nofollow" class="external text" href="http://www.gnu.org/licenses/gpl-3.0.txt">GNU General Public License v3.0</a></li>
+<li> <b>Notas</b>: Los pines asignados para realizar la grabación son: Reset--&gt; RB4, Datos--&gt; RB7, Reloj--&gt; RB3</li></ul>
+<p><br>
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th>Fichero</th>
+<th>Descripción
+</th></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="images/0/0c/Picp-pic16f876-skypic-1.hex">Picp-pic16f876-skypic-1.hex</a>
+</td>
+<td> Fichero ejecutable
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="images/1/16/Picp-pic16f876-skypic-1.zip">Picp-pic16f876-skypic-1.zip</a>
+</td>
+<td> Fuentes
+</td></tr></tbody></table>
+<p>Acceso al repositorio:
+</p>
+<pre>svn co <a rel="nofollow" class="external free" 
+	href="http://svn.iearobotics.com/Stargate/servidores/picp/skypic/picp-pic16f876-skypic-1/">http://svn.iearobotics.com/Stargate/servidores/picp/skypic/picp-pic16f876-skypic-1/</a>
+</pre>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>23/Sep/2008</b>: Version 3 del PICP para tarjetas <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> a 20Mhz
+<ul><li> Implementado servicio CHIP-ERASE para borrar por completo toda la memoria del PIC, aunque esté protegido</li></ul></li>
+<li> <b>29/Jul/2007</b>: Versión 2 del PICP para tarjetas <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> a 20Mhz
+<ul><li> Implementado en C (compilador <a rel="nofollow" class="external text" href="http://sdcc.sourceforge.net/">SDCC 2.6</a>)</li>
+<li> Nuevo servicio JUMP. Ahora la grabación del 
+	<a href="PIC_Bootloader.html" title="PIC Bootloader">PIC_Bootloader</a> se hace mucho más rapidamente</li></ul></li>
+<li> <b>26/Jul/2007</b>: Nueva implementación del servidor PICP para tarjetas 
+	<a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> a 20Mhz</li></ul>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<ul><li> <a rel="nofollow" class="external text" 
+	href="../proyectos/stargate/servidores/sg-picp/sg-picp.html">Página oficial del PICP</a></li>
+<li> Programa <a href="https://iearobotics.com/wiki/index.php?title=Skypic_down" title="Skypic down">Skypic_down</a>, un cliente para el PICP en plataformas Linux</li></ul>
+
+</div></div></body></html>
