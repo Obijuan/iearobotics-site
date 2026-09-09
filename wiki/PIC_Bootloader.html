@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>PIC Bootloader - WikiRobotics</title>
+  	<link rel="stylesheet" href="PIC_Bootloader_files/load_k2jy.css">
+  	<link rel="shortcut icon" href="https://obijuan.github.io/iearobotics-site/favicon.ico">
+</head>
+
+<body style="margin: 10px; font-size: 12px;"></body>
+
+<h1 id="firstHeading" class="firstHeading" lang="es">PIC Bootloader</h1>
+<div id="bodyContent" class="mw-body-content">
+
+<!-- start content -->
+<p><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Pic-flecha.jpg" 
+	class="image" title="Logo del PIC-Bootloader">
+	<img alt="Logo del PIC-Bootloader" 
+	src="PIC_Bootloader_files/Pic-flecha_k2jy.jpg" width="213" height="133"></a>
+</p>
+
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Caracter.C3.ADsticas"><span class="tocnumber">2</span> <span class="toctext">Características</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Utilizaci.C3.B3n_del_Bootloader:_Cargadores"><span class="tocnumber">3</span> <span class="toctext">Utilización del Bootloader: Cargadores</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Descargas"><span class="tocnumber">4</span> <span class="toctext">Descargas</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Versi.C3.B3n_1.2"><span class="tocnumber">4.1</span> <span class="toctext">Versión 1.2</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Cambios"><span class="tocnumber">5</span> <span class="toctext">Cambios</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Compilaci.C3.B3n"><span class="tocnumber">6</span> <span class="toctext">Compilación</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Acceso_al_repositorio"><span class="tocnumber">7</span> <span class="toctext">Acceso al repositorio</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Enlaces_externos"><span class="tocnumber">8</span> <span class="toctext">Enlaces externos</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>Un <i>bootloader</i> es un <i>firmware</i> para permitir la rápida descarga de programas en los microcontroladores. En el caso de los PIC, el <i>bootloader</i> permite descargar programas directamente desde el PC sin necesidad de utilizar ningún tipo de grabador.
+</p><p>La descarga se hace a través del <b>puerto serie</b>. También funciona con el <b>USB</b> conectando un <b>conversor USB-serie</b>.
+</p>
+<h2><span class="mw-headline" id="Caracter.C3.ADsticas">Características</span></h2>
+<ul><li> <b>Familia de PICs</b>: PIC16F873A/876A/877A</li>
+<li> <b>Cristal</b>: 20MHz</li>
+<li> <b>Comunicación serie</b>: 38400 Baudios</li>
+<li> Adaptado para la <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">tarjeta Skypic</a> a 20MHz</li>
+<li> <b>Licencia</b>: GPL</li>
+<li> <b>Autores</b>:
+<ul><li>  <i>Petr Kolomaxnik</i>, (c) 2002</li>
+<li>  <i>Peter Huemer</i>, (c) 2003-2004</li>
+<li>  <a rel="nofollow" class="external text" href="../personal/juan/">Juan Gonzalez</a>, (c) 2005-2007&nbsp;: Adaptación a la <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">tarjeta Skypic</a> y el <a href="https://iearobotics.com/wiki/index.php?title=Skybot" title="Skybot">Robot Skybot</a></li></ul></li></ul>
+<h2><span class="mw-headline" id="Utilizaci.C3.B3n_del_Bootloader:_Cargadores">Utilización del Bootloader: Cargadores</span></h2>
+<p>Para poder descaragar los ficheros <i>hex</i> en la <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">skypic</a> necesitamos un <i>programa cargador</i>, que se comunicará a través del puerto serie con el <i>bootloader</i>. Están disponibles los siguientes:
+</p>
+<ul><li> <b>Plataformas Linux</b>: 
+	<a href="https://iearobotics.com/wiki/index.php?title=Pic_downloader" title="Pic downloader">Pic_downloader</a>. Para consola. Escrita en C</li>
+<li> <b>Plataformas Windows</b>: <a rel="nofollow" class="external text" href="http://www.microchipc.com/PIC16bootload/">Pic_downloader</a>, en la página de Microchip</li>
+<li> <b>Multiplataforma</b>(Linux y Windows): <a href="https://iearobotics.com/wiki/index.php?title=Pydownloader" title="Pydownloader">Pydownloader</a>. Escrita en Python</li></ul>
+<h2><span class="mw-headline" id="Descargas">Descargas</span></h2>
+<h3><span class="mw-headline" id="Versi.C3.B3n_1.2">Versión 1.2</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th>Fichero</th>
+<th>Descripción
+</th></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="images/f/f2/PIC16_bootloader_1.2.hex">PIC16_bootloader.hex</a>
+</td>
+<td> Firmware para la <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> (Palabra de configuración <i>3F32</i>)
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="images/1/14/PIC16_bootloader-1.2.zip">PIC16_bootlloader-1.2.zip</a>
+</td>
+<td> Fuentes (en ensamblador)
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Cambios">Cambios</span></h2>
+<ul><li> <b>25/jul/2007</b>: Corregido BUG en fichero PIC16_bootloader.hex. La velocidad de transmision estaba mal configurada. Debe ser de 34800 baudios</li></ul>
+<h2><span class="mw-headline" id="Compilaci.C3.B3n">Compilación</span></h2>
+<p>El <i>bootloader</i> se compila con las herramientas libres <a rel="nofollow" class="external text" href="http://gputils.sourceforge.net/">GPUTILS</a>. Disponibles en los repositorios de DEBIAN y de la mayoría de distribuciones de Linux. También están disponibles para Windows.
+</p><p>Se incluye un fichero <i>Makefile</i> para compilar fácilmente con <i>make</i>:
+</p>
+<pre>make
+</pre>
+<p>Para compilar "manualmente" se puede invocar el siguiente comando:
+</p>
+<pre>gpasm -w 2 PIC16_bootloader.asm
+</pre>
+<p>lo que generará el fichero <i>PIC16_bootloader.hex</i> para grabar en la <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">skypic</a>
+</p><p><br>
+</p>
+<h2><span class="mw-headline" id="Acceso_al_repositorio">Acceso al repositorio</span></h2>
+<ul><li> SVN del proyecto: <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/picbootloader/">http://svn.iearobotics.com/picbootloader/</a></li>
+<li> La última versión se puede obtener así:</li></ul>
+<pre>svn co <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/picbootloader/">http://svn.iearobotics.com/picbootloader/</a>
+</pre>
+<h2><span class="mw-headline" id="Enlaces_externos">Enlaces externos</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="http://gputils.sourceforge.net/">GPUTILS</a>: Utilidades GNU para los microcontroladores PIC.</li>
+<li> <a rel="nofollow" class="external text" href="http://www.microchipc.com/PIC16bootload/">Pic_Downloader</a>: Cargador de Shame Tolmie para Windows (página de Microchip)</li></ul>
+
+
+
+</div></div></body></html>
