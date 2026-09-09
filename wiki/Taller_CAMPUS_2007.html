@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Taller CAMPUS 2007 - WikiRobotics</title>
+  	<link rel="stylesheet" href="Taller_CAMPUS_2007_files/load_sVBq.css">
+</head>
+
+<body style="margin: 10px; font-size: 12px;">
+<h1 id="firstHeading" class="firstHeading" lang="es">Taller CAMPUS 2007</h1>
+<div id="bodyContent" class="mw-body-content"></div>
+
+
+<!-- start content -->
+<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Concurso_del_Mogoll.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Concurso del Mogollón</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.C3.9Altima_hora"><span class="tocnumber">2</span> <span class="toctext">Última hora</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Introducci.C3.B3n"><span class="tocnumber">3</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#FAQs"><span class="tocnumber">4</span> <span class="toctext">FAQs</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Notas_sobre_el_taller"><span class="tocnumber">5</span> <span class="toctext">Notas sobre el taller</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Notas_Linux"><span class="tocnumber">5.1</span> <span class="toctext">Notas Linux</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Multiplataforma_.28Python.29"><span class="tocnumber">5.2</span> <span class="toctext">Multiplataforma (Python)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Enlaces_relacionados"><span class="tocnumber">6</span> <span class="toctext">Enlaces relacionados</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Concurso_del_Mogoll.C3.B3n">Concurso del Mogollón</span></h2>
+<p>Mañana es el <b>concurso del Mogollón</b> a las 12:00 en el area de CampusBot.<br>
+Las normas del mismo las podéis encontrar en este enlace <a href="https://iearobotics.com/wiki/index.php?title=Concurso_mogoll%C3%B3n" title="Concurso mogollón">concurso mogollón</a><br>
+Os animamos a participar, cuantos más robots es más divertido, y el objetivo no es otro que volvernos a ver las caras todos juntos y pasar un buen rato.<br>
+</p>
+<h2><span class="mw-headline" id=".C3.9Altima_hora">Última hora</span></h2>
+<p><i><b>Los cambios introducidos los vamos a dividir por "secciones" y vamos a resaltar los últimos realizados cambiando su color de letra. Los cambios del día actual, serán todos de color rojo, mientras que los antiguos tendrán el color negro habitual.</b></i>
+</p>
+<ul><li> Temas relacionados con el <b>concurso del Mogollón</b></li></ul>
+<p><font color="red">Para que funcione correctamente la librería Skybot con el concurso del mogollón hay que colocar los sensores de infrarrojos en las posición 3 y 4. El sensor 1 actual pasará a ser el 3 y el sensor 2 pasará a ser el 4. Los enlaces a los nuevos archivos de la librería están aquí, y también podéis hacer el cambio vosotros editando la misma y en las funciones de SensorIR_Izq_Lee_Blanco() y SensorIR_Der_Lee_Blanco() cambiar el 1 por 3 y el 2 por 4 en lo que a sensores se refiere. Lo mismo para SensorIR_Izq_Lee_Negro(), SensorIR_Der_Lee_Negro().</font> 
+</p><p><a rel="nofollow" class="external text" href="wiki/downloads/taller-skybot/software/libreria_skybot/libreria_skybot.c">Libreria_skybot.c</a><br>
+<a rel="nofollow" class="external text" href="wiki/downloads/taller-skybot/software/libreria_skybot/libreria_skybot.h">Libreria_skybot.h</a>
+</p><p><br>
+</p>
+<ul><li> Temas relacionados con la <b>sesión IV</b></li></ul>
+<p><font color="red">En los ejemplos de programación II que usan funciones externas como delay0 al compilar da un error porque no se encuentran las funciones. Para solucionar esto hay que decirle al compilador que use también el fichero delay0.c a la hora de compilar. Como recomendación, otra vía más rápida es copiar el código de las funciones en nuestro propio programa, y compilar como siempre.</font>
+</p><p>Se ha incluido un nuevo ejemplo en la tabla de ficheros llamado Encoder.c (al final de la misma) para poder utilizar los 4 sensores infrarrojos del Skybot, y dotarle así de funciones de velocidad, control de giro de la rueda, etc.
+</p>
+<ul><li> Temas relacionados con el Conversor USB-Serie</li></ul>
+<p>Por ahora todos los conversores que hemos probado han funcionado bien, algunos a la primera y otros al cabo de un rato. Si todavía queda alguien al que no le funciona que me pregunte mañana (Soy Andrés).
+</p>
+<ul><li> Temas relacionados con la <b>sesión III</b></li></ul>
+<p>El fichero de ejemplo <b>"hola-mundo-windows.zip"</b> incluido en el cd no contiene el fichero .bat "crear_ejecutable.bat", luego no compila al pulsar sobre la opción "sdcc con libreria auxiliar..." del Programmers Notepad. El fichero de la web está actualizado, pero la solución es tan sencilla como incluir "crear_ejecutable.bat" en la misma carpeta que el resto de ficheros de "hola-mundo-windows.zip".
+</p><p>La librería Skybot considera que los sensores para seguir la línea negra están colocados en el 1 y 2, mientras que en el resto del manual se consideran el 3 y 4. No tiene la mayor importancia, tan solo conectar los sensores en el conector de al lado y ya está.
+</p><p><b>Incidencia:</b>
+</p><p>(Versiones Windows) El instalador automático configura por defecto el Programmers Notepad 2 para que cuando abrais un fichero .c, dispongais de herramientas de compilación para el mísmo (para generar el .hex). Dichas opciones se encuentran disponibles en "Tools", y se llaman "sdcc" y "sdcc con libreria auxiliar". En algunos ordenadores, será necesario que termineis de configurar dicha opción. Las instrucciones las podeis encontrar en:
+</p><p><a rel="nofollow" class="external free" href="talleres/generico-v14/sesion-3/windows/SDCC_config.pdf">http://www.iearobotics.com/talleres/generico-v14/sesion-3/windows/SDCC_config.pdf</a>
+</p><p>Es importante que sigais dichas instrucciones al pie de la letra, aunque básicamente se trata de añadir "%d" en la casilla "Parameters" (separando con un espacio&nbsp;%n y "%d").
+</p><p><br>
+<b>IMPORTANTE:</b>
+</p><p>El instalador automático suministrado puede corromper algunos de los ficheros de la sesion 3 del skybot, en concreto los ficheros <b>libreria_skybot.c</b> y <b>libreria_skybot.h</b> Si teneis problemas para compilar alguno de los mismos, podeis cogerlo de la web en el siguiente enlace:
+</p><p><a rel="nofollow" class="external free" href="talleres/generico-v14/sesion-3/ejemplos/ejemplos-skybot-1.html#descargas">http://www.iearobotics.com/talleres/generico-v14/sesion-3/ejemplos/ejemplos-skybot-1.html#descargas</a>
+</p><p>o bien, cogerlo de la documentacion incluida en los cd's que os hemos repartido. Para ello, navegar por la documentacion y entrar en la "sesion-3 -&gt; Ejemplos de Programacion -&gt; Descargas de ficheros"
+</p><p>También se han detectado algunos ejemplos del CD (de la sesion-4) corruptos y al intentar compilarlos y/o descargarlos están fallando. En la WEB podéis encontrar los ficheros sin corromper.<br>
+Cuando descargueis un programa por primera vez en el PIC ya no podréis usar el BotControl hasta no volver a grabar en el PIC el skybot-monitor.hex que encontrareis en la carpeta <b>firmware</b>.<br><br>
+</p><p><br>
+</p>
+<ul><li> Temas relacionados con la <b>sesión II</b></li></ul>
+<p>Para colocar los sensores de infrarrojos CNY70 en lugar de soldar el cable que ayer quitamos de los servos, vamos a utilizar un cable plano de casi 20cm que está dentro de la caja.
+</p><p>Ese cable lo conectaremos por un extremo a la placa SKY293, al conector que pone sensor 3:4. Y por el otro extremo lo conectaremos a los sensores según esta descrito en esta página, en el <b>método b</b> de la sección <b>Conexión sensores de infrarrojos</b>.
+<a rel="nofollow" class="external free" href="proyectos/sky293/sky293.html">http://www.iearobotics.com/proyectos/sky293/sky293.html</a>
+</p><p>El resto del proceso es como se indica en la web.
+</p><p><br>
+</p>
+<ul><li> Temas relacionados con la <b>sesión I</b></li></ul>
+<p>Al desmontar los motores teneis que tener cuidado con ellos. Al quitar la tapa superior quedará al descubierto toda la caja reductora, formada por pequeñas piezas blancas y dos ejes metálicos. Es muy importante que esos ejes no se os pierdan, no hay de repuesto.
+</p><p>Siguiendo con el mismo tema, en la caja reductora también hay un engranaje negro que es el eje del motor. En ese engranaje hay un tope que tendréis que cortar. El consejo es el siguiente, tened cuidado y escoged unos buenos alicates de corte, o incluso un cutter, para evitar no partir la pieza.
+</p><p>En caso de duda estamos a vuestra disposición. 
+</p>
+<ul><li> Hoy martes empieza el taller de Robótica Básica en Campus Party 2007.  </li></ul>
+<p>15:00 - 16:00&nbsp;: Empezaremos a dar el material. <br>
+16:00 - 18:00&nbsp;: Primera sesión del taller.<br>
+</p>
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>Bienvenidos al taller de <b>Skybots</b> de la Campus Party 2007. En este enlace <a rel="nofollow" class="external free" href="http://www.iearobotics.com/talleres/generico-v14/index.html">http://www.iearobotics.com/talleres/generico-v14/index.html</a> encontrareis la información básica del curso<br>
+<br>
+El taller esta dividido en sesiones, de forma que cada día se haga una durante dos horas.<br>
+Los monitores del taller somos Ricardo, Javier y Andrés, y estamos sentados justo debajo del FARO de Campus Bot<br>
+Nuestra labor es la de ayudaros a construir y programar el robot, para que el sábado todos los participantes concursen en la "Prueba Mogollón". <br><br>
+Este año se han introducido algunos cambios:
+</p>
+<ul><li> Nueva versión del compilador de SDCC, hemos pasado a las 2.6 <br></li>
+<li> Junto con el kit se entrega un CD con la documentación del curso.<br></li>
+<li> Se han juntado todas las aplicaciones en un instalador para Windows.<br></li>
+<li> Se ha añadido la libreria SKYBOT para programar el robot de una forma muy sencilla<br></li>
+<li> Se ha simplificado el tema de los CNY70 para evitar soldar, por lo menos para los que siguen la línea negra.<br></li></ul>
+<p><br>
+En resumen, hay nuevas mejoras, que esperamos que sirvan para falicitar la programación y construcción del robot a todas aquellas personas que sean nuevas en el mundo de la robótica, pero mantenemos todas las funcionalidades anteriores para todos aquellos que ya tienen experiencia y buscan una programación a bajo nivel.
+</p>
+<h2><span class="mw-headline" id="FAQs">FAQs</span></h2>
+<ul><li> Uso el instalador y me falla al compilar.</li></ul>
+<p><br>Problema:
+</p>
+<pre>C:\robotica\programas\libreria_facil&gt;sdcc -mpic14 -p16f876a -c mogollon.c 
+Processor: 16f876a
+'16f876a' was not found.
+Valid devices are:
+p16f627  p16f628  p16f84   p16f873 
+p16f877  p16f819  
+</pre>
+<p>Solución:<br>
+</p><p>Primero hay que asegurarse de usar la versión del SDCC 2.6.0 o superior.<br>
+</p><p>Uno de los problemas más generales es que en algunas instalaciones los PATH de las aplicaciones no se configuran correctamente.
+Lo que hay que hacer es ir a Mi PC-&gt; propiedades-&gt; propiedades avanzadas y dentro de esa ventana configurar las variables de entorno.
+</p><p>Cada uno las tendrá que poner de acuerdo con su instalación:
+</p><p>Variable: PATH<br>
+Valor: "añadir al final lo siguiente" C:\proyectos\robotica\gputils\bin;C:\Archivos de programa\SDCC\bin<br><br>
+</p><p>Variable: GPUTILS_LKR_PATH<br>
+Valor: C:\proyectos\robotica\gputils\lkr<br><br>
+</p><p>Variable: GPUTILS_HEADER_PATH<br>
+Valor: C:\proyectos\robotica\gputils\header<br><br>
+</p><p><br>
+</p>
+<ul><li> En el SDCC no me sale la opción de compilar.</li></ul>
+<pre>Usar el siguiente manual donde se describe el proceso.
+<a rel="nofollow" class="external text" href="wiki/downloads/SDCC_config.pdf">Documentación para configurar el SDCC</a>
+</pre>
+<ul><li> Python.</li></ul>
+<p>He instalado el software siguiendo las instrucciones de la web y cuando ejecuto un script me dice que no encuentra el archivo python. El problema es que el PATH al ejecutable de Python no esta añadido al del sistema, lo que tendremos que hacer es localizar dicho path y añadirlo a la Variable PATH. Eso se hace desde Mi PC-&gt; propiedades-&gt; avanzadas-&gt; variables de entorno.
+</p>
+<h2><span class="mw-headline" id="Notas_sobre_el_taller">Notas sobre el taller</span></h2>
+<h3><span class="mw-headline" id="Notas_Linux">Notas Linux</span></h3>
+<ul><li> Ultima version del programa de descargas para Linux: <a href="https://iearobotics.com/wiki/index.php?title=Pic_downloader" title="Pic downloader">Pic_downloader</a>. Interfaz de línea de comandos</li></ul>
+<h3><span class="mw-headline" id="Multiplataforma_.28Python.29">Multiplataforma (Python)</span></h3>
+<p>El software necesario es:
+</p>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=LibIris" title="LibIris">LibIris</a>. Cliente para el bootloader. Incluye un ejemplo para consola de manejo de la libreria. </li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=Iris" title="Iris">Iris</a>. Programa de descargas con interfaz gráfico basado en QT</li></ul>
+<p>De momento vamos a usar el ejemplo que hay en <a href="https://iearobotics.com/wiki/index.php?title=LibIris" title="LibIris">LibIris</a>
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="proyectos/cuadernos/ct11/ct11.html">Puerto serie y python</a>. Ejemplos de prueba del puerto serie en python para Linux/Windows. Incluye guía de instalación.</li></ul>
+<h2><span class="mw-headline" id="Enlaces_relacionados">Enlaces relacionados</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="talleres/campusbot-2007">Página inscripción Campus Party 2007</a></li></ul>
+<ul><li> <a rel="nofollow" class="external text" href="https://obijuan.github.io/wiki">Página principal IeaRobotics</a></li></ul>
+<ul><li> <a rel="nofollow" class="external text" href="proyectos/skybot/skybot.html">Página Robot Skybot</a></li></ul>
+
+</div></body></html>
+
