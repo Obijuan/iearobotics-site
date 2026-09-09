@@ -1,0 +1,597 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+
+	
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=iso-8859-15">
+
+	
+	
+  <title>Taller de robotica b&aacute;sico. Sesion 3. Motores y sensores</title>
+  <meta name="GENERATOR" content="OpenOffice.org 1.1.3  (Linux)">
+
+	
+  <meta name="CREATED" content="20040522;11483800">
+
+	
+  <meta name="CHANGED" content="20050720;21225800">
+
+	
+  <meta name="KEYWORDS" content="robotica, microcontroladores, pic, hardware">
+
+	
+  <style>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</style>
+</head>
+
+
+<body dir="ltr" lang="en-US">
+
+
+<table style="page-break-before: always;" bgcolor="#abbeeb" border="0" cellpadding="4" cellspacing="0" width="917">
+
+	<col width="909">
+	<tbody>
+    <tr>
+
+		<td width="909">
+			
+      <p align="center"><font face="Arial, sans-serif">Taller de
+			Rob&oacute;tica B&aacute;sico - Skybot v1.4. - SESION 3 - <b> Motores y sensores</b></font></p>
+
+
+		</td>
+
+	</tr>
+
+  </tbody>
+</table>
+
+
+<p style="margin-bottom: 0cm;" align="center"><br>
+
+</p>
+
+<hr>
+<h2><font face="Arial, sans-serif">Objetivos</font></h2>
+
+<p align="justify"><font face="Arial, sans-serif"><font size="2">Conocer
+c&oacute;mo funcionan los motores y los sensores desde un punto de
+vista del programador. A este nivel no nos importan los detalles
+f&iacute;sicos, ni el tipo de motor, ni el tipo de sensores.
+Simplemente necesitamos conocer c&oacute;mo podemos mover los motores
+y c&oacute;mo leer los sensores para programar nuestros algoritmos de
+comportamiento del robot.</font></font></p>
+
+<hr>
+<h2><font face="Arial, sans-serif">El PUERTO B en el Skybot</font></h2>
+
+<p align="justify"><font face="Arial, sans-serif"><font size="2">La
+tarjeta SKY293 se conecta a la Skypic a trav&eacute;s del <b>PUERTO B</b>.
+Incluye cuatro sensores y dos motores. Para los sensores s&oacute;lo
+se necesita 1 bit y para los motores cuatro, dos para cada motor. Se
+accede a estos perif&eacute;ricos por los bits del puerto B que se
+indican en esta figura.</font></font></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+			<td valign="top" width="100%">
+				
+    <p align="center"><img src="images/ejemplos_portb_skybot.png" name="Imagen1" align="middle" border="0" height="134" width="647"></p>
+
+			</td>
+
+		</tr>
+
+	</thead>
+</table>
+
+<p><font face="Arial, sans-serif"><font size="2">Los bits <b>RB0</b>,
+<b>RB5</b>, <b>RB6</b> y <b>RB7</b> hay que configurarlos como
+<b>entradas</b> para poder leer los sensores. Los bits <b>RB1</b>,
+<b>RB2</b>, <b>RB3</b> y <b>RB4</b> hay que configurarlos como
+<b>salidas</b> para poder mover los motores.</font></font></p>
+
+<p align="justify"><font face="Arial, sans-serif"><font size="2">En la
+tarjeta SKY293 hay <b>4 switches</b> que permiten desconectar los
+sensores por si se quieren utilizar los bits del puerto B para otros
+prop&oacute;sitos. En la figura se muestra qu&eacute; n&uacute;mero
+de switch est&aacute; asociado a qu&eacute; sensor. Cuando los
+switches est&aacute;n conectado (posi&oacute;n ON, hacia abajo) los
+sensores est&aacute;n conectados al puerto B. En caso contrario est&aacute;n
+desconectados.</font></font></p>
+
+<hr>
+<h2><font face="Arial, sans-serif">El control de los motores</font></h2>
+
+<p><font face="Arial, sans-serif"><font size="2">Los motores se
+controlan de manera digital. Para cada uno de ellos hay dos bits, uno
+que indica si el motor est&aacute; encendido o apagado (ON/OFF) y el
+otro el sentido de giro.</font></font></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+			<td valign="top" width="100%">
+				
+    <p align="center"><img src="images/ejemplos_motores.png" name="Imagen2" align="middle" border="0" height="144" width="499"></p>
+
+			</td>
+
+		</tr>
+
+	</thead>
+</table>
+
+<p align="justify"><font face="Arial, sans-serif"><font size="2">Seg&uacute;n
+las combinaciones de bits que enviemos al puerto B, cambiaremos el
+estado de los motores. Si las conexiones se han realizado como se ha
+descrito en la documentaci&oacute;n del taller los valores que hay
+que enviar para mover el robot ser&aacute;n los mostrados en la
+siguiente tabla. Si se han hecho otras conexiones entonces los
+valores ser&aacute;n diferentes y el usuario los tendr&aacute; que
+buscar.</font></font></p>
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="100%">
+
+	<col width="43*">
+	<col width="43*">
+	<col width="43*">
+	<col width="43*">
+	<col width="43*">
+	<col width="43*">
+	<thead>
+		<tr valign="top">
+
+			<th bgcolor="#e6e6e6" width="17%">
+				
+    <p><font face="Arial, sans-serif"><font size="2">Acci&oacute;n </font></font>
+				</p>
+
+			</th>
+
+			<th bgcolor="#e6e6e6" width="17%">
+				
+    <p><font face="Arial, sans-serif"><font size="2">RB4</font></font></p>
+
+			</th>
+
+			<th bgcolor="#e6e6e6" width="17%">
+				
+    <p><font face="Arial, sans-serif"><font size="2">RB3</font></font></p>
+
+			</th>
+
+			<th bgcolor="#e6e6e6" width="17%">
+				
+    <p><font face="Arial, sans-serif"><font size="2">RB2</font></font></p>
+
+			</th>
+
+			<th bgcolor="#e6e6e6" width="17%">
+				
+    <p><font face="Arial, sans-serif"><font size="2">RB1</font></font></p>
+
+			</th>
+
+			<th bgcolor="#e6e6e6" width="17%">
+				
+    <p><font face="Arial, sans-serif"><font size="2">Valor en puerto B</font></font></p>
+
+			</th>
+
+		</tr>
+
+	</thead>
+	<tbody>
+
+		<tr>
+
+			<td valign="top" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2"><b>Adelante</b></font></font></p>
+
+			</td>
+
+			<td sdval="0" sdnum="1034;" valign="bottom" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
+
+			</td>
+
+			<td sdval="0" sdnum="1034;" valign="bottom" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
+
+			</td>
+
+			<td sdval="1" sdnum="1034;" valign="bottom" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
+
+			</td>
+
+			<td sdval="1" sdnum="1034;" valign="bottom" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">0</font></font></p>
+
+			</td>
+
+			<td valign="top" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">0x1C</font></font></p>
+
+			</td>
+
+		</tr>
+
+		<tr>
+
+			<td valign="top" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2"><b>Atras</b></font></font></p>
+
+			</td>
+
+			<td sdval="1" sdnum="1034;" valign="bottom" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
+
+			</td>
+
+			<td sdval="1" sdnum="1034;" valign="bottom" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">0</font></font></p>
+
+			</td>
+
+			<td sdval="1" sdnum="1034;" valign="bottom" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
+
+			</td>
+
+			<td sdval="1" sdnum="1034;" valign="bottom" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
+
+			</td>
+
+			<td valign="top" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">0x16</font></font></p>
+
+			</td>
+
+		</tr>
+
+		<tr>
+
+			<td valign="top" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2"><b>Izquierda</b></font></font></p>
+
+			</td>
+
+			<td sdval="1" sdnum="1034;" valign="bottom" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
+
+			</td>
+
+			<td sdval="0" sdnum="1034;" valign="bottom" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
+
+			</td>
+
+			<td sdval="1" sdnum="1034;" valign="bottom" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
+
+			</td>
+
+			<td sdval="1" sdnum="1034;" valign="bottom" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
+
+			</td>
+
+			<td valign="top" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">0x1E</font></font></p>
+
+			</td>
+
+		</tr>
+
+		<tr>
+
+			<td valign="top" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2"><b>Derecha</b></font></font></p>
+
+			</td>
+
+			<td sdval="0" sdnum="1034;" valign="bottom" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
+
+			</td>
+
+			<td sdval="1" sdnum="1034;" valign="bottom" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">0</font></font></p>
+
+			</td>
+
+			<td sdval="1" sdnum="1034;" valign="bottom" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
+
+			</td>
+
+			<td sdval="1" sdnum="1034;" valign="bottom" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">0</font></font></p>
+
+			</td>
+
+			<td valign="top" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">0x14</font></font></p>
+
+			</td>
+
+		</tr>
+
+		<tr>
+
+			<td valign="top" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2"><b>Parado</b></font></font></p>
+
+			</td>
+
+			<td sdval="0" sdnum="1034;" valign="bottom" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">0</font></font></p>
+
+			</td>
+
+			<td sdval="0" sdnum="1034;" valign="bottom" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">0</font></font></p>
+
+			</td>
+
+			<td sdval="0" sdnum="1034;" valign="bottom" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">0</font></font></p>
+
+			</td>
+
+			<td sdval="0" sdnum="1034;" valign="bottom" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">0</font></font></p>
+
+			</td>
+
+			<td valign="top" width="17%">
+				
+      <p align="center"><font face="Arial, sans-serif"><font size="2">0x00</font></font></p>
+
+			</td>
+
+		</tr>
+
+	
+  </tbody>
+</table>
+
+<p><br>
+<br>
+
+</p>
+
+<hr>
+<h2><font face="Arial, sans-serif">Los sensores de infrarrojos</font></h2>
+
+<p align="justify"><font face="Arial, sans-serif"><font size="2">Los
+sensores de infrarrojos <b>CNY70</b> tienen incorporado un emisor y
+un receptor en el mismo encapsulado. Est&aacute;n constantemente
+emitiendo luz infrarroja. Si a poca distancia existe una superficie
+blanca, la luz se refleja y es captada por el receptor. Si la
+superficie es negra, absorbe la mayor parte de la luz y el detector
+no recibe nada.</font></font></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+			<td valign="top" width="100%">
+				
+    <p align="center"><img src="images/ejemplos_sensores.png" name="Imagen3" align="middle" border="0" height="245" width="482"></p>
+
+			</td>
+
+		</tr>
+
+	</thead>
+</table>
+
+<p><br>
+<br>
+
+</p>
+
+<p><font face="Arial, sans-serif"><font size="2">En la siguiente tabla
+se resume el valor leido en el bit correspondiente del puerto B de la
+Skypic seg&uacute;n el color detectado por el sensor:</font></font></p>
+
+<dl>
+
+	
+  <dl>
+
+		
+    <dl>
+
+			
+      <dl>
+
+				
+        <dl>
+
+					
+          <dl>
+
+						<dd>
+						
+              <table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="484">
+
+							<col width="77">
+							<col width="389">
+							<thead>
+								<tr valign="top">
+
+									<th bgcolor="#e6e6e6" width="77">
+										
+                  <p><font face="Arial, sans-serif"><font size="2">Color</font></font></p>
+
+									</th>
+
+									<th bgcolor="#e6e6e6" width="389">
+										
+                  <p><font face="Arial, sans-serif"><font size="2">Lectura del
+										sensor (Bit del puerto B)</font></font></p>
+
+									</th>
+
+								</tr>
+
+							</thead>
+							<tbody>
+
+								<tr>
+
+									<td valign="top" width="77">
+										
+                    <p align="center"><font face="Arial, sans-serif"><font size="2">Blanco</font></font></p>
+
+									</td>
+
+									<td sdval="0" sdnum="1034;" valign="bottom" width="389">
+										
+                    <p align="center"><font face="Arial, sans-serif"><font size="2">0</font></font></p>
+
+									</td>
+
+								</tr>
+
+								<tr>
+
+									<td valign="top" width="77">
+										
+                    <p align="center"><font face="Arial, sans-serif"><font size="2">Negro</font></font></p>
+
+									</td>
+
+									<td sdval="1" sdnum="1034;" valign="bottom" width="389">
+										
+                    <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
+
+									</td>
+
+								</tr>
+
+							
+                </tbody>
+						
+              </table>
+
+					</dd>
+          </dl>
+
+				
+        </dl>
+
+			
+      </dl>
+
+		
+    </dl>
+
+	
+  </dl>
+
+</dl>
+
+<p><br>
+<br>
+
+</p>
+
+<hr>
+<h2><font face="Arial, sans-serif">Programaci&oacute;n del robot</font></h2>
+
+<p align="justify"><font face="Arial, sans-serif"><font size="2">Para
+mover los motores y por tanto controlar el robot s&oacute;lo hay que
+dar valors a los bits RB4, RB3, RB2 y RB1 del puerto B del PIC. Es
+decir, el robot se mueve escribiendo valores en el puerto B. Para
+leer los sensores, s&oacute;lo hay que leer el puerto B y conocer en
+qu&eacute; estado est&aacute;n los bits RB0, RB5, RB6 y RB7.</font></font></p>
+
+<p><font face="Arial, sans-serif"><font size="2">La manera de programar
+comportamientos sencillos del robot es el siguiente:</font></font></p>
+
+<ul>
+
+	<li>
+    <p><font face="Arial, sans-serif"><font size="2">Leer los sensores
+	(lectura del puerto B)</font></font></p>
+
+	</li>
+  <li>
+    <p><font face="Arial, sans-serif"><font size="2">Procesar su valor
+	(hacer c&aacute;lculos)</font></font></p>
+
+	</li>
+  <li>
+    <p><font face="Arial, sans-serif"><font size="2">Mover los motores
+	(escritura en el puerto B)</font></font></p>
+
+  </li>
+</ul>
+
+<p><font face="Arial, sans-serif"><font size="2"><b>&iexcl;&iexcl;Con
+s&oacute;lo saber c&oacute;mo leer del puerto B y c&oacute;mo
+escribir en &eacute;l ya podremos implementar comportamientos
+sencillos!!!!</b></font></font></p>
+
+<hr>
+<p><a href="index.html"><font size="2"><font face="Arial, sans-serif">[Sesion
+3]</font></font></a></p>
+
+<address style="margin-bottom: 0.5cm;"><a href="http://www.iearobotics.com/personal/juan/index.html"><font size="2"><font face="Arial, sans-serif">Juan
+Gonz&aacute;lez</font></font></a><a href="http://www.iearobotics.com/">
+</a>
+</address>
+
+<p style="margin-bottom: 0cm;"><a href="http://www.iearobotics.com"><font size="2"><font face="Arial, sans-serif">IEAROBOTICS</font></font></a>
+</p>
+
+</body>
+</html>

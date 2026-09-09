@@ -1,0 +1,1785 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=iso-8859-15">
+  <title>Taller de robotica. Sesion 4. Ejemplos de
+programaci&oacute;n del Skybot</title>
+
+
+  <meta name="GENERATOR" content="OpenOffice.org 1.1.3 (Linux)">
+
+  <meta name="CREATED" content="20040522;11483800">
+
+  <meta name="CHANGED" content="20050722;2204900">
+
+  <meta name="KEYWORDS" content="robotica, microcontroladores, pic, hardware">
+
+  <style>
+<!--
+H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+-->
+  </style>
+</head>
+
+
+<body style="direction: ltr;" lang="en-US">
+
+<table style="page-break-before: always;" bgcolor="#abbeeb" border="0" cellpadding="4" cellspacing="0" width="917">
+
+  <col width="909"> <tbody>
+
+    <tr>
+
+      <td width="909">
+      <p align="center"><font face="Arial, sans-serif">Taller
+de Rob&oacute;tica B&aacute;sico - Skybot v1.4. - SESION 3 - <b>
+Ejemplos de programaci&oacute;n del Skybot</b></font></p>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<p style="margin-bottom: 0cm;" align="center"><br>
+
+</p>
+
+<hr>
+<h2>Objetivos</h2>
+
+<p align="justify"><font face="Arial, sans-serif"><font size="2">El
+objetivo de este cap&iacute;tulo es mostrar <b>ejemplos de
+programas
+en C</b> para manejar diferentes recursos del robot. Editando,
+compilando, probando y modificando los ejemplos se aprender&aacute;
+muy r&aacute;pidamente a manejar el robot y en poco tiempo se
+podr&aacute;
+dar rienda suelta a la imaginaci&oacute;n para hacer otras cosas...
+<b>&iexcl;Qu&eacute; comience la fiesta!</b></font></font></p>
+
+<hr>
+<h2>Contenido</h2>
+
+<ul>
+
+  <li>
+    <p><font size="2"><font face="Arial, sans-serif"><a href="#ejemplos_basicos">Ejemplos
+b&aacute;sicos</a>.</font></font></p>
+
+  </li>
+
+  <li>
+    <p><a href="#motores_sensores"><font size="2"><font face="Arial, sans-serif">Ejemplos b&aacute;sicos de
+motores y sensores</font></font></a></p>
+
+  </li>
+
+  <li>
+    <p><a href="#temporizacion"><font size="2"><font face="Arial, sans-serif">Temporizaci&oacute;n</font></font></a></p>
+
+  </li>
+
+  <li>
+    <p><a href="#puerto_serie"><font size="2"><font face="Arial, sans-serif">El puerto serie en el PIC</font></font></a></p>
+
+  </li>
+
+  <li>
+    <p><a href="#mezclando_todo"><font size="2"><font face="Arial, sans-serif">Mezclando todo</font></font></a></p>
+
+  </li>
+
+  <li>
+    <p><a href="#descargas"><font size="2"><font face="Arial, sans-serif">Descargas de ficheros</font></font></a></p>
+
+  </li>
+
+</ul>
+
+<hr>
+<h2><a name="ejemplos_basicos"></a>Ejemplos
+b&aacute;sicos</h2>
+
+<p><font face="Arial, sans-serif"><font size="2">Para
+los siguientes
+ejemplos <b>desconectar el cable que une la Skypic con la CT293</b>.</font></font></p>
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="100%">
+
+  <col width="256*"> <thead> <tr>
+
+    <td bgcolor="#ccccff" valign="top" width="100%">
+    <p><font face="Arial, sans-serif">[</font><a href="download/ledp.c.html"><font face="Arial, sans-serif">ledp</font></a><font face="Arial, sans-serif">] <b>Led parpadeante</b>.
+Hacer que el led de la Skypic parpadee.</font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p><font face="Arial, sans-serif"><font size="2">En
+la funci&oacute;n
+<font face="Courier, monospace">main()</font> nos
+encontramos con:</font></font></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="682">
+
+  <col width="674"> <thead> <tr>
+
+    <td bgcolor="#e6e6e6" valign="top" width="674">
+    <p>&nbsp;<font face="Monospace"><font color="#000000">PORTB</font>^=<font color="#000000">LED</font>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i><font color="#808080">//--&nbsp;Cambiar&nbsp;led&nbsp;de&nbsp;estado</font></i></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p><font face="Arial, sans-serif"><font size="2">Esta
+l&iacute;nea
+cambia de estado s&oacute;lo el bit RB1, dejando los
+dem&aacute;s
+igual. Lo que se consigue es que cada vez que se ejecuta el led pasa
+de un estado al contrario: de encendido a apagado y de apagado a
+encendido. </font></font>
+</p>
+
+<p><font face="Arial, sans-serif"><font size="2">Es
+la instrucci&oacute;n
+abreviada de PORTB = PORTB ^ LED, donde ^ es el operador XOR (O
+exclusivo)</font></font></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="682">
+
+  <col width="674"> <thead> <tr>
+
+    <td bgcolor="#e6e6e6" valign="top" width="674">
+    <p>&nbsp;<font face="Monospace"><font color="#000000">pausa</font>(<font color="#000000">RETRASO</font>);&nbsp;&nbsp;&nbsp;&nbsp;<i><font color="#808080">//--&nbsp;Pausa</font></i></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p><font face="Arial, sans-serif"><font size="2">A
+continuaci&oacute;n
+se llama una funci&oacute;n que hemos definido para hacer una
+pausa.
+El microcontrolador ejecuta instrucciones muy r&aacute;pido. Si
+cambiamos de estado el led muy r&aacute;pidamente, nuestro ojo no
+lo
+apreciar&aacute; y dar&aacute; la impresi&oacute;n de que
+el led est&aacute;
+siempre encendido. Por ello hay que introducir una pausa. En la
+funci&oacute;n de pausa se decrrementa una variable hasta llegar a
+0.
+Cambiando el par&aacute;metro que se le paso conseguimos una pausa
+mayor o menor.</font></font></p>
+
+<p><font face="Arial, sans-serif"><font size="2"><b>EXPERIMENTO</b>:
+Modificar el valor de la constante RETRASO. Poniendo diferentes
+valores. Por ejemplo 0x8000, 0x4000... &iquest;Qu&eacute;
+sucede?</font></font></p>
+
+<p><br>
+
+<br>
+
+</p>
+
+<hr>
+<h2><a name="motores_sensores"></a>Ejemplos
+b&aacute;sicos de motores
+y sensores</h2>
+
+<p style="margin-bottom: 0cm;"><br>
+
+</p>
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="100%">
+
+  <col width="256*"> <thead> <tr>
+
+    <td bgcolor="#ccccff" valign="top" width="100%">
+    <p><font face="Arial, sans-serif">[<a href="download/motor-on.c.html"><font size="2"><font face="Arial, sans-serif">motor-on</font></font></a>]
+    <b>Activar los motores para que el robot vaya hacia adelante</b></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p style=""><font face="Arial, sans-serif"><font size="2">Este
+programa simplemente hace que el robot avance. Para que se
+par&eacute;
+habr&aacute; que quitar la alimentaci&oacute;n :-). Conseguimos
+que
+se mueva simplemente enviando.</font></font></p>
+
+<p style=""><font face="Arial, sans-serif"><font size="2">Lo
+primero que se hace es configurar el <b>PUERTO B</b> para
+trabajar
+con el Skybot.</font></font></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="684">
+
+  <col width="676"> <thead> <tr>
+
+    <td bgcolor="#e6e6e6" valign="top" width="676">
+    <p><font color="#808080">&nbsp;&nbsp;<i><font face="Monospace">//--&nbsp;Configurar&nbsp;el&nbsp;puerto&nbsp;B&nbsp;para&nbsp;trabajar&nbsp;con&nbsp;el&nbsp;Skybot<br>
+
+&nbsp;&nbsp;//--&nbsp;RB0,&nbsp;RB5,&nbsp;RB6&nbsp;y&nbsp;RB7&nbsp;como&nbsp;entradas<br>
+
+&nbsp;&nbsp;//--&nbsp;RB1,&nbsp;RB2,&nbsp;RB3&nbsp;y&nbsp;RB4&nbsp;como&nbsp;salidas<br>
+
+&nbsp;&nbsp;<font color="#000000">TRISB</font>=<font color="#008080">0xE1</font>;</font></i></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p style=""><font face="Arial, sans-serif"><font size="2">y
+despu&eacute;s se activan los bits correspondientes del puerto B,
+enviado directamente un valor:</font></font></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="684">
+
+  <col width="676"> <thead> <tr>
+
+    <td bgcolor="#e6e6e6" valign="top" width="676">
+    <p><font color="#808080">&nbsp;&nbsp;<i><font face="Monospace">//--&nbsp;Activar&nbsp;los&nbsp;bits&nbsp;de&nbsp;los&nbsp;motores&nbsp;para&nbsp;que&nbsp;el&nbsp;robot&nbsp;avance<br>
+
+&nbsp;&nbsp;<font color="#000000">PORTB</font>=<font color="#000000">AVANZA</font>;</font></i></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p><br>
+
+<br>
+
+</p>
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="100%">
+
+  <col width="256*"> <thead> <tr>
+
+    <td bgcolor="#ccccff" valign="top" width="100%">
+    <p><font face="Arial, sans-serif">[<a href="download/motor-off.c.html"><font size="2"><font face="Arial, sans-serif">motor-off</font></font></a>]
+    <b>Parar los motores</b></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p style=""><font face="Arial, sans-serif"><font size="2">Este
+ejemplo es igual que el motor-on, pero en vez de enviar el valor
+AVANZA, se env&iacute;a el valor STOP para que el robot se pare.</font></font></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="684">
+
+  <col width="676"> <thead> <tr>
+
+    <td bgcolor="#e6e6e6" valign="top" width="676">
+    <p><font color="#808080">&nbsp;&nbsp;<i><font face="Monospace">//--&nbsp;Parar&nbsp;el&nbsp;robot<br>
+
+&nbsp;&nbsp;<font color="#000000">PORTB</font>=<font color="#000000">STOP</font>;</font></i></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p style=""><font face="Arial, sans-serif"><font size="2"><b>EXPERIMENTO</b>:
+Modificar el valor que se env&iacute;a al puerto B para que el
+robot
+se mueva de diferente manera. Para que el robot gire, los motores se
+activan en sentidos contrarios. Pero tambi&eacute;n
+girar&aacute; si
+una de las ruedas se para y la otra avanza. Esto permite hacer giros
+de mayor radio y m&aacute;s suaves.</font></font></p>
+
+<p><br>
+
+<br>
+
+</p>
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="100%">
+
+  <col width="256*"> <thead> <tr>
+
+    <td bgcolor="#ccccff" valign="top" width="100%">
+    <p><font face="Arial, sans-serif">[<a href="download/sensor4.c.html"><font size="2"><font face="Arial, sans-serif">sensor4</font></font></a>]
+    <b>Prueba del sensor 4. </b>Leer su estado y mostrarlo
+por el led</font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p style=""><font face="Arial, sans-serif"><font size="2">Este
+ejemplo es muy &uacute;til para comprobar si los sensores funcionan
+correctamente. El programa s&oacute;lo lee el sensor 4 pero
+cambiando
+la constante SENSOR podemos leer los otros sensores, reflejando su
+estado por el led. La &uacute;nica excepci&oacute;n es el
+SENSOR 2
+que comparte pin con el led. Si usamos el led, no podemos leer ese
+sensor :-(</font></font></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="811">
+
+  <col width="803"> <thead> <tr>
+
+    <td bgcolor="#e6e6e6" valign="top" width="803">
+    <p><font color="#808080"><font face="Monospace"><i>//--&nbsp;Indicar&nbsp;el&nbsp;sensor&nbsp;a&nbsp;comprobar.&nbsp;Esto&nbsp;se&nbsp;puede&nbsp;cambiar,&nbsp;pero&nbsp;no&nbsp;se&nbsp;puede<br>
+
+//--&nbsp;poner&nbsp;el&nbsp;sensor&nbsp;2&nbsp;porque&nbsp;comparte&nbsp;pin&nbsp;con&nbsp;el&nbsp;led<br>
+
+    <font color="#008000">#define&nbsp;&nbsp;&nbsp;SENSOR&nbsp;SENSOR4</font></i></font></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p style=""><font face="Arial, sans-serif"><font size="2">Si
+ponemos en esa constante el valor SENSOR3, el programa
+funcionar&aacute;
+para ese sensor.</font></font></p>
+
+<p style=""><font face="Arial, sans-serif"><font size="2"><b>EXPERIMENTO</b>:
+Cambiar el valor de la constante SENSOR para hacer pruebas con los
+sensores 1 y 3.</font></font></p>
+
+<p><br>
+
+<br>
+
+</p>
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="100%">
+
+  <col width="256*"> <thead> <tr>
+
+    <td bgcolor="#ccccff" valign="top" width="100%">
+    <p><font face="Arial, sans-serif">[<a href="download/sensores.c.html"><font size="2"><font face="Arial, sans-serif">sensores</font></font></a>]
+    <b>Prueba de todos los sensores. </b>Leer su estado y
+mostrarlo por 4 leds externos conectados al puerto A</font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p><font face="Arial, sans-serif"><font size="2">Este
+ejemplo es
+similar al sensor4 pero en este caso se leen todos los sensores y su
+estado se muestra por el PUERTO A. Como la skypic tiene s&oacute;lo
+un led, para poder probar este programa habr&aacute; que conectar 4
+leds externos o bien utilizar alguna placa que ya los lleve, como por
+ejemplo la FREELEDs.</font></font></p>
+
+<p><br>
+
+<br>
+
+</p>
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="100%">
+
+  <col width="256*"> <thead> <tr>
+
+    <td bgcolor="#ccccff" valign="top" width="100%">
+    <p><font face="Arial, sans-serif">[<a href="download/motores-sensor3.c.html"><font size="2"><font face="Arial, sans-serif">motores-sensor3</font></font></a>]
+    <b>Prueba de motores y sensores. </b>El robot avanza
+cuando le sensor 3 lee negro. Se para si lee blanco.</font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p><font face="Arial, sans-serif"><font size="2">Ejemplo
+de un
+comportamiento muy sencillo del robot. Si el sensor 3 lee negro, el
+robot est&aacute; parado. Pero si lee blanco, se pone a avanzar.
+Cambiando el valor de la constante SENSOR podemos hacer la misma
+prueba con cualquiera de los otros tres sensores.</font></font></p>
+
+<p style=""><font face="Arial, sans-serif"><font size="2"><b>EXPERIMENTO</b>:
+Colocar el robot sobre una superficie blanca (por ejemplo un folio).
+Colocar en un trozo de papel un trozo de cinta aislante negro. El
+robot avanzar&aacute; pero si le ponemos el trozo negro debajo del
+sensor 3 se parar&aacute;. Si lo desplazamos hacia adelante el
+robot
+volver&aacute; a avanzar hasta situarse otra vez sobre
+&eacute;l.
+Dar&aacute; la impresi&oacute;n de que est&aacute;
+siguiente el trozo
+de papel negro que le estamos poniendo :-). En este ejemplo
+s&oacute;lo
+se mover&aacute; en l&iacute;nea recta.</font></font></p>
+
+<p><br>
+
+<br>
+
+</p>
+
+<hr>
+<h2><a name="temporizacion"></a>Temporizaci&oacute;n</h2>
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="100%">
+
+  <col width="256*"> <thead> <tr>
+
+    <td bgcolor="#ccccff" valign="top" width="100%">
+    <p><font face="Arial, sans-serif">[<a href="download/delay0.h.html"><font size="2"><font face="Arial, sans-serif">delay0.h</font></font></a>][<a href="download/delay0.c.html"><font size="2"><font face="Arial, sans-serif">delay0.c</font></font></a>]
+    <b>Librer&iacute;a para temporizaci&oacute;n (timer 0)</b></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p><font face="Arial, sans-serif"><font size="2">Esta
+librer&iacute;a
+se emplear&aacute; desde otros programas en C (<font face="Courier, monospace">#include
+&ldquo;delay0.h&rdquo;</font>). Tiene una
+funci&oacute;n llamada
+<font face="Courier, monospace">delay0()</font> que
+nos permite
+realizar pausas en unidades de 10ms. Para usar esta funci&oacute;n,
+previamente hay que configurar el temporizador, llamando a
+<font face="Monospace"><font color="#000000">timer0_configurar</font>().</font></font></font></p>
+
+<p><font face="Arial, sans-serif"><font size="2">El
+microcontrolador
+PIC incluye en su interior una serie de perif&eacute;ricos que son
+muy &uacute;tiles en rob&oacute;tica. Uno de ellos es el
+temporizador
+0 (timer 0 en ingl&eacute;s). Es una especie de
+&ldquo;cron&oacute;metro&rdquo;
+que nos permite saber cuanto tiempo ha transcurrido desde la
+&uacute;ltima
+vez que se emple&oacute;.</font></font></p>
+
+<p><font face="Arial, sans-serif"><font size="2">Tal
+y como est&aacute;
+configurado en esta librer&iacute;a, la pausa m&aacute;xima que
+podremos realizar es de 2560 ms, es decir, de 2.5 segundos
+aproximadamente. Y la pausa m&iacute;nima es de 10 ms.</font></font></p>
+
+<p style="margin-bottom: 0cm;"><font face="Arial, sans-serif"><font size="2">Esta
+es la funci&oacute;n que hay que llamar para configurar el
+temporizador 0.</font></font></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="811">
+
+  <col width="803"> <thead> <tr>
+
+    <td bgcolor="#e6e6e6" valign="top" width="803">
+    <p><font color="#808080"><font face="Monospace"><i>/************************************/<br>
+
+/*&nbsp;Configurar&nbsp;el&nbsp;temporizador&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/<br>
+
+/************************************/<br>
+
+    <font color="#800000">void</font>&nbsp;<font color="#000000">timer0_configurar</font>()</i></font></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p style=""><font face="Arial, sans-serif"><font size="2">y
+esta es la funci&oacute;n de pausa:</font></font></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="811">
+
+  <col width="803"> <thead> <tr>
+
+    <td bgcolor="#e6e6e6" valign="top" width="803">
+    <p><font color="#808080"><font face="Monospace"><i>/************************************************/<br>
+/*&nbsp;Hacer&nbsp;una&nbsp;pausa&nbsp;en&nbsp;unidades&nbsp;de&nbsp;10ms&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/<br>
+/*&nbsp;ENTRADA:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/<br>
+
+/*&nbsp;&nbsp;&nbsp;-pausa:&nbsp;Valor&nbsp;de&nbsp;la&nbsp;pausa&nbsp;en&nbsp;decenas&nbsp;de&nbsp;ms&nbsp;*/<br>
+
+/************************************************/<br>
+
+    <font color="#800000">void</font>&nbsp;<font color="#000000">delay0</font>(<font color="#800000">unsigned</font>&nbsp;<font color="#800000">char</font>&nbsp;<font color="#000000">pausa</font>)</i></font></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p><br>
+
+<br>
+
+</p>
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="100%">
+
+  <col width="256*"> <thead> <tr>
+
+    <td bgcolor="#ccccff" valign="top" width="100%">
+    <p><font face="Arial, sans-serif">[<a href="download/ledp2.c.html"><font size="2"><font face="Arial, sans-serif">ledp2</font></font></a>]
+    <b>Led parpadeante con temporizador</b></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p><font size="2"><font face="Arial, sans-serif">Ejemplo
+de uso de la
+librer&iacute;a <a href="download/delay0.h.html"><font size="2"><font face="Arial, sans-serif">delay0.h</font></font></a>.
+Se cambia el estado del led cada medio segundo.</font></font></p>
+
+<p><font size="2"><font face="Arial, sans-serif">Para
+usar esta
+librer&iacute;a debemos incluir el fichero <a href="download/delay0.h.html"><font size="2"><font face="Arial, sans-serif">delay0.h</font></font></a></font></font></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="811">
+
+  <col width="803"> <thead> <tr>
+
+    <td bgcolor="#e6e6e6" valign="top" width="803">
+    <p><font color="#808080"><font face="Monospace"><i>//--&nbsp;Para&nbsp;usar&nbsp;temporizaciones&nbsp;con&nbsp;el&nbsp;timer&nbsp;0<br>
+
+    <font color="#008000">#include&nbsp;"delay0.h"</font></i></font></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p style=""><font face="Arial, sans-serif"><font size="2">y
+en el programa principal hay que configurar el temporizador 0:</font></font></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="811">
+
+  <col width="803"> <thead> <tr>
+
+    <td bgcolor="#e6e6e6" valign="top" width="803">
+    <p><font color="#808080"><font face="Monospace"><i>//--&nbsp;Configurar&nbsp;temporizador<br>
+
+&nbsp;&nbsp;<font color="#000000">timer0_configurar</font>();</i></font></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p style=""><font face="Arial, sans-serif"><font size="2">El
+bucle principal es muy sencillo:</font></font></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="811">
+
+  <col width="803"> <thead> <tr>
+
+    <td bgcolor="#e6e6e6" valign="top" width="803">
+    <p><font color="#808080">&nbsp;&nbsp;&nbsp;&nbsp;<i><font face="Monospace"><font color="#000000">delay0</font>(<font color="#0000ff">50</font>);&nbsp;&nbsp;&nbsp;&nbsp;//--&nbsp;Pausa&nbsp;de&nbsp;0.5seg<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">PORTB</font>^=<font color="#008080">0x02</font>;&nbsp;&nbsp;//--&nbsp;Cambiar&nbsp;el&nbsp;led&nbsp;de&nbsp;estado</font></i></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p style=""><font face="Arial, sans-serif"><font size="2">Se
+hace una pausa de medio segundo y se cambia el estado del led. Eso se
+repite indefinidamente.</font></font></p>
+
+<p style=""><font face="Arial, sans-serif"><font size="2"><b>EXPERIMENTO</b>:
+&iquest;Y si queremos hacer una rutina de pausa m&aacute;s
+larga para
+que el led cambie de estado cada 5 segundos? <b>Ayuda</b>:
+siempre
+podremos hacer una funci&oacute;n que dentro de un bucle llame a
+delay0()...</font></font></p>
+
+<hr>
+<h2><a name="puerto_serie"></a>El puerto serie
+en el PIC</h2>
+
+<p><font face="Arial, sans-serif"><font size="2">Mediante
+el puerto
+serie podemos comuniar el robot con el PC. Para estos ejemplos
+debemos utilizar un terminal de comunicaciones configurado a <b>9600</b>
+baudios, como por ejemplo el <b>minicom</b> en Linux o el
+<b>Hyperterminal </b>en Windows.</font></font></p>
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="100%">
+
+  <col width="256*"> <thead> <tr>
+
+    <td bgcolor="#ccccff" valign="top" width="100%">
+    <p><font size="2"><font size="3"><font face="Arial, sans-serif">[</font></font><a href="download/sci.h.html"><font size="3"><font face="Arial, sans-serif">sci.h</font></font></a><font size="3"><font face="Arial, sans-serif">] <b>Librer&iacute;a
+para enviar y recibir informaci&oacute;n por el puerto serie, a
+9600 baudios</b>.</font></font></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p><font face="Arial, sans-serif"><font size="2">Esta
+librer&iacute;a
+permite enviar caracteres y recibir caracteres, y tambi&eacute;n
+incluye una funci&oacute;n para enviar cadenas.</font></font></p>
+
+<p><font size="2"><font face="Arial, sans-serif">Para
+usar esta
+librer&iacute;a debemos incluir el fichero </font></font><a href="download/sci.h.html"><font size="2"><font face="Arial, sans-serif">sci.h</font></font></a></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="811">
+
+  <col width="803"> <thead> <tr>
+
+    <td bgcolor="#e6e6e6" valign="top" width="803">
+    <p><font color="#808080"><font face="Monospace"><i>//--&nbsp;Se&nbsp;usa&nbsp;la&nbsp;libreria&nbsp;de&nbsp;comunicaciones&nbsp;serie<br>
+
+    <font color="#008000">#include&nbsp;"sci.h"</font></i></font></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p style=""><font face="Arial, sans-serif"><font size="2">y
+en el programa principal hay que configurar el puerto serie:</font></font></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="811">
+
+  <col width="803"> <thead> <tr>
+
+    <td bgcolor="#e6e6e6" valign="top" width="803">
+    <p><font color="#808080"><font face="Monospace"><i>//--&nbsp;Configurar&nbsp;las&nbsp;comunicaciones&nbsp;serie<br>
+
+&nbsp;&nbsp;<font color="#000000">sci_conf</font>();</i></font></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p><br>
+
+<br>
+
+</p>
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="100%">
+
+  <col width="256*"> <thead> <tr>
+
+    <td bgcolor="#ccccff" valign="top" width="100%">
+    <p><font face="Arial, sans-serif">[<a href="download/sci-eco.c.html"><font face="Arial, sans-serif">sci-eco</font></a><font face="Arial, sans-serif">]</font> <b>Hacer eco
+por el puerto serie de todo lo recibido</b></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p><font face="Arial, sans-serif"><font size="2">Ejemplo
+que lee un
+caracter del puerto serie, cambia el estado del led, y lo vuelve a
+enviar.</font></font></p>
+
+<p style="margin-bottom: 0cm;"><font face="Arial, sans-serif"><font size="2">Para
+leer carcteres del puerto serie se utiliza la funci&oacute;n
+<font face="Courier, monospace">sci_read()</font></font></font></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="811">
+
+  <col width="803"> <thead> <tr>
+
+    <td bgcolor="#e6e6e6" valign="top" width="803">
+    <p><font color="#808080"><font face="Monospace"><i>//--&nbsp;Esperar&nbsp;a&nbsp;que&nbsp;llegue&nbsp;dato&nbsp;del&nbsp;PC<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">c</font>=<font color="#000000">sci_read</font>();</i></font></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p style=""><font face="Arial, sans-serif"><font size="2">Al
+llamarla, el microcontrolador se queda esperando hasta que llegue un
+car&aacute;cter por el puerto serie. En ese momento lo devuelve la
+funci&oacute;n y se almacena en la variable c.</font></font></p>
+
+<p style=""><font face="Arial, sans-serif"><font size="2">Para
+enviar el caracter de vuelta se llama a <font face="Courier, monospace">sci_write()</font>,
+pasando como par&aacute;metro el car&aacute;cter recibido</font></font></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="811">
+
+  <col width="803"> <thead> <tr>
+
+    <td bgcolor="#e6e6e6" valign="top" width="803">
+    <p><font color="#808080">&nbsp;<i><font face="Monospace">//--&nbsp;...y&nbsp;enviar&nbsp;de&nbsp;vuelta&nbsp;el&nbsp;caracter&nbsp;por&nbsp;el&nbsp;puerto&nbsp;serie<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">sci_write</font>(<font color="#000000">c</font>);</font></i></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p style=""><font face="Arial, sans-serif"><font size="2"><b>EXPERIMENTO</b>:
+Hacer que devuelva un car&aacute;cter distinto del recibido. Por
+ejemplo que le sume 1.</font></font></p>
+
+<p><br>
+
+<br>
+
+</p>
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="100%">
+
+  <col width="256*"> <thead> <tr>
+
+    <td bgcolor="#ccccff" valign="top" width="100%">
+    <p><font face="Arial, sans-serif">[<a href="download/sci-cad.c.html"><font face="Arial, sans-serif">sci-cad</font></a><font face="Arial, sans-serif">]</font> <b>Enviar una
+cadena por el puerto serie cada vez que se recibe algo</b></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p><font face="Arial, sans-serif"><font size="2">Es
+un ejemplo muy
+parecido al sci-eco.c, pero en vez de un caracter se envia una
+cadena. Esto es muy &uacute;til para hacer programas que muestren
+un
+men&uacute; de opciones al usuario.</font></font></p>
+
+<p><font face="Arial, sans-serif"><font size="2">Para
+enviar una cadena
+hay que llamar a la funci&oacute;n <font face="Courier, monospace">sci_cad()</font>:</font></font></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="811">
+
+  <col width="803"> <thead> <tr>
+
+    <td bgcolor="#e6e6e6" valign="top" width="803">
+    <p><font color="#808080"><font face="Monospace"><i>//--&nbsp;Enviar&nbsp;la&nbsp;cadena&nbsp;por&nbsp;el&nbsp;puerto&nbsp;serie<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">sci_cad</font>(<font color="#ff0000">"Hola&nbsp;como&nbsp;estas..."</font>);</i></font></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p style=""><font face="Arial, sans-serif"><font size="2">Esta
+funci&oacute;n s&oacute;lo es v&aacute;lida para enviar
+cadenas
+consantes. Si se quieren enviar cadenas localizadas en un array hay
+que invocar a la funci&oacute;n sci_cad2(). En las
+pr&oacute;ximas
+versiones del SDCC lo corregir&aacute;n.</font></font></p>
+
+<p><br>
+
+<br>
+
+</p>
+
+<hr>
+<h2><a name="mezclando_todo"></a>Mezclando todo</h2>
+
+<p style="" align="left"><font face="Arial, sans-serif"><font size="2">Lo
+bueno de tener peque&ntilde;os ejemplos sueltos es que se puede
+aplicar la t&eacute;cnica de CYP para programa. Es la
+t&eacute;cnica
+del COPY Y PASTE :-). Tomando una pieza de aqu&iacute;, otra de
+all&aacute;
+y a&ntilde;adiendo unas pocas cosillas m&aacute;s se pueden
+hacer
+programas muy interesantes.</font></font></p>
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="100%">
+
+  <col width="256*"> <thead> <tr>
+
+    <td bgcolor="#ccccff" valign="top" width="100%">
+    <p><font face="Arial, sans-serif">[<a href="download/sci-sensor.c.html"><font face="Arial, sans-serif">sci-sensor</font></a>] <b>Enviar
+el estado de un sensor por el puerto serie</b></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p><font face="Arial, sans-serif"><font size="2">Este
+ejemplo lee uno
+de los sensores (se puede especificar cu&aacute;l cambiando la
+constante SENSOR) y env&iacute;a su estado por el puerto serie. Si
+lee negro env&iacute;a la letra 'N' y si lee blanco la 'B'. Es muy
+&uacute;til para probar los sensores.</font></font></p>
+
+<p><br>
+
+<br>
+
+</p>
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="100%">
+
+  <col width="256*"> <thead> <tr>
+
+    <td bgcolor="#ccccff" valign="top" width="100%">
+    <p><font face="Arial, sans-serif">[<a href="download/sci-menu.c.html"><font face="Arial, sans-serif">sci-menu</font></a>] <b>Mover
+el robot desde un men&uacute; de opciones que se ve en un terminal
+serie</b></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p><font face="Arial, sans-serif"><font size="2">Este
+es un ejemplo muy
+interesante. Al pulsar el bot&oacute;n de reset y comenzar a
+ejecutarse el programa, env&iacute;a un menu por el puerto serie,
+que
+se visualiza si tenemos abierto un terminal de comunicaciones a 9600
+baudios. Mediante estas opciones podremos mover el robot. </font></font>
+</p>
+
+<p><font face="Arial, sans-serif"><font size="2">Las
+teclas empleadas
+son o,p,q,a y espacio.</font></font></p>
+
+<p style=""><font face="Arial, sans-serif"><font size="2"><b>EXPERIMENTO</b>:
+Anadir m&aacute;s opciones al programa. Por ejemplo para que el
+robot
+realice giros en arco, en los que una rueda est&aacute; parada y la
+otra avanzando.</font></font></p>
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="100%">
+
+  <col width="256*"> <thead> <tr>
+
+    <td bgcolor="#ccccff" valign="top" width="100%">
+    <p><font face="Arial, sans-serif">[<a href="download/secuencia.c.html"><font face="Arial, sans-serif">secuencia</font></a>] <b>El
+robot realiza una secuencia pregrabada</b></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p><font face="Arial, sans-serif"><font size="2">Este
+es uno de los
+ejemplos m&aacute;s divertidos :-). Ya sabemos c&oacute;mo
+mover el
+robot. Tambi&eacute;n podemos esperar un determinado tiempo.
+Tenemos
+todos los elementos para hacer que el robot siga una secuencia de
+movimiento pregrabada, del tipo: ir hacia adelante durante 1 segundo,
+luego girar a la izquierda durante 0.3 segundos, luego ve hacia
+tr&aacute;s...</font></font></p>
+
+<p style=""><font face="Arial, sans-serif"><font size="2"><b>EXPERIMENTO</b>:
+Modificar la secuencia para que describa un triangulo y que al
+terminar vuelva al punto inicial.</font></font></p>
+
+<p><br>
+
+<br>
+
+</p>
+
+<hr>
+<h2><a name="descargas"></a>Descarga de
+ficheros</h2>
+
+<p style="margin-bottom: 0cm;"><br>
+
+</p>
+
+<dl>
+
+  <dd>
+    <table bgcolor="#abbeeb" border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="858">
+
+      <tbody>
+
+        <tr>
+
+          <td width="848">
+          <p align="center"><font face="Arial, sans-serif"><b>Ejemplos para el skybot</b></font></p>
+
+          </td>
+
+        </tr>
+
+      </tbody>
+    </table>
+
+  </dd>
+
+  <dd>
+    <table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" rules="cols" width="858">
+
+      <col width="136"> <col width="140"> <col width="122"> <col width="426"> <tbody>
+
+        <tr bgcolor="#abbeeb">
+
+          <td width="136">
+          <p align="center"><font face="Arial, sans-serif"><b>Fichero C</b></font></p>
+
+          </td>
+
+          <td width="140">
+          <p align="center"><font face="Arial, sans-serif"><b>Ejecutable</b></font></p>
+
+          </td>
+
+          <td width="122">
+          <p align="center"><font face="Arial, sans-serif"><b>HTML</b></font></p>
+
+          </td>
+
+          <td width="426">
+          <p align="center"><font face="Arial, sans-serif"><b>Descripci&oacute;n</b></font></p>
+
+          </td>
+
+        </tr>
+
+      </tbody> <tbody>
+
+        <tr bgcolor="#cabeeb">
+
+          <td width="136">
+          <p><a href="download/ledon.c"><font size="2"><font face="Arial, sans-serif">ledon.c</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/ledon.hex"><font size="2"><font face="Arial, sans-serif">ledon.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/ledon.c.html"><font size="2"><font face="Arial, sans-serif">ledon</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>PUERTO B: Programa &ldquo;hola
+mundo&rdquo;. </b>Encender el led de la Skypic</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#abbeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/ledp.c"><font size="2"><font face="Arial, sans-serif">ledp.c</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/ledp.hex"><font size="2"><font face="Arial, sans-serif">ledp.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/ledp.c.html"><font size="2"><font face="Arial, sans-serif">ledp</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>PUERTO B: </b>Hacer que el led de
+la skypic parpadee</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#cabeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/motor-on.c"><font size="2"><font face="Arial, sans-serif">motor-on.c</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/motor-on.hex"><font size="2"><font face="Arial, sans-serif">motor-on.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/motor-on.c.html"><font size="2"><font face="Arial, sans-serif">motor-on</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>MOTORES: </b>Activar los dos
+motores del robot.</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#abbeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/motor-off.c"><font size="2"><font face="Arial, sans-serif">motor-off.c</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/motor-off.hex"><font size="2"><font face="Arial, sans-serif">motor-off.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/motor-off.c.html"><font size="2"><font face="Arial, sans-serif">motor-off</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>MOTORES: </b>desactivar los dos
+motores del robot.</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#cabeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/sensor4.c"><font size="2"><font face="Arial, sans-serif">sensor4.c</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/sensor4.hex"><font size="2"><font face="Arial, sans-serif">sensor4.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/sensor4.c.html"><font size="2"><font face="Arial, sans-serif">sensor4</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>SENSORES: </b>Ejemplo de lectura
+del sensor 4. Su estado se refleja en el led. Si lee blanco el led se
+apaga, si lee negro se enciente.</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#abbeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/sensores.c"><font size="2"><font face="Arial, sans-serif">sensores.c</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/sensores.hex"><font size="2"><font face="Arial, sans-serif">sensores.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/sensores.c.html"><font size="2"><font face="Arial, sans-serif">sensores</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>SENSORES: </b>Prueba de los 4
+sensores. Se lee su estado y se env&iacute;a al puerto A. Si se
+conectan 4 leds externos se podr&aacute; ver en ellos el estado de
+los sensores.</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#cabeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/motores-sensor3.c"><font size="2"><font face="Arial, sans-serif">motores-sensor3.c</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/motores-sensor3.hex"><font size="2"><font face="Arial, sans-serif">motores-sensor3.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/motores-sensor3.c.html"><font size="2"><font face="Arial, sans-serif">motores-sensor3</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>SENSORES y MOTORES: </b>Cuando el
+sensor 3 lee negro el robot est&aacute; parado. Si lee blanco
+comienza a avanzar.</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#abbeeb">
+
+          <td width="136">
+          <p><a href="download/delay0.h"><font size="2"><font face="Arial, sans-serif">delay0.h</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="140">
+          <p align="center"><font face="Arial, sans-serif"><font size="2">--------------</font></font></p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/delay0.h.html"><font size="2"><font face="Arial, sans-serif">delay0</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>TEMPORIZADOR 0: </b>Rutina de pausa
+que usa el temporizador 0 (sin interrupciones). Para ser incluido desde
+nuestros programas en c.</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#abbeeb">
+
+          <td width="136">
+          <p><a href="download/delay0.c"><font size="2"><font face="Arial, sans-serif">delay0.c</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="140">
+          <p align="center"><font face="Arial, sans-serif"><font size="2">--------------</font></font></p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/delay0.c.html"><font size="2"><font face="Arial, sans-serif">delay0</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>TEMPORIZADOR 0: </b>Codigo de las
+funciones de pausa
+que usa el temporizador 0 (sin interrupciones).</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#cabeeb">
+
+          <td width="136">
+          <p><a href="download/ledp2.c"><font size="2"><font face="Arial, sans-serif">ledp2.c</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/ledp2.hex"><font size="2"><font face="Arial, sans-serif">ledp2.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/ledp2.c.html"><font size="2"><font face="Arial, sans-serif">ledp2</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>TEMPORIZADOR 0: </b>Se usa el
+temporizador 0 para hacer que el led cambie de estado cada medio
+segundo.</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#abbeeb">
+
+          <td width="136">
+          <p><a href="download/sci.h"><font size="2"><font face="Arial, sans-serif">sci.h</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="140">
+          <p align="center"><font face="Arial, sans-serif"><font size="2">--------------
+          </font></font> </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/sci.h.html"><font size="2"><font face="Arial, sans-serif">sci</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>PUERTO SERIE: </b>Librer&iacute;a
+para enviar y recibir informaci&oacute;n por el puerto serie, a
+9600 baudios.</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#cabeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/sci-eco.c"><font size="2"><font face="Arial, sans-serif">sci-eco.c</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/sci-eco.hex"><font size="2"><font face="Arial, sans-serif">sci-eco.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/sci-eco.c.html"><font size="2"><font face="Arial, sans-serif">sci-eco</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>PUERTO SERIE: </b>Se hace eco de
+todo lo recibido por el puerto serie</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#abbeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/sci-cad.c"><font size="2"><font face="Arial, sans-serif">sci-cad.c</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/sci-cad.hex"><font size="2"><font face="Arial, sans-serif">sci-cad.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/sci-cad.c.html"><font size="2"><font face="Arial, sans-serif">sci-cad</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>PUERTO SERIE: </b>Enviar una cadena
+por el puerto serie cuando se recibe un car&aacute;cter</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#cabeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/sci-sensor.c"><font size="2"><font face="Arial, sans-serif">sci-sensor.c</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/sci-sensor.hex"><font size="2"><font face="Arial, sans-serif">sci-sensor.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/sci-sensor.c.html"><font size="2"><font face="Arial, sans-serif">sci-sensor</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>PUERTO SERIE y SENSORES: </b>Leer
+el estado de un sensor y enviarlo por el puerto serie</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#abbeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/sci-menu.c"><font size="2"><font face="Arial, sans-serif">sci-menu.c</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/sci-menu.hex"><font size="2"><font face="Arial, sans-serif">sci-menu.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/sci-menu.c.html"><font size="2"><font face="Arial, sans-serif">sci-menu</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>PUERTO SERIE y ROBOT: </b>Mover el
+robot mediante un terminal de comunicaciones serie, a traves de un menu</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#cabeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/secuencia.c"><font size="2"><font face="Arial, sans-serif">secuencia.c</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/secuencia.hex"><font size="2"><font face="Arial, sans-serif">secuencia.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/secuencia.c.html"><font size="2"><font face="Arial, sans-serif">secuencia</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>ROBOT: </b>El robot realiza una
+secuencia pregrabada</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#abbeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/pic16f877.h"><font size="2"><font face="Arial, sans-serif">pic16f877.h</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p align="center"><font face="Arial, sans-serif"><font size="2">--------------
+          </font></font> </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/pic16f877.h.html"><font size="2"><font face="Arial, sans-serif">pic16f877</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2">Cabecera con todas las definciones de los recursos
+del PIC</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#cabeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/Makefile.linux"><font size="2"><font face="Arial, sans-serif">Makefile.linux</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p align="center"><font face="Arial, sans-serif"><font size="2">..........
+          </font></font> </p>
+
+          </td>
+
+          <td width="122">
+          <p><font face="Arial, sans-serif"><a href="download/Makefile.linux.html"><font size="2"><font face="Arial, sans-serif">Makefile.linux</font></font></a>
+          </font></p>
+
+          <font face="Arial, sans-serif"> </font></td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2">Ejemplo de Makefile para Linux</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#abbeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/Makefile.windows"><font size="2"><font face="Arial, sans-serif">Makefile.windows</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p align="center"><font face="Arial, sans-serif"><font size="2">..........
+          </font></font> </p>
+
+          </td>
+
+          <td width="122">
+          <p><font face="Arial, sans-serif"><a href="download/Makefile.windows.html"><font size="2"><font face="Arial, sans-serif">Makefile.windows</font></font></a>
+          </font></p>
+
+          <font face="Arial, sans-serif"> </font></td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2">Ejemplo de Makefile para Windows</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#cabeeb">
+
+          <td bgcolor="#ffffcc" width="136">
+          <p><font face="Arial, sans-serif"><a href="download/ejemplos1-linux.tgz"><font size="2"><font face="Arial, sans-serif">ejemplos1-linux.tgz</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td bgcolor="#ffffcc" width="140">
+          <p align="center"><font face="Arial, sans-serif"><font size="2">..........
+          </font></font> </p>
+
+          </td>
+
+          <td bgcolor="#ffffcc" width="122">
+          <p align="center"><font face="Arial, sans-serif"><font size="2">..........
+          </font></font> </p>
+
+          </td>
+
+          <td bgcolor="#ffffcc" width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>TODOS LOS EJEMPLOS para Linux</b>.
+Con Makefile y proyecto para Anjuta.</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#abbeeb">
+
+          <td bgcolor="#ffff99" width="136">
+          <p><font face="Arial, sans-serif"><font size="2"><a href="download/ejemplos1-windows.zip">ejemplos1-windows.zip</a></font></font></p>
+
+          </td>
+
+          <td bgcolor="#ffff99" width="140">
+          <p align="center"><font face="Arial, sans-serif"><font size="2">..........
+          </font></font> </p>
+
+          </td>
+
+          <td bgcolor="#ffff99" width="122">
+          <p align="center"><font face="Arial, sans-serif"><font size="2">..........
+          </font></font> </p>
+
+          </td>
+
+          <td bgcolor="#ffff99" width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>TODOS LOS EJEMPLOS</b> con Makefile
+para Windows</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#cabeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/bumper.c"><font size="2"><font face="Arial, sans-serif">bumper.c</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/bumper.hex"><font size="2"><font face="Arial, sans-serif">bumper.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/bumper.c.html"><font size="2"><font face="Arial, sans-serif">bumper</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>BUMPER: </b>El robot apaga el led cuando se aprieta el bumper derecho</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#abbeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/contacto.c"><font size="2"><font face="Arial, sans-serif">contacto.c</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <div style="text-align: left;"><font><font><a href="download/contacto.hex"><font size="2"><font face="Arial, sans-serif">contacto.hex</font></font></a></font></font></div>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/contacto.c.html"><font size="2"><font face="Arial, sans-serif">contacto</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><span style="font-family: Arial,sans-serif;"><span style="font-weight: bold;"><small>CONTACTO:</small>&nbsp;</span></span><font face="Arial, sans-serif"><font size="2">El robot se convierte en una lapa y tiende a pegarse a los objetos.</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#cabeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/linea.c"><font size="2"><font face="Arial, sans-serif">linea.c</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/linea.hex"><font size="2"><font face="Arial, sans-serif">linea.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/linea.c.html"><font size="2"><font face="Arial, sans-serif">linea</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>LINEA: </b>El robot sigue la linea negra</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#abbeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/mogollon.c"><font size="2"><font face="Arial, sans-serif">mogollon.c</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <font><font><a href="download/mogollon.hex"><font size="2"><font face="Arial, sans-serif">mogollon.hex</font></font></a></font></font></td>
+
+          <td width="122">
+          <p><a href="download/mogollon.c.html"><font size="2"><font face="Arial, sans-serif">mogollon</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>MOGOLLON:&nbsp;</b></font></font><font face="Arial, sans-serif"><font size="2">El robot se configura para participar en el concurso del mogollon en plan mol&eacute;cula que rebota contra las lineas negras</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#cabeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/conversor.c"><font size="2"><font face="Arial, sans-serif">conversor.c</font></font></a>
+          </font> </p>
+
+          </td>
+          <td width="140">
+          <p><a href="download/conversor.hex"><font size="2"><font face="Arial, sans-serif">conversor.hex</font></font></a>
+          </p>
+          </td>
+          <td width="122">
+          <p><a href="download/conversor.c.html">
+	  <font size="2"><font face="Arial, sans-serif">conversor</font></font></a></p>
+          </td>
+          <td width="426">
+            <p><font face="Arial, sans-serif" size="2">
+	      <b>CONVERSOR: </b>El robot lee la luz recibida por la LDR y reacciona
+	    </font></p>
+          </td>
+        </tr>
+
+<tr bgcolor=#abbeeb>
+          <td width="136">
+          <p><font face="Arial, sans-serif">
+	  <a href="download/Encoder.c">
+	  <font size="2"><font face="Arial, sans-serif">Encoder.c</font></font></a>
+	  </font></p>
+          </td>
+
+        <td width="140">
+        <p>
+        <a href="download/Encoder.hex">
+	<font size="2">
+	<font face="Arial, sans-serif">Encoder.hex</font></font></a>
+	</p>
+	</td>
+
+	<td width="122">
+	<p>
+	<a href="download/Encoder.c.html">
+	<font size="2"><font face="Arial, sans-serif">Encoder</font></font></a></p>
+	</td>
+
+        <td width="426">
+        <p><font face="Arial, sans-serif" size="2">
+        <b>ENCODER: </b>Programa de ejemplo sobre como controlar los sensores infrarrojos y usarlos de encoders
+        </font></p>
+</tr>
+
+      </tbody>
+    </table>
+
+  </dd>
+
+</dl>
+
+<p style="margin-bottom: 0cm;"><br>
+
+</p>
+
+<p style="margin-bottom: 0cm;"><br>
+
+</p>
+
+<hr>
+<p><a href="../index.html"><font size="2"><font face="Arial, sans-serif">[Sesion
+3]</font></font></a></p>
+
+<address style="margin-bottom: 0.5cm;"><small><a href="mailto:jvaliente@ifara.com">Javier Valiente</a></small><br>
+<a href="http://www.iearobotics.com/personal/juan/index.html"><font size="2"><font face="Arial, sans-serif">Juan
+Gonz&aacute;lez</font></font></a><a href="http://www.iearobotics.com/">
+</a></address>
+
+<p style="margin-bottom: 0cm;"><a href="http://www.iearobotics.com"><font size="2"><font face="Arial, sans-serif">IEAROBOTICS</font></font></a>
+</p>
+
+</body>
+</html>

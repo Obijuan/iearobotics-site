@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-15">
+	<TITLE>Taller de robotica Universidad Aut&oacute;noma de Madrid 2006. Skybot-monitor</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20040522;11483800">
+	<META NAME="CHANGED" CONTENT="20050718;23370400">
+	<META NAME="KEYWORDS" CONTENT="robotica, microcontroladores, pic, hardware">
+	<STYLE>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+		P.estilo2 { font-family: "Arial", "Helvetica", sans-serif }
+		H2.estilo2 { font-family: "Arial", "Helvetica", sans-serif }
+		ADDRESS.estilo2 { font-family: "Arial", "Helvetica", sans-serif }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<TABLE WIDTH=917 BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#abbeeb" STYLE="page-break-before: always">
+	<COL WIDTH=909>
+	<TR>
+		<TD WIDTH=909>
+			<P ALIGN=CENTER><FONT FACE="Arial, Helvetica, sans-serif"><FONT SIZE=2><B>SkyBot-Monitor:
+			Servidor para el control del robot skybot</B></FONT></FONT>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<BR><BR>
+<P CLASS="estilo2"><FONT SIZE=2>El programa <B>Skybot-monitor</B> es un programa servidor (se ejecuta en la SKYPIC) que nos permitir&aacute; probar el robot desde programas clientes (se ejecutan en el PC) tipo <A HREF="../botcontrol/index.htm">BotControl</A>. El programa esta basado en el <A HREF="../../../../proyectos/stargate/servidores/sg-generic/sg-generic.html">servidor gen&eacute;rico</A> (<A HREF="../../../../proyectos/stargate/index.html">proyecto
+Stargate</A>) que nos permite acceder desde el PC a todos los recursos del PIC mediante una conexi&oacute;n serie. 
+<BR><BR>
+El programa esta escrito en lenguaje ensamblador y esta adaptado para poder ser grabado en el PIC sin necesidad de ninguna tarjeta o sistema de desarrollo tipo ICD2 de Microchip. En el SKYBOT es el programa que viene grabado por defecto para que podamos probar el robot sin necesidad de programarlo previamente, tan solo necesitaremos un cliente tipo BotControl para Windows o skybot-test para Linux.
+<br><br>
+En caso de que lo hayamos borrado lo podemos volver a cargar en el microcontrolador siguiendo estos pasos:
+<li><b>1.</b> Descargarse el fichero <B>skybot-monitor.hex</B> de la secci&oacute;n downloads de esta p&aacute;gina</li>
+<li><b>2.</b> Conectar el Skybot al PC mediante el cable serie</li>
+<li><b>3.</b> Conectar las pilas al robot</li>
+<li><b>4.</b> Linux: Ejecutar el comando <i>skybot-down skybot-monitor.hex</i></li>
+<li><b>&nbsp;&nbsp;</b> Windows: Ejecutar el programa <i>pic_downloader.exe</i>, configurarlo para 38400 baudios. Seleccionar el fichero<i> skybot-monitor.hex</i> mediate la opci&oacute;n <i>search</i> y pulsar <i>write</i> para grabar de forma permanente el PIC. No hace falta que est&eacute; seleccionada la opci&oacute;n EEPROM.</li>
+<br><br>
+En el caso de que nos de un mensaje de error diciendo <B>"No se encuentra el bootloader"</b> recomendamos revisar todos los puntos anteriores una segunda vez. Si nos sigue dando el error lo m&aacute;s probable es que se haya desconfigurado la SKYPIC y con ello perdido el programa residente <b>Bootloader</B>.
+Este aplicaci&oacute;n convive siempre con nuestro programa grabado, y es la que se encarga de que podamos grabar diferentes programas utilizando simplemente un cable serie y evitando las herramientas de programacion externas. Por lo tanto, en el caso de que se haya perdido, necesitamos restaurar dicho programa en la SKYPIC para poder seguir trabajando con el entorno del taller.  Para ello tendremos que utilizar alguna herramienta que permita grabar PICs externamente. Por ejemplo el ICD2/MPLAB, el TE20/ICPROG, el Puerto Paralelo / ICProg, o cualquier otra a la que tenga acceso el usuario. Para m&aacute;s informaci&oacute;n de este proceso pulse <a href="../../../../proyectos/skypic/bootloader/bootloader.html">aqu&iacute;</a><BR><BR>
+
+
+
+
+
+</P>
+<HR>
+<H2 CLASS="estilo2">Download</H2>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=741 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=150>
+			<COL WIDTH=583>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=150>
+					<P><A HREF="download/skybot-monitor.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Skybot-monitor.hex</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=583>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Fichero compilado para la SKYPIC (PIC 16f876A a 20Mhz). Directamente descargable en el PIC</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=150>
+					<P><A HREF="download/skybot-monitor.asm"><FONT SIZE=2><FONT FACE="Arial, sans-serif">skybot-monitor.asm</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=583>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Fuentes del programa en ASM</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#cabeeb">
+				<TD WIDTH=150>
+					<P><A HREF="download/Makefile"><FONT SIZE=2><FONT FACE="Arial, sans-serif">Makefile</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=583>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Makefile para poder compilar directamente con el comando make. Esto es opcional ya que se puede usar el MPLAB o el GPASM directamente.</FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR BGCOLOR="#abbeeb">
+				<TD WIDTH=150>
+					<P><A HREF="download/skybot-loader.hex"><FONT SIZE=2><FONT FACE="Arial, sans-serif">bootloader.hex</FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=583>
+					<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Fichero .hex del bootloader para el caso en que tengamos  que restaurar el Bootloader. OJO, lo tenemos que hacer con otras herramientas, no valen el PIC_DOWNLOADER ni el SKYBOT_DOWN </FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+	<BR>	
+	</DL>
+</DL>
+<P CLASS="estilo2" STYLE="margin-bottom: 0cm"><BR>
+</P>
+
+<HR>
+<H2 CLASS="estilo2">Autores</H2>
+<UL>
+	<LI><P><A HREF="http://www.iearobotics.com/personal/juan/index.html"><FONT SIZE=2><FONT FACE="Arial, Helvetica, sans-serif">Juan Gonz&aacute;lez G&oacute;mez</FONT></FONT></A>
+	</P>
+</UL>
+<HR>
+<H2 CLASS="estilo2">Licencia</H2>
+<P CLASS="estilo2"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Licencia
+GPL.</B> Se conceden permisos para copiar, distribuir, modificar y
+redistribuir las modificaciones </FONT></FONT>
+</P>
+
+<HR>
+<H2 CLASS="estilo2"><A NAME="todo"></A>Links</H2>
+<UL>
+	<LI><P><FONT FACE="Arial, Helvetica, sans-serif"><A HREF="http://www.iearobotics.com/talleres/uam-2006/index.html"><FONT SIZE=2>Taller
+	de rob&oacute;tica</FONT></A> <FONT SIZE=2>en la Universidad Aut&oacute;noma de Madrid (UCA2006). Skybot v1.3.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, Helvetica, sans-serif"><A HREF="http://www.iearobotics.com/talleres/uca-2005/index.html"><FONT SIZE=2>Taller
+	de rob&oacute;tica</FONT></A> <FONT SIZE=2>en la Universidad de C&aacute;diz (UCA2005). Skybot v1.2.</FONT></FONT></P>
+	<LI><P><FONT FACE="Arial, Helvetica, sans-serif"><A HREF="http://www.iearobotics.com/talleres/campusbot-2005/index.html"><FONT SIZE=2>Taller
+	de rob&oacute;tica</FONT></A> <FONT SIZE=2>en la Campus Party 2005
+	de Valencia. Skybot v1.0.</FONT></FONT></P>
+	<LI><P><A HREF="../../../../proyectos/stargate/index.html"><FONT SIZE=2><FONT FACE="Arial, Helvetica, sans-serif">Proyecto
+	Stargate</FONT></FONT></A></P>
+</UL>
+<HR>
+<H2 CLASS="estilo2">Noticias</H2>
+<UL>
+	<LI><P><FONT FACE="Arial, Helvetica, sans-serif"><FONT SIZE=2><B>14/Feb/2005</B>.
+	Creada esta p&aacute;gina para el taller de la Universidad Aut&oacute;noma de Madrid </FONT></FONT></P>
+</UL>
+<HR>
+<ADDRESS CLASS="estilo2" STYLE="margin-bottom: 0.5cm"><A HREF="http://www.iearobotics.com/personal/andres/index.html">Andr&eacute;dres Prieto-Moreno</FONT></A><BR><A HREF="http://www.iearobotics.com">IEAROBOTICS</A>
+</ADDRESS>
+</BODY>
+</HTML>

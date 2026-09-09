@@ -1,0 +1,68 @@
+
+<html>
+<head>
+<title>Encoder.c</title>
+<meta name="generator" content="c2html 0.9.6">
+<meta name="date" content="2007-07-26T12:51:44+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/*****************************************************************************/</font>
+<font color="#B22222">/* Encoder.c      Julio-2007                                                 */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Ejemplo para comprobar los encoders del skybot                            */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Prueba del encoder conectado como sensor1. El skybot empieza a avanzar.   */</font>
+<font color="#B22222">/* Cuando el sensor detecta 5 transiciones entre el blanco y el negro, en    */</font>
+<font color="#B22222">/* cualquier orden, enciende el led y se para.                               */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  Javier Valiente &lt;jvaliente@ifara.com&gt;                                    */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  LICENCIA GPL                                                             */</font>
+<font color="#B22222">/*****************************************************************************/</font>
+
+//-- Especificar el pic a emplear
+<font color="#A020F0">#include &lt;pic16f876a.h&gt;</font>
+
+//-- Definiciones de los sensores
+<strong><font color="#228B22">#define   SENSOR1  0x01</font></strong>
+<strong><font color="#228B22">#define   SENSOR2  0x20</font></strong>
+
+<strong><font color="#228B22">#define   ENCODER1 SENSOR1</font></strong>
+<strong><font color="#228B22">#define   LED 0x02</font></strong>
+
+
+unsigned char sensor;
+
+// Contar numero de vueltas
+
+<strong><font color="#4169E1"><a name="CuentaNTransiciones"></a>void CuentaNTransiciones(unsigned char num_segmentos)</font></strong>
+{
+  unsigned char i=0;
+  unsigned char old_lectura_sensor, new_lectura;
+
+  old_lectura_sensor = (PORTB &amp; ENCODER1);
+
+  <font color="#4169E1">while</font> (i &lt; num_segmentos)
+  {
+    new_lectura = (PORTB &amp; ENCODER1);
+    <font color="#4169E1">if</font> (old_lectura_sensor != new_lectura)
+        {
+          old_lectura_sensor = new_lectura;
+          i++; // Suma una transicion
+        }
+  }
+}
+
+
+<strong><font color="#4169E1"><a name="main"></a>void main(void)</font></strong>
+{
+    TRISB = 0xE1;
+        PORTB = 0x1C;
+    CuentaNTransiciones(5);
+    PORTB=LED; //-- Encender LED y desactivar motores
+}
+</pre>
+</body>
+
+</html>

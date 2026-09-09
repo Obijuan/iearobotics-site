@@ -1,0 +1,55 @@
+
+<html>
+<head>
+<title>Makefile.windows</title>
+<meta name="generator" content="c2html 0.9.6">
+<meta name="date" content="2007-07-12T08:32:44+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#A020F0"># **************************************************************************</font>
+<font color="#A020F0"># Fichero makefile.</font>
+<font color="#A020F0"># --------------------------------------------------------------------------</font>
+<font color="#A020F0"># Licencia GPL. Juan Gonzalez Gomez</font>
+<font color="#A020F0"># Actualizado por Javier Valiente &lt;jvaliente@ifara.com&gt;</font>
+<font color="#A020F0"># --------------------------------------------------------------------------</font>
+<font color="#A020F0"># </font>
+<font color="#A020F0">#***************************************************************************</font>
+
+<font color="#A020F0">#-- Compilador</font>
+CC = sdcc
+
+CFLAGS = -mpic14 -p16f876a
+
+<font color="#A020F0">#-- Ejemplos para el PUERTO B</font>
+<font color="#A020F0">#-- Indicar el nombre sin extensi&oacute;n del archivo  compilar</font>
+NAME1=ledon
+
+
+
+<strong><font color="#FF0000">all:</font></strong> $(NAME1).hex 
+<font color="#A020F0">#$(NAME1).hex : $(SRCS:.c=.o)</font>
+
+
+<font color="#A020F0">#--------------------</font>
+<font color="#A020F0">#- LIMPIEZA</font>
+<font color="#A020F0">#--------------------</font>
+<strong><font color="#FF0000">clean:</font></strong>
+        del *.o *.hex *.lst *.p *.d *.asm *.cod
+
+<font color="#A020F0">#-----------------------</font>
+<font color="#A020F0"># REGLAS GENERICAS</font>
+<font color="#A020F0">#-----------------------</font>
+<font color="#A020F0">#-- Obtencion de los ficheros objeto .o</font>
+.c.o: 
+                $(CC) -S $(CFLAGS) $&lt;  
+            gpasm -c $*.asm 
+
+<font color="#A020F0">#-- Obtencion de los ficheros ejecutables</font>
+%.hex : %.o 
+        gplink -o $@ -a inhx8m $&lt; -s <font color="#666666">"C:\Archivos de programa\gputils\lkr\16f877.lkr"</font>
+
+</pre>
+</body>
+
+</html>

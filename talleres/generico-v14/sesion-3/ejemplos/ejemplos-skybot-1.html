@@ -1,0 +1,1160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+
+  <meta content="text/html; charset=iso-8859-15" http-equiv="CONTENT-TYPE">
+  <title>Taller de robotica. Sesion 3. Ejemplos de
+programaci&oacute;n del Skybot</title>
+
+
+  <meta content="OpenOffice.org 1.1.3 (Linux)" name="GENERATOR">
+
+  <meta content="20040522;11483800" name="CREATED">
+
+  <meta content="20050722;2204900" name="CHANGED">
+
+  <meta content="robotica, microcontroladores, pic, hardware" name="KEYWORDS">
+
+  <style>
+<!--
+H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+-->
+  </style>
+</head>
+
+
+<body style="direction: ltr;" lang="en-US">
+
+<table style="page-break-before: always;" bgcolor="#abbeeb" border="0" cellpadding="4" cellspacing="0" width="917">
+
+  <col width="909"> <tbody>
+
+    <tr>
+
+      <td width="909">
+      <p align="center"><font face="Arial, sans-serif">Taller
+de Rob&oacute;tica B&aacute;sico - Skybot v1.4. - SESION 3 - <b>
+Ejemplos de programaci&oacute;n del Skybot</b></font></p>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<p style="margin-bottom: 0cm;" align="center"><br>
+
+</p>
+
+<hr>
+<h2>Objetivos</h2>
+
+<p align="justify"><font face="Arial, sans-serif"><font size="2">El
+objetivo de este cap&iacute;tulo es mostrar <b>ejemplos de
+programas
+en C</b> para manejar diferentes recursos del robot. Editando,
+compilando, probando y modificando los ejemplos se aprender&aacute;
+muy r&aacute;pidamente a manejar el robot y en poco tiempo se
+podr&aacute;
+dar rienda suelta a la imaginaci&oacute;n para hacer otras cosas...
+<b>&iexcl;Qu&eacute; comience la fiesta!</b></font></font></p>
+
+<hr>
+<h2>Contenido</h2>
+
+<ul>
+
+  <li>
+    <p><font size="2"><font face="Arial, sans-serif"><a href="#ejemplos_basicos">Ejemplos
+b&aacute;sicos</a>.</font></font></p>
+
+  </li>
+
+  <li>
+    <p><a href="#motores_sensores"><font size="2"><font face="Arial, sans-serif">Ejemplos b&aacute;sicos de
+motores y sensores</font></font></a></p>
+
+  </li>
+
+  <li>
+    <p><a href="#descargas"><font size="2"><font face="Arial, sans-serif">Descargas de ficheros</font></font></a></p>
+
+  </li>
+
+</ul>
+
+<hr>
+<h2><a name="ejemplos_basicos"></a>Ejemplos
+b&aacute;sicos</h2>
+
+<p><font face="Arial, sans-serif"><font size="2">Para
+los siguientes
+ejemplos <b>desconectar el cable que une la Skypic con la CT293</b>.</font></font></p>
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="100%">
+
+  <col width="256*"> <thead> <tr>
+
+    <td bgcolor="#ccccff" valign="top" width="100%">
+    <p><font face="Arial, sans-serif">[</font><a href="download/ejemplo1.c.html"><font face="Arial, sans-serif">ejemplo1</font></a><font face="Arial, sans-serif">] <span style="font-weight: bold;">Led encendido/apagado</span>.
+Hacer que el led de la Skypic se encienda cada vez que se acccione el
+pulsador de la skypic.</font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p><font face="Arial, sans-serif"><font size="2">En
+la funci&oacute;n
+<font face="Courier, monospace">main()</font> nos
+encontramos con:</font></font></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="682">
+
+  <col width="674"> <thead> <tr>
+
+    <td bgcolor="#e6e6e6" valign="top" width="674">
+    <p>&nbsp;<small>if (Pulsador_esta_pulsado() ==
+VERDADERO)</small></p>
+
+    <p><small>&nbsp;&nbsp;&nbsp; { &nbsp;<br>
+
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;EncenderLed(); <br>
+
+&nbsp;&nbsp; &nbsp;} <br>
+
+&nbsp;&nbsp; &nbsp;else<br>
+
+&nbsp;&nbsp;&nbsp; { <br>
+
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;ApagarLed(); // en caso contrario apago el LED <br>
+
+&nbsp;&nbsp; &nbsp;} &nbsp;</small></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p><font face="Arial, sans-serif"><font size="2">Esta
+l&iacute;nea
+comprueba si la funcion Pulsador_esta_pulsado() devuelve VERDADERO.
+Seg&uacute;n esta condici&oacute;n se cumpla o no, se
+llamar&aacute; a la funci&oacute;n EncenderLed() o ApagarLed().
+</font></font></p>
+
+<p><font face="Arial, sans-serif"><font size="2">Y
+envolviendo a este c&oacute;digo de comprobaci&oacute;n,
+encontramos lo siguiente:</font></font></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="682">
+
+  <col width="674"> <thead> <tr>
+
+    <td bgcolor="#e6e6e6" valign="top" width="674">
+    <p><small><span style="font-weight: bold;">&nbsp;
+for (;;)</span><br style="font-weight: bold;">
+
+    <span style="font-weight: bold;">&nbsp; { </span><br style="font-weight: bold;">
+
+&nbsp;&nbsp;&nbsp; // Si pulsador apretado enciendo el LED <br>
+
+&nbsp;&nbsp;&nbsp; if (Pulsador_esta_pulsado() == VERDADERO)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{&nbsp; <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+EncenderLed(); <br>
+
+&nbsp;&nbsp;&nbsp; } <br>
+
+&nbsp;&nbsp;&nbsp; else<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{ <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+ApagarLed(); // en caso contrario apago el LED <br>
+
+&nbsp;<span style="font-weight: bold;">&nbsp;&nbsp;
+}</span></small> <font face="Monospace"><i><font color="#808080"><br>
+
+    </font></i></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p><font face="Arial, sans-serif"><font size="2">La
+instrucci&oacute;n "for(;;)", equivale a decir que se repita
+continuamente todo aquello que se encuentre entre sus corchetes. De
+este modo, nos aseguramos de que nuestro programa compruebe sin parar
+si el pulsador esta accionado o no (y de encender/apagar el led de la
+skypic).</font></font></p>
+
+<p><font face="Arial, sans-serif"><font size="2"><b>EXPERIMENTO</b>:
+Modificar la condici&oacute;n del if para modificar el
+comportamiento del skybot</font></font></p>
+
+<p><br>
+
+<br>
+
+</p>
+
+<hr>
+<h2><a name="motores_sensores"></a>Ejemplos
+b&aacute;sicos de motores
+y sensores</h2>
+
+<p style="margin-bottom: 0cm;"><br>
+
+</p>
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="100%">
+
+  <col width="256*"> <thead> <tr>
+
+    <td bgcolor="#ccccff" valign="top" width="100%">
+    <p><font face="Arial, sans-serif">[<a href="download/ejemplo2.c.html"><font size="2"><font face="Arial, sans-serif">ejemplo2</font></font></a>]
+    <b>Activar los motores para que el robot vaya hacia adelante
+durante 2 segundos</b></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p style=""><font face="Arial, sans-serif"><font size="2">Este
+programa simplemente hace que el robot avance durante 2 segundos
+exactamente.</font></font></p>
+
+<p style=""><font face="Arial, sans-serif"><font size="2">Lo
+primero que se hace es configurar el&nbsp;Skybot para que use los
+motores.</font></font></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="684">
+
+  <col width="676"> <thead> <tr>
+
+    <td bgcolor="#e6e6e6" valign="top" width="676">
+    <p><font color="#808080"><i><font face="Monospace">&nbsp; // Configuramos el PIC16f876a
+para&nbsp; <br>
+
+&nbsp; // adaptarse al Robot Skybot <br>
+
+    <font color="#000000">&nbsp; ConfigurarSkybot();</font></font></i></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p style=""><font face="Arial, sans-serif"><font size="2">y
+despu&eacute;s se detalla la acci&oacute;n exacta que queremos
+que realice:</font></font></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="684">
+
+  <col width="676"> <thead> <tr>
+
+    <td bgcolor="#e6e6e6" valign="top" width="676">
+    <p>&nbsp;&nbsp; <i><font color="#000000" face="Monospace">Avanzar();<br>
+
+&nbsp; PausaTiempo(2,0);<br>
+
+&nbsp; Parar();</font></i></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p>
+<small>Con estas instrucciones, le decimos que los motores se
+pongan a
+avanzar, que lo hagan durante 2 segundos, y luego ya cambiamos la
+configuraci&oacute;n de los motores para que se detengan. Este
+ser&aacute; el procedimiento habitual cuando queramos decirle a
+nuestro
+skybot que realice una operaci&oacute;n determinada durante X
+segundos.</small></p>
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="100%">
+
+  <col width="256*"> <thead> <tr>
+
+    <td bgcolor="#ccccff" valign="top" width="100%">
+    <p><font face="Arial, sans-serif">[<a href="download/ejemplo3.c.html"><font size="2"><font face="Arial, sans-serif">ejemplo3</font></font></a>]&nbsp;<b>Mover
+el robot en diferentes direcciones</b></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p style=""><font face="Arial, sans-serif"><font size="2">Este
+ejemplo es igual que el ejemplo2, pero en vez de enviar la orden
+Avanzar(), se env&iacute;an distintas ordenes, para que el robot
+baile un poco.</font></font></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="684">
+
+  <col width="676"> <thead> <tr>
+
+    <td bgcolor="#e6e6e6" valign="top" width="676">
+    <p><font color="#808080">&nbsp;&nbsp;<i><font face="Monospace">&nbsp; // adaptarse al Robot Skybot <br>
+
+&nbsp; <span style="color: rgb(0, 0, 0);">ConfigurarSkybot();</span>
+    <br>
+
+&nbsp; &nbsp;<br>
+
+&nbsp; // El Skybot avanza durante 2 segundos <br>
+
+&nbsp; <span style="color: rgb(0, 0, 0);">Avanzar(); </span><br style="color: rgb(0, 0, 0);">
+
+    <span style="color: rgb(0, 0, 0);">&nbsp;
+PausaTiempo(2,0); </span><br>
+
+&nbsp; &nbsp;<br>
+
+&nbsp; // El Skybot avanza durante 2 segundos <br>
+
+&nbsp; <span style="color: rgb(0, 0, 0);">GirarIzq();
+    </span><br style="color: rgb(0, 0, 0);">
+
+    <span style="color: rgb(0, 0, 0);">&nbsp;
+PausaTiempo(2,0); </span><br>
+
+&nbsp; &nbsp;<br>
+
+&nbsp; // El Skybot avanza durante 2 segundos <br>
+
+    <span style="color: rgb(0, 0, 0);">&nbsp;
+GirarDer(); </span><br style="color: rgb(0, 0, 0);">
+
+    <span style="color: rgb(0, 0, 0);">&nbsp;
+PausaTiempo(2,0);</span> <br>
+
+&nbsp; &nbsp;<br>
+
+&nbsp; // paramos el Robot <br>
+
+&nbsp; <span style="color: rgb(0, 0, 0);">Parar();</span></font></i></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p style=""><font face="Arial, sans-serif"><font size="2"><b>EXPERIMENTO</b>:
+Modificar las ordenes para que el skybot realice el trazado de un
+cuadrado imaginario.</font></font></p>
+
+<p><br>
+
+<br>
+
+</p>
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="100%">
+
+  <col width="256*"> <thead> <tr>
+
+    <td bgcolor="#ccccff" valign="top" width="100%">
+    <p><font face="Arial, sans-serif">[<a href="download/ejemplo4.c.html"><font size="2"><font face="Arial, sans-serif">ejemplo4</font></font></a>]
+    <b>Prueba del sensor 1. </b>Leer su estado y mostrarlo
+por el led</font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p style=""><font face="Arial, sans-serif"><font size="2">Este
+ejemplo es muy &uacute;til para comprobar si los sensores funcionan
+correctamente. El programa s&oacute;lo lee el sensor infrarrojo 1
+pero
+cambiando
+la llamada a la funci&oacute;n SensorIR_Izq_Lee_Negro() por su
+hom&oacute;nima para el derecho, podemos leer el otro sensor,
+reflejando su
+estado por el led.&nbsp;</font></font></p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="811">
+
+  <col width="803"> <thead> <tr>
+
+    <td bgcolor="#e6e6e6" valign="top" width="803">
+    <p><font color="#808080"><font face="Monospace"><i><font color="#008000"><span style="color: rgb(0, 0, 0);">&nbsp; for (;;)</span><br style="color: rgb(0, 0, 0);">
+
+    <span style="color: rgb(0, 0, 0);">&nbsp; { </span><br style="color: rgb(0, 0, 0);">
+
+    <span style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;
+    <span style="color: rgb(102, 102, 102);">// Si leo
+NEGRO apago el LED</span> </span><br style="color: rgb(0, 0, 0);">
+
+    <span style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;
+if (SensorIR_Izq_Lee_Negro() == VERDADERO)</span><br style="color: rgb(0, 0, 0);">
+
+    <span style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{ </span><br style="color: rgb(0, 0, 0);">
+
+    <span style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; ApagarLed(); </span><br style="color: rgb(0, 0, 0);">
+
+    <span style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;
+} </span><br style="color: rgb(0, 0, 0);">
+
+    <span style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;
+    <span style="color: rgb(102, 102, 102);">// en caso
+contrario lo enciendo</span> </span><br style="color: rgb(0, 0, 0);">
+
+    <span style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;
+else</span><br style="color: rgb(0, 0, 0);">
+
+    <span style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{ </span><br style="color: rgb(0, 0, 0);">
+
+    <span style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; EncenderLed(); </span><br style="color: rgb(0, 0, 0);">
+
+    <span style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;
+} </span><br style="color: rgb(0, 0, 0);">
+
+    <span style="color: rgb(0, 0, 0);">&nbsp; }</span></font></i></font></font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p style=""><font face="Arial, sans-serif"><font size="2"><b>EXPERIMENTO</b>:
+Cambiar el valor de la condici&oacute;n del if para que sea el
+derecho, y que se apague cuando lea blanco.</font></font></p>
+
+<p><br>
+
+</p>
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="100%">
+
+  <col width="256*"> <thead> <tr>
+
+    <td bgcolor="#ccccff" valign="top" width="100%">
+    <p><font face="Arial, sans-serif">[<a href="download/ejemplos5.c.html"><font size="2"><font face="Arial, sans-serif">ejemplo5</font></font></a>]
+    <b>Prueba de motores y sensores. </b>El robot avanza
+mientras el sensor 3 lee blanco. Se para si lee negro.</font></p>
+
+    </td>
+
+  </tr>
+
+  </thead>
+</table>
+
+<p><font face="Arial, sans-serif"><font size="2">Ejemplo
+de un
+comportamiento muy sencillo del robot. Mientras el sensor 3 lee blanco,
+el
+robot est&aacute; avanzando. Pero si lee negro se detiene.
+Cambiando el valor de la condici&oacute;n del if, podemos hacer la
+misma
+prueba con cualquiera de los otros tres sensores.</font></font></p>
+
+<p style=""><font face="Arial, sans-serif"><font size="2"><b>EXPERIMENTO</b>:
+Colocar el robot sobre una superficie negra &uacute; opaca (por
+ejemplo, el suelo).
+Colocar&nbsp;un trozo de cinta aislante blanca a unos
+cent&iacute;metros de la cabeza del robot. El
+robot avanzar&aacute; hasta alcanzar la "meta".&nbsp;En este
+ejemplo
+s&oacute;lo
+se mover&aacute; en l&iacute;nea recta.
+&iexcl;&iexcl;Prueba a programar un movimiento m&aacute;s
+complejo!!</font></font></p>
+
+<p><br>
+
+<br>
+
+</p>
+
+<hr><br>
+<small>Hasta aqu&iacute;, s&oacute;lo unos ejemplos escogidos basados
+en la libreria Skybot. A partir de aqu&iacute;, el alumno debe
+curiosear el resto de los ejemplos hasta comprender su funcionamiento.<br>
+<br>
+Una vez entendidos, se puede pasar a la siguiente sesi&oacute;n, donde
+se profundiza en la programaci&oacute;n de nuestro skybot y se
+introducen los conceptos de puertos, pines de entrada/salida etc.<br>
+</small>
+<hr>
+<h2><a name="descargas"></a>Descarga de
+ficheros</h2>
+
+<p style="margin-bottom: 0cm;"><br>
+
+</p>
+
+<dl>
+
+  <dd>
+    <table bgcolor="#abbeeb" border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="858">
+
+      <tbody>
+
+        <tr>
+
+          <td width="848">
+          <p align="center"><font face="Arial, sans-serif"><b>Ejemplos para el skybot</b></font></p>
+
+          </td>
+
+        </tr>
+
+      </tbody>
+    </table>
+
+  </dd>
+
+  <dd>
+    <table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" rules="cols" width="858">
+
+      <col width="136"> <col width="140"> <col width="122"> <col width="426"> <tbody>
+
+        <tr bgcolor="#abbeeb">
+
+          <td width="136">
+          <p align="center"><font face="Arial, sans-serif"><b>Fichero C</b></font></p>
+
+          </td>
+
+          <td width="140">
+          <p align="center"><font face="Arial, sans-serif"><b>Ejecutable</b></font></p>
+
+          </td>
+
+          <td width="122">
+          <p align="center"><font face="Arial, sans-serif"><b>HTML</b></font></p>
+
+          </td>
+
+          <td width="426">
+          <p align="center"><font face="Arial, sans-serif"><b>Descripci&oacute;n</b></font></p>
+
+          </td>
+
+        </tr>
+
+      </tbody> <tbody>
+
+        <tr bgcolor="#cabeeb">
+
+          <td width="136">
+          <p><a href="download/ejemplo1.c"><font size="2"><font face="Arial, sans-serif">ejemplo1.c</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/ejemplo1.hex"><font size="2"><font face="Arial, sans-serif">ejemplo1.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/ejemplo1.c.html"><font size="2"><font face="Arial, sans-serif">ejemplo1</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2">Al apretar el Pulsador el LED se
+enciende</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#abbeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/ejemplo2.c"><font size="2"><font face="Arial, sans-serif">ejemplo2.c</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/ejemplo2.hex"><font size="2"><font face="Arial, sans-serif">ejemplo2.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/ejemplo2.c.html"><font size="2"><font face="Arial, sans-serif">ejemplo2</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2">Hacemos que el Skybot avance
+durante 2 segundos</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#cabeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/ejemplo3.c"><font size="2"><font face="Arial, sans-serif">ejemplo3.c</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/ejemplo3.hex"><font size="2"><font face="Arial, sans-serif">ejemplo3.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/ejemplo3.c.html"><font size="2"><font face="Arial, sans-serif">ejemplo3</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2">Hacemos que el robot se mueva en
+diferentes direcciones</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#abbeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/ejemplo4.c"><font size="2"><font face="Arial, sans-serif">ejemplo4.c</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/ejemplo4.hex"><font size="2"><font face="Arial, sans-serif">ejemplo4.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/ejemplo4.c.html"><font size="2"><font face="Arial, sans-serif">ejemplo4</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2">Si el sensor 1 detecta negro
+apago el LED</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#cabeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/ejemplo5.c"><font size="2"><font face="Arial, sans-serif">ejemplo5.c</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/ejemplo5.hex"><font size="2"><font face="Arial, sans-serif">ejemplo5.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/ejemplo5.c.html"><font size="2"><font face="Arial, sans-serif">ejemplo5</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2">Mientras el Sensor3 lea blanco
+avanza el robot</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#abbeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/ejemplo6.c"><font size="2"><font face="Arial, sans-serif">ejemplo6.c</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/ejemplo6.hex"><font size="2"><font face="Arial, sans-serif">ejemplo6.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/ejemplo6.c.html"><font size="2"><font face="Arial, sans-serif">ejemplo6</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2">Al apretar el Bumper Derecho el
+LED se enciende</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#cabeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/ejemplo7.c"><font size="2"><font face="Arial, sans-serif">ejemplo7.c</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/ejemplo7.hex"><font size="2"><font face="Arial, sans-serif">ejemplo7.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/ejemplo7.c.html"><font size="2"><font face="Arial, sans-serif">ejemplo7</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2">Al apretar el Bumper Izquierdo
+el robot se para</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#abbeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/ejemplo8.c"><font size="2"><font face="Arial, sans-serif">ejemplo8.c</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/ejemplo8.hex"><font size="2"><font face="Arial, sans-serif">ejemplo8.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/ejemplo8.c.html"><font size="2"><font face="Arial, sans-serif">ejemplo8</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2">El Led parpadea</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#cabeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/ejemplo9.c"><font size="2"><font face="Arial, sans-serif">ejemplo9.c</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/ejemplo9.hex"><font size="2"><font face="Arial, sans-serif">ejemplo9.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/ejemplo9.c.html"><font size="2"><font face="Arial, sans-serif">ejemplo9</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2">Lectura de la LDR y huida hacia
+delante (huye de la luz) (BETA)</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#abbeeb">
+
+          <td width="136">
+          <p><a href="download/delay0.h"><font size="2"><font face="Arial, sans-serif">delay0.h</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="140">
+          <p align="center"><font face="Arial, sans-serif"><font size="2">--------------</font></font></p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/delay0.h.html"><font size="2"><font face="Arial, sans-serif">delay0.h</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>TEMPORIZADOR 0: </b>Rutina de pausa
+que usa el temporizador 0 (sin interrupciones). Para ser incluido en la
+misma carpeta que libreria_skybot.h</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#abbeeb">
+
+          <td width="136">
+          <p><a href="download/delay0.c"><font size="2"><font face="Arial, sans-serif">delay0.c</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="140">
+          <p align="center"><font face="Arial, sans-serif"><font size="2">--------------</font></font></p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/delay0.c.html"><font size="2"><font face="Arial, sans-serif">delay0.c</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>TEMPORIZADOR 0: </b>Codigo de las
+funciones de pausa
+que usa el temporizador 0 (sin interrupciones).</font></font><font face="Arial, sans-serif"><font size="2">Para
+ser incluido en la misma carpeta que libreria_skybot.h</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#cabeeb">
+
+          <td width="136">
+          <p><a href="download/libreria_skybot.h"><font size="2"><font face="Arial, sans-serif">libreria_skybot.h</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="140">
+          <p><font face="Arial, sans-serif"><font size="2">&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;--------------</font></font>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/libreria_skybot.h.html"><font size="2"><font face="Arial, sans-serif">libreria_skybot.h</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>LIBRERIA SKYBOT: </b>Conjunto de
+funciones que facilitan el acceso a los sensores y motores del skybot.</font></font><font face="Arial, sans-serif"><font size="2">Para
+ser incluido en la
+misma carpeta que el fichero de codigo C principal</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#cabeeb">
+
+          <td width="136">
+          <p><a href="download/libreria_skybot.c"><font size="2"><font face="Arial, sans-serif">libreria_skybot.c</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="140">
+          <p><font face="Arial, sans-serif"><font size="2">&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;--------------</font></font>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/libreria_skybot.c.html"><font size="2"><font face="Arial, sans-serif">libreria_skybot.c</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>LIBRERIA SKYBOT: </b>Conjunto de
+funciones que facilitan el acceso a los sensores y motores del skybot.</font></font><font face="Arial, sans-serif"><font size="2">Para
+ser incluido en la
+misma carpeta que el fichero de codigo C principal</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#abbeeb">
+
+          <td width="136">
+          <p><a href="download/mogollon.c"><font size="2"><font face="Arial, sans-serif">mogollon.c</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="140">
+          <span style="font-family: Arial,sans-serif;"></span><font><font><a href="download/mogollon.hex"><font size="2"><font face="Arial, sans-serif">mogollon.hex</font></font></a></font></font></td>
+
+          <td width="122">
+          <p><a href="download/mogollon.c.html"><font size="2"><font face="Arial, sans-serif">mogollon</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>MOGOLLON: </b>Codigo basico que
+permite participar en el concurso del mogollon en caso de urgencia.</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#cabeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/sigue_linea.c"><font size="2"><font face="Arial, sans-serif">sigue_linea.c</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/sigue_linea.hex"><font size="2"><font face="Arial, sans-serif">sigue_linea.hex</font></font></a>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/sigue_linea.c.html"><font size="2"><font face="Arial, sans-serif">sigue_linea</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>SIGUE_LINEA:&nbsp;</b>Programa
+que hace que el Skybot siga una linea</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#abbeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/Makefile.linux"><font size="2"><font face="Arial, sans-serif">Makefile.linux</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><font face="Arial, sans-serif"><font size="2">&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; --------------</font></font>
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/Makefile.linux.html"><font size="2"><font face="Arial, sans-serif">Makefile.linux</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2">Ejemplo de Makefile para Linux</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#cabeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/borrar_codigo_objeto.bat"><font size="2"><font face="Arial, sans-serif">borrar_codigo_objeto.bat</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><a href="download/sci-sensor.hex"><font size="2"><font face="Arial, sans-serif"><br>
+
+          </font></font></a></p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/borrar_codigo_objeto.bat.html"><font size="2"><font face="Arial, sans-serif">borrar_codigo_objeto</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>BORRAR_CODIGO: </b>Elimina todos
+los ficheros creados durante el proceso de compilacion</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#abbeeb">
+
+          <td width="136">
+          <p><font face="Arial, sans-serif"><a href="download/crear_ejecutable.bat"><font size="2"><font face="Arial, sans-serif">crear_ejecutable.bat</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td width="140">
+          <p><br>
+
+          </p>
+
+          </td>
+
+          <td width="122">
+          <p><a href="download/crear_ejecutable.bat.html"><font size="2"><font face="Arial, sans-serif">crear_ejecutable</font></font></a></p>
+
+          </td>
+
+          <td width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>CREAR_EJECUTABLE: </b>Para entornos
+windows, compila el fichero pasado como argumento, situado en la ruta
+pasada como segundo argumento (Ver fichero y leer instrucciones en la
+cabecera).</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#cabeeb">
+
+          <td bgcolor="#ffffcc" width="136">
+          <p><font face="Arial, sans-serif"><a href="download/ejemplos1-linux.tgz"><font size="2"><font face="Arial, sans-serif">ejemplos1-linux.tgz</font></font></a>
+          </font> </p>
+
+          </td>
+
+          <td bgcolor="#ffffcc" width="140">
+          <p align="center"><font face="Arial, sans-serif"><font size="2">..........
+          </font></font> </p>
+
+          </td>
+
+          <td bgcolor="#ffffcc" width="122">
+          <p align="center"><font face="Arial, sans-serif"><font size="2">..........
+          </font></font> </p>
+
+          </td>
+
+          <td bgcolor="#ffffcc" width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>TODOS LOS EJEMPLOS para Linux</b>.
+Con Makefile</font></font></p>
+
+          </td>
+
+        </tr>
+
+        <tr bgcolor="#abbeeb">
+
+          <td bgcolor="#ffff99" width="136">
+          <p><font face="Arial, sans-serif"><font size="2"><a href="download/ejemplos1-windows.zip">ejemplos1-windows.zip</a></font></font></p>
+
+          </td>
+
+          <td bgcolor="#ffff99" width="140">
+          <p align="center"><font face="Arial, sans-serif"><font size="2">..........
+          </font></font> </p>
+
+          </td>
+
+          <td bgcolor="#ffff99" width="122">
+          <p align="center"><font face="Arial, sans-serif"><font size="2">..........
+          </font></font> </p>
+
+          </td>
+
+          <td bgcolor="#ffff99" width="426">
+          <p><font face="Arial, sans-serif"><font size="2"><b>TODOS LOS EJEMPLOS</b> con ficheros
+de proceso por lotes
+para Windows (.bat)</font></font></p>
+
+          </td>
+
+        </tr>
+
+      </tbody>
+    </table>
+
+  </dd>
+
+</dl>
+
+<p style="margin-bottom: 0cm;"><br>
+
+</p>
+
+<p style="margin-bottom: 0cm;"><br>
+
+</p>
+
+<hr>
+<p><a href="../index.html"><font size="2"><font face="Arial, sans-serif">[Sesion
+3]</font></font></a></p>
+
+<address style="margin-bottom: 0.5cm;"><a href="http://www.iearobotics.com/personal/juan/index.html"><font size="2"><font face="Arial, sans-serif">Juan
+Gonz&aacute;lez</font></font></a><br>
+
+<br>
+
+<a href="mailto:jvaliente@ifara.com"><font size="2"><font face="Arial, sans-serif">Javier Valiente</font></font></a><br>
+
+</address>
+
+<p style="margin-bottom: 0cm;"><a href="http://www.iearobotics.com"><font size="2"><font face="Arial, sans-serif">IEAROBOTICS</font></font></a>
+</p>
+
+</body>
+</html>

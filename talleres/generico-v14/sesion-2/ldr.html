@@ -1,0 +1,680 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+
+
+	
+  
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=iso-8859-15">
+
+
+	
+	
+  
+  
+  <title>Taller Robotica B&aacute;sica - Sesi&oacute;n 4</title>
+  <meta name="KEYWORDS" content="robotica, microcontroladores, pic, hardware">
+
+
+	
+  
+  <style>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</style>
+</head>
+
+
+<body dir="ltr" lang="es-ES">
+
+
+<center>
+<table style="page-break-before: always;" bgcolor="#abbeeb" border="0" cellpadding="4" cellspacing="0" width="917">
+
+
+	<col width="909">
+	<tbody>
+
+    <tr>
+
+
+		<td width="909">
+			
+      
+      <p align="center">Taller de Rob&oacute;tica B&aacute;sico - Skybot v1.4. - SESION 2. <b>Preparaci&oacute;n del sensor de luz</b></p>
+
+
+
+		</td>
+
+
+	</tr>
+
+
+  
+  </tbody>
+</table>
+
+
+
+</center>
+
+
+<center>
+	
+<table cellpadding="2" cellspacing="2">
+
+
+		<tbody>
+
+    <tr>
+
+
+			<td>
+				
+      
+      <p><a href="#introduccion">[Introducci&oacute;n]</a></p>
+
+
+			</td>
+
+
+			<td>
+				
+      
+      <p><a href="#materiales">[Materiales]</a></p>
+
+
+			</td>
+
+
+			<td>
+				
+      
+      <p><a href="#herramientas">[Herramientas]</a></p>
+
+
+			</td>
+
+
+			
+			<td>
+				
+      
+      <p><a href="#construccion">[Construcci&oacute;n]</a></p>
+
+
+			</td>
+
+
+			<td>
+				
+      
+      <p><a href="#cable">[Cable conexi&oacute;n]</a></p>
+
+
+			</td>
+
+
+			<td>
+				
+      
+      <p><a href="#software">[Software]</a></p>
+
+
+			</td>
+
+
+		</tr>
+
+
+	
+  
+  </tbody>
+</table>
+
+
+</center>
+
+
+<p style="margin-bottom: 0cm;" align="center"><br>
+
+<img src="images/skybot-ldr.jpg" name="Imagen1">
+</p>
+
+
+
+<!-- Introducción --><br>
+
+<br>
+
+
+<h2><a name="introduccion"></a>Introducci&oacute;n </h2>
+
+
+<p style="margin-bottom: 0cm;">Vamos a colocar el sensor de
+luz o <b>LDR</b>
+en el robot. Lo situaremos a modo de antena en el robot y nos
+servir&aacute; para detectar objetos luminosos.
+Una LDR proporciona un voltaje dependiente de la intensidad de luz, por
+lo tanto es un sensor anal&oacute;gico y lo tendremos que manejar
+usando una entrada anal&oacute;gica de la SKYPIC, situadas en el Puerto
+A, el mismo que hemos usado para los bumpers. </p>
+
+
+<br>
+
+
+
+<hr>
+<!-- materiales -->
+<table>
+
+
+  <tbody>
+
+    <tr>
+
+
+      <td>
+      
+      <h2><a name="materiales"></a>Materiales </h2>
+
+
+      
+      <ul>
+
+
+	<li>
+          
+          <p style="margin-bottom: 0cm;">1 LDR
+	</p>
+
+
+	</li>
+
+        <li>
+          
+          <p style="margin-bottom: 0cm;">1 cable rojo de 25 cm de longitud 
+	</p>
+
+
+	</li>
+
+        <li>
+          
+          <p style="margin-bottom: 0cm;">1 cable negro de 25 cm de longitud
+		</p>
+
+
+	</li>
+
+        <li>
+          
+          <p style="margin-bottom: 0cm;">Alambre para hacer la antena (no inclu&iacute;do en el kit)
+	</p>
+
+
+	</li>
+
+        <li>
+          
+          <p style="margin-bottom: 0cm;">Tornillo y tuerca m&eacute;trica 4
+	</p>
+
+
+        </li>
+
+      
+      </ul>
+
+
+      </td>
+
+
+      <td><img src="images/materiales-ldr.jpg" name="materiales-ldr" align="right"></td>
+
+
+    </tr>
+
+
+  
+  </tbody>
+</table>
+
+
+
+<hr>
+<!-- herramientas -->
+<table>
+
+
+  <tbody>
+
+    <tr>
+
+
+      <td>
+      
+      <h2><a name="herramientas"></a>Herramientas </h2>
+
+
+      
+      <ul>
+
+
+	<li>
+          
+          <p style="margin-bottom: 0cm;">Soldador y esta&ntilde;o</p>
+
+
+	</li>
+
+        <li>
+          
+          <p style="margin-bottom: 0cm;">Pelacables y soporte soldador (opcionales)</p>
+
+
+	</li>
+
+        <li>
+          
+          <p style="margin-bottom: 0cm;">Alicate</p>
+
+
+        </li>
+
+      
+      </ul>
+
+
+      </td>
+
+
+      <td><img src="images/herramientas.jpg" name="Herramientas"></td>
+
+
+    </tr>
+
+
+  
+  </tbody>
+</table>
+
+
+
+
+<hr>
+<!-- Construcción -->
+<h2><a name="construccion"></a>Construcci&oacute;n</h2>
+
+
+<p align="center"><img src="images/ldr-1.jpg" name="Imagen2" align="bottom"></p>
+
+
+<p>Como se puede apreciar en la figura, una LDR tiene dos patas. Vamos
+a soldar el cable rojo a una de ellas y el negro a la otra. No importa
+la polaridad
+por lo que podemos poner cada cable en la pata que queramos. Luego
+protegeremos la soldadura con un poco de cinta aislante y montaremos la
+LDR en el lugar que
+queramos, una opci&oacute;n es ponerla como si fuera una antena.
+</p>
+
+
+<p>Finalmente conectaremos el cable <b>negro</b> a la <b>entrada GND</b> de la SKY293 y el cable <b>rojo</b> a la <b>entrada AN0</b>.  Si necesitamos que la LDR detecte la luz de forma direccional conviene
+encapsularla de tal forma que s&oacute;lo podamos recibir la luz por un peque&ntilde;o orificio.
+</p>
+
+<p>El proceso se muestra en las siguientes figuras:
+</p>
+
+
+<table border="1">
+
+
+  <tbody>
+
+    <tr>
+
+
+      <td><b>Paso 1) </b>Soldamos el cable rojo a una de las patas</td>
+
+
+      <td><b>Paso 2) </b>Soldamos el cable negro a la otra pata</td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td align="center"><img src="images/ldr-2.jpg" name="Imagen2"></td>
+
+
+      <td align="center"><img src="images/ldr-3.jpg" name="Imagen3"></td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td><b>Paso 3) </b>Protegemos la soldadura</td>
+
+
+      <td><b>Paso 4) </b>Hacemos la antena</td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td align="center"><img src="images/ldr-4.jpg" name="Imagen4"><img src="images/ldr-4bis.jpg" name="Imagen4bis"></td>
+
+
+      <td align="center"><img src="images/ldr-5.jpg" name="Imagen5"></td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td><b>Paso 5) </b>Montamos la LDR</td>
+
+
+      <td><b>Paso 6) </b>Atornillamos la antena</td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td align="center"><img src="images/ldr-6.jpg" name="Imagen6"></td>
+
+
+      <td align="center"><img src="images/ldr-7.jpg" name="Imagen7"></td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td><b>Paso 7) </b>Conectamos a la SKY293</td>
+
+
+      <td><b>Paso 8) </b>Encapsulamos la antena</td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td align="center"><img src="images/sky293-ldr.png" name="Imagen8"></td>
+
+
+      <td align="center"><img src="images/ldr-9.jpg" name="Imagen9"></td>
+
+
+    </tr>
+
+
+  
+  </tbody>
+</table>
+
+
+<br>
+
+
+
+
+<!-- cable -->
+<hr>
+<h2><a name="cable"></a>Cable de conexi&oacute;n</h2>
+
+
+<p>Vamos a utilizar el otro cable de bus que hay en el kit. Lo vamos a
+conectar por un extremo al Puerto A de la SKYPIC (etiquetado como CT1),
+y por el otro al Puerto A de la SKY293.
+</p>
+
+
+<br>
+
+
+
+<!-- software -->
+<hr>
+<p></p>
+
+
+<h2><a name="software"></a>Software</h2>
+
+
+<p> Como hemos dicho antes, una LDR es un sensor anal&oacute;gico, eso
+significa que la informaci&oacute;n que nos d&aacute; tiene infinitos
+estados, en contra de los sensores digitales que s&oacute;lo tienen
+dos. Esta caracter&iacute;stica hace que necesitemos un conversor
+anal&oacute;gico-digital (ADC Analog to Digital Converter) para poder
+trabajar con este tipo de informaci&oacute;n NO DIGITAL. <br>
+
+El ADC recibe como entrada la se&ntilde;al anal&oacute;gina y
+proporciona en su salida una serie de bits proporcionales al valor de
+la entrada. El PIC16F876A tiene un conversor AD interno con varias
+entradas situadas en el Puerto A.
+<br>
+
+Nosotros vamos a usar este recurso para leer la informaci&oacute;n de
+la LDR. Tendremos que configurar el ADC interno para que sea capaz de
+leer valores anal&oacute;gicos en la entrada AN0 y dejar el resto de
+entradas como digitales. De esta forma mantendremos la compatibilidad
+con los bumpers.
+</p>
+
+
+
+<p align="center">
+<table border="1">
+
+
+  <tbody>
+
+    <tr>
+
+
+	<td><b>SKY293 Puerto A</b></td>
+
+
+	<td><b>SKYPIC Puerto A</b></td>
+
+
+	<td><b>Descripci&oacute;n</b></td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+	<td>AN0</td>
+
+
+
+	<td>PA0</td>
+
+
+	<td>Cable Rojo LDR</td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+	<td>AN1</td>
+
+
+	<td>PA1</td>
+
+
+	<td>---</td>
+
+
+
+    </tr>
+
+
+    <tr>
+
+
+	<td>AN2</td>
+
+
+	<td>PA2</td>
+
+
+	<td>---</td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+	<td>AN3</td>
+
+
+	<td>PA3</td>
+
+
+
+	<td>---</td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+	<td>TO</td>
+
+
+	<td>PA4</td>
+
+
+	<td>---</td>
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+	<td>AN4</td>
+
+
+	<td>PA5</td>
+
+
+	<td>---</td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+	<td><b>Clema alimentacion</b></td>
+
+
+	<td></td>
+
+
+	<td></td>
+
+
+
+    </tr>
+
+
+    <tr>
+
+
+	<td>GND</td>
+
+
+	<td>Cable negro LDR</td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+	<td>VCC</td>
+
+
+	<td>NC</td>
+
+
+    </tr>
+
+
+  </tbody>
+</table>
+</p>
+
+
+
+<br>
+
+<br>
+
+
+
+
+
+
+<hr>
+<p style="margin-bottom: 0cm;"><font face="Arial, sans-serif" size="2">
+<a href="index.html">[ Sesi&oacute;n 2]</a><br>
+
+
+<br>
+
+<a href="http://www.iearobotics.com/">IEA ROBOTICS</a> </font>
+</p>
+
+<address><font face="Arial, sans-serif" size="2"><br>
+
+P&aacute;gina creada por
+<a href="http://www.iearobotics.com/personal/andres/index.html">Andr&eacute;s
+Prieto-Moreno Torres</a> </font>
+</address>
+
+
+</body>
+</html>

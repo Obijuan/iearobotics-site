@@ -1,0 +1,1724 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+
+
+
+
+	
+  
+  
+  
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=iso-8859-15">
+
+
+
+
+	
+	
+  
+  
+  
+  
+  
+  
+  <title>Taller de robotica. Sesion 3. Software para Linux</title>
+  <meta name="GENERATOR" content="OpenOffice.org 1.1.3  (Linux)">
+
+
+
+
+	
+  
+  
+  
+  <meta name="CREATED" content="20040522;11483800">
+
+
+
+
+	
+  
+  
+  
+  <meta name="CHANGED" content="20050719;18532700">
+
+
+
+
+	
+  
+  
+  
+  <meta name="KEYWORDS" content="robotica, microcontroladores, pic, hardware, linux">
+
+
+
+
+	
+  
+  
+  
+  <style>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</style>
+</head>
+
+
+<body dir="ltr" lang="en-US">
+
+
+
+
+
+
+<table style="page-break-before: always;" bgcolor="#abbeeb" border="0" cellpadding="4" cellspacing="0" width="917">
+
+
+
+
+	<col width="909">
+	<tbody>
+
+
+
+    <tr>
+
+
+
+
+		<td width="909">
+			
+      
+      
+      
+      <p align="center"><font face="Arial, sans-serif">Taller de
+			Rob&oacute;tica B&aacute;sico - Skybot v1.4. - SESION 3 - <b> Software para Linux
+			</b></font></p>
+
+
+
+
+
+		</td>
+
+
+
+
+	</tr>
+
+
+
+
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+
+<p style="margin-bottom: 0cm;" align="center"><br>
+
+
+
+
+</p>
+
+
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+
+
+
+			<td valign="top" width="100%">
+				
+    
+    
+    
+    <p align="center"><img src="images/inst-linux-ini.png" name="Imagen1" align="middle" border="0" height="253" width="337"></p>
+
+
+
+
+			</td>
+
+
+
+
+		</tr>
+
+
+
+
+	</thead>
+</table>
+
+
+
+
+<hr>
+<h2><font face="Arial, sans-serif">Introducci&oacute;n</font></h2>
+
+
+
+
+<p><font face="Arial, sans-serif"><font size="2">A continuaci&oacute;n
+instalaremos las herramienta que vamo a utilizar desde Linux. <b>Todo
+el software es libre</b>, por lo que se puede usar, copiar,
+distribuir, modificar y redistribuir las modificaciones. </font></font>
+</p>
+
+
+
+
+<ul>
+
+
+
+
+	<li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><a href="#Editor">Editor
+	de textos</a></font></font></p>
+
+
+
+
+	</li>
+
+
+
+  <li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><a href="#gputils">Utilidades
+	para el PIC</a></font></font></p>
+
+
+
+
+	</li>
+
+
+
+  <li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><a href="#Compilador">Compilador
+	de C</a></font></font></p>
+
+
+
+
+	</li>
+
+
+
+  <li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><a href="#Cargador">Cargador</a></font></font></p>
+
+
+
+
+	</li>
+
+
+
+  <li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><a href="#Otras">Otras
+	herramientas</a></font></font></p>
+
+
+
+
+  </li>
+
+
+
+</ul>
+
+
+
+
+<hr>
+<h2><a name="Editor"></a><a name="Editor de textos"></a><font face="Arial, sans-serif">Editor
+de textos</font></h2>
+
+
+
+
+<p><font face="Arial, sans-serif"><font size="2">Para editar los
+ficheros en C se puede emplear <b>cualquier editor</b>: Emacs, Vim,
+Kate, Gedit... Si nunca has utilizado ninguno de ellos no tienes
+claro cual usar, nosotros te aconsejamos el <a href="http://anjuta.sourceforge.net/">Anjuta</a>,
+que es un entorno de programaci&oacute;n.</font></font></p>
+
+
+
+
+<p><font face="Arial, sans-serif"><font size="2">Est&aacute; disponible
+en cualquier distribuci&oacute;n. Si usas <a href="http://www.debian.org/">Debian</a>
+o una derivada (Ubuntu, Knoppix,...) lo puedes instalar muy
+f&aacute;cilmente con:</font></font></p>
+
+
+
+
+<ul>
+
+
+
+
+	<li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><i>apt-get
+	install anjuta</i></font></font></p>
+
+
+
+
+  </li>
+
+
+
+</ul>
+
+
+
+
+<p><font face="Arial, sans-serif"><font size="2">O bien utilizando el
+gestor gr&aacute;fico de paquetes synaptic.</font></font></p>
+
+
+
+
+<p><font face="Arial, sans-serif"><font size="2"><a href="images/inst-linux-anjuta.png">Aqu&iacute;
+puedes ver un pantallazo</a> de mi Anjuta en acci&oacute;n. Yo tengo
+la <b>versi&oacute;n 1.2.2</b>, que es la que viene con Debian/Sarge.
+Si te gusta la configuraci&oacute;n que tengo, la puedes instalar de
+esta manera:</font></font></p>
+
+
+
+
+<ul>
+
+
+
+
+	<li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Descargar el
+	fichero <a href="download/anjuta-cfg.tgz">anjuta-cfg.tgz</a>.</font></font></p>
+
+
+
+
+	</li>
+
+
+
+  <li>
+    
+    
+    
+    <p><font size="2"><font face="Arial, sans-serif">Descomprimirlo en
+	nuestro Home: <i><font face="Courier, monospace">$ <b>tar vzxf
+	anjuta-cfg.tgz</b></font></i></font></font></p>
+
+
+
+
+  </li>
+
+
+
+</ul>
+
+
+
+
+<hr>
+<h2><a name="gputils"></a><font face="Arial, sans-serif">Herramientas
+GPUTILS</font></h2>
+
+
+
+
+<p><font face="Arial, sans-serif"><b>Instalaci&oacute;n</b></font></p>
+
+
+
+
+<p><font face="Arial, sans-serif"><font size="2"><font face="Arial, sans-serif">Las
+</font></font><a href="http://gputils.sourceforge.net/"><font size="2"><font face="Arial, sans-serif">GPUTILS</font></font></a><font size="2"><font face="Arial, sans-serif">
+son necesarias para que funcione el compilador de C.  Incluyen un
+ensamblador, desensamblador y un enlazador (linker).</font></font></font></p>
+
+
+
+
+<ul>
+
+
+
+
+	<li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Est&aacute;
+	disponible en Debian: apt-get install gptutils</font></font></p>
+
+
+
+
+	</li>
+
+
+
+  <li>
+    
+    
+    
+    <p><font size="2"><font face="Arial, sans-serif">Otras
+	distribuciones: en la p&aacute;gina de descargas est&aacute;n
+	disponibles los </font></font><a href="https://sourceforge.net/project/showfiles.php?group_id=41924"><font size="2"><font face="Arial, sans-serif">paquetes
+	rpm</font></font></a></p>
+
+
+
+
+  </li>
+
+
+
+</ul>
+
+
+
+
+<p><font face="Arial, sans-serif"><font size="2">La versi&oacute;n que
+yo tengo es la <b>0.13.0</b>, que viene en Debian/Sarge.</font></font></p>
+
+
+
+
+<p><font face="Arial, sans-serif"><font size="2"><b><font size="3">Pruebas</font></b>:</font></font></p>
+
+
+
+
+<p><font face="Arial, sans-serif"><font size="2">Para probar que est&aacute;
+correctamente instalado:</font></font></p>
+
+
+
+
+<ul>
+
+
+
+
+	<li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Bajar el paquete
+	<a href="download/gputils-test.tgz">gputils-test.tgz</a>. Contiene
+	un ejemplo muy sencillo en ensamblador y un fichero Makefile</font></font></p>
+
+
+
+
+	</li>
+
+
+
+  <li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Descomprimir:</font></font></p>
+
+
+
+
+  </li>
+
+
+
+</ul>
+
+
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+
+
+
+			<td bgcolor="#e6e6e6" valign="top" width="100%">
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2">$ tar vzxf
+				gputils-test.tgz </font></font>
+				</p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2">gputils-test/</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2">gputils-test/Makefile</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2">gputils-test/ledon.asm</font></font></p>
+
+
+
+
+			</td>
+
+
+
+
+		</tr>
+
+
+
+
+	</thead>
+</table>
+
+
+
+
+<ul>
+
+
+
+
+	<li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Entrar en el
+	directorio y ejecutar make:</font></font></p>
+
+
+
+
+  </li>
+
+
+
+</ul>
+
+
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+
+
+
+			<td bgcolor="#e6e6e6" valign="top" width="100%">
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2">$ cd gputils-test</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2">$ make</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2">gpasm -w 2 -a
+				inhx8m ledon.asm</font></font></p>
+
+
+
+
+			</td>
+
+
+
+
+		</tr>
+
+
+
+
+	</thead>
+</table>
+
+
+
+
+<ul>
+
+
+
+
+	<li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Esto habr&aacute;
+	generado el fichero .hex con el c&oacute;digo m&aacute;quina, junto
+	con otros ficheros. Si es as&iacute;, las gptuils funcionan
+	correctamente.</font></font></p>
+
+
+
+
+  </li>
+
+
+
+</ul>
+
+
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+
+
+
+			<td bgcolor="#e6e6e6" valign="top" width="100%">
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2">$ ls</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2">ledon.asm 
+				ledon.cod  ledon.hex  ledon.lst  Makefile</font></font></p>
+
+
+
+
+			</td>
+
+
+
+
+		</tr>
+
+
+
+
+	</thead>
+</table>
+
+
+
+
+<hr>
+<h2><a name="Compilador"></a>Compilador de C</h2>
+
+
+
+
+<p><font size="2"><font face="Arial, sans-serif">El compilador que
+vamos a emplear es el </font></font><a href="http://sdcc.sourceforge.net/"><font size="2"><font face="Arial, sans-serif">SDCC</font></font></a><font size="2"><font face="Arial, sans-serif">.
+Todav&iacute;a es una versi&oacute;n alfa para los microcontroladores
+PIC por lo que no est&aacute; implementada todas las funcionalidades
+de uno comercial, sin embargo est&aacute; lo suficiente maduro como
+para hacer los ejemplos del taller.</font></font></p>
+
+
+
+
+<p><font face="Arial, sans-serif"><font size="2">La versi&oacute;n que
+emplearemos es la <b>2.6.0</b>.</font></font></p>
+
+
+
+
+<p><font face="Arial, sans-serif"><b>Instalaci&oacute;n</b></font></p>
+<ul>
+  <li>
+    <p><font size="2"><font face="Arial, sans-serif"><b>Descargar la
+	versi&oacute;n 2.6.0</b> desde la p&aacute;gina de </font></font><a href="http://sdcc.sourceforge.net/#Download"><font size="2"><font face="Arial, sans-serif">download</font></font></a><font size="2"><font face="Arial, sans-serif">.
+	El fichero a bajar es </font></font><a href="http://downloads.sourceforge.net/sdcc/sdcc-2.6.0-i386-unknown-linux2.2.tar.gz?modtime=1154349353&amp;big_mirror=0"><font size="2"><font face="Arial, sans-serif">sdcc-2.6.0-i386-unknown-linux2.2.tar.gz</font></font></a><font size="2"><font face="Arial, sans-serif">.</font></font></p>
+
+
+
+
+	</li>
+
+
+
+  <li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Descomprimir:</font></font></p>
+
+
+
+
+  </li>
+
+
+
+</ul>
+
+
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+
+
+
+			<td bgcolor="#e6e6e6" valign="top" width="100%">
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2">$ tar vzxf 
+				sdcc-2.6.0-i386-unknown-linux2.2.tar.gz</font></font></p>
+
+
+
+
+			</td>
+
+
+
+
+		</tr>
+
+
+
+
+	</thead>
+</table>
+
+
+
+
+<ul>
+
+
+
+
+	<li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Entrar en el
+	directorio y copiar todos los fichero en <b>/usr/local,</b> como
+	root</font></font></p>
+
+
+
+
+  </li>
+
+
+
+</ul>
+
+
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+
+
+
+			<td bgcolor="#e6e6e6" valign="top" width="100%">
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2"># cd sdcc</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2"># cp -r *
+				/usr/local</font></font></p>
+
+
+
+
+			</td>
+
+
+
+
+		</tr>
+
+
+
+
+	</thead>
+</table>
+<p><font face="Arial, sans-serif"><b><font size="3">Pruebas</font></b></font></p>
+
+
+
+
+<ul>
+
+
+
+
+	<li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Desde nuestro
+	home, ejecutar los siguiente:</font></font></p>
+
+
+
+
+  </li>
+
+
+
+</ul>
+
+
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+
+
+
+			<td bgcolor="#e6e6e6" valign="top" width="100%">
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2">$ sdcc -v</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2">SDCC :
+				mcs51/gbz80/z80/avr/ds390/pic16/pic14/TININative/xa51/ds400/hc08
+				<b>2.6.0</b> #4309 (Sep 28 2006) (UNIX) </font></font>
+				</p>
+
+
+
+
+			</td>
+
+
+
+
+		</tr>
+
+
+
+
+	</thead>
+</table>
+
+
+
+
+<ul>
+
+
+
+
+	<li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Fijarse que pone
+	2.6.0</font></font></p>
+
+
+
+
+	</li>
+
+
+
+  <li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Vamos a compilar
+	un programa de ejemplo. Bajar el paquete <a href="download/sdcc_hola_mundo.tgz">sdcc_hola_mundo.tgz</a>.</font></font></p>
+
+
+
+
+	</li>
+
+
+
+  <li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Descomprimirlo y
+	entrar en el directorio:</font></font></p>
+
+
+
+
+  </li>
+
+
+
+</ul>
+
+
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+
+
+
+			<td bgcolor="#e6e6e6" valign="top" width="100%">
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2">$ tar vzxf
+				sdcc_hola_mundo.tgz</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2">$ cd
+				sdcc_hola_mundo</font></font></p>
+
+
+
+
+			</td>
+
+
+
+
+		</tr>
+
+
+
+
+	</thead>
+</table>
+
+
+
+
+<ul>
+
+
+
+
+	<li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Ejecutar make:</font></font></p>
+
+
+
+
+  </li>
+
+
+
+</ul>
+
+
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+
+
+
+			<td bgcolor="#e6e6e6" valign="top" width="100%">
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2">$ make</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2">Compilando ...<br>
+
+
+
+Generando ejecutable</font></font></p>
+
+
+    
+    
+    <p><font face="Courier, monospace"><font size="2"><br>
+
+
+
+    </font></font></p>
+
+
+
+    </td>
+
+
+
+  </tr>
+
+
+
+  </thead>
+</table>
+
+
+
+<ul>
+
+
+
+  <li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Se nos habr&aacute;n
+	generado varios ficheros, entre ellos el que tiene el c&oacute;digo
+	m&aacute;quina: <span style=""><i>ledon.hex</i></span></font></font></p>
+
+
+
+
+  </li>
+
+
+
+</ul>
+
+
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+
+
+
+			<td bgcolor="#e6e6e6" valign="top" width="100%">
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2">$ ls</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2">ledon.asm 
+				ledon.c  ledon.cod  ledon.d  <b>ledon.hex</b>  ledon.lst  ledon.o ledon.p
+				 Makefile</font></font></p>
+
+
+
+
+			</td>
+
+
+
+
+		</tr>
+
+
+
+
+	</thead>
+</table>
+
+
+
+
+<hr>
+<h2><a name="Cargador"></a>Cargador 
+</h2>
+
+
+
+
+<p><font size="2"><font face="Arial, sans-serif">Para grabar los
+programas en el PIC utilizaremos el cargador de </font></font><a href="http://www.microchipc.com/PIC16bootload/"><font size="2"><font face="Arial, sans-serif">Shane
+Tolmie</font></font></a><font size="2"><font face="Arial, sans-serif">.</font></font></p>
+
+
+
+
+<p><font face="Arial, sans-serif"><b>Instalaci&oacute;n</b></font></p>
+
+
+
+
+<ul>
+
+
+
+
+	<li>
+    
+    
+    
+    <p style=""><font face="Arial, sans-serif"><font size="2">Bajar
+	el paquete <a href="download/cargador.tgz">cargador.tgz</a>.</font></font></p>
+
+
+
+
+	</li>
+
+
+
+  <li>
+    
+    
+    
+    <p style=""><font face="Arial, sans-serif"><font size="2">Descomprimirlo
+	y entrar en el directorio</font></font></p>
+
+
+
+
+  </li>
+
+
+
+</ul>
+
+
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+
+
+
+			<td bgcolor="#e6e6e6" valign="top" width="100%">
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2">$ tar vzxf
+				cargador.tgz</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2">$ cd cargador</font></font></p>
+
+
+
+
+			</td>
+
+
+
+
+		</tr>
+
+
+
+
+	</thead>
+</table>
+
+
+
+
+<ul>
+
+
+
+
+	<li>
+    
+    
+    
+    <p style=""><font face="Arial, sans-serif"><font size="2">Dar
+	permisos de lectura y escritura al puerto serie que se vaya a
+	emplear. Lo normal es utilizar el /dev/ttyS0 (que es el equivalente
+	al COM1 de Windows). Esta operaci&oacute;n hay que hacerla como
+	root.</font></font></p>
+
+
+
+
+  </li>
+
+
+
+</ul>
+
+
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+
+
+
+			<td bgcolor="#e6e6e6" valign="top" width="100%">
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2"># chmod a+rw
+				/dev/ttyS0</font></font></p>
+
+
+
+
+			</td>
+
+
+
+
+		</tr>
+
+
+
+
+	</thead>
+</table>
+
+
+
+
+<ul>
+
+
+
+
+	<li>
+    
+    
+    
+    <p style=""><font face="Arial, sans-serif"><font size="2">Editar
+	el script skybot-down y poner el dispositivo serie que se vaya a
+	emplear. Por defecto vienen con el /dev/ttyS0. Este script llama al
+	cargador con los par&aacute;metro adecuados. Este es el aspecto que
+	tiene:</font></font></p>
+
+
+
+
+  </li>
+
+
+
+</ul>
+
+
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+
+
+
+			<td bgcolor="#e6e6e6" valign="top" width="100%">
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2">$ cat skybot-down</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2">#!/bin/sh</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2">picdl -S38400
+				-P/dev/ttyS0 $1</font></font></p>
+
+
+
+
+			</td>
+
+
+
+
+		</tr>
+
+
+
+
+	</thead>
+</table>
+
+
+
+
+<ul>
+
+
+
+
+	<li>
+    
+    
+    
+    <p style=""><font face="Arial, sans-serif"><font size="2">Copiar
+	los ficheros al directorio /usr/local/bin, como root:</font></font></p>
+
+
+
+
+  </li>
+
+
+
+</ul>
+
+
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+
+
+
+			<td bgcolor="#e6e6e6" valign="top" width="100%">
+				
+    
+    
+    
+    <p><font face="Courier, monospace"><font size="2"># cp *
+				/usr/local/bin</font></font></p>
+
+
+
+
+			</td>
+
+
+
+
+		</tr>
+
+
+
+
+	</thead>
+</table>
+
+
+
+
+<p><font face="Arial, sans-serif"><font size="2"><span style="">Ya
+tenemos el software listo para trabajar!!!!</span></font></font></p>
+
+
+
+
+<hr>
+<h2><a name="Otras"></a>Otras herramientas</h2>
+
+
+
+
+<ul>
+
+
+
+
+	<li>
+    
+    
+    
+    <p><font size="2"><font face="Arial, sans-serif">Para mover el
+	robot y hacer pruebas de los sensores utilizaremos el programa
+	</font></font><a href="../../software/skybot-test/skybot-test.html"><font size="2"><font face="Arial, sans-serif">Skybot-test</font></font></a><font size="2"><font face="Arial, sans-serif">.
+	</font></font>
+	</p>
+
+
+
+
+	</li>
+
+
+
+  <li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Tambi&eacute;n
+	utilizaremos el <b>minicom</b>, que es un terminal de
+	comunicaciones. Est&aacute; disponible en todas las distribuciones.
+	Para instalarlo en Debian s&oacute;lo tendremos que hacer: <i><font face="Courier, monospace">apt-get
+	install minicom</font></i>. Para configurarlo hacer lo siguiente:</font></font></p>
+
+
+
+
+	
+    
+    
+    
+    <ul>
+
+
+
+
+		<li>
+        
+        
+        
+        <p><font face="Arial, sans-serif"><font size="2">Ejecutar <b>minicom
+		-s</b> como root</font></font></p>
+
+
+
+
+		</li>
+
+
+
+      <li>
+        
+        
+        
+        <p><font face="Arial, sans-serif"><font size="2">Seleccionar la
+		opci&oacute;n de &ldquo;configuraci&oacute;n de la puerta serial&rdquo;</font></font></p>
+
+
+
+
+		</li>
+
+
+
+      <li>
+        
+        
+        
+        <p><font face="Arial, sans-serif"><font size="2">Seleccionar el
+		dispositivo serie donde conectaremos el skybot, pulsando la A</font></font></p>
+
+
+
+
+		</li>
+
+
+
+      <li>
+        
+        
+        
+        <p><font face="Arial, sans-serif"><font size="2">Dar a la opci&oacute;n
+		E</font></font></p>
+
+
+
+
+		</li>
+
+
+
+      <li>
+        
+        
+        
+        <p><font face="Arial, sans-serif"><font size="2">Establecer una
+		velocidad de 9600 baudios (Opci&oacute;n E)</font></font></p>
+
+
+
+
+		</li>
+
+
+
+      <li>
+        
+        
+        
+        <p><font face="Arial, sans-serif"><font size="2">Salir del men&uacute;
+		pulsando enter. La configuraci&oacute;n establecidad debe ser 9600
+		N81</font></font></p>
+
+
+
+
+		</li>
+
+
+
+      <li>
+        
+        
+        
+        <p><font face="Arial, sans-serif"><font size="2">Grabar la
+		configuraci&oacute;n en la opcion &ldquo;Salvar configuracion como
+		dfl...&rdquo;</font></font></p>
+
+
+
+
+		</li>
+
+
+
+      <li>
+        
+        
+        
+        <p><font face="Arial, sans-serif"><font size="2">Salir</font></font></p>
+
+
+
+
+	</li>
+
+
+
+    
+    
+    
+    </ul>
+
+
+
+
+  </li>
+
+
+
+</ul>
+
+
+
+
+<hr>
+<p style="margin-bottom: 0cm;"><a href="../index.html"><font size="2"><font face="Arial, sans-serif">[Sesion
+III]</font></font></a> 
+</p>
+
+
+
+
+<address style="margin-bottom: 0.5cm;"><a href="http://www.iearobotics.com/personal/juan/index.html"><font size="2"><font face="Arial, sans-serif">Juan
+Gonz&aacute;lez</font></font></a><br>
+
+
+
+<a href="http://www.iearobotics.com"><font size="2"><font face="Arial, sans-serif">IEAROBOTICS</font></font></a>
+</address>
+
+
+
+
+</body>
+</html>

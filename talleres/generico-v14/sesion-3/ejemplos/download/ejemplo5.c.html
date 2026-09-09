@@ -1,0 +1,49 @@
+
+<html>
+<head>
+<title>ejemplo5.c</title>
+<meta name="generator" content="c2html 0.9.6">
+<meta name="date" content="2007-07-19T16:01:58+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/*
+Ejemplo de programaci&oacute;n del Skybot 
+usando la libreria_skybot
+
+Ejemplo5:
+Mientras el Sensor3 lea blanco avanza el robot
+
+Julio-2007
+*/</font>
+
+<font color="#A020F0">#include </font><font color="#666666">"libreria_skybot.h"</font><font color="#A020F0"></font>
+
+//----------------------------
+//- Comienzo del programa  
+//----------------------------
+
+<strong><font color="#4169E1"><a name="main"></a>void main(void)</font></strong>
+{
+  // Configuramos el PIC16f876a para 
+  // adaptarse al Robot Skybot
+  ConfigurarSkybot();
+  
+  // Bucle principal
+  <font color="#4169E1">for</font> (;;)
+  {
+    // Si leo blanco avanzo
+    <font color="#4169E1">if</font> (SensorIR_Izq_Lee_Blanco() == VERDADERO)
+    {
+      Avanza();
+    }
+    <font color="#4169E1">else</font> // en caso contrario me paro
+    {
+      Stop();
+    }
+  }
+}
+</pre>
+</body>
+
+</html>

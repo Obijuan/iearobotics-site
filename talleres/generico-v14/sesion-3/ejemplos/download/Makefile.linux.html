@@ -1,0 +1,63 @@
+
+<html>
+<head>
+<title>Makefile</title>
+<meta name="generator" content="c2html 0.9.6">
+<meta name="date" content="2007-07-19T16:01:58+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#A020F0"># **************************************************************************</font>
+<font color="#A020F0">#</font>
+<font color="#A020F0"># Fichero makefile.</font>
+<font color="#A020F0">#</font>
+<font color="#A020F0"># En sistemas Linux, use este fichero para compilar y obtener el fichero</font>
+<font color="#A020F0"># .hex necesario para programar su Skybot.</font>
+<font color="#A020F0">#</font>
+<font color="#A020F0"># Para compilar, ejecute </font><font color="#666666">"make"</font><font color="#A020F0"></font>
+<font color="#A020F0"># Para borrar ficheros creados durante compilacion, </font><font color="#666666">"make clean"</font><font color="#A020F0"></font>
+<font color="#A020F0">#</font>
+<font color="#A020F0"># --------------------------------------------------------------------------</font>
+<font color="#A020F0"># Licencia GPL. </font>
+<font color="#A020F0"># --------------------------------------------------------------------------</font>
+<font color="#A020F0"># Autor : Javier Valiente &lt;jvaliente@ifara.com&gt;</font>
+<font color="#A020F0">#***************************************************************************</font>
+
+<font color="#A020F0">#-- Compilador</font>
+CC = sdcc
+
+SDCCFLAGS = -mpic14 -p16f876a
+
+<font color="#A020F0">#-- Modificar NAME1=main por NAME1=(nombre_del_fichero_c_creado)</font>
+<font color="#A020F0">#-- Ejemplo: Si el fichero se llama ejemplo1.c, NAME1=ejemplo1.c</font>
+NAME1=ejemplo1
+LIBRERIA_AUX=libreria_skybot
+LIBRERIA_TMR=delay0
+
+<strong><font color="#FF0000">all:</font></strong> $(NAME1).o $(LIBRERIA_AUX).o $(LIBRERIA_TMR).o
+        @ echo <font color="#666666">"Sacando programa para PIC ..."</font>
+        @ sdcc $(SDCCFLAGS) -Wl-m -Wl-ainhx8m -o $(NAME1) $(NAME1).o $(LIBRERIA_AUX).o $(LIBRERIA_TMR).o
+
+$(NAME1).o: $(NAME1).c
+        @ echo <font color="#666666">"Compilando fichero fuente ..."</font>
+        @ sdcc $(SDCCFLAGS) -c $(NAME1).c
+
+$(LIBRERIA_AUX).o: $(LIBRERIA_AUX).c $(LIBRERIA_AUX).h
+        @ echo <font color="#666666">"Compilando libreria auxiliar ..."</font>
+        @ sdcc $(SDCCFLAGS) -c $(LIBRERIA_AUX).c
+
+$(LIBRERIA_TMR).o: $(LIBRERIA_TMR).c $(LIBRERIA_TMR).h
+        @ echo <font color="#666666">"Compilando libreria timer ..."</font>
+        @ sdcc $(SDCCFLAGS) -c $(LIBRERIA_TMR).c
+
+
+<font color="#A020F0">#--------------------</font>
+<font color="#A020F0">#- LIMPIEZA</font>
+<font color="#A020F0">#--------------------</font>
+<strong><font color="#FF0000">clean:</font></strong>
+        @ echo <font color="#666666">"Borrando ficheros objeto ..."</font>
+        @ rm -f *.o *.hex *.lst *.p *.d *.asm *.cod *.map *.?~
+</pre>
+</body>
+
+</html>

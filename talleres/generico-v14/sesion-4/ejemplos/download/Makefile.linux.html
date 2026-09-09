@@ -1,0 +1,45 @@
+
+<html>
+<head>
+<title>Makefile.linux</title>
+<meta name="generator" content="c2html 0.9.6">
+<meta name="date" content="2007-07-12T08:31:16+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#A020F0"># **************************************************************************</font>
+<font color="#A020F0"># Fichero makefile.</font>
+<font color="#A020F0"># --------------------------------------------------------------------------</font>
+<font color="#A020F0"># Licencia GPL.</font>
+<font color="#A020F0"># --------------------------------------------------------------------------</font>
+<font color="#A020F0"># Autor: Javier Valiente &lt;jvaliente@ifara.com&gt;</font>
+<font color="#A020F0">#***************************************************************************</font>
+
+<font color="#A020F0">#-- Compilador</font>
+CC = sdcc
+
+CFLAGS = -Wl-m -Wl-ainhx8m -mpic14 -p16f876a
+
+<font color="#A020F0">#-- Ejemplos para el PUERTO B</font>
+NAME1=ledon
+
+<strong><font color="#FF0000">all:</font></strong> $(NAME1)
+
+$(NAME1): $(NAME1).o
+        @echo <font color="#666666">"Generando ejecutable"</font>
+        @sdcc $(CFLAGS) -o $(NAME1) $(NAME1).o
+
+$(NAME1).o: $(NAME1).c
+        @echo <font color="#666666">"Compilando ..."</font>
+        @sdcc $(CFLAGS) -c $(NAME1).c
+
+<font color="#A020F0">#--------------------</font>
+<font color="#A020F0">#- LIMPIEZA</font>
+<font color="#A020F0">#--------------------</font>
+<strong><font color="#FF0000">clean:</font></strong>
+        @echo <font color="#666666">"Borrando ficheros generados en el proceso ..."</font>
+        @rm -f *.o *.hex *.lst *.p *.d *.asm *.cod *.map
+</pre>
+</body>
+
+</html>

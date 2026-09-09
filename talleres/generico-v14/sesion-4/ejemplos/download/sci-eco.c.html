@@ -1,0 +1,62 @@
+
+<html>
+<head>
+<title>sci-eco.c</title>
+<meta name="generator" content="c2html 0.9.6">
+<meta name="date" content="2007-07-25T00:31:22+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/*****************************************************************************/</font>
+<font color="#B22222">/* sci-eco.c      Julio-2005                                                 */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Ejemplo para el skybot                                                    */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Se hace eco de todo lo recibido por el puerto serie                       */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  Juan Gonzalez &lt;juan@iearobotics.com&gt;                                     */</font>
+<font color="#B22222">/*  Modificado por: Javier Valiente &lt;jvaliente@ifara.com&gt;                    */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  LICENCIA GPL                                                             */</font>
+<font color="#B22222">/*****************************************************************************/</font>
+
+//-- Especificar el pic a emplear
+<font color="#A020F0">#include &lt;pic16f876a.h&gt;</font>
+
+//-- Se usa la libreria de comunicaciones serie
+<font color="#A020F0">#include </font><font color="#666666">"sci.h"</font><font color="#A020F0"></font>
+
+
+<font color="#B22222">/*********************************/</font>
+<font color="#B22222">/* Programa principal            */</font>
+<font color="#B22222">/*********************************/</font>
+<strong><font color="#4169E1"><a name="main"></a>void main(void)</font></strong>
+{
+        unsigned char c;
+        
+        //-- Configurar el puerto B 
+        //-- Todos los pines de entrada, salvo RB1 de salida, que es
+        //-- donde esta el led
+        TRISB=0xFD;
+        
+        //-- Configurar las comunicaciones serie
+        sci_conf();
+        
+        //-- Bucle infinito
+        <font color="#4169E1">for</font> (;;)
+          {
+                //-- Esperar a que llegue dato del PC
+                c=sci_read();
+                
+                //-- Cambiar el led de estado
+                PORTB^=0x02; 
+                
+                //-- ...y enviar de vuelta el caracter por el puerto serie
+                sci_write(c);
+        }
+}
+
+</pre>
+</body>
+
+</html>

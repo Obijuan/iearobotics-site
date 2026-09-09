@@ -1,0 +1,993 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+
+
+
+
+	
+  
+  
+  
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=iso-8859-15">
+
+
+
+
+	
+	
+  
+  
+  
+  
+  
+  
+  <title>Taller de Rob&oacute;tica B&aacute;sico</title>
+  <meta name="GENERATOR" content="OpenOffice.org 1.1.3  (Linux)">
+
+
+
+
+	
+  
+  
+  
+  <meta name="CREATED" content="20040522;11483800">
+
+
+
+
+	
+  
+  
+  
+  <meta name="CHANGED" content="20051016;21175100">
+
+
+
+
+	
+  
+  
+  
+  <meta name="KEYWORDS" content="robotica, microcontroladores, pic, hardware">
+
+
+
+
+	
+  
+  
+  
+  <style>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</style>
+</head>
+
+
+<body dir="ltr" lang="en-US">
+
+
+
+
+<table style="page-break-before: always;" bgcolor="#abbeeb" border="0" cellpadding="4" cellspacing="0" width="917">
+
+
+
+
+	<col width="909">
+	<tbody>
+
+
+
+    <tr>
+
+
+
+
+		<td width="909">
+			
+      
+      
+      
+      <p align="center"><font face="Arial, sans-serif"><font size="4"><b>Taller
+			de Rob&oacute;tica B&aacute;sico - Skybot V1.4.</b></font></font></p>
+
+
+
+
+		</td>
+
+
+
+
+	</tr>
+
+
+
+
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+<p style="margin-bottom: 0cm;" align="center"><br>
+
+
+
+
+</p>
+
+
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+
+
+
+			<td valign="top" width="100%">
+				
+    
+    
+    
+    <p align="center"><img style="border: 0px solid ; width: 644px; height: 483px;" alt="" src="images/taller-ini.jpg" name="Imagen1" align="middle"></p>
+
+
+
+
+			</td>
+
+
+
+
+		</tr>
+
+
+
+
+	</thead>
+</table>
+
+
+
+
+<hr>
+<h2><font face="Arial, sans-serif">Introducci&oacute;n</font></h2>
+
+
+
+
+<p align="justify"><font face="Arial, sans-serif"><font size="2">Taller
+de <b>iniciaci&oacute;n a la rob&oacute;tica</b>. Est&aacute; pensado
+para todos aquellos que les gusta la rob&oacute;tica y quieren
+construirse <b>su propio robot</b>. No son necesarios ning&uacute;n
+tipo de conocimientos previos. El taller ser&aacute; eminentemente
+pr&aacute;ctico y habr&aacute; que soldar, trucar servos, montar la
+estructura, programar en C... Se construir&aacute; un robot Skybot partiendo
+desde cero. </font></font>
+</p>
+
+
+
+
+<p align="justify"><font face="Arial, sans-serif"><font size="2">El
+taller lo encontrar&aacute;n especialmente &uacute;til los
+estudiantes de carreras t&eacute;cnicas como inform&aacute;tica,
+telecomunicaciones o industriales, donde ver&aacute;n c&oacute;mo se
+aplican los conocimientos te&oacute;ricos que les ense&ntilde;an. </font></font>
+
+</p>
+
+
+
+<p align="justify"><font face="Arial, sans-serif"><font size="2">Todas
+las personas que hayan adquirido un Skybot y no est&eacute;n apuntadas
+a un taller, es decir que se lo van a construir por su cuenta,
+encontrar&aacute;n en estas p&aacute;ginas la informaci&oacute;n
+necesaria para hacerlo. Recomendamos ir sesi&oacute;n por sesi&oacute;n
+leyendo detenidamente para no dejarnos detalle.</font></font>
+</p>
+
+
+
+
+<hr>
+<h2><font face="Arial, sans-serif">El robot Skybot</font></h2>
+
+
+
+
+<p align="justify"><font size="2"><font face="Arial, sans-serif">El robot
+que se construir&aacute; en el taller es el <a href="../../proyectos/skybot/skybot.html"><b>Skybot v1.4.</b></a>,
+comercializado por la empresa </font></font><a href="http://www.ifara.com/"><font size="2"><font face="Arial, sans-serif">Ifara
+Tecnolog&iacute;as</font></font></a><font size="2"><font face="Arial, sans-serif">.
+Es un robot sencillo,econ&oacute;mico, did&aacute;ctico y abierto.
+Permite que todos aquellos que tengan inter&eacute;s por la rob&oacute;tica
+puedan iniciarse en ella de una manera r&aacute;pida y sencilla. </font></font>
+</p>
+
+
+
+
+<p align="justify"><font face="Arial, sans-serif"><font size="2">Se trata
+de un <b>robot abierto</b>: los planos de la estructura mec&aacute;nica,
+los esquemas hardware y el c&oacute;digo fuente de los programas
+est&aacute;n disponibles. Cualquiera puede construirse el robot o
+estudiar con m&aacute;s detalle cualquiera de sus partes. As&iacute;,
+adem&aacute;s, queda garantizada su perdurabilidad en el tiempo,
+estando al margen de decisiones comerciales, y permite a todos
+aquellos que no puedan adquirirlo,otra alternativa para tenerlo.</font></font></p>
+
+
+
+
+<p align="justify"><font size="2"><font face="Arial, sans-serif">El
+Skybot ha sido dise&ntilde;ado por <a href="http://www.iearobotics.com/personal/andres/">Andr&eacute;s
+Prieto-Moreno</a>, de <a href="http://www.ifara.com/"><font size="2"><font face="Arial, sans-serif">Ifara
+Tecnolog&iacute;as</font></font></a>.</font></font></p>
+
+
+
+
+<hr>
+<h2><font face="Arial, sans-serif">Temario</font></h2>
+
+
+
+
+<ul>
+
+
+
+
+	<li>
+    
+    
+    
+    <p><a href="sesion-1/index.html"><font size="2"><font face="Arial, sans-serif">Sesi&oacute;n
+	1</font></font></a> <font size="2"><font face="Arial, sans-serif">:
+	Comenzar la construcci&oacute;n de la estructura y trucar los servos</font></font></p>
+
+
+
+
+	</li>
+
+
+
+  <li>
+    
+    
+    
+    <p><a href="sesion-2/index.html"><font size="2"><font face="Arial, sans-serif">Sesi&oacute;n
+	2</font></font></a> <font size="2"><font face="Arial, sans-serif">:
+	Finalizar la estructura, conectar todos los sensores y probar el robot</font></font></p>
+
+
+
+
+	</li>
+
+
+
+  <li>
+    
+    
+    
+    <p><font size="2"><font face="Arial, sans-serif"><a href="sesion-3/index.html">Sesi&oacute;n
+	3</a>: Instalaci&oacute;n del software. Programa &ldquo;hola mundo&rdquo;.
+	Programaci&oacute;n del robot con la libreria skybot</font></font></p>
+
+
+
+
+	</li>
+
+
+
+  <li>
+    
+    
+    
+    <p><font size="2"><font face="Arial, sans-serif"><a href="sesion-4/index.html">Sesion
+	4</a>: Programaci&oacute;n avanzada</font></font></p>
+
+
+
+
+	</li>
+
+
+
+  <li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><a href="http://www.iearobotics.com/wiki/index.php?title=Concurso_mogoll%C3%B3n"><font size="2"><b>Sesi&oacute;n
+	5</b></a>: El concurso del Mogoll&oacute;n.</font></font></p>
+
+
+
+
+  </li>
+
+
+
+</ul>
+
+
+
+
+
+<hr>
+<h2><font face="Arial, sans-serif">Material entregado </font>
+</h2>
+
+
+
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" rules="none" width="100%">
+
+
+
+
+	<col width="128*">
+	<col width="128*">
+	<thead>
+		<tr>
+
+
+
+
+			<td width="50%">
+				
+    
+    
+    
+    <p align="center"><img src="images/taller-material-robot.png" name="Imagen3" align="middle" border="0" height="300" width="400"></p>
+
+
+
+
+			</td>
+
+
+
+
+			<td width="50%">
+				
+    
+    
+    
+    <ul>
+
+
+
+
+					<li>
+        
+        
+        
+        <p><font face="Arial, sans-serif"><font size="2">Piezas de
+					Metacrilato negro para la estructura mec&aacute;nica</font></font></p>
+
+
+
+
+					</li>
+
+
+
+      <li>
+        
+        
+        
+        <p><font face="Arial, sans-serif"><font size="2">Tornillos
+					necesarios para el montaje de la estructura</font></font></p>
+
+
+
+
+					</li>
+
+
+
+      <li>
+        
+        
+        
+        <p><font size="2"><font face="Arial, sans-serif">Dos servos
+					del tipo <a href="../../proyectos/cuadernos/ct3/ct3.html">Futaba
+					3003</a></font></font></p>
+
+
+
+
+					</li>
+
+
+
+      <li>
+        
+        
+        
+        <p><font size="2"><font face="Arial, sans-serif"><a href="../../proyectos/skypic/skypic.html">Tarjeta
+					Skypic</a>, con el micro 16F876A de Microchip</font></font></p>
+
+
+
+
+					</li>
+
+
+
+      <li>
+        
+        
+        
+        <p><font size="2"><font face="Arial, sans-serif"><a href="../../proyectos/sky293/sky293.html">Tarjeta
+					sky293</a>, con los drivers de potencia y circuitos para los
+					sensores se infrarrojos</font></font></p>
+
+
+
+
+					</li>
+
+
+
+      <li>
+        
+        
+        
+        <p><font face="Arial, sans-serif"><font size="2">Portapilas
+					(para 4 pilas de tipo AA) con cables y conector jack macho</font></font></p>
+
+
+
+
+					</li>
+
+
+
+      <li>
+        
+        
+        
+        <p><font face="Arial, sans-serif"><font size="2">4 sensores de
+					infrarrojos del tipo CNY70</font></font></p>
+
+
+
+
+					</li>
+
+
+
+      <li>
+        
+        
+        
+        <p><font face="Arial, sans-serif"><font size="2">Dos sensores
+					de contacto (Bumpers)</font></font></p>
+
+
+
+
+					</li>
+
+
+
+      <li>
+        
+        
+        
+        <p><font face="Arial, sans-serif"><font size="2">Un sensor de
+					luz (LDR)</font></font></p>
+
+
+
+
+					</li>
+
+
+
+      <li>
+        
+        
+        
+        <p><font face="Arial, sans-serif"><font size="2">Un cable
+					serie para la conexion al PC</font></font></p>
+
+
+
+
+				</li>
+
+
+
+    
+    
+    
+    </ul>
+
+
+
+
+				
+    
+    
+    
+    <ul>
+
+
+
+
+					<li>
+        
+        
+        
+        <p style=""><font face="Arial, sans-serif"><font size="2">Dos
+					encoders impresos en papel, para pegar a las ruedas</font></font></p>
+
+
+
+
+				</li>
+
+
+
+    
+    
+    
+    </ul>
+
+
+
+
+			</td>
+
+
+
+
+		</tr>
+
+
+
+
+	</thead>
+</table>
+
+
+
+
+<p><br>
+
+
+
+<br>
+
+
+
+
+</p>
+
+
+
+
+<hr>
+<h2><font face="Arial, sans-serif">Material adicional </font>
+</h2>
+
+
+
+
+<p><font face="Arial, sans-serif"><font size="2">Material adicional (no
+incluido en el kit del robot) que se va a necesitar para el taller:</font></font></p>
+
+
+
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" rules="none" width="100%">
+
+
+
+
+	<col width="144*">
+	<col width="112*">
+	<thead>
+		<tr>
+
+
+
+
+			<td width="56%">
+				
+    
+    
+    
+    <p align="center"><img src="images/taller-material-adicional.png" name="Imagen2" align="middle" border="0" height="364" width="485"></p>
+
+
+
+
+			</td>
+
+
+
+
+			<td valign="top" width="44%">
+				
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><b>1) </b>Soporte
+				para soldador</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><b>2)</b>
+				Pol&iacute;metro (opcional)</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><b>3)</b> Soldador
+				de punta fina (11W)</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><b>4) </b>Pelacables
+				(opcional)</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><b>5)</b> 4 pilas
+				tama&ntilde;o AA</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><b>6) </b>Alicates
+				para cortar</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><b>7)</b> Alicates
+				de cabeza plana</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><b>8)</b> Lima</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><b>9)</b>
+				Destornillador peque&ntilde;o de cabeza plana</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><b>10)</b>
+				Destornillador peque&ntilde;o de cabeza en estrella</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><b>11)</b>
+				Pegamento para pl&aacute;sticos r&iacute;gidos (por ejemplo
+				PlasticCeys)</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><b>12)</b> Tijeras</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><b>13)</b> Rollo
+				de esta&ntilde;o de 1mm</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><b>14)</b> Rollo
+				ce cinta aislante negro</font></font></p>
+
+
+
+
+				
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><b>15)</b>
+				Ordenador con puerto serie</font></font></p>
+
+
+
+
+			</td>
+
+
+
+
+		</tr>
+
+
+
+
+	</thead>
+</table>
+
+
+
+
+<p><br>
+
+
+
+<br>
+
+
+
+
+</p>
+
+
+
+
+<hr>
+<h2><font face="Arial, sans-serif">Al finalizar el taller </font>
+</h2>
+
+
+
+
+<p align="justify"><font face="Arial, sans-serif"><font size="2">Al
+finalizar el taller, todos los grupos tendr&aacute;n funcionando su
+primer robot y con &eacute;l podr&aacute;n empezar a profundizar en
+los temas que m&aacute;s les interesen: electr&oacute;nica,
+programaci&oacute;n, mec&aacute;nica... Una vez que se ha construido
+el primer robot, se tienen los conocimientos pr&aacute;cticos
+necesarios para empezar a modificarlo y personalizarlo.</font></font></p>
+
+
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+
+
+
+			<td valign="top" width="100%">
+				
+    
+    
+    
+    <p align="center"><img src="images/taller-skybots-formacion.png" name="Imagen4" align="middle" border="0" height="222" width="296"></p>
+
+
+
+
+			</td>
+
+
+
+
+		</tr>
+
+
+
+
+	</thead>
+</table>
+
+
+
+
+<p align="justify"><br>
+
+
+
+<br>
+
+
+
+
+</p>
+
+
+
+
+<hr>
+<h2>Enlaces</h2>
+
+
+
+
+<ul>
+
+
+
+
+
+	<li>
+    
+    
+    
+    <p><a href="http://www.iearobotics.com/indice/indice-talleres.html"><span style="text-decoration: none;"><font size="2"><font face="Arial, sans-serif">Link a diferentes talleres de rob&oacute;tica realizados con anterioridad</font></font></span></a></p>
+
+
+
+
+
+
+	</li>
+
+
+
+  <li>
+    
+    
+    
+    <p><a href="http://www.iearobotics.com/personal/juan/eventos/evento06/index2.html"><span style="text-decoration: none;"><font size="2"><font face="Arial, sans-serif">Extracto del cuaderno de bit&aacute;cora del taller de C&aacute;diz 2005</font></font></span></a></p>
+
+
+
+
+
+  </li>
+
+
+
+  <li>
+    
+    
+    
+    <p><a href="http://www.iearobotics.com/personal/juan/eventos/evento03/index7.html"><span style="text-decoration: none;"><font size="2"><font face="Arial, sans-serif">Extracto del cuaderno de bit&aacute;cora del taller de la Campus Party 2005</font></font></span></a></p>
+
+
+
+ 
+	
+  </li>
+
+
+
+  <li>
+    
+    
+    
+    <p><a href="../../proyectos/skybot/skybot.html"><span style="text-decoration: none;"><font size="2"><font face="Arial, sans-serif">Robot Skybot</font></font></span></a></p>
+
+
+
+
+	</li>
+
+
+
+  <li>
+    
+    
+    
+    <p><a href="../../proyectos/skypic/skypic.html"><span style="text-decoration: none;"><font size="2"><font face="Arial, sans-serif">Tarjeta
+	Skypic</font></font></span></a></p>
+
+
+
+
+	</li>
+
+
+
+  <li>
+    
+    
+    
+    <p><span style="text-decoration: none;"><a href="../../proyectos/sky293/sky293.html"><font size="2"><font face="Arial, sans-serif">Tarjeta
+	sky293</font></font></a> </span>
+	</p>
+
+
+
+
+	</li>
+
+  <li>
+    
+    <p><span style="text-decoration: none;"><font size="2"><font face="Arial, sans-serif">Servomecanismos
+	</font></font><a href="../../proyectos/cuadernos/ct3/ct3.html"><font size="2"><font face="Arial, sans-serif">Futaba
+	3003</font></font></a></span></p>
+
+  </li>
+
+</ul>
+
+<hr>
+<p style="margin-bottom: 0cm;"><a href="http://www.iearobotics.com/"><font size="2"><font face="Arial, sans-serif">IEAROBOTICS</font></font></a>
+</p>
+
+</body>
+</html>

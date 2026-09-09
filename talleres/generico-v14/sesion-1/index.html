@@ -1,0 +1,367 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+
+	
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=iso-8859-15">
+
+	
+	
+  <title>Taller de robotica b&aacute;sico - Skybot v1.3.</title>
+  <meta name="GENERATOR" content="OpenOffice.org 1.1.3  (Linux)">
+
+	
+  <meta name="CREATED" content="20040522;11483800">
+
+	
+  <meta name="CHANGED" content="20050715;21220500">
+
+	
+  <meta name="KEYWORDS" content="robotica, microcontroladores, pic, hardware">
+
+	
+  <style>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</style>
+</head>
+
+
+<body dir="ltr" lang="en-US">
+
+<table style="page-break-before: always;" bgcolor="#abbeeb" border="0" cellpadding="4" cellspacing="0" width="917">
+
+	<col width="909">
+	<tbody>
+    <tr>
+
+		<td width="909">
+			
+      <p align="center">Taller de Rob&oacute;tica B&aacute;sico - Skybot v1.4. - <b>
+			SESION 1</b></p>
+
+		</td>
+
+	</tr>
+
+  </tbody>
+</table>
+
+<p style="margin-bottom: 0cm;" align="center"><br>
+
+</p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+			<td valign="top" width="100%">
+				
+    <p align="center"><img src="images/sesion1-ini.png" name="Imagen1" align="middle" border="0" height="205" width="630"></p>
+
+			</td>
+
+		</tr>
+
+	</thead>
+</table>
+
+<hr>
+<h2>Objetivos</h2>
+
+<p><font face="Arial, sans-serif"><font size="2">Preparar la estructura
+del robot. Trucar los servos y entender su funcionamiento como
+motores de corriente continua.</font></font></p>
+
+<hr>
+<h2>Temario</h2>
+
+<ul>
+
+	<li>
+    <p><a href="mecanica-1.html"><font size="2"><font face="Arial, sans-serif">Estructura
+	mec&aacute;nica I</font></font></a></p>
+
+	</li>
+  <li>
+    <p><a href="trucaje-servos1.html"><font size="2"><font face="Arial, sans-serif">Trucaje
+	de los servos</font></font></a></p>
+
+	</li>
+  <li>
+    <p><a href="portapilas.html"><font size="2"><font face="Arial, sans-serif">Preparaci&oacute;n
+	del portapilas</font></font></a></p>
+
+	</li>
+  <li>
+    <p><a href="pruebas-servos.html"><font size="2"><font face="Arial, sans-serif">Pruebas
+	de los servos</font></font></a></p>
+
+  </li>
+</ul>
+
+<hr>
+<h2>Material adicional 
+</h2>
+
+<p><font face="Arial, sans-serif"><font size="2">Material adicional (no
+incluido en el kit del robot) que se va a necesitar para esta sesi&oacute;n:</font></font></p>
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" rules="none" width="100%">
+
+	<col width="128*">
+	<col width="128*">
+	<thead>
+		<tr>
+
+			<td width="50%">
+				
+    <p align="center"><img src="images/sesion1-material.png" name="Imagen2" align="middle" border="0" height="316" width="422"></p>
+
+			</td>
+
+			<td valign="top" width="50%">
+				
+    <p><font face="Arial, sans-serif"><font size="2"><b>1)</b>
+				Pol&iacute;metro (opcional)</font></font></p>
+
+				
+    <p><font face="Arial, sans-serif"><font size="2"><b>2)</b>
+				Alicantes para cortar</font></font></p>
+
+				
+    <p><font face="Arial, sans-serif"><font size="2"><b>3)</b> Alicates
+				de cabeza plana</font></font></p>
+
+				
+    <p><font face="Arial, sans-serif"><font size="2"><b>4)</b>
+				Destornillador peque&ntilde;o de estrella</font></font></p>
+
+				
+    <p><font face="Arial, sans-serif"><font size="2"><b>5)
+				</b>Destornillador peque&ntilde;o de cabeza plana</font></font></p>
+
+				
+    <p><font face="Arial, sans-serif"><font size="2"><b>6) </b>Lima</font></font></p>
+
+				
+    <p><font face="Arial, sans-serif"><font size="2"><b>7)</b> Soldador
+				de punta fina</font></font></p>
+
+				
+    <p><font face="Arial, sans-serif"><font size="2"><b>8)</b>
+				Pegamento para pl&aacute;sticos r&iacute;gidos</font></font></p>
+
+				
+    <p><font face="Arial, sans-serif"><font size="2"><b>9)</b> Rollo de
+				cinta aislante</font></font></p>
+
+				
+    <p><font face="Arial, sans-serif"><font size="2"><b>10)</b> Rollo
+				de esta&ntilde;o</font></font></p>
+
+				
+    <p><font face="Arial, sans-serif"><font size="2"><b>11)</b> cuatro
+				pilas tama&ntilde;o AA</font></font></p>
+
+			</td>
+
+		</tr>
+
+	</thead>
+</table>
+
+<p><br>
+<br>
+
+</p>
+
+<hr>
+<h2>Manos a la obra</h2>
+
+<ul>
+
+	<li>
+    <p align="justify"><font size="2"><font face="Arial, sans-serif">Primero
+	montaremos el ch&aacute;sis del robot. Est&aacute; constituido por
+	piezas de pl&aacute;stico que se pegan. </font></font><a href="mecanica-1.html"><font size="2"><font face="Arial, sans-serif">Seguir
+	los pasos descritos aqu&iacute;</font></font></a><font size="2"><font face="Arial, sans-serif">.
+	Seg&uacute;n el pegamento empleado, las piezas tardar&aacute;n m&aacute;s
+	o menos en pegarse. Una vez construido el ch&aacute;sis, lo
+	dejaremos en un sitio apartado sec&aacute;ndose y no lo utilizaremos
+	hasta la sesi&oacute;n II, el d&iacute;a siguiente.</font></font></p>
+
+	</li>
+  <li>
+    <p align="justify"><font size="2"><font face="Arial, sans-serif">Para
+	el robot utilizaremos<span style="text-decoration: none;"><span style="text-decoration: none;"><span style="text-decoration: none;">
+	motores de corriente cont&iacute;nua (cc). Estos motores son muy
+	baratos, sin embargo tienen el inconveniente de que giran muy
+	deprisa pero tienen muy poca fuerza (es como intentar arrancar un
+	coche en cuarta). Es necesario utilizar una serie de engranajes para
+	conseguir mayor fuerza a costa de perder velocidad. Una soluci&oacute;n
+	muy empleada es <b>utilizar servomecanismos</b>, como por ejemplo
+	los </span></span></span></font><span style="text-decoration: none;"><span style="text-decoration: none;"><span style="text-decoration: none;"><a href="../../../proyectos/cuadernos/ct3/ct3.html"><font face="Arial, sans-serif">Futaba
+	3003</font></a> <font face="Arial, sans-serif">o compatibles, que se
+	pueden conseguir en cualquier tienda de aeromodelismo. Tienen una
+	fuerza y velocidad muy adecuados para hacer peque&ntilde;os robots
+	m&oacute;viles de aprendizaje que se puedan desplazar por peque&ntilde;as
+	superdicies, como la de una mesa. Para convertirlos en motores de
+	corriente cont&iacute;nua normales es preciso &ldquo;trucarlos&rdquo;.
+	Para ello hay que abrirlos, eliminar la electr&oacute;nica interna y
+	los topes mec&aacute;nicos y soldar un par de cables. </font><a href="trucaje-servos1.html"><font face="Arial, sans-serif">Todo
+	el proceso est&aacute; descrito aqu&iacute;</font></a></span></span></span>
+	</font>
+	</p>
+
+	</li>
+  <li>
+    <p align="justify"><font size="2"><font face="Arial, sans-serif">El
+	robot ser&aacute; aut&oacute;nomo y se alimentar&aacute; con 4 pilas
+	AA (6v). Durante el taller, si no se quieren gastar pilas, se puede
+	utilizar un alimentador que voltaje de salida comprendido entre 4.5
+	y 6v. Las pilas se colocan en el portapilas y para conectarlo a la
+	electr&oacute;nica hay que soldar un conector de tipo jack.
+	Aproecharemos para utilizar el pol&iacute;metro para comprobar que
+	hemos soldado bien los cables y que no hay ning&uacute;n
+	cortocircuito. Tambi&eacute;n mediremos la tensi&oacute;n de salida,
+	para asegurarnos que es la correcta. <a href="portapilas.html">Seguir
+	los pasos descritos aqu&iacute;.</a></font></font></p>
+
+	</li>
+  <li>
+    <p align="justify"><font size="2"><font face="Arial, sans-serif">Por
+	&uacute;ltimo comprobaremos que los servos funcionan correctamente y
+	aprovecharemos para ver c&oacute;mo funciona un motor de corriente
+	continua. </font></font><a href="pruebas-servos.html"><font size="2"><font face="Arial, sans-serif">Hacer
+	las pruebas descritas aqu&iacute;.</font></font></a></p>
+
+  </li>
+</ul>
+
+<hr>
+<h2>Al finalizar la sesion 
+</h2>
+
+<ul>
+
+	
+  <p><font size="2"><font face="Arial, sans-serif">Al terminar la sesi&oacute;n
+	1 deberemos tener estos elementos</font></font>:</p>
+
+</ul>
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" rules="none" width="100%">
+
+	<col width="128*">
+	<col width="128*">
+	<thead>
+		<tr>
+
+			<td valign="top" width="50%">
+				
+    <p align="center"><img src="images/sesion1-final.png" name="Imagen3" align="middle" border="0" height="331" width="441"></p>
+
+			</td>
+
+			<td width="50%">
+				
+    <p><font face="Arial, sans-serif"><font size="2"><b>1)</b> Ch&aacute;sis
+				del robot</font></font></p>
+
+				
+    <p><font face="Arial, sans-serif"><font size="2"><b>2) </b>Ruedas</font></font></p>
+
+				
+    <p><font face="Arial, sans-serif"><font size="2"><b>3)</b>
+				Tornillos del eje de los servos</font></font></p>
+
+				
+    <p><font face="Arial, sans-serif"><font size="2"><b>4)</b> Cables
+				para los sensores</font></font></p>
+
+				
+    <p><font face="Arial, sans-serif"><font size="2"><b>5)</b> Servos
+				trucados y probados</font></font></p>
+
+				
+    <p><font face="Arial, sans-serif"><font size="2"><b>6)</b>
+				Portapilas con sus pilas y comprobada su tensi&oacute;n de
+				salida.</font></font></p>
+
+			</td>
+
+		</tr>
+
+	</thead>
+</table>
+
+<p><br>
+<br>
+
+</p>
+
+<hr>
+<h2>Informaci&oacute;n adicional</h2>
+
+<ul>
+
+	<li>
+    <p><a href="../../../proyectos/cuadernos/ct3/ct3.html"><span style="text-decoration: none;"><font size="2"><font face="Arial, sans-serif">Servos
+	del tipo Futaba 3003</font></font></span></a></p>
+
+	</li>
+  <li>
+    <p><a href="../../../proyectos/cuadernos/ct2/ct2.html"><font size="2"><font face="Arial, sans-serif">Cuaderno
+	t&eacute;cnico II: trucaje de los servos Futaba 3003</font></font></a><font size="2"><font face="Arial, sans-serif">.
+	M&aacute;s informaci&oacute;n sobre los servos y c&oacute;mo
+	trucarlos.</font></font></p>
+
+	</li>
+  <li>
+    <p><a href="../../../proyectos/tritt/tritt.html"><font size="2"><font face="Arial, sans-serif">Microbot
+	Tritt</font></font></a><font size="2"><font face="Arial, sans-serif">,
+	un robot abierto y sencillo para iniciarse en la rob&oacute;tica.
+	Hecho con piezas de Lego (<b>Iearobotics</b>, <b>Microb&oacute;tica</b>).</font></font></p>
+
+	</li>
+  <li>
+    <p><a href="../../../proyectos/siko/Microbot_Siko.html"><font size="2"><font face="Arial, sans-serif">Microbot
+	Siko</font></font></a><font size="2"><font face="Arial, sans-serif">,
+	robot-oruga de muy bajo coste para iniciarse en la rob&oacute;tica(<b>Jose Pichardo</b>)</font></font></p>
+
+	</li>
+  <li>
+    <p><a href="images/Slayer-1.jpg"><font size="2"><font face="Arial, sans-serif">Rastreador	Slayer</font></font></a><font size="2"><font face="Arial, sans-serif">,
+	con tracci&oacute;n delantera y cabeza giratoria. (<a href="http://www.x-pic-system.tk/"><span style="">Daniel
+	Alvarez y Alberto Calvo</span></a>)</font></font></p>
+
+	</li>
+  <li>
+    <p><a href="images/QueenMary.png"><font size="2"><font face="Arial, sans-serif">Queen-Mary</font></font></a><font size="2"><font face="Arial, sans-serif">,
+	otro rastreador que usa Cds como ruedas (<a href="http://www.x-pic-system.tk/"><span style="">Daniel
+	&Aacute;lvarez y Alberto Calvo</span></a>)</font></font></p>
+
+	</li>
+  <li>
+    <p><a href="http://www.rbzrobotdesign.com/index.php?module=3&amp;id=21"><font size="2"><font face="Arial, sans-serif">Robot
+	PI</font></font></a><font size="2"><font face="Arial, sans-serif">,
+	comercializado por <b>RBZ</b>. Plataforma muy buena para iniciarse y
+	profundizar en los algoritmos de navegaci&oacute;n y cooperaci&oacute;n.</font></font></p>
+
+  </li>
+</ul>
+
+<hr>
+<p><a href="../index.html"><font size="2"><font face="Arial, sans-serif">[pagina
+principal]</font></font></a></p>
+
+
+<p style="margin-bottom: 0cm;"><a href="http://www.iearobotics.com"><font size="2"><font face="Arial, sans-serif">IEAROBOTICS</font></font></a>
+</p>
+
+</body>
+</html>

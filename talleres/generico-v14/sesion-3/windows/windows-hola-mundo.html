@@ -1,0 +1,734 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+
+
+
+
+  
+  
+  
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=iso-8859-15">
+
+
+
+  
+
+
+  
+  
+  
+  
+  
+  <title>Taller de robotica. Sesion 3. "Hola mundo" en Windows</title>
+  <meta name="GENERATOR" content="OpenOffice.org 1.1.3 (Linux)">
+
+
+
+
+  
+  
+  
+  <meta name="CREATED" content="20040522;11483800">
+
+
+
+
+  
+  
+  
+  <meta name="CHANGED" content="20050721;8542600">
+
+
+
+
+  
+  
+  
+  <meta name="KEYWORDS" content="robotica, microcontroladores, pic, hardware, linux">
+
+
+
+
+  
+  
+  
+  <style>
+<!--
+H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+-->
+  </style>
+</head>
+
+
+<body style="direction: ltr;" lang="en-US">
+
+
+
+
+<table style="page-break-before: always;" bgcolor="#abbeeb" border="0" cellpadding="4" cellspacing="0" width="917">
+
+
+
+
+  <col width="909"> <tbody>
+
+
+
+
+    <tr>
+
+
+
+
+      <td width="909">
+      
+      
+      
+      <p align="center">Taller de Rob&oacute;tica
+B&aacute;sico - Skybot v1.4. - SESION 3 - Windows. <b>&ldquo;Hola
+mundo&rdquo;</b></p>
+
+
+
+
+      </td>
+
+
+
+
+    </tr>
+
+
+
+
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+<p style="margin-bottom: 0cm;" align="center"><br>
+
+
+
+
+</p>
+
+
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+
+
+  <col width="256*"> <thead> <tr>
+
+
+
+
+    <td valign="top" width="100%">
+    
+    
+    
+    <p align="center"><img src="images/skybot-portatil-windows.png" name="Imagen1" align="middle" border="0" height="300" width="400"></p>
+
+
+
+
+    </td>
+
+
+
+
+  </tr>
+
+
+
+
+  </thead>
+</table>
+
+
+
+
+<hr>
+<h2><font face="Arial, sans-serif">Introducci&oacute;n</font></h2>
+
+
+
+
+<p><font face="Arial, sans-serif"><font size="2">En
+este capitulo
+editaremos, compilaremos y cargaremos en el robot el programa mas
+sencillo posible: el famoso &ldquo;<b>hola mundo</b>&rdquo;.
+Cuando
+programamos un ordenador, el programa &ldquo;hola mundo&rdquo;
+es el
+programa m&aacute;s sencillo que imprime por pantalla la frase
+&ldquo;Hola
+mundo!&rdquo;.</font></font></p>
+
+
+
+
+<p><font face="Arial, sans-serif"><font size="2">En
+nuestro caso, vamos
+a programar un microcontrolador, que no tiene pantalla. Tampoco tiene
+teclado. Pero tiene otros perif&eacute;ricos, como por ejemplo un
+led. El programa &ldquo;hola mundo&rdquo; lo &uacute;nico
+que har&aacute;
+ser&aacute; <b>enceder el led</b> de la Skypic. Es la
+manera en la
+que el micro nos dir&aacute;: &ldquo;Estoy vivo y he ejecutado
+tu
+programa&rdquo;.</font></font></p>
+
+
+
+
+<p><font face="Arial, sans-serif"><font size="2">Nos
+centraremos en que
+el programa hola mundo funcione en nuestro robot. En los siguiente
+cap&iacute;tulos veremos c&oacute;mo funciona.</font></font></p>
+
+
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+
+
+  <col width="256*"> <thead> <tr>
+
+
+
+
+    <td valign="top" width="100%">
+    
+    
+    
+    <p align="center"><img src="./images/hola_mundo_skybot_led.png" name="Imagen2" align="middle" border="0" height="300" width="400"></p>
+
+
+
+
+    </td>
+
+
+
+
+  </tr>
+
+
+
+
+  </thead>
+</table>
+
+
+
+
+<p><br>
+
+
+
+
+<br>
+
+
+
+
+</p>
+
+
+
+
+<hr>
+<h2><a name="Editor"></a><a name="Editor de textos"></a><font face="Arial, sans-serif">Editando
+el c&oacute;digo y compilando</font></h2>
+
+
+
+
+<p><font face="Arial, sans-serif"><font size="2">&iexcl;Manos
+a la
+obra! Vamos a cacharrear. Primero nos descargamos el programa
+&ldquo;hola
+mundo&rdquo;.</font></font></p>
+
+
+
+
+<ul>
+
+
+
+
+  <li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Bajar el paquete <a href="download/hola-mundo-windows.zip"><span style="">hola-mundo-windows.zip</span></a>.
+Al descomprimirlo veremos tres archivos: <br>
+
+
+
+
+    <b>ledon.c</b>: El programa principal escrito en C. <br>
+
+
+
+
+    <b>Makefile</b>: El fichero con las reglas para
+compilar el programa.  </font></font></p>
+
+
+
+
+  </li>
+
+
+
+
+  <li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Descomprimelo en la carpeta que has debido crear
+antes que se llame &ldquo; <b>C:\robotica\programas</b>&rdquo;.
+Y podeis ver lo que hay.</font></font></p>
+
+
+
+
+  </li>
+
+
+
+
+  
+
+
+
+  <li>
+    
+    
+    
+    <p><font size="2"><font face="Arial, sans-serif">Ahora ejecutamos el <b>Programmers
+Notepad. </b>Si quereis podeis ver un pantallazo del <a href="images/pn.jpg">Programmers notepad aqu&iacute;.</a></font></font></p>
+
+
+
+
+  </li>
+
+
+
+
+</ul>
+
+
+
+
+<ul>
+
+
+
+
+  
+  
+  
+  <ul>
+
+
+
+
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Pinchamos en &ldquo;<b>File</b>&rdquo;,
+y despues en la opci&oacute;n &ldquo;<b>Open</b>&rdquo;,
+donde nos iremos a la ruta donde hemos almacenado el paquete <b>hola-mundo-windows.
+Zip( C.\robotica\programas\) </b>. All&iacute; abrimos el
+archivo que se llama &ldquo;<b>ledon.c</b>&rdquo;</font></font></p>
+
+
+
+
+  
+  
+  
+  </ul>
+
+
+
+
+  <li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Para compilar el programa, solo tienes que pulsar
+en el men&uacute; &ldquo;<b>Tools</b>&rdquo;,
+la opci&oacute;n &ldquo;<b>make</b>&rdquo; que
+es la que hemos configurado antes. Y ya tenemos nuestro programa
+compilado y listo para descargar en el robot. Si nos fijamos en la
+carpeta del proyecto veremos que ahora hay bastantes archivos. El que
+nos interesa es el <b>ledon.hex</b> que contiene el
+c&oacute;digo ejecutable para el PIC y que ser&aacute; el que
+descarguemos utilizando el PIC_DOWNLOADER.EXE</font></font></p>
+
+
+
+
+  </li>
+
+
+
+
+  <li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Al ejecutar la opci&oacute;n <b>make</b>
+estamos accediendo al fichero <b>Makefile</b> que hay en
+el directorio del ejemplo y que contiene las instrucciones para
+compilar el programa. Es importante que los PATHs y nombres que
+aparecen en ese fichero se coincidan con los del proyecto.<br>
+
+
+
+
+    <br>
+
+
+
+
+Por ejemplo, en el proyecto <i>Hola Mundo</i> el programa
+principal se llama <b>ledon.c</b>, por eso en el Makefile
+aparece <b>NAME1=ledon</b> (sin la extensi&oacute;n).
+Si queremos compilar otro, tendremos que cambiar el nombre que aparece
+en NAME1 por el nuevo.
+    <br>
+
+
+
+
+    </font></font></p>
+
+
+
+
+  </li>
+
+
+
+
+</ul>
+
+
+
+
+<h2><font face="Arial, sans-serif"><font size="2"><font face="Arial, sans-serif"><font size="2"><a name="gputils"></a><font face="Arial, sans-serif">Descargando
+en el robot</font></font></font></font></font></h2>
+
+
+
+
+<ul>
+
+
+
+
+  <font face="Arial, sans-serif"><font size="2"><font face="Arial, sans-serif"><font size="2"> <li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Conectar el robot al puerto serie del PC</font></font></p>
+
+
+
+
+  </li>
+
+
+
+
+  <li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Alimentarlo</font></font></p>
+
+
+
+
+  </li>
+
+
+
+
+  </font></font></font></font>
+</ul>
+
+
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+
+
+  <col width="256*"> <thead> <tr>
+
+
+
+
+    <td valign="top" width="100%">
+    
+    
+    
+    <p align="center"><img src="../linux/images/hola_mundo_skybot_ready.png" name="Imagen3" align="middle" border="0" height="300" width="400"></p>
+
+
+
+
+    </td>
+
+
+
+
+  </tr>
+
+
+
+
+  </thead>
+</table>
+
+
+
+
+<ul>
+
+
+
+
+  <font face="Arial, sans-serif"><font size="2"><font face="Arial, sans-serif"><font size="2"> <li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Arrancar el cargador</font></font></p>
+
+
+
+
+  </li>
+
+
+
+
+  <li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Selecionar el fichero <b>ledon.hex</b></font></font></p>
+
+
+
+
+  </li>
+
+
+
+
+  <li>
+    
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2">Seleccionar el puerto serie (<b>COMX</b>)
+y una configuraci&oacute;n de <b>38400 baudios</b></font></font></p>
+
+
+
+
+  </li>
+
+
+
+
+  <li>
+    
+    
+    
+    <p style=""><font face="Arial, sans-serif"><font size="2">Pulsar en <b>Write</b>.</font></font></p>
+
+
+
+
+  </li>
+
+
+
+
+  </font></font></font></font>
+</ul>
+
+
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+
+
+  <col width="256*"> <thead> <tr>
+
+
+
+
+    <td valign="top" width="100%">
+    
+    
+    
+    <p align="center"><img src="images/pic_loader_window_pant.jpg" name="Imagen4" align="middle" border="0" height="289" width="283"></p>
+
+
+
+
+    </td>
+
+
+
+
+  </tr>
+
+
+
+
+  </thead>
+</table>
+
+
+
+
+<p><font face="Arial, sans-serif"><font size="2"><font face="Arial, sans-serif"><font size="2"><font face="Arial, sans-serif"><font size="2">Se
+quedar&aacute;
+esperando a que se pulse el bot&oacute;n de reset.</font></font></font></font></font></font></p>
+
+
+
+
+<p><font face="Arial, sans-serif"><font size="2"><font face="Arial, sans-serif"><font size="2"><font face="Arial, sans-serif"><font size="2"><b>Apretar
+el bot&oacute;n
+de reset</b> y el ledon.hex se cargar&aacute;. <b>&iexcl;Ahora
+el led
+est&aacute; encendido!</b>. Si quitamos la
+alimentaci&oacute;n y la
+volvemos a poner, es decir, reiniciamos a nuestro micro, se
+volver&aacute;
+a ejecutar el &uacute;ltimo programa cargado. Los programas se
+graban
+en la memoria flash, que es <b>no vol&aacute;til.</b></font></font></font></font></font></font></p>
+
+
+
+
+<p><font face="Arial, sans-serif"><font size="2"><font face="Arial, sans-serif"><font size="2"><font face="Arial, sans-serif"><font size="2"><b>&iexcl;&iexcl;Ya
+hemos programado el robot!!</b><br>
+
+
+
+
+<br>
+
+
+
+
+Si en este proceso nos sale un mesaje de error diciendo que <b>no
+se encuentra el Bootloader</b> hay que revisar tres cosas:<br>
+
+
+
+
+1. Que el robot esta alimentado a 5v o 6v.<br>
+
+
+
+
+2. Que estamos dando al pulsador correcto, es decir al de <b>Reset</b><br>
+
+
+
+
+3. Que esta conectado el cable serie al conector telef&oacute;nico
+marcado como PC (el de la derecha junto a la clema de
+alimentaci&oacute;n).
+<br>
+
+
+
+
+<br>
+
+
+
+
+Si todav&iacute;a sigue fallando es muy probable que se <b>haya
+desprogramado</b> el bootloader interno. El Skybot lo trae
+grabado por defecto pero en caso de no tenerlo se tiene que volver a
+grabar. Las instrucciones para ello est&aacute;n <a href="../../../../proyectos/skypic/bootloader/bootloader.html">aqu&iacute;</a>.Si
+estamos en un taller comentarlo a alg&uacute;n instructor para que
+lo haga.
+</font></font></font></font></font></font></p>
+
+
+
+
+<hr>
+<p style="margin-bottom: 0cm;"><font face="Arial, sans-serif"><font size="2"><font face="Arial, sans-serif"><font size="2"><a href="../index.html"><font size="2"><font face="Arial, sans-serif">[Sesion
+III]</font></font></a> </font></font></font></font></p>
+
+
+
+
+<p style="margin-bottom: 0cm;"><font face="Arial, sans-serif"><font size="2"><font face="Arial, sans-serif"><font size="2"><a href="mailto:Jose%20Pichardo%20%3Ctartesos2@telefonica.net%3E"><font size="2"><font face="Arial, sans-serif">Jose
+Pichardo Gallardo</font></font></a></font></font></font></font></p>
+
+
+
+
+<address style="margin-bottom: 0.5cm;"><font face="Arial, sans-serif"><font size="2"><font face="Arial, sans-serif"><font size="2"><a href="http://www.ifara.com/personal/juan/index.html"><font size="2"><font face="Arial, sans-serif">Juan
+Gonz&aacute;lez</font></font></a>
+<br>
+
+
+
+
+<a href="http://www.ifara.com/personal/andres/index.html"><font size="2"><font face="Arial, sans-serif">Andr&eacute;s
+Prieto-Moreno
+</font></font></a><br>
+
+
+
+
+</font></font></font></font><font><font><font face="Arial, sans-serif"><font size="2"><font face="Arial, sans-serif"><font size="2"><a href="mailto:jvaliente@ifara.com"><font size="2"><font face="Arial, sans-serif">Javier
+Valiente
+</font></font></a></font></font></font></font></font></font><br>
+
+
+
+
+<font face="Arial, sans-serif"><font size="2"><font face="Arial, sans-serif"><font size="2"> <a href="http://www.ifara.com"><font size="2"><font face="Arial, sans-serif">IEAROBOTICS</font></font></a>
+</font></font></font></font></address>
+
+
+
+
+</body>
+</html>

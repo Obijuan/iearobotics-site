@@ -1,0 +1,55 @@
+
+<html>
+<head>
+<title>sigue_linea.c</title>
+<meta name="generator" content="c2html 0.9.6">
+<meta name="date" content="2007-07-19T16:01:58+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/*
+Ejemplo de programaci&Atilde;³n del Skybot 
+usando la libreria_skybot
+
+El robot sigue una linea negra hasta
+el final, y se para.
+
+Julio-2007
+*/</font>
+
+
+<font color="#A020F0">#include </font><font color="#666666">"libreria_skybot.h"</font><font color="#A020F0"></font>
+
+
+//----------------------------
+//- Comienzo del programa  
+//----------------------------
+
+<strong><font color="#4169E1"><a name="main"></a>void main(void)</font></strong>
+{
+  ConfigurarSkybot();
+  
+  <font color="#4169E1">for</font> (;;)
+  {
+    <font color="#4169E1">if</font> (SensorIR_Izq_Lee_Negro() &amp;&amp; SensorIR_Der_Lee_Negro())
+    {
+      Avanzar();
+    }
+    <font color="#4169E1">else</font> <font color="#4169E1">if</font> (SensorIR_Izq_Lee_Negro())
+    {
+      GirarIzq();
+    }
+    <font color="#4169E1">else</font> <font color="#4169E1">if</font> (SensorIR_Der_Lee_Negro())
+    {
+      GirarDer();
+    }
+    <font color="#4169E1">else</font>
+    {
+      Parar();
+    }
+  }  
+}
+</pre>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+
+<html>
+<head>
+<title>delay0.h</title>
+<meta name="generator" content="c2html 0.9.6">
+<meta name="date" content="2007-07-19T16:01:58+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/*****************************************************************************/</font>
+<font color="#B22222">/* delay0.h      Julio-2007                                                  */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Libreria de temporizacion para el skybot                                  */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Este fichero esta pensado para ser incluido en el programa principal.     */</font>
+<font color="#B22222">/* Antes de utilizar la funcion delay0() es necesario llamar a               */</font>
+<font color="#B22222">/* timer0_configurar() para configurar correctamente el timer 0              */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Utilizacion del temporizador 0 para generar una pausa de 10ms y           */</font>
+<font color="#B22222">/* obtener una rutina de delay en unidades de 10ms                           */</font>
+<font color="#B22222">/* No se utilizan interrupciones                                             */</font>
+<font color="#B22222">/* El temporizador 0 es de 8 bits                                            */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  Andres Prieto-Moreno &lt;andres@ifara.com&gt;                                  */</font>
+<font color="#B22222">/*  Juan Gonzalez &lt;juan@iearobotics.com&gt;                                     */</font>
+<font color="#B22222">/*  Modificado por: Javier Valiente &lt;jvaliente@ifara.com&gt;                    */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  LICENCIA GPL                                                             */</font>
+<font color="#B22222">/*****************************************************************************/</font>
+
+<font color="#A020F0">#ifndef _DELAYH</font>
+<strong><font color="#228B22">#define _DELAYH</font></strong>
+
+<font color="#A020F0">#include &lt;pic16f876a.h&gt;</font>
+
+//-- Definiciones
+<strong><font color="#228B22">#define TICKS10 0x3D  // Valor con el que inicializar contador para</font></strong>
+                      // conseguir TICKs de 10ms
+
+<font color="#B22222">/************************************/</font>
+<font color="#B22222">/* Configurar el temporizador 0     */</font>
+<font color="#B22222">/************************************/</font>
+<strong><font color="#4169E1">void timer0_configurar()</font></strong>;
+
+<font color="#B22222">/************************************************/</font>
+<font color="#B22222">/* Hacer una pausa en unidades de 10ms          */</font>
+<font color="#B22222">/* ENTRADA:                                     */</font>
+<font color="#B22222">/*   -pausa: Valor de la pausa en decenas de ms */</font>
+<font color="#B22222">/************************************************/</font>
+<strong><font color="#4169E1">void delay0(unsigned char pausa)</font></strong>;
+
+<font color="#A020F0">#endif</font>
+</pre>
+</body>
+
+</html>

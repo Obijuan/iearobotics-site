@@ -1,0 +1,36 @@
+
+<html>
+<head>
+<title>crear_ejecutable.bat</title>
+<meta name="generator" content="c2html 0.9.6">
+<meta name="date" content="2007-07-19T16:01:58+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80">@echo off
+REM ***********************************************************
+REM    Creando Ejecutables. 
+REM    En caso de error/warning, revisar codigo del programa
+REM
+REM    Para compilar un programa, configurar el programmers
+REM    notepad, o teclear desde consola lo siguiente:
+REM    crear_ejecutable nombrefichero_c ruta
+REM    Donde:
+REM       nombrefichero es el nombre del programa principal
+REM       ruta es la ruta completa hasta el directorio actual
+REM   Ejemplo:
+REM       crear_ejecutable <font color="#666666">"ejemplo1"</font> <font color="#666666">"C:\robotica\ejemplos\"
+REM
+REM   Importante: El fichero se escribe sin la terminacion "</font>.c<font color="#666666">"
+REM    
+REM ***********************************************************
+cd %2
+sdcc -mpic14 -p16f876a -c %1.c
+sdcc -mpic14 -p16f876a -c libreria_skybot.c
+sdcc -mpic14 -p16f876a -c delay0.c
+sdcc -mpic14 -p16f876a -o %1 %1.o libreria_skybot.o delay0.o
+
+</pre>
+</body>
+
+</html>

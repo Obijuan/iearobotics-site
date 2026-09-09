@@ -1,0 +1,107 @@
+
+<html>
+<head>
+<title>sci-menu.c</title>
+<meta name="generator" content="c2html 0.9.6">
+<meta name="date" content="2007-07-25T00:36:39+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/*****************************************************************************/</font>
+<font color="#B22222">/* sci-menu.c      Julio-2005                                                */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Ejemplo para el skybot                                                    */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Mover el robot desde un terminal serie. Utilizar las teclas o,p,q y a     */</font>
+<font color="#B22222">/* en minusculas. Configurarlo a 9600 baudios, 8,n,1                         */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  Juan Gonzalez &lt;juan@iearobotics.com&gt;                                     */</font>
+<font color="#B22222">/*  Modificado por: Javier Valiente &lt;jvaliente@ifara.com&gt;                    */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  LICENCIA GPL                                                             */</font>
+<font color="#B22222">/*****************************************************************************/</font>
+
+//-- Especificar el pic a emplear
+<font color="#A020F0">#include &lt;pic16f876a.h&gt;</font>
+
+//-- Se usa la libreria de comunicaciones serie
+<font color="#A020F0">#include </font><font color="#666666">"sci.h"</font><font color="#A020F0"></font>
+
+//-- Definiciones para los motores. Estos valores define
+//-- los movimientos del robot
+<strong><font color="#228B22">#define   AVANZA     0x1C</font></strong>
+<strong><font color="#228B22">#define   ATRAS      0x16</font></strong>
+<strong><font color="#228B22">#define   IZQUIERDA  0x1E </font></strong>
+<strong><font color="#228B22">#define   DERECHA    0x14 </font></strong>
+<strong><font color="#228B22">#define   STOP       0x00</font></strong>
+
+
+<font color="#B22222">/******************************/</font>
+<font color="#B22222">/* Sacar el menu de opciones  */</font>
+<font color="#B22222">/******************************/</font>
+<strong><font color="#4169E1"><a name="menu"></a>void menu(void)</font></strong>
+{
+        sci_cad(<font color="#666666">"Menu\n\r"</font>);
+        sci_cad(<font color="#666666">"----\n\r"</font>);
+        sci_cad(<font color="#666666">"q.- adelante\n\r"</font>);
+        sci_cad(<font color="#666666">"a.- atras\n\r"</font>);
+        sci_cad(<font color="#666666">"o.- izquierda\n\r"</font>);
+        sci_cad(<font color="#666666">"p.- derecha\n\r"</font>);
+        sci_cad(<font color="#666666">"ESPACIO.- Parar\n\r"</font>);
+}
+
+<font color="#B22222">/*********************************/</font>
+<font color="#B22222">/* Programa principal            */</font>
+<font color="#B22222">/*********************************/</font>
+<strong><font color="#4169E1"><a name="main"></a>void main(void)</font></strong>
+{
+        unsigned char c;
+        
+        //-- Configurar el puerto B 
+        //-- RB0, RB5, RB6 y RB7 como entradas
+        //-- RB1, RB2, RB3 y RB4 como salidas
+        //-- Todos los sensores de entrada, pero el RB1 de salida, que es
+        //-- donde esta el led
+        TRISB=0xE1;
+        
+        //-- Configurar las comunicaciones serie
+        sci_conf();
+        
+        //-- Parar los motores del robot
+        PORTB=STOP;
+        
+        //-- Sacar el menu
+        menu();
+        
+        //-- Bucle infinito
+        <font color="#4169E1">for</font> (;;)
+          {
+                //-- Esperar a que llegue opcion del usuario
+                c=sci_read();
+                
+                //-- Segun la tecla pulsada...
+                <font color="#4169E1">switch</font>(c)
+                    {
+                        <font color="#4169E1">case</font> 'q':       //-- Adelante
+                                PORTB=0x1C;
+                                <font color="#4169E1">break</font>;
+                        <font color="#4169E1">case</font> 'a':
+                                PORTB=ATRAS;  //-- Atras
+                                <font color="#4169E1">break</font>;
+                        <font color="#4169E1">case</font> 'o':
+                                PORTB=IZQUIERDA; //-- Izquierda
+                                <font color="#4169E1">break</font>;
+                        <font color="#4169E1">case</font> 'p':
+                                PORTB=DERECHA;   //-- Derecha
+                                <font color="#4169E1">break</font>;
+                        <font color="#4169E1">case</font> ' ':         //-- stop
+                                PORTB=STOP;
+                                <font color="#4169E1">break</font>;
+                }
+        }
+}
+
+</pre>
+</body>
+
+</html>

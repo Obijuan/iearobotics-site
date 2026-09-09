@@ -1,0 +1,49 @@
+
+<html>
+<head>
+<title>ledon.c</title>
+<meta name="generator" content="c2html 0.9.6">
+<meta name="date" content="2007-07-25T00:05:09+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/*************************************************************************** */</font>
+<font color="#B22222">/* ledon.c      Julio-2007                                                   */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Ejemplo para el skybot                                                    */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  Encender el led de la Skypic                                             */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  Andres Prieto-Moreno &lt;andres@ifara.com&gt;                                  */</font>
+<font color="#B22222">/*  Juan Gonzalez &lt;juan@iearobotics.com&gt;                                     */</font>
+<font color="#B22222">/*  Modificado por: Javier Valiente &lt;jvaliente@ifara.com&gt;                    */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  LICENCIA GPL                                                             */</font>
+<font color="#B22222">/*****************************************************************************/</font>
+
+//-- Especificar el pic a emplear
+<font color="#A020F0">#include &lt;pic16f876a.h&gt;</font>
+
+//-- Definiciones
+<strong><font color="#228B22">#define LED       0x02     // Pin del led de la Skypic</font></strong>
+
+//----------------------------
+//- Comienzo del programa  
+//----------------------------
+
+<strong><font color="#4169E1"><a name="main"></a>void main(void)</font></strong>
+{
+  //-- Configurar pin del led como salida
+  TRISB&amp;=~LED;
+
+  //-- Activar el led
+  PORTB|=LED;
+  
+  //-- Bucle infinito
+  <font color="#4169E1">while</font>(1);
+}
+
+</pre>
+</body>
+
+</html>

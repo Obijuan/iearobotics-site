@@ -1,0 +1,101 @@
+
+<html>
+<head>
+<title>sci.h</title>
+<meta name="generator" content="c2html 0.9.6">
+<meta name="date" content="2007-06-01T11:24:52+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/*************************************************************************** */</font>
+<font color="#B22222">/* sci.h      Julio-2005                                                     */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Ejemplo para el skybot                                                    */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Rutinas para manejo del puerto serie del PIC                              */</font>
+<font color="#B22222">/* Comunicaciones a 9600 baudios (Configuracion 8N1)                         */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  Juan Gonzalez &lt;juan@iearobotics.com&gt;                                     */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  LICENCIA GPL                                                             */</font>
+<font color="#B22222">/*****************************************************************************/</font>
+
+<font color="#B22222">/****************************************************/</font>
+<font color="#B22222">/* Configurar el puerto serie a N81 y 9600 Baudios  */</font>
+<font color="#B22222">/****************************************************/</font>
+<strong><font color="#4169E1"><a name="sci_conf"></a>void sci_conf(void)</font></strong>
+{
+  SPBRG = 0x81;  //-- 9600 baudios (con cristal de 20MHz)
+  TXSTA = 0x24;  //-- Configurar transmisor
+  RCSTA = 0x90;  //-- Configurar receptor
+  
+}
+
+<font color="#B22222">/******************************************/</font>
+<font color="#B22222">/* Recibir un caracter por el SCI         */</font>
+<font color="#B22222">/*----------------------------------------*/</font>
+<font color="#B22222">/* DEVUELVE:                              */</font>
+<font color="#B22222">/*   -Caracter recibido                   */</font>
+<font color="#B22222">/******************************************/</font>
+<strong><font color="#4169E1"><a name="sci_read"></a>unsigned char sci_read(void)</font></strong>
+{
+  //-- Eserar hasta que llegue el dato
+  <font color="#4169E1">while</font> (!RCIF);
+    
+  <font color="#4169E1">return</font> RCREG;
+}
+
+<font color="#B22222">/*****************************************/</font>
+<font color="#B22222">/* Transmitir un caracter por el SCI     */</font>
+<font color="#B22222">/*---------------------------------------*/</font>
+<font color="#B22222">/* ENTRADAS:                             */</font>
+<font color="#B22222">/*   -car: Caracter a enviar             */</font>
+<font color="#B22222">/*****************************************/</font>
+<strong><font color="#4169E1"><a name="sci_write"></a>void sci_write(unsigned char car)</font></strong>
+{
+  //-- Esperar a que Flag de lista para transmitir se active
+  <font color="#4169E1">while</font> (!TXIF);
+    
+  //-- Hacer la transmision
+  TXREG=car;
+}
+
+<font color="#B22222">/*--------------------------------------------------*/</font>
+<font color="#B22222">/* Enviar una cadena por el puerto serie            */</font>
+<font color="#B22222">/* NOTA: con esta funcion solo se pueden enviar     */</font>
+<font color="#B22222">/* cadenas constantes y NO un puntero a una cadena  */</font>
+<font color="#B22222">/* Observar que se usa el atributo __code           */</font>
+<font color="#B22222">/* No esta soluconado todavia en el SDCC 2.5.1      */</font>
+<font color="#B22222">/* Ejemplo de uso:                                  */</font>
+<font color="#B22222">/*    sci_cad("Hola");                              */</font>
+<font color="#B22222">/*--------------------------------------------------*/</font>
+<strong><font color="#4169E1"><a name="sci_cad"></a>void sci_cad(__code unsigned char *cad)</font></strong>
+{ 
+  unsigned char i=0;
+  
+  <font color="#4169E1">while</font> (cad[i]!=0) {
+    sci_write(cad[i]);
+    i++;
+  }  
+}
+
+<font color="#B22222">/*---------------------------------------------------------*/</font>
+<font color="#B22222">/* Envio de una cadena por el puerto serie                 */</font>
+<font color="#B22222">/* Con esta funcion si podemos enviar punteros a cadenas,  */</font>
+<font color="#B22222">/* pero no cadenas constantes                              */</font>
+<font color="#B22222">/* Ejemplo de uso:                                         */</font>
+<font color="#B22222">/*     sci_cad2(mi_cadena);                                */</font>
+<font color="#B22222">/*---------------------------------------------------------*/</font>
+<strong><font color="#4169E1"><a name="sci_cad2"></a>void sci_cad2(unsigned char *cad)</font></strong>
+{ 
+  unsigned char i=0;
+  
+  <font color="#4169E1">while</font> (cad[i]!=0) {
+    sci_write(cad[i]);
+    i++;
+  }  
+}
+</pre>
+</body>
+
+</html>

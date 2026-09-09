@@ -1,0 +1,83 @@
+
+<html>
+<head>
+<title>mogollon.c</title>
+<meta name="generator" content="c2html 0.9.6">
+<meta name="date" content="2007-07-19T16:01:58+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/*
+Ejemplo de programaci&Atilde;³n del Skybot 
+usando la libreria_skybot para la
+participacion en el concurso del
+Mogoll&Atilde;³n.
+
+El robot enciende un led y queda
+a la espera de que le aprieten el
+pulsador.
+Espera 5 segundos haciendo que el
+led parpadee.
+Empieza a avanzar y rebotar contra
+cualquier linea negra que detecte.
+
+Julio-2007
+*/</font>
+
+
+
+<font color="#A020F0">#include </font><font color="#666666">"libreria_skybot.h"</font><font color="#A020F0"></font>
+
+<strong><font color="#228B22">#define ESPERA 200</font></strong>
+
+
+//----------------------------
+//- Comienzo del programa  
+//----------------------------
+unsigned char i;
+
+<strong><font color="#4169E1"><a name="main"></a>void main(void)</font></strong>
+{
+  ConfigurarSkybot();
+  
+  PausaTiempo(0,30);
+  EncenderLed();
+  
+  
+  //-- Esperar a que se apriete el pulsador
+  <font color="#4169E1">while</font> (Pulsador_no_esta_pulsado());
+  
+  
+  //-- Hacer que el led parpadee durante 5 segundos
+  <font color="#4169E1">for</font> (i=0; i&lt;5; i++)
+  {
+    ApagarLed();
+    PausaTiempo(0,50);
+    EncenderLed();
+    PausaTiempo(0,50);
+  }  
+  
+  <font color="#4169E1">for</font> (;;)
+  {
+    <font color="#4169E1">if</font> (SensorIR_Izq_Lee_Blanco() &amp;&amp; SensorIR_Der_Lee_Negro())
+    { //-- Blanco-negro
+      GirarIzq();
+      PausaTiempo(0,ESPERA);
+    }  
+    <font color="#4169E1">else</font> <font color="#4169E1">if</font> (SensorIR_Izq_Lee_Negro() &amp;&amp; SensorIR_Der_Lee_Blanco())
+    { //-- Negro-Blanco
+      GirarDer();
+      PausaTiempo(0,ESPERA);
+    }
+    <font color="#4169E1">else</font> <font color="#4169E1">if</font> (SensorIR_Izq_Lee_Negro() &amp;&amp; SensorIR_Der_Lee_Negro())
+    {  //-- Negro-negro
+      Retroceder();
+      PausaTiempo(0,ESPERA);
+    }
+    <font color="#4169E1">else</font> Avanzar();
+  }
+}
+</pre>
+</body>
+
+</html>

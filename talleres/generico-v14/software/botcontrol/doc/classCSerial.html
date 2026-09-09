@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>SGTramas: Referencia de la Clase CSerial</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.4.3-20050530 -->
+<div class="qindex"><a class="qindex" href="index.html">Página&nbsp;principal</a> | <a class="qindex" href="hierarchy.html">Jerarquía&nbsp;de&nbsp;la&nbsp;clase</a> | <a class="qindex" href="annotated.html">Lista&nbsp;de&nbsp;componentes</a> | <a class="qindex" href="files.html">Lista&nbsp;de&nbsp;archivos</a> | <a class="qindex" href="functions.html">Miembros&nbsp;de&nbsp;las&nbsp;clases</a></div>
+<h1>Referencia de la Clase CSerial</h1><!-- doxytag: class="CSerial" --><p>Diagrama de herencias de CSerial
+<p><center><img src="classCSerial.png" usemap="#CSerial_map" border="0" alt=""></center>
+<map name="CSerial_map">
+<area href="classCSGTramas.html" alt="CSGTramas" shape="rect" coords="0,56,79,80">
+</map>
+<a href="classCSerial-members.html">Lista de todos los miembros.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Métodos públicos</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerial.html#a0">CSerial</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a1"></a><!-- doxytag: member="CSerial::~CSerial" ref="a1" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerial.html#a1">~CSerial</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a2"></a><!-- doxytag: member="CSerial::Open" ref="a2" args="(int nPort=2, int nBaud=9600)" -->
+BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerial.html#a2">Open</a> (int nPort=2, int nBaud=9600)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a3"></a><!-- doxytag: member="CSerial::Close" ref="a3" args="(void)" -->
+BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerial.html#a3">Close</a> (void)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a4"></a><!-- doxytag: member="CSerial::ReadData" ref="a4" args="(void *, int)" -->
+int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerial.html#a4">ReadData</a> (void *, int)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a5"></a><!-- doxytag: member="CSerial::SendData" ref="a5" args="(const char *, int)" -->
+int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerial.html#a5">SendData</a> (const char *, int)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a6"></a><!-- doxytag: member="CSerial::ReadDataWaiting" ref="a6" args="(void)" -->
+int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerial.html#a6">ReadDataWaiting</a> (void)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a7"></a><!-- doxytag: member="CSerial::IsOpened" ref="a7" args="(void)" -->
+BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerial.html#a7">IsOpened</a> (void)</td></tr>
+
+<tr><td colspan="2"><br><h2>Atributos protegidos</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="p0"></a><!-- doxytag: member="CSerial::m_hIDComDev" ref="p0" args="" -->
+HANDLE&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerial.html#p0">m_hIDComDev</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="p1"></a><!-- doxytag: member="CSerial::m_OverlappedRead" ref="p1" args="" -->
+OVERLAPPED&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerial.html#p1">m_OverlappedRead</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="p2"></a><!-- doxytag: member="CSerial::m_OverlappedWrite" ref="p2" args="" -->
+OVERLAPPED&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerial.html#p2">m_OverlappedWrite</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="p3"></a><!-- doxytag: member="CSerial::m_bOpened" ref="p3" args="" -->
+BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSerial.html#p3">m_bOpened</a></td></tr>
+
+</table>
+<hr><a name="_details"></a><h2>Descripción detallada</h2>
+
+<p>
+
+<p>
+Definición en la línea <a class="el" href="Serial_8h-source.html#l00027">27</a> del archivo <a class="el" href="Serial_8h-source.html">Serial.h</a>.<hr><h2>Documentación del constructor y destructor</h2>
+<a class="anchor" name="a0"></a><!-- doxytag: member="CSerial::CSerial" ref="a0" args="()" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">CSerial::CSerial           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Clase CSerial<p>
+Clase con primitivas de acceso al puerto serie que funciona bajo Windows.<p>
+<dl compact><dt><b>Autor:</b></dt><dd>Tom Archer and Rick Leinecker</dd></dl>
+
+<p>
+Definición en la línea <a class="el" href="Serial_8cpp-source.html#l00036">36</a> del archivo <a class="el" href="Serial_8cpp-source.html">Serial.cpp</a>.
+<p>
+Hace referencia a <a class="el" href="Serial_8h-source.html#l00048">m_bOpened</a>, <a class="el" href="Serial_8h-source.html#l00046">m_hIDComDev</a>, <a class="el" href="Serial_8h-source.html#l00047">m_OverlappedRead</a>, y <a class="el" href="Serial_8h-source.html#l00047">m_OverlappedWrite</a>.    </td>
+  </tr>
+</table>
+<hr>La documentación para esta clase fué generada a partir de los siguientes archivos:<ul>
+<li><a class="el" href="Serial_8h-source.html">Serial.h</a><li><a class="el" href="Serial_8cpp-source.html">Serial.cpp</a></ul>
+<hr size="1"><address style="align: right;"><small>Generado el Mon Jul 18 16:24:51 2005 para SGTramas por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.3-20050530 </small></address>
+</body>
+</html>

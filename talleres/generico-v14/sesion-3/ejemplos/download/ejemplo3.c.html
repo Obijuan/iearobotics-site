@@ -1,0 +1,50 @@
+
+<html>
+<head>
+<title>ejemplo3.c</title>
+<meta name="generator" content="c2html 0.9.6">
+<meta name="date" content="2007-07-19T16:01:58+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/*
+Ejemplo de programaci&oacute;n del Skybot 
+usando la libreria_skybot
+
+Ejemplo3:
+Hacemos que el robot se mueva en diferentes direcciones
+
+Julio-2007
+*/</font>
+
+<font color="#A020F0">#include </font><font color="#666666">"libreria_skybot.h"</font><font color="#A020F0"></font>
+
+//----------------------------
+//- Comienzo del programa  
+//----------------------------
+
+<strong><font color="#4169E1"><a name="main"></a>void main(void)</font></strong>
+{
+  // Configuramos el PIC16f876a para 
+  // adaptarse al Robot Skybot
+  ConfigurarSkybot();
+  
+  // El Skybot avanza durante 2 segundos
+  Avanzar();
+  PausaTiempo(2,0);
+  
+  // El Skybot avanza durante 2 segundos
+  GirarIzq();
+  PausaTiempo(2,0);
+  
+  // El Skybot avanza durante 2 segundos
+  GirarDer();
+  PausaTiempo(2,0);
+  
+  // paramos el Robot
+  Parar();
+}
+</pre>
+</body>
+
+</html>

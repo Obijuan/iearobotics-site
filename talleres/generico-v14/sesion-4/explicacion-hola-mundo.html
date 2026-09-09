@@ -1,0 +1,898 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+
+
+	
+  
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=iso-8859-15">
+
+
+	
+	
+  
+  
+  <title>Taller de robotica basico. Sesion 3. Explicaci&oacute;n del programa "hola mundo"</title>
+  <meta name="GENERATOR" content="OpenOffice.org 1.1.3  (Linux)">
+
+
+	
+  
+  <meta name="CREATED" content="20040522;11483800">
+
+
+	
+  
+  <meta name="CHANGED" content="20050720;16532700">
+
+
+	
+  
+  <meta name="KEYWORDS" content="robotica, microcontroladores, pic, hardware">
+
+
+	
+  
+  <style>
+	<!--
+		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+	-->
+	</style>
+</head>
+
+
+<body dir="ltr" lang="en-US">
+
+
+
+<table style="page-break-before: always;" bgcolor="#abbeeb" border="0" cellpadding="4" cellspacing="0" width="917">
+
+
+	<col width="909">
+	<tbody>
+
+    <tr>
+
+
+		<td width="909">
+			
+      
+      <p align="center"><font face="Arial, sans-serif">Taller de
+			Rob&oacute;tica B&aacute;sico - Skybot v1.4. - SESION 3 - <b> Explicaci&oacute;n del &ldquo;hola mundo&rdquo;</b></font></p>
+
+
+		</td>
+
+
+	</tr>
+
+
+  
+  </tbody>
+</table>
+
+
+
+<p style="margin-bottom: 0cm;" align="center"><br>
+
+
+</p>
+
+
+<hr>
+<h2>Objetivos</h2>
+
+
+<p><font face="Arial, sans-serif"><font size="2">Empezar a
+familiarizarse con el PIC y con su programaci&oacute;n en C.</font></font></p>
+
+
+<hr>
+<h2>Descargas</h2>
+
+
+<p><font size="2"><font face="Arial, sans-serif">Aqu&iacute; est&aacute;
+recopilado el programa &ldquo;hola mundo&rdquo;. Para entender su
+funcionamiento s&oacute;lo necesitamos abrir el fichero </font></font><a href="download/ledon.c"><font size="2"><font face="Arial, sans-serif">ledon.c</font></font></a>
+<font size="2"><font face="Arial, sans-serif">con el editor.</font></font></p>
+
+
+<dl>
+
+
+	
+  
+  <dl>
+
+
+		<dd>
+		
+      
+      <table bgcolor="#abbeeb" border="0" cellpadding="4" cellspacing="0" width="742">
+
+
+			<col width="734">
+			<tbody>
+
+          <tr>
+
+
+				<td width="734">
+					
+            
+            <p align="center"><b>Descarga de ficheros</b></p>
+
+
+				</td>
+
+
+			</tr>
+
+
+		
+        
+        </tbody>
+      
+      </table>
+
+
+		</dd>
+
+    <dd>
+		
+      
+      <table border="0" cellpadding="2" cellspacing="0" width="741">
+
+
+			<col width="196">
+			<col width="537">
+			<tbody>
+
+          <tr bgcolor="#cabeeb">
+
+
+				<td width="196">
+					
+            
+            <p><a href="linux/download/hola-mundo-linux.tgz"><font size="2"><font face="Arial, sans-serif">hola-mundo-linux.tgz</font></font></a></p>
+
+
+				</td>
+
+
+				<td width="537">
+					
+            
+            <p><font face="Arial, sans-serif"><font size="2">Programa
+					hola-mundo (usuarios de linux) con Makefile y proyecto para
+					anjuta</font></font></p>
+
+
+				</td>
+
+
+			</tr>
+
+
+			<tr bgcolor="#cabeeb">
+
+
+				<td bgcolor="#ccccff" width="196">
+					
+            
+            <p><a href="windows/download/hola_mundo_windows.zip"><font size="2"><font face="Arial, sans-serif">hola-mundo-windows.zip</font></font></a>
+					</p>
+
+
+				</td>
+
+
+				<td bgcolor="#ccccff" width="537">
+					
+            
+            <p><font face="Arial, sans-serif"><font size="2">Programa
+					hola-mundo (usuarios de Windows) </font></font></p>
+
+
+				</td>
+
+
+			</tr>
+
+
+			<tr bgcolor="#cabeeb">
+
+
+				<td width="196">
+					
+            
+            <p><a href="download/ledon.c"><font size="2"><font face="Arial, sans-serif">ledon.c</font></font></a></p>
+
+
+				</td>
+
+
+				<td width="537">
+					
+            
+            <p><font face="Arial, sans-serif"><font size="2">Las fuentes del
+					&ldquo;hola mundo&rdquo;</font></font></p>
+
+
+				</td>
+
+
+			</tr>
+
+
+			<tr bgcolor="#cabeeb">
+
+
+				<td bgcolor="#ccccff" width="196">
+					
+            
+            <p><a href="download/ledon.hex"><font size="2"><font face="Arial, sans-serif">ledon.hex</font></font></a></p>
+
+
+				</td>
+
+
+				<td bgcolor="#ccccff" width="537">
+					
+            
+            <p><font face="Arial, sans-serif"><font size="2">El &ldquo;hola
+					mundo&rdquo; ejecutable, para descargar en el robot</font></font></p>
+
+
+				</td>
+
+
+			</tr>
+
+
+		
+        
+        </tbody>
+      
+      </table>
+
+
+	</dd>
+
+  
+  </dl>
+
+
+</dl>
+
+
+<p style="margin-bottom: 0cm;"><br>
+
+
+</p>
+
+
+<hr>
+<h2>Programa hola mundo</h2>
+
+
+<p><font size="2"><font face="Arial, sans-serif">Aqu&iacute; est&aacute;
+el programa </font></font><a href="download/ledon.c.html"><font size="2"><font face="Arial, sans-serif">ledon.c
+en html</font></font></a> <font size="2"><font face="Arial, sans-serif">para
+verlo mejor con el navegador.</font></font></p>
+
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="100%">
+
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+
+			<td bgcolor="#ffffcc" valign="top" width="100%">
+				
+    
+    <p><font face="Monospace"><i><font color="#808080">/***************************************************************************&nbsp;*/</font></i><br>
+
+    <i><font color="#808080">/*&nbsp;ledon.c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Julio-2007
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></i><br>
+
+    <i><font color="#808080">/*---------------------------------------------------------------------------*/</font></i><br>
+
+    <i><font color="#808080">/*&nbsp;Ejemplo&nbsp;para&nbsp;el&nbsp;skybot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></i><br>
+
+    <i><font color="#808080">/*---------------------------------------------------------------------------*/</font></i><br>
+
+    <i><font color="#808080">/*&nbsp;&nbsp;Encender&nbsp;el&nbsp;led&nbsp;de&nbsp;la&nbsp;Skypic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></i><br>
+
+    <i><font color="#808080">/*---------------------------------------------------------------------------*/</font></i><br>
+
+    <i><font color="#808080">/*&nbsp;&nbsp;Andres&nbsp;Prieto-Moreno&nbsp;&lt;andres@ifara.com&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></i><br>
+
+    </font><font face="Monospace"><i><font color="#808080">/*&nbsp;&nbsp;Juan&nbsp;Gonzalez&nbsp;&lt;juan@iearobotics.com&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></i><br>
+
+    </font><font face="Monospace"><i><font color="#808080">/*&nbsp;&nbsp;Javier
+Valiente&nbsp;&lt;jvaliente@ifara.com&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></i><br>
+
+    </font><font face="Monospace"><i><font color="#808080">/*---------------------------------------------------------------------------*/</font></i><br>
+
+    <i><font color="#808080">/*&nbsp;&nbsp;LICENCIA&nbsp;GPL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></i><br>
+
+    <i><font color="#808080">/*****************************************************************************/</font></i><br>
+
+    <br>
+
+    <i><font color="#808080">//--&nbsp;Especificar&nbsp;el&nbsp;pic&nbsp;a&nbsp;emplear<br>
+
+    </font></i><font color="#008000">#include &lt;pic16f876a.h&gt;<br>
+
+    </font><br>
+
+    <i><font color="#808080">//--&nbsp;Definiciones<br>
+
+    </font></i><font color="#008000">#define&nbsp;LED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x02&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><i><font color="#808080">//&nbsp;Pin&nbsp;del&nbsp;led&nbsp;de&nbsp;la&nbsp;Skypic<br>
+
+    </font></i><br>
+
+    <i><font color="#808080">//----------------------------<br>
+
+//-&nbsp;Comienzo&nbsp;del&nbsp;programa&nbsp;&nbsp;<br>
+
+//----------------------------<br>
+
+    </font></i><br>
+
+    <font color="#800000">void</font>&nbsp;<font color="#000000">main</font>(<font color="#800000">void</font>)<br>
+
+{<br>
+
+&nbsp;&nbsp;<i><font color="#808080">//--&nbsp;Configurar&nbsp;pin&nbsp;del&nbsp;led&nbsp;como&nbsp;salida<br>
+
+    </font></i>&nbsp;&nbsp;<font color="#000000">TRISB</font>&amp;=~<font color="#000000">LED</font>;<br>
+
+    <br>
+
+&nbsp;&nbsp;<i><font color="#808080">//--&nbsp;Activar&nbsp;el&nbsp;led<br>
+
+    </font></i>&nbsp;&nbsp;<font color="#000000">PORTB</font>|=<font color="#000000">LED</font>;<br>
+
+&nbsp;&nbsp;<br>
+
+&nbsp;&nbsp;<i><font color="#808080">//--&nbsp;Bucle&nbsp;infinito<br>
+
+    </font></i>&nbsp;&nbsp;<b><font color="#000000">while</font></b>(<font color="#0000ff">1</font>);<br>
+
+}</font></p>
+
+
+			</td>
+
+
+		</tr>
+
+
+	</thead>
+</table>
+
+
+<p><br>
+
+<br>
+
+
+</p>
+
+
+<hr>
+<h2>Descripci&oacute;n del hola mundo</h2>
+
+
+<ul>
+
+
+	<li>
+    
+    <p><font face="Arial, sans-serif"><b>Cabeceras</b></font></p>
+
+
+  </li>
+
+</ul>
+
+
+<p style="" align="justify"><font face="Arial, sans-serif"><font size="2">Todos
+los programas empezar&aacute;n con las siguientes lineas, que indican
+el tipo de PIC a utilizar.&nbsp;</font></font></p>
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+
+			<td bgcolor="#e6e6e6" valign="top" width="100%">
+				
+    
+    <p><font face="Monospace"><i><font color="#808080">//--&nbsp;Especificar&nbsp;el&nbsp;pic&nbsp;a&nbsp;emplear<br>
+
+    </font></i><font color="#008000">#include &lt;pic16f876a.h&gt;</font></font></p>
+
+
+			</td>
+
+
+		</tr>
+
+
+	</thead>
+</table>
+
+
+<ul>
+
+
+	<li>
+    
+    <p><font face="Arial, sans-serif"><font size="3"><b>El led de la
+	skypic</b></font></font></p>
+
+
+  </li>
+
+</ul>
+
+
+<p><font face="Arial, sans-serif"><font size="2">El PIC 16f876A tiene 3
+puertos de entrada/salidas digitales: el A, B y C. El <b>puerto B</b>
+es donde est&aacute; conectado el <b>led</b> de la skypic. Son 8 bits
+independientes, que se pueden configurar para funcionar como entrada
+o salida. Por defecto est&aacute;n configurados como entradas.</font></font></p>
+
+
+<p><font face="Arial, sans-serif"><font size="2">El LED de la skypic
+est&aacute; conectado al Bit 1 (Los bits se empiezan a numerar desde
+el bit 0 hasta el bit 7). Para encender el led hay que poner a '1' el
+bit 1, o lo que es lo mismo, enviar el valor 0x02 al puerto B.</font></font></p>
+
+
+<p><font face="Arial, sans-serif"><font size="2">Esto lo definimos con
+la constante LED, que indica d&oacute;nde est&aacute; conectado el
+led.</font></font></p>
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+
+			<td bgcolor="#e6e6e6" valign="top" width="100%">
+				
+    
+    <p><font face="Monospace"><i><font color="#808080">//--&nbsp;Definiciones<br>
+
+    </font></i><font color="#008000">#define&nbsp;LED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x02&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><i><font color="#808080">//&nbsp;Pin&nbsp;del&nbsp;led&nbsp;de&nbsp;la&nbsp;Skypic</font></i></font></p>
+
+
+			</td>
+
+
+		</tr>
+
+
+	</thead>
+</table>
+
+
+<ul>
+
+
+	<li>
+    
+    <p><font face="Arial, sans-serif"><b>Comienzo del programa</b></font></p>
+
+
+  </li>
+
+</ul>
+
+
+<p><font face="Arial, sans-serif"><font size="2">La l&iacute;nea <font face="Courier, monospace">void
+main(void)</font> indica el comienzo de la la <b>funci&oacute;n
+principal</b>, que se empezar&aacute; a ejecutar en cuanto arranque
+el PIC. Se ejecutar&aacute; todo el c&oacute;digo que est&aacute;
+entre llaves.</font></font></p>
+
+
+<p><font face="Arial, sans-serif"><font size="2">El registro <b>TRISB</b>
+permite configurar los bits del puerto B, para que sean de entrada o
+salida. Un bit de TRISB puesto a <b>0</b> indica que el pin
+correspondiente del puerto B ser&aacute; de <b>salida</b>, y un <b>1</b>
+indica que ser&aacute; de <b>entrada</b>.</font></font></p>
+
+
+<p><font face="Arial, sans-serif"><font size="2">Lo primero que se hace
+es configurar el puerto B para que el bit B1, el que est&aacute;
+conectado al led, sea de salida. Esto se podr&iacute;a hacer de una
+forma m&aacute;s sencilla as&iacute;:</font></font></p>
+
+
+<p><font face="Arial, sans-serif"><font size="2">TRISB=0x00;</font></font></p>
+
+
+<p><font face="Arial, sans-serif"><font size="2">que pone el puerto B
+entero de salida. Sin embargo, en la manera en que est&aacute; hecho
+en el programa ledon.c, s&oacute;lo se pone a 0 el Bit 1 del registro
+TRISB, <b>dejando el resto de bits sin alterar</b>. Esto es muy &uacute;til
+cuando se quiere trabajar con bits independientes unos de otros.</font></font></p>
+
+
+<p><font face="Arial, sans-serif"><font size="2">Se est&aacute;
+utilizando la notaci&oacute;n abreviada. La l&iacute;nea ser&iacute;a
+equivalente a esto:</font></font></p>
+
+
+<p><font face="Arial, sans-serif"><font size="2">TRISB = TRISB &amp;
+~LED;</font></font></p>
+
+
+<p><font face="Arial, sans-serif"><font size="2">~ es el operador de
+negaci&oacute;n de bits. </font></font>
+</p>
+
+
+<p><font face="Arial, sans-serif"><font size="2"><b>&amp; </b>es la
+operaci&oacute;n l&oacute;gica AND realizada bit a bit </font></font>
+</p>
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+
+			<td bgcolor="#e6e6e6" valign="top" width="100%">
+				
+    
+    <p><font face="Monospace"><font color="#800000">void</font>&nbsp;<font color="#000000">main</font>(<font color="#800000">void</font>)<br>
+
+{<br>
+
+&nbsp;&nbsp;<i><font color="#808080">//--&nbsp;Configurar&nbsp;pin&nbsp;del&nbsp;led&nbsp;como&nbsp;salida<br>
+
+    </font></i>&nbsp;&nbsp;<font color="#000000">TRISB</font>&amp;=~<font color="#000000">LED</font>;</font></p>
+
+
+			</td>
+
+
+		</tr>
+
+
+	</thead>
+</table>
+
+
+<ul>
+
+
+	<li>
+    
+    <p><font face="Arial, sans-serif"><font size="3"><b>Activando el
+	LED</b></font></font></p>
+
+
+  </li>
+
+</ul>
+
+
+<p><font face="Arial, sans-serif"><font size="2">El registro <b>PORTB</b>
+nos permite enviar informaci&oacute;n por el puerto B. Cualquier
+valor que escribamos en &eacute;l, saldr&aacute; por los bits del
+puerto B del PIC y se traducir&aacute; en que saldr&aacute;n voltajes
+por el conector CT2 de la Skypic, siempre y cuando lo hayamos
+configurado como puerto de salida. Un bit a '1' se corresponde con un
+valor de 5v y un bit a 0 con 0v. </font></font>
+</p>
+
+
+<p><font face="Arial, sans-serif"><font size="2">Para encender el led
+podr&iacute;amos haber hecho esto:</font></font></p>
+
+
+<p><font face="Arial, sans-serif"><font size="2">PORTB=0x02</font></font></p>
+
+
+<p><font face="Arial, sans-serif"><font size="2">Esto activa el Bit 1 y
+deja el resto a 0. Por el conector de salida saldr&iacute;an 5v hacia
+el led y 0v por el resto de pines.</font></font></p>
+
+
+<p><font face="Arial, sans-serif"><font size="2">Sin embargo, en
+ciertas aplicaciones nos interesa activar s&oacute;lo un bit, <b>dejando
+el resto sin alterar</b>. As&iacute; es como se hace en el programa
+ledon.c.</font></font></p>
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+
+			<td bgcolor="#e6e6e6" valign="top" width="100%">
+				
+    
+    <p><font face="Monospace"><i><font color="#808080">//--&nbsp;Activar&nbsp;el&nbsp;led<br>
+
+    </font></i>&nbsp;&nbsp;<font color="#000000">PORTB</font>|=<font color="#000000">LED</font>;</font></p>
+
+
+			</td>
+
+
+		</tr>
+
+
+	</thead>
+</table>
+
+
+<p style=""><font face="Arial, sans-serif"><font size="2">La
+instrucci&oacute;n ser&iacute;a equivalente a esta: PORTB = PORTB |
+LED, donde el s&iacute;mbolo | es el operador OR l&oacute;gico.</font></font></p>
+
+
+<ul>
+
+
+	<li>
+    
+    <p><font face="Arial, sans-serif"><font size="3"><b>Finalizando</b></font></font></p>
+
+
+  </li>
+
+</ul>
+
+
+<p style=""><font face="Arial, sans-serif"><font size="2">El
+microcontrolador PIC nunca para de ejecutar instrucciones, mientras
+est&eacute; alimentado. Por eso finalizamos el programa con un <b>bucle
+infinito</b>. Dejamos al micro eternamente dando vueltas en ese
+bucle, hasta que alguien pulse el reset o quite la alimentaci&oacute;n.
+Es una manera de tener &ldquo;controlado&rdquo; al microcntrolador.</font></font></p>
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+
+			<td bgcolor="#e6e6e6" valign="top" width="100%">
+				
+    
+    <p>&nbsp;&nbsp;<font face="Monospace"><i><font color="#808080">//--&nbsp;Bucle&nbsp;infinito<br>
+
+    </font></i>&nbsp;&nbsp;<b><font color="#000000">while</font></b>(<font color="#0000ff">1</font>);<br>
+
+}</font></p>
+
+
+			</td>
+
+
+		</tr>
+
+
+	</thead>
+</table>
+
+
+<p><br>
+
+<br>
+
+
+</p>
+
+
+<hr>
+<h2>El puerto B</h2>
+
+
+<p><font face="Arial, sans-serif"><font size="2">El <b>puerto B</b> es
+un puerto digital de 8 bits, cada uno de cuyos bits es configurable
+para entrada o salida. Los bits se denotan <b>RB0</b>, <b>RB1</b>,...,<b>RB7</b>.
+El sentido de cada uno de los bits de este puerto est&aacute;
+determinado por el valor de los bits del registro <b>TRISB</b>. Cada
+uno de ellos controla el sentido de uno de los bits del puerto B,
+como se muestra gr&aacute;ficamente en la figura de la izquierda.</font></font></p>
+
+
+<p><font face="Arial, sans-serif"><font size="2">En la derecha se
+muestra un ejemplo de configuraci&oacute;n. Se almacena el valor 0x8D
+hexadecimal en el registro TRISB, que se corresponde con el valor en
+binario 10001101. Los bits de TRISB que est&aacute;n a '1' configura
+el bit correspondiente del puerto B para que sea de entrada. Los bits
+que est&aacute;n a '0' lo configuran para salida.</font></font></p>
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+
+			<td valign="top" width="100%">
+				
+    
+    <p align="center"><img src="images/exp_hola_mundo_portb.png" name="Imagen1" align="middle" border="0" height="257" width="694"></p>
+
+
+			</td>
+
+
+		</tr>
+
+
+	</thead>
+</table>
+
+
+<p><br>
+
+<br>
+
+
+</p>
+
+
+<hr>
+<h2>El PUERTO B en la SKYPIC</h2>
+
+
+<p><font face="Arial, sans-serif"><font size="2">En la tarjeta <b>Skypic</b>
+hay un <b>pulsador de pruebas</b> (el que est&aacute; al lado del
+reset) y un <b>led</b>, conectados a los bits <b>RB0</b> y <b>RB1</b>
+respectivamente. Por ello, si se quiere acceder al led, habr&aacute;
+que configurar el bit RB1 de salida. Si se quiere leer del pulsador,
+habr&aacute; que configurar el RB0 como entrada.</font></font></p>
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+	<col width="256*">
+	<thead>
+		<tr>
+
+
+			<td valign="top" width="100%">
+				
+    
+    <p align="center"><img src="images/exp_hola_mundo_portb_skypic.png" name="Imagen2" align="middle" border="0" height="228" width="328"></p>
+
+
+			</td>
+
+
+		</tr>
+
+
+	</thead>
+</table>
+
+
+<p><br>
+
+<br>
+
+
+</p>
+
+
+<hr>
+<h2>Para recordar...</h2>
+
+
+<ul>
+
+
+	<li>
+    
+    <p><font face="Arial, sans-serif"><font size="2">A trav&eacute;s
+	del puerto B podemos enviar y recibir informaci&oacute;n digital.</font></font></p>
+
+
+	</li>
+
+  <li>
+    
+    <p><font face="Arial, sans-serif"><font size="2">Para sacar
+	informaci&oacute;n al exterior escribiremos en el registro <b>PORTB</b></font></font></p>
+
+
+	</li>
+
+  <li>
+    
+    <p><font face="Arial, sans-serif"><font size="2">Para leer
+	informaci&oacute;n leeremos el registro PORTB</font></font></p>
+
+
+	</li>
+
+  <li>
+    
+    <p><font face="Arial, sans-serif"><font size="2">Para configurar
+	los bits como entradas o salidas utilizaremos el registro <b>TRISB</b></font></font></p>
+
+
+	</li>
+
+  <li>
+    
+    <p><font size="2"><font face="Arial, sans-serif">Para activar uno
+	o varios bits de un registro REG, sin alterar el resto utilizamos
+	esta intrucci&oacute;n: <b>REG</b></font></font><b>|=VALOR</b></p>
+
+
+	</li>
+
+  <li>
+    
+    <p><font face="Arial, sans-serif"><font size="2">Para poner a cero
+	uno o varios bits de un registro REG, sin alterar el resto,
+	utilizamos la instrucci&oacute;n: <b>REG&amp;=~VALOR</b>;</font></font></p>
+
+
+	</li>
+
+  <li>
+    
+    <p><font face="Arial, sans-serif"><font size="2">En la
+	programaci&oacute;n del robot estaremos constantemente leyendo bits
+	de entrada del puerto B (sensores) y escribiendo en bits de salida
+	(para mover los motores).</font></font></p>
+
+
+  </li>
+
+</ul>
+
+
+<hr>
+<p><a href="index.html"><font size="2"><font face="Arial, sans-serif">[Sesion
+3]</font></font></a></p>
+
+
+<address style="margin-bottom: 0.5cm;"><a href="http://www.iearobotics.com/personal/juan/index.html"><font size="2"><font face="Arial, sans-serif">Juan
+Gonz&aacute;lez</font></font></a><a href="http://www.iearobotics.com/">
+</a>
+</address>
+
+
+<p style="margin-bottom: 0cm;"><a href="http://www.iearobotics.com"><font size="2"><font face="Arial, sans-serif">IEAROBOTICS</font></font></a>
+</p>
+
+
+</body>
+</html>

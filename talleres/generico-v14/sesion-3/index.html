@@ -1,0 +1,569 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+
+
+
+  
+  
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=iso-8859-15">
+
+
+  
+
+
+  
+  
+  
+  <title>Taller de rob&oacute;tica B&aacute;sico . Sesion 3</title>
+  <meta name="GENERATOR" content="OpenOffice.org 1.1.3 (Linux)">
+
+
+
+  
+  
+  <meta name="CREATED" content="20040522;11483800">
+
+
+
+  
+  
+  <meta name="CHANGED" content="20050721;19195100">
+
+
+
+  
+  
+  <meta name="KEYWORDS" content="robotica, microcontroladores, pic, hardware">
+
+
+
+  
+  
+  <style>
+<!--
+H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
+-->
+  </style>
+</head>
+
+
+<body style="direction: ltr;" lang="en-US">
+
+
+
+<table style="page-break-before: always;" bgcolor="#abbeeb" border="0" cellpadding="4" cellspacing="0" width="917">
+
+
+
+  <col width="909"> <tbody>
+
+
+
+    <tr>
+
+
+
+      <td width="909">
+      
+      
+      <p align="center">Taller de Rob&oacute;tica
+B&aacute;sico - Skybot v1.4. - <b> SESION 3</b></p>
+
+
+
+      </td>
+
+
+
+    </tr>
+
+
+
+  
+  
+  </tbody>
+</table>
+
+
+
+<p style="margin-bottom: 0cm;" align="center"><br>
+
+
+
+</p>
+
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+
+
+  <col width="256*"> <thead> <tr>
+
+
+
+    <td valign="top" width="100%">
+    
+    
+    <p align="center"><img src="images/sesion3-ini-fin.png" name="Imagen1" align="middle" border="0" height="205" width="630"></p>
+
+
+
+    </td>
+
+
+
+  </tr>
+
+
+
+  </thead>
+</table>
+
+
+
+<hr>
+<h2>Objetivos</h2>
+
+
+
+<p><font face="Arial, sans-serif"><font size="2">En
+esta sesi&oacute;n
+empezaremos a programar el robot. Instalaremos el software necesario
+y nos familiarizaremos con &eacute;l. Aprenderemos, a base de
+ejemplos, a programar el robot. <b>&iexcl;&iexcl;Aqu&iacute;
+comienza
+la acci&oacute;n!!</b></font></font></p>
+
+
+
+<hr>
+<h2>Temario</h2>
+
+
+
+<ul>
+
+
+
+  <li>
+    
+    
+    <p><a href="introduccion.html"><font size="2"><font face="Arial, sans-serif">Introducci&oacute;n</font></font></a><font size="2"><font face="Arial, sans-serif">.</font></font></p>
+
+
+
+  </li>
+
+
+
+</ul>
+
+
+
+<ul>
+
+
+
+  <li>
+    
+    
+    <p><font size="2"><font face="Arial, sans-serif">Instalaci&oacute;n del software
+necesario. [<a href="linux/inst-linux.html">Linux</a>]
+[<a href="windows/inst-windows.html">Windows</a>]</font></font></p>
+
+
+
+  </li>
+
+
+
+  <li>
+    
+    
+    <p><font size="2"><font face="Arial, sans-serif">Probando el programa
+&ldquo;hola mundo&rdquo;. [<a href="linux/linux-hola-mundo.html">Linux</a>] [<a href="windows/windows-hola-mundo.html">Windows</a>]</font></font></p>
+
+
+
+  </li>
+
+
+
+  
+
+
+  
+
+  <li>
+    
+    
+    <p><font size="2"><font face="Arial, sans-serif"><a href="ejemplos/ejemplos-skybot-1.html">Ejemplos de
+programaci&oacute;n</a>: Programando el Skybot con la
+libreria Skybot. <B>¡OJO! Al final de la pagina se encuentran los ejemplos de codigo conversor.c (manejo de ldr) y mogollon.c (para el concurso).</B>   </font></font></p>
+
+
+
+  </li>
+
+
+
+</ul>
+
+
+
+<hr>
+<h2>Material adicional </h2>
+
+
+
+<table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" rules="none" width="100%">
+
+
+
+  <col width="128*"> <col width="128*"> <thead>
+  <tr>
+
+
+
+    <td valign="top" width="50%">
+    
+    
+    <p align="center"><img src="images/sesion3-material.png" name="Imagen2" align="middle" border="0" height="268" width="357"></p>
+
+
+
+    </td>
+
+
+
+    <td width="50%">
+    
+    
+    <p><font face="Arial, sans-serif"><font size="3"><b>1)</b> Ordenador con puerto serie (o
+conversor USB-serie)</font></font></p>
+
+
+
+    
+    
+    <p><font face="Arial, sans-serif"><font size="3"><b>2) </b>Cinta aislante negra</font></font></p>
+
+
+
+    </td>
+
+
+
+  </tr>
+
+
+
+  </thead>
+</table>
+
+
+
+<p><br>
+
+
+
+<br>
+
+
+
+</p>
+
+
+
+<hr>
+<h2>Manos a la obra</h2>
+
+
+
+<ul>
+
+
+
+  <li>
+    
+    
+    <p align="justify"><font face="Arial, sans-serif"><font size="2">Primero vamos a instalar las <b>herramientas
+software</b> para trabajar. Para este taller s&oacute;lo se
+ha seleccionado <b>software libre</b>, tanto para <b>Linux</b>
+como para <b>Windows</b>. Existen algunas herramientas
+propietarias m&aacute;s avanzadas que las que nosotros usaremos,
+pero el software libre nos permitir&aacute; disponer de las fuentes
+de todos los programas para poder estudiarlos, as&iacute; como
+distribuirlos o modificarlos.</font></font></p>
+
+
+
+    
+    
+    <ul>
+
+
+
+      <li>
+        
+        
+        <p align="justify"><font face="Arial, sans-serif"><font size="2">Usuarios
+de <b>Linux</b>, <a href="linux/inst-linux.html">seguir
+estas instrucciones</a>.</font></font></p>
+
+
+
+      </li>
+
+
+
+      <li>
+        
+        
+        <p align="justify"><font face="Arial, sans-serif"><font size="2">Usuarios
+de <b>Windows</b>, <a href="windows/inst-windows.html">seguir
+estas instrucciones</a>.</font></font></p>
+
+
+
+      </li>
+
+
+
+    
+    
+    </ul>
+
+
+
+  </li>
+
+
+
+  <li>
+    
+    
+    <p align="justify"><font face="Arial, sans-serif"><font size="2">Para comprobar que todo est&aacute; bien
+instalado y funcionando, probaremos el programa <b>&ldquo;hola
+mundo&rdquo;</b>. Es el programa m&aacute;s sencillo que
+podemos cargar en el robot, que lo &uacute;nico que hacer es
+enceder el led que tiene.</font></font></p>
+
+
+
+    
+    
+    <ul>
+
+
+
+      <li>
+        
+        
+        <p align="justify"><font face="Arial, sans-serif"><font size="2">Usuarios
+de <b>Linux</b>, <a href="linux/linux-hola-mundo.html">seguir
+estas instrucciones</a></font></font></p>
+
+
+
+      </li>
+
+
+
+      <li>
+        
+        
+        <p align="justify"><font size="2"><font face="Arial, sans-serif">Usuarios de <b>Windows</b>,
+        <a href="windows/windows-hola-mundo.html">seguir
+estas instrucciones</a></font></font></p>
+
+
+
+      </li>
+
+
+
+    
+    
+    </ul>
+
+
+
+  </li>
+
+
+
+  <li>
+    
+    
+    <p align="justify"><font face="Arial, sans-serif"><font size="2">Despu&eacute;s de comprobar que el <b>&ldquo;hola
+mundo&rdquo; </b>funciona y ver que se tienen correctamente
+instaladas todas las herramientas, veremos con un poco m&aacute;s
+de detalle su funcionamiento.&nbsp;</font></font></p>
+
+
+
+  </li>
+
+
+
+  <li>
+    
+    
+    <p align="justify"><font face="Arial, sans-serif"><font size="2">Para poder programar el robot s&oacute;lo nos
+queda conocer un poco m&aacute;s sobre la libreria Skybot, que nos
+va a facilitar en gran medida el empezar a hacer nuestros primeros
+progresos en el mundo de la programaci&oacute;n. Finalmente pondremos en pr&aacute;ctica todo lo
+aprendido, viendo ejemplos en C para programar todos los sensores del
+skybot&nbsp;y controlar el robot. Daremos muchos ejemplos muy
+sencillos, para que a partir de ellos se comprenda el funcionamiento y
+sea muy sencillo construir nuestros propios programas. <a href="ejemplos/ejemplos-skybot-1.html">Aqu&iacute;
+est&aacute;n todos los ejemplos</a>.</font></font></p>
+
+  </li>
+
+  <li>
+
+  </li>
+
+
+
+</ul>
+
+
+
+<hr>
+<h2>Al finalizar la sesion </h2>
+
+
+
+<ul>
+
+
+
+  
+  
+  <p><font face="Arial, sans-serif"><font size="2">...Tendremos
+el software instalado y probado y ya habremos hecho muchas cosas con el
+robot. Sabremos c&oacute;mo moverlo y c&oacute;mo leer los
+sensores. Todo est&aacute; listo para profundizar&nbsp;en el
+funcionamiento real del skybot y empezar a programar comportamientos...</font></font></p>
+
+
+
+</ul>
+
+
+
+<hr>
+<h2>Enlaces</h2>
+
+
+
+<ul>
+
+
+
+  <li>
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><a href="http://www.microchip.com">Microchip</a>,
+el fabricante de los microcontroladores PIC</font></font></p>
+
+
+
+  </li>
+
+
+
+  <li>
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><a href="http://www.iearobotics.com/personal/andres/proyectos/picmin/download/manuales/manual16f87x.pdf">Hoja
+de datos del pic16f876a</a></font></font></p>
+
+
+
+  </li>
+
+
+
+  <li>
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><a href="http://sdcc.sourceforge.net/">SDCC</a>,
+compilador de C</font></font></p>
+
+
+
+  </li>
+
+
+
+  <li>
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><a href="http://gputils.sourceforge.net/">Gputils</a>,
+utilidades de GNU para los PICs</font></font></p>
+
+
+
+  </li>
+
+
+
+  <li>
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><a href="http://www.pnotepad.org/">Programmers
+Notepad</a> (PN), un editor libre para Windows.</font></font></p>
+
+
+
+  </li>
+
+
+
+  <li>
+    
+    
+    <p><font face="Arial, sans-serif"><font size="2"><a href="http://pikdev.free.fr/">Pikdev</a>,
+un IDE para la programaci&oacute;n de los pics</font></font></p>
+
+
+
+  </li>
+
+
+
+</ul>
+
+
+
+<hr>
+<p><a href="../index.html"><font size="2"><font face="Arial, sans-serif">[pagina
+principal]</font></font></a></p>
+
+
+
+<address style="margin-bottom: 0.5cm;"><a href="http://www.iearobotics.com/personal/juan/index.html"><font size="2"><font face="Arial, sans-serif">Juan Gonz&aacute;lez</font></font></a>
+</address>
+
+
+
+<address style="margin-bottom: 0.5cm;"><a href="mailto:jvaliente@ifara.com">
+<font face="Arial, sans-serif" size="2">Javier Valiente</font></a>
+</address>
+
+
+
+<p style="margin-bottom: 0cm;"><a href="http://www.iearobotics.com"><font size="2">
+<font face="Arial, sans-serif">IEAROBOTICS</font></font></a>
+</p>
+
+
+
+</body>
+</html>

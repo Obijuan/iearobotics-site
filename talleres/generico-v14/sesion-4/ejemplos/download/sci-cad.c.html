@@ -1,0 +1,69 @@
+
+<html>
+<head>
+<title>sci-cad.c</title>
+<meta name="generator" content="c2html 0.9.6">
+<meta name="date" content="2007-07-25T00:28:57+00:00">
+</head>
+
+<body bgcolor="#FFFFFF">
+<pre width="80"><font color="#B22222">/*****************************************************************************/</font>
+<font color="#B22222">/* sci-cad.c      Julio-2004                                                 */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Ejemplo para el skybot                                                    */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/* Enviar una cadena por el puerto serie cada vez que se recibe un caracter  */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  Juan Gonzalez &lt;juan@iearobotics.com&gt;                                     */</font>
+<font color="#B22222">/*  Modificado por: Javier Valiente &lt;jvaliente@ifara.com&gt;                    */</font>
+<font color="#B22222">/*---------------------------------------------------------------------------*/</font>
+<font color="#B22222">/*  LICENCIA GPL                                                             */</font>
+<font color="#B22222">/*****************************************************************************/</font>
+
+//-- Especificar el pic a emplear
+<font color="#A020F0">#include &lt;pic16f876a.h&gt;</font>
+
+//-- Se usa la libreria de comunicaciones serie
+<font color="#A020F0">#include </font><font color="#666666">"sci.h"</font><font color="#A020F0"></font>
+
+
+<font color="#B22222">/*********************************/</font>
+<font color="#B22222">/* Programa principal            */</font>
+<font color="#B22222">/*********************************/</font>
+<strong><font color="#4169E1"><a name="main"></a>void main(void)</font></strong>
+{
+        
+        //-- Configurar el puerto B 
+        //-- Todos los pines de entrada, salvo RB1 de salida, que es
+        //-- donde esta el led
+        TRISB=0xFD;
+        
+        //-- Configurar las comunicaciones serie
+        sci_conf();
+        
+        //-- Bucle infinito
+        <font color="#4169E1">for</font> (;;)
+          {
+                //-- Esperar a que llegue dato
+                sci_read();
+                
+                //-- Cambiar el led de estado
+                PORTB^=0x02;
+                
+                //-- Enviar la cadena por el puerto serie
+                sci_cad(<font color="#666666">"Hola como estas..."</font>);
+                
+                //-- Si se quiere enviar una cadena que esta en un array
+                //-- utilizar la funcion sci_cad2()
+                //-- Ejemplo: sci_cad2(mi_cadena);
+                //-- con: unsigned char mi_cadena[]=<font color="#666666">"test"</font>; una variable global
+                //-- definida fuera del main
+                //-- Es un bug del SDCC 2.5.1
+        }
+
+}
+
+</pre>
+</body>
+
+</html>

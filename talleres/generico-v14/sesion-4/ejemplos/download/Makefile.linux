@@ -1,0 +1,32 @@
+# **************************************************************************
+# Fichero makefile.
+# --------------------------------------------------------------------------
+# Licencia GPL.
+# --------------------------------------------------------------------------
+# Autor: Javier Valiente <jvaliente@ifara.com>
+#***************************************************************************
+
+#-- Compilador
+CC = sdcc
+
+CFLAGS = -Wl-m -Wl-ainhx8m -mpic14 -p16f876a
+
+#-- Ejemplos para el PUERTO B
+NAME1=ledon
+
+all: $(NAME1)
+
+$(NAME1): $(NAME1).o
+	@echo "Generando ejecutable"
+	@sdcc $(CFLAGS) -o $(NAME1) $(NAME1).o
+
+$(NAME1).o: $(NAME1).c
+	@echo "Compilando ..."
+	@sdcc $(CFLAGS) -c $(NAME1).c
+
+#--------------------
+#- LIMPIEZA
+#--------------------
+clean:
+	@echo "Borrando ficheros generados en el proceso ..."
+	@rm -f *.o *.hex *.lst *.p *.d *.asm *.cod *.map
