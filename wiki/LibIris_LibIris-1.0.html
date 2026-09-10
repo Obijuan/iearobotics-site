@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>LibIris:LibIris-1.0 - WikiRobotics</title>
+  	<link rel="stylesheet" href="load.css">
+</head>
+
+<body style="margin: 10px; font-size: 12px;">
+<h1 id="firstHeading" class="firstHeading" lang="es">LibIris:LibIris-1.0</h1>
+<div id="bodyContent" class="mw-body-content"></div>
+
+<!-- start content -->
+<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr">
+	<div id="toc" class="toc">
+	<div id="toctitle"><h2>Contenido</h2><span class="toctoggle">
+	&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Ejemplos_de_utilizacion"><span class="tocnumber">2</span> <span class="toctext">Ejemplos de utilizacion</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Ejemplo_libIrisExample.py"><span class="tocnumber">3</span> <span class="toctext">Ejemplo libIrisExample.py</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Ejemplos_en_Linux"><span class="tocnumber">3.1</span> <span class="toctext">Ejemplos en Linux</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#Descarga_del_fichero_ledp.hex"><span class="tocnumber">3.1.1</span> <span class="toctext">Descarga del fichero ledp.hex</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Descarga_del_servidor_servos8"><span class="tocnumber">3.1.2</span> <span class="toctext">Descarga del servidor servos8</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Descarga"><span class="tocnumber">4</span> <span class="toctext">Descarga</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Versi.C3.B3n_1.0"><span class="tocnumber">4.1</span> <span class="toctext">Versión 1.0</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>la versión 1.0 fue la primera que se creó de la 
+	<a href="LibIris.html" title="LibIris">LibIris</a>. 
+	Actualmente existen versiones más modernas pero se ha dejado esta página
+</p>
+<h2><span class="mw-headline" id="Ejemplos_de_utilizacion">Ejemplos de utilizacion</span></h2>
+<p><a href="LibIris.html" title="LibIris">LibIris</a> 
+	es una librería muy sencilla de utilizar. Para utilizarla basta con importar la librería, 
+	crear una instancia (pasándole el dispositivo serie) y usar el método 'download': 
+</p>
+<pre>import libIris <br>
+iris = libIris.Iris(serialName)
+try:
+  iris.download (file)
+except:
+  print 'Download failed.'
+</pre>
+<ul><li> <b>serialName</b> es el nombre del dispositivo serie</li>
+<li> <b>file</b> es una cadena que indica el objeto a descargar. Se puede especificar de tres formas:
+<ul><li> Mediante el nombre y ruta del fichero .hex.</li>
+<li> URL del fichero. Ej. <a rel="nofollow" class="external free" 
+	href="http://mi_dominio.com/firmware.hex">http://mi_dominio.com/firmware.hex</a></li>
+<li> Nombre del servidor 
+	<a href="https://iearobotics.com/wiki/index.php?title=Stargate" title="Stargate">Stargate</a> 
+	a descargar: <a href="Stargate:PICP.html" title="Stargate:PICP">sg-picp</a>,
+	 sg-generic, sg-servos8, sg-null, sg-echo</li></ul></li></ul>
+<h2><span class="mw-headline" id="Ejemplo_libIrisExample.py">Ejemplo libIrisExample.py</span></h2>
+<p>Con las fuentes del programa se incluye el ejemplo <b>libIrisExample.py</b> que es permite descargar fichero .hex en la <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> mediante la línea de comandos.
+</p>
+<h3><span class="mw-headline" id="Ejemplos_en_Linux">Ejemplos en Linux</span></h3>
+<h4><span class="mw-headline" id="Descarga_del_fichero_ledp.hex">Descarga del fichero ledp.hex</span></h4>
+<p>Para hacer esta prueba primero será necesario bajarse el fichero 
+	<a rel="nofollow" class="external text" 
+	href="../talleres/generico-v14/sesion-4/ejemplos/download/ledp.hex">ledp.hex</a>
+	 a un directorio local y luego ejecutar:
+</p>
+<pre>$ <b>python libIrisExample.py ledp.hex /dev/ttyUSB0</b>
+Stargate Iris 1.0. Download programs to Skypic board.
+GPL license <br>
+File: "ledp.hex"
+Serial port: /dev/ttyUSB0 <br>
+File "ledp.hex" opened.
+Serial port /dev/ttyUSB0 opened.
+Identifing bootloader. (press skypic reset button if hangs)
+Writing... OK
+Activating program... OK
+</pre>
+<h4><span class="mw-headline" id="Descarga_del_servidor_servos8">Descarga del servidor servos8</span></h4>
+<p>Para grabar el servidor 
+	<a rel="nofollow" class="external text" 
+	href="../proyectos/stargate/servidores/sg-servos8/sg-servos8.html">Servos8</a>
+	 y poder así mover servos con la Skypic hay que ejecutar el comando:
+</p>
+<pre>$ <b>python libIrisExample.py sg-servos8 /dev/ttyUSB0</b>
+Stargate Iris 1.0. Download programs to Skypic board.
+GPL license <br>
+File: "sg-servos8"
+Serial port: /dev/ttyUSB0 <br>
+File from "<a rel="nofollow" class="external free" 
+href="../proyectos/stargate/servidores/sg-servos8/download/sg-servos8-pic16f876-skypic.hex">http://www.iearobotics.com/proyectos/stargate/servidores/sg-servos8/download/sg-servos8-pic16f876-skypic.hex</a>" opened.
+Serial port /dev/ttyUSB0 opened.
+Identifing bootloader. (press skypic reset button if hangs)
+Writing... OK
+Activating program... OK
+</pre>
+<p>Automáticamente se baja el servidor de internet y lo descarga en la 
+	<a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a>
+</p><p><br>
+</p>
+<h2><span class="mw-headline" id="Descarga">Descarga</span></h2>
+<h3><span class="mw-headline" id="Versi.C3.B3n_1.0">Versión 1.0</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" 
+class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th>Fichero</th>
+<th>Descripción
+</th></tr>
+<tr>
+<td> <a href="images/3/36/LibIris-1.0.tgz" 
+	title="Archivo:LibIris-1.0.tgz">Archivo:LibIris-1.0.tgz</a>
+</td>
+<td> Librería libIris.
+</td></tr></tbody></table>
+<p>---
+</p>
+
+</div></div></body></html>
