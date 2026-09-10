@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>LibIris:hex-view - WikiRobotics</title>
+  	<link rel="stylesheet" href="load.css">
+</head>
+
+<body style="margin: 10px; font-size: 12px;">
+<h1 id="firstHeading" class="firstHeading" lang="es">LibIris:hex-view</h1>
+<div id="bodyContent" class="mw-body-content">
+
+<!-- start content -->
+<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><p>
+	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:Logo-libiris-peq.png" 
+	class="image" title="Logo de la libIris">
+	<img alt="Logo de la libIris" src="LibIris_hex-view_files/Logo-libiris-peq_sedf.png" width="250" height="174"></a>
+</p>
+
+<div id="toc" class="toc">
+	<div id="toctitle"><h2>Contenido</h2><span class="toctoggle">
+	&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span>
+	</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Caracter.C3.ADsticas"><span class="tocnumber">2</span> <span class="toctext">Características</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Utilizaci.C3.B3n"><span class="tocnumber">3</span> <span class="toctext">Utilización</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Par.C3.A1metros"><span class="tocnumber">3.1</span> <span class="toctext">Parámetros</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Ejemplos"><span class="tocnumber">3.2</span> <span class="toctext">Ejemplos</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Descargas"><span class="tocnumber">4</span> <span class="toctext">Descargas</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Cambios"><span class="tocnumber">5</span> <span class="toctext">Cambios</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>El programa <b>hex-view</b> es una utilidad para visualizar en la consola ficheros que están en el formato HEX de Intel (ficheros con extensión .hex). Está basado en la <a href="https://iearobotics.com/wiki/index.php?title=LibIris" title="LibIris">LibIris</a>.
+</p>
+<h2><span class="mw-headline" id="Caracter.C3.ADsticas">Características</span></h2>
+<ul><li> <b>Lenguaje de programación</b>: Python</li>
+<li> <b>Sistema operativo</b>: Multiplataforma (Linux/Windows)</li>
+<li> <b>Interfaz usuario</b>: Consola</li>
+<li> <b>Licencia</b>: GPL</li>
+<li> <b>Autores</b>:
+<ul><li><a rel="nofollow" class="external text" href="http://rafael.trevino.menendez.googlepages.com/">Rafael Treviño</a>,</li>
+<li><a rel="nofollow" class="external text" href="../personal/juan/">Juan González</a></li></ul></li></ul>
+<h2><span class="mw-headline" id="Utilizaci.C3.B3n">Utilización</span></h2>
+<h3><span class="mw-headline" id="Par.C3.A1metros">Parámetros</span></h3>
+<p>Se invoca de la siguiente forma:
+</p>
+<pre><i>python hex-view &lt;fichero .hex&gt; [Formato]</i>
+</pre>
+<p>donde los parámetros son:
+</p>
+<ul><li> <b>&lt;fichero .hex&gt;</b>&nbsp;: Nombre del fichero en formato HEX que se quiere visualizar</li>
+<li> <b>[Formato]</b>: Formato de salida en pantalla (Opcional). Puede ser:
+<ul><li> <b>f1</b>: Mostrarlo como una tabla con la dirección y el contenido</li>
+<li> <b>f2</b>: Mostrarlo en el formato Dirección-Bloque. Cada bloque constituido únicamente por palabras contigüas.</li>
+<li> <b>f3</b>: Mostrarlo en el formato Dirección-Bloque, pero con un tamaño de bloque menor o igual a 16 palabras.</li></ul></li></ul>
+<h3><span class="mw-headline" id="Ejemplos">Ejemplos</span></h3>
+<p>Volcar el contenido del fichero ledp.hex, usando el <b>formato 1</b>. Si no se especifica ningún formato, como en este caso, se toma por defecto el formato 1:
+</p>
+<pre>$ hex-view ledp.hex <br>
+Fichero: "ledp.hex"
+Tamano&nbsp;: 35 palabras <br>
+Dir: Contenido
+---- ---------
+0000: 0000
+0001: 118A
+0002: 120A
+0003: 2821
+[...]
+0021: 118A
+0022: 120A
+0023: 2805
+</pre>
+<p>Volcar el contenido del mismo fichero pero en <b>formato 2</b>:
+</p>
+<pre>$ hex-view ledp.hex f2 <br>
+Fichero: "ledp.hex"
+Tamano&nbsp;: 35 palabras
+Bloques: 1 <br>
+Direccion: 0000
+0000 118A 120A 2821 0000 30FD 1683 1303 0086 3002 1283 0686 30FF 00FF 30FF 2012
+2809 0008 1283 1303 00A3 087F 00A2 0822 0423 1903 2820 30FF 07A2 1C03 03A3 2817
+0008 118A 120A 2805
+</pre>
+<p>Otro ejemplo del <b>formato 2</b>. En este caso el programa está compuesto de 3 bloques. El último se corresponde con la palabra de configuración:
+</p>
+<pre>$ hex-view test.hex f2 <br>
+Fichero: "test.hex"
+Tamano&nbsp;: 337 palabras
+Bloques: 3 <br>
+Direccion: 0000
+2804 3FFF 3FFF 3FFF 1303 1683 0186 30FF 1283 0086 3006 00FC 30FF 00FB 30FF 00FA
+0BFC 2813 281A 0BFB 2816 2819 0BFA 2816 2813 2810 301A 00FB 30FF 00FA 0BFB 2821
+2824 0BFA 2821 281E 3042 00FA 0BFA 2826 0000 0186 3006 00FC 30FF 00FB 30FF 00FA
+0BFC 2833 283A 0BFB 2836 2839 0BFA 2836 2833 2830 301A 00FB 30FF 00FA 0BFB 2841
+2844 0BFA 2841 283E 3042 00FA 0BFA 2846 0000 2807 284A 3FFF 3FFF 3FFF 3FFF 3FFF <br>
+Direccion: 2100
+00C0 00A8 0000 0064 0000 0000 0000 0000 0000 0000 0000 0000 0053 004E 0054 0050
+0020 0052 0045 0041 0044 0059 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000
+[...] <br>
+Direccion: 2007
+3F7A
+</pre>
+<p>Ejemplo que muestra el ledp.hex usando el <b>formato 3</b>: 
+</p>
+<pre>$ hex-view ledp.hex f3 <br>
+Fichero: "ledp.hex"
+Tamano&nbsp;: 35 palabras
+Bloques: 3 <br>
+Direccion: 0000
+0000 118A 120A 2821 0000 30FD 1683 1303 0086 3002 1283 0686 30FF 00FF 30FF 2012 <br>
+Direccion: 0010
+2809 0008 1283 1303 00A3 087F 00A2 0822 0423 1903 2820 30FF 07A2 1C03 03A3 2817 <br>
+Direccion: 0020
+0008 118A 120A 2805
+</pre>
+<h2><span class="mw-headline" id="Descargas">Descargas</span></h2>
+<ul><li> Esta utilidad está incluida en las fuentes de la <a href="LibIris.html" title="LibIris">LibIris</a></li>
+<li> Las fuentes se pueden ver vía web accediendo al svn: <a rel="nofollow" class="external text" 
+	href="http://svn.iearobotics.com/libIris/libiris-1.2/libIris-utils/hex-view.py">hex-view.py</a></li></ul>
+<h2><span class="mw-headline" id="Cambios">Cambios</span></h2>
+<ul><li> <b>9/Sep/2007</b>: Version inicial de esta pagina</li></ul>
+<hr>
+
+</div>
+</body>
+</html>
