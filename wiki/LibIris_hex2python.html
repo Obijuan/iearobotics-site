@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>LibIris:hex2python - WikiRobotics</title>
+  	<link rel="stylesheet" href="load.css">
+</head>
+
+<body style="margin: 10px; font-size: 12px;">
+<h1 id="firstHeading" class="firstHeading" lang="es">LibIris:hex2python</h1>
+<div id="bodyContent" class="mw-body-content">
+
+<!-- start content -->
+
+<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><p>
+	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:Logo-libiris-peq.png" 
+	class="image" title="Logo de la libIris"><img alt="Logo de la libIris" 
+	src="LibIris_hex2python_files/Logo-libiris-peq_ZrBb.png" width="250" height="174"></a>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Caracter.C3.ADsticas"><span class="tocnumber">2</span> <span class="toctext">Características</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Utilizaci.C3.B3n"><span class="tocnumber">3</span> <span class="toctext">Utilización</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Par.C3.A1metros"><span class="tocnumber">3.1</span> <span class="toctext">Parámetros</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Ejemplos"><span class="tocnumber">3.2</span> <span class="toctext">Ejemplos</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Descargas"><span class="tocnumber">4</span> <span class="toctext">Descargas</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Cambios"><span class="tocnumber">5</span> <span class="toctext">Cambios</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>El programa <b>hex2python</b> convertierte un fichero en formato HEX Intel en una <b>lista en python</b>. Esta lista se puede incluir en nuestros programas para descargarse en la <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a>. Así se pueden tener aplicaciones que descarguen firmware en la <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> sin tener que utilizar ficheros externos .hex.
+</p><p>Todo el firmware que se encuentra en el módulo <b>PIC16_Firmware</b> de la 
+	<a href="LibIris.html" title="LibIris">LibIris</a> ha sido generado con esta aplicación
+</p>
+<h2><span class="mw-headline" id="Caracter.C3.ADsticas">Características</span></h2>
+<ul><li> <b>Lenguaje de programación</b>: Python</li>
+<li> <b>Sistema operativo</b>: Multiplataforma (Linux/Windows)</li>
+<li> <b>Interfaz usuario</b>: Consola</li>
+<li> <b>Licencia</b>: GPL</li>
+<li> <b>Autores</b>:
+<ul><li><a rel="nofollow" class="external text" href="http://rafael.trevino.menendez.googlepages.com/">Rafael Treviño</a>,</li>
+<li><a rel="nofollow" class="external text" href="../personal/juan/">Juan González</a></li></ul></li></ul>
+<h2><span class="mw-headline" id="Utilizaci.C3.B3n">Utilización</span></h2>
+<h3><span class="mw-headline" id="Par.C3.A1metros">Parámetros</span></h3>
+<p>Se invoca de la siguiente forma:
+</p>
+<pre><i>python hex2python &lt;fichero.hex&gt; [Formato] [nombre lista]</i>
+</pre>
+<p>donde los parámetros son:
+</p>
+<ul><li> <b>&lt;fichero.hex&gt;</b>: Nombre del fichero en formato HEX</li>
+<li> <b>[formato]</b>: Formato para la lista de salida. Puede ser:</li>
+<li> <b>[nombre lista]</b>: Nombre a asignar a la lista generada
+<ul><li> <b>f2</b>: Lista de bloques. Los bloques están formados por palabras contiguas</li>
+<li> <b>f3</b>: Lista de bloques, con tamaño de bloque no mayor de 16 palabras</li></ul></li></ul>
+<h3><span class="mw-headline" id="Ejemplos">Ejemplos</span></h3>
+<p>Con este ejemplo se genera la lista prog que contiene el código máquina del programa ledp.hex. Por defecto, si no se especifica ningún formato se usa el <b>f2</b> y se toma como nombre de la lista <b>prog</b>:
+</p>
+<pre>$ hex2python ledp.hex <br>
+prog=[[0x0000, 0x0000, 0x118A, 0x120A, 0x2821, 0x0000, 0x30FD, 0x1683, 
+       0x1303, 0x0086, 0x3002, 0x1283, 0x0686, 0x30FF, 0x00FF, 0x30FF,
+       0x2012, 0x2809, 0x0008, 0x1283, 0x1303, 0x00A3, 0x087F, 0x00A2,
+       0x0822, 0x0423, 0x1903, 0x2820, 0x30FF, 0x07A2, 0x1C03, 0x03A3,
+       0x2817, 0x0008, 0x118A, 0x120A, 0x2805],]
+</pre>
+<p>En este ejemplo se especifica el <b>formato f3</b>. Este es el que se suele usar para descargar programas a través del bootloader:
+</p>
+<pre>$ hex2python ledp.hex f3 <br>
+prog=[[0x0000, 0x0000, 0x118A, 0x120A, 0x2821, 0x0000, 0x30FD, 0x1683,
+       0x1303, 0x0086, 0x3002, 0x1283, 0x0686, 0x30FF, 0x00FF, 0x30FF,
+       0x2012],[0x0010, 0x2809, 0x0008, 0x1283, 0x1303, 0x00A3, 0x087F,
+       0x00A2, 0x0822, 0x0423, 0x1903, 0x2820, 0x30FF, 0x07A2, 0x1C03,
+       0x03A3, 0x2817],[0x0020, 0x0008, 0x118A, 0x120A, 0x2805],]
+</pre>
+<p>Y en este último ejemplo se asigna el nombre <i>ledp</i> a la lista:
+</p>
+<pre>$ hex2python ledp.hex f3 ledp <br>
+ledp=[[0x0000, 0x0000, 0x118A, 0x120A, 0x2821, 0x0000, 0x30FD, 0x1683,
+       0x1303, 0x0086, 0x3002, 0x1283, 0x0686, 0x30FF, 0x00FF, 0x30FF,
+       0x2012],[0x0010, 0x2809, 0x0008, 0x1283, 0x1303, 0x00A3, 0x087F,
+       0x00A2, 0x0822, 0x0423, 0x1903, 0x2820, 0x30FF, 0x07A2, 0x1C03,
+       0x03A3, 0x2817],[0x0020, 0x0008, 0x118A, 0x120A, 0x2805],]
+</pre>
+<h2><span class="mw-headline" id="Descargas">Descargas</span></h2>
+<ul><li> Esta utilidad está incluida en las fuentes de la 
+	<a href="LibIris.html" title="LibIris">LibIris</a></li>
+<li> Las fuentes se pueden ver vía web accediendo al svn: <a rel="nofollow" class="external text" 
+	href="http://svn.iearobotics.com/libIris/libiris-1.2/libIris-utils/hex2python.py">hex2python.py</a></li></ul>
+<h2><span class="mw-headline" id="Cambios">Cambios</span></h2>
+<ul><li> <b>09/Sep/2007</b>: Versión inicial de esta página</li></ul>
+<hr>
+
+</div>
+</body>
+</html>
+
