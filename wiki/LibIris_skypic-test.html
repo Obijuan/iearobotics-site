@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>LibIris:skypic-test - WikiRobotics</title>
+  	<link rel="stylesheet" href="load.css">
+</head>
+
+<body style="margin: 10px; font-size: 12px;">
+<h1 id="firstHeading" class="firstHeading" lang="es">LibIris:skypic-test</h1>
+<div id="bodyContent" class="mw-body-content">
+
+<!-- start content -->
+<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><p>
+	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:Logo-libiris-peq.png" 
+	class="image" title="Logo de la libIris"><img alt="Logo de la libIris" 
+	src="LibIris_skypic-test_files/Logo-libiris-peq_HZnf.png" width="250" height="174"></a>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Caracter.C3.ADsticas"><span class="tocnumber">2</span> <span class="toctext">Características</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Autores"><span class="tocnumber">3</span> <span class="toctext">Autores</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Utilizaci.C3.B3n"><span class="tocnumber">4</span> <span class="toctext">Utilización</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Par.C3.A1metros"><span class="tocnumber">4.1</span> <span class="toctext">Parámetros</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Ejemplos"><span class="tocnumber">4.2</span> <span class="toctext">Ejemplos</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Descargas"><span class="tocnumber">5</span> <span class="toctext">Descargas</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Cambios"><span class="tocnumber">6</span> <span class="toctext">Cambios</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>El programa <b>skypic-test</b> permite realizar una prueba rápida de la 
+	<a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a>. 
+	Se descarga un programa que hace que el led parpadee. Así se puede comprobar rápidamente si la 
+	<a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> 
+	está funcionando o si tiene el 
+	<a href="PIC_Bootloader.html" title="PIC Bootloader">Bootloader</a> correctamente grabado
+</p>
+<h2><span class="mw-headline" id="Caracter.C3.ADsticas">Características</span></h2>
+<ul><li> <b>Lenguaje de programación</b>: Python</li>
+<li> <b>Sistema operativo</b>: Multiplataforma (Linux/Windows)</li>
+<li> <b>Interfaz usuario</b>: Consola</li>
+<li> <b>Licencia</b>: GPL</li></ul>
+<h2><span class="mw-headline" id="Autores">Autores</span></h2>
+<ul><li><a rel="nofollow" class="external text" 
+	href="http://rafael.trevino.menendez.googlepages.com/">Rafael Treviño</a>,</li>
+<li><a rel="nofollow" class="external text" href="../personal/juan/">Juan González</a></li></ul>
+<h2><span class="mw-headline" id="Utilizaci.C3.B3n">Utilización</span></h2>
+<h3><span class="mw-headline" id="Par.C3.A1metros">Parámetros</span></h3>
+<p>Se invoca de la siguiente forma:
+</p>
+<pre><i>python skypic-test &lt;serie&gt;</i>
+</pre>
+<p>donde los parámetros son:
+</p>
+<ul><li> <b>&lt;serie&gt;</b>: Nombre del dispositivo serie a emplear. 
+<ul><li> En plataformas Windows será COM1, COM2...</li>
+<li> En Linux: /dev/ttyS0, /dev/ttyUSB0...</li></ul></li></ul>
+<h3><span class="mw-headline" id="Ejemplos">Ejemplos</span></h3>
+<p>En este ejemplo se prueba una 
+	<a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> 
+	conectada a un conversor <b>USB-serie</b> en una máquina <b>Linux</b>. 
+	El dispositivo serie usado es el /dev/ttyUSB0.
+Según cómo se tenga conectado el jumper JP4, el reset de la 
+<a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> 
+habrá que realizarlo manualmente o será automático. En caso de reset manual, el programa se 
+quedará esperando a que se pulse el reset indicando el mensaje "<i>Esperando Bootloader</i>"
+</p>
+<pre>$ python skypic-test /dev/ttyUSB0 <br>
+Skypic-test. Prueba rapida de la Skypic. Licencia GPL <br>
+Serial port /dev/ttyUSB0 opened.
+Reset Skypic
+Esperando Bootloader
+.............Bootloader OK <br>
+Descargando:
+*** OK
+Ejecutando programa
+</pre>
+<p>Su uso en <b>Windows</b> es similar. Lo que cambia es el nombre del dispositivo serie. En este ejemplo es el COM1:
+</p>
+<pre>&gt; python skypic-test COM1 <br>
+Skypic-test. Prueba rapida de la Skypic. Licencia GPL <br>
+Serial port COM1 opened.
+Reset Skypic
+Esperando Bootloader
+.............Bootloader OK <br>
+Descargando:
+*** OK
+Ejecutando programa
+</pre>
+<h2><span class="mw-headline" id="Descargas">Descargas</span></h2>
+<ul><li> Esta utilidad está incluida en las fuentes de la <a href="LibIris.html" title="LibIris">LibIris</a></li>
+<li> Las fuentes se pueden ver vía web accediendo al svn: <a rel="nofollow" class="external text" 
+	href="http://svn.iearobotics.com/libIris/libiris-1.2/libIris-utils/skypic-test.py">skypic-test.py</a></li></ul>
+<h2><span class="mw-headline" id="Cambios">Cambios</span></h2>
+<ul><li> <b>09/Sep/2007</b>: Versión inicial de esta página</li></ul>
+<hr>
+
+</div>
+</body>
+</html>
+
