@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>LibIris - WikiRobotics</title>
+  	<link rel="stylesheet" href="load.css">
+</head>
+
+<body style="margin: 10px; font-size: 12px;">
+<h1 id="firstHeading" class="firstHeading" lang="es">LibIris</h1>
+<div id="bodyContent" class="mw-body-content"></div>
+
+<!-- start content -->
+
+<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><p>
+	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:Logo-libiris.png" 
+	class="image" title="Logo de la libIris"><img alt="Logo de la libIris" 
+	src="LibIris_files/Logo-libiris_zv6m.png" width="401" height="279"></a>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Caracter.C3.ADsticas"><span class="tocnumber">2</span> <span class="toctext">Características</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Autores"><span class="tocnumber">3</span> <span class="toctext">Autores</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Agradecimientos"><span class="tocnumber">4</span> <span class="toctext">Agradecimientos</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#M.C3.B3dulos"><span class="tocnumber">5</span> <span class="toctext">Módulos</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Utilidades"><span class="tocnumber">6</span> <span class="toctext">Utilidades</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Ejemplos_de_utilizaci.C3.B3n"><span class="tocnumber">7</span> <span class="toctext">Ejemplos de utilización</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Lectura_de_un_fichero_.hex"><span class="tocnumber">7.1</span> <span class="toctext">Lectura de un fichero .hex</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Descarga_de_firmware"><span class="tocnumber">7.2</span> <span class="toctext">Descarga de firmware</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Descarga_de_un_fichero_.hex"><span class="tocnumber">7.3</span> <span class="toctext">Descarga de un fichero .hex</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Prueba_r.C3.A1pida_en_modo_interactivo"><span class="tocnumber">7.4</span> <span class="toctext">Prueba rápida en modo interactivo</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Descargas"><span class="tocnumber">8</span> <span class="toctext">Descargas</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#.C3.9Altima_versi.C3.B3n:_1.2"><span class="tocnumber">8.1</span> <span class="toctext">Última versión: 1.2</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Versiones_anteriores"><span class="tocnumber">8.2</span> <span class="toctext">Versiones anteriores</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#Cambios"><span class="tocnumber">9</span> <span class="toctext">Cambios</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#Acceso_al_repositorio"><span class="tocnumber">10</span> <span class="toctext">Acceso al repositorio</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#Historia"><span class="tocnumber">11</span> <span class="toctext">Historia</span></a>
+<ul>
+<li class="toclevel-2 tocsection-18"><a href="#Versi.C3.B3n_1.2"><span class="tocnumber">11.1</span> <span class="toctext">Versión 1.2</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Versi.C3.B3n_1.0"><span class="tocnumber">11.2</span> <span class="toctext">Versión 1.0</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p><strong class="selflink">LibIris</strong> es la librería en 
+	<a rel="nofollow" class="external text" href="https://www.python.org/">python</a> para descarga de programas en la tarjeta 
+	<a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a>. Implementa el protocolo del 
+	<a href="PIC_Bootloader.html" title="PIC Bootloader">PIC_Bootloader</a>. Es necesario, por tanto, que el 
+	<a href="PIC_Bootloader.html" title="PIC Bootloader">PIC_Bootloader</a> haya sido grabado previamente en la <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a>. Además, permite cargar directamente los servidores del <a href="https://iearobotics.com/wiki/index.php?title=Stargate" title="Stargate"> Proyecto Stargate</a>.
+Con esta libreria es muy fácil implementar aplicaciones de usuario en las que sea necesario descargar programas en la <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a>. <br>
+El nombre <b>Iris</b> viene de la película Stargate, donde se colocaba el Iris como 'interfaz' con la puerta Stargate.
+</p>
+<h2><span class="mw-headline" id="Caracter.C3.ADsticas">Características</span></h2>
+<ul><li> Descarga de programas en la 
+	<a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a>
+	 a través del <a href="PIC_Bootloader.html" title="PIC Bootloader">PIC_Bootloader</a></li>
+<li> Descarga de los servidores del proyecto 
+	<a href="https://iearobotics.com/wiki/index.php?title=Stargate" title="Stargate">Stargate</a></li>
+<li> Lenguaje: Python</li>
+<li> <b>Multiplataforma</b>: Linux y Windows</li>
+<li> <b>Licencia</b>: GPL</li></ul>
+<h2><span class="mw-headline" id="Autores">Autores</span></h2>
+<ul><li>  <a rel="nofollow" class="external text" href="http://rafael.trevino.menendez.googlepages.com/">Rafael Treviño</a>, (c) 2007&nbsp;: Creación de la librería.</li>
+<li>  <a rel="nofollow" class="external text" href="../personal/juan/">Juan González</a>, (c) 2007. Versión 1.2</li></ul>
+<h2><span class="mw-headline" id="Agradecimientos">Agradecimientos</span></h2>
+<p>Muchas gracias por las pruebas realizadas en Plataformas Windows a:
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="../personal/ricardo">Ricardo Gómez</a></li>
+<li> <a rel="nofollow" class="external text" href="../personal/andres/">Andrés Prieto-Moreno</a></li>
+<li> <a rel="nofollow" class="external text" href="http://webdearde.com/blogs/mifulapirus/">Angel Hernández</a></li></ul>
+<p>Muchas gracias a <b>David</b>, el autor de este estupendo artículo sobre <a rel="nofollow" class="external text" href="http://crysol.inf-cr.uclm.es/node/325">cómo empaquetar un script python para Debian</a>. En su blog sólo figura el nombre de David, no sé sus apellidos&nbsp;:-(
+</p>
+<ul><li> A <b>Ignacio González</b> por probar la librería en un <a rel="nofollow" class="external text" href="https://es.wikipedia.org/wiki/NSLU2">NSLU2</a> (arquitectura arm) y crear el paquete binario. Muchas gracias&nbsp;;-)</li></ul>
+<h2><span class="mw-headline" id="M.C3.B3dulos">Módulos</span></h2>
+<p>La <b>libIris</b> está formada por tres módulos:
+</p>
+<ul><li> <b>InteHex</b>: Lectura y análisis de ficheros en formato .hex de Intel.</li>
+<li> <b>Pic16_Bootloader</b>: Implementación de los servicios ofrecidos por el 
+	<a href="PIC_Bootloader.html" title="PIC Bootloader"> Bootloader</a>. Es el empleado para descargar ficheros .hex o Firmware en la <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a>.</li>
+<li> <b>Pic16_Firmware</b>: Este módulo contiene programas en código máquina listos para descargarse en la 
+	<a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a>. Contiene lo siguiente:
+<ul><li> Monitor (Servidor genérico). Permite acceder a todos los registros internos del PIC a traves de los servicios de Load/Store</li>
+<li> Servos8. Posicionamiento de hasta 8 servos del tipo Futaba 3003 o compatibles.</li>
+<li> <a href="Stargate_PICP.html" title="Stargate:PICP"> Picp</a>. Grabación a bajo nivel de microcontroladores PIC</li>
+<li> Eco. Servidor de "Eco" para hacer pruebas. Se hace "eco" de todo lo recibido por el puerto serie</li>
+<li> ledp1. Clásico programa del led parpadeante</li>
+<li> ledp2. Led parpadeante pero a mayor frecuencia que ledp1.</li>
+<li> ledon. Simplemente enciende el led</li></ul></li></ul>
+<h2><span class="mw-headline" id="Utilidades">Utilidades</span></h2>
+<p>Además de los módulos anteriores, la libIris viene con tres utilidades para consola, que también sirven de ejemplo de utilización:
+</p>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=LibIris:hex-view" title="LibIris:hex-view">hex-view</a>: Visualización de ficheros .hex. Permite ver el contenido de los ficheros .hex en diferentes formatos</li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=LibIris:hex2python" title="LibIris:hex2python">hex2python</a>: Convierte un fichero .hex a un script en python que contiene el código máquina en forma de una lista</li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=LibIris:skypic-test" title="LibIris:skypic-test">skypic-test</a>: Pruebas rápidas de la Skypic. Descarga el firmware ledp para hacer que el led de la skypic parpadee y comprobar de manera rápida si está funcionando.</li></ul>
+<h2><span class="mw-headline" id="Ejemplos_de_utilizaci.C3.B3n">Ejemplos de utilización</span></h2>
+<h3><span class="mw-headline" id="Lectura_de_un_fichero_.hex">Lectura de un fichero .hex</span></h3>
+<p>El código para analizar un fichero .hex es muy sencillo. Basta con crear un objeto de la clase <b>HexReader</b> del módulo <b>IntelHex</b>, pasando como parámetro el nombre del fichero .hex. Si ocurre un error se produce una excepción. Este ejemplo abre y analiza el fichero ledp.hex:
+</p>
+<pre><span style="color: #804000;">import</span> libIris.IntelHex <br>
+<span style="color: #804000;">try</span>:
+  hr = libIris.IntelHex.HexReader ("<span style="color: #006000;">ledp.hex</span>")
+<span style="color: #804000;">except</span> libIris.IntelHex.ReaderError,msg:
+  <span style="color: #804000;">print</span> "<span style="color: #006000;">Error:&nbsp;%s</span>"&nbsp;% msg
+  sys.exit(-1)
+</pre>
+<p>El objeto hr contiene el código máquina. Se puede acceder a él mediante listas que pueden estar en tres formatos. Para generarlas se invocan los siguientes métodos:
+</p>
+<ul><li> <b>memory()</b>: Devuelve una lista en la que cada elemento es la dirección y su contendido. El contenido es una tupla con el byte alto y luego el bajo.</li>
+<li> <b>dataBlocks()</b>: Devuelve una lista de bloques. Cada bloque es a su vez una lista en la que el primer elemento indica la dirección de comienzo y los siguientes son las palabras</li>
+<li> <b>dataBlocks16()</b>: Devuelve una lista de bloques en la que cada bloque tiene un tamaño no mayor de 16 palabras</li></ul>
+<h3><span class="mw-headline" id="Descarga_de_firmware">Descarga de firmware</span></h3>
+<p>Este es un ejemplo de código que descarga el <b>firmware ledp</b> que se encuentra en el módulo Pic16_Firmware. No es necesario leer ningún fichero. El usuario puede incluir su propio firmware en sus programas utilizando la herramienta hex2python.
+</p>
+<pre><span style="color: #804000;">import</span> libIris.Pic16_Bootloader
+<span style="color: #804000;">import</span> libIris.IntelHex
+<span style="color: #804000;">import</span> libIris.Pic16_Firmware <br>
+<span style="color: #800000;">#-- Abrir puerto serie</span>
+<span style="color: #804000;">try</span>:
+  iris = libIris.Pic16_Bootloader.Iris("<span style="color: #006000;">/dev/ttyUSB0</span>")
+<span style="color: #804000;">except</span> libIris.Pic16_Bootloader.IrisError,msg:
+  <span style="color: #804000;">print</span> msg
+  sys.exit(-1) <br>
+<span style="color: #800000;">#-- Obtener firmware a descargar. </span>
+program = libIris.Pic16_Firmware.ledp2 <br>
+<span style="color: #800000;">#-- Realizar la descarga</span>
+<span style="color: #804000;">try</span>:
+  iris.download(program)
+<span style="color: #804000;">except</span> libIris.Pic16_Bootloader.IrisError,msg:
+  <span style="color: #804000;">print</span> "<span style="color: #006000;">\nError:&nbsp;%s</span>"&nbsp;% msg
+  sys.exit(-1)
+</pre>
+<p>Primero se crea un objeto de la <b>clase Iris</b>. Con ello se abre el puerto serie. Hay que especifica el nombre del dispositivo serie a emplear. En el caso de plataformas Windows se deben poner los nombres adecuados: COM1, COM2, etc.
+</p><p>A continuación se descarga el firmware usando el método <b>download()</b>. Si aparece un error se genera una excepción. En este ejemplo el firmware a descargar es el ledp2, obtenido de la librería PIC16_Firmware. Pero se podría utilizar uno del usuario.
+</p>
+<h3><span class="mw-headline" id="Descarga_de_un_fichero_.hex">Descarga de un fichero .hex</span></h3>
+<p>Este ejemplo es muy parecido al anterior, pero ahora el programa a descargar se obtiene a partir de un fichero .hex. Primero se abre el fichero. Luego se transforma al formato adecuado para su descarga. Se abre el puerto serie y finalmente se descarga:
+</p>
+<pre><span style="color: #804000;">import</span> libIris.Pic16_Bootloader
+<span style="color: #804000;">import</span> libIris.IntelHex
+<span style="color: #804000;">import</span> libIris.Pic16_Firmware <br>
+<span style="color: #804000;">try</span>:
+  hr = libIris.IntelHex.HexReader ("<span style="color: #006000;">ledp.hex</span>")
+<span style="color: #804000;">except</span> libIris.IntelHex.ReaderError,msg:
+  <span style="color: #804000;">print</span> "<span style="color: #006000;">Error:&nbsp;%s</span>"&nbsp;% msg
+  sys.exit(-1) <br>
+<span style="color: #800000;">#-- Obtener el programa en el formato adecuado para su descarga </span>
+program = hr.dataBlocks16() <br>
+<span style="color: #800000;">#-- Abrir puerto serie</span>
+<span style="color: #804000;">try</span>:
+  iris = libIris.Pic16_Bootloader.Iris("<span style="color: #006000;">/dev/ttyUSB0</span>")
+<span style="color: #804000;">except</span> libIris.Pic16_Bootloader.IrisError,msg:
+  <span style="color: #804000;">print</span> msg
+  sys.exit(-1) <br>
+<span style="color: #800000;">#-- Realizar la descarga</span>
+<span style="color: #804000;">try</span>:
+  iris.download(program)
+<span style="color: #804000;">except</span> libIris.Pic16_Bootloader.IrisError,msg:
+  <span style="color: #804000;">print</span> "<span style="color: #006000;">\nError:&nbsp;%s</span>"&nbsp;% msg
+  sys.exit(-1)
+</pre>
+<h3><span class="mw-headline" id="Prueba_r.C3.A1pida_en_modo_interactivo">Prueba rápida en modo interactivo</span></h3>
+<p>También se pueden hacer pruebas directamente usando el <b>modo interactivo de python</b>. Con muy pocos comandos se pueden hacer pruebas de descarga. En este ejemplo se descargará el <b>Firmware ledp2</b> que se encuentra en el  
+<b>módulo libIris.Pic16_Firmware</b> y que hace que el led se ponga a parpadear.
+</p><p>El usuario debe sustituir el nombre del dispositivo serie por el correspondiente. En este ejemplo se usa el /dev/ttyUSB0 en Linux. En el caso de Windows habría que poner COM1, COM2, etc.
+</p><p>Los comandos tecleados por el usuario se han puesto en negrita
+</p>
+<pre>Python 2.4.4 (#2, Apr  5 2007, 20:11:18)
+[GCC 4.1.2 20061115 (prerelease) (Debian 4.1.1-21)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.<br>
+&gt;&gt;&gt; <i><b>from libIris.Pic16_Bootloader import *</b></i>
+&gt;&gt;&gt; <i><b>from libIris.Pic16_Firmware import *</b></i>
+&gt;&gt;&gt; <i><b>iris = Iris("/dev/ttyUSB0")</b></i>
+Serial port /dev/ttyUSB0 opened.
+&gt;&gt;&gt; <i><b>iris.download(ledp2)</b></i>
+Reset Skypic
+Esperando Bootloader
+Bootloader OK <br>
+Descargando:
+*** OK
+Ejecutando programa
+&gt;&gt;&gt;
+</pre>
+<h2><span class="mw-headline" id="Descargas">Descargas</span></h2>
+<h3><span class="mw-headline" id=".C3.9Altima_versi.C3.B3n:_1.2">Última versión: 1.2</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th>Fichero</th>
+<th>Descripción
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" 
+	href="http://www.iearobotics.com/wiki/images/2/21/Libiris-1.2.zip">Libiris-1.2.zip</a>
+</td>
+<td> Fuentes
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" 
+	href="http://www.iearobotics.com/downloads/packages/python-libiris_1.2-5_i386-ubuntu-10.04.deb">python-libiris_1.2-5_i386-ubuntu-10.04.deb</a>
+</td>
+<td> Paquete para <b>Ubuntu 10.04</b>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" 
+	href="http://www.iearobotics.com/downloads/packages/python-libiris_1.2-5_i386-ubuntu-9-04.deb">python-libiris_1.2-5_i386-ubuntu-9-04.deb</a>
+</td>
+<td> Paquete para <b>Ubuntu 9.04 (Jaunty Jackalope)</b>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" 
+	href="http://www.iearobotics.com/wiki/images/e/ea/Python-libiris_1.2-5_i386.deb">Python-libiris_1.2-5_i386.deb</a>
+</td>
+<td> Paquete para <b>Debian/Etch</b> y <b>Ubuntu 7.04</b>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" 
+	href="http://www.iearobotics.com/wiki/images/a/a6/Python-libiris_1.2-5_arm.deb">Python-libiris_1.2-5_arm.deb</a>
+</td>
+<td> Paquete para <b>arquitectura arm</b>. Probado en un <a rel="nofollow" class="external text" href="https://es.wikipedia.org/wiki/NSLU2">NSLU2</a>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" 
+	href="http://www.iearobotics.com/downloads/libIris-1.2.win32.exe">libIris-1.2.win32.exe</a>
+</td>
+<td> <b>Windows XP</b>. Autoinstalable.
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Versiones_anteriores">Versiones anteriores</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th>Fichero</th>
+<th>Descripción
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" 
+	href="http://www.iearobotics.com/wiki/images/3/36/LibIris-1.0.tgz">libIris-1.0.tgz</a>
+</td>
+<td> Versión 1.0. Acceso a su página: <a href="https://iearobotics.com/wiki/index.php?title=LibIris:LibIris-1.0" title="LibIris:LibIris-1.0">libiris-1.0</a>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Cambios">Cambios</span></h2>
+<ul><li> <b>13/Jun/2010</b>: Añadido paquete para <b>Ubuntu 9.10</b></li>
+<li> <b>29/Jul/2009</b>: Añadido paquete para <b>Ubuntu 9.04</b></li>
+<li> <b>26/Nov/2007</b>: Añadido paquete binario para <b>arquitecturas arm</b> (probado en <a rel="nofollow" class="external text" href="https://es.wikipedia.org/wiki/NSLU2">NSLU2</a>). Por Ignacio González.</li>
+<li> <b>18/Sep/2007</b>: Liberada <b>versión 1.2!</b></li>
+<li> <b>16/Sep/2007</b>: Publicada Version 1.2 RC1
+<ul><li> Paquete .tgz con las fuentes</li>
+<li> Paquete .deb para Debian</li></ul></li>
+<li> <b>2/Sep/2007</b>: La versión 1.0 está obsoleta. Se ha llevado a esta página:
+	 <a href="https://iearobotics.com/wiki/index.php?title=LibIris:LibIris-1.0" title="LibIris:LibIris-1.0">Libiris-1.0</a></li>
+<li> <b>Junio/2007</b>. Publicación de la version 1.0</li></ul>
+<h2><span class="mw-headline" id="Acceso_al_repositorio">Acceso al repositorio</span></h2>
+<ul><li> SVN del proyecto: <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/libIris/">http://svn.iearobotics.com/libIris/</a></li>
+<li> El arbol completo, incluyendo todas las versiones, se puede obtener así</li></ul>
+<pre>svn co <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/libIris/">http://svn.iearobotics.com/libIris/</a>
+</pre>
+<ul><li> La <b>versión 1.2</b> se puede bajar así:</li></ul>
+<pre>svn co <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/libIris/libiris-1.2">http://svn.iearobotics.com/libIris/libiris-1.2</a>
+</pre>
+<h2><span class="mw-headline" id="Historia">Historia</span></h2>
+<h3><span class="mw-headline" id="Versi.C3.B3n_1.2">Versión 1.2</span></h3>
+<p>Los cambios con respecto a la versión 1.0 son:
+</p>
+<ul><li> División de la librería en los tres módulos: <b>IntelHex</b>, <b>PIC16_Bootloader</b> y <b>PIC16_Firmware</b>. Cada uno resuelve un problema distinto. IntelHex para el parseo de ficheros .hex, PIC16_Bootloader para hacer clientes que descarguen firmware en la skypic y PIC16_Firmware donde está el código máquina de diferentes programas para el PIC, entre ellos todos los servidores del proyecto Stargate.</li>
+<li> La descarga del firwmare vía web se ha sustituido por la utilización del módulo <b>PIC16_Firmware</b>. De esta manera se puede utilizar en ordenadores sin conexión a internet. La funcionalidad de descarga web se incluirá nuevamente en siguientes versiones.</li>
+<li> Creadas las aplicaciones 
+	<a href="https://iearobotics.com/wiki/index.php?title=LibIris:hex-view" title="LibIris:hex-view"> hex-view</a>, <a href="https://iearobotics.com/wiki/index.php?title=LibIris:hex2python" title="LibIris:hex2python"> hex2python</a> y <a href="https://iearobotics.com/wiki/index.php?title=LibIris:skypic-test" title="LibIris:skypic-test"> skypic-test</a> que se distribuyen junto con la LibIris</li>
+<li> Creados scripts para su instalación mediante <i><b>python setup.py install</b></i>.</li>
+<li> Probado en plataformas Windows</li>
+<li> Probado en una <a rel="nofollow" class="external text" 
+	href="https://es.wikipedia.org/wiki/NSLU2">NSLU2</a> (arquitectura arm) y creado paquete binario. (Por Ignacio González)</li>
+<li> Empaquetado para <b>Debian</b> y <b>Ubuntu</b></li>
+<li> Autoinstalable para <b>Windows</b></li>
+<li> Creada página man</li>
+<li> Creados programas de pruebas para la detección de errores</li>
+<li> BUGs corregidos</li></ul>
+<h3><span class="mw-headline" id="Versi.C3.B3n_1.0">Versión 1.0</span></h3>
+<p>La versión inicial fue la 
+	<a href="https://iearobotics.com/wiki/index.php?title=LibIris:LibIris-1.0" title="LibIris:LibIris-1.0">libiris-1.0</a>, creada por <a rel="nofollow" class="external text" href="http://rafael.trevino.menendez.googlepages.com/">Rafael Treviño</a>. Estaba constituida por un único módulo con toda la funcionalidad. Además incluía la posibilidad de descargar automáticamente el firmware del proyecto <a href="https://iearobotics.com/wiki/index.php?title=Stargate" title="Stargate">Stargate</a> a través de la web.
+</p><p><br>
+</p>
+<hr>
+
+</div></div></body></html>
