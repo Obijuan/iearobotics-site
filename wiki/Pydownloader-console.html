@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pydownloader-console - WikiRobotics</title>
+  	<link rel="stylesheet" href="load.css">
+</head>
+
+<body style="margin: 10px; font-size: 12px;">
+<h1 id="firstHeading" class="firstHeading" lang="es">Pydownloader-console</h1>
+<div id="bodyContent" class="mw-body-content"></div>
+
+<!-- start content -->
+					
+<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><p>
+	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:Pydownloader-logo.png" 
+	class="image" title="Logo del pydownloader">
+	<img alt="Logo del pydownloader" src="Pydownloader-console_files/Pydownloader-logo_7yJI.png" 
+	width="250" height="194"></a>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Caracter.C3.ADsticas"><span class="tocnumber">2</span> <span class="toctext">Características</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Agradecimientos"><span class="tocnumber">3</span> <span class="toctext">Agradecimientos</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Utilizaci.C3.B3n"><span class="tocnumber">4</span> <span class="toctext">Utilización</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Par.C3.A1metros"><span class="tocnumber">4.1</span> <span class="toctext">Parámetros</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Ejemplos"><span class="tocnumber">4.2</span> <span class="toctext">Ejemplos</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Pantallazos"><span class="tocnumber">5</span> <span class="toctext">Pantallazos</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Dependencias"><span class="tocnumber">6</span> <span class="toctext">Dependencias</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Descargas"><span class="tocnumber">7</span> <span class="toctext">Descargas</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#versi.C3.B3n:_1.0"><span class="tocnumber">7.1</span> <span class="toctext">versión: 1.0</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Cambios"><span class="tocnumber">8</span> <span class="toctext">Cambios</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Acceso_al_repositorio"><span class="tocnumber">9</span> <span class="toctext">Acceso al repositorio</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>Pydownloader-console es uno de los "sabores" del programa 
+	<a href="https://iearobotics.com/wiki/index.php?title=Pydownloader" title="Pydownloader">Pydownloader</a>. 
+	Permite la descarga de programas en la tarjeta 
+	<a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> 
+	usándose como interfaz <b>la consola</b>.
+</p><p>Esta herramienta está basada en la 
+	<a href="LibIris.html" title="LibIris">LibIris</a>
+</p>
+<h2><span class="mw-headline" id="Caracter.C3.ADsticas">Características</span></h2>
+<ul><li> <b>Lenguaje de programación</b>: Python</li>
+<li> <b>Sistema operativo</b>: Multiplataforma (Linux/FreeBSD/Windows/Arm)</li>
+<li> <b>Interfaz usuario</b>: Consola</li>
+<li> <b>Licencia</b>: GPL</li>
+<li> <b>Autores</b>:
+<ul><li><a rel="nofollow" class="external text" href="http://rafael.trevino.menendez.googlepages.com/">Rafael Treviño</a>,</li>
+<li><a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main"> Juan González</a></li></ul></li></ul>
+<h2><span class="mw-headline" id="Agradecimientos">Agradecimientos</span></h2>
+<ul><li> A <b>Ignacio González</b> por probar el pydowloader en un 
+	<a rel="nofollow" class="external text" href="https://es.wikipedia.org/wiki/NSLU2">NSLU2</a> 
+	(arquitectura arm) y crear el paquete binario. Muchas gracias&nbsp;;-)</li>
+<li> A <b>Fernando Herrero</b> por las pruebas en FreeBSD (6.3). Muchas gracias&nbsp;;-)</li></ul>
+<h2><span class="mw-headline" id="Utilizaci.C3.B3n">Utilización</span></h2>
+<h3><span class="mw-headline" id="Par.C3.A1metros">Parámetros</span></h3>
+<p>Se invoca de la siguiente forma:
+</p>
+<pre><i>pydownloader &lt;programa&gt; [&lt;puerto&gt;]</i>
+</pre>
+<p>donde los parámetros son:
+</p>
+<ul><li> <b>&lt;programa&gt;</b>&nbsp;: Fichero .hex o el nombre del firmware predefinido a cargar:
+<ul><li> <i>ledp1</i>: Programa de prueba 1. Led parpadeante</li>
+<li> <i>ledp2</i>: Programa de prueba 2. Led parpadeante a mas velocidad</li>
+<li> <i>monitor</i>: Servidor generico</li>
+<li> <i>servos8</i>: Servidor para movimiento de hasta 8 servos</li>
+<li> <i>Picp</i>  &nbsp;: Servidor para la programacion de PICs</li>
+<li> <i>eco</i>   &nbsp;: Servidor de eco por el puerto serie</li></ul></li>
+<li> <b>[&lt;puerto&gt;]</b>: Nombre del dispositivo serie a utilizar.
+<ul><li> <b>Linux</b>: /dev/ttyS0, /dev/ttyS1..., /dev/ttyUSB0, /dev/ttyUSB1...</li>
+<li> <b>FreeBSD</b>: /dev/cuad0, /dev/cuad1,...</li>
+<li> <b>Windows</b>: COM1, COM2,...</li></ul></li></ul>
+<h3><span class="mw-headline" id="Ejemplos">Ejemplos</span></h3>
+<p>Descarga del fichero <b>test.hex</b> en una 
+	<a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> 
+	conectada a traves de un conversor USB-serie en una maquina Linux:
+</p>
+<pre>$ <i><b>pydownloader test.hex /dev/ttyUSB0</b></i>
+PyDownloader. Descarga de programas en la Skypic. Licencia GPL <br>
+Fichero: "test.hex"
+Esperando Bootloader <br>
+Descargando:
+***** OK
+</pre>
+<p>Descarga del <b>firmware ledp1</b> para comprobar si la 
+	<a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> está funcionando
+</p>
+<pre>$ <i><b>pydownloader ledp1 /dev/ttyUSB0</b></i>
+PyDownloader. Descarga de programas en la Skypic. Licencia GPL <br>
+Firmware: ledp1 <br>
+Esperando Bootloader <br>
+Descargando:
+*** OK
+</pre>
+<h2><span class="mw-headline" id="Pantallazos">Pantallazos</span></h2>
+<ul><li> Funcionamiento en una máquina Linux:</li></ul>
+<p><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Pydownloader-1.0.png" 
+	class="image" title="Pantallazo del pydownloader-1.0 en Linux">
+	<img alt="Pantallazo del pydownloader-1.0 en Linux" 
+	src="Pydownloader-console_files/Pydownloader-1.0_7yJI.png" width="563" height="345"></a>
+</p>
+<ul><li> Funcionamiento en una máquina Windows XP:</li></ul>
+<p><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Pydownloader-1.0-win.png" 
+	class="image" title="Pantallazo del pydownloader-1.0 en Windows">
+	<img alt="Pantallazo del pydownloader-1.0 en Windows" 
+	src="Pydownloader-console_files/Pydownloader-1.0-win_7yJI.png" width="670" height="206"></a>
+<br>
+</p>
+<h2><span class="mw-headline" id="Dependencias">Dependencias</span></h2>
+<p><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Icono_aviso.png" 
+	class="image"><img alt="Icono aviso.png" 
+	src="Pydownloader-console_files/Icono_aviso_7yJI.png" width="24" height="24"></a>
+	Los programas pydownloader están basados en la librería 
+	<a href="LibIris.html" title="LibIris">LibIris</a>. Para que funcionen es necesario su instalación.
+</p>
+<h2><span class="mw-headline" id="Descargas">Descargas</span></h2>
+<h3><span class="mw-headline" id="versi.C3.B3n:_1.0">versión: 1.0</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th>Fichero</th>
+<th>Descripción
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/wiki/images/6/62/Pydownloader-1.0.zip">Pydownloader-1.0.zip</a>
+</td>
+<td> Fuentes
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/wiki/images/9/96/Pydownloader_1.0-2_i386.deb">Pydownloader_1.0-2_i386.deb</a>
+</td>
+<td> Paquete para <b>Debian/Etch</b> y <b>Ubuntu 7.04</b>
+<p>
+</p>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/wiki/images/d/d7/Pydownloader_1.0-2_arm.deb">Pydownloader_1.0-2_arm.deb</a>
+</td>
+<td> Paquete para <b>arquitectura arm</b>. Probado en un <a rel="nofollow" class="external text" href="https://es.wikipedia.org/wiki/NSLU2">NSLU2</a>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/pydownloader-1.0.win32.exe">pydownloader-1.0.win32.exe</a>
+</td>
+<td> Autoinstalable para <b>Windows XP</b>
+<p>
+</p>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Cambios">Cambios</span></h2>
+<ul><li> <b>5/Feb/2008</b>: Probado el funcionamiento en FreeBSD-6.3. Por <b>Fernando Herrero</b>.</li>
+<li> <b>26/Nov/2007</b>: Añadido paquete binario para <b>arquitecturas arm</b> (probado en <a rel="nofollow" class="external text" href="https://es.wikipedia.org/wiki/NSLU2">NSLU2</a>). Por <b>Ignacio González</b>.</li>
+<li> <b>20/Sep/2007</b>: Liberada <b>versión 1.0</b>!!</li>
+<li> <b>17/Sep/2007</b>: Añadida la versión 1.0 RC1</li>
+<li> <b>16/Sep/2007</b>: Version inicial de esta pagina</li></ul>
+<h2><span class="mw-headline" id="Acceso_al_repositorio">Acceso al repositorio</span></h2>
+<ul><li> SVN del proyecto <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/pydownloader/">http://svn.iearobotics.com/pydownloader/</a></li></ul>
+<p>La <b>version 1.0</b> se puede obtener asi:
+</p>
+<pre>svn co <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/pydownloader/pydownloader/pydownloader-1.0/">http://svn.iearobotics.com/pydownloader/pydownloader/pydownloader-1.0/</a>
+</pre>
+<hr>
+
+</div>
+</body>
+</html>
