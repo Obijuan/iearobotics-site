@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pydownloader - WikiRobotics</title>
+  	<link rel="stylesheet" href="load.css">
+</head>
+
+<body style="margin: 10px; font-size: 12px;">
+<h1 id="firstHeading" class="firstHeading" lang="es">Pydownloader</h1>
+<div id="bodyContent" class="mw-body-content"></div>
+
+<!-- start content -->
+<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><p>
+	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:Pydownloader-logo.png" 
+	class="image" title="Logo del pydownloader"><img alt="Logo del pydownloader" 
+	src="Pydownloader_files/Pydownloader-logo_-2C5.png" width="250" height="194"></a>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Caracter.C3.ADsticas"><span class="tocnumber">2</span> <span class="toctext">Características</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Autores"><span class="tocnumber">3</span> <span class="toctext">Autores</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Agradecimientos"><span class="tocnumber">4</span> <span class="toctext">Agradecimientos</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Sabores"><span class="tocnumber">5</span> <span class="toctext">Sabores</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Dependencias"><span class="tocnumber">6</span> <span class="toctext">Dependencias</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#V.C3.ADdeo_de_demostraci.C3.B3n"><span class="tocnumber">7</span> <span class="toctext">Vídeo de demostración</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Acceso_al_repositorio"><span class="tocnumber">8</span> <span class="toctext">Acceso al repositorio</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Cambios"><span class="tocnumber">9</span> <span class="toctext">Cambios</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p><b>Pydownloader</b> es una aplicación para descarga de programas en la 
+	<a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a>. 
+	Es necesario previamente que el 
+	<a href="PIC_Bootloader.html" title="PIC Bootloader">bootloader</a> se encuentre ya grabado en la 
+	<a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a>. 
+	Con el Pydownloader se puede:
+</p>
+<ul><li> Descargar ficheros .hex</li>
+<li> Descargar directamente los servidores del proyecto 
+	<a href="https://iearobotics.com/wiki/index.php?title=Stargate" title="Stargate">Stargate</a></li>
+<li> Descargar directamente el programa de pruebas ledp para hacer comprobaciones rápidas de la 
+	<a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a></li></ul>
+<p>El Pydownloader está basado en la 
+	<a href="LibIris.html" title="LibIris">LibIris</a>
+</p>
+<h2><span class="mw-headline" id="Caracter.C3.ADsticas">Características</span></h2>
+<ul><li> <b>Lenguaje</b>: Python</li>
+<li> <b>Multiplataforma</b>: Linux/FreeBSD/Windows/Linux-Arm</li>
+<li> <b>Licencia</b>: GPL</li></ul>
+<h2><span class="mw-headline" id="Autores">Autores</span></h2>
+<ul><li>  <a rel="nofollow" class="external text" 
+	href="http://rafael.trevino.menendez.googlepages.com/">Rafael Treviño</a></li>
+<li>  <a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main"> 
+	Juan González</a></li></ul>
+<h2><span class="mw-headline" id="Agradecimientos">Agradecimientos</span></h2>
+<p>Muchas gracias por las pruebas realizadas en Plataformas Windows a:
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="../personal/ricardo">Ricardo Gómez</a></li>
+<li> <a rel="nofollow" class="external text" href="../personal/andres/">Andrés Prieto-Moreno</a></li>
+<li> <a rel="nofollow" class="external text" href="http://webdearde.com/blogs/mifulapirus/">Angel Hernández</a></li></ul>
+<p>Muchas gracias por las pruebas realizadas en Ubuntu a <b>Javier Valiente Estébanez</b>. 
+</p><p>Muchas gracias a <b>David</b>, el autor de este estupendo artículo sobre 
+	<a rel="nofollow" class="external text" href="http://crysol.inf-cr.uclm.es/node/325">
+		cómo empaquetar un script python para Debian</a>. En su blog sólo figura el nombre de David, 
+		no sé sus apellidos&nbsp;:-(
+</p><p>Muchas gracias a <b>Fernando Herrero</b> por las pruebas en FreeBSD
+</p>
+<h2><span class="mw-headline" id="Sabores">Sabores</span></h2>
+<p>El <b>Pydownloader</b> está disponible en cuatro "sabores":
+</p>
+<ul><li> <a href="Pydownloader-console.html" title="Pydownloader-console">Pydownloader-console</a>: Versión para la consola. <b>Linux/FreeBSD/Windows</b>.</li>
+<li> <a href="Pydownloader-wx.html" title="Pydownloader-wx">Pydownloader-wx</a>: Interfaz gráfica usando las librerías Wxpython. <b>Linux/Windows</b></li>
+<li> <a href="Pydownloader-gtk.html" title="Pydownloader-gtk">Pydownloader-gtk</a>: Interfaz gráfica usando las PyGTK. <b>Linux</b></li>
+<li> <a href="Pydownloader-qt.html" title="Pydownloader-qt">Pydownloader-qt</a>: Interfaz gráfica usando las PyQT. <b>Linux</b></li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:Pydownloader-1.0.png" 
+	class="image"><img alt="" 
+	src="Pydownloader_files/300px-Pydownloader-1.0_-2C5.png" 
+	width="300" height="184" class="thumbimage" 
+	srcset="Pydownloader_files/450px-Pydownloader-1.0_-2C5.png 1.5x, Pydownloader_files/Pydownloader-1.0_-2C5.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Pydownloader-1.0.png" class="internal" title="Aumentar"></a></div>Pantallazo del pydownloader-1.0 en Linux</div></div></div>
+</td></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:Pydownloader-wx-1.0-linux.png"
+	 class="image"><img alt="" 
+	 src="Pydownloader_files/300px-Pydownloader-wx-1.0-linux_-2C5.png" width="300" height="269" class="thumbimage"
+	  srcset="Pydownloader_files/Pydownloader-wx-1.0-linux_-2C5.png 1.5x, Pydownloader_files/Pydownloader-wx-1.0-linux_-2C5.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Pydownloader-wx-1.0-linux.png" class="internal" title="Aumentar"></a></div>Pantallazo del pydownloader-wx-1.0 en Linux</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:Pydownloader-wx-1.0-win.png" class="image">
+		<img alt="" src="Pydownloader_files/300px-Pydownloader-wx-1.0-win_-2C5.png" width="300" height="268" class="thumbimage" srcset="Pydownloader_files/Pydownloader-wx-1.0-win_-2C5.png 1.5x, Pydownloader_files/Pydownloader-wx-1.0-win_-2C5.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Pydownloader-wx-1.0-win.png" class="internal" title="Aumentar"></a></div>Pantallazo del pydownloader-wx-1.0 en Winddows</div></div></div>
+</td></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:Pydownloader-gtk-1.0-linux.png" 
+	class="image"><img alt="" src="Pydownloader_files/300px-Pydownloader-gtk-1.0-linux_-2C5.png" 
+	width="300" height="215" class="thumbimage" 
+	srcset="Pydownloader_files/450px-Pydownloader-gtk-1.0-linux_-2C5.png 1.5x, Pydownloader_files/Pydownloader-gtk-1.0-linux_-2C5.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Pydownloader-gtk-1.0-linux.png" class="internal" title="Aumentar"></a></div>Pantallazo del pydownloader-gtk-1.0 en Linux</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:295px;">
+	<a href="Pydonwloader-qt-1.0-linux.png" class="image">
+		<img alt="" src="Pydownloader_files/Pydonwloader-qt-1.0-linux_-2C5.png" width="293" height="367" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Pydonwloader-qt-1.0-linux.png" class="internal" title="Aumentar"></a></div>Pantallazo del pydownloader-qt-1.0 en Linux</div></div></div>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Dependencias">Dependencias</span></h2>
+<p><a href="Icono_aviso.png" class="image">
+	<img alt="Icono aviso.png" src="Pydownloader_files/Icono_aviso_-2C5.png" 
+	width="24" height="24"></a>Los programas pydownloader están basados en la librería 
+	<a href="LibIris.html" title="LibIris">LibIris</a>. Para que funcionen es necesario su instalación.
+</p>
+<h2><span class="mw-headline" id="V.C3.ADdeo_de_demostraci.C3.B3n">Vídeo de demostración</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=-t48-Nccp-c">Demo 1</a>: 
+	Demostración de la versión gráfica del pydownloader en acción.</li></ul>
+<h2><span class="mw-headline" id="Acceso_al_repositorio">Acceso al repositorio</span></h2>
+<ul><li> SVN completo del proyecto: 
+	<a rel="nofollow" class="external free" 
+	href="http://svn.iearobotics.com/pydownloader/">http://svn.iearobotics.com/pydownloader/</a>. Incluye todas las versiones y sabores.</li>
+<li> Para obtenerlo hay que usar el siguiente comando:</li></ul>
+<pre>svn co <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/pydownloader/">http://svn.iearobotics.com/pydownloader/</a>
+</pre>
+<h2><span class="mw-headline" id="Cambios">Cambios</span></h2>
+<ul><li> <b>24/Sep/2007</b>: Añadidos pantallazos de los cuatro "sabores"</li>
+<li> <b>9/Sep/2007</b>: Creada página inicial</li></ul>
+<hr>
+
+</div>
+</body>
+</html>
