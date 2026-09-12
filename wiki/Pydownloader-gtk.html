@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pydownloader-gtk - WikiRobotics</title>
+  	<link rel="stylesheet" href="load.css">
+</head>
+
+<body style="margin: 10px; font-size: 12px;">
+<h1 id="firstHeading" class="firstHeading" lang="es">Pydownloader-gtk</h1>
+<div id="bodyContent" class="mw-body-content"></div>
+
+<!-- start content -->
+<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><p>
+	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:Pydownloader-logo.png" 
+	class="image" title="Logo del pydownloader"><img alt="Logo del pydownloader" 
+	src="Pydownloader-gtk_files/Pydownloader-logo_fMQg.png" width="250" height="194"></a>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Caracter.C3.ADsticas"><span class="tocnumber">2</span> <span class="toctext">Características</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Pantallazo"><span class="tocnumber">3</span> <span class="toctext">Pantallazo</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Utilizaci.C3.B3n"><span class="tocnumber">4</span> <span class="toctext">Utilización</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Dependencias"><span class="tocnumber">5</span> <span class="toctext">Dependencias</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Descargas"><span class="tocnumber">6</span> <span class="toctext">Descargas</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#versi.C3.B3n:_1.0"><span class="tocnumber">6.1</span> <span class="toctext">versión: 1.0</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Cambios"><span class="tocnumber">7</span> <span class="toctext">Cambios</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Acceso_al_repositorio"><span class="tocnumber">8</span> <span class="toctext">Acceso al repositorio</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>Pydownloader-gtk es uno de los "sabores" del programa 
+	<a href="https://iearobotics.com/wiki/index.php?title=Pydownloader" title="Pydownloader">Pydownloader</a>. 
+	Permite la descarga de programas en la tarjeta 
+	<a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a>
+	 usándose como interfaz una ventana creada con las librerias gráficas 
+	 <a rel="nofollow" class="external text" href="http://www.pygtk.org/">pyGTK</a>.
+</p><p>Esta herramienta está basada en la 
+	<a href="LibIris.html" title="LibIris">LibIris</a>
+</p>
+<h2><span class="mw-headline" id="Caracter.C3.ADsticas">Características</span></h2>
+<ul><li> <b>Lenguaje de programación</b>: Python</li>
+<li> <b>Sistema operativo</b>: Linux</li>
+<li> <b>Interfaz usuario</b>: <a rel="nofollow" class="external text" href="http://www.pygtk.org/">pyGTK</a></li>
+<li> <b>Licencia</b>: GPL</li>
+<li> <b>Autores</b>:
+<ul><li><a rel="nofollow" class="external text" href="http://rafael.trevino.menendez.googlepages.com/">Rafael Treviño</a>,</li>
+<li><a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main"> Juan González</a></li></ul></li></ul>
+<h2><span class="mw-headline" id="Pantallazo">Pantallazo</span></h2>
+<p><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Pydownloader-gtk-1.0-linux.png" 
+	class="image" title="center"><img alt="center" 
+	src="Pydownloader-gtk_files/Pydownloader-gtk-1.0-linux_fMQg.png" width="477" height="342"></a>
+</p>
+<h2><span class="mw-headline" id="Utilizaci.C3.B3n">Utilización</span></h2>
+<ul><li> <b>Alimentar</b> la <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a>
+	 y conectarla al puerto serie del ordenador o al USB a través de un conversor USB-serie</li>
+<li> <b>Ejecutar</b> el pydownloader-wx</li>
+<li> <b>Seleccionar el puerto serie</b> donde esté conectada la 
+	<a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a>
+<ul><li> Los puertos serie son /dev/ttyS0, /dev/ttyS1... y si se está empleando un conversor usb-serie serán: /dev/ttyUSB0, /dev/ttyUSB1...</li></ul></li></ul>
+<p>Las acciones que se pueden realizar son:
+</p>
+<ul><li> <b>Grabación de un fichero .hex:</b>
+<ul><li> Seleccionar el fichero pinchando en "Buscar" y luego en "Grabar"</li>
+<li> Se puede grabar cualquier fichero .hex "arrastrándolo" con el ratón hacia el Pydownloader</li></ul></li></ul>
+<ul><li> <b>Realizar pruebas</b> para comprobar la 
+	<a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> 
+<ul><li> Botón "test1": Descarga un programa que hace parpear el led</li>
+<li> Botón "test2": Como test1 pero el led parpadea con mayor frecuencia</li></ul></li></ul>
+<ul><li> <b>Descargar programas específicos</b>:
+<ul><li> Botón "Monitor": Cargar el 
+	<a rel="nofollow" class="external text" 
+	href="../proyectos/stargate/servidores/sg-generic/sg-generic.html">servidor genérico</a>. 
+	Es el que se utiliza para hacer pruebas con el robot 
+	<a href="https://iearobotics.com/wiki/index.php?title=Skybot" title="Skybot">Skybot</a></li>
+<li> Botón "Servos8": Cargar el 
+	<a rel="nofollow" class="external text" 
+	href="../proyectos/stargate/servidores/sg-servos8/sg-servos8.html">Servos8</a> que permite mover hasta 8 servos del tipo Futaba 3003.</li>
+<li> Botón "Picp": Cargar el 
+	<a href="Stargate_PICP.html" title="Stargate:PICP">Stargate:PICP</a> 
+	para convertir la <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> 
+	en una tarjeta grabadora (permite grabar "a bajo nivel", por ejemplo para grabar el bootloader en otra 
+	<a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a></li>
+<li> Botón "Eco": Cargar el 
+	<a rel="nofollow" class="external text" 
+	href="../proyectos/stargate/servidores/sg-echo/sg-echo.html">Servidor de Eco</a> que reenvía todos los caracteres recibidos a través del puerto serie.</li></ul></li></ul>
+<h2><span class="mw-headline" id="Dependencias">Dependencias</span></h2>
+<p><a class="image"><img alt="Icono aviso.png" 
+	src="Pydownloader-gtk_files/Icono_aviso_fMQg.png" width="24" height="24"></a>
+	Los programas pydownloader están basados en la librería 
+	<a href="LibIris.html" title="LibIris">LibIris</a>. Para que funcionen es necesario su instalación.
+</p>
+<h2><span class="mw-headline" id="Descargas">Descargas</span></h2>
+<h3><span class="mw-headline" id="versi.C3.B3n:_1.0">versión: 1.0</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th>Fichero</th>
+<th>Descripción
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/wiki/images/3/3d/Pydownloader-gtk-1.0.tgz">Pydownloader-gtk-1.0.tgz</a>
+</td>
+<td> Fuentes
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/wiki/images/4/48/Pydownloader-gtk_1.0-1_i386.deb">Pydownloader-gtk_1.0-1_i386.deb</a>
+</td>
+<td> Paquete para <b>Debian/Etch</b> y <b>Ubuntu 7.04</b>
+<p>
+</p>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Cambios">Cambios</span></h2>
+<ul><li> <b>24/Sep/2007</b>: Versión 1.0 Liberada!!!</li>
+<li> <b>23/Sep/2007</b>: Publicada Versión 1.0 RC1.</li>
+<li> <b>20/Sep/2007</b>: Version inicial de esta pagina</li></ul>
+<h2><span class="mw-headline" id="Acceso_al_repositorio">Acceso al repositorio</span></h2>
+<ul><li> SVN del proyecto <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/pydownloader/">http://svn.iearobotics.com/pydownloader/</a></li></ul>
+<p>La <b>version 1.0</b> se puede obtener asi:
+</p>
+<pre>svn co <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/pydownloader/pydownloader-gtk/pydownloader-gtk-1.0">http://svn.iearobotics.com/pydownloader/pydownloader-gtk/pydownloader-gtk-1.0</a>
+</pre>
+<hr>
+
+</div>
+</body>
+</html>
