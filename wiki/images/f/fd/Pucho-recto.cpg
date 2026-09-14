@@ -1,0 +1,81 @@
+# Fichero de cpg's de prueba
+# Se pueden poner comentarios
+# Siempre que estos empiecen con '#'
+# Y blancos delante
+# Este fichero contiene una lista de CPG's
+# caracterizados por...
+
+# Lista de funciones a usar
+# Primero el nombre y dos puntos
+# Después la lista de variables, incluido t
+# t es la variable del paso dentro de los samples
+# Por último la definición tal y como se haría en Python
+# samples es una constante que se puede usar que determina las muestras
+# Por ejemplo, la función seno con amplitud y desfase sería así:
+
+f: A, T, Phi, O, t: int (A * sin ((2 * pi * t) / (T * samples) + DEG_TO_RAD * Phi)) + O
+
+# Después la lista debe contener el nombre de la función y la lista
+# de valores para las variables que NO son t
+# A t no se le asigna valor por el usuario
+
+#  T  D
+#
+#    O  O
+# 1  O  O
+#    O  O
+#   O+OO+O
+#    O  O    -- Hombro
+# 2  O  O    -- Codo
+#    O  O    -- Tobillo
+
+# Funcion A   T   Phi 	O
+# ------- -   -   --- 	-
+
+#-- Rabo
+  f       0  1   0  	-45 
+
+#-- Hombro T2  
+  f       0  1   0   90
+
+#-- Espina dorsal 1
+  f       0  1   240  	0
+
+#-- Hombro T1
+  f       0  1   0   	90
+
+#-- Codo T2
+  f       50  1   0  	0
+
+#-- Tobillo T2
+  f       50  1   120   0
+
+#-- Espina dorsal 2
+  f       0  1   0  	0
+
+#-- Codo T1
+  f       50  1   0   0
+
+#-- Tobillo T1
+  f       50  1   120  	0
+
+#-- Hombro D2
+  f       0  1   0   90
+
+#-- Cabeza
+  f       0  1   240  	0
+
+#-- Hombro D1
+  f       0  1   0   	90
+
+#-- Codo D2
+  f       50  1   -120  	0
+
+#-- Tobillo D2
+  f       50  1   0   0
+
+#-- Codo D1
+  f       50  1   -120  	0
+
+#-- Tobillo D1
+  f       50  1   0   0
