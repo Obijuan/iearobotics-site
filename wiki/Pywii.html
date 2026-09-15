@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pywii - WikiRobotics</title>
+  	<link rel="stylesheet" href="load.css">
+</head>
+
+<body style="margin: 10px; font-size: 12px;">
+<h1 id="firstHeading" class="firstHeading" lang="es">Pywii</h1>
+<div id="bodyContent" class="mw-body-content"></div>
+
+<!-- start content -->
+<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Caracter.C3.ADsticas"><span class="tocnumber">2</span> <span class="toctext">Características</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Notas_t.C3.A9cnicas"><span class="tocnumber">3</span> <span class="toctext">Notas técnicas</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Utilizaci.C3.B3n_de_pywii"><span class="tocnumber">4</span> <span class="toctext">Utilización de pywii</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Utilizaci.C3.B3n_de_un_cerebro_Pyro.2FPyrobotics_con_pywii"><span class="tocnumber">4.1</span> <span class="toctext">Utilización de un cerebro Pyro/Pyrobotics con pywii</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Wiiview"><span class="tocnumber">5</span> <span class="toctext">Wiiview</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Descargas"><span class="tocnumber">6</span> <span class="toctext">Descargas</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Versi.C3.B3n_1.0"><span class="tocnumber">6.1</span> <span class="toctext">Versión 1.0</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Acceso_al_repositorio"><span class="tocnumber">7</span> <span class="toctext">Acceso al repositorio</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p><strong class="selflink">Pywii</strong> es la librería de comunicación con el mando de la Wii, 
+	el Wiimote. Con esta librería es sencillo el manejo del mando a través de scripts python que 
+	pueden controlar sistemas basados en 
+	<a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> 
+	mediante <a href="LibStargate.html" title="LibStargate">libStargate</a>. 
+	Con los ejemplos de uso es sencillo ver como manejar la clase y modificarlos para los usos propios de cada uno.
+</p><p>La comunicación se hace a través de bluetooth por lo que deberías tener un dispositivo bluetooth.
+</p><p>La librería sólo funciona bajo Linux por problemas con la pila de protocolos bluetooth de Windows, pero todo se andará&nbsp;;).
+</p>
+<h2><span class="mw-headline" id="Caracter.C3.ADsticas">Características</span></h2>
+<ul><li> <b>Licencia</b>: GPL</li>
+<li> <b>Autor</b>:
+<ul><li>  <a rel="nofollow" class="external text" href="http://rafael.trevino.menendez.googlepages.com/">Rafael Treviño</a>, (c) 2007&nbsp;: Creación de la librería.</li>
+<li>  <a rel="nofollow" class="external text" href="http://rafael.trevino.menendez.googlepages.com/">Rafael Treviño</a>, (c) 2007&nbsp;: Creación del plugin Pyro/Pyrobot con pywii.</li></ul></li></ul>
+<h2><span class="mw-headline" id="Notas_t.C3.A9cnicas">Notas técnicas</span></h2>
+<p>La librería se basa en un pequeño servidor corriendo en otro hilo de ejecución que va recibiendo los eventos del mando por la conexión bluetooth y dejando los eventos 'procesados' en la cola de usuario. Se puede establecer otro servidor, en otro hilo, para que procese a más alto nivel los eventos del primer servidor y deje el resultado en la cola de usuario, pero actualmente el servidor de movimientos (cómo denomino a este último servidor) está en fase de desarrollo.
+</p>
+<h2><span class="mw-headline" id="Utilizaci.C3.B3n_de_pywii">Utilización de pywii</span></h2>
+<p>La utilización es muy sencilla. Basta con instanciar una clase Wiimote, llamar al método 'start' (pasándole la dirección bluetooth a utilizar) y después ir recibiendo los eventos del mando a través de llamadas a 'getEvents'. Todo esto dentro de un  bucle sin fin para estar continuamete recibiendo eventos.
+</p>
+<h3><span class="mw-headline" id="Utilizaci.C3.B3n_de_un_cerebro_Pyro.2FPyrobotics_con_pywii">Utilización de un cerebro Pyro/Pyrobotics con pywii</span></h3>
+<p>Dentro del entorno Pyro/Pyrobotics también se puede utilizar esta librería a modo de controlador básico. Dentro del paquete pywiiPyro.tgz está tanto la librería como el 'brain' que se debe utilizar para Pyro. Con este paquete podéis controlar cualquier robot de los controlados habitualmente con Pyro sin escribir ni una línea de código!
+</p><p><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Icono_aviso.png" class="image"><img alt="Icono aviso.png" src="Pywii_files/Icono_aviso_rP2d.png" width="24" height="24"></a>‎ Atención: Al cargar el 'brain' en Pyro/Pyrobot se produce un bloqueo debido a que está esperando conectar con el mando. Se deben pulsar los botones 1 y 2 del mando para que la librería lo capte y se desbloquee.
+</p>
+<h2><span class="mw-headline" id="Wiiview">Wiiview</span></h2>
+<p>Es una aplicación de ventana utilizando 
+	<a rel="nofollow" class="external text" href="http://www.pygame.org/news.html">pygame</a> para ver como se leen los eventos. Básicamente es un ejemplo de uso de la librería para poder modificar y jugar con ella. PyGame se puede instalar mediante apt-get.
+</p><p>Uso:
+python wiiview.py &lt;dirección del mando&gt;
+</p><p>Para conocer la dirección del mando ejecuta:
+hcitool scan
+</p><p>Y pulsa los botones 1 y 2 (modo descubrimiento), así sabrás la dirección de tu mando y podrás pasárselo a wiiview!
+</p>
+<h2><span class="mw-headline" id="Descargas">Descargas</span></h2>
+<h3><span class="mw-headline" id="Versi.C3.B3n_1.0">Versión 1.0</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th>Fichero</th>
+<th>Descripción
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" 
+	href="images/7/7f/Pywii-1.0.tgz">Pywii-1.0.tgz</a>]
+</td>
+<td> Librería pywii.
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" 
+	href="wiki/images/e/e6/PywiiPyro.tgz">PywiiPyro-1.0.tgz</a>]
+</td>
+<td> Paquete con la librería pywii y el 'brain' Pyro/Pyrobotics.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Acceso_al_repositorio">Acceso al repositorio</span></h2>
+<ul><li> SVN del proyecto: <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/pywii/">http://svn.iearobotics.com/pywii/</a></li>
+<li> La última versión se puede obtener así:</li></ul>
+<pre>svn co <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/pywii/">http://svn.iearobotics.com/pywii/</a>
+</pre>
+<p><br>
+</p>
+<hr>
+
+</div>
+</div>
+</body>
+</html>
