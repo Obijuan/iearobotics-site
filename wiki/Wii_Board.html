@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Wii Board - WikiRobotics</title>
+  	<link rel="stylesheet" href="load.css">
+</head>
+
+<body style="margin: 10px; font-size: 12px;">
+<h1 id="firstHeading" class="firstHeading" lang="es">Wii Board</h1>
+<div id="bodyContent" class="mw-body-content"></div>
+
+<!-- start content -->
+<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Wii-board-juan.jpg" class="image"><img alt="" src="Wii_Board_files/300px-Wii-board-juan_aQzq.jpg" width="300" height="225" class="thumbimage" srcset="Wii_Board_files/450px-Wii-board-juan_aQzq.jpg 1.5x, Wii_Board_files/600px-Wii-board-juan_aQzq.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Wii-board-juan.jpg" class="internal" title="Aumentar"></a></div>300px</div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Wii-board-wiimote.jpg" class="image"><img alt="" src="Wii_Board_files/300px-Wii-board-wiimote_aQzq.jpg" width="300" height="225" class="thumbimage" srcset="Wii_Board_files/450px-Wii-board-wiimote_aQzq.jpg 1.5x, Wii_Board_files/600px-Wii-board-wiimote_aQzq.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Wii-board-wiimote.jpg" class="internal" title="Aumentar"></a></div>300px</div></div></div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Diario_de_pruebas"><span class="tocnumber">2</span> <span class="toctext">Diario de pruebas</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Prueba_1:_18.2FJun.2F2008"><span class="tocnumber">2.1</span> <span class="toctext">Prueba 1: 18/Jun/2008</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#V.C3.ADdeos"><span class="tocnumber">3</span> <span class="toctext">Vídeos</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Descargas"><span class="tocnumber">4</span> <span class="toctext">Descargas</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Enlaces"><span class="tocnumber">5</span> <span class="toctext">Enlaces</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Autor"><span class="tocnumber">6</span> <span class="toctext">Autor</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Licencia"><span class="tocnumber">7</span> <span class="toctext">Licencia</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Historia"><span class="tocnumber">8</span> <span class="toctext">Historia</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Cr.C3.A9ditos"><span class="tocnumber">9</span> <span class="toctext">Créditos</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Noticias"><span class="tocnumber">10</span> <span class="toctext">Noticias</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>Nintendo ha sacado la 
+	<a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/Wii_Balance_Board">
+		Wii Board</a>, una plataforma dotada de cuatro sensores de fuerza, 
+		sobre la que el usuario se sube y puede conocer su peso, indice de masa corporal, 
+		equilibrio, etc.
+</p><p><b>Queremos usar la Wii Board para mover robots</b>&nbsp;:-) En esta página iremos recopilando la información necesaria.
+</p>
+<h2><span class="mw-headline" id="Diario_de_pruebas">Diario de pruebas</span></h2>
+<h3><span class="mw-headline" id="Prueba_1:_18.2FJun.2F2008">Prueba 1: 18/Jun/2008</span></h3>
+<p>Hemos conseguido mover un 
+	<a href="https://iearobotics.com/wiki/index.php?title=Skybot" title="Skybot">Skybot</a> 
+	con la Wii-board&nbsp;:-)
+</p>
+<ul><li> Lenguaje: Python</li>
+<li> Plataforma: Linux. Probado en una Debian/Etch</li>
+<li> Está basado en <a href="Pywii.html" title="Pywii">Pywii</a> y 
+	<a href="LibStargate.html" title="LibStargate">LibStargate</a>, que se han incluido en el fichero .tar.gz</li>
+<li> En el <a href="https://iearobotics.com/wiki/index.php?title=Skybot" title="Skybot">Skybot</a> debe estar grabado el 
+	<a rel="nofollow" class="external text" 
+	href="../proyectos/stargate/servidores/sg-generic/sg-generic.html">Servidor genérico</a>.
+</li></ul>
+<p><b>Funcionamiento</b>:
+</p>
+<ul><li> Editar el fichero wii-fit.py y poner la dirección de la wii-board</li>
+<li> Ejecutar:</li></ul>
+<pre>./wii-fit.py -p/dev/ttyUSB0
+</pre>
+<p>Sustituir /dev/ttyUSB0 por el puerto serie donde esté conectado el Skybot
+</p>
+<ul><li> Aparecerá:</li></ul>
+<pre>Conectando a 00:1E:35:C1:5E:E4, presiona 1 y 2.
+</pre>
+<p>Pulsar el botón de "Sync" de la wii-board que se encuentra situado donde las pilas.
+El funcionamiento lo he calibrado a "ojo" para mi peso&nbsp;;-)
+</p>
+<h2><span class="mw-headline" id="V.C3.ADdeos">Vídeos</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> &lt;youtube&gt;5_W9StajjJI&lt;/youtube&gt;
+<p>Primera prueba. Moviendo un Skybot.
+(<a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=5_W9StajjJI">Enlace al vídeo</a>)
+</p>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Descargas">Descargas</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" 
+	href="images/2/20/Wii-fit-prueba1.tar.gz">Wii-fit-prueba1.tar.gz</a>
+</td>
+<td> Programa wii-fit. Prueba 1.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=Skybot" title="Skybot">Robot Skybot</a></li>
+<li> <a rel="nofollow" class="external text" href="http://edutechwiki.unige.ch/en/Nintendo_Wii_balance_board">Surfing the Web</a>: Navegando por Internet usando la Wii Board.</li>
+<li> <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/Wii_Balance_Board">Wii Board</a> (Wikipedia)</li>
+<li> <a rel="nofollow" class="external text" href="http://carl.kenner.googlepages.com/glovepie">GlovePIE</a>: Parece que este driver (para windows) ya soporta la Wii Board.</li>
+<li> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=lKUDU9lE--E">Surfeando en Google earth</a>: Vídeo en Youtube</li>
+<li> <a rel="nofollow" class="external text" href="http://www.wiili.org/index.php/Wii_Balance_Board_PC_Drivers">Ingeniería inversa del protocolo</a>. Información de lo que se va descubriendo del protocolo.</li></ul>
+<h2><span class="mw-headline" id="Autor">Autor</span></h2>
+<ul><li> <a href="Juan_Gonzalez_Main.html" title="Juan Gonzalez:Main"> Juan González</a></li></ul>
+<h2><span class="mw-headline" id="Licencia">Licencia</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cc_logo.png" class="image"><img alt="Cc logo.png" src="Wii_Board_files/Cc_logo_aQzq.png" width="88" height="31"></a> This work is licensed under a <a rel="nofollow" class="external text" href="http://creativecommons.org/licenses/by-sa/2.5/es/">Creative Commons Attribution-ShareAlike 2.5 Spain License</a>.
+</td></tr>
+<tr>
+<td> El Software está bajo licencia GPL
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Historia">Historia</span></h2>
+<p>Todo comenzó cuando los de la Universidad de Bremen colgaron en YouTube <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=lKUDU9lE--E">este vídeo</a>. Los hechos se sucedieron así:
+</p>
+<ul><li> <b>[27/Mayo/2008]</b>: 
+	<a href="Juan_Gonzalez_Main.html" title="Juan Gonzalez:Main">Juan González</a> envia un correo mostrando el vídeo de los de Bremen, con el título: "El frikismo es la base de la investigación"</li>
+<li> <b>[28/Mayo/2008]</b>: 
+<ul><li><a rel="nofollow" class="external text" href="http://blog.mundobot.com/">Alejandro Alonso</a> responde <b>proponiendo la idea-friki</b> de colocar la wii-board sobre la base de <a rel="nofollow" class="external text" href="http://www.mundobot.com/blog/?p=180">SAM</a> para moverlo como si fuese un segway. La idea la propuso un compañero suyo de trabajo y rápidamente la compartió con los demás.</li>
+<li> Responde Juan. La idea es buenísima. Y propone de dónde conseguir una wii-board: su padre se acababa de comprar una.</li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=Andr%C3%A9s_Prieto-Moreno" title="Andrés Prieto-Moreno">Andrés Prieto-Moreno</a> y <a rel="nofollow" class="external text" href="http://webdearde.com/blogs/mifulapirus">Angel Hernández</a> se emocionan con la idea. Empieza la búsqueda de información por internet. Andrés está atacado y quiere comprarse una Wii-board.</li></ul></li>
+<li> <b>[04/Jun/2008]</b>: Alejandro manda un mail que refleja toda la actividad que ocurrió durante esos días, con el título: "Juan está atacado"</li>
+<li> <b>[07/Jun/2008]</b>: Juan "toma prestada" la wii-board de su padre. Envía un correo: "Habemus wii-board!!!"</li>
+<li> <b>[08/Jun/2008]</b>: Se sacan fotos de la Wii-board y se crea la primera versión de esta página en el wiki.</li>
+<li> <b>[10/Jun/2008]</b>: Andrés manda un correo con el título: "Me estoy poniendo muy nervioso&nbsp;!!!!!!!!!!!!!!", donde entre otras cosas dice: "2.  Juan. Quiero el WiiFit, <b>quiero mover a yossua meneando mi trasero</b>!!!" </li>
+<li> <b>[14/Jun/2008]</b>: Andrés intenta comprar la wii-board por segunda vez, en el Media Markt. Fracaso. Están agotadas.</li>
+<li> <b>[18/Jun/2008]</b>: Primera vez que se mueve un 
+	<a href="https://iearobotics.com/wiki/index.php?title=Skybot" title="Skybot">Skybot</a> con la Wii-board. Juan envía un mensaje titulado: "Un pequeño paso para el hombre....", seguido de "PERO UN GRAN SALTO PARA LAS FRIKADAS!!!!!!!!!!!!!!!!!!!!!!!!!!". Se abre la veda para el control "meneando el trasero" de los robots.</li>
+<li> <b>[27/Jun/2008]</b>: 
+<ul><li> En el blog <b>www.balanceboardblog.com </b>  
+	<a rel="nofollow" class="external text" href="http://www.balanceboardblog.com/2008/06/wii-balance-board-used-to-control-robot.html">publican esta entrada</a> (en inglés). Su autor, Andrew Macartby se pone en contacto con Juan para pedir más detalles. Se le responde comentándole las ideas de hacer tu propio segway y la del "Robosurfing": controlar tu robot inalámbrico como su fueses un "skater"</li>
+<li> <b>Iñaqui Navarro</b> me manda un mail diciendo que han <a rel="nofollow" class="external text" href="http://www.hackaday.com/2008/06/27/wii-fit-balance-board-controls-robot/">publicado esta entrada</a> en www.hackaday.com. (Publiada por Juan Aguilar)</li></ul></li>
+<li> <b>[28/Jun/2008]</b>: El vídeo de la primera prueba se empieza a extender por la blogosfera:
+<ul><li> En <b>www.balanceboardblog.com</b> publican <a rel="nofollow" class="external text" href="http://www.balanceboardblog.com/2008/06/man-creating-wii-balance-board-segway.html">esta nueva entrada</a></li>
+<li> <a rel="nofollow" class="external text" href="https://gizmodo.com/5020386/man-uses-wii-balance-board-to-move-a-robot-plans-to-move-people-too">Referencia de Gizmodo.com </a>. Las ideas del seg-way y del Robosurfing han gustado&nbsp;:-)</li>
+<li> <a rel="nofollow" class="external text" href="http://www.engadget.com/2008/06/27/man-uses-wii-balance-board-to-control-robot-takes-aim-at-segway/">Hacen eco de la noticia</a> en engadget.com (en inglés)</li>
+<li> <a rel="nofollow" class="external text" href="http://ruliweb2.empas.com/ruliboard/read.htm?num=17059&amp;table=game_nin02&amp;main=nin">Aparición en un blog japonés</a> (o tal vez coreano?).</li>
+<li> <a rel="nofollow" class="external text" href="http://gonintendo.com/?p=47702">Video publicado en</a> el blog <b>gonintendo.com</b></li></ul></li>
+<li> <b>[30/Jun/2008]</b>: 
+<ul><li> El contador de visitas del vídeo de Youtube ya va por 24.800!!</li>
+<li> <b>Jose Pichardo</b> me ha enviado un correo diciendo que <a rel="nofollow" class="external text" href="http://www.neoteo.com/wii-balance-board-mando-para-robots.neo">se ha publicado una entrada en NeoTeo</a>.</li></ul></li>
+<li> <b>[01/Jul/2008]</b>: <b>Alejandro Alonso</b> manda un mail diciendo que han publicado <a rel="nofollow" class="external text" href="http://es.engadget.com/2008/06/27/ingeniero-espanol-controla-un-robot-con-la-wii-balance-board/">esta entrada</a> en es.engadget.com (Español)</li>
+<li> <b>[15/Jul/2008]</b>: <a href="https://iearobotics.com/wiki/index.php?title=Andr%C3%A9s_Prieto-Moreno" title="Andrés Prieto-Moreno">Andrés</a> ya tiene una wii-board. Preparados para ver en acción el robosurfing con <a href="https://iearobotics.com/wiki/index.php?title=Robot_FlatBot" title="Robot FlatBot">FlatBot</a> y Yosua.</li>
+<li> <b>[6/Ago/2008]</b>: Se ha puesto en contacto conmigo <b>Juan Manuel Daganzo</b> de la <b>Revista Muy Interesante</b>. Está escribiendo un reportaje sobre "otros usos de las consolas" y se ha interesado por el control de robots con la Wii-board.</li>
+<li> <b>[05/Nov/2008]</b>: Virginia Morales, editora gráfica de la <b>Revista Muy Interesante</b> se ha puesto en contacto conmigo para que le envíe algunas fotos.</li>
+<li> <b>[02/Ene/2009]</b>: Ha salido publicado el artículo "<a rel="nofollow" class="external text" href="http://www.muyinteresante.es/index.php/todas-reportajes/56/6254-la-varita-magica-de-la-wii">La varita mágina de la Wii</a>" en la revista muy interesante, número 332, escrito por <b>Juan Manuel Daganzo</b>.</li></ul>
+<h2><span class="mw-headline" id="Cr.C3.A9ditos">Créditos</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="http://rafael.trevino.menendez.googlepages.com/">Rafael Treviño</a> es el Autor de <a href="https://iearobotics.com/wiki/index.php?title=Pywii" title="Pywii">Pywii</a></li>
+<li> <b>Juan M. González</b> nos ha dejado su Wii-board para hacer pruebas. ¡Gracias!</li>
+<li> <a rel="nofollow" class="external text" href="http://webdearde.com/blogs/mifulapirus">Alejandro Alonso</a> propuso la idea inicial de usar la wii-board para colocarla encima de la base de SAM y moverse como si fuese un Segway</li></ul>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>15/Jul/2008</b>: ¡¡Ya tenemos otra wii-board más!!</li>
+<li> <b>18/Jun/2008</b>: Hemos movido un <a href="https://iearobotics.com/wiki/index.php?title=Skybot" title="Skybot">Skybot</a> por primera vez con la wii-board!! </li>
+<li> <b>8/Jun/2008</b>: ¡¡Ya tenemos una wii-board!!&nbsp;:-)</li>
+<li> <b>7/Jun/2008</b>: Versión inicial de esta página</li></ul>
+
+</div>
+</div>
+</body>
+</html>
