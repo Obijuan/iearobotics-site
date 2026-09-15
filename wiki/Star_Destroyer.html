@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Star Destroyer - WikiRobotics</title>
+  	<link rel="stylesheet" href="load.css">
+</head>
+
+<body style="margin: 10px; font-size: 12px;">
+<h1 id="firstHeading" class="firstHeading" lang="es">Star Destroyer</h1>
+<div id="bodyContent" class="mw-body-content"></div>
+
+<!-- start content -->
+<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Fotos_y_Video"><span class="tocnumber">2</span> <span class="toctext">Fotos y Video</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Autores"><span class="tocnumber">3</span> <span class="toctext">Autores</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Descripci.C3.B3n"><span class="tocnumber">4</span> <span class="toctext">Descripción</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h1>
+<p>Star Destroyer es un robot con la apariencia de un Destructor Imperial de la pelí­cula Star Wars. 
+Se controla un <a rel="nofollow" class="external text" href="https://es.wikipedia.org/wiki/Control_Remoto_Wii">wiimote</a> mando de la consola Wii, existiendo dos modos de funcionamiento:
+</p>
+<ul>
+  <li> Utilizando el mando como un volante. </li>
+  <li> Utilizando el mando para leer la posición de un LED infrarrojo. </li>
+</ul>
+<p>Ambos modos que permiten ajustar la velocidad de avance del robot, tanto hacia delante como hacia atrás, así como la cantidad de giro.
+También incluye sensores infrarrojos que evitan, por ejemplo, que el robot se caiga de una mesa.
+</p>
+<h1><span class="mw-headline" id="Fotos_y_Video">Fotos y Video</span></h1>
+<p><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Arriba.jpg" class="image"><img alt="Arriba.jpg" src="Star_Destroyer_files/Arriba_GXjs.jpg" width="400" height="300"></a>
+<a href="https://iearobotics.com/wiki/index.php?title=Archivo:Debajo.jpg" class="image"><img alt="Debajo.jpg" src="Star_Destroyer_files/Debajo_GXjs.jpg" width="400" height="300"></a>
+</p><p><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=beI-BIeg-tY">Video en youtube</a>
+</p>
+<h1><span class="mw-headline" id="Autores">Autores</span></h1>
+<p>Leonardo Diez Dolinski<br>
+Antonio González Huete<br>
+Claudio Jesús Sánchez Casanueva
+</p>
+<h1><span class="mw-headline" id="Descripci.C3.B3n">Descripción</span></h1>
+<p>En primer lugar el wiimote envía por bluetooth la información un PC. 
+</p>
+<ul>
+<li>En el modo volante utiliza los acelerómetros para obtener la inclinación del mando en dos planos: la inclinación para la velocidad (como en los controles de un avion se controla la altitud) y el giro para la cantidad de giro.</li>
+<li>En el modo infrarrojo se mantiene el wiimote fijo, apuntando hacia el lector un LED infrarrojo. Definiendo un origen de coordenadas, el wiimote obtiene las coordenadas (X, Y) del LED con respecto al origen de coordenadas.</li>
+</ul>
+<p><br>
+En segundo lugar el PC interpreta la información, calculando la velocidad que deberán tener cada uno de los dos motores del robot, y enviándosela por protocolo serie al robot. <br>
+Estos valores, enteros entre 100 y -100 representan el porcentaje de la potencia total que utilizar el motor. Con valores positivos el motor avanzara y con valores negativos retrocederá. Con este método es posible obtener diferentes velocidades de avance, así como giros mas o menos pronunciados.
+</p><p><br>
+En tercer y ultimo lugar el robot recibe los datos por, utilizando modulación en frecuencia, aplica dichos valores a los motores, para lograr un control pseudo-analógico de cada uno de ellos.<br>
+El robot, por debajo de la maqueta, esta montado sobre una base triangular. En todos lo vértices de este triangulo hay colocados sensores infrarrojos utilizados para evitar que el robot continúe con el movimiento en caso de detectar un obstáculo, como por ejemplo el borde de una mesa o una linea negra en el suelo. Si detecta alguno de los obstáculos, el sensor cambia de valor y el robot altera el movimiento actual.
+</p>
+
+</div>
+</div>
+</body>
+</html>
