@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Robot FlatBot - WikiRobotics</title>
+  	<link rel="stylesheet" href="load.css">
+</head>
+
+<body style="margin: 10px; font-size: 12px;">
+<h1 id="firstHeading" class="firstHeading" lang="es">Robot FlatBot</h1>
+<div id="bodyContent" class="mw-body-content"></div>
+
+<!-- start content -->
+<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Flatbot1.jpg" class="image"><img alt="" src="Robot_FlatBot_files/300px-Flatbot1_V75N.jpg" width="300" height="200" class="thumbimage" srcset="Robot_FlatBot_files/Flatbot1_V75N.jpg 1.5x, Robot_FlatBot_files/Flatbot1_V75N.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Flatbot1.jpg" class="internal" title="Aumentar"></a></div>Portátil encima del FlatBot</div></div></div> </td>
+<td>  <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Flatbot3.jpg" class="image"><img alt="" src="Robot_FlatBot_files/300px-Flatbot3_V75N.jpg" width="300" height="200" class="thumbimage" srcset="Robot_FlatBot_files/Flatbot3_V75N.jpg 1.5x, Robot_FlatBot_files/Flatbot3_V75N.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Flatbot3.jpg" class="internal" title="Aumentar"></a></div>Vista superior</div></div></div></td>
+<td>  <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Flatbot2.jpg" class="image"><img alt="" src="Robot_FlatBot_files/300px-Flatbot2_V75N.jpg" width="300" height="200" class="thumbimage" srcset="Robot_FlatBot_files/Flatbot2_V75N.jpg 1.5x, Robot_FlatBot_files/Flatbot2_V75N.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Flatbot2.jpg" class="internal" title="Aumentar"></a></div>Vista inferior</div></div></div>
+</td></tr></tbody></table>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Descripci.C3.B3n"><span class="tocnumber">2</span> <span class="toctext">Descripción</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Mec.C3.A1nica"><span class="tocnumber">2.1</span> <span class="toctext">Mecánica</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Hardware_.28POR_ESCRIBIR.29"><span class="tocnumber">2.2</span> <span class="toctext">Hardware (POR ESCRIBIR)</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Firmware_.28Servidor.29"><span class="tocnumber">2.3</span> <span class="toctext">Firmware (Servidor)</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#Servidor_b.C3.A1sico"><span class="tocnumber">2.3.1</span> <span class="toctext">Servidor básico</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Servidor_avanzado"><span class="tocnumber">2.3.2</span> <span class="toctext">Servidor avanzado</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Programas_para_la_SKYPIC_y_la_SKY293"><span class="tocnumber">2.3.3</span> <span class="toctext">Programas para la SKYPIC y la SKY293</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-9"><a href="#Software_PC_.28Cliente.29"><span class="tocnumber">2.4</span> <span class="toctext">Software PC (Cliente)</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="#Cliente_b.C3.A1sico_para_servidor_.28firmware.29_b.C3.A1sico"><span class="tocnumber">2.4.1</span> <span class="toctext">Cliente básico para servidor (firmware) básico</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#Cliente_b.C3.A1sico_para_servidor_.28firmware.29_avanzado"><span class="tocnumber">2.4.2</span> <span class="toctext">Cliente básico para servidor (firmware) avanzado</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#Cliente_avanzado_para_servidor_.28firmware.29_b.C3.A1sico"><span class="tocnumber">2.4.3</span> <span class="toctext">Cliente avanzado para servidor (firmware) básico</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#Cliente_avanzado_para_servidor_.28firmware.29_avanzado"><span class="tocnumber">2.4.4</span> <span class="toctext">Cliente avanzado para servidor (firmware) avanzado</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Montaje"><span class="tocnumber">3</span> <span class="toctext">Montaje</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Aplicaciones"><span class="tocnumber">4</span> <span class="toctext">Aplicaciones</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#Ordenador_port.C3.A1til_m.C3.B3vil"><span class="tocnumber">4.1</span> <span class="toctext">Ordenador portátil móvil</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Control_con_el_mando_de_la_wii"><span class="tocnumber">4.2</span> <span class="toctext">Control con el mando de la wii</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Base_m.C3.B3vil_para_colocar_objetos"><span class="tocnumber">4.3</span> <span class="toctext">Base móvil para colocar objetos</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#V.C3.ADdeos"><span class="tocnumber">5</span> <span class="toctext">Vídeos</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="#Autor"><span class="tocnumber">6</span> <span class="toctext">Autor</span></a></li>
+<li class="toclevel-1 tocsection-21"><a href="#Licencia"><span class="tocnumber">7</span> <span class="toctext">Licencia</span></a></li>
+<li class="toclevel-1 tocsection-22"><a href="#M.C3.A1s_informaci.C3.B3n"><span class="tocnumber">8</span> <span class="toctext">Más información</span></a></li>
+<li class="toclevel-1 tocsection-23"><a href="#Fe_de_erratas"><span class="tocnumber">9</span> <span class="toctext">Fe de erratas</span></a></li>
+<li class="toclevel-1 tocsection-24"><a href="#Cr.C3.A9ditos"><span class="tocnumber">10</span> <span class="toctext">Créditos</span></a></li>
+<li class="toclevel-1 tocsection-25"><a href="#Noticias"><span class="tocnumber">11</span> <span class="toctext">Noticias</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h1>
+<p>El robot <b>FlatBot</b> es una plataforma móvil sencilla que ofrece una superficie plana lo suficientemente grande como para poder transportar objetos de hasta 3 o 4 kilos. Por eso es ideal para poner ruedas a un ordenador portátil.
+La plataforma lleva incorporada una electrónica que la hace autónoma, es decir, no necesita un PC para que se mueva, aunque si se dispone de éste se podrán hacer aplicaciones de alto nivel.
+</p>
+<h1><span class="mw-headline" id="Descripci.C3.B3n">Descripción</span></h1>
+<p>FlaBot se puede considerar como una evolución de la mecánica del robot 
+	<a href="https://iearobotics.com/wiki/index.php?title=Skybot" title="Skybot">Skybot</a>, ya que la electronica de control es compatible entre los dos robots al igual que el software.<br>
+La diferencia, como hemos dicho, reside en la estructura mecánica, que ahora permite transportar un PC encima como se puede ver en las fotos.
+</p>
+<h2><span class="mw-headline" id="Mec.C3.A1nica">Mecánica</span></h2>
+<p>La estructura mecánica de la primera versión es de aluminio de 2mm.<br>
+Está hecha de una sola pieza, con cuatro pliegues en cada lateral para ganar consistencia y hacer que pueda soportar al menos 5 Kg, aunque estamos seguros de que aguantará muchos más, otra cosa es que los motores lo muevan.<br>
+</p><p><br>
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:Rueda_flatbot.jpg" class="image">
+		<img alt="" src="Robot_FlatBot_files/300px-Rueda_flatbot_V75N.jpg" 
+		width="300" height="225" 
+		class="thumbimage" srcset="Robot_FlatBot_files/Rueda_flatbot_V75N.jpg 1.5x, Robot_FlatBot_files/Rueda_flatbot_V75N.jpg 2x"></a>  
+		<div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Rueda_flatbot.jpg" class="internal" title="Aumentar"></a></div><a rel="nofollow" class="external text" href="http://www.superrobotica.com/S360175.htm">ver detalle</a></div></div></div> </td>
+<td>  <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:Motor_flatbot.jpg" 
+	class="image"><img alt="" src="Robot_FlatBot_files/300px-Motor_flatbot_V75N.jpg" 
+	width="300" height="225" class="thumbimage" 
+	srcset="Robot_FlatBot_files/Motor_flatbot_V75N.jpg 1.5x, Robot_FlatBot_files/Motor_flatbot_V75N.jpg 2x"></a>
+	  <div class="thumbcaption"><div class="magnify">
+		<a href="https://iearobotics.com/wiki/index.php?title=Archivo:Motor_flatbot.jpg" 
+		class="internal" title="Aumentar"></a></div>
+		<a rel="nofollow" class="external text" href="http://www.superrobotica.com/S330130.htm">
+			ver detalle</a></div></div></div>
+</td></tr></tbody></table>
+<p><br>
+Lleva dos motores de 8.1 kg-cm, 120rpm a 12v con sus ruedas tractoras de alta adherencia y dos ruedas locas de la marca <b>ALEX 1-0217</b>.<br>
+La estructura se ha hecho ampliable en el número de motores, puede llevar hasta 6, tres por cada lado, que podrán mover más de 20Kg sin problemas.<br>
+<br>
+<b>Planos del robot:</b><br>
+</p>
+<ul><li> <a rel="nofollow" class="external text" 
+	href="images/d/d9/Flatbot-reducido.pdf">Plano con cotas</a></li>
+<li> <a rel="nofollow" class="external text" 
+	href="images/2/29/Flatbot-reducido_sc.pdf">Plano sin cotas</a></li>
+<li> <a rel="nofollow" class="external text" 
+	href="images/0/09/Flatbot-reducido-cotas.dxf">Plano con cotas en DXF</a></li></ul>
+<p><br>
+</p>
+<h2><span class="mw-headline" id="Hardware_.28POR_ESCRIBIR.29">Hardware (POR ESCRIBIR)</span></h2>
+<p>La tarjeta de control del robot es la 
+	<a href="https://iearobotics.com/wiki/index.php?title=SkyControl" title="SkyControl">SkyControl</a> cuyas principales características son:
+</p>
+<ul><li> PIC16f876A</li>
+<li> Conexión por USB</li>
+<li> Driver L298B integrado para control de motores</li>
+<li> Conector I2C para conectar sensores</li>
+<li> Conector directo para tres servomecanismos</li></ul>
+<p><br>
+</p><p><b>Configuración de los jumpers</b>:<br>
+</p>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=SkyControl:Hardware#Jumpers_de_configuraci.C3.B3n" title="SkyControl:Hardware">Tabla de configuración de los jumpers de la placa SkyControl</a></li></ul>
+<p><b>Enlaces directos</b>:<br>
+</p>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=SkyControl:Planos" title="SkyControl:Planos">Planos de fabricación de la placa SkyControl</a><br></li></ul>
+<h2><span class="mw-headline" id="Firmware_.28Servidor.29">Firmware (Servidor)</span></h2>
+<p>El Firmware es el software que está grabado en el PIC16F876A. Dado que la electrónica es compatible con la del <a href="https://iearobotics.com/wiki/index.php?title=Skybot" title="Skybot">Skybot</a>,  todos los programas de éste serán válidos para el Flatbot, pero no tendrá sentido usarlos debido a que su cometido es distinto y además a que le faltan los sensores que tiene el <a href="https://iearobotics.com/wiki/index.php?title=Skybot" title="Skybot">Skybot</a>,  por lo que no podrá realizar todas las funciones.<br>
+En el <a href="https://iearobotics.com/wiki/index.php?title=Skybot" title="Skybot">Skybot</a>  se graban programas que hacen que se comporte de forma autónoma, como por ejemplo seguir una línea negra, evitar obstáculos con los bumpers, etc. Ahora, se busca otro tipo de aplicación, se necesita un programa que disponga de servicios que permitan controlar al robot, pero la inteligencia no residirá en él, como con el Skybot, sino que se hará en un PC externo.<br>
+Es lo que llamamos programación CLIENTE-SERVIDOR, una aplicación (<i>servidor</i>) ofrece servicios a otra (<i>cliente</i>) que los usa para lograr un objetivo.<br>
+<br>
+A continuación detallamos algunos de los servidores realizados:<br>
+</p><p><br>
+</p>
+<h3><span class="mw-headline" id="Servidor_b.C3.A1sico">Servidor básico</span></h3>
+<p>Se trata de un programa que permite mover el robot mandando caracteres ASCII por el puerto serie. <br>
+Por lo tanto, necesitaremos un cliente (PC), que disponga de un terminal de comunicaciones, por ejemplo el "Minicom" en Linux o el Hyperterminal en Windows. <br>
+Los parámetros de la comunicación son: 9600 baudios, 8 bits de datos, 1 bit de stop y sin paridad. Es decir 9600, 8n1<br>
+Los comandos son:
+</p>
+<ul><li> q   -&gt; adelante</li>
+<li> a   -&gt; atras</li>
+<li> o   -&gt; izquierda</li>
+<li> p   -&gt; derecha</li>
+<li> <i> (espacio) -&gt; parar</i></li></ul>
+<p><br>
+<b>Descarga de archivos para la <b>SkyControl</b></b><br>
+</p>
+<ul><li> <a rel="nofollow" class="external text" 
+	href="images/3/31/Sci-menu-skycontrol.c">Fichero Fuente Servidor Básico para SkyControl .c</a><br></li>
+<li> <a rel="nofollow" class="external text" 
+	href="images/e/ea/Sci-menu-skycontrol.hex">Fichero Binario Servidor Básico para SkyControl.hex</a><br></li></ul>
+<h3><span class="mw-headline" id="Servidor_avanzado">Servidor avanzado</span></h3>
+<p>Se ha ampliado el programa anterior para añadirle funciones de PWM. Es decir de control de velocidad en los motores. Dado que el controlador utiliza el PIC16f876a se usarán las unidades de PWM internas del micro. <br>
+Esas unidades se encargan de generar las señales de PWM de forma automática y permite que nuestro programa se dedique a otras cosa. Como inconveniente diremos que los bit de ON/OFF de los motores se han cableado al Puerto C debido a que ahí residen los pines de salida del PWM.<br><br>
+Los comandos del servidor son:<br>
+</p>
+<ul><li> Comandos basicos del servidor:</li></ul>
+<pre>q  -&gt; Adelante
+a  -&gt; Atras
+o  -&gt; izquierda
+p  -&gt; derecha
+' ' -&gt; parar
+
++  -&gt; incrementa la velocidad en +5
+-  -&gt; decrementa la velocidad en -5
+
+0..5 -&gt; Diferentes valores de velocidad
+</pre>
+<ul><li> Comandos avanzados:</li></ul>
+<pre>v  -&gt; Espera recibir tres dígitos indicando valor velocidad.
+      Ej: v &lt;'1'&gt; &lt;'8'&gt; &lt;'5'&gt;
+      Una vez recibidos los tres digitos devuelve un '.'
+
+V  -&gt; Espera a recibir un byte que indica la velocidad. Ej: V&lt;61&gt;
+      Una vez recibido el valor devuelve un '.'
+
+b  -&gt; Espera a recibir dos bytes que indican la velocidad de cada motor
+      primer byte = motor_1
+      segundo_byte = motor_2
+      Una vez recibidos los dos bytes devuelve un '.'
+</pre>
+<ul><li>  Comando PING </li></ul>
+<pre>i   -&gt; Responde I (para probar conexion
+</pre>
+<p><br>
+<b>Descarga de archivos para la <b>SkyControl</b></b><br>
+</p>
+<ul><li> <a rel="nofollow" class="external text" 
+	href="images/2/22/Flatbot-skycontrol-avanzado.c">Fichero Fuente Servidor Avanzado .c</a><br></li>
+<li> <a rel="nofollow" class="external text" 
+	href="images/d/d6/Flatbot-skycontrol-avanzado.hex">Fichero Binario Servidor Avanzado .hex</a><br></li></ul>
+<p><br>
+</p>
+<h3><span class="mw-headline" id="Programas_para_la_SKYPIC_y_la_SKY293">Programas para la SKYPIC y la SKY293</span></h3>
+<p>Todos aquellos que estéis usando un FLatBot pero con las placas SKYPIC y SKY293 en lugar de con la SKYControl tendréis que usar estas versiones de los servidores. La principal diferencia es que en el FLatBot el puerto de control de motores es el <b>Puerto C</b> mientras que en el Skybot es el <b>Puerto B</b>.<br><br>
+Además, para usar el PWM tendréis que haceros un cable especial que una el Puerto C (bit 1  y bit 2) con los enables de los motores en el Puerto B.
+<br>
+<br>
+<b>Servidor básico</b><br>
+En esta <a rel="nofollow" class="external text" 
+href="../talleres/generico-v14/sesion-4/ejemplos/ejemplos-skybot-1.html#puerto_serie">
+página</a> podrá encontrar el programa 
+<a rel="nofollow" class="external text" 
+href="../talleres/generico-v14/sesion-4/ejemplos/download/sci-menu.c.html">
+sci_menu.c</a> que implementa el servidor básico.<br>
+</p><p><b>Servidor avanzado</b><br>
+</p>
+<ul><li> <a rel="nofollow" class="external text" 
+	href="images/9/9b/Avanzado_Flatbot.c">Fichero Fuente Servidor Avanzado .c para la Skypic</a><br></li>
+<li> <a rel="nofollow" class="external text" 
+	href="images/7/7e/Avanzado_Flatbot.hex">Fichero Binario Servidor Avanzado .hex para la Skypic</a><br></li></ul>
+<h2><span class="mw-headline" id="Software_PC_.28Cliente.29">Software PC (Cliente)</span></h2>
+<p>El cliente es un programa que se ejecuta en el PC que está encima de Flatbot y que se comunica con el servidor (firmware) por el puerto serie. Este software estará programado en C/C++, python, C#, JAVA, Visual Basic o incluso podrá ser una aplicación de terceros. <br>
+Este aspecto es uno de los diferenciadores del Flatbot respecto al 
+<a href="https://iearobotics.com/wiki/index.php?title=Skybot" title="Skybot">Skybot</a>,
+  ya que al poder transportar el PC sobre él podremos hacer programas complejos que necesiten 
+  gran capacidad de proceso y que hasta ahora no era posible hacerlos funcionar en el propio robot. 
+  Por ejemplo, usando una WEBCAM conectada al PC que controla el Flatbot, 
+  podremo hacer seguimiento de objetos por Visión Artificial. Otra aplicación, 
+  diametralmente opuesta, es el control del robot desde diferentes dispositivos, 
+  como mando de la WII, joystick playstation, móvil, consola de juegos, etc...<br> 
+</p>
+<h3><span class="mw-headline" id="Cliente_b.C3.A1sico_para_servidor_.28firmware.29_b.C3.A1sico">Cliente básico para servidor (firmware) básico</span></h3>
+<p>El cliente básico por excelencia es cualquier programa terminal de puerto serie. <br>
+En Linux tenemos el "minicom" o el "gtkterm"<br>
+En windows tenemos el "hyperterminal"<br>
+Para que funcionen con el servidor básico tendremos que configurarlos a 9600, 8n1 y sin flujos de ningún tipocomo hemos explicado antes.<br>
+Los comandos a enviar son los descritos en <b>Firmware (Servidor) -&gt; Servidor básico</b><br>
+</p>
+<h3><span class="mw-headline" id="Cliente_b.C3.A1sico_para_servidor_.28firmware.29_avanzado">Cliente básico para servidor (firmware) avanzado</span></h3>
+<p>Usaremos el mismo entorno que antes 'Cliente básico con servidor básico' salvo que ahora desde el terminal podremos mandar comandos de velocidad. <br>
+Además, para que el robot se empiece a mover, primero necesitamos indicar la velocidad. Eso lo podemos hacer mandando las teclas numéricas, '1', '2', ...<br>
+Los comandos a enviar son los descritos <b>Firmware (Servidor) -&gt; Servidor avanzado</b><br>
+</p>
+<h3><span class="mw-headline" id="Cliente_avanzado_para_servidor_.28firmware.29_b.C3.A1sico">Cliente avanzado para servidor (firmware) básico</span></h3>
+<p>En este caso usaremos un programa en C# para mover el robot. <br>
+Este programa se comunica con el robot por el puerte serie y nosotros nos comunicaremos con el programa con el mando de la Wii.<br>
+Usamos el PAD del mando, no tiene implementado el control analógico.<br>
+</p>
+<ul><li> Ejemplo: Cliente para mando de la WII</li></ul>
+<h3><span class="mw-headline" id="Cliente_avanzado_para_servidor_.28firmware.29_avanzado">Cliente avanzado para servidor (firmware) avanzado</span></h3>
+<p>Es una mejora del programa anterior, ahora usamos la información analógica para mover el robot, tenemos el control de velocidad en los motores.<br>
+</p>
+<ul><li> Ejemplo: Cliente para mando de la WII</li></ul>
+<h1><span class="mw-headline" id="Montaje">Montaje</span></h1>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:FlatBot_montado.jpg" 
+	class="image">
+	<img alt="" src="Robot_FlatBot_files/300px-FlatBot_montado_V75N.jpg" width="300" height="307" class="thumbimage" srcset="Robot_FlatBot_files/FlatBot_montado_V75N.jpg 1.5x, Robot_FlatBot_files/FlatBot_montado_V75N.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:FlatBot_montado.jpg" class="internal" title="Aumentar"></a></div>Parte inferior del FlatBot (Detalle de montaje)</div></div></div> </td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:FlatBot_detalle_conexiones.jpg" 
+	class="image"><img alt="" 
+	src="Robot_FlatBot_files/300px-FlatBot_detalle_conexiones_V75N.jpg" 
+	width="300" height="174" class="thumbimage" 
+	srcset="Robot_FlatBot_files/FlatBot_detalle_conexiones_V75N.jpg 1.5x, Robot_FlatBot_files/FlatBot_detalle_conexiones_V75N.jpg 2x"></a>  
+	<div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:FlatBot_detalle_conexiones.jpg" class="internal" title="Aumentar"></a></div>Cableado de los motores y la batería del FlatBot</div></div></div>
+</td></tr></tbody></table>
+<ul><li> Tabla jumpers</li></ul>
+<p><a href="https://iearobotics.com/wiki/index.php?title=SkyControl:Hardware#Jumpers_de_configuraci.C3.B3n" title="SkyControl:Hardware">
+	Configuracion jumpers de la placa SkyControl</a>
+</p>
+<h1><span class="mw-headline" id="Aplicaciones">Aplicaciones</span></h1>
+<h2><span class="mw-headline" id="Ordenador_port.C3.A1til_m.C3.B3vil">Ordenador portátil móvil</span></h2>
+<p>El FlatBot se ha diseñado para colocar encima de él un ordenador portátil y dotar al robot de una alta capacidad de proceso. Por lo tanto, podremos crear un número de aplicaciones casi infinitas. <br><br>  
+Una de las configuración más exitosa es un FlatBot controlado por un portátil 
+<a href="https://iearobotics.com/wiki/index.php?title=ASUS_EEE" title="ASUS EEE"> ASUS Eee</a> como se puede ver en la foto y video de abajo.<br>
+En la tercera sesión del 
+<a href="Taller_FlatBot.html" title="Taller FlatBot">Taller FlatBot</a> 
+se controla el robot usando una WEBCAM (interna o externa), la aplicación de ejemplo
+ es hacer que el robot siga un objeto caracterizado por su color.
+<br>
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:Asus_eee3.jpg" 
+	class="image"><img alt="" src="Robot_FlatBot_files/300px-Asus_eee3_V75N.jpg" 
+	width="300" height="229" 
+	class="thumbimage" srcset="Robot_FlatBot_files/Asus_eee3_V75N.jpg 1.5x, Robot_FlatBot_files/Asus_eee3_V75N.jpg 2x"></a>  
+	<div class="thumbcaption"><div class="magnify">
+		<a href="https://iearobotics.com/wiki/index.php?title=Archivo:Asus_eee3.jpg" 
+		class="internal" title="Aumentar"></a>
+	</div>FlatBot con un portátil Asus Eee encima</div></div></div> </td>
+<td>300|250&lt;/youtube&gt;
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Control_con_el_mando_de_la_wii">Control con el mando de la wii</span>
+</h2>
+<p>Usando la comunicación bluetooth con un portátil (con Bluetooth) podemos controlar a FlatBot 
+	usando el mando de la wii, ya sea con un control básico todo o nada, o con 
+	un control avanzado que incluye velocidad variable.
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>300|250&lt;/youtube&gt;
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Base_m.C3.B3vil_para_colocar_objetos">
+	Base móvil para colocar objetos</span></h2>
+<p>El FlatBot es ideal para usarlo como una base móvil controlada desde un ordenador. 
+	Encima se pueden colocar diferentes objetos. Por ejemplo a 
+	<a rel="nofollow" class="external text" 
+	href="https://en.wikipedia.org/wiki/Bert_and_Ernie">Epi</a>. 
+	Está sujeto a FlatBot mediante velcro. 
+</p>
+<table border="4" cellpadding="8" cellspacing="0" 
+class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:FlatBot-Epi1.jpg" 
+	class="image">
+	<img alt="" src="Robot_FlatBot_files/300px-FlatBot-Epi1_V75N.jpg" 
+	width="300" height="225" class="thumbimage" srcset="Robot_FlatBot_files/450px-FlatBot-Epi1_V75N.jpg 1.5x, Robot_FlatBot_files/600px-FlatBot-Epi1_V75N.jpg 2x"></a>  
+	<div class="thumbcaption"><div class="magnify">
+		<a href="https://iearobotics.com/wiki/index.php?title=Archivo:FlatBot-Epi1.jpg" 
+		class="internal" title="Aumentar"></a></div>Epi encima del FlatBot</div></div></div> </td>
+<td>300|250&lt;/youtube&gt;
+</td></tr></tbody></table>
+<p>En otra de las pruebas hemos colocado un <a rel="nofollow" class="external text" 
+	href="https://en.wikipedia.org/wiki/Robosapien_v2">roboSapiens v2</a>, 
+	que tiene un peros de 4.3 Kilos. También está agarrado con velcro a la superficie de FlatBot. 
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>300|250&lt;/youtube&gt; </td>
+<td>300|250&lt;/youtube&gt;
+</td></tr></tbody></table>
+<p>También se puede colocar una papelera encima y convertirla en una canasta móvil&nbsp;;-)
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:Flatbot-robosapiens.jpg" 
+	class="image"><img alt="" src="Robot_FlatBot_files/300px-Flatbot-robosapiens_V75N.jpg" 
+	width="300" height="225" class="thumbimage" srcset="Robot_FlatBot_files/450px-Flatbot-robosapiens_V75N.jpg 1.5x, Robot_FlatBot_files/600px-Flatbot-robosapiens_V75N.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Flatbot-robosapiens.jpg" class="internal" title="Aumentar"></a></div>Robosapiens v2 encima del FlatBot</div></div></div> </td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:FlatBot-papelera.jpg" 
+	class="image"><img alt="" src="Robot_FlatBot_files/300px-FlatBot-papelera_V75N.jpg" 
+	width="300" height="400" class="thumbimage" srcset="Robot_FlatBot_files/450px-FlatBot-papelera_V75N.jpg 1.5x, Robot_FlatBot_files/600px-FlatBot-papelera_V75N.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:FlatBot-papelera.jpg" class="internal" title="Aumentar"></a></div>Una papelera móvil</div></div></div>
+</td></tr></tbody></table>
+<h1><span class="mw-headline" id="V.C3.ADdeos">Vídeos</span></h1>
+<ul><li> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=o5idMjOk0DQ">FlatBot controlado por el mando de la WII</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=mYO-tqRL7pY">Movido por un portátil Asus Eee PC</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=tHx8VzlFlrQ">Transportando a Epi</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=lojJpX5g2EA">Llevando a Robosapiens v2</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=4y61ehRpMdE">Robosapiens v2 bailando encima de FlatBot</a></li></ul>
+<h1><span class="mw-headline" id="Autor">Autor</span></h1>
+<ul><li> <a rel="nofollow" class="external text" 
+	href="http://www.iearobotics.com/wiki/index.php?title=Andr%C3%A9s_Prieto-Moreno">
+	Andrés Prieto-Moreno Torres</a></li></ul>
+<h1><span class="mw-headline" id="Licencia">Licencia</span></h1>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" 
+style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; 
+border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cc_logo.png" 
+	class="image"><img alt="Cc logo.png" 
+	src="Robot_FlatBot_files/Cc_logo_V75N.png" width="88" height="31"></a> 
+	This work is licensed under a <a rel="nofollow" 
+	class="external text" href="http://creativecommons.org/licenses/by-sa/2.5/es/">
+	Creative Commons Attribution-ShareAlike 2.5 Spain License</a>.
+</td></tr></tbody></table>
+<h1><span class="mw-headline" id="M.C3.A1s_informaci.C3.B3n">Más información</span></h1>
+<ul><li> <a href="Taller_FlatBot.html" title="Taller FlatBot">Taller FlatBot</a></li></ul>
+<h1><span class="mw-headline" id="Fe_de_erratas">Fe de erratas</span></h1>
+<ul><li> En los planos mecánicos, los taladros para sujetar el sensor de ultrasonidos
+	 trasero están mal, el de arriba va abajo y viceversa.</li></ul>
+<h1><span class="mw-headline" id="Cr.C3.A9ditos">Créditos</span></h1>
+<h1><span class="mw-headline" id="Noticias">Noticias</span></h1>
+<p><b>11/Jun/2008</b>: Versión inicial de esta página
+</p>
+
+</div>
+</div>
+</body>
+</html>
