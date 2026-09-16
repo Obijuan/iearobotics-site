@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Taller Skybot:Sesión 1 - WikiRobotics</title>
+  	<link rel="stylesheet" href="load.css">
+</head>
+
+<body style="margin: 10px; font-size: 12px;">
+<h1 id="firstHeading" class="firstHeading" lang="es">Taller Skybot:Sesión 1</h1>
+<div id="bodyContent" class="mw-body-content"></div>
+
+<!-- start content -->
+<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Objetivos"><span class="tocnumber">1</span> <span class="toctext">Objetivos</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Material_adicional_necesario"><span class="tocnumber">2</span> <span class="toctext">Material adicional necesario</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#.C2.A1Manos_a_la_obra.21"><span class="tocnumber">3</span> <span class="toctext">¡Manos a la obra!</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Al_finalizar_la_sesi.C3.B3n"><span class="tocnumber">4</span> <span class="toctext">Al finalizar la sesión</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Informaci.C3.B3n_adicional"><span class="tocnumber">5</span> <span class="toctext">Información adicional</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Enlaces"><span class="tocnumber">6</span> <span class="toctext">Enlaces</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Noticias"><span class="tocnumber">7</span> <span class="toctext">Noticias</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Objetivos">Objetivos</span></h2>
+<p>Preparar la estructura del robot. Trucar los servos y entender su funcionamiento como motores de corriente continua.
+</p>
+<h2><span class="mw-headline" id="Material_adicional_necesario">Material adicional necesario</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-material.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n_1_files/300px-Taller-skybot-sesion1-material_bwyB.png" width="300" height="225" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n_1_files/Taller-skybot-sesion1-material_bwyB.png 1.5x, Taller_Skybot_Sesi%C3%B3n_1_files/Taller-skybot-sesion1-material_bwyB.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-material.png" class="internal" title="Aumentar"></a></div>Material adicional necesario para la <b>Sesión 1</b></div></div></div>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<p><b>1</b>. Polímetro (opcional) <br>
+<b>2</b>. Alicantes para cortar <br>
+<b>3</b>. Alicates de cabeza plana <br>
+<b>4</b>. Destornillador pequeño de estrella <br>
+<b>5</b>. Destornillador pequeño de cabeza plana <br>
+<b>6</b>. Lima <br>
+<b>7</b>. Soldador de punta fina <br>
+<b>8</b>. Pegamento para plásticos rígidos <br>
+<b>9</b>. Rollo de cinta aislante<br>
+<b>10</b>. Rollo de estaño <br>
+<b>11</b>.cuatro pilas tamaño AA <br>
+</p>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id=".C2.A1Manos_a_la_obra.21">¡Manos a la obra!</span></h2>
+<ul><li> <a href="Taller_Skybot_Sesión_1_Montaje_del_chásis.html" 
+	title="Taller Skybot:Sesión 1:Montaje del chásis">Paso 1</a>: <b>Montar el chásis del Robot</b>.</li></ul>
+<dl><dd>El chásis del <a href="https://iearobotics.com/wiki/index.php?title=Skybot" title="Skybot">Skybot</a> está formado por piezas de plástico que tenemos que pegar. Dependiendo del pegamento empleado, las piezas se pegarán instantáneamente o habrá que esperar a que se sequen. En cualquier caso, el chásis no lo necesitaremos hasta la Sesión 2.</dd></dl>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesi%C3%B3n_1:Trucaje_servos" title="Taller Skybot:Sesión 1:Trucaje servos"> Paso 2</a>: <b>Trucaje de los servos</b>.</li></ul>
+<dl><dd>Para mover el robot utilizaremos motores de corriente continua. Los modelos convencionales son muy baratos pero tienen el inconveniente de que giran muy deprisa y tienen poca fuerza (es como intentar arrancar un coche en cuarta). Es necesario utilizar engranajes para conseguir más fuerza a costa de menor velocidad.</dd></dl>
+<dl><dd>Una solución muy empleada es comprar <b>servomecanismos</b>, como por ejemplo los <b>Futaba 3003</b> o compatibles,  y <b>trucarlos para convertirlos en motores de corriente continua</b>. Se pueden conseguir en cualquier tienda de aeromodelismo. Tienen una fuerza y velocidad muy adecuados para hacer pequeños robots móviles de aprendizaje que se puedan desplazar por superficies reducidas, como la de una mesa. </dd></dl>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesi%C3%B3n_1:Probando_los_servos_con_el_portapilas" title="Taller Skybot:Sesión 1:Probando los servos con el portapilas"> Paso 3</a>: <b>Probando los servos</b>.</li></ul>
+<dl><dd>Ahora comprobaremos que los servos se mueven correctamente y aprovecharemos para ver cómo funciona un motor de corriente continua.</dd></dl>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesi%C3%B3n_1:Interruptor" title="Taller Skybot:Sesión 1:Interruptor">Paso 4</a>: <b>Preparación del portapilas</b>.</li></ul>
+<dl><dd>El <a href="https://iearobotics.com/wiki/index.php?title=Skybot" title="Skybot">Skybot</a> puede funcionar como un robot autónomo o telecontrolado desde el PC. Para la alimentación usaremos <b>4 pilas AA</b>. Sin embargo, se puede utilizar un alimentador entre 4.5 - 6 para hacer pruebas y no gastar pilas. Para conectar el portapilas usaremos un interruptor para poder encender/apagar el robot fácilmente. </dd>
+<dd>En las versiones anteriores del Skybot se usaba un <b>JACK</b> en lugar del <b>Interruptor</b>. Entrar aquí <a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesi%C3%B3n_1:Portapilas" title="Taller Skybot:Sesión 1:Portapilas">Paso 4-con Jack</a> para ver su montaje.</dd></dl>
+<h2><span class="mw-headline" id="Al_finalizar_la_sesi.C3.B3n">Al finalizar la sesión</span></h2>
+<p>Al terminar la sesión 1 deberemos tener estos elementos:
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-final.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n_1_files/300px-Taller-skybot-sesion1-final_bwyB.png" width="300" height="225" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n_1_files/Taller-skybot-sesion1-final_bwyB.png 1.5x, Taller_Skybot_Sesi%C3%B3n_1_files/Taller-skybot-sesion1-final_bwyB.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-final.png" class="internal" title="Aumentar"></a></div>Lo que debemos tener construido al finalizar la sesión 1</div></div></div>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<p><b>1</b>. Chásis del robot <br>
+<b>2</b>. Ruedas <br>
+<b>3</b>. Tornillos del eje de los servos <br>
+<b>4</b>. Cables para los sensores <br>
+<b>5</b>. Servos trucados y probados <br>
+<b>6</b>. Portapilas con sus pilas y comprobada su tensión de salida.<br>
+</p>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Informaci.C3.B3n_adicional">Información adicional</span></h2>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=Servos_Futaba_3003" title="Servos Futaba 3003">Servos Futaba 3003</a></li></ul>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot" title="Taller Skybot">Taller Skybot</a>. Página principal</li></ul>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>19/Junio/2008</b>: Finalizada la migración</li>
+<li> <b>15/Junio/2008</b>: Comenzada esta página. Migración de la <a rel="nofollow" class="external text" href="http://www.iearobotics.com/talleres/generico-v14/sesion-1/index.html">documentación en HTML</a>.</li></ul>
+
+</div>
+</div>
+</body>
+</html>
