@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Impresoras 3D open-source - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Impresoras_3D_open-source","wgTitle":"Impresoras 3D open-source","wgCurRevisionId":22375,"wgRevisionId":22375,"wgArticleId":2128,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Reprap","Dinastía R"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Impresoras_3D_open-source","wgRelevantArticleId":2128,"wgRequestId":"aqu9E8Hq0xq0jJjiDLfSOwAAj8Y","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Impresoras-3D-open-source_files/load_Rv-Y.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="Impresoras-3D-open-source_files/load_Rv-Y.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="Impresoras-3D-open-source_files/load_002_Rv-Y.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Impresoras_3D_open-source rootpage-Impresoras_3D_open-source skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Impresoras 3D open-source</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Generaci.C3.B3n_0"><span class="tocnumber">2</span> <span class="toctext">Generación 0</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Generaci.C3.B3n_1"><span class="tocnumber">3</span> <span class="toctext">Generación 1</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Generaci.C3.B3n_2"><span class="tocnumber">4</span> <span class="toctext">Generación 2</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Generaci.C3.B3n_3"><span class="tocnumber">5</span> <span class="toctext">Generación 3</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Generaci.C3.B3n_4"><span class="tocnumber">6</span> <span class="toctext">Generación 4</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Clones_virtuales"><span class="tocnumber">7</span> <span class="toctext">Clones virtuales</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#La_dinast.C3.ADa_R"><span class="tocnumber">8</span> <span class="toctext">La dinastía R</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Noticas"><span class="tocnumber">9</span> <span class="toctext">Noticas</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Enlaces"><span class="tocnumber">10</span> <span class="toctext">Enlaces</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>Las impresoras 3D open-source tienen la característica de que <b>son clonables</b>. Cada una puede imprimir las piezas para construirte otra nueva (<b>replicación</b>). Por supuesto, sólo es posible la replicación de las piezas de plástico. El resto de partes se conocen como <b>vitaminas</b>, y tienen que ser aportadas por el constructor (motores, varillas metálicas, correas, tornillos...)
+</p><p>Una vez que dispones de una de estas impresoras, la puedes clonar. Pero... ¿Cómo conseguir la primera? Es lo que en el proyecto <a rel="nofollow" class="external text" href="http://reprap.org/wiki/RepRap">Reprap</a> lo llaman impresoras <a rel="nofollow" class="external text" href="http://reprap.org/wiki/RepStrap">RepStrap</a>: impresoras 3D que han sido construidas mediante máquinas diferentes: cortadoras por láser, maquinas de control numérico, etc. A partir de ellas, se puede comenzar una nueva <b>dinastía de máquinas replicantes</b>. Eso es lo que estamos haciendo en el <a rel="nofollow" class="external text" href="http://www.reprap.org/wiki/Proyecto_Clone_Wars">proyecto Clone-wars</a>
+</p><p>Las máquinas RepStrap son para nosotros la <b>Generación 0</b>.
+</p>
+<h2><span class="mw-headline" id="Generaci.C3.B3n_0">Generación 0</span></h2>
+<table class="wikitable" style="width:100%">
+
+<tbody><tr>
+<td> <img alt="160px" src="Impresoras-3D-open-source_files/R1-50_Rv-Y.jpg" title="160px" width="1536" height="1806">
+</td>
+<td>
+<ul><li> <b>Nombre</b>: <b><font color="#0000FF">R1</font></b> (<font color="#00FF00">R.I.P</font>)</li>
+<li> <b>Modelo</b>: <a rel="nofollow" class="external text" href="http://wiki.makerbot.com/cupcake">Cupcake</a>, de Makerbot Industries </li>
+<li> <b>Nacimiento</b>: 19/Mayo/2009 (Impresión de la primera pieza)</li>
+<li> <b>Propiedad de</b>: 
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main">Juan González-Gómez</a> (Obijuan)</li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=Andr%C3%A9s_Prieto-Moreno" title="Andrés Prieto-Moreno">Andrés_Prieto-Moreno</a></li></ul></li>
+<li> <b>Hijos</b>: <a href="https://iearobotics.com/wiki/index.php?title=Prusa_Mendel:_R2D2" title="Prusa Mendel: R2D2">R2D2</a></li></ul>
+<ul><li> <b><a href="https://iearobotics.com/wiki/index.php?title=Makerbot_Cupcake:_R1" title="Makerbot Cupcake: R1">MAS INFORMACIÓN</a></b></li></ul>
+</td>
+<td>
+<center> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:R1-series.jpg" class="image" title="90px"><img alt="90px" src="Impresoras-3D-open-source_files/R1-series_Rv-Y.jpg" width="414" height="847"></a> </center> <br>
+<center><a rel="nofollow" class="external text" href="http://starwars.wikia.com/wiki/R1-series_astromech_droid">Serie R1</a></center>
+</td></tr>
+<tr>
+<td> <img alt="150px" src="Impresoras-3D-open-source_files/Madre-gen0-r1_Rv-Y.jpg" title="150px" width="1074" height="1208">
+</td>
+<td>
+<ul><li> <b>Nombre</b>: <b><font color="#0000FF">MADRE</font></b></li>
+<li> <b>Modelo</b>: <a rel="nofollow" class="external text" href="http://store.makerbot.com/makerbot-thing-o-matic.html">Thing-o-Matic</a> de la empresa Makerbot</li>
+<li> <b>Nacimiento</b>: 16/Mayo/2011 (Impresión de la primera pieza)</li>
+<li> <b>Propiedad de</b>: <a rel="nofollow" class="external text" href="http://asrob.uc3m.es/">Asociación de Robótica de la UC3M</a></li>
+<li> <b><a href="https://iearobotics.com/wiki/index.php?title=Impresora_3D:MADRE" title="Impresora 3D:MADRE">MÁS INFORMACIÓN</a></b></li></ul>
+</td>
+<td>
+<center> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Mother_98098.png" class="image" title="200px"><img alt="200px" src="Impresoras-3D-open-source_files/Mother_98098_Rv-Y.png" width="471" height="352"></a> </center>
+</td></tr>
+<tr>
+<td> <img alt="160px" src="Impresoras-3D-open-source_files/PADRE-1_Rv-Y.jpg" title="160px" width="452" height="581">
+</td>
+<td>
+<ul><li> <b>Nombre</b>: <b><font color="#0000FF">PADRE</font></b> (a.k.a UC3-PO)</li>
+<li> <b>Modelo</b>: <a rel="nofollow" class="external text" href="http://store.makerbot.com/makerbot-thing-o-matic.html">Thing-o-Matic</a> de la empresa Makerbot</li>
+<li> <b>Nacimiento</b>: 8/Oct/2011 (Impresión de la primera pieza)</li>
+<li> <b>Propiedad de</b>: <a rel="nofollow" class="external text" href="http://www.uc3m.es/portal/page/portal/dpto_ing_sistemas_automatica">Departamento de Ingeniería de Sistemas y Automática</a>, Universidad Carlos III de Madrid</li>
+<li> <b><a href="https://iearobotics.com/wiki/index.php?title=Impresora_3D:PADRE" title="Impresora 3D:PADRE">MÁS INFORMACIÓN</a></b></li></ul>
+</td>
+<td>
+<center> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Darth-vader-star-wars-doormat.jpg" class="image" title="170px"><img alt="170px" src="Impresoras-3D-open-source_files/Darth-vader-star-wars-doormat_Rv-Y.jpg" width="309" height="330"></a> </center>
+<center>"Yo soy tu padre..."</center>
+</td></tr>
+<tr>
+<td> <img alt="160px" src="Impresoras-3D-open-source_files/Robcib-maker_Rv-Y.jpg" title="160px" width="832" height="1142">
+</td>
+<td>
+<ul><li> <b>Nombre</b>: <b><font color="#0000FF">ROBCIB-MAKER</font></b></li>
+<li> <b>Modelo</b>: <a rel="nofollow" class="external text" href="http://store.makerbot.com/makerbot-thing-o-matic.html">Thing-o-Matic</a> de la empresa Makerbot</li>
+<li> <b>Nacimiento</b>: 12/Nov/2011-- (Impresión de la primera pieza)</li>
+<li> <b>Propiedad de</b>: <a rel="nofollow" class="external text" href="http://www.robcib.etsii.upm.es/">Grupo de robótica y Cibernética</a> de la Universidad Politécnica de Madrid</li>
+<li> <b><a href="https://iearobotics.com/wiki/index.php?title=MakerBot_Thing-o-Matic:_Robcib-Maker" title="MakerBot Thing-o-Matic: Robcib-Maker">MÁS INFORMACIÓN</a></b></li></ul>
+</td>
+<td>
+<center> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Robcib-banner.png" class="image" title="250px"><img alt="250px" src="Impresoras-3D-open-source_files/Robcib-banner_Rv-Y.png" width="612" height="185"></a> </center>
+</td></tr>
+<tr>
+<td> <img alt="200px" src="Impresoras-3D-open-source_files/DeutecnoMAKER-1_Rv-Y.jpg" title="200px" width="2260" height="2563">
+</td>
+<td>
+<ul><li> <b>Nombre</b>: <b><font color="#0000FF">Deutecno-MAKER</font></b></li>
+<li> <b>Modelo</b>: <a rel="nofollow" class="external text" href="http://store.makerbot.com/makerbot-thing-o-matic.html">Thing-o-Matic</a> de la empresa Makerbot</li>
+<li> <b>Nacimiento</b>: 15/Dic/2011 </li>
+<li> <b>Propiedad de</b>: <a rel="nofollow" class="external text" href="http://www.deutecno.com/">Deutecno</a> </li>
+<li> <b><a href="https://iearobotics.com/wiki/index.php?title=MakerBot_Thing-o-Matic:_Deutecno-Maker" title="MakerBot Thing-o-Matic: Deutecno-Maker">MÁS INFORMACIÓN</a></b></li></ul>
+</td>
+<td>
+<center><a href="https://iearobotics.com/wiki/index.php?title=Archivo:DEUTECNO-TITULO.jpg" class="image" title="250px"><img alt="250px" src="Impresoras-3D-open-source_files/DEUTECNO-TITULO_Rv-Y.jpg" width="309" height="33"></a></center>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Generaci.C3.B3n_1">Generación 1</span></h2>
+<table class="wikitable" style="width:100%">
+
+<tbody><tr>
+<td> <center><img alt="200px" src="Impresoras-3D-open-source_files/Prusa-r2d2-clon_Rv-Y.jpg" title="200px" width="1200" height="1117"></center>
+</td>
+<td>
+<ul><li> <b>Nombre</b>: <b><font color="#0000FF">R2D2</font></b></li>
+<li> <b>Familia</b>: <a rel="nofollow" class="external text" href="http://reprap.org/wiki/Prusa_Mendel">Prusa Mendel</a> original</li>
+<li> <b>Autores</b>:  <a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main">Juan González Gómez</a> (Obijuan) y <a href="https://iearobotics.com/wiki/index.php?title=Andr%C3%A9s_Prieto-Moreno" title="Andrés Prieto-Moreno">Andrés Prieto-Moreno</a></li>
+<li> <b>Impresora Progenitora</b>:  <a href="https://iearobotics.com/wiki/index.php?title=Makerbot_Cupcake:_R1" title="Makerbot Cupcake: R1">R1</a></li>
+<li> <b>Nacimiento</b>: 24/Dic/2011</li></ul>
+<ul><li>  <a href="https://iearobotics.com/wiki/index.php?title=Prusa_Mendel:_R2D2" title="Prusa Mendel: R2D2">MÁS INFORMACIÓN</a></li></ul>
+</td>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:R2d2.jpg" class="image" title="150px"><img alt="150px" src="Impresoras-3D-open-source_files/R2d2_Rv-Y.jpg" width="485" height="600"></a> <br>
+<center><a rel="nofollow" class="external text" href="http://starwars.wikia.com/wiki/R2-series_astromech_droid">Serie R2</a></center>
+</td></tr>
+<tr>
+<td> <center><img alt="200px" src="Impresoras-3D-open-source_files/Clon-33-P1_Rv-Y.png" title="200px" width="1539" height="1389"></center>
+</td>
+<td>
+<ul><li> <b>Nombre</b>: <b><font color="#0000FF">P1</font></b></li>
+<li> <b>Familia</b>: Printrbot original</li>
+<li> <b>Generación</b>: 1</li>
+<li> <b>Autor</b>:  <a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main">Juan González Gómez</a> (Obijuan)</li>
+<li> <b>Impresora Progenitora</b>:  Granja de Printrbot HQ</li>
+<li> <b>Nacimiento</b>:  11/Jul/2012</li></ul>
+<ul><li>  <a href="https://iearobotics.com/wiki/index.php?title=Printerbot:_P1" title="Printerbot: P1">MÁS INFORMACIÓN</a></li></ul>
+</td>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:P1.png" class="image" title="150px"><img alt="150px" src="Impresoras-3D-open-source_files/P1_Rv-Y.png" width="159" height="143"></a>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Generaci.C3.B3n_2">Generación 2</span></h2>
+<table class="wikitable" style="width:100%">
+
+<tbody><tr>
+<td> <center><img alt="200px" src="Impresoras-3D-open-source_files/R3-1_Rv-Y.jpg" title="200px" width="1384" height="1324"></center>
+</td>
+<td>
+<ul><li> <b>Nombre</b>: <b><font color="#0000FF">R3</font></b></li>
+<li> <b>Familia</b>: <a rel="nofollow" class="external text" href="http://reprap.org/wiki/Prusa_Mendel">Prusa Mendel</a> (iteración 2)</li>
+<li> <b>Generación</b>: 2</li>
+<li> <b>Impresora Progenitora</b>:  <a href="https://iearobotics.com/wiki/index.php?title=Prusa_Mendel:_R2D2" title="Prusa Mendel: R2D2"> R2D2</a></li>
+<li> <b>Nacimiento</b>:  1/Abril/2012</li>
+<li> <b>Autores</b>:  <a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main">Juan González Gómez</a> (Obijuan) y <a href="https://iearobotics.com/wiki/index.php?title=Andr%C3%A9s_Prieto-Moreno" title="Andrés Prieto-Moreno">Andrés Prieto-Moreno</a></li></ul>
+<ul><li>  <a href="https://iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteraci%C3%B3n_2:_R3" title="Prusa Mendel Iteración 2: R3">MÁS INFORMACIÓN</a></li></ul>
+</td>
+<td> <center><a href="https://iearobotics.com/wiki/index.php?title=Archivo:R3.jpg" class="image" title="150px"><img alt="150px" src="Impresoras-3D-open-source_files/R3_Rv-Y.jpg" width="561" height="846"></a> </center><br>
+<center><a rel="nofollow" class="external text" href="http://starwars.wikia.com/wiki/R3-series_astromech_droid">Serie R3</a></center>
+</td></tr>
+
+<tr>
+<td> <center><img alt="200px" src="Impresoras-3D-open-source_files/Clon-18-han_Rv-Y.png" title="200px" width="2487" height="2250"></center>
+</td>
+<td>
+<ul><li> <b>Nombre</b>: <b><font color="#0000FF">Han</font></b></li>
+<li> <b>Familia</b>: <a rel="nofollow" class="external text" href="http://reprap.org/wiki/Prusa_Mendel">Prusa Mendel</a> (iteración 2)</li>
+<li> <b>Generación</b>: 2</li>
+<li> <b>Impresora Progenitora</b>:  <a href="https://iearobotics.com/wiki/index.php?title=Prusa_Mendel:_R2D2" title="Prusa Mendel: R2D2"> R2D2</a></li>
+<li> <b>Nacimiento</b>:  06/Mayo/2012</li>
+<li> <b>Autor</b>: <a href="https://iearobotics.com/wiki/index.php?title=Andr%C3%A9s_Prieto-Moreno" title="Andrés Prieto-Moreno">Andrés Prieto-Moreno</a></li></ul>
+<ul><li>  <a href="https://iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteraci%C3%B3n_2:_Han" title="Prusa Mendel Iteración 2: Han">MÁS INFORMACIÓN</a></li></ul>
+</td>
+<td> <center><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Han_solo.jpg" class="image" title="150px"><img alt="150px" src="Impresoras-3D-open-source_files/Han_solo_Rv-Y.jpg" width="454" height="654"></a> </center><br>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Generaci.C3.B3n_3">Generación 3</span></h2>
+<table class="wikitable" style="width:100%">
+
+<tbody><tr>
+<td> <center><img alt="200px" src="Impresoras-3D-open-source_files/Clon-42-R2-Reloaded_Rv-Y.jpg" title="200px" width="1494" height="1536"></center>
+</td>
+<td>
+<ul><li> <b>Nombre</b>: <b><font color="#0000FF">R2 Reloaded</font></b></li>
+<li> <b>Familia</b>: <a rel="nofollow" class="external text" href="http://reprap.org/wiki/Prusa_Mendel">Prusa Mendel</a> (iteración 2)</li>
+<li> <b>Generación</b>: 3</li>
+<li> <b>Impresora Progenitora</b>:  <a href="https://iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteraci%C3%B3n_2:_R3" title="Prusa Mendel Iteración 2: R3">R3</a></li>
+<li> <b>Nacimiento</b>:  28/Agosto/2012</li>
+<li> <b>Autores</b>:  <a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main">Juan González Gómez</a> (Obijuan) y <a href="https://iearobotics.com/wiki/index.php?title=Andr%C3%A9s_Prieto-Moreno" title="Andrés Prieto-Moreno">Andrés Prieto-Moreno</a></li></ul>
+<ul><li>  <a href="https://iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteraci%C3%B3n_2:_R2-reloaded" title="Prusa Mendel Iteración 2: R2-reloaded">MÁS INFORMACIÓN</a></li></ul>
+</td>
+<td> <center><a href="https://iearobotics.com/wiki/index.php?title=Archivo:R2-reloaded.png" class="image" title="150px"><img alt="150px" src="Impresoras-3D-open-source_files/R2-reloaded_Rv-Y.png" width="485" height="600"></a> </center>
+</td></tr>
+<tr>
+<td> <center><a href="https://iearobotics.com/wiki/index.php?title=Archivo:R4i3.jpg" class="image" title="250px"><img alt="250px" src="Impresoras-3D-open-source_files/R4i3_Rv-Y.jpg" width="1516" height="1536"></a></center>
+</td>
+<td>
+<ul><li> <b>Nombre</b>: <b><font color="#0000FF">R4i3</font></b></li>
+<li> <b>Familia</b>: <a rel="nofollow" class="external text" href="http://www.reprap.org/wiki/Clone_wars:_Prusa_iteraci%C3%B3n_3_single_frame">Prusa i3</a></li>
+<li> <b>Generación</b>: 3</li>
+<li> <b>Impresora Progenitora</b>:  <a href="https://iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteraci%C3%B3n_2:_R3" title="Prusa Mendel Iteración 2: R3">R3</a></li>
+<li> <b>Nacimiento</b>: 13 / Abril / 2013</li>
+<li> <b>Autores</b>:  <a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main">Juan González Gómez</a> (Obijuan) y <a href="https://iearobotics.com/wiki/index.php?title=Andr%C3%A9s_Prieto-Moreno" title="Andrés Prieto-Moreno">Andrés Prieto-Moreno</a></li></ul>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=Impresora_3D:_R4i3" title="Impresora 3D: R4i3">MAS INFORMACIÓN</a></li></ul>
+</td>
+<td> <center><a href="https://iearobotics.com/wiki/index.php?title=Archivo:R4i3-logo.jpg" class="image" title="150px"><img alt="150px" src="Impresoras-3D-open-source_files/R4i3-logo_Rv-Y.jpg" width="250" height="418"></a> </center>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Generaci.C3.B3n_4">Generación 4</span></h2>
+<table class="wikitable" style="width:100%">
+
+
+<tbody><tr>
+<td> <center><img alt="200px" src="Impresoras-3D-open-source_files/R5-1_Rv-Y.png" title="200px" width="2134" height="3168"></center>
+</td>
+<td>
+<ul><li> <b>Nombre</b>: <b><font color="#0000FF">R5</font></b></li>
+<li> <b>Familia</b>: <a rel="nofollow" class="external text" href="http://reprap.org/wiki/Prusa_i3_Hephestos/es">Prusa i3 Hephestos</a></li>
+<li> <b>Generación</b>: 4</li>
+<li> <b>Impresora Progenitora</b>:  <a href="https://iearobotics.com/wiki/index.php?title=Impresora_3D:_R4i3" title="Impresora 3D: R4i3">R4i3</a></li>
+<li> <b>Nacimiento</b>: Jueves, 14 de Octubre de 2014</li>
+<li> <b>Autor</b>:  <a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main">Obijuan</a></li></ul>
+<ul><li>  <a href="https://iearobotics.com/wiki/index.php?title=Prusa_i3:_R5)" title="Prusa i3: R5)" class="mw-redirect">MÁS INFORMACIÓN</a></li></ul>
+</td>
+<td> <center><a href="https://iearobotics.com/wiki/index.php?title=Archivo:R5.png" class="image" title="150px"><img alt="150px" src="Impresoras-3D-open-source_files/R5_Rv-Y.png" width="207" height="303"></a> </center>
+</td></tr>
+<tr>
+<td> <center><img alt="200px" src="Impresoras-3D-open-source_files/Clone-Wars-logo_Rv-Y.png" title="200px" width="348" height="204"></center>
+</td>
+<td>
+<ul><li> <b>Nombre</b>: <b><font color="#0000FF">PRUSAV</font></b></li>
+<li> <b>Familia</b>: <a rel="nofollow" class="external text" href="http://www.reprap.org/wiki/Clone_wars:_Prusa_iteraci%C3%B3n_3_single_frame">Prusa i3</a></li>
+<li> <b>Generación</b>: 4</li>
+<li> <b>Impresora Progenitora</b>:  [[]]</li>
+<li> <b>Nacimiento</b>: </li>
+<li> <b>Autores</b>:  Comunidad CloneWars</li></ul>
+<ul><li>  <a href="https://iearobotics.com/wiki/index.php?title=Prusa_i3:_PRUSAV_(Prusa_i3_Total_clonewars)" title="Prusa i3: PRUSAV (Prusa i3 Total clonewars)">MÁS INFORMACIÓN</a></li></ul>
+</td>
+<td> <center><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Clone-Wars-logo.png" class="image" title="150px"><img alt="150px" src="Impresoras-3D-open-source_files/Clone-Wars-logo_Rv-Y.png" width="348" height="204"></a> </center>
+</td></tr>
+</tbody></table>
+<h2><span class="mw-headline" id="Clones_virtuales">Clones virtuales</span></h2>
+<table class="wikitable" style="width:100%">
+
+<tbody><tr>
+<td> <center><img alt="200px" src="Impresoras-3D-open-source_files/Prusa2-Blender-1_Rv-Y.png" title="200px" width="918" height="990"></center>
+</td>
+<td>
+<ul><li> <b>Nombre</b>: <b><font color="#0000FF">Prusa2 Blender</font></b></li>
+<li> <b>Familia</b>: <a rel="nofollow" class="external text" href="http://reprap.org/wiki/Prusa_Mendel">Prusa Mendel</a> (iteración 2)</li>
+<li> <b>Herramienta de diseño</b>: Blender 2.5</li>
+<li> <b>Nacimiento</b>:  20/Agosto/2012</li>
+<li> <b>Autor</b>:  <a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main">Juan González Gómez</a> (Obijuan)</li></ul>
+<ul><li>  <a href="https://iearobotics.com/wiki/index.php?title=Prusa2_Blender" title="Prusa2 Blender">MAS INFORMACIÓN</a></li></ul>
+</td>
+<td> <center><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Blender_logo.png" class="image" title="150px"><img alt="150px" src="Impresoras-3D-open-source_files/Blender_logo_Rv-Y.png" width="1193" height="1023"></a> </center>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="La_dinast.C3.ADa_R">La dinastía R</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:2012-12-24-R-dynasty.png" class="image"><img alt="" src="Impresoras-3D-open-source_files/300px-2012-12-24-R-dynasty_Rv-Y.png" width="300" height="194" class="thumbimage" srcset="Impresoras-3D-open-source_files/450px-2012-12-24-R-dynasty_Rv-Y.png 1.5x, Impresoras-3D-open-source_files/600px-2012-12-24-R-dynasty_Rv-Y.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:2012-12-24-R-dynasty.png" class="internal" title="Aumentar"></a></div>Gráfico de la dinastía R (<i>click para ampliar</i>)</div></div></div>
+<table class="wikitable">
+<tbody><tr>
+<td> Generación 0  </td>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Makerbot_Cupcake:_R1" title="Makerbot Cupcake: R1">Impresora R1</a>  </td>
+<td> Cupcake Nº8
+</td></tr>
+<tr>
+<td> Generación 1  </td>
+<td>  <a href="https://iearobotics.com/wiki/index.php?title=Prusa_Mendel:_R2D2" title="Prusa Mendel: R2D2">Impresora R2D2</a> </td>
+<td> Prusa Mendel original
+</td></tr>
+<tr>
+<td> Generación 2  </td>
+<td>   <a href="https://iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteraci%C3%B3n_2:_R3" title="Prusa Mendel Iteración 2: R3">Impresora R3</a>  </td>
+<td> Prusa Mendel Iteración 2
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Noticas">Noticas</span></h2>
+<ul><li> <b>15/Oct/2014</b>: Añadida la página de R5</li>
+<li> <b>17/Abril/2013</b>: Añadida página de R4i3</li>
+<li> <b>24/Dic/2012</b>: Actualizado el árbol de la dinastía R (1er aniversario)</li>
+<li> <b>29/Agosto/2012</b>: Publicada la página de R2-Reloaded</li>
+<li> <b>20/Agosto/2012</b>: Publicada la página de la Prusa2-Blender</li>
+<li> <b>09/Julio/2012</b>: Comenzada la página de R2-reloaded</li>
+<li> <b>05/Julio/2012</b>: Comenzada la construcción de P1</li>
+<li> <b>06/Mayo/2012</b>: Añadida la ficha de Han</li>
+<li> <b>05/Enero/2011</b>: Comenzada esta página</li></ul>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<table class="wikitable">
+
+<tbody><tr>
+<td>
+<p><img alt="Proyecto Clone wars" src="Impresoras-3D-open-source_files/Clone-Wars-logo_Rv-Y.png" title="Proyecto Clone wars" width="348" height="204">
+</p>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.reprap.org/wiki/Proyecto_Clone_Wars">Proyecto Clone wars</a>: Construye tu impresora 3D opensource!
+</td></tr>
+<tr>
+<td>
+<center><img alt="Proyecto Reprap" src="Impresoras-3D-open-source_files/RepRap1_Rv-Y.png" title="Proyecto Reprap" width="110" height="137"></center>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://reprap.org/">Proyecto RepRap</a>: Impresoras 3D auto-replicantes. El origen de la revolución de las impresoras 3D opensource
+</td></tr>
+<tr>
+<td>
+<center><img alt="Obijuan Academy" src="Impresoras-3D-open-source_files/Logo-obijuan-academy-white-back_Rv-Y.png" title="Obijuan Academy" width="731" height="655"> </center>
+</td>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Obijuan_Academy" title="Obijuan Academy">Obijuan Academy</a>, Tu academia rebelde!&nbsp;;-)
+</td></tr>
+</tbody></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20260917101235
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.062 seconds
+Real time usage: 0.071 seconds
+Preprocessor visited node count: 53/1000000
+Preprocessor generated node count: 74/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://iearobotics.com/wiki/index.php?title=Impresoras_3D_open-source&amp;oldid=22375">https://iearobotics.com/wiki/index.php?title=Impresoras_3D_open-source&amp;oldid=22375</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categorías</a>: <ul><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Reprap" title="Categoría:Reprap">Reprap</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Dinast%C3%ADa_R" title="Categoría:Dinastía R">Dinastía R</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://iearobotics.com/wiki/index.php?title=Impresoras_3D_open-source" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Impresoras_3D_open-source&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://iearobotics.com/wiki/index.php?title=Impresoras_3D_open-source&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://iearobotics.com/wiki/index.php?title=Impresoras_3D_open-source&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Impresoras+3D+open-source" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Impresoras_3D_open-source" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Impresoras_3D_open-source" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://iearobotics.com/wiki/index.php?title=Impresoras_3D_open-source&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://iearobotics.com/wiki/index.php?title=Impresoras_3D_open-source&amp;oldid=22375" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://iearobotics.com/wiki/index.php?title=Impresoras_3D_open-source&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Impresoras-3D-open-source_files/gnu-fdl_Rv-Y.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="Impresoras-3D-open-source_files/poweredby_mediawiki_88x31_Rv-Y.png" alt="Powered by MediaWiki" srcset="Impresoras-3D-open-source_files/poweredby_mediawiki_132x47_Rv-Y.png 1.5x, Impresoras-3D-open-source_files/poweredby_mediawiki_176x62_Rv-Y.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 18 oct 2014 a las 00:22.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":209});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
