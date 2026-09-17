@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Programación del PIC16 en C - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Programación_del_PIC16_en_C","wgTitle":"Programación del PIC16 en C","wgCurRevisionId":7099,"wgRevisionId":7099,"wgArticleId":1037,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Documentación","Skypic","Microcontroladores","PIC","SVN"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Programación_del_PIC16_en_C","wgRelevantArticleId":1037,"wgRequestId":"aquSTW4qxrrdXXZMudVgHAAAcz0","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Programaci%C3%B3n_del_PIC16_en_C_files/load_wUT5.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="Programaci%C3%B3n_del_PIC16_en_C_files/load_wUT5.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="Programaci%C3%B3n_del_PIC16_en_C_files/load_002_wUT5.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Programación_del_PIC16_en_C rootpage-Programación_del_PIC16_en_C skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Programación del PIC16 en C</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Portada-curso-PIC16.jpg" class="image"><img alt="" src="Programaci%C3%B3n_del_PIC16_en_C_files/300px-Portada-curso-PIC16_wUT5.jpg" width="300" height="345" class="thumbimage" srcset="Programaci%C3%B3n_del_PIC16_en_C_files/450px-Portada-curso-PIC16_wUT5.jpg 1.5x, Programaci%C3%B3n_del_PIC16_en_C_files/600px-Portada-curso-PIC16_wUT5.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Portada-curso-PIC16.jpg" class="internal" title="Aumentar"></a></div>Curso de programación del PIC16 en C</div></div></div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Hardware_necesario"><span class="tocnumber">2</span> <span class="toctext">Hardware necesario</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#M.C3.B3dulo_1:_Introducci.C3.B3n_al_PIC16F876A"><span class="tocnumber">3</span> <span class="toctext">Módulo 1: Introducción al PIC16F876A</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#M.C3.B3dulo_2:_Puertos_de_E.2FS_digitales._Introducci.C3.B3n_al_lenguaje_C_.28I.29"><span class="tocnumber">4</span> <span class="toctext">Módulo 2: Puertos de E/S digitales. Introducción al lenguaje C (I)</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#M.C3.B3dulo_3:_Puerto_serie._Introducci.C3.B3n_al_lenguaje_C_.28II.29"><span class="tocnumber">5</span> <span class="toctext">Módulo 3: Puerto serie. Introducción al lenguaje C (II)</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#M.C3.B3dulo_4:_Temporizadores"><span class="tocnumber">6</span> <span class="toctext">Módulo 4: Temporizadores</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#M.C3.B3dulo_5:_Displays_de_cristal_l.C3.ADquido_.28LCD.29"><span class="tocnumber">7</span> <span class="toctext">Módulo 5: Displays de cristal líquido (LCD)</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#M.C3.B3dulo_6:_Conversor_anal.C3.B3gico.2Fdigital"><span class="tocnumber">8</span> <span class="toctext">Módulo 6: Conversor analógico/digital</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#M.C3.B3dulo_7:_Memoria_EEPROM"><span class="tocnumber">9</span> <span class="toctext">Módulo 7: Memoria EEPROM</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#M.C3.B3dulo_8:_Control_de_servos"><span class="tocnumber">10</span> <span class="toctext">Módulo 8: Control de servos</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#M.C3.B3dulo_9:_Introducci.C3.B3n_a_la_programaci.C3.B3n_en_lenguaje_ENSAMBLADOR"><span class="tocnumber">11</span> <span class="toctext">Módulo 9: Introducción a la programación en lenguaje ENSAMBLADOR</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#M.C3.B3dulo_10:_Bus_I2C"><span class="tocnumber">12</span> <span class="toctext">Módulo 10: Bus I2C</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#M.C3.B3dulo_11:_Memoria_Flash_y_protocolo_ICSP"><span class="tocnumber">13</span> <span class="toctext">Módulo 11: Memoria Flash y protocolo ICSP</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Repositorio"><span class="tocnumber">14</span> <span class="toctext">Repositorio</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Historia"><span class="tocnumber">15</span> <span class="toctext">Historia</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#Enlaces"><span class="tocnumber">16</span> <span class="toctext">Enlaces</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#Autores"><span class="tocnumber">17</span> <span class="toctext">Autores</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#Licencia"><span class="tocnumber">18</span> <span class="toctext">Licencia</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#Noticias"><span class="tocnumber">19</span> <span class="toctext">Noticias</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skypic-2007.jpg" class="image"><img alt="" src="Programaci%C3%B3n_del_PIC16_en_C_files/Skypic-2007_wUT5.jpg" width="300" height="252" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skypic-2007.jpg" class="internal" title="Aumentar"></a></div><a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Tarjeta Skypic</a>, usada para este curso</div></div></div>
+<p>Curso de introducción a la programación en C de los microcontroladores <b>PIC16F87X</b> de Microchip. Es totalmente práctico, haciéndose ejemplos desde el primer momento. El enfoque didácto es lo que los autores llamamos POE: <b>Programación Orientada a Ejemplos</b>&nbsp;;-). En cada uno de los módulos se presentan los conocimientos teóricos mínimos necesarios y se aplican en ejemplos.
+</p><p>El lector aprenderá el funcionamiento de los diferentes recursos de estos micros así como la programación en lenguaje C, que se va introduciendo gradualmente con los ejemplos.
+</p><p>Todos los ejemplos se han probado en la <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Tarjeta Skypic</a>, a la que se le añaden diferentes placas periféricas. Esta tarjeta es <b>hardware libre</b>, por lo que están disponibles todos sus planos.
+</p>
+<h2><span class="mw-headline" id="Hardware_necesario">Hardware necesario</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skypic-2007.jpg" class="image" title="100px"><img alt="100px" src="Programaci%C3%B3n_del_PIC16_en_C_files/Skypic-2007_wUT5.jpg" width="300" height="252"></a>
+</td>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Tarjeta Skypic</a>. Tarjeta Microcontroladora basada en el <b>PIC16F876A</b>. Se conecta por el puerto serie al PC desde donde se decargan directamente los programas. Incorpora un led y un botón para hacer pruebas, que serán usados mucho en los ejemplos de programación.
+<p>Esta tarjeta es <b>hardware libre</b>, por lo que están disponibles todos sus planos.
+</p>
+</td></tr>
+<tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Freeleds.jpg" class="image" title="100px"><img alt="100px" src="Programaci%C3%B3n_del_PIC16_en_C_files/Freeleds_wUT5.jpg" width="200" height="168"></a>
+</td>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Freeleds" title="Freeleds"> Tarjeta Freeleds</a>. Tarjeta con 8 leds que se conecta a cualquiera de los puertos de la Skypic. Es muy útil para mostrar información en ellos.
+</td></tr>
+<tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Lcd-matrix.jpg" class="image" title="150px"><img alt="150px" src="Programaci%C3%B3n_del_PIC16_en_C_files/Lcd-matrix_wUT5.jpg" width="300" height="140"></a>
+</td>
+<td> <b>Display LCD</b> de 16x2 caracteres con una placa para su conexión a los puertos A y B de la Skypic
+</td></tr>
+<tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Servo-futaba-3003.jpg" class="image" title="100px"><img alt="100px" src="Programaci%C3%B3n_del_PIC16_en_C_files/Servo-futaba-3003_wUT5.jpg" width="200" height="186"></a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/proyectos/cuadernos/ct3/ct3.html">Servo Futaba 3003</a>. A la Skypic se pueden conectar directamente hasta 8 servos.
+</td></tr>
+<tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Altavoz.jpg" class="image" title="100px"><img alt="100px" src="Programaci%C3%B3n_del_PIC16_en_C_files/Altavoz_wUT5.jpg" width="200" height="182"></a>
+</td>
+<td> <b>Altavoz pequeño</b> de 8 ohm y 0.2W
+</td></tr>
+<tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Potenciometro.jpg" class="image" title="100px"><img alt="100px" src="Programaci%C3%B3n_del_PIC16_en_C_files/Potenciometro_wUT5.jpg" width="200" height="189"></a>
+</td>
+<td> <b>Potenciómetro</b> de 10K con conector para la Skypic
+</td></tr>
+<tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Srf02.jpg" class="image" title="100px"><img alt="100px" src="Programaci%C3%B3n_del_PIC16_en_C_files/Srf02_wUT5.jpg" width="200" height="181"></a>
+</td>
+<td> <b>SRF02</b>: Emisor-receptor de ultrasonidos por bus I2C
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="M.C3.B3dulo_1:_Introducci.C3.B3n_al_PIC16F876A">Módulo 1: Introducción al PIC16F876A</span></h2>
+<ul><li> Transparencias: (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/19593039/Modulo-1-Introduccion-al-PIC16F87x">En línea</a>)  (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/PIC16-modulo1-Introduccion.pdf">PDF</a>)  (<a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo1-intro/PIC16-modulo1-Introduccion.odp">OpenOffice</a>) </li>
+<li> Ejemplos: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo1-ejemplos.zip">Modulo1-ejemplos.zip</a></li></ul>
+<dl><dd><dl><dd><table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo1-intro/ejemplos/plantilla.c">plantilla.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo1-hex/plantilla.hex">plantilla.hex</a>
+</td>
+<td> Plantilla de programación para el SDCC
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo1-intro/ejemplos/hola_mundo.c">hola_mundo.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo1-hex/hola_mundo.hex">hola_mundo.hex</a>
+</td>
+<td> Programa "Hola mundo" que enciende el led de la Skypic
+</td></tr></tbody></table></dd></dl></dd></dl>
+<h2><span class="mw-headline" id="M.C3.B3dulo_2:_Puertos_de_E.2FS_digitales._Introducci.C3.B3n_al_lenguaje_C_.28I.29">Módulo 2: Puertos de E/S digitales. Introducción al lenguaje C (I)</span></h2>
+<ul><li> Transparencias: (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/19669288/Modulo-2-Puertos-de-ES-digitales-Introduccion-al-lenguaje-C-I-">En línea</a>) (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/PIC16-modulo2-Puertos.pdf">PDF</a>) (<a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo2-puertos/PIC16-modulo2-Puertos.odp">OpenOffice</a>) </li>
+<li> Ejemplos: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo2-ejemplos.zip">Modulo2-ejemplos.zip</a></li></ul>
+<dl><dd><dl><dd><b>PUERTO B</b></dd></dl></dd></dl>
+<dl><dd><dl><dd><table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo2-puertos/ejemplos/Puerto-B/ledon.c">ledon.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo2-hex/Puerto-B/ledon.hex">ledon.hex</a>
+</td>
+<td>  Poner a 1 el bit 1 (RB1) del puerto B. Se enciende el led de la Skypic
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo2-puertos/ejemplos/Puerto-B/ledon2.c">ledon2.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo2-hex/Puerto-B/ledon2.hex">ledon2.hex</a>
+</td>
+<td> Igual que ledon.c. Mejora de la legibilidad mediante <b>#define</b>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo2-puertos/ejemplos/Puerto-B/salida8.c">salida8.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo2-hex/Puerto-B/salida8.hex">salida8.hex</a>
+</td>
+<td> Ejemplo de salida de 8 bits
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo2-puertos/ejemplos/Puerto-B/variables1.c">variables1.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo2-hex/Puerto-B/variables1.hex">variables1.hex</a>
+</td>
+<td> Ejemplo de declaracion de <b>variables</b> y su uso
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo2-puertos/ejemplos/Puerto-B/contador1.c">contador1.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo2-hex/Puerto-B/contador1.hex">contador1.hex</a>
+</td>
+<td> <b>Bucle for</b>. Contador desde 0 hasta 128 que se muestra por los leds. Versión rápida no apreciable por ojo humano
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo2-puertos/ejemplos/Puerto-B/contador2.c">contador2.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo2-hex/Puerto-B/contador2.hex">contador2.hex</a>
+</td>
+<td> <b>Funciones en C</b>. Contador desde 0 hasta 128 que se muestra por los leds. Versión con pausa para ver la secuencia
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo2-puertos/ejemplos/Puerto-B/pulsador-led.c">pulsador-led.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo2-hex/Puerto-B/pulsador-led.hex">pulsador-led.hex</a>
+</td>
+<td> Ejemplo de <b>entrada y salida digitales</b>. Por RB1 (el led) se saca el valor negado de lo recibido por RB0 (pulsador)
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo2-puertos/ejemplos/Puerto-B/pulsador-led2.c">pulsador-led2.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo2-hex/Puerto-B/pulsador-led2.hex">pulsador-led2.hex</a>
+</td>
+<td> Ejemplo de <b>entrada y salida digitales</b>. Por RB1 (el led) se saca el valor negado de lo recibido por RB0 (pulsador) . Mejora de la legibilidad mediante #define.
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo2-puertos/ejemplos/Puerto-B/contador-int1.c">contador-int1.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo2-hex/Puerto-B/contador-int1.hex">contador-int1.hex</a>
+</td>
+<td> <b>Detección de flancos</b> por <b>RB0</b>, mediante espera activa.
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo2-puertos/ejemplos/Puerto-B/contador-int2.c">contador-int2.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo2-hex/Puerto-B/contador-int2.hex">contador-int2.hex</a>
+</td>
+<td> <b>Detección de flancos</b> por <b>RB0</b>. Ejemplo mediante interrupciones.
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo2-puertos/ejemplos/Puerto-B/pull-ups.c">pull-ups.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo2-hex/Puerto-B/pull-ups.hex">pull-ups.hex</a>
+</td>
+<td> Ejemplo de activación de las <b>resistencias de pull-up</b>.
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo2-puertos/ejemplos/Puerto-B/flancos1.c">flancos1.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo2-hex/Puerto-B/flancos1.hex">flancos1.hex</a>
+</td>
+<td> <b>Detección de cambio</b> en pines <b>RB4-RB7</b>. Mediante espera activa.
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo2-puertos/ejemplos/Puerto-B/flancos2.c">flancos2.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo2-hex/Puerto-B/flancos2.hex">flancos2.hex</a>
+</td>
+<td> <b>Detección de cambio</b> en pines <b>RB4-RB7</b>. Mediante interrupciones
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo2-puertos/ejemplos/Puerto-B/luces.c">luces.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo2-hex/Puerto-B/luces.hex">luces.hex</a>
+</td>
+<td> <b>Arrays en C</b>. Secuencia de luces en los leds
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo2-puertos/ejemplos/Puerto-B/luces2.c">luces2.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo2-hex/Puerto-B/luces2.hex">luces2.hex</a>
+</td>
+<td> <b>Arrays en C</b>. Operador Sizeof. Mismo ejemplo anterior, pero calculándose automáticamente el tamaño del array
+</td></tr></tbody></table></dd></dl></dd></dl>
+<dl><dd><dl><dd><b>PUERTO A</b></dd></dl></dd></dl>
+<dl><dd><dl><dd><table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo2-puertos/ejemplos/Puerto-A/RA0-on.c">RA0-on.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo2-hex/Puerto-A/RA0-on.hex">RA0-on.hex</a>
+</td>
+<td> Poner el pin 0 (RA0) del puerto A a 1
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo2-puertos/ejemplos/Puerto-A/salida6.c">salida6.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo2-hex/Puerto-A/salida6.hex">salida6.hex</a>
+</td>
+<td> Ejemplo de salida digital de 6 bits
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo2-puertos/ejemplos/Puerto-A/RA0-led.c">RA0-led.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo2-hex/Puerto-A/RA0-led.hex">RA0-led.hex</a>
+</td>
+<td> Ejemplo de <b>entrada y salida digitales</b>. Por RB1 (el led) se saca el valor RA0
+</td></tr></tbody></table></dd></dl></dd></dl>
+<dl><dd><dl><dd><b>PUERTO C</b></dd></dl></dd></dl>
+<dl><dd><dl><dd><table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo2-puertos/ejemplos/Puerto-C/RC0-on.c">RC0-on.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo2-hex/Puerto-C/RC0-on.hex">RC0-on.hex</a>
+</td>
+<td> Poner el pin 0 (RC0) del puerto C a 1
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo2-puertos/ejemplos/Puerto-C/C-salida8.c">C-salida8.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo2-hex/Puerto-C/C-salida8.hex">C-salida8.hex</a>
+</td>
+<td> Ejemplo de salida digital de 8 bits
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo2-puertos/ejemplos/Puerto-C/RC0-led.c">RC0-led.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo2-hex/Puerto-C/RC0-led.hex">RC0-led.hex</a>
+</td>
+<td> Ejemplo de <b>entrada y salida digitales</b>. Por RB1 (el led) se saca el valor RC0
+</td></tr></tbody></table></dd></dl></dd></dl>
+<h2><span class="mw-headline" id="M.C3.B3dulo_3:_Puerto_serie._Introducci.C3.B3n_al_lenguaje_C_.28II.29">Módulo 3: Puerto serie. Introducción al lenguaje C (II)</span></h2>
+<ul><li> Transparencias: (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/19683298/Modulo-3-Puerto-Serie-Introduccion-al-lenguaje-C">En línea</a>)  (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/PIC16-modulo3-SCI.pdf">PDF</a>)  (<a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo3-sci/PIC16-modulo3-SCI.odp">OpenOffice</a>) </li>
+<li> Ejemplos: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo3-ejemplos.zip">Modulo3-ejemplos.zip</a></li></ul>
+<dl><dd><dl><dd><table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo3-sci/ejemplos/sci-conf.c">sci-conf.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo3-hex/sci-conf.hex">sci-conf.hex</a>
+</td>
+<td>  <b>Configuracion del puerto serie</b> a 9600 baudios y 8N1. Cada vez que se recibe un dato del PC se cambia el estado del led
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo3-sci/ejemplos/sci-conf2.c">sci-conf2.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo3-hex/sci-conf2.hex">sci-conf2.hex</a>
+</td>
+<td> Mismo ejemplo anterior, pero con la parte de configuración en una función separada
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo3-sci/ejemplos/sci-eco.c">sci-eco.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo3-hex/sci-eco.hex">sci-eco.hex</a>
+</td>
+<td> Ejemplo de <b>envio-recepcion de datos</b>. Se hace eco de todo lo recibido por el puerto serie
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo3-sci/ejemplos/sci-eco2.c">sci-eco2.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo3-hex/sci-eco2.hex">sci-eco2.hex</a>
+</td>
+<td> Mismo ejemplo anterior, pero dividido en funciones
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo3-sci/ejemplos/sci-cad.c">sci-cad.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo3-hex/sci-cad.hex">sci-cad.hex</a>
+</td>
+<td> <b>Envío de cadenas</b> por el puerto serie
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo3-sci/ejemplos/sci-cad2.c">sci-cad2.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo3-hex/sci-cad2.hex">sci-cad2.hex</a>
+</td>
+<td> Envío de cadenas. Se prueba a enviar una cadena con caracteres especiales
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo3-sci/ejemplos/sci-menu.c">sci-menu.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo3-hex/sci-menu.hex">sci-menu.hex</a>
+</td>
+<td> <b>Envío-recepción de datos</b>. Ejemplo de programa interactivo. Instrucción <b>switch</b>.
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo3-sci/ejemplos/sci-error.c">sci-error.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo3-hex/sci-error.hex">sci-error.hex</a>
+</td>
+<td> Prueba de <b>error en el flag de overflow</b>. Este programa "se cuelga"
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo3-sci/ejemplos/sci-read2.c">sci-read2.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo3-hex/sci-read2.hex">sci-read2.hex</a>
+</td>
+<td> Nueva rutina de lectura de por el puerto serie que tiene en cuenta los errores y no se bloquea
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo3-sci/ejemplos/sci-int-rx.c">sci-int-rx.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo3-hex/sci-int-rx.hex">sci-int-rx.hex</a>
+</td>
+<td> <b>Recepción de datos</b> mediante <b>interrupciones</b>
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo3-sci/ejemplos/sci-contador-eco.c">sci-contador-eco.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo3-hex/sci-contador-eco.hex">sci-contador-eco.hex</a>
+</td>
+<td> Ejemplo de dos <b>tareas "concurrentes"</b>. Una hace eco por el puerto serie mientras la otra cuenta.
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo3-sci/ejemplos/sci-int-tx.c">sci-int-tx.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo3-hex/sci-int-tx.hex">sci-int-tx.hex</a>
+</td>
+<td> <b>Transmisión de datos</b> mediante <b>interrupciones</b>
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo3-sci/ejemplos/sci-contadores.c">sci-contadores.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo3-hex/sci-contadores.hex">sci-contadores.hex</a>
+</td>
+<td> Ejemplo de dos tareas "concurrentes". Una envía datos constantemente mientras la otra cuenta.
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo3-sci/ejemplos/sci.h">sci.h</a>
+</td>
+<td> [--]
+</td>
+<td> Rutinas de manejo del puerto serie para ser usadas desde otros programas usando <b>#include</b>
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo3-sci/ejemplos/sci-test.c">sci-test.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo3-hex/sci-test.hex">sci-test.hex</a>
+</td>
+<td> Ejemplo de uso de sci.h
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo3-sci/ejemplos/libsci.c">libsci.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo3-hex/libsci.lib">libsci.lib</a>
+</td>
+<td> Módulo de comunicaciones serie. Para ser enlazado con nuestros programas
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo3-sci/ejemplos/libsci.h">libsci.h</a>
+</td>
+<td> [---]
+</td>
+<td> Cabeceras para el módulo libsci
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo3-sci/ejemplos/sci-test2.c">sci-test2.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo3-hex/sci-test2.hex">sci-test2.hex</a>
+</td>
+<td> Ejemplo de uso del módulo libsci
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo3-sci/ejemplos/sci-test3.c">sci-test3.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo3-hex/sci-test3.hex">sci-test3.hex</a>
+</td>
+<td> Ejemplo de uso de la libreria libsci.lib
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo3-sci/ejemplos/sci-hex.c">sci-hex.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo3-hex/sci-hex.hex">sci-hex.hex</a>
+</td>
+<td> Conversión de números a cadenas ASCII para ser enviados a través del puerto serie
+</td></tr></tbody></table></dd></dl></dd></dl>
+<h2><span class="mw-headline" id="M.C3.B3dulo_4:_Temporizadores">Módulo 4: Temporizadores</span></h2>
+<ul><li> Transparencias: (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/19695630/Modulo-4-Temporizadores">En línea</a>)  (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/PIC16-modulo4-timer.pdf">PDF</a>)  (<a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo4-timer/PIC16-modulo4-timer.odp">OpenOffice</a>) </li>
+<li> Ejemplos: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Module4-ejemplos.zip">Module4-ejemplos.zip</a></li></ul>
+<dl><dd><dl><dd><table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo4-timer/ejemplos/timer0-pausa1ms.c">timer0-pausa1ms.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo4-hex/timer0-pausa1ms.hex">timer0-pausa1ms.hex</a>
+</td>
+<td> Realizar una <b>pausa de 1ms</b>. Se hace parpadear el led de la Skypic
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo4-timer/ejemplos/timer0-pausa10ms.c">timer0-pausa10ms.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo4-hex/timer0-pausa10ms.hex">timer0-pausa10ms.hex</a>
+</td>
+<td> Realizar una <b>pausa de 10ms</b>. Se hace parpadear el led de la Skypic
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo4-timer/ejemplos/timer0-onda1Khz.c">timer0-onda1Khz.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo4-hex/timer0-onda1Khz.hex">timer0-onda1Khz.hex</a>
+</td>
+<td> Generación de una <b>señal de 1Khz</b> de frecuencia
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo4-timer/ejemplos/timer0-onda10Khz.c">timer0-onda10Khz.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo4-hex/timer0-onda10Khz.hex">timer0-onda10Khz.hex</a>
+</td>
+<td> Generación de una <b>señal de 10Khz</b> de frecuencia
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo4-timer/ejemplos/timer0-escala.c">timer0-escala.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo4-hex/timer0-escala.hex">timer0-escala.hex</a>
+</td>
+<td> Reproducción de la <b>escala musical</b>
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo4-timer/ejemplos/timer0-delay.c">timer0-delay.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo4-hex/timer0-delay.hex">timer0-delay.hex</a>
+</td>
+<td> Ejemplo de esperas de "larga duración". Se hace parpadear el led a la frecuencia de 1Hz (1 vez por segundo)
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo4-timer/ejemplos/timer0-onda10Khz-int.c">timer0-onda10Khz-int.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo4-hex/timer0-onda10Khz.hex">timer0-onda10Khz-int.hex</a>
+</td>
+<td> Generación de una onda de 10Khz mediante <b>interrupciones</b>
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo4-timer/ejemplos/timer0-organo.c">timer0-organo.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo4-hex/timer0-organo.hex">timer0-organo.hex</a>
+</td>
+<td> <b>Órgano digital</b> por el puerto serie
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo4-timer/ejemplos/timer0-pwm1.c">timer0-pwm1.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo4-hex/timer0-pwm1.hex">timer0-pwm1.hex</a>
+</td>
+<td> Generación de una <b>señal PWM</b> con ciclos de trabajo del 20% y 50%
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo4-timer/ejemplos/timer0-pwm2.c">timer0-pwm2.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo4-hex/timer0-pwm2.hex">timer0-pwm2.hex</a>
+</td>
+<td> Generación de una <b>señal PWM</b> con ciclos de trabajo del 20% y 50%. Ejemplo mejorado.
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo4-timer/ejemplos/timer0-pwm3-fade.c">timer0-pwm3-fade.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo4-hex/timer0-pwm3-fade.hex">timer0-pwm3-fade.hex</a>
+</td>
+<td> Generación de <b>señales PWM de máxima resolución</b>. Se decrementa el ciclo de trabajo gradualmente para hacer que los leds se apaguen progresivamente (efecto fade)
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo4-timer/ejemplos/timer0-pwm-int.c">timer0-pwm-int.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo4-hex/timer0-pwm-int.hex">timer0-pwm-int.hex</a>
+</td>
+<td> Generación de <b>señales PWM mediante interrupciones</b>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo4-timer/ejemplos/timer0-pwm-sci.c">timer0-pwm-sci.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo4-hex/timer0-pwm-sci.hex">timer0-pwm-sci.hex</a>
+</td>
+<td> Ejemplo de <b>control de motores con PWM</b>. Mover el Skybot a diferentes velocidades
+</td></tr></tbody></table></dd></dl></dd></dl>
+<p><br>
+</p>
+<ul><li> Programas para <b>Octave/Matlab</b>: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo4-octave.zip">Modulo4-octave.zip</a></li></ul>
+<dl><dd><dl><dd><table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo4-timer/octave/timer0_ticks.m">timer0_ticks.m</a>
+</td>
+<td> Calcular el <b>número de ticks</b> del Temporizador 0 que tienen que transcurrir para lograr un tiempo determinado
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo4-timer/octave/timer0_Duracion.m">timer0_Duracion.m</a>
+</td>
+<td> Calcular el <b>tiempo real</b> que transcurre cuando se quiere esperar un tiempo determinado
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo4-timer/octave/timer0_TMR0.m">timer0_TMR0.m</a>
+</td>
+<td> Obtener los valores de inicialización del temporizador así como el prescaler para lograr <b>una pausa de un valor concreto</b>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo4-timer/octave/timer0_TMR0_frec.m">timer0_TMR0_frec.m</a>
+</td>
+<td> Obtener los valores de inicialización del temporizador así como el prescaler para <b>generar una señal cuadrada de una frecuencia determinada</b>
+</td></tr></tbody></table></dd></dl></dd></dl>
+<p><b>Ejemplo 1</b>: Configurar el timer0 para realizar pausas de 1ms
+</p>
+<pre><i>octave:1&gt;</i> <b>timer0_TMR0(20,1000);</b>
+T0INI= 100, PS2:0= 100, Div=  32, tc= 998.4 us, Error= 1.60 us
+T0INI= 178, PS2:0= 101, Div=  64, tc= 998.4 us, Error= 1.60 us
+T0INI= 217, PS2:0= 110, Div= 128, tc= 998.4 us, Error= 1.60 us
+T0INI= 236, PS2:0= 111, Div= 256, tc= 1024.0 us, Error= -24.00 us
+</pre>
+<dl><dd><dl><dd> Como argumento se pasa la frecuencia del cristal (en Mhz) y el tiempo en micro-segundos. Existen 4 soluciones, según los valores usados para el prescaler (32,64,128 o 256). T0INI indica el valor con el que hay que inicializar el temporizador para que ocurra un overflow transcurrido 1ms</dd></dl></dd></dl>
+<p><b>Ejemplo 2</b>: Configurar el timer0 para generar una onda cuadrada de 800 Hz
+</p>
+<pre><i>octave:1&gt;</i> <b>timer0_TMR0_frec(20,800);</b>
+TMR0= 61, PS2:0= 011, Div=  16, Frec= 801.3 Hz, Error= -1.28 Hz
+TMR0= 158, PS2:0= 100, Div=  32, Frec= 797.2 Hz, Error= 2.81 Hz
+TMR0= 207, PS2:0= 101, Div=  64, Frec= 797.2 Hz, Error= 2.81 Hz
+TMR0= 232, PS2:0= 110, Div= 128, Frec= 813.8 Hz, Error= -13.80 Hz
+TMR0= 244, PS2:0= 111, Div= 256, Frec= 813.8 Hz, Error= -13.80 Hz
+</pre>
+<dl><dd><dl><dd> Como argumento se pasa la frecuencia del cristal (en Mhz) y la frecuencia de la señal a generar, en Hz. Existen 5 soluciones, según los valores establecidos para el prescaler (16,32,64,128 o 256). La frecuencia obtenida no es exacta, sino que existe un error, también calculado por el script.</dd></dl></dd></dl>
+<h2><span class="mw-headline" id="M.C3.B3dulo_5:_Displays_de_cristal_l.C3.ADquido_.28LCD.29">Módulo 5: Displays de cristal líquido (LCD)</span></h2>
+<ul><li> Transparencias: (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/19731035/Modulo-5-Displays-de-cristal-liquido-LCD">En línea</a>)  (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/PIC16-modulo5-lcd.pdf">PDF</a>)  (<a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo5-LCD/PIC16-modulo5-lcd.odp">OpenOffice</a>) </li>
+<li> Ejemplos: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo5-ejemplos.zip">Modulo5-ejemplos.zip</a></li></ul>
+<dl><dd><dl><dd><table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo5-LCD/ejemplos/lcd-hola.c">lcd-hola.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo5-hex/lcd-hola.hex">lcd-hola.hex</a>
+</td>
+<td> Ejemplo "hola mundo". Se inicializa el LCD y se imprime la cadena "HOLA!"
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo5-LCD/ejemplos/lcd-term.c">lcd-term.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo5-hex/lcd-term.hex">lcd-term.hex</a>
+</td>
+<td> Convertir el LCD en una "maquina de escribir". Los caracteres que se envian por el puerto serie desde el PC se imprimen en el LCD
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo5-LCD/ejemplos/lcd-menu.c">lcd-menu.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo5-hex/lcd-menu.hex">lcd-menu.hex</a>
+</td>
+<td> Ejemplo de prueba de los diferentes comandos del LCD. Mediante un menu de opciones que sale por el puerto serie, el usuario selecciona los comandos a probar
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo5-LCD/ejemplos/lcd-usuario.c">lcd-usuario.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo5-hex/lcd-usuario.hex">lcd-usuario.hex</a>
+</td>
+<td> Ejemplo de como definir nuestros propios caracteres para ser impresos en el LCD
+</td></tr></tbody></table></dd></dl></dd></dl>
+<h2><span class="mw-headline" id="M.C3.B3dulo_6:_Conversor_anal.C3.B3gico.2Fdigital">Módulo 6: Conversor analógico/digital</span></h2>
+<ul><li> Transparencias: (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/19732000/Modulo-6-Conversor-analogicodigital">En línea</a>)  (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/PIC16-modulo6-ad.pdf">PDF</a>)  ([OpenOffice]) </li>
+<li> Ejemplos: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo6-ejemplos.zip">Modulo6-ejemplos.zip</a></li></ul>
+<dl><dd><dl><dd><table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo6-conversor-AD/ejemplos/ad0-leds.c">ad0-leds.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo6-hex/ad0-leds.hex">ad0-leds.hex</a>
+</td>
+<td> Ejemplo de lectura del cana RA0 analógico. La muestra de 8 bits leída se envía por el puerto B para ser visualizada en los leds
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo6-conversor-AD/ejemplos/ad0-leds-int.c">ad0-leds-int.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo6-conversor-AD/ejemplos/ad0-leds-int.c">ad0-leds-int.hex</a>
+</td>
+<td> Ejemplo de lectura del cana RA0 analógico. La lectura del conversor se realiza mediante interrupciones.
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo6-conversor-AD/ejemplos/ad0-vumetro.c">ad0-vumetro.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo6-conversor-AD/ejemplos/ad0-vumetro.c">ad0-vumetro.hex</a>
+</td>
+<td> Ejemplo de lectura del cana RA0 analógico. La lectura se realiza mediante interrupciones. La información se muestra en los leds
+</td></tr></tbody></table></dd></dl></dd></dl>
+<h2><span class="mw-headline" id="M.C3.B3dulo_7:_Memoria_EEPROM">Módulo 7: Memoria EEPROM</span></h2>
+<ul><li> Transparencias: (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/19734627/Modulo-7-Memoria-eeprom">En línea</a>)  (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/PIC16-modulo7-eeprom.pdf">PDF</a>)  (<a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo7-eeprom/PIC16-modulo7-eeprom.odp">OpenOffice</a>) </li>
+<li> Ejemplos: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo7-ejemplos.zip">Modulo7-ejemplos.zip</a></li></ul>
+<dl><dd><dl><dd><table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo7-eeprom/ejemplos/eeprom-write-byte.c">eeprom-write-byte.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo7-hex/eeprom-write-byte.hex">eeprom-write-byte.hex</a>
+</td>
+<td> Escritura de un byte en la memoria eeprom
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo7-eeprom/ejemplos/eeprom-read-byte.c">eeprom-read-byte.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo7-hex/eeprom-read-byte.hex">eeprom-read-byte.hex</a>
+</td>
+<td> Ejemplo de lectura de la memoria eeprom. Se lee el byte de la direccion 0 y se saca por los leds
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo7-eeprom/ejemplos/eeprom-write.c">eeprom-write.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo7-hex/eeprom-write.hex">eeprom-write.hex</a>
+</td>
+<td> Ejemplo de escritura de una tira de bytes en la eeprom
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo7-eeprom/ejemplos/eeprom-dump-sci.c">eeprom-dump-sci.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo7-hex/eeprom-dump-sci.hex">eeprom-dump-sci.hex</a>
+</td>
+<td> Ejemplo para volcar el contenido de la memoria eeprom por el puerto serie
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo7-eeprom/ejemplos/eeprom-write-int.c">eeprom-write-int.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo7-hex/eeprom-write-int.hex">eeprom-write-int.hex</a>
+</td>
+<td> Ejemplo de escritura de una tira de bytes en la eeprom. La escritura se hace por interrupciones
+</td></tr></tbody></table></dd></dl></dd></dl>
+<h2><span class="mw-headline" id="M.C3.B3dulo_8:_Control_de_servos">Módulo 8: Control de servos</span></h2>
+<ul><li> Transparencias: (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/19735906/Modulo-8-Control-de-servos">En línea</a>)  (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/PIC16-modulo8-servos.pdf">PDF</a>)  (<a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo8-servos/PIC16-modulo8-servos.odp">OpenOffice</a>) </li>
+<li> Ejemplos: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo8-ejemplos.zip">Modulo8-ejemplos.zip</a></li></ul>
+<dl><dd><dl><dd><table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo8-servos/ejemplos/servo1.c">servo1.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo8-hex/servo1.hex">servo1.hex</a>
+</td>
+<td> Movimiento de un servo. Se coloca en las posiciones -90, 0 y 90
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo8-servos/ejemplos/servo8.c">servo8.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo8-servos/ejemplos/servo8.c">servo8.hex</a>
+</td>
+<td> Posicionamiento de 8 servos. Se mueven los servos 0 y 1. El resto se dejan en la posición de 0 grados
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo8-servos/ejemplos/servo8-int.c">servo8-int.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo8-servos/ejemplos/servo8-int.c">servo8-int.hex</a>
+</td>
+<td> Posicionamiento de 8 servos mediante interrupciones
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo8-servos/ejemplos/servos-sci.c">servos-sci.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo8-servos/ejemplos/servos-sci.c">servos-sci.hex</a>
+</td>
+<td> El usuario puede establecer la posición de los 8 servos mediante comandos ASCII por el puerto serie
+</td></tr></tbody></table></dd></dl></dd></dl>
+<h2><span class="mw-headline" id="M.C3.B3dulo_9:_Introducci.C3.B3n_a_la_programaci.C3.B3n_en_lenguaje_ENSAMBLADOR">Módulo 9: Introducción a la programación en lenguaje ENSAMBLADOR</span></h2>
+<ul><li> Transparencias: (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/19755136/Modulo-9-Introduccion-a-la-programacion-en-ENSAMBLADOR">En línea</a>)  (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/PIC16-modulo9-asm.pdf">PDF</a>)  (<a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo9-asm/PIC16-modulo9-asm.odp">OpenOffice</a>) </li>
+<li> Ejemplos: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo9-ejemplos.zip">Modulo9-ejemplos.zip</a></li></ul>
+<dl><dd><dl><dd><table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo9-asm/ejemplos/plantilla.asm">plantilla.asm</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo9-hex/plantilla.hex">plantilla.hex</a>
+</td>
+<td> Plantilla ejemplo para programar los PICs en ensamblador
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo9-asm/ejemplos/ledon.asm">ledon.asm</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo9-hex/ledon.hex">ledon.hex</a>
+</td>
+<td> Ejemplo "Hola mundo" para encender el led conecado a RB1
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo9-asm/ejemplos/ledon2.asm">ledon2.asm</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo9-hex/ledon2.hex">ledon2.hex</a>
+</td>
+<td> Mismo ejemplo que ledon.asm, pero contiene <b>el codigo de arranque</b> necesario para cargarlo con <b>el Bootloader</b>
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo9-asm/ejemplos/outputb.asm">outputb.asm</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo9-hex/outputb.hex">outputb.hex</a>
+</td>
+<td> Enviar un VALOR al puerto B
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo9-asm/ejemplos/pulsador.asm">pulsador.asm</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo9-hex/pulsador.hex">pulsador.hex</a>
+</td>
+<td> Ejemplo de comprobación de bits. Leer el estado del pulsador. Cuando se aprieta se enciende el led
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo9-asm/ejemplos/ledp.asm">ledp.asm</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo9-hex/ledp.hex">ledp.hex</a>
+</td>
+<td> Bucles. Hacer parpadear el led (bit RB1)
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo9-asm/ejemplos/sci-eco.asm">sci-eco.asm</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo9-hex/sci-eco.hex">sci-eco.hex</a>
+</td>
+<td> Se hace eco de todo lo recibido por el puerto serie
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo9-asm/ejemplos/sci-int1.asm">sci-int1.asm</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo9-hex/sci-int1.hex">sci-int1.hex</a>
+</td>
+<td> Interrupciones. Prueba de la interrupcion de recepcion del SCI
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo9-asm/ejemplos/sci-int2.asm">sci-int2.asm</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo9-hex/sci-int2.hex">sci-int2.hex</a>
+</td>
+<td> Mismo ejemplo anterior, pero guardando el contexto al producirse la interrupción y recuperándolo al final
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo9-asm/ejemplos/sdcc-asm.c">sdcc-asm.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo9-hex/sdcc-asm.hex">sdcc-asm.hex</a>
+</td>
+<td> Ejemplo de invocación de instrucciones en ensamblador desde un programa en C. Se hace parpadear el led
+</td></tr></tbody></table></dd></dl></dd></dl>
+<h2><span class="mw-headline" id="M.C3.B3dulo_10:_Bus_I2C">Módulo 10: Bus I2C</span></h2>
+<ul><li> Transparencias: (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/19768174/Modulo-10-Bus-I2C">En línea</a>)  (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/PIC16-modulo10-I2C.pdf">PDF</a>) </li>
+<li> Ejemplos: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo10-ejemplos.zip">Modulo10-ejemplos.zip</a></li></ul>
+<dl><dd><dl><dd><table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo10-I2C/ejemplos/I2C_esclavo.c">I2C_esclavo.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo10-hex/I2C_esclavo.hex">I2C_esclavo.hex</a>
+</td>
+<td> <b>Ejemplo de esclavo por el I2C</b>. La Skypic esclava se convierte en un puerto serie remoto, de manera que el maestro puede enviar información al PC a través de este esclavo. Además, el maestro puede cambiar el estado del LED del esclavo y leer su pulsador
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo10-I2C/ejemplos/I2C_master.c">I2C_master.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo10-hex/I2C_master.hex">I2C_master.hex</a>
+</td>
+<td> <b>Ejemplo de Maestro por el I2C</b>. Se usa junto con el ejemplo anterior. La Skypic se convierte en un maestro que accede a la Skypic esclava para cambiar el estado de su led, enviar información por su puerto serie y leer su pulsador
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo10-I2C/ejemplos/srf02.c">srf02.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo10-hex/srf02.hex">srf02.hex</a>
+</td>
+<td> Ejemplo de utilización del <b>sensor de distancia SRF02</b>, conectado por el I2C a una Skypic. El programa permite acceder a todos los servicios ofrecidos por el sensor desde el puerto serie del PC
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo10-I2C/ejemplos/distancia.c">distancia.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo10-hex/distancia.hex">distancia.hex</a>
+</td>
+<td> Ejemplo de utilización del <b>sensor de distancia SRF02</b>, conectado por el I2C a una Skypic. La distancia se lee constantemente y se envía por el puerto serie
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo10-I2C/ejemplos/brujula.c">brujula.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo10-hex/brujula.hex">brujula.hex</a>
+</td>
+<td> Ejemplo de manejo de una <b>brújula por I2C</b>. El programa permite acceder a todos los servicios ofrecidos por la brújula desde el puerto serie del PC
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo10-I2C/ejemplos/LCD_sensores.c">LCD_sensores.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo10-hex/LCD_sensores.hex">LCD_sensores.c</a>
+</td>
+<td> Ejemplo de uso de <b>múltiples sensores por I2C</b>. Se leen el sensor de distancia y la brújula y se muestran los resultados en un LCD conectado también por I2C
+</td></tr></tbody></table></dd></dl></dd></dl>
+<h2><span class="mw-headline" id="M.C3.B3dulo_11:_Memoria_Flash_y_protocolo_ICSP">Módulo 11: Memoria Flash y protocolo ICSP</span></h2>
+<ul><li> Transparencias: No hay. La información está en los ejemplos</li>
+<li> Ejemplos: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo11-ejemplos.zip">Modulo11-ejemplos.zip</a></li></ul>
+<dl><dd><dl><dd><table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo11-flash-ICSP/ejemplos/flash-write-word.c">flash-write-word.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo11-hex/flash-write-word.hex">flash-write-word.hex</a>
+</td>
+<td> Ejemplo de <b>escritura de una palabra</b> en la <b>flash</b> del PIC
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo11-flash-ICSP/ejemplos/flash-read-word.c">flash-read-word.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo11-hex/flash-read-word.hex">flash-read-word.hex</a>
+</td>
+<td> Ejemplo de <b>lectura de la memoria flash</b>. Se lee una palabra y se envia por el sci
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo11-flash-ICSP/ejemplos/flash-dump.c">flash-dump.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo11-hex/flash-dump.hex">flash-dump.hex</a>
+</td>
+<td> <b>Volcar el contenido de la flash</b> del PIC por el puerto serie
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo11-flash-ICSP/ejemplos/icsp-dump.c">icsp-dump.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo11-hex/icsp-dump.hex">icsp-dump.hex</a>
+</td>
+<td> <b>Volcar un bloque de memoria flash de otro PIC</b>, por ICSP. Los datos se envian por el puerto serie
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo11-flash-ICSP/ejemplos/icsp-ledp.c">icsp-ledp.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo11-hex/icsp-ledp.hex">icsp-ledp.hex</a>
+</td>
+<td> <b>Ejemplo de grabación de un programa por el icsp</b>. El PIC "grabador" graba el programa de parpadear el led en otro pic. <b>¡¡¡Un PIC que graba a otro PIC!!!!!</b>
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo11-flash-ICSP/ejemplos/icsp-ledp-ok.c">icsp-ledp-ok.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo11-hex/icsp-ledp-ok.hex">icsp-ledp-ok.hex</a>
+</td>
+<td> <b>Grabación de un programa por ICSP</b>. Versión MEJORADA. Además de grabarse el programa ledp en otro Pic, se realiza su VERIFICACION y la grabación de la palabra de configuración.
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo11-flash-ICSP/ejemplos/icsp-virus1.c">icsp-virus1.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo11-hex/icsp-virus1.hex">icsp-virus1.hex</a>
+</td>
+<td> <b>Programa que se CLONA A SI MISMO</b>. ¡¡UN VIRUS!!. Se hace un duplicado de la memoria flash del PIC original en el PIC destino. Ahora el pic destino, a su vez, se puede clonar en otro pic, infectándolo&nbsp;;-)
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/Curso_pic/PIC16/v1.0/Modulo11-flash-ICSP/ejemplos/icsp-virus2.c">icsp-virus2.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Curso-Pic/PIC16-v1.0/Modulo11-hex/icsp-virus2.hex">icsp-virus2.hex</a>
+</td>
+<td> <b>VIRUS</b>. Mismo ejemplo anterior, pero que realiza juegos con las luces en una tarjeta Freeleds conectada al puerto C, para ver a simple vista la idea de clonación.
+</td></tr></tbody></table></dd></dl></dd></dl>
+<h2><span class="mw-headline" id="Repositorio">Repositorio</span></h2>
+<ul><li> Repositorio SVN: <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/Curso_pic/">http://svn.iearobotics.com/Curso_pic/</a></li></ul>
+<p>Para obtener la última versión teclear:
+</p>
+<pre>svn co <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/Curso_pic/">http://svn.iearobotics.com/Curso_pic/</a>
+</pre>
+<h2><span class="mw-headline" id="Historia">Historia</span></h2>
+<ul><li> <b>Jun/2009</b>: Creado como una de las partes del <b>Curso de Microcontroladores PIC: Arquitectura, recursos y programación</b>, impartido en esa misma fecha a personal de la Administración pública</li></ul>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<h2><span class="mw-headline" id="Autores">Autores</span></h2>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=Andr%C3%A9s_Prieto-Moreno" title="Andrés Prieto-Moreno">Andrés Prieto-Moreno</a></li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main"> Juan González-Gómez</a></li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=Ricardo_G%C3%B3mez" title="Ricardo Gómez">Ricardo Gómez</a></li></ul>
+<h2><span class="mw-headline" id="Licencia">Licencia</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cc_logo.png" class="image"><img alt="Cc logo.png" src="Programaci%C3%B3n_del_PIC16_en_C_files/Cc_logo_wUT5.png" width="88" height="31"></a> This work is licensed under a <a rel="nofollow" class="external text" href="http://creativecommons.org/licenses/by-sa/2.5/es/">Creative Commons Attribution-ShareAlike 2.5 Spain License</a>.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>16/Sep/2009</b>: Añadido módulo 11. Primera versión del curso publicada&nbsp;:-)</li>
+<li> <b>15/Sep/2009</b>: Añadidos módulos 8, 9 y 10</li>
+<li> <b>14/Sep/2009</b>: Añadidos módulos 4, 5, 6 y 7</li>
+<li> <b>13/Sep/2009</b>: Añadido módulo 3</li>
+<li> <b>12/Sep/2009</b>: Añadido módulo 2</li>
+<li> <b>10/Sep/2009</b>: Comenzada esta página. Añadido módulo 1</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20260917071005
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.045 seconds
+Real time usage: 0.050 seconds
+Preprocessor visited node count: 125/1000000
+Preprocessor generated node count: 221/1000000
+Post‐expand include size: 3200/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.663      1 - -total
+ 65.09%    1.733     16 - Plantilla:Tablabonita
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://iearobotics.com/wiki/index.php?title=Programaci%C3%B3n_del_PIC16_en_C&amp;oldid=7099">https://iearobotics.com/wiki/index.php?title=Programación_del_PIC16_en_C&amp;oldid=7099</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categorías</a>: <ul><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Documentaci%C3%B3n" title="Categoría:Documentación">Documentación</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Skypic" title="Categoría:Skypic">Skypic</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Microcontroladores" title="Categoría:Microcontroladores">Microcontroladores</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:PIC" title="Categoría:PIC">PIC</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:SVN" title="Categoría:SVN">SVN</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://iearobotics.com/wiki/index.php?title=Programaci%C3%B3n_del_PIC16_en_C" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Programaci%C3%B3n_del_PIC16_en_C&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://iearobotics.com/wiki/index.php?title=Programaci%C3%B3n_del_PIC16_en_C&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://iearobotics.com/wiki/index.php?title=Programaci%C3%B3n_del_PIC16_en_C&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Programaci%C3%B3n+del+PIC16+en+C" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Programaci%C3%B3n_del_PIC16_en_C" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Programaci%C3%B3n_del_PIC16_en_C" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://iearobotics.com/wiki/index.php?title=Programaci%C3%B3n_del_PIC16_en_C&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://iearobotics.com/wiki/index.php?title=Programaci%C3%B3n_del_PIC16_en_C&amp;oldid=7099" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://iearobotics.com/wiki/index.php?title=Programaci%C3%B3n_del_PIC16_en_C&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Programaci%C3%B3n_del_PIC16_en_C_files/gnu-fdl_wUT5.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="Programaci%C3%B3n_del_PIC16_en_C_files/poweredby_mediawiki_88x31_wUT5.png" alt="Powered by MediaWiki" srcset="Programaci%C3%B3n_del_PIC16_en_C_files/poweredby_mediawiki_132x47_wUT5.png 1.5x, Programaci%C3%B3n_del_PIC16_en_C_files/poweredby_mediawiki_176x62_wUT5.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 19 dic 2009 a las 03:42.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":114});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
