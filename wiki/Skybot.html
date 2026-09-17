@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Skybot - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Skybot","wgTitle":"Skybot","wgCurRevisionId":13273,"wgRevisionId":13273,"wgArticleId":25,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Robots","Skybot","Documentación","Videos","Skypic","SVN"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Skybot","wgRelevantArticleId":25,"wgRequestId":"aql_yOAwDVwIZOTMHCvMxQAniGc","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Skybot_files/load_qeXi.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="Skybot_files/load_qeXi.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="Skybot_files/load_002_qeXi.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Skybot rootpage-Skybot skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Skybot</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-foto.jpg" class="image"><img alt="" src="Skybot_files/300px-Skybot-foto_qeXi.jpg" width="300" height="225" class="thumbimage" srcset="Skybot_files/450px-Skybot-foto_qeXi.jpg 1.5x, Skybot_files/600px-Skybot-foto_qeXi.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-foto.jpg" class="internal" title="Aumentar"></a></div>Robot Skybot</div></div></div>
+<p><br>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Demostraciones_con_el_Skybot"><span class="tocnumber">2</span> <span class="toctext">Demostraciones con el Skybot</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Robot_en_modo_aut.C3.B3nomo"><span class="tocnumber">2.1</span> <span class="toctext">Robot en modo autónomo</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Robot_Tele-controlado_desde_el_PC"><span class="tocnumber">2.2</span> <span class="toctext">Robot Tele-controlado desde el PC</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Caracter.C3.ADsticas"><span class="tocnumber">3</span> <span class="toctext">Características</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Mec.C3.A1nica"><span class="tocnumber">4</span> <span class="toctext">Mecánica</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Electr.C3.B3nica"><span class="tocnumber">5</span> <span class="toctext">Electrónica</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Enlace_directo_a_los_esquemas_electricos"><span class="tocnumber">5.1</span> <span class="toctext">Enlace directo a los esquemas electricos</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Software"><span class="tocnumber">6</span> <span class="toctext">Software</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Programa_de_pruebas:_Skybot-test"><span class="tocnumber">6.1</span> <span class="toctext">Programa de pruebas: Skybot-test</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Entorno_usado_en_los_talleres_de_rob.C3.B3tica"><span class="tocnumber">6.2</span> <span class="toctext">Entorno usado en los talleres de robótica</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Ejemplos_de_programaci.C3.B3n_en_C"><span class="tocnumber">6.3</span> <span class="toctext">Ejemplos de programación en C</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Documentaci.C3.B3n"><span class="tocnumber">7</span> <span class="toctext">Documentación</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="#.C3.8Dndice_del_taller_del_Skybot:"><span class="tocnumber">7.1</span> <span class="toctext">Índice del taller del Skybot:</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#Aplicaciones"><span class="tocnumber">8</span> <span class="toctext">Aplicaciones</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#Fotos"><span class="tocnumber">9</span> <span class="toctext">Fotos</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#Lista_de_Correo"><span class="tocnumber">10</span> <span class="toctext">Lista de Correo</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#Repositorio"><span class="tocnumber">11</span> <span class="toctext">Repositorio</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#Descargas"><span class="tocnumber">12</span> <span class="toctext">Descargas</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="#Electr.C3.B3nica_2"><span class="tocnumber">12.1</span> <span class="toctext">Electrónica</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Planos_mec.C3.A1nicos"><span class="tocnumber">12.2</span> <span class="toctext">Planos mecánicos</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Circuitos_de_pruebas"><span class="tocnumber">12.3</span> <span class="toctext">Circuitos de pruebas</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="#Enlaces"><span class="tocnumber">13</span> <span class="toctext">Enlaces</span></a></li>
+<li class="toclevel-1 tocsection-24"><a href="#.C2.BFD.C3.B3nde_comprar_el_Skybot.3F"><span class="tocnumber">14</span> <span class="toctext">¿Dónde comprar el Skybot?</span></a></li>
+<li class="toclevel-1 tocsection-25"><a href="#Historia"><span class="tocnumber">15</span> <span class="toctext">Historia</span></a></li>
+<li class="toclevel-1 tocsection-26"><a href="#Autores"><span class="tocnumber">16</span> <span class="toctext">Autores</span></a></li>
+<li class="toclevel-1 tocsection-27"><a href="#Licencia"><span class="tocnumber">17</span> <span class="toctext">Licencia</span></a></li>
+<li class="toclevel-1 tocsection-28"><a href="#Cr.C3.A9ditos"><span class="tocnumber">18</span> <span class="toctext">Créditos</span></a></li>
+<li class="toclevel-1 tocsection-29"><a href="#Noticias"><span class="tocnumber">19</span> <span class="toctext">Noticias</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>El <b>Skybot</b> es un robot móvil, que se desplaza mediante dos ruedas motrices y está dotado de sensores para reaccionar ante estímulos del medio. <b>Es un robot "hola mundo"</b>. Está pensado para aquellos que quieren <b>iniciarse en el mundo de la robótica y los microcontroladores</b>. A diferencia de otros, el Skybot <b>NO es un juguete</b>. Su electrónica es la misma empleada en robots más avanzados tanto comerciales como de investigación. Por ello, <b>a partir de este robot es muy fácil desarrollar otros más complejos</b>.
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <b>¿Cómo empezar en robótica?</b>. Lo mejor es comenzar construyendo un robot, entenderlo y luego modificarlo. Esa es la filosofía del Skybot: Aprende con un ejemplo, modifícalo a tus necesidades.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Demostraciones_con_el_Skybot">Demostraciones con el Skybot</span></h2>
+<p>El Skybot puede funcionar en modo autónomo ejecutando el software que está grabado en el microcontrolador o bien estar tele-controlado desde un PC.
+</p>
+<h3><span class="mw-headline" id="Robot_en_modo_aut.C3.B3nomo">Robot en modo autónomo</span></h3>
+<p>La aplicación típica es la de hacer que el robot siga una línea negra sobre un fondo blanco. Los sensores que lleva en la parte frontel le permiten distinguir los colores blanco y negro.
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>300|250&lt;/youtube&gt;
+<p>El robot Skybot siguiendo una línea negra <br>
+(<a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=aZykkdvh2Bg">Vídeo</a>)
+</p>
+</td>
+<td>
+  <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-siguelineas.jpg" class="image"><img alt="" src="Skybot_files/300px-Skybot-siguelineas_qeXi.jpg" width="300" height="225" class="thumbimage" srcset="Skybot_files/450px-Skybot-siguelineas_qeXi.jpg 1.5x, Skybot_files/600px-Skybot-siguelineas_qeXi.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-siguelineas.jpg" class="internal" title="Aumentar"></a></div>300px</div></div></div>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Robot_Tele-controlado_desde_el_PC">Robot Tele-controlado desde el PC</span></h3>
+<p>El robot se conecta al ordenador por un cable serie y podemos hacer programas que lo tele-controlen. El cable se puede sustituir por un enlace Bluetooth. Una aplicación muy divertida es mover el robot con el mando de la wii. 
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>300|250&lt;/youtube&gt;
+<p>Moviendo el skybot con <a href="https://iearobotics.com/wiki/index.php?title=Tarri-wheel" title="Tarri-wheel">Tarri-wheel</a>!
+</p>
+</td>
+<td>
+<p>&lt;youtube&gt;UTfLc-VckHw|300|250&lt;/youtube&gt;
+Moviendo el Skybot con el mando de la wii...<br>
+...al estilo "minority report"&nbsp;:-)
+</p>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Caracter.C3.ADsticas">Características</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-partes.jpg" class="image"><img alt="" src="Skybot_files/300px-Skybot-partes_qeXi.jpg" width="300" height="225" class="thumbimage" srcset="Skybot_files/450px-Skybot-partes_qeXi.jpg 1.5x, Skybot_files/600px-Skybot-partes_qeXi.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-partes.jpg" class="internal" title="Aumentar"></a></div>Diferentes partes del Skybot</div></div></div>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<ul><li> <b>Robot Abierto</b>. Toda la información está disponible y se conceden permisos para su estudio, modificación y distribución. El software para su utilización es libre.</li>
+<li> <b>Multiplataforma</b>: Linux/Windows/Mac</li>
+<li> <b>Estructura mecánica</b>: Piezas de metacrilato de 3mm pegadas</li>
+<li> <b>Dos ruedas motrices</b>: Actuadas por servos Futaba 3003 trucados para girar 360 grados</li>
+<li> <b>Sensores</b>: 
+<ul><li> Hasta 4 <b>sensores de infrarrojos CNY70</b> para detectar superficies blancas/negras, </li>
+<li> Hasta 6 <b>sensores de contacto</b> (bumpers)</li>
+<li> 1 <b>sensor de luz</b> (ampliable)</li>
+<li> 1 <b>relé</b></li></ul></li>
+<li> <b>Dimensiones</b>: 16 x 11 x 10 cm. aprox. (largo)x(ancho)x(alto)</li>
+<li> <b>Microprocesador</b>: PIC16F876A (<a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Tarjeta Skypic</a>)</li>
+<li> <b>Etapa de potencia</b>: Chip 293 (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/proyectos/sky293/sky293.html">Tarjeta Sky293</a>)</li>
+<li> <b>Alimentación</b>: Entre 4.5-6v. Se usan 4 pilas de tipo AA. Opcionalmente se puede utilizar una alimentación separada para los motores, comprendida entre 4-12 voltios. (Por ejemplo una pila de 9v). Con ello se consigue más velocidad.</li></ul>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Mec.C3.A1nica">Mecánica</span></h2>
+<p>La estructura mecánica está compuesta por <b>7 piezas de metacrilato</b> de 3mm, dos <b>servos Futaba 3003 trucados</b> y una <b>rueda loca</b>. Es una estructura <b>fácilmente replicable</b> y se pueden emplear materiales como madera, PVC expandido, aluminio, etc. Las piezas se unen mediante pegamento y los motores se sujetan mediante tornillos normales de métrica 4. <b>Tanto la tornillería como la rueda loca se encuentran en cualquier ferretería</b>.
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-mecanica-superior.jpg" class="image"><img alt="Skybot-mecanica-superior.jpg" src="Skybot_files/Skybot-mecanica-superior_qeXi.jpg" width="283" height="233"></a>
+<p>Chásis del Skybot. Vista superior
+</p>
+</td>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-mecanica-inferior.jpg" class="image"><img alt="Skybot-mecanica-inferior.jpg" src="Skybot_files/Skybot-mecanica-inferior_qeXi.jpg" width="274" height="233"></a>
+<p>Chásis del Skybot. Vista inferior
+</p>
+</td></tr></tbody></table>
+<p>Esta estructura ha sido diseñada por <a href="https://iearobotics.com/wiki/index.php?title=Andr%C3%A9s_Prieto-Moreno" title="Andrés Prieto-Moreno">Andrés Prieto-Moreno</a>
+</p>
+<h2><span class="mw-headline" id="Electr.C3.B3nica">Electrónica</span></h2>
+<p>El Skybot utiliza las tarjetas <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> como procesadora y <a rel="nofollow" class="external text" href="http://www.iearobotics.com/proyectos/sky293/sky293.html">Sky293</a> para los sensores y la etapa de potencia. Ambas se unen formando una torre, colocándose encima del chásis.
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skypic-sky293.jpg" class="image"><img alt="" src="Skybot_files/300px-Skypic-sky293_qeXi.jpg" width="300" height="225" class="thumbimage" srcset="Skybot_files/450px-Skypic-sky293_qeXi.jpg 1.5x, Skybot_files/600px-Skypic-sky293_qeXi.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skypic-sky293.jpg" class="internal" title="Aumentar"></a></div>Tarjetas Skypic y Sky293</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skypic-sky293-torre.jpg" class="image"><img alt="" src="Skybot_files/300px-Skypic-sky293-torre_qeXi.jpg" width="300" height="225" class="thumbimage" srcset="Skybot_files/450px-Skypic-sky293-torre_qeXi.jpg 1.5x, Skybot_files/600px-Skypic-sky293-torre_qeXi.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skypic-sky293-torre.jpg" class="internal" title="Aumentar"></a></div>Tarjetas Skypic y Sky293 conectadas en torre</div></div></div>
+</td></tr></tbody></table>
+<p>La electrónica es genérica e independiente de la estructura mecánica. Esto ofrece tres ventajas:
+</p>
+<ul><li> <b>Reutilización</b>. La electrónica se puede emplear en otros diseños, bien para nuevos robots o bien para otras aplicaciones. Por ejemplos, el robot cuadrúpedo <a href="https://iearobotics.com/wiki/index.php?title=PuchoBot_II" title="PuchoBot II">PuchoBot II</a> o el robot gusano <a href="https://iearobotics.com/wiki/index.php?title=Cube_Revolutions" title="Cube Revolutions">Cube Revolutions</a> utilizan la <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> como controladora.</li>
+<li> <b>Usar otra electrónica</b>. Sobre la estructura del Skybot podemos colocar otra electrónica diferente, como por ejemplo una diseñada por nosotros.</li>
+<li> <b>Usar otra estructura</b>. La estructura del skybot se puede cambiar por otra, usándo la misma electrónica. Por ejemplo hacer un chásis de aluminio y usar unos motores más potentes. Por ejemplo se ha usado para construir el primer prototipo del <a href="https://iearobotics.com/wiki/index.php?title=Robot_FlatBot" title="Robot FlatBot">Robot_FlatBot</a>.</li></ul>
+<p><br>
+</p>
+<h3><span class="mw-headline" id="Enlace_directo_a_los_esquemas_electricos">Enlace directo a los esquemas electricos</span></h3>
+<table>
+
+<tbody><tr>
+<td style="width:48px;"><div style="position: relative; width: 48px; height: 48px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://iearobotics.com/wiki/index.php?title=Skypic:Planos" title="Skypic:Planos">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Icono_man.png" class="image" title="Skypic:Planos"><img alt="Skypic:Planos" src="Skybot_files/Icono_man_qeXi.png" width="48" height="48"></a></div>
+</div> 
+</td>
+<td><b><a href="https://iearobotics.com/wiki/index.php?title=Skypic:Planos" title="Skypic:Planos">Skypic Planos</a></b> <br>  Esquemático, PCB y ficheros de fabricación
+</td></tr>
+<tr>
+<td style="width:48px;"><div style="position: relative; width: 48px; height: 48px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://iearobotics.com/wiki/index.php?title=Skypic:Planos" title="Skypic:Planos">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Icono_man.png" class="image" title="Skypic:Planos"><img alt="Skypic:Planos" src="Skybot_files/Icono_man_qeXi.png" width="48" height="48"></a></div>
+</div> 
+</td>
+<td><b><a rel="nofollow" class="external text" href="http://www.iearobotics.com/proyectos/sky293/sky293.html#download">Sky293 Planos</a></b> <br>  Esquemático, PCB y ficheros de fabricación
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Software">Software</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Multiplatform.png" class="image"><img alt="" src="Skybot_files/300px-Multiplatform_qeXi.png" width="300" height="93" class="thumbimage" srcset="Skybot_files/Multiplatform_qeXi.png 1.5x, Skybot_files/Multiplatform_qeXi.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Multiplatform.png" class="internal" title="Aumentar"></a></div>300px</div></div></div>
+<p>La <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">tarjeta Skypic</a> lleva un microprocesador <b>PIC16F876A</b>. Existen muchas aplicaciones para la programación de los <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/PIC_microcontroller">PIC</a>, como o el <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/MPLAB">MPLAB</a> de Microchip o el <a rel="nofollow" class="external text" href="http://www.ic-prog.com/index1.htm">ICPROG</a>, de un programador independiente. Todas ellas se pueden utilizar con el Skybot. Sin embargo, hemos seleccionado una serie de aplicaciones para disponer de <b>un entorno libre y multiplataforma</b>, que permita manejar el Skybot desde <b>Gnu/Linux</b>, <b>Windows</b>, <b>FreeBSD</b> o <b>Mac</b>.
+</p>
+<h3><span class="mw-headline" id="Programa_de_pruebas:_Skybot-test">Programa de pruebas: Skybot-test</span></h3>
+<p>Para controlar el Skybot y leer el estado de todos sus sensores se puede utilizar el programa <a href="https://iearobotics.com/wiki/index.php?title=Skybot-test" title="Skybot-test">Skybot-test</a>. Permite mover el robot y comprobar si los sensores están funcionando.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-pantallazo-linux.png" class="image"><img alt="" src="Skybot_files/300px-Skybot-test-pantallazo-linux_qeXi.png" width="300" height="207" class="thumbimage" srcset="Skybot_files/450px-Skybot-test-pantallazo-linux_qeXi.png 1.5x, Skybot_files/Skybot-test-pantallazo-linux_qeXi.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-pantallazo-linux.png" class="internal" title="Aumentar"></a></div>Pantallazo de Skybot-test-1.0 en Gnu/Linux</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-pantallazo-win.png" class="image"><img alt="" src="Skybot_files/300px-Skybot-test-pantallazo-win_qeXi.png" width="300" height="221" class="thumbimage" srcset="Skybot_files/450px-Skybot-test-pantallazo-win_qeXi.png 1.5x, Skybot_files/Skybot-test-pantallazo-win_qeXi.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-pantallazo-win.png" class="internal" title="Aumentar"></a></div>Pantallazo de Skybot-test-1.0 en Windows XP</div></div></div>
+</td></tr></tbody></table>
+<p><br>
+</p>
+<h3><span class="mw-headline" id="Entorno_usado_en_los_talleres_de_rob.C3.B3tica">Entorno usado en los talleres de robótica</span></h3>
+<p>Para los <a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot" title="Taller Skybot">Talleres de robótica con el Skybot</a>, hemos optado por las siguientes alternativas:
+</p>
+<ul><li> <b>Un <a href="https://iearobotics.com/wiki/index.php?title=PIC_Bootloader" title="PIC Bootloader">Bootloader</a> grabado en el PIC</b>, lo que permite la rápida descarga de programas en la Skypic <b>sin usar grabador</b>.</li>
+<li> <b>Descarga de programas en el PIC</b>: Aplicación <a href="https://iearobotics.com/wiki/index.php?title=Pydownloader" title="Pydownloader">Pydownloader</a>, escrita en Python.</li>
+<li> <b>Programación en lenguaje C</b>. Utilizamos el compilador libre <a rel="nofollow" class="external text" href="http://sdcc.sourceforge.net/">SDCC</a>.</li>
+<li> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/talleres/generico-v14/sesion-3/index.html">Más información</a></li></ul>
+<h3><span class="mw-headline" id="Ejemplos_de_programaci.C3.B3n_en_C">Ejemplos de programación en C</span></h3>
+<p><a rel="nofollow" class="external text" href="http://www.iearobotics.com/talleres/generico-v14/sesion-3/ejemplos/ejemplos-skybot-1.html#descargas">Aquí están los ejemplos de programación del Skybot en lenguaje C</a> (usando la librería fácil).
+</p>
+<h2><span class="mw-headline" id="Documentaci.C3.B3n">Documentación</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot" title="Taller Skybot">Taller Skybot</a>. <b>Página principal</b>. Montaje y programación del Skybot. Documentación usada en los talleres de robótica.</li></ul>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id=".C3.8Dndice_del_taller_del_Skybot:">Índice del taller del Skybot:</span></h3>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesi%C3%B3n_1" title="Taller Skybot:Sesión 1">Sesión 1</a>&nbsp;: Construcción de la estructura mecánica y trucaje de los servos</li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesi%C3%B3n_2" title="Taller Skybot:Sesión 2">Sesión 2</a>&nbsp;: Finalizar la estructura, conectar todos los sensores y probar el robot</li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesi%C3%B3n_3" title="Taller Skybot:Sesión 3"> Sesión 3</a>: Instalación del software. Programa “hola mundo”.</li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesion4:Programaci%C3%B3n_del_Skybot" title="Taller Skybot:Sesion4:Programación del Skybot">Sesion 4</a>: Programación del Skybot</li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=Concurso_mogoll%C3%B3n" title="Concurso mogollón">Sesión 5</a>: El concurso del Mogollón.</li></ul>
+<h2><span class="mw-headline" id="Aplicaciones">Aplicaciones</span></h2>
+<p>Algunos ejemplos de manejo del Skybot y robots basados en él:
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/proyectos/friki-apps/wii-skybot/wii-skybot.html">Control del Skybot con el mando de la wii</a></li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=Wiilson" title="Wiilson">Wiilson</a>: Skybot + Wii + PWM</li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=Star_Destroyer" title="Star Destroyer">Star Destroyer</a>: Destructor de Star Wars movido con WII&nbsp;!!!</li></ul>
+<h2><span class="mw-headline" id="Fotos">Fotos</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-pre.jpg" class="image"><img alt="" src="Skybot_files/300px-Skybot-pre_qeXi.jpg" width="300" height="225" class="thumbimage" srcset="Skybot_files/Skybot-pre_qeXi.jpg 1.5x, Skybot_files/Skybot-pre_qeXi.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-pre.jpg" class="internal" title="Aumentar"></a></div>Maqueta preliminar del Skybot</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-v1.0-foto1.jpg" class="image"><img alt="" src="Skybot_files/300px-Skybot-v1.0-foto1_qeXi.jpg" width="300" height="199" class="thumbimage" srcset="Skybot_files/450px-Skybot-v1.0-foto1_qeXi.jpg 1.5x, Skybot_files/Skybot-v1.0-foto1_qeXi.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-v1.0-foto1.jpg" class="internal" title="Aumentar"></a></div>Skybot v1.0. Vista lateral</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-v1.0-foto2.jpg" class="image"><img alt="" src="Skybot_files/300px-Skybot-v1.0-foto2_qeXi.jpg" width="300" height="265" class="thumbimage" srcset="Skybot_files/Skybot-v1.0-foto2_qeXi.jpg 1.5x, Skybot_files/Skybot-v1.0-foto2_qeXi.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-v1.0-foto2.jpg" class="internal" title="Aumentar"></a></div>Skybot v1.0. Vista lateral</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-v1.0-foto3.jpg" class="image"><img alt="" src="Skybot_files/300px-Skybot-v1.0-foto3_qeXi.jpg" width="300" height="333" class="thumbimage" srcset="Skybot_files/Skybot-v1.0-foto3_qeXi.jpg 1.5x, Skybot_files/Skybot-v1.0-foto3_qeXi.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-v1.0-foto3.jpg" class="internal" title="Aumentar"></a></div>Skybot v1.0. Vista frontal</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-v1.0-foto4.jpg" class="image"><img alt="" src="Skybot_files/300px-Skybot-v1.0-foto4_qeXi.jpg" width="300" height="200" class="thumbimage" srcset="Skybot_files/Skybot-v1.0-foto4_qeXi.jpg 1.5x, Skybot_files/Skybot-v1.0-foto4_qeXi.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-v1.0-foto4.jpg" class="internal" title="Aumentar"></a></div>Skybot v1.0. Vista frontal de cerca</div></div></div>
+</td>
+<td>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Lista_de_Correo">Lista de Correo</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td><b>Lista de correo</b> para el intercambio de información, discusión, etc, sobre el Skybot, la Skypic, Skycontrol y en general robótica y electrónica:
+<ul><li> <b>Dirección</b>: <i>skylista@googlegroups.com</i></li>
+<li> <b>Página web</b>: <a rel="nofollow" class="external free" href="https://groups.google.com/group/skylista">http://groups.google.com/group/skylista</a></li></ul>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Repositorio">Repositorio</span></h2>
+<ul><li> SVN del proyecto <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/Skybot">http://svn.iearobotics.com/Skybot</a></li></ul>
+<p>Para obtener la versión estable actual del SVN:
+</p>
+<pre>svn co <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/Skybot/skybot/skybot-2006">http://svn.iearobotics.com/Skybot/skybot/skybot-2006</a>
+</pre>
+<h2><span class="mw-headline" id="Descargas">Descargas</span></h2>
+<h3><span class="mw-headline" id="Electr.C3.B3nica_2">Electrónica</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Skypic:Planos" title="Skypic:Planos">Skypic Planos</a>
+</td>
+<td> Esquemático, PCB y ficheros de fabricación
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/proyectos/sky293/sky293.html#download">Sky293 Planos</a>
+</td>
+<td> Esquemático, PCB y ficheros de fabricación
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Planos_mec.C3.A1nicos">Planos mecánicos</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Skybot/V1.0/skybot-v1.0.zip">skybot-v1.0.zip</a>
+</td>
+<td> Planos del Sybot v1.0, en DXF. Se pueden visualizar con <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/QCad">Qcad</a> o Autocad.
+<p>
+</p>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Skybot/V1.0/skybot-chasis.pdf">skybot-chasis.pdf</a>
+</td>
+<td> Piezas que componen el Chasis. Fabricación mediante corte por láser
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Skybot/V1.0/Skybot-ruedas-G2.pdf">Skybot-ruedas-G2.pdf</a>
+</td>
+<td> Ruedas. Generacion 2. Incorporan una goma tórica para mejorar el agarre.
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/Skybot/V1.0/Skybot-ruedas-G1.pdf">Skybot-ruedas-G1.pdf</a>
+</td>
+<td> Ruedas. Generacion 1. Fabricación mediante corte laser. Pensadas para poner alrededor de ellas la goma de un globo
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Circuitos_de_pruebas">Circuitos de pruebas</span></h3>
+<p>Circuitos para que el Skybot los siga. Imprimir en papel Din-A4 con impresora láser. Los circuitos en formato SVG se pueden editar con el programa multiplataforma <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/Inkscape">Inkscape</a>.
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/wiki/images/0/0b/Skybot-circuito-1.pdf">Skybot-circuito-1.pdf</a>
+</td>
+<td> Circuito 1. En PDF.
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/wiki/images/f/fb/Skybot-circuito1.svg">Skybot-circuito1.svg</a>
+</td>
+<td> Circuito 1. Fuentes en SVG.
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/wiki/images/3/37/Skybot-circuito2.pdf">Skybot-circuito2.pdf</a>
+</td>
+<td> Circuito 2. En PDF.
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/wiki/images/a/aa/Skybot-circuito-2.svg">Skybot-circuito-2.svg</a>
+</td>
+<td> Circuito 2. Fuentes en SVG.
+<p>
+</p>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Tarjeta Skypic</a></li>
+<li> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/proyectos/sky293/sky293.html">Tarjeta Sky293</a></li>
+<li> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/proyectos/cuadernos/ct3/ct3.html">Servos Futaba 3003</a></li>
+<li> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/proyectos/skybot/skybot.html">Antigua página del Skybot</a></li></ul>
+<h2><span class="mw-headline" id=".C2.BFD.C3.B3nde_comprar_el_Skybot.3F">¿Dónde comprar el Skybot?</span></h2>
+<p>El Skybot es <b>un robot Libre</b>, cualquiera lo puede construir, modificar, distribuir o vender. Estas son algunas empresas que lo comercializan:
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+
+<tbody><tr>
+<td> <img alt="Robot Premiere, by Quark Robotics" src="Skybot_files/Logo_robot_premiere_qeXi.png" title="Robot Premiere, by Quark Robotics" width="299" height="115">
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.robotpremiere.es/product.php?id_product=11">Kit Skybot en Robot Premiere</a>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Historia">Historia</span></h2>
+<p>El Skybot es una evolución del <a rel="nofollow" class="external text" href="http://www.iearobotics.com/proyectos/tritt/tritt.html">robot Tritt</a>, que desarrollamos en 1997 para impartir talleres de robótica en nuestra universidad. Más tarde este robot fue comercializado por la empresa Microbótica S.L, de la que formábamos parte. 
+</p><p>El Skybot nació en el 2004. La estructura de Tritt era de lego y el microcontrolador un 6811 de Motorola. Estos dos componentes quedaron obsoletos por lo que decidimos crear una estructura mecánica y electrónica nuevas. El nombre de Skybot viene de Skynet, el ordenador de la película Terminator. Usamos el prefijo SKY para identificar las diferentes tarjetas: Skypic, Sky293 y el robot Skybot.
+</p><p><b> Resumen de la historia del Skybot</b>:
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <b>[Jul-2009]</b> </td>
+<td> Taller de robótica básico en las III Jornadas de Inicialización a la Universidad (UAM 2009) (<a href="https://iearobotics.com/wiki/index.php?title=III_Jornadas_de_Iniciaci%C3%B3n_a_la_Universidad" title="III Jornadas de Iniciación a la Universidad"> Más información</a>)
+</td></tr>
+<tr>
+<td> <b>[Jun-2009]</b> </td>
+<td> V Taller de robótica en la Universidad Autónoma de Madrid (<a href="https://iearobotics.com/wiki/index.php?title=V_Taller_de_Rob%C3%B3tica_UAM_2009" title="V Taller de Robótica UAM 2009"> Más información</a>)
+</td></tr>
+<tr>
+<td> <b>15/Dic/2009</b> </td>
+<td> <a rel="nofollow" class="external text" href="http://www.robotpremiere.com/">Robotpremiere</a> vende su primer Skybot, a un particular en Madrid
+</td></tr>
+<tr>
+<td> <b>20/Nov/2009</b> </td>
+<td> El Skybot lo empieza a comercializar la tienda <a rel="nofollow" class="external text" href="http://www.robotpremiere.com/">Robotpremiere</a>
+</td></tr>
+<tr>
+<td> <b>[Oct-2008]</b> </td>
+<td> <b>Skybot 1.5</b>. Se sustituye el jack de elimentación por un interruptor. Taller Robótica Básica. Campus Party Iberoamérica.(<a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot_Iberoam%C3%A9rica_2008" title="Taller Skybot Iberoamérica 2008"> Más información</a>)
+</td></tr>
+<tr>
+<td> <b>[Jul-2008]</b> </td>
+<td> IV Taller de robótica en la Campus Party 2008 de Valencia (<a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot_CampusBot_2008" title="Taller Skybot CampusBot 2008"> Más información</a>)
+</td></tr>
+<tr>
+<td> <b>[Jul-2008]</b> </td>
+<td> IV Taller de robótica en la Universidad Autónoma de Madrid (<a href="https://iearobotics.com/wiki/index.php?title=Taller_Rob%C3%B3tica_UAM_2008" title="Taller Robótica UAM 2008"> Más información</a>)
+</td></tr>
+<tr>
+<td> <b>[Jun-2008]</b> </td>
+<td> Skybot movido por primera vez usando la Wii-board. (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/blog/2008/06/18/wii-board-moviendo-un-skybot/">Blog</a>) (<a href="https://iearobotics.com/wiki/index.php?title=Wii_Board" title="Wii Board"> Más información</a>)
+</td></tr>
+<tr>
+<td> <b>[Abril-2008]</b> </td>
+<td> Skybot mostrado en la Jornadas para alumnos de altas capacidades de la comunidad de Madrid, en la UAM. (<a href="https://iearobotics.com/wiki/index.php?title=2008-04-12:UAM:Rob%C3%B3tica_Modular_y_Locomoci%C3%B3n" title="2008-04-12:UAM:Robótica Modular y Locomoción"> Más información</a>)
+</td></tr>
+<tr>
+<td> <b>[Dic-2007]</b> </td>
+<td> Skybot mostrado en la charla "La granja de micro-robots". Móstoles. Mádrid.
+</td></tr>
+<tr>
+<td> <b>[Nov-2007]</b> </td>
+<td> Skybot mostrado en la charla "La granja de micro-robots". LudusParty. Lugo
+</td></tr>
+<tr>
+<td> <b>[Jul-2007]</b> </td>
+<td> III Taller de iniciación a la robótica en CampusBot. CampusParty. Valencia. (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/talleres/campusbot-2007/index.html">Más información</a>). (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/talleres/generico-v14/index.html">Documentación</a>)
+</td></tr>
+<tr>
+<td> <b>[Jul-2007]</b></td>
+<td> <b>Nace Skybot v1.4</b>. III Taller de iniciación a la robótica Universidad Autónoma de Madrid. El robot es igual al v1.3, pero ahora se utiliza la librería Skybot de Javier Valiente para facilitar la programación. (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/talleres/generico-v14/index.html">Documentación</a>)
+</td></tr>
+<tr>
+<td> <b>[Mayo-2007]</b> </td>
+<td> Skybot mostrado en la charla "La granja de micro-robots". Nebrija Lan Party. Madrid (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/personal/juan/conferencias/conf34/index.html">Más información</a>)
+</td></tr>
+<tr>
+<td> <b>[Abril-2007]</b> </td>
+<td> Skybot mostrado en la charla "La granja de micro-robots". EbroParty. Miranda de Ebro. Burgos. (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/personal/juan/conferencias/conf33/index.html">Más información</a>)
+</td></tr>
+<tr>
+<td><b>[Abril-2007]</b> </td>
+<td> Skybot mostrado en la charla "La granja de micro-robots". Enred@. Isla Cristina. Huelva (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/personal/juan/conferencias/conf32/index.html">Más información</a>)
+</td></tr>
+<tr>
+<td> <b>[Abril-2007]</b> </td>
+<td> Control del Skybot mediante el mando de la wii. (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/proyectos/friki-apps/wii-skybot/wii-skybot.html">Más información</a>)
+</td></tr>
+<tr>
+<td><b>[Marzo-2007]</b> </td>
+<td> Skybot mostrado en la charla "La granja de micro-robots". I Jornadas de ARDE. Málaga.  (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/personal/juan/conferencias/conf28/index.html">Más información</a>)
+</td></tr>
+<tr>
+<td> <b>[Feb-2007]</b></td>
+<td> II Taller de iniciación a la robótica en la Universidad Autónoma de Madrid. (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/talleres/uam-feb-2007/index.html">Más información</a>) (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/talleres/generico-v13/index.html">Documentación</a>)
+</td></tr>
+<tr>
+<td> <b>[Nov-2006]</b></td>
+<td> Skybot mostrado en la charla "La granja de micro-robots". LudusParty. Lugo
+</td></tr>
+<tr>
+<td> <b>[Julio-2006]</b></td>
+<td> II Taller de iniciación a la robótica CampusBot. (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/personal/juan/eventos/evento17/index.html">Más información</a>) (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/talleres/generico-v13/index.html">Documentación</a>)
+</td></tr>
+<tr>
+<td><b>[Julio-2006]</b></td>
+<td> Skybot mostrado como parte de los robots de la "Granja de Micro-Robots" en la Party Quijote en Ciudad Real. (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/personal/juan/conferencias/conf24/index.html">Más información</a>)
+</td></tr>
+<tr>
+<td> <b>[Feb-2006]</b></td>
+<td> <b>Nace Skybot v1.3</b>. I Taller de Robótica en la Universidad Autónoma de Madrid. Se sustituyen las antiguas ruedas por las nuevas que usan una goma tórica para un mejor agarre (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/talleres/uam-2006/index.html">Más información</a>) (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/talleres/generico-v13/index.html">Documentación</a>)
+</td></tr>
+<tr>
+<td> <b>[Nov-2005]</b></td>
+<td> <b>Nace Skybot v1.2</b>. Taller de Robótica en la Universidad de Cádiz. La <a rel="nofollow" class="external text" href="http://www.iearobotics.com/proyectos/ct293/ct293.html">tarjeta CT293</a> se sustituye por la nueva <a rel="nofollow" class="external text" href="http://www.iearobotics.com/proyectos/sky293/sky293.html">sky293</a>. (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/personal/juan/eventos/evento06/index.html">Más información</a>) (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/talleres/uca-2005/index.html">Documentación</a>)
+</td></tr>
+<tr>
+<td> <b>[Jul-2005]</b></td>
+<td> <b>Primer taller de robótica con el Skybot</b>. Campus Bot. Campus Party 2005. Valencia. (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/personal/juan/eventos/evento03/index.html">Más información</a>) (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/talleres/campusbot-2005/index.html">Documentación</a>)
+</td></tr>
+<tr>
+<td><b>[Junio-2005]</b></td>
+<td> <b>Nace Skybot v1.0</b> llevado a la V muestra de Microbótica en la Universidad de Málaga. (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/personal/juan/eventos/evento02/index.html">Más información</a>)
+</td></tr>
+<tr>
+<td><b>[Abril-2005]</b> </td>
+<td> Prototipo mostrado en las Sesiones de robótica organizadas por la Comunidad de Madrid en la Universidad Pontificia de Salamanca. (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/personal/juan/conferencias/conf8/index.html">Más información</a>)
+</td></tr>
+<tr>
+<td> <b>[Nov-2004]</b></td>
+<td> Prototipo inicial mostrado por primera vez en la IV Semana de la Ciencia en Madrid en Universidad Pontificia de Salamanca en Madrid. (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/personal/juan/conferencias/conf3/index.html">Más información</a>)
+</td></tr>
+<tr>
+<td><b>[1997-2004]</b></td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/proyectos/tritt/tritt.html">Microbot Tritt</a>, precursor del Skybot.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Autores">Autores</span></h2>
+<ul><li><a href="https://iearobotics.com/wiki/index.php?title=Andr%C3%A9s_Prieto-Moreno" title="Andrés Prieto-Moreno">Andrés Prieto-Moreno</a></li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main"> Juan González Gómez</a></li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=Ricardo_G%C3%B3mez" title="Ricardo Gómez">Ricardo Gómez</a></li></ul>
+<h2><span class="mw-headline" id="Licencia">Licencia</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cc_logo.png" class="image"><img alt="Cc logo.png" src="Skybot_files/Cc_logo_qeXi.png" width="88" height="31"></a> This work is licensed under a <a rel="nofollow" class="external text" href="http://creativecommons.org/licenses/by-sa/2.5/es/">Creative Commons Attribution-ShareAlike 2.5 Spain License</a>.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Cr.C3.A9ditos">Créditos</span></h2>
+<ul><li> A <a rel="nofollow" class="external text" href="http://www.mundobot.com/">Alejandro Alonso</a> por confiar en el SkyBot y por todas las sugerencias para mejorar el concepto inicial</li>
+<li> A <b>Ifara tecnologías</b> por financiar y comercializar el Skybot v1.0, v1.2 y v1.3</li></ul>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>30/Enero/2012</b>: Añadido enlace a RobotPremiere: Venden el Skybot</li>
+<li> <b>27/Julio/2009</b>. Skybot añadido a un repositorio. Creado plano de las ruedas</li>
+<li> <b>17/Junio/2008</b>. Migración finalizada (<a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main">Juan González</a>)</li>
+<li> <b>15/Mayo/2008</b>. Comenzada esta página. Migración de la <a rel="nofollow" class="external text" href="http://www.iearobotics.com/proyectos/skybot/skybot.html">documentación en HTML</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20260915172632
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.050 seconds
+Real time usage: 0.058 seconds
+Preprocessor visited node count: 204/1000000
+Preprocessor generated node count: 425/1000000
+Post‐expand include size: 3726/2097152 bytes
+Template argument size: 102/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.467      1 - -total
+ 37.54%    1.677      2 - Plantilla:Click
+ 37.54%    1.677     15 - Plantilla:Tablabonita
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://iearobotics.com/wiki/index.php?title=Skybot&amp;oldid=13273">https://iearobotics.com/wiki/index.php?title=Skybot&amp;oldid=13273</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categorías</a>: <ul><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Robots" title="Categoría:Robots">Robots</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Skybot" title="Categoría:Skybot">Skybot</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Documentaci%C3%B3n" title="Categoría:Documentación">Documentación</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Videos" title="Categoría:Videos">Videos</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Skypic" title="Categoría:Skypic">Skypic</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:SVN" title="Categoría:SVN">SVN</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://iearobotics.com/wiki/index.php?title=Skybot" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Skybot&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://iearobotics.com/wiki/index.php?title=Skybot&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://iearobotics.com/wiki/index.php?title=Skybot&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Skybot" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Skybot" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Skybot" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://iearobotics.com/wiki/index.php?title=Skybot&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://iearobotics.com/wiki/index.php?title=Skybot&amp;oldid=13273" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://iearobotics.com/wiki/index.php?title=Skybot&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Skybot_files/gnu-fdl_qeXi.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="Skybot_files/poweredby_mediawiki_88x31_qeXi.png" alt="Powered by MediaWiki" srcset="Skybot_files/poweredby_mediawiki_132x47_qeXi.png 1.5x, Skybot_files/poweredby_mediawiki_176x62_qeXi.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 30 ene 2012 a las 10:06.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":123});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
