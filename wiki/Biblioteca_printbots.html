@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Biblioteca printbots - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Biblioteca_printbots","wgTitle":"Biblioteca printbots","wgCurRevisionId":22333,"wgRevisionId":22333,"wgArticleId":4517,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Reprap","Objetos 3D","Printbots"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Biblioteca_printbots","wgRelevantArticleId":4517,"wgRequestId":"aqu_l8Hq0xq0jJjiDLfbmwAALAc","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Biblioteca_printbots_files/load_-dP2.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="Biblioteca_printbots_files/load_-dP2.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="Biblioteca_printbots_files/load_002_-dP2.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Biblioteca_printbots rootpage-Biblioteca_printbots skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Biblioteca printbots</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <b><a rel="nofollow" class="external text" href="https://github.com/Obijuan/printbot_part_library">Github</a></b>
+</th></tr></tbody></table>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Logo-printbots-parts-library.png" class="image"><img alt="" src="Biblioteca_printbots_files/300px-Logo-printbots-parts-library_-dP2.png" width="300" height="278" class="thumbimage" srcset="Biblioteca_printbots_files/450px-Logo-printbots-parts-library_-dP2.png 1.5x, Biblioteca_printbots_files/Logo-printbots-parts-library_-dP2.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Logo-printbots-parts-library.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Fotos"><span class="tocnumber">2</span> <span class="toctext">Fotos</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Printbots"><span class="tocnumber">3</span> <span class="toctext">Printbots</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Vitaminas"><span class="tocnumber">4</span> <span class="toctext">Vitaminas</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Pilas_y_portapilas"><span class="tocnumber">4.1</span> <span class="toctext">Pilas y portapilas</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Servo_SpringRC_SM-S4303R"><span class="tocnumber">4.2</span> <span class="toctext">Servo SpringRC SM-S4303R</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Servo_Futaba_3003"><span class="tocnumber">4.3</span> <span class="toctext">Servo Futaba 3003</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Tornillos"><span class="tocnumber">4.4</span> <span class="toctext">Tornillos</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Tuercas"><span class="tocnumber">4.5</span> <span class="toctext">Tuercas</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Rodamientos"><span class="tocnumber">4.6</span> <span class="toctext">Rodamientos</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Sensores"><span class="tocnumber">4.7</span> <span class="toctext">Sensores</span></a>
+<ul>
+<li class="toclevel-3 tocsection-12"><a href="#Octopus"><span class="tocnumber">4.7.1</span> <span class="toctext">Octopus</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#Otros"><span class="tocnumber">4.7.2</span> <span class="toctext">Otros</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-14"><a href="#Herramientas"><span class="tocnumber">4.8</span> <span class="toctext">Herramientas</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Decoraci.C3.B3n"><span class="tocnumber">4.9</span> <span class="toctext">Decoración</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Otras_Vitaminas"><span class="tocnumber">4.10</span> <span class="toctext">Otras Vitaminas</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#Piezas_impresas"><span class="tocnumber">5</span> <span class="toctext">Piezas impresas</span></a>
+<ul>
+<li class="toclevel-2 tocsection-18"><a href="#Ruedas"><span class="tocnumber">5.1</span> <span class="toctext">Ruedas</span></a>
+<ul>
+<li class="toclevel-3 tocsection-19"><a href="#Para_servos_Futaba_3003"><span class="tocnumber">5.1.1</span> <span class="toctext">Para servos Futaba 3003</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#Para_servos_SM-4303R"><span class="tocnumber">5.1.2</span> <span class="toctext">Para servos SM-4303R</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-21"><a href="#Ensambles"><span class="tocnumber">6</span> <span class="toctext">Ensambles</span></a></li>
+<li class="toclevel-1 tocsection-22"><a href="#Repositorio"><span class="tocnumber">7</span> <span class="toctext">Repositorio</span></a></li>
+<li class="toclevel-1 tocsection-23"><a href="#Autores"><span class="tocnumber">8</span> <span class="toctext">Autores</span></a></li>
+<li class="toclevel-1 tocsection-24"><a href="#Licencia"><span class="tocnumber">9</span> <span class="toctext">Licencia</span></a></li>
+<li class="toclevel-1 tocsection-25"><a href="#Noticias"><span class="tocnumber">10</span> <span class="toctext">Noticias</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>Biblioteca de piezas impresas y vitaminas para el diseño de printbots e impresoras 3D
+</p>
+<h2><span class="mw-headline" id="Fotos">Fotos</span></h2>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <b><a rel="nofollow" class="external text" href="https://plus.google.com/u/0/photos/109138697406392447933/albums/6020068108954731953">Álbum de fotos</a></b>
+</th></tr></tbody></table>
+<h2><span class="mw-headline" id="Printbots">Printbots</span></h2>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a rel="nofollow" class="external text" href="https://github.com/Obijuan/printbots/tree/master/Renacuajo">Printbot Renacuajo</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="300px" src="Biblioteca_printbots_files/Renacuajo-1_-dP2.png" title="300px" width="1479" height="1071">
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Vitaminas">Vitaminas</span></h2>
+<h3><span class="mw-headline" id="Pilas_y_portapilas">Pilas y portapilas</span></h3>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Portapilas_para_4_pilas_AAA" title="Freecad: Portapilas para 4 pilas AAA">Portapilas 4-AAA</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Portapilas_para_8_pilas_AAA" title="Freecad: Portapilas para 8 pilas AAA">Portapilas 8-AAA</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Biblioteca_printbots_files/Battery-holder-4-AAA-2_-dP2.png" title="170px" width="885" height="598">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/Battery-holder-8-AAA-2_-dP2.png" title="170px" width="956" height="572">
+</td></tr></tbody></table>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Pila_tipo_AAA" title="Freecad: Pila tipo AAA">Pila AAA</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Biblioteca_printbots_files/Battery-AAA-2_-dP2.png" title="170px" width="843" height="597">
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Servo_SpringRC_SM-S4303R">Servo SpringRC SM-S4303R</span></h3>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Servo_SpringRC_SM-S4303R" title="Freecad: Servo SpringRC SM-S4303R">Servo SM-S4303R</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Biblioteca_printbots_files/SM-S4303R-2_-dP2.png" title="170px" width="943" height="600">
+</td></tr></tbody></table>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Tornillos_inferiores_Servo_SM-S4303R" title="Freecad: Tornillos inferiores Servo SM-S4303R">Tornillos inferiores</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Tornillo_eje_Servo_SM-S4303R" title="Freecad: Tornillo eje Servo SM-S4303R">Tornillo eje</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Tornillo_corona_Servo_SM-S4303R" title="Freecad: Tornillo corona Servo SM-S4303R">Tornillo corona</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Biblioteca_printbots_files/SM-S4303R-bottom-screws-2_-dP2.png" title="170px" width="946" height="600">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/SM-S4303R-shaft-screw-3_-dP2.png" title="170px" width="983" height="596">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/SM-S4303R-horn-screw-2_-dP2.png" title="170px" width="984" height="600">
+</td></tr></tbody></table>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Corona_peque%C3%B1a_Servo_SM-S4303R" title="Freecad: Corona pequeña Servo SM-S4303R">Corona pequeña</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Corona_circular_grande_Servo_SM-S4303R" title="Freecad: Corona circular grande Servo SM-S4303R">Corona grande</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Corona_de_6_brazos_Servo_SM-S4303R" title="Freecad: Corona de 6 brazos Servo SM-S4303R">Corona 6 brazos</a> </th>
+<th><a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Corona_de_4_brazos_Servo_SM-S4303R" title="Freecad: Corona de 4 brazos Servo SM-S4303R">Corona 4 brazos</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Biblioteca_printbots_files/SM-S4303R-small-rounded-horn-2_-dP2.png" title="170px" width="945" height="602">
+</td>
+<td> <img alt="Corona grande" src="Biblioteca_printbots_files/SM-S4303R-big-rounded-horn-2_-dP2.png" title="Corona grande" width="846" height="600">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/SM-S4303R-6-arms-horn-2_-dP2.png" title="170px" width="846" height="600">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/SM-S4303R-4-arms-horn-2_-dP2.png" title="170px" width="897" height="598">
+</td></tr></tbody></table>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Corona_peque%C3%B1a_de_2_brazos_Servo_SM-S4303R" title="Freecad: Corona pequeña de 2 brazos Servo SM-S4303R">Corona 2 brazos pequeña</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Corona_grande_de_2_brazos_Servo_SM-S4303R" title="Freecad: Corona grande de 2 brazos Servo SM-S4303R">Corona 2 brazos grande</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Biblioteca_printbots_files/SM-S4303R-2-arms-small-horn-2_-dP2.png" title="170px" width="904" height="600">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/SM-S4303R-2-arms-big-horn-2_-dP2.png" title="170px" width="889" height="597">
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Servo_Futaba_3003">Servo Futaba 3003</span></h3>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Futaba_3003" title="Freecad: Futaba 3003">Futaba 3003</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:Futaba_3003_Tapa_inferior_2" title="Freecad:Futaba 3003 Tapa inferior 2">Tapa inferior</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Biblioteca_printbots_files/Futaba3003-1_-dP2.png" title="170px" width="1318" height="1072">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/Futaba3003-lid-2_-dP2.png" title="170px" width="1264" height="1072">
+</td></tr></tbody></table>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Futaba_3003:_tornillo_eje" title="Futaba 3003: tornillo eje">Tornillo eje</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Futaba_3003:_tornillos_de_la_corona" title="Futaba 3003: tornillos de la corona">Tornillo corona</a>   </th>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Futaba_3003:_tornillos_inferiores" title="Futaba 3003: tornillos inferiores">Tornillo inferior</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Biblioteca_printbots_files/Futaba3003-shaft-bolt-2_-dP2.png" title="170px" width="963" height="602">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/Futaba3003-horn-bolt-2_-dP2.png" title="170px" width="1452" height="1071">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/Futaba3003-bottom-screw-2_-dP2.png" title="170px" width="942" height="603">
+</td></tr></tbody></table>
+<p><br>
+</p>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Futaba_3003._Corona_redondeada_pequena" title="Freecad: Futaba 3003. Corona redondeada pequena">Corona pequeña</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Futaba_3003:_corona_grande" title="Futaba 3003: corona grande">Corona grande</a>  </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Futaba_3003:_corona_de_4_brazos" title="Futaba 3003: corona de 4 brazos">Corona 4 brazos</a>  </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Futaba_3003:_corona_de_6_brazos" title="Futaba 3003: corona de 6 brazos">Corona de 6 brazos</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Biblioteca_printbots_files/Futaba3003-rounded-horn-1_-dP2.png" title="170px" width="1455" height="1074">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/Futaba3003-big-rounded-horn-3_-dP2.png" title="170px" width="926" height="601">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/Futaba3003-4-arm-horn-2_-dP2.png" title="170px" width="936" height="606">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/Futaba3003-6-arm-horn-3_-dP2.png" title="170px" width="981" height="597">
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Tornillos">Tornillos</span></h3>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Tornillo_cabeza_cilindrica_M3x6" title="Tornillo cabeza cilindrica M3x6">Tornillo M3x6</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Tornillo_cabeza_cilindrica_M3x8" title="Tornillo cabeza cilindrica M3x8">Tornillo M3x8</a>   </th>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Tornillo_cabeza_cilindrica_M3x10" title="Tornillo cabeza cilindrica M3x10">Tornillo M3x10</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Tornillo_cabeza_cilindrica_M3x12" title="Tornillo cabeza cilindrica M3x12">Tornillo M3x12</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Biblioteca_printbots_files/M3x6-cyl-2_-dP2.png" title="170px" width="938" height="600">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/M3x8-cyl-2_-dP2.png" title="170px" width="937" height="602">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/M3x10-cyl-2_-dP2.png" title="170px" width="938" height="599">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/M3x12-cyl-2_-dP2.png" title="170px" width="940" height="599">
+</td></tr></tbody></table>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Tornillo_cabeza_cil%C3%ADndrica_llave_hexagonal_M3x10" title="Tornillo cabeza cilíndrica llave hexagonal M3x10">Tornillo M3x10 hex</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Tornillo_cabeza_cil%C3%ADndrica_llave_hexagonal_M3x40" title="Tornillo cabeza cilíndrica llave hexagonal M3x40">Tornillo M3x40 hex</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Biblioteca_printbots_files/M3x10-cyl-hex-head-2_-dP2.png" title="170px" width="1020" height="603">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/M3x40-cyl-hex-head-2_-dP2.png" title="170px" width="954" height="603">
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Tuercas">Tuercas</span></h3>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Tuerca_M3_hexagonal" title="Tuerca M3 hexagonal">Tuerca M3 hexagonal</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Biblioteca_printbots_files/Nut-M3-2_-dP2.png" title="170px" width="938" height="599">
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Rodamientos">Rodamientos</span></h3>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rodamiento_608zz" title="Freecad: Rodamiento 608zz">Rodamiento 608zz</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rodamiento_623zz" title="Freecad: Rodamiento 623zz">Rodamiento 623zz</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Biblioteca_printbots_files/608zz_-dP2.png" title="170px" width="1485" height="1036">
+</td>
+<td> <img alt="120px" src="Biblioteca_printbots_files/623zz_-dP2.png" title="120px" width="333" height="363">
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Sensores">Sensores</span></h3>
+<h4><span class="mw-headline" id="Octopus">Octopus</span></h4>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Sensor_Octopus_LDR" title="Freecad: Sensor Octopus LDR">Sensor LDR</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Sensor_Octopus_IR" title="Freecad: Sensor Octopus IR">Sensor IR</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Octopus_LED" title="Freecad: Octopus LED">LED</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Octopus_zumbador" title="Freecad: Octopus zumbador">Zumbador</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Biblioteca_printbots_files/Octopus-LDR-sensor-2_-dP2.jpg" title="170px" width="851" height="542">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/Octopus-IR-sensor-2_-dP2.jpg" title="170px" width="851" height="542">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/Octopus-LED-1_-dP2.jpg" title="170px" width="851" height="570">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/Octopus-buzzer-2_-dP2.jpg" title="170px" width="851" height="542">
+</td></tr></tbody></table>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Octopus_Pulsador" title="Freecad: Octopus Pulsador">Pulsador</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Biblioteca_printbots_files/Octopus-pushbutton-3_-dP2.jpg" title="170px" width="851" height="542">
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Otros">Otros</span></h4>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Ultrasonidos_BAT" title="Freecad: Ultrasonidos BAT">Ultrasonidos BAT</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Biblioteca_printbots_files/BAT-ultrasonic-2_-dP2.jpg" title="170px" width="654" height="538">
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Herramientas">Herramientas</span></h3>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Llave_allen_2.5mm" title="Freecad: Llave allen 2.5mm">Llave allen 2.5mm</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Biblioteca_printbots_files/Hex-key-2_5mm-2_-dP2.png" title="170px" width="949" height="594">
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Decoraci.C3.B3n">Decoración</span></h3>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Ojos_del_renacuajo-bot" title="Freecad: Ojos del renacuajo-bot">Ojos de Renacuajobot</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Biblioteca_printbots_files/Renacuajo-eyes-2_-dP2.png" title="170px" width="956" height="599">
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Otras_Vitaminas">Otras Vitaminas</span></h3>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Tarjeta_SD" title="Freecad: Tarjeta SD">Tarjeta SD</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Biblioteca_printbots_files/Sd-card-2_-dP2.png" title="170px" width="1474" height="1070">
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Piezas_impresas">Piezas impresas</span></h2>
+<h3><span class="mw-headline" id="Ruedas">Ruedas</span></h3>
+<h4><span class="mw-headline" id="Para_servos_Futaba_3003">Para servos Futaba 3003</span></h4>
+<p>Ruedas para el Miniskybot y robot similares con servos Futaba 3003
+</p>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_Miniskybot_para_corona_circular_peque%C3%B1a_Futaba_3003" title="Freecad: Rueda Miniskybot para corona circular pequeña Futaba 3003"> Corona circular</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_Miniskybot_para_corona_circular_grande_Futaba_3003" title="Freecad: Rueda Miniskybot para corona circular grande Futaba 3003"> Corona circular grande</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_Miniskybot_para_corona_Futaba_3003_de_6_brazos" title="Freecad: Rueda Miniskybot para corona Futaba 3003 de 6 brazos"> Corona de 6 brazos</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_Miniskybot_para_corona_Futaba_3003_de_4_brazos" title="Freecad: Rueda Miniskybot para corona Futaba 3003 de 4 brazos"> Corona de 4 brazos</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Biblioteca_printbots_files/Miniskybot-wheel-futaba3003-rounded-horn-2_-dP2.png" title="170px" width="1455" height="1034">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/Miniskybot-wheel-futaba3003-big-rounded-horn-10_-dP2.png" title="170px" width="1431" height="1066">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/Miniskybot-wheel-futaba3003-6-arms-horn-3_-dP2.png" title="170px" width="1434" height="1020">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/Miniskybot-wheel-futaba3003-4-arms-horn-2_-dP2.png" title="170px" width="1377" height="1026">
+</td></tr></tbody></table>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_Miniskybot_modelo_engranaje_para_Futaba_3003" title="Freecad: Rueda Miniskybot modelo engranaje para Futaba 3003"> Modelo engranaje</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_Miniskybot_modelo_open_hardware_para_Futaba_3003" title="Freecad: Rueda Miniskybot modelo open hardware para Futaba 3003">Modelo Open Hw</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_Miniskybot_modelo_pent%C3%A1culo_para_Futaba_3003" title="Freecad: Rueda Miniskybot modelo pentáculo para Futaba 3003"> Modelo pentáculo</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_Miniskybot_modelo_renacuajo_para_Futaba_3003" title="Freecad: Rueda Miniskybot modelo renacuajo para Futaba 3003">Modelo renacuajo</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Biblioteca_printbots_files/Miniskybot-wheel-gear-futaba3003-2_-dP2.png" title="170px" width="1374" height="1029">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/Miniskybot-wheel-open-hw-logo-futaba3003-2_-dP2.png" title="170px" width="1428" height="1027">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/Miniskybot-wheel-pentacle-futaba3003-2_-dP2.png" title="170px" width="1431" height="1028">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/Miniskybot-wheel-renacuajo-futaba3003-2_-dP2.png" title="170px" width="1433" height="1029">
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Para_servos_SM-4303R">Para servos SM-4303R</span></h4>
+<p>Ruedas para el <a rel="nofollow" class="external text" href="http://www.thingiverse.com/thing:210098">printbot Renacuajobot</a> y robots similares que usen servos SM-S4303R
+</p>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_b%C3%A1sica_RenacuajoBot_para_corona_circular_peque%C3%B1a_SM-S4303R" title="Freecad: Rueda básica RenacuajoBot para corona circular pequeña SM-S4303R"> Corona circular</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_b%C3%A1sica_RenacuajoBot_para_corona_circular_grande_SM-S4303R" title="Freecad: Rueda básica RenacuajoBot para corona circular grande SM-S4303R"> Corona circular grande</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_b%C3%A1sica_RenacuajoBot_para_corona_de_6_brazos_SM-S4303R" title="Freecad: Rueda básica RenacuajoBot para corona de 6 brazos SM-S4303R"> Corona 6 brazos</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_b%C3%A1sica_RenacuajoBot_para_corona_de_4_brazos_SM-S4303R" title="Freecad: Rueda básica RenacuajoBot para corona de 4 brazos SM-S4303R"> Corona 4 brazos</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Biblioteca_printbots_files/Renacuajo-wheel-small-rounded-horn-5_-dP2.png" title="170px" width="1353" height="1068">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/Renacuajo-wheel-big-rounded-horn-2_-dP2.png" title="170px" width="1355" height="1030">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/Renacuajo-wheel-6-arms-horn-2_-dP2.png" title="170px" width="1368" height="1067">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/Renacuajo-wheel-4-arms-horn-2_-dP2.png" title="170px" width="1379" height="1033">
+</td></tr></tbody></table>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_b%C3%A1sica_RenacuajoBot_para_corona_de_2_brazos_SM-S4303R" title="Freecad: Rueda básica RenacuajoBot para corona de 2 brazos SM-S4303R"> Corona 2 brazos</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_original_RenacuajoBot" title="Freecad: Rueda original RenacuajoBot"> Rueda RenacuajoBot</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_original_RenacuajoBot_con_tornillos" title="Freecad: Rueda original RenacuajoBot con tornillos"> RenacuajoBot tornillos</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_RenacuajoBot_modelo_engranaje" title="Freecad: Rueda RenacuajoBot modelo engranaje"> Modelo engranaje</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Biblioteca_printbots_files/Renacuajo-wheel-2-arms-horn-3_-dP2.png" title="170px" width="1375" height="1027">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/Renacuajo-original-wheel-1_-dP2.png" title="170px" width="1379" height="1033">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/Renacuajo-original-wheel-screws-1_-dP2.png" title="170px" width="1453" height="913">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/Renacuajo-wheel-gear-1_-dP2.png" title="170px" width="924" height="601">
+</td></tr></tbody></table>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_RenacuajoBot_modelo_pentacular" title="Freecad: Rueda RenacuajoBot modelo pentacular">Modelo pentáculo</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_RenacuajoBot_modelo_open_hardware" title="Freecad: Rueda RenacuajoBot modelo open hardware">Modelo open hardware</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Biblioteca_printbots_files/Renacuajo-wheel-pentacle-1_-dP2.png" title="170px" width="924" height="601">
+</td>
+<td> <img alt="170px" src="Biblioteca_printbots_files/Renacuajo-wheel-open-hardware-1_-dP2.png" title="170px" width="1379" height="1073">
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Ensambles">Ensambles</span></h2>
+<h2><span class="mw-headline" id="Repositorio">Repositorio</span></h2>
+<ul><li> Repositorio github: <a rel="nofollow" class="external free" href="https://github.com/Obijuan/printbot_part_library">https://github.com/Obijuan/printbot_part_library</a></li></ul>
+<h2><span class="mw-headline" id="Autores">Autores</span></h2>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main">Juan González</a> (Obijuan)</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/movilujo">Jose Luis Villarejo Muñoz</a></li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/PedroDeOro">Pedro de Oro</a></li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/rcccort">rcccort</a></li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Gerpi">Germán Souto</a></li></ul>
+<h2><span class="mw-headline" id="Licencia">Licencia</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cc_logo.png" class="image"><img alt="Cc logo.png" src="Biblioteca_printbots_files/Cc_logo_-dP2.png" width="88" height="31"></a> This work is licensed under a <a rel="nofollow" class="external text" href="http://creativecommons.org/licenses/by-sa/3.0/es/">Creative Commons Attribution-ShareAlike 3.0 Spain License</a>.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>19/Julio/2014</b>: Comenzada esta página</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20260917102319
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.132 seconds
+Real time usage: 0.249 seconds
+Preprocessor visited node count: 104/1000000
+Preprocessor generated node count: 125/1000000
+Post‐expand include size: 200/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    1.528      1 - Plantilla:Tablabonita
+100.00%    1.528      1 - -total
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://iearobotics.com/wiki/index.php?title=Biblioteca_printbots&amp;oldid=22333">https://iearobotics.com/wiki/index.php?title=Biblioteca_printbots&amp;oldid=22333</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categorías</a>: <ul><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Reprap" title="Categoría:Reprap">Reprap</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Objetos_3D" title="Categoría:Objetos 3D">Objetos 3D</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Printbots" title="Categoría:Printbots">Printbots</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://iearobotics.com/wiki/index.php?title=Biblioteca_printbots" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Biblioteca_printbots&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://iearobotics.com/wiki/index.php?title=Biblioteca_printbots&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://iearobotics.com/wiki/index.php?title=Biblioteca_printbots&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Biblioteca+printbots" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Biblioteca_printbots" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Biblioteca_printbots" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://iearobotics.com/wiki/index.php?title=Biblioteca_printbots&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://iearobotics.com/wiki/index.php?title=Biblioteca_printbots&amp;oldid=22333" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://iearobotics.com/wiki/index.php?title=Biblioteca_printbots&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Biblioteca_printbots_files/gnu-fdl_-dP2.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="Biblioteca_printbots_files/poweredby_mediawiki_88x31_-dP2.png" alt="Powered by MediaWiki" srcset="Biblioteca_printbots_files/poweredby_mediawiki_132x47_-dP2.png 1.5x, Biblioteca_printbots_files/poweredby_mediawiki_176x62_-dP2.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 13 oct 2014 a las 23:27.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":391});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
