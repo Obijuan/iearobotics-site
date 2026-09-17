@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Skybot-test - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Skybot-test","wgTitle":"Skybot-test","wgCurRevisionId":8987,"wgRevisionId":8987,"wgArticleId":604,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["SVN","Skybot","Stargate","Python","Software"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Skybot-test","wgRelevantArticleId":604,"wgRequestId":"aqt5f_hjM9qTiRqjhzvlFAAARAI","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Skybot-test_files/load_L2tJ.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="Skybot-test_files/load_L2tJ.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="Skybot-test_files/load_002_L2tJ.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Skybot-test rootpage-Skybot-test skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Skybot-test</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><p><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-logo-1.png" class="image" title="Logo del skybot-test‎"><img alt="Logo del skybot-test‎" src="Skybot-test_files/Skybot-test-logo-1_L2tJ.png" width="300" height="312"></a>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Caracter.C3.ADsticas"><span class="tocnumber">2</span> <span class="toctext">Características</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Pantallazos"><span class="tocnumber">3</span> <span class="toctext">Pantallazos</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Ejemplo_de_uso"><span class="tocnumber">4</span> <span class="toctext">Ejemplo de uso</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Teclas"><span class="tocnumber">5</span> <span class="toctext">Teclas</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Descargas"><span class="tocnumber">6</span> <span class="toctext">Descargas</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Versi.C3.B3n:_1.0.1"><span class="tocnumber">6.1</span> <span class="toctext">Versión: 1.0.1</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Versi.C3.B3n:_1.0"><span class="tocnumber">6.2</span> <span class="toctext">Versión: 1.0</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Licencia"><span class="tocnumber">7</span> <span class="toctext">Licencia</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Cambios"><span class="tocnumber">8</span> <span class="toctext">Cambios</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#Versi.C3.B3n_1.0.1"><span class="tocnumber">8.1</span> <span class="toctext">Versión 1.0.1</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Versi.C3.B3n_1.0"><span class="tocnumber">8.2</span> <span class="toctext">Versión 1.0</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Instalaci.C3.B3n"><span class="tocnumber">9</span> <span class="toctext">Instalación</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="#Instalacion_en_Windows_XP"><span class="tocnumber">9.1</span> <span class="toctext">Instalacion en Windows XP</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Ubuntu_9.10"><span class="tocnumber">9.2</span> <span class="toctext">Ubuntu 9.10</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Ubuntu_9.04"><span class="tocnumber">9.3</span> <span class="toctext">Ubuntu 9.04</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Debian-Etch_.284.0.29.2F_Ubuntu_Feisty_.287.04.29"><span class="tocnumber">9.4</span> <span class="toctext">Debian-Etch (4.0)/ Ubuntu Feisty (7.04)</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Otras_distribuciones_de_Linux.2FFreeBSD"><span class="tocnumber">9.5</span> <span class="toctext">Otras distribuciones de Linux/FreeBSD</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#Desarrolladores"><span class="tocnumber">10</span> <span class="toctext">Desarrolladores</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="#Entorno"><span class="tocnumber">10.1</span> <span class="toctext">Entorno</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Acceso_al_repositorio"><span class="tocnumber">10.2</span> <span class="toctext">Acceso al repositorio</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Empaquetar_para_Debian.2FUbuntu"><span class="tocnumber">10.3</span> <span class="toctext">Empaquetar para Debian/Ubuntu</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Crear_ejecutable_para_windows"><span class="tocnumber">10.4</span> <span class="toctext">Crear ejecutable para windows</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Crear_paquete_fuente_desde_el_SVN"><span class="tocnumber">10.5</span> <span class="toctext">Crear paquete fuente desde el SVN</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-25"><a href="#Historia"><span class="tocnumber">11</span> <span class="toctext">Historia</span></a></li>
+<li class="toclevel-1 tocsection-26"><a href="#Autor"><span class="tocnumber">12</span> <span class="toctext">Autor</span></a></li>
+<li class="toclevel-1 tocsection-27"><a href="#Agradecimientos"><span class="tocnumber">13</span> <span class="toctext">Agradecimientos</span></a></li>
+<li class="toclevel-1 tocsection-28"><a href="#Enlaces"><span class="tocnumber">14</span> <span class="toctext">Enlaces</span></a></li>
+<li class="toclevel-1 tocsection-29"><a href="#Noticias"><span class="tocnumber">15</span> <span class="toctext">Noticias</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>El <b>skybot-test</b> es una aplicación <b>multiplataforma</b> para controlar el <a href="https://iearobotics.com/wiki/index.php?title=Skybot" title="Skybot">robot Skybot</a> mediante una interfaz gráfica y mostrar en ella el estado de todos sus sensores. Es muy útil para verificar si el Skybot está funcionando correctamente así como detectar si los motores están correctamente conectados y comprobar el funcionamiento de los sensores de infrarrojos, bumpers y sensor de luz.
+</p>
+<h2><span class="mw-headline" id="Caracter.C3.ADsticas">Características</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-mando-bluetooth.jpg" class="image"><img alt="" src="Skybot-test_files/300px-Skybot-test-mando-bluetooth_L2tJ.jpg" width="300" height="225" class="thumbimage" srcset="Skybot-test_files/450px-Skybot-test-mando-bluetooth_L2tJ.jpg 1.5x, Skybot-test_files/600px-Skybot-test-mando-bluetooth_L2tJ.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-mando-bluetooth.jpg" class="internal" title="Aumentar"></a></div>Mando a distancia Bluetooth que puede usarse para mover el Skybot. Son los mismos que se emplean para pasar las transparencias de una presentación hecha con el PC</div></div></div>
+<ul><li> <b>Programa autocontenido</b>: sólo es necesario este programa para probar el <a href="https://iearobotics.com/wiki/index.php?title=Skybot" title="Skybot">Skybot</a>. Incluye un botón para descargar el firmware adecuado.</li>
+<li> <b>Movimiento</b> del Skybot mediante <b>botones</b> de la interfaz gráfica</li>
+<li> <b>Movimiento</b> del Skybot utilizando directamente <b>el teclado</b></li>
+<li> <b>Visualización de los puertos A y B</b>, con el estado de todos sus bits y su valor en hexadecimal</li>
+<li> <b>Visualización de todos sus sensores</b>:
+<ul><li> 4 sensores de infrarrojos. <b>CNY70</b></li>
+<li> 4 sensores de contacto. <b>Bumpers</b></li>
+<li> 1 sensor de luz. <b>LDR</b></li></ul></li>
+<li> Acceso a los bits individuales del puerto B mediante botones/teclas</li>
+<li> <b>Cambio de estado del relé</b> de la <a rel="nofollow" class="external text" href="http://www.iearobotics.com/proyectos/sky293/sky293.html">Sky293</a> mediante botón/teclas</li>
+<li> <b>Cambio de estado del led</b> de la <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> mediante botón/teclas</li>
+<li> Control mediante un <b>mando a distancia Bluetooth</b>.</li></ul>
+<h2><span class="mw-headline" id="Pantallazos">Pantallazos</span></h2>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-pantallazo-linux.png" class="image"><img alt="" src="Skybot-test_files/300px-Skybot-test-pantallazo-linux_L2tJ.png" width="300" height="207" class="thumbimage" srcset="Skybot-test_files/450px-Skybot-test-pantallazo-linux_L2tJ.png 1.5x, Skybot-test_files/Skybot-test-pantallazo-linux_L2tJ.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-pantallazo-linux.png" class="internal" title="Aumentar"></a></div>Pantallazo de Skybot-test-1.0 en Gnu/Linux</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-pantallazo-win.png" class="image"><img alt="" src="Skybot-test_files/300px-Skybot-test-pantallazo-win_L2tJ.png" width="300" height="221" class="thumbimage" srcset="Skybot-test_files/450px-Skybot-test-pantallazo-win_L2tJ.png 1.5x, Skybot-test_files/Skybot-test-pantallazo-win_L2tJ.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-pantallazo-win.png" class="internal" title="Aumentar"></a></div>Pantallazo de Skybot-test-1.0 en Windows XP</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-pantallazo-MAC.png" class="image"><img alt="" src="Skybot-test_files/300px-Skybot-test-pantallazo-MAC_L2tJ.png" width="300" height="212" class="thumbimage" srcset="Skybot-test_files/450px-Skybot-test-pantallazo-MAC_L2tJ.png 1.5x, Skybot-test_files/600px-Skybot-test-pantallazo-MAC_L2tJ.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-pantallazo-MAC.png" class="internal" title="Aumentar"></a></div>Pantallazo de Skybot-test-1.0 en un Mac</div></div></div>
+</td>
+<td>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Ejemplo_de_uso">Ejemplo de uso</span></h2>
+<ul><li> Alimentar el <a href="https://iearobotics.com/wiki/index.php?title=Skybot" title="Skybot">Skybot</a></li>
+<li> Conectarlo al PC a través del puerto serie (o utilizando un conversor USB-serie)</li>
+<li> Ejecutar el programa <b>skybot-test</b>. El aspecto del programa será como el mostrado en el Pantallazo 1.</li>
+<li> Seleccionar el puerto serie donde está conectado el Skybot y pulsar en <b>Abrir</b></li></ul>
+<p>Para controlar el Skybot se debe descargar un programa monitor. Si esto ya se ha hecho previamente y además el robot está correctamente alimentado y conectado al PC, se establecerá la conexión entre el PC y la tarjeta <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> y la aplicación Skybot-test funcionará normalmente, como se muestra en el pantallazo 2:
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-pant1.png" class="image"><img alt="" src="Skybot-test_files/300px-Skybot-test-pant1_L2tJ.png" width="300" height="211" class="thumbimage" srcset="Skybot-test_files/450px-Skybot-test-pant1_L2tJ.png 1.5x, Skybot-test_files/600px-Skybot-test-pant1_L2tJ.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-pant1.png" class="internal" title="Aumentar"></a></div><b>Pantallazo 1</b>: Skybot-test nada más arrancarlo. Lo primero es seleccionar el puerto serie donde está conectada el Skybot</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-pant2.png" class="image"><img alt="" src="Skybot-test_files/300px-Skybot-test-pant2_L2tJ.png" width="300" height="211" class="thumbimage" srcset="Skybot-test_files/450px-Skybot-test-pant2_L2tJ.png 1.5x, Skybot-test_files/600px-Skybot-test-pant2_L2tJ.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-pant2.png" class="internal" title="Aumentar"></a></div><b>Pantallazo 2</b>: Puerto serie Abierto y Skybot detectado</div></div></div>
+</td></tr></tbody></table>
+<ul><li> Si la conexión con el monitor no se ha establecido, aparecerá lo mostrado en el pantallazo 3.</li>
+<li> Para establecer la comunicación hay que descargar el programa monitor. Para ello pinchar en "Descargar monitor". Aparecerá un mensaje inferior indiando que se pulse reset en la tarjeta Skypic (Pantallazo 4) </li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-pant3.png" class="image"><img alt="" src="Skybot-test_files/300px-Skybot-test-pant3_L2tJ.png" width="300" height="211" class="thumbimage" srcset="Skybot-test_files/450px-Skybot-test-pant3_L2tJ.png 1.5x, Skybot-test_files/600px-Skybot-test-pant3_L2tJ.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-pant3.png" class="internal" title="Aumentar"></a></div><b>Pantallazo 3</b>: Conexión con el Skybot no establecida</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-pant4.png" class="image"><img alt="" src="Skybot-test_files/300px-Skybot-test-pant4_L2tJ.png" width="300" height="211" class="thumbimage" srcset="Skybot-test_files/450px-Skybot-test-pant4_L2tJ.png 1.5x, Skybot-test_files/600px-Skybot-test-pant4_L2tJ.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-pant4.png" class="internal" title="Aumentar"></a></div><b>Pantallazo 4</b>: Preparado para descargar el programa monitor. Hay que apretar el pulsador de reset de la skypic</div></div></div>
+</td></tr></tbody></table>
+<ul><li> Al pulsar el botón de reset de la <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> comenzará la descarga del monitor (pantallazo 5)</li>
+<li> Al finalizar se establecerá la conexión (pantallazo 6)</li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-pant5.png" class="image"><img alt="" src="Skybot-test_files/300px-Skybot-test-pant5_L2tJ.png" width="300" height="211" class="thumbimage" srcset="Skybot-test_files/450px-Skybot-test-pant5_L2tJ.png 1.5x, Skybot-test_files/600px-Skybot-test-pant5_L2tJ.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-pant5.png" class="internal" title="Aumentar"></a></div><b>Pantallazo 5</b>: Descargando el programa monitor</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-pant6.png" class="image"><img alt="" src="Skybot-test_files/300px-Skybot-test-pant6_L2tJ.png" width="300" height="211" class="thumbimage" srcset="Skybot-test_files/450px-Skybot-test-pant6_L2tJ.png 1.5x, Skybot-test_files/600px-Skybot-test-pant6_L2tJ.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-test-pant6.png" class="internal" title="Aumentar"></a></div><b>Pantallazo 6</b>: Descarga del monitor completada y conexión establecida</div></div></div>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Teclas">Teclas</span></h2>
+<p>El skybot-test permite utilizar el teclado para realizar diferentes acciones:
+</p>
+<ul><li> <b>O,P,Q,A,(espacio)</b>: Movimiento del robot hacia la izquierda, derecha, adelante, atrás y parar.</li>
+<li> <b>1,2,3,4</b>: Cambiar el estado de los bits RB1, RB2, RB3 y RB4 que son los asignados a los motores</li>
+<li> <b>r</b>: Cambiar el estado del relé</li>
+<li> <b>l</b>: Cambiar el estado del led</li></ul>
+<h2><span class="mw-headline" id="Descargas">Descargas</span></h2>
+<h3><span class="mw-headline" id="Versi.C3.B3n:_1.0.1">Versión: 1.0.1</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th>Fichero</th>
+<th>Descripción
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/wiki/images/0/05/Skybot-test-1.0.1.tar.gz">Skybot-test-1.0.1.tar.gz</a>
+</td>
+<td> Fuentes
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/packages/skybot-test_1.0.1-1_i386-ubuntu-10.04.deb">skybot-test_1.0.1-1_i386-ubuntu-10.04.deb</a>
+</td>
+<td> Paquete para <b>Ubuntu 10.04</b>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/packages/skybot-test_1.0.1-1_i386-ubuntu-9-04.deb">skybot-test_1.0.1-1_i386-ubuntu-9-04.deb</a>
+</td>
+<td> Paquete para <b>Ubuntu 9.04 (Jaunty Jackalope)</b>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/wiki/images/c/c0/Skybot-test_1.0.1-1_i386-etch.deb">Skybot-test_1.0.1-1_i386-etch.deb</a>
+</td>
+<td> Paquete para <b>Debian/Etch</b>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/wiki/images/d/d7/Skybot-test_1.0.1-1_i386.deb">Skybot-test_1.0.1-1_i386.deb</a>
+</td>
+<td> Paquete para <b>Debian/Lenny</b>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/skybot-test-1.0.1.win32.exe">skybot-test-1.0.1.win32.exe</a>
+</td>
+<td> Autoinstalable para <b>Windows XP</b>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Versi.C3.B3n:_1.0">Versión: 1.0</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th>Fichero</th>
+<th>Descripción
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/wiki/images/8/83/Skybot-test-1.0-src.tar.gz">Skybot-test-1.0-src.tar.gz</a>
+</td>
+<td> Fuentes
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/wiki/images/f/f3/Skybot-test_1.0-1_i386-etch.deb">Skybot-test_1.0-1_i386-etch.deb</a>
+</td>
+<td> Paquete para <b>Debian/Etch</b>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/wiki/images/8/83/Skybot-test_1.0-1_i386.deb">Skybot-test_1.0-1_i386.deb</a>
+</td>
+<td> Paquete para <b>Debian/Lenny</b>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/skybot-test-1.0.win32.exe">skybot-test-1.0.win32.exe</a>
+</td>
+<td> Autoinstalable para <b>Windows XP</b>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Licencia">Licencia</span></h2>
+<table>
+<tbody><tr>
+<td><a href="https://iearobotics.com/wiki/index.php?title=Archivo:GPLv3-logo-red.png" class="image" title="150px"><img alt="150px" src="Skybot-test_files/GPLv3-logo-red_L2tJ.png" width="319" height="130"></a>
+</td>
+<td>Skybot-test es <b>Software libre</b> distribuido bajo la <a rel="nofollow" class="external text" href="http://www.viti.es/gnu/licenses/gpl.html">licencia GPL v3.0</a>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Cambios">Cambios</span></h2>
+<h3><span class="mw-headline" id="Versi.C3.B3n_1.0.1">Versión 1.0.1</span></h3>
+<p>Es una versión de mantenimiento. No incluye nuevas funcionalidades
+</p>
+<ul><li> Bug corregido: Problemas al usar el control por teclas. </li>
+<li> Añadida ventana de ayuda con las teclas</li></ul>
+<h3><span class="mw-headline" id="Versi.C3.B3n_1.0">Versión 1.0</span></h3>
+<p>Versión inicial, creada para el <a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot_Iberoam%C3%A9rica_2008" title="Taller Skybot Iberoamérica 2008">Taller Skybot Iberoamérica 2008</a>
+</p>
+<h2><span class="mw-headline" id="Instalaci.C3.B3n">Instalación</span></h2>
+<h3><span class="mw-headline" id="Instalacion_en_Windows_XP">Instalacion en Windows XP</span></h3>
+<p>Hay que <b>descargar e instalar</b> los siguientes paquetes. Utilizar las opciones que vienen por defecto:
+</p>
+<ul><li> <i>Lenguaje Python</i>. <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/python-2.5.msi">python-2.5.msi</a></li>
+<li> <i>Extensiones para Windows</i>.<a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/pywin32-210.win32-py2.5.exe">pywin32-210.win32-py2.5.exe</a></li>
+<li> <i>Librería de acceso al puerto serie</i>: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/pyserial-2.2.win32.exe">pyserial-2.2.win32.exe</a></li>
+<li> <i>Librerías gráficas wxPython</i>: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/wxPython2.8-win32-unicode-2.8.6.0-py25.exe">wxPython2.8-win32-unicode-2.8.6.0-py25.exe</a></li>
+<li> <i>Librería Libiris</i>: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/libIris-1.2.win32.exe">libIris-1.2.win32.exe</a></li>
+<li> <i>Librería LibStargate</i>: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/libstargate-1.2.win32.exe">libstargate-1.2.win32.exe</a></li></ul>
+<ul><li> Por último el <i>Skybot-test</i>: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/skybot-test-1.0.1.win32.exe">skybot-test-1.0.1.win32.exe</a></li></ul>
+<p>Si se han utilizado las opciones que vienen por defecto en los instaladores, el pyburn se encuentra en el directorio: <b>C:\python25\Scripts</b>. El ejecutable es <b>skybot-test</b>.<br><br>
+</p>
+<h3><span class="mw-headline" id="Ubuntu_9.10">Ubuntu 9.10</span></h3>
+<ul><li> Instalar la librería <b>libiris</b>: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/packages/python-libiris_1.2-5_i386-ubuntu-10.04.deb">python-libiris_1.2-5_i386-ubuntu-10.04.deb</a></li>
+<li> Instalar la librería <b>LibStargate</b>: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/packages/python-libstargate_1.2-1_i386-ubuntu-10.04.deb">libstargate_1.2-1_i386-ubuntu-10.04.deb</a></li>
+<li> Instalar el <b>Skybot-test</b>: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/packages/skybot-test_1.0.1-1_i386-ubuntu-10.04.deb">skybot-test_1.0.1-1_i386-ubuntu-10.04.deb</a></li></ul>
+<h3><span class="mw-headline" id="Ubuntu_9.04">Ubuntu 9.04</span></h3>
+<ul><li> Instalar la librería <b>libiris</b>: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/packages/python-libiris_1.2-5_i386-ubuntu-9-04.deb">python-libiris_1.2-5_i386-ubuntu-9-04.deb</a></li>
+<li> Instalar la librería <b>LibStargate</b>: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/packages/python-libstargate_1.2-1_i386-ubuntu-9-04.deb">python-libstargate_1.2-1_i386-ubuntu-9-04.deb</a></li>
+<li> Instalar el <b>Skybot-test</b>: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/packages/skybot-test_1.0.1-1_i386-ubuntu-9-04.deb">skybot-test_1.0.1-1_i386-ubuntu-9-04.deb</a></li></ul>
+<h3><span class="mw-headline" id="Debian-Etch_.284.0.29.2F_Ubuntu_Feisty_.287.04.29">Debian-Etch (4.0)/ Ubuntu Feisty (7.04)</span></h3>
+<ul><li> Instalar los paquetes: (disponibles en los repositorios oficiales)
+<ul><li> <b>python-serial</b>: Librería de acceso al puerto serie</li>
+<li> <b>python-wxgtk2.6</b>: Librerías gráficas wxPython</li></ul></li>
+<li> Instalar la librería <b>libiris</b>: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/wiki/images/e/ea/Python-libiris_1.2-5_i386.deb">Python-libiris_1.2-5_i386.deb</a></li>
+<li> Instalar la librería <b>LibStargate</b>: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/wiki/images/d/df/Python-libstargate_1.2-1_i386.deb">Python-libstargate_1.2-1_i386.deb</a>
+<ul><li> En caso de tener una versión mas moderna que venga con Python 2.6 o genere algun tipo de error en la instalación, probar la instalación manual. Para ello, descargar el fichero con el codigo fuente y ejecutar, con permisos de root, "python setup.py install".</li></ul></li>
+<li> Instalar el <b>Skybot-test</b>: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/wiki/images/f/f3/Skybot-test_1.0-1_i386-etch.deb">Skybot-test_1.0-1_i386-etch.deb</a>
+<ul><li> igual que en el caso anterior, bajar y descomprimir el fichero tar.gz con las fuentes y ejecutar "python setup.py install".</li></ul></li></ul>
+<h3><span class="mw-headline" id="Otras_distribuciones_de_Linux.2FFreeBSD">Otras distribuciones de Linux/FreeBSD</span></h3>
+<p>El Skybot-test está programa en Python por lo que es totalmente portable a otras distribuciones de Linux/FreeBSD.
+Para que funcione es necesario tener instalado:
+</p>
+<ul><li> Python 2.4 o superior</li>
+<li> Librería de acceso al puerto serie en Python: <a rel="nofollow" class="external text" href="http://pyserial.wiki.sourceforge.net/pySerial">Paquete pySerial</a></li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=LibIris" title="LibIris"> Librería LibIris</a>, para la descarga de programas en la <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a></li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=LibStargate" title="LibStargate"> Librería LibStargate</a>, para la comunicación con los servidores grabados en la <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a></li></ul>
+<p>Finalmente, para instalar el Skybot-test, descargar el paquete fuente, descomprimirlo, entrar en el directorio skybot-test-1.0 y ejecutar:
+</p>
+<pre>python setup.py install
+</pre>
+<p>Para ejecutarlo:
+</p>
+<pre>skybot-test
+</pre>
+<h2><span class="mw-headline" id="Desarrolladores">Desarrolladores</span></h2>
+<h3><span class="mw-headline" id="Entorno">Entorno</span></h3>
+<ul><li> Lenguaje: Python 2.4 o superior</li>
+<li> Máquina donde se ha desarrollado: Portátil Dell con GNU/Linux Debian/Etch (4.0)</li>
+<li> Interfaz gráfica: <a rel="nofollow" class="external text" href="http://wxpython.org/">wxPython</a>.</li>
+<li> Construcción de la interfaz: <a rel="nofollow" class="external text" href="http://wxglade.sourceforge.net/">wxglade</a> 0.4.1 (Paquete debian: python-wxglade)</li>
+<li> IDE: Anjuta</li>
+<li> Dependencias:
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=LibIris" title="LibIris">LibIris</a>&nbsp;: Descargar de Firmware en la skypic</li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=LibStargate" title="LibStargate">LibStargate</a>: Acceso a los recursos de la Skypic desde el PC</li></ul></li></ul>
+<h3><span class="mw-headline" id="Acceso_al_repositorio">Acceso al repositorio</span></h3>
+<ul><li> SVN del proyecto <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skybot_test/">http://svn.iearobotics.com/skybot_test</a></li></ul>
+<p>La versión actual se puede obtener así:
+</p>
+<pre>svn co <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/skybot_test/skybot-test-1.0.1/">http://svn.iearobotics.com/skybot_test/skybot-test-1.0.1/</a>
+</pre>
+<h3><span class="mw-headline" id="Empaquetar_para_Debian.2FUbuntu">Empaquetar para Debian/Ubuntu</span></h3>
+<p>Ejecutar los siguientes comandos:
+</p>
+<pre>svn export <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/skybot_test/skybot-test-1.0.1/">http://svn.iearobotics.com/skybot_test/skybot-test-1.0.1/</a> skybot-test-1.0.1
+cd skybot-test-1.0.1
+chmod a+x debian/rules
+dpkg-buildpackage -rfakeroot
+</pre>
+<p>Si no ocurren errores, se habrá creado el paquete .deb en el directorio padre
+</p>
+<h3><span class="mw-headline" id="Crear_ejecutable_para_windows">Crear ejecutable para windows</span></h3>
+<p>Bajar la versión del SVN:
+</p>
+<pre>svn co <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/skybot_test/skybot-test-1.0.1/">http://svn.iearobotics.com/skybot_test/skybot-test-1.0.1/</a>
+cd skybot-test-1.0.1
+</pre>
+<p>Crear el ejecutable:
+</p>
+<pre>python setup.py bdist --formats=wininst
+</pre>
+<p>Se creará el fichero <b>dist/skybot-wx-1.0.1.win32.exe</b>
+</p>
+<h3><span class="mw-headline" id="Crear_paquete_fuente_desde_el_SVN">Crear paquete fuente desde el SVN</span></h3>
+<p>Se quieren crear los ficheros .tar.gz y .zip con las fuentes del proyecto. Los pasos a seguir son:
+Bajar la versión desde el SVN:
+</p>
+<pre>svn co <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/skybot_test/skybot-test-1.0.1/">http://svn.iearobotics.com/skybot_test/skybot-test-1.0.1/</a>
+cd skybot-test-1.0.1
+</pre>
+<p>Crear el fichero con las fuentes:
+</p>
+<pre>python setup.py sdist --formats=gztar,zip
+</pre>
+<p>Los ficheros fuente creados son <b>dist/skybot-wx-1.0.1.gz</b> y <b>dist/skybot-wx-1.0.1zip</b>
+</p>
+<h2><span class="mw-headline" id="Historia">Historia</span></h2>
+<p>El Skybot-test es una versión actualizada del programa <a rel="nofollow" class="external text" href="http://www.iearobotics.com/personal/juan/proyectos/cttools/ct294.html">CT294</a> que utilizábamos para el control del robot <a rel="nofollow" class="external text" href="http://www.iearobotics.com/proyectos/tritt/tritt.html">Tritt</a>. Esta nueva versión es gráfica y multiplataforma, pero la funcionalidad es casi la misma.
+</p>
+<ul><li> <b>Octubre/2008</b>: Programa Skybot-test en versión gráfica y multiplataforma</li>
+<li> <b>Julio/2005</b>: Programa <a rel="nofollow" class="external text" href="http://www.iearobotics.com/talleres/generico-v14/software/skybot-test/skybot-test.html">Skybot-test para la consola</a> de Linux y <a rel="nofollow" class="external text" href="http://www.iearobotics.com/talleres/generico-v14/software/botcontrol/index.htm">Botcontrol</a> para windows. Realizados para el <a rel="nofollow" class="external text" href="http://www.iearobotics.com/personal/juan/eventos/evento03/index.html">primer taller de robótica en la campus party</a>.</li>
+<li> <b>1999</b>: Programa <a rel="nofollow" class="external text" href="http://www.iearobotics.com/personal/juan/proyectos/cttools/ct294.html">CT294</a> para el control de <a rel="nofollow" class="external text" href="http://www.iearobotics.com/proyectos/tritt/tritt.html">Tritt</a>.</li></ul>
+<h2><span class="mw-headline" id="Autor">Autor</span></h2>
+<ul><li>  <a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main"> Juan González</a></li></ul>
+<h2><span class="mw-headline" id="Agradecimientos">Agradecimientos</span></h2>
+<ul><li> A <a href="https://iearobotics.com/wiki/index.php?title=Andr%C3%A9s_Prieto-Moreno" title="Andrés Prieto-Moreno">Andrés Prieto-Moreno</a> por las pruebas realizadas en Windows</li></ul>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/talleres/generico-v14/software/skybot-test/skybot-test.html">Programa Skybot-test</a> para consola y plataformas Linux. Programado en C. (<b>Obsoleto</b>)</li></ul>
+<ul><li> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/talleres/generico-v14/software/botcontrol/index.htm">BotControl</a>. Control del Skybot desde plataformas Windows. Programado en Visual C++ 6.0. (<b>Obsoleto</b>)</li></ul>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>13/Jun/2010</b>: Añadido paquete para Ubuntu 10.04</li>
+<li> <b>29/Jul/2009</b>: Añadido paquete para Ubuntu 9.04</li>
+<li> <b>01/Nov/2008</b>: Liberada versión 1.0.1</li>
+<li> <b>27/Oct/2008</b>: Liberada la version 1.0 del Skybot-test</li>
+<li> <b>13/Oct/2008</b>: Comenzada esta página</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20260917052415
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.033 seconds
+Real time usage: 0.040 seconds
+Preprocessor visited node count: 123/1000000
+Preprocessor generated node count: 149/1000000
+Post‐expand include size: 400/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    1.823      1 - -total
+ 95.02%    1.732      2 - Plantilla:Tablabonita
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://iearobotics.com/wiki/index.php?title=Skybot-test&amp;oldid=8987">https://iearobotics.com/wiki/index.php?title=Skybot-test&amp;oldid=8987</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categorías</a>: <ul><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:SVN" title="Categoría:SVN">SVN</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Skybot" title="Categoría:Skybot">Skybot</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Stargate" title="Categoría:Stargate">Stargate</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Python" title="Categoría:Python">Python</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Software" title="Categoría:Software">Software</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://iearobotics.com/wiki/index.php?title=Skybot-test" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Skybot-test&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://iearobotics.com/wiki/index.php?title=Skybot-test&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://iearobotics.com/wiki/index.php?title=Skybot-test&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Skybot-test" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Skybot-test" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Skybot-test" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://iearobotics.com/wiki/index.php?title=Skybot-test&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://iearobotics.com/wiki/index.php?title=Skybot-test&amp;oldid=8987" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://iearobotics.com/wiki/index.php?title=Skybot-test&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Skybot-test_files/gnu-fdl_L2tJ.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="Skybot-test_files/poweredby_mediawiki_88x31_L2tJ.png" alt="Powered by MediaWiki" srcset="Skybot-test_files/poweredby_mediawiki_132x47_L2tJ.png 1.5x, Skybot-test_files/poweredby_mediawiki_176x62_L2tJ.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 13 jun 2010 a las 02:23.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":126});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
