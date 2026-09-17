@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Objetos 3D - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Objetos_3D","wgTitle":"Objetos 3D","wgCurRevisionId":24803,"wgRevisionId":24803,"wgArticleId":991,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Reprap","Objetos 3D"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Objetos_3D","wgRelevantArticleId":991,"wgRequestId":"aquQmm4qxrrdXXZMudVaTQAAXAA","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Objetos_3D_files/load_Cyux.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="Objetos_3D_files/load_Cyux.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="Objetos_3D_files/load_002_Cyux.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Objetos_3D rootpage-Objetos_3D skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Objetos 3D</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><p><br>
+</p>
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>En esta página publicando todos los objetos 3D que hemos impreso en nuestras <a href="https://iearobotics.com/wiki/index.php?title=Impresoras_3D_open-source" title="Impresoras 3D open-source">impresoras 3D opensource</a>, tanto diseñados por nosotros como por otros autores.  Todos ellos también están publicados en thingiverse (en Inglés), pero aquí están en Castellano.
+</p>
+<h2><span class="mw-headline" id=".C3.8Dndice">Índice</span></h2>
+<p><a rel="nofollow" class="external text" href="https://github.com/Obijuan/3D-parts/wiki">Nuevo Índice en la wiki de github</a>
+</p>
+<h2><span class="mw-headline" id="Antiguo_.C3.8Dndice">Antiguo Índice</span></h2>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Pinza_mecanica" title="Freecad: Pinza mecanica">Pinza mecánica</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Biblioteca_printbots" title="Biblioteca printbots">Piezas para printbots</a>   </th>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Freecad:Futaba_3003_Tapa_inferior" title="Freecad:Futaba 3003 Tapa inferior">Tapa inferior Servo Futaba 3003</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Objetos_3D_files/Robot-claw-ini_Cyux.png" title="170px" width="829" height="799">
+</td>
+<td> <img alt="170px" src="Objetos_3D_files/Logo-printbots-parts-library_Cyux.png" title="170px" width="595" height="552">
+</td>
+<td> <img alt="170px" src="Objetos_3D_files/04-Futaba-3003-bottom-lid-detailed-top-1_Cyux.png" title="170px" width="1493" height="1073">
+</td></tr></tbody></table>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Organizador_de_canicas" title="Organizador de canicas">Organizador de canicas</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=%C3%89mbolo_b%C3%A1sico" title="Émbolo básico">Émbolo básico</a>   </th>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Logo_bq" title="Logo bq">logo bq</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Objetos_3D_files/Porta-canicas-8-sin-fondo_Cyux.jpg" title="170px" width="1424" height="1052">
+</td>
+<td> <img alt="170px" src="Objetos_3D_files/Basic-plunger-2_Cyux.jpg" title="170px" width="2048" height="1536">
+</td>
+<td> <img alt="170px" src="Objetos_3D_files/Bq-logo-04-clean_Cyux.jpg" title="170px" width="1632" height="1156">
+</td></tr></tbody></table>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Bol%C3%ADgrafo" title="Bolígrafo">Bolígrafo</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=L%C3%A1piz_t%C3%A1ctil" title="Lápiz táctil">Lápiz táctil</a>   </th>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Portaboli_para_m%C3%B3dulos_REPYZ" title="Portaboli para módulos REPYZ">Portaboli para módulos REPYZ</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Objetos_3D_files/Bolis-imprimibles_Cyux.png" title="170px" width="2007" height="1004">
+</td>
+<td> <img alt="170px" src="Objetos_3D_files/Pen_touch-1_Cyux.jpg" title="170px" width="1772" height="1451">
+</td>
+<td> <img alt="170px" src="Objetos_3D_files/Repyz-pen-holder-4_Cyux.jpg" title="170px" width="1059" height="1286">
+</td></tr></tbody></table>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=M%C3%B3dulos_REPYZ" title="Módulos REPYZ">Módulos REPYZ</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Tapas_inferiores_para_Servos" title="Tapas inferiores para Servos">Tapas inferiores para Servos</a>   </th>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Mini-cajones_organizadores" title="Mini-cajones organizadores">Mini-cajones organizadores</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Objetos_3D_files/Repyz-logo_Cyux.jpg" title="170px" width="1000" height="971">
+</td>
+<td> <img alt="150px" src="Objetos_3D_files/Servo_lower_cover-1_Cyux.jpg" title="150px" width="2403" height="2193">
+</td>
+<td> <img alt="170px" src="Objetos_3D_files/Cajones-organizadores-1_Cyux.jpg" title="170px" width="1413" height="1263">
+</td></tr></tbody></table>
+<p><br>
+</p>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Regulador_altura_Prusa_i3" title="Regulador altura Prusa i3">Regulador altura Prusa i3</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Soporte_para_endstop" title="Soporte para endstop">Soporte para endstop</a>   </th>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Soporte_para_colgar_herramientas" title="Soporte para colgar herramientas">Soporte para colgar herramientas</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Objetos_3D_files/DSC02699_Cyux.JPG" title="170px" width="3648" height="2736">
+</td>
+<td> <img alt="150px" src="Objetos_3D_files/Endstop-clamp-01_Cyux.JPG" title="150px" width="1504" height="1360">
+</td>
+<td> <img alt="170px" src="Objetos_3D_files/DSC02247_Cyux.JPG" title="170px" width="3648" height="2736">
+</td></tr></tbody></table>
+<p><br>
+</p>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Probeta_para_pruebas_de_tracci%C3%B3n" title="Probeta para pruebas de tracción">Probeta para pruebas de tracción</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Placa_de_identificaci%C3%B3n_clonewars" title="Placa de identificación clonewars">Placa de identificación clonewars</a>   </th>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Pata_para_mesa_de_Ikea" title="Objeto 3D: Pata para mesa de Ikea">Pata mesa Ikea</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Objetos_3D_files/DSC02190_Cyux.JPG" title="170px" width="3648" height="2736">
+</td>
+<td> <img alt="170px" src="Objetos_3D_files/DSC01906_Cyux.JPG" title="170px" width="3648" height="2736">
+</td>
+<td> <img alt="170px" src="Objetos_3D_files/DSC01774_Cyux.JPG" title="170px" width="3648" height="2736">
+</td></tr></tbody></table>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Objecto_3D:_Patas_de_mesa" title="Objecto 3D: Patas de mesa">Patas de mesa</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Objecto_3D:_Logo_de_sigma_technologies" title="Objecto 3D: Logo de sigma technologies">Logo Sigma Tech.</a>   </th>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Tapadera_inferior_para_servos" title="Objeto 3D: Tapadera inferior para servos">Tapadera de servo</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Objetos_3D_files/DSC01872_Cyux.JPG" title="170px" width="3648" height="2736">
+</td>
+<td> <img alt="170px" src="Objetos_3D_files/DSC01868_Cyux.JPG" title="170px" width="3648" height="2736">
+</td>
+<td> <img alt="170px" src="Objetos_3D_files/DSC01520_Cyux.JPG" title="170px" width="3648" height="2736">
+</td></tr></tbody></table>
+<p><br>
+</p>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Esquinas_biseladas" title="Objeto 3D: Esquinas biseladas">Esquinas biseladas</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:Cubo_Biselado" title="Objeto 3D:Cubo Biselado">Cubo biselado</a>   </th>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Ruedecilla_con_tuerca" title="Objeto 3D: Ruedecilla con tuerca">Ruedecilla con tuerca</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Objetos_3D_files/DSC01467_Cyux.JPG" title="170px" width="3648" height="2736">
+</td>
+<td> <img alt="170px" src="Objetos_3D_files/DSC05830_Cyux.JPG" title="170px" width="2048" height="1536">
+</td>
+<td> <img alt="170px" src="Objetos_3D_files/DSC05804_Cyux.JPG" title="170px" width="2048" height="1536">
+</td></tr></tbody></table>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Porta-correas_DVD" title="Objeto 3D: Porta-correas DVD">Porta-correas DVD</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Tuerca_M8_imprimible" title="Tuerca M8 imprimible">Tuerca M8 imprimible</a>   </th>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Regulador_altura_z_para_Prusa" title="Regulador altura z para Prusa">Regulador altura Prusa</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Objetos_3D_files/DSC05711_Cyux.JPG" title="170px" width="2048" height="1536">
+</td>
+<td> <img alt="170px" src="Objetos_3D_files/DSC05695_Cyux.JPG" title="170px" width="2048" height="1536">
+</td>
+<td> <img alt="130px" src="Objetos_3D_files/DSC05685-r1_Cyux.JPG" title="130px" width="1076" height="1316">
+</td></tr></tbody></table>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Mini_domo" title="Objeto 3D: Mini domo">Mini domo</a> </th>
+<th><a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Muelle_parametrizado" title="Objeto 3D: Muelle parametrizado">Muelle parametrizado</a>   </th>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Decoradores_para_la_Prusa" title="Objeto 3D: Decoradores para la Prusa">Decoradores para la Prusa</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Objetos_3D_files/DSC05502_Cyux.JPG" title="170px" width="2048" height="1536">
+</td>
+<td> <img alt="170px" src="Objetos_3D_files/DSC04884_Cyux.JPG" title="170px" width="2048" height="1536">
+</td>
+<td> <img alt="170px" src="Objetos_3D_files/Prusa-decorators_Cyux.jpg" title="170px" width="1574" height="1478">
+</td></tr></tbody></table>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Ruedas_para_servo" title="Objeto 3D: Ruedas para servo">Rueda para Servo 4.0</a> </th>
+<th><a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Porta-pendrives" title="Objeto 3D: Porta-pendrives">Porta-pendrives</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Objecto_3D:_La_moneda_Que-os-den" title="Objecto 3D: La moneda Que-os-den">La moneda Que-os-den</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Objetos_3D_files/Servo_wheel_4.0-1_Cyux.jpg" title="170px" width="1584" height="1284">
+</td>
+<td> <img alt="170px" src="Objetos_3D_files/Pendrive-holder-1-r1_Cyux.jpg" title="170px" width="937" height="679">
+</td>
+<td> <img alt="170px" src="Objetos_3D_files/Fyou-1_Cyux.jpg" title="170px" width="2048" height="1536">
+</td></tr></tbody></table>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:Ganchos_de_Ikea" title="Objeto 3D:Ganchos de Ikea">Gancho de Ikea</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Ruedas_para_servo" title="Objeto 3D: Ruedas para servo">Rueda para servo</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Ruedas_para_servo" title="Objeto 3D: Ruedas para servo">Rueda logo OSHW</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Objetos_3D_files/Ikea-hook-1_Cyux.jpg" title="170px" width="1024" height="768">
+</td>
+<td> <img alt="170px" src="Objetos_3D_files/DSC01065_Cyux.JPG" title="170px" width="1600" height="1200">
+</td>
+<td> <img alt="170px" src="Objetos_3D_files/DSC02588_Cyux.JPG" title="170px" width="1600" height="1200">
+</td></tr></tbody></table>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Mini-Skybot" title="Mini-Skybot">Mini-Skybot</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Portapilas_parametrizado" title="Objeto 3D: Portapilas parametrizado">Portapilas parametrizado</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Gafas" title="Objeto 3D: Gafas"> Gafas</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Objetos_3D_files/Miniskybot-v1.0-red-r1_Cyux.jpg" title="170px" width="1088" height="1010">
+</td>
+<td> <img alt="200px" src="Objetos_3D_files/Battery-pack5-r1-peq_Cyux.jpg" title="200px" width="200" height="148">
+</td>
+<td> <img alt="200px" src="Objetos_3D_files/Objeto-3D-gafas-07_Cyux.jpg" title="200px" width="1600" height="1200">
+</td></tr></tbody></table>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=M%C3%B3dulos_REPY-1" title="Módulos REPY-1">Módulos REPY-1</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Ruedas_G3_para_el_Skybot" title="Ruedas G3 para el Skybot">Ruedas para servos</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:Ficha_de_casino" title="Objeto 3D:Ficha de casino">Fichas de casino</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="200px" src="Objetos_3D_files/Repy1-module-1-thumb_Cyux.jpeg" title="200px" width="200" height="150">
+</td>
+<td> <img alt="200px" src="Objetos_3D_files/Ruedas-Skybot-G3-v2-4-peq_Cyux.jpg" title="200px" width="200" height="150">
+</td>
+<td> <img alt="200px" src="Objetos_3D_files/Ficha-casino-thumb2-peq_Cyux.jpg" title="200px" width="200" height="150">
+</td></tr></tbody></table>
+<p><br>
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div style="position: relative; width: 200px; height: 150px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Cucharillas_para_el_caf%C3%A9" title="Objeto 3D: Cucharillas para el café">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Objecto-3D-cucharilla-cafe-1-peq.jpg" class="image" title="Objeto 3D: Cucharillas para el café"><img alt="Objeto 3D: Cucharillas para el café" src="Objetos_3D_files/Objecto-3D-cucharilla-cafe-1-peq_Cyux.jpg" width="200" height="150"></a></div>
+</div> <br>
+<center><a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Cucharillas_para_el_caf%C3%A9" title="Objeto 3D: Cucharillas para el café">Objeto 3D: Cucharillas para el café</a></center>
+</td>
+<td> <div style="position: relative; width: 200px; height: 150px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:Vaso_de_chupito" title="Objeto 3D:Vaso de chupito">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Minimug-1-thumb.jpeg" class="image" title="Objeto 3D:Vaso de chupito"><img alt="Objeto 3D:Vaso de chupito" src="Objetos_3D_files/Minimug-1-thumb_Cyux.jpeg" width="200" height="150"></a></div>
+</div> <br>
+<center><a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:Vaso_de_chupito" title="Objeto 3D:Vaso de chupito">Vaso de Chupito</a></center>
+</td>
+<td>  <div style="position: relative; width: 200px; height: 150px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://iearobotics.com/wiki/index.php?title=Objetos_3D:_Moneda" title="Objetos 3D: Moneda">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Moneda-reprap-1-thumb.jpg" class="image" title="Objetos 3D: Moneda"><img alt="Objetos 3D: Moneda" src="Objetos_3D_files/Moneda-reprap-1-thumb_Cyux.jpg" width="200" height="150"></a></div>
+</div> <br>
+<center> <a href="https://iearobotics.com/wiki/index.php?title=Objetos_3D:_Moneda" title="Objetos 3D: Moneda">Moneda</a>  </center>
+</td></tr></tbody></table>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div style="position: relative; width: 200px; height: 182px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Cabeza_del_robot_HOAP" title="Objeto 3D: Cabeza del robot HOAP">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Hoap-fase-1-peq.jpg" class="image" title="Objeto 3D: Cabeza del robot HOAP"><img alt="Objeto 3D: Cabeza del robot HOAP" src="Objetos_3D_files/Hoap-fase-1-peq_Cyux.jpg" width="200" height="182"></a></div>
+</div> <br>
+<center><a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Cabeza_del_robot_HOAP" title="Objeto 3D: Cabeza del robot HOAP"> Cara del robot HOAP</a></center>
+</td>
+<td> <div style="position: relative; width: 200px; height: 163px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://iearobotics.com/wiki/index.php?title=Mini-Skybot:_Ch%C3%A1sis" title="Mini-Skybot: Chásis">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:MiniSkybot-chasis-1-peq.jpg" class="image" title="Mini-Skybot: Chásis"><img alt="Mini-Skybot: Chásis" src="Objetos_3D_files/MiniSkybot-chasis-1-peq_Cyux.jpg" width="200" height="163"></a></div>
+</div> <br>
+<center><a href="https://iearobotics.com/wiki/index.php?title=Mini-Skybot:_Ch%C3%A1sis" title="Mini-Skybot: Chásis">Mini-Skybot: Chásis</a></center>
+</td>
+<td> <div style="position: relative; width: 200px; height: 150px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://iearobotics.com/wiki/index.php?title=Objetos_3D:_Logo_MR" title="Objetos 3D: Logo MR">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Logo-MR-1-peq.jpg" class="image" title="Objetos 3D: Logo MR"><img alt="Objetos 3D: Logo MR" src="Objetos_3D_files/Logo-MR-1-peq_Cyux.jpg" width="200" height="150"></a></div>
+</div> <br>
+<center><a href="https://iearobotics.com/wiki/index.php?title=Objetos_3D:_Logo_MR" title="Objetos 3D: Logo MR">Logo MR</a></center>
+</td></tr></tbody></table>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div style="position: relative; width: 200px; height: 150px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Estrella_parametrizable" title="Objeto 3D: Estrella parametrizable">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Estrella-parametrizable-3-peq.jpg" class="image" title="Objeto 3D: Estrella parametrizable"><img alt="Objeto 3D: Estrella parametrizable" src="Objetos_3D_files/Estrella-parametrizable-3-peq_Cyux.jpg" width="200" height="150"></a></div>
+</div> <br>
+<center><a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Estrella_parametrizable" title="Objeto 3D: Estrella parametrizable">Estrella parametrizable</a></center>
+</td>
+<td> <div style="position: relative; width: 200px; height: 137px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Coche_de_f%C3%B3rmula_1" title="Objeto 3D: Coche de fórmula 1">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Formula1-freecad-peq.png" class="image" title="Objeto 3D: Coche de fórmula 1"><img alt="Objeto 3D: Coche de fórmula 1" src="Objetos_3D_files/Formula1-freecad-peq_Cyux.png" width="200" height="137"></a></div>
+</div> <br>
+<center><a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Coche_de_f%C3%B3rmula_1" title="Objeto 3D: Coche de fórmula 1">Coche de fórmula 1</a></center>
+</td>
+<td> <div style="position: relative; width: 200; height: 158px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Piezas_con_tuercas_empotradas" title="Objeto 3D: Piezas con tuercas empotradas">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Captive-nut-test-1-peq.jpg" class="image" title="Objeto 3D: Piezas con tuercas empotradas"><img alt="Objeto 3D: Piezas con tuercas empotradas" src="Objetos_3D_files/Captive-nut-test-1-peq_Cyux.jpg" width="200" height="158"></a></div>
+</div> <br>
+<center><a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Piezas_con_tuercas_empotradas" title="Objeto 3D: Piezas con tuercas empotradas">Piezas con tuercas empotradas</a></center>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Repositorio">Repositorio</span></h2>
+<ul><li> Repositorio SVN: <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/3D_objects/">http://svn.iearobotics.com/3D_objects/</a></li></ul>
+<p>Para obtener la última versión teclear:
+</p>
+<pre>svn co <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/3D_objects/">http://svn.iearobotics.com/3D_objects/</a>
+</pre>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>26/Junio/2015</b>: 
+<ul><li> Publicados los sólidos platónicos en la <a rel="nofollow" class="external text" href="https://github.com/Obijuan/3D-parts/wiki">wiki de github</a></li>
+<li> Wikirobotics se irá usando cada vez menos. Hay que renovarse&nbsp;;-)</li></ul></li>
+<li> <b>19/Junio/2015</b>: Añadida la pinza robótica imprimible en 3D</li>
+<li> <b>05/Enero/2014</b>: Quitado el enlace a los objetos de <a rel="nofollow" class="external text" href="http://www.thingiverse.com/tag:Plastic_Valley">Plastic Valley</a> en thingiverse</li>
+<li> <b>4/Junio/2013</b>: Módulos REPYZ</li>
+<li> <b>8/Abril/2013</b>: 
+<ul><li> Soporte para final de carrera</li>
+<li> Regulador de altura para prusa i3</li></ul></li>
+<li> <b>24/Ene/2013</b>: Soporte para herramientas</li>
+<li> <b>13/Ene/2013</b>: Probetas para pruebas de tracción</li>
+<li> <b>06/Dic/2012</b>: Placa identificativa de Clone Wars </li>
+<li> <b>28/Nov/2012</b>: 
+<ul><li> Añadida las patas de mesa</li>
+<li> Añadidas las patas para mesas de Ikea</li></ul></li>
+<li> <b>27/Nov/2012</b>: Añadido el logo de sigma tech</li>
+<li> <b>18/Sep/2012</b>: Añadida la tapa para servo</li>
+<li> <b>06/Sep/2012</b>: Añadido el cubo biselado</li>
+<li> <b>31/Ago/2012</b>: Añadida la ruedecilla con tuerca (thumbwheel)</li>
+<li> <b>20/Ago/2012</b>: Publicado el porta-correas del DVD portátil</li>
+<li> <b>31/Jul/2012</b>: Publicado el regulador de altura para la Prusa</li>
+<li> <b>15/Jul/2012</b>: Publicado el Mini-domo</li>
+<li> <b>12/Abril/2012</b>: Muelle imprimible y parametrizado</li>
+<li> <b>26/Marzo/2012</b>: Decoradores para la Prusa</li>
+<li> <b>25/Marzo/2012</b>: Rueda para servo V4.0</li>
+<li> <b>08/Ene/2012</b>: Gancho de Ikea parametrizado</li>
+<li> <b>29/Dic/2010</b>: Nuevo objeto: piezas de prueba con tuercas empotradas</li>
+<li> <b>18/Dic/2010</b>: Nuevo objeto: Coche de fórmula 1</li>
+<li> <b>06/Dic/2010</b>: Nuevo objeto: Estrella parametrizable</li>
+<li> <b>05/Dic/2010</b>: Nuevo objeto: Logo del grupo MR</li>
+<li> <b>26/Nov/2010</b>&nbsp;: Nuevo objeto: Cabeza del robot Hoap</li>
+<li> <b>20/Nov/2010</b>: Nuevo objeto: Cucharillas para el café</li>
+<li> <b>14/Nov/2010</b>: Nueva versión de las ruedas del Skybot (openScad). Impresa en colores</li>
+<li> <b>07/Nov/2010</b>: Nueva versión de la ficha de casino (openscad). Impresa en colores</li>
+<li> <b>30/Julio/2009</b>: Añadida la ficha de casino</li>
+<li> <b>29/Julio/2009</b>: Añadidas las ruedas G3 para el Skybot</li>
+<li> <b>11/Junio/2009</b>: Añadidos el vaso de chupito y la moneda</li>
+<li> <b>10/Junio/2009</b>: Añadidos los Módulos REPY-1</li>
+<li> <b>9/Junio/2009</b>: Comenzada esta página</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20260917070250
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.101 seconds
+Real time usage: 0.115 seconds
+Preprocessor visited node count: 219/1000000
+Preprocessor generated node count: 765/1000000
+Post‐expand include size: 4281/2097152 bytes
+Template argument size: 922/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    6.376      1 - -total
+ 38.90%    2.480      7 - Plantilla:Click2
+ 26.38%    1.682      2 - Plantilla:Click
+ 24.48%    1.561      3 - Plantilla:Tablabonita
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://iearobotics.com/wiki/index.php?title=Objetos_3D&amp;oldid=24803">https://iearobotics.com/wiki/index.php?title=Objetos_3D&amp;oldid=24803</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categorías</a>: <ul><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Reprap" title="Categoría:Reprap">Reprap</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Objetos_3D" title="Categoría:Objetos 3D">Objetos 3D</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://iearobotics.com/wiki/index.php?title=Objetos_3D" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Objetos_3D&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://iearobotics.com/wiki/index.php?title=Objetos_3D&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://iearobotics.com/wiki/index.php?title=Objetos_3D&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Objetos+3D" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Objetos_3D" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Objetos_3D" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://iearobotics.com/wiki/index.php?title=Objetos_3D&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://iearobotics.com/wiki/index.php?title=Objetos_3D&amp;oldid=24803" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://iearobotics.com/wiki/index.php?title=Objetos_3D&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Objetos_3D_files/gnu-fdl_Cyux.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="Objetos_3D_files/poweredby_mediawiki_88x31_Cyux.png" alt="Powered by MediaWiki" srcset="Objetos_3D_files/poweredby_mediawiki_132x47_Cyux.png 1.5x, Objetos_3D_files/poweredby_mediawiki_176x62_Cyux.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 5 jul 2015 a las 13:33.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":187});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
