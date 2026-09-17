@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Skycube - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Skycube","wgTitle":"Skycube","wgCurRevisionId":11730,"wgRevisionId":11730,"wgArticleId":1036,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Hardware","Robots modulares","Skycube"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Skycube","wgRelevantArticleId":1036,"wgRequestId":"aquea1XtwAvuSADDCKTwTwAAmR4","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Skycube_files/load_hcS-.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="Skycube_files/load_hcS-.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="Skycube_files/load_002_hcS-.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Skycube rootpage-Skycube skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Skycube</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skycube-1.0-modulo-y1-1.jpg" class="image"><img alt="" src="Skycube_files/300px-Skycube-1.0-modulo-y1-1_hcS-.jpg" width="300" height="324" class="thumbimage" srcset="Skycube_files/450px-Skycube-1.0-modulo-y1-1_hcS-.jpg 1.5x, Skycube_files/600px-Skycube-1.0-modulo-y1-1_hcS-.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skycube-1.0-modulo-y1-1.jpg" class="internal" title="Aumentar"></a></div>Skycube 1.0 montada en un módulo Y1</div></div></div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Caracter.C3.ADsticas"><span class="tocnumber">2</span> <span class="toctext">Características</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Conexi.C3.B3n_al_PC"><span class="tocnumber">3</span> <span class="toctext">Conexión al PC</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Alimentaci.C3.B3n"><span class="tocnumber">4</span> <span class="toctext">Alimentación</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Portapilas"><span class="tocnumber">4.1</span> <span class="toctext">Portapilas</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Planos"><span class="tocnumber">5</span> <span class="toctext">Planos</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Fotos"><span class="tocnumber">6</span> <span class="toctext">Fotos</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Skycube_1.0._Versi.C3.B3n_industrial"><span class="tocnumber">6.1</span> <span class="toctext">Skycube 1.0. Versión industrial</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Segundo_prototipo:_PCB_de_pruebas"><span class="tocnumber">6.2</span> <span class="toctext">Segundo prototipo: PCB de pruebas</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Primer_prototipo:_Placa_cableada"><span class="tocnumber">6.3</span> <span class="toctext">Primer prototipo: Placa cableada</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#V.C3.ADdeos"><span class="tocnumber">7</span> <span class="toctext">Vídeos</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#Pruebas_con_el_segundo_prototipo"><span class="tocnumber">7.1</span> <span class="toctext">Pruebas con el segundo prototipo</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Pruebas_con_el_primer_prototipo"><span class="tocnumber">7.2</span> <span class="toctext">Pruebas con el primer prototipo</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Repositorio"><span class="tocnumber">8</span> <span class="toctext">Repositorio</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Historia"><span class="tocnumber">9</span> <span class="toctext">Historia</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#Autores"><span class="tocnumber">10</span> <span class="toctext">Autores</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#Licencia"><span class="tocnumber">11</span> <span class="toctext">Licencia</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#Enlaces"><span class="tocnumber">12</span> <span class="toctext">Enlaces</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#Noticias"><span class="tocnumber">13</span> <span class="toctext">Noticias</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>Tarjeta microcontroladora para ser integrada en los <a href="https://iearobotics.com/wiki/index.php?title=M%C3%B3dulos_Y1" title="Módulos Y1">Módulos Y1</a> o <a href="https://iearobotics.com/wiki/index.php?title=M%C3%B3dulos_MY" title="Módulos MY">Módulos MY</a> y construir <a rel="nofollow" class="external text" href="http://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Robots_modulares">robots modulares</a> autónomos.
+</p><p>La tarjeta <b>Skycube</b> es <b>hardware libre<sup>2</sup></b>. Ha sido diseñado con la herramienta libre <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/KiCAD">Kicad</a>.
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skycube-1.0-modulo-y1-2.jpg" class="image"><img alt="" src="Skycube_files/300px-Skycube-1.0-modulo-y1-2_hcS-.jpg" width="300" height="260" class="thumbimage" srcset="Skycube_files/450px-Skycube-1.0-modulo-y1-2_hcS-.jpg 1.5x, Skycube_files/600px-Skycube-1.0-modulo-y1-2_hcS-.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skycube-1.0-modulo-y1-2.jpg" class="internal" title="Aumentar"></a></div>La tarjeta Skycube 1.0</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skycube-3D-1.jpg" class="image"><img alt="" src="Skycube_files/300px-Skycube-3D-1_hcS-.jpg" width="300" height="254" class="thumbimage" srcset="Skycube_files/450px-Skycube-3D-1_hcS-.jpg 1.5x, Skycube_files/600px-Skycube-3D-1_hcS-.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skycube-3D-1.jpg" class="internal" title="Aumentar"></a></div>Modelo 3D de la skycube 1.0, hecho con Kicad</div></div></div>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Caracter.C3.ADsticas">Características</span></h2>
+<ul><li> Microprocesador: <b>PIC16F876A</b> a 20Mhz</li>
+<li> Conexión de hasta <b>8 servos</b> (8 módulos).</li>
+<li> 4 conectores de servos por cada cara, para facilitar el cableado</li>
+<li> Comunicación por <b>bus I2C</b> entre tarjetas Skycube.</li>
+<li> Conector de I2C doble, uno por cada cara, para facilitar la interconexión</li>
+<li> Conector de alimentación doble, tipo molex, uno por cada cara</li>
+<li> Conector de grabación ICSP</li>
+<li> Led de pruebas</li>
+<li> Botón de pruebas</li>
+<li> Micro-interruptor de on/off</li>
+<li> Led de power-on</li>
+<li> Slot de expansión para conectar sensores</li>
+<li> Pines de TX y RX accesibles mediante un conector. Muy útil para descargar firmware usando un bootloader</li></ul>
+<h2><span class="mw-headline" id="Conexi.C3.B3n_al_PC">Conexión al PC</span></h2>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cable-ftdi-conexion-skycube-1.jpg" class="image"><img alt="" src="Skycube_files/300px-Cable-ftdi-conexion-skycube-1_hcS-.jpg" width="300" height="196" class="thumbimage" srcset="Skycube_files/450px-Cable-ftdi-conexion-skycube-1_hcS-.jpg 1.5x, Skycube_files/600px-Cable-ftdi-conexion-skycube-1_hcS-.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cable-ftdi-conexion-skycube-1.jpg" class="internal" title="Aumentar"></a></div>Conexión del cable FTDI modificado a la Skycube 1.0 para descargar software</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Ftdi-cable-rs232R-5v-2.jpg" class="image"><img alt="" src="Skycube_files/300px-Ftdi-cable-rs232R-5v-2_hcS-.jpg" width="300" height="105" class="thumbimage" srcset="Skycube_files/450px-Ftdi-cable-rs232R-5v-2_hcS-.jpg 1.5x, Skycube_files/600px-Ftdi-cable-rs232R-5v-2_hcS-.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Ftdi-cable-rs232R-5v-2.jpg" class="internal" title="Aumentar"></a></div>El cable USB-serie de FTDI: TTL-232R-5V</div></div></div>
+</td></tr></tbody></table>
+<p><br>
+La Skycube 1.0 se conecta al PC a través del USB utilizando el <a href="https://iearobotics.com/wiki/index.php?title=Skycube_1.0:_Cable_de_descarga_FTDI" title="Skycube 1.0: Cable de descarga FTDI">cable USB-serie de FTDI</a>. El modelo es el <b>TTL-232R-5V</b>. Este cable tiene un conector de 6 pines. Para usarlo con la Skycube <b>es necesario modificar el cable</b> y sustituir este conector por uno de 3 pines.
+</p><p>Este cable sirva para <b>descargar firmware en la Skycube</b>, así como comunicarse vía puerto serie con ella para <b>telecontrolar los robots modulares</b> desde el PC
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div style="position: relative; width: 40px; height: 40px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://iearobotics.com/wiki/index.php?title=Skycube_1.0:_Cable_de_descarga_FTDI" title="Skycube 1.0: Cable de descarga FTDI">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Icono_instrucciones.png" class="image" title="Skycube 1.0: Cable de descarga FTDI"><img alt="Skycube 1.0: Cable de descarga FTDI" src="Skycube_files/Icono_instrucciones_hcS-.png" width="40" height="40"></a></div>
+</div> 
+</td>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Skycube_1.0:_Cable_de_descarga_FTDI" title="Skycube 1.0: Cable de descarga FTDI">Instrucciones para la construcción del cable</a>
+</td></tr></tbody></table>
+<p><br>
+</p>
+<h2><span class="mw-headline" id="Alimentaci.C3.B3n">Alimentación</span></h2>
+<p>La Skycube se alimenta entre <b>4.5</b> y <b>6 voltios</b> a través de un conector molex de 2 vías. Dispone de 2 conectores molex para alimentarla, uno en la cara superior y otro en la inferior. De esta manera, el usuario puede elegir el que más cómodo le resulte. Tener estos dos conectores es especialmente útil para facilitar el cableado del bus de alimentación, en el caso de interconectarse 2 ó mas Skycubes.
+</p>
+<h3><span class="mw-headline" id="Portapilas">Portapilas</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Portapilas-skycube-test1.jpg" class="image"><img alt="" src="Skycube_files/300px-Portapilas-skycube-test1_hcS-.jpg" width="300" height="287" class="thumbimage" srcset="Skycube_files/450px-Portapilas-skycube-test1_hcS-.jpg 1.5x, Skycube_files/600px-Portapilas-skycube-test1_hcS-.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Portapilas-skycube-test1.jpg" class="internal" title="Aumentar"></a></div>Conexión del portapilas a la Skycube, a través del conector de la cara superior</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Portapilas-skycube-test3.jpg" class="image"><img alt="" src="Skycube_files/300px-Portapilas-skycube-test3_hcS-.jpg" width="300" height="271" class="thumbimage" srcset="Skycube_files/450px-Portapilas-skycube-test3_hcS-.jpg 1.5x, Skycube_files/600px-Portapilas-skycube-test3_hcS-.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Portapilas-skycube-test3.jpg" class="internal" title="Aumentar"></a></div>Conexión del portapilas en el conector de la cara inferior de la Skycube</div></div></div>
+</td></tr></tbody></table>
+<p>Para alimentar la skycube se puede utilizar un <b>portapilas de 4 pilas AAA</b>. Tiene el tamaño exacto para ser integrado en los <a href="https://iearobotics.com/wiki/index.php?title=M%C3%B3dulos_Y1" title="Módulos Y1">Módulos Y1</a> ó <a href="https://iearobotics.com/wiki/index.php?title=M%C3%B3dulos_MY" title="Módulos MY">Módulos MY</a>.
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div style="position: relative; width: 40px; height: 40px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://iearobotics.com/wiki/index.php?title=Skycube:Montaje_del_portapilas" title="Skycube:Montaje del portapilas">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Icono_instrucciones.png" class="image" title="Skycube:Montaje del portapilas"><img alt="Skycube:Montaje del portapilas" src="Skycube_files/Icono_instrucciones_hcS-.png" width="40" height="40"></a></div>
+</div> 
+</td>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Skycube:Montaje_del_portapilas" title="Skycube:Montaje del portapilas">Instrucciones de montaje del portapilas</a>
+</td></tr></tbody></table>
+<p><br>
+</p>
+<h2><span class="mw-headline" id="Planos">Planos</span></h2>
+<ul><li> <b>Ficheros FUENTE y de fabricación</b>:</li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/skycube/skycube-1.0/skycube-1.0-r109.zip">skycube-1.0-r109.zip</a>
+</td>
+<td> Ficheros fuentes para Kicad: Esquemas, librerias y PCB
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/skycube/skycube-1.0/skycube-1.0-fabricacion.zip">skycube-1.0-fabricacion.zip</a>
+</td>
+<td> Ficheros para su fabricación: Gerbers y plano de taladros
+</td></tr></tbody></table>
+<p><br>
+</p>
+<ul><li> <b>Ficheros con documentación en PDF</b>:</li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/skycube/skycube-1.0/skycube-esquema.pdf">skycube-esquema.pdf</a>
+</td>
+<td> Esquema
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/skycube/skycube-1.0/skycube-PCB-bottom.pdf">skycube-PCB-bottom.pdf</a>
+</td>
+<td> PCB. Cara inferior
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/skycube/skycube-1.0/skycube-PCB-top.pdf">skycube-PCB-top.pdf</a>
+</td>
+<td> PCB. Cara superior
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/skycube/skycube-1.0/skycube-serigrafia-Top.pdf">skycube-serigrafia-Top.pdf</a>
+</td>
+<td> Serigrafías cara superior
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/skycube/skycube-1.0/skycube-serigrafia-bottom.pdf">skycube-serigrafia-bottom.pdf</a>
+</td>
+<td> Serigrafías cara inferior
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/skycube/skycube-1.0/skycube-componentes.pdf">skycube-componentes.pdf</a>
+</td>
+<td> Listado de componentes
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Fotos">Fotos</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<ul><li> <a rel="nofollow" class="external text" href="http://fotos.iearobotics.com/index.php?album=tarjeta-skycube">Ver álbum de fotos completo</a>.</li></ul>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Skycube_1.0._Versi.C3.B3n_industrial">Skycube 1.0. Versión industrial</span></h3>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skycube-1.0-3.jpg" class="image"><img alt="" src="Skycube_files/300px-Skycube-1.0-3_hcS-.jpg" width="300" height="225" class="thumbimage" srcset="Skycube_files/450px-Skycube-1.0-3_hcS-.jpg 1.5x, Skycube_files/600px-Skycube-1.0-3_hcS-.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skycube-1.0-3.jpg" class="internal" title="Aumentar"></a></div>La skycube 1.0 montada en un módulo Y1</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skycube-1.0-4.jpg" class="image"><img alt="" src="Skycube_files/300px-Skycube-1.0-4_hcS-.jpg" width="300" height="225" class="thumbimage" srcset="Skycube_files/450px-Skycube-1.0-4_hcS-.jpg 1.5x, Skycube_files/600px-Skycube-1.0-4_hcS-.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skycube-1.0-4.jpg" class="internal" title="Aumentar"></a></div>La skycube 1.0 junto a un módulo Y1</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skycube-lote-n1-1.jpg" class="image"><img alt="" src="Skycube_files/300px-Skycube-lote-n1-1_hcS-.jpg" width="300" height="225" class="thumbimage" srcset="Skycube_files/450px-Skycube-lote-n1-1_hcS-.jpg 1.5x, Skycube_files/600px-Skycube-lote-n1-1_hcS-.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skycube-lote-n1-1.jpg" class="internal" title="Aumentar"></a></div>Algunas skycubes del Lote Nº 1</div></div></div>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Segundo_prototipo:_PCB_de_pruebas">Segundo prototipo: PCB de pruebas</span></h3>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skycube-pcb1-1.jpg" class="image"><img alt="" src="Skycube_files/300px-Skycube-pcb1-1_hcS-.jpg" width="300" height="225" class="thumbimage" srcset="Skycube_files/450px-Skycube-pcb1-1_hcS-.jpg 1.5x, Skycube_files/600px-Skycube-pcb1-1_hcS-.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skycube-pcb1-1.jpg" class="internal" title="Aumentar"></a></div>Segundo prototipo de la Skycube. PCB</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skycube-pcb1-2.jpg" class="image"><img alt="" src="Skycube_files/300px-Skycube-pcb1-2_hcS-.jpg" width="300" height="225" class="thumbimage" srcset="Skycube_files/450px-Skycube-pcb1-2_hcS-.jpg 1.5x, Skycube_files/600px-Skycube-pcb1-2_hcS-.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skycube-pcb1-2.jpg" class="internal" title="Aumentar"></a></div>Segundo prototipo integrado en un módulo Y1</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Minicube-II-skycube-prot2-1.jpg" class="image"><img alt="" src="Skycube_files/300px-Minicube-II-skycube-prot2-1_hcS-.jpg" width="300" height="225" class="thumbimage" srcset="Skycube_files/450px-Minicube-II-skycube-prot2-1_hcS-.jpg 1.5x, Skycube_files/600px-Minicube-II-skycube-prot2-1_hcS-.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Minicube-II-skycube-prot2-1.jpg" class="internal" title="Aumentar"></a></div>Segundo prototipo de la Skycube controlando el robot Minicube-II</div></div></div>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Primer_prototipo:_Placa_cableada">Primer prototipo: Placa cableada</span></h3>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skycube-prot1-2.jpg" class="image"><img alt="" src="Skycube_files/300px-Skycube-prot1-2_hcS-.jpg" width="300" height="225" class="thumbimage" srcset="Skycube_files/450px-Skycube-prot1-2_hcS-.jpg 1.5x, Skycube_files/600px-Skycube-prot1-2_hcS-.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skycube-prot1-2.jpg" class="internal" title="Aumentar"></a></div>Primer prototipo de la Skycube en un Módulo Y1</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Minicube-skycube-1.jpg" class="image"><img alt="" src="Skycube_files/300px-Minicube-skycube-1_hcS-.jpg" width="300" height="225" class="thumbimage" srcset="Skycube_files/450px-Minicube-skycube-1_hcS-.jpg 1.5x, Skycube_files/600px-Minicube-skycube-1_hcS-.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Minicube-skycube-1.jpg" class="internal" title="Aumentar"></a></div>Robot Minicube-I con el primer prototipo de la Skycube integrada</div></div></div>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="V.C3.ADdeos">Vídeos</span></h2>
+<h3><span class="mw-headline" id="Pruebas_con_el_segundo_prototipo">Pruebas con el segundo prototipo</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>300|250&lt;/youtube&gt;
+</td></tr>
+<tr>
+<td> Movimento del robot Minicube-II de forma autónoma <br> usando el segundo prototipo de la Skycube<br>
+<p><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=R9cU1WgN5HQ">Enlace al video en Youtube</a>
+</p>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Pruebas_con_el_primer_prototipo">Pruebas con el primer prototipo</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>300|250&lt;/youtube&gt;
+</td>
+<td>300|250&lt;/youtube&gt;
+</td></tr>
+<tr>
+<td> Pruebas del primer prototipo de la Skycube en un módulo Y1. <br>
+<p><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=ga4-KeNQ1W0">Enlace al video en Youtube</a>
+</p>
+</td>
+<td> Robot Minicube-I moviéndose de manera autónoma, <br>con la tarjeta Skycube <br>
+<p><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=CkTBHTHtS9E">Enlace al video en Youtube</a>
+</p>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Repositorio">Repositorio</span></h2>
+<ul><li> Repositorio SVN: <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/Skycube/">http://svn.iearobotics.com/Skycube/</a></li></ul>
+<p>Para obtener la versión 1.0 (la última) teclear:
+</p>
+<pre>svn co <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/Skycube/skycube-1.0">http://svn.iearobotics.com/Skycube/skycube-1.0</a>
+</pre>
+<h2><span class="mw-headline" id="Historia">Historia</span></h2>
+<ul><li> <b>16/Enero/2010</b>: Lote Nº 1 de Skycubes listo! 45 Skycubes montadas y probadas (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/blog/2010/01/16/lote-n%C2%BA-1-de-tarjetas-skycube/">Blog</a>)</li>
+<li> <b>21/Dic/2009</b>: Probado el cable USB-serie de FTDI. Creada la documentación (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/blog/2009/12/23/cable-usb-serie-ftdi-para-conectar-la-skycube-al-pc/">Blog</a>)</li>
+<li> <b>08/Nov/2009</b>: Segundo prototipo: PCB de la Skycube, hecho en la ETSI Telecomunicaciones en la UPM (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/blog/2009/11/08/primer-pcb-de-la-tarjeta-skycube/">Blog</a>)</li>
+<li> <b>13/Sep/2009</b>: Movimiento de Minicube-I de manera autónoma usando la Skycube (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/blog/2009/09/13/el-robot-modular-minicube-i-ya-es-autonomo/">Blog</a>)</li>
+<li> <b>10/Sep/2009</b>: Primer prototipo de la Skycube, hecho a mano. Oscilación de un servo (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/blog/2009/09/10/tarjeta-skycube-y-robots-modulares-autonomos/">Blog</a>)</li></ul>
+<h2><span class="mw-headline" id="Autores">Autores</span></h2>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main"> Juan González-Gómez</a></li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=Andr%C3%A9s_Prieto-Moreno" title="Andrés Prieto-Moreno">Andrés Prieto-Moreno</a></li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=Ricardo_G%C3%B3mez" title="Ricardo Gómez">Ricardo Gómez</a></li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<p>La Skycube es una placa derivada de la <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic-2009</a> (v1.3)
+</p>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Licencia">Licencia</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <img alt="100px" src="Skycube_files/OSHWv1-noText_hcS-.jpg" title="100px" width="234" height="200">
+</td>
+<td>
+<p><a rel="nofollow" class="external text" href="http://freedomdefined.org/OSHW">Open Source Hardware Definition v1.0</a> <br>
+<b>Hardware de Fuentes Abiertas</b> (OSHW en inglés) es aquel hardware cuyo diseño se hace disponible públicamente para que cualquier persona lo pueda estudiar, modificar, distribuir, materializar y vender, tanto el original como otros objetos basados en ese diseño. Las fuentes del hardware (entendidas como los ficheros fuente) habrán de estar disponibles en un formato apropiado para poder realizar modificaciones sobre ellas. 
+</p>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=Skycube_1.0:_Cable_de_descarga_FTDI" title="Skycube 1.0: Cable de descarga FTDI">Cable para descarga de Firmware en la Skycube</a>. Instrucciones para el montaje</li></ul>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>09/Mayo/2011</b>: Añadido logo y licencia de OSHW (Open Source Hardware)</li>
+<li> <b>05/Dic/2010</b>: Skycube-2010 r109: Modificada para verse correctamente en 3D en la última versión de Kicad: 2010-05-05 BZR 2356</li>
+<li> <b>21/Ene/2010</b>: Añadido apartado de alimentación y enlace a las instrucciones de montaje del portapilas</li>
+<li> <b>16/Ene/2010</b>: Añadida foto del Lote nº1 de Skycubes</li>
+<li> <b>23/Dic/2009</b>: Añadido apartado de conexión al PC con el cable FTDI</li>
+<li> <b>01/Dic/2009</b>: Skycube 1.0 liberada!!!! Validado el PCB industrial.</li>
+<li> <b>29/Nov/2009</b>: Movimiento del robot Minicube-II de manera autónoma</li>
+<li> <b>08/Nov/2009</b>: Segundo prototipo de la Skycube 1.0</li>
+<li> <b>13/Sep/2009</b>: Movimiento del robot Minicube-I de manera autónoma. Añadido vídeo</li>
+<li> <b>10/Sep/2009</b>: Prueba de oscilación de un módulo Y1. Añadido vídeo</li>
+<li> <b>09/Sep/2009</b>: Construido primer prototipo, soldado con cables. Añadidas las fotos</li>
+<li> <b>03/Sep/2009</b>: Comenzada esta página</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20260917080152
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.038 seconds
+Real time usage: 0.044 seconds
+Preprocessor visited node count: 152/1000000
+Preprocessor generated node count: 353/1000000
+Post‐expand include size: 3024/2097152 bytes
+Template argument size: 200/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.265      1 - -total
+ 40.83%    1.741     11 - Plantilla:Tablabonita
+ 39.43%    1.682      2 - Plantilla:Click
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://iearobotics.com/wiki/index.php?title=Skycube&amp;oldid=11730">https://iearobotics.com/wiki/index.php?title=Skycube&amp;oldid=11730</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categorías</a>: <ul><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Hardware" title="Categoría:Hardware">Hardware</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Robots_modulares" title="Categoría:Robots modulares">Robots modulares</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Skycube" title="Categoría:Skycube">Skycube</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://iearobotics.com/wiki/index.php?title=Skycube" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Skycube&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://iearobotics.com/wiki/index.php?title=Skycube&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://iearobotics.com/wiki/index.php?title=Skycube&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Skycube" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Skycube" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Skycube" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://iearobotics.com/wiki/index.php?title=Skycube&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://iearobotics.com/wiki/index.php?title=Skycube&amp;oldid=11730" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://iearobotics.com/wiki/index.php?title=Skycube&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Skycube_files/gnu-fdl_hcS-.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="Skycube_files/poweredby_mediawiki_88x31_hcS-.png" alt="Powered by MediaWiki" srcset="Skycube_files/poweredby_mediawiki_132x47_hcS-.png 1.5x, Skycube_files/poweredby_mediawiki_176x62_hcS-.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 9 may 2011 a las 04:03.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":109});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
