@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Mini-Skybot - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Mini-Skybot","wgTitle":"Mini-Skybot","wgCurRevisionId":22132,"wgRevisionId":22132,"wgArticleId":1737,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Skybot","Robots imprimibles"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Mini-Skybot","wgRelevantArticleId":1737,"wgRequestId":"aqucFlXtwAvuSADDCKTmUAAAvNM","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Mini-Skybot_files/load_yY23.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="Mini-Skybot_files/load_yY23.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="Mini-Skybot_files/load_002_yY23.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Mini-Skybot rootpage-Mini-Skybot skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Mini-Skybot</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Miniskybot-red-hand-r1.jpg" class="image"><img alt="" src="Mini-Skybot_files/300px-Miniskybot-red-hand-r1_yY23.jpg" width="300" height="232" class="thumbimage" srcset="Mini-Skybot_files/450px-Miniskybot-red-hand-r1_yY23.jpg 1.5x, Mini-Skybot_files/600px-Miniskybot-red-hand-r1_yY23.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Miniskybot-red-hand-r1.jpg" class="internal" title="Aumentar"></a></div>MiniSkybot V1.0 (<i>click para ampliar</i>)</div></div></div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Prototipos"><span class="tocnumber">2</span> <span class="toctext">Prototipos</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Bibloteca_para_dise.C3.B1o_de_printbots_en_Freecad"><span class="tocnumber">3</span> <span class="toctext">Bibloteca para diseño de printbots en Freecad</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Ruedas_para_Miniskybot"><span class="tocnumber">4</span> <span class="toctext">Ruedas para Miniskybot</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Fotos"><span class="tocnumber">5</span> <span class="toctext">Fotos</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Videos"><span class="tocnumber">6</span> <span class="toctext">Videos</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Art.C3.ADculos"><span class="tocnumber">7</span> <span class="toctext">Artículos</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Historia"><span class="tocnumber">8</span> <span class="toctext">Historia</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Repositorio"><span class="tocnumber">9</span> <span class="toctext">Repositorio</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Licencia"><span class="tocnumber">10</span> <span class="toctext">Licencia</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Autores"><span class="tocnumber">11</span> <span class="toctext">Autores</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Enlaces"><span class="tocnumber">12</span> <span class="toctext">Enlaces</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Noticias"><span class="tocnumber">13</span> <span class="toctext">Noticias</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>El MiniSkybot es un robot educacional <b>libre</b> e <b>imprimible</b>. Toda la información está disponible para que cualquiera lo pueda estudiar, copiar, modificar y fabricar. Además, ha sido <b>diseñado exclusivamente usando software libre</b>: <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/Linux">Sistema operativo Linux</a>, <a rel="nofollow" class="external text" href="http://www.openscad.org/">OpenScad</a>, <a rel="nofollow" class="external text" href="http://sourceforge.net/projects/free-cad/">Frecad</a> y <a rel="nofollow" class="external text" href="http://sourceforge.net/projects/free-cad/">Kicad</a>. Esto garantiza que se puedan realizar diseños derivados sin tener que pagar ningún tipo de licencia o realizar copias ilegales de software privativo.
+</p><p>Al ser un robot “<i>libre e imprimible</i>“, cualquier persona lo puede bajar e imprimir. La gente que no tenga acceso a una impresora 3D, siempre le puede pedir a un amigo que la tenga que se lo imprima, o ir a un “hacklab” que sí la tenga
+</p>
+<h2><span class="mw-headline" id="Prototipos">Prototipos</span></h2>
+<table style="border: 1px solid darkgray;">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Miniskybot_2" title="Miniskybot 2">Miniskybot 2</a>  </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Mini-Skybot_v1.0" title="Mini-Skybot v1.0">Mini-Skybot v1.0</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Mini-Skybot:_Ch%C3%A1sis" title="Mini-Skybot: Chásis"> Miniskybot v0.1</a>
+</th></tr>
+<tr>
+<td> <img alt="170px" src="Mini-Skybot_files/Miniskybot-2-1_yY23.jpg" title="170px" width="1096" height="1184">
+</td>
+<td> <img alt="170px" src="Mini-Skybot_files/Miniskybot-red_yY23.png" title="170px" width="1088" height="1010">
+</td>
+<td> <img alt="200px" src="Mini-Skybot_files/Mini-Skybot-chasis-2-r1_yY23.jpg" title="200px" width="1100" height="851">
+</td></tr></tbody></table>
+<p><br>
+</p>
+<h2><span class="mw-headline" id="Bibloteca_para_dise.C3.B1o_de_printbots_en_Freecad">Bibloteca para diseño de printbots en Freecad</span></h2>
+<p>Biblioteca con vitaminas y piezas impresas para el diseño de printbots
+</p>
+<table style="border: 1px solid darkgray;">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Biblioteca_printbots" title="Biblioteca printbots">Biblioteca printbots</a>
+</th></tr>
+<tr>
+<td> <img alt="170px" src="Mini-Skybot_files/Logo-printbots-parts-library_yY23.png" title="170px" width="595" height="552">
+</td></tr></tbody></table>
+<p><br>
+</p>
+<h2><span class="mw-headline" id="Ruedas_para_Miniskybot">Ruedas para Miniskybot</span></h2>
+<p>En la <a href="https://iearobotics.com/wiki/index.php?title=Biblioteca_printbots" title="Biblioteca printbots">Biblioteca printbots</a> están incluidos las últimas ruedas para el Miniskybot
+</p>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_Miniskybot_para_corona_circular_peque%C3%B1a_Futaba_3003" title="Freecad: Rueda Miniskybot para corona circular pequeña Futaba 3003"> Corona circular</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_Miniskybot_para_corona_circular_grande_Futaba_3003" title="Freecad: Rueda Miniskybot para corona circular grande Futaba 3003"> Corona circular grande</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_Miniskybot_para_corona_Futaba_3003_de_6_brazos" title="Freecad: Rueda Miniskybot para corona Futaba 3003 de 6 brazos"> Corona de 6 brazos</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_Miniskybot_para_corona_Futaba_3003_de_4_brazos" title="Freecad: Rueda Miniskybot para corona Futaba 3003 de 4 brazos"> Corona de 4 brazos</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Mini-Skybot_files/Miniskybot-wheel-futaba3003-rounded-horn-2_yY23.png" title="170px" width="1455" height="1034">
+</td>
+<td> <img alt="170px" src="Mini-Skybot_files/Miniskybot-wheel-futaba3003-big-rounded-horn-10_yY23.png" title="170px" width="1431" height="1066">
+</td>
+<td> <img alt="170px" src="Mini-Skybot_files/Miniskybot-wheel-futaba3003-6-arms-horn-3_yY23.png" title="170px" width="1434" height="1020">
+</td>
+<td> <img alt="170px" src="Mini-Skybot_files/Miniskybot-wheel-futaba3003-4-arms-horn-2_yY23.png" title="170px" width="1377" height="1026">
+</td></tr></tbody></table>
+<table class="wikitable" style="text-align:center" border="0">
+<tbody><tr>
+<th>  <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_Miniskybot_modelo_engranaje_para_Futaba_3003" title="Freecad: Rueda Miniskybot modelo engranaje para Futaba 3003"> Modelo engranaje</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_Miniskybot_modelo_open_hardware_para_Futaba_3003" title="Freecad: Rueda Miniskybot modelo open hardware para Futaba 3003">Modelo Open Hw</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_Miniskybot_modelo_pent%C3%A1culo_para_Futaba_3003" title="Freecad: Rueda Miniskybot modelo pentáculo para Futaba 3003"> Modelo pentáculo</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freecad:_Rueda_Miniskybot_modelo_renacuajo_para_Futaba_3003" title="Freecad: Rueda Miniskybot modelo renacuajo para Futaba 3003">Modelo renacuajo</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="Mini-Skybot_files/Miniskybot-wheel-gear-futaba3003-2_yY23.png" title="170px" width="1374" height="1029">
+</td>
+<td> <img alt="170px" src="Mini-Skybot_files/Miniskybot-wheel-open-hw-logo-futaba3003-2_yY23.png" title="170px" width="1428" height="1027">
+</td>
+<td> <img alt="170px" src="Mini-Skybot_files/Miniskybot-wheel-pentacle-futaba3003-2_yY23.png" title="170px" width="1431" height="1028">
+</td>
+<td> <img alt="170px" src="Mini-Skybot_files/Miniskybot-wheel-renacuajo-futaba3003-2_yY23.png" title="170px" width="1433" height="1029">
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Fotos">Fotos</span></h2>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="http://fotos.iearobotics.com/index.php?album=mini-skybot%2Fchasis-basico">Álbum de fotos completo</a>
+</th></tr></tbody></table>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://plus.google.com/u/0/photos/109138697406392447933/albums/5700499011974060241">Álbum de fotos en G+</a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Miniskybot-1.0-escuadron1.jpg" class="image"><img alt="" src="Mini-Skybot_files/300px-Miniskybot-1.0-escuadron1_yY23.jpg" width="300" height="225" class="thumbimage" srcset="Mini-Skybot_files/450px-Miniskybot-1.0-escuadron1_yY23.jpg 1.5x, Mini-Skybot_files/600px-Miniskybot-1.0-escuadron1_yY23.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Miniskybot-1.0-escuadron1.jpg" class="internal" title="Aumentar"></a></div>Un escuadrón de MiniSkybots v1.0 (<i>Click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Miniskybot-1.0-escuadron2.jpg" class="image"><img alt="" src="Mini-Skybot_files/300px-Miniskybot-1.0-escuadron2_yY23.jpg" width="300" height="225" class="thumbimage" srcset="Mini-Skybot_files/450px-Miniskybot-1.0-escuadron2_yY23.jpg 1.5x, Mini-Skybot_files/600px-Miniskybot-1.0-escuadron2_yY23.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Miniskybot-1.0-escuadron2.jpg" class="internal" title="Aumentar"></a></div>Los Miniskybots v1.0 sobre la estantería  (<i>Click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:MiniSkybot-chasis-1.jpg" class="image"><img alt="" src="Mini-Skybot_files/300px-MiniSkybot-chasis-1_yY23.jpg" width="300" height="245" class="thumbimage" srcset="Mini-Skybot_files/450px-MiniSkybot-chasis-1_yY23.jpg 1.5x, Mini-Skybot_files/600px-MiniSkybot-chasis-1_yY23.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:MiniSkybot-chasis-1.jpg" class="internal" title="Aumentar"></a></div>Mini-Skybot vv0.1 (<i>Click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:MiniSkybot-chasis-5.jpg" class="image"><img alt="" src="Mini-Skybot_files/300px-MiniSkybot-chasis-5_yY23.jpg" width="300" height="225" class="thumbimage" srcset="Mini-Skybot_files/450px-MiniSkybot-chasis-5_yY23.jpg 1.5x, Mini-Skybot_files/600px-MiniSkybot-chasis-5_yY23.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:MiniSkybot-chasis-5.jpg" class="internal" title="Aumentar"></a></div>Tres Mini-Skybots v0.1 junto a un Skybot (<i>Click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Videos">Videos</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>300|250&lt;/youtube&gt; <br>
+<p><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=RSO1v0a-HO8">Enlace directo al vídeo en Youtube</a>
+<br>
+Jugando con el Miniskybot 1.0
+</p>
+</td>
+<td>300|250&lt;/youtube&gt; <br>
+<p><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=x1v-4ejwBKk">Enlace directo al vídeo en Youtube</a>
+<br>
+Miniskybot V0.1
+</p>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Art.C3.ADculos">Artículos</span></h2>
+<table class="wikitable">
+<tbody><tr>
+<td>
+<ul><li> Juan Gonzalez-Gomez, Alberto Valero-Gomez, Andres Prieto-Moreno, Mohamed Abderrahim (2011), <b>A New Open Source 3D-printable Mobile Robotic Platform for Education</b>, Proc. of the 6th International Symposium on Autonomous Minirobots for Research and Edutainment, May, 23-25. Bielefeld. Germany  (<b><a href="https://iearobotics.com/wiki/index.php?title=Paper:2011-Amire-Miniskybot" title="Paper:2011-Amire-Miniskybot">Más información</a></b>)</li></ul>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Historia">Historia</span></h2>
+<ul><li> <b>Junio/2013</b>: Miniskybot v1 aparece en la revista americana Servo magazine, de Junio/2013  (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/2010-11-27-MiniSkybot/v1.0/Servo-06-2013-miniskybot.pdf">PDF</a> con portada y pag. 46</li>
+<li> (Noticias pendientes)</li>
+<li> <b>24/Ene/2011</b>: El Miniskybot de Daniel Gómez: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/blog/2012/01/24/el-miniskybot-de-daniel-gomez/">Blog</a></li>
+<li> <b>22/Dic/2011</b>: El Miniskybot de Darkomen: el primero el funcionar con una Skymega: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/blog/2012/01/22/el-miniskybot-de-darkomen/">Blog</a></li>
+<li> <b>31/Oct/2011</b>: Scout: Nueva mutación del Miniskybot por Sliptonic (Missouri, USA). Publicado en thingiverse&nbsp;: <a rel="nofollow" class="external text" href="http://www.thingiverse.com/thing:13042">Scout</a></li>
+<li> <b>20/Oct/2011</b>: Miniskybot en Latinoware 2011: (<a rel="nofollow" class="external text" href="http://www.latinoware.org/node/164">Página en Latinoware</a>), (<a href="https://iearobotics.com/wiki/index.php?title=2011-10-20:Latinoware:Robots_Libres_e_imprimibles" title="2011-10-20:Latinoware:Robots Libres e imprimibles">Más información</a>)</li>
+<li> <b>24/Sep/2011</b>: El Miniskybot se muestra en el OSHWcon en Madrid (<a href="https://iearobotics.com/wiki/index.php?title=2011-09-24:OSHWCon:Robots_Libres_e_imprimibles" title="2011-09-24:OSHWCon:Robots Libres e imprimibles">Más información</a>)</li>
+<li> <b>13/Agosto/2011</b>: Construcción de miniskybots en el Hackerspace Adelaide (Australia): <a rel="nofollow" class="external text" href="http://hackerspace-adelaide.org.au/blog/2011/08/13/pre-sciworld-hacksession/">Entrada en su Blog</a></li>
+<li> <b>14/Sep/2011</b>: El minisybot se menciona en el blog de Makerbot: (<a rel="nofollow" class="external text" href="http://www.makerbot.com/blog/2011/09/14/makerbot-in-the-wild-universidad-carlos-iii-de-madrid/">Entrada</a>)</li>
+<li> <b>02/Agosto/2011</b>: El miniskybot se menciona en <a rel="nofollow" class="external text" href="http://www.colourworks.co.za/2011/08/use-3d-printing-to-create-robots-at-home/">esta entrada de blog</a></li>
+<li> <b>24/Junio/2011</b>: CW Kreiser ha creado este vídeo&nbsp;:-)  (<a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=2EqvuPXYKf0">Video</a>) (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/blog/2011/06/24/mas-sobre-la-primera-telecopia-del-miniskybot/">Blog</a>)</li>
+<li> <b>20/Junio/2011</b>: Primera "Telecopia" del Miniskybot: Mecánica, electrónica y software (por CW kreiser) (<a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=8ZZbghV05eQ">video</a>) (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/blog/2011/06/21/miniskybot-primera-telecopia-de-un-robot-imprimible/">blog</a>)</li>
+<li> <b>06/Junio/2011</b>: Miniskybot "impreso" por FUBAR LABs: <a rel="nofollow" class="external text" href="http://fubarlabs.org/miniskybot-3d-printed-robot-ready-for-robodui">Blog</a></li>
+<li> <b>23/Mayo/2011</b>:
+<ul><li> Robot miniskybot presentado en el <a rel="nofollow" class="external text" href="http://www.amiresymposia.org/amire2011/index.php?title=AMiRE_2011:_6th_International_Symposium_on_Autonomous_Minirobots_for_Research_and_Edutainment">AMIRE 2011</a>: 6th International Symposium on Autonomous Minirobots for Research and Edutainment, en Bielefeld, Alemania. (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/blog/2011/05/28/a-new-open-source-3d-printable-mobile-robotic-platform-for-education/">Blog I</a>) (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/blog/2011/05/28/el-miniskybot-en-el-amire-2011/">Blog II</a>)</li></ul></li></ul>
+<table class="wikitable">
+<tbody><tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Miniskybot-thingiverse-popular-thing.png" class="image" title="100px"><img alt="100px" src="Mini-Skybot_files/Miniskybot-thingiverse-popular-thing_yY23.png" width="1143" height="1151"></a>
+</td>
+<td> El Miniskybot es el tercer objeto más popular en Thingiverse
+</td></tr></tbody></table>
+<ul><li> <b>06/Mayo/2011</b>&nbsp;: 
+<ul><li> Makerbot: En el capítulo 10 de su "Robot Hospital" hacen mención al Mini-skybot (minuto 0:20) (<a rel="nofollow" class="external text" href="http://www.makerbot.com/blog/2011/05/06/robot-hospital-episode-ten/">entrada en el blog de Makerbot</a>)</li>
+<li> Entrada sobre el Miniskybot <a rel="nofollow" class="external text" href="http://es.paperblog.com/miniskybot-536960/">en paperblog</a></li>
+<li> <a rel="nofollow" class="external text" href="http://es-robot.com/2011/05/miniskybot.html">es-robot.com</a> se hace eco de la entrada anterior</li></ul></li>
+<li> <b>05/Mayo/2011</b>:  Entrada sobre el Miniskybot en <a rel="nofollow" class="external text" href="http://blog.ponoko.com/2011/05/04/a-look-at-the-miniskybot/">el blog de Ponoko</a></li>
+<li> <b>23/Abril/2011</b>: Miniskybot v1.0 publicado en el wiki y en Thingivese</li>
+<li> (inicios) Pendiente</li></ul>
+<h2><span class="mw-headline" id="Repositorio">Repositorio</span></h2>
+<ul><li> Repositorio SVN: <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/Mini_Skybot">http://svn.iearobotics.com/Mini_Skybot</a></li></ul>
+<p>Para obtener la última teclear:
+</p>
+<pre>svn co <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/Mini_Skybot/v1.0/">http://svn.iearobotics.com/Mini_Skybot/v1.0/</a>
+</pre>
+<h2><span class="mw-headline" id="Licencia">Licencia</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cc_logo.png" class="image"><img alt="Cc logo.png" src="Mini-Skybot_files/Cc_logo_yY23.png" width="88" height="31"></a> This work is licensed under a <a rel="nofollow" class="external text" href="http://creativecommons.org/licenses/by-sa/2.5/es/">Creative Commons Attribution-ShareAlike 2.5 Spain License</a>.
+</td></tr></tbody></table>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <img alt="100px" src="Mini-Skybot_files/OSHWv1-noText_yY23.jpg" title="100px" width="234" height="200">
+</td>
+<td>
+<p><a rel="nofollow" class="external text" href="http://freedomdefined.org/OSHW">Open Source Hardware Definition v1.0</a> 
+</p>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Autores">Autores</span></h2>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=Andr%C3%A9s_Prieto-Moreno" title="Andrés Prieto-Moreno">Andrés Prieto-Moreno</a></li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main"> Juan González-Gómez</a></li>
+<li> <a rel="nofollow" class="external text" href="https://iearobotics.com/alberto/doku.php">Alberto Valero</a></li>
+<li> <a rel="nofollow" class="external text" href="http://roboticslab.uc3m.es/roboticslab/persona.php?id_pers=6">Mohamed Abderrahim</a></li></ul>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="http://www.thingiverse.com/thing:7989">Miniskybot v1.0 en Thingiverse</a></li>
+<li> <a rel="nofollow" class="external text" href="http://www.thingiverse.com/thing:4954">Miniskybot v0.1 en Thingiverse</a></li>
+<li> <a rel="nofollow" class="external text" href="http://138.100.100.129/mrgroup/doku.php?id=robots:miniskybot">MiniSkybot en MRGroup</a></li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=Skybot" title="Skybot">Robot Skybot</a></li></ul>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>10/Sep/2014</b>: Añadido enlace a la <a href="https://iearobotics.com/wiki/index.php?title=Biblioteca_printbots" title="Biblioteca printbots">Biblioteca printbots</a>. Añadido el catálogo de ruedas disponibles</li>
+<li> <b>23/Abril/2011</b>: (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/blog/2011/04/23/robots-imprimibles-miniskybot-v1-0/">Blog</a>) Añadida documentación del Miniskybot V1.0</li>
+<li> <b>02/Enero/2011</b>: Añadidas fotos de la versión 1.0</li>
+<li> <b>27/Nov/2010</b>: Comenzada esta página</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20260917075150
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.042 seconds
+Real time usage: 0.050 seconds
+Preprocessor visited node count: 62/1000000
+Preprocessor generated node count: 93/1000000
+Post‐expand include size: 600/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    1.824      1 - -total
+ 90.51%    1.651      3 - Plantilla:Tablabonita
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://iearobotics.com/wiki/index.php?title=Mini-Skybot&amp;oldid=22132">https://iearobotics.com/wiki/index.php?title=Mini-Skybot&amp;oldid=22132</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categorías</a>: <ul><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Skybot" title="Categoría:Skybot">Skybot</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Robots_imprimibles" title="Categoría:Robots imprimibles">Robots imprimibles</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://iearobotics.com/wiki/index.php?title=Mini-Skybot" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Mini-Skybot&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://iearobotics.com/wiki/index.php?title=Mini-Skybot&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://iearobotics.com/wiki/index.php?title=Mini-Skybot&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Mini-Skybot" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Mini-Skybot" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Mini-Skybot" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://iearobotics.com/wiki/index.php?title=Mini-Skybot&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://iearobotics.com/wiki/index.php?title=Mini-Skybot&amp;oldid=22132" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://iearobotics.com/wiki/index.php?title=Mini-Skybot&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Mini-Skybot_files/gnu-fdl_yY23.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="Mini-Skybot_files/poweredby_mediawiki_88x31_yY23.png" alt="Powered by MediaWiki" srcset="Mini-Skybot_files/poweredby_mediawiki_132x47_yY23.png 1.5x, Mini-Skybot_files/poweredby_mediawiki_176x62_yY23.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 10 sep 2014 a las 04:40.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":123});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
