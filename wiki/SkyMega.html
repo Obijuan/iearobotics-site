@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>SkyMega - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"SkyMega","wgTitle":"SkyMega","wgCurRevisionId":13568,"wgRevisionId":13568,"wgArticleId":1471,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Hardware","Robots modulares","Skymega","ATMEL"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"SkyMega","wgRelevantArticleId":1471,"wgRequestId":"aqu7yMHq0xq0jJjiDLfNXwAAUqk","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="SkyMega_files/load_Ha3k.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="SkyMega_files/load_Ha3k.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="SkyMega_files/load_002_Ha3k.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-SkyMega rootpage-SkyMega skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">SkyMega</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><p><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-logo-board.png" class="image" title="right"><img alt="right" src="SkyMega_files/Skymega-logo-board_Ha3k.png" width="1330" height="638"></a>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Caracter.C3.ADsticas"><span class="tocnumber">2</span> <span class="toctext">Características</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Fotos"><span class="tocnumber">3</span> <span class="toctext">Fotos</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Conexi.C3.B3n_al_PC"><span class="tocnumber">4</span> <span class="toctext">Conexión al PC</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Descripci.C3.B3n_de_elementos"><span class="tocnumber">5</span> <span class="toctext">Descripción de elementos</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Partes"><span class="tocnumber">5.1</span> <span class="toctext">Partes</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Pines"><span class="tocnumber">5.2</span> <span class="toctext">Pines</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Alimentaci.C3.B3n"><span class="tocnumber">6</span> <span class="toctext">Alimentación</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Conexi.C3.B3n_de_servos"><span class="tocnumber">7</span> <span class="toctext">Conexión de servos</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Accesorios_imprimibles"><span class="tocnumber">8</span> <span class="toctext">Accesorios imprimibles</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Perif.C3.A9ricos"><span class="tocnumber">9</span> <span class="toctext">Periféricos</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Grabaci.C3.B3n_del_Bootloader"><span class="tocnumber">10</span> <span class="toctext">Grabación del Bootloader</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#Grabador_USBtinyISP"><span class="tocnumber">10.1</span> <span class="toctext">Grabador USBtinyISP</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Mensajes_de_error"><span class="tocnumber">10.2</span> <span class="toctext">Mensajes de error</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#Probando_la_placa:_.22Hola_mundo.22"><span class="tocnumber">11</span> <span class="toctext">Probando la placa: "Hola mundo"</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#Pasos_a_seguir"><span class="tocnumber">11.1</span> <span class="toctext">Pasos a seguir</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Errores"><span class="tocnumber">11.2</span> <span class="toctext">Errores</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#Ejemplos_de_programaci.C3.B3n"><span class="tocnumber">12</span> <span class="toctext">Ejemplos de programación</span></a>
+<ul>
+<li class="toclevel-2 tocsection-19"><a href="#Recursos"><span class="tocnumber">12.1</span> <span class="toctext">Recursos</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#B.C3.A1sicos"><span class="tocnumber">12.2</span> <span class="toctext">Básicos</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Freeleds"><span class="tocnumber">12.3</span> <span class="toctext">Freeleds</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Skypads"><span class="tocnumber">12.4</span> <span class="toctext">Skypads</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Servos"><span class="tocnumber">12.5</span> <span class="toctext">Servos</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Osciladores"><span class="tocnumber">12.6</span> <span class="toctext">Osciladores</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Robots_modulares"><span class="tocnumber">12.7</span> <span class="toctext">Robots modulares</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-26"><a href="#Programaci.C3.B3n_Avanzada"><span class="tocnumber">13</span> <span class="toctext">Programación Avanzada</span></a></li>
+<li class="toclevel-1 tocsection-27"><a href="#Planos"><span class="tocnumber">14</span> <span class="toctext">Planos</span></a></li>
+<li class="toclevel-1 tocsection-28"><a href="#Repositorio"><span class="tocnumber">15</span> <span class="toctext">Repositorio</span></a></li>
+<li class="toclevel-1 tocsection-29"><a href="#Historia"><span class="tocnumber">16</span> <span class="toctext">Historia</span></a></li>
+<li class="toclevel-1 tocsection-30"><a href="#Autores"><span class="tocnumber">17</span> <span class="toctext">Autores</span></a></li>
+<li class="toclevel-1 tocsection-31"><a href="#Licencia"><span class="tocnumber">18</span> <span class="toctext">Licencia</span></a></li>
+<li class="toclevel-1 tocsection-32"><a href="#Enlaces"><span class="tocnumber">19</span> <span class="toctext">Enlaces</span></a></li>
+<li class="toclevel-1 tocsection-33"><a href="#Noticias"><span class="tocnumber">20</span> <span class="toctext">Noticias</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>Tarjeta microcontroladora de reducidas dimensiones <b>compatible</b> con los <a href="https://iearobotics.com/wiki/index.php?title=M%C3%B3dulos_Y1" title="Módulos Y1">Módulos Y1</a> / <a href="https://iearobotics.com/wiki/index.php?title=M%C3%B3dulos_MY" title="Módulos MY">MY1</a> / <a href="https://iearobotics.com/wiki/index.php?title=M%C3%B3dulos_REPY-1" title="Módulos REPY-1">REPY1</a>. Las aplicaciones principales son la programación de <b>robots modulares</b>, robots móviles como el <a href="https://iearobotics.com/wiki/index.php?title=Mini-Skybot" title="Mini-Skybot">Miniskybot</a> (o derivados) o bien para <b>usos educaciones</b>. 
+</p><p>La tarjeta Skymega es <b>hardware libre<sup>2</sup></b>. Ha sido diseñado con la herramienta libre <a rel="nofollow" class="external text" href="http://iut-tice.ujf-grenoble.fr/kicad/">Kicad</a>. También es <b>compatible con</b> <a rel="nofollow" class="external text" href="http://www.arduino.cc/">Arduino</a>.
+</p>
+<hr>
+<center>
+<p><img alt="Logokicad.png" src="SkyMega_files/Logokicad_Ha3k.png" width="507" height="51">
+</p>
+</center>
+<h2><span class="mw-headline" id="Caracter.C3.ADsticas">Características</span></h2>
+<ul><li> Hardware libre<sup>2</sup></li>
+<li> Compatible mecánicamente con la <a href="https://iearobotics.com/wiki/index.php?title=Skycube" title="Skycube">tarjeta Skycube</a></li>
+<li> Compatible con Arduino</li>
+<li> Microprocesador: <b>ATMEGA</b> a 16Mhz. Modelos: 88/168/328</li>
+<li> Conexión de hasta <b>8 servos</b> (8 módulos).</li>
+<li> Los conectores de los servos se pueden poner por ambas caras de la placa</li>
+<li> Comunicación por <b>bus I2C</b> entre tarjetas skymega</li>
+<li> Hasta 2 conectores de I2C, que se pueden soldar por ambas caras</li>
+<li> Conector de alimentación doble, tipo molex, uno por cada cara</li>
+<li> Conector de grabación ICSP</li>
+<li> Led de pruebas</li>
+<li> Pulsador de pruebas</li>
+<li> Micro-interruptor de on/off</li>
+<li> Led de power-on</li>
+<li> Slot de expansión para conectar sensores</li></ul>
+<h2><span class="mw-headline" id="Fotos">Fotos</span></h2>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://plus.google.com/u/0/photos/109138697406392447933/albums/5675518782881794385">Álbum de fotos en google+</a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Repy1-skymega-1.png" class="image"><img alt="" src="SkyMega_files/300px-Repy1-skymega-1_Ha3k.png" width="300" height="365" class="thumbimage" srcset="SkyMega_files/450px-Repy1-skymega-1_Ha3k.png 1.5x, SkyMega_files/Repy1-skymega-1_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Repy1-skymega-1.png" class="internal" title="Aumentar"></a></div>La skymega 1.0 en un módulo Repy1 (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Miniskybot-skymega-1.png" class="image"><img alt="" src="SkyMega_files/300px-Miniskybot-skymega-1_Ha3k.png" width="300" height="307" class="thumbimage" srcset="SkyMega_files/450px-Miniskybot-skymega-1_Ha3k.png 1.5x, SkyMega_files/600px-Miniskybot-skymega-1_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Miniskybot-skymega-1.png" class="internal" title="Aumentar"></a></div>El Miniskybot con una skymega (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-1.0-1.jpg" class="image"><img alt="" src="SkyMega_files/300px-Skymega-1.0-1_Ha3k.jpg" width="300" height="225" class="thumbimage" srcset="SkyMega_files/450px-Skymega-1.0-1_Ha3k.jpg 1.5x, SkyMega_files/600px-Skymega-1.0-1_Ha3k.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-1.0-1.jpg" class="internal" title="Aumentar"></a></div>Tarjeta Skymega 1.0. Lote 1 (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Blog-skymega-1.0-pcbs.png" class="image"><img alt="" src="SkyMega_files/300px-Blog-skymega-1.0-pcbs_Ha3k.png" width="300" height="146" class="thumbimage" srcset="SkyMega_files/450px-Blog-skymega-1.0-pcbs_Ha3k.png 1.5x, SkyMega_files/600px-Blog-skymega-1.0-pcbs_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Blog-skymega-1.0-pcbs.png" class="internal" title="Aumentar"></a></div>PCB de la Tarjeta Skymega 1.0. Lote 1 (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Conexi.C3.B3n_al_PC">Conexión al PC</span></h2>
+<p>La skymega se conecta al PC a través de un <a rel="nofollow" class="external text" href="http://www.ftdichip.com/Products/Cables/USBTTLSerial.htm">cable USB-serie de FTDI</a> (<b>modelo TTL-232R-5V</b>). Este cable tiene un conector de 6 pines. Para usarlo con la Skymega es necesario modifica este conector y  sustituirlo por uno de 4 pines como se muestra en las fotos. Opcionalmente, si no se dispone del conector de 4 pines, se puede reutilizar el de 6, colocando los cables como se indica en las fotos y sin conectar los 2 hilos sobrantes.
+</p><p>Este cable sirve para <b>descargar firmware</b> en la Skymega, así como comunicarse vía puerto serie con ella.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-fdti-cable-1.png" class="image"><img alt="" src="SkyMega_files/300px-Skymega-fdti-cable-1_Ha3k.png" width="300" height="184" class="thumbimage" srcset="SkyMega_files/450px-Skymega-fdti-cable-1_Ha3k.png 1.5x, SkyMega_files/600px-Skymega-fdti-cable-1_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-fdti-cable-1.png" class="internal" title="Aumentar"></a></div>Conexión del cable FTDI  modificado a la Skymega 1.0 para descargar software (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-ftdi-cable-2.png" class="image"><img alt="" src="SkyMega_files/300px-Skymega-ftdi-cable-2_Ha3k.png" width="300" height="213" class="thumbimage" srcset="SkyMega_files/450px-Skymega-ftdi-cable-2_Ha3k.png 1.5x, SkyMega_files/600px-Skymega-ftdi-cable-2_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-ftdi-cable-2.png" class="internal" title="Aumentar"></a></div>El cable USB-serie de FTDI: TTL-232R-5V modificado para la skymega (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-ftdi-cable-header-1.png" class="image"><img alt="" src="SkyMega_files/300px-Skymega-ftdi-cable-header-1_Ha3k.png" width="300" height="380" class="thumbimage" srcset="SkyMega_files/450px-Skymega-ftdi-cable-header-1_Ha3k.png 1.5x, SkyMega_files/Skymega-ftdi-cable-header-1_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-ftdi-cable-header-1.png" class="internal" title="Aumentar"></a></div>Detalles del conector. Vistas superior e inferior (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-ftdi-cable-6pins.png" class="image"><img alt="" src="SkyMega_files/300px-Skymega-ftdi-cable-6pins_Ha3k.png" width="300" height="223" class="thumbimage" srcset="SkyMega_files/450px-Skymega-ftdi-cable-6pins_Ha3k.png 1.5x, SkyMega_files/600px-Skymega-ftdi-cable-6pins_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-ftdi-cable-6pins.png" class="internal" title="Aumentar"></a></div>Conexión de la skymega al PC con un cable FTDI de 6 pines modificado, sin sustituirlo por un conector de 4 pines (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Descripci.C3.B3n_de_elementos">Descripción de elementos</span></h2>
+<h3><span class="mw-headline" id="Partes">Partes</span></h3>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-front.png" class="image"><img alt="" src="SkyMega_files/300px-Skymega-front_Ha3k.png" width="300" height="241" class="thumbimage" srcset="SkyMega_files/450px-Skymega-front_Ha3k.png 1.5x, SkyMega_files/Skymega-front_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-front.png" class="internal" title="Aumentar"></a></div>Parte frontal de la Skymega (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-parts.png" class="image"><img alt="" src="SkyMega_files/300px-Skymega-parts_Ha3k.png" width="300" height="241" class="thumbimage" srcset="SkyMega_files/450px-Skymega-parts_Ha3k.png 1.5x, SkyMega_files/Skymega-parts_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-parts.png" class="internal" title="Aumentar"></a></div>Descripción de la skymega (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Pines">Pines</span></h3>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-pins.png" class="image"><img alt="" src="SkyMega_files/300px-Skymega-pins_Ha3k.png" width="300" height="261" class="thumbimage" srcset="SkyMega_files/450px-Skymega-pins_Ha3k.png 1.5x, SkyMega_files/600px-Skymega-pins_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-pins.png" class="internal" title="Aumentar"></a></div><b>Asignación de pines de la Skymega</b>. Las etiquetas azules son pines correspondientes a la nomenclatura de Arduino y las rojas del micro ATMEGA (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<ul><li> <a rel="nofollow" class="external text" href="http://arduino.cc/en/Hacking/PinMapping168">Correspondencia de pines entre el ATMEGA168 y Arduino</a></li></ul>
+<h2><span class="mw-headline" id="Alimentaci.C3.B3n">Alimentación</span></h2>
+<p>La Skymega se alimenta con un <b>voltaje entre 4.5v y 6v</b>. Es necesario crear un cable con un conector molex de 2 vías para alimentarla. Existen varias posibilidades:
+</p>
+<ul><li> Utilizar un <b>portapilas</b>, con el conector molex</li>
+<li> Crear un <b>cable USB-molex</b> para alimentarla directamente desde el PC</li>
+<li> Utilizar cualquier <b>fuente de alimentación externa</b> con un conector molex</li></ul>
+<table>
+<tbody><tr>
+<td>  <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Portapilas-skycube-paso-7-3.jpg" class="image"><img alt="" src="SkyMega_files/300px-Portapilas-skycube-paso-7-3_Ha3k.jpg" width="300" height="149" class="thumbimage" srcset="SkyMega_files/450px-Portapilas-skycube-paso-7-3_Ha3k.jpg 1.5x, SkyMega_files/600px-Portapilas-skycube-paso-7-3_Ha3k.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Portapilas-skycube-paso-7-3.jpg" class="internal" title="Aumentar"></a></div>Conector molex de alimentación. ¡¡Ojo a la colocación exacta de los cables!! (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-alimentacion-1-r1.jpg" class="image"><img alt="" src="SkyMega_files/300px-Skymega-alimentacion-1-r1_Ha3k.jpg" width="300" height="225" class="thumbimage" srcset="SkyMega_files/450px-Skymega-alimentacion-1-r1_Ha3k.jpg 1.5x, SkyMega_files/600px-Skymega-alimentacion-1-r1_Ha3k.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-alimentacion-1-r1.jpg" class="internal" title="Aumentar"></a></div>La skymega con el cable de alimentación conectado (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Portapilas-skycube-final-r2.jpg" class="image"><img alt="" src="SkyMega_files/300px-Portapilas-skycube-final-r2_Ha3k.jpg" width="300" height="279" class="thumbimage" srcset="SkyMega_files/450px-Portapilas-skycube-final-r2_Ha3k.jpg 1.5x, SkyMega_files/600px-Portapilas-skycube-final-r2_Ha3k.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Portapilas-skycube-final-r2.jpg" class="internal" title="Aumentar"></a></div>Portapilas con 4 pilas AAA (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-cable-alimentacion-1.jpg" class="image"><img alt="" src="SkyMega_files/300px-Skymega-cable-alimentacion-1_Ha3k.jpg" width="300" height="259" class="thumbimage" srcset="SkyMega_files/450px-Skymega-cable-alimentacion-1_Ha3k.jpg 1.5x, SkyMega_files/600px-Skymega-cable-alimentacion-1_Ha3k.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-cable-alimentacion-1.jpg" class="internal" title="Aumentar"></a></div>Cable de alimentación USB - molex (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<table>
+<tbody><tr>
+<td>  <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-alimentacion-fuente-1.jpg" class="image"><img alt="" src="SkyMega_files/300px-Skymega-alimentacion-fuente-1_Ha3k.jpg" width="300" height="225" class="thumbimage" srcset="SkyMega_files/450px-Skymega-alimentacion-fuente-1_Ha3k.jpg 1.5x, SkyMega_files/600px-Skymega-alimentacion-fuente-1_Ha3k.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-alimentacion-fuente-1.jpg" class="internal" title="Aumentar"></a></div>Skymega conectada a una fuente de alimentación (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-portapilas-2.jpg" class="image"><img alt="" src="SkyMega_files/300px-Skymega-portapilas-2_Ha3k.jpg" width="300" height="225" class="thumbimage" srcset="SkyMega_files/450px-Skymega-portapilas-2_Ha3k.jpg 1.5x, SkyMega_files/600px-Skymega-portapilas-2_Ha3k.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-portapilas-2.jpg" class="internal" title="Aumentar"></a></div>Skymega conectada a un portapilas imprimible (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Conexi.C3.B3n_de_servos">Conexión de servos</span></h2>
+<p>Los servos tiene 3 cables:
+</p>
+<ul><li> <b>Negro</b>: Masa (GND)</li>
+<li> <b>Rojo</b>: Alimentación (VCC)</li>
+<li> <b>Blanco</b>: Señal de control (CTL)</li></ul>
+<p>Los servos se conectan con la orientación mostrada en las fotos
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-conector-futaba-1.png" class="image"><img alt="" src="SkyMega_files/300px-Skymega-conector-futaba-1_Ha3k.png" width="300" height="368" class="thumbimage" srcset="SkyMega_files/450px-Skymega-conector-futaba-1_Ha3k.png 1.5x, SkyMega_files/Skymega-conector-futaba-1_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-conector-futaba-1.png" class="internal" title="Aumentar"></a></div>Conector del servo Futaba 3003 (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-conexion-servo-1-r1.jpg" class="image"><img alt="" src="SkyMega_files/300px-Skymega-conexion-servo-1-r1_Ha3k.jpg" width="300" height="263" class="thumbimage" srcset="SkyMega_files/450px-Skymega-conexion-servo-1-r1_Ha3k.jpg 1.5x, SkyMega_files/600px-Skymega-conexion-servo-1-r1_Ha3k.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-conexion-servo-1-r1.jpg" class="internal" title="Aumentar"></a></div>Conexion de un servo Futaba 3003 a la skymega (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-conexion-servo-2.jpg" class="image"><img alt="" src="SkyMega_files/300px-Skymega-conexion-servo-2_Ha3k.jpg" width="300" height="225" class="thumbimage" srcset="SkyMega_files/450px-Skymega-conexion-servo-2_Ha3k.jpg 1.5x, SkyMega_files/600px-Skymega-conexion-servo-2_Ha3k.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-conexion-servo-2.jpg" class="internal" title="Aumentar"></a></div>Detalles de conexión del servo (<i>click para ampliar'</i>)</div></div></div>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Accesorios_imprimibles">Accesorios imprimibles</span></h2>
+<table class="wikitable" style="text-align:center" border="20">
+<tbody><tr>
+<th> <a rel="nofollow" class="external text" href="http://www.thingiverse.com/thing:8954">Sonar device</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Objeto_3D:_Portapilas_parametrizado" title="Objeto 3D: Portapilas parametrizado">Portapilas</a>
+</th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=M%C3%B3dulos_REPY-1" title="Módulos REPY-1">Módulos REPY1</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Mini-Skybot" title="Mini-Skybot">Mini-Skybot</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="170px" src="SkyMega_files/Sonar-dev-1_Ha3k.jpg" title="170px" width="800" height="600">
+</td>
+<td> <img alt="170px" src="SkyMega_files/Battery-pack5-r1-peq_Ha3k.jpg" title="170px" width="200" height="148">
+</td>
+<td> <img alt="100px" src="SkyMega_files/Repy1-skymega-1_Ha3k.png" title="100px" width="525" height="639">
+</td>
+<td> <img alt="120px" src="SkyMega_files/Miniskybot-skymega-1_Ha3k.png" title="120px" width="992" height="1014">
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Perif.C3.A9ricos">Periféricos</span></h2>
+<table class="wikitable" style="text-align:center" border="20">
+<tbody><tr>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Freeleds" title="Freeleds">Tarjeta Freeleds</a> </th>
+<th> <a href="https://iearobotics.com/wiki/index.php?title=Skypads_2.0" title="Skypads 2.0">Tarjeta Skypads</a>
+</th></tr>
+<tr align="center">
+<td> <img alt="200px" src="SkyMega_files/Skymega-freeleds-1_Ha3k.jpg" title="200px" width="1200" height="900">
+</td>
+<td> <img alt="200px" src="SkyMega_files/Skymega-skypads-1_Ha3k.jpg" title="200px" width="1200" height="900">
+</td></tr></tbody></table>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=Freeleds" title="Freeleds">Tarjeta Freeleds</a>: Placa con 8 leds para hacer pruebas</li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=Skypads_2.0" title="Skypads 2.0">Tarjeta Skypads</a>: Placa con 8 pulsadores simulando un "gamepad"</li></ul>
+<h2><span class="mw-headline" id="Grabaci.C3.B3n_del_Bootloader">Grabación del Bootloader</span></h2>
+<p>Para poder utilizar la tarjeta skymega normalmente, es necesario grabar un <b>bootloader</b>. Esta operación <b>sólo hay que realizarla una vez por cada nuevo micro</b> ATMEGA que se coloque en la placa. Por ello, si ya nos lo han grabado, no es necesario comprar ningún programador adicional.
+</p><p>Para grabar el bootloader en micros nuevos, se necesita disponer de un programador de AVRs. Existen muchos modelos. Uno de ellos es el <a href="https://iearobotics.com/wiki/index.php?title=Grabador_de_AVRs:USBtinyISP_v2.0" title="Grabador de AVRs:USBtinyISP v2.0">USBtinyISP</a>, que es totalmente libre. 
+</p>
+<h3><span class="mw-headline" id="Grabador_USBtinyISP">Grabador USBtinyISP</span></h3>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-usbtinyISP.png" class="image"><img alt="" src="SkyMega_files/300px-Skymega-usbtinyISP_Ha3k.png" width="300" height="186" class="thumbimage" srcset="SkyMega_files/450px-Skymega-usbtinyISP_Ha3k.png 1.5x, SkyMega_files/600px-Skymega-usbtinyISP_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-usbtinyISP.png" class="internal" title="Aumentar"></a></div>Conexión del grabador USBtinyISP a la Skymega (<i>Click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-usbtiny-2.jpg" class="image"><img alt="" src="SkyMega_files/300px-Skymega-usbtiny-2_Ha3k.jpg" width="300" height="191" class="thumbimage" srcset="SkyMega_files/450px-Skymega-usbtiny-2_Ha3k.jpg 1.5x, SkyMega_files/600px-Skymega-usbtiny-2_Ha3k.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-usbtiny-2.jpg" class="internal" title="Aumentar"></a></div>Detalles de la conexión del grabador al puerto ICSP (<i>Click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p><b>Para grabar el bootloader seguir los siguientes pasos</b>:
+</p>
+<ul><li> <b>Conectar</b> el grabador USBtinyISP al PC (USB) y a la tarjeta Skymega. El led rojo de power on se deberá encender</li>
+<li> Arrancar el entorno de <b>Arduino</b>. <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Icono_aviso.png" class="image"><img alt="Icono aviso.png" src="SkyMega_files/Icono_aviso_Ha3k.png" width="24" height="24"></a> <b>¡¡Es necesario hacerlo como super usuario!!</b>. Aparecerá una ventana como la mostrada en la <b>Figura 1</b>.</li></ul>
+<pre><i>$ sudo arduino</i>
+</pre>
+<ul><li> <b>Seleccionar la placa</b> en <i>Tools/Board</i> (<b>Figura 2</b>). Dependiendo del micro ATMEGA que se tengo, se deberá seleccionar una de estas dos opciones:
+<ul><li> skymega con micro ATMEGA 328 -&gt; Opción: <i>Arduino Duemilanove or Nano w/ ATmega328</i></li>
+<li> skymega con micro ATMEGA 168 -&gt; Opción: <i>Arduino Diecimila, Duemilanove or Nano w/ ATmega168</i></li></ul></li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-bootloader-screeen-1.png" class="image"><img alt="" src="SkyMega_files/300px-Skymega-bootloader-screeen-1_Ha3k.png" width="300" height="362" class="thumbimage" srcset="SkyMega_files/450px-Skymega-bootloader-screeen-1_Ha3k.png 1.5x, SkyMega_files/Skymega-bootloader-screeen-1_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-bootloader-screeen-1.png" class="internal" title="Aumentar"></a></div><b>Figura 1</b>: El entorno de Arduino nada más arrancarlo (<i>Click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-bootloader-screeen-2.png" class="image"><img alt="" src="SkyMega_files/300px-Skymega-bootloader-screeen-2_Ha3k.png" width="300" height="210" class="thumbimage" srcset="SkyMega_files/450px-Skymega-bootloader-screeen-2_Ha3k.png 1.5x, SkyMega_files/600px-Skymega-bootloader-screeen-2_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-bootloader-screeen-2.png" class="internal" title="Aumentar"></a></div><b>Figura 2</b>: Selección de la placa: ATMEGA 328 (<i>Click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<ul><li> <b>Grabar el bootloader</b>. Opción <i>Tools/Burn Bootloader/ USBtinyISP</i> (<b>Figura 3</b>). Se empezará a grabar el bootloader. En la parte inferior aparecerá el mensaje "<i>Burning bootloader to I/O Board (this may take a minute)</i>" (<b>Figura 4</b>). Al cabo de un minuto aproximadamente habrá finalizado y si todo ha ido bien aparecerá el mensaje: "<i>Done burning bootloader</i>". <b>¡La placa está lista!</b>&nbsp;:-)</li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-bootloader-screeen-3.png" class="image"><img alt="" src="SkyMega_files/300px-Skymega-bootloader-screeen-3_Ha3k.png" width="300" height="280" class="thumbimage" srcset="SkyMega_files/450px-Skymega-bootloader-screeen-3_Ha3k.png 1.5x, SkyMega_files/600px-Skymega-bootloader-screeen-3_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-bootloader-screeen-3.png" class="internal" title="Aumentar"></a></div><b>Figura 3</b>: Selección del grabador: USBtinyISP (<i>Click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-bootloader-screeen-4.png" class="image"><img alt="" src="SkyMega_files/300px-Skymega-bootloader-screeen-4_Ha3k.png" width="300" height="96" class="thumbimage" srcset="SkyMega_files/450px-Skymega-bootloader-screeen-4_Ha3k.png 1.5x, SkyMega_files/Skymega-bootloader-screeen-4_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-bootloader-screeen-4.png" class="internal" title="Aumentar"></a></div><b>Figura 4</b>: Realizando la grabación. Mensaje que aparece en la parte inferior de la ventana (<i>Click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Mensajes_de_error">Mensajes de error</span></h3>
+<ul><li> <b>Error 1</b>: "<i>avrdude: initialization failed, rc=-1. Double check connections and try again...</i>". Este error se produce en alguno de los casos siguiente:
+<ul><li> Grabador no conectado a la Skymega</li>
+<li> El micro no está puesto en el zócalo</li>
+<li> El micro está en el zócalo pero no está apretado bien, por lo que algunas patas no hacen contacto</li>
+<li> El micro está puesto en el zócalo...  ¡Pero con la orientación incorrecta!</li>
+<li> El micro es defectuoso</li></ul></li></ul>
+<ul><li> <b>Error 2</b>: "<i>avrdude: Error: Could not find USBtiny device...</i>". Se produce si el grabador no está conectado</li></ul>
+<ul><li> <b>Error 3</b>: "<i>avrdude: error: usbtiny_transmit: error sending control message: Operation not permitted</i>". Has olvidado arrancar el entorno arduino como Súper-usuario&nbsp;:-)</li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-bootloader-screeen-6.png" class="image"><img alt="" src="SkyMega_files/300px-Skymega-bootloader-screeen-6_Ha3k.png" width="300" height="91" class="thumbimage" srcset="SkyMega_files/450px-Skymega-bootloader-screeen-6_Ha3k.png 1.5x, SkyMega_files/Skymega-bootloader-screeen-6_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-bootloader-screeen-6.png" class="internal" title="Aumentar"></a></div><b>Error 1</b> (<i>Click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-bootloader-screeen-7.png" class="image"><img alt="" src="SkyMega_files/300px-Skymega-bootloader-screeen-7_Ha3k.png" width="300" height="93" class="thumbimage" srcset="SkyMega_files/450px-Skymega-bootloader-screeen-7_Ha3k.png 1.5x, SkyMega_files/Skymega-bootloader-screeen-7_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-bootloader-screeen-7.png" class="internal" title="Aumentar"></a></div><b>Error 2</b> (<i>Click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-bootloader-screeen-8.png" class="image"><img alt="" src="SkyMega_files/300px-Skymega-bootloader-screeen-8_Ha3k.png" width="300" height="93" class="thumbimage" srcset="SkyMega_files/450px-Skymega-bootloader-screeen-8_Ha3k.png 1.5x, SkyMega_files/Skymega-bootloader-screeen-8_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-bootloader-screeen-8.png" class="internal" title="Aumentar"></a></div><b>Error 3</b> (<i>Click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Probando_la_placa:_.22Hola_mundo.22">Probando la placa: "Hola mundo"</span></h2>
+<p>Para probar la skymega por primera vez, seguir los siguientes pasos:
+</p>
+<h3><span class="mw-headline" id="Pasos_a_seguir">Pasos a seguir</span></h3>
+<ul><li> El bootloader debe estar grabado</li>
+<li> Alimentar la skymega, conectando bien el portapilas o el cable de alimentación USB.</li>
+<li> Encender la placa con el interruptor. El led rojo se encenderá</li>
+<li> Enchufar el cable de descarga (FTDI) al PC y conectarlo a la Skymega</li>
+<li> Ejecutar el entorno de arduino</li>
+<li> <b>Seleccionar la placa</b> en <i>Tools/Board</i> (<b>Figura 2</b>). Dependiendo del micro ATMEGA que se tengo, se deberá seleccionar una de estas dos opciones:
+<ul><li> skymega con micro ATMEGA 328 -&gt; Opción: <i>Arduino Duemilanove or Nano w/ ATmega328</i></li>
+<li> skymega con micro ATMEGA 168 -&gt; Opción: <i>Arduino Diecimila, Duemilanove or Nano w/ ATmega168</i></li></ul></li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-bootloader-screeen-1.png" class="image"><img alt="" src="SkyMega_files/300px-Skymega-bootloader-screeen-1_Ha3k.png" width="300" height="362" class="thumbimage" srcset="SkyMega_files/450px-Skymega-bootloader-screeen-1_Ha3k.png 1.5x, SkyMega_files/Skymega-bootloader-screeen-1_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-bootloader-screeen-1.png" class="internal" title="Aumentar"></a></div><b>Figura 1</b>: El entorno de Arduino nada más arrancarlo (<i>Click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-bootloader-screeen-2.png" class="image"><img alt="" src="SkyMega_files/300px-Skymega-bootloader-screeen-2_Ha3k.png" width="300" height="210" class="thumbimage" srcset="SkyMega_files/450px-Skymega-bootloader-screeen-2_Ha3k.png 1.5x, SkyMega_files/600px-Skymega-bootloader-screeen-2_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-bootloader-screeen-2.png" class="internal" title="Aumentar"></a></div><b>Figura 2</b>: Selección de la placa: ATMEGA 328 (<i>Click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<ul><li> Seleccionar el puerto serie en <i>Tools/Serial Port</i>. En Linux típicamente será el <i>/dev/ttyUSB0</i> (<b>Figura 3</b>)</li>
+<li> Abrir el ejemplo "hola mundo". Pinchar en File/Examples/1.Basic y seleccionar Blink (<b>Figura 4</b>). </li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-download-3.png" class="image"><img alt="" src="SkyMega_files/300px-Skymega-download-3_Ha3k.png" width="300" height="310" class="thumbimage" srcset="SkyMega_files/450px-Skymega-download-3_Ha3k.png 1.5x, SkyMega_files/Skymega-download-3_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-download-3.png" class="internal" title="Aumentar"></a></div><b>Figura 3</b>: Selección del puerto serie (<i>Click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-download-4.png" class="image"><img alt="" src="SkyMega_files/300px-Skymega-download-4_Ha3k.png" width="300" height="309" class="thumbimage" srcset="SkyMega_files/450px-Skymega-download-4_Ha3k.png 1.5x, SkyMega_files/600px-Skymega-download-4_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-download-4.png" class="internal" title="Aumentar"></a></div><b>Figura 4</b>: Selección del ejemplo Blink, que hace parpadear el led de la skymega (<i>Click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<ul><li> Se abrirá una nueva ventana con el código del ejemplo (<b>Figura 5</b>);</li>
+<li> Descargar en la skymega. Pinchar el icono correspondiente (<b>Figura 6</b>) o la opción <i>File/Upload to I/O Board</i>. El programa se compilará y empezará a descargarse. Al cabo de unos segundos se podrá ver cómo el led verde de la skymega parpadea.</li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-download-5.png" class="image"><img alt="" src="SkyMega_files/300px-Skymega-download-5_Ha3k.png" width="300" height="357" class="thumbimage" srcset="SkyMega_files/450px-Skymega-download-5_Ha3k.png 1.5x, SkyMega_files/Skymega-download-5_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-download-5.png" class="internal" title="Aumentar"></a></div><b>Figura 5</b>: El ejemplo Blink cargado en el editor (<i>Click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-download-6.png" class="image"><img alt="" src="SkyMega_files/300px-Skymega-download-6_Ha3k.png" width="300" height="357" class="thumbimage" srcset="SkyMega_files/450px-Skymega-download-6_Ha3k.png 1.5x, SkyMega_files/Skymega-download-6_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-download-6.png" class="internal" title="Aumentar"></a></div><b>Figura 6</b>: Descargando el "hola mundo" en la skymega (<i>Click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Errores">Errores</span></h3>
+<ul><li> <b>Error 1</b>: "<i>avrdude: stk500_recv(): programmer is not responding</i>". Se debe a alguna de las siguientes causas:
+<ul><li> El cable de descarga no está conectado a la Skymega</li>
+<li> El cable de descarga no está correctamente conectado (comprobar que esté con la orientación correcta)</li>
+<li> La skymega no está alimentada</li>
+<li> La skymega no está encendida. Darle al interrupción de ON</li></ul></li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-download-7.png" class="image"><img alt="" src="SkyMega_files/300px-Skymega-download-7_Ha3k.png" width="300" height="88" class="thumbimage" srcset="SkyMega_files/450px-Skymega-download-7_Ha3k.png 1.5x, SkyMega_files/Skymega-download-7_Ha3k.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-download-7.png" class="internal" title="Aumentar"></a></div><b>Error 1</b> (<i>Click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Ejemplos_de_programaci.C3.B3n">Ejemplos de programación</span></h2>
+<h3><span class="mw-headline" id="Recursos">Recursos</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/resources/skymega/skymega.h">skymega.h</a>
+</td>
+<td> Asignación de pines y definiciones para la tarjeta Skymega. Instalar en <i>sketches/libraries/skymega</i>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="B.C3.A1sicos">Básicos</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/Basic/TestLed/TestLed.pde">TestLed.pde</a>
+</td>
+<td> Ejemplo "hola mundo". Hacer que parpadee el led de la Skymega
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/Basic/TestButton/TestButton.pde">TestButton.pde</a>
+</td>
+<td> Ejemplo de prueba del pulsador de Test de la skymega. Al apretarlo se enciende el led
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/Basic/blink_button/blink_button.pde">blink_button.pde</a>
+</td>
+<td> Hacer parpadear el led. Cuando se pulsa el botón de pruebas se incrementa la frecuencia
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Freeleds">Freeleds</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/Freeleds/Test_freeleds/Test_freeleds.pde">Test_freeleds.pde</a>
+</td>
+<td> Ejemplo de programación de la Freeleds. Se reproduce la secuencia del "coche fantástico"
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/Freeleds/Freeleds_binary/Freeleds_binary.pde">Freeleds_binary.pde</a>
+</td>
+<td> Mostrar números en la Freeleds (en binario)
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/Freeleds/Freeleds_counter/Freeleds_counter.pde">Freeleds_counter.pde</a>
+</td>
+<td> Contador binario en la Freeleds
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/Freeleds/Freeleds_manual_counter/Freeleds_manual_counter.pde">Freeleds_manual_counter.pde</a>
+</td>
+<td> Contador binario en la Freeleds, que se incrementa con cada pulsación del botón de pruebas
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Skypads">Skypads</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/Skypads/Test_skypads/Test_skypads.pde">Test_skypads.pde</a>
+</td>
+<td> Ejemplo de programación de la Skypads. El estado de los botones se envía por el puerto serie
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/Skypads/skypads_servos/skypads_servos.pde">skypads_servos.pde </a>
+</td>
+<td> Control de 4 servos utilizando la Skypads  (¡Muy adictivo!)
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Servos">Servos</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/Servos/Servo_90/Servo_90.pde">Servo_90.pde</a>
+</td>
+<td> Posicionamiento de los servos a 90 grados. Se utiliza para <b>calibrar los módulos REPY1</b>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/Servos/Servo_2pos/Servo_2pos.pde">Servo_2pos.pde</a>
+</td>
+<td> Generación de una secuencia de movimiento de 2 posiciones para los 4 servos
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/Servos/Servo_seq/Servo_seq.pde">Servo_seq.pde</a>
+</td>
+<td> Generación de secuencias de movimiento de n posiciones, para los 4 servos. Se pasa a la siguiente posición bien porque ha transcurrido un tiempo o bien porque se pulse el botón de test
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/Servos/Servo_button/Servo_button.pde">Servo_button.pde</a>
+</td>
+<td> Movimiento de los servos con el pulsador de Test. Al apretarlo se incrementa la posición de los servos. Al alcanzar los límites se cambia el sentido
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Osciladores">Osciladores</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/Oscillators/Oscillator/Oscillator.cpp">Oscillator.cpp</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/Oscillators/Oscillator/Oscillator.h">Oscillator.h</a>
+</td>
+<td> <b>Librería Oscillator</b>. Generar oscilaciones sinusoidales en los servos. <b>Copiar en sketchbook/libraries/Oscillator</b>
+</td></tr></tbody></table>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/Oscillators/Oscillator_test1/Oscillator_test1.pde">Oscillator_test1.pde</a>
+</td>
+<td> Prueba de osciladores. Ejemplo de uso (necesario <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/resources/skymega/skymega.h">skymega.h</a>)
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/Oscillators/Oscillator4/Oscillator4.pde">Oscillator4.pde</a>
+</td>
+<td> Producir oscilaciones en los servos con la misma amplitud, offset, periodo y diferencia de fase fija. Es <b>la base para generar secuencias de movimiento</b> en robots modulares (necesario <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/resources/skymega/skymega.h">skymega.h</a>)
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Robots_modulares">Robots modulares</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/modular_robot/Worm/Worm.cpp">Worm.cpp</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/modular_robot/Worm/Worm.h">Worm.h</a>
+</td>
+<td> <b>Librería Worm</b>. Locomoción de gusanos modulares (en una dimensión). <b>Copiar en sketchbook/libraries/Worm</b>
+</td></tr></tbody></table>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/modular_robot/Worm_test/Worm_test.pde">Worm_test.pde</a>
+</td>
+<td> Ejemplo de uso 1. Locomoción de un gusano de 2 módulos
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/modular_robot/Worm_wave/Worm_wave.pde">Worm_wave.pde</a>
+</td>
+<td> Ejemplo de uso 2. Locomoción de un gusano de 4 módulos usando el concepto "waves"
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/modular_robot/Worm_wave_auto/Worm_wave_auto.pde">Worm_wave_auto.pde</a> <br>
+<p><a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/modular_robot/Worm_wave_auto/aux.cpp">aux.cpp</a> <br>
+<a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/examples/modular_robot/Worm_wave_auto/aux.h">aux.h</a> <br>
+</p>
+</td>
+<td> Ejemplo de uso 3. Mismo ejemplo que Worm_wave pero el robot cambia el modo de caminar al apretar el pulsador de pruebas o bien si transcurren 10 segundos.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Programaci.C3.B3n_Avanzada">Programación Avanzada</span></h2>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=Programaci%C3%B3n_de_micros_ATMEGA_en_C" title="Programación de micros ATMEGA en C">Programación de micros ATMEGA en C</a></li></ul>
+<h2><span class="mw-headline" id="Planos">Planos</span></h2>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2; align:center">
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Icono_aviso.png" class="image"><img alt="Icono aviso.png" src="SkyMega_files/Icono_aviso_Ha3k.png" width="24" height="24"></a> Utilizar la <b>version 2011-08-04</b> o superior de <b>KICAD</b>.
+</td></tr></tbody></table>
+<ul><li> <b>Ficheros FUENTE y de fabricación</b>:</li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/skymega/v1.0/skymega-1.0-src.zip">skymega-1.0-src.zip</a>
+</td>
+<td> Ficheros <b>fuentes</b> para Kicad: Esquemas, librerias y PCB
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/skymega/v1.0/skymega-v1.0-gerber.zip">skymega-v1.0-gerber.zip</a>
+</td>
+<td> Ficheros para su <b>fabricación</b>: Gerbers y plano de taladros
+</td></tr></tbody></table>
+<p><br>
+</p>
+<ul><li> <b>Ficheros con documentación en PDF</b>:</li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/skymega/v1.0/skymega-v1.0-sch.pdf">skymega-v1.0-sch.pdf</a>
+</td>
+<td> Esquema
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/skymega/v1.0/skymega-v1.0-Back.pdf">skymega-v1.0-Back.pdf</a>
+</td>
+<td> PCB. Cara inferior
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/skymega/v1.0/skymega-v1.0-Front.pdf">skymega-v1.0-Front.pdf </a>
+</td>
+<td> PCB. Cara superior
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/skymega/v1.0/skymega-v1.0-SilkS_Front.pdf">skymega-v1.0-SilkS_Front.pdf</a>
+</td>
+<td> Serigrafías cara superior
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/skymega/v1.0/skymega-v1.0-SilkS_Back.pdf">skymega-v1.0-SilkS_Back.pdf</a>
+</td>
+<td> Serigrafías cara inferior
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/skymega/v1.0/skymega-v1.0-components-es.pdf">skymega-v1.0-components-es.pdf</a>
+</td>
+<td> Listado de componentes
+</td></tr></tbody></table>
+<ul><li> <b>Planos mecánicos</b></li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/skycube-mega/v1.0/documentation/PCB/mechanics/skymega-dimensions.pdf">skymega-dimensions.pdf</a>
+</td>
+<td> PDF con la placa acotada. Dimensiones y situación de los taladros
+</td></tr></tbody></table>
+<table class="wikitable">
+<tbody><tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-dxf-png.png" class="image" title="100px"><img alt="100px" src="SkyMega_files/Skymega-dxf-png_Ha3k.png" width="400" height="400"></a>
+</td>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-scad.png" class="image" title="100px"><img alt="100px" src="SkyMega_files/Skymega-scad_Ha3k.png" width="500" height="500"></a>
+</td>
+<td>  <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-stl.png" class="image" title="100px"><img alt="100px" src="SkyMega_files/Skymega-stl_Ha3k.png" width="529" height="530"></a>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/skymega/v1.0/skymega-v1.0.dxf">DXF</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/skymega/v1.0/skymega-v1.0-scad.zip">OpenScad</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/skymega/v1.0/skymega-v1.0.stl">STL</a>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Repositorio">Repositorio</span></h2>
+<ul><li> Repositorio SVN: <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/skycube-mega">http://svn.iearobotics.com/skycube-mega</a></li></ul>
+<h2><span class="mw-headline" id="Historia">Historia</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<ul><li> <a rel="nofollow" class="external text" href="http://fotos.iearobotics.com/index.php?album=skycube-mega">Más fotos</a>.</li></ul>
+</td></tr></tbody></table>
+<ul><li> <b>07/Dic/2011</b>: La skymega se menciona en <a rel="nofollow" class="external text" href="http://paperbits.net/post/13880890824/arduino-compatible-skymega-board-for-powering-and">este blog</a></li>
+<li> <b>02/Dic/2011</b>: 
+<ul><li> Terminada la documentación de la Skymega (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/blog/2011/12/02/tarjeta-skymega-publicada-la-documentacion-y-ejemplos/">Blog</a>)</li>
+<li> Creada <a rel="nofollow" class="external text" href="http://www.thingiverse.com/thing:14197">una página en Thingiverse</a> para compartirla con la comunidad</li></ul></li>
+<li> <b>17/Nov/2011</b>: Repartidos 40 PCBs entre los estudiantes de la UC3M para que las monten</li>
+<li> <b>03/Agosto/2011</b>: Montaje de 50 skymegas finalizado</li>
+<li> <b>20/Junio/2011</b>: Recibido el primer lote de 100 PCBs. Montadas y probadas 3 prototipos (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/blog/2011/06/21/skymega-1-0-ya-esta-aqui/">Blog</a>)</li>
+<li> <b>29/Mayo/2011</b>: Encargados 100 PCBs en pcbcart. Tardarán unas 3 semanas. Se espera recibirlos la semana del 20 de Junio</li>
+<li> <b>16/Mayo/2011</b>: Fabricados 8 PCBs prototipos en la ETSI de Telecomunicación (UPM). Montada y probada!! (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/blog/2011/05/29/pcb-prototipo-de-la-placa-skymega/">Blog</a>)</li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-prot3-1.jpg" class="image"><img alt="" src="SkyMega_files/300px-Skymega-prot3-1_Ha3k.jpg" width="300" height="225" class="thumbimage" srcset="SkyMega_files/450px-Skymega-prot3-1_Ha3k.jpg 1.5x, SkyMega_files/600px-Skymega-prot3-1_Ha3k.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-prot3-1.jpg" class="internal" title="Aumentar"></a></div>PCB de la skymega</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-prot3-2.jpg" class="image"><img alt="" src="SkyMega_files/300px-Skymega-prot3-2_Ha3k.jpg" width="300" height="225" class="thumbimage" srcset="SkyMega_files/450px-Skymega-prot3-2_Ha3k.jpg 1.5x, SkyMega_files/600px-Skymega-prot3-2_Ha3k.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-prot3-2.jpg" class="internal" title="Aumentar"></a></div>Itziar Lima y Juan Gonzalez soldando el PCB de la skymega</div></div></div>
+</td></tr></tbody></table>
+<ul><li> <b>07/Mayo/2011</b>: Cambio de nombre. La placa ha sido bautizada como <b>Skymega</b>, en vez de Skycube-mega.</li>
+<li> <b>14/Abril/2011</b>: Itziar Lima ha hecho un nuevo esquema y ha soldado un prototipo. Está validado</li></ul>
+<table>
+<tbody><tr>
+<td>  <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-prot2-1.jpg" class="image"><img alt="" src="SkyMega_files/300px-Skymega-prot2-1_Ha3k.jpg" width="300" height="225" class="thumbimage" srcset="SkyMega_files/450px-Skymega-prot2-1_Ha3k.jpg 1.5x, SkyMega_files/600px-Skymega-prot2-1_Ha3k.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-prot2-1.jpg" class="internal" title="Aumentar"></a></div>Protipo de Itziar Lima</div></div></div>
+</td>
+<td>  <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-prot2-2.jpg" class="image"><img alt="" src="SkyMega_files/300px-Skymega-prot2-2_Ha3k.jpg" width="300" height="225" class="thumbimage" srcset="SkyMega_files/450px-Skymega-prot2-2_Ha3k.jpg 1.5x, SkyMega_files/600px-Skymega-prot2-2_Ha3k.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skymega-prot2-2.jpg" class="internal" title="Aumentar"></a></div>Itziar Lima soldando el prototipo</div></div></div>
+</td></tr></tbody></table>
+<ul><li> <b>30/Mayo/2010</b>: Construido prototipo I. Probado con la locomoción de Minicube-I (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/blog/2010/05/29/primer-prototipo-de-la-tarjeta-skycube-mega-locomocion-de-minicube-i/">Blog</a>)</li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skycube-mega-prot1-2.jpg" class="image"><img alt="" src="SkyMega_files/300px-Skycube-mega-prot1-2_Ha3k.jpg" width="300" height="225" class="thumbimage" srcset="SkyMega_files/450px-Skycube-mega-prot1-2_Ha3k.jpg 1.5x, SkyMega_files/600px-Skycube-mega-prot1-2_Ha3k.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skycube-mega-prot1-2.jpg" class="internal" title="Aumentar"></a></div>Cara superior</div></div></div>
+</td>
+<td>  <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skycube-mega-prot1-3.jpg" class="image"><img alt="" src="SkyMega_files/300px-Skycube-mega-prot1-3_Ha3k.jpg" width="300" height="225" class="thumbimage" srcset="SkyMega_files/450px-Skycube-mega-prot1-3_Ha3k.jpg 1.5x, SkyMega_files/600px-Skycube-mega-prot1-3_Ha3k.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skycube-mega-prot1-3.jpg" class="internal" title="Aumentar"></a></div>Cara inferior</div></div></div>
+</td></tr>
+<tr>
+<td>  <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skycube-mega-prot1-minicube-I-1.jpg" class="image"><img alt="" src="SkyMega_files/300px-Skycube-mega-prot1-minicube-I-1_Ha3k.jpg" width="300" height="225" class="thumbimage" srcset="SkyMega_files/450px-Skycube-mega-prot1-minicube-I-1_Ha3k.jpg 1.5x, SkyMega_files/600px-Skycube-mega-prot1-minicube-I-1_Ha3k.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skycube-mega-prot1-minicube-I-1.jpg" class="internal" title="Aumentar"></a></div>Locomoción de Minicube-I</div></div></div>
+</td>
+<td>300|250&lt;/youtube&gt; <br>
+<p>Skycube-mega prototipo 1: Ejemplo de locomoción<br>
+del robot Minicube-I
+</p>
+</td></tr></tbody></table>
+<ul><li> <b>27/Mayo/2010</b>: Prototipo preliminar. Placa protoboard con un Arduino nano (<a rel="nofollow" class="external text" href="http://www.iearobotics.com/blog/2010/05/27/software-de-micro-osciladores-portado-al-atmega168-de-atmel/">Blog</a>)</li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Micro-osciladores-atmel-prot1.jpg" class="image"><img alt="" src="SkyMega_files/300px-Micro-osciladores-atmel-prot1_Ha3k.jpg" width="300" height="225" class="thumbimage" srcset="SkyMega_files/450px-Micro-osciladores-atmel-prot1_Ha3k.jpg 1.5x, SkyMega_files/600px-Micro-osciladores-atmel-prot1_Ha3k.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Micro-osciladores-atmel-prot1.jpg" class="internal" title="Aumentar"></a></div>Prototipo I: Arduino nano montado en una protoboard, haciendo oscilar un servo</div></div></div>
+</td>
+<td>300|250&lt;/youtube&gt; <br>
+<p>Prototipo preliminar: Oscilación de un módulo MY1
+</p>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Autores">Autores</span></h2>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main"> Juan González-Gómez</a></li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=Andr%C3%A9s_Prieto-Moreno" title="Andrés Prieto-Moreno">Andrés Prieto-Moreno</a></li>
+<li> Itziar Lima</li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=Ricardo_G%C3%B3mez" title="Ricardo Gómez">Ricardo Gómez</a></li></ul>
+<h2><span class="mw-headline" id="Licencia">Licencia</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <img alt="100px" src="SkyMega_files/Oshw-2_Ha3k.png" title="100px" width="184" height="171">
+</td>
+<td>
+<p><a rel="nofollow" class="external text" href="http://freedomdefined.org/OSHW">Open Source Hardware Definition v1.0</a> <br>
+<b>Hardware de Fuentes Abiertas</b> (OSHW en inglés) es aquel hardware cuyo diseño se hace disponible públicamente para que cualquier persona lo pueda estudiar, modificar, distribuir, materializar y vender, tanto el original como otros objetos basados en ese diseño. Las fuentes del hardware (entendidas como los ficheros fuente) habrán de estar disponibles en un formato apropiado para poder realizar modificaciones sobre ellas. 
+</p>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="http://www.thingiverse.com/thing:14197">La Skymega en Thingiverse</a></li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=Grabador_de_AVRs:USBtinyISP_v2.0" title="Grabador de AVRs:USBtinyISP v2.0">Grabador de AVRs:USBtinyISP v2.0</a></li>
+<li> <b>Documentación</b>: <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/2010-05-12-arduino-nano/atmega-168-datasheet.pdf">Hoja de datos del Atmel ATmega 168</a></li>
+<li> <b>Documentación</b>: <a rel="nofollow" class="external text" href="http://www.nongnu.org/avr-libc/">AVR-libc</a></li></ul>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>22/Feb/2012</b>: Añadido fichero PDF con las dimensiones de la placa y posición de los taladros</li>
+<li> <b>02/Dic/2011</b>: Añadida documentación de la placa y ejemplos de programación</li>
+<li> <b>21/Junio/2011</b>: Añadidas fotos de la versión 1.0</li>
+<li> <b>29/Mayo/2011</b>: Añadidas fotos del PCB prototipo</li>
+<li> <b>7/Mayo/2011</b>: Añadido fotos del prototipo de Itziar Lima</li>
+<li> <b>27/Mayo/2010</b>: Comenzada esta página</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20260917100705
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.088 seconds
+Real time usage: 0.102 seconds
+Preprocessor visited node count: 175/1000000
+Preprocessor generated node count: 261/1000000
+Post‐expand include size: 2800/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.500      1 - -total
+ 67.24%    1.681     14 - Plantilla:Tablabonita
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://iearobotics.com/wiki/index.php?title=SkyMega&amp;oldid=13568">https://iearobotics.com/wiki/index.php?title=SkyMega&amp;oldid=13568</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categorías</a>: <ul><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Hardware" title="Categoría:Hardware">Hardware</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Robots_modulares" title="Categoría:Robots modulares">Robots modulares</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Skymega" title="Categoría:Skymega">Skymega</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:ATMEL" title="Categoría:ATMEL">ATMEL</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://iearobotics.com/wiki/index.php?title=SkyMega" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:SkyMega&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://iearobotics.com/wiki/index.php?title=SkyMega&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://iearobotics.com/wiki/index.php?title=SkyMega&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=SkyMega" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/SkyMega" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/SkyMega" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://iearobotics.com/wiki/index.php?title=SkyMega&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://iearobotics.com/wiki/index.php?title=SkyMega&amp;oldid=13568" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://iearobotics.com/wiki/index.php?title=SkyMega&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="SkyMega_files/gnu-fdl_Ha3k.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="SkyMega_files/poweredby_mediawiki_88x31_Ha3k.png" alt="Powered by MediaWiki" srcset="SkyMega_files/poweredby_mediawiki_132x47_Ha3k.png 1.5x, SkyMega_files/poweredby_mediawiki_176x62_Ha3k.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 22 feb 2012 a las 03:23.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":172});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
