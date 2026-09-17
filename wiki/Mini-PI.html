@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Mini-PI - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Mini-PI","wgTitle":"Mini-PI","wgCurRevisionId":18476,"wgRevisionId":18476,"wgArticleId":3183,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Robots","Documentación"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Mini-PI","wgRelevantArticleId":3183,"wgRequestId":"aqu_BsHq0xq0jJjiDLfY9AAAXxA","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Mini-PI_files/load_lUYN.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="Mini-PI_files/load_lUYN.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="Mini-PI_files/load_002_lUYN.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Mini-PI rootpage-Mini-PI skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Mini-PI</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Raspberry-pi.jpg" class="image"><img alt="" src="Mini-PI_files/Raspberry-pi_lUYN.jpg" width="300" height="225" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Raspberry-pi.jpg" class="internal" title="Aumentar"></a></div>Raspberry PI</div></div></div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Raspberry-PI"><span class="tocnumber">2</span> <span class="toctext">Raspberry-PI</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Loading_the_linux_image_into_the_SDCard"><span class="tocnumber">2.1</span> <span class="toctext">Loading the linux image into the SDCard</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Connecting_the_RaspberryPI"><span class="tocnumber">2.2</span> <span class="toctext">Connecting the RaspberryPI</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#Power_Input"><span class="tocnumber">2.2.1</span> <span class="toctext">Power Input</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#First_Boot_.28Interfaces.29"><span class="tocnumber">2.2.2</span> <span class="toctext">First Boot (Interfaces)</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Later_configuration_.28Interfaces.29"><span class="tocnumber">2.2.3</span> <span class="toctext">Later configuration (Interfaces)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Connecting_Sensors"><span class="tocnumber">3</span> <span class="toctext">Connecting Sensors</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#My_assignment"><span class="tocnumber">3.1</span> <span class="toctext">My assignment</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Sensors_to_explore"><span class="tocnumber">3.2</span> <span class="toctext">Sensors to explore</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Connecting_the_Serial_Port"><span class="tocnumber">3.3</span> <span class="toctext">Connecting the Serial Port</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Other_interfaces"><span class="tocnumber">4</span> <span class="toctext">Other interfaces</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#USB_2.0_to_Ethernet_Adapter"><span class="tocnumber">4.1</span> <span class="toctext">USB 2.0 to Ethernet Adapter</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#.27WiFi_USB_Adapter"><span class="tocnumber">4.2</span> <span class="toctext">'WiFi USB Adapter</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#USB_Camera"><span class="tocnumber">4.3</span> <span class="toctext"><b>USB Camera</b></span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Console_Serial_Port_over_Bluetooth_using_a_Serial_to_Bluetooth_device."><span class="tocnumber">4.4</span> <span class="toctext"><i>Console Serial Port</i> over Bluetooth using a  <b>Serial to Bluetooth</b> device.</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#I2C_and_SPI"><span class="tocnumber">4.5</span> <span class="toctext"><b>I2C</b> and <b>SPI</b></span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#Reminders"><span class="tocnumber">5</span> <span class="toctext">Reminders</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#Design"><span class="tocnumber">6</span> <span class="toctext">Design</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="#Authors"><span class="tocnumber">7</span> <span class="toctext">Authors</span></a></li>
+<li class="toclevel-1 tocsection-21"><a href="#Links"><span class="tocnumber">8</span> <span class="toctext">Links</span></a></li>
+<li class="toclevel-1 tocsection-22"><a href="#License"><span class="tocnumber">9</span> <span class="toctext">License</span></a></li>
+<li class="toclevel-1 tocsection-23"><a href="#Greetings"><span class="tocnumber">10</span> <span class="toctext">Greetings</span></a></li>
+<li class="toclevel-1 tocsection-24"><a href="#History"><span class="tocnumber">11</span> <span class="toctext">History</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>The scope of this page is to document the <b>Mini-PI</b> robot.
+</p><p><b>Mini-PI</b> stands off: 
+</p>
+<ul><li><b>Mini</b>: The simplest robot: Miniskybot</li>
+<li><b>PI</b>: Raspberry-PI: cheapest Linux PC</li></ul>
+<p>The intend is to build a robot, very simple, using 3D printer, and  with the Raspeberry-PI as  main processor (CPU).
+</p><p>I will start writing here the steps i am following to do it. I have been so many years without building a robot, and now, i feel excited about it. During these years i have been following all <a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main"> Juan's</a> publications, and i will take advantage of all of them: 3D printers, python, Skymega, ...
+</p><p>About me:  I am living in California now, that is one of the reasons i am writing this in english, another, is  because i would like to present this in my son's <a rel="nofollow" class="external text" href="http://www.mtnview.goleta.k12.ca.us/">school</a>. They knew about my background in robotics and they would like me to present something. They have a strong team in   <a rel="nofollow" class="external text" href="http://mindstorms.lego.com/">Lego Mindstorms</a>... let's see what i can do!!
+</p>
+<h2><span class="mw-headline" id="Raspberry-PI">Raspberry-PI</span></h2>
+<p>The main webs of <i>Raspberry PI</i> are <a rel="nofollow" class="external free" href="http://www.raspberrypi.org/">http://www.raspberrypi.org</a>   and  <a rel="nofollow" class="external free" href="http://elinux.org/R-Pi_Hub">http://elinux.org/R-Pi_Hub</a>. The board was originally developed as an educational project, and has became very popular during 2012. I recommend to read this <a rel="nofollow" class="external text" href="http://www.raspberrypi.org/about">note</a> from the authors. 
+</p><p>I decided to use it because several reasons:
+</p>
+<ul><li> It is cheap</li>
+<li> It is well documented</li>
+<li> It is broadly used</li>
+<li> It has an easy hardware </li>
+<li> It has a GPIO bus with (IO, I2C, SPI, UART), and of course USB, ETH, ...</li>
+<li> Supports Debian Linux</li></ul>
+<p>So, after having used a lot of embedded kits (TI DMVA2, DM368, Hi3516, Freescale, Versalogic, DM667, ...) i found this kit really interesting for building <i>low cost robotic applications</i>. It took me a while to find the right moment to start, but once i did it, i was surprised about how fast and easy was to set up everything.
+</p><p>I bought the Raspberry-PI here:
+<a rel="nofollow" class="external free" href="http://www.alliedelec.com/images/products/mkt/pb/rasp/rasp.aspx">http://www.alliedelec.com/images/products/mkt/pb/rasp/rasp.aspx</a>
+</p><p>There are two models A and B. In my case i bought the B because i wanted it to have Ethernet on the board. Option A is not a bad idea, for example  if you want to have Wifi then,  instead of buying the model B that has the ETH, you can buy the model-A (cheaper) and a USB-Wifi-Dongle... The PN i got is: E1313RS2V13B1.0
+</p>
+<h3><span class="mw-headline" id="Loading_the_linux_image_into_the_SDCard">Loading the linux image into the SDCard</span></h3>
+<p>The first thing i did was to flash the SDcard. I followed the following links:
+</p>
+<ul><li> <a rel="nofollow" class="external free" href="http://www.raspberrypi.org/downloads">http://www.raspberrypi.org/downloads</a></li>
+<li> <a rel="nofollow" class="external free" href="http://downloads.raspberrypi.org/download.php?file=/images/raspbian/2013-02-09-wheezy-raspbian/2013-02-09-wheezy-raspbian.zip">http://downloads.raspberrypi.org/download.php?file=/images/raspbian/2013-02-09-wheezy-raspbian/2013-02-09-wheezy-raspbian.zip</a></li>
+<li> <a rel="nofollow" class="external free" href="http://elinux.org/RPi_Easy_SD_Card_Setup">http://elinux.org/RPi_Easy_SD_Card_Setup</a></li></ul>
+<p>In my case i have used <b>Whezzy</b> (Debian stable release by My,2013) as the distribution (the recommended for beginners), and i followed the instructions for MacOS users, and since i am a little bit old i decided to use the command line option. I didn't try the graphical tools, but i am pretty sure that they work and are as easy as the command line method. Once i got the SDcard flashed i put it in the raspberry-PI (model B) and it booted without any problem. 
+</p><p>These are the instructions from <a rel="nofollow" class="external text" href="http://elinux.org/RPi_Easy_SD_Card_Setup">Raspberry (Using command line tools (2)</a>
+</p>
+<pre><b>Note</b>: Some users have <a rel="nofollow" class="external text" href="http://www.raspberrypi.org/phpBB3/search.php?keywords=extra+files&amp;t=8226&amp;sf=msgonly">reported issues</a> with using Mac&nbsp;OS&nbsp;X to create SD cards.  
+#These commands and actions need to be performed from an account that has administrator privileges.
+# Download the image from a mirror or torrent
+#* <a rel="nofollow" class="external free" href="http://www.raspberrypi.org/downloads">http://www.raspberrypi.org/downloads</a>
+# Verify if the the hash key is the same (optional), in the terminal run: 
+#* <b>shasum ~/Downloads/2012-12-16-wheezy-raspbian.zip</b>
+# Extract the image:
+#* <b>unzip ~/Downloads/2012-12-16-wheezy-raspbian.zip</b>
+#* <i>(or: just double click the zip, it will extract automatically)</i>
+# From the terminal run <b>df -h</b>
+# Connect the SD card reader with the SD card inside
+# Run <b>df -h</b> again and look for the new device that wasn't listed last time. Record the device name of the filesystem's partition, for example, <b>/dev/disk3s1</b>
+# Unmount the partition so that you will be allowed to overwrite the disk:
+#* <b>sudo diskutil unmount /dev/disk3s1</b>
+#* <i>(or: open Disk Utility and unmount the partition of the SD card (do not eject it, or you have to reconnect it)</i>
+# Using the device name of the partition work out the raw device name for the entire disk, by omitting the final "s1" and replacing "disk" with "rdisk" 
+(<b>this is very important:</b> you <b>will</b> lose all data on the hard drive on your computer if you get the wrong device name). Make sure the device name
+ is the name of the whole SD card as described above, not just a partition of it (for example, rdisk3, not rdisk3s1. Similarly you might have another 
+SD drive name/number like rdisk2 or rdisk4, etc. -- recheck by using the <b>df -h</b> command both before &amp; after you insert your SD card reader into 
+your Mac if you have any doubts!):
+#* For example, <b>/dev/disk3s1</b> =&gt; <b>/dev/rdisk3</b>
+# In the terminal write the image to the card with this command, using the raw disk device name from above (read <b>carefully</b> the above step, to be sure you use the correct rdisk# here!):
+#* <b>sudo dd bs=1m if=~/Downloads/2012-10-28-wheezy-raspbian/2012-12-16-wheezy-raspbian.img of=/dev/rdisk3</b>
+#* if the above command report an error(dd: bs: illegal numeric value), please change bs=1M to bs=1m
+#* (note that dd will not feedback any information until there is an error or it is finished, information will show and disk will re-mount when complete. However if you are curious as to the 
+progresss - ctrl-T (SIGINFO, the status argument of your tty) will display some en-route statistics).
+# After the dd command finishes, eject the card:
+#* <b>sudo diskutil eject /dev/rdisk3</b> 
+#* <i>(or: open Disk Utility and eject the SD card)</i>
+# Insert it in the Raspberry Pi, and have fun
+</pre>
+<p><br>
+The first think i saw was the <b>raspi-config</b> tool. The first time i didn't change anything, but once i finish investigating the X-options, i decided to turn off the X-Windows. I am going to run console programs and i will use ssh to connect with the raspberry-PI. In other words, there is no need to have it running now.
+</p>
+<h3><span class="mw-headline" id="Connecting_the_RaspberryPI">Connecting the RaspberryPI</span></h3>
+<h4><span class="mw-headline" id="Power_Input">Power Input</span></h4>
+<p>Raspberry PI (model B) works with 5VDC / 700mA. There are two ways to powering the board:
+</p>
+<ul><li> Using the power in <i>micro-usb</i> connector, or</li>
+<li> Using the GPIO Bus (P1). Pins2 and 4 are directly  connected to the +5VDC line.</li></ul>
+<p>It has some protections in the main power line to prevent damages, but, since the 5VDC is also used in the HDMI, USB, etc... by adding a different voltage than 5VDC you never know if something else will break. That is why the recommendation is to stay with 5DV.  
+</p><p><br>
+The power input connector is a micro-usb connector. For me this is not the best in robotics, however, it is very common in computer, mobiles, that makes not difficult to find  a power kit. And the design has been well thought and they still offer the GPIO as a solution, so i am glad to see that they thought in this as well. We will use the GPIO power input later in our robot, but now, let's use the simplest:
+</p><p>I am using the typical micro-usb to usb cable, and the Mean Well (GS05U-USB) Power supply. It has these capabilities:
+</p>
+<ul><li> Input: 100-240VAC, 50/60Hz, 0.15A</li>
+<li> Output: 5VDC,  1A, 5.0 W MAX</li></ul>
+<p>These ratings are quite standard, for example iPhone, Samsung Galaxy use the same.
+</p>
+<h4><span class="mw-headline" id="First_Boot_.28Interfaces.29">First Boot (Interfaces)</span></h4>
+<p>When booting it for the first time, I recommend to use a
+</p>
+<ul><li> USB-Mouse</li>
+<li> USB-Keyboard</li>
+<li> HDMI output (If you don't an HDMI input in your TV/Monitor you can use the old RCA, however it doesn't give you the best) </li>
+<li> Standard power supply that has 5VDC and 1A.</li></ul>
+<p>(Default login: Username: pi ,  Password: raspberry)
+</p><p>It will give you a mini PC, your keyboard, graphical interface, mouse. You can play and learn about it.
+For example, try to connect and Ethernet cable, discover the IP, do an SSH from another PC
+Basically, become familiar with it. As authors said: Have Fun!!!
+</p>
+<h4><span class="mw-headline" id="Later_configuration_.28Interfaces.29">Later configuration (Interfaces)</span></h4>
+<p>Mini-PI robot is not going to use the graphical interface, so even if it doesn't take too long to boot, i decided to disable it. I ran the <b>rasp-config</b> as sudo and in boot options i seleceted "Disable graphical interface'. Then i disconnected all the cables, because from now on, i am accessing the system using SSH. The idea is not even use the Ethernet, i will add a Bluetooth module in the serial port, or another USB-Wifi to make it <i>Wireless</i>. We will see this later on this article.
+</p>
+<h2><span class="mw-headline" id="Connecting_Sensors">Connecting Sensors</span></h2>
+<p>Well, now that i have the CPU up and running, i am going to start adding the sensors and motors.<br>
+Before starting, let's go to take a look to the RPI's <a rel="nofollow" class="external text" href="http://elinux.org/RPi_Low-level_peripherals">hardware</a>.
+</p><p>The most important note from creator is the following:
+</p>
+<table class="wikitable">
+<tbody><tr>
+<td>
+<p>The GPIO (general purpose I/O) signals on the 2x13 header pins include SPI, I2C, serial UART, 3V3 and 5V power. These interfaces are not "plug and play" and require care to avoid miswiring. <b>The pins use a 3V3 logic level and are not tolerant of 5V levels</b>, such as you might find on a 5V powered Arduino.
+</p>
+</td></tr></tbody></table>
+<p><b>P1 Header Pinout</b>  <a rel="nofollow" class="external text" href="http://elinux.org/RPi_Low-level_peripherals">This a copy from RPI information</a>
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:GPIOs.png" class="image"><img alt="GPIOs.png" src="Mini-PI_files/GPIOs_lUYN.png" width="254" height="581"></a>
+<p>P1  Top View description
+</p>
+</td>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:RPi_P1_header.png" class="image"><img alt="RPi P1 header.png" src="Mini-PI_files/RPi_P1_header_lUYN.png" width="450" height="167"></a>
+<p>P1  Top View Layout
+</p>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="My_assignment">My assignment</span></h3>
+<ul><li> <b>Serial Port</b></li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> RPi P1 </td>
+<td> Signal </td>
+<td> BCM pin
+</td></tr>
+<tr>
+<td> pin6 </td>
+<td>  GND </td>
+<td>
+</td></tr>
+<tr>
+<td> pin 8 </td>
+<td> TXD </td>
+<td> GPIO14
+</td></tr>
+<tr>
+<td> pin 10 </td>
+<td>  RXD </td>
+<td> GPIO15
+</td></tr></tbody></table>
+<p><br>
+</p>
+<ul><li> <b>SPI</b></li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> RPi P1 </td>
+<td> Signal </td>
+<td> BCM pin
+</td></tr>
+<tr>
+<td> pin19 </td>
+<td>  MOSI </td>
+<td> GPIO10
+</td></tr>
+<tr>
+<td> pin 21 </td>
+<td> MISO </td>
+<td> GPIO9
+</td></tr>
+<tr>
+<td> pin 23 </td>
+<td>  SCLK </td>
+<td> GPIO11
+</td></tr>
+<tr>
+<td> pin 24 </td>
+<td>  CE0 </td>
+<td> GPIO8
+</td></tr>
+<tr>
+<td> pin 25 </td>
+<td> GND </td>
+<td>
+</td></tr>
+<tr>
+<td> pin 26 </td>
+<td>  CE1 </td>
+<td> GPIO7
+</td></tr></tbody></table>
+<p><br>
+</p>
+<ul><li> <b>I2C</b></li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> RPi P1 </td>
+<td> Signal </td>
+<td> BCM pin
+</td></tr>
+<tr>
+<td> pin 3 </td>
+<td> SDA </td>
+<td> GPIO0
+</td></tr>
+<tr>
+<td> pin 5 </td>
+<td> SCL </td>
+<td> GPIO1
+</td></tr>
+<tr>
+<td> pin 9 </td>
+<td>  GND </td>
+<td>
+</td></tr></tbody></table>
+<p><br>
+</p>
+<ul><li> <b>8 bits port</b></li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> RPi P1 </td>
+<td> Signal </td>
+<td> BCM pin
+</td></tr>
+<tr>
+<td> pin 11 </td>
+<td> IO 0 </td>
+<td> GPIO17
+</td></tr>
+<tr>
+<td> pin 12 </td>
+<td> IO 1 </td>
+<td> GPIO18
+</td></tr>
+<tr>
+<td> pin 13 </td>
+<td> IO 2 </td>
+<td> GPIO21
+</td></tr>
+<tr>
+<td> pin 15 </td>
+<td> IO 3 </td>
+<td> GPIO22
+</td></tr>
+<tr>
+<td> pin 16 </td>
+<td> IO 4 </td>
+<td>  GPIO23
+</td></tr>
+<tr>
+<td> pin 18 </td>
+<td> IO 5 </td>
+<td> GPIO24
+</td></tr>
+<tr>
+<td> pin 22 </td>
+<td> IO 6 </td>
+<td> GPIO25
+</td></tr>
+<tr>
+<td> pin 7 </td>
+<td> IO 7 </td>
+<td> GPIO4
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Sensors_to_explore">Sensors to explore</span></h3>
+<ul><li> Done: Ultrasonic (I2C)</li>
+<li> Not available&nbsp;: Inclinometer (Analog)</li>
+<li> Done: Compas (I2C)</li></ul>
+<p>Motors
+</p>
+<ul><li> Futaba S3003</li>
+<li> Robbe</li>
+<li> Hittec</li></ul>
+<p>Output
+</p>
+<ul><li> Done: Display: 2C, 16*4 lines</li>
+<li> Done&nbsp;: <a rel="nofollow" class="external text" href="http://openmicros.org/index.php/articles/94-ciseco-product-documentation/raspberry-pi/217-getting-started-with-raspberry-pi-gpio-and-python#2">LED</a></li>
+<li> Done&nbsp;: Relay</li>
+<li> Done&nbsp;: TTL3v3 to Bluetooth link.</li></ul>
+<p>Input
+</p>
+<ul><li> Done&nbsp;: Switch</li></ul>
+<p>Almost all these sensors and actuators can be connected directly to the Raspberry-Pi, however, since it has an I2C bus, i want to explore connecting the Skymega as well. By doing this, i could have some others sensors connected using the A/D, and i could take advantage of using a micro for some tasks. It is too early to make decisions, now is time to explore everything.
+</p>
+<h3><span class="mw-headline" id="Connecting_the_Serial_Port">Connecting the Serial Port</span></h3>
+<p>I was looking into all my old robotic's stuff from Spain and i found this cable:
+</p>
+<ul><li> FTDI: TTL-232R-3V3 (USB cable with 6 way 0.1" pitch single inline connector with +3.3V signaling).  <a rel="nofollow" class="external text" href="http://www.ftdichip.com/Support/Documents/DataSheets/Cables/DS_TTL-232R_CABLES.pdf">Datasheet</a></li></ul>
+<p>The cable comes with a 6 pins connector (GND, CTS, VCC, TXD, RXD, RTS), but i only need three of them (GND, TXD, RXD) so i will put my own connector with only three wires. See the table below, to see <i>my final pin out</i> assignment.
+</p>
+<table border="1" style="text-align:center;">
+<tbody><tr>
+<td bgcolor="yellow"> <b>RPI P1 Pin Number</b> </td>
+<td bgcolor="yellow">  <b>Description</b> </td>
+<td bgcolor="orange"> <b>FTDI Pin Number</b> </td>
+<td bgcolor="orange"> <b> Description</b> </td>
+<td bgcolor="lime"> <b>My 3wires connector</b> </td>
+<td bgcolor="lime"> <b>Description</b> </td>
+<td>  <b>Notes</b>
+</td></tr>
+<tr>
+<td bgcolor="yellow"> P1-06  </td>
+<td bgcolor="yellow"> GND </td>
+<td bgcolor="orange"> Pin1 (Black) </td>
+<td bgcolor="orange"> GND </td>
+<td bgcolor="lime"> Pin 1 (Black) </td>
+<td bgcolor="lime"> GND
+</td></tr>
+<tr>
+<td bgcolor="yellow"> P1-08 </td>
+<td bgcolor="yellow"> TXD  </td>
+<td bgcolor="orange"> Pin 5 (Yellow) </td>
+<td bgcolor="orange"> RXD </td>
+<td bgcolor="lime"> Pin 2 (Yellow) </td>
+<td bgcolor="lime"> RXD </td>
+<td> TTL 3.3v signal
+</td></tr>
+<tr>
+<td bgcolor="yellow"> P1-10 </td>
+<td bgcolor="yellow"> RXD  </td>
+<td bgcolor="orange"> Pin 4 (Orange) </td>
+<td bgcolor="orange"> TXD </td>
+<td bgcolor="lime"> Pin 3 (Orange) </td>
+<td bgcolor="lime"> TXD </td>
+<td> TTL 3.3v signal
+</td></tr></tbody></table>
+<p><br>
+So, now the only thing we need is to modify the connector and connect it to P1 to see what happens...
+</p><p>Ok, that was easy. I connected the FTDI USB into my computer (I am using a MAC today)  and the serial port was attached to <i>/de/cu.usbserial-FTF5YQGL</i>, i configured to use my minicom in that port (115200,8n1) and i got the connection up &amp; running.
+By default the serial goes to <i>ttyS0</i> in the Raspberry-PI, that means that we will see the booting from linux, access to the console, etc... It is a good option for "recovery" but i prefer to have it free as another port for my robots. I mean, instead of being used by linux, being use by custom applications.
+</p><p>To disable the <i>console</i> functionality in the serial port you need to do two things:
+</p>
+<ul><li> Edit the <b>/etc/inittab</b>  and comment <b>T0:23:respawn:/sbin/getty -L ttyAMA0 115200 vt100</b></li>
+<li> Edit the  <b>/boot/cmdline.txt</b> and remove the serial port from boot: <b>dwc_otg.lpm_enable=0</b> <i>console=ttyAMA0,115200 kgdboc=ttyAMA0,115200</i> <b>console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline rootwait</b>. Remove the cursive section.</li>
+<li> reboot</li></ul>
+<p>You can find more information in: <a rel="nofollow" class="external free" href="http://www.hobbytronics.co.uk/raspberry-pi-serial-port">http://www.hobbytronics.co.uk/raspberry-pi-serial-port</a><br>
+More information about Serial Port in:  <a rel="nofollow" class="external free" href="http://elinux.org/RPi_Serial_Connection">http://elinux.org/RPi_Serial_Connection</a>
+</p>
+<h2><span class="mw-headline" id="Other_interfaces">Other interfaces</span></h2>
+<p>A part of using P1 to connect sensors, I am exploring what else can i connect using the USBs.
+The Linux Kernel is supporting almost all the standard devices: Mouse, Keyboard, USB_Memories,...
+But, i have also tried:
+</p>
+<h3><span class="mw-headline" id="USB_2.0_to_Ethernet_Adapter">USB 2.0 to Ethernet Adapter</span></h3>
+<p>With this module i am able to have two ethernets up and running. They go through USB, both of them, so the speed is limited to 100bt.
+I have used the following module: Rocketfish Model RF-PPC132
+</p>
+<h3><span class="mw-headline" id=".27WiFi_USB_Adapter">'WiFi USB Adapter</span></h3>
+<p>ModelBelkin N150
+I just connected to the USB and it the new interface appeared in the ifconfig under wlan0.
+The module was detected by the kernel and i just needed to configure the wireless network.
+</p><p><b>sudo vi /etc/wpa_supplicant/wpa_supplicant.conf</b>
+</p>
+<pre>network={
+ssid="YOUR SSID" 
+proto=RSN
+key_mgmt=WPA-PSK
+pairwise=CCMP TKIP
+group=CCMP TKIP
+psk="YOUR WIFI-PASSWORD"
+}
+</pre>
+<p>And then i reboot the system... and that's it. 
+</p><p>By default the Raspberry uses DHCP, but you can also configure the WiFi interface as Static:
+</p><p><b>sudo vi /etc/network/interfaces</b>
+</p>
+<pre>allow-hotplug wlan0
+auto wlan0 
+iface wlan0 inet manual
+address 192.168.1.100
+netmask 255.255.255.0
+gateway 192.168.1.1
+wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+</pre>
+<h3><span class="mw-headline" id="USB_Camera"><b>USB Camera</b></span></h3>
+<p>I bought a couple of  <i>PS2 Eye Cameras</i> in the pre-owned market. The reason was because i read that they are well supported by the kernel and there is no need to deal with linux driver.
+Then I installed <b>GStreamer</b> and started playing with it.<br>
+<b>Important: All these examples are based on GStreamer 0.1</b> which is deprecated but is what it is included in <b>Whezzy</b>. Later on i will move to 1.0.
+</p>
+<table class="wikitable">
+<tbody><tr>
+<td>
+<p>sudo apt-get upgrade<br>
+sudo apt-get update<br>
+sudo apt-get install gstreamer-tools gstreamer0.10-plugins-bad gstreamer0.10-plugins-good v4l-utils
+</p>
+</td></tr></tbody></table>
+<p>Right now i have only used the <i>gst-launcher</i>, i haven't built my own application (in C) yet. However, with the get-launcher for some of the applications is enough.<br>
+(In these tests i have my HDMI output connected to a monitor, i am not booting to X, i just boot to Console mode)
+</p>
+<ul><li> Capture and display video</li></ul>
+<table class="wikitable">
+<tbody><tr>
+<td>
+<p>gst-launch-0.10 v4l2src device=/dev/video0&nbsp;! video/x-raw-yuv,width=320,height=240,framerate=30/1&nbsp;! ffmpegcolorspace&nbsp;! autovideosink
+</p>
+</td></tr></tbody></table>
+<ul><li> Capture and display video with Overlay </li></ul>
+<table class="wikitable">
+<tbody><tr>
+<td>
+<p>gst-launch-0.10 v4l2src device=/dev/video0&nbsp;! video/x-raw-yuv,width=640,height=480,framerate=30/1&nbsp;! timeoverlay halign=left valign=bottom text="Stream time:" shaded-background=true&nbsp;! ffmpegcolorspace&nbsp;! autovideosink
+</p>
+</td></tr></tbody></table>
+<ul><li> Record JPEG video to foo.jpg file</li></ul>
+<table class="wikitable">
+<tbody><tr>
+<td>
+<p>gst-launch-0.10 v4l2src&nbsp;! video/x-raw-yuv,width=320,height=240,framerate=30/1&nbsp;! ffmpegcolorspace&nbsp;! jpegenc&nbsp;! multipartmux&nbsp;! filesink location=foo.jpg
+</p>
+</td></tr></tbody></table>
+<ul><li> Play recorded video</li></ul>
+<table class="wikitable">
+<tbody><tr>
+<td>
+<p>gst-launch-0.10 filesrc location=foo.jpg&nbsp;! multipartdemux&nbsp;! jpegdec&nbsp;! ffmpegcolorspace&nbsp;! autovideosink
+</p>
+</td></tr></tbody></table>
+<ul><li> Take a snapshot</li></ul>
+<table class="wikitable">
+<tbody><tr>
+<td>
+<p>gst-launch-0.10 v4l2src&nbsp;! video/x-raw-yuv,width=320,height=240,framerate=30/1&nbsp;! ffmpegcolorspace&nbsp;! pngenc&nbsp;! filesink location=foo.png
+</p>
+</td></tr></tbody></table>
+<ul><li> Stream H264 video </li></ul>
+<p>I still need to improve performance... not good in the client side. Now looking to upgrade to gstreamer 1.0 and using HW acceleration.
+</p>
+<table class="wikitable">
+<tbody><tr>
+<td>
+<p>gst-launch-0.10 \
+v4l2src&nbsp;!\
+video/x-raw-yuv,width=320,height=240,framerate=30/1&nbsp;!\
+ffmpegcolorspace&nbsp;!\
+x264enc bitrate=1024&nbsp;!\
+rtph264pay config-interval=1 pt=96&nbsp;!\
+gdppay&nbsp;!\
+tcpserversink host=192.168.1.127 port=5000 sync=false
+</p>
+</td></tr></tbody></table>
+<p>The good thing about the Pi is that there are hundreds of docs about projects that help a lot. In this case i used:
+</p>
+<ul><li> From <a rel="nofollow" class="external text" href="http://www.geekytheory.com/acerca-de/">Mario Perez</a> this post: <a rel="nofollow" class="external free" href="http://www.geekytheory.com/tutorial-raspberry-pi-3-eye-toy-camera-ps2-motion-system/">http://www.geekytheory.com/tutorial-raspberry-pi-3-eye-toy-camera-ps2-motion-system/</a></li></ul>
+<p>I have also tried with the <b>mpeg-streamer</b>. It is more or less same approach than GStreamer (conecting blocks) but is less powerful. However, the application is really nice, it comes with an embedded app that listens to Port XXX and offers a web page to manage your video coming from the camera. You can get access to that video from any mobile device. The good thing is that the CPU usage is much lower than streaming H264, and it works quite well. Until i improve the gstreamer this is what i use to stream video to mobile devices.
+</p>
+<h3><span class="mw-headline" id="Console_Serial_Port_over_Bluetooth_using_a_Serial_to_Bluetooth_device."><i>Console Serial Port</i> over Bluetooth using a  <b>Serial to Bluetooth</b> device.</span></h3>
+<p>In this page  <a rel="nofollow" class="external free" href="http://blog.miguelgrinberg.com/post/a-cheap-bluetooth-serial-port-for-your-raspberry-pi">http://blog.miguelgrinberg.com/post/a-cheap-bluetooth-serial-port-for-your-raspberry-pi</a> from <i>Miguel Grinberg</i> you can find an excellent description of how to interface the module. I was so lucky because i had that module and this link makes the integration very simple.
+</p>
+<h3><span class="mw-headline" id="I2C_and_SPI"><b>I2C</b> and <b>SPI</b></span></h3>
+<p>I removed both of them from the modules <i>blacklist</i> (/etc/modprobe.d/raspi-blacklist.conf)<br>
+i rebooted the RPi<br>
+sudo modprobe i2c-dev<br>
+sudo modprobe spidev<br>
+</p>
+<pre>i2c-0, ice-1, spidev0.0 and spidev0.1 are now present in /dev <br>
+</pre>
+<p>To have these modules installed at boot time go to <b>/etc/modules</b> and add:
+root@raspberrypi:~# vi /etc/modules 
+</p>
+<pre># /etc/modules: kernel modules to load at boot time.
+#
+# This file contains the names of kernel modules that should be loaded
+# at boot time, one per line. Lines beginning with "#" are ignored.
+# Parameters can be specified after the module name.
+
+snd-bcm2835
+i2c-dev
+spidev
+</pre>
+<p><br>
+Now that we have the drivers and devices lets go to the SW examples. First of all we will install some tools and python modules:
+</p>
+<ul><li>  i2c-tools (<i>sudo apt-get install i2c-tools</i>) and now i am able to run <b>i2cdetect -y 1</b> to find the i2c devices that are connected. The Raspberry Pi designers swapped over I2C ports between board releases. Just remember: 512M Pi's use i2c port 1, 256M ones use i2c port 0. In both cases they are accessable through P1 connector </li>
+<li> apt-get install python-smbus</li></ul>
+<p><b>Level shifter for the I2C</b>: Almost all my devices are 5v so i am using this <a rel="nofollow" class="external text" href="http://lightake.com/detail.do/sku.5_3V_System_IIC_I2C_Level_Converter_Module_for_Sensor___Blue-62966">module</a> to convert form RPi 3v3 to a 5v I2C bus.
+</p>
+<ul><li> AVCC connect to 5V system power</li>
+<li> ASCL connect to 5V system SCL</li>
+<li> ASDA connect to 5V system SDA</li>
+<li> AGND connect to 5V system GND</li>
+<li> BVCC connect to 3V system power</li>
+<li> BSCL connect to 3V system SCL</li>
+<li> BSDA connect to 3V systems SDA</li>
+<li> BGND connect to 3V system GND</li></ul>
+<p>Interesting article about Low Level programming:
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="http://www.pieter-jan.com/node/15">Low level I2C and GPIO</a></li></ul>
+<h2><span class="mw-headline" id="Reminders">Reminders</span></h2>
+<ul><li> lsusb&nbsp;: List the USB devices attached to your system</li>
+<li> modprobe i2c-dev&nbsp;: to load the i2c driver</li>
+<li> modprobe spidev&nbsp;: to load the spidev driver</li></ul>
+<h2><span class="mw-headline" id="Design">Design</span></h2>
+<ul><li> Raspberry PI Hardware main page: <a rel="nofollow" class="external free" href="http://elinux.org/RPi_Hardware">http://elinux.org/RPi_Hardware</a></li>
+<li> Raspberry PI <b>schematic</b>: <a rel="nofollow" class="external free" href="http://www.raspberrypi.org/wp-content/uploads/2012/10/Raspberry-Pi-R2.0-Schematics-Issue2.2_027.pdf">http://www.raspberrypi.org/wp-content/uploads/2012/10/Raspberry-Pi-R2.0-Schematics-Issue2.2_027.pdf</a></li></ul>
+<h2><span class="mw-headline" id="Authors">Authors</span></h2>
+<ul><li><a href="https://iearobotics.com/wiki/index.php?title=Andr%C3%A9s_Prieto-Moreno" title="Andrés Prieto-Moreno">Andrés Prieto-Moreno</a></li></ul>
+<h2><span class="mw-headline" id="Links">Links</span></h2>
+<ul><li> Raspberry.org: <a rel="nofollow" class="external free" href="http://www.raspberrypi.org/">http://www.raspberrypi.org</a></li>
+<li> Raspberry PI documentation: <a rel="nofollow" class="external free" href="http://elinux.org/R-Pi_Hub">http://elinux.org/R-Pi_Hub</a></li>
+<li> Raspberry PI Low level peripherals (GPIO, I2C, ...): <a rel="nofollow" class="external free" href="http://elinux.org/RPi_Low-level_peripherals">http://elinux.org/RPi_Low-level_peripherals</a></li>
+<li> Raspberry PI Serial Port: <a rel="nofollow" class="external free" href="http://elinux.org/RPi_Serial_Connection">http://elinux.org/RPi_Serial_Connection</a></li></ul>
+<h2><span class="mw-headline" id="License">License</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cc_logo.png" class="image"><img alt="Cc logo.png" src="Mini-PI_files/Cc_logo_lUYN.png" width="88" height="31"></a> This work is licensed under a <a rel="nofollow" class="external text" href="http://creativecommons.org/licenses/by-sa/2.5/es/">Creative Commons Attribution-ShareAlike 2.5 Spain License</a>.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Greetings">Greetings</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="http://elinux.org/R-Pi_Hub">Raspberry PI community</a>. A lot of information comes from them. My congratulations because it is one of the best documentation i have ever read. </li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main"> Juan Gonzalez</a>: I don't need to present him to you, most of the articles of this page has been written by him. He is a good friend of mine and i learn everyday from him and his ideas.</li></ul>
+<h2><span class="mw-headline" id="History">History</span></h2>
+<ul><li> <b>11/Mayo/2013</b>: Creation of the page</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20260917102054
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.028 seconds
+Real time usage: 0.033 seconds
+Preprocessor visited node count: 115/1000000
+Preprocessor generated node count: 161/1000000
+Post‐expand include size: 1200/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.095      1 - -total
+ 80.71%    1.691      6 - Plantilla:Tablabonita
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://iearobotics.com/wiki/index.php?title=Mini-PI&amp;oldid=18476">https://iearobotics.com/wiki/index.php?title=Mini-PI&amp;oldid=18476</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categorías</a>: <ul><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Robots" title="Categoría:Robots">Robots</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Documentaci%C3%B3n" title="Categoría:Documentación">Documentación</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://iearobotics.com/wiki/index.php?title=Mini-PI" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Mini-PI&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://iearobotics.com/wiki/index.php?title=Mini-PI&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://iearobotics.com/wiki/index.php?title=Mini-PI&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Mini-PI" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Mini-PI" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Mini-PI" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://iearobotics.com/wiki/index.php?title=Mini-PI&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://iearobotics.com/wiki/index.php?title=Mini-PI&amp;oldid=18476" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://iearobotics.com/wiki/index.php?title=Mini-PI&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Mini-PI_files/gnu-fdl_lUYN.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="Mini-PI_files/poweredby_mediawiki_88x31_lUYN.png" alt="Powered by MediaWiki" srcset="Mini-PI_files/poweredby_mediawiki_132x47_lUYN.png 1.5x, Mini-PI_files/poweredby_mediawiki_176x62_lUYN.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 1 dic 2013 a las 02:16.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":106});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
