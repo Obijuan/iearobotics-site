@@ -130,7 +130,7 @@ La estructura se ha hecho ampliable en el número de motores, puede llevar hasta
 </p>
 <h2><span class="mw-headline" id="Hardware_.28POR_ESCRIBIR.29">Hardware (POR ESCRIBIR)</span></h2>
 <p>La tarjeta de control del robot es la 
-	<a href="https://iearobotics.com/wiki/index.php?title=SkyControl" title="SkyControl">SkyControl</a> cuyas principales características son:
+	<a href="SkyControl.html" title="SkyControl">SkyControl</a> cuyas principales características son:
 </p>
 <ul><li> PIC16f876A</li>
 <li> Conexión por USB</li>
@@ -140,14 +140,23 @@ La estructura se ha hecho ampliable en el número de motores, puede llevar hasta
 <p><br>
 </p><p><b>Configuración de los jumpers</b>:<br>
 </p>
-<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=SkyControl:Hardware#Jumpers_de_configuraci.C3.B3n" title="SkyControl:Hardware">Tabla de configuración de los jumpers de la placa SkyControl</a></li></ul>
+<ul><li> <a href="SkyControl_Hardware.html#Jumpers_de_configuraci.C3.B3n" title="SkyControl:Hardware">
+	Tabla de configuración de los jumpers de la placa SkyControl</a></li></ul>
 <p><b>Enlaces directos</b>:<br>
 </p>
-<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=SkyControl:Planos" title="SkyControl:Planos">Planos de fabricación de la placa SkyControl</a><br></li></ul>
+<ul><li> <a href="SkyControl_Planos.html" title="SkyControl:Planos">
+	Planos de fabricación de la placa SkyControl</a><br></li></ul>
 <h2><span class="mw-headline" id="Firmware_.28Servidor.29">Firmware (Servidor)</span></h2>
-<p>El Firmware es el software que está grabado en el PIC16F876A. Dado que la electrónica es compatible con la del <a href="https://iearobotics.com/wiki/index.php?title=Skybot" title="Skybot">Skybot</a>,  todos los programas de éste serán válidos para el Flatbot, pero no tendrá sentido usarlos debido a que su cometido es distinto y además a que le faltan los sensores que tiene el <a href="https://iearobotics.com/wiki/index.php?title=Skybot" title="Skybot">Skybot</a>,  por lo que no podrá realizar todas las funciones.<br>
-En el <a href="https://iearobotics.com/wiki/index.php?title=Skybot" title="Skybot">Skybot</a>  se graban programas que hacen que se comporte de forma autónoma, como por ejemplo seguir una línea negra, evitar obstáculos con los bumpers, etc. Ahora, se busca otro tipo de aplicación, se necesita un programa que disponga de servicios que permitan controlar al robot, pero la inteligencia no residirá en él, como con el Skybot, sino que se hará en un PC externo.<br>
-Es lo que llamamos programación CLIENTE-SERVIDOR, una aplicación (<i>servidor</i>) ofrece servicios a otra (<i>cliente</i>) que los usa para lograr un objetivo.<br>
+<p>El Firmware es el software que está grabado en el PIC16F876A. Dado que la electrónica es compatible con la del 
+	<a href="Skybot.html" title="Skybot">Skybot</a>,  todos los programas de éste serán válidos para el Flatbot, 
+	pero no tendrá sentido usarlos debido a que su cometido es distinto y además a que le faltan los sensores 
+	que tiene el <a href="Skybot.html" title="Skybot">Skybot</a>,  por lo que no podrá realizar todas las funciones.<br>
+En el <a href="Skybot.html" title="Skybot">Skybot</a>  se graban programas que hacen que se comporte de forma autónoma, 
+como por ejemplo seguir una línea negra, evitar obstáculos con los bumpers, etc. 
+Ahora, se busca otro tipo de aplicación, se necesita un programa que disponga de servicios que permitan controlar al robot, 
+pero la inteligencia no residirá en él, como con el Skybot, sino que se hará en un PC externo.<br>
+Es lo que llamamos programación CLIENTE-SERVIDOR, una aplicación (<i>servidor</i>) ofrece servicios a otra (<i>cliente</i>) 
+que los usa para lograr un objetivo.<br>
 <br>
 A continuación detallamos algunos de los servidores realizados:<br>
 </p><p><br>
