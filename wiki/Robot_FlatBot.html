@@ -242,7 +242,7 @@ sci_menu.c</a> que implementa el servidor básico.<br>
 <h2><span class="mw-headline" id="Software_PC_.28Cliente.29">Software PC (Cliente)</span></h2>
 <p>El cliente es un programa que se ejecuta en el PC que está encima de Flatbot y que se comunica con el servidor (firmware) por el puerto serie. Este software estará programado en C/C++, python, C#, JAVA, Visual Basic o incluso podrá ser una aplicación de terceros. <br>
 Este aspecto es uno de los diferenciadores del Flatbot respecto al 
-<a href="https://iearobotics.com/wiki/index.php?title=Skybot" title="Skybot">Skybot</a>,
+<a href="Skybot.html" title="Skybot">Skybot</a>,
   ya que al poder transportar el PC sobre él podremos hacer programas complejos que necesiten 
   gran capacidad de proceso y que hasta ahora no era posible hacerlos funcionar en el propio robot. 
   Por ejemplo, usando una WEBCAM conectada al PC que controla el Flatbot, 
@@ -250,52 +250,65 @@ Este aspecto es uno de los diferenciadores del Flatbot respecto al
   diametralmente opuesta, es el control del robot desde diferentes dispositivos, 
   como mando de la WII, joystick playstation, móvil, consola de juegos, etc...<br> 
 </p>
-<h3><span class="mw-headline" id="Cliente_b.C3.A1sico_para_servidor_.28firmware.29_b.C3.A1sico">Cliente básico para servidor (firmware) básico</span></h3>
+<h3><span class="mw-headline" id="Cliente_b.C3.A1sico_para_servidor_.28firmware.29_b.C3.A1sico">
+	Cliente básico para servidor (firmware) básico</span></h3>
 <p>El cliente básico por excelencia es cualquier programa terminal de puerto serie. <br>
 En Linux tenemos el "minicom" o el "gtkterm"<br>
 En windows tenemos el "hyperterminal"<br>
 Para que funcionen con el servidor básico tendremos que configurarlos a 9600, 8n1 y sin flujos de ningún tipocomo hemos explicado antes.<br>
 Los comandos a enviar son los descritos en <b>Firmware (Servidor) -&gt; Servidor básico</b><br>
 </p>
-<h3><span class="mw-headline" id="Cliente_b.C3.A1sico_para_servidor_.28firmware.29_avanzado">Cliente básico para servidor (firmware) avanzado</span></h3>
-<p>Usaremos el mismo entorno que antes 'Cliente básico con servidor básico' salvo que ahora desde el terminal podremos mandar comandos de velocidad. <br>
-Además, para que el robot se empiece a mover, primero necesitamos indicar la velocidad. Eso lo podemos hacer mandando las teclas numéricas, '1', '2', ...<br>
+<h3><span class="mw-headline" id="Cliente_b.C3.A1sico_para_servidor_.28firmware.29_avanzado">
+	Cliente básico para servidor (firmware) avanzado
+</span></h3>
+<p>Usaremos el mismo entorno que antes 'Cliente básico con servidor básico' salvo que ahora desde el terminal 
+	podremos mandar comandos de velocidad. <br>
+Además, para que el robot se empiece a mover, primero necesitamos indicar la velocidad. 
+Eso lo podemos hacer mandando las teclas numéricas, '1', '2', ...<br>
 Los comandos a enviar son los descritos <b>Firmware (Servidor) -&gt; Servidor avanzado</b><br>
 </p>
-<h3><span class="mw-headline" id="Cliente_avanzado_para_servidor_.28firmware.29_b.C3.A1sico">Cliente avanzado para servidor (firmware) básico</span></h3>
+<h3><span class="mw-headline" id="Cliente_avanzado_para_servidor_.28firmware.29_b.C3.A1sico">
+	Cliente avanzado para servidor (firmware) básico</span></h3>
 <p>En este caso usaremos un programa en C# para mover el robot. <br>
 Este programa se comunica con el robot por el puerte serie y nosotros nos comunicaremos con el programa con el mando de la Wii.<br>
 Usamos el PAD del mando, no tiene implementado el control analógico.<br>
 </p>
 <ul><li> Ejemplo: Cliente para mando de la WII</li></ul>
-<h3><span class="mw-headline" id="Cliente_avanzado_para_servidor_.28firmware.29_avanzado">Cliente avanzado para servidor (firmware) avanzado</span></h3>
-<p>Es una mejora del programa anterior, ahora usamos la información analógica para mover el robot, tenemos el control de velocidad en los motores.<br>
+<h3><span class="mw-headline" id="Cliente_avanzado_para_servidor_.28firmware.29_avanzado">
+	Cliente avanzado para servidor (firmware) avanzado</span></h3>
+<p>Es una mejora del programa anterior, ahora usamos la información analógica para mover el robot, 
+	tenemos el control de velocidad en los motores.<br>
 </p>
 <ul><li> Ejemplo: Cliente para mando de la WII</li></ul>
 <h1><span class="mw-headline" id="Montaje">Montaje</span></h1>
-<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; 
+padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
 <tbody><tr>
 <td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
-	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:FlatBot_montado.jpg" 
+	<a href="images/6/65/FlatBot_montado.jpg" 
 	class="image">
-	<img alt="" src="Robot_FlatBot_files/300px-FlatBot_montado_V75N.jpg" width="300" height="307" class="thumbimage" srcset="Robot_FlatBot_files/FlatBot_montado_V75N.jpg 1.5x, Robot_FlatBot_files/FlatBot_montado_V75N.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:FlatBot_montado.jpg" class="internal" title="Aumentar"></a></div>Parte inferior del FlatBot (Detalle de montaje)</div></div></div> </td>
+	<img alt="" src="Robot_FlatBot_files/300px-FlatBot_montado_V75N.jpg" width="300" height="307" 
+	class="thumbimage"></a>  
+	<div class="thumbcaption">
+		Parte inferior del FlatBot (Detalle de montaje)</div></div></div> </td>
+
 <td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
-	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:FlatBot_detalle_conexiones.jpg" 
+	<a href="images/7/77/FlatBot_detalle_conexiones.jpg" 
 	class="image"><img alt="" 
 	src="Robot_FlatBot_files/300px-FlatBot_detalle_conexiones_V75N.jpg" 
-	width="300" height="174" class="thumbimage" 
-	srcset="Robot_FlatBot_files/FlatBot_detalle_conexiones_V75N.jpg 1.5x, Robot_FlatBot_files/FlatBot_detalle_conexiones_V75N.jpg 2x"></a>  
-	<div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:FlatBot_detalle_conexiones.jpg" class="internal" title="Aumentar"></a></div>Cableado de los motores y la batería del FlatBot</div></div></div>
+	width="300" height="174" class="thumbimage"></a>  
+	<div class="thumbcaption">
+		Cableado de los motores y la batería del FlatBot</div></div></div>
 </td></tr></tbody></table>
 <ul><li> Tabla jumpers</li></ul>
-<p><a href="https://iearobotics.com/wiki/index.php?title=SkyControl:Hardware#Jumpers_de_configuraci.C3.B3n" title="SkyControl:Hardware">
+<p><a href="SkyControl_Hardware.html#Jumpers_de_configuraci.C3.B3n" title="SkyControl:Hardware">
 	Configuracion jumpers de la placa SkyControl</a>
 </p>
 <h1><span class="mw-headline" id="Aplicaciones">Aplicaciones</span></h1>
 <h2><span class="mw-headline" id="Ordenador_port.C3.A1til_m.C3.B3vil">Ordenador portátil móvil</span></h2>
 <p>El FlatBot se ha diseñado para colocar encima de él un ordenador portátil y dotar al robot de una alta capacidad de proceso. Por lo tanto, podremos crear un número de aplicaciones casi infinitas. <br><br>  
 Una de las configuración más exitosa es un FlatBot controlado por un portátil 
-<a href="https://iearobotics.com/wiki/index.php?title=ASUS_EEE" title="ASUS EEE"> ASUS Eee</a> como se puede ver en la foto y video de abajo.<br>
+<a href="ASUS_EEE.html" title="ASUS EEE"> ASUS Eee</a> como se puede ver en la foto y video de abajo.<br>
 En la tercera sesión del 
 <a href="Taller_FlatBot.html" title="Taller FlatBot">Taller FlatBot</a> 
 se controla el robot usando una WEBCAM (interna o externa), la aplicación de ejemplo
@@ -305,15 +318,20 @@ se controla el robot usando una WEBCAM (interna o externa), la aplicación de ej
 <table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
 <tbody><tr>
 <td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
-	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:Asus_eee3.jpg" 
+	<a href="images/c/ca/Asus_eee3.jpg" 
 	class="image"><img alt="" src="Robot_FlatBot_files/300px-Asus_eee3_V75N.jpg" 
 	width="300" height="229" 
-	class="thumbimage" srcset="Robot_FlatBot_files/Asus_eee3_V75N.jpg 1.5x, Robot_FlatBot_files/Asus_eee3_V75N.jpg 2x"></a>  
-	<div class="thumbcaption"><div class="magnify">
-		<a href="https://iearobotics.com/wiki/index.php?title=Archivo:Asus_eee3.jpg" 
-		class="internal" title="Aumentar"></a>
-	</div>FlatBot con un portátil Asus Eee encima</div></div></div> </td>
-<td>300|250&lt;/youtube&gt;
+	class="thumbimage"></a>  
+	<div>FlatBot con un portátil Asus Eee encima</div></div></div> </td>
+
+<td> <a href="https://www.youtube.com/watch?v=mYO-tqRL7pY">
+	<img src="http://img.youtube.com/vi/mYO-tqRL7pY/0.jpg" height=230>  
+	<div class="thumbcaption">
+		<a href="https://www.youtube.com/watch?v=mYO-tqRL7pY">Vídeo en Youtube</a> 
+	</div>
+</a> 
+	
+	
 </td></tr></tbody></table>
 <h2><span class="mw-headline" id="Control_con_el_mando_de_la_wii">Control con el mando de la wii</span>
 </h2>
@@ -337,13 +355,11 @@ se controla el robot usando una WEBCAM (interna o externa), la aplicación de ej
 class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
 <tbody><tr>
 <td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
-	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:FlatBot-Epi1.jpg" 
+	<a href="images/6/6f/FlatBot-Epi1.jpg" 
 	class="image">
 	<img alt="" src="Robot_FlatBot_files/300px-FlatBot-Epi1_V75N.jpg" 
-	width="300" height="225" class="thumbimage" srcset="Robot_FlatBot_files/450px-FlatBot-Epi1_V75N.jpg 1.5x, Robot_FlatBot_files/600px-FlatBot-Epi1_V75N.jpg 2x"></a>  
-	<div class="thumbcaption"><div class="magnify">
-		<a href="https://iearobotics.com/wiki/index.php?title=Archivo:FlatBot-Epi1.jpg" 
-		class="internal" title="Aumentar"></a></div>Epi encima del FlatBot</div></div></div> </td>
+	width="300" height="225" class="thumbimage"></a>  
+	<div class="thumbcaption">Epi encima del FlatBot</div></div></div> </td>
 <td>300|250&lt;/youtube&gt;
 </td></tr></tbody></table>
 <p>En otra de las pruebas hemos colocado un <a rel="nofollow" class="external text" 
