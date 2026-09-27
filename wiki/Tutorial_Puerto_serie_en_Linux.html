@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Tutorial:Puerto serie en Linux - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Tutorial:Puerto_serie_en_Linux","wgTitle":"Tutorial:Puerto serie en Linux","wgCurRevisionId":25473,"wgRevisionId":25473,"wgArticleId":874,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["SVN"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Tutorial:Puerto_serie_en_Linux","wgRelevantArticleId":874,"wgRequestId":"arjGgCmH0xy0uRdYSHNPAQAn7d4","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Tutorial_Puerto_serie_en_Linux_files/load_hgeM.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="Tutorial_Puerto_serie_en_Linux_files/load_002_hgeM.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://www.iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://www.iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="Tutorial_Puerto_serie_en_Linux_files/load_hgeM.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Tutorial_Puerto_serie_en_Linux rootpage-Tutorial_Puerto_serie_en_Linux skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Tutorial:Puerto serie en Linux</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="thumb tright"><div class="thumbinner" style="width:226px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Tutorial-linux-serial.png" class="image"><img alt="" src="Tutorial_Puerto_serie_en_Linux_files/Tutorial-linux-serial_hgeM.png" width="224" height="129" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Tutorial-linux-serial.png" class="internal" title="Aumentar"></a></div><a rel="nofollow" class="external text" href="https://www.iearobotics.com/wiki/images/b/b2/Tutorial-linux-serial-portada.zip">fuentes</a></div></div></div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Tutorial:_Linux_and_the_Serial_port"><span class="tocnumber">1</span> <span class="toctext">Tutorial: Linux and the Serial port</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Tutorial:_Puerto_serie_en_Linux"><span class="tocnumber">2</span> <span class="toctext">Tutorial: Puerto serie en Linux</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Introducci.C3.B3n"><span class="tocnumber">2.1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Compilaci.C3.B3n"><span class="tocnumber">2.2</span> <span class="toctext">Compilación</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#BUG:_Error_de_compilacion_.5BSolucionado.5D"><span class="tocnumber">2.3</span> <span class="toctext">BUG: Error de compilacion [Solucionado]</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Pruebas_con_el_puerto_serie"><span class="tocnumber">2.4</span> <span class="toctext">Pruebas con el puerto serie</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Pruebas_con_la_tarjeta_Skypic"><span class="tocnumber">2.5</span> <span class="toctext">Pruebas con la tarjeta Skypic</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Puerto_serie_y_Linux"><span class="tocnumber">2.6</span> <span class="toctext">Puerto serie y Linux</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#M.C3.B3dulo_serial.c"><span class="tocnumber">2.7</span> <span class="toctext">Módulo serial.c</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="#C.C3.B3digo_fuente"><span class="tocnumber">2.7.1</span> <span class="toctext">Código fuente</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#Descripci.C3.B3n"><span class="tocnumber">2.7.2</span> <span class="toctext">Descripción</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-12"><a href="#Ejemplo_1:_enviar.2Frecibir_cadenas"><span class="tocnumber">2.8</span> <span class="toctext">Ejemplo 1: enviar/recibir cadenas</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="#C.C3.B3digo_fuente_2"><span class="tocnumber">2.8.1</span> <span class="toctext">Código fuente</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#Ejecuci.C3.B3n"><span class="tocnumber">2.8.2</span> <span class="toctext">Ejecución</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#Explicaci.C3.B3n"><span class="tocnumber">2.8.3</span> <span class="toctext">Explicación</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-16"><a href="#Ejemplo_2:_Mini-terminal"><span class="tocnumber">2.9</span> <span class="toctext">Ejemplo 2: Mini-terminal</span></a>
+<ul>
+<li class="toclevel-3 tocsection-17"><a href="#C.C3.B3digo_fuente_3"><span class="tocnumber">2.9.1</span> <span class="toctext">Código fuente</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#Ejecuci.C3.B3n_2"><span class="tocnumber">2.9.2</span> <span class="toctext">Ejecución</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#Explicaci.C3.B3n_2"><span class="tocnumber">2.9.3</span> <span class="toctext">Explicación</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-20"><a href="#Descarga_de_los_ejemplos"><span class="tocnumber">2.10</span> <span class="toctext">Descarga de los ejemplos</span></a>
+<ul>
+<li class="toclevel-3 tocsection-21"><a href="#Versi.C3.B3n:_1.0"><span class="tocnumber">2.10.1</span> <span class="toctext">Versión: 1.0</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-22"><a href="#Licencia"><span class="tocnumber">2.11</span> <span class="toctext">Licencia</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Autor"><span class="tocnumber">2.12</span> <span class="toctext">Autor</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Enlaces"><span class="tocnumber">2.13</span> <span class="toctext">Enlaces</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Repositorio"><span class="tocnumber">2.14</span> <span class="toctext">Repositorio</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#Noticias"><span class="tocnumber">2.15</span> <span class="toctext">Noticias</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Tutorial:_Linux_and_the_Serial_port"><font color="#0000FF">Tutorial: Linux and the Serial port</font></span></h1>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:English.gif" class="image"><img alt="English.gif" src="Tutorial_Puerto_serie_en_Linux_files/English_hgeM.gif" width="162" height="93"></a>
+</td>
+<td> This tutorial is written in Spanish but all <b>the source code is in English</b>. A lot of documentation can be found in the sources. Start by downloading the <a rel="nofollow" class="external text" href="https://www.iearobotics.com/wiki/images/5/55/Serial-1.0.tar.gz">Serial-1.0.tar.gz</a> package, uncompress it, change to the serial-1.0 directory and type make to compile the examples. Please, read the <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/serial/trunk/Tutorial.txt">Tutorial.txt</a> file.
+</td></tr></tbody></table>
+<h1><span class="mw-headline" id="Tutorial:_Puerto_serie_en_Linux"><font color="#0000FF">Tutorial: Puerto serie en Linux</font></span></h1>
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>Breve tutorial sobre cómo manejar el <b>puerto serie desde Linux</b>. Yo lo utilizo para comunicarme con microcontroladores externos y para el control de mis robots. Aunque nuestro ordenador no disponga de puerto serie, no hay problema. Se pueden utilizar <b>conversores USB-serie</b>.
+</p><p>Los ejemplos de este tutorial se han probado en la distribución de Linux <b>Debian/Lenny</b> (5.0)
+</p>
+<h2><span class="mw-headline" id="Compilaci.C3.B3n">Compilación</span></h2>
+<p>Para compilar los ejemplos, seguir los siguientes pasos:
+</p>
+<ol><li> Descargar el paquete con los ejemplos: <a rel="nofollow" class="external text" href="https://www.iearobotics.com/wiki/images/5/55/Serial-1.0.tar.gz">Serial-1.0.tar.gz</a></li>
+<li> Descomprimirlo</li>
+<li> Entrar en el directorio serial-1.0</li>
+<li> Ejecutar make</li></ol>
+<pre>$ make
+gcc -o serial.o -c serial/serial.c
+gcc -Iserial   -c -o send_receive_ex/send_receive.o send_receive_ex/send_receive.c
+gcc -o send_receive send_receive_ex/send_receive.o  serial.o
+gcc -Iserial   -c -o term_ex/term.o term_ex/term.c
+gcc -Iserial   -c -o term_ex/console_io.o term_ex/console_io.c
+gcc -o term term_ex/term.o term_ex/console_io.o serial.o
+</pre>
+<h2><span class="mw-headline" id="BUG:_Error_de_compilacion_.5BSolucionado.5D">BUG: Error de compilacion [Solucionado]</span></h2>
+<p>[2015/oct/27] Esteban &lt;esteban.e at lcc.cl&gt;  ha reportado el siguiente error de compilacion:
+</p>
+<pre>esteban serial-1.0 $ make
+gcc -o serial.o -c serial/serial.c
+serial/serial.c: En la función ‘serial_read’:
+serial/serial.c:99:3: error: nombre de tipo ‘fd_set’ desconocido
+  fd_set fds;
+  ^
+serial/serial.c:100:18: error: no se conoce el tamaño de almacenamiento de ‘timeout’
+  struct timeval timeout; 
+[...]
+</pre>
+<p>Se soluciona añadiendo el siguiente include al comienzo del fichero serial.c:
+</p>
+<pre> #include &lt;sys/select.h&gt;
+</pre>
+<h2><span class="mw-headline" id="Pruebas_con_el_puerto_serie">Pruebas con el puerto serie</span></h2>
+<p>Para probar los ejemplos de este tutorial <b>es necesario tener conectado un dispositivo al puerto serie que nos haga "eco" de todo lo recibido</b>. De esta manera se puede verificar que el software del PC está funcionando correctamente.
+</p><p>Existen varias alternativas:
+</p>
+<ul><li> <b>Alternativa 1</b>: Utilizar un cable para unir los pines 2 y 3 del puerto serie. Todo lo que se envíe por el pin de transmisión (TX) se recibirá automáticamente por el de recepción (RX).</li></ul>
+<ul><li> <b>Alternativa 2</b>: Utilizar un microcontrolador externo que ejecute un firmware para hacer eco. Esta es la opción que se ha usado para probar los ejemplos de este tutorial. Se ha utilizado la <a href="https://www.iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">tarjeta Skypic</a></li></ul>
+<h2><span class="mw-headline" id="Pruebas_con_la_tarjeta_Skypic">Pruebas con la tarjeta Skypic</span></h2>
+<ul><li> Tarjeta <a href="https://www.iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a>, conectada al PC por medio de un cable serie o conversor USB-serie</li>
+<li> El firmware grabado es el <a rel="nofollow" class="external text" href="https://www.iearobotics.com/proyectos/stargate/servidores/sg-echo/sg-echo.html">Servidor de eco</a></li>
+<li> Si se conecta la <a href="https://www.iearobotics.com/wiki/index.php?title=Freeleds" title="Freeleds"> tarjeta Freeleds</a> al puerto B de la Skypic, se podrá ver en binario todo lo que se ha recibido.</li>
+<li> La Skypic se configura muy fácilmente para este ejemplo ejecutando el programa <a href="https://www.iearobotics.com/wiki/index.php?title=Pydownloader-wx" title="Pydownloader-wx">Pydownloader-wx</a> y <b>pulsando el botón de "ECO"</b>, que descarga automáticamente el servidor de eco.</li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Pydownloader-wx-1.0-linux.png" class="image"><img alt="" src="Tutorial_Puerto_serie_en_Linux_files/300px-Pydownloader-wx-1.0-linux_hgeM.png" width="300" height="269" class="thumbimage" srcset="Tutorial_Puerto_serie_en_Linux_files/Pydownloader-wx-1.0-linux_hgeM.png 1.5x, Tutorial_Puerto_serie_en_Linux_files/Pydownloader-wx-1.0-linux_hgeM.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Pydownloader-wx-1.0-linux.png" class="internal" title="Aumentar"></a></div>Pantallazo del programa <b>Pydownloader</b>. Pulsar el botón de ECO para descargar el firmware necesario para este tutorial</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Freeleds-skypic.png" class="image"><img alt="" src="Tutorial_Puerto_serie_en_Linux_files/300px-Freeleds-skypic_hgeM.png" width="300" height="225" class="thumbimage" srcset="Tutorial_Puerto_serie_en_Linux_files/Freeleds-skypic_hgeM.png 1.5x, Tutorial_Puerto_serie_en_Linux_files/Freeleds-skypic_hgeM.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Freeleds-skypic.png" class="internal" title="Aumentar"></a></div>La <b>tarjeta Freeleds</b> conectada a la <b>Skypic</b> para hacer ejecutar los programas de este tutorial</div></div></div>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Puerto_serie_y_Linux">Puerto serie y Linux</span></h2>
+<p>Los nombres que se dan en Linux a los dispositivos serie son:
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th> Nombre del dispositivo </th>
+<th> Descripción
+</th></tr>
+<tr>
+<td> /dev/ttyS0    </td>
+<td> Primer puerto serie nativo. (Equivalente a COM1 en Windows)
+</td></tr>
+<tr>
+<td> /dev/ttyS1    </td>
+<td> Segundo puerto serie nativo. (Equivalente a COM2 en Windows)
+</td></tr>
+<tr>
+<td> /dev/ttySnn   </td>
+<td> n-ésimo puerto serie nativo
+</td></tr>
+<tr>
+<td> /dev/ttyUSB0     </td>
+<td> Conversor USB-serie 1
+</td></tr>
+<tr>
+<td> /dev/ttyUSB1     </td>
+<td> Conversor USB-serie 2
+</td></tr>
+<tr>
+<td> /dev/ttyUSBnn    </td>
+<td> n-ésimo conversor USB-serie
+</td></tr></tbody></table>
+<p>La forma de acceder al puerto serie es la misma que para trabajar con cualquier otro fichero. Se usan las llamadas <b>read()</b> y <b>write()</b> para leer y escribir respectivamente. Pero a diferencia de los archivos normales, <b>antes de usar el puerto serie es necesario configurarlo</b>, estableciendo la velocidad de trabajo y su modo de funcionamiento.
+</p>
+<h2><span class="mw-headline" id="M.C3.B3dulo_serial.c">Módulo serial.c</span></h2>
+<h3><span class="mw-headline" id="C.C3.B3digo_fuente">Código fuente</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/serial/trunk/serial/serial.c">serial.c</a>
+</td>
+<td> Fuentes del módulo para comunicaciones serie (en el SVN)
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/serial/trunk/serial/serial.h">serial.h</a>
+</td>
+<td> Ficheros de cabecera
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Descripci.C3.B3n">Descripción</span></h3>
+<p>El módulo serial.c es el que implementa las funciones para <b>abir/cerrar</b> el puerto serie y <b>enviar/recibir</b> datos. El resto de ejemplos hacen uso de ellas.
+</p><p>La función <b>serial_open()</b> abre el puerto serie para lectura/escritura y en <b>modo crudo</b> (raw). En este modo no se procesan ciertos caracteres especiales de control. Se usa el puerto serie sólo para enviar/recibir bytes sin interpretarlos.
+</p><p>Se configura el <b>modo de funcionamiento serie a 8N1</b> (8 bits de datos, 1 bit de stop y sin paridad).
+La velocidad es la indicada por el usuario en el parámetro baud. Es una constante que puede valer: B9600, B19200, etc. Se puede encontrar más información sobre todos los valores posibles en la <b>página de manual de termios</b> (man termios)
+</p><p>Esta función <b>devuelve el descriptor del puerto serie</b> (o -1 si ha ocurrido un error), que será necesario para realizar las lecturas y escrituras.
+</p>
+<pre>int <b>serial_open</b>(char *serial_name, speed_t baud)
+{
+  struct termios newtermios;
+  int fd;
+
+  fd = open(serial_name,O_RDWR | O_NOCTTY); 
+
+  newtermios.c_cflag= CBAUD | CS8 | CLOCAL | CREAD;
+  newtermios.c_iflag=IGNPAR;
+  newtermios.c_oflag=0;
+  newtermios.c_lflag=0;
+  newtermios.c_cc[VMIN]=1;
+  newtermios.c_cc[VTIME]=0;
+
+  cfsetospeed(&amp;newtermios,baud);
+  cfsetispeed(&amp;newtermios,baud);
+ 
+  if (tcflush(fd,TCIFLUSH)==-1) return -1;
+  if (tcflush(fd,TCOFLUSH)==-1) return -1;
+  if (tcsetattr(fd,TCSANOW,&amp;newtermios)==-1) return -1;  
+
+  return fd;
+}
+</pre>
+<p>La función <b>serial_send()</b> envía una cadena de bytes por el puerto serie. Lo único que hace es invocar la llamada al sistema <b>write()</b>. Como parámetros se pasa el descriptor serie del puerto serie (<i>serial_fd</i>), devuelto por la función <i>serial_open()</i>, el array con los datos a enviar (<i>data</i>) y su tamaño (<i>size</i>).
+</p>
+<pre>void <b>serial_send</b>(int serial_fd, char *data, int size)
+{
+  write(serial_fd, data, size);
+}
+</pre>
+<p>La función <b>serial_read()</b> se usa para leer datos del puerto serie. Se le pasan como parámetros el descriptor del puerto serie (<i>serial_fd</i>), el array donde almacenar los datos recibidos (<i>data</i>), el tamaño máximo de bytes a recibir (<i>size</i>, para no desbordar el array) y el tiempo máximo para recibir los datos (<i>timeout_usec</i>). Si transcurre un tiempo igual a <i>timeout_usec</i> y no se han recibido datos, la función retornará y devolverá el control a la que la invocó.
+</p><p>Para realizar las lecturas no bloqueantes, se usa la llamada al sistema select(). En este caso devuelve 1 si hay datos esperando a ser leídos y 0 si ha ocurrido un timeout. A continuación se invoca a read() para leer estos datos. El proceso se repite para garantizar que es posible recibir datos de tamaño size. Al utilizar conversores USB-serie, los datos llegan en diferentes grupos siendo necesario realizar más de una llamada a read().
+</p><p>Se devuelve el número de bytes leídos (o 0 si ha ocurrido un timeout).
+</p>
+<pre>int <b>serial_read</b>(int serial_fd, char *data, int size, int timeout_usec)
+{
+  fd_set fds;
+  struct timeval timeout;
+  int count=0;
+  int ret;
+  int n;
+
+  do {
+    FD_ZERO(&amp;fds);
+    FD_SET (serial_fd, &amp;fds);
+    
+    timeout.tv_sec = 0;  
+    timeout.tv_usec = timeout_usec;
+
+    ret=select (FD_SETSIZE,&amp;fds, NULL, NULL,&amp;timeout);
+    
+    if (ret==1) {
+      n=read (serial_fd, &amp;data[count], size-count); 
+      count+=n;
+      data[count]=0;
+    }
+  } while (count&lt;size &amp;&amp; ret==1);
+
+  return count;
+}
+</pre>
+<p>La última función es <b>serial_close()</b>, que simplemente invoca a close() para cerrar el puerto serie.
+</p>
+<pre>void serial_close(int fd)
+{
+  close(fd);
+}
+</pre>
+<h2><span class="mw-headline" id="Ejemplo_1:_enviar.2Frecibir_cadenas">Ejemplo 1: enviar/recibir cadenas</span></h2>
+<h3><span class="mw-headline" id="C.C3.B3digo_fuente_2">Código fuente</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/serial/trunk/send_receive_ex/send_receive.c">send_receive.c</a>
+</td>
+<td> Fuentes del ejemplo, en el SVN
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Ejecuci.C3.B3n">Ejecución</span></h3>
+<p>Este ejemplo envía la cadena "<i>ASCII Command test</i>" por el puerto serie a la velocidad de 9600 baudios y espera recibir una cadena de respuesta.
+</p><p>Si se ha conectado un dispositivo que haga eco, el ejecutar este ejemplo se obtendrá:
+</p>
+<pre>$ <b>./send_receive /dev/ttyUSB0</b>
+String sent------&gt; ASCII Command test
+String received--&gt; ASCII Command test (18 bytes)
+</pre>
+<p>Si no hay eco la salida será la siguiente:
+</p>
+<pre>$ <b>./send_receive /dev/ttyUSB0</b>
+String sent------&gt; ASCII Command test
+String received--&gt; Timeout!
+</pre>
+<h3><span class="mw-headline" id="Explicaci.C3.B3n">Explicación</span></h3>
+<p>Sólo se explicarán algunos fragmentos del código. Primero se abre el puerto serie, a la velocidad de 9600 baudios invocando la función <i>serial_open()</i>. Se pasa como argumento el nombre del dispositivo serie obtenido de la línea de comandos. Se indica si ha ocurrido un error al abrirlo (por ejemplo si se especifica un dispositivo serie incorrecto):
+</p>
+<pre> serial_fd=<b>serial_open</b>(argv[1],B9600);
+ 
+ if (serial_fd==-1) {
+   printf ("Error opening the serial device:&nbsp;%s\n",argv[1]);
+   perror("OPEN");
+   exit(0);
+ }
+</pre>
+<p>Luego se envía la cadena definida en la constante CMD y se espera recibir la misma
+</p>
+<pre> <b>serial_send</b>(serial_fd, CMD, CMD_LEN);
+ printf ("String sent------&gt;&nbsp;%s\n",CMD);
+
+ n=<b>serial_read</b>(serial_fd,data,CMD_LEN,TIMEOUT);
+</pre>
+<p>La variable n contiene el número de bytes recibidos. Si n es 0 es porque habrá ocurrido un timeout. En caso contrario se imprimen en pantalla la cadena recibida.
+</p><p>Por último se cierra el puerto serie:
+</p>
+<pre> serial_close(serial_fd);
+</pre>
+<h2><span class="mw-headline" id="Ejemplo_2:_Mini-terminal">Ejemplo 2: Mini-terminal</span></h2>
+<h3><span class="mw-headline" id="C.C3.B3digo_fuente_3">Código fuente</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/serial/trunk/term_ex/term.c">term.c</a>
+</td>
+<td> Fuentes del terminal, en el SVN
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/serial/trunk/term_ex/console_io.c">console_io.c</a>
+</td>
+<td> Fuentes de las Rutinas para control del teclado, en el SVN
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Ejecuci.C3.B3n_2">Ejecución</span></h3>
+<p>Este ejemplo es un mini terminal de comunicaciones. Todo lo que el usuario teclee será enviado por el puerto serie y todo lo recibido será mostrado en pantalla.
+</p><p>Para utilizarlo:
+</p>
+<pre>$ ./term /dev/ttyUSB0
+Press the ESC key to quit
+</pre>
+<p>Comienza a funcionar. Pulsando la tecla ESC se termina. Si se tiene conectada la tarjeta skypic con una Freeleds se podrá ver en los leds el valor binario del carácter enviado, además de mostrarse en pantalla el eco.
+</p>
+<h3><span class="mw-headline" id="Explicaci.C3.B3n_2">Explicación</span></h3>
+<p>Al ejecutarse el programa se abre el puerto serie a 9600 baudios (igual que en el ejemplo anterior) y se invoca a la función <b>term()</b> que es la que implementa el bucle principal.
+</p><p>Dentro de este bucle primero se comprueba si el usuario a pulsado una tecla. Esto se hace llamando a la función <b>console_io_kbhit()</b> definida en el fichero <b>console_io.c</b> y que no es objeto de este tutorial su explicación.
+Si se ha apretado una tecla, se lee usando <b>console_io_getch()</b> y se envía por el puerto serie con <b>serial_send()</b>.
+La llegada de datos se comprueba periódicamente, invocando serial_read(). Los datos recibidos se imprimen en la pantalla. Si ha ocurrido un timeout significa que no se ha recibido nada.
+</p>
+<pre>void <b>term</b>(void)
+{
+  char c[1];
+  char rec[1];
+  int n;
+  
+  //-- Main loop
+  do {
+    if (console_io_kbhit()) {
+      c[0]=console_io_getch();
+      if (c[0]!=ESC) 
+        serial_send(serial_fd,c,1);
+    }
+    n=serial_read(serial_fd,rec,1,TIMEOUT);
+    if (n==1) {
+      printf ("%c",rec[0]);
+      fflush(stdout);
+    }
+  } while (c[0]!=ESC);   
+}
+</pre>
+<h2><span class="mw-headline" id="Descarga_de_los_ejemplos">Descarga de los ejemplos</span></h2>
+<h3><span class="mw-headline" id="Versi.C3.B3n:_1.0">Versión: 1.0</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th>Fichero</th>
+<th>Descripción
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/wiki/images/5/55/Serial-1.0.tar.gz">Serial-1.0.tar.gz</a>
+</td>
+<td> Fuentes
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/wiki/images/4/4b/Serial-1.0-bin.tar.gz">Serial-1.0-bin.tar.gz</a>
+</td>
+<td> Ejecutables de los ejemplos, compilados para Debian Lenny 5.0 (intel 32 bits)
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Licencia">Licencia</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Cc_logo.png" class="image"><img alt="Cc logo.png" src="Tutorial_Puerto_serie_en_Linux_files/Cc_logo_hgeM.png" width="88" height="31"></a> This work is licensed under a <a rel="nofollow" class="external text" href="http://creativecommons.org/licenses/by-sa/3.0/es/">Creative Commons Attribution-ShareAlike 3.0 Spain License</a>.
+</td></tr>
+<tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:GPLv3-logo-red.png" class="image" title="150px"><img alt="150px" src="Tutorial_Puerto_serie_en_Linux_files/GPLv3-logo-red_hgeM.png" width="319" height="130"></a> El código está liberado bajo licencia GPLv3
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Autor">Autor</span></h2>
+<p><a href="https://www.iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main">Juan González Gómez</a>
+</p>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<ul><li> <a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:_Puerto_serie_en_Linux_en_C%2B%2B" title="Tutorial: Puerto serie en Linux en C++">Tutorial: Puerto serie en Linux en C++</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/proyectos/cuadernos/ct1/ct1.html">Comunicaciones serie (Hw)</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/proyectos/cuadernos/ct11/ct11.html">Comunicaciones serie con Python</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/personal/juan/proyectos/consola_io/consola_io.html">Módulo consola_io para acceso al teclado</a> (lenguaje C, Linux)</li></ul>
+<h2><span class="mw-headline" id="Repositorio">Repositorio</span></h2>
+<ul><li> SVN del proyecto <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/serial/">http://svn.iearobotics.com/serial/</a></li></ul>
+<p>Para obtener la última versión del SVN:
+</p>
+<pre>svn co <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/serial/serial-1.0">http://svn.iearobotics.com/serial/serial-1.0</a>
+</pre>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>27/Oct/2015</b>: Error de compilación reportado por Esteban. Solucionado en la wiki (no en el repo ni en los tgz)</li>
+<li> <b>20/Enero/2009</b>: Versión inicial. Publicado serial-1.0</li>
+<li> <b>19/Enero/2009</b>: Comenzada esta página</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20260927073217
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.091 seconds
+Real time usage: 0.100 seconds
+Preprocessor visited node count: 131/1000000
+Preprocessor generated node count: 189/1000000
+Post‐expand include size: 1600/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    3.073      1 - -total
+ 70.97%    2.181      8 - Plantilla:Tablabonita
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:Puerto_serie_en_Linux&amp;oldid=25473">https://www.iearobotics.com/wiki/index.php?title=Tutorial:Puerto_serie_en_Linux&amp;oldid=25473</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categoría</a>: <ul><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:SVN" title="Categoría:SVN">SVN</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:Puerto_serie_en_Linux" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://www.iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Tutorial:Puerto_serie_en_Linux&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:Puerto_serie_en_Linux&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:Puerto_serie_en_Linux&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Tutorial%3APuerto+serie+en+Linux" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Tutorial:Puerto_serie_en_Linux" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Tutorial:Puerto_serie_en_Linux" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:Puerto_serie_en_Linux&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:Puerto_serie_en_Linux&amp;oldid=25473" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:Puerto_serie_en_Linux&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Tutorial_Puerto_serie_en_Linux_files/gnu-fdl_hgeM.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="Tutorial_Puerto_serie_en_Linux_files/poweredby_mediawiki_88x31_hgeM.png" alt="Powered by MediaWiki" srcset="Tutorial_Puerto_serie_en_Linux_files/poweredby_mediawiki_132x47_hgeM.png 1.5x, Tutorial_Puerto_serie_en_Linux_files/poweredby_mediawiki_176x62_hgeM.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 27 oct 2015 a las 01:26.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":420});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
