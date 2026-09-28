@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../style_iHeX.css">
+
+  <!-- 🚧 CAMBIAR 🚧 -->
+  <title>Robots modulares autónomos (I)</title>
+</head>
+
+
+<body class="group-blog">
+<div id="page" class="site">
+  <div class="site-inner">
+		<div id="content" class="site-content">
+			<div class="content-area">
+
+		
+<!-- Artículo -->        
+<article>
+	<header class="entry-header">
+    <!-- 🚧 CAMBIAR 🚧 -->
+	  <h1 class="entry-title">Robots modulares autónomos (I)</h1>
+  </header><!-- .entry-header -->
+
+<div class="entry-content" style="margin-bottom: 50px;">
+<!-- 🚧 CAMBIAR 🚧 -->
+<p><img fetchpriority="high" decoding="async" 
+	src="index_files/micro-osciladores-ejemplo1_3hMB.jpg" 
+	alt="micro-osciladores-ejemplo1" 
+	title="micro-osciladores-ejemplo1" 
+	width="400" height="300" 
+	class="aligncenter size-full wp-image-243" 
+	srcset="index_files/micro-osciladores-ejemplo1_3hMB.jpg 400w, index_files/micro-osciladores-ejemplo1-300x225_3hMB.jpg 300w" sizes="(max-width: 400px) 85vw, 400px"><br>
+
+	He empezado a trabajar en que 
+	<a href="../../../../wiki/Categoría_Robots_modulares.html">mis robots modulares</a> 
+	sean autónomos. Hasta ahora se controlaban desde el PC. Sin embargo, el modelo de control 
+	desarrollado en <a href="../../../../wiki/Juan_Gonzalez_Tesis.html">mi tesis doctoral</a>, 
+	basado en <strong>osciladores sinusoidales</strong>, está pensado para poderse 
+	implementar usando pocos recursos, como por ejemplo <strong>microcontroladores de 8 bits</strong>.</p>
+<p>Las fases para que los robots modulares sean autónomos son:</p>
+
+<p>1.- <strong>Autonomía del software</strong>. El programa para generar la locomoción 
+	se tiene que ejecutar en un microcontrolador<br>
+
+2.- <strong>Integración de la electrónica</strong> en los módulos Y1. 
+  Hay que hacer una placa que se pueda meter dentro de un módulo<br>
+
+3.- <strong>Autonomía de alimentación</strong>. Seleccionar unas baterías e integrarlas 
+dentro de los módulos (o colocarla entre ellos).</p>
+
+<p>He empezado por la <strong>fase 1</strong>. Ya tengo una primera versión del software 
+	para ejecutarse en una <a href="../../../../wiki/Skypic.html">tarjeta Skypic</a>, 
+	que tiene un pic16f876a. Este software lo he llamado 
+	<a href="../../../../wiki/Micro-osciladores.html">micro-osciladores</a>. 
+	En este vídeo se puede ver uno de los experimentos realizados, en los que se han colocados 
+	<strong>dos módulos que oscilan de manera autónoma</strong> con una amplitud de 45 grados y 
+	desfase de 90 grados:</p>
+
+<p>
+	<a href="http://www.youtube.com/watch?v=Au-bKpiNv0A">
+		<img src="http://img.youtube.com/vi/Au-bKpiNv0A/0.jpg" alt="">
+	</a>
+
+	<a href="http://www.youtube.com/watch?v=Au-bKpiNv0A">Vídeo en Youtube</a>
+</p>
+
+<p>El software está programado en C usando el SDCC. 
+	Debido a un bug en este compilador las funciones trigonométricas no están 
+	disponibles por lo que he implementado mi propia función <em>sin()</em> usando tablas.</p>
+<p>Todas las fuentes están disponibles en la página de los 
+	<a href="../../../../wiki/Micro-osciladores.html">micro-osciladores</a>.</p>
+<p><a href="../../../../wiki/Juan_Gonzalez_Main.html">Obijuan</a></p>
+
+	
+</div><!-- .entry-content -->
+
+  <footer class="entry-footer">
+		<span class="byline">
+			<span class="author vcard">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<img alt="" src="../../../obijuan.jpeg" 
+			    class="avatar avatar-49 photo" height="49" width="49" decoding="async">
+			</span>
+		</span>
+
+		<span class="posted-on">
+      <!-- 🚧 CAMBIAR 🚧 -->
+			April 08, 2009
+		</span>
+		
+	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+
+<div id="comments" class="comments-area">
+
+			<h2 class="comments-title">
+			2 thoughts on “Robots modulares autónomos (I)”		</h2>
+
+		
+		<ol class="comment-list">
+					<li id="comment-1079" class="comment even thread-even depth-1">
+			<article id="div-comment-1079" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="../../../ranganok.png" class="avatar avatar-42 photo" height="42" width="42" decoding="async">						<b class="fn"><a href="https://skiras.blogspot.com/" class="url" rel="ugc external nofollow">Ranganok Schahzaman</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.iearobotics.com/blog/2009/04/08/robots-modulares-autonomos-i/#comment-1079"><time datetime="2009-04-08T12:11:36-07:00">April 8, 2009 at 12:11 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hola,</p>
+<p>¿Has pensado como los vas a comunicar? Lo digo porque tendrán que ir sincronizados 
+	entre ellos para que no se produzca un desfase que pueden producir efectos no deseados.</p>
+<p>No se si te acordarás que te dije (en las Jornadas de ARDE) que había estado siguiendo tu trabajo, 
+	y había pensado en este problema. Las solución que se me había ocurrido es 
+	hacer un módulo 1 (en la cabeza o en la cola) que hiciera de máster de la 
+	comunicación interna, enviando a parte de las límeas de datos, 
+	una línea de sincronismo (o hacerlo vía software, pero así no te libras 
+	de las desincronizaciones de reloj).</p>
+<p>Se pueden explorar las dos vertientes modificando brevemente el software.</p>
+<p>S2</p>
+<p>Ranganok Schahzaman</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-1080" class="comment byuser comment-author-obijuan bypostauthor odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-1080" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="../../../obijuan.jpeg" class="avatar avatar-42 photo" height="42" width="42" loading="lazy" decoding="async">						<b class="fn"><a href="https://www.iearobotics.com/personal/juan" class="url" rel="ugc">obijuan</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.iearobotics.com/blog/2009/04/08/robots-modulares-autonomos-i/#comment-1080"><time datetime="2009-04-08T23:30:30-07:00">April 8, 2009 at 11:30 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hola Ranganok!</p>
+<p>  Lo bueno de la robótica modular es que quedan muchísimas cosas por 
+	investigar y probar 🙂</p>
+<p>  El problema de la escalabilidad todavía no lo he abordado. 
+	Ahora me voy a centrar en suponer una red de microcontroladores formada únicamente por un 
+	único nodo que será capaz de hacer oscilar hasta 8 servos. Con ello quiero que 
+	los robots que tengo ahora puedan moverse de forma autónoma.</p>
+<p>  Pero efectivamente, luego aparece el problema de escalar el robot. ¿Qué pasa si se 
+	hace un robot serpiente con 16 módulos? Hay que pensar en una topología de red y un 
+	protocolo de comunicación que permita su correcto funcionamiento y sincronización. 
+	Es un problema muy interesante 🙂</p>
+<p>Saludos, Obijuan</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+			<p class="no-comments">Comments are closed.</p>
+	
+	
+</div><!-- .comments-area -->
+
+
+
+	<nav class="navigation post-navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links">
+
+			<div class="nav-previous">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<a href="../../03/26/" rel="prev">
+
+					<span class="meta-nav" aria-hidden="true">Previous</span>
+
+          <!-- 🚧 CAMBIAR 🚧 -->
+				  <span class="post-title">Demostración de Robots Modulares en Madridbot 2009</span>
+        </a>
+			</div>
+
+			<div class="nav-next">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<a href="https://www.iearobotics.com/blog/2009/04/15/robots-modulares-autonomos-ii/" 
+					 rel="next">
+					<span class="meta-nav" aria-hidden="true">Next</span>
+
+          <!-- 🚧 CAMBIAR 🚧 --> 
+					<span class="post-title">Robots Modulares autónomos (II)</span>
+        		</a>
+			</div>
+		</div>
+	</nav>
+
+	
+</div><!-- .content-area -->
+</div><!-- .site-content -->
+</div><!-- .site-inner -->
+</div><!-- .site -->
+
+
+</body>
+</html>
+
