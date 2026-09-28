@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Micro-osciladores - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Micro-osciladores","wgTitle":"Micro-osciladores","wgCurRevisionId":13563,"wgRevisionId":13563,"wgArticleId":929,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["SVN","Robots modulares","Skypic","ATMEL"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Micro-osciladores","wgRelevantArticleId":929,"wgRequestId":"arq-OHjU9iosaNMlnS7G8QAARy0","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Micro-osciladores_files/load_PZYw.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="Micro-osciladores_files/load_002_PZYw.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://www.iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://www.iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="Micro-osciladores_files/load_PZYw.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Micro-osciladores rootpage-Micro-osciladores skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Micro-osciladores</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Micro-osciladores-logo-grande.png" class="image"><img alt="" src="Micro-osciladores_files/300px-Micro-osciladores-logo-grande_PZYw.png" width="300" height="439" class="thumbimage" srcset="Micro-osciladores_files/450px-Micro-osciladores-logo-grande_PZYw.png 1.5x, Micro-osciladores_files/600px-Micro-osciladores-logo-grande_PZYw.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Micro-osciladores-logo-grande.png" class="internal" title="Aumentar"></a></div>Micro-osciladores: movimiento autónomo de robots modulares</div></div></div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Descarga"><span class="tocnumber">2</span> <span class="toctext">Descarga</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#ArduSnake_Library"><span class="tocnumber">2.1</span> <span class="toctext">ArduSnake Library</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Versi.C3.B3n_0.4"><span class="tocnumber">2.2</span> <span class="toctext">Versión 0.4</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Versi.C3.B3n:_0.3"><span class="tocnumber">2.3</span> <span class="toctext">Versión: 0.3</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Versi.C3.B3n:_0.2"><span class="tocnumber">2.4</span> <span class="toctext">Versión: 0.2</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Versi.C3.B3n:_0.1"><span class="tocnumber">2.5</span> <span class="toctext">Versión: 0.1</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Evoluci.C3.B3n_del_proyecto"><span class="tocnumber">3</span> <span class="toctext">Evolución del proyecto</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#ArduSnake_Library_2"><span class="tocnumber">3.1</span> <span class="toctext">ArduSnake Library</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Versi.C3.B3n_0.4_2"><span class="tocnumber">3.2</span> <span class="toctext">Versión 0.4</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Versi.C3.B3n_0.3"><span class="tocnumber">3.3</span> <span class="toctext">Versión 0.3</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Versi.C3.B3n_0.2"><span class="tocnumber">3.4</span> <span class="toctext">Versión 0.2</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Versi.C3.B3n_0.1"><span class="tocnumber">3.5</span> <span class="toctext">Versión 0.1</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#V.C3.ADdeos"><span class="tocnumber">4</span> <span class="toctext">Vídeos</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Cambios"><span class="tocnumber">5</span> <span class="toctext">Cambios</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#Repositorio"><span class="tocnumber">6</span> <span class="toctext">Repositorio</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#Licencia"><span class="tocnumber">7</span> <span class="toctext">Licencia</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#Autor"><span class="tocnumber">8</span> <span class="toctext">Autor</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#Noticias"><span class="tocnumber">9</span> <span class="toctext">Noticias</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>En la tesis doctoral "<a href="https://www.iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Tesis" title="Juan Gonzalez:Tesis">Robótica Modular y Locomoción: Aplicación a Robots Ápodos</a>" propusimos un modelo de <b>osciladores sinusoidales</b> para la locomoción de robots modulares de tipo ápodo (gusanos y serpientes). En ella estudiamos los parámetros de los osciladores para conseguir los diferentes modos de caminar.
+</p><p>Este modelo de control genera <b>movimientos muy suaves</b>, pero lo más importante es que <b>son necesarios muy pocos recursos para su implementación</b>. Por ejemplo, se pueden usar microcontroladores de 8 bits, como los PICs o los AVR. La implementación de los osciladores en los microcontroladores la hemos denominado <b>micro-osciladores</b>.
+</p><p>Hasta ahora, todos los experimentos de locomoción de los robots ápodos (ver vídeos <a rel="nofollow" class="external autonumber" href="https://www.youtube.com/watch?v=RJL-buxNiD4">[1]</a> y <a rel="nofollow" class="external autonumber" href="https://www.youtube.com/watch?v=dl-LReQScZk">[2]</a>) los hacíamos controlando las oscilaciones desde un PC. Ahora, con los micro-osciladores podemos hacer que <b>los robots ápodos sean autónomos</b>, y que se desplacen sin tener que estar conectados al PC.
+</p>
+<h2><span class="mw-headline" id="Descarga">Descarga</span></h2>
+<h3><span class="mw-headline" id="ArduSnake_Library">ArduSnake Library</span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<td>
+<p><a href="https://www.iearobotics.com/wiki/index.php?title=ArduSnake:_Arduino_Modular_Snake_Robots_Library" title="ArduSnake: Arduino Modular Snake Robots Library">ArduSnake: Arduino Modular Snake Robots Library</a>
+</p>
+</td>
+<td> Se ha hecho una nueva versión de micro-osciladores compatible con Arduino. Es un proyecto aparte que tiene su propia página wiki
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Versi.C3.B3n_0.4">Versión 0.4</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/micro-osciladores/micro_osciladores_0.4.zip">micro_osciladores_0.4.zip</a>
+</td>
+<td> <b>Fuentes</b>. Paquete con todo: Software para el PC, firmware para PIC y firmware para ATMEGA
+</td></tr>
+</tbody></table>
+<h3><span class="mw-headline" id="Versi.C3.B3n:_0.3">Versión: 0.3</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th>Fichero</th>
+<th>Descripción
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/micro-osciladores/v0.3/micro_osciladores_0.3.zip">micro_osciladores_0.3.zip</a>
+</td>
+<td> <b>Fuentes</b>. Programas del PIC en C. Programas para el PC en python
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/micro-osciladores/v0.3/sg-oscillator.hex">sg-oscillator.hex</a>
+</td>
+<td> <i>Ejecutable</i>. Servidor de oscilaciones, para comunicarse desde el PC
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/micro-osciladores/v0.3/test-oscillator8.hex">test-oscillator8.hex</a>
+</td>
+<td> <i>Ejecutable</i>. Ejemplo de oscilación de 8 servos
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/micro-osciladores/v0.3/test-P8.hex">test-P8.hex</a>
+</td>
+<td> <i>Ejecutable</i>. Ejemplo de movimiento de un robot del grupo cabeceo-cabeceo de 8 módulos. Probado con <a href="https://www.iearobotics.com/wiki/index.php?title=Cube_Revolutions" title="Cube Revolutions">Cube Revolutions</a>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/micro-osciladores/v0.3/test-PP1.hex">test-PP1.hex</a>
+</td>
+<td> <i>Ejecutable</i>. Ejemplo de movimiento de la configuracion PP (<a href="https://www.iearobotics.com/wiki/index.php?title=MiniCube" title="MiniCube">Minicube-I</a>). Se usa el pulsador de test para cambiar la dirección del movimiento: adelante/atras
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/micro-osciladores/v0.3/test-PY8.hex">test-PY8.hex</a>
+</td>
+<td> <i>Ejecutable</i>. Ejemplo de movimiento de robots del grupo cabeceo-viraje de 8 módulos. Solo se ejecuta un movimiento. Probado con <a href="https://www.iearobotics.com/wiki/index.php?title=Hypercube" title="Hypercube">Hypercube</a>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/micro-osciladores/v0.3/test-hypercube.hex">test-hypercube.hex</a>
+</td>
+<td> <i>Ejecutable</i>. Secuencia de movimiento para <a href="https://www.iearobotics.com/wiki/index.php?title=Hypercube" title="Hypercube">Hypercube</a>. Se alternan el movimiento recto, desplazamiento lateral y rotación
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/micro-osciladores/v0.3/test-PYP1.hex">test-PYP1.hex</a>
+</td>
+<td> <i>Ejecutable</i>. Secuencia de movimiento para la configuración PYP (<a href="https://www.iearobotics.com/wiki/index.php?title=MiniCube" title="MiniCube">Minicube-II</a>). Se cambia de movimiento al apretar el pulsador de la <a href="https://www.iearobotics.com/wiki/index.php?title=Skycube" title="Skycube">Skycube</a>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Versi.C3.B3n:_0.2">Versión: 0.2</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th>Fichero</th>
+<th>Descripción
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/wiki/images/e/e5/Micro_osciladores_0.2.tar.gz">Micro_osciladores_0.2.tar.gz</a>
+</td>
+<td> Fuentes
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/wiki/images/8/8b/Ej1-servos2-v0-2.hex">Ej1-servos2-v0-2.hex</a>
+</td>
+<td> Ejemplo 1: Oscilación de dos servos (servos 1 y 2). Ejecutable para la Skypic
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/wiki/images/2/25/Ej-PP1-v0-2.hex">Ej-PP1-v0-2.hex</a>
+</td>
+<td> Ejemplo 2: Locomoción de Minicube-I (configuración PP). Ejecutable para la Skypic
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Versi.C3.B3n:_0.1">Versión: 0.1</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th>Fichero</th>
+<th>Descripción
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/wiki/images/1/18/Micro_osciladores_0.1.tar.gz">Micro_osciladores_0.1.tar.gz</a>
+</td>
+<td> Fuentes
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/wiki/images/6/6f/Micro-oscillators-v0-1.hex">Micro-oscillators-v0-1.hex</a>
+</td>
+<td> Ejecutable para descargar en una Skypic
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Evoluci.C3.B3n_del_proyecto">Evolución del proyecto</span></h2>
+<h3><span class="mw-headline" id="ArduSnake_Library_2">ArduSnake Library</span></h3>
+<ul><li> Migración al entorno de Arduino. El desarrollo se continúa en esta página del wiki: <a href="https://www.iearobotics.com/wiki/index.php?title=ArduSnake:_Arduino_Modular_Snake_Robots_Library" title="ArduSnake: Arduino Modular Snake Robots Library">ArduSnake: Arduino Modular Snake Robots Library</a></li>
+<li> Migración a repositorio en github</li></ul>
+<h3><span class="mw-headline" id="Versi.C3.B3n_0.4_2">Versión 0.4</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Micro-osciladores-0.4-1.jpg" class="image"><img alt="" src="Micro-osciladores_files/300px-Micro-osciladores-0.4-1_PZYw.jpg" width="300" height="225" class="thumbimage" srcset="Micro-osciladores_files/450px-Micro-osciladores-0.4-1_PZYw.jpg 1.5x, Micro-osciladores_files/600px-Micro-osciladores-0.4-1_PZYw.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Micro-osciladores-0.4-1.jpg" class="internal" title="Aumentar"></a></div>Micro-osciladores <b>versión 0.4</b>: Pruebas con una skymega</div></div></div>
+<ul><li> Añadido soporte para los micros ATMEGA. Pruebas con la tarjeta Skymega. </li>
+<li> Ejemplo de locomoción de la configuración mínima PP</li>
+<li> Ejemplo de oscilación de 8 servos</li></ul>
+<h3><span class="mw-headline" id="Versi.C3.B3n_0.3">Versión 0.3</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Micro-osciladores-0.3-1.jpg" class="image"><img alt="" src="Micro-osciladores_files/300px-Micro-osciladores-0.3-1_PZYw.jpg" width="300" height="190" class="thumbimage" srcset="Micro-osciladores_files/450px-Micro-osciladores-0.3-1_PZYw.jpg 1.5x, Micro-osciladores_files/600px-Micro-osciladores-0.3-1_PZYw.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Micro-osciladores-0.3-1.jpg" class="internal" title="Aumentar"></a></div>Micro-osciladores <b>versión 0.3</b>: Funcionando con la Skycube. Locomoción de Minicube-II</div></div></div>
+<p>(<a rel="nofollow" class="external text" href="https://www.iearobotics.com/blog/2010/01/18/micro-osciladores-03/">Entrada en Blog</a>)<br>
+Se ha probado con el SDCC 2.8.0
+</p>
+<ul><li> <b>Optimización del código</b>
+<ul><li> Sólo se usa el timer 0 para implementar las señales PWM y el periodo de muestreo</li>
+<li> Se usa el periodo de muestreo mínimo posible: 20ms. Viene determinado por el servo Futaba 3003</li>
+<li> Las oscilaciones son independientes del número de módulos. Oscilan exactamente igual 2 módulos que 8 (en las versiones anteriores esto no era así)</li>
+<li> Código más compacto, simple y fácil de usar</li></ul></li>
+<li> <b>Control parcial de los osciladores desde el PC</b>:
+<ul><li> Versión alfa del servidor sg-oscillator, que se comunica con el PC a 56700 baudios. Implementados los servicios de identificación, ping, habilitación/deshabilitación de servos, activación/desactivación de osciladores y posicionamiento de servos.</li>
+<li> Recepción de tramas mediante interrupciones</li>
+<li> Nuevo stargate Oscillator, implementado en python, para controlar los osciladores desde el PC</li></ul></li>
+<li> <b>Nuevos módulos oscillator-pn.c y oscillator-pyn.c</b>, para la locomoción de robots modulares de topología de 1D de los grupos cabeceo-cabeceo y cabeceo-viraje</li>
+<li> <b>Adaptación a la tarjeta Skyucube</b>. Los ejemplos funcionan bien en una tarjeta <a href="https://www.iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> o en la nueva <a href="https://www.iearobotics.com/wiki/index.php?title=Skycube" title="Skycube">Skycube 1.0</a></li>
+<li> <b>Nuevos ejemplos</b>:
+<ul><li> Movimiento del robot <a href="https://www.iearobotics.com/wiki/index.php?title=Cube_Revolutions" title="Cube Revolutions">Cube Revolutions</a></li>
+<li> Movimiento del robot <a href="https://www.iearobotics.com/wiki/index.php?title=Hypercube" title="Hypercube">Hypercube</a></li>
+<li> Movimiento del robot <a href="https://www.iearobotics.com/wiki/index.php?title=MiniCube" title="MiniCube">Minicube-II</a></li>
+<li> Oscilación de módulos desde el PC</li></ul></li></ul>
+<h3><span class="mw-headline" id="Versi.C3.B3n_0.2">Versión 0.2</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Micro-osciladores-0.2-PP.jpg" class="image"><img alt="" src="Micro-osciladores_files/300px-Micro-osciladores-0.2-PP_PZYw.jpg" width="300" height="225" class="thumbimage" srcset="Micro-osciladores_files/450px-Micro-osciladores-0.2-PP_PZYw.jpg 1.5x, Micro-osciladores_files/600px-Micro-osciladores-0.2-PP_PZYw.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Micro-osciladores-0.2-PP.jpg" class="internal" title="Aumentar"></a></div>Micro-osciladores <b>versión 0.2</b>: Movimiento de Minicube-I</div></div></div>
+<ul><li> <b>Reestructuración del código</b>. Creados los siguientes módulos:
+<ul><li> <i>sin.c</i>: Implementación de la función seno</li>
+<li> <i>servos.c</i>: Posicionamiento de los servos</li>
+<li> <i>timer2.c</i>: Generacion de pausas mediante el temporizador 2</li></ul></li>
+<li> <b>Ejemplos de utilización</b>:
+<ul><li> <i>ej1-servos2.c</i>: Oscilación de los servos 1 y 2</li>
+<li> <i>ej-PP1.c</i>: Locomoción de Minicube-I. Se emplean los servos 3 y 4. El robot se mueve en linea recta. Cada vez que se aprite el pulsador S1 de la <a href="https://www.iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> se cambia el sentido del movimiento</li></ul></li>
+<li> <b>Constantes definibles por el usuario</b>:
+<ul><li> <b>A</b>: Amplitud de las oscilaciones. Rango: 0-90 grados</li>
+<li> <b>FASE0</b>: Fase inicial. Rango: 0-360 grados</li>
+<li> <b>DF</b>: Diferencia de fase entre dos módulos consecutivos. Rango: -180,180 grados</li>
+<li> <b>OFFSET</b>: Valor medio de la oscilación. Rango: -90,90 grados</li>
+<li> <b>T</b>: Periodo de la oscilación en segundos</li>
+<li> <b>INC</b>: Incremento de la fase con el tiempo. Rango: -180,180 grados</li></ul></li></ul>
+<h3><span class="mw-headline" id="Versi.C3.B3n_0.1">Versión 0.1</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Micro-osciladores-ejemplo1.jpg" class="image"><img alt="" src="Micro-osciladores_files/300px-Micro-osciladores-ejemplo1_PZYw.jpg" width="300" height="225" class="thumbimage" srcset="Micro-osciladores_files/450px-Micro-osciladores-ejemplo1_PZYw.jpg 1.5x, Micro-osciladores_files/600px-Micro-osciladores-ejemplo1_PZYw.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Micro-osciladores-ejemplo1.jpg" class="internal" title="Aumentar"></a></div>Micro-osciladores <b>versión 0.1</b>: Haciendo oscilar dos módulos Y1</div></div></div>
+<p>Implementación de los <b>micro-osciladores</b> para la <a href="https://www.iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">tarjeta Skypic</a>, usando el compilador <a rel="nofollow" class="external text" href="http://sdcc.sourceforge.net/">SDCC</a> <b>versión 2.8.0</b>. Como ejemplo se hacen oscilar dos <a href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_Y1" title="Módulos Y1">Módulos Y1</a> con amplitudes de 45 grados, mismo periodo y diferencia de fase de 90 grados.
+</p><p>Debido a un bug en el SDCC 2.8.0 (y 2.9.0) con los números flotantes negativos, las funciones trigonométricas de la librería matemática no funcionan correctamente. Por ello hemos tenido que implementar nuestra propia función seno usando una tabla
+</p><p><b>Para probar la versión 0.1 en una skypic</b>:
+</p>
+<ul><li> Descargar el ejecutable en la Skypic: <a rel="nofollow" class="external text" href="https://www.iearobotics.com/wiki/images/6/6f/Micro-oscillators-v0-1.hex">Micro-oscillators-v0-1.hex</a></li>
+<li> Conectar dos servos (o módulos Y1) a las posiciones 1 y 2 de la Skypic</li>
+<li> Empezarán a oscilar</li></ul>
+<p><b>Para compilar la versión 0.1:</b>
+</p>
+<ul><li> Descargar las fuentes: <a rel="nofollow" class="external text" href="https://www.iearobotics.com/wiki/images/1/18/Micro_osciladores_0.1.tar.gz">Micro_osciladores_0.1.tar.gz</a></li>
+<li> Descomprimir el paquete y entrar en el directorio <i>micro_osciladores_0.1</i></li>
+<li> Usar alguno de los siguientes métodos:</li></ul>
+<dl><dd><ul><li> Ejecutar el siguiente comando en la linea de comandos:</li></ul></dd></dl>
+<pre>$ sdcc -Wl-m -Wl-ainhx8m -mpic14 -p16f876a libm.lib -o micro-oscillators micro-oscillators.c
+</pre>
+<ul><li> También se puede compilar usando make o el Piklab</li></ul>
+<h2><span class="mw-headline" id="V.C3.ADdeos">Vídeos</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>300|250&lt;/youtube&gt;
+</td>
+<td>300|250&lt;/youtube&gt;
+</td></tr>
+<tr>
+<td> Probando la <b>versión 0.3</b>. <br> Movimiento del robot <a href="https://www.iearobotics.com/wiki/index.php?title=MiniCube" title="MiniCube">Minicube-II</a> y control desde el PC<br> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=PnMehYqtwTY">Enlace al video en Youtube</a>
+</td>
+<td> Probando la <b>versión 0.2</b>. <br> Movimiento del robot <a href="https://www.iearobotics.com/wiki/index.php?title=MiniCube" title="MiniCube">Minicube-I</a> <br> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=66NN98tEd9Q">Enlace al video en Youtube</a>
+</td></tr></tbody></table>
+<p><br>
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>300|250&lt;/youtube&gt;
+</td></tr>
+<tr>
+<td> Probando la <b>versión 0.1</b>. <br> Oscilación de dos Módulos Y1 <br><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=Au-bKpiNv0A">Enlace al video en Youtube</a>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Cambios">Cambios</span></h2>
+<ul><li> <b>15/Feb/2012</b>: Nueva <a href="https://www.iearobotics.com/wiki/index.php?title=ArduSnake:_Arduino_Modular_Snake_Robots_Library" title="ArduSnake: Arduino Modular Snake Robots Library">ArduSnake Library</a>. Micro-osciladores compatibles con Arduino. Es un proyecto independiente que se lleva a su propia página del wiki.</li>
+<li> <b>09/Feb/2012</b>: Liberada versión 0.4</li>
+<li> <b>18/Enero/2010</b>: Version 0.3
+<ul><li> Ejemplos de movimiento de <a href="https://www.iearobotics.com/wiki/index.php?title=MiniCube" title="MiniCube">Minicube-II</a>, <a href="https://www.iearobotics.com/wiki/index.php?title=Cube_Revolutions" title="Cube Revolutions">Cube Revolutions</a> e <a href="https://www.iearobotics.com/wiki/index.php?title=Hypercube" title="Hypercube">Hypercube</a></li>
+<li> Control parcial de los osciladores desde el PC</li>
+<li> Probado en <a href="https://www.iearobotics.com/wiki/index.php?title=Skycube" title="Skycube">tarjeta Skycube</a></li></ul></li>
+<li> <b>15/Abril/2009</b>: Versión 0.2
+<ul><li> Ejemplo de movimiento del robot <a href="https://www.iearobotics.com/wiki/index.php?title=MiniCube" title="MiniCube">Minicube-I</a></li></ul></li>
+<li> <b>08/Abril/2009</b>: Versión 0.1
+<ul><li> Versión inicial</li>
+<li> Ejemplo de movimiento de dos módulos Y1</li></ul></li></ul>
+<h2><span class="mw-headline" id="Repositorio">Repositorio</span></h2>
+<ul><li> Repositorio SVN: <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/micro_osciladores">http://svn.iearobotics.com/micro_osciladores</a></li></ul>
+<p>Para obtener la última <b>versión estable</b> teclear:
+</p>
+<pre>svn co <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/micro_osciladores/micro_osciladores_0.4">http://svn.iearobotics.com/micro_osciladores/micro_osciladores_0.4</a>
+</pre>
+<h2><span class="mw-headline" id="Licencia">Licencia</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Cc_logo.png" class="image"><img alt="Cc logo.png" src="Micro-osciladores_files/Cc_logo_PZYw.png" width="88" height="31"></a> This work is licensed under a <a rel="nofollow" class="external text" href="http://creativecommons.org/licenses/by-sa/3.0/es/">Creative Commons Attribution-ShareAlike 3.0 Spain License</a>.
+</td></tr>
+<tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:GPLv3-logo-red.png" class="image" title="150px"><img alt="150px" src="Micro-osciladores_files/GPLv3-logo-red_PZYw.png" width="319" height="130"></a> El código está liberado bajo licencia GPLv3
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Autor">Autor</span></h2>
+<p><a href="https://www.iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main">Juan González Gómez</a>
+</p>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>27/Mayo/2010</b>: Comenzada la migración a los micros ATmega168</li>
+<li> <b>18/Enero/2010</b>: Liberada versión 0.3</li>
+<li> <b>8/Abril/2009</b>: Comenzada esta página</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20260928192129
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.025 seconds
+Real time usage: 0.039 seconds
+Preprocessor visited node count: 98/1000000
+Preprocessor generated node count: 149/1000000
+Post‐expand include size: 1400/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.456      1 - -total
+ 81.12%    1.992      7 - Plantilla:Tablabonita
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://www.iearobotics.com/wiki/index.php?title=Micro-osciladores&amp;oldid=13563">https://www.iearobotics.com/wiki/index.php?title=Micro-osciladores&amp;oldid=13563</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categorías</a>: <ul><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:SVN" title="Categoría:SVN">SVN</a></li><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Robots_modulares" title="Categoría:Robots modulares">Robots modulares</a></li><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Skypic" title="Categoría:Skypic">Skypic</a></li><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:ATMEL" title="Categoría:ATMEL">ATMEL</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://www.iearobotics.com/wiki/index.php?title=Micro-osciladores" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://www.iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Micro-osciladores&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://www.iearobotics.com/wiki/index.php?title=Micro-osciladores&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://www.iearobotics.com/wiki/index.php?title=Micro-osciladores&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Micro-osciladores" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Micro-osciladores" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Micro-osciladores" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://www.iearobotics.com/wiki/index.php?title=Micro-osciladores&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://www.iearobotics.com/wiki/index.php?title=Micro-osciladores&amp;oldid=13563" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://www.iearobotics.com/wiki/index.php?title=Micro-osciladores&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Micro-osciladores_files/gnu-fdl_PZYw.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="Micro-osciladores_files/poweredby_mediawiki_88x31_PZYw.png" alt="Powered by MediaWiki" srcset="Micro-osciladores_files/poweredby_mediawiki_132x47_PZYw.png 1.5x, Micro-osciladores_files/poweredby_mediawiki_176x62_PZYw.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 22 feb 2012 a las 02:05.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":122});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
