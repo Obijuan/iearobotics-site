@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Módulos REPY-1 - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Módulos_REPY-1","wgTitle":"Módulos REPY-1","wgCurRevisionId":12389,"wgRevisionId":12389,"wgArticleId":993,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Reprap","Objetos 3D","Robots modulares","SVN","Videos"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Módulos_REPY-1","wgRelevantArticleId":993,"wgRequestId":"arvioVj8NMM1iJ3_2RSN4gAAxmU","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="M%C3%B3dulos_REPY-1_files/load_V-vg.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="M%C3%B3dulos_REPY-1_files/load_002_V-vg.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://www.iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://www.iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="M%C3%B3dulos_REPY-1_files/load_V-vg.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Módulos_REPY-1 rootpage-Módulos_REPY-1 skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Módulos REPY-1</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repy1-v1.1-1.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPY-1_files/300px-Repy1-v1.1-1_V-vg.jpg" width="300" height="265" class="thumbimage" srcset="M%C3%B3dulos_REPY-1_files/450px-Repy1-v1.1-1_V-vg.jpg 1.5x, M%C3%B3dulos_REPY-1_files/600px-Repy1-v1.1-1_V-vg.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repy1-v1.1-1.jpg" class="internal" title="Aumentar"></a></div>El módulo REPY1 v1.1. Impreso en una Thing-o-matic MK7 (<i>click para ampliar</i>)</div></div></div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Informaci.C3.B3n"><span class="tocnumber">2</span> <span class="toctext">Información</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Repositorio"><span class="tocnumber">3</span> <span class="toctext">Repositorio</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Versi.C3.B3n_1.1"><span class="tocnumber">4</span> <span class="toctext">Versión 1.1</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Descargar"><span class="tocnumber">4.1</span> <span class="toctext">Descargar</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Montaje"><span class="tocnumber">4.2</span> <span class="toctext">Montaje</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Caracter.C3.ADsticas"><span class="tocnumber">4.3</span> <span class="toctext">Características</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Fotos"><span class="tocnumber">4.4</span> <span class="toctext">Fotos</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Historia"><span class="tocnumber">4.5</span> <span class="toctext">Historia</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Versi.C3.B3n_1.0"><span class="tocnumber">5</span> <span class="toctext">Versión 1.0</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#Descarga"><span class="tocnumber">5.1</span> <span class="toctext">Descarga</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Instrucctiones_de_montaje"><span class="tocnumber">5.2</span> <span class="toctext">Instrucctiones de montaje</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Historia_2"><span class="tocnumber">5.3</span> <span class="toctext">Historia</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Fotos_2"><span class="tocnumber">5.4</span> <span class="toctext">Fotos</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Videos"><span class="tocnumber">5.5</span> <span class="toctext">Videos</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#Enlaces"><span class="tocnumber">6</span> <span class="toctext">Enlaces</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#Autor"><span class="tocnumber">7</span> <span class="toctext">Autor</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#Licencia"><span class="tocnumber">8</span> <span class="toctext">Licencia</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#Agradecimientos"><span class="tocnumber">9</span> <span class="toctext">Agradecimientos</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="#Noticias"><span class="tocnumber">10</span> <span class="toctext">Noticias</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>Los <b>módulos REPY1</b> son una copia de los <a href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_Y1" title="Módulos Y1">Módulos Y1</a>, pero pensados para poder ser "impresos" mediante una <b>impresora 3D</b> opensource. Con ellos se pueden construir <b>printbots modulares</b>.
+</p><p>Características de los módulos REPY:
+</p>
+<ul><li> <b>PrintBots modulares</b>: Permiten construir PrintBots modulares</li>
+<li> <b>Son Libres</b>. Está disponibles los ficheros fuentes para que cualquiera pueda modificar el diseño, distribuirlo, imprimirlo o venderlo.</li>
+<li> <b>Pocas piezas</b>. Sólo constan de dos piezas: el cuerpo y la cabeza. </li>
+<li> <b>Montaje sencillo</b>. Sólo hay que atornillar el servo y unir las dos partes</li>
+<li> <b>Disponibilidad inmediata</b>. Si se necesitan más módulos para construir nuevos printbots modulares o bien para reemplazar alguno que estuviese roto, sólo hay que imprimirse las piezas en tu propia casa y listo </li>
+<li> <b>Teletransportación</b>. Estos módulos se pueden considerar como "teletransportables". Directamente pasan de la web a su materialización en tu propia casa. Cualquier persona en el mundo, que tenga acceso a este tipo de impresoras podrá disponer de su módulo en poco tiempo&nbsp;:-)</li></ul>
+<h2><span class="mw-headline" id="Informaci.C3.B3n">Información</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <b>Dimensiones</b> </td>
+<td> 52x52x72mm (en posición de reposo)
+</td></tr>
+<tr>
+<td> <b>Material</b> </td>
+<td> <a rel="nofollow" class="external text" href="https://es.wikipedia.org/wiki/Acrilonitrilo_butadieno_estireno">ABS</a> (Acrilonitrilo Butadieno Estireno) Es el mismo plástico de las piezas de Lego
+</td></tr>
+<tr>
+<td> <b>Peso</b> </td>
+<td> 50gr aprox.
+</td></tr>
+<tr>
+<td> <b>Tiempo de impresión</b> </td>
+<td> 1h y 30 minutos. Cada una de las dos piezas (cabeza y cuerpo) tantan en imprimirse entre 45 y 46 minutos
+</td></tr>
+<tr>
+<td> <b>Tiempo de montaje</b> </td>
+<td> 10 minutos
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Repositorio">Repositorio</span></h2>
+<ul><li> Repositorio SVN: <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/3D_objects/repy-1">http://svn.iearobotics.com/3D_objects/repy-1</a></li></ul>
+<p>Para obtener la <b>versión v1.1</b> teclear:
+</p>
+<pre>svn co <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/3D_objects/repy-1/v1.1">http://svn.iearobotics.com/3D_objects/repy-1/v1.1</a>
+</pre>
+<p><br>
+</p>
+<h2><span class="mw-headline" id="Versi.C3.B3n_1.1">Versión 1.1</span></h2>
+<h3><span class="mw-headline" id="Descargar">Descargar</span></h3>
+<table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repy1-v1.1-body.png" class="image" title="100px"><img alt="100px" src="M%C3%B3dulos_REPY-1_files/Repy1-v1.1-body_V-vg.png" width="500" height="499"></a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/3D_objects/repy-1/v1.1/stl/REPY1-1.1-module-body.stl">REPY1-1.1-module-body.stl</a>
+</td>
+<td> Cuerpo del módulo (STL)
+</td></tr>
+<tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repy1-v1.1-head.png" class="image" title="100px"><img alt="100px" src="M%C3%B3dulos_REPY-1_files/Repy1-v1.1-head_V-vg.png" width="500" height="500"></a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/3D_objects/repy-1/v1.1/stl/REPY1-1.1-module-head.stl">REPY1-1.1-module-head.stl</a>
+</td>
+<td> Cabeza del módulo (STL)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2009-06-09-repy1/v1.1/repy1-v1.1-sources.zip">repy1-v1.1-sources.zip</a>
+</td>
+<td> Fuentes (OpenScad)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2009-06-09-repy1/v1.1/repy1-v1_1-doc-freecad.zip">repy1-v1_1-doc-freecad.zip</a>
+</td>
+<td> Ficheros de documentación. En Freecad
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Montaje">Montaje</span></h3>
+<ul><li> <b>Material necesario</b>
+<ul><li> 1 <a rel="nofollow" class="external text" href="https://www.iearobotics.com/wiki/index.php?title=Servos_Futaba_3003%7C">Servo Futaba 3003</a> o compatible</li>
+<li> 1 tornillo M3x6 de cabeza cónica</li>
+<li> 4 tornillos M3x10 de cabeza cilíndrica</li>
+<li> 4 tuercas M3</li>
+<li> 4 arandelas M3</li>
+<li> Cuerpo (pieza impresa)</li>
+<li> Cabeza (pierza impresa)</li></ul></li></ul>
+<ul><li> <b>Instrucciones</b>
+<ul><li> Imprimir las dos piezas necesarias (cabeza y cuerpo)</li>
+<li> Limar los taladros para asegurarse que los tornillos entran correctamente</li>
+<li> Limar el taladro grande de la cabeza para asegurarse que la corona del servo entra correctamente</li>
+<li> Limar el hueco del servo en la pieza del cuerpo del módulo para asegurarse que entra fácilmente, sin forzar el módulo</li>
+<li> Insertar la corona del servo en la cabeza. Pegarla con superglue o pegamento bicomponente</li>
+<li> Insertar el tornillo M3x6 en el cuerpo (ver fotos) de manera que apunte hacia fuera y la cabeza se quede a ras.</li>
+<li> Colocar el servo en su hueco. Entre el servo y la pieza colocar 4 arandelas. Luego insertar los tornillos y las tuercas</li>
+<li> Unir las dos partes (Cuerpo y cabeza). Insertar primero el taladro pequeño y luego la corona del servo. <b>¡Asegurarse que la posición horizontal se corresponde con la posición de 0 grados!</b></li></ul></li></ul>
+<ul><li> <b>Instrucciones visuales</b></li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repy1-v1.1-parts-1.png" class="image"><img alt="" src="M%C3%B3dulos_REPY-1_files/300px-Repy1-v1.1-parts-1_V-vg.png" width="300" height="256" class="thumbimage" srcset="M%C3%B3dulos_REPY-1_files/450px-Repy1-v1.1-parts-1_V-vg.png 1.5x, M%C3%B3dulos_REPY-1_files/600px-Repy1-v1.1-parts-1_V-vg.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repy1-v1.1-parts-1.png" class="internal" title="Aumentar"></a></div>Piezas que componen el módulo (<i>Click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repy1-v1.1-parts-2.png" class="image"><img alt="" src="M%C3%B3dulos_REPY-1_files/300px-Repy1-v1.1-parts-2_V-vg.png" width="300" height="249" class="thumbimage" srcset="M%C3%B3dulos_REPY-1_files/450px-Repy1-v1.1-parts-2_V-vg.png 1.5x, M%C3%B3dulos_REPY-1_files/600px-Repy1-v1.1-parts-2_V-vg.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repy1-v1.1-parts-2.png" class="internal" title="Aumentar"></a></div>Paso 1: Montaje de la cabeza y cuerpo del módulo (<i>Click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repy1-v1.1-parts-3.png" class="image"><img alt="" src="M%C3%B3dulos_REPY-1_files/300px-Repy1-v1.1-parts-3_V-vg.png" width="300" height="263" class="thumbimage" srcset="M%C3%B3dulos_REPY-1_files/450px-Repy1-v1.1-parts-3_V-vg.png 1.5x, M%C3%B3dulos_REPY-1_files/600px-Repy1-v1.1-parts-3_V-vg.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repy1-v1.1-parts-3.png" class="internal" title="Aumentar"></a></div>Paso 2: Unir cabeza y cuerpo. Esa posición se corresponde con un ángulo de 0 grados (<i>Click para ampliar</i>)</div></div></div>
+</td>
+<td>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Caracter.C3.ADsticas">Características</span></h3>
+<ul><li> Realizada en Openscad, extruyendo ficheros DXF</li>
+<li> Esta versión deriva de los <a href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_Y1" title="Módulos Y1">Módulos Y1</a> <b>v1.1</b>, que han sido también migrados a Openscad</li>
+<li> Cambios con respecto a los módulos Y1 originales: 
+<ul><li> taladro de la pieza FE avellanado. </li>
+<li> Eliminados los taladros de 3mm que unen la corona del servo con la cabeza</li></ul></li>
+<li> Taladros parameterizados</li>
+<li> Grosor de las piezas parametrizado</li></ul>
+<h3><span class="mw-headline" id="Fotos">Fotos</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://plus.google.com/u/0/photos/109138697406392447933/albums/5672278308534941297">Álbum de fotos completo</a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repy1-v1.1-2.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPY-1_files/300px-Repy1-v1.1-2_V-vg.jpg" width="300" height="232" class="thumbimage" srcset="M%C3%B3dulos_REPY-1_files/450px-Repy1-v1.1-2_V-vg.jpg 1.5x, M%C3%B3dulos_REPY-1_files/600px-Repy1-v1.1-2_V-vg.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repy1-v1.1-2.jpg" class="internal" title="Aumentar"></a></div>Un módulo REPY1 v1.1 (<i>Click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repy1-v1.1-3.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPY-1_files/300px-Repy1-v1.1-3_V-vg.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPY-1_files/450px-Repy1-v1.1-3_V-vg.jpg 1.5x, M%C3%B3dulos_REPY-1_files/600px-Repy1-v1.1-3_V-vg.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repy1-v1.1-3.jpg" class="internal" title="Aumentar"></a></div>4 módulos REPY1 v1.1 (<i>Click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Historia">Historia</span></h3>
+<ul><li> <i>09/Nov/2011</i>: Módulos liberados! (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/blog/2011/11/09/modulo-repy1-version-1-1/">Blog</a>)</li>
+<li> <i>07/Nov/2011</i>: 4 módulos Repy1 v1.1 montados (de color verde)</li>
+<li> <i>03/Nov/2011</i>: Nieves Galeco ha impreso la cabeza. Módulo impreso en MADRE validado!</li>
+<li> <i>02/Nov/2011</i>: Primer módulo v1.1 impreso. ¡Validado! (impreso en PADRE)</li></ul>
+<h2><span class="mw-headline" id="Versi.C3.B3n_1.0">Versión 1.0</span></h2>
+<p>(<i>Versión obsoleta</i>). se mantiene en el wiki por razones históricas
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repy1-module-1.jpeg" class="image"><img alt="" src="M%C3%B3dulos_REPY-1_files/300px-Repy1-module-1_V-vg.jpeg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPY-1_files/450px-Repy1-module-1_V-vg.jpeg 1.5x, M%C3%B3dulos_REPY-1_files/600px-Repy1-module-1_V-vg.jpeg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repy1-module-1.jpeg" class="internal" title="Aumentar"></a></div>Módulo REPY1 v1.0. Impreso en una Reprap Cupcake <i>(click para ampliar)</i></div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repy1-body-blender.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPY-1_files/300px-Repy1-body-blender_V-vg.jpg" width="300" height="178" class="thumbimage" srcset="M%C3%B3dulos_REPY-1_files/450px-Repy1-body-blender_V-vg.jpg 1.5x, M%C3%B3dulos_REPY-1_files/600px-Repy1-body-blender_V-vg.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repy1-body-blender.jpg" class="internal" title="Aumentar"></a></div>v1.0: El cuerpo del módulo diseñado con Blender <i>(click para ampliar)</i></div></div></div>
+<p>Es la versión inicial. Se ha creado con la herramienta <a rel="nofollow" class="external text" href="http://www.blender.org/">Blender</a> en una máquina con Linux (Debian/Lenny)
+</p>
+<h3><span class="mw-headline" id="Descarga">Descarga</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th> Pieza   </th>
+<th> Blender   </th>
+<th> STL </th>
+<th> GCODE
+</th></tr>
+<tr>
+<td> Cuerpo del módulo REPY1  </td>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/3D_objects/repy-1/v1.0/repy1-module-body.blend">repy1-module-body.blend</a> </td>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/3D_objects/repy-1/v1.0/repy1-module-body.stl">repy1-module-body.stl</a> </td>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2009-06-09-repy1/v1.0/repy1-module-body.gcode">repy1-module-body.gcode</a>
+</td></tr>
+<tr>
+<td> Cabeza del módulo REPY1  </td>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/3D_objects/repy-1/v1.0/repy1-module-head.blend">repy1-module-head.blend</a> </td>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/3D_objects/repy-1/v1.0/repy1-module-head.stl">repy1-module-head.stl</a> </td>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2009-06-09-repy1/v1.0/repy1-module-head.gcode">repy1-module-head.gcode</a>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Instrucctiones_de_montaje">Instrucctiones de montaje</span></h3>
+<p>El montaje está descrito en el <a rel="nofollow" class="external text" href="http://fotos.iearobotics.com/index.php?album=modulos-repy-1">álbum de fotos</a>.
+</p>
+<h3><span class="mw-headline" id="Historia_2">Historia</span></h3>
+<ul><li> La versión 1.0 fue impresa por primera vez el <b>9/Junio/2009</b> en una máquina <a href="https://www.iearobotics.com/wiki/index.php?title=Cupcake_CNC" title="Cupcake CNC">Cupcake CNC</a></li>
+<li> En esta misma fecha se imprimió el <b>primer robot modular</b> con módulos REPY1 (la configuración PP)</li>
+<li> Esta versión es similar a la de los módulos Y1</li>
+<li> Un lateral de cabeza no se imprime bien y hay que eliminarlo, pero el módulo funciona correctamente</li>
+<li> Previamente, el 18 de Febrero de 2009, <a rel="nofollow" class="external text" href="https://www.iearobotics.com/blog/2009/02/18/reprap-y-modulos-y1/">se había impreso la cabeza del módulo en una máquina Reprap original</a>, en el <b>MediaLab-prado</b> de Madrid</li>
+<li> El mismo <b>9/Junio/2009</b> los módulos repy-1 han sido publicados en el <a rel="nofollow" class="external text" href="http://blog.makerbot.com/2009/06/09/repy-1-modules-robotic-catipillars-action/">blog de Makerbots</a></li>
+<li> <b>10/Junio/2009</b>: Varios blogs se han hecho eco de la noticia
+<ul><li> Gracias a Eduardo Orive (Edorka) me entero de que <a rel="nofollow" class="external text" href="http://blog.makezine.com/archive/2009/06/3d-printer_robot_caterpillar_parts.html">han publicado la noticia en Make</a></li>
+<li> Noticia en <a rel="nofollow" class="external text" href="http://dailydiy.com/2009/06/10/3d-printer-robot-caterpillar-parts/">Daily DIY</a></li>
+<li> Noticia en <a rel="nofollow" class="external text" href="http://www.blog-avenue.com/2009/06/3d-printer-robot-caterpillar-parts.html">Blog Avenue</a></li></ul></li></ul>
+<h3><span class="mw-headline" id="Fotos_2">Fotos</span></h3>
+<ul><li> <a rel="nofollow" class="external text" href="http://fotos.iearobotics.com/index.php?album=modulos-repy-1">Ver álbum de fotos</a>. Se describe el proceso completo, desde su impresión hasta su montaje.</li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Y1-repy1-1.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPY-1_files/300px-Y1-repy1-1_V-vg.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPY-1_files/450px-Y1-repy1-1_V-vg.jpg 1.5x, M%C3%B3dulos_REPY-1_files/600px-Y1-repy1-1_V-vg.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Y1-repy1-1.jpg" class="internal" title="Aumentar"></a></div>Dos módulos REPY1 junto a un módulo Y1 original</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repy1-pp-1.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPY-1_files/300px-Repy1-pp-1_V-vg.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPY-1_files/450px-Repy1-pp-1_V-vg.jpg 1.5x, M%C3%B3dulos_REPY-1_files/600px-Repy1-pp-1_V-vg.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repy1-pp-1.jpg" class="internal" title="Aumentar"></a></div>La configuración PP montada con dos módulos REPY1</div></div></div>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Videos">Videos</span></h3>
+<ul><li> En estos vídeos se puede ver al <b>módulo REPY1 v1.0 en acción</b>. En el vídeo de la izquierda se está imprimiendo el cuerpo en la cupcake. En la derecha se está probando el movimiento de un módulo</li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> &lt;youtube&gt;2JfYikN3KGA|300|250&lt;/youtube&gt; <br> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=2JfYikN3KGA">Enlace al vídeo</a>
+</td>
+<td> &lt;youtube&gt;DMcbII2sS7g|300|250&lt;/youtube&gt; <br> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=DMcbII2sS7g">Enlace al vídeo</a>
+</td></tr></tbody></table>
+<ul><li> Vídeo demostrativo de <b>la configuración mínima PP</b> construida mediante dos módulos REPY1</li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> &lt;youtube&gt;ZxGXqCpo21k|300|250&lt;/youtube&gt; <br> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=ZxGXqCpo21k">Enlace al vídeo</a>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<ul><li> <a href="https://www.iearobotics.com/wiki/index.php?title=Objetos_3D" title="Objetos 3D">Página índice de objetos 3D</a></li>
+<li> <a rel="nofollow" class="external text" href="http://www.thingiverse.com/thing:13442">Módulos REPY1 en Thingiverse</a>. Versión 1.1</li>
+<li> <a rel="nofollow" class="external text" href="http://www.thingiverse.com/thing:688">Módulos REPY-1 en Thingiverse</a>. Versión 1.0</li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_Y1" title="Módulos Y1">Módulos Y1</a>: Módulos originales, de plástico cortado por láser</li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_MY" title="Módulos MY">Módulos MY1</a>: Módulos de aluminio</li></ul>
+<h2><span class="mw-headline" id="Autor">Autor</span></h2>
+<p><a href="https://www.iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main">Juan González Gómez</a>
+</p>
+<h2><span class="mw-headline" id="Licencia">Licencia</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Cc_logo.png" class="image"><img alt="Cc logo.png" src="M%C3%B3dulos_REPY-1_files/Cc_logo_V-vg.png" width="88" height="31"></a> This work is licensed under a <a rel="nofollow" class="external text" href="http://creativecommons.org/licenses/by-sa/3.0/es/">Creative Commons Attribution-ShareAlike 3.0 Spain License</a>.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Agradecimientos">Agradecimientos</span></h2>
+<ul><li> A todos los desarrolladores del <a rel="nofollow" class="external text" href="http://reprap.org/">proyecto Reprap</a>, por acercar la tecnología a la gente de la calle.</li>
+<li> A los socios fundadores de <a rel="nofollow" class="external text" href="http://www.makerbot.com/">MakerBot Industries</a>, por haber comercializado a un precio muy asequible su fabulosa impresora 3D CupCake. En especial a <b>Zach Smith</b> por toda su ayuda.</li>
+<li> A la gente del <b>Medialab-Prado</b>, en Madrid, por dejarme participar en el proyecto de la Reprap y realizar algunas impresiones. Muchas gracias, en particular, a <b>Gabriel Lucas</b>.</li>
+<li> A <b><a href="https://www.iearobotics.com/wiki/index.php?title=Andr%C3%A9s_Prieto-Moreno" title="Andrés Prieto-Moreno">Andrés Prieto-Moreno</a></b> por su apoyo, financiación de la Cupcake y ayuda en el montaje y las pruebas. Si no es por tu ayuda, los módulos REPY1 no serían una realidad. Muchas gracias&nbsp;;-)</li>
+<li> A <b><a href="https://www.iearobotics.com/wiki/index.php?title=Ricardo_G%C3%B3mez" title="Ricardo Gómez">Ricardo Gómez</a></b> por su ayuda en el montaje de la máquina y su electrónica. Muchas gracias&nbsp;:-)</li>
+<li> A <b>Nieves Galeco</b> (Nicuma), estudiante de Ingenieria Electrónica Industrial y Automática de la UC3M por imprimir la cabeza de la versión 1.1 y ayudar en su validación. ¡Muchas gracias!</li>
+<li> A <a rel="nofollow" class="external text" href="http://iearobotics.com/alberto/">Alberto Valero</a> por su ayuda en la impresión de módulos v1.1 en PADRE, y su validación. ¡Muchas gracias!</li></ul>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>9/Nov/2011</b>: Añadidas instrucciones montaje de la versión 1.1</li>
+<li> <b>3/Nov/2011</b>: Añadidos los ficheros STL de la versión 1.1</li>
+<li> <b>9/Junio/2009</b>: Primera versión de esta página</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20260929160905
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.032 seconds
+Real time usage: 0.038 seconds
+Preprocessor visited node count: 96/1000000
+Preprocessor generated node count: 137/1000000
+Post‐expand include size: 1000/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.535      1 - -total
+ 79.25%    2.009      5 - Plantilla:Tablabonita
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_REPY-1&amp;oldid=12389">https://www.iearobotics.com/wiki/index.php?title=Módulos_REPY-1&amp;oldid=12389</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categorías</a>: <ul><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Reprap" title="Categoría:Reprap">Reprap</a></li><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Objetos_3D" title="Categoría:Objetos 3D">Objetos 3D</a></li><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Robots_modulares" title="Categoría:Robots modulares">Robots modulares</a></li><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:SVN" title="Categoría:SVN">SVN</a></li><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Videos" title="Categoría:Videos">Videos</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_REPY-1" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://www.iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:M%C3%B3dulos_REPY-1&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_REPY-1&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_REPY-1&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=M%C3%B3dulos+REPY-1" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/M%C3%B3dulos_REPY-1" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/M%C3%B3dulos_REPY-1" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_REPY-1&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_REPY-1&amp;oldid=12389" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_REPY-1&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="M%C3%B3dulos_REPY-1_files/gnu-fdl_V-vg.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="M%C3%B3dulos_REPY-1_files/poweredby_mediawiki_88x31_V-vg.png" alt="Powered by MediaWiki" srcset="M%C3%B3dulos_REPY-1_files/poweredby_mediawiki_132x47_V-vg.png 1.5x, M%C3%B3dulos_REPY-1_files/poweredby_mediawiki_176x62_V-vg.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 9 nov 2011 a las 03:26.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":111});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
