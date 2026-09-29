@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Grabador de AVRs:USBtinyISP v2.0 - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Grabador_de_AVRs:USBtinyISP_v2.0","wgTitle":"Grabador de AVRs:USBtinyISP v2.0","wgCurRevisionId":8807,"wgRevisionId":8807,"wgArticleId":963,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Hardware","Reprap","Documentación","ATMEL"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Grabador_de_AVRs:USBtinyISP_v2.0","wgRelevantArticleId":963,"wgRequestId":"artqyvL3g-3pzfZ3Go4xOAAAhDU","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Grabador_de_AVRs_USBtinyISP_v2.0_files/load_JEHx.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="Grabador_de_AVRs_USBtinyISP_v2.0_files/load_002_JEHx.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://www.iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://www.iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="Grabador_de_AVRs_USBtinyISP_v2.0_files/load_JEHx.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Grabador_de_AVRs_USBtinyISP_v2_0 rootpage-Grabador_de_AVRs_USBtinyISP_v2_0 skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Grabador de AVRs:USBtinyISP v2.0</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:USBtinyISP-1.jpg" class="image"><img alt="" src="Grabador_de_AVRs_USBtinyISP_v2.0_files/300px-USBtinyISP-1_JEHx.jpg" width="300" height="225" class="thumbimage" srcset="Grabador_de_AVRs_USBtinyISP_v2.0_files/450px-USBtinyISP-1_JEHx.jpg 1.5x, Grabador_de_AVRs_USBtinyISP_v2.0_files/600px-USBtinyISP-1_JEHx.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:USBtinyISP-1.jpg" class="internal" title="Aumentar"></a></div>El grabador USBtinyISP una vez montado junto a la bolsa donde estaban sus componentes</div></div></div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Descripci.C3.B3n"><span class="tocnumber">2</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Conexi.C3.B3n_a_un_Arduino_Nano"><span class="tocnumber">3</span> <span class="toctext">Conexión a un Arduino Nano</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Software"><span class="tocnumber">4</span> <span class="toctext">Software</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Instalaci.C3.B3n_en_Debian.2FLenny"><span class="tocnumber">4.1</span> <span class="toctext">Instalación en Debian/Lenny</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Probando_el_grabador"><span class="tocnumber">5</span> <span class="toctext">Probando el grabador</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Comprobando_el_grabador_con_un_Arduino_nano"><span class="tocnumber">5.1</span> <span class="toctext">Comprobando el grabador con un Arduino nano</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Grabanci.C3.B3n_del_Bootloader"><span class="tocnumber">6</span> <span class="toctext">Grabanción del Bootloader</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#Arduino_Nano"><span class="tocnumber">6.1</span> <span class="toctext">Arduino Nano</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Placa_madre_Reprap_G3"><span class="tocnumber">6.2</span> <span class="toctext">Placa madre Reprap G3</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Enlaces"><span class="tocnumber">7</span> <span class="toctext">Enlaces</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Noticias"><span class="tocnumber">8</span> <span class="toctext">Noticias</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>El grabador de AVRs <a rel="nofollow" class="external text" href="http://www.ladyada.net/make/usbtinyisp/">USBtinyISP</a> permite programar la memoria flash de los <a rel="nofollow" class="external text" href="https://es.wikipedia.org/wiki/AVR">micros AVR</a> de atmel. Se conecta al PC a través del USB. Es <b>hardware libre</b>, por lo que están disponibles todos sus esquemas.
+</p>
+<h2><span class="mw-headline" id="Descripci.C3.B3n">Descripción</span></h2>
+<p>Este grabador se lo puede construir uno mismo desde cero o bien lo puede comprar como un kit para montar. Nosotros recibimos ese kit al comprarnos la <b>impresora 3D</b> <a rel="nofollow" class="external text" href="http://wiki.makerbot.com/cupcake">CupCake</a> (Una versión más pequeña de <a rel="nofollow" class="external text" href="http://reprap.org/bin/view/Main/WebHome">RepRap</a>).
+</p><p><br>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:USBtiny-description.png" class="image"><img alt="" src="Grabador_de_AVRs_USBtinyISP_v2.0_files/300px-USBtiny-description_JEHx.png" width="300" height="225" class="thumbimage" srcset="Grabador_de_AVRs_USBtinyISP_v2.0_files/450px-USBtiny-description_JEHx.png 1.5x, Grabador_de_AVRs_USBtinyISP_v2.0_files/600px-USBtiny-description_JEHx.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:USBtiny-description.png" class="internal" title="Aumentar"></a></div>Descripción de las partes del grabador USBtinyISP v2.0 (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/dibujos/USBtinyISP-description-src.tar.gz">src</a>)</div></div></div>
+<p><br>
+Las distintas partes del grabador son:
+</p>
+<ul><li> <b>Led rojo</b>: Indica que la grabación se está realizando</li>
+<li> <b>Led verde</b>: Led de power. Se enciende cuando se conecta al USB del PC</li>
+<li> <b>Conexión al PC</b>: Conector para su conexión al PC mediante un cable USB</li>
+<li> <b>Jumper</b>: Sirve para configurar la alimentación del micro que se está grabando
+<ul><li> Jumper puesto --&gt; El programador alimenta el micro (5v). La corriente máxima es de 100mA</li>
+<li> Jumper quitado --&gt; La alimentación del micro a grabar se tiene que obtener mediante una fuente externa</li></ul></li>
+<li> <b>Conector ICSP</b>: Conector de 6 pines para la grabación del micro. Es el que normalmente se usará.</li>
+<li> <b>Conector JTAG</b>: Conector de 10 pines para la grabación mediante JTAG</li></ul>
+<h2><span class="mw-headline" id="Conexi.C3.B3n_a_un_Arduino_Nano">Conexión a un Arduino Nano</span></h2>
+<p>La programación normalmente se hará usando el conector de 6 pines. La muesca indica la orientación del cable. En algunas placas, este conector se puede conectar en dos orientaciones. Para saber cuál es la correcta hay que fijarse en dónde está el pin 1 del conector.
+En las siguientes figuras se muestra un ejemplo de conexión a un <b>Arduino nano</b>, para su programación:
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:UsbtinyISP-conector6.png" class="image"><img alt="" src="Grabador_de_AVRs_USBtinyISP_v2.0_files/300px-UsbtinyISP-conector6_JEHx.png" width="300" height="211" class="thumbimage" srcset="Grabador_de_AVRs_USBtinyISP_v2.0_files/450px-UsbtinyISP-conector6_JEHx.png 1.5x, Grabador_de_AVRs_USBtinyISP_v2.0_files/600px-UsbtinyISP-conector6_JEHx.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:UsbtinyISP-conector6.png" class="internal" title="Aumentar"></a></div>Conector ICSP de 6 pines (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/dibujos/USBtinyISP-conector6-src.tar.gz">src</a>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:USBtiny-arduino-nano.png" class="image"><img alt="" src="Grabador_de_AVRs_USBtinyISP_v2.0_files/300px-USBtiny-arduino-nano_JEHx.png" width="300" height="225" class="thumbimage" srcset="Grabador_de_AVRs_USBtinyISP_v2.0_files/450px-USBtiny-arduino-nano_JEHx.png 1.5x, Grabador_de_AVRs_USBtinyISP_v2.0_files/600px-USBtiny-arduino-nano_JEHx.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:USBtiny-arduino-nano.png" class="internal" title="Aumentar"></a></div>Programación de un Arduino nano (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/dibujos/USBtinyISP-arduino-nano.tar.gz">src</a>)</div></div></div>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Software">Software</span></h2>
+<p>El USBtinyISP es multiplataforma (Linux, Mac, Windows). Un software para su utilización, en línea de comandos, es el <a rel="nofollow" class="external text" href="http://www.nongnu.org/avrdude/">AVRDUDE</a>
+</p>
+<h3><span class="mw-headline" id="Instalaci.C3.B3n_en_Debian.2FLenny">Instalación en Debian/Lenny</span></h3>
+<p>El AVRDude está disponible en los repositorios oficiales de Debian. Instalación:
+</p>
+<pre>$ sudo apt-get install avrdude
+</pre>
+<h2><span class="mw-headline" id="Probando_el_grabador">Probando el grabador</span></h2>
+<p>Lo normal es que este grabador nos lo construyamos a partir del kit, soldando los componentes electrónicos en la placa de circuito impreso. Una vez construida, para probarla seguir los siguientes pasos:
+</p>
+<ul><li> <b>Conectar el programador al USB del PC</b>
+<ul><li> Comprobar que el led verde <b>está encendido</b></li>
+<li> Al Ejecutar <i>dmesg</i> se debe ver algo como esto:</li></ul></li></ul>
+<pre>$ dmesg
+[...]
+usb 3-2: new low speed USB device using uhci_hcd and address 11
+usb 3-2: configuration #1 chosen from 1 choice
+usb 3-2: New USB device found, idVendor=1781, idProduct=0c9f
+usb 3-2: New USB device strings: Mfr=0, Product=2, SerialNumber=0
+usb 3-2: Product: USBtiny
+</pre>
+<h3><span class="mw-headline" id="Comprobando_el_grabador_con_un_Arduino_nano">Comprobando el grabador con un Arduino nano</span></h3>
+<ul><li> Conectar el grabador</li>
+<li> Asegurarse que el <b>jumper del grabador está colocado</b></li>
+<li> Conectar el conector de 6 pines al Arduino nano</li>
+<li> Ejecutar este comando:</li></ul>
+<pre>$ sudo avrdude  -c usbtiny -p m168
+avrdude: AVR device initialized and ready to accept instructions
+Reading | ################################################## | 100% 0.01s
+avrdude: Device signature = 0x1e9406
+avrdude: safemode: Fuses OK
+avrdude done.  Thank you.
+</pre>
+<p>Este comando no graba nada. Simplemente accede al micro y lee su configuración.
+</p><p><b><font color="#0000FF">NOTA 1</font></b>: Se ha ejecutado con <b>sudo</b> para tener privilegios de root. Si se ejecuta como un usuario normal se obtendrá lo siguiente:
+</p>
+<pre>$ avrdude  -c usbtiny -p m168
+avrdude: error: usbtiny_transmit: error sending control message: Operation not permitted
+</pre>
+<dl><dd>No todavía qué permisos tengo que cambiar para que funcione como usuario normal</dd></dl>
+<p><b><font color="#0000FF">NOTA 2</font></b>: Si el grabador no está conectado o se ha soldado incorrectamente, se obtendrá el siguiente mensaje de error:
+</p>
+<pre>$ sudo avrdude  -c usbtiny -p m168
+avrdude: Error: Could not find USBtiny device (0x1781/0xc9f)
+</pre>
+<h2><span class="mw-headline" id="Grabanci.C3.B3n_del_Bootloader">Grabanción del Bootloader</span></h2>
+<h3><span class="mw-headline" id="Arduino_Nano">Arduino Nano</span></h3>
+<p>La grabación del Bootloader se realiza desde <b>el entorno de programación del Arduino</b>. 
+</p>
+<ul><li> Lo primero es tener instaldo este entorno:
+<ul><li> <b>sudo apt-get install</b> openjdk-6-jre gcc-avr avr-libc avrdude</li>
+<li> Bajar paquete <a rel="nofollow" class="external text" href="https://arduino.googlecode.com/files/arduino-0015-linux.tgz">arduino-0015-linux.tgz</a></li>
+<li> Descomprimirlo, entrar en directorio y ejecutar <b>arduino</b> (con sudo, para tener privilegios para grabar)</li></ul></li></ul>
+<pre>$ sudo ./arduino
+</pre>
+<p>El entorno arrancará y se verá el pantallazo de la figura 1. Enchufar el grabador al USB. No olvidar <b>conectar el jumper de alimentación</b>.
+</p>
+<ul><li> Ir a la opción tools/boards del menú superior y seleccionar el <b>Arduino Nano</b>.</li>
+<li> Ir a la opción tools/Bootloader y seleccionar la opción <b>w/USBtinySP</b></li></ul>
+<p>La grabación del Bootloader comienza (<b>fig 2</b>). Se enciende el led rojo del grabador, y el verde se apaga. Al cabo de aproximadamente un minuto, la grabación termina (<b>fig. 3</b>), el led rojo se apaga y el verde se vuelve a encender. El micro ya tiene el Bootloader cargado.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Arduino-bootloader-pant1.png" class="image"><img alt="" src="Grabador_de_AVRs_USBtinyISP_v2.0_files/300px-Arduino-bootloader-pant1_JEHx.png" width="300" height="360" class="thumbimage" srcset="Grabador_de_AVRs_USBtinyISP_v2.0_files/450px-Arduino-bootloader-pant1_JEHx.png 1.5x, Grabador_de_AVRs_USBtinyISP_v2.0_files/Arduino-bootloader-pant1_JEHx.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Arduino-bootloader-pant1.png" class="internal" title="Aumentar"></a></div><b>Fig. 1</b>: El entorno de arduino nada más ejecutarlo</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Arduino-bootloader-pant2.png" class="image"><img alt="" src="Grabador_de_AVRs_USBtinyISP_v2.0_files/300px-Arduino-bootloader-pant2_JEHx.png" width="300" height="360" class="thumbimage" srcset="Grabador_de_AVRs_USBtinyISP_v2.0_files/450px-Arduino-bootloader-pant2_JEHx.png 1.5x, Grabador_de_AVRs_USBtinyISP_v2.0_files/Arduino-bootloader-pant2_JEHx.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Arduino-bootloader-pant2.png" class="internal" title="Aumentar"></a></div><b>Fig. 2</b>: Grabación del Bootloader en proceso</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Arduino-bootloader-pant3.png" class="image"><img alt="" src="Grabador_de_AVRs_USBtinyISP_v2.0_files/300px-Arduino-bootloader-pant3_JEHx.png" width="300" height="360" class="thumbimage" srcset="Grabador_de_AVRs_USBtinyISP_v2.0_files/450px-Arduino-bootloader-pant3_JEHx.png 1.5x, Grabador_de_AVRs_USBtinyISP_v2.0_files/Arduino-bootloader-pant3_JEHx.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Arduino-bootloader-pant3.png" class="internal" title="Aumentar"></a></div><b>Fig. 3</b>: Grabación del Bootloader finalizada</div></div></div>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Placa_madre_Reprap_G3">Placa madre Reprap G3</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:USBtiny-reprap-mobo.jpg" class="image"><img alt="" src="Grabador_de_AVRs_USBtinyISP_v2.0_files/300px-USBtiny-reprap-mobo_JEHx.jpg" width="300" height="225" class="thumbimage" srcset="Grabador_de_AVRs_USBtinyISP_v2.0_files/450px-USBtiny-reprap-mobo_JEHx.jpg 1.5x, Grabador_de_AVRs_USBtinyISP_v2.0_files/600px-USBtiny-reprap-mobo_JEHx.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:USBtiny-reprap-mobo.jpg" class="internal" title="Aumentar"></a></div>Grabando el Bootloader en la placa base v1.1 de la Reprap</div></div></div>
+<p>La <a rel="nofollow" class="external text" href="http://www.reprap.org/bin/view/Main/Motherboard_1_1">Placa madre de Reprap</a> (v1.1) está basada en <a rel="nofollow" class="external text" href="http://sanguino.cc/">Sanguino</a>. Para descargar el Bootloader hay que instalar primero el entorno de Arduino y luego añadir las extensiones para Sanguino. Ese trabajo de unificación lo hemos realizado para la versión Arduino 0015.
+</p>
+<ul><li> Instalación del entorno software:</li></ul>
+<ul><li><ul><li> <b>sudo apt-get install</b> openjdk-6-jre gcc-avr avr-libc avrdude</li>
+<li> Bajar el paquete <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/atmel/Arduino-Sanguino-0015.tar.gz">Arduino-Sanguino-0015.tar.gz</a></li>
+<li> Descomprimirlo, entrar en directorio y ejecutar <b>arduino</b> (con sudo, para tener privilegios para grabar)</li></ul></li></ul>
+<pre>$ sudo ./arduino
+</pre>
+<p>El entorno arrancará y se verá el pantallazo de la figura 1. Enchufar el grabador al USB. No olvidar <b>conectar el jumper de alimentación</b>.
+</p>
+<ul><li> Ir a la opción tools/boards del menú superior y seleccionar el <b>Sanguino</b>.</li>
+<li> Ir a la opción tools/Bootloader y seleccionar la opción <b>w/USBtinySP</b></li></ul>
+<p>La grabación del Bootloader comienza (<b>fig 2</b>). Se enciende el led rojo del grabador, y el verde se apaga. Al cabo de aproximadamente un minuto, la grabación termina (<b>fig. 3</b>), el led rojo se apaga y el verde se vuelve a encender. El micro ya tiene el Bootloader cargado.
+</p><p>Al terminar la carga, <b>el led rojo de DEBUG emitirá unos cortos destellos</b>. Esto también ocurrirá cada vez que se apriete el botón de reset de la placa. Así podemos saber si el Bootloader está cargado.
+</p>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="http://www.ladyada.net/make/usbtinyisp/">USBtinyISP</a>. Página web del grabador donde se encuentra toda la información</li>
+<li> <a rel="nofollow" class="external text" href="http://www.arduino.cc/">Arduino</a>. Página principal</li></ul>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>08/Mayo/2009</b>: Versión inicial de esta página</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20260929073801
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.017 seconds
+Real time usage: 0.020 seconds
+Preprocessor visited node count: 49/1000000
+Preprocessor generated node count: 56/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://www.iearobotics.com/wiki/index.php?title=Grabador_de_AVRs:USBtinyISP_v2.0&amp;oldid=8807">https://www.iearobotics.com/wiki/index.php?title=Grabador_de_AVRs:USBtinyISP_v2.0&amp;oldid=8807</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categorías</a>: <ul><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Hardware" title="Categoría:Hardware">Hardware</a></li><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Reprap" title="Categoría:Reprap">Reprap</a></li><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Documentaci%C3%B3n" title="Categoría:Documentación">Documentación</a></li><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:ATMEL" title="Categoría:ATMEL">ATMEL</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://www.iearobotics.com/wiki/index.php?title=Grabador_de_AVRs:USBtinyISP_v2.0" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://www.iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Grabador_de_AVRs:USBtinyISP_v2.0&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://www.iearobotics.com/wiki/index.php?title=Grabador_de_AVRs:USBtinyISP_v2.0&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://www.iearobotics.com/wiki/index.php?title=Grabador_de_AVRs:USBtinyISP_v2.0&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Grabador+de+AVRs%3AUSBtinyISP+v2.0" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Grabador_de_AVRs:USBtinyISP_v2.0" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Grabador_de_AVRs:USBtinyISP_v2.0" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://www.iearobotics.com/wiki/index.php?title=Grabador_de_AVRs:USBtinyISP_v2.0&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://www.iearobotics.com/wiki/index.php?title=Grabador_de_AVRs:USBtinyISP_v2.0&amp;oldid=8807" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://www.iearobotics.com/wiki/index.php?title=Grabador_de_AVRs:USBtinyISP_v2.0&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Grabador_de_AVRs_USBtinyISP_v2.0_files/gnu-fdl_JEHx.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="Grabador_de_AVRs_USBtinyISP_v2.0_files/poweredby_mediawiki_88x31_JEHx.png" alt="Powered by MediaWiki" srcset="Grabador_de_AVRs_USBtinyISP_v2.0_files/poweredby_mediawiki_132x47_JEHx.png 1.5x, Grabador_de_AVRs_USBtinyISP_v2.0_files/poweredby_mediawiki_176x62_JEHx.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 26 may 2010 a las 01:22.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":85});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
