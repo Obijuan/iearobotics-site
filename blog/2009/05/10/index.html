@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../style_iHeX.css">
+
+  <!-- 🚧 CAMBIAR 🚧 -->
+  <title>Estado de nuetra Reprap (I)</title>
+</head>
+
+
+<body class="group-blog">
+<div id="page" class="site">
+  <div class="site-inner">
+		<div id="content" class="site-content">
+			<div class="content-area">
+
+		
+<!-- Artículo -->        
+<article>
+	<header class="entry-header">
+    <!-- 🚧 CAMBIAR 🚧 -->
+	  <h1 class="entry-title">Estado de nuetra Reprap (I)</h1>
+  </header><!-- .entry-header -->
+
+<div class="entry-content" style="margin-bottom: 50px;">
+	<!-- 🚧 CAMBIAR 🚧 -->
+		<p><img fetchpriority="high" decoding="async" src="index_files/reprap1-placa-madre-pap_Mu3A.jpg" alt="reprap1-placa-madre-pap" title="reprap1-placa-madre-pap" width="400" height="300" class="aligncenter size-full wp-image-324" srcset="index_files/reprap1-placa-madre-pap_Mu3A.jpg 400w, index_files/reprap1-placa-madre-pap-300x225_Mu3A.jpg 300w" sizes="(max-width: 400px) 85vw, 400px"></p>
+<p>Ya tenemos la <a href="http://www.reprap.org/bin/view/Main/Motherboard_1_1">placa madre</a> 
+	soldada y la controladora para un motor pap. Este fin de semana nos hemos centrado en el software y 
+	en probar que ambas placas funcionasen.</p>
+
+<p>  Lo primero fue probar el <strong>USBtiny</strong>, un grabador para los micros AVR de Atmel. 
+	Como yo tenía un Arduino nano, estuve primero haciendo pruebas con é. Luego grabé el Bootloader 
+	en la placa base. (<a href="../../../../wiki/Grabador_de_AVRs_USBtinyISP_v2.0.html">Más información</a>)</p>
+
+<p><img decoding="async" src="index_files/reprap1-placa-base-bootloader_Mu3A.jpg" alt="reprap1-placa-base-bootloader" title="reprap1-placa-base-bootloader" width="400" height="300" class="aligncenter size-full wp-image-327" srcset="index_files/reprap1-placa-base-bootloader_Mu3A.jpg 400w, index_files/reprap1-placa-base-bootloader-300x225_Mu3A.jpg 300w" sizes="(max-width: 400px) 85vw, 400px"></p>
+<p>Lo siguiente fue descargar un programa “hola mundo” y luego el Firmware de la RepRap. 
+	El entorno utilizado es el de <strong>Arduino/Sanguino</strong>.</p>
+<p><img decoding="async" src="index_files/sanguino-ide-firmware-screenshot_Mu3A.png" alt="sanguino-ide-firmware-screenshot" title="sanguino-ide-firmware-screenshot" width="452" height="523" class="aligncenter size-full wp-image-330" srcset="index_files/sanguino-ide-firmware-screenshot_Mu3A.png 452w, index_files/sanguino-ide-firmware-screenshot-259x300_Mu3A.png 259w" sizes="(max-width: 452px) 85vw, 452px"></p>
+<p>Este es el aspecto de la placa base corriendo el Firmware:</p>
+
+<p><img loading="lazy" decoding="async" src="index_files/reprap1-placa-madre_Mu3A.png" alt="reprap1-placa-madre" title="reprap1-placa-madre" width="400" height="300" class="aligncenter size-full wp-image-332" srcset="index_files/reprap1-placa-madre_Mu3A.png 400w, index_files/reprap1-placa-madre-300x225_Mu3A.jpg 300w" sizes="auto, (max-width: 400px) 85vw, 400px"></p>
+<p>Está conectada a la <strong>fuente ATX</strong> por un lado y por el otro al PC mediante un cable USB-serie. 
+	Una de las cosas curiosas de esta placa es que el firmware controla a la propia fuente ATX. 
+	En las primeras pruebas la fuente no se encendía (el ventilador no arrancaba) 
+	por lo que pensábamos que no estaba funcionando correctamente. 
+	Luego vimos que es el Firmware el que activa una señal que enciende a la fuente.</p>
+
+<p>  Con la placa madre funcionando, lo siguiente fue probar 
+	<a href="http://www.reprap.org/bin/view/Main/Stepper_Motor_Driver_2_3">
+		la controladora de un motor paso a paso</a>. 
+		El programa de pruebas es muy divertido. Las frecuencias a las que se mueve el motor 
+		se corresponden con las notas musicales de las canciones de cumpleaños feliz y 
+		la marcha imperial de star-wars, por lo que si uno acerca el oído las podrá escuchar  😉</p>
+
+<p><img loading="lazy" decoding="async" src="index_files/reprap1-controlador-pap_Mu3A.jpg" alt="reprap1-controlador-pap" title="reprap1-controlador-pap" width="400" height="300" class="aligncenter size-full wp-image-335" srcset="index_files/reprap1-controlador-pap_Mu3A.jpg 400w, index_files/reprap1-controlador-pap-300x225_Mu3A.jpg 300w" sizes="auto, (max-width: 400px) 85vw, 400px"></p>
+<p>Toda la información sobre la electrónica de la Reprap la estamos publicando 
+	<a href="../../../../wiki/Reprap_Electrónica.html">en esta página del wiki</a>.</p>
+
+<p>  Lo que más me gusta de todo esto es que <strong>la Reprap es un proyecto libre</strong> 
+	y por tanto <strong>todo el hardware que utilizan es libre</strong>. 
+	Están disponibles todos los esquemas y toda la información. 
+	Esto ha sido muy útil para entender cómo funciona toda su electrónica. </p>
+<p><a href="../../../../wiki/Juan_Gonzalez_Main.html">Obijuan</a></p>
+
+	
+</div><!-- .entry-content -->
+
+  <footer class="entry-footer">
+		<span class="byline">
+			<span class="author vcard">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<img alt="" src="../../../obijuan.jpeg" 
+			    class="avatar avatar-49 photo" height="49" width="49" decoding="async">
+			</span>
+		</span>
+
+		<span class="posted-on">
+      <!-- 🚧 CAMBIAR 🚧 -->
+			May 10, 2009
+		</span>
+		
+	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+
+
+	<nav class="navigation post-navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links">
+
+			<div class="nav-previous">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<a href="../../05/07/index2.html" rel="prev">
+
+					<span class="meta-nav" aria-hidden="true">Previous</span>
+
+          <!-- 🚧 CAMBIAR 🚧 -->
+				  <span class="post-title">Ya ha llegado el kit de nuestra Reprap!</span>
+        </a>
+			</div>
+
+			<div class="nav-next">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<a href="https://www.iearobotics.com/blog/2009/05/13/disenando-piezas-en-3d-para-probar-con-la-reprap/" 
+					 rel="next">
+					<span class="meta-nav" aria-hidden="true">Next</span>
+
+          <!-- 🚧 CAMBIAR 🚧 --> 
+					<span class="post-title">Diseñando piezas en 3D para probar con la Reprap</span>
+        		</a>
+			</div>
+		</div>
+	</nav>
+
+	
+</div><!-- .content-area -->
+</div><!-- .site-content -->
+</div><!-- .site-inner -->
+</div><!-- .site -->
+
+
+</body>
+</html>
+
