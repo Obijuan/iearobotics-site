@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Reprap:Electrónica - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Reprap:Electrónica","wgTitle":"Reprap:Electrónica","wgCurRevisionId":8806,"wgRevisionId":8806,"wgArticleId":974,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Reprap","ATMEL"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Reprap:Electrónica","wgRelevantArticleId":974,"wgRequestId":"artrlvL3g-3pzfZ3Go423wAAMJs","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Reprap_Electr%C3%B3nica_files/load_uNZH.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="Reprap_Electr%C3%B3nica_files/load_002_uNZH.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://www.iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://www.iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="Reprap_Electr%C3%B3nica_files/load_uNZH.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Reprap_Electrónica rootpage-Reprap_Electrónica skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Reprap:Electrónica</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Placa_madre"><span class="tocnumber">2</span> <span class="toctext">Placa madre</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Descripci.C3.B3n"><span class="tocnumber">2.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Grabaci.C3.B3n_del_bootloader"><span class="tocnumber">2.2</span> <span class="toctext">Grabación del bootloader</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Probando_el_.22Hola_mundo.22"><span class="tocnumber">2.3</span> <span class="toctext">Probando el "Hola mundo"</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Descarga_del_Firmware"><span class="tocnumber">2.4</span> <span class="toctext">Descarga del Firmware</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Controladora_de_los_motores_paso_a_paso"><span class="tocnumber">3</span> <span class="toctext">Controladora de los motores paso a paso</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Descripci.C3.B3n_2"><span class="tocnumber">3.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Probando_un_motor_paso_a_paso"><span class="tocnumber">3.2</span> <span class="toctext">Probando un motor paso a paso</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Noticias"><span class="tocnumber">4</span> <span class="toctext">Noticias</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Reprap-electronica-diagrama.png" class="image"><img alt="" src="Reprap_Electr%C3%B3nica_files/300px-Reprap-electronica-diagrama_uNZH.png" width="300" height="208" class="thumbimage" srcset="Reprap_Electr%C3%B3nica_files/450px-Reprap-electronica-diagrama_uNZH.png 1.5x, Reprap_Electr%C3%B3nica_files/600px-Reprap-electronica-diagrama_uNZH.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Reprap-electronica-diagrama.png" class="internal" title="Aumentar"></a></div>Diagrama de la electrónica de la Reprap (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/reprap/reprap-electronica-diagrama-src.tar.gz">src</a>)</div></div></div>
+<p>La electrónica de la máquina <a rel="nofollow" class="external text" href="http://wiki.makerbot.com/cupcake">CupCake</a> (una versión de la <a rel="nofollow" class="external text" href="http://reprap.org/bin/view/Main/WebHome">Reprap</a>) está compuesta por:
+</p>
+<ul><li> Una <a rel="nofollow" class="external text" href="http://www.reprap.org/bin/view/Main/Motherboard_1_1">placa madre</a></li>
+<li> 3 <a rel="nofollow" class="external text" href="http://www.reprap.org/bin/view/Main/Stepper_Motor_Driver_2_3">placas controladoras de motores paso a paso</a></li>
+<li> 6 <a rel="nofollow" class="external text" href="http://reprap.org/bin/view/Main/OptoEndstop_2_1">placas para los topes finales de carrera</a></li>
+<li> La <a rel="nofollow" class="external text" href="http://www.reprap.org/bin/view/Main/Extruder_Controller_2_1">controladora del cabezal</a></li>
+<li> Un <a href="https://www.iearobotics.com/wiki/index.php?title=Grabador_de_AVRs:USBtinyISP_v2.0" title="Grabador de AVRs:USBtinyISP v2.0">programador de micros Atmel</a>  (Opcional)</li></ul>
+<h2><span class="mw-headline" id="Placa_madre">Placa madre</span></h2>
+<h3><span class="mw-headline" id="Descripci.C3.B3n">Descripción</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Reprap-electronica-placa-base-desc.png" class="image"><img alt="" src="Reprap_Electr%C3%B3nica_files/300px-Reprap-electronica-placa-base-desc_uNZH.png" width="300" height="235" class="thumbimage" srcset="Reprap_Electr%C3%B3nica_files/450px-Reprap-electronica-placa-base-desc_uNZH.png 1.5x, Reprap_Electr%C3%B3nica_files/600px-Reprap-electronica-placa-base-desc_uNZH.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Reprap-electronica-placa-base-desc.png" class="internal" title="Aumentar"></a></div>La placa madre de la Reprap (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/reprap/reprap-electronica-placa-base-desc-src.tar.gz">src</a>)</div></div></div>
+<p>La <a rel="nofollow" class="external text" href="http://www.reprap.org/bin/view/Main/Motherboard_1_1">placa madre</a> está basada en el <b>micro ATMEGA644P</b> y es compatible con <b>Sanguino</b>, por lo que se utiliza el entorno de desarrollo de este para la descarga del firmware.
+</p>
+<h3><span class="mw-headline" id="Grabaci.C3.B3n_del_bootloader">Grabación del bootloader</span></h3>
+<p>Una vez montada la placa madre, <b>lo primero es grabar el Bootloader</b>. Para ello hay que instalar el entorno de desarrollo de Sanguino y grabar el bootloader. Será preciso disponer de un <b>programador de micros AVR</b>. El que nosotros tenemos es el <b>USBtiny</b> que nos ha venido con la Reprap. 
+</p>
+<ul><li> <a href="https://www.iearobotics.com/wiki/index.php?title=Grabador_de_AVRs:USBtinyISP_v2.0" title="Grabador de AVRs:USBtinyISP v2.0">Aquí están las instrucciones para la grabación del bootloader.</a></li></ul>
+<h3><span class="mw-headline" id="Probando_el_.22Hola_mundo.22">Probando el "Hola mundo"</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Reprap-base-atx.jpg" class="image"><img alt="" src="Reprap_Electr%C3%B3nica_files/300px-Reprap-base-atx_uNZH.jpg" width="300" height="225" class="thumbimage" srcset="Reprap_Electr%C3%B3nica_files/450px-Reprap-base-atx_uNZH.jpg 1.5x, Reprap_Electr%C3%B3nica_files/600px-Reprap-base-atx_uNZH.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Reprap-base-atx.jpg" class="internal" title="Aumentar"></a></div>La placa base conectada a la fuente ATX y al PC</div></div></div>
+<p>Lo siguiente es descargar un programa "hola mundo" que hace que parpadee el led rojo de DEBUG de la placa madre. Con ello comprobamos que la placa se está bien alimentada, que el cable USB-serie funciona correctamente y que el entorno software está operativo.
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Icono_aviso.png" class="image"><img alt="Icono aviso.png" src="Reprap_Electr%C3%B3nica_files/Icono_aviso_uNZH.png" width="24" height="24"></a> Antes de comenzar <b>asegurarse de configurar la fuente ATX a 230-220 voltios</b>!!. Para ello hay que colocar el switch rojo de la parte posterior en la posición correcta. Se encuentra situado al lado del interruptor de on-off
+</td></tr></tbody></table>
+<p>El proceso es el siguiente:
+</p>
+<ul><li> Conectar la fuente ATX a la placa madre (tiene que estar apagada)</li>
+<li> Conectar la placa madre al PC mediante el cable usb-serie. Asegurarse de que <b>está conectado con la polaridad correcta</b> en el conector. El <b>cable verde</b> mirando hacia la serigrafía que pone <b>GRN</b> y el <b>negro</b> hacia la que pone <b>BLK</b>.</li>
+<li> Encender la fuente de alimentación. El ventilador de la fuente no se pondrá en marcha. Tan sólo veremos parpadear el led rojo de DEBUG unos instantes al principio y luego se apagará.</li>
+<li> Arrancar el entorno de desarrollo de Sanguino-arduino: (No es necesario hacerlo como root)</li></ul>
+<pre>$ ./arduino
+</pre>
+<ul><li> <b>Descargar</b> el programa "hola mundo": <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/reprap/Sanguino-ledp/ledp.pde">ledp.pde</a> y <b>guardarlo en la carpeta sketchbook/ledp</b> dentro del directorio donde esté situado el entorno de desarrollo (en mi caso el entorno lo tengo en el directorio Arduino-Sanguino-0015 de mi home)</li>
+<li> Abrir el programa ledp desde el entorno. Para ello ir a la opción <b>File/Sketchbook/Open</b> y seleccionar ledp.pde.</li>
+<li> Otra opción (tal vez más rápida) es hacer copy&amp;paste del código del hola mundo en el editor del entorno:</li></ul>
+<pre>#define ledPin 0
+
+void setup()
+{
+  pinMode(ledPin,OUTPUT);
+}
+
+void loop()
+{
+  digitalWrite(ledPin,HIGH);
+  delay(500);
+  digitalWrite(ledPin,LOW);
+  delay(500);
+}
+</pre>
+<ul><li> El entorno estará en el estado mostrado en la <b>figura 1</b>.</li>
+<li> Compilar el programa <b>pinchando en el botón de la parte superior</b> izquierda o bien dando a la opción <b>Sketch/Verify</b> del menú superior. Una vez finalizado el estado será como el mostrado en la <b>figura 2</b>.</li></ul>
+<table>
+<tbody><tr>
+<td>  <div class="thumb tright"><div class="thumbinner" style="width:264px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Arduino-ide-compile-button.png" class="image"><img alt="" src="Reprap_Electr%C3%B3nica_files/Arduino-ide-compile-button_uNZH.png" width="262" height="56" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Arduino-ide-compile-button.png" class="internal" title="Aumentar"></a></div>Botón de compilación</div></div></div>
+</td></tr></tbody></table>
+<ul><li> Para descargar el ledp, apretar el <b>botón de reset</b> de la placa base y rápidamente (en 1 ó dos segundos) pinchar en el <b>botón de descarga</b> o dar a la <b>opción "File-&gt; Upload to I/O Board"</b></li></ul>
+<table>
+<tbody><tr>
+<td>  <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Arduino-ide-download-button.png" class="image"><img alt="" src="Reprap_Electr%C3%B3nica_files/300px-Arduino-ide-download-button_uNZH.png" width="300" height="50" class="thumbimage" srcset="Reprap_Electr%C3%B3nica_files/Arduino-ide-download-button_uNZH.png 1.5x, Reprap_Electr%C3%B3nica_files/Arduino-ide-download-button_uNZH.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Arduino-ide-download-button.png" class="internal" title="Aumentar"></a></div>Botón de descarga en la placa madre</div></div></div>
+</td></tr></tbody></table>
+<ul><li> El programa empezará a descargarse y una vez finalizado el estado será como el mostrado en la <b>figura 3</b>. En la placa madre se podrá ver cómo <b>el led rojo de DEBUG parpadea</b>. ¡¡Nuestra placa madre vive!!</li></ul>
+<ul><li> Si no se ha descargado correctamente, se mostrará un mensaje de error como el de la <b>figura 4</b>. Puede ser debido a que se ha tardado mucho tiempo desde que se pulsó el botón de reset hasta que se hizo la descarga.</li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Sanguino-ledp1.png" class="image"><img alt="" src="Reprap_Electr%C3%B3nica_files/300px-Sanguino-ledp1_uNZH.png" width="300" height="308" class="thumbimage" srcset="Reprap_Electr%C3%B3nica_files/450px-Sanguino-ledp1_uNZH.png 1.5x, Reprap_Electr%C3%B3nica_files/Sanguino-ledp1_uNZH.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Sanguino-ledp1.png" class="internal" title="Aumentar"></a></div><b>Figura 1</b>: El entorno con el programa hola mundo ledp en el editor</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Sanguino-ledp2.png" class="image"><img alt="" src="Reprap_Electr%C3%B3nica_files/300px-Sanguino-ledp2_uNZH.png" width="300" height="308" class="thumbimage" srcset="Reprap_Electr%C3%B3nica_files/450px-Sanguino-ledp2_uNZH.png 1.5x, Reprap_Electr%C3%B3nica_files/Sanguino-ledp2_uNZH.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Sanguino-ledp2.png" class="internal" title="Aumentar"></a></div><b>Figura 2</b>: Compilación del programa ledp finalizada</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Sanguino-ledp3.png" class="image"><img alt="" src="Reprap_Electr%C3%B3nica_files/300px-Sanguino-ledp3_uNZH.png" width="300" height="308" class="thumbimage" srcset="Reprap_Electr%C3%B3nica_files/450px-Sanguino-ledp3_uNZH.png 1.5x, Reprap_Electr%C3%B3nica_files/Sanguino-ledp3_uNZH.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Sanguino-ledp3.png" class="internal" title="Aumentar"></a></div><b>Figura 3</b>: Ledp correctamente descargado en la placa madre</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Sanguino-ledp4.png" class="image"><img alt="" src="Reprap_Electr%C3%B3nica_files/300px-Sanguino-ledp4_uNZH.png" width="300" height="308" class="thumbimage" srcset="Reprap_Electr%C3%B3nica_files/450px-Sanguino-ledp4_uNZH.png 1.5x, Reprap_Electr%C3%B3nica_files/Sanguino-ledp4_uNZH.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Sanguino-ledp4.png" class="internal" title="Aumentar"></a></div><b>Figura 4</b>: Error durante la descarga</div></div></div>
+</td>
+<td>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Descarga_del_Firmware">Descarga del Firmware</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Reprap-mobo-firmware1.jpg" class="image"><img alt="" src="Reprap_Electr%C3%B3nica_files/300px-Reprap-mobo-firmware1_uNZH.jpg" width="300" height="225" class="thumbimage" srcset="Reprap_Electr%C3%B3nica_files/450px-Reprap-mobo-firmware1_uNZH.jpg 1.5x, Reprap_Electr%C3%B3nica_files/600px-Reprap-mobo-firmware1_uNZH.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Reprap-mobo-firmware1.jpg" class="internal" title="Aumentar"></a></div>La placa madre con el firmware cargado. El led verde de Power se activa al poner el switch de encendido a ON</div></div></div>
+<p>Todo el firmware necesario para controlar la Reprap <a rel="nofollow" class="external text" href="http://www.reprap.org/bin/view/Main/Generation3Firmware">está disponible en esta página</a>. El que nosotros usamos es la versión 1.0 de la tercera generación de Reprap.
+</p>
+<ul><li> Bajar el paquete: <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/reprap/reprap-gen3-firmware-1.0.zip">reprap-gen3-firmware-1.0.zip</a></li>
+<li> Descomprimirlo en el directorio <i>sketchbook</i> dentro de la carpeta donde está instalado el software (Arduino-Sanguino-0015).</li>
+<li> Cargar las fuentes del firmware. Pulsar en <b>file-&gt;Sketchbook-&gt;Open</b> y seleccionar el fichero <b>sketchbook/reprap-gen3-firmware-1.0/SanguinoMaster/SanguinoMaster.pde</b></li>
+<li> Compilar el programa <b>pinchando en el botón de la parte superior</b> izquierda o bien dando a la opción <b>Sketch/Verify</b> del menú superior.</li></ul>
+<table>
+<tbody><tr>
+<td>  <div class="thumb tright"><div class="thumbinner" style="width:264px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Arduino-ide-compile-button.png" class="image"><img alt="" src="Reprap_Electr%C3%B3nica_files/Arduino-ide-compile-button_uNZH.png" width="262" height="56" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Arduino-ide-compile-button.png" class="internal" title="Aumentar"></a></div>Botón de compilación</div></div></div>
+</td></tr></tbody></table>
+<ul><li> Para descargar el firmware, apretar el <b>botón de reset</b> de la placa base y rápidamente (en 1 ó dos segundos) pinchar en el <b>botón de descarga</b> o dar a la <b>opción "File-&gt; Upload to I/O Board"</b></li></ul>
+<table>
+<tbody><tr>
+<td>  <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Arduino-ide-download-button.png" class="image"><img alt="" src="Reprap_Electr%C3%B3nica_files/300px-Arduino-ide-download-button_uNZH.png" width="300" height="50" class="thumbimage" srcset="Reprap_Electr%C3%B3nica_files/Arduino-ide-download-button_uNZH.png 1.5x, Reprap_Electr%C3%B3nica_files/Arduino-ide-download-button_uNZH.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Arduino-ide-download-button.png" class="internal" title="Aumentar"></a></div>Botón de descarga en la placa madre</div></div></div>
+</td></tr></tbody></table>
+<ul><li> Se verá cómo el led rojo de DEBUG parpadea mientras se realiza la descarga. El proceso finaliza al cabo de unos segundos</li>
+<li> Si ahora se coloca el <b>swicth de encendido en la posición ON</b>, la fuente de alimentación comenzará a funcionar. El ventilador se activará y <b>el led verde de Power se encenderá</b>.</li>
+<li> ¡¡Ya tenemos el firmware de nuestra placa base funcionando!!</li></ul>
+<p>(Falta: poner mensajes recibidos por el puerto serie)
+</p>
+<h2><span class="mw-headline" id="Controladora_de_los_motores_paso_a_paso">Controladora de los motores paso a paso</span></h2>
+<h3><span class="mw-headline" id="Descripci.C3.B3n_2">Descripción</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Reprap-electronica-controlador-pap-desc.png" class="image"><img alt="" src="Reprap_Electr%C3%B3nica_files/300px-Reprap-electronica-controlador-pap-desc_uNZH.png" width="300" height="231" class="thumbimage" srcset="Reprap_Electr%C3%B3nica_files/450px-Reprap-electronica-controlador-pap-desc_uNZH.png 1.5x, Reprap_Electr%C3%B3nica_files/600px-Reprap-electronica-controlador-pap-desc_uNZH.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Reprap-electronica-controlador-pap-desc.png" class="internal" title="Aumentar"></a></div>La placa controladora de un motor paso a paso (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/reprap/reprap-electronica-controlador-pap-desc-src.tar.gz">src</a>)</div></div></div>
+<p>Esta <a rel="nofollow" class="external text" href="http://www.reprap.org/bin/view/Main/Stepper_Motor_Driver_2_3">controladora</a> permite manejar <b>un motor paso a paso</b>. Se conecta a la placa madre a través de un cable plano de bus (de 10 hilos) y recibe la alimentación directamente de la fuente ATX. Tiene dos conectores RJ45 para conectar las placas con los sensores final de carrera.
+</p>
+<h3><span class="mw-headline" id="Probando_un_motor_paso_a_paso">Probando un motor paso a paso</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Reprap-motor-test.jpg" class="image"><img alt="" src="Reprap_Electr%C3%B3nica_files/300px-Reprap-motor-test_uNZH.jpg" width="300" height="225" class="thumbimage" srcset="Reprap_Electr%C3%B3nica_files/450px-Reprap-motor-test_uNZH.jpg 1.5x, Reprap_Electr%C3%B3nica_files/600px-Reprap-motor-test_uNZH.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Reprap-motor-test.jpg" class="internal" title="Aumentar"></a></div>Probando un motor paso a paso</div></div></div>
+<p>Una vez montadas las controladoras, hay que comprobar que funcionan correctamente. Las probaremos individualmente, una por una. Seguir los siguientes pasos:
+</p>
+<ul><li> Conectar la placa madre a la fuente de alimentación ATX</li>
+<li> Conectar una controladora de los motores PAP a la placa madre, mediante un cable de bus, donde pone "X axis". </li>
+<li> Conectar la fuente ATX a la controladora de los motores PAP</li>
+<li> Bajar, compilar y descargar en la placa base cualquiera de los siguientes programas:
+<ul><li> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/reprap/motores/motorx_test.tar.gz">motorx_test.tar.gz</a>. Prueba 1: Cumpleaños feliz</li>
+<li> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/reprap/motores/motorx_test2.tar.gz">motorx_test2.tar.gz. </a>Prueba 2: Marcha imperial</li></ul></li>
+<li> Poner en ON el switch de la placa base</li>
+<li> Al cabo de unos segundos desde que finaliza la descarga, el motor PAP comenzará a moverse. Además se podrá ver cómo los cuatro leds situados al lado del conector del motor también se ponen a parpadear. Lo divertido de este ejemplo es que las frecuencias a las que se mueve el motor se corresponden con las notas musicales de las canciones de cumpleaños feliz y la marcha imperial de star-wars. Acercar el oido para escucharlo mejor&nbsp;;-)</li></ul>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>10/Mayo/2009</b>: Anadida información sobre la placa madre</li>
+<li> <b>09/Mayo/2009</b>: Comenzada esta página</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20260929074110
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.030 seconds
+Real time usage: 0.057 seconds
+Preprocessor visited node count: 43/1000000
+Preprocessor generated node count: 65/1000000
+Post‐expand include size: 200/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    1.849      1 - Plantilla:Tablabonita
+100.00%    1.849      1 - -total
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://www.iearobotics.com/wiki/index.php?title=Reprap:Electr%C3%B3nica&amp;oldid=8806">https://www.iearobotics.com/wiki/index.php?title=Reprap:Electrónica&amp;oldid=8806</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categorías</a>: <ul><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Reprap" title="Categoría:Reprap">Reprap</a></li><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:ATMEL" title="Categoría:ATMEL">ATMEL</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://www.iearobotics.com/wiki/index.php?title=Reprap:Electr%C3%B3nica" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://www.iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Reprap:Electr%C3%B3nica&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://www.iearobotics.com/wiki/index.php?title=Reprap:Electr%C3%B3nica&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://www.iearobotics.com/wiki/index.php?title=Reprap:Electr%C3%B3nica&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Reprap%3AElectr%C3%B3nica" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Reprap:Electr%C3%B3nica" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Reprap:Electr%C3%B3nica" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://www.iearobotics.com/wiki/index.php?title=Reprap:Electr%C3%B3nica&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://www.iearobotics.com/wiki/index.php?title=Reprap:Electr%C3%B3nica&amp;oldid=8806" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://www.iearobotics.com/wiki/index.php?title=Reprap:Electr%C3%B3nica&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Reprap_Electr%C3%B3nica_files/gnu-fdl_uNZH.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="Reprap_Electr%C3%B3nica_files/poweredby_mediawiki_88x31_uNZH.png" alt="Powered by MediaWiki" srcset="Reprap_Electr%C3%B3nica_files/poweredby_mediawiki_132x47_uNZH.png 1.5x, Reprap_Electr%C3%B3nica_files/poweredby_mediawiki_176x62_uNZH.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 26 may 2010 a las 01:22.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":168});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
