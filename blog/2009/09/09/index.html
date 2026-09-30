@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../style_iHeX.css">
+
+  <!-- 🚧 CAMBIAR 🚧 -->
+  <title>Hardware libre (I)</title>
+</head>
+
+
+<body class="group-blog">
+<div id="page" class="site">
+  <div class="site-inner">
+		<div id="content" class="site-content">
+			<div class="content-area">
+
+		
+<!-- Artículo -->        
+<article>
+	<header class="entry-header">
+    <!-- 🚧 CAMBIAR 🚧 -->
+	  <h1 class="entry-title">Hardware libre (I)</h1>
+  </header><!-- .entry-header -->
+
+<div class="entry-content" style="margin-bottom: 50px;">
+	<!-- 🚧 CAMBIAR 🚧 -->
+		<p><img fetchpriority="high" decoding="async" src="index_files/hardware-libre-logo_8_rD.png" alt="hardware-libre-logo" title="hardware-libre-logo" width="336" height="400" class="aligncenter size-full wp-image-583" srcset="index_files/hardware-libre-logo_8_rD.png 336w, index_files/hardware-libre-logo-252x300_8_rD.png 252w" sizes="(max-width: 336px) 85vw, 336px"><br>
+Las ideas principales sobre <strong>Hardware libre</strong> las publicamos en 
+el artículo <em><a href="../../../../personal/juan/publicaciones/art4/index.html">
+	“Hardware libre: clasificación y desarrollo de hardware reconfigurable en entornos GNU/Linux”</a></em>[1] 
+	presentado en el <strong>VI congreso de Hispalinux</strong> en Septiembre de 2003.  </p>
+
+<p>Durante estos años, hemos publicado otros artículos[2][3][4][5] y 
+	presentaciones con los detalles de nuestros diseños libres. 
+	En las<strong> jornadas sobre Software libre de la UAM</strong>, en Marzo de 2007, 
+	revisamos algunos conceptos y simplificamos la clasificación, 
+	en la presentación titulada:
+	<em> <a href="../../../../personal/juan/conferencias/conf27/index.html">
+		“Hardware Libre: conociendo las tripas”</a></em>[6]. 
+	Aquí os dejo la versión on-line:</p>
+
+<p><a title="View Hardware Libre: conociendo las tripas on Scribd" 
+	href="http://www.scribd.com/doc/17614129/Hardware-Libre-conociendo-las-tripas" 
+	style="margin: 12px auto 6px auto; font-family: Helvetica,Arial,Sans-serif; 
+	font-style: normal; font-variant: normal; 
+	font-weight: normal; font-size: 14px; line-height: normal; 
+	font-size-adjust: none; font-stretch: normal; -x-system-font: none; 
+	display: block; text-decoration: underline;">
+	Hardware Libre: conociendo las tripas</a> </p>
+	
+	
+	Se puede <strong>resumir en las siguientes ideas</strong>:<br>
+<li>Un dispositivo hardware es libre si se aplican 
+	<strong><a href="https://es.wikipedia.org/wiki/Software_libre#Libertades_del_software_libre">
+		las  4 libertades del software libre</a> a sus planos</strong> de diseño y fabricación. 
+		En vez de código fuente hablamos por tanto de <strong>planos</strong></li>
+
+<li><strong>Es el autor el que decide si un diseño es libre</strong>. 
+	Es independiente de la herramienta de diseño electrónico usada para su creación.</li>
+
+<li>Sin embargo,<strong> la herramienta impone restricciones a la compartición del hardware</strong>. 
+	Por ejemplo, si una placa (libre) se ha diseñado con Orcad, 
+	para que cualquier usuario pueda ejercer las libertades concedidas, 
+	debería pagar una licencia para adquirir este programa. 
+	O aunque tuviese una versión gratuita, estará restringido a usar el sistema operativo 
+	en el que corre esta aplicación (en este caso sería Windows).</li>
+
+<li>Según estas restricciones, <strong>el hardware libre lo clasificamos en tres grandes familias</strong>: 
+	Grupos I, II y III</li>
+<h3>Grupo I</h3>
+<p><font color="#00FF00">Sin restricciones</font>.<br>
+Lo forman las <strong>placas libres que han sido diseñadas sólo con software libre</strong>. 
+En este grupo <strong>NO</strong> hay restricciones en la compartición. Además, 
+el formato de los planos será también abierto y conocido por todos, 
+permitiendo la aparición de otras herramientas compatibles. 
+Este es el <strong>hardware libre “pata negra”</strong>. Es, según mi opinión, 
+a lo que habría que tender. El software libre más avanzado que existe hasta 
+el momento para diseño electrónico es el 
+<a href="http://www.lis.inpg.fr/realise_au_lis/kicad/">Kicad</a>.</p>
+<p><img decoding="async" src="index_files/skypic-kicad2-peq1_8_rD.png" alt="skypic-kicad2-peq1" title="skypic-kicad2-peq1" width="500" height="172" class="aligncenter size-full wp-image-662" srcset="index_files/skypic-kicad2-peq1_8_rD.png 500w, index_files/skypic-kicad2-peq1-300x103_8_rD.png 300w" sizes="(max-width: 500px) 85vw, 500px"></p>
+
+<h3>Grupo II</h3>
+<p><font color="#FF6000">1 restricción</font>.<br>
+<strong>Hardware libre diseñado con herramientas propietarias pero multiplataforma</strong>, 
+siendo alguna de las plataformas soportadas un sistema operativo libre. 
+Los diseños de este grupo se pueden compartir, pero será necesario adquirir 
+la licencia de estas herramientas o en caso de ser gratuitas, 
+someterse a las restricciones impuestas por la empresa creadora 
+(limitación en tamaño de las placas, de las caras, etc). Pero al menos, 
+corren en algún sistema operativo libre. La herramienta representativa de este grupo 
+es el <a href="https://en.wikipedia.org/wiki/Eagle_(program)">Eagle</a>, de Cadsoft.</p>
+<h3>Grupo III</h3>
+<p><font color="#FF0000">2 restricciones</font>.<br>
+<strong>Hardware libre diseñado con herramientas propietarias  que sólo 
+	corren en sistemas operativos propietarios</strong>. 
+	Para compartir el hardware los usuarios deben adquirir una licencia y además 
+	utilizar el S.O propietario (normalmente Windows) 
+	que requiere a su vez de otra licencia. 
+	Las personas que no usan este S.O a diario (entre los que me incluyo) tienen 
+	más restricciones para poder reutilizar el hardware libre. 
+	Cualquier hardware diseñado con Orcad, Protel o Pads por ejemplo, 
+	entrarían dentro de esta categoría.</p>
+
+<h3>Hardware libre hoy </h3>
+<p>Actualmente, en el 2009, el hardware libre se ha extendido y ha ido en aumento su uso. 
+	Algunos de los más conocidos son <a href="http://www.arduino.cc/">Arduino</a> 
+	(y todos sus derivados, como por ejemplo <a href="http://sanguino.cc/">Sanguino</a> o 
+	<a href="http://www.seeedstudio.com/blog/?page_id=110">Seduino</a>), 
+	<a href="http://www.hackinglab.org/pinguino/index_pinguino.html">Pinguino</a>, 
+	el<a href="http://reprap.org/bin/view/Main/WebHome"> proyecto Reprap</a> 
+	(una impresora 3D auto-replicable), 
+	<a href="http://wiki.openmoko.org/wiki/Main_Page">openMoko</a> (un teléfono móvil) y 
+	<a href="http://beaversource.oregonstate.edu/projects/cspfl">OSWALD</a> (un PC ultra-móvil). 
+
+	Nuestros desarrollos también son libres, destacando la 
+	<a href="../../../../wiki/Skypic.html">Skypic</a>, 
+	<a href="../../../../proyectos/sky293/sky293.html">sky293</a> y 
+	<a href="../../../../wiki/SkyControl.html"> Skycontrol</a>.</p>
+
+<p>Los grupos más numerosos son el II y el III. Es decir, hardware libre con restricciones en su compartición. 
+	En mi opinión es debido a la resistencia al cambio. 
+	Las herramientas de diseño electrónico son complejas de aprender. 
+	Una vez que se ha aprendido a manejar una con la que se es muy productivo, 
+	cuesta mucho esfuerzo cambiarse a una nueva. 
+	Si se aborda el cambio, el diseñador tardará un tiempo razonable 
+	en volver a ser productivo y lamentablemente ese tiempo no suele estar disponible. 
+	Por ello, los que usan Orcad u Eagle, tenderán a seguir usándolos.</p>
+
+<p>  (Continuará...)</p>
+<p><a href="../../../../wiki/Juan_Gonzalez_Main.html">Obijuan</a></p>
+
+<h3>Referencias </h3>
+<p>[1] Ivan González, Juan González, Francisco Gómez-Arribas, 
+	<strong><em>Hardware libre: clasificación y desarrollo de hardware reconfigurable en entornos GNU/Linux</em></strong>, 
+	Actas del VI Congreso de Hispalinux, Universidad Rey Juan Carlos I, Septiembre 2003. 
+	[<a href="http://www.scribd.com/doc/14851723/Hardware-libre-clasificacion-y-desarrollo-de-hardware-reconfigurable-en-entornos-GNULinux">Lectura en línea</a>] 
+	[<a href="../../../../personal/juan/publicaciones/art4/index.html">Descargar</a>]</p>
+
+<p>[2] Juan González, Pablo Haya, Sergio Lopez-Buedo y Eduardo Boemo, 
+	<strong><em>Tarjeta entrenadora para FPGA, basada en hardware abierto</em></strong>, 
+	Actas del Seminario Hispabot 2003, Alcalá de Henares, Madrid, Mayo 2003. 
+	[<a href="http://www.scribd.com/doc/14570150/Tarjeta-entrenadora-para-FPGA-basada-en-hardware-abierto">
+		Lectura en línea</a>] 
+	[<a href="../../../../personal/juan/publicaciones/art1/index.html">Descargar</a>]</p>
+
+<p>[3] Juan González, Andrés Prieto-Moreno, 
+	<strong><em>Herramientas hardware y software para el desarrollo de aplicaciones con 
+		Microcontroladores PIC bajo plataformas GNU/Linux</em></strong>, 
+		Actas de las III Jornadas de Software Libre, Universidad Pontificia de Salamanca en Madrid. 
+		Mayo 2004. 
+		[<a href="http://www.scribd.com/doc/14952821/Herramientas-hardware-y-software-para-el-desarrollo-de-aplicaciones-con-Microcontroladores-PIC-bajo-plataformas-GNULinux">
+			Lectura en línea</a>] 
+			[<a href="../../../../personal/juan/publicaciones/art5/index.html">Descargar</a>]</p>
+
+<p>[4] Juan González-Gómez y Andres Prieto-Moreno Torres.,
+	<em><strong>Hardware libre: la Tarjeta Skypic, una Entrenadora para Microcontroladores PIC</strong></em>, 
+	Actas del I Congreso de Tecnologías de Software Libre, CTSL 2005, pp. 57-66. 
+	Factultad de Informática, A Coruña. Julio 2005. 
+	[<a href="http://www.scribd.com/doc/16003593/Hardware-Libre-la-Tarjeta-Skypic-una-Entrenadora-para-Microcontroladores-PIC">
+		Lectura en línea</a>]
+		[<a href="../../../../personal/juan/publicaciones/art9/index.html">Descargar</a>]</p>
+
+<p>[5] Xavier De Blas Foix, Juan Gonzalez-Gomez,  
+	<em><strong>Proyecto Chronojump: Sistema de Medida y Gestión de la Capacidad de Salto usando Software y Hardware Libres</strong>
+	</em>, Actas del I Congreso de TecnologÃ­as de Software Libre, CTSL 2005, pp. 123-131. 
+	Factultad de Informática, A Coruña. Julio 2005. 
+	[<a href="http://www.scribd.com/doc/16377083/Proyecto-Chronojump-Sistema-de-Medida-y-Gestion-de-la-Capacidad-de-Salto-usando-Software-y-Hardware-Libres">
+		Lectura en línea</a>]
+		[<a href="../../../../personal/juan/publicaciones/art10/index.html">Descargar</a>]</p>
+
+<p>[6] Juan González, <em><strong>Hardware libre: conociendo las tripas</strong></em>. 
+	Jornadas de Software Libre en la UAM. Escuela politécnica Superior. Madrid. Marzo-2007. 
+	[<a href="" hardware="" libre:="" conociendo="" las="" tripas".jornadas="" de="" software="" libre="" en="" 
+	la="" uam.="" escuela="" politécnica="" superior.="" madrid"="">Lectura en línea</a>]
+	[<a href="../../../../personal/juan/conferencias/conf27/index.html">Descargar</a>]</p>
+
+
+	
+</div><!-- .entry-content -->
+
+  <footer class="entry-footer">
+		<span class="byline">
+			<span class="author vcard">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<img alt="" src="../../../obijuan.jpeg" 
+			    class="avatar avatar-49 photo" height="49" width="49" decoding="async">
+			</span>
+		</span>
+
+		<span class="posted-on">
+      <!-- 🚧 CAMBIAR 🚧 -->
+			September 9, 2009
+		</span>
+		
+	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+
+
+<div id="comments" class="comments-area">
+
+			<h2 class="comments-title">
+			One thought on “Hardware libre (I)”		</h2>
+
+		
+		<ol class="comment-list">
+					<li id="comment-1258" class="comment even thread-even depth-1">
+			<article id="div-comment-1258" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="../../../avatar-anonimo.png" class="avatar avatar-42 photo" height="42" width="42" loading="lazy" decoding="async">						<b class="fn">houxiang</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.iearobotics.com/blog/2009/09/09/hardware-libre-i/#comment-1258"><time datetime="2009-09-12T15:23:41-07:00">September 12, 2009 at 3:23 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hello Juan,</p>
+<p>I just see this blog, and very happy to hear you sound. Everything looks good!?</p>
+<p>From Hamburg</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+			<p class="no-comments">Comments are closed.</p>
+	
+	
+</div><!-- .comments-area -->
+
+
+	<nav class="navigation post-navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links">
+
+			<div class="nav-previous">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<a href="../../08/26/" rel="prev">
+
+					<span class="meta-nav" aria-hidden="true">Previous</span>
+
+          <!-- 🚧 CAMBIAR 🚧 -->
+				  <span class="post-title">Vídeo de la charla sobre robótica modular en la URJC</span>
+        </a>
+			</div>
+
+			<div class="nav-next">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<a href="https://www.iearobotics.com/blog/2009/09/10/tarjeta-skycube-y-robots-modulares-autonomos/" 
+					 rel="next">
+					<span class="meta-nav" aria-hidden="true">Next</span>
+
+          <!-- 🚧 CAMBIAR 🚧 --> 
+					<span class="post-title">Tarjeta Skycube y Robots modulares autónomos</span>
+        		</a>
+			</div>
+		</div>
+	</nav>
+
+	
+</div><!-- .content-area -->
+</div><!-- .site-content -->
+</div><!-- .site-inner -->
+</div><!-- .site -->
+
+
+</body>
+</html>
+
