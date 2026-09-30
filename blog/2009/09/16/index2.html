@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../style_iHeX.css">
+
+  <!-- 🚧 CAMBIAR 🚧 -->
+  <title>Hardware libre (II)</title>
+</head>
+
+
+<body class="group-blog">
+<div id="page" class="site">
+  <div class="site-inner">
+		<div id="content" class="site-content">
+			<div class="content-area">
+
+		
+<!-- Artículo -->        
+<article>
+	<header class="entry-header">
+    <!-- 🚧 CAMBIAR 🚧 -->
+	  <h1 class="entry-title">Hardware libre (II)</h1>
+  </header><!-- .entry-header -->
+
+<div class="entry-content" style="margin-bottom: 50px;">
+	<!-- 🚧 CAMBIAR 🚧 -->
+		<p><img fetchpriority="high" decoding="async" src="index2_files/hardware-libre-2-peq_SRO1.jpg" alt="hardware-libre-2-peq" title="hardware-libre-2-peq" width="400" height="320" class="aligncenter size-full wp-image-733" srcset="index2_files/hardware-libre-2-peq_SRO1.jpg 400w, index2_files/hardware-libre-2-peq-300x240_SRO1.jpg 300w" sizes="(max-width: 400px) 85vw, 400px"></p>
+<p>[<a href="../../../../blog/2009/09/09/">hardware libre (I)</a>] 
+	Muchos de los diseños de<em> hardware libre</em> pertenecen al <strong>grupo II</strong>, 
+	y están diseñados con la herramienta <a href="https://en.wikipedia.org/wiki/Eagle_(program)">Eagle</a>. 
+	Este <em>software</em>, en mi opinión, <strong>es muy bueno</strong> y nos ha permitido a muchos 
+	diseñadores electrónicos poder usar <strong>plataformas alternativas como Linux o Mac</strong>. 
+	Además existe una <strong>versión freeware</strong> limitada, gratuita, que permite que cualquiera se 
+	lo pueda instalar y usar. Por ello, a nivel técnico sólo tengo alabanzas para el Eagle.</p>
+
+<p>Sin embargo, <strong>al ser software propietario, aparecen restricciones a la hora de compartir los diseños</strong>. 
+	Son estas restricciones, y NO la calidad del Eagle, lo que conviene plantearse a la hora de hacer diseños libres. 
+	Normalmente, los usuarios hacen <em>hardware libre</em>, pero sin tener en mente estas restricciones. 
+	En este <em>post</em> las enumeraré y analizaré.</p>
+
+<h3>Restricciones</h3>
+<p></p>
+<li> <font color="#FF0000"><strong>Restricció 1: </strong>Uso NO comercial</font>.  La versión 
+	<em>freeware</em> del Eagle es gratuita. Sin embargo, sólo se puede emplear para hacer 
+	diseños para uno mismo.
+	<strong> La licencia no permite que los vendas o ganes dinero con ellos</strong>. 
+	Por ello, <strong>el hardware diseñado con esta versión NO ES LIBRE</strong>, 
+	ya que se viola la libertad de uso. El usuario tendría que tener la libertad de poder usarlo con fines comerciales. 
+	Para disponer de esta libertad, hay que pagar la licencia. </li>
+
+<li> <font color="#FF0000"> <strong>Restricción 2:</strong> Coste de la licencia.</font> 
+	Hay que pagar un licencia para hacer <em>hardware libre</em> con Ealge. 
+	La más barata cuesta <strong>$49</strong> y permite adquirir una versión limitada en funcionalidad. 
+	No es mucho dinero, si vives en occidente. Pero esta restricción implica 
+	un gran esfuerzo para los usuarios de los paises menos desarrollados. 
+	Si esta versión limitada no es suficiente para hacer el <em>hardware</em> que queremos, 
+	se puede comprar la versión estándar (<strong>$747</strong>) o 
+	la profesional (<strong>$1494</strong>) (licencias sólo para 1 usuario). 
+	<a href="http://www.cadsoft.de/prices.htm">Aquí podéis consultar la lista completa de precios</a>.
+ </li>
+ <p></p>
+<p><img decoding="async" src="index2_files/hw-libre-dibujo_SRO1.png" alt="hw-libre-dibujo" title="hw-libre-dibujo" width="400" height="329" class="aligncenter size-full wp-image-795" srcset="index2_files/hw-libre-dibujo_SRO1.png 400w, index2_files/hw-libre-dibujo-300x246_SRO1.png 300w" sizes="(max-width: 400px) 85vw, 400px"></p>
+<li><font color="#FF0000"><strong>Restricció 3:</strong> Limitaciones en la placa. </font> 
+	Cuando se usa tanto la versión <em>freeware</em> como la “barata” de $49, 
+	<strong>las placas que podemos diseñar están limitadas</strong>. 
+	El tamaño máximo es de 10x8 cm, no se pueden emplear más de dos caras y 
+	el esquema no puede ser jerárquico (sólo una hoja por placa). 
+	Las limitaciones se relajan en la versión estándar ($747) y desaparecen en la profesional ($1494).
+</li>
+
+<li><font color="#FF0000"><strong>Restricción 4</strong>: Planos en formato propietario.</font> 
+	Nuestros diseños se almacenan en un fichero cuyo formato sólo es conocido por Cadsoft. 
+	Esto presenta varios inconvenientes. El principal es 
+	<strong>la incertidumbre en la perdurabilidad de la información</strong>. 
+	<em>¿Quién me garantiza que Cadsoft no rompa la compatibilidad en las versiones futuras y que 
+		no pueda abrir mis propios diseñoos en el futuro?</em>. 
+		Otro es la imposibilidad de que terceros desarrolladores de <em>software</em> 
+		hagan aplicaciones que puedan leer los planos. Por ejemplo, no se podría 
+		hacer herramientas que creen automáticamente “footprints” parametrizados o  
+		que sacasen estadísticas. 
+		Este tipo de <em>software</em> sólo lo puede hacer Cadsoft, por lo que la comunidad de 
+		<em>software</em> libre no puede aportar nada.
+</li>
+
+<li><font color="#FF0000"><strong>Restricción 5</strong>: Multiplataforma limitada.</font> 
+	Aunque una característica muy importante del Eagle es que es Multiplataforma, 
+	sólo se puede ejecutar en las tres plataformas pre-establecidas por Cadsoft. Pero… 
+	<em>¿Qué pasa con FreeBSD?</em><em> ¿Se puede ejectuar eagle en un notebook con procesador mips? 
+		¿O en un teléfono móvil de última generación?</em> La respuesta es NO.  
+		Sin embargo, esto no es así con las aplicaciones libres, que al estar disponible su 
+		código fuente son potencialmente portables a cualquier plataforma.
+</li>
+
+<p></p>
+
+<p><img decoding="async" src="index2_files/logokicad_SRO1.png" alt="logokicad" title="logokicad" width="507" height="51" class="aligncenter size-full wp-image-790" srcset="index2_files/logokicad_SRO1.png 507w, index2_files/logokicad-300x30_SRO1.png 300w" sizes="(max-width: 507px) 85vw, 507px"></p>
+<h3>Hardware libre y Kicad</h3>
+<p><strong>Todas estas restricciones desaparecen cuando se usa <em>software libre</em></strong>. 
+	Por ello, si estamos interesados en el <em>hardware</em> libre  y queremos hacer diseños libres 
+	que no tengan restricciones, hay que plantease el uso de alternativas libres. 
+	Una muy interesante es el <a href="http://www.lis.inpg.fr/realise_au_lis/kicad/">Kicad</a>. 
+	<strong>El hardware libre es aún más libre si se diseña con herramientas libres</strong>.</p>
+<p>Y esa es la motivación que me ha llevado a comenzar la migración de la 
+	<a href="../../../../wiki/Skypic.html">tarjeta Skypic</a>, hecha con Ealge, a Kicad. 
+	Esta nueva versión (Skypic-2009) tendrá las mismas funcionalidades (con pequeños cambios) 
+	pero todas las restricciones para su compartición desaparecerán. 
+	Está accesible <a href="http://svn.iearobotics.com/Skypic/trunk/">en este repositorio</a>.</p>
+<p><a href="../../../../wiki/Juan_Gonzalez_Main.html">Obijuan</a></p>
+	
+
+
+	
+</div><!-- .entry-content -->
+
+  <footer class="entry-footer">
+		<span class="byline">
+			<span class="author vcard">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<img alt="" src="../../../obijuan.jpeg" 
+			    class="avatar avatar-49 photo" height="49" width="49" decoding="async">
+			</span>
+		</span>
+
+		<span class="posted-on">
+      <!-- 🚧 CAMBIAR 🚧 -->
+			September 16, 2009
+		</span>
+		
+	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+	
+
+<div id="comments" class="comments-area">
+
+			<h2 class="comments-title">
+			4 thoughts on “Hardware libre (II)”		</h2>
+
+		
+		<ol class="comment-list">
+					<li id="comment-1266" class="comment even thread-even depth-1">
+			<article id="div-comment-1266" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="../../../ranganok.png" class="avatar avatar-42 photo" height="42" width="42" loading="lazy" decoding="async">						<b class="fn"><a href="https://skiras.blogspot.com/" class="url" rel="ugc external nofollow">Ranganok Schahzaman</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.iearobotics.com/blog/2009/09/16/hardware-libre-ii/#comment-1266"><time datetime="2009-09-17T00:41:09-07:00">September 17, 2009 at 12:41 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Lo malo del KiCAD es que todavía le falta algo de recorrido para 
+		comparse con el Eagle (aunque no mucho) y sobretodo muchísimo recorrido 
+		para comparse con herramientas profesionales como el Altium.</p>
+<p>Para la gente que empieza y que va a hacer cosas sencillas si que es bueno usar el KiCAD, 
+	sin embargo a la que te vas a cosas más complicadas me da la sensación que se queda algo corto 
+	(quizás lo mío es deformación profesional).</p>
+<p>Por otro lado el desarrollo de KiCAD sigue avanzando y esperemos que pronto se parezca mas a un software profesional.</p>
+<p>¿Alguien se anima a colaborar?</p>
+<p>S2</p>
+<p>Ranganok Schahzaman</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-1267" class="comment byuser comment-author-obijuan bypostauthor odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-1267" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="../../../obijuan.jpeg" srcset="index2_files/7b5cef3e932730382fa7887d196c57a992508fc12110235164_003_SRO1.jpeg 2x" class="avatar avatar-42 photo" height="42" width="42" loading="lazy" decoding="async">						<b class="fn"><a href="https://www.iearobotics.com/personal/juan" class="url" rel="ugc">obijuan</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.iearobotics.com/blog/2009/09/16/hardware-libre-ii/#comment-1267"><time datetime="2009-09-17T02:38:07-07:00">September 17, 2009 at 2:38 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hola Ranganok,</p>
+<p>Tu comentario es muy interesante. Creo que tengo que poner una entrada en el blog sobre ello 😉 En realidad, 
+	yo también pensaba así (antes había usado Orcad, Tango e Eagle) cuando comencñe hace años a usar el Kicad.</p>
+<p>  El kicad es libre y por tanto extremadamente dinámico. La situación que comentas tal vez podría ser 
+	el escenario de hace tres años, pero no ahora. En la lista de usuarios[1] hay una actividad incesante. 
+	Hay más de 2690 apuntados, de diferentes ámbitos: Universidad, Empresa, particulares, etc.  
+	La disyuntiva Kicad-Eagle-Altium-Orcad hace tiempo que se dejó de comentar en la lista por estar superada. 
+	Se han realizado diseños muy complejos, de hasta 16 capas, comercializados por empresas de Taiwan e 
+	incluso hay diseños que funcionan para frecuencias muy altas (micro-ondas). Todos ellos diseñados con Kicad.</p>
+
+<p>  Tanto es así que hay un grupo que está migrando el telfono móvil libre OpenMoko a Kicad[2][3]. 
+	La electrónica del OpenMoko es muy compleja y no se puede diseñar con cualquier herramienta. 
+	Todos los esquemas están en el repositorio[4] (ya van por la revisión 5643!)</p>
+
+<p>La lista de desarrollo del kicad está muy poblada para ser de desarrollo. ¡Hay 424 miembros! 
+	No todos son desarrolladores principales, pero todos los de esa lista colaboran en su desarrollo. 
+	Esto significa que prácticamente todos los días hay parches nuevos enviados. 
+	De hecho, los kicads empaquetados que nos podemos bajar de las últimas distribuciones 
+	(Ubuntu, Debian, Suse, etc…) están obsoletos comparados con las versiones en el SVN.</p>
+
+<p>  Por ello, Kicad, al día de hoy, es un monstruo que sigue creciendo.  
+	Y hace tiempo que está maduro para hacer placas profesionales.</p>
+<p>Gracias otra vez por comentario. Se me había olvidado hablar sobre su madurez, así que 
+	lo pondré en una tercera entrada 😉</p>
+<p>[1]http://tech.groups.yahoo.com/group/kicad-users/<br>
+[2]http://www.tuxbrain.com/otro-gran-paso-en-hardware-abierto-de-openmoko<br>
+[3]http://wiki.openmoko.org/wiki/Gta02-core<br>
+[4]http://svn.openmoko.org/trunk/gta02-core/</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-1272" class="comment even thread-even depth-1">
+			<article id="div-comment-1272" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="../../../ranganok.png" class="avatar avatar-42 photo" height="42" width="42" loading="lazy" decoding="async">						<b class="fn"><a href="https://skiras.blogspot.com/" class="url" rel="ugc external nofollow">Ranganok Schahzaman</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.iearobotics.com/blog/2009/09/16/hardware-libre-ii/#comment-1272"><time datetime="2009-09-20T04:46:22-07:00">September 20, 2009 at 4:46 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Supongo que tendré que darle otra oportunidad al KiCAD. 
+	Sin embargo el hecho de hacer placas profesionales o con una cierta complejidad con este programa 
+	no tiene nada que ver con lo que estaba pidiendo, ya que yo mismo he realizado diseños 
+	profesionales en el TANGO (para MS-DOS) y la ultima vez que probé el KiCAD 
+	estaba un poco por encima que el TANGO (ya que la interacción entre el esquemático y el PCB la realizaba mejor). </p>
+
+<p>A lo que me refiero sobretodo es a las ayudas a la hora de realizar el diseño 
+	tanto el esquemñatico (nombramiento automático, ordenación de las librerías, 
+	facilidad de crear nuevos compontentes, etc), como el PCB (polígonos, eliminación automática de lazos, 
+	ayudas en el enrutado manual, reglas potentes de enrutado automático, etc.), 
+	que no se si ya está implementado en el KiCAD (como he dicho ya hace que no uso el programa), 
+	pero son cosas que se hechan mucho en falta si las has probado y no están en el siguiente programa que usas.</p>
+<p>S2</p>
+<p>Ranganok Schahzaman</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-1273" class="comment byuser comment-author-obijuan bypostauthor odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-1273" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="index2_files/7b5cef3e932730382fa7887d196c57a992508fc12110235164_004_SRO1.jpeg" srcset="index2_files/7b5cef3e932730382fa7887d196c57a992508fc12110235164_003_SRO1.jpeg 2x" class="avatar avatar-42 photo" height="42" width="42" loading="lazy" decoding="async">						<b class="fn"><a href="https://www.iearobotics.com/personal/juan" class="url" rel="ugc">obijuan</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.iearobotics.com/blog/2009/09/16/hardware-libre-ii/#comment-1273"><time datetime="2009-09-20T05:46:39-07:00">September 20, 2009 at 5:46 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hola Ranganok,</p>
+<p>  Con diseños profesionales me refiero a diseños hechos por ingenieros que viven profesionalmente del 
+	diseño electrónico. En la lista del Kicad hay  muchos de ellos. Al principio Kicad era sólo para 
+	“jugar en casa”, usado por estudiantes o particulares. 
+	Ahora no, hay gente que lo usa profesionalmente, viviendo de ello.</p>
+
+<p>  En cuanto a las características que nombras, claro, están todas :-). 
+	Si no encuentras alguna, pregunta en la lista. La única que no está integrada en el IDE del Kicad es el 
+	Rutado automático avanzado, que hay que hacerlo exportando el netlist, usar freerouting y 
+	luego importar el resultado.  Hay usuarios haciendo scritps para que esto se haga automáticamente y 
+	desarrolladores integrándolo en el propio kicad (No lo he mirado, pero es posible que ya esté en la versión del SVN).</p>
+
+<p>  Yo lo que te recomiendo es que uses la herramienta que más te guste. 
+	Si ya sabes usar el Eagle, sigue usando Eagle. Si usas el Pads, sigue con el Pads. 
+	El kicad es muy recomendable para la gente que quiera hacer hardware libre. 
+	Usando Kicad se eliminan todas las restricciones para su compartición, 
+	por lo que es más fácil crear una comunidad de desarrolladores hardware al rededor de un diseño, 
+	similar al del software libre.  Y por supuesto, todo ello de forma legal.</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+			<p class="no-comments">Comments are closed.</p>
+	
+	
+</div><!-- .comments-area -->
+
+
+
+	<nav class="navigation post-navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links">
+
+			<div class="nav-previous">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<a href="../../09/13/" rel="prev">
+
+					<span class="meta-nav" aria-hidden="true">Previous</span>
+
+          <!-- 🚧 CAMBIAR 🚧 -->
+				  <span class="post-title">El robot modular Minicube-I ya es autónomo ;-)</span>
+        </a>
+			</div>
+
+			<div class="nav-next">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<a href="../../09/16/index2.html" 
+					 rel="next">
+					<span class="meta-nav" aria-hidden="true">Next</span>
+
+          <!-- 🚧 CAMBIAR 🚧 --> 
+					<span class="post-title">Hardware libre (II)</span>
+        		</a>
+			</div>
+		</div>
+	</nav>
+
+	
+</div><!-- .content-area -->
+</div><!-- .site-content -->
+</div><!-- .site-inner -->
+</div><!-- .site -->
+
+
+</body>
+</html>
+
