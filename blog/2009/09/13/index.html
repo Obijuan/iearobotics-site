@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../style_iHeX.css">
+
+  <!-- 🚧 CAMBIAR 🚧 -->
+  <title>El robot modular Minicube-I ya es autónomo ;-)</title>
+</head>
+
+
+<body class="group-blog">
+<div id="page" class="site">
+  <div class="site-inner">
+		<div id="content" class="site-content">
+			<div class="content-area">
+
+		
+<!-- Artículo -->        
+<article>
+	<header class="entry-header">
+    <!-- 🚧 CAMBIAR 🚧 -->
+	  <h1 class="entry-title">El robot modular Minicube-I ya es autónomo ;-)</h1>
+  </header><!-- .entry-header -->
+
+<div class="entry-content" style="margin-bottom: 50px;">
+	<!-- 🚧 CAMBIAR 🚧 -->
+		<p><img fetchpriority="high" decoding="async" src="index_files/minicube-i-skycube-1-peq_IEa5.jpg" alt="minicube-i-skycube-1-peq" title="minicube-i-skycube-1-peq" width="400" height="300" class="aligncenter size-full wp-image-687" srcset="index_files/minicube-i-skycube-1-peq_IEa5.jpg 400w, index_files/minicube-i-skycube-1-peq-300x225_IEa5.jpg 300w" sizes="(max-width: 400px) 85vw, 400px"></p>
+<p>Está lista la primera versión de 
+	<a href="../../../../wiki/MiniCube.html">Minicube-I</a> que es autónoma, con toda la electrónica y 
+	la alimentación integrada en el propio robot.</p>
+
+<p>Breve descripción del robot:</p>
+<li><strong>Mecánica</strong>: Dos 
+	<a href="../../../../personal/juan/doctorado/Modulos-Y1/modulos-y1.html">módulos Y1</a></li>
+<li><strong>Electrónica</strong>:
+	<a href="../../../../wiki/Skycube.html"> Tarjeta Skycube</a></li>
+<li><strong>Firmware</strong>: <a href="../../../../wiki/Micro-osciladores.html">Micro-osciladores</a></li>
+<li><strong>Alimentación</strong>: Batería de Li-Po + regulador</li>
+<li><strong>Tipo de robot</strong>: Configuración mínima del grupo cabeceo-cabeceo con topología de 1D</li>
+
+<p>Aquí está el robot en acción:<br>
+
+<p>
+	<a href="http://www.youtube.com/watch?v=CkTBHTHtS9E">
+		<img src="http://img.youtube.com/vi/CkTBHTHtS9E/0.jpg" alt="">
+	</a>
+	<a href="http://www.youtube.com/watch?v=CkTBHTHtS9E">Vídeo en Youtube</a>
+</p>
+
+
+<p>En esta demostración sólo se muestra un tipo de locomoción, 
+	con <strong>los parámetros de los osciladores</strong> fijados a:</p>
+<li><em>Amplitud</em>: 45 grados</li>
+<li><em>Diferencia de fase</em>: 125 grados</li>
+<li><em>Periodo</em>: 200ms</li>
+<li><em>Offset</em>: 0 grados</li>
+
+<p>Variándolos, el robot cambia el modo de caminar.</p>
+
+<h3>Evolución</h3>
+<p>En <a href="../../../../wiki/Juan_Gonzalez_Tesis.html">mi tesis</a> 
+	he estudiado los algoritmos de locomoción de los robots ápodos, centrándome en resolver 
+	<strong>el problema de la coordinación</strong>.</p>
+
+<p>  Para validar estos algoritmos, realicé simulaciones 
+	(<a href="../../../../blog/2008/12/17/">entrada en el blog</a>) y construí 
+	robots modulares controlados desde el PC 
+	(<a href="../../../../blog/2008/05/07/">ver entrada sobre minicube-1</a>)</p>
+
+<p>  Con la tesis demostré que los algoritmos basados en osciladores sinusoidales son viables. 
+	El siguiente paso era implementarlos para lograr robots modulares autónomos, 
+	que no necesitasen conectarse al pc para moverse.</p>
+
+<p><img decoding="async" src="index_files/evolucion-pp_IEa5.png" alt="evolucion-pp" title="evolucion-pp" width="403" height="310" class="aligncenter size-full wp-image-709" srcset="index_files/evolucion-pp_IEa5.png 403w, index_files/evolucion-pp-300x230_IEa5.png 300w" sizes="(max-width: 403px) 85vw, 403px"></p>
+<p>  Los osciladores los implementé para la 
+	<a href="../../../../wiki/Skypic.html">Skypic</a>. 
+	En las primeras pruebas sólo hacía oscilar un servo 
+	(<a href="../../../../blog/2009/04/08/">ver entrada</a>) y luego moví 
+	<strong>Minicube-I</strong> 
+	(<a href="../../../../blog/2009/04/15/">ver entrada</a>) y 
+	<strong>Cube-M</strong> 
+	(<a href="../../../../blog/2009/04/21/">ver entrada</a>). 
+	Estos robots sí son autónomos (no se conectan al PC) pero tanto la electrónica como las baterías 
+	estaban situadas en el exterior.</p>
+<p>  El último paso ha sido construir la tarjeta 
+	<a href="../../../../wiki/Skycube.html">Skycube</a> e integrarla en los módulos y1 
+	(<a href="../../../../blog/2009/09/10/">ver entrada</a>). Y gracias a 
+	<a href="../../../../wiki/Ricardo_Gómez.html">Ricardo Gómez</a>, 
+	las pilas se han sustituido por la baterías de Li-Po actuales.</p>
+
+<h3>Trabajo futuro</h3>
+<p>Aunque esta prueba se ha realizado con Minicube-i, <strong>tanto la electrónica como 
+	los algoritmos son escalables</strong> y por tanto permiten mover robots de mayor longitud. 
+	El siguiente paso será hacer el <strong>PCB</strong> de la Skycube, 
+	para poder replicarla fácilmente y usarla con robots mayores. 
+	Será necesario, también, hacer el firmware para mover servos a través del <strong>bus I2C</strong>.</p>
+<p><a href="../../../../../wiki/Juan_Gonzalez_Main.html">Obijuan</a></p>
+	
+
+
+	
+</div><!-- .entry-content -->
+
+  <footer class="entry-footer">
+		<span class="byline">
+			<span class="author vcard">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<img alt="" src="../../../obijuan.jpeg" 
+			    class="avatar avatar-49 photo" height="49" width="49" decoding="async">
+			</span>
+		</span>
+
+		<span class="posted-on">
+      <!-- 🚧 CAMBIAR 🚧 -->
+			September 13, 2009
+		</span>
+		
+	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+	
+
+
+<div id="comments" class="comments-area">
+
+			<h2 class="comments-title">
+			6 thoughts on “El robot modular Minicube-I ya es autónomo ;-)”		</h2>
+
+		
+		<ol class="comment-list">
+					<li id="comment-1259" class="comment even thread-even depth-1">
+			<article id="div-comment-1259" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="../../../chris.png" class="avatar avatar-42 photo" height="42" width="42" loading="lazy" decoding="async">						<b class="fn"><a href="http://pensabot.com/" class="url" rel="ugc external nofollow">Chris.</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.iearobotics.com/blog/2009/09/13/el-robot-modular-minicube-i-ya-es-autonomo/#comment-1259"><time datetime="2009-09-13T15:08:26-07:00">September 13, 2009 at 3:08 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Sin duda es un hito histórico 🙂  la teoría de cuerdas quedará corta 
+		para el potencial de estos ladrillos cibernéticos.</p>
+<p>¿Cómo piensas resolver la comunicación entre módulos?, 
+	¿qué tal un protocolo similar a un sistema nervioso dinámico que facilite 
+	la suerte de una evolución? Por ejemplo por vía inalámbrica a una red 
+	corporal de muy baja potencia (residuales electromagnéticos); 
+	aunque mejor propongo una vía por fibra óptica que a la vez sirve de sensor.</p>
+<p>Chris.</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-1260" class="comment byuser comment-author-obijuan bypostauthor odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-1260" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="../../../obiuan.jpeg" srcset="index_files/7b5cef3e932730382fa7887d196c57a992508fc12110235164_003_IEa5.jpeg 2x" class="avatar avatar-42 photo" height="42" width="42" loading="lazy" decoding="async">						<b class="fn"><a href="https://www.iearobotics.com/personal/juan" class="url" rel="ugc">obijuan</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.iearobotics.com/blog/2009/09/13/el-robot-modular-minicube-i-ya-es-autonomo/#comment-1260"><time datetime="2009-09-14T06:42:27-07:00">September 14, 2009 at 6:42 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hola Chris!</p>
+<p>  De momento la comunicación será mucho más “mundana”. Un bus I2C para empezar. 
+	Pero todo llegará…. pasito a pasito 😉</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-1264" class="comment even thread-even depth-1">
+			<article id="div-comment-1264" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="../../../mundobot.png" class="avatar avatar-42 photo" height="42" width="42" loading="lazy" decoding="async">						<b class="fn"><a href="http://www.quarkrobotics.com/" class="url" rel="ugc external nofollow">Alejandro Alonso Puig</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.iearobotics.com/blog/2009/09/13/el-robot-modular-minicube-i-ya-es-autonomo/#comment-1264"><time datetime="2009-09-16T11:17:04-07:00">September 16, 2009 at 11:17 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Juan, te ha quedado genial y supercompacto. Enhorabuena!!!<br>
+Un abrazo</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-1265" class="comment byuser comment-author-obijuan bypostauthor odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-1265" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="../../../obijuan.jpeg" class="avatar avatar-42 photo" height="42" width="42" loading="lazy" decoding="async">						<b class="fn"><a href="https://www.iearobotics.com/personal/juan" class="url" rel="ugc">obijuan</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.iearobotics.com/blog/2009/09/13/el-robot-modular-minicube-i-ya-es-autonomo/#comment-1265"><time datetime="2009-09-16T11:30:45-07:00">September 16, 2009 at 11:30 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Gracias Alejandro!! Es mucho mejor verlo en directo 😉  
+						Cuando nos veamos te lo enseño, y de paso nos actualizamos de todas las novedades</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-1383" class="comment even thread-even depth-1">
+			<article id="div-comment-1383" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="../../../avatar-anonimo.png" srcset="index_files/d794dc19806651788cd1fae39c0c010a6ca8c292228bb72a0fa_002_IEa5.png 2x" class="avatar avatar-42 photo" height="42" width="42" loading="lazy" decoding="async">						<b class="fn">ALEJANDRO</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.iearobotics.com/blog/2009/09/13/el-robot-modular-minicube-i-ya-es-autonomo/#comment-1383"><time datetime="2009-11-06T19:59:21-07:00">November 6, 2009 at 7:59 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>JUAN ES UN EXCELENTE TRABAJO FELICITACIONES.<br>
+ME GUSTARIA COMO HACER UNO, PARA ENSEÃ‘ALO A MIS ALUMNOS.<br>
+LA TARJETA DONDE SE PUEDE CONSEGUIR O DE QUE MODO<br>
+GRACIAS ESPERO ME ENVIES POR FAVOR INFORMACION.</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-1384" class="comment byuser comment-author-obijuan bypostauthor odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-1384" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="../../../obijuan.jpeg" class="avatar avatar-42 photo" height="42" width="42" loading="lazy" decoding="async">						<b class="fn"><a href="https://www.iearobotics.com/personal/juan" class="url" rel="ugc">obijuan</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.iearobotics.com/blog/2009/09/13/el-robot-modular-minicube-i-ya-es-autonomo/#comment-1384"><time datetime="2009-11-06T23:11:19-07:00">November 6, 2009 at 11:11 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hola Alejandro,</p>
+<p>  La tarjeta Skycube está en fase de prototipo y todavía no está terminada, 
+	estamos en ello 🙂  Pero en el repositorio puedes descargarte los últimos planos. 
+	En el blog iremos publicando los avances</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+			<p class="no-comments">Comments are closed.</p>
+	
+	
+</div><!-- .comments-area -->
+
+
+	<nav class="navigation post-navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links">
+
+			<div class="nav-previous">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<a href="../../09/10/" rel="prev">
+
+					<span class="meta-nav" aria-hidden="true">Previous</span>
+
+          <!-- 🚧 CAMBIAR 🚧 -->
+				  <span class="post-title">Tarjeta Skycube y Robots modulares autónomos</span>
+        </a>
+			</div>
+
+			<div class="nav-next">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<a href="https://www.iearobotics.com/blog/2009/09/16/publicado-curso-de-programacion-del-pic16-en-c/" 
+					 rel="next">
+					<span class="meta-nav" aria-hidden="true">Next</span>
+
+          <!-- 🚧 CAMBIAR 🚧 --> 
+					<span class="post-title">Publicado curso de programación del PIC16 en C</span>
+        		</a>
+			</div>
+		</div>
+	</nav>
+
+	
+</div><!-- .content-area -->
+</div><!-- .site-content -->
+</div><!-- .site-inner -->
+</div><!-- .site -->
+
+
+</body>
+</html>
+
