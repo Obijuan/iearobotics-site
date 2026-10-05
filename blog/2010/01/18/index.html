@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../style_iHeX.css">
+
+  <!-- 🚧 CAMBIAR 🚧 -->
+  <title>Micro-osciladores 0.3</title>
+</head>
+
+
+<body class="group-blog">
+<div id="page" class="site">
+  <div class="site-inner">
+		<div id="content" class="site-content">
+			<div class="content-area">
+
+		
+<!-- Artículo -->        
+<article>
+	<header class="entry-header">
+    <!-- 🚧 CAMBIAR 🚧 -->
+	  <h1 class="entry-title">Micro-osciladores 0.3</h1>
+  </header><!-- .entry-header -->
+
+<div class="entry-content" style="margin-bottom: 50px;">
+	<!-- 🚧 CAMBIAR 🚧 -->
+		<p><img fetchpriority="high" decoding="async" src="index_files/blog-micro-osciladores-logo1_Rrdi.png" alt="blog-micro-osciladores-logo1" title="blog-micro-osciladores-logo1" width="250" height="366" class="aligncenter size-full wp-image-1118" srcset="index_files/blog-micro-osciladores-logo1_Rrdi.png 250w, index_files/blog-micro-osciladores-logo1-204x300_Rrdi.png 204w" sizes="(max-width: 250px) 85vw, 250px"></p>
+<p>Hemos liberado la <strong>versión 0.3</strong> de los 
+	<a href="../../../../wiki/Micro-osciladores.html">micro-osciladores</a>. 
+	Es el software que se ejecuta en un pic16f876a y que controla la oscilación de hasta 8 
+	<a href="../../../../wiki/Servos_Futaba_3003.html">servos futaba 3003</a> o compatibles. 
+	Con estas oscilaciones se logra que los <strong>robots modulares</strong> 
+	con topología de una dimensión puedan desplazarse.</p>
+
+<p><strong>Las mejoras</strong> con respecto a la versión anterior son:<br>
+* <em>Optimización del código</em><br>
+* <em>Periodo de muestreo fijado a 20ms, que es lo mínimo posible para servos Futaba</em><br>
+* <em>Mejorado el funcionamiento: las oscilaciones ya no dependen del número de servos funcionando</em><br>
+*<em> Adaptación a la <a href="../../../../wiki/Skycube.html">tarjeta Skycube</a></em><br>
+* <em>Ejemplos de movimiento de los robots 
+	<a href="../../../../wiki/Cube_Revolutions.html">Cube Revolutions</a>,  
+	<a href="../../../../wiki/Hypercube.html">Hypercube</a> y 
+	<a href="../../../../wiki/MiniCube.html">Minicube-II</a>.</em><br>
+* <em>Control de los osciladores desde el PC</em></p>
+
+<p>Los osciladores pueden funcionar de manera autónoma o bien<strong> controlados desde el PC</strong>. 
+	Esto es muy útil para aprender su funcionamiento y ver cómo afectan los diferentes 
+	parámetros a la locomoción de los robots (esto lo usaremos en los talleres de robots modulares).</p>
+<p>Hemos desarrollado un <strong>programa en python</strong> que se comunica con el servidor de oscilaciones. 
+	Es muy útil porque se puede usar el modo interactivo del interprete de python para hacer pruebas, 
+	como se muestra en el vídeo:</p>
+
+<p>
+	<a href="https://www.youtube.com/watch?v=PnMehYqtwTY">
+		<img src="http://img.youtube.com/vi/PnMehYqtwTY/0.jpg" alt="">
+	</a>
+
+	<a href="https://www.youtube.com/watch?v=PnMehYqtwTY">Vídeo en Youtube</a>
+</p>
+
+
+<p>Este es el script python con los comandos usados en el vídeo: </p>
+
+<pre><code><span style="color: #804000;">import</span> libStargate.Oscillator
+ o=libStargate.Oscillator.Open_session("<span style="color: #006000;">/dev/ttyUSB0</span>")
+<span style="color: #800000;">#-- Activar los osciladores 1, 2 y 3</span>
+o.on(1)
+o.on(2)
+o.on(3)
+
+<span style="color: #800000;">#-- Parar oscilador 2</span>
+o.off(2)
+
+ <span style="color: #800000;">#-- Llevar servo 2 a 45 grados</span>
+ o.pos(2,45)
+
+ <span style="color: #800000;">#-- Llevar servo 2 a -45 grados</span>
+ o.pos(2,-45)
+
+ <span style="color: #800000;">#-- Deshabilitar servo 2</span>
+ o.disable(2)
+
+ <span style="color: #800000;">#-- Deshabilitar resto de servos</span>
+ o.disable(1)
+ o.disable(3)
+</code></pre>
+
+<p>En las próximas versiones se completará la interfaz para establecer 
+	los parámetros de oscilación: velocidad, amplitud, fase y offset.</p>
+
+<p><a href="../../../../wiki/Juan_Gonzalez_Main.html">Obijuan</a></p>
+
+	
+</div><!-- .entry-content -->
+
+  <footer class="entry-footer">
+		<span class="byline">
+			<span class="author vcard">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<img alt="" src="../../../obijuan.jpeg" 
+			    class="avatar avatar-49 photo" height="49" width="49" decoding="async">
+			</span>
+		</span>
+
+		<span class="posted-on">
+      <!-- 🚧 CAMBIAR 🚧 -->
+			January 18, 2010
+		</span>
+		
+	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+		
+
+	<nav class="navigation post-navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links">
+
+			<div class="nav-previous">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<a href="../../01/17/" rel="prev">
+					<span class="meta-nav" aria-hidden="true">Previous</span>
+
+          <!-- 🚧 CAMBIAR 🚧 -->
+				  <span class="post-title">Mi mesa está tomada por los robots modulares!</span>
+        </a>
+			</div>
+
+			<div class="nav-next">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<a href="www.iearobotics.com/blog/2010/01/21/tarjeta-skypads-10/" 
+					 rel="next">
+					<span class="meta-nav" aria-hidden="true">Next</span>
+
+          <!-- 🚧 CAMBIAR 🚧 --> 
+					<span class="post-title">Tarjeta Skypads 1.0</span>
+        		</a>
+			</div>
+		</div>
+	</nav>
+
+	
+</div><!-- .content-area -->
+</div><!-- .site-content -->
+</div><!-- .site-inner -->
+</div><!-- .site -->
+
+
+</body>
+</html>
+
