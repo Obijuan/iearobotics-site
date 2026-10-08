@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../style_iHeX.css">
+
+  <!-- 🚧 CAMBIAR 🚧 -->
+  <title>Simulando robots modulares con OpenRave (II)</title>
+</head>
+
+
+<body class="group-blog">
+<div id="page" class="site">
+  <div class="site-inner">
+		<div id="content" class="site-content">
+			<div class="content-area">
+
+		
+<!-- Artículo -->        
+<article>
+	<header class="entry-header">
+    <!-- 🚧 CAMBIAR 🚧 -->
+	  <h1 class="entry-title">Simulando robots modulares con OpenRave (II)</h1>
+  </header><!-- .entry-header -->
+
+<div class="entry-content" style="margin-bottom: 50px;">
+	<!-- 🚧 CAMBIAR 🚧 -->
+		<p><img fetchpriority="high" decoding="async" src="index_files/blog-minicube-i-open-rave-2_zkE7.jpg" alt="blog-minicube-i-open-rave-2" title="blog-minicube-i-open-rave-2" width="500" height="392" class="aligncenter size-full wp-image-1244" srcset="index_files/blog-minicube-i-open-rave-2_zkE7.jpg 500w, index_files/blog-minicube-i-open-rave-2-300x235_zkE7.jpg 300w" sizes="(max-width: 500px) 85vw, 500px"></p>
+<p>He realizado la simulación de la locomoción de 
+	<a href="../../../../wiki/MiniCube.html">Minicube-I</a> con 
+	<a href="http://openrave.programmingvision.com/index.php/Main_Page">Openrave</a>, 
+	pero usando un modelo real de <a href="../../../../wiki/Módulos_Y1.html">módulos Y1</a>, 
+	en vez del hexaédrico como en la 
+	<a href="../../../../blog/2010/02/23/">simulación previa</a>.</p>
+
+<p>Las piezas de los módulos Y1 están hechas en <a href="https://es.wikipedia.org/wiki/Blender">Blender</a> 
+	y de ahí se han exportado al formato <a href="https://en.wikipedia.org/wiki/Open_Inventor">Open Inventor</a> (.iv) 
+	que puede importar OpenRave.</p>
+
+<p>
+	<a href="http://www.youtube.com/watch?v=lsj7H2EGPqM">
+		<img src="http://img.youtube.com/vi/lsj7H2EGPqM/0.jpg" alt="">
+	</a>
+	<a href="http://www.youtube.com/watch?v=lsj7H2EGPqM">Vídeo en youtube</a>
+</p>
+
+
+<p>Todavía tengo que afinar algunos parámetros de la física, pero está funcionando bastante bien. 
+	Es la primera vez que simulo el modelo real 😉</p>
+<p>Todos los ejemplos de prueba que estoy haciendo en c++ los estoy publicando en esta página del wiki: 
+	<a href="../../../../wiki/OpenRave_y_robots_modulares.html">OpenRave y Robots modulares</a> 
+	para que cualquiera los pueda probar</p>
+<p><a href="../../../../wiki/Juan_Gonzalez_Main.html">Obijuan</a></p>
+
+
+	
+</div><!-- .entry-content -->
+
+  <footer class="entry-footer">
+		<span class="byline">
+			<span class="author vcard">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<img alt="" src="../../../obijuan.jpeg" 
+			    class="avatar avatar-49 photo" height="49" width="49" decoding="async">
+			</span>
+		</span>
+
+		<span class="posted-on">
+      <!-- 🚧 CAMBIAR 🚧 -->
+			March 1, 2010
+		</span>
+		
+	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+	
+
+
+<div id="comments" class="comments-area">
+
+			<h2 class="comments-title">
+			2 thoughts on “Simulando robots modulares con OpenRave (II)”		</h2>
+
+		
+		<ol class="comment-list">
+					<li id="comment-1722" class="comment even thread-even depth-1">
+			<article id="div-comment-1722" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="../../../pablo.png" srcset="index_files/ea641d58fb35ebbf9d6257093206b92100acea3f3a2fa533c83_002_zkE7.png 2x" class="avatar avatar-42 photo" height="42" width="42" decoding="async">						<b class="fn"><a href="http://geus.wordpress.com/" class="url" rel="ugc external nofollow">Pablo</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.iearobotics.com/blog/2010/03/01/simulando-robots-modulares-con-openrave-ii/#comment-1722"><time datetime="2010-03-03T17:04:27-07:00">March 3, 2010 at 5:04 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Genial Obijuan por el trabajo, gracias también por la referencia a la página la wiki.</p>
+<p>La verdad que llevo un tiempo queriendo aprender a manejar OpenRave, 
+	lo sigo desde hace un tiempo y todo lo que veo de él tiene buena pinta.</p>
+<p>¿Por cierto, de todos los archivos cpp que tienes cual es que usas durante los vídeos?</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-1724" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-1724" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="../../../obijuan.jpeg" srcset="index_files/7b5cef3e932730382fa7887d196c57a992508fc12110235164_003_zkE7.jpeg 2x" class="avatar avatar-42 photo" height="42" width="42" loading="lazy" decoding="async">						<b class="fn">Obijuan</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.iearobotics.com/blog/2010/03/01/simulando-robots-modulares-con-openrave-ii/#comment-1724"><time datetime="2010-03-04T01:11:51-07:00">March 4, 2010 at 1:11 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hola Pablo!</p>
+<p>Los últimos ejemplos están en el fichero:</p>
+<p>2010-03-01-test-cpp.zip</p>
+<p>El ejemplo test16.cpp es el que usa el modelo hexaedrico y el test30.cpp el que usa el real. 
+	Son los dos que he usado en los vídeos.</p>
+<p>Para que te funcionen es necesario que apliques el parche que he puesto en la página del wiki. 
+	Estoy en contacto con el desarrollador principal para ver si me aceptan 
+	unas modificaciones para poder mover los robots modulares.</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+			<p class="no-comments">Comments are closed.</p>
+	
+	
+</div><!-- .comments-area -->
+
+
+	<nav class="navigation post-navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links">
+
+			<div class="nav-previous">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<a href="../../02/28/" rel="prev">
+					<span class="meta-nav" aria-hidden="true">Previous</span>
+
+          <!-- 🚧 CAMBIAR 🚧 -->
+				  <span class="post-title">Publicada la documentación del montaje de UNIMOD A1</span>
+        </a>
+			</div>
+
+			<div class="nav-next">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<a href="https://www.iearobotics.com/blog/2010/03/08/contribucion-a-openrave-odecontroller/" 
+					 rel="next">
+					<span class="meta-nav" aria-hidden="true">Next</span>
+
+          <!-- 🚧 CAMBIAR 🚧 --> 
+					<span class="post-title">Contribución a OpenRave: Odecontroller</span>
+        		</a>
+			</div>
+		</div>
+	</nav>
+
+	
+</div><!-- .content-area -->
+</div><!-- .site-content -->
+</div><!-- .site-inner -->
+</div><!-- .site -->
+
+
+</body>
+</html>
+
