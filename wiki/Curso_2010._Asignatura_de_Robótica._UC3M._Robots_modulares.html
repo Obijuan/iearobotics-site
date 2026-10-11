@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Curso 2010. Asignatura de Robótica. UC3M. Robots modulares - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Curso_2010._Asignatura_de_Robótica._UC3M._Robots_modulares","wgTitle":"Curso 2010. Asignatura de Robótica. UC3M. Robots modulares","wgCurRevisionId":8741,"wgRevisionId":8741,"wgArticleId":1387,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Robótica","Robots modulares"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Curso_2010._Asignatura_de_Robótica._UC3M._Robots_modulares","wgRelevantArticleId":1387,"wgRequestId":"astVe3E7QI1OSoXf1VaHRwAn764","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/load_lKTe.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/load_002_lKTe.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://www.iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://www.iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/load_lKTe.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Curso_2010_Asignatura_de_Robótica_UC3M_Robots_modulares rootpage-Curso_2010_Asignatura_de_Robótica_UC3M_Robots_modulares skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Curso 2010. Asignatura de Robótica. UC3M. Robots modulares</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-1.jpg" class="image"><img alt="" src="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/300px-2010-robotica-uc3m-robots-modulares-1_lKTe.jpg" width="300" height="225" class="thumbimage" srcset="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/450px-2010-robotica-uc3m-robots-modulares-1_lKTe.jpg 1.5x, Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/600px-2010-robotica-uc3m-robots-modulares-1_lKTe.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-1.jpg" class="internal" title="Aumentar"></a></div>Los participantes en el taller de robots modulares (<i>click para ampliar</i>)</div></div></div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Ficha"><span class="tocnumber">1</span> <span class="toctext">Ficha</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Resumen"><span class="tocnumber">2</span> <span class="toctext">Resumen</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Sesi.C3.B3n_1:_Montaje_de_los_m.C3.B3dulos_y_de_la_electr.C3.B3nica"><span class="tocnumber">3</span> <span class="toctext">Sesión 1: Montaje de los módulos y de la electrónica</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Descripci.C3.B3n"><span class="tocnumber">3.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Tareas_a_realizar"><span class="tocnumber">3.2</span> <span class="toctext">Tareas a realizar</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Sesi.C3.B3n_2:_Experimentos_de_locomoci.C3.B3n_en_1D"><span class="tocnumber">4</span> <span class="toctext">Sesión 2: Experimentos de locomoción en 1D</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Descripci.C3.B3n_2"><span class="tocnumber">4.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Software_para_descargar"><span class="tocnumber">4.2</span> <span class="toctext">Software para descargar</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Experimento_1:_La_gran_ola"><span class="tocnumber">4.3</span> <span class="toctext">Experimento 1: La gran ola</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="#Descripci.C3.B3n_3"><span class="tocnumber">4.3.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#Instrucciones"><span class="tocnumber">4.3.2</span> <span class="toctext">Instrucciones</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-12"><a href="#Experimento_2:_oscilaci.C3.B3n_de_Unimod"><span class="tocnumber">4.4</span> <span class="toctext">Experimento 2: oscilación de Unimod</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="#Descripci.C3.B3n_4"><span class="tocnumber">4.4.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#Instrucciones_2"><span class="tocnumber">4.4.2</span> <span class="toctext">Instrucciones</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-15"><a href="#Experimento_3:_Coordinaci.C3.B3n_b.C3.A1sica._Bimod"><span class="tocnumber">4.5</span> <span class="toctext">Experimento 3: Coordinación básica. Bimod</span></a>
+<ul>
+<li class="toclevel-3 tocsection-16"><a href="#Descripci.C3.B3n_5"><span class="tocnumber">4.5.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#Instrucciones_3"><span class="tocnumber">4.5.2</span> <span class="toctext">Instrucciones</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-18"><a href="#Experimento_4:_Configuraci.C3.B3n_m.C3.ADnima_Minicube-I"><span class="tocnumber">4.6</span> <span class="toctext">Experimento 4: Configuración mínima Minicube-I</span></a>
+<ul>
+<li class="toclevel-3 tocsection-19"><a href="#Descripci.C3.B3n_6"><span class="tocnumber">4.6.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#Instrucciones_4"><span class="tocnumber">4.6.2</span> <span class="toctext">Instrucciones</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-21"><a href="#Experimento_5:_Robot_Cube3"><span class="tocnumber">4.7</span> <span class="toctext">Experimento 5: Robot Cube3</span></a>
+<ul>
+<li class="toclevel-3 tocsection-22"><a href="#Descripci.C3.B3n_7"><span class="tocnumber">4.7.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="#Instrucciones_5"><span class="tocnumber">4.7.2</span> <span class="toctext">Instrucciones</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-24"><a href="#Experimento_6:_Robot_Cube6"><span class="tocnumber">4.8</span> <span class="toctext">Experimento 6: Robot Cube6</span></a>
+<ul>
+<li class="toclevel-3 tocsection-25"><a href="#Descripci.C3.B3n_8"><span class="tocnumber">4.8.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="#Instrucciones_6"><span class="tocnumber">4.8.2</span> <span class="toctext">Instrucciones</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-27"><a href="#Experimento_7:_Robot_Cube12.21"><span class="tocnumber">4.9</span> <span class="toctext">Experimento 7: Robot Cube12!</span></a>
+<ul>
+<li class="toclevel-3 tocsection-28"><a href="#Descripci.C3.B3n_9"><span class="tocnumber">4.9.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-29"><a href="#Instrucciones_7"><span class="tocnumber">4.9.2</span> <span class="toctext">Instrucciones</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-30"><a href="#Grupos_y_Robots"><span class="tocnumber">5</span> <span class="toctext">Grupos y Robots</span></a></li>
+<li class="toclevel-1 tocsection-31"><a href="#Fotos"><span class="tocnumber">6</span> <span class="toctext">Fotos</span></a></li>
+<li class="toclevel-1 tocsection-32"><a href="#Autor"><span class="tocnumber">7</span> <span class="toctext">Autor</span></a></li>
+<li class="toclevel-1 tocsection-33"><a href="#Licencia"><span class="tocnumber">8</span> <span class="toctext">Licencia</span></a></li>
+<li class="toclevel-1 tocsection-34"><a href="#Enlaces"><span class="tocnumber">9</span> <span class="toctext">Enlaces</span></a></li>
+<li class="toclevel-1 tocsection-35"><a href="#Agradecimientos"><span class="tocnumber">10</span> <span class="toctext">Agradecimientos</span></a></li>
+<li class="toclevel-1 tocsection-36"><a href="#Noticias"><span class="tocnumber">11</span> <span class="toctext">Noticias</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Ficha">Ficha</span></h2>
+<ul><li> <b>Asignatura de Robótica</b>. Ingeniería Informática. Universidad Carlos III. Campus de Colmenarejo</li>
+<li> <b>Actividad</b>: Caso de estudio 2: Construcción de robots modulares. Experimentos de coordinación y locomoción.</li>
+<li> <b>Duración</b>: 6 horas, dividas en 2 sesiones de 2 y 4 horas</li>
+<li> <b>Fechas</b>: 7 y 21 de Abril de 2010</li>
+<li> <b>Lugar</b>: Laboratorio 1.1.B08</li>
+<li> <b>Estudiantes</b>: 14, divididos en 4 grupos</li>
+<li> <b>Profesor</b>: <a href="https://www.iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main">Juan González Gómez</a> (Obijuan)</li>
+<li> <b>Plataforma robótica</b>: <a href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_MY" title="Módulos MY">Módulos MY1</a> y <a href="https://www.iearobotics.com/wiki/index.php?title=Skycube" title="Skycube">Tarjeta Skycube</a></li>
+<li> <b>Objetivos</b>:
+<ul><li> Introducir a los estudiantes en el mundo de los robots modulares</li>
+<li> <b>Batir el record</b> de España de contrucción de la serpiente/gusano más larga&nbsp;;-)</li>
+<li> Ser <b>Pioneros en España</b> en la impartición de la robótica modular en un curso de grado</li></ul></li></ul>
+<h2><span class="mw-headline" id="Resumen">Resumen</span></h2>
+<p>Actividad organizada dentro de la <b>asignatura de Robótica</b> en Ingeniería Informática de la <b>Universidad Carlos III de Madrid</b>. Para completar la parte teórica, y hacerla más amena, se propone a los estudiantes construir diferentes configuraciones de robots modulares con topología de 1D y realizar experimentos de locomoción y coordinación con ellos.
+</p><p>En la parte de experimentos sólo dió tiempo ha construir robots con movimiento de 1D. Sin embargo, el objetivo de <b>batir el record de España</b> se cumplió: Hicimos un gusano de 12 módulos que se movía de forma autónoma. Hasta el momento es el más largo de España&nbsp;;-)
+</p>
+<h2><span class="mw-headline" id="Sesi.C3.B3n_1:_Montaje_de_los_m.C3.B3dulos_y_de_la_electr.C3.B3nica">Sesión 1: Montaje de los módulos y de la electrónica</span></h2>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-kit-1.jpg" class="image"><img alt="" src="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/300px-2010-robotica-uc3m-robots-modulares-kit-1_lKTe.jpg" width="300" height="225" class="thumbimage" srcset="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/450px-2010-robotica-uc3m-robots-modulares-kit-1_lKTe.jpg 1.5x, Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/600px-2010-robotica-uc3m-robots-modulares-kit-1_lKTe.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-kit-1.jpg" class="internal" title="Aumentar"></a></div>Kit entregado a cada grupo  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-estudiantes-montaje.jpg" class="image"><img alt="" src="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/300px-2010-robotica-uc3m-robots-modulares-estudiantes-m_lKTe.jpg" width="300" height="225" class="thumbimage" srcset="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/450px-2010-robotica-uc3m-robots-modulares-estudiantes-m_lKTe.jpg 1.5x, Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/600px-2010-robotica-uc3m-robots-modulares-estudiantes-m_lKTe.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-estudiantes-montaje.jpg" class="internal" title="Aumentar"></a></div>Los estudiantes montando los módulos MY1 (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+</tbody></table>
+<h3><span class="mw-headline" id="Descripci.C3.B3n">Descripción</span></h3>
+<p>A cada grupo se le dió el material necesario para montar tres <a href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_MY" title="Módulos MY">Módulos MY1</a>, un cable de descarga, la <a href="https://www.iearobotics.com/wiki/index.php?title=Skycube" title="Skycube">Tarjeta Skycube</a> y el portapilas.
+</p>
+<h3><span class="mw-headline" id="Tareas_a_realizar">Tareas a realizar</span></h3>
+<ul><li> Montar 3 módulos MY1: <a href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_MY1:Montaje" title="Módulos MY1:Montaje">Instrucciones</a></li>
+<li> Montar el portapilas: <a href="https://www.iearobotics.com/wiki/index.php?title=Skycube:Montaje_del_portapilas" title="Skycube:Montaje del portapilas">Instrucciones</a></li>
+<li> Montar el cable de descarga: <a href="https://www.iearobotics.com/wiki/index.php?title=Skycube_1.0:_Cable_de_descarga_FTDI" title="Skycube 1.0: Cable de descarga FTDI">Instrucciones</a></li></ul>
+<h2><span class="mw-headline" id="Sesi.C3.B3n_2:_Experimentos_de_locomoci.C3.B3n_en_1D">Sesión 2: Experimentos de locomoción en 1D</span></h2>
+<h3><span class="mw-headline" id="Descripci.C3.B3n_2">Descripción</span></h3>
+<p>En esta segunda parte se realizan una serie de experimentos guiados para enseñar el concepto de <b>oscilación</b> y cómo lograr la <b>locomoción en una dimensión de los robots modulares de tipo gusano</b>. Para lograrlo los estudiantes tienen que modificar los parámetros amplitud, frecuencia y diferencia de fase de cada oscilador.
+</p>
+<h3><span class="mw-headline" id="Software_para_descargar">Software para descargar</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2010-04-21-robots-modulares-estudiantes/experimentos-modulares.zip">experimentos-modulares.zip</a>
+</td>
+<td> Fuentes en C de los programas para la Skycube
+</td></tr></tbody></table>
+<p>Se proporciona el software para la <a href="https://www.iearobotics.com/wiki/index.php?title=Skycube" title="Skycube">Tarjeta Skycube</a> que implementa la oscilación de los módulos. Lo primero es bajárselo y compilarlo para comprobar que todo funciona bien. 
+</p>
+<ul><li> Bajar este paquete: <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2010-04-21-robots-modulares-estudiantes/experimentos-modulares.zip">experimentos-modulares.zip</a></li>
+<li> Descomprimirlo </li>
+<li> Compilarlo con make</li></ul>
+<h3><span class="mw-headline" id="Experimento_1:_La_gran_ola">Experimento 1: La gran ola</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-exp1-gran-ola.jpg" class="image"><img alt="" src="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/300px-2010-robotica-uc3m-robots-modulares-exp1-gran-ola_lKTe.jpg" width="300" height="225" class="thumbimage" srcset="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/450px-2010-robotica-uc3m-robots-modulares-exp1-gran-ola_lKTe.jpg 1.5x, Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/600px-2010-robotica-uc3m-robots-modulares-exp1-gran-ola_lKTe.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-exp1-gran-ola.jpg" class="internal" title="Aumentar"></a></div><b>Experimento 1</b>: La gran ola, formada por 12 módulos  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td>300|250&lt;/youtube&gt;
+<p><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=MQFxrA9jAjA">Enlace directo al vídeo en Youtube</a> <br>
+Vídeo de la ola en acción
+</p>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_3">Descripción</span></h4>
+<p>En este experimento se hacen oscilar todos los módulos con la misma amplitud y frecuencia, pero cambiando la fase, de manera que aparece una ola que se propaga
+</p>
+<h4><span class="mw-headline" id="Instrucciones">Instrucciones</span></h4>
+<ul><li> Montar la tarjeta Skycube sobre el portapilas. Seguid las instrucciones <b>SOLO hasta el paso 3</b>: <a href="https://www.iearobotics.com/wiki/index.php?title=Unimod_A1:Montaje" title="Unimod A1:Montaje">Instrucciones</a></li>
+<li> Conectar los módulos a la Skycube en las posiciones 2, 4 y 6</li>
+<li> Editar el programa <b>experimento1-ola.c</b> y cambiar las fases de los servos 2, 4 y 6 con los siguientes valores:
+<ul><li> <b>Grupo 1</b>:    0, -30, -60</li>
+<li> <b>Grupo 2</b>:  -90, -120, -150</li>
+<li> <b>Grupo 3</b>: -180, -210, -240</li>
+<li> <b>Grupo 4</b>: -270, -300, -330</li></ul></li>
+<li> Compilad el programa y descargarlo en la Skycube</li></ul>
+<h3><span class="mw-headline" id="Experimento_2:_oscilaci.C3.B3n_de_Unimod">Experimento 2: oscilación de Unimod</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-exp2-Unimod.jpg" class="image"><img alt="" src="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/300px-2010-robotica-uc3m-robots-modulares-exp2-Unimod_lKTe.jpg" width="300" height="225" class="thumbimage" srcset="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/450px-2010-robotica-uc3m-robots-modulares-exp2-Unimod_lKTe.jpg 1.5x, Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/600px-2010-robotica-uc3m-robots-modulares-exp2-Unimod_lKTe.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-exp2-Unimod.jpg" class="internal" title="Aumentar"></a></div><b>Experimento 2</b>: Oscilación de los UNIMODS (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td>300|250&lt;/youtube&gt;
+<p><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=hHHE8bRbTwU">Enlace directo al vídeo en Youtube</a> <br>
+Vídeo los Unimods agitando las banderas&nbsp;:-)
+</p>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_4">Descripción</span></h4>
+<p>En este experimento cada grupo monta un <a href="https://www.iearobotics.com/wiki/index.php?title=Unimod" title="Unimod">Unimod</a>, que es un módulo capaz de oscilar de manera autónoma. Con este experimento los estudiantes pueden comprobar el efecto de los parámetros amplitud y frecuencia.
+</p>
+<h4><span class="mw-headline" id="Instrucciones_2">Instrucciones</span></h4>
+<ul><li> Montar Unimod: <a href="https://www.iearobotics.com/wiki/index.php?title=Unimod_A1:Montaje" title="Unimod A1:Montaje">Instrucciones</a></li>
+<li> Conectar el servo a la posición 2</li>
+<li> Compilar y descargar el programa <b>experimento2-unimod.c</b></li>
+<li> Al apretar el pulsador de pruebas (test) cambiarán los parámetros de la oscilación: frecuencia y amplitud</li></ul>
+<h3><span class="mw-headline" id="Experimento_3:_Coordinaci.C3.B3n_b.C3.A1sica._Bimod">Experimento 3: Coordinación básica. Bimod</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Imagen-2010-robotica-uc3m-robots-modulares-exp3-Bimod.jpg" class="image"><img alt="" src="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/300px-Imagen-2010-robotica-uc3m-robots-modulares-exp3-B_lKTe.jpg" width="300" height="225" class="thumbimage" srcset="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/450px-Imagen-2010-robotica-uc3m-robots-modulares-exp3-B_lKTe.jpg 1.5x, Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/600px-Imagen-2010-robotica-uc3m-robots-modulares-exp3-B_lKTe.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Imagen-2010-robotica-uc3m-robots-modulares-exp3-Bimod.jpg" class="internal" title="Aumentar"></a></div>Experimento 3: Locomoción de Bimod (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td>300|250&lt;/youtube&gt;
+<p><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=-SK2G3hUhOs">Enlace directo al vídeo en Youtube</a> <br>
+Carrera entre dos robots Bimod
+</p>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_5">Descripción</span></h4>
+<p>Montaje del robot Bimod a partir de la unión de dos <a href="https://www.iearobotics.com/wiki/index.php?title=Unimod" title="Unimod">Unimod</a>. Se comprueba el efecto de la fase en la locomoción del robot. Cada Bimod está formado por dos Unidmod, cada uno de un grupo.
+</p>
+<h4><span class="mw-headline" id="Instrucciones_3">Instrucciones</span></h4>
+<ul><li> Montar un robot modular de dos módulos uniendo dos Unimods con tornillos</li>
+<li> Robot 1: Unimods de los grupos 1 y 2</li>
+<li> Robot 2: Unimods de los grupos 3 y 4</li>
+<li> Utilizaremos el mismo software que el del experimento 2</li>
+<li> Dependiendo de cómo se enciendan los dos unimod, el robot se desplazará mejor o peor</li>
+<li> Practicad hasta conseguir que el robot se mueva (prueba y error)</li>
+<li> <b>¡Carreras!</b>: ¿Cual de los dos robots llegará antes a la meta?</li></ul>
+<h3><span class="mw-headline" id="Experimento_4:_Configuraci.C3.B3n_m.C3.ADnima_Minicube-I">Experimento 4: Configuración mínima Minicube-I</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-exp4-Minicube-I-1.jpg" class="image"><img alt="" src="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/300px-2010-robotica-uc3m-robots-modulares-exp4-Minicube_lKTe.jpg" width="300" height="225" class="thumbimage" srcset="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/450px-2010-robotica-uc3m-robots-modulares-exp4-Minicube_lKTe.jpg 1.5x, Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/600px-2010-robotica-uc3m-robots-modulares-exp4-Minicube_lKTe.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-exp4-Minicube-I-1.jpg" class="internal" title="Aumentar"></a></div>Experimento 4: Locomoción de Minicube-I (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td>300|250&lt;/youtube&gt;
+<p><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=mcUg_0C7U_8">Enlace directo al vídeo en Youtube</a> <br>
+Vídeo de la carrera de robots tipo Minicube-I
+</p>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_6">Descripción</span></h4>
+<p>Montaje del robot modular mínimo (<a href="https://www.iearobotics.com/wiki/index.php?title=Robot_Modular:Minicube-I" title="Robot Modular:Minicube-I">Minicube-I</a>) con dos módulos y una <a href="https://www.iearobotics.com/wiki/index.php?title=Skycube" title="Skycube">Tarjeta Skycube</a>. Estudio del efecto de la frecuencia, amplitud y diferencia de fase en la locomoción.
+</p>
+<h4><span class="mw-headline" id="Instrucciones_4">Instrucciones</span></h4>
+<ul><li> Desmontar el robot anterior</li>
+<li> Cada grupo debe montar el <b>robot Minicube-I</b>: <a href="https://www.iearobotics.com/wiki/index.php?title=Minicube-I:_Montaje" title="Minicube-I: Montaje">Instrucciones</a></li>
+<li> Los módulos se pueden conectar a las posiciones 2, 4, 6 u 8</li>
+<li> Editar el programa <b>experimento4-minicube-I.c</b> y modificar la variable v con los números de los servos conectados. El programa por defecto supone que se han conectado los servos 4 y 6</li>
+<li> Compilar y descargar</li>
+<li> Al pulsar el botón de pruebas, se cambian los parámetros de los osciladores y el robot se moverá de diferentes maneras.</li>
+<li> Probad diferentes valores de los parámetros: Av (amplitud), df (diferencia de fase) e inc (frecuencia).</li>
+<li> <b>¡¡Carreras!!</b>. ¿Qué robot llegará antes a la meta?</li></ul>
+<h3><span class="mw-headline" id="Experimento_5:_Robot_Cube3">Experimento 5: Robot Cube3</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-exp5-Cube3-I-1.jpg" class="image"><img alt="" src="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/300px-2010-robotica-uc3m-robots-modulares-exp5-Cube3-I-_lKTe.jpg" width="300" height="225" class="thumbimage" srcset="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/450px-2010-robotica-uc3m-robots-modulares-exp5-Cube3-I-_lKTe.jpg 1.5x, Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/600px-2010-robotica-uc3m-robots-modulares-exp5-Cube3-I-_lKTe.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-exp5-Cube3-I-1.jpg" class="internal" title="Aumentar"></a></div>Experimento 5: Locomoción de Cube3 (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td>300|250&lt;/youtube&gt;
+<p><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=byQh3k_4iFU">Enlace directo al vídeo en Youtube</a> <br>
+Vídeo de la carrera de los robots Cube3-I
+</p>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_7">Descripción</span></h4>
+<p>Locomoción del robot <a href="https://www.iearobotics.com/wiki/index.php?title=Robot_Modular:_Cube3" title="Robot Modular: Cube3">Cube3</a>, formado por tres <a href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_MY" title="Módulos MY">Módulos MY1</a> y una <a href="https://www.iearobotics.com/wiki/index.php?title=Skycube" title="Skycube">Tarjeta Skycube</a>.
+</p>
+<h4><span class="mw-headline" id="Instrucciones_5">Instrucciones</span></h4>
+<ul><li> Montar el robot Cube3, de tres módulos: <a href="https://www.iearobotics.com/wiki/index.php?title=Cube3:_Montaje" title="Cube3: Montaje">Instrucciones</a></li>
+<li> Editar el programa '<i>experimento5-cube3.c</i> y modificar la variable v con las conexiones de los servos</li>
+<li> Compilar el programa y descargarlo en el robot</li>
+<li> Observar cómo se mueve</li>
+<li> Editar el programa y modificar las constantes A, DF e INC</li>
+<li> <b>¡¡Carreras!!</b></li></ul>
+<h3><span class="mw-headline" id="Experimento_6:_Robot_Cube6">Experimento 6: Robot Cube6</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-exp5-Cube6-I-1.jpg" class="image"><img alt="" src="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/300px-2010-robotica-uc3m-robots-modulares-exp5-Cube6-I-_lKTe.jpg" width="300" height="225" class="thumbimage" srcset="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/450px-2010-robotica-uc3m-robots-modulares-exp5-Cube6-I-_lKTe.jpg 1.5x, Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/600px-2010-robotica-uc3m-robots-modulares-exp5-Cube6-I-_lKTe.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-exp5-Cube6-I-1.jpg" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td>300|250&lt;/youtube&gt;
+<p><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=qndFSG8RxC4">Enlace directo al vídeo en Youtube</a> <br>
+Vídeo de la carrera de los Cube6-I
+</p>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_8">Descripción</span></h4>
+<p>Locomoción del robot Cube6-I, formado por la unión de dos <a href="https://www.iearobotics.com/wiki/index.php?title=Robot_Modular:_Cube3" title="Robot Modular: Cube3">Cube3</a> de dos grupos
+</p>
+<h4><span class="mw-headline" id="Instrucciones_6">Instrucciones</span></h4>
+<ul><li> Construir un robot de 6 módulos uniendo dos Cube3 mediante tornillos</li>
+<li> Robot 1: Grupos 1 y 2</li>
+<li> Robot 2: Grupos 3 y 4</li>
+<li> Editar el programa <b>experimento6-cube6.c</b> y modificar la variable v con las conexiones de los servos. No modifiquéis los valores de A, DF e INC todavía</li>
+<li> Compilar el programa y descargarlo en cada uno de los Cube3.</li>
+<li> Arrancar los dos Cube3 a la vez!</li>
+<li> <i>¡¡Carreras!!</i></li></ul>
+<h3><span class="mw-headline" id="Experimento_7:_Robot_Cube12.21">Experimento 7: Robot Cube12!</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-exp5-Cube12-I-1.jpg" class="image"><img alt="" src="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/300px-2010-robotica-uc3m-robots-modulares-exp5-Cube12-I_lKTe.jpg" width="300" height="225" class="thumbimage" srcset="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/450px-2010-robotica-uc3m-robots-modulares-exp5-Cube12-I_lKTe.jpg 1.5x, Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/600px-2010-robotica-uc3m-robots-modulares-exp5-Cube12-I_lKTe.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-exp5-Cube12-I-1.jpg" class="internal" title="Aumentar"></a></div>Experimento 6: Locomoción de Cube 12 (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td>300|250&lt;/youtube&gt;
+<p><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=EcO05EoIU5w">Enlace directo al vídeo en Youtube</a> <br>
+Vídeo del movimiento del gusano de 12 módulos
+</p>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_9">Descripción</span></h4>
+<p>En este último experimento, se unen los dos robots Cube6 para formar uno de 12 y hacer que se mueva!
+</p>
+<h4><span class="mw-headline" id="Instrucciones_7">Instrucciones</span></h4>
+<ul><li> Unir los dos robots Cube6 mediante tornillos</li>
+<li> Descargar la versión original del programa experimento6-cube6.c (con los valores de A, DF e INC) que están por defecto</li>
+<li> ¿Se moverá el robot?&nbsp;:-)</li></ul>
+<h2><span class="mw-headline" id="Grupos_y_Robots">Grupos y Robots</span></h2>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-challenger-chumacho.jpg" class="image"><img alt="" src="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/300px-2010-robotica-uc3m-robots-modulares-challenger-ch_lKTe.jpg" width="300" height="225" class="thumbimage" srcset="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/450px-2010-robotica-uc3m-robots-modulares-challenger-ch_lKTe.jpg 1.5x, Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/600px-2010-robotica-uc3m-robots-modulares-challenger-ch_lKTe.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-challenger-chumacho.jpg" class="internal" title="Aumentar"></a></div>Los grupos <b>Challenger</b> y <b>Chumacho</b>, con su robot gusano de 6 módulos: Iman Ouazzani, Julián Marchante, Iván Yusty, Ulises Rubio, Rubén Ares, Javier Morales y Jesús Martínez (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-lapili-bender_sifredi.jpg" class="image"><img alt="" src="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/300px-2010-robotica-uc3m-robots-modulares-lapili-bender_lKTe.jpg" width="300" height="225" class="thumbimage" srcset="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/450px-2010-robotica-uc3m-robots-modulares-lapili-bender_lKTe.jpg 1.5x, Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/600px-2010-robotica-uc3m-robots-modulares-lapili-bender_lKTe.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-lapili-bender_sifredi.jpg" class="internal" title="Aumentar"></a></div>Los grupos <b>Bender-Sifredi</b> y <b>Lapili</b>, con su robot gusano de 6 módulos: Ricardo Vilches, Fernando Tomé, Martín Carlos, Hugo Cárdenas, Daniel Ortega, David Rubio, Airon de Benito y Carlos Ferrer  (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+</tbody></table>
+<h2><span class="mw-headline" id="Fotos">Fotos</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://fotos.iearobotics.com/index.php?album=asignatura-robotica-uc3m-2010%2Frobots-modulares">Álbum de fotos</a>
+</td></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-foto1.jpg" class="image"><img alt="" src="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/300px-2010-robotica-uc3m-robots-modulares-foto1_lKTe.jpg" width="300" height="225" class="thumbimage" srcset="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/450px-2010-robotica-uc3m-robots-modulares-foto1_lKTe.jpg 1.5x, Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/600px-2010-robotica-uc3m-robots-modulares-foto1_lKTe.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-foto1.jpg" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-foto2.jpg" class="image"><img alt="" src="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/300px-2010-robotica-uc3m-robots-modulares-foto2_lKTe.jpg" width="300" height="225" class="thumbimage" srcset="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/450px-2010-robotica-uc3m-robots-modulares-foto2_lKTe.jpg 1.5x, Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/600px-2010-robotica-uc3m-robots-modulares-foto2_lKTe.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-foto2.jpg" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-foto3.jpg" class="image"><img alt="" src="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/300px-2010-robotica-uc3m-robots-modulares-foto3_lKTe.jpg" width="300" height="225" class="thumbimage" srcset="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/450px-2010-robotica-uc3m-robots-modulares-foto3_lKTe.jpg 1.5x, Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/600px-2010-robotica-uc3m-robots-modulares-foto3_lKTe.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-foto3.jpg" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-foto4.jpg" class="image"><img alt="" src="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/300px-2010-robotica-uc3m-robots-modulares-foto4_lKTe.jpg" width="300" height="225" class="thumbimage" srcset="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/450px-2010-robotica-uc3m-robots-modulares-foto4_lKTe.jpg 1.5x, Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/600px-2010-robotica-uc3m-robots-modulares-foto4_lKTe.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-foto4.jpg" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-foto5.jpg" class="image"><img alt="" src="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/300px-2010-robotica-uc3m-robots-modulares-foto5_lKTe.jpg" width="300" height="225" class="thumbimage" srcset="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/450px-2010-robotica-uc3m-robots-modulares-foto5_lKTe.jpg 1.5x, Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/600px-2010-robotica-uc3m-robots-modulares-foto5_lKTe.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-foto5.jpg" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-foto6.jpg" class="image"><img alt="" src="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/300px-2010-robotica-uc3m-robots-modulares-foto6_lKTe.jpg" width="300" height="225" class="thumbimage" srcset="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/450px-2010-robotica-uc3m-robots-modulares-foto6_lKTe.jpg 1.5x, Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/600px-2010-robotica-uc3m-robots-modulares-foto6_lKTe.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-foto6.jpg" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Autor">Autor</span></h2>
+<ul><li> <a href="https://www.iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main"> Juan González-Gómez</a></li></ul>
+<h2><span class="mw-headline" id="Licencia">Licencia</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Cc_logo.png" class="image"><img alt="Cc logo.png" src="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/Cc_logo_lKTe.png" width="88" height="31"></a> This work is licensed under a <a rel="nofollow" class="external text" href="http://creativecommons.org/licenses/by-sa/2.5/es/">Creative Commons Attribution-ShareAlike 2.5 Spain License</a>.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<ul><li> <a href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_MY" title="Módulos MY">Módulos MY1</a></li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=Skycube" title="Skycube">Tarjeta Skycube</a></li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=Unimod" title="Unimod">Robot modular Unimod</a></li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=Robot_Modular:Minicube-I" title="Robot Modular:Minicube-I">Robot modular Minicube-I</a></li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=Micro-osciladores" title="Micro-osciladores">Micro-osciladores</a>. Software para generar la locomoción</li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=Robot_Modular:_Cube3" title="Robot Modular: Cube3">Robot modular Cube3</a></li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Tesis" title="Juan Gonzalez:Tesis">Robótica Modular y Locomoción: Aplicación a Robots Ápodos</a>. Documentación. Tesis doctoral sobre la locomoción de robots modulares</li></ul>
+<h2><span class="mw-headline" id="Agradecimientos">Agradecimientos</span></h2>
+<ul><li> A <a rel="nofollow" class="external text" href="http://roboticslab.uc3m.es/roboticslab/persona.php?id_pers=1">D. Miguel Ángel Salich</a> por darme carta blanca en la organizacion y planificación de la asignatura de Robótica. Gracias a ello, he podido organizar esta actividad. ¡Muchísimas gracias!&nbsp;:-)</li></ul>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>10/Abril/2010</b>: Terminada la primera versión de esta página</li>
+<li> <b>21/Abril/2010</b>: Añadidos los experimentos de la sesión 2</li>
+<li> <b>07/Abril/2010</b>: Comenzada esta página</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20261011092337
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.042 seconds
+Real time usage: 0.051 seconds
+Preprocessor visited node count: 175/1000000
+Preprocessor generated node count: 241/1000000
+Post‐expand include size: 2000/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.655      1 - -total
+ 67.47%    1.791     10 - Plantilla:Tablabonita
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://www.iearobotics.com/wiki/index.php?title=Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares&amp;oldid=8741">https://www.iearobotics.com/wiki/index.php?title=Curso_2010._Asignatura_de_Robótica._UC3M._Robots_modulares&amp;oldid=8741</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categorías</a>: <ul><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Rob%C3%B3tica" title="Categoría:Robótica">Robótica</a></li><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Robots_modulares" title="Categoría:Robots modulares">Robots modulares</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://www.iearobotics.com/wiki/index.php?title=Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://www.iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://www.iearobotics.com/wiki/index.php?title=Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://www.iearobotics.com/wiki/index.php?title=Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Curso+2010.+Asignatura+de+Rob%C3%B3tica.+UC3M.+Robots+modulares" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://www.iearobotics.com/wiki/index.php?title=Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://www.iearobotics.com/wiki/index.php?title=Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares&amp;oldid=8741" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://www.iearobotics.com/wiki/index.php?title=Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/gnu-fdl_lKTe.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/poweredby_mediawiki_88x31_lKTe.png" alt="Powered by MediaWiki" srcset="Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/poweredby_mediawiki_132x47_lKTe.png 1.5x, Curso_2010._Asignatura_de_Rob%C3%B3tica._UC3M._Robots_modulares_files/poweredby_mediawiki_176x62_lKTe.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 12 may 2010 a las 23:08.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":125});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
