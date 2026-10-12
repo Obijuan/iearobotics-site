@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Cinemática de brazos robóticos simples con Octave/Matlab - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Cinemática_de_brazos_robóticos_simples_con_Octave/Matlab","wgTitle":"Cinemática de brazos robóticos simples con Octave/Matlab","wgCurRevisionId":14096,"wgRevisionId":14096,"wgArticleId":1657,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Cinemática_de_brazos_robóticos_simples_con_Octave/Matlab","wgRelevantArticleId":1657,"wgRequestId":"as0Ya7R7uskr_K0jDmUyfQAAACM","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/load_r04x.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/load_002_r04x.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://www.iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://www.iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/load_r04x.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Cinemática_de_brazos_robóticos_simples_con_Octave_Matlab rootpage-Cinemática_de_brazos_robóticos_simples_con_Octave_Matlab skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Cinemática de brazos robóticos simples con Octave/Matlab</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Robot3-kinematics.png" class="image"><img alt="" src="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/300px-Robot3-kinematics_r04x.png" width="300" height="216" class="thumbimage" srcset="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/450px-Robot3-kinematics_r04x.png 1.5x, Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/600px-Robot3-kinematics_r04x.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Robot3-kinematics.png" class="internal" title="Aumentar"></a></div>Cinemática de un brazo robot de 3 grados de libertad (<i>click para ampliar</i>)</div></div></div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Instalaci.C3.B3n"><span class="tocnumber">2</span> <span class="toctext">Instalación</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Robot_1"><span class="tocnumber">3</span> <span class="toctext">Robot 1</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Ejemplo"><span class="tocnumber">3.1</span> <span class="toctext">Ejemplo</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Robot_2"><span class="tocnumber">4</span> <span class="toctext">Robot 2</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Ejemplo_2"><span class="tocnumber">4.1</span> <span class="toctext">Ejemplo</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Robot_2_.2B_1"><span class="tocnumber">5</span> <span class="toctext">Robot 2 + 1</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Ejemplo_3"><span class="tocnumber">5.1</span> <span class="toctext">Ejemplo</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Robot_3"><span class="tocnumber">6</span> <span class="toctext">Robot 3</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Ejemplo_4"><span class="tocnumber">6.1</span> <span class="toctext">Ejemplo</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Robot_3.2B1"><span class="tocnumber">7</span> <span class="toctext">Robot 3+1</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#Ejemplo_5"><span class="tocnumber">7.1</span> <span class="toctext">Ejemplo</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Descargas"><span class="tocnumber">8</span> <span class="toctext">Descargas</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Autor"><span class="tocnumber">9</span> <span class="toctext">Autor</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Licencia"><span class="tocnumber">10</span> <span class="toctext">Licencia</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#Repositorio_SVN"><span class="tocnumber">11</span> <span class="toctext">Repositorio SVN</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#Enlaces"><span class="tocnumber">12</span> <span class="toctext">Enlaces</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#Noticias"><span class="tocnumber">13</span> <span class="toctext">Noticias</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>Se muestran ejemplos de cómo resolver la <b>cinemática directa</b> de tres brazos robóticos sencillos, de 1, 2 y 3 grados de libertad usando <b>transformadas homogéneas</b> y la herramienta <a rel="nofollow" class="external text" href="http://www.gnu.org/software/octave/">Octave</a> , corriendo en una máquina con Ubuntu Linux (11.10)
+</p><p>Los ejemplos se hicieron originalmente para los estudiantes de la asignatura de <b>Control y Programación de Robots</b>, Ingeniería Industrial, Universidad Carlos III de Madrid (UC3M)
+</p>
+<h2><span class="mw-headline" id="Instalaci.C3.B3n">Instalación</span></h2>
+<p>Instalación de octave en Ubuntu 11.10:
+</p>
+<pre> sudo apt-get install octave3.2
+</pre>
+<p>Descargar el paquete <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2010-10-12-ArmRobotKinematics/ArmRobotKinematics-v1.2.zip">ArmRobotKinematics-v1.2.zip</a> con los ejemplos y descomprimirlo
+</p>
+<h2><span class="mw-headline" id="Robot_1">Robot 1</span></h2>
+<p>El primer ejemplo es un <b>robot con un grado de libertad</b> (&lt;math&gt;q_1&lt;/math&gt;). Sólo es necesario usar una transformación homogénea determinada por una rotación de &lt;math&gt;q_1&lt;/math&gt; grados alrededor del eje &lt;math&gt;x_1&lt;/math&gt; y una traslación de &lt;math&gt;l_1&lt;/math&gt; sobre el eje &lt;math&gt;y_1&lt;/math&gt;:
+</p><p>&lt;math&gt;A_1=Rotx(q_1)Trasy(l_1)&lt;/math&gt; donde:
+</p><p>&lt;math&gt;Rotx(a)=\left(\begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; cos(a) &amp; -sin(a) &amp; 0\\
+0 &amp; sin(a) &amp; cos(a) &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\end{array}\right)&lt;/math&gt;, &lt;math&gt;Trasy(l_1)=\left(\begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; l_1\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\end{array}\right)
+&lt;/math&gt;
+</p><p><br>
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Robot1-kinematics.png" class="image"><img alt="" src="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/300px-Robot1-kinematics_r04x.png" width="300" height="216" class="thumbimage" srcset="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/450px-Robot1-kinematics_r04x.png 1.5x, Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/600px-Robot1-kinematics_r04x.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Robot1-kinematics.png" class="internal" title="Aumentar"></a></div><b>Fig 1</b>: Cinemática del robot 1 (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Robot1-pantallazo.png" class="image"><img alt="" src="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/300px-Robot1-pantallazo_r04x.png" width="300" height="249" class="thumbimage" srcset="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/450px-Robot1-pantallazo_r04x.png 1.5x, Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/Robot1-pantallazo_r04x.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Robot1-pantallazo.png" class="internal" title="Aumentar"></a></div><b>Fig 2</b>: Captura de pantalla de la ejecución de Robot1 en Octave(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>En la <b>Figura 1</b> se muestra la geometría del robot y la nomenclatura empleada para los sistemas de referencia. En la <b>figura 2</b> se puede ver un pantallazo de la ejecución del programa para Octave.
+</p>
+<h3><span class="mw-headline" id="Ejemplo">Ejemplo</span></h3>
+<p>Arrancar octave y ejecutar el siguiente comando
+</p>
+<pre>octave:1&gt; robot1(45)
+</pre>
+<p>Se le pasa como parámetro el ángulo &lt;math&gt;q_1&lt;/math&gt; en grados. El programa calcula los puntos del robot y los dibuja en pantalla.
+</p>
+<h2><span class="mw-headline" id="Robot_2">Robot 2</span></h2>
+<p>Este segundo ejemplo es un brazo robot de <b>2 grados de libertad</b> (&lt;math&gt;q_1&lt;/math&gt; y &lt;math&gt;q_2&lt;/math&gt;). Las dos matrices de transformación son:
+</p>
+<ul><li> &lt;math&gt;A_1=Rotx(q_1)Trasy(l_1)&lt;/math&gt; </li>
+<li> &lt;math&gt;A_2=Rotx(q_2)Trasy(l_2)&lt;/math&gt; </li></ul>
+<p>donde: Rotx y Trasy son las mismas matrices del ejemplo 1
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Robot2-kinematics.png" class="image"><img alt="" src="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/300px-Robot2-kinematics_r04x.png" width="300" height="216" class="thumbimage" srcset="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/450px-Robot2-kinematics_r04x.png 1.5x, Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/600px-Robot2-kinematics_r04x.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Robot2-kinematics.png" class="internal" title="Aumentar"></a></div><b>Fig 3</b>: Cinemática del robot 2 (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Robot2-pantallazo.png" class="image"><img alt="" src="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/300px-Robot2-pantallazo_r04x.png" width="300" height="249" class="thumbimage" srcset="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/450px-Robot2-pantallazo_r04x.png 1.5x, Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/Robot2-pantallazo_r04x.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Robot2-pantallazo.png" class="internal" title="Aumentar"></a></div><b>Fig 4</b>: Captura de pantalla de la ejecución de Robot2 en Octave(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>En la <b>Figura 3</b> se muestra la geometría del robot y la nomenclatura empleada para los sistemas de referencia. En la <b>figura 4</b> se puede ver un pantallazo de la ejecución del programa para Octave. 
+</p>
+<h3><span class="mw-headline" id="Ejemplo_2">Ejemplo</span></h3>
+<p>Arrancar octave y ejecutar el siguiente comando 
+</p>
+<pre>octave:1&gt; robot2(45,-55)
+</pre>
+<p>Se le pasa como parámetros los ángulos &lt;math&gt;q_1&lt;/math&gt; y &lt;math&gt;q_2&lt;/math&gt; en grados. El programa calcula los puntos del robot y los dibuja en pantalla.
+</p>
+<h2><span class="mw-headline" id="Robot_2_.2B_1">Robot 2 + 1</span></h2>
+<p>Robot con <b>2 grados de libertad para posicionamiento</b> del manipulador y <b>1 para su orientación</b>. La nueva matriz de transformación es:
+</p>
+<ul><li> &lt;math&gt;A_3=Rotx(q_3)&lt;/math&gt; </li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Robot2_1-kinematics.png" class="image"><img alt="" src="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/300px-Robot2_1-kinematics_r04x.png" width="300" height="216" class="thumbimage" srcset="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/450px-Robot2_1-kinematics_r04x.png 1.5x, Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/600px-Robot2_1-kinematics_r04x.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Robot2_1-kinematics.png" class="internal" title="Aumentar"></a></div><b>Fig 4</b>: Cinemática del robot 2+1 (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Robot2_1-pantallazo.png" class="image"><img alt="" src="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/300px-Robot2_1-pantallazo_r04x.png" width="300" height="249" class="thumbimage" srcset="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/450px-Robot2_1-pantallazo_r04x.png 1.5x, Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/Robot2_1-pantallazo_r04x.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Robot2_1-pantallazo.png" class="internal" title="Aumentar"></a></div><b>Fig 5</b>: Captura de pantalla de la ejecución de Robot2+1 en Octave(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>En la <b>Figura 4</b> se muestra la geometría del robot y la nomenclatura empleada para los sistemas de referencia. En la <b>figura 5</b> se puede ver un pantallazo de la ejecución del programa para Octave. 
+</p>
+<h3><span class="mw-headline" id="Ejemplo_3">Ejemplo</span></h3>
+<p>Arrancar octave y ejecutar el siguiente comando 
+</p>
+<pre>octave:1&gt; robot2_1(45,-55,60);
+</pre>
+<p>Se le pasa como parámetros los ángulos &lt;math&gt;q_1&lt;/math&gt;, &lt;math&gt;q_2&lt;/math&gt; y &lt;math&gt;q_2&lt;/math&gt; en grados. El programa calcula los puntos del robot y los dibuja en pantalla.
+</p>
+<h2><span class="mw-headline" id="Robot_3">Robot 3</span></h2>
+<p>Este ejemplo es un <b>brazo robot de 3 grados de libertad</b> (&lt;math&gt;q_0&lt;/math&gt;, &lt;math&gt;q_1&lt;/math&gt; y &lt;math&gt;q_2&lt;/math&gt;). Las matrices de transformación homogéneas son:
+</p>
+<ul><li> &lt;math&gt;A_0=Rotz(g_0)&lt;/math&gt;</li>
+<li> &lt;math&gt;A_1=Rotx(q_1)Trasy(l_1)&lt;/math&gt; </li>
+<li> &lt;math&gt;A_2=Rotx(q_2)Trasy(l_2)&lt;/math&gt; </li></ul>
+<p>donde las matrices Rotx y Trasy son las mismas de los ejemplos 1 y 2, y Rotz es:
+</p><p>&lt;math&gt;Rotz(a)=\left(\begin{array}{cccc}
+cos(a) &amp; -sin(a) &amp; 0 &amp; 0\\
+sin(a) &amp; cos(a) &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\end{array}\right)&lt;/math&gt;
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Robot3-kinematics.png" class="image"><img alt="" src="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/300px-Robot3-kinematics_r04x.png" width="300" height="216" class="thumbimage" srcset="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/450px-Robot3-kinematics_r04x.png 1.5x, Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/600px-Robot3-kinematics_r04x.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Robot3-kinematics.png" class="internal" title="Aumentar"></a></div><b>Fig 6</b>: Cinemática del Robot 3 (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Robot3-captura1.png" class="image"><img alt="" src="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/300px-Robot3-captura1_r04x.png" width="300" height="249" class="thumbimage" srcset="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/450px-Robot3-captura1_r04x.png 1.5x, Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/Robot3-captura1_r04x.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Robot3-captura1.png" class="internal" title="Aumentar"></a></div><b>Fig 7</b>: Captura de pantalla de la ejecución de Robot3 en Octave (<i>Click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>En la <b>Figura 6</b> se muestra la geometría del robot y la nomenclatura empleada para los sistemas de referencia. En la <b>figura 7</b> se puede ver un pantallazo de la ejecución del programa para Octave. 
+</p>
+<h3><span class="mw-headline" id="Ejemplo_4">Ejemplo</span></h3>
+<p>Arrancar octave y ejecutar el siguiente comando 
+</p>
+<pre>octave:1&gt; robot3(-10,45,-60)
+</pre>
+<p>Se le pasa como parámetros los ángulos &lt;math&gt;q_0&lt;/math&gt;, &lt;math&gt;q_1&lt;/math&gt; y &lt;math&gt;q_2&lt;/math&gt; en grados. El programa calcula los puntos del robot y los dibuja en pantalla.
+</p>
+<h2><span class="mw-headline" id="Robot_3.2B1">Robot 3+1</span></h2>
+<p>Robot de <b>4 grados de libertad</b>, 3 para posicionamiento del manipulador y 1 para su orientación.
+Las matrices de transformación homogéneas son:
+</p>
+<ul><li> &lt;math&gt;A_0=Rotz(q_0)&lt;/math&gt;</li>
+<li> &lt;math&gt;A_1=Rotx(q_1)Trasy(l_1)&lt;/math&gt; </li>
+<li> &lt;math&gt;A_2=Rotx(q_2)Trasy(l_2)&lt;/math&gt; </li>
+<li> &lt;math&gt;A_3=Rotx(q_3)&lt;/math&gt; </li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Robot3_1-kinematics.png" class="image"><img alt="" src="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/300px-Robot3_1-kinematics_r04x.png" width="300" height="216" class="thumbimage" srcset="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/450px-Robot3_1-kinematics_r04x.png 1.5x, Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/600px-Robot3_1-kinematics_r04x.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Robot3_1-kinematics.png" class="internal" title="Aumentar"></a></div><b>Fig 8</b>: Cinemática del Robot 3+1 (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Robot3_1-pantallazo.png" class="image"><img alt="" src="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/300px-Robot3_1-pantallazo_r04x.png" width="300" height="249" class="thumbimage" srcset="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/450px-Robot3_1-pantallazo_r04x.png 1.5x, Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/Robot3_1-pantallazo_r04x.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Robot3_1-pantallazo.png" class="internal" title="Aumentar"></a></div><b>Fig 9</b>: Captura de pantalla de la ejecución de Robot3+1 en Octave (<i>Click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>En la <b>Figura 8</b> se muestra la geometría del robot y la nomenclatura empleada para los sistemas de referencia. En la <b>figura 9</b> se puede ver un pantallazo de la ejecución del programa para Octave. 
+</p>
+<h3><span class="mw-headline" id="Ejemplo_5">Ejemplo</span></h3>
+<p>Arrancar octave y ejecutar el siguiente comando 
+</p>
+<pre>octave:1&gt; robot3_1(-10,45,-60,60);
+</pre>
+<p>Se le pasa como parámetros los ángulos &lt;math&gt;q_0&lt;/math&gt;, &lt;math&gt;q_1&lt;/math&gt;, &lt;math&gt;q_2&lt;/math&gt; y &lt;math&gt;q_3&lt;/math&gt; en grados. El programa calcula los puntos del robot y los dibuja en pantalla.
+</p>
+<h2><span class="mw-headline" id="Descargas">Descargas</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2010-10-12-ArmRobotKinematics/ArmRobotKinematics-v1.2.zip">ArmRobotKinematics-v1.2.zip</a>
+</td>
+<td> Ejemplos para octave/Matlab. Versión 1.2
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2010-10-12-ArmRobotKinematics/ArmRobotKinematics-1.1.zip">ArmRobotKinematics-1.1.zip</a>
+</td>
+<td> Ejemplos para octave. Versión 1.1
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2010-10-12-ArmRobotKinematics/ArmRobotKinematics-1.0.zip">ArmRobotKinematics-1.0.zip</a>
+</td>
+<td> Ejemplos para Octave. Versión 1.0 (<b>Obsoleta</b>)
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Autor">Autor</span></h2>
+<p><a href="https://www.iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main">Juan González Gómez</a>
+</p>
+<h2><span class="mw-headline" id="Licencia">Licencia</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Cc_logo.png" class="image"><img alt="Cc logo.png" src="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/Cc_logo_r04x.png" width="88" height="31"></a> This work is licensed under a <a rel="nofollow" class="external text" href="http://creativecommons.org/licenses/by-sa/3.0/es/">Creative Commons Attribution-ShareAlike 3.0 Spain License</a>.
+</td></tr>
+<tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:GPLv3-logo-red.png" class="image" title="150px"><img alt="150px" src="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/GPLv3-logo-red_r04x.png" width="319" height="130"></a> El código está liberado bajo licencia GPLv3
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Repositorio_SVN">Repositorio SVN</span></h2>
+<ul><li> <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/ArmRobotKinematics">http://svn.iearobotics.com/ArmRobotKinematics</a></li></ul>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<ul><li> <a href="https://www.iearobotics.com/wiki/index.php?title=Cuadernos_T%C3%A9cnicos" title="Cuadernos Técnicos">Índice de cuadernos técnicos</a></li></ul>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>28/Abril/2012</b>:
+<ul><li> Version 1.2 liberada: Modificados los ejemplos para funcionar en Matlab (además de octave)</li></ul></li>
+<li> <b>20/Octubre/2010</b>:
+<ul><li> Añadidos los ejemplos Robot2+1 y Robot3+1</li>
+<li> Versión 1.1 liberada</li></ul></li>
+<li> <b>12/Octubre/2010</b>: 
+<ul><li> Primera versión de esta página</li>
+<li> Versión 1.0 liberada</li></ul></li>
+<li> <b>07/Octubre/2010</b>: Comenzada esta página</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20261012172707
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.035 seconds
+Real time usage: 0.041 seconds
+Preprocessor visited node count: 94/1000000
+Preprocessor generated node count: 145/1000000
+Post‐expand include size: 1400/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.644      1 - -total
+ 76.67%    2.027      7 - Plantilla:Tablabonita
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://www.iearobotics.com/wiki/index.php?title=Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave/Matlab&amp;oldid=14096">https://www.iearobotics.com/wiki/index.php?title=Cinemática_de_brazos_robóticos_simples_con_Octave/Matlab&amp;oldid=14096</a>»</div>
+					<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://www.iearobotics.com/wiki/index.php?title=Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave/Matlab" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://www.iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave/Matlab&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://www.iearobotics.com/wiki/index.php?title=Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave/Matlab&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://www.iearobotics.com/wiki/index.php?title=Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave/Matlab&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Cinem%C3%A1tica+de+brazos+rob%C3%B3ticos+simples+con+Octave%2FMatlab" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave/Matlab" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave/Matlab" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://www.iearobotics.com/wiki/index.php?title=Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave/Matlab&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://www.iearobotics.com/wiki/index.php?title=Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave/Matlab&amp;oldid=14096" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://www.iearobotics.com/wiki/index.php?title=Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave/Matlab&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/gnu-fdl_r04x.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/poweredby_mediawiki_88x31_r04x.png" alt="Powered by MediaWiki" srcset="Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/poweredby_mediawiki_132x47_r04x.png 1.5x, Cinem%C3%A1tica_de_brazos_rob%C3%B3ticos_simples_con_Octave_Matlab_files/poweredby_mediawiki_176x62_r04x.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 28 abr 2012 a las 08:25.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":136});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
