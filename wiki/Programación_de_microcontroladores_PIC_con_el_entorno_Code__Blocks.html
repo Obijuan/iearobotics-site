@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Programación de microcontroladores PIC con el entorno Code::Blocks - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Programación_de_microcontroladores_PIC_con_el_entorno_Code::Blocks","wgTitle":"Programación de microcontroladores PIC con el entorno Code::Blocks","wgCurRevisionId":9984,"wgRevisionId":9984,"wgArticleId":1641,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Programación_de_microcontroladores_PIC_con_el_entorno_Code::Blocks","wgRelevantArticleId":1641,"wgRequestId":"as0WNe2z3uYfh2o5PcvdwgAnSt0","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/load_fgxy.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/load_002_fgxy.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://www.iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://www.iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/load_fgxy.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Programación_de_microcontroladores_PIC_con_el_entorno_Code_Blocks rootpage-Programación_de_microcontroladores_PIC_con_el_entorno_Code_Blocks skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Programación de microcontroladores PIC con el entorno Code::Blocks</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Code-blocks-pic-logo.png" class="image"><img alt="Code-blocks-pic-logo.png" src="Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/300px-Code-blocks-pic-logo_fgxy.png" width="300" height="279" class="thumbimage" srcset="Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/450px-Code-blocks-pic-logo_fgxy.png 1.5x, Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/Code-blocks-pic-logo_fgxy.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Code-blocks-pic-logo.png" class="internal" title="Aumentar"></a></div></div></div></div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Instalaci.C3.B3n"><span class="tocnumber">2</span> <span class="toctext">Instalación</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Ubuntu.2FLinux_10.04"><span class="tocnumber">2.1</span> <span class="toctext">Ubuntu/Linux 10.04</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#Instalaci.C3.B3n_2"><span class="tocnumber">2.1.1</span> <span class="toctext">Instalación</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Configuraci.C3.B3n"><span class="tocnumber">2.1.2</span> <span class="toctext">Configuración</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-6"><a href="#Instalaci.C3.B3n_en_Mac"><span class="tocnumber">2.2</span> <span class="toctext">Instalación en Mac</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Instalaci.C3.B3n_en_Windows"><span class="tocnumber">2.3</span> <span class="toctext">Instalación en Windows</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Probando_el_ejemplo_hola_mundo"><span class="tocnumber">3</span> <span class="toctext">Probando el ejemplo hola mundo</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Descargas"><span class="tocnumber">4</span> <span class="toctext">Descargas</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Autor"><span class="tocnumber">5</span> <span class="toctext">Autor</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Agradecimientos"><span class="tocnumber">6</span> <span class="toctext">Agradecimientos</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Licencia"><span class="tocnumber">7</span> <span class="toctext">Licencia</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Enlaces"><span class="tocnumber">8</span> <span class="toctext">Enlaces</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Noticias"><span class="tocnumber">9</span> <span class="toctext">Noticias</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>En este tutorial se muestra cómo configurar el entorno <a rel="nofollow" class="external text" href="http://www.codeblocks.org/">code::blocks</a> para programar <b>los microcontroladores PIC en lenguaje C</b>. El <i>code::blocks</i> es <b>libre y multiplataforma</b> (Linux, Mac, Windows) por lo que permite la programación con independencia del sistema operativo empleado.
+</p><p>Los ejemplos presentados son para trabajar con las tarjetas <a href="https://www.iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a>, <a href="https://www.iearobotics.com/wiki/index.php?title=Skycube" title="Skycube">Skycube</a> o similares, que utilicen un <b>PIC16F876A</b>, pero el <i>code::blocks</i> se puede usar con otros PICs.
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Icono_aviso.png" class="image"><img alt="Icono aviso.png" src="Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/Icono_aviso_fgxy.png" width="24" height="24"></a> La <b>versión</b> de <i>Code::Blocks</i> a utilizar es la <b>8.02</b>.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Instalaci.C3.B3n">Instalación</span></h2>
+<h3><span class="mw-headline" id="Ubuntu.2FLinux_10.04">Ubuntu/Linux 10.04</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Pantallazo-compiler-and-debugger-codeblocks-r2.png" class="image"><img alt="" src="Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/300px-Pantallazo-compiler-and-debugger-codeblocks-r2_fgxy.png" width="300" height="269" class="thumbimage" srcset="Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/450px-Pantallazo-compiler-and-debugger-codeblocks-r2_fgxy.png 1.5x, Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/600px-Pantallazo-compiler-and-debugger-codeblocks-r2_fgxy.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Pantallazo-compiler-and-debugger-codeblocks-r2.png" class="internal" title="Aumentar"></a></div>Configuración del codeblocks en Linux (<i>click para ampliar</i>)</div></div></div>
+<h4><span class="mw-headline" id="Instalaci.C3.B3n_2">Instalación</span></h4>
+<ul><li> Instalar el compilador SDCC: <a rel="nofollow" class="external text" href="http://www.apturl.net/index.php/install/sdcc">sdcc</a></li>
+<li> Instalar el codeblocks: <a rel="nofollow" class="external text" href="http://www.apturl.net/index.php/install/codeblocks">codeblocks</a></li></ul>
+<h4><span class="mw-headline" id="Configuraci.C3.B3n">Configuración</span></h4>
+<ul><li> Arrancar el code::blocks (Menú Aplicaciones/programación de Ubuntu)</li>
+<li> Pinchar en la opción <i><b>Settings/Compiler and debugger</b></i></li>
+<li> Seleccionar en el desplegable superior (en <i>Selected compiler</i>) la opción "<b>SDCC Compiler</b>"</li>
+<li> Seleccionar la pestaña "<b>Toolchain executables</b>"</li>
+<li> En el diálogo "Compiler's installation directory" escribir: <b>/usr/bin</b></li>
+<li> Pinchar en <b>Aceptar</b> en la parte inferior</li>
+<li> ¡¡Listo!!</li></ul>
+<h3><span class="mw-headline" id="Instalaci.C3.B3n_en_Mac">Instalación en Mac</span></h3>
+<p>Por hacer...
+</p>
+<h3><span class="mw-headline" id="Instalaci.C3.B3n_en_Windows">Instalación en Windows</span></h3>
+<ul><li> Instalar las GPUTILS: <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/skypic-software/Windows/gputils-0.13.7.exe">gputils-0.13.7.exe</a></li>
+<li> Instalar el SDCC: <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/skypic-software/Windows/sdcc-2.9.0-setup.exe">sdcc-2.9.0-setup.exe</a></li>
+<li> Instalar el Code::blocks: <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/skypic-software/Windows/codeblocks-8.02-setup.exe">codeblocks-8.02-setup.exe</a></li>
+<li> <b>¡¡Listo!!</b> No es necesario configurar nada más</li></ul>
+<h2><span class="mw-headline" id="Probando_el_ejemplo_hola_mundo">Probando el ejemplo hola mundo</span></h2>
+<ul><li> Descargar el proyecto de ejemplo: <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2010-08-19-codeblocks-pic/codeblocks-ledon.zip">codeblocks-ledon.zip</a></li>
+<li> Descomprimirlo</li>
+<li> Entrar en el directorio <i>ledon</i></li>
+<li> Abrir el proyecto con <i>codeblocks</i></li>
+<li> Compilar con <i>Build/build</i></li>
+<li> En el directorio <b>ledon/bin/Release</b> estará el fichero <b>ledon.hex</b> que se puede descargar en las tarjetas <i>Skypic/Skycube</i></li></ul>
+<table>
+<tbody><tr>
+<td>  <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Pantallazo-codeblocks-ubuntu-linux-10_04.png" class="image"><img alt="" src="Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/300px-Pantallazo-codeblocks-ubuntu-linux-10_04_fgxy.png" width="300" height="367" class="thumbimage" srcset="Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/450px-Pantallazo-codeblocks-ubuntu-linux-10_04_fgxy.png 1.5x, Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/600px-Pantallazo-codeblocks-ubuntu-linux-10_04_fgxy.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Pantallazo-codeblocks-ubuntu-linux-10_04.png" class="internal" title="Aumentar"></a></div>Codeblocks compilando el ejemplo ledon en Ubuntu/Linux 10.04 (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td>  <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:CodeBlock-MacOS-X-Snow-Leopard-r1.png" class="image"><img alt="" src="Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/300px-CodeBlock-MacOS-X-Snow-Leopard-r1_fgxy.png" width="300" height="349" class="thumbimage" srcset="Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/450px-CodeBlock-MacOS-X-Snow-Leopard-r1_fgxy.png 1.5x, Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/600px-CodeBlock-MacOS-X-Snow-Leopard-r1_fgxy.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:CodeBlock-MacOS-X-Snow-Leopard-r1.png" class="internal" title="Aumentar"></a></div>Codeblocks compilando el ledon en MacOS X Snow Leopard (<i>Click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Pantallazo-codeblocks-ledon-windows.png" class="image"><img alt="" src="Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/300px-Pantallazo-codeblocks-ledon-windows_fgxy.png" width="300" height="351" class="thumbimage" srcset="Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/450px-Pantallazo-codeblocks-ledon-windows_fgxy.png 1.5x, Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/600px-Pantallazo-codeblocks-ledon-windows_fgxy.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Pantallazo-codeblocks-ledon-windows.png" class="internal" title="Aumentar"></a></div>Codeblocks compilando el ledon en Windows XP (<i>Click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Pantallazo-codeblocks-ledon-windows7.jpg" class="image"><img alt="" src="Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/300px-Pantallazo-codeblocks-ledon-windows7_fgxy.jpg" width="300" height="328" class="thumbimage" srcset="Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/450px-Pantallazo-codeblocks-ledon-windows7_fgxy.jpg 1.5x, Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/600px-Pantallazo-codeblocks-ledon-windows7_fgxy.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Pantallazo-codeblocks-ledon-windows7.jpg" class="internal" title="Aumentar"></a></div>Codeblocks compilando el ledon en Windows 7 (<i>Click para ampliar</i></div></div></div>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Descargas">Descargas</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2010-08-19-codeblocks-pic/codeblocks-ledon.zip">codeblocks-ledon.zip</a>
+</td>
+<td>  Ejemplo "hola mundo". Encender el led de la Skypic/Skycube
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Autor">Autor</span></h2>
+<p><a href="https://www.iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main">Juan González Gómez</a>
+</p>
+<h2><span class="mw-headline" id="Agradecimientos">Agradecimientos</span></h2>
+<ul><li> A <b>Miguel Angel Berna Alberola</b> por las pruebas realizadas en Windows. ¡Muchas gracias!</li>
+<li> A <a href="https://www.iearobotics.com/wiki/index.php?title=Ricardo_G%C3%B3mez" title="Ricardo Gómez">Ricardo Gómez</a> por las pruebas realizadas en Mac OS. ¡Muchas gracias!</li></ul>
+<h2><span class="mw-headline" id="Licencia">Licencia</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Cc_logo.png" class="image"><img alt="Cc logo.png" src="Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/Cc_logo_fgxy.png" width="88" height="31"></a> This work is licensed under a <a rel="nofollow" class="external text" href="http://creativecommons.org/licenses/by-sa/3.0/es/">Creative Commons Attribution-ShareAlike 3.0 Spain License</a>.
+</td></tr>
+<tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:GPLv3-logo-red.png" class="image" title="150px"><img alt="150px" src="Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/GPLv3-logo-red_fgxy.png" width="319" height="130"></a> El código está liberado bajo licencia GPLv3
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="http://wiki.codeblocks.org/index.php?title=Using_the_Code::Blocks_IDE_with_SDCC_on_PIC_MCUs">Using_the_Code::Blocks_IDE_with_SDCC_on_PIC_MCUs</a></li>
+<li> <a rel="nofollow" class="external text" href="http://www.codeblocks.org/">Entorno Code::Blocks</a></li></ul>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>22/Agosto/2010</b>: Subido pantallazo de CodeBlocks en Windows 7 (Gracias a Miguel Angel Berna)</li>
+<li> <b>21/Agosto/2010</b>: Subido pantallazo de CodeBlocks en Mac Os (Gracias a Ricardo Gómez)</li>
+<li> <b>19/Agosto/2010</b>: Terminada la primera versión (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/blog/2010/08/19/entorno-codeblocks-para-programacion-de-microcontroladores-pic/">Blog</a>)</li>
+<li> <b>18/Agosto/2010</b>: Comenzada esta página</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20261012171741
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.021 seconds
+Real time usage: 0.027 seconds
+Preprocessor visited node count: 66/1000000
+Preprocessor generated node count: 97/1000000
+Post‐expand include size: 600/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    1.979      1 - -total
+ 88.99%    1.761      3 - Plantilla:Tablabonita
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://www.iearobotics.com/wiki/index.php?title=Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code::Blocks&amp;oldid=9984">https://www.iearobotics.com/wiki/index.php?title=Programación_de_microcontroladores_PIC_con_el_entorno_Code::Blocks&amp;oldid=9984</a>»</div>
+					<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://www.iearobotics.com/wiki/index.php?title=Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code::Blocks" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://www.iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code::Blocks&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://www.iearobotics.com/wiki/index.php?title=Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code::Blocks&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://www.iearobotics.com/wiki/index.php?title=Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code::Blocks&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Programaci%C3%B3n+de+microcontroladores+PIC+con+el+entorno+Code%3A%3ABlocks" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code::Blocks" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code::Blocks" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://www.iearobotics.com/wiki/index.php?title=Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code::Blocks&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://www.iearobotics.com/wiki/index.php?title=Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code::Blocks&amp;oldid=9984" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://www.iearobotics.com/wiki/index.php?title=Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code::Blocks&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/gnu-fdl_fgxy.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/poweredby_mediawiki_88x31_fgxy.png" alt="Powered by MediaWiki" srcset="Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/poweredby_mediawiki_132x47_fgxy.png 1.5x, Programaci%C3%B3n_de_microcontroladores_PIC_con_el_entorno_Code__Blocks_files/poweredby_mediawiki_176x62_fgxy.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 22 ago 2010 a las 00:38.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":96});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
