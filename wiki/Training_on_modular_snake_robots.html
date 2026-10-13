@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Training on modular snake robots - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Training_on_modular_snake_robots","wgTitle":"Training on modular snake robots","wgCurRevisionId":11347,"wgRevisionId":11347,"wgArticleId":1823,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Training_on_modular_snake_robots","wgRelevantArticleId":1823,"wgRequestId":"as5hTwD0AL3DU5BjvKDQpQAAnck","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Training_on_modular_snake_robots_files/load_5KB8.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="Training_on_modular_snake_robots_files/load_002_5KB8.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://www.iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://www.iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="Training_on_modular_snake_robots_files/load_5KB8.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Training_on_modular_snake_robots rootpage-Training_on_modular_snake_robots skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Training on modular snake robots</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Modular-snake-usar-1.jpg" class="image"><img alt="" src="Training_on_modular_snake_robots_files/300px-Modular-snake-usar-1_5KB8.jpg" width="300" height="225" class="thumbimage" srcset="Training_on_modular_snake_robots_files/450px-Modular-snake-usar-1_5KB8.jpg 1.5x, Training_on_modular_snake_robots_files/600px-Modular-snake-usar-1_5KB8.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Modular-snake-usar-1.jpg" class="internal" title="Aumentar"></a></div>A 12 modules caterpillar robot (<b>click to enlarge</b>)</div></div></div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Programme"><span class="tocnumber">2</span> <span class="toctext">Programme</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Day_1"><span class="tocnumber">2.1</span> <span class="toctext">Day 1</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Day_2"><span class="tocnumber">2.2</span> <span class="toctext">Day 2</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Day_3"><span class="tocnumber">2.3</span> <span class="toctext">Day 3</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Day_4"><span class="tocnumber">2.4</span> <span class="toctext">Day 4</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Day_5"><span class="tocnumber">2.5</span> <span class="toctext">Day 5</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Sessions"><span class="tocnumber">3</span> <span class="toctext">Sessions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#Session_1:_Introduction"><span class="tocnumber">3.1</span> <span class="toctext">Session 1: Introduction</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Session_2:_Building_the_MY1_modules"><span class="tocnumber">3.2</span> <span class="toctext">Session 2: Building the MY1 modules</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Session_3:_Software_installation_and_programming"><span class="tocnumber">3.3</span> <span class="toctext"><b>Session 3</b>: Software installation and programming</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Session_4:_Servo_controlling"><span class="tocnumber">3.4</span> <span class="toctext"><b>Session 4</b>: Servo controlling</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Session_5:_Locomotion_in_1D_.28I.29"><span class="tocnumber">3.5</span> <span class="toctext"><b>Session 5</b>: Locomotion in 1D (I)</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Session_6:_Locomotion_in_1D_.28II.29"><span class="tocnumber">3.6</span> <span class="toctext"><b>Session 6</b>: Locomotion in 1D (II)</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Session_7:_Locomotion_in_2D_.28I.29"><span class="tocnumber">3.7</span> <span class="toctext"><b>Session 7</b>: Locomotion in 2D (I)</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Session_8:_Locomotion_in_2D_.28II.29"><span class="tocnumber">3.8</span> <span class="toctext"><b>Session 8</b>: Locomotion in 2D (II)</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Session_9:_Pending_experiments"><span class="tocnumber">3.9</span> <span class="toctext"><b>Session 9</b>: Pending experiments</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Session_10:_Conclusions_and_future_work"><span class="tocnumber">3.10</span> <span class="toctext"><b>Session 10</b>: Conclusions and future work</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#Repository"><span class="tocnumber">4</span> <span class="toctext">Repository</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="#Authors"><span class="tocnumber">5</span> <span class="toctext">Authors</span></a></li>
+<li class="toclevel-1 tocsection-21"><a href="#License"><span class="tocnumber">6</span> <span class="toctext">License</span></a></li>
+<li class="toclevel-1 tocsection-22"><a href="#Links"><span class="tocnumber">7</span> <span class="toctext">Links</span></a></li>
+<li class="toclevel-1 tocsection-23"><a href="#Bibliography"><span class="tocnumber">8</span> <span class="toctext">Bibliography</span></a></li>
+<li class="toclevel-1 tocsection-24"><a href="#News"><span class="tocnumber">9</span> <span class="toctext">News</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>The last few years have witnessed an increasing interest in modular reconfigurable robotics. The applications include industrial inspection, urban search and rescue, space applications and military reconnaissance. They are also very interesting for research purposes. Modular robots are composed of some identical or similar units which can attach and detach each other and are capable of changing the configurations.  
+</p><p>Some modular prototypes are quite famous, such as Polybot from Mark Yim, CONRO and SuperBot from Information Sciences Institute and Computer Science, M-TRAN robot from Kamimura. Some common ideas of these prototypes lie in two points. Normally this kind of robots consists of many modules which are able to change the way they are connected. In further the modular approach enables robots the reconfiguration capability which is very essential in such tasks which are difficult for a fixed-shape robot. It also enables the mobile robotic system the characteristics of versatility, robustness, low-cost and fast-prototyping so that new configurations of different robots can be built fast and easily, for the exploration, testing and analysis of new ideas. More exciting advantage is that the robots have the capability of adopting different locomotion to match various tasks and suit complex environments. 
+</p><p>Robotics has emerged as a useful tool in education because robots provide ideas of science and technology. It connects the student with the science and technology easily. In this training program, we would like to use modular robots for educational purposes. the participators will work with educational robots and modular robots to learn the following aspects:
+</p>
+<ul><li> <b>Building modular mobile robots and simple kinematic chains</b></li>
+<li> <b>Programming of elementary robot skills and behaviours</b></li>
+<li> <b>Locomotion control based on bio-inspired methods</b></li>
+<li> <b>Testing for cooperating tasks</b></li></ul>
+<p>We also hope that the participators could apply theory and model learned in the robotics related course to real robot systems so to gain experiences in working with physical sensors, actuators and robot programming.
+</p><p><br>
+All information here will be improved according to our new working experimence regularly.
+</p>
+<h2><span class="mw-headline" id="Programme">Programme</span></h2>
+<h3><span class="mw-headline" id="Day_1"><font color="blue">Day 1</font></span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<ul><li> <b>Session 1: Introduction</b></li></ul>
+<dl><dd> * <i>About ourselves.</i></dd>
+<dd> * <i>Introduction to modular robotics(<a rel="nofollow" class="external text" href="https://www.iearobotics.com/wiki/images/e/e1/Modular_robots_introduction.pdf">PDF</a>)</i></dd>
+<dd> * <i>Overview of the training on modular snake robots (As shown below)</i></dd></dl>
+<p><br>
+</p>
+<ul><li> <b>Session 2: Building the MY1 modules</b></li></ul>
+<dl><dd> <i>Assembling the MY1 modules. Mounting the battery pack. Preparing the download cable. Building Unimod A1</i></dd></dl>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Day_2"><font color="blue">Day 2</font></span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<ul><li> <b>Session 3: Software installation</b></li></ul>
+<dl><dd> <i>Installing the SDCC C compiler. Installing and testing the Codeblocks IDE. Installing and testing the Pydownloader tool. Introduction to the Skycube board. More programming examples</i></dd></dl>
+<ul><li> <b>Session 4: Servo controlling</b></li></ul>
+<dl><dd> Introduction to servo controlling. Programming the sevos. Introduction to the sinusoidal generators. Programming oscillations. Experiment 1: "The wave". Experiment 2: "The big wave"</dd></dl>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Day_3"><font color="blue">Day 3</font></span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<dl><dd><font color="green"><b>First Challenge!</b></font> <i>Building a 30 modules caterpillar robot</i></dd></dl>
+<ul><li> <b>Session 5: Locomotion in 1D (I)</b></li></ul>
+<dl><dd> <i>Finish the 10 Unimods A1. Minicube-I assembling. Experiments on the locomotion of Minicube-I. Building the Cube3 configuration. Experiments on the locomotion of Cube3</i></dd></dl>
+<ul><li> <b>Session 6: Locomotion in 1D (II)</b></li></ul>
+<dl><dd><i>Building the Cube6 configuration. Locomotion experiments. Building the Cube12 configuration. Locomotion experiments. Building the Cube30 configuration! Locomotion experiments. Locomotion principles. Introduction to the serpenoid curve</i></dd></dl>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Day_4"><font color="blue">Day 4</font></span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<dl><dd><font color="green"><b>Second challenge!</b></font> <i>Building a 30-module snake!!</i></dd></dl>
+<ul><li> <b>Session 7: Locomotion in 2D (I)</b></li></ul>
+<dl><dd><i>Building 10 Unimods B1. Building 10 Unidmods 2D-B1. Building 5 Minicube-II type A1. Building 5 Minicube-II type B1. Locomotion gaits. Locomotions experiments. Building a 6 modules pith-yaw configuration. Locomotion experiments</i> </dd></dl>
+<ul><li> <b>Session 8: Locomotion in 2D (II)</b></li></ul>
+<dl><dd> Building 3 snake9. Locomotion experiments. Building 1 snake18. Experiments. Building the snake30!. Locomotion experiments.</dd></dl>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Day_5"><font color="blue">Day 5</font></span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<ul><li> <b>Session 9: Pending Experiments</b></li></ul>
+<dl><dd>Pending tasks, resolve questions, complete the unfinished experiments</dd></dl>
+<ul><li> <b>Session 10: Conclusions and future work</b></li></ul>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Sessions">Sessions</span></h2>
+<h3><span class="mw-headline" id="Session_1:_Introduction">Session 1: <font color="blue">Introduction</font></span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<ul><li> About ourselves</li>
+<li> Introduction to modular robotics(<a rel="nofollow" class="external text" href="https://www.iearobotics.com/wiki/images/e/e1/Modular_robots_introduction.pdf">PDF</a>)</li>
+<li> Overview of the training on modular snake robots</li></ul>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Houxiang.jpg" class="image" title="Prof. Dr. Houxiang Zhang"><img alt="Prof. Dr. Houxiang Zhang" src="Training_on_modular_snake_robots_files/Houxiang_5KB8.jpg" width="421" height="568"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Juan_gonzalez_08.jpg" class="image" title="Dr. Juan Gonzalez-Gomez"><img alt="Dr. Juan Gonzalez-Gomez" src="Training_on_modular_snake_robots_files/Juan_gonzalez_08_5KB8.jpg" width="706" height="612"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:AndresPrieto-Moreno_peq.jpg" class="image" title="Andrés Prieto-Moreno"><img alt="Andrés Prieto-Moreno" src="Training_on_modular_snake_robots_files/AndresPrieto-Moreno_peq_5KB8.jpg" width="235" height="283"></a>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Session_2:_Building_the_MY1_modules">Session 2: <font color="blue">Building the MY1 modules</font></span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<ul><li> <a href="https://www.iearobotics.com/wiki/index.php?title=MY1_modules:_assembling" title="MY1 modules: assembling">Assembling the MY1 modules</a>. 30 modules should be assembled.</li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=Skycube:_Mounting_the_battery_pack" title="Skycube: Mounting the battery pack">Mounting the battery pack</a>. 10 battery packs should be mounted.</li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=Skycube:_Preparing_the_Download_cable" title="Skycube: Preparing the Download cable">Preparing the download cable</a>. 5 download cable should be mounted</li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=Unimod_A1:_Assembling" title="Unimod A1: Assembling">Unimod A1: Assembling</a>. 10 Unimods will be assembled</li></ul>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Modulo-y1-lote1-3.jpg" class="image" title="A MY1 module"><img alt="A MY1 module" src="Training_on_modular_snake_robots_files/Modulo-y1-lote1-3_5KB8.jpg" width="1014" height="902"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Unimod-A1-1-r2.jpg" class="image" title="A Unimod A1"><img alt="A Unimod A1" src="Training_on_modular_snake_robots_files/Unimod-A1-1-r2_5KB8.jpg" width="742" height="994"></a>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Session_3:_Software_installation_and_programming"><b>Session 3</b>: <font color="blue">Software installation and programming</font></span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<ul><li> <a href="https://www.iearobotics.com/wiki/index.php?title=SDCC_C_compiler" title="SDCC C compiler">Installing the SDCC C compiler</a></li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=CodeBlock_IDE_and_PIC_microcontrollers" title="CodeBlock IDE and PIC microcontrollers">Installing and testing the Codeblocks IDE</a></li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=Pydownloader_tool" title="Pydownloader tool">Installing and testing the Pydownloader tool</a></li>
+<li> Introduction to the Skycube board</li>
+<li> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/modular-robot-training/MR_prog_examples.zip">Programming examples for the training</a></li></ul>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Screenshot-codeblock-10.05-ubuntu-10.10.png" class="image" title="The Code::Blocks programming environmnet"><img alt="The Code::Blocks programming environmnet" src="Training_on_modular_snake_robots_files/Screenshot-codeblock-10.05-ubuntu-10.10_5KB8.png" width="857" height="903"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Pydownloader-screenshot-2.png" class="image" title="The pydownloader tool"><img alt="The pydownloader tool" src="Training_on_modular_snake_robots_files/Pydownloader-screenshot-2_5KB8.png" width="395" height="349"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Skycube-1.0-modulo-y1-2.jpg" class="image" title="The Skycube Board"><img alt="The Skycube Board" src="Training_on_modular_snake_robots_files/Skycube-1.0-modulo-y1-2_5KB8.jpg" width="1187" height="1027"></a>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Session_4:_Servo_controlling"><b>Session 4</b>: <font color="blue">Servo controlling</font></span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<ul><li> Introduction to servo controlling</li>
+<li> Programming the sevos</li>
+<li> Introduction to the sinusoidal generators</li>
+<li> Programming oscillations</li>
+<li> Experiment 1: "The wave". 10 Modules</li>
+<li> Experiment 2: "The big wave". 30 modules</li></ul>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Servo-futaba-3003-2.jpg" class="image" title="Servo futaba 3003"><img alt="Servo futaba 3003" src="Training_on_modular_snake_robots_files/Servo-futaba-3003-2_5KB8.jpg" width="1002" height="934"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Micro-osciladores-logo-grande.png" class="image" title="Sinusoidal oscillators"><img alt="Sinusoidal oscillators" src="Training_on_modular_snake_robots_files/Micro-osciladores-logo-grande_5KB8.png" width="675" height="987"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-exp1-gran-ola.jpg" class="image" title="The wave"><img alt="The wave" src="Training_on_modular_snake_robots_files/2010-robotica-uc3m-robots-modulares-exp1-gran-ola_5KB8.jpg" width="1600" height="1200"></a>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Session_5:_Locomotion_in_1D_.28I.29"><b>Session 5</b>: <font color="blue">Locomotion in 1D (I)</font></span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<p><font color="green"><b>Challenge 1!</b></font> <i>Towards a 30 modules caterpillar robot</i>
+</p>
+<ul><li> <a href="https://www.iearobotics.com/wiki/index.php?title=Unimod_A1:_Assembling" title="Unimod A1: Assembling">Finish 10 Unimods A1</a></li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=Minicube-I:_Assembling" title="Minicube-I: Assembling">Minicube-I: Assembling</a>. Building 10 Minicube-I robots </li>
+<li> Locomotion of the PP minimal configuration</li>
+<li> Experiments on the locomotion of Minicube-I</li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=Cube3:_Assembling" title="Cube3: Assembling">Building the Cube3 configuration</a></li>
+<li> Experiments on the locomotion of Cube3</li></ul>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Minicube-I-fin-r2.jpg" class="image" title="The Minicube-I robot"><img alt="The Minicube-I robot" src="Training_on_modular_snake_robots_files/Minicube-I-fin-r2_5KB8.jpg" width="1556" height="910"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Cube3-MY1-1-r1.jpg" class="image" title="The Cube3 robot"><img alt="The Cube3 robot" src="Training_on_modular_snake_robots_files/Cube3-MY1-1-r1_5KB8.jpg" width="1287" height="636"></a>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Session_6:_Locomotion_in_1D_.28II.29"><b>Session 6</b>: <font color="blue">Locomotion in 1D (II)</font></span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<p><font color="green"><b>Challenge 1!</b></font> <i>Towards a 30 modules caterpillar robot</i>
+</p>
+<ul><li> Building the Cube6 configuration</li>
+<li> Locomotion experiments</li>
+<li> Building the Cube12 configuration</li>
+<li> Locomotion experiments</li>
+<li> Building the <b>Cube30</b> configuration!</li>
+<li> Locomotion experiments</li>
+<li> Locomotion principles</li>
+<li> Introduction to the serpenoid curve</li></ul>
+</td>
+<td>  <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:2010-robotica-uc3m-robots-modulares-exp5-Cube12-I-1.jpg" class="image" title="Cube12 caterpillar robot"><img alt="Cube12 caterpillar robot" src="Training_on_modular_snake_robots_files/2010-robotica-uc3m-robots-modulares-exp5-Cube12-I-1_5KB8.jpg" width="2048" height="1536"></a>
+</td>
+<td>  <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Cube18-Juan-Avinash.jpg" class="image" title="Cube18 caterpillar robot"><img alt="Cube18 caterpillar robot" src="Training_on_modular_snake_robots_files/Cube18-Juan-Avinash_5KB8.jpg" width="776" height="513"></a>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Session_7:_Locomotion_in_2D_.28I.29"><b>Session 7</b>: <font color="blue">Locomotion in 2D (I)</font></span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<p><font color="green"><b>Challenge 2!</b></font> <i>Towards a 30 modules snake robot</i>
+</p>
+<ul><li> <a href="https://www.iearobotics.com/wiki/index.php?title=Unimod_B1:_Assembling" title="Unimod B1: Assembling">Building 10 Unimods B1</a></li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=Unimod_2D-B1:_Assembling" title="Unimod 2D-B1: Assembling">Building 10 Unidmods 2D-B1</a></li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=Minicube-II_A1:_Assembly" title="Minicube-II A1: Assembly">Building 5 Minicube-II type A1</a></li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=Minicube-II_B1:_Assembly" title="Minicube-II B1: Assembly">Building 5 Minicube-II type B1</a></li>
+<li> Locomotion gaits</li>
+<li> Locomotions experiments</li>
+<li> Building a 6 modules pith-yaw configuration</li>
+<li> Locomotion experiments</li></ul>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Unimod-B1-r1.jpg" class="image" title="Unimod type B1"><img alt="Unimod type B1" src="Training_on_modular_snake_robots_files/Unimod-B1-r1_5KB8.jpg" width="485" height="657"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Unimod-2D-B1-1-r2.jpg" class="image" title="Unimod 2D type B1"><img alt="Unimod 2D type B1" src="Training_on_modular_snake_robots_files/Unimod-2D-B1-1-r2_5KB8.jpg" width="1060" height="758"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Minicube-IIA-1-r1.jpg" class="image" title="Minicube-II type A1"><img alt="Minicube-II type A1" src="Training_on_modular_snake_robots_files/Minicube-IIA-1-r1_5KB8.jpg" width="1600" height="1200"></a>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Session_8:_Locomotion_in_2D_.28II.29"><b>Session 8</b>: <font color="blue">Locomotion in 2D (II)</font></span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<p><font color="green"><b>Challenge 2!</b></font> <i>Towards a 30 modules snake robot</i>
+</p>
+<ul><li> Building 3 snake9 </li>
+<li> Locomotion experiments</li>
+<li> Building 1 snake18</li>
+<li> Experiments</li>
+<li> Building the snake30!</li>
+<li> Locomotion experiments</li></ul>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Hypercube-snake8.jpg" class="image" title="Snake robot"><img alt="Snake robot" src="Training_on_modular_snake_robots_files/Hypercube-snake8_5KB8.jpg" width="363" height="164"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Training-mod-robot-snake7.jpg" class="image" title="Snake robot"><img alt="Snake robot" src="Training_on_modular_snake_robots_files/Training-mod-robot-snake7_5KB8.jpg" width="544" height="408"></a>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Session_9:_Pending_experiments"><b>Session 9</b>: <font color="blue">Pending experiments</font></span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<ul><li> Pending tasks</li>
+<li> Solve questions</li>
+<li> Complete the unfinished experiments</li></ul>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Session_10:_Conclusions_and_future_work"><b>Session 10</b>: <font color="blue">Conclusions and future work</font></span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<ul><li> Simulations</li>
+<li> Communications between the modules</li>
+<li> Sensors</li>
+<li> Neural networks</li>
+<li> Modular snake robot applications</li>
+<li> 2D topology configurations</li></ul>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:TMR-GZ-II.jpg" class="image" title="1D and 2D topology modular robots"><img alt="1D and 2D topology modular robots" src="Training_on_modular_snake_robots_files/TMR-GZ-II_5KB8.jpg" width="1094" height="821"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:TMR-grasping-4.jpg" class="image" title="Modular grasping simulation"><img alt="Modular grasping simulation" src="Training_on_modular_snake_robots_files/TMR-grasping-4_5KB8.jpg" width="1299" height="540"></a>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Repository">Repository</span></h2>
+<ul><li> SVN repository: <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/MR_workshop">http://svn.iearobotics.com/MR_workshop</a></li></ul>
+<p>The latest version can be obtained typing:
+</p>
+<pre>svn co <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/MR_workshop/trunk">http://svn.iearobotics.com/MR_workshop/trunk</a>
+</pre>
+<h2><span class="mw-headline" id="Authors">Authors</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="https://sites.google.com/site/houxiangzhang/home">Prof. Dr. Houxiang Zhang</a>. Department of Technology and nautical science. Aalesund University Colleage. Norway</li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main">Dr. Juan Gonzalez-Gomez</a>. Robotics Lab. Department of system engineering and Automation. Universidad Carlos III de Madrid. Spain</li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=Andr%C3%A9s_Prieto-Moreno" title="Andrés Prieto-Moreno">Andres Prieto-Moreno</a>. Department of computer science. Universidad Autonoma de Madrid. Spain</li></ul>
+<h2><span class="mw-headline" id="License">License</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:CC-BY-SA-logo.png" class="image"><img alt="CC-BY-SA-logo.png" src="Training_on_modular_snake_robots_files/CC-BY-SA-logo_5KB8.png" width="88" height="31"></a> This work is licensed under a <a rel="nofollow" class="external text" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike License</a>.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Links">Links</span></h2>
+<ul><li> <a href="https://www.iearobotics.com/wiki/index.php?title=Skycube" title="Skycube">Skycube board</a></li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_MY" title="Módulos MY">MY1 modules</a></li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=Unimod" title="Unimod">Unimod configuration</a></li></ul>
+<h2><span class="mw-headline" id="Bibliography">Bibliography</span></h2>
+<ul><li> Juan Gonzalez-Gomez, "<i><b>Modular Robotics and Locomotion: Application to Limbless robots</b></i>". PhD dissertation. Universidad Autonoma de Madrid. Nov/2008. (<a href="https://www.iearobotics.com/wiki/index.php?title=Juan_Gonzalez:PhD_Thesis" title="Juan Gonzalez:PhD Thesis">More information</a>)</li></ul>
+<ul><li> Juan Gonzalez-Gomez, Houxiang Zhang and Eduardo Boemo, <i>"<b>Locomotion Principles of 1D Topology Pitch and Pitch-Yaw-Connecting Modular Robots</b>"</i>. Chapter 24 of the Book: Bioinspiration and Robotics: Walking and Climbing Robots, pp. 403-428. Published by Advanced Robotics Systems International and I-Tech Education and Publishing. Vienna, Austria. September 2007. (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/personal/juan/publicaciones/art16/index.html">More Information</a>)</li></ul>
+<ul><li> Juan Gonzalez-Gomez, Houxiang Zhang, Eduardo Boemo and Jianwei Zhang, "<i><b>Locomotion Capabilities of a Modular Robot with Eight Pitch-Yaw-Connecting Modules</b></i>",Proc. of the 9th International Conference on Climbing and Walking Robots. Clawar06, pp. 150-157. Brussels, September 2006. (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/personal/juan/publicaciones/art14/index.html">More Information</a>)</li></ul>
+<ul><li> Juan Gonzalez-Gomez and E. Boemo, <i>"<b>Motion of Minimal Configurations of a Modular Robot: Sinusoidal, Lateral Rolling and Lateral Shift</b></i>", Proc. of the 8th International Conference on Climbing and Walking Robots. CLAWAR, pp. 667-674. London, September 2005. (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/personal/juan/publicaciones/art12/index.html">More Information</a>)</li></ul>
+<ul><li> Houxiang Zhang, Juan Gonzalez-Gomez, Zhizhu Xie, Sheng Cheng, Jianwei Zhang. "<i> <b>Development of a Low-cost Flexible Modular Robot GZ-I</b></i>". Proceeding of 2008 IEEE/ASME International Conference on Advanced Intelligent Mechatronlics, pp. 223-228, Xi'an, China, 4 - 7 June. (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/papers/AIM_2008-GZ-I.pdf">PDF</a>)</li></ul>
+<ul><li> Houxiang Zhang, Juan Gonzalez-Gomez, S.Y. Chen, Jianwei Zhang. "<i><b>Embedded Intelligent Capability of a Modular Robotic System</b></i>".Proceeding of IEEE Robio2008, Bangkok, Thailand, Dec. 2008. (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/papers/AIM_2008-GZ-I.pdf">PDF</a>)</li></ul>
+<ul><li> Houxiang Zhang, Juan González-Gómez, Jianwei Zhang. "<i><b>A New Application of Modular Robots on Analysis of Caterpillar-like Locomotion</b></i>". Proceedings of the 2009 IEEE International Conference on Mechatronics, Malaga, Spain, 14-17 April. (<a href="https://www.iearobotics.com/wiki/index.php?title=Paper:ICM09-caterpillar" title="Paper:ICM09-caterpillar">More Information</a>)</li></ul>
+<ul><li> G. Salvietti, H.X. Zhang, J. Gonzalez-Gomez, D. Prattichizzo, and J.W. Zhang. "<b>Task Priority Grasping and Locomotion Control of Modular Robot</b>". In Proc. IEEE Int. Conf. on Robotics and Biomimetics, Guilin, China, December 2009. (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/papers/Robio2009-task-priority.pdf">PDF</a>)</li></ul>
+<ul><li> Juan Gonzalez-Gomez, Javier Gonzalez-quijano, Houxiang Zhang, Mohamed Abderrahim, "<i><b>Toward the sense of touch in snake modular robots for search and rescue operations</b></i>". In Proc of the ICRA 2010 workshop on modular robots: State of the art. pp. 63-68, May-3rd, Anchorage, Alaska. (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2010-05-03-ICRA-Workshop/Paper-ICRA-workshop-2010-snake-USAR.pdf">PDF</a>)</li></ul>
+<ul><li> Houxiang Zhang, Wei Wang, Juan Gonzalez-Gomez, Jianwei Zhang. "<b>Design and Realization of a Novel Modular Climbing Caterpillar Using Low-frequency Vibrating Passive Suckers</b>". Advanced Robotics. Volume 23, Numbers 7-8, 2009 , pp. 889-906. </li></ul>
+<ul><li> Houxiang Zhang, Wei Wang, Juan Gonzalez-Gomez and Jianwei Zhang (2010), "<b>A bio-inspired small-sized wall-climbing caterpillar robot</b>", Book chapter (1), Mechatronic Systems Applications, Annalisa Milella Donato Di Paola and Grazia Cicirelli (Ed.), ISBN: 978-953-307-040-7, InTech (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/papers/Bio-inspired-small-sized-wall-climbing-caterpillar-robot.pdf">PDF</a>)</li></ul>
+<h2><span class="mw-headline" id="News">News</span></h2>
+<ul><li> <b>Feb/19th/2011</b>: This page is started</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20261013165023
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.056 seconds
+Real time usage: 0.067 seconds
+Preprocessor visited node count: 166/1000000
+Preprocessor generated node count: 283/1000000
+Post‐expand include size: 3200/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.669      1 - -total
+ 64.35%    1.717     16 - Plantilla:Tablabonita
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://www.iearobotics.com/wiki/index.php?title=Training_on_modular_snake_robots&amp;oldid=11347">https://www.iearobotics.com/wiki/index.php?title=Training_on_modular_snake_robots&amp;oldid=11347</a>»</div>
+					<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://www.iearobotics.com/wiki/index.php?title=Training_on_modular_snake_robots" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://www.iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Training_on_modular_snake_robots&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://www.iearobotics.com/wiki/index.php?title=Training_on_modular_snake_robots&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://www.iearobotics.com/wiki/index.php?title=Training_on_modular_snake_robots&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Training+on+modular+snake+robots" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Training_on_modular_snake_robots" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Training_on_modular_snake_robots" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://www.iearobotics.com/wiki/index.php?title=Training_on_modular_snake_robots&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://www.iearobotics.com/wiki/index.php?title=Training_on_modular_snake_robots&amp;oldid=11347" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://www.iearobotics.com/wiki/index.php?title=Training_on_modular_snake_robots&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Training_on_modular_snake_robots_files/gnu-fdl_5KB8.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="Training_on_modular_snake_robots_files/poweredby_mediawiki_88x31_5KB8.png" alt="Powered by MediaWiki" srcset="Training_on_modular_snake_robots_files/poweredby_mediawiki_132x47_5KB8.png 1.5x, Training_on_modular_snake_robots_files/poweredby_mediawiki_176x62_5KB8.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 5 mar 2011 a las 08:34.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":147});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
