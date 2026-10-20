@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Prusa Mendel: R2D2 - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Prusa_Mendel:_R2D2","wgTitle":"Prusa Mendel: R2D2","wgCurRevisionId":15818,"wgRevisionId":15818,"wgArticleId":2104,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Reprap","Dinastía R","Generación 1"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Prusa_Mendel:_R2D2","wgRelevantArticleId":2104,"wgRequestId":"atcS7sMpmaZ-hHbgX1xZKwAnX7k","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Prusa_Mendel_R2D2_files/load_KjIE.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="Prusa_Mendel_R2D2_files/load_002_KjIE.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://www.iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://www.iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="Prusa_Mendel_R2D2_files/load_KjIE.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Prusa_Mendel_R2D2 rootpage-Prusa_Mendel_R2D2 skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Prusa Mendel: R2D2</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><p><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Reprap-gen1.png" class="image" title="300px"><img alt="300px" src="Prusa_Mendel_R2D2_files/Reprap-gen1_KjIE.png" width="570" height="216"></a>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#M.C3.A9ritos"><span class="tocnumber">2</span> <span class="toctext">Méritos</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Ficha"><span class="tocnumber">3</span> <span class="toctext">Ficha</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Autores"><span class="tocnumber">4</span> <span class="toctext">Autores</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Fotos"><span class="tocnumber">5</span> <span class="toctext">Fotos</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#V.C3.ADdeos"><span class="tocnumber">6</span> <span class="toctext">Vídeos</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Descargas"><span class="tocnumber">7</span> <span class="toctext">Descargas</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Firmware"><span class="tocnumber">7.1</span> <span class="toctext">Firmware</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Software"><span class="tocnumber">7.2</span> <span class="toctext">Software</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Perfiles"><span class="tocnumber">7.3</span> <span class="toctext">Perfiles</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Pruebas"><span class="tocnumber">7.4</span> <span class="toctext">Pruebas</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Actualizaciones_para_R2"><span class="tocnumber">8</span> <span class="toctext">Actualizaciones para R2</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Historia"><span class="tocnumber">9</span> <span class="toctext">Historia</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Enlaces"><span class="tocnumber">10</span> <span class="toctext">Enlaces</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>Impresora 3D construida desde cero en el <a rel="nofollow" class="external text" href="http://asrob.uc3m.es/index.php/Proyecto:_Clone_wars">proyecto Clone Wars</a>. R2D2 es la primera generación de impresoras clonables. Es hija de <a href="https://www.iearobotics.com/wiki/index.php?title=Makerbot_Cupcake:_R1" title="Makerbot Cupcake: R1">R1</a>
+</p>
+<h2><span class="mw-headline" id="M.C3.A9ritos">Méritos</span></h2>
+<table class="wikitable">
+<tbody><tr>
+<td>  <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Icono_premio.png" class="image"><img alt="Icono premio.png" src="Prusa_Mendel_R2D2_files/Icono_premio_KjIE.png" width="20" height="39"></a> Es el primer clon del proyecto Clone wars
+</td></tr>
+<tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Icono_premio.png" class="image"><img alt="Icono premio.png" src="Prusa_Mendel_R2D2_files/Icono_premio_KjIE.png" width="20" height="39"></a> <b>Primogénito</b>: Es el primer Hijo de <a href="https://www.iearobotics.com/wiki/index.php?title=Makerbot_Cupcake:_R1" title="Makerbot Cupcake: R1">R1</a>
+</td></tr>
+<tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Icono_premio.png" class="image"><img alt="Icono premio.png" src="Prusa_Mendel_R2D2_files/Icono_premio_KjIE.png" width="20" height="39"></a> Es el primer clon en ser <b>Jedi Master</b>: Imprimir un juego completo de piezas para la Prusa 2
+</td></tr>
+<tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Icono_premio.png" class="image"><img alt="Icono premio.png" src="Prusa_Mendel_R2D2_files/Icono_premio_KjIE.png" width="20" height="39"></a> Es el primer clon en ser <b>Consejero Jedi</b>: Tener descendencia
+</td></tr>
+<tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Icono_premio.png" class="image"><img alt="Icono premio.png" src="Prusa_Mendel_R2D2_files/Icono_premio_KjIE.png" width="20" height="39"></a> Es el primer clon en ser <b>Consejero Jedi supremo</b>: Tener dos clones hijos
+</td></tr>
+<tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Icono_premio.png" class="image"><img alt="Icono premio.png" src="Prusa_Mendel_R2D2_files/Icono_premio_KjIE.png" width="20" height="39"></a> Es el primer clon en ser <b>Máster de la Orden Jedi</b>: Tener tres o más clones hijos
+</td></tr>
+<tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Icono_premio.png" class="image"><img alt="Icono premio.png" src="Prusa_Mendel_R2D2_files/Icono_premio_KjIE.png" width="20" height="39"></a> Es el primer clon en <b>reencarnarse</b>!
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Ficha">Ficha</span></h2>
+<table class="wikitable" style="width:100%">
+
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Prusa-r2d2-clon.jpg" class="image" title="200px"><img alt="200px" src="Prusa_Mendel_R2D2_files/Prusa-r2d2-clon_KjIE.jpg" width="1200" height="1117"></a>
+</td>
+<td>
+<ul><li> <b>Nombre</b>: <b><font color="#0000FF">R2D2</font></b> (<font color="#00FF00">R.I.P</font>)</li>
+<li> <b>Familia</b>: <a rel="nofollow" class="external text" href="http://reprap.org/wiki/Prusa_Mendel">Prusa Mendel</a> original</li>
+<li> <b>Generación</b>: 1</li>
+<li> <b>Material</b>: Plástico ABS</li>
+<li> <b>Color</b>: Piezas blancas, salvo extrusor que es negro</li>
+<li> <b>Impresora Progenitora</b>:  <a href="https://www.iearobotics.com/wiki/index.php?title=Makerbot_Cupcake:_R1" title="Makerbot Cupcake: R1">R1</a></li>
+<li> <b>Descendencia</b>: <a href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteraci%C3%B3n_2:_R3" title="Prusa Mendel Iteración 2: R3">R3</a>, <a rel="nofollow" class="external text" href="http://asrob.uc3m.es/index.php/Clone_wars:_Impresora_Uterus">Úterus</a>, <a href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteraci%C3%B3n_2:_Han" title="Prusa Mendel Iteración 2: Han">Han</a>, <a rel="nofollow" class="external text" href="http://asrob.uc3m.es/index.php/Clone_wars:Impresora_X_Wing">X-wing</a></li>
+<li> <b>Electrónica</b>: <a rel="nofollow" class="external text" href="http://reprap.org/wiki/RAMPS_1.2">RAMPS 1.2</a>  + <a rel="nofollow" class="external text" href="http://arduino.cc/en/Main/ArduinoBoardMega2560">Arduino Mega 2560</a> </li>
+<li> <b>Firmware</b>: <a rel="nofollow" class="external text" href="https://github.com/kliment/Sprinter">Sprinter</a></li>
+<li> <b>Extrusor</b>: <a rel="nofollow" class="external text" href="http://reprap.org/wiki/Wade%27s_Geared_Extruder">Wade's extruder</a> (plástico de 3mm)</li>
+<li> <b>Hot-End</b>: Inicialmente Arcol v3.0. Actualización a <a rel="nofollow" class="external text" href="http://reprap.org/wiki/LulzBot/Budaschnozzle">Budaschnozzle</a> de Makergear (Aguja de 0.5mm)</li>
+<li> <b>Nacimiento</b>: 24/Dic/2011 (primera pieza impresa), a las 10h de la mañana</li>
+<li> <b>Reencarnación</b>:  28/Agosto/2012 . Se ha reencarnado en <a href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteraci%C3%B3n_2:_R2-reloaded" title="Prusa Mendel Iteración 2: R2-reloaded">R2-Reloaded</a></li></ul>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:R2d2.jpg" class="image" title="150px"><img alt="150px" src="Prusa_Mendel_R2D2_files/R2d2_KjIE.jpg" width="485" height="600"></a> <br>
+<center><a rel="nofollow" class="external text" href="http://starwars.wikia.com/wiki/R2-series_astromech_droid">Serie R2</a></center>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Autores">Autores</span></h2>
+<ul><li> <a href="https://www.iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main">Juan González Gómez</a> (Obijuan)</li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=Andr%C3%A9s_Prieto-Moreno" title="Andrés Prieto-Moreno">Andrés Prieto-Moreno</a></li></ul>
+<h2><span class="mw-headline" id="Fotos">Fotos</span></h2>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://plus.google.com/u/0/photos/109138697406392447933/albums/5687497861792727265">Álbum de fotos en google+</a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC03872.JPG" class="image"><img alt="" src="Prusa_Mendel_R2D2_files/300px-DSC03872_KjIE.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_R2D2_files/450px-DSC03872_KjIE.JPG 1.5x, Prusa_Mendel_R2D2_files/600px-DSC03872_KjIE.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC03872.JPG" class="internal" title="Aumentar"></a></div>(<i>Click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC03865.JPG" class="image"><img alt="" src="Prusa_Mendel_R2D2_files/300px-DSC03865_KjIE.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_R2D2_files/450px-DSC03865_KjIE.JPG 1.5x, Prusa_Mendel_R2D2_files/600px-DSC03865_KjIE.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC03865.JPG" class="internal" title="Aumentar"></a></div>(<i>Click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC03873.JPG" class="image"><img alt="" src="Prusa_Mendel_R2D2_files/300px-DSC03873_KjIE.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_R2D2_files/450px-DSC03873_KjIE.JPG 1.5x, Prusa_Mendel_R2D2_files/600px-DSC03873_KjIE.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC03873.JPG" class="internal" title="Aumentar"></a></div>(<i>Click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="V.C3.ADdeos">Vídeos</span></h2>
+<table class="wikitable">
+
+<tbody><tr>
+<td> &lt;youtube&gt;j9g6PrL2FrQ|300|250&lt;/youtube&gt; <br>
+<p><b>01/Ene/2012</b>: Impresión de un cubo <br>de calibración
+</p>
+</td>
+<td>   &lt;youtube size&gt;tDHL7AZm_y8|300|250&lt;/youtube&gt;
+<p><b>24/Dic/2011</b>: ¡Primera impresión!
+</p>
+</td></tr></tbody></table>
+<table class="wikitable">
+
+
+<tbody><tr>
+<td> &lt;youtube&gt;oC_1Tjw196Y|300|250&lt;/youtube&gt; <br>
+<p><b>20/Dic/2011</b>: Probando el extrusor
+</p>
+</td>
+<td>  &lt;youtube&gt;083C4P0mKxA|300|250&lt;/youtube&gt; <br>
+<p><b>18/Dic/2011</b>: Probando electrónica y motores
+</p>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Descargas">Descargas</span></h2>
+<h3><span class="mw-headline" id="Firmware">Firmware</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2011-12-18-Prusa-R2D2/firmware/Sprinter-R2D2-firmware-0.2.zip">Sprinter-R2D2-firmware-0.2.zip</a>
+</td>
+<td> <b>Versión 0.2</b>. Calibrado realizado. Con este firmware se han impreso todas las piezas de la Prusa iteración 2 en R2D2
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2011-12-18-Prusa-R2D2/firmware/Sprinter-R2D2-0.1.zip">Sprinter-R2D2-0.1.zip</a>
+</td>
+<td> Versión inicial. Todo el hardware funciona. No se ha realizado calibrado
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Software">Software</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2011-12-18-Prusa-R2D2/software/Printrun-SF41.zip">Printrun-SF41.zip</a>
+</td>
+<td> Software PrintRun + Skeinforge 41 para Linux. Incluye la carpeta test con piezas para probar la Prusa: moneda, cubo de calibración, etc...
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Perfiles">Perfiles</span></h3>
+<p>Los perfiles están basados en los que ha hecho Renosis: <a rel="nofollow" class="external text" href="https://github.com/Renosis/MakerGear-Prusa-Skeinforge-Settings">Perfiles para skeinforge 41</a>, que me facilitó Fernando Salceda.
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2011-12-18-Prusa-R2D2/software/R2D2_SF41_dot_skeinforge.zip">R2D2_SF41_dot_skeinforge.zip</a>
+</td>
+<td> Perfil para Skeinforge 41 para imprimir en ABS en R2D2. Este es el pefil que se ha usado para imprimir todas las piezas de la Prusa Iteración 2. Renombrar la carpeta a .skeinforge y ponerla en el HOME
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Pruebas">Pruebas</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2011-12-18-Prusa-R2D2/test-parts/Imperial/imperial.gcode">imperial.gcode</a>
+</td>
+<td> GCODE para tocar la marcha imperial en una Prusa.
+</td></tr></tbody></table>
+<ul><li> Colocar el extrusor en el centro de la plataforma</li>
+<li> Abrir el gcode y ejecutarlo!</li></ul>
+<h2><span class="mw-headline" id="Actualizaciones_para_R2">Actualizaciones para R2</span></h2>
+<ul><li> Upgrade de la rueda dentada a "Rebel alliance Gear"</li>
+<li> Probar slic3r</li>
+<li> Upgrade del firmware a Marlin</li>
+<li> <strike>Poner polea metálica T5 en eje x</strike></li>
+<li> <strike>Poner belt-clamps de la Prusa 2 en eje x</strike></li>
+<li> <strike>Poner rodamientos lineales en eje Y</strike></li>
+<li> <strike>Upgrade del extrusor al de la Prusa 2</strike></li>
+<li> <strike>Poner disipadores a los pololu</strike></li>
+<li> <strike>Ajustar la corriente del eje Y</strike></li>
+<li> <strike>Poner rodamientos lineales en el eje x</strike></li>
+<li> <strike>Poner bearing guides de la prusa 2 en el eje y</strike></li>
+<li> <strike>Upgrade al último skeinforge</strike></li>
+<li> <strike>Poner poleas metálicas T5 en eje y</strike></li>
+<li> <strike>Poner belt-clamps de la Prusa 2 en eje y</strike></li>
+<li> <strike>Solucionar backlash!</strike></li>
+<li> <strike>Quitar disipador extra-grande</strike></li>
+<li> <strike>Poner bearing guide de la prusa 2 en eje X</strike></li>
+<li> <strike>Pone espejo de Ikea</strike></li></ul>
+<h2><span class="mw-headline" id="Historia">Historia</span></h2>
+<ul><li> <b>28/Agosto/2012</b>: R2D2 se ha <b>reencarnado</b> en <a href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteraci%C3%B3n_2:_R2-reloaded" title="Prusa Mendel Iteración 2: R2-reloaded">R2-Reloaded</a>. Por tanto ya no tendrá más descendencia, pero todavía están pendientes de construcción los 6 juegos adicionales que donó, mientras estaba en vida. Así que como máximo tendrá 6 hijos más&nbsp;:-)</li>
+<li> <b>26/Junio/2012</b>: Ha nacido otro hijo más: <a rel="nofollow" class="external text" href="http://asrob.uc3m.es/index.php/Clone_wars:Impresora_X_Wing">Xwing</a></li>
+<li> <b>01/Junio/2012</b>: Ya tengo las 6 poleas T2.5 que me ha dado <b>César Fernández</b></li></ul>
+<table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC05152.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC05152_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr></tbody></table>
+<ul><li> <b>30/Mayo/2012</b>: Ya me ha llegado el Budas 1.1! Además de un Hobbed bold nuevo y un adaptador de tarjetas SD para la RAMPS</li></ul>
+<table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC05145.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC05145_KjIE.JPG" width="2048" height="1536"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC05149.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC05149_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr>
+</tbody></table>
+<ul><li> <b>22/Mayo/2012</b>: He encargado un Budaschnozzle 1.1 + hobbed bold + SD board en lulzbot: 195€</li>
+<li> <b>07/Mayo/2012</b>: Ha nacido <a href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteraci%C3%B3n_2:_Han" title="Prusa Mendel Iteración 2: Han">Han</a>, el Clon de <a href="https://www.iearobotics.com/wiki/index.php?title=Andr%C3%A9s_Prieto-Moreno" title="Andrés Prieto-Moreno">Andrés Prieto-Moreno</a>, por lo que R2D2 asciende a la categoría de <b>Máster de la orden Jedi</b></li>
+<li> <b>05/Mayo/2012</b>: R2 ha tenido otro hijo: <a rel="nofollow" class="external text" href="http://asrob.uc3m.es/index.php/Clone_wars:_Impresora_Uterus">Úterus</a>. R2 asciende a la categoría de <b>Consejero Jedi supremo</b>!!</li>
+<li> <b>04/Abril/2012</b>: 
+<ul><li> R2 ha vuelto a la vida. Le he puesto el arcol v4 con aguja de 0.35 que compré hace tiempo. Ha impreso algunas piezas en negro. El extrusor lo he actualizado al de la Prusa 2 (Greg's extruder), impresor por R3</li>
+<li> (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/blog/2012/04/04/ha-nacido-la-obi-granja/">Blog</a>) R2 y R3 forman parte de la Obigranja! Es la primera vez que imprimen en paralelo!</li></ul></li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04827.JPG" class="image" title="R2 con el nuevo extrusor, y hotend de arcol 4.0 con aguja de 0.35 (click para ampliar)"><img alt="R2 con el nuevo extrusor, y hotend de arcol 4.0 con aguja de 0.35 (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04827_KjIE.JPG" width="2048" height="1536"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04848.JPG" class="image" title="Piezas impresas en R2 con el nuevo extrusor (click para ampliar)"><img alt="Piezas impresas en R2 con el nuevo extrusor (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04848_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr>
+<tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04832.JPG" class="image" title="La Obigranja (click para ampliar)"><img alt="La Obigranja (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04832_KjIE.JPG" width="2048" height="1536"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04833.JPG" class="image" title="La Obigranja (click para ampliar)"><img alt="La Obigranja (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04833_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>03/Abril/2012</b>: Montado el nuevo extrusor para R2, impreso por R3</li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04811.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04811_KjIE.JPG" width="2048" height="1536"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04812.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04812_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr></tbody></table></dd></dl>
+<p><br>
+</p>
+<ul><li> <b>01/Abril/2012</b>: R2 ha tenido un hijo: <a href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteraci%C3%B3n_2:_R3" title="Prusa Mendel Iteración 2: R3">R3</a>. Por tanto R2 asciende a <b>Consejero Jedi</b>!!</li>
+<li> <b>30/Marzo/2012</b>: Andrés ha recibido los peek insulators en USA. El día 7 me los manda para España.</li>
+<li> <b>25/Marzo/2012</b>: 
+<ul><li> Tras unas 250 horas de impresión, el <b>EXTRUSOR SE HA ROTO!</b>. Se ha partido el <a rel="nofollow" class="external text" href="http://www.lulzbot.com/en/budaschnozzle-10-parts/81-replacement-peek-insulator.html">peek insulator</a>. Sólo cuesta $7, pero hay que comprarlo en USA. Ya se lo he encargado a Andrés Prieto-Moreno (que está viviendo allí)</li>
+<li> Andrés ya ha hecho el pedido (2 peek insulators). En 5 ó 6 días lo recibirá en su casa de USA, y sobre el 7 de Abril David Rubio traerá las piezas a España.</li></ul></li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04692.JPG" class="image" title="Extrusor Budaschnozzle partido! (click para ampliar)"><img alt="Extrusor Budaschnozzle partido! (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04692_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>24/Marzo/2012</b>: Upgrade de R2:
+<ul><li> Aplanado el eje del motor del eje Y</li>
+<li> Cambiada la polea del eje Y por una metálica (T5)</li>
+<li> Eliminado el problema de backlash!!! Ahora los círculos ya son círculares por fin (y no ovalados)!</li>
+<li> Añadidos los "belt clamps" de la Prusa 2 (con las tuercas empotradas). Ahora es más fácil tensar la correa del eje Y</li>
+<li> Añadidos 8 "thumbscrews" a las tuercas de la base inferior. Ahora es más fácil nivelar la plataforma.</li>
+<li> Colocado el espejo de Ikea. </li>
+<li> Con estas mejoras, la calidad de la impresión de R2 ha mejorado notablemente</li></ul></li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04675.JPG" class="image" title="R2 con su nueva base de espejo (de ikea) (click para ampliar)"><img alt="R2 con su nueva base de espejo (de ikea) (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04675_KjIE.JPG" width="2048" height="1536"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04676.JPG" class="image" title="Polea metálica T5 para el eje y. Backlash emilinado! (click para ampliar)"><img alt="Polea metálica T5 para el eje y. Backlash emilinado! (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04676_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>22/Marzo/2012</b>: Entregado el décimo juego de piezas, a Daniel casares</li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04623.JPG" class="image" title="Entrega de las piezas a Daniel Casares (click para ampliar)"><img alt="Entrega de las piezas a Daniel Casares (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04623_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>19/Marzo/2012</b>: <b>Segundo rollo</b> de plástico de 2.3Kg <b>terminado</b>. Sustituido por otro (el último que queda del pedido pasado) </li>
+<li> <b>16/Marzo/2012</b>: Sustituido el rodamiento del eje x por un bearing guide de la prusa 2. Ahora la correa no roza con las arandelas metálicas que hacían de guía</li>
+<li> <b>09/Marzo/2012</b>:
+<ul><li> Impreso el <b>décimo juego de piezas</b>, para Daniel Casares, estudiante de industriales de la UPM. Con este juego he decidido <b>Jubilar a R2</b> (ya no voy a imprimir más juegos, salvo para casos excepcionales). Imprimir 10 juegos me ha servido para comprobar la fiabilidad de la Prusa. Han sido muchas horas de impresión, y R2 ha podido con ellas.</li>
+<li> Jose Manuel Escuder (Castellón) <b>ha recibido las piezas</b> </li>
+<li> Impresas 2 piezas para Mario Almagro. Tiempo total: 3h</li>
+<li> Impreso extrusor para Carlos García </li>
+<li> Impresas 4 poleas de extrusor para Fernando Salceda (Clon Deathstar)</li></ul></li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04612.JPG" class="image" title="Las piezas para el clon xwing, de Daniel Casares (click para ampliar)"><img alt="Las piezas para el clon xwing, de Daniel Casares (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04612_KjIE.JPG" width="2048" height="1536"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04613.JPG" class="image" title="Las piezas para Mario Almagro (click para ampliar)"><img alt="Las piezas para Mario Almagro (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04613_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr>
+<tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04616.JPG" class="image" title="Extrusor para Carlos Cargía  (click para ampliar)"><img alt="Extrusor para Carlos Cargía  (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04616_KjIE.JPG" width="2048" height="1536"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04614.JPG" class="image" title="Poleas para Fernando Salceda (click para ampliar)"><img alt="Poleas para Fernando Salceda (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04614_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>08/Marzo/2012</b>: 
+<ul><li> Andrés Prieto-Moreno ha recibido las piezas, en Santa Bárbara (USA). Ya puede empezar a montar su clon&nbsp;:-)</li></ul></li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Photo1.JPG" class="image" title="Andrés Prieto-Moreno con las piezas de su Clon Han (click para ampliar)"><img alt="Andrés Prieto-Moreno con las piezas de su Clon Han (click para ampliar)" src="Prusa_Mendel_R2D2_files/Photo1_KjIE.JPG" width="1632" height="1224"></a>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>07/Marzo/2012</b>: Juego de piezas enviado a Jose Manuel Escuder, en castellón (por Correos)</li>
+<li> <b>06/Marzo/2012</b>: Impreso el noveno juego de piezas, para Jose Manuel Escuder Martínez (Clon Ahsoka Tano, Castellón)</li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04610.JPG" class="image" title="Noveno juego de piezas, para el clon Ahsoka Tano  (click para ampliar)"><img alt="Noveno juego de piezas, para el clon Ahsoka Tano  (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04610_KjIE.JPG" width="2048" height="1536"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04611.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04611_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>04/Marzo/2012</b>: 
+<ul><li> Entregado el juego de piezas a Ricardo Gómez (clon EA4-A)</li>
+<li> Enviadas las piezas a Andrés Prieto-Moreno (Clon Han, en Santa Bárbara, USA)</li></ul></li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04595.JPG" class="image" title="Entrega del juego de piezas a Ricardo Gómez (Clon EA4-A) (click para ampliar)"><img alt="Entrega del juego de piezas a Ricardo Gómez (Clon EA4-A) (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04595_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>03/Marzo/2012</b>: Listo el juego de piezas de la Prusa 2 para EA4-A, el clon de Ricardo gómez.<b> ¡¡Es el octavo juego!!</b></li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04593.JPG" class="image" title="Juego de piezas para EA4-A, el clon de Ricardo Gómez (click para ampliar)"><img alt="Juego de piezas para EA4-A, el clon de Ricardo Gómez (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04593_KjIE.JPG" width="2048" height="1536"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04594.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04594_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>02/Marzo/2012</b>: Listo el juego de piezas de la Prusa 2 para Han, el Clon de Andrés Prieto Moreno (En santa bárbara, California, USA). <b>¡¡Es el séptimo juego!!</b></li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04587.JPG" class="image" title="Juego de piezas para Han, el clon de Andrés Prieto-Moreno (click para ampliar)"><img alt="Juego de piezas para Han, el clon de Andrés Prieto-Moreno (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04587_KjIE.JPG" width="2048" height="1536"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04588.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04588_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>26/Febrero/2012</b>: 
+<ul><li> Impresas 3 patas para el cuadricóptero de Robcib. Tiempo de impresión: 5 horas y 12 minutos (1h y 44min cada una)</li>
+<li> Decorando un poco a R2&nbsp;;-)</li></ul></li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04576.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04576_KjIE.JPG" width="2048" height="1536"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04579.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04579_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr>
+<tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04569.JPG" class="image" title="Las 3 patas que faltaban del cuadricóptero (click para ampliar)"><img alt="Las 3 patas que faltaban del cuadricóptero (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04569_KjIE.JPG" width="2048" height="1536"></a>
+</td>
+<td>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>25/Febrero/2012</b>:
+<ul><li> Entregado el Juego de piezas a Carlos Menéndez (Clon: The Manx)</li>
+<li> Impreso un molde para la Prusa Mold, diseñado por César Augusto Fernández</li></ul></li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04559.JPG" class="image" title="Entrega oficial de las piezas a Carlos Menéndez (click para ampliar)"><img alt="Entrega oficial de las piezas a Carlos Menéndez (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04559_KjIE.JPG" width="2048" height="1536"></a>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04562.JPG" class="image" title="Molde de la pieza z-mount (click para ampliar)"><img alt="Molde de la pieza z-mount (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04562_KjIE.JPG" width="2048" height="1536"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04563.JPG" class="image" title="Molde con su caja junto a los molder para los insertos (click para ampliar)"><img alt="Molde con su caja junto a los molder para los insertos (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04563_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>24/Febrero/2012</b>: Impreso el juego completo de piezas de la Prusa 2 para Carlos Menéndez (¡<b>Es el sexto juego</b>!)</li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04553.JPG" class="image" title="Piezas para la Prusa 2 de Carlos Menéndez (click para ampliar)"><img alt="Piezas para la Prusa 2 de Carlos Menéndez (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04553_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr>
+</tbody></table></dd></dl>
+<ul><li> <b>21/Febrero/2012</b>:
+<ul><li> Entregado el juego completo de piezas de la printrbot a Javier del Álamo</li>
+<li> Entregadas las piezas de la printrbot a Nieves Cubo para completar su Printrbot</li></ul></li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04537.JPG" class="image" title="Entrega de piezas a Javier del Álamo (click para ampliar)"><img alt="Entrega de piezas a Javier del Álamo (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04537_KjIE.JPG" width="2048" height="1536"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04538.JPG" class="image" title="Entrega de piezas para Nieves Cubo (click para ampliar)"><img alt="Entrega de piezas para Nieves Cubo (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04538_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr>
+</tbody></table></dd></dl>
+<ul><li> <b>18/Febrero/2012</b>: 
+<ul><li> Ya está listas todas las piezas de la <a rel="nofollow" class="external text" href="https://www.iearobotics.com/wiki/index.php?title=Clone_wars:_Printrbot">Printrbot</a> de Javier del Álamo. Ya llevo impresos <b>5 Juegos</b> de impresoras (4 Prusas 2, 1 Printrbot)</li>
+<li> Impresas piezas para el Clon de Nicuma (una printrbot): dos bases, un x-motor, y un x-carriage.</li>
+<li> R2 se ha fundido el primer rollo de 2.3Kg de plástico. He puesto un rollo nuevo de ABS blanco-natural de German Reprap Foundation</li></ul></li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04508.JPG" class="image" title="Piezas de la Printrbot de Javier del Álamo (click para ampliar)"><img alt="Piezas de la Printrbot de Javier del Álamo (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04508_KjIE.JPG" width="2048" height="1536"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04510.JPG" class="image" title="Bolsa para Javi (click para ampliar)"><img alt="Bolsa para Javi (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04510_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr>
+<tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04517.JPG" class="image" title="Piezas de la Printrbot de Nicuma: 2 bases, x-motor y x-carriage (click para ampliar)"><img alt="Piezas de la Printrbot de Nicuma: 2 bases, x-motor y x-carriage (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04517_KjIE.JPG" width="2048" height="1536"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04518.JPG" class="image" title="Bolsa para Nicuma (click para ampliar)"><img alt="Bolsa para Nicuma (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04518_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr>
+<tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04519.JPG" class="image" title="Rollo de 2.3kg de ABS gastado(Click para ampliar)"><img alt="Rollo de 2.3kg de ABS gastado(Click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04519_KjIE.JPG" width="2048" height="1536"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04520.JPG" class="image" title="Nuevo Rollo de 2.3Kg de ABS blanco natural (Click para ampliar)"><img alt="Nuevo Rollo de 2.3Kg de ABS blanco natural (Click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04520_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>17/Febrero/2012</b>: 
+<ul><li> Abraham Alvaro Jiménez me ha confirmado que ha recibido las piezas que le envié (a Zamora)</li>
+<li> Javier Rodríguez (Almería) me confirma que ha recibido el paquete con las piezas de la Prusa</li></ul></li>
+<li> <b>15/Febrero/2012</b>: 
+<ul><li> Enviadas las piezas a Abraham Alvaro Jimenez de Zamora</li>
+<li> Entregada la pieza a Mario Almagro</li>
+<li> Entregadas las piezas a Santiago López</li>
+<li> Impresa una pata del cuadricóptero del DISAM. Diseñada por David Sanz. Tiempo: 1h y 46 minutos</li></ul></li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04429.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04429_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>14/Febrero/2012</b>: Impresas 3 <i>bearing guides</i> y 2 <i>belt clamp with nut holder</i> para Abraham Alvaro Jimenez de Zamora.</li>
+<li> <b>13/Febrero/2012</b>: 
+<ul><li> Piezas enviadas a Javier Rodríguez (Almería). Correo ordinario. Precio: 4.5€</li>
+<li> Impresas dos poleas T2.5 para Úterus y entregadas. Hay que probar si funcionan bien.</li></ul></li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04405.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04405_KjIE.JPG" width="2048" height="1536"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC_9257.jpg" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC_9257_KjIE.jpg" width="2048" height="1357"></a>
+</td></tr></tbody></table></dd></dl>
+<p><br>
+</p>
+<ul><li> <b>12/Febrero/2012</b>: 
+<ul><li> Impresa la pieza del cuadricóptero de Miguel Angel de Frutos. Ha tardado <b>3 horas y 28 minutos</b>. Es el record de la pieza más grande que he impreso nunca!!!</li>
+<li> Terminado el juego de piezas para Javier Rodríguez (de Almería). R2 ya ha impreso 4 juegos completos!</li>
+<li> Impreso otro engranaje más "Alianza rebelde" de David Estévez</li></ul></li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04397.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04397_KjIE.JPG" width="2048" height="1536"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04398.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04398_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr>
+<tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04385.JPG" class="image" title="Juego de piezas para Javier Rodríguez (click para ampliar)"><img alt="Juego de piezas para Javier Rodríguez (click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04385_KjIE.JPG" width="2048" height="1536"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04399.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Prusa_Mendel_R2D2_files/DSC04399_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>6/Febrero/2012</b>: 
+<ul><li> (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/blog/2012/02/06/primera-auto-reparacion-de-r2d2/">blog</a>) <b>Primera auto-reparación</b> de R2. Se ha roto el engranaje pequeño del extrusor. Tiempo de vida: unas 70 horas. Se ha sustituido por uno de la iteración 2 y ya está funcionado. Se ha aprovechado para atornillarlo al eje del motor en vez de pegarlo con pegamente bicomponente (poxypol).</li>
+<li> Todas las piezas para el <b>clon Úterus</b> de Cole están <b>terminadas</b>. ¡R2D2 ya ha impreso 3 juegos completos de piezas!!. Se han entregado</li>
+<li> Impresas 2 piezas más del humanoide de Fernando Remiro</li>
+<li> Impresa una pieza para Mario Almagro. Ha tardado 1h y media.</li></ul></li></ul>
+<dl><dd><table class="wikitable">
+
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04326.JPG" class="image"><img alt="" src="Prusa_Mendel_R2D2_files/300px-DSC04326_KjIE.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_R2D2_files/450px-DSC04326_KjIE.JPG 1.5x, Prusa_Mendel_R2D2_files/600px-DSC04326_KjIE.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04326.JPG" class="internal" title="Aumentar"></a></div>Limando el eje del motor para atornillar el engranaje nuevo (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04330.JPG" class="image"><img alt="" src="Prusa_Mendel_R2D2_files/300px-DSC04330_KjIE.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_R2D2_files/450px-DSC04330_KjIE.JPG 1.5x, Prusa_Mendel_R2D2_files/600px-DSC04330_KjIE.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04330.JPG" class="internal" title="Aumentar"></a></div>El extrusor con el nuevo engranaje (blanco) (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04331.JPG" class="image"><img alt="" src="Prusa_Mendel_R2D2_files/300px-DSC04331_KjIE.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_R2D2_files/450px-DSC04331_KjIE.JPG 1.5x, Prusa_Mendel_R2D2_files/600px-DSC04331_KjIE.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04331.JPG" class="internal" title="Aumentar"></a></div>El juego de piezas para Úterus. Las piezas que faltan ya las tiene Cole (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04335.JPG" class="image"><img alt="" src="Prusa_Mendel_R2D2_files/300px-DSC04335_KjIE.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_R2D2_files/450px-DSC04335_KjIE.JPG 1.5x, Prusa_Mendel_R2D2_files/600px-DSC04335_KjIE.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04335.JPG" class="internal" title="Aumentar"></a></div>Entrega oficial de las piezas para Úterus (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td>  <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04332.JPG" class="image"><img alt="" src="Prusa_Mendel_R2D2_files/300px-DSC04332_KjIE.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_R2D2_files/450px-DSC04332_KjIE.JPG 1.5x, Prusa_Mendel_R2D2_files/600px-DSC04332_KjIE.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04332.JPG" class="internal" title="Aumentar"></a></div>Dos piezas que faltaban del humanoide de Fernando Remiro (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td>  <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04336.JPG" class="image"><img alt="" src="Prusa_Mendel_R2D2_files/300px-DSC04336_KjIE.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_R2D2_files/450px-DSC04336_KjIE.JPG 1.5x, Prusa_Mendel_R2D2_files/600px-DSC04336_KjIE.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04336.JPG" class="internal" title="Aumentar"></a></div>Pieza impresa para Mario Almagro (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<p><br> 
+</p>
+<ul><li> <b>5/Febrero/2012</b>: Ya están listas las 3 "bearing guides" para el clon de <a rel="nofollow" class="external text" href="https://plus.google.com/u/0/108347194424547002289/posts">Santiago López</a></li></ul>
+<dl><dd><table class="wikitable">
+
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04311.JPG" class="image"><img alt="DSC04311.JPG" src="Prusa_Mendel_R2D2_files/DSC04311_KjIE.JPG" width="2048" height="1536"></a>
+</td>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04313.JPG" class="image"><img alt="DSC04313.JPG" src="Prusa_Mendel_R2D2_files/DSC04313_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>4/Febrero/2012</b>: Impresas todas las piezas del humanoide de <b>Fernando Remiro</b></li></ul>
+<dl><dd><table class="wikitable">
+
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04307.JPG" class="image"><img alt="DSC04307.JPG" src="Prusa_Mendel_R2D2_files/DSC04307_KjIE.JPG" width="2048" height="1536"></a>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>3/Febrero/2012</b>:
+<ul><li> Impresas las primeras piezas de Úterus, el clon de Juanma amuedo (Cole)</li>
+<li> Impresas dos piezas para el Robot de Fernando Remiro</li>
+<li> Hito importante: primera entrega de piezas de Prusa de un clon para la construcción de otro clon</li></ul></li></ul>
+<dl><dd><table class="wikitable">
+
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04262.JPG" class="image"><img alt="" src="Prusa_Mendel_R2D2_files/300px-DSC04262_KjIE.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_R2D2_files/450px-DSC04262_KjIE.JPG 1.5x, Prusa_Mendel_R2D2_files/600px-DSC04262_KjIE.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04262.JPG" class="internal" title="Aumentar"></a></div>Piezas de Úterus (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04263.JPG" class="image"><img alt="" src="Prusa_Mendel_R2D2_files/300px-DSC04263_KjIE.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_R2D2_files/450px-DSC04263_KjIE.JPG 1.5x, Prusa_Mendel_R2D2_files/600px-DSC04263_KjIE.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04263.JPG" class="internal" title="Aumentar"></a></div>Piezas para el robot de Fernando Remiro (<i>Click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04264.JPG" class="image"><img alt="" src="Prusa_Mendel_R2D2_files/300px-DSC04264_KjIE.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_R2D2_files/450px-DSC04264_KjIE.JPG 1.5x, Prusa_Mendel_R2D2_files/600px-DSC04264_KjIE.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04264.JPG" class="internal" title="Aumentar"></a></div>Entrega oficial del primer kit de piezas de la Prusa a Miguel Angel de Frutos (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>2/Febrero/2012</b>: 
+<ul><li> Juego de Piezas de Miguel Angel de Frutos Terminado!. R2D2 Ya lleva 2 juegos completos impresos!</li>
+<li> Se empiezan a imprimir las piezas para el clon Úterus de Juan Manuel Amuedo (Cole)</li></ul></li></ul>
+<dl><dd><table class="wikitable">
+
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04261.JPG" class="image"><img alt="" src="Prusa_Mendel_R2D2_files/300px-DSC04261_KjIE.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_R2D2_files/450px-DSC04261_KjIE.JPG 1.5x, Prusa_Mendel_R2D2_files/600px-DSC04261_KjIE.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04261.JPG" class="internal" title="Aumentar"></a></div>Juego de piezas completo para Miguel Angel de Frutos (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04260.JPG" class="image"><img alt="" src="Prusa_Mendel_R2D2_files/300px-DSC04260_KjIE.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_R2D2_files/450px-DSC04260_KjIE.JPG 1.5x, Prusa_Mendel_R2D2_files/600px-DSC04260_KjIE.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04260.JPG" class="internal" title="Aumentar"></a></div>Los dos juegos de piezas impresos por R2D2: para R3 y para Miguel Angel (<i>Click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>31/Enero/2012</b>: (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/blog/2012/01/31/r2d2-tocando-la-marcha-imperial/">Blog</a>) (<a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=rml-ChsPEEM">Youtube</a>) <b>R2D2</b> tocando la marcha imperial de Star wars</li>
+<li> <b>30/Enero/2012</b>: Impresas 3 Bearing Guides para la Prusa de <b>Juan Manuel Herrera López</b> de <b>Sevilla</b> (enviadas por correo ordinario). <b>Actualización: 4/Feb/2012</b>: Juan Manuel me ha confirmado que ha recibido las piezas</li></ul>
+<dl><dd><table class="wikitable">
+
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04210.JPG" class="image"><img alt="" src="Prusa_Mendel_R2D2_files/300px-DSC04210_KjIE.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_R2D2_files/450px-DSC04210_KjIE.JPG 1.5x, Prusa_Mendel_R2D2_files/600px-DSC04210_KjIE.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04210.JPG" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>29/Enero/2012</b>: 
+<ul><li> Se empiezan a imprimir las piezas para el clon de <b>Miguel Angel de Frutos</b> (<a rel="nofollow" class="external text" href="https://aerobotclubderobticadeaeronuticos.blogspot.com/">Aerobot</a>)</li>
+<li> Impreso una pieza para sacar un molde de silicona de las "bar clamps" de la Prusa</li>
+<li> Impresas las piezas: Doblador de componentes y soporte para auriculares</li></ul></li></ul>
+<dl><dd><table class="wikitable">
+
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04205.JPG" class="image"><img alt="" src="Prusa_Mendel_R2D2_files/300px-DSC04205_KjIE.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_R2D2_files/450px-DSC04205_KjIE.JPG 1.5x, Prusa_Mendel_R2D2_files/600px-DSC04205_KjIE.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04205.JPG" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04194.JPG" class="image"><img alt="" src="Prusa_Mendel_R2D2_files/300px-DSC04194_KjIE.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_R2D2_files/450px-DSC04194_KjIE.JPG 1.5x, Prusa_Mendel_R2D2_files/600px-DSC04194_KjIE.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04194.JPG" class="internal" title="Aumentar"></a></div>Pieza para hacer un molde para 4 "bar-clamps" (<i>Click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04190.JPG" class="image"><img alt="" src="Prusa_Mendel_R2D2_files/300px-DSC04190_KjIE.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_R2D2_files/450px-DSC04190_KjIE.JPG 1.5x, Prusa_Mendel_R2D2_files/600px-DSC04190_KjIE.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04190.JPG" class="internal" title="Aumentar"></a></div><a rel="nofollow" class="external text" href="http://www.thingiverse.com/thing:14594">Doblador de componentes</a> (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04195.JPG" class="image"><img alt="" src="Prusa_Mendel_R2D2_files/300px-DSC04195_KjIE.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_R2D2_files/450px-DSC04195_KjIE.JPG 1.5x, Prusa_Mendel_R2D2_files/600px-DSC04195_KjIE.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC04195.JPG" class="internal" title="Aumentar"></a></div><a rel="nofollow" class="external text" href="http://www.thingiverse.com/thing:16591">Soporte para auriculares</a> (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>18/Enero/2012</b>: (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/blog/2012/01/24/mi-clon-r2-ha-impreso-todas-las-piezas-de-r3/">Blog</a>) Todas las piezas de R3 impresas! El <strong class="selflink">Clon R2D2</strong> sube a la categoría de <b>Jedi Máster</b>&nbsp;:-)</li></ul>
+<dl><dd><table class="wikitable">
+
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:R3-printable-parts.jpg" class="image"><img alt="" src="Prusa_Mendel_R2D2_files/300px-R3-printable-parts_KjIE.jpg" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_R2D2_files/450px-R3-printable-parts_KjIE.jpg 1.5x, Prusa_Mendel_R2D2_files/600px-R3-printable-parts_KjIE.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:R3-printable-parts.jpg" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:R2-with-R3-parts.jpg" class="image"><img alt="" src="Prusa_Mendel_R2D2_files/300px-R2-with-R3-parts_KjIE.jpg" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_R2D2_files/450px-R2-with-R3-parts_KjIE.jpg 1.5x, Prusa_Mendel_R2D2_files/600px-R2-with-R3-parts_KjIE.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:R2-with-R3-parts.jpg" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>02/Enero/2012</b>: Se empiezan a imprimir las piezas de la nueva <a href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteraci%C3%B3n_2:_R3" title="Prusa Mendel Iteración 2: R3">impresora R3</a> (Generation 2!)</li>
+<li> <b>31/Dic/2011</b>: (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/blog/2012/01/01/clone-wars-r2d2-al-99-5/">Blog</a>) R2D2 ha impreso muchas piezas&nbsp;:-)</li></ul>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<td>
+<ul><li> <b>24/Dic/2011</b>: (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/blog/2011/12/24/clone-wars-r2d2-ha-impreso-su-primera-pieza/">blog</a>) <b>R2D2 ha impreso su primera pieza</b>, a las 10h de la mañana&nbsp;:-D </li></ul>
+</td></tr></tbody></table>
+<ul><li> <b>21/Dic/2011</b>: (<a rel="nofollow" class="external autonumber" href="https://www.iearobotics.com/blog/2011/12/21/clone-wars-mi-extrusor-ya-extruye/">[1]</a>) R2D2 ya está extruyendo! Se ha sustituido el hot end por un Budaschnozzle de Makergear, comprado en Lulzbot.</li></ul>
+<ul><li> <b>11/Dic/2011</b>: (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/blog/2011/12/11/clone-wars-el-clon-r2d2-esta-terminado/">Blog</a>) El clon <b>R2D2</b> está terminado!! Aunque todavía no está imprimiendo por problemas con el extrusor.Probablemente el hot-end esté obstruido.</li></ul>
+<ul><li> <b>04/Octubre/2011</b>: (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/blog/2011/10/04/clone-wars-todos-los-ejes-de-mi-clon-estan-funcionando/">Blog</a>) El eje X del Clon R2D2 ya está funcionando!! Todos los ejes están operativos!!!&nbsp;:-)</li></ul>
+<ul><li> <b>19/Septiembre/2011</b>: (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/blog/2011/09/21/clone-wars-el-eje-z-de-mi-clon-esta-montado-y-funcionando/">Blog</a>) El eje Z del Clon R2D2 ya está funcionando!!</li></ul>
+<ul><li> <b>14/Septiembre/2011</b>: (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/blog/2011/09/14/clone-wars-el-eje-y-ya-esta-funcionando/">Blog</a>) El eje Y del Clon R2D2 ya está funcionando!!</li></ul>
+<ul><li> <b>31/Mayo/2011</b>: (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/blog/2011/06/04/clone-wars-ha-llegado-el-pedido-de-material/">Blog</a>) Ha llegado el pedido de xyzprinters!</li></ul>
+<ul><li> <b>03/Mayo/2011</b>: (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/blog/2011/05/03/clone-wars-mas-piezas-impresas/">Blog</a>) Más piezas impresas:</li></ul>
+<dl><dd><table class="wikitable">
+
+<tbody><tr>
+<td>
+<ul><li> PLA bushings x 12 (4 min)</li>
+<li> X end idler x 1 (1h 33 min)</li>
+<li> X end motor x 1 (1h 51 min)</li>
+<li> Rod Clamp x 2 (6 min)</li>
+<li> Coupling x 2 (14 min)</li>
+<li> X carriage x 1 (1h)</li>
+<li> Endstop holder x 3 (9 min)</li></ul>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>15/Abril/2011</b>: (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/blog/2011/04/18/clow-wars-parte-superior-ensamblada-primera-reunion/">Blog</a>)  Completadas las partes 4 y 5: Colocadas las varillas de la parte superior. Apretadas todas las tuercas.</li></ul>
+<dl><dd><b>NOTA</b>: Al apretar las tuercas la estructura cojeaba bastante. Para evitarlo he tenido que hacerme <b>dos varas de madera</b> de longitudes <b>290mm</b> y <b>234mm</b> para que todas las distancias sean exactamente iguales. La estructura ha mejorado mucho.</dd></dl>
+<ul><li> <b>12/Abril/2011</b>: (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/blog/2011/04/12/clon-wars-varillas-traseras-ensambladas/">Blog</a>) Completada la parte 3 de las instrucciones: Ensambladas las varillas traseras</li></ul>
+<ul><li> <b>11/Abril/2011</b>: (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/blog/2011/04/11/clon-wars-se-vislumbra-la-impresora/">Blog</a>) Completada la parte 2 de las instrucciones. Montaje de las varillas frontales. Ya se vislumbra la impresora&nbsp;:-)</li></ul>
+<ul><li> <b>10/Abril/2011</b>: (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/blog/2011/04/10/clon-wars-mas-piezas-impresas/">Blog</a>) Más piezas impresas: Y motor bracket x 1 (28 min), z motor mount   x 2 (1h 10min), Pulley x 2 (9 min), Belt-clamp x 4 (3 min)</li></ul>
+<ul><li> <b>09/Abril/2011</b>: (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/blog/2011/04/09/clon-wars-bastidores-triangulares-montados/">Blog</a>). Realizada la parte 1 de las instrucciones: <b>montados los dos bastidores triangulares laterales</b>. Es extremadamente fácil!!! (una vez que se tienen las piezas)</li></ul>
+<dl><dd><table class="wikitable">
+
+<tbody><tr>
+<td>
+<p><b>Piezas usadas</b>:
+</p>
+<ul><li> 6 varillas roscadas M8 de 370mm</li>
+<li> 2 vértices de bastidor </li>
+<li> 4 vértices de bastidor con pie</li>
+<li> 2 abrazaderas de barra</li>
+<li> 14 tuercas M8</li>
+<li> 14 arandelas M8</li></ul>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>08/Abril/2011</b>: (<a rel="nofollow" class="external text" href="https://www.iearobotics.com/blog/2011/04/08/clon-wars-primeras-compras/">Blog</a>). Ya están cortadas las varillas roscadas. En total se necesitan 16, de los tamaños que están documentados en la sección de material.</li></ul>
+<ul><li> <b>06/Abril/2011</b>: Hemos comprado 10 varillas roscadas M8 de 1m, a 0.80€ cada una, 100 tuercas M8 (5€) y 100 arandelas M8 (5€). Coste total: 18€. Tienda: Ferretería Imán, en Leganés</li></ul>
+<dl><dd><table class="wikitable">
+
+<tbody><tr>
+<td>
+<p><b>Piezas compradas</b>:
+</p>
+<ul><li> 10 varillas roscadas, M8, 1m de largo</li>
+<li> 100 Tuercas M8</li>
+<li> 100 Arandelas M8</li></ul>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>5/Abril/2011</b>:(<a rel="nofollow" class="external text" href="https://www.iearobotics.com/blog/2011/04/05/clon-wars-clonando-impresoras-3d/">Blog</a>) Clon <b>R2D2</b>: Ya tenemos impresas 14 piezas en color blanco y plástico ABS.</li></ul>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<ul><li> <a href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteraci%C3%B3n_2:_R3" title="Prusa Mendel Iteración 2: R3">Impresora R3</a></li>
+<li> <a rel="nofollow" class="external text" href="http://reprap.org/wiki/LulzBot/Budaschnozzle">Budaschnozzle</a></li>
+<li> <a rel="nofollow" class="external text" href="http://www.lulzbot.com/en/hot-ends/1-budaschnozzle.html">Comprar Budaschnozzle en Lulzbot</a></li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/michthom/MIDI-to-CNC/">Midi-to-CNC</a> git repository. Para generar canciones tocadas por la impresora</li></ul>
+<table class="wikitable">
+
+<tbody><tr>
+<td>
+<p><img alt="Proyecto Clone wars" src="Prusa_Mendel_R2D2_files/Clone_Wars_logo-peq_KjIE.png" title="Proyecto Clone wars" width="200" height="137">
+</p>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://asrob.uc3m.es/index.php/Proyecto:_Clone_wars">Proyecto Clone Wars</a>
+</td></tr></tbody></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20261020070623
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.137 seconds
+Real time usage: 0.210 seconds
+Preprocessor visited node count: 71/1000000
+Preprocessor generated node count: 109/1000000
+Post‐expand include size: 800/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    1.985      1 - -total
+ 88.31%    1.753      4 - Plantilla:Tablabonita
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel:_R2D2&amp;oldid=15818">https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel:_R2D2&amp;oldid=15818</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categorías</a>: <ul><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Reprap" title="Categoría:Reprap">Reprap</a></li><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Dinast%C3%ADa_R" title="Categoría:Dinastía R">Dinastía R</a></li><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Generaci%C3%B3n_1" title="Categoría:Generación 1">Generación 1</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel:_R2D2" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://www.iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Prusa_Mendel:_R2D2&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel:_R2D2&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel:_R2D2&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Prusa+Mendel%3A+R2D2" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Prusa_Mendel:_R2D2" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Prusa_Mendel:_R2D2" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel:_R2D2&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel:_R2D2&amp;oldid=15818" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel:_R2D2&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Prusa_Mendel_R2D2_files/gnu-fdl_KjIE.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="Prusa_Mendel_R2D2_files/poweredby_mediawiki_88x31_KjIE.png" alt="Powered by MediaWiki" srcset="Prusa_Mendel_R2D2_files/poweredby_mediawiki_132x47_KjIE.png 1.5x, Prusa_Mendel_R2D2_files/poweredby_mediawiki_176x62_KjIE.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 1 sep 2012 a las 03:04.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":290});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
