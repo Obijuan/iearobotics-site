@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../style_iHeX.css">
+
+  <!-- 🚧 CAMBIAR 🚧 -->
+  <title>¿¿Viagra en nuestra web?? Noooooooo!!!!!!!!</title>
+</head>
+
+
+<body class="group-blog">
+<div id="page" class="site">
+  <div class="site-inner">
+		<div id="content" class="site-content">
+			<div class="content-area">
+
+		
+<!-- Artículo -->        
+<article>
+	<header class="entry-header">
+    <!-- 🚧 CAMBIAR 🚧 -->
+	  <h1 class="entry-title">¿¿Viagra en nuestra web?? Noooooooo!!!!!!!!</h1>
+  </header><!-- .entry-header -->
+
+<div class="entry-content" style="margin-bottom: 50px;">
+	<!-- 🚧 CAMBIAR 🚧 -->
+		<p><a href="https://www.iearobotics.com/blog/wp-content/uploads/2012/09/iearobotics-attack.png"><img fetchpriority="high" decoding="async" src="index_files/iearobotics-attack_r7Om.png" alt="" title="iearobotics-attack" width="500" height="376" class="aligncenter size-full wp-image-3611" srcset="index_files/iearobotics-attack_r7Om.png 500w, index_files/iearobotics-attack-300x225_r7Om.png 300w" sizes="(max-width: 500px) 85vw, 500px"></a></p>
+<p>La <a href="../../../../wiki/">web de iearobotics</a> ha sido infectada por el famoso “<strong>google viagra attack</strong>“. 
+	Yo no soy webmaster, ni tengo mucha idea de administrar webs. Uso la wiki para publicar información libre, 
+	accesible para todo el mundo.</p>
+
+<p>  Este es un post fundamentalmente para mí, para recordar en el futuro cómo he arreglado esto (¿Está realmente solucionado?).</p>
+
+<h2>El primer aviso </h2>
+<p>  Este <strong>malware</strong> te redirecciona las páginas de la wiki hacia las típicas de viagra con las que siempre 
+	nos <em>spamnean</em>. PERO sólo lo hace con los usuarios. <strong>Si eres el administrador no ves absolutamente nada</strong> y 
+	te parece que está todo normal. Yo la wiki de iearobotics la uso a diario… así que cualquier ataque me doy cuenta en seguida… 
+	pero esta vez no.</p>
+<p>  La primera noticia la tuve a través de <a href="http://carlosgs.es/">Carlos García</a>. Me envió un correo con 
+	<a href="../../../../wiki/Mini-Skybot.html"> el enlace del robot Mini-Skybot</a> diciéndome que me había atacado la wiki. 
+	Inmediatamente fui a ver la página y …. allí estaba tal cual. Sin ningún tipo de ataque. Busqué y rebusqué 
+	pero nada encontré. No obstante, me quedé con la mosa detrás de la oreja. Si me lo hubiera dicho otra persona dudaría, 
+	pero me lo dijo Carlos… así que algo tendría que haber ahí.</p>
+
+<h2>Houston, tenemos un problema</h2>
+<p>  Busqué en google la cadena “google viagra” y llegué al 
+	<a href="https://productforums.google.com/forum/#!forum/webmasters">Google Webmaster Tools Forum</a>. Allí encontré 
+	que muchos más tenían este mismo problema. En uno de los mensajes ponían un enlace a 
+	<a href="http://redleg-redleg.blogspot.com.es/2011/02/pharmacy-hack.html">este post</a> que 
+	<strong>ha sido todo un descubrimiento</strong> y todo lo que he conseguido y estoy publicando aquí ha sido 
+	gracias a esa información.</p>
+
+<p>  Primero, para estar seguro que tu sitio está contaminado sólo tienes que ir a google y buscar directamente en tu web. 
+	Yo en mi caso he hecho esto:</p>
+<p><em>site:www.iearobotics.com (online|pharmacy|cialis|viagra|xanax)</em></p>
+<p>y me salen…. <strong>¡Más de 305 resultados!</strong> ¡Dios mío! 
+	¡Iearobotics se ha convertido en un puto bazar de venta de viagras! 
+	<em>¡Houston! ¡Houston! ¡Tenemos un problema!</em></p>
+
+<h2>WTF??</h2>
+<p>  Lo siguiente es saber exactamente qué es lo que ve la gente, 
+	ya que yo como administrador lo veo todo bien. De esta manera podré saber cuándo está arreglado. 
+	Eso lo podemos ver desde este <a href="http://web-sniffer.net/">HTTP Request and Response Header viewer</a>. 
+	Efectivamente, al introducir la URL de la wiki del miniskybot ya se puede ver que la página que devuelve está 
+	llena de <em>viagra and friends</em>.</p>
+
+<h2>Confirmado: sufrimos viagraitis. ¿Y ahora qué?</h2>
+<p>  Ahora toca localizar el archivo infectado. Tarea jodida. Como me está afectando a las páginas de la wiki, 
+	lo normal es comprobar primero si está en algún fichero php de mediawiki. Así que me conecté 
+	por SSH y <strong>dentro de la carpeta wiki</strong> ejecuté este búsqueda:</p>
+<p><code><br>
+$ grep -r base64_decode *<br>
+</code></p>
+<p>El -r es para que haga búsqueda recursiva por todos los directorios dentro del wiki.</p>
+<p>…. y…..  ¡Voila!</p>
+<p><code><br>
+includes/WebStart.php: eval(gzuncompress(base64_decode('<strong>eF7NPQ1z2zay<br>
+f4XRZGypcVwCIAjSDhPnEt+18/Ka</strong>....<br>
+</code></p>
+
+<p>Aquí sólo he puesto un poco el comienzo, pero el código es mucho más largo. 
+	Para los que tengan curiosidad, en 
+	<a href="../../../../downloads/2012-09-04-iearobotics-wiki-malware/iearobotics-wiki-malware.zip">este ZIP</a> 
+	está el <strong>fichero original infectado</strong>, junto con las versiones decodificadas.</p>
+
+<p>Así que ya tenemos un candidato, el fichero <strong>includes/WebStart.php</strong>. Hay que eliminar 
+	el código que han metido ahí. Luego volvemos a comprobar con el <em>viewer</em> y vemos que ahora sí que 
+	devuelve la página de la wiki original.</p>
+
+<h2>Pero en google sigue apareciendo la P… viagra</h2>
+<p>Con este “parche” hemos conseguido que la gente pueda volver a entrar en la wiki y que vea las páginas… 
+	pero <strong>en google sigue cacheada la farmacia</strong>, así que la tendremos ahí una temporadita más…  
+	Posiblemente exista una forma de solucionarlo, pero ahora mismo no sé cómo.</p>
+
+<h2>Pero… y ¿Cómo han entrado?</h2>
+
+<p>Pues ni idea 🙁  Supongo que tocará actualizar el wordpress y la wiki, además de cambiar las claves de acceso.</p>
+
+<h2>Confirmado, el “parche” funciona</h2>
+<p>Justo mientras escribo este post, <a href="http://carlosgs.es/">Carlos García</a> me confirma que puede ver la wiki correctamente. 
+	¡ufff! ¡Qué alivio! Por supuesto, en cualquier momento pueden volver a entrar… pero es un alivio haber encontrado una 
+	solución provisional.</p>
+
+<h2>Analizando el bicho encontrado…</h2>
+<p>El malware encontrado la verdad es que …. NO TIENE DESPERDICIO!  Yo es un mundo que desconocía, 
+	pero hay que reconocer la creatividad e ingenio para ofuscar el código. 
+	En un post futuro mostraré los resultados de mis disecciones…</p>
+<p><a href="../../../../wiki/Juan_Gonzalez_Main.html">Obijuan</a></p>
+
+
+
+</div><!-- .entry-content -->
+
+  <footer class="entry-footer">
+		<span class="byline">
+			<span class="author vcard">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<img alt="" src="../../../obijuan.jpeg" 
+			    class="avatar avatar-49 photo" height="49" width="49" decoding="async">
+			</span>
+		</span>
+
+		<span class="posted-on">
+      <!-- 🚧 CAMBIAR 🚧 -->
+			September 4, 2012
+		</span>
+		
+	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+	
+
+
+
+	<nav class="navigation post-navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links">
+
+			<div class="nav-previous">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<a href="../../09/03/" rel="prev">
+					<span class="meta-nav" aria-hidden="true">Previous</span>
+
+          <!-- 🚧 CAMBIAR 🚧 -->
+				  <span class="post-title">Video-tutoriales de construcción de una impresora 3D de tipo Prusa 2</span>
+        </a>
+			</div>
+
+			<div class="nav-next">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<a href="https://www.iearobotics.com/blog/2012/09/10/enhancing-openscad-with-the-attach-library/" 
+					 rel="next">
+					<span class="meta-nav" aria-hidden="true">Next</span>
+
+          <!-- 🚧 CAMBIAR 🚧 --> 
+					<span class="post-title">Enhancing Openscad with the attach library</span>
+        		</a>
+			</div>
+		</div>
+	</nav>
+
+	
+</div><!-- .content-area -->
+</div><!-- .site-content -->
+</div><!-- .site-inner -->
+</div><!-- .site -->
+
+
+</body>
+</html>
+
