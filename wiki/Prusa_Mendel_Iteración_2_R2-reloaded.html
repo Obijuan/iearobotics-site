@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Prusa Mendel Iteración 2: R2-reloaded - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Prusa_Mendel_Iteración_2:_R2-reloaded","wgTitle":"Prusa Mendel Iteración 2: R2-reloaded","wgCurRevisionId":17666,"wgRevisionId":17666,"wgArticleId":2547,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Reprap"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Prusa_Mendel_Iteración_2:_R2-reloaded","wgRelevantArticleId":2547,"wgRequestId":"atteoDdlLwtzjMTjBB0_3gAADp8","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/load_vM3w.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/load_002_vM3w.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://www.iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://www.iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/load_vM3w.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Prusa_Mendel_Iteración_2_R2-reloaded rootpage-Prusa_Mendel_Iteración_2_R2-reloaded skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Prusa Mendel Iteración 2: R2-reloaded</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><p><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Reprap-gen3.png" class="image" title="300px"><img alt="300px" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/Reprap-gen3_vM3w.png" width="570" height="216"></a>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#M.C3.A9ritos"><span class="tocnumber">2</span> <span class="toctext">Méritos</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Ficha"><span class="tocnumber">3</span> <span class="toctext">Ficha</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Autor"><span class="tocnumber">4</span> <span class="toctext">Autor</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Descargas"><span class="tocnumber">5</span> <span class="toctext">Descargas</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Software"><span class="tocnumber">5.1</span> <span class="toctext">Software</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Perfiles"><span class="tocnumber">5.2</span> <span class="toctext">Perfiles</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Firmware"><span class="tocnumber">5.3</span> <span class="toctext">Firmware</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Fotos"><span class="tocnumber">6</span> <span class="toctext">Fotos</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Tareas"><span class="tocnumber">7</span> <span class="toctext">Tareas</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Historia"><span class="tocnumber">8</span> <span class="toctext">Historia</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Enlaces"><span class="tocnumber">9</span> <span class="toctext">Enlaces</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>R2-Reloaded es la <b>reencarnación</b> de la impresora R2D2. Casi todas las vitaminas de R2D2 se ha reutilizado para la construcción de R2-Reloaded. Las piezas las ha impreso R3, hija de R2D2.
+</p>
+<h2><span class="mw-headline" id="M.C3.A9ritos">Méritos</span></h2>
+<table class="wikitable">
+<tbody><tr>
+<td>  <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Icono_premio.png" class="image"><img alt="Icono premio.png" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/Icono_premio_vM3w.png" width="20" height="39"></a> Primer clon reencarnado en Clone wars.  R2-Reloaded es la reencarnación de <a href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel:_R2D2" title="Prusa Mendel: R2D2">R2D2</a>
+</td></tr>
+<tr>
+<td>  <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Icono_premio.png" class="image"><img alt="Icono premio.png" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/Icono_premio_vM3w.png" width="20" height="39"></a> Primer clon nacido para "enseñar". Su proceso de construcción se ha documentando a medida que se iba construyendo: <a href="https://www.iearobotics.com/wiki/index.php?title=Guia_de_montaje_de_la_Prusa_2" title="Guia de montaje de la Prusa 2">Video-tutoriales de construcción de una Prusa i2</a>
+</td></tr>
+</tbody></table>
+<h2><span class="mw-headline" id="Ficha">Ficha</span></h2>
+<table class="wikitable" style="width:100%">
+
+<tbody><tr>
+<td> <center><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:R2-Reloaded-decorada.png" class="image" title="300px"><img alt="300px" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/R2-Reloaded-decorada_vM3w.png" width="2904" height="2736"></a></center>
+</td>
+<td>
+<ul><li> <b>Nombre</b>: <b><font color="#0000FF">R2 Reloaded</font></b></li>
+<li> <b>Familia</b>: <a rel="nofollow" class="external text" href="http://reprap.org/wiki/Prusa_Mendel">Prusa Mendel</a> (iteración 2)</li>
+<li> <b>Generación</b>: 3</li>
+<li> <b>Material</b>: Plástico ABS</li>
+<li> <b>Color</b>: Negro</li>
+<li> <b>Impresora Progenitora</b>:  <a href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteraci%C3%B3n_2:_R3" title="Prusa Mendel Iteración 2: R3">R3</a></li>
+<li> <b>Electrónica</b>: Ramps 1.2</li>
+<li> <b>Firmware</b>: Sprinter super-estable 0.2</li>
+<li> <b>Extrusor</b>: Jonaskuehling</li>
+<li> <b>Hot-End</b>:  Budaschnozzle 1.1</li>
+<li> <b>Nacimiento</b>: 28/Agosto/2012</li></ul>
+</td>
+<td> <center><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:R2-reloaded.png" class="image" title="150px"><img alt="150px" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/R2-reloaded_vM3w.png" width="485" height="600"></a> </center>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Autor">Autor</span></h2>
+<ul><li> <a href="https://www.iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main">Juan González Gómez</a> (Obijuan)</li></ul>
+<h2><span class="mw-headline" id="Descargas">Descargas</span></h2>
+<h3><span class="mw-headline" id="Software">Software</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2012-08-31-R2-Reloaded/Printrun-2012-11-02-SF50-R2Reloaded.zip">Printrun-2012-11-02-SF50-R2Reloaded.zip</a>
+</td>
+<td> Software PrintRun (Nov-2012) + Skeinforge 50 + perfiles para Linux.
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2012-08-31-R2-Reloaded/Printrun-2012-04-02-SF50-R2-Reloaded.zip">Printrun-2012-04-02-SF50-R2-Reloaded.zip</a>
+</td>
+<td> Software PrintRun + Skeinforge 50 + perfiles para Linux. Incluye la carpeta test con piezas para probar la Prusa: moneda, cubo de calibración, etc...
+<p>(Para Linux: Instalar las dependencias: sudo apt-get install python-serial python-wxgtk2.8 python-pyglet ) (<b>Obsoleto</b>)
+</p>
+</td></tr>
+</tbody></table>
+<h3><span class="mw-headline" id="Perfiles">Perfiles</span></h3>
+<p>Los perfiles originales de skeinforge se instalan en skeinforge/skeinforge_application (carpetas alterations y profile). Los que skeinforge usa realmente están en $HOME/.skeinforge (skeinforge los copia ahí y las modificaciones se guardan en el home)
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2012-08-31-R2-Reloaded/R2R-profiles-v2-skeinforge50.zip">R2R-profiles-v2-skeinforge50.zip</a>
+</td>
+<td> Perfiles, v12. Adaptados al firmware Sprinter 1.3.22
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2012-08-31-R2-Reloaded/R2R-profile-v1-skeinforge50.zip">R2R-profile-v1-skeinforge50.zip</a>
+</td>
+<td> Perfiles originales, v1. Adaptados al firmware Sprinter Super-estable (<b>obsoletos</b>)
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Firmware">Firmware</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2012-08-31-R2-Reloaded/R2R-Sprinter-1.3.22T-Nov-2012.zip">R2R-Sprinter-1.3.22T-Nov-2012.zip</a>
+</td>
+<td> Firmware: Sprinter 1.3.22T, de Nov de 2012
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2012-08-31-R2-Reloaded/R2-Reloaded-Sprinter-Superestable-0.2.zip">R2-Reloaded-Sprinter-Superestable-0.2.zip</a>
+</td>
+<td> Firmware: Sprinter Super-estable, configurado para R2-Reloaded! (<b>Obsoleto</b>)
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Fotos">Fotos</span></h2>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://plus.google.com/u/0/photos/109138697406392447933/albums/5771586254571654305">Álbum de fotos en google+</a>
+</th></tr></tbody></table>
+<h2><span class="mw-headline" id="Tareas">Tareas</span></h2>
+<ul><li> Imprimir ganchos de Ikea</li>
+<li> <strike>Probar la laca como adherente</strike></li>
+<li> <strike>Imprimir en PLA</strike></li>
+<li> <strike>Imprimir los thumbwheels</strike></li>
+<li> <strike>Colocar los thumbwheels</strike></li>
+<li> <strike>Imprimir decoradores</strike></li>
+<li> <strike>Imprimir iniciales</strike></li>
+<li> <strike>Imprimir el regulador de altura</strike></li>
+<li> <strike>Colocar el regulador de altura</strike></li>
+<li> <strike>Desplazar eje y a la derecha para ganar los 2cm perdidos</strike></li>
+<li> <strike>Colocar el espejo de ikea</strike></li>
+<li> <strike>Probar el "magic glue": ABS + acetona</strike></li>
+<li> <strike>Actualizar Sprinter a la última versión</strike></li>
+<li> <strike>Comprobar si la última versión de Sprinter se descarga bien con Arduino 1.0 (o superior)</strike></li></ul>
+<h2><span class="mw-headline" id="Historia">Historia</span></h2>
+<ul><li> <b>01/Feb/2013</b>: Impresos secciones grandes en PLA. La máxima es de 19cm de diámetro y 6cm de altura</li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC02317.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC02317_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC02317_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC02317_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC02317.JPG" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC02318.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC02318_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC02318_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC02318_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC02318.JPG" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC02323.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC02323_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC02323_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC02323_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC02323.JPG" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td>
+</td></tr></tbody></table></dd></dl>
+<p><br>
+</p>
+<ul><li> <b>29/Enero/2013</b>: R2-Reloaded está en el Centro Tecnológico de Repsol, junto a P1</li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC02289.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC02289_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC02289_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC02289_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC02289.JPG" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>18/Dic/2012</b>: Impreso un anillo grande, de 19cm de diámetro y 6cm de alto. Para evitar que se despegase de la base he probado a poner en la base ABS + acetona: Mano de santo! Eso no hay quien lo despegue!!!</li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC02035.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC02035_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC02035_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC02035_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC02035.JPG" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC02037.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC02037_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC02037_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC02037_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC02037.JPG" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<p><br>
+</p>
+<ul><li> <b>13/Dic/2012</b>: Cambiado el firmware a Sprinter 1.3.22T. Lo dejaré en pruebas un tiempo hasta darlo por validado</li></ul>
+<ul><li> <b>08/Dic/2012</b>: ¡R2-Reloaded decorada!</li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01932.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC01932_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC01932_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC01932_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01932.JPG" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<p><br>
+</p>
+<ul><li> <b>30/Nov/2012</b>: Entrega de piezas (9ª donación) a Diego del Campo. Mi mujer la ha hecho en mi nombre&nbsp;:-)</li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:20121130_132648.jpg" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-20121130_132648_vM3w.jpg" width="300" height="400" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-20121130_132648_vM3w.jpg 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-20121130_132648_vM3w.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:20121130_132648.jpg" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<p><br>
+</p>
+<ul><li> <b>30/Nov/2012</b>: Enviada mi "Donación" para Mamabot, la impresora 3D del proyecto "Papá quiero un robot". Las piezas blancas las ha impresor R3, y las negras R2-Reloaded</li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01876.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC01876_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC01876_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC01876_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01876.JPG" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>29/Nov/2012</b>:  Impreso el noveno juego de piezas de una Prusa 2, para Diego del Campo</li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01875.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC01875_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC01875_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC01875_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01875.JPG" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<p><br>
+</p>
+<ul><li> <b>26/Nov/2012</b>:  Campaña de "impresión" de juguetes para donar: Imprimiendo sonrisas. He impreso una mini-flota de <a rel="nofollow" class="external text" href="http://www.thingiverse.com/thing:9710">camiones</a> y <a rel="nofollow" class="external text" href="http://www.thingiverse.com/thing:11101">un juego del tren</a>. Las piezas negras se han impreso en R2-Reloaded y las blancas en R3</li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01865.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC01865_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC01865_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC01865_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01865.JPG" class="internal" title="Aumentar"></a></div>Flota de camiones y juego del tren  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01857.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC01857_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC01857_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC01857_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01857.JPG" class="internal" title="Aumentar"></a></div>Nuestros expertos evaluando los juguetes  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>24/Nov/2012</b>:  Donado Juego de piezas de una Prusa 2 para Nuria Almodóvar (Madrid)</li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01838.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC01838_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC01838_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC01838_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01838.JPG" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01843.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC01843_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC01843_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC01843_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01843.JPG" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<p><br>
+</p>
+<ul><li> <b>31/Oct/2012</b>: Alfonso lópez (Lorca, Muercia) me ha enviado una foto con las piezas (cuarta donación)</li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Donacion-alfonso-lopez.jpg" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-Donacion-alfonso-lopez_vM3w.jpg" width="300" height="400" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-Donacion-alfonso-lopez_vM3w.jpg 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-Donacion-alfonso-lopez_vM3w.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Donacion-alfonso-lopez.jpg" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>30/Oct/2012</b>: 
+<ul><li> Terminado de imprimir el séptimo juego de piezas para concluir la campaña de donación de octubre. Estas serán donadas en la OSHDEM el 17 de Nov. en Coruña</li>
+<li> Entregado el quinto juego de piezas a Fernando Remiro, para construir la impresora PEE-1, dentro del programa de Enriquecimiento Educativo</li></ul></li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01753.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC01753_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC01753_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC01753_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01753.JPG" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01756.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC01756_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC01756_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC01756_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01756.JPG" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>29/Oct/2012</b>: Pablo Martínez me ha enviado una fotos con las piezas&nbsp;:-)</li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Donacion-r2-reloaded-pablo-song.jpg" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-Donacion-r2-reloaded-pablo-song_vM3w.jpg" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-Donacion-r2-reloaded-pablo-song_vM3w.jpg 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-Donacion-r2-reloaded-pablo-song_vM3w.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Donacion-r2-reloaded-pablo-song.jpg" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>28/Oct/2012</b>: Impreso el sexto juego de piezas, donado a Enric Vega Casanovas</li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01752.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC01752_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC01752_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC01752_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01752.JPG" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>27/Oct/2012</b>: Gastado el primer rollo de ABS (Blanco, de 2.3 Kgr)</li>
+<li> <b>25/Oct/2012</b>: Terminados 2 juegos de piezas de Prusas 2 para Alfonso López de Murcia, y Fernando Remiro (Madrid)</li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01747.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC01747_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC01747_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC01747_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01747.JPG" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>22/Oct/2012</b>: Christian Mendoza me ha enviado una foto con las piezas&nbsp;:-)  Han llegado Prusas y salvas!</li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:20121021_005620.jpg" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-20121021_005620_vM3w.jpg" width="300" height="400" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-20121021_005620_vM3w.jpg 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-20121021_005620_vM3w.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:20121021_005620.jpg" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>19/Oct/2012</b>: 
+<ul><li> Impreso el tercer juego de piezas de R2-Reloaded. Donado a Pablo Martínez Barbosa, de Pontevedra (Piezas enviadas)</li>
+<li> Christian mendoza me confirma que ha recibido las piezas. Estoy esperando las fotos&nbsp;:-)</li></ul></li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01727.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC01727_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC01727_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC01727_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01727.JPG" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01726.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC01726_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC01726_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC01726_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01726.JPG" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>12/Oct/2012</b>: Impreso el segundo juego de piezas de R2-Reloaded. Donado a Christian Mendoza</li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01693.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC01693_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC01693_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC01693_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01693.JPG" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<p><br>
+</p>
+<ul><li> <b>11/Oct/2012</b>: Entrega del juego de piezas de una Prusa 2 a <a rel="nofollow" class="external text" href="http://www.semanasphera.es/">AETEL</a>: Asociación de Electrónica de E.U.I.T Teleco.</li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01690.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC01690_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC01690_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC01690_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01690.JPG" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>10/Oct/2012</b>: Impreso el juego de piezas para <a rel="nofollow" class="external text" href="http://www.semanasphera.es/">AETEL</a>: Asociación de Electrónica de E.U.I.T Teleco. R2-Reloaded asciende a la categoría de Jedi Master!</li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01689.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC01689_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC01689_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC01689_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01689.JPG" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>18/Sep/2012</b>: Terminado el bloque I del tutorial de la evolución de la Prusa 2: Mejorando la base y el eje Y </li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01511.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC01511_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC01511_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC01511_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC01511.JPG" class="internal" title="Aumentar"></a></div>R2-Reloaded con todos sus nuevas mejoras: regulador de altura, ruedecillas para nivelar y espejo  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>07/Sep/2012</b>: Comenzada la segunda parte de los tutoriales de la Prusa 2: <a href="https://www.iearobotics.com/wiki/index.php?title=Evolucionando_la_Prusa_2" title="Evolucionando la Prusa 2">Evolucionando la Prusa 2</a></li>
+<li> <b>02/Sep/2012</b>: Publicada <a rel="nofollow" class="external text" href="https://www.iearobotics.com/blog/2012/09/01/nacimiento-de-r2-reloaded/">entrada en el blog</a>  sobre R2-Reloaded</li>
+<li> <b>31/Ago/2012</b>: 
+<ul><li> Para celebrar el nacimiento de R2-Reloaded, he encargado 3 rollos de 2.3Kg de ABS de 3mm en <a rel="nofollow" class="external text" href="http://www.reprapsource.com/">Reprapsource</a>. Dos negros y uno azul. He pagado: 193€ (por paypal).</li>
+<li> Impresas y colocadas las <a href="https://www.iearobotics.com/wiki/index.php?title=Objeto_3D:_Ruedecilla_con_tuerca" title="Objeto 3D: Ruedecilla con tuerca">ruedecillas con tuercas</a> para nivelar la base más fácilmente (thumbwheels)</li>
+<li> Impreso <a rel="nofollow" class="external text" href="http://www.thingiverse.com/thing:5689">un mosquetón</a></li></ul></li></ul>
+<dl><dd><table class="wikitable">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC05807.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC05807_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC05807_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC05807_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC05807.JPG" class="internal" title="Aumentar"></a></div>Ruedas con tuercas para nivelar la base de R2-Reloaded (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC05810.JPG" class="image"><img alt="" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/300px-DSC05810_vM3w.JPG" width="300" height="225" class="thumbimage" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/450px-DSC05810_vM3w.JPG 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/600px-DSC05810_vM3w.JPG 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC05810.JPG" class="internal" title="Aumentar"></a></div>Mosquetón</div></div></div>
+</td></tr></tbody></table></dd></dl>
+<ul><li> <b>29/Ago/2012</b>: Se graba <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=Y0XuKo9Ft_I">el último vídeo del tutorial de la  Prusa</a>&nbsp;:-)</li></ul>
+<ul><li> <b>28/Ago/2012</b>:  R2 Reloaded imprime su primera pieza. ¡Ya es Jedi!</li></ul>
+<table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC05794.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/DSC05794_vM3w.JPG" width="2048" height="1536"></a>
+</td></tr></tbody></table>
+<ul><li> <b>27/Ago/2012</b>: R2 Reloaded asciende a Aspirante a Jedi!</li></ul>
+<table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC05783.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/DSC05783_vM3w.JPG" width="2048" height="1536"></a>
+</td></tr></tbody></table>
+<ul><li> <b>28/Jul/2012</b>: R2 Reloaded asciende a Padawan!</li></ul>
+<table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC05657.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/DSC05657_vM3w.JPG" width="2048" height="1536"></a>
+</td></tr></tbody></table>
+<ul><li> <b>23/Jul/2012</b>: R2 Reloaded es Aspirante a Padawan</li></ul>
+<table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC05619.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/DSC05619_vM3w.JPG" width="2048" height="1536"></a>
+</td></tr></tbody></table>
+<ul><li> <b>07/Jul/2012</b>: R3 ha impreso las piezas para R2-reloaded!</li></ul>
+<table class="wikitable">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:DSC05451.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/DSC05451_vM3w.JPG" width="2048" height="1536"></a>
+</td></tr></tbody></table>
+<ul><li> <b>17/Jun/2012</b>: Comienzo los <a href="https://www.iearobotics.com/wiki/index.php?title=Guia_de_montaje_de_la_Prusa_2" title="Guia de montaje de la Prusa 2">Video Tutoriales</a>. La idea es desmontar R2D2 y re-encarnarla en R2-Reloaded. La voy a re-hacer desde 0 documentando todo el proceso.</li></ul>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<ul><li> <a href="https://www.iearobotics.com/wiki/index.php?title=Makerbot_Cupcake:_R1" title="Makerbot Cupcake: R1">Impresora R1</a> (Generación 0)</li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel:_R2D2" title="Prusa Mendel: R2D2"> Impresora R2D2</a> (Generación 1)</li>
+<li> <a rel="nofollow" class="external text" href="http://reprap.org/wiki/Prusa_Mendel">Prusa iteration 2</a></li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/prusajr/PrusaMendel">Prusa github</a></li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/prusajr/PrusaMendel/commits/master">Prusa changelog</a></li>
+<li> <a rel="nofollow" class="external text" href="http://www.xyzprinters.com/">xyzprinters</a>: Tienda on-line para comprar material</li></ul>
+<p><br>
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<td>
+<p><img alt="Proyecto Clone wars" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/Clone_Wars_logo-peq_vM3w.png" title="Proyecto Clone wars" width="200" height="137">
+</p>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://asrob.uc3m.es/index.php/Proyecto:_Clone_wars">Proyecto Clone Wars</a>: Construye tu impresora 3D opensource!
+</td></tr>
+<tr>
+<td>
+<p><img alt="Proyecto Reprap" src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/RepRap1_vM3w.png" title="Proyecto Reprap" width="110" height="137">
+</p>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://reprap.org/">Proyecto RepRap</a>: Impresoras 3D auto-replicantes. El origen de la revolución de las impresoras 3D opensource
+</td></tr>
+</tbody></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20261023131824
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.065 seconds
+Real time usage: 0.077 seconds
+Preprocessor visited node count: 59/1000000
+Preprocessor generated node count: 91/1000000
+Post‐expand include size: 600/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    1.872      1 - -total
+ 91.24%    1.708      3 - Plantilla:Tablabonita
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteraci%C3%B3n_2:_R2-reloaded&amp;oldid=17666">https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteración_2:_R2-reloaded&amp;oldid=17666</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categoría</a>: <ul><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Reprap" title="Categoría:Reprap">Reprap</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteraci%C3%B3n_2:_R2-reloaded" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://www.iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Prusa_Mendel_Iteraci%C3%B3n_2:_R2-reloaded&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteraci%C3%B3n_2:_R2-reloaded&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteraci%C3%B3n_2:_R2-reloaded&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Prusa+Mendel+Iteraci%C3%B3n+2%3A+R2-reloaded" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Prusa_Mendel_Iteraci%C3%B3n_2:_R2-reloaded" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Prusa_Mendel_Iteraci%C3%B3n_2:_R2-reloaded" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteraci%C3%B3n_2:_R2-reloaded&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteraci%C3%B3n_2:_R2-reloaded&amp;oldid=17666" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteraci%C3%B3n_2:_R2-reloaded&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/gnu-fdl_vM3w.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/poweredby_mediawiki_88x31_vM3w.png" alt="Powered by MediaWiki" srcset="Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/poweredby_mediawiki_132x47_vM3w.png 1.5x, Prusa_Mendel_Iteraci%C3%B3n_2_R2-reloaded_files/poweredby_mediawiki_176x62_vM3w.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 16 abr 2013 a las 10:18.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":146});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
