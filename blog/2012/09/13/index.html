@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../style_iHeX.css">
+
+  <!-- 🚧 CAMBIAR 🚧 -->
+  <title>Enhancing openscad (II): Bevel library</title>
+</head>
+
+
+<body class="group-blog">
+<div id="page" class="site">
+  <div class="site-inner">
+		<div id="content" class="site-content">
+			<div class="content-area">
+
+		
+<!-- Artículo -->        
+<article>
+	<header class="entry-header">
+    <!-- 🚧 CAMBIAR 🚧 -->
+	  <h1 class="entry-title">Enhancing openscad (II): Bevel library</h1>
+  </header><!-- .entry-header -->
+
+<div class="entry-content" style="margin-bottom: 50px;">
+	<!-- 🚧 CAMBIAR 🚧 -->
+		<p><a href="https://www.iearobotics.com/blog/wp-content/uploads/2012/09/bevel-ej1-box.png"><img fetchpriority="high" decoding="async" src="index_files/bevel-ej1-box_ClUG.png" alt="" title="bevel-ej1-box" width="500" height="447" class="aligncenter size-full wp-image-3729" srcset="index_files/bevel-ej1-box_ClUG.png 500w, index_files/bevel-ej1-box-300x268_ClUG.png 300w" sizes="(max-width: 500px) 85vw, 500px"></a></p>
+<p>(First part: <a href="../../../../blog/2012/09/10/">Enhancing openscad with the attach library</a>)</p>
+<h2>Introduction</h2>
+<p>There is one very common operation that has to be done in nearly all the designs: 
+	<strong>beveling edges</strong>. It can be done on the <strong>convex side</strong>, 
+	for avoiding sharp edges, or on the <strong>concave side</strong>, 
+	for reinforce the part (avoiding the 90 degrees connection between parts).</p>
+
+<p>With the <a href="http://www.thingiverse.com/thing:30336">bevel library</a> I am developing 
+	doing these two operations is a piece of cake. Let's see some examples</p>
+
+<h2>Beveling the exterior edges</h2>
+<p><a href="https://www.iearobotics.com/blog/wp-content/uploads/2012/09/ej1-1.png"><img decoding="async" src="index_files/ej1-1_ClUG.png" alt="" title="ej1-1" width="500" height="227" class="aligncenter size-full wp-image-3736" srcset="index_files/ej1-1_ClUG.png 500w, index_files/ej1-1-300x136_ClUG.png 300w" sizes="(max-width: 500px) 85vw, 500px"></a></p>
+<p>Let's take a cube as an example. We want to bevel the top-right edge. 
+	We will use the concept of <strong>connector</strong> 
+	(the same that is used for the 
+	<a href="../../../../blog/2012/09/10/">attach operator</a>). First we draw the cube and define 
+	two connectors in the same position (the same attachment point). 
+	The first one is on the edge we want to bevel. The other is normal and should point to 
+	the exterior bisector. </p>
+
+<p>  Using the <strong>connector()</strong> module they can be easily viewed for debugging. 
+	It is also useful to make the cube transparent for seeing the connectors better:</p>
+<p><code>
+size=[40,40,15];<br><br>
+//-- Define the Connectors<br>
+//--     position,               orientation, 0<br>
+ec1 = [ [size[0]/2, 0, size[2]/2], [0,1,0], 0];<br>
+en1 = [ ec1[0],                    [1,0,1], 0];<br>
+
+<br>
+//-- Debug! Show the connectors<br>
+connector(ec1);<br>
+connector(en1);<br>
+
+<br>
+//-- Draw the cube (transparent for debugging)<br>
+color("Yellow",0.4)<br>
+  cube(size,center=true);<br>
+</code></p>
+
+<p>Now is when the magic comes:</p>
+<p><a href="https://www.iearobotics.com/blog/wp-content/uploads/2012/09/ej1-21.png"><img decoding="async" src="index_files/ej1-21_ClUG.png" alt="" title="ej1-2" width="400" height="358" class="aligncenter size-full wp-image-3747" srcset="index_files/ej1-21_ClUG.png 400w, index_files/ej1-21-300x268_ClUG.png 300w" sizes="(max-width: 400px) 85vw, 400px"></a></p>
+<p>Invoke the <strong>bevel()</strong> module, passing the connectors as parameters, 
+	as well as the corner radius, the bevel resolution and the length (l). 
+	Automatically a beveled concave corner part is placed on the connectors, 
+	with the right orientation. In this example the color has been change to transparent 
+	blue to see the new part better.</p>
+
+<p><code>
+color("Blue",0.4)<br>
+  bevel(ec1, en1, cr = 8, cres=10, l=size[1]+2);<br>
+</code></p>
+
+<p>The edge has not been beveled yet… we still have to apply the <strong>difference()</strong> operator:</p>
+
+<p><code>
+difference() {<br>
+  cube(size,center=true);<br>
+  bevel(ec1, en1, cr = 8, cres=10, l=size[1]+2);<br>
+}<br>
+</code></p>
+
+<p>and there it is!</p>
+<p><a href="https://www.iearobotics.com/blog/wp-content/uploads/2012/09/ej1-3.png"><img loading="lazy" decoding="async" src="index_files/ej1-3_ClUG.png" alt="" title="ej1-3" width="400" height="258" class="aligncenter size-full wp-image-3754" srcset="index_files/ej1-3_ClUG.png 400w, index_files/ej1-3-300x193_ClUG.png 300w" sizes="auto, (max-width: 400px) 85vw, 400px"></a></p>
+<p>Change the corner resolution, or the radius for modifying the beveling. 
+	Also you can easily <strong>add more bevel() operations</strong> into the difference() 
+	so that you bevel more egdes. Here is another part with different kind of beveled edges:</p>
+
+<p><a href="https://www.iearobotics.com/blog/wp-content/uploads/2012/09/bevel_02_cube.png"><img loading="lazy" decoding="async" src="index_files/bevel_02_cube_ClUG.png" alt="" title="bevel_02_cube" width="400" height="264" class="aligncenter size-full wp-image-3755" srcset="index_files/bevel_02_cube_ClUG.png 400w, index_files/bevel_02_cube-300x198_ClUG.png 300w" sizes="auto, (max-width: 400px) 85vw, 400px"></a></p>
+<h2>Reinforcing parts: buttress</h2>
+<p>Adding buttress to the union of orthogonal parts is done in a similar way than the edge beveling. 
+	First the 2 connectors should be defined, with a vector on the edge direction and another normal to it, 
+	pointing to the interior bisector.</p>
+<p><a href="https://www.iearobotics.com/blog/wp-content/uploads/2012/09/ej3-3.png"><img loading="lazy" decoding="async" src="index_files/ej3-3_ClUG.png" alt="" title="ej3-3" width="500" height="165" class="aligncenter size-full wp-image-3759" srcset="index_files/ej3-3_ClUG.png 500w, index_files/ej3-3-300x99_ClUG.png 300w" sizes="auto, (max-width: 500px) 85vw, 500px"></a></p>
+
+<p><code>
+//-- part parameters<br>
+size=[30,30,30];<br>
+th = 3;<br><br>
+
+//-- Define the connectors<br>
+ec1 = [ [0,-size[1]/2+th,-size[2]/2+th], [1,0,0],  0];<br>
+en1 = [ ec1[0],                          [0,1,1], 0];<br>
+
+<br>
+//-- Show the connectors (Debug)<br>
+connector(ec1);<br>
+connector(en1);<br>
+color("Yelow",0.5)<br>
+difference() {<br>
+cube(size,center=true);<br>
+translate([0,th,th])<br>
+cube([size[0]+2,size[1],size[2]],center=true);<br>
+}<br>
+</code></p>
+
+<p>Now one buttress is added:</p>
+
+<p><code>
+bconcave_corner_attach(ec1,en1,l=th,cr=8,cres=0);<br>
+</code></p>
+
+<p><a href="https://www.iearobotics.com/blog/wp-content/uploads/2012/09/ej3-4.png"><img loading="lazy" decoding="async" src="index_files/ej3-4_ClUG.png" alt="" title="ej3-4" width="400" height="258" class="aligncenter size-full wp-image-3764" srcset="index_files/ej3-4_ClUG.png 400w, index_files/ej3-4-300x193_ClUG.png 300w" sizes="auto, (max-width: 400px) 85vw, 400px"></a></p>
+<p>Easy, does not it? 🙂  Again, playing with the parameters, or adding more connectors, different reinforments are created:</p>
+<p><a href="https://www.iearobotics.com/blog/wp-content/uploads/2012/09/ej3-5.png"><img loading="lazy" decoding="async" src="index_files/ej3-5_ClUG.png" alt="" title="ej3-5" width="500" height="259" class="aligncenter size-full wp-image-3767" srcset="index_files/ej3-5_ClUG.png 500w, index_files/ej3-5-300x155_ClUG.png 300w" sizes="auto, (max-width: 500px) 85vw, 500px"></a></p>
+<p>Happy Beveling and reinforcing!!!</p>
+
+
+
+<p><a href="../../../../wiki/Juan_Gonzalez_Main.html">Obijuan</a></p>
+
+
+
+</div><!-- .entry-content -->
+
+  <footer class="entry-footer">
+		<span class="byline">
+			<span class="author vcard">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<img alt="" src="../../../obijuan.jpeg" 
+			    class="avatar avatar-49 photo" height="49" width="49" decoding="async">
+			</span>
+		</span>
+
+		<span class="posted-on">
+      <!-- 🚧 CAMBIAR 🚧 -->
+			September 13, 2012
+		</span>
+		
+	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+	
+
+
+
+	<nav class="navigation post-navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links">
+
+			<div class="nav-previous">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<a href="../../09/10/" rel="prev">
+					<span class="meta-nav" aria-hidden="true">Previous</span>
+
+          <!-- 🚧 CAMBIAR 🚧 -->
+				  <span class="post-title">Enhancing Openscad with the attach library</span>
+        </a>
+			</div>
+
+			<div class="nav-next">
+        <!-- 🚧 CAMBIAR 🚧 -->
+				<a href="../../10/03/" 
+					 rel="next">
+					<span class="meta-nav" aria-hidden="true">Next</span>
+
+          <!-- 🚧 CAMBIAR 🚧 --> 
+					<span class="post-title">The show must go on…</span>
+        		</a>
+			</div>
+		</div>
+	</nav>
+
+	
+</div><!-- .content-area -->
+</div><!-- .site-content -->
+</div><!-- .site-inner -->
+</div><!-- .site -->
+
+
+</body>
+</html>
