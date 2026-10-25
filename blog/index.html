@@ -1,1164 +1,1638 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IeaRobotics</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IeaRobotics - Blog Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --card-hover: #334155;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-color: #38bdf8;
+      --accent-hover: #7dd3fc;
+      --border-color: #334155;
+      --radius: 10px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 2.5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--text-main);
+      display: inline-block;
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    details {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      margin-bottom: 1rem;
+      overflow: hidden;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    details[open] {
+      border-color: #475569;
+    }
+
+    summary {
+      font-weight: 600;
+      font-size: 1.2rem;
+      padding: 1rem 1.25rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      color: var(--text-main);
+      transition: background-color 0.2s ease;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary:hover {
+      background-color: var(--card-hover);
+    }
+
+    summary::after {
+      content: "›";
+      font-size: 1.5rem;
+      line-height: 1;
+      color: var(--accent-color);
+      transition: transform 0.2s ease;
+    }
+
+    details[open] summary::after {
+      transform: rotate(90deg);
+    }
+
+    details[open] summary {
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0.5rem 0;
+    }
+
+    li {
+      padding: 0.6rem 1.25rem;
+      display: flex;
+      align-items: baseline;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      font-size: 0.95rem;
+    }
+
+    li:last-child {
+      border-bottom: none;
+    }
+
+    li:hover {
+      background-color: rgba(255, 255, 255, 0.02);
+    }
+
+    .date {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 500;
+      min-width: 100px;
+      flex-shrink: 0;
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: color 0.15s ease;
+      word-break: break-word;
+    }
+
+    a:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem 0.5rem;
+      }
+
+      li {
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+
+      .date {
+        min-width: auto;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<h1>BLOG</h1>
+<header>
+  <h1>BLOG de Iearobotics (Archivo)</h1>
+</header>
 
 <details>
   <summary>2007</summary>
-
   <ul>
-
     <li>
-      26-Abril: <a href="2007/04/26/entry1.html">Puesta en marcha del Blog de Iearobotics</a>
+      <span class="date">26-Abril</span>
+      <a href="2007/04/26/entry1.html">Puesta en marcha del Blog de Iearobotics</a>
     </li>
-
     <li>
-      26-Abril: <a href="2007/04/26/entry2.html">Listado de fabricantes de piezas para robot</a>
+      <span class="date">26-Abril</span>
+      <a href="2007/04/26/entry2.html">Listado de fabricantes de piezas para robot</a>
     </li>
-
     <li>
-      26-Abril: <a href="2007/04/26/entry3.html">Esto es una prueba</a>
+      <span class="date">26-Abril</span>
+      <a href="2007/04/26/entry3.html">Esto es una prueba</a>
     </li>
-
     <li>
-      29-Abril: <a href="2007/04/29/entry1.html">Controlando un Skybot al estilo “minority report” ;-)</a>
+      <span class="date">29-Abril</span>
+      <a href="2007/04/29/entry1.html">Controlando un Skybot al estilo “minority report” ;-)</a>
     </li>
-
     <li> 
-      02-Mayo: <a href="2007/05/02/entry1.html">Visita al Instituto de Automática Industrial</a>
-    </li>
-
-    <li>
-      03-Mayo: <a href="2007/05/03/entry1.html">Pucho en proceso de reparación</a>
-    </li>
-
-    <li>
-      04-Mayo: <a href="2007/05/04/entry1.html">La Granja de Micro-robots en Isla Cristina</a>
-    </li>
-
-    <li>
-      05-Mayo: <a href="2007/05/05/entry1.html">Encontramos a Joshua en YouTube</a>
-    </li>
-
-    <li>
-      06-Mayo: <a href="2007/05/06/entry1.html">Teoría del caos aplicada: mi mesa de trabajo</a>
-    </li>
-
-    <li>
-      07-Mayo: <a href="2007/05/07/entry1.html">La Granja de Micro-Robots en Miranda de Ebro (Burgos)</a>
-    </li>
-
-    <li>
-      11-Mayo: <a href="2007/05/11/entry1.html">La Granja de Micro-Robots en la Nebrija Lan Party (Madrid)</a>
-    </li>
-
-    <li>
-      15-Mayo: <a href="2007/05/11/">Robótica y wiimote</a>
-    </li>
-
-    <li>
-      16-Mayo: <a href="2007/05/16/">RoboBlog</a>
-    </li>
-
-    <li>
-      25-Mayo: <a href="2007/05/25/">Dibujando ondas en 3D</a>
-    </li>
-
-    <li>
-      30-Mayo: <a href="2007/05/30/">Robots móviles y wiimote</a>
-    </li>
-
-    <li>
-      19-Junio: <a href="2007/06/19/">Robot R3P-BOT (Clon de Cube Revolutions)</a>
-    </li>
-
-    <li>
-      05-Julio: <a href="2007/07/05/">Robot Spia: robot controlado con el wiimote</a>
-    </li>
-
-    <li>
-      24-Julio: <a href="2007/07/24/">Campus Party 2007</a>
-    </li>
-
-    <li>
-      25-Julio: <a href="2007/07/25/">Paco y SAM se divierten en la Campus Party 2007</a>
-    </li>
-
-    <li>
-      12-Agosto: <a href="2007/08/12/">Ha nacido un friki</a>
-    </li>
-
-    <li>
-      30-Agosto: <a href="2007/08/30/">Ha nacido otro friki</a>
-    </li>
-
-    <li>
-      30-Agosto: <a href="2007/08/30/index2.html">Visitando a PuchoBot</a>
-    </li>
-
-    <li>
-      01-Septiembre: <a href="2007/09/01">Simulando a Pucho con el MRSuite</a>
-    </li>
-
-    <li>
-      08-Septiembre: <a href="2007/09/08">TupperBot 2.0</a>
-    </li>
-
-    <li>
-      09-Septiembre: <a href="2007/09/09">Carga de programas en la Skypic</a>
-    </li>
-
-    <li>
-      20-Septiembre: <a href="2007/09/20">Diseñando un gusano trepador</a>
-    </li>
-
-    <li>
-      21-Septiembre: <a href="2007/09/21">Principios de Locomoción de los robots modulares con topología de 1D</a>
-    </li>
-
-    <li>
-      01-Octubre: <a href="2007/10/01">Presentación de PuchoBot II</a>
-    </li>
-
-    <li>
-      15-Octubre: <a href="2007/10/15">Lectura del proyecto final de carrera de Rafael Treviño</a>
-    </li>
-
-    <li>
-      06-Noviembre: <a href="2007/11/06">Robótica y niños</a>
-    </li>
-
-    <li>
-      24-Noviembre: <a href="2007/11/24">Visita de Houxiang Zhang</a>
-    </li>
-
-    <li>
-      24-Noviembre: <a href="2007/11/24/index2.html">Visita a SAM, el robot de protocolo de Quark Robotics</a>
+      <span class="date">02-Mayo</span>
+      <a href="2007/05/02/entry1.html">Visita al Instituto de Automática Industrial</a>
     </li>
     <li>
-      27-Noviembre: <a href="2007/11/27/">Grabando una Skypic desde una NSLU2</a>
+      <span class="date">03-Mayo</span>
+      <a href="2007/05/03/entry1.html">Pucho en proceso de reparación</a>
     </li>
     <li>
-      04-Diciembre: <a href="2007/12/04/">ChronoJump ha ganado en los Trophees du Libre</a>
+      <span class="date">04-Mayo</span>
+      <a href="2007/05/04/entry1.html">La Granja de Micro-robots en Isla Cristina</a>
     </li>
     <li>
-      04-Diciembre: <a href="2007/12/04/index2.html">Ludus Party 2007</a>
+      <span class="date">05-Mayo</span>
+      <a href="2007/05/05/entry1.html">Encontramos a Joshua en YouTube</a>
     </li>
     <li>
-      27-Diciembre: <a href="2007/12/27/">NetZone Móstoles 2007</a>
+      <span class="date">06-Mayo</span>
+      <a href="2007/05/06/entry1.html">Teoría del caos aplicada: mi mesa de trabajo</a>
+    </li>
+    <li>
+      <span class="date">07-Mayo</span>
+      <a href="2007/05/07/entry1.html">La Granja de Micro-Robots en Miranda de Ebro (Burgos)</a>
+    </li>
+    <li>
+      <span class="date">11-Mayo</span>
+      <a href="2007/05/11/entry1.html">La Granja de Micro-Robots en la Nebrija Lan Party (Madrid)</a>
+    </li>
+    <li>
+      <span class="date">15-Mayo</span>
+      <a href="2007/05/11/">Robótica y wiimote</a>
+    </li>
+    <li>
+      <span class="date">16-Mayo</span>
+      <a href="2007/05/16/">RoboBlog</a>
+    </li>
+    <li>
+      <span class="date">25-Mayo</span>
+      <a href="2007/05/25/">Dibujando ondas en 3D</a>
+    </li>
+    <li>
+      <span class="date">30-Mayo</span>
+      <a href="2007/05/30/">Robots móviles y wiimote</a>
+    </li>
+    <li>
+      <span class="date">19-Junio</span>
+      <a href="2007/06/19/">Robot R3P-BOT (Clon de Cube Revolutions)</a>
+    </li>
+    <li>
+      <span class="date">05-Julio</span>
+      <a href="2007/07/05/">Robot Spia: robot controlado con el wiimote</a>
+    </li>
+    <li>
+      <span class="date">24-Julio</span>
+      <a href="2007/07/24/">Campus Party 2007</a>
+    </li>
+    <li>
+      <span class="date">25-Julio</span>
+      <a href="2007/07/25/">Paco y SAM se divierten en la Campus Party 2007</a>
+    </li>
+    <li>
+      <span class="date">12-Agosto</span>
+      <a href="2007/08/12/">Ha nacido un friki</a>
+    </li>
+    <li>
+      <span class="date">30-Agosto</span>
+      <a href="2007/08/30/">Ha nacido otro friki</a>
+    </li>
+    <li>
+      <span class="date">30-Agosto</span>
+      <a href="2007/08/30/index2.html">Visitando a PuchoBot</a>
+    </li>
+    <li>
+      <span class="date">01-Septiembre</span>
+      <a href="2007/09/01">Simulando a Pucho con el MRSuite</a>
+    </li>
+    <li>
+      <span class="date">08-Septiembre</span>
+      <a href="2007/09/08">TupperBot 2.0</a>
+    </li>
+    <li>
+      <span class="date">09-Septiembre</span>
+      <a href="2007/09/09">Carga de programas en la Skypic</a>
+    </li>
+    <li>
+      <span class="date">20-Septiembre</span>
+      <a href="2007/09/20">Diseñando un gusano trepador</a>
+    </li>
+    <li>
+      <span class="date">21-Septiembre</span>
+      <a href="2007/09/21">Principios de Locomoción de los robots modulares con topología de 1D</a>
+    </li>
+    <li>
+      <span class="date">01-Octubre</span>
+      <a href="2007/10/01">Presentación de PuchoBot II</a>
+    </li>
+    <li>
+      <span class="date">15-Octubre</span>
+      <a href="2007/10/15">Lectura del proyecto final de carrera de Rafael Treviño</a>
+    </li>
+    <li>
+      <span class="date">06-Noviembre</span>
+      <a href="2007/11/06">Robótica y niños</a>
+    </li>
+    <li>
+      <span class="date">24-Noviembre</span>
+      <a href="2007/11/24">Visita de Houxiang Zhang</a>
+    </li>
+    <li>
+      <span class="date">24-Noviembre</span>
+      <a href="2007/11/24/index2.html">Visita a SAM, el robot de protocolo de Quark Robotics</a>
+    </li>
+    <li>
+      <span class="date">27-Noviembre</span>
+      <a href="2007/11/27/">Grabando una Skypic desde una NSLU2</a>
+    </li>
+    <li>
+      <span class="date">04-Diciembre</span>
+      <a href="2007/12/04/">ChronoJump ha ganado en los Trophees du Libre</a>
+    </li>
+    <li>
+      <span class="date">04-Diciembre</span>
+      <a href="2007/12/04/index2.html">Ludus Party 2007</a>
+    </li>
+    <li>
+      <span class="date">27-Diciembre</span>
+      <a href="2007/12/27/">NetZone Móstoles 2007</a>
     </li>
   </ul>
-
 </details>
-
 
 <details>
   <summary>2008</summary>
-
   <ul>
     <li>
-      22-Enero: <a href="2008/01/22/">Nueva tarjeta Chronopic 3.0</a>
+      <span class="date">22-Enero</span>
+      <a href="2008/01/22/">Nueva tarjeta Chronopic 3.0</a>
     </li>
     <li>
-      01-Marzo: <a href="2008/03/01/">Plataforma de tecnología avanzada y acceso abierto</a>
+      <span class="date">01-Marzo</span>
+      <a href="2008/03/01/">Plataforma de tecnología avanzada y acceso abierto</a>
     </li>
     <li>
-      13-Abril: <a href="2008/04/13/">Charla sobre Robótica Modular y locomoción en la UAM</a>
+      <span class="date">13-Abril</span>
+      <a href="2008/04/13/">Charla sobre Robótica Modular y locomoción en la UAM</a>
     </li>
     <li>
-      18-Abril: <a href="2008/04/18/">Cube Revolutions (I)</a>
+      <span class="date">18-Abril</span>
+      <a href="2008/04/18/">Cube Revolutions (I)</a>
     </li>
     <li>
-      24-Abril: <a href="2008/04/24/">Cube revolutions (II)</a>
+      <span class="date">24-Abril</span>
+      <a href="2008/04/24/">Cube revolutions (II)</a>
     </li>
     <li>
-      25-Abril: <a href="2008/04/25/">FLIR Systems compra Ifara Tecnologías</a>
+      <span class="date">25-Abril</span>
+      <a href="2008/04/25/">FLIR Systems compra Ifara Tecnologías</a>
     </li>
     <li>
-      30-Abril: <a href="2008/04/30/">Robot Hypercube</a>
+      <span class="date">30-Abril</span>
+      <a href="2008/04/30/">Robot Hypercube</a>
     </li>
     <li>
-      02-Mayo: <a href="2008/05/02/">¡La robótica es muy divertida!</a>
+      <span class="date">02-Mayo</span>
+      <a href="2008/05/02/">¡La robótica es muy divertida!</a>
     </li>
     <li>
-      07-Mayo: <a href="2008/05/07/">Configuraciones mínimas (I): Minicube-1</a>
+      <span class="date">07-Mayo</span>
+      <a href="2008/05/07/">Configuraciones mínimas (I): Minicube-1</a>
     </li>
     <li>
-      10-Mayo: <a href="2008/05/10/">Configuraciones mínimas (II): Minicube-2</a>
+      <span class="date">10-Mayo</span>
+      <a href="2008/05/10/">Configuraciones mínimas (II): Minicube-2</a>
     </li>
     <li>
-      22-Mayo: <a href="2008/05/22/">Configuraciones mínimas (III): Minicube-3</a>
+      <span class="date">22-Mayo</span>
+      <a href="2008/05/22/">Configuraciones mínimas (III): Minicube-3</a>
     </li>
     <li>
-      29-Mayo: <a href="2008/05/29/">Experimentando con FlatBot</a>
+      <span class="date">29-Mayo</span>
+      <a href="2008/05/29/">Experimentando con FlatBot</a>
     </li>
     <li>
-      31-Mayo: <a href="2008/05/31/">Video mejorado de FlatBot</a>  
+      <span class="date">31-Mayo</span>
+      <a href="2008/05/31/">Video mejorado de FlatBot</a>  
     </li>
     <li>
-      03-Junio: <a href="2008/06/03/">Dibujando con Inkscape</a>
+      <span class="date">03-Junio</span>
+      <a href="2008/06/03/">Dibujando con Inkscape</a>
     </li>
     <li>
-      03-Junio: <a href="2008/06/03/index2.html">Yossua esta buscando zapatos nuevos…</a>
+      <span class="date">03-Junio</span>
+      <a href="2008/06/03/index2.html">Yossua esta buscando zapatos nuevos…</a>
     </li>
     <li>
-      10-Junio: <a href="2008/06/10/">Tarri-wheel!</a>
+      <span class="date">10-Junio</span>
+      <a href="2008/06/10/">Tarri-wheel!</a>
     </li>
     <li>
-      13-Junio: <a href="2008/06/13/">Frikeando con FlatBot :-)</a>
+      <span class="date">13-Junio</span>
+      <a href="2008/06/13/">Frikeando con FlatBot :-)</a>
     </li>
     <li>
-      15-Junio: <a href="2008/06/15/">Portátil Asus EEE y Robótica</a>
+      <span class="date">15-Junio</span>
+      <a href="2008/06/15/">Portátil Asus EEE y Robótica</a>
     </li>
     <li>
-      18-Junio: <a href="2008/06/18/">Skybot: Iniciarse en la robótica</a>
+      <span class="date">18-Junio</span>
+      <a href="2008/06/18/">Skybot: Iniciarse en la robótica</a>
     </li>
     <li>
-      18-Junio: <a href="2008/06/18/index2.html">Wii-board: moviendo un Skybot ;-)</a>
+      <span class="date">18-Junio</span>
+      <a href="2008/06/18/index2.html">Wii-board: moviendo un Skybot ;-)</a>
     </li>
     <li>
-      03-Julio: <a href="2008/07/03/">Estado de mi tesis (I)</a>
+      <span class="date">03-Julio</span>
+      <a href="2008/07/03/">Estado de mi tesis (I)</a>
     </li>
     <li>
-      01-Agosto: <a href="2008/08/01/">Estado de mi tesis (II)</a>
+      <span class="date">01-Agosto</span>
+      <a href="2008/08/01/">Estado de mi tesis (II)</a>
     </li>
     <li>
-      08-Agosto: <a href="2008/08/08/">Resumen Campus PArty 2008</a>
+      <span class="date">08-Agosto</span>
+      <a href="2008/08/08/">Resumen Campus PArty 2008</a>
     </li>
     <li>
-      12-Agosto: <a href="2008/08/12/">Demostración de robots modulares en 
-        los cursos de verano de El Escorial</a>
+      <span class="date">12-Agosto</span>
+      <a href="2008/08/12/">Demostración de robots modulares en los cursos de verano de El Escorial</a>
     </li>
     <li>
-      17-Agosto: <a href="2008/08/17/">Estado de mi tesis (III)</a>
+      <span class="date">17-Agosto</span>
+      <a href="2008/08/17/">Estado de mi tesis (III)</a>
     </li>
     <li>
-      27-Agosto: <a href="2008/08/27/">Estado de mi tesis (IV)</a>
+      <span class="date">27-Agosto</span>
+      <a href="2008/08/27/">Estado de mi tesis (IV)</a>
     </li>
     <li>
-      10-Septiembre: <a href="2008/09/10/">Estado de mi tesis (V)</a>
+      <span class="date">10-Septiembre</span>
+      <a href="2008/09/10/">Estado de mi tesis (V)</a>
     </li>
     <li>
-      23-Septiembre: <a href="2008/09/23/">Tesis RC1</a>
+      <span class="date">23-Septiembre</span>
+      <a href="2008/09/23/">Tesis RC1</a>
     </li>
     <li>
-      26-Septiembre: <a href="2008/09/26/">Vídeo de los módulos GZ-I</a>
+      <span class="date">26-Septiembre</span>
+      <a href="2008/09/26/">Vídeo de los módulos GZ-I</a>
     </li>
     <li>
-      06-Octubre: <a href="2008/10/06/">Pyburn: Grabando PICs</a> 
+      <span class="date">06-Octubre</span>
+      <a href="2008/10/06/">Pyburn: Grabando PICs</a> 
     </li>
     <li>
-      18-Octubre: <a href="2008/10/18/">Seminario previo a la defensa de la tesis</a> 
+      <span class="date">18-Octubre</span>
+      <a href="2008/10/18/">Seminario previo a la defensa de la tesis</a> 
     </li>
     <li>
-      27-Octubre: <a href="2008/10/27/">Skybot-test 1.0 liberado</a> 
+      <span class="date">27-Octubre</span>
+      <a href="2008/10/27/">Skybot-test 1.0 liberado</a> 
     </li>
     <li>
-      03-Noviembre: <a href="2008/11/03/">VIII simposium Internacional sobre computación</a>
+      <span class="date">03-Noviembre</span>
+      <a href="2008/11/03/">VIII simposium Internacional sobre computación</a>
     </li>
     <li>
-      12-Noviembre: <a href="2008/11/12/">Campus Party Iberoamérica</a>
+      <span class="date">12-Noviembre</span>
+      <a href="2008/11/12/">Campus Party Iberoamérica</a>
     </li>
     <li>
-      18-Noviembre: <a href="2008/11/18/">Lectura de mi tesis: El día del juicio final</a>
+      <span class="date">18-Noviembre</span>
+      <a href="2008/11/18/">Lectura de mi tesis: El día del juicio final</a>
     </li>
     <li>
-      25-Noviembre: <a href="2008/11/25/">Doctor Obijuan :-)</a>
+      <span class="date">25-Noviembre</span>
+      <a href="2008/11/25/">Doctor Obijuan :-)</a>
     </li>
     <li>
-      10-Diciembre: <a href="2008/12/10/">Simulaciones de robots ápodos</a>
+      <span class="date">10-Diciembre</span>
+      <a href="2008/12/10/">Simulaciones de robots ápodos</a>
     </li>
     <li>
-      12-Diciembre: <a href="2008/12/12/">Simulaciones de robots ápodos (II)</a>
+      <span class="date">12-Diciembre</span>
+      <a href="2008/12/12/">Simulaciones de robots ápodos (II)</a>
     </li>
     <li>
-      13-Diciembre: <a href="2008/12/13/">Mi nuevo Arduino Nano</a>
+      <span class="date">13-Diciembre</span>
+      <a href="2008/12/13/">Mi nuevo Arduino Nano</a>
     </li>
     <li>
-      17-Diciembre: <a href="2008/12/17/">Simulaciones de las configuraciones mínimas</a>
+      <span class="date">17-Diciembre</span>
+      <a href="2008/12/17/">Simulaciones de las configuraciones mínimas</a>
     </li>
     <li>
-      26-Diciembre: <a href="2008/12/26/">Publicado Cube Simulator 1.0</a>
+      <span class="date">26-Diciembre</span>
+      <a href="2008/12/26/">Publicado Cube Simulator 1.0</a>
     </li>
   </ul>
-
 </details>
 
 <details>
   <summary>2009</summary>
-
   <ul>
     <li>
-      12-Enero: <a href="2009/01/12/">Publicado Cube Simulator 1.0</a>
+      <span class="date">12-Enero</span>
+      <a href="2009/01/12/">Publicado Cube Simulator 1.0</a>
     </li>
     <li>
-      13-Enero: <a href="2009/01/13/">Aparición en la revista “Muy interesante”</a>
+      <span class="date">13-Enero</span>
+      <a href="2009/01/13/">Aparición en la revista “Muy interesante”</a>
     </li>
     <li>
-      19-Enero: <a href="2009/01/19/">Recopilación de aparición en medios de comunicación</a>
+      <span class="date">19-Enero</span>
+      <a href="2009/01/19/">Recopilación de aparición en medios de comunicación</a>
     </li>
     <li>
-      20-Enero: <a href="2009/01/20/">Tutorial: Puerto serie en Linux</a>
+      <span class="date">20-Enero</span>
+      <a href="2009/01/20/">Tutorial: Puerto serie en Linux</a>
     </li>
     <li>
-      23-Enero: <a href="2009/01/23/">Driver Led8 para JDE</a>
+      <span class="date">23-Enero</span>
+      <a href="2009/01/23/">Driver Led8 para JDE</a>
     </li>
     <li>
-      24-Enero: <a href="2009/01/24/">Vehículo con dos gusanos de potencia :-D</a>
+      <span class="date">24-Enero</span>
+      <a href="2009/01/24/">Vehículo con dos gusanos de potencia :-D</a>
     </li>
     <li>
-      26-Enero: <a href="2009/01/26/">Drivers servos8 y oscillator8 para JDE</a>
+      <span class="date">26-Enero</span>
+      <a href="2009/01/26/">Drivers servos8 y oscillator8 para JDE</a>
     </li>
     <li>
-      28-Enero: <a href="2009/01/28/">Esquema keyboard para JDE</a>
+      <span class="date">28-Enero</span>
+      <a href="2009/01/28/">Esquema keyboard para JDE</a>
     </li>
     <li>
-      04-Febrero: <a href="2009/02/04/">Conferencia sobre el proyecto RepRap en Madrid</a>
+      <span class="date">04-Febrero</span>
+      <a href="2009/02/04/">Conferencia sobre el proyecto RepRap en Madrid</a>
     </li>
     <li>
-      09-Febrero: <a href="2009/02/09/">Taller sobre RepRap (I)</a>
+      <span class="date">09-Febrero</span>
+      <a href="2009/02/09/">Taller sobre RepRap (I)</a>
     </li>
     <li>
-      10-Febrero: <a href="2009/02/10/">Taller sobre reprap (II): La máquina tiene cuerpo</a>
+      <span class="date">10-Febrero</span>
+      <a href="2009/02/10/">Taller sobre reprap (II): La máquina tiene cuerpo</a>
     </li>
     <li>
-      11-Febrero: <a href="2009/02/11/">Taller de reprap (III): La máquina está viva!</a>
+      <span class="date">11-Febrero</span>
+      <a href="2009/02/11/">Taller de reprap (III): La máquina está viva!</a>
     </li>
     <li>
-      13-Febrero: <a href="2009/02/13/">Taller de reprap (VI): La máquina ya imprime!</a>
+      <span class="date">13-Febrero</span>
+      <a href="2009/02/13/">Taller de reprap (VI): La máquina ya imprime!</a>
     </li>
     <li>
-      18-Febrero: <a href="2009/02/18/">Reprap y módulos Y1</a>
+      <span class="date">18-Febrero</span>
+      <a href="2009/02/18/">Reprap y módulos Y1</a>
     </li>
     <li>
-      25-Febrero: <a href="2009/02/25/">Mi nueva Debian 5.0 (Lenny)</a>
+      <span class="date">25-Febrero</span>
+      <a href="2009/02/25/">Mi nueva Debian 5.0 (Lenny)</a>
     </li>
     <li>
-      18-Marzo: <a href="2009/03/18/">Hemos encargado nuestra Reprap :-)</a>
+      <span class="date">18-Marzo</span>
+      <a href="2009/03/18/">Hemos encargado nuestra Reprap :-)</a>
     </li>
     <li>
-      24-Marzo: <a href="2009/03/24/">Charla sobre robótica modular en las III jornadas de robótica de A.R.D.E</a>
+      <span class="date">24-Marzo</span>
+      <a href="2009/03/24/">Charla sobre robótica modular en las III jornadas de robótica de A.R.D.E</a>
     </li>
     <li>
-      26-Marzo: <a href="2009/03/26/">Demostración de Robots Modulares en Madridbot 2009</a>
+      <span class="date">26-Marzo</span>
+      <a href="2009/03/26/">Demostración de Robots Modulares en Madridbot 2009</a>
     </li>
     <li>
-      08-Abril: <a href="2009/04/08/">Robots modulares autónomos (I)</a>
+      <span class="date">08-Abril</span>
+      <a href="2009/04/08/">Robots modulares autónomos (I)</a>
     </li>
     <li>
-      15-Abril: <a href="2009/04/15/">Robots Modulares autónomos (II)</a>
+      <span class="date">15-Abril</span>
+      <a href="2009/04/15/">Robots Modulares autónomos (II)</a>
     </li>
     <li>
-      21-Abril: <a href="2009/04/21/">International Conference on Mechatronics 2009</a>
+      <span class="date">21-Abril</span>
+      <a href="2009/04/21/">International Conference on Mechatronics 2009</a>
     </li>
     <li>
-      29-Abril: <a href="2009/04/29/">Lanzado JDEROBOT 4.3</a>
+      <span class="date">29-Abril</span>
+      <a href="2009/04/29/">Lanzado JDEROBOT 4.3</a>
     </li>
     <li>
-      07-Mayo: <a href="2009/05/07/">Charla sobre Robótica Modular en la Universidad Rey Juan Carlos</a>
+      <span class="date">07-Mayo</span>
+      <a href="2009/05/07/">Charla sobre Robótica Modular en la Universidad Rey Juan Carlos</a>
     </li>
     <li>
-      07-Mayo: <a href="2009/05/07/index2.html">Ya ha llegado el kit de nuestra Reprap!</a>
+      <span class="date">07-Mayo</span>
+      <a href="2009/05/07/index2.html">Ya ha llegado el kit de nuestra Reprap!</a>
     </li>
     <li>
-      10-Mayo: <a href="2009/05/10/">Estado de nuetra Reprap (I)</a>
+      <span class="date">10-Mayo</span>
+      <a href="2009/05/10/">Estado de nuetra Reprap (I)</a>
     </li>
     <li>
-      13-Mayo: <a href="2009/05/13/">Diseñando piezas en 3D para probar con la Reprap</a>
+      <span class="date">13-Mayo</span>
+      <a href="2009/05/13/">Diseñando piezas en 3D para probar con la Reprap</a>
     </li>
     <li>
-      17-Mayo: <a href="2009/05/17/">Estado de nuestra reprap (II)</a>
+      <span class="date">17-Mayo</span>
+      <a href="2009/05/17/">Estado de nuestra reprap (II)</a>
     </li>
     <li>
-      19-Mayo: <a href="2009/05/19/">Habemus Reprap!</a>
+      <span class="date">19-Mayo</span>
+      <a href="2009/05/19/">Habemus Reprap!</a>
     </li>
     <li>
-      04-Junio: <a href="2009/06/04/">Visita de Francisco Ramos, de la Universidad de Castilla-la Mancha</a>
+      <span class="date">04-Junio</span>
+      <a href="2009/06/04/">Visita de Francisco Ramos, de la Universidad de Castilla-la Mancha</a>
     </li>
     <li>
-      10-Junio: <a href="2009/06/10/">Módulos REPY-1</a>
+      <span class="date">10-Junio</span>
+      <a href="2009/06/10/">Módulos REPY-1</a>
     </li>
     <li>
-      12-Junio: <a href="2009/06/12/">Repositorios de objetos 3D imprimibles</a>
+      <span class="date">12-Junio</span>
+      <a href="2009/06/12/">Repositorios de objetos 3D imprimibles</a>
     </li>
     <li>
-      19-Junio: <a href="2009/06/19/">Visita al Robotics Innovation Center de Bremen (Alemania)</a>
+      <span class="date">19-Junio</span>
+      <a href="2009/06/19/">Visita al Robotics Innovation Center de Bremen (Alemania)</a>
     </li>
     <li>
-      22-Junio: <a href="2009/06/22/">Curso de robots modulares en Hamburgo (Alemania)</a>
+      <span class="date">22-Junio</span>
+      <a href="2009/06/22/">Curso de robots modulares en Hamburgo (Alemania)</a>
     </li>
     <li>
-      23-Julio: <a href="2009/07/23/">Conferencia sobre Robótica modular en los cursos de verano de la UCLM</a>
+      <span class="date">23-Julio</span>
+      <a href="2009/07/23/">Conferencia sobre Robótica modular en los cursos de verano de la UCLM</a>
     </li>
     <li>
-      25-Julio: <a href="2009/07/25/">Mis documentos en Scribd</a>
+      <span class="date">25-Julio</span>
+      <a href="2009/07/25/">Mis documentos en Scribd</a>
     </li>
     <li>
-      25-Julio: <a href="2009/07/25/index2.html">Simulación de los módulos y1 con Sketchup</a>
+      <span class="date">25-Julio</span>
+      <a href="2009/07/25/index2.html">Simulación de los módulos y1 con Sketchup</a>
     </li>
     <li>
-      27-Julio: <a href="2009/07/27/">Lista de correo y respositorio svn para el Skybot</a>
+      <span class="date">27-Julio</span>
+      <a href="2009/07/27/">Lista de correo y respositorio svn para el Skybot</a>
     </li>
     <li>
-      29-Julio: <a href="2009/07/29/">Ruedas G3 para el Skybot</a>
+      <span class="date">29-Julio</span>
+      <a href="2009/07/29/">Ruedas G3 para el Skybot</a>
     </li>
     <li>
-      30-Julio: <a href="2009/07/30/">Vídeo de la demo de robots modulares en la Cristalera 2008</a>
+      <span class="date">30-Julio</span>
+      <a href="2009/07/30/">Vídeo de la demo de robots modulares en la Cristalera 2008</a>
     </li>
     <li>
-      25-Agosto: <a href="2009/08/25/">Referencia en diario Público.es</a>
+      <span class="date">25-Agosto</span>
+      <a href="2009/08/25/">Referencia en diario Público.es</a>
     </li>
     <li>
-      25-Agosto: <a href="2009/08/25/index2.html">Módulos octogonales ORM</a>
+      <span class="date">25-Agosto</span>
+      <a href="2009/08/25/index2.html">Módulos octogonales ORM</a>
     </li>
     <li>
-      25-Agosto: <a href="2009/08/25/index3.html">STARK-R8: Skybot + Brazo robot con módulos Y1</a>
+      <span class="date">25-Agosto</span>
+      <a href="2009/08/25/index3.html">STARK-R8: Skybot + Brazo robot con módulos Y1</a>
     </li>
     <li>
-      26-Agosto: <a href="2009/08/26/">Vídeo de la charla sobre robótica modular en la URJC</a>
+      <span class="date">26-Agosto</span>
+      <a href="2009/08/26/">Vídeo de la charla sobre robótica modular en la URJC</a>
     </li>
     <li>
-      09-Septiembre: <a href="2009/09/09/">Hardware libre (I)</a>
+      <span class="date">09-Septiembre</span>
+      <a href="2009/09/09/">Hardware libre (I)</a>
     </li>
     <li>
-      10-Septiembre: <a href="2009/09/10/">Tarjeta Skycube y Robots modulares autónomos</a>
+      <span class="date">10-Septiembre</span>
+      <a href="2009/09/10/">Tarjeta Skycube y Robots modulares autónomos</a>
     </li>
     <li>
-      13-Septiembre: <a href="2009/09/13/">El robot modular Minicube-I ya es autónomo ;-)</a>
+      <span class="date">13-Septiembre</span>
+      <a href="2009/09/13/">El robot modular Minicube-I ya es autónomo ;-)</a>
     </li>
     <li>
-      16-Septiembre: <a href="2009/09/16/">Publicado curso de programación del PIC16 en C</a>
+      <span class="date">16-Septiembre</span>
+      <a href="2009/09/16/">Publicado curso de programación del PIC16 en C</a>
     </li>
     <li>
-      16-Septiembre: <a href="2009/09/16/index2.html">Hardware libre (II)</a>
+      <span class="date">16-Septiembre</span>
+      <a href="2009/09/16/index2.html">Hardware libre (II)</a>
     </li>
     <li>
-      19-Septiembre: <a href="2009/09/19/">Primer prototipo de la Skypic-2009</a>
+      <span class="date">19-Septiembre</span>
+      <a href="2009/09/19/">Primer prototipo de la Skypic-2009</a>
     </li>
     <li>
-      20-Septiembre: <a href="2009/09/20/">Jugando con robots modulares</a>
+      <span class="date">20-Septiembre</span>
+      <a href="2009/09/20/">Jugando con robots modulares</a>
     </li>
     <li>
-      29-Septiembre: <a href="2009/09/27/">Manteniendo la distancia</a>
+      <span class="date">29-Septiembre</span>
+      <a href="2009/09/27/">Manteniendo la distancia</a>
     </li>
     <li>
-      05-Octubre: <a href="2009/10/05/">Mi nueva Padawan</a>
+      <span class="date">05-Octubre</span>
+      <a href="2009/10/05/">Mi nueva Padawan</a>
     </li>
     <li>
-      05-Octubre: <a href="2009/10/05/index2.html">Cambio de aires: CEIEC</a>
+      <span class="date">05-Octubre</span>
+      <a href="2009/10/05/index2.html">Cambio de aires: CEIEC</a>
     </li>
     <li>
-      24-Octubre: <a href="2009/10/24/">Skypic 2009 (I): PCB industrial</a>
+      <span class="date">24-Octubre</span>
+      <a href="2009/10/24/">Skypic 2009 (I): PCB industrial</a>
     </li>
     <li>
-      30-Octubre: <a href="2009/10/30/">Usbpicprog: Grabador libre de PICs</a>
+      <span class="date">30-Octubre</span>
+      <a href="2009/10/30/">Usbpicprog: Grabador libre de PICs</a>
     </li>
     <li>
-      02-Noviembre: <a href="2009/11/02/">Ya está lista la Skypic 2009</a>
+      <span class="date">02-Noviembre</span>
+      <a href="2009/11/02/">Ya está lista la Skypic 2009</a>
     </li>
     <li>
-      03-Noviembre: <a href="2009/11/03/">Venta de PCBs de la skypic 2009: ayúdanos a financiar el hardware libre</a>
+      <span class="date">03-Noviembre</span>
+      <a href="2009/11/03/">Venta de PCBs de la skypic 2009: ayúdanos a financiar el hardware libre</a>
     </li>
     <li>
-      08-Noviembre: <a href="2009/11/08/">Primer PCB de la tarjeta Skycube</a>
+      <span class="date">08-Noviembre</span>
+      <a href="2009/11/08/">Primer PCB de la tarjeta Skycube</a>
     </li>
     <li>
-      23-Noviembre: <a href="2009/11/23/">Skypic 2009: Muchas gracias por vuestra ayuda :-)</a>
+      <span class="date">23-Noviembre</span>
+      <a href="2009/11/23/">Skypic 2009: Muchas gracias por vuestra ayuda :-)</a>
     </li>
     <li>
-      29-Noviembre: <a href="2009/11/29/">Robots modulares en el Dorkbot Madrid</a>
+      <span class="date">29-Noviembre</span>
+      <a href="2009/11/29/">Robots modulares en el Dorkbot Madrid</a>
     </li>
     <li>
-      29-Noviembre: <a href="2009/11/29/index2.html">El robot Minicube-II ya es autónomo!</a>
+      <span class="date">29-Noviembre</span>
+      <a href="2009/11/29/index2.html">El robot Minicube-II ya es autónomo!</a>
     </li>
     <li>
-      01-Diciembre: <a href="2009/12/01/">Módulos MY-1: prueba de concepto</a>
+      <span class="date">01-Diciembre</span>
+      <a href="2009/12/01/">Módulos MY-1: prueba de concepto</a>
     </li>
     <li>
-      03-Diciembre: <a href="2009/12/03/">Tarjeta Skycube 1.0</a>
+      <span class="date">03-Diciembre</span>
+      <a href="2009/12/03/">Tarjeta Skycube 1.0</a>
     </li>
     <li>
-      07-Diciembre: <a href="2009/12/07/">Defensa del proyecto de Enrique Holgado en la UCLM</a>
+      <span class="date">07-Diciembre</span>
+      <a href="2009/12/07/">Defensa del proyecto de Enrique Holgado en la UCLM</a>
     </li>
     <li>
-      15-Diciembre: <a href="2009/12/15/">Hablando sobre el taller de robots modulares</a>
+      <span class="date">15-Diciembre</span>
+      <a href="2009/12/15/">Hablando sobre el taller de robots modulares</a>
     </li>
     <li>
-      20-Diciembre: <a href="2009/12/20/">Segundo prototipo de los módulos MY-1</a>
+      <span class="date">20-Diciembre</span>
+      <a href="2009/12/20/">Segundo prototipo de los módulos MY-1</a>
     </li>
     <li>
-      23-Diciembre: <a href="2009/12/23/">Cable USB-serie FTDI para conectar la Skycube al PC</a>
+      <span class="date">23-Diciembre</span>
+      <a href="2009/12/23/">Cable USB-serie FTDI para conectar la Skycube al PC</a>
     </li>
     <li>
-      25-Diciembre: <a href="2009/12/25/">Monolito 1.0: Biblioteca de componentes para Kicad</a>
+      <span class="date">25-Diciembre</span>
+      <a href="2009/12/25/">Monolito 1.0: Biblioteca de componentes para Kicad</a>
     </li>
-
   </ul>
-
 </details>
 
 <details>
   <summary>2010</summary>
-
   <ul>
     <li>
-      16-Enero: <a href="2010/01/16/">Lote Nº 1 de tarjetas Skycube!!</a>
+      <span class="date">16-Enero</span>
+      <a href="2010/01/16/">Lote Nº 1 de tarjetas Skycube!!</a>
     </li>
     <li>
-      17-Enero: <a href="2010/01/17/">Mi mesa está tomada por los robots modulares!</a>
+      <span class="date">17-Enero</span>
+      <a href="2010/01/17/">Mi mesa está tomada por los robots modulares!</a>
     </li>
     <li>
-      18-Enero: <a href="2010/01/18/">Micro-osciladores 0.3</a>
+      <span class="date">18-Enero</span>
+      <a href="2010/01/18/">Micro-osciladores 0.3</a>
     </li>
     <li>
-      21-Enero: <a href="2010/01/21/">Tarjeta Skypads 1.0</a>
+      <span class="date">21-Enero</span>
+      <a href="2010/01/21/">Tarjeta Skypads 1.0</a>
     </li>
     <li>
-      22-Enero: <a href="2010/01/22/">Tarjeta skypads 2.0</a>
+      <span class="date">22-Enero</span>
+      <a href="2010/01/22/">Tarjeta skypads 2.0</a>
     </li>
     <li>
-      24-Enero: <a href="2010/01/24/">Modular Robotics and Locomotion: Application to Limbless robots</a>
+      <span class="date">24-Enero</span>
+      <a href="2010/01/24/">Modular Robotics and Locomotion: Application to Limbless robots</a>
     </li>
     <li>
-      27-Enero: <a href="2010/01/27/">Profesor en la Universidad Carlos III</a>
+      <span class="date">27-Enero</span>
+      <a href="2010/01/27/">Profesor en la Universidad Carlos III</a>
     </li>
     <li>
-      31-Enero: <a href="2010/01/31/">Lote número 1 de módulos MY1</a>
+      <span class="date">31-Enero</span>
+      <a href="2010/01/31/">Lote número 1 de módulos MY1</a>
     </li>
     <li>
-      31-Enero: <a href="2010/01/31/index2.html">Visita a Xavier de Blas en Barcelona para el proyecto Chronojump</a>
+      <span class="date">31-Enero</span>
+      <a href="2010/01/31/index2.html">Visita a Xavier de Blas en Barcelona para el proyecto Chronojump</a>
     </li>
     <li>
-      06-Febrero: <a href="2010/02/06/">Presentada la propuesta para el I Taller de Robots Ápodos Modulares en la Universidad Carlos III</a>
+      <span class="date">06-Febrero</span>
+      <a href="2010/02/06/">Presentada la propuesta para el I Taller de Robots Ápodos Modulares en la Universidad Carlos III</a>
     </li>
     <li>
-      11-Febrero: <a href="2010/02/11/">VI Taller de robótica en la UAM 2010</a>
+      <span class="date">11-Febrero</span>
+      <a href="2010/02/11/">VI Taller de robótica en la UAM 2010</a>
     </li>
     <li>
-      11-Febrero: <a href="2010/02/11/index2.html">Documentación del montaje de los módulos MY-1</a>
+      <span class="date">11-Febrero</span>
+      <a href="2010/02/11/index2.html">Documentación del montaje de los módulos MY-1</a>
     </li>
     <li>
-      23-Febrero: <a href="2010/02/23/">Simulando Robots modulares con OpenRave (I)</a>
+      <span class="date">23-Febrero</span>
+      <a href="2010/02/23/">Simulando Robots modulares con OpenRave (I)</a>
     </li>
     <li>
-      28-Febrero: <a href="2010/02/28/">Publicada la documentación del montaje de UNIMOD A1</a>
+      <span class="date">28-Febrero</span>
+      <a href="2010/02/28/">Publicada la documentación del montaje de UNIMOD A1</a>
     </li>
     <li>
-      01-Marzo: <a href="2010/03/01/">Simulando robots modulares con OpenRave (II)</a>
+      <span class="date">01-Marzo</span>
+      <a href="2010/03/01/">Simulando robots modulares con OpenRave (II)</a>
     </li>
     <li>
-      08-Marzo: <a href="2010/03/08/">Contribución a OpenRave: Odecontroller</a>
+      <span class="date">08-Marzo</span>
+      <a href="2010/03/08/">Contribución a OpenRave: Odecontroller</a>
     </li>
     <li>
-      09-Marzo: <a href="2010/03/09/">OpenMR: Modular Robots plug-in for Openrave</a>
+      <span class="date">09-Marzo</span>
+      <a href="2010/03/09/">OpenMR: Modular Robots plug-in for Openrave</a>
     </li>
     <li>
-      14-Marzo: <a href="2010/03/14/">Moviendo un módulo Y1 virtual con JDERobot 5.0</a>
+      <span class="date">14-Marzo</span>
+      <a href="2010/03/14/">Moviendo un módulo Y1 virtual con JDERobot 5.0</a>
     </li>
     <li>
-      16-Marzo: <a href="2010/03/16/">Publicada la documentación del montaje del robot modular Minicube-I</a>
+      <span class="date">16-Marzo</span>
+      <a href="2010/03/16/">Publicada la documentación del montaje del robot modular Minicube-I</a>
     </li>
     <li>
-      20-Marzo: <a href="2010/03/20/">VIII Aniversario de IeaRobotics</a>
+      <span class="date">20-Marzo</span>
+      <a href="2010/03/20/">VIII Aniversario de IeaRobotics</a>
     </li>
     <li>
-      26-Marzo: <a href="2010/03/26/">Experimentos con Unimod</a>
+      <span class="date">26-Marzo</span>
+      <a href="2010/03/26/">Experimentos con Unimod</a>
     </li>
     <li>
-      28-Marzo: <a href="2010/03/28/">Robots móviles en la la signatura de Robótica en la UC3M</a>
+      <span class="date">28-Marzo</span>
+      <a href="2010/03/28/">Robots móviles en la la signatura de Robótica en la UC3M</a>
     </li>
     <li>
-      30-Marzo: <a href="2010/03/30/">Skybot: Tomas falsas</a>
+      <span class="date">30-Marzo</span>
+      <a href="2010/03/30/">Skybot: Tomas falsas</a>
     </li>
     <li>
-      31-Marzo: <a href="2010/03/31/">Robots modulares en 3D con OpenRave</a>
+      <span class="date">31-Marzo</span>
+      <a href="2010/03/31/">Robots modulares en 3D con OpenRave</a>
     </li>
     <li>
-      03-Abril: <a href="2010/04/03/">Montaje de Cube3</a>
+      <span class="date">03-Abril</span>
+      <a href="2010/04/03/">Montaje de Cube3</a>
     </li>
     <li>
-      04-Abril: <a href="2010/04/04/">Granja de robots modulares (I)</a>
+      <span class="date">04-Abril</span>
+      <a href="2010/04/04/">Granja de robots modulares (I)</a>
     </li>
     <li>
-      05-Abril: <a href="2010/04/05/">Montaje de Unimod B1</a>
+      <span class="date">05-Abril</span>
+      <a href="2010/04/05/">Montaje de Unimod B1</a>
     </li>
     <li>
-      12-Abril: <a href="2010/04/12/">Robots modulares en la Semana de la Robótica</a>
+      <span class="date">12-Abril</span>
+      <a href="2010/04/12/">Robots modulares en la Semana de la Robótica</a>
     </li>
     <li>
-      15-Abril: <a href="2010/04/15/">Publicadas transparencias de la charla “Robots modulares” dada en la UC3M</a>
+      <span class="date">15-Abril</span>
+      <a href="2010/04/15/">Publicadas transparencias de la charla “Robots modulares” dada en la UC3M</a>
     </li>
     <li>
-      16-Abril: <a href="2010/04/16/">Transparencias de Robots Ápodos modulares de Hispabot-Alcabot</a>
+      <span class="date">16-Abril</span>
+      <a href="2010/04/16/">Transparencias de Robots Ápodos modulares de Hispabot-Alcabot</a>
     </li>
     <li>
-      18-Abril: <a href="2010/04/18/">Montaje de Unimod 2D - tipo B1</a>
+      <span class="date">18-Abril</span>
+      <a href="2010/04/18/">Montaje de Unimod 2D - tipo B1</a>
     </li>
     <li>
-      05-Mayo: <a href="2010/05/11/">Robots modulares en la asignatura de Robótica en la UC3M</a>
+      <span class="date">05-Mayo</span>
+      <a href="2010/05/11/">Robots modulares en la asignatura de Robótica en la UC3M</a>
     </li>
     <li>
-      18-Mayo: <a href="2010/05/18/">Robot modular serpiente para búsqueda y rescate en zonas catastróficas</a>
+      <span class="date">18-Mayo</span>
+      <a href="2010/05/18/">Robot modular serpiente para búsqueda y rescate en zonas catastróficas</a>
     </li>
     <li>
-      27-Mayo: <a href="2010/05/27/">Software de micro-osciladores portado al ATmega168 de Atmel</a>
+      <span class="date">27-Mayo</span>
+      <a href="2010/05/27/">Software de micro-osciladores portado al ATmega168 de Atmel</a>
     </li>
     <li>
-      29-Mayo: <a href="2010/05/29/">Primer prototipo de la Tarjeta Skycube-mega: Locomoción de Minicube-I</a>
+      <span class="date">29-Mayo</span>
+      <a href="2010/05/29/">Primer prototipo de la Tarjeta Skycube-mega: Locomoción de Minicube-I</a>
     </li>
     <li>
-      08-Junio: <a href="2010/06/08/">Visita al Instituto de Robótica de la Universidad de Beihang en China</a>
+      <span class="date">08-Junio</span>
+      <a href="2010/06/08/">Visita al Instituto de Robótica de la Universidad de Beihang en China</a>
     </li>
     <li>
-      10-Junio: <a href="2010/06/10/">Visita de investigadores del Instituto de Robótica de la Universidad Beihang de Pekín</a>
+      <span class="date">10-Junio</span>
+      <a href="2010/06/10/">Visita de investigadores del Instituto de Robótica de la Universidad Beihang de Pekín</a>
     </li>
     <li>
-      13-Junio: <a href="2010/06/13/">Software para la Skypic + Skybot empaquetados para Ubuntu 10.04</a>
+      <span class="date">13-Junio</span>
+      <a href="2010/06/13/">Software para la Skypic + Skybot empaquetados para Ubuntu 10.04</a>
     </li>
     <li>
-      15-Junio: <a href="2010/06/15/">Robots modulares en la Universidad de Málaga</a>
+      <span class="date">15-Junio</span>
+      <a href="2010/06/15/">Robots modulares en la Universidad de Málaga</a>
     </li>
     <li>
-      22-Junio: <a href="2010/06/22/">Publicadas transparencias de la charla dada en la Universidad de Málaga</a>
+      <span class="date">22-Junio</span>
+      <a href="2010/06/22/">Publicadas transparencias de la charla dada en la Universidad de Málaga</a>
     </li>
     <li>
-      28-Junio: <a href="2010/06/28/">Fabricando la Skypic en china</a>
+      <span class="date">28-Junio</span>
+      <a href="2010/06/28/">Fabricando la Skypic en china</a>
     </li>
     <li>
-      08-Julio: <a href="2010/07/08/">La nueva bandera de España</a>
+      <span class="date">08-Julio</span>
+      <a href="2010/07/08/">La nueva bandera de España</a>
     </li>
     <li>
-      12-Julio: <a href="2010/07/12/">Campeones del mundo de fútbol</a>
+      <span class="date">12-Julio</span>
+      <a href="2010/07/12/">Campeones del mundo de fútbol</a>
     </li>
     <li>
-      13-Julio: <a href="2010/07/13/">Plantilla para fabricar 20 módulos Y1 en Ponoko.com</a>
+      <span class="date">13-Julio</span>
+      <a href="2010/07/13/">Plantilla para fabricar 20 módulos Y1 en Ponoko.com</a>
     </li>
     <li>
-      15-Julio: <a href="2010/07/15/">Programación del puerto serie en Linux en C++</a>
+      <span class="date">15-Julio</span>
+      <a href="2010/07/15/">Programación del puerto serie en Linux en C++</a>
     </li>
     <li>
-      16-Julio: <a href="2010/07/16/">Probando comportamientos en Minicube-II (I)</a>
+      <span class="date">16-Julio</span>
+      <a href="2010/07/16/">Probando comportamientos en Minicube-II (I)</a>
     </li>
     <li>
-      27-Julio: <a href="2010/07/27/">Taller de robots modulares en el Campus científico de Verano de la UC3M</a>
+      <span class="date">27-Julio</span>
+      <a href="2010/07/27/">Taller de robots modulares en el Campus científico de Verano de la UC3M</a>
     </li>
     <li>
-      28-Julio: <a href="2010/07/28/">Comida de los ex-CEIECs</a>
+      <span class="date">28-Julio</span>
+      <a href="2010/07/28/">Comida de los ex-CEIECs</a>
     </li>
     <li>
-      30-Julio: <a href="2010/07/30/">Probando comportamientos en Minicube-II (II)</a>
+      <span class="date">30-Julio</span>
+      <a href="2010/07/30/">Probando comportamientos en Minicube-II (II)</a>
     </li>
     <li>
-      07-Agosto: <a href="2010/08/07/">Reprap resurrection!</a>
+      <span class="date">07-Agosto</span>
+      <a href="2010/08/07/">Reprap resurrection!</a>
     </li>
     <li>
-      08-Agosto: <a href="2010/08/08/">Fabricación de 20 módulos Y1 en ponoko.com (II)</a>
+      <span class="date">08-Agosto</span>
+      <a href="2010/08/08/">Fabricación de 20 módulos Y1 en ponoko.com (II)</a>
     </li>
     <li>
-      13-Agosto: <a href="2010/08/13/">Diseñando piezas con OpenScad</a>
+      <span class="date">13-Agosto</span>
+      <a href="2010/08/13/">Diseñando piezas con OpenScad</a>
     </li>
     <li>
-      15-Agosto: <a href="2010/08/15/">Modular mesh robots (I)</a>
+      <span class="date">15-Agosto</span>
+      <a href="2010/08/15/">Modular mesh robots (I)</a>
     </li>
     <li>
-      19-Agosto: <a href="2010/08/19/">Entorno Code::Blocks para programación de microcontroladores PIC</a>
+      <span class="date">19-Agosto</span>
+      <a href="2010/08/19/">Entorno Code::Blocks para programación de microcontroladores PIC</a>
     </li>
     <li>
-      12-Octubre: <a href="2010/10/12/">Cinemática directa de brazos robóticos simples con Octave</a>
+      <span class="date">12-Octubre</span>
+      <a href="2010/10/12/">Cinemática directa de brazos robóticos simples con Octave</a>
     </li>
     <li>
-      23-Octubre: <a href="2010/10/23/">Anuncio: Charla sobre robots modulares en la UCLM</a>
+      <span class="date">23-Octubre</span>
+      <a href="2010/10/23/">Anuncio: Charla sobre robots modulares en la UCLM</a>
     </li>
     <li>
-      31-Octubre: <a href="2010/10/31/">Lectura del proyecto fin de carrera de Carlos Pastor</a>
+      <span class="date">31-Octubre</span>
+      <a href="2010/10/31/">Lectura del proyecto fin de carrera de Carlos Pastor</a>
     </li>
     <li>
-      01-Noviembre: <a href="2010/11/01/">Me ha llegado el DVD de Sintel: una película libre hecha con Blender</a>
+      <span class="date">01-Noviembre</span>
+      <a href="2010/11/01/">Me ha llegado el DVD de Sintel: una película libre hecha con Blender</a>
     </li>
     <li>
-      06-Noviembre: <a href="2010/11/06/">Publicadas transparencias de la charla de robots modulares en la UCLM</a>
+      <span class="date">06-Noviembre</span>
+      <a href="2010/11/06/">Publicadas transparencias de la charla de robots modulares en la UCLM</a>
     </li>
     <li>
-      07-Noviembre: <a href="2010/11/07/">Reprap resurrection! (II)</a>
+      <span class="date">07-Noviembre</span>
+      <a href="2010/11/07/">Reprap resurrection! (II)</a>
     </li>
     <li>
-      07-Noviembre: <a href="2010/11/07/index2.html">Fichas de casino en OpenScad</a>
+      <span class="date">07-Noviembre</span>
+      <a href="2010/11/07/index2.html">Fichas de casino en OpenScad</a>
     </li>
     <li>
-      10-Noviembre: <a href="2010/11/10/">Freecad: aplicación libre de CAD</a>
+      <span class="date">10-Noviembre</span>
+      <a href="2010/11/10/">Freecad: aplicación libre de CAD</a>
     </li>
     <li>
-      14-Noviembre: <a href="2010/11/14/">Ruedas del Skybot diseñadas en Openscad</a>
+      <span class="date">14-Noviembre</span>
+      <a href="2010/11/14/">Ruedas del Skybot diseñadas en Openscad</a>
     </li>
     <li>
-      20-Noviembre: <a href="2010/11/20/">Cucharilla imprimible para mover el café</a>
+      <span class="date">20-Noviembre</span>
+      <a href="2010/11/20/">Cucharilla imprimible para mover el café</a>
     </li>
     <li>
-      26-Noviembre: <a href="2010/11/26/">Cabeza del robot Hoap imprimible</a>
+      <span class="date">26-Noviembre</span>
+      <a href="2010/11/26/">Cabeza del robot Hoap imprimible</a>
     </li>
     <li>
-      28-Noviembre: <a href="2010/11/28/">Robot MiniSkybot</a>
+      <span class="date">28-Noviembre</span>
+      <a href="2010/11/28/">Robot MiniSkybot</a>
     </li>
     <li>
-      04-Diciembre: <a href="2010/12/04/">Desarrollo de Robots modulares de tipo serpiente para búsqueda y rescate en entornos urbanos</a>
+      <span class="date">04-Diciembre</span>
+      <a href="2010/12/04/">Desarrollo de Robots modulares de tipo serpiente para búsqueda y rescate en entornos urbanos</a>
     </li>
     <li>
-      05-Diciembre: <a href="2010/12/05/">Kicad: biblioteca Monolito 1.1.1 publicada</a>
+      <span class="date">05-Diciembre</span>
+      <a href="2010/12/05/">Kicad: biblioteca Monolito 1.1.1 publicada</a>
     </li>
     <li>
-      06-Diciembre: <a href="2010/12/06/">Logo del grupo MR en Openscad</a>
+      <span class="date">06-Diciembre</span>
+      <a href="2010/12/06/">Logo del grupo MR en Openscad</a>
     </li>
     <li>
-      19-Diciembre: <a href="2010/12/19/">Coche de fórmula 1 imprimible en 3D</a>
+      <span class="date">19-Diciembre</span>
+      <a href="2010/12/19/">Coche de fórmula 1 imprimible en 3D</a>
     </li>
     <li>
-      19-Diciembre: <a href="2010/12/19/index2.html">Agentes robóticos VS Mecatrónica</a>
+      <span class="date">19-Diciembre</span>
+      <a href="2010/12/19/index2.html">Agentes robóticos VS Mecatrónica</a>
     </li>
     <li>
-      29-Diciembre: <a href="2010/12/29/">Piezas con tuercas empotradas</a>
+      <span class="date">29-Diciembre</span>
+      <a href="2010/12/29/">Piezas con tuercas empotradas</a>
     </li>
     <li>
-      29-Diciembre: <a href="2010/12/29/index2.html">Producción de ruedas del Skybot/Mini-Skybot</a>
+      <span class="date">29-Diciembre</span>
+      <a href="2010/12/29/index2.html">Producción de ruedas del Skybot/Mini-Skybot</a>
     </li>
   </ul>
 </details>
 
 <details>
   <summary>2011</summary>
-
   <ul>
     <li>
-      02-Enero: <a href="2011/01/02/">No puedo parar de imprimir robots!</a>
+      <span class="date">02-Enero</span>
+      <a href="2011/01/02/">No puedo parar de imprimir robots!</a>
     </li>
     <li>
-      29-Enero: <a href="2011/01/29/">3DTin: Herramienta on-line para diseño 3D</a>
+      <span class="date">29-Enero</span>
+      <a href="2011/01/29/">3DTin: Herramienta on-line para diseño 3D</a>
     </li>
     <li>
-      30-Enero: <a href="2011/01/30/">Portapilas parametrizado</a>
+      <span class="date">30-Enero</span>
+      <a href="2011/01/30/">Portapilas parametrizado</a>
     </li>
     <li>
-      20-Febrero: <a href="2011/02/20/">Software para la Skypic/Skybot empaquetados para Ubuntu 10.10 (64-bits)</a>
+      <span class="date">20-Febrero</span>
+      <a href="2011/02/20/">Software para la Skypic/Skybot empaquetados para Ubuntu 10.10 (64-bits)</a>
     </li>
     <li>
-      05-Marzo: <a href="2011/03/05/">Taller de robots modulares en Arabia Saudí</a>
+      <span class="date">05-Marzo</span>
+      <a href="2011/03/05/">Taller de robots modulares en Arabia Saudí</a>
     </li>
     <li>
-      19-Marzo: <a href="2011/03/19/">Talk in Saudi Arabia: The state of the art research at Robotics Lab in Carlos III University of Madrid</a>
+      <span class="date">19-Marzo</span>
+      <a href="2011/03/19/">Talk in Saudi Arabia: The state of the art research at Robotics Lab in Carlos III University of Madrid</a>
     </li>
     <li>
-      19-Marzo: <a href="2011/03/19/index2.html">Easy Graph library: programación de grafos en C++</a>
+      <span class="date">19-Marzo</span>
+      <a href="2011/03/19/index2.html">Easy Graph library: programación de grafos en C++</a>
     </li>
     <li>
-      19-Marzo: <a href="2011/03/19/index3.html">Talk in Saudi Arabia: Modular Snake Robots</a>
+      <span class="date">19-Marzo</span>
+      <a href="2011/03/19/index3.html">Talk in Saudi Arabia: Modular Snake Robots</a>
     </li>
     <li>
-      22-Marzo: <a href="2011/03/22/">Genetic Algorithm for a fast and robust Solution to Multiple-TSP</a>
+      <span class="date">22-Marzo</span>
+      <a href="2011/03/22/">Genetic Algorithm for a fast and robust Solution to Multiple-TSP</a>
     </li>
     <li>
-      28-Marzo: <a href="2011/03/28/">Movimiento del robot Mini-skybot con ruedas limitadas</a>
+      <span class="date">28-Marzo</span>
+      <a href="2011/03/28/">Movimiento del robot Mini-skybot con ruedas limitadas</a>
     </li>
     <li>
-      31-Marzo: <a href="2011/03/31/">Taller de robots modulares en Arabia Saudí (II)</a>
+      <span class="date">31-Marzo</span>
+      <a href="2011/03/31/">Taller de robots modulares en Arabia Saudí (II)</a>
     </li>
     <li>
-      01-Abril: <a href="2011/04/01/">Robots modulares y CPGs en la BBC news</a>
+      <span class="date">01-Abril</span>
+      <a href="2011/04/01/">Robots modulares y CPGs en la BBC news</a>
     </li>
     <li>
-      02-Abril: <a href="2011/04/02/">Impresora 3D Open-Source en la UC3M (I)</a>
+      <span class="date">02-Abril</span>
+      <a href="2011/04/02/">Impresora 3D Open-Source en la UC3M (I)</a>
     </li>
     <li>
-      03-Abril: <a href="2011/04/03/">Robot modular Cube3</a>
+      <span class="date">03-Abril</span>
+      <a href="2011/04/03/">Robot modular Cube3</a>
     </li>
     <li>
-      03-Abril: <a href="2011/04/03/index2.html">Visita de Bjarne Stroustrup, el padre de C++, a la UC3M</a>
+      <span class="date">03-Abril</span>
+      <a href="2011/04/03/index2.html">Visita de Bjarne Stroustrup, el padre de C++, a la UC3M</a>
     </li>
     <li>
-      05-Abril: <a href="2011/04/05/">Clon Wars: Clonando impresoras 3D</a>
+      <span class="date">05-Abril</span>
+      <a href="2011/04/05/">Clon Wars: Clonando impresoras 3D</a>
     </li>
     <li>
-      08-Abril: <a href="2011/04/08/">Clon wars: Primeras compras</a>
+      <span class="date">08-Abril</span>
+      <a href="2011/04/08/">Clon wars: Primeras compras</a>
     </li>
     <li>
-      09-Abril: <a href="2011/04/09/">Clon wars: Bastidores triangulares montados</a>
+      <span class="date">09-Abril</span>
+      <a href="2011/04/09/">Clon wars: Bastidores triangulares montados</a>
     </li>
     <li>
-      10-Abril: <a href="2011/04/10/">Clon wars: Más piezas impresas</a>
+      <span class="date">10-Abril</span>
+      <a href="2011/04/10/">Clon wars: Más piezas impresas</a>
     </li>
     <li>
-      11-Abril: <a href="2011/04/11/">Clon wars: Se vislumbra la impresora</a>
+      <span class="date">11-Abril</span>
+      <a href="2011/04/11/">Clon wars: Se vislumbra la impresora</a>
     </li>
     <li>
-      12-Abril: <a href="2011/04/12/">Clon wars: varillas traseras ensambladas</a>
+      <span class="date">12-Abril</span>
+      <a href="2011/04/12/">Clon wars: varillas traseras ensambladas</a>
     </li>
     <li>
-      13-Abril: <a href="2011/04/13/">The UniTrack is here</a>
+      <span class="date">13-Abril</span>
+      <a href="2011/04/13/">The UniTrack is here</a>
     </li>
     <li>
-      14-Abril: <a href="2011/04/14/">… and the OlalliDana caterpillar robot is also here</a>
+      <span class="date">14-Abril</span>
+      <a href="2011/04/14/">… and the OlalliDana caterpillar robot is also here</a>
     </li>
     <li>
-      18-Abril: <a href="2011/04/18/">Clone wars: Parte superior ensamblada. Primera reunión</a>
+      <span class="date">18-Abril</span>
+      <a href="2011/04/18/">Clone wars: Parte superior ensamblada. Primera reunión</a>
     </li>
     <li>
-      20-Abril: <a href="2011/04/20/">Gafas imprimibles</a>
+      <span class="date">20-Abril</span>
+      <a href="2011/04/20/">Gafas imprimibles</a>
     </li>
     <li>
-      23-Abril: <a href="2011/04/23/">Robots imprimibles: Miniskybot V1.0</a>
+      <span class="date">23-Abril</span>
+      <a href="2011/04/23/">Robots imprimibles: Miniskybot V1.0</a>
     </li>
     <li>
-      03-Mayo: <a href="2011/05/03/">Clone wars: Más piezas impresas</a>
+      <span class="date">03-Mayo</span>
+      <a href="2011/05/03/">Clone wars: Más piezas impresas</a>
     </li>
     <li>
-      13-Mayo: <a href="2011/05/13/">Ha llegado MADRE, la impresora 3D de la asociación de robótica de la UC3M</a>
+      <span class="date">13-Mayo</span>
+      <a href="2011/05/13/">Ha llegado MADRE, la impresora 3D de la asociación de robótica de la UC3M</a>
     </li>
     <li>
-      13-Mayo: <a href="2011/05/13/index2.html">Montaje de MADRE (I): Plataforma</a>
+      <span class="date">13-Mayo</span>
+      <a href="2011/05/13/index2.html">Montaje de MADRE (I): Plataforma</a>
     </li>
     <li>
-      16-Mayo: <a href="2011/05/16/">Orugator v1.1 released</a>
+      <span class="date">16-Mayo</span>
+      <a href="2011/05/16/">Orugator v1.1 released</a>
     </li>
     <li>
-      17-Mayo: <a href="2011/05/17/">MADRE ha nacido</a>
+      <span class="date">17-Mayo</span>
+      <a href="2011/05/17/">MADRE ha nacido</a>
     </li>
     <li>
-      28-Mayo: <a href="2011/05/28/">A New Open Source 3D-printable Mobile Robotic Platform for Education</a>
+      <span class="date">28-Mayo</span>
+      <a href="2011/05/28/">A New Open Source 3D-printable Mobile Robotic Platform for Education</a>
     </li>
     <li>
-      28-Mayo: <a href="2011/05/28/index2.html">El Miniskybot en el Amire 2011</a>
+      <span class="date">28-Mayo</span>
+      <a href="2011/05/28/index2.html">El Miniskybot en el Amire 2011</a>
     </li>
     <li>
-      29-Mayo: <a href="2011/05/29/">Hardware libre (III)</a>
+      <span class="date">29-Mayo</span>
+      <a href="2011/05/29/">Hardware libre (III)</a>
     </li>
     <li>
-      29-Mayo: <a href="2011/05/29/index2.html">PCB prototipo de la placa Skymega</a>
+      <span class="date">29-Mayo</span>
+      <a href="2011/05/29/index2.html">PCB prototipo de la placa Skymega</a>
     </li>
     <li>
-      03-Junio: <a href="2011/06/03/">MADRE en la nave</a>
+      <span class="date">03-Junio</span>
+      <a href="2011/06/03/">MADRE en la nave</a>
     </li>
     <li>
-      04-Junio: <a href="2011/06/04/">Clone wars: ha llegado el pedido de material</a>
+      <span class="date">04-Junio</span>
+      <a href="2011/06/04/">Clone wars: ha llegado el pedido de material</a>
     </li>
     <li>
-      05-Junio: <a href="2011/06/05/">Ruedas paramétricas</a>
+      <span class="date">05-Junio</span>
+      <a href="2011/06/05/">Ruedas paramétricas</a>
     </li>
     <li>
-      06-Junio: <a href="2011/06/06/">Ruedas con el logo OSHW para Skybot/Miniskybot</a>
+      <span class="date">06-Junio</span>
+      <a href="2011/06/06/">Ruedas con el logo OSHW para Skybot/Miniskybot</a>
     </li>
     <li>
-      09-Junio: <a href="2011/06/09/">A Distributed Neural Controller for Locomotion in Linear Modular Robotic Configurations</a>
+      <span class="date">09-Junio</span>
+      <a href="2011/06/09/">A Distributed Neural Controller for Locomotion in Linear Modular Robotic Configurations</a>
     </li>
     <li>
-      21-Junio: <a href="2011/06/21/">Miniskybot: Primera “Telecopia” de un robot imprimible</a>
+      <span class="date">21-Junio</span>
+      <a href="2011/06/21/">Miniskybot: Primera “Telecopia” de un robot imprimible</a>
     </li>
     <li>
-      21-Junio: <a href="2011/06/21/index2.html">Skymega 1.0: Ya está aquí :-)</a>
+      <span class="date">21-Junio</span>
+      <a href="2011/06/21/index2.html">Skymega 1.0: Ya está aquí :-)</a>
     </li>
     <li>
-      14-Agosto: <a href="2011/08/14/">¿Y esto para qué sirve?</a>
+      <span class="date">14-Agosto</span>
+      <a href="2011/08/14/">¿Y esto para qué sirve?</a>
     </li>
     <li>
-      14-Agosto: <a href="2011/08/14/index2.html">Entrevista en el “Flexible elements Podcast”</a>
+      <span class="date">14-Agosto</span>
+      <a href="2011/08/14/index2.html">Entrevista en el “Flexible elements Podcast”</a>
     </li>
     <li>
-      30-Agosto: <a href="2011/08/30/">Lectura del proyecto final de carrera de Andrés San-Millán</a>
+      <span class="date">30-Agosto</span>
+      <a href="2011/08/30/">Lectura del proyecto final de carrera de Andrés San-Millán</a>
     </li>
     <li>
-      03-Septiembre: <a href="2011/09/03/">The Object Oriented Mechanics Library is arriving</a>
+      <span class="date">03-Septiembre</span>
+      <a href="2011/09/03/">The Object Oriented Mechanics Library is arriving</a>
     </li>
     <li>
-      04-Septiembre: <a href="2011/09/04/">Clone wars: Ya hay dos prototipos casi listos!!</a>
+      <span class="date">04-Septiembre</span>
+      <a href="2011/09/04/">Clone wars: Ya hay dos prototipos casi listos!!</a>
     </li>
     <li>
-      14-Septiembre: <a href="2011/09/14/">Clone Wars: El eje Y ya está funcionando</a>
+      <span class="date">14-Septiembre</span>
+      <a href="2011/09/14/">Clone Wars: El eje Y ya está funcionando</a>
     </li>
     <li>
-      18-Septiembre: <a href="2011/09/18/">En la tesis doctoral de Fernando Herrero Carrón</a>
+      <span class="date">18-Septiembre</span>
+      <a href="2011/09/18/">En la tesis doctoral de Fernando Herrero Carrón</a>
     </li>
     <li>
-      19-Septiembre: <a href="2011/09/19/">Proyecto Final de carrera de Iñaki Garaigorta</a>
+      <span class="date">19-Septiembre</span>
+      <a href="2011/09/19/">Proyecto Final de carrera de Iñaki Garaigorta</a>
     </li>
     <li>
-      19-Septiembre: <a href="2011/09/19/index2.html">Clone wars: El clon Mardan ya extruye!!</a>
+      <span class="date">19-Septiembre</span>
+      <a href="2011/09/19/index2.html">Clone wars: El clon Mardan ya extruye!!</a>
     </li>
     <li>
-      21-Septiembre: <a href="2011/09/21/">Clone wars: El eje Z de mi clon está montado y funcionando</a>
+      <span class="date">21-Septiembre</span>
+      <a href="2011/09/21/">Clone wars: El eje Z de mi clon está montado y funcionando</a>
     </li>
     <li>
-      21-Septiembre: <a href="2011/09/21/index2.html">Nos vemos en el OSHWcon</a>
+      <span class="date">21-Septiembre</span>
+      <a href="2011/09/21/index2.html">Nos vemos en el OSHWcon</a>
     </li>
     <li>
-      28-Septiembre: <a href="2011/09/28/">Robots libres e imprimibles en el OSHWcon 2011</a>
+      <span class="date">28-Septiembre</span>
+      <a href="2011/09/28/">Robots libres e imprimibles en el OSHWcon 2011</a>
     </li>
     <li>
-      04-Octubre: <a href="2011/10/04/">Clone wars: Todos los ejes de mi clon están funcionando!!</a>
+      <span class="date">04-Octubre</span>
+      <a href="2011/10/04/">Clone wars: Todos los ejes de mi clon están funcionando!!</a>
     </li>
     <li>
-      15-Octubre: <a href="2011/10/15/">Robots libres e imprimibles en Latinoware (Brasil)</a>
+      <span class="date">15-Octubre</span>
+      <a href="2011/10/15/">Robots libres e imprimibles en Latinoware (Brasil)</a>
     </li>
     <li>
-      15-Octubre: <a href="2011/10/15/index2.html">Vídeo de la charla “Robots libres e imprimibles” del OSHWcon 2011 en Madrid</a>
+      <span class="date">15-Octubre</span>
+      <a href="2011/10/15/index2.html">Vídeo de la charla “Robots libres e imprimibles” del OSHWcon 2011 en Madrid</a>
     </li>
     <li>
-      15-Octubre: <a href="2011/10/15/index3.html">Vídeo de la charla “Robots libres e imprimibles” del OSHWcon 2011 en Madrid</a>
+      <span class="date">15-Octubre</span>
+      <a href="2011/10/15/index3.html">Vídeo de la charla “Robots libres e imprimibles” del OSHWcon 2011 en Madrid</a>
     </li>
     <li>
-      27-Octubre: <a href="2011/10/27/">Publicadas las transparencias sobre Robots libres e imprimibles (Latinoware 2011)</a>
+      <span class="date">27-Octubre</span>
+      <a href="2011/10/27/">Publicadas las transparencias sobre Robots libres e imprimibles (Latinoware 2011)</a>
     </li>
     <li>
-      31-Octubre: <a href="2011/10/31/">Scout: Una mutación del Miniskybot en Missouri, USA</a>
+      <span class="date">31-Octubre</span>
+      <a href="2011/10/31/">Scout: Una mutación del Miniskybot en Missouri, USA</a>
     </li>
     <li>
-      06-Noviembre: <a href="2011/11/06/">Concepto de PRINTBOTS</a>
+      <span class="date">06-Noviembre</span>
+      <a href="2011/11/06/">Concepto de PRINTBOTS</a>
     </li>
     <li>
-      06-Noviembre: <a href="2011/11/06/index2.html">Primer PrintBot articulado: 4track</a>
+      <span class="date">06-Noviembre</span>
+      <a href="2011/11/06/index2.html">Primer PrintBot articulado: 4track</a>
     </li>
     <li>
-      06-Noviembre: <a href="2011/11/06/index3.html">PrintBot Orugator: controlando la velocidad</a>
+      <span class="date">06-Noviembre</span>
+      <a href="2011/11/06/index3.html">PrintBot Orugator: controlando la velocidad</a>
     </li>
     <li>
-      06-Noviembre: <a href="2011/11/06/index4.html">Plastic Valley DISAM-UPM!</a>
+      <span class="date">06-Noviembre</span>
+      <a href="2011/11/06/index4.html">Plastic Valley DISAM-UPM!</a>
     </li>
     <li>
-      09-Noviembre: <a href="2011/11/09/">Módulo REPY1 versión 1.1</a>
+      <span class="date">09-Noviembre</span>
+      <a href="2011/11/09/">Módulo REPY1 versión 1.1</a>
     </li>
     <li>
-      09-Noviembre: <a href="2011/11/09/index2.html">Diseño e Impresión de Piezas 3D con herramientas Open Source en el Máster de Robótica y Automatización de la UC3M</a>
+      <span class="date">09-Noviembre</span>
+      <a href="2011/11/09/index2.html">Diseño e Impresión de Piezas 3D con herramientas Open Source en el Máster de Robótica y Automatización de la UC3M</a>
     </li>
     <li>
-      13-Noviembre: <a href="2011/11/13/">Clon wars: Otro clon terminado</a>
+      <span class="date">13-Noviembre</span>
+      <a href="2011/11/13/">Clon wars: Otro clon terminado</a>
     </li>
     <li>
-      24-Noviembre: <a href="2011/11/24/">Plastic Valley Euiti-UPM!!!</a>
+      <span class="date">24-Noviembre</span>
+      <a href="2011/11/24/">Plastic Valley Euiti-UPM!!!</a>
     </li>
     <li>
-      26-Noviembre: <a href="2011/11/26/">La nueva pinza imprimible del robot Hoap del Robotics Lab</a>
+      <span class="date">26-Noviembre</span>
+      <a href="2011/11/26/">La nueva pinza imprimible del robot Hoap del Robotics Lab</a>
     </li>
     <li>
-      02-Diciembre: <a href="2011/12/02/">Tarjeta Skymega: Publicada la documentación y ejemplos</a>
+      <span class="date">02-Diciembre</span>
+      <a href="2011/12/02/">Tarjeta Skymega: Publicada la documentación y ejemplos</a>
     </li>
     <li>
-      11-Diciembre: <a href="2011/12/11/">Clone wars: El clon R2D2 está terminado :-)</a>
+      <span class="date">11-Diciembre</span>
+      <a href="2011/12/11/">Clone wars: El clon R2D2 está terminado :-)</a>
     </li>
     <li>
-      21-Diciembre: <a href="2011/12/21/">Clone wars: Mi extrusor ya extruye :-)</a>
+      <span class="date">21-Diciembre</span>
+      <a href="2011/12/21/">Clone wars: Mi extrusor ya extruye :-)</a>
     </li>
     <li>
-      24-Diciembre: <a href="2011/12/24/">Clone wars: R2D2 ha impreso su primera pieza! :-)</a>
+      <span class="date">24-Diciembre</span>
+      <a href="2011/12/24/">Clone wars: R2D2 ha impreso su primera pieza! :-)</a>
     </li>
   </ul>
 </details>
 
 <details>
   <summary>2012</summary>
-
   <ul>
     <li>
-      01-Enero: <a href="2012/01/01/">Clone wars: R2D2 al 99.5%</a>
+      <span class="date">01-Enero</span>
+      <a href="2012/01/01/">Clone wars: R2D2 al 99.5%</a>
     </li>
     <li>
-      03-Enero: <a href="2012/01/03/">Impresora Cupcake R1, generation 0</a>
+      <span class="date">03-Enero</span>
+      <a href="2012/01/03/">Impresora Cupcake R1, generation 0</a>
     </li>
     <li>
-      04-Enero: <a href="2012/01/04/">Clone wars: primeras piezas de R3, el clon de la segunda generación</a>
+      <span class="date">04-Enero</span>
+      <a href="2012/01/04/">Clone wars: primeras piezas de R3, el clon de la segunda generación</a>
     </li>
     <li>
-      06-Enero: <a href="2012/01/06/">¡El ataque de los ganchos!</a>
+      <span class="date">06-Enero</span>
+      <a href="2012/01/06/">¡El ataque de los ganchos!</a>
     </li>
     <li>
-      08-Enero: <a href="2012/01/08/">Porta pendrives parametrizado</a>
+      <span class="date">08-Enero</span>
+      <a href="2012/01/08/">Porta pendrives parametrizado</a>
     </li>
     <li>
-      10-Enero: <a href="2012/01/10/">Monolito 1.2</a>
+      <span class="date">10-Enero</span>
+      <a href="2012/01/10/">Monolito 1.2</a>
     </li>
     <li>
-      19-Enero: <a href="2012/01/19/">PFC de Julián Marín</a>
+      <span class="date">19-Enero</span>
+      <a href="2012/01/19/">PFC de Julián Marín</a>
     </li>
     <li>
-      21-Enero: <a href="2012/01/21/">La moneda “Que-os-den”</a>
+      <span class="date">21-Enero</span>
+      <a href="2012/01/21/">La moneda “Que-os-den”</a>
     </li>
     <li>
-      22-Enero: <a href="2012/01/22/">Visita de Jesús González Barahona a Plastic Valley UC3M</a>
+      <span class="date">22-Enero</span>
+      <a href="2012/01/22/">Visita de Jesús González Barahona a Plastic Valley UC3M</a>
     </li>
     <li>
-      22-Enero: <a href="2012/01/22/index2.html">El Miniskybot de Darkomen</a>
+      <span class="date">22-Enero</span>
+      <a href="2012/01/22/index2.html">El Miniskybot de Darkomen</a>
     </li>
     <li>
-      22-Enero: <a href="2012/01/22/index3.html">Plastic valley UC3M, en MadFab</a>
+      <span class="date">22-Enero</span>
+      <a href="2012/01/22/index3.html">Plastic valley UC3M, en MadFab</a>
     </li>
     <li>
-      24-Enero: <a href="2012/01/24/">Clone wars: Los clones Maese Artorius y Mardan ya han impreso sus primeras piezas</a>
+      <span class="date">24-Enero</span>
+      <a href="2012/01/24/">Clone wars: Los clones Maese Artorius y Mardan ya han impreso sus primeras piezas</a>
     </li>
     <li>
-      24-Enero: <a href="2012/01/24/index2.html">Mi clon R2 ha impreso todas las piezas de R3</a>
+      <span class="date">24-Enero</span>
+      <a href="2012/01/24/index2.html">Mi clon R2 ha impreso todas las piezas de R3</a>
     </li>
     <li>
-      24-Enero: <a href="2012/01/24/index3.html">El Miniskybot de Daniel Gómez</a>
+      <span class="date">24-Enero</span>
+      <a href="2012/01/24/index3.html">El Miniskybot de Daniel Gómez</a>
     </li>
     <li>
-      25-Enero: <a href="2012/01/25/">El mejor regalo de mis compañeros</a>
+      <span class="date">25-Enero</span>
+      <a href="2012/01/25/">El mejor regalo de mis compañeros</a>
     </li>
     <li>
-      26-Enero: <a href="2012/01/26/">Guía de calibración de la impresora Prusa Mendel</a>
+      <span class="date">26-Enero</span>
+      <a href="2012/01/26/">Guía de calibración de la impresora Prusa Mendel</a>
     </li>
     <li>
-      29-Enero: <a href="2012/01/29/">Clone wars: Quedada en el MediaLab Prado</a>
+      <span class="date">29-Enero</span>
+      <a href="2012/01/29/">Clone wars: Quedada en el MediaLab Prado</a>
     </li>
     <li>
-      29-Enero: <a href="2012/01/29/index2.html">Clone wars: El clon Halcón Milenario ya imprime</a>
+      <span class="date">29-Enero</span>
+      <a href="2012/01/29/index2.html">Clone wars: El clon Halcón Milenario ya imprime</a>
     </li>
     <li>
-      30-Enero: <a href="2012/01/30/">Lectura de la posición de los servos Futaba 3003</a>
+      <span class="date">30-Enero</span>
+      <a href="2012/01/30/">Lectura de la posición de los servos Futaba 3003</a>
     </li>
     <li>
-      30-Enero: <a href="2012/01/30/index2.html">OOML en el blog de Ponoko</a>
+      <span class="date">30-Enero</span>
+      <a href="2012/01/30/index2.html">OOML en el blog de Ponoko</a>
     </li>
     <li>
-      31-Enero: <a href="2012/01/31/">R2D2 tocando la marcha imperial</a>
+      <span class="date">31-Enero</span>
+      <a href="2012/01/31/">R2D2 tocando la marcha imperial</a>
     </li>
     <li>
-      01-Febrero: <a href="2012/02/01/">Clone wars: Prusa Mold (I)</a>
+      <span class="date">01-Febrero</span>
+      <a href="2012/02/01/">Clone wars: Prusa Mold (I)</a>
     </li>
     <li>
-      04-Febrero: <a href="2012/02/04/">Clone wars: Primera entrega oficial de piezas de un clon para construir otro clon</a>
+      <span class="date">04-Febrero</span>
+      <a href="2012/02/04/">Clone wars: Primera entrega oficial de piezas de un clon para construir otro clon</a>
     </li>
     <li>
-      06-Febrero: <a href="2012/02/06/">Primera auto-reparación de R2D2</a>
+      <span class="date">06-Febrero</span>
+      <a href="2012/02/06/">Primera auto-reparación de R2D2</a>
     </li>
     <li>
-      17-Febrero: <a href="2012/02/17/">Robot humanoide imprimible en el IES Juan de la Cierva</a>
+      <span class="date">17-Febrero</span>
+      <a href="2012/02/17/">Robot humanoide imprimible en el IES Juan de la Cierva</a>
     </li>
     <li>
-      17-Febrero: <a href="2012/02/17/index2.html">Toda la acción en Google+</a>
+      <span class="date">17-Febrero</span>
+      <a href="2012/02/17/index2.html">Toda la acción en Google+</a>
     </li>
     <li>
-      22-Febrero: <a href="2012/02/22/">Primeros pasos del Printbot humanoide de Toni Barceló y Fernando Remiro</a>
+      <span class="date">22-Febrero</span>
+      <a href="2012/02/22/">Primeros pasos del Printbot humanoide de Toni Barceló y Fernando Remiro</a>
     </li>
     <li>
-      04-Marzo: <a href="2012/03/04/">Clone wars: Ya somos 10 clones!</a>
+      <span class="date">04-Marzo</span>
+      <a href="2012/03/04/">Clone wars: Ya somos 10 clones!</a>
     </li>
     <li>
-      04-Marzo: <a href="2012/03/04/index2.html">Clone wars genealogy</a>
+      <span class="date">04-Marzo</span>
+      <a href="2012/03/04/index2.html">Clone wars genealogy</a>
     </li>
     <li>
-      06-Marzo: <a href="2012/03/06/">Identificando a los Miniskybots mediante códigos QR</a>
+      <span class="date">06-Marzo</span>
+      <a href="2012/03/06/">Identificando a los Miniskybots mediante códigos QR</a>
     </li>
     <li>
-      06-Marzo: <a href="2012/03/06/index2.html">Prueba de concepto del Miniskybot 2.0</a>
+      <span class="date">06-Marzo</span>
+      <a href="2012/03/06/index2.html">Prueba de concepto del Miniskybot 2.0</a>
     </li>
     <li>
-      25-Marzo: <a href="2012/03/25">Ruedas para servo 4.0</a>
+      <span class="date">25-Marzo</span>
+      <a href="2012/03/25">Ruedas para servo 4.0</a>
     </li>
     <li>
-      25-Marzo: <a href="2012/03/25/index2.html">Caso de estudio: Garabatobot</a>
+      <span class="date">25-Marzo</span>
+      <a href="2012/03/25/index2.html">Caso de estudio: Garabatobot</a>
     </li>
     <li>
-      26-Marzo: <a href="2012/03/26/">¡Decora tu Prusa!</a>
+      <span class="date">26-Marzo</span>
+      <a href="2012/03/26/">¡Decora tu Prusa!</a>
     </li>
     <li>
-      02-Abril: <a href="2012/04/02/">Clone wars: R3 ha nacido!</a>
+      <span class="date">02-Abril</span>
+      <a href="2012/04/02/">Clone wars: R3 ha nacido!</a>
     </li>
     <li>
-      04-Abril: <a href="2012/04/04/">Ha nacido la Obi-granja</a>
+      <span class="date">04-Abril</span>
+      <a href="2012/04/04/">Ha nacido la Obi-granja</a>
     </li>
     <li>
-      08-Abril: <a href="2012/04/08/">Muelles imprimibles. Prueba de concepto</a>
+      <span class="date">08-Abril</span>
+      <a href="2012/04/08/">Muelles imprimibles. Prueba de concepto</a>
     </li>
     <li>
-      15-Abril: <a href="2012/04/15/">ArduSnake: Biblioteca para Locomoción de robots modulares con Arduino</a>
+      <span class="date">15-Abril</span>
+      <a href="2012/04/15/">ArduSnake: Biblioteca para Locomoción de robots modulares con Arduino</a>
     </li>
     <li>
-      15-Abril: <a href="2012/04/15/index2.html">A mi hija Alicia le encantan los robots modulares :-)</a>
+      <span class="date">15-Abril</span>
+      <a href="2012/04/15/index2.html">A mi hija Alicia le encantan los robots modulares :-)</a>
     </li>
     <li>
-      17-Abril: <a href="2012/04/17/">El Miniskybot 2 siguiendo la línea negra</a>
+      <span class="date">17-Abril</span>
+      <a href="2012/04/17/">El Miniskybot 2 siguiendo la línea negra</a>
     </li>
     <li>
-      17-Abril: <a href="2012/04/17/index2.html">El artículo del Miniskybot en el libro “Advances in Autonomous MiniRobots”</a>
+      <span class="date">17-Abril</span>
+      <a href="2012/04/17/index2.html">El artículo del Miniskybot en el libro “Advances in Autonomous MiniRobots”</a>
     </li>
     <li>
-      19-Abril: <a href="2012/04/19/">Motion Control of Differential Wheeled Robots with Joint Limit Constraints</a>
+      <span class="date">19-Abril</span>
+      <a href="2012/04/19/">Motion Control of Differential Wheeled Robots with Joint Limit Constraints</a>
     </li>
     <li>
-      23-Abril: <a href="2012/04/23/">Simulando la cinemática de los robots con ruedas limitadas en octave/matlab</a>
+      <span class="date">23-Abril</span>
+      <a href="2012/04/23/">Simulando la cinemática de los robots con ruedas limitadas en octave/matlab</a>
     </li>
     <li>
-      24-Abril: <a href="2012/04/24/">Printbots “chocolateros”</a>
+      <span class="date">24-Abril</span>
+      <a href="2012/04/24/">Printbots “chocolateros”</a>
     </li>
     <li>
-      02-Mayo: <a href="2012/05/02/">Simulación de la cinemática del Miniskybot en octave/Matlab</a>
+      <span class="date">02-Mayo</span>
+      <a href="2012/05/02/">Simulación de la cinemática del Miniskybot en octave/Matlab</a>
     </li>
     <li>
-      13-Mayo: <a href="2012/05/13/">Charla sobre Printbots en la Universidad de Málaga</a>
+      <span class="date">13-Mayo</span>
+      <a href="2012/05/13/">Charla sobre Printbots en la Universidad de Málaga</a>
     </li>
     <li>
-      22-Mayo: <a href="2012/05/22/">Diseño e Impresión de Piezas 3D con herramientas Open Source (II)</a>
+      <span class="date">22-Mayo</span>
+      <a href="2012/05/22/">Diseño e Impresión de Piezas 3D con herramientas Open Source (II)</a>
     </li>
     <li>
-      22-Mayo: <a href="2012/05/22/index2.html">Micro Video-tutoriales sobre OpenScad</a>
+      <span class="date">22-Mayo</span>
+      <a href="2012/05/22/index2.html">Micro Video-tutoriales sobre OpenScad</a>
     </li>
     <li>
-      23-Mayo: <a href="2012/05/23/">Publicada las transparencias de la charla sobre PrintBots dada en MadridBot 2012</a>
+      <span class="date">23-Mayo</span>
+      <a href="2012/05/23/">Publicada las transparencias de la charla sobre PrintBots dada en MadridBot 2012</a>
     </li>
     <li>
-      01-Junio: <a href="2012/06/01/">Publicadas las transparencias de la charla sobre Printbots dada en Cybertech 2012</a>
+      <span class="date">01-Junio</span>
+      <a href="2012/06/01/">Publicadas las transparencias de la charla sobre Printbots dada en Cybertech 2012</a>
     </li>
     <li>
-      03-Junio: <a href="2012/06/03/">Publicadas las transparencias de la charla sobre Impresoras 3D open-source en el Máster de Economía digital e Industrias creativas de la EOI</a>
+      <span class="date">03-Junio</span>
+      <a href="2012/06/03/">Publicadas las transparencias de la charla sobre Impresoras 3D open-source en el Máster de Economía digital e Industrias creativas de la EOI</a>
     </li>
     <li>
-      04-Junio: <a href="2012/06/04/">Publicadas las transparencias de la charla sobre Printbots dada en la Universidad de Málaga</a>
+      <span class="date">04-Junio</span>
+      <a href="2012/06/04/">Publicadas las transparencias de la charla sobre Printbots dada en la Universidad de Málaga</a>
     </li>
     <li>
-      05-Junio: <a href="2012/06/05/">Prueba de concepto del skyball</a>
+      <span class="date">05-Junio</span>
+      <a href="2012/06/05/">Prueba de concepto del skyball</a>
     </li>
     <li>
-      11-Junio: <a href="2012/06/11/">PrintBots y Robots modulares en Robocity 2030</a>
+      <span class="date">11-Junio</span>
+      <a href="2012/06/11/">PrintBots y Robots modulares en Robocity 2030</a>
     </li>
     <li>
-      21-Junio: <a href="2012/06/21/">Mini-cajones paramétricos impresos bajo demanda</a>
+      <span class="date">21-Junio</span>
+      <a href="2012/06/21/">Mini-cajones paramétricos impresos bajo demanda</a>
     </li>
     <li>
-      15-Julio: <a href="2012/07/15/">Construye tus propios mini-domos</a>
+      <span class="date">15-Julio</span>
+      <a href="2012/07/15/">Construye tus propios mini-domos</a>
     </li>
     <li>
-      01-Agosto: <a href="2012/08/01/">Tuercas y arandelas M8 imprimibles</a>
+      <span class="date">01-Agosto</span>
+      <a href="2012/08/01/">Tuercas y arandelas M8 imprimibles</a>
     </li>
     <li>
-      20-Agosto: <a href="2012/08/20/">Sobreviviendo a las vacaciones: Porta-correas imprimible para DVD</a>
+      <span class="date">20-Agosto</span>
+      <a href="2012/08/20/">Sobreviviendo a las vacaciones: Porta-correas imprimible para DVD</a>
     </li>
     <li>
-      21-Agosto: <a href="2012/08/21/">Sobreviviendo a las vacaciones (II): La Prusa-Blender</a>
+      <span class="date">21-Agosto</span>
+      <a href="2012/08/21/">Sobreviviendo a las vacaciones (II): La Prusa-Blender</a>
     </li>
     <li>
-      01-Septiembre: <a href="2012/09/01/">Nacimiento de R2-Reloaded</a>
+      <span class="date">01-Septiembre</span>
+      <a href="2012/09/01/">Nacimiento de R2-Reloaded</a>
     </li>
     <li>
-      03-Septiembre: <a href="2012/09/03/">Video-tutoriales de construcción de una impresora 3D de tipo Prusa 2</a>
+      <span class="date">03-Septiembre</span>
+      <a href="2012/09/03/">Video-tutoriales de construcción de una impresora 3D de tipo Prusa 2</a>
     </li>
     <li>
-      04-Septiembre: <a href="2012/09/04/">¿¿Viagra en nuestra web?? Noooooooo!!!!!!!!</a>
+      <span class="date">04-Septiembre</span>
+      <a href="2012/09/04/">¿¿Viagra en nuestra web?? Noooooooo!!!!!!!!</a>
     </li>
     <li>
-      10-Septiembre: <a href="2012/09/10/">Enhancing Openscad with the attach library</a>
+      <span class="date">10-Septiembre</span>
+      <a href="2012/09/10/">Enhancing Openscad with the attach library</a>
     </li>
     <li>
-      13-Septiembre: <a href="2012/09/13/">Enhancing openscad (II): Bevel library</a>
+      <span class="date">13-Septiembre</span>
+      <a href="2012/09/13/">Enhancing openscad (II): Bevel library</a>
     </li>
     <li>
-      03-Octubre: <a href="2012/10/03/">The show must go on…</a>
+      <span class="date">03-Octubre</span>
+      <a href="2012/10/03/">The show must go on…</a>
     </li>
     <li>
-      28-Noviembre: <a href="2012/11/28/">Nuevas patas imprimibles para la mesa de Ikea</a>
+      <span class="date">28-Noviembre</span>
+      <a href="2012/11/28/">Nuevas patas imprimibles para la mesa de Ikea</a>
     </li>
     <li>
-      24-Diciembre: <a href="2012/12/24/">Hace un año que nació R2D2…</a>
+      <span class="date">24-Diciembre</span>
+      <a href="2012/12/24/">Hace un año que nació R2D2…</a>
     </li>
   </ul>
 </details>
@@ -1167,7 +1641,8 @@
   <summary>2013</summary>
   <ul>
     <li>
-      01-Enero: <a href="2013/11/03/">Así viví TEDx Valladolid</a>
+      <span class="date">03-Noviembre</span>
+      <a href="2013/11/03/">Así viví TEDx Valladolid</a>
     </li>
   </ul>
 </details>
