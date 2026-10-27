@@ -1,0 +1,17 @@
+# Ejemplo de fichero Makefile avanzado
+
+
+program.exe: program.obj teclado.lib
+  TLINK /V  program.obj teclado.lib
+
+.asm.obj: 
+  TASM /ZI $<
+
+.obj.lib:
+   TLIB $&.lib -+$<
+
+clean:
+    del *.obj
+    del *.map
+    del *.exe
+    del *.lib

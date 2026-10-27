@@ -1,0 +1,9 @@
+test.exe: test.obj
+	tlink /v test.obj
+
+test.obj: test.asm
+	tasm /zi test.asm
+
+clean:
+	del *.obj 
+	del test.exe
