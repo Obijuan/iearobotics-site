@@ -1,0 +1,12 @@
+Qty 	Value      	Device           	Parts   
+1			CTCONA           	CT1     
+1			JUMPER3R         	JP1     
+1	10nF 400V	C-EU102-043X133  	C1      
+1	100nF 630V	C-EU225-062X268  	C2      
+1	120R 1W		R-EU_0411/12     	R3      
+1	180R		RESISTENCIA10    	R1      
+1	470R 1/2W	RESISTENCIA10    	R2      
+2	CLEMA2P		CLEMA2P          	CL1, CL2
+1	FUSIBLE		FUSIBLE          	4A      
+1	MOC3020		MOC3020          	IC1     
+1	TIC226D-H	TRIACS/TIC226D-H 	SCR1    
