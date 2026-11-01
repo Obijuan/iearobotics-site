@@ -1,0 +1,13 @@
+# Makefile
+# Si ponemos -ml se compila como 'far'
+# los procedimientos en ensablador también los declaramos 'far'
+# y la pila la usamos considerando CS y OFFSET
+ 
+dump.exe: dump.c lib.asm
+  tcc -v -ml -Ic:\compila\tc\include -Lc:\compila\tc\lib dump.c lib.asm
+
+clean:
+    del *.obj
+    del *.map
+    del *.exe
+    del *.lib
