@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GPBOT</title>
+  	<link rel="stylesheet" href="load.css">
+</head>
+
+<body style="margin: 10px; font-size: 12px;">
+<h1 id="firstHeading" class="firstHeading" lang="es">GPBOT</h1>
+<div id="bodyContent" class="mw-body-content"></div>
+
+
+<!-- start content -->
+<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><center>
+<table>
+<tbody><tr>
+<td> <a href="images/f/f0/Gpbot.jpg" class="image" title="width=200px">
+	<img alt="width=200px" src="GPBOT_files/Gpbot_JwFN.jpg" width="418" height="336"></a>
+</td></tr></tbody></table>
+</center>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Caracteristicas"><span class="tocnumber">2</span> <span class="toctext">Caracteristicas</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Puertos_de_Conexi.C3.B3n"><span class="tocnumber">3</span> <span class="toctext">Puertos de Conexión</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Puertos_de_Conexi.C3.B3n_Tarjeta_GpBot"><span class="tocnumber">3.1</span> <span class="toctext">Puertos de Conexión Tarjeta GpBot</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Puertos_de_Conexi.C3.B3n_Tarjeta_GpIfaz"><span class="tocnumber">3.2</span> <span class="toctext">Puertos de Conexión Tarjeta GpIfaz</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Alimentaci.C3.B3n"><span class="tocnumber">4</span> <span class="toctext">Alimentación</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Software"><span class="tocnumber">5</span> <span class="toctext">Software</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Diferencias_entre_CodeWarrior_y_SDCC"><span class="tocnumber">5.1</span> <span class="toctext">Diferencias entre CodeWarrior y SDCC</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Documentaci.C3.B3n"><span class="tocnumber">6</span> <span class="toctext">Documentación</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Enlaces_a_las_p.C3.A1ginas_de_pr.C3.A1cticas"><span class="tocnumber">6.1</span> <span class="toctext">Enlaces a las páginas de prácticas</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Programas_de_Ejemplo"><span class="tocnumber">7</span> <span class="toctext">Programas de Ejemplo</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Enlaces"><span class="tocnumber">8</span> <span class="toctext">Enlaces</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Cr.C3.A9ditos"><span class="tocnumber">9</span> <span class="toctext">Créditos</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h1>
+<p><br>
+Esta página se esta migrando al Wiki desde su versión en 
+<a rel="nofollow" class="external text" href="../../personal/juan/proyectos/gpbot/gpbot.html">HTML</a>.
+<br>
+</p><p><br>
+La <b>tarjeta GPBOT</b>, diseñada por el profesor <a rel="nofollow" class="external text" href="http://arantxa.ii.uam.es/~gdrivera/">Guillermo González de Rivera</a>, se emplea en el <a rel="nofollow" class="external text" href="http://arantxa.ii.uam.es/~gdrivera/robotica/inicio.htm">laboratorio de la asignatura de Robótica</a> de la <a rel="nofollow" class="external text" href="http://www.ii.uam.es/">Escuela Técnica Superior</a> de la Universidad Autónoma de Madrid (EPS-UAM). 
+</p><p>En esta página se recopila <b>información</b> sobre la tarjeta, se muestran <b>ejemplos de programación</b> en ensamlador y C y se presentan las diferentes herramientas software, para trabajar desde entornos <b>Linux</b> y <b>Windows</b>.
+</p><p><br>
+</p>
+<h1><span class="mw-headline" id="Caracteristicas">Caracteristicas</span></h1>
+<p>Microcontrolador MC68HC908GP32 de Motorola (8 bits), que incorpora entre otras cosas:
+</p>
+<ul><li> 4 puertos de E/S, de 8 bits (Puertos A,B,C y D)</li>
+<li> 32KB de memoria Flash</li>
+<li> 512B de RAM</li>
+<li> Unidad de comunicaciones serie asíncronas (SCI)</li>
+<li> Unidad de comunicaciones serie síncrona (SPI)</li>
+<li> Dos temporizadores de 16 bits</li>
+<li> 8 canales A/D de 8 bits</li>
+<li> Bus de expansión dividido en 4 conectores para cable plano de bus (puertos A, B, C y D)</li>
+<li> Conector para cable monitor</li>
+<li> <b>Alimentación</b>: Entre 6.0v y 9.0 voltios, a través de clemas o conector tipo jack (alimentación regulada)</li>
+<li> <b>Velocidad de funcionamiento</b>: Cristal de 9.8304 Mhz, con el que se consigue una velocidad de bus de 2.45MHz</li>
+<li> Conexión directa con la tarjeta GP_IFAZ, para controlar hasta 4 motores de corriente continua y conectar 4 sensores de infrarrojos</li></ul>
+<p><br>
+<a href="images/1/19/Gpbot-carac1.png" class="image" title="Conectores de la tarjeta GPBOT">
+	<img alt="Conectores de la tarjeta GPBOT" src="GPBOT_files/Gpbot-carac1_JwFN.png" width="320" height="308"></a>
+<br>
+<br>
+</p>
+<h1><span class="mw-headline" id="Puertos_de_Conexi.C3.B3n">Puertos de Conexión</span></h1>
+<h3><span class="mw-headline" id="Puertos_de_Conexi.C3.B3n_Tarjeta_GpBot">Puertos de Conexión Tarjeta GpBot</span></h3>
+<p><br>
+<a href="images/c/cb/Puertos_gpbot.png" class="image" title="Puertos de la Tarjeta GpBot">
+	<img alt="Puertos de la Tarjeta GpBot" src="GPBOT_files/Puertos_gpbot_JwFN.png" width="580" height="282"></a>
+<br>
+<br>
+</p>
+<h3><span class="mw-headline" id="Puertos_de_Conexi.C3.B3n_Tarjeta_GpIfaz">Puertos de Conexión Tarjeta GpIfaz</span></h3>
+<p><br>
+<a href="images/8/83/Gp_ifaz.jpg" class="image" title="Puertos de la Tarjeta GpIfaz">
+	<img alt="Puertos de la Tarjeta GpIfaz" src="GPBOT_files/Gp_ifaz_JwFN.jpg" width="676" height="298"></a>
+<br>
+<br>
+</p>
+<h1><span class="mw-headline" id="Alimentaci.C3.B3n">Alimentación</span></h1>
+<p><br>
+<a href="images/1/1c/Ali-jack_gpbot.jpg" class="image" title="Conector de alimentación en la GPBOT">
+	<img alt="Conector de alimentación en la GPBOT" src="GPBOT_files/Ali-jack_gpbot_JwFN.jpg" width="504" height="142"></a>
+<br><br>
+La GPBOT se alimenta a través de un conector de tipo <b>Jack</b> macho de 5mm y conectando los cables a la clema de alimentación. La alimentación está regulada entre 6v y 9v, pero se recomienda usar las siguientes:
+</p>
+<ul><li> Versión 1.0: Para su correcto funcionamiento se recomienda un a tensión de 7.5v</li>
+<li> Versión 1.1: Para su correcto funcionamiento se recomienda un a tensión de 7.5v</li>
+<li> Versión 1.2: Para su correcto funcionamiento se recomienda un a tensión de 6.0v</li></ul>
+<p><br>
+</p>
+<h1><span class="mw-headline" id="Software">Software</span></h1>
+<p>Existen diferentes entornos para trabajar con la GPBOT:
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="http://www.freescale.com/webapp/sps/site/overview.jsp?code=CW_SPECIALEDITIONS&amp;tid=CWH">Entorno CodeWarrior</a>, de la empresa <b>MetroWerks</b>. Entorno integrado para desarrollo de aplicaciones en C. Sólo plataformas <b>Windows</b>. Permiten descargar una versión de evaluación, limitada. De todas las disponibles la que necesitamos es la habilitada para microcontroladores.</li>
+<li> <a rel="nofollow" class="external text" href="http://www.pemicro.com/">Entorno de desarrollo M68ICS08</a> de la empresa <b>P&amp;E Microcomputer Systems</b>. Disponible sólo para plataformas <b>Windows</b>. Descarga gratuita. Incluye un editor, ensamblador, programador y depurador, todo integrado.</li>
+<li> <a rel="nofollow" class="external text" href="http://sdcc.sourceforge.net/">Compilador cruzado SDCC</a>. Herramienta libre y <b>multiplataforma</b> (disponible para Windows, Linux, MAC, etc), distribuida bajo licencia GPL. Es un compilador de C para microcontroladores de 8 bits, entre ellos el 68hc08, pero también es válido para los PIC, 8051, Z80, y algunos otros. Se utiliza en la consola, pero se integra perfectamente con otros IDEs, como por ejemplo Anjuta o el programer's notepad. También incluye el ensamblador as-hc08. Está disponible en Debian.</li>
+<li> Sofware de grabación <a rel="nofollow" class="external text" 
+	href="../../personal/juan/proyectos/gpbot-down/gpbot-down.html">GPBOT-DOWN</a>. Permite programar la GPBOT desde plataformas Linux. Disponible bajo licencia GPL.</li></ul>
+<p><br>
+<b>NOTA</b>: Las directivas del ensamblador empleado por el M68ICS08 y por el as-hc08 son diferentes, por ello los programas .asm no se pueden llevar directamente de una a otra herramienta (los cambios, no obstante, son mínimos).<br><br>
+<b>NOTA</b>: Algunos de los nombres utilizados por el SDCC y el CodeWarrior son distintos. Por ejemplo el PORTx se traduce como PTx. Tened esto en cuenta a la hora de usar los diferentes ejemplos de programación.<br><br>
+</p>
+<h2><span class="mw-headline" id="Diferencias_entre_CodeWarrior_y_SDCC">Diferencias entre CodeWarrior y SDCC</span></h2>
+<ul><li> Los puertos en el SDCC se llaman <i>PORTA</i>, <i>PORTB</i>, <i>PORTC</i>, <i>PORTD</i> y <i>PORTE</i>. En el CodeWarrior <i>PTA</i>, <i>PTB</i>, <i>PTC</i>, <i>PTD</i> y <i>PTE</i>.</li>
+<li> En el SDCC las rutinas de interrupción se escriben "<i>void rsi_t1ch0 (void) interrupt 4 {</i>", en el CodeWarrior se altera el orden "<i>interrupt 4 void rsi_t1ch0 (void)</i>"</li>
+<li> En el SDCC para inscrustar ensamblador se usa la directiva "<i>_asm CLI _endasm</i>". En el CodeWarrior se usa "<i>_asm { CLI } </i>"</li></ul>
+<h1><span class="mw-headline" id="Documentaci.C3.B3n">Documentación</span></h1>
+<ul><li> <a rel="nofollow" class="external text" href="http://arantxa.ii.uam.es/~gdrivera/robotica/hc08/mc68hc908gp32.pdf">Datasheet del 68HC08GP32</a>: Especificaciones técnicas del microcontrolador 6808. Motorola.</li>
+<li> <a rel="nofollow" class="external text" href="http://arantxa.ii.uam.es/~gdrivera/robotica/gp_bot/gp_bot_13.pdf">Manual de usuario del sistema GPBOT</a>. Guillermo González de Rivera. 2002.</li></ul>
+<h3><span class="mw-headline" id="Enlaces_a_las_p.C3.A1ginas_de_pr.C3.A1cticas">Enlaces a las páginas de prácticas</span></h3>
+
+<ul><li> <a href="Robótica_2008_09.html" title="Robótica 2008/09"> Prácticas UAM 2008-2009</a></li></ul>
+<h1><span class="mw-headline" id="Programas_de_Ejemplo">Programas de Ejemplo</span></h1>
+<p><b> Proyectos para Code Warrior </b>
+</p>
+<ul><li> <a rel="nofollow" class="external text" 
+	href="images/4/44/LED_GPBOT_CodeWarrior.zip">LED On</a> Enciende un LED <br></li>
+<li> <a rel="nofollow" class="external text" 
+	href="images/6/66/Motor_On_GPBOT_CodeWarrior.zip">Motor On</a> Enciende un motor <br></li>
+<li> <a rel="nofollow" class="external text" 
+	href="images/6/68/Sensor1_GPBOT_CodeWarrior.zip">Sensor1</a> Lee un sensor de infrarrojos CNY70 <br></li>
+<li> <a rel="nofollow" class="external text" 
+	href="images/4/47/Eco_GPBOT_CodeWarrior.zip">Serie ECO</a> Servidor de ECO <br></li>
+<li> <a rel="nofollow" class="external text" 
+	href="images/b/b1/Stepper_GPBOT.zip">Stepper</a> Ejemplo para motor Paso a Paso<br></li></ul>
+<p><br>
+</p><p><b> En la página en <a rel="nofollow" class="external text" 
+	href="../../personal/juan/proyectos/gpbot/gpbot.html">HTML</a> encontramos muchos más ejemplos en C para SDCC y también en ASM</b>
+</p>
+<h1><span class="mw-headline" id="Enlaces">Enlaces</span></h1>
+<ul><li> <a rel="nofollow" class="external text" href="http://arantxa.ii.uam.es/~gdrivera/robotica/inicio.htm">Asignatura de Robótica</a>, en la EPS de la Universidad Autónoma de Madrid. </li>
+<li> <a rel="nofollow" class="external text" href="http://sdcc.sourceforge.net/">SDCC</a>. Compilador cruzado de C para el 68hc08, Libre y multiplataforma.</li>
+<li> <a rel="nofollow" class="external text" href="http://www.pemicro.com/">Entorno de desarrollo M68ICS08</a>, de la empresa P&amp;E Microcomputer Systems. Sólo para Windows.</li>
+<li> <a rel="nofollow" class="external text" href="http://www.freescale.com/webapp/sps/site/overview.jsp?code=CW_SPECIALEDITIONS&amp;tid=CWH">Entorno CodeWarrior</a>, de la empresa MetroWerks. Entorno integrado para desarrollo de aplicaciones en C. Sólo plataformas Windows.</li>
+<li> <a rel="nofollow" class="external text" 
+	href="../../personal/juan/proyectos/gpbot-down/gpbot-down.html">GPBOT-DOWN</a>. Programación de la GPBOT desde entornos Linux</li></ul>
+<h1><span class="mw-headline" id="Cr.C3.A9ditos">Créditos</span></h1>
+<ul><li> <a rel="nofollow" class="external text" href="http://arantxa.ii.uam.es/~gdrivera/">Guillermo González de Rivera</a>. Diseñador del sistema de desarrollo GPBOT.</li>
+<li> <a rel="nofollow" class="external text" href="http://arantxa.ii.uam.es/~igonzale/">Iván González</a>. Coautor del manual de programación de la GPBOT. Parte de los ejemplos de esta página están basados en sus programas.</li>
+<li> Carlos Jesús Venegas. Coautor del manual de programación de la GPBOT. Parte de los ejemplos de esta página están basados en sus programas.</li>
+<li> <a href="Juan_Gonzalez_Main.html" title="Juan Gonzalez:Main"> Juan González Gómez</a> por los ejemplos de programación y la recopilación de información en la página original.</li></ul>
+
+</div>
+</body>
+</html>
+
