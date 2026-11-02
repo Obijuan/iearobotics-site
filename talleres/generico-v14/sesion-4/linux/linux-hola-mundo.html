@@ -1,25 +1,13 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-
-	
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=iso-8859-15">
-
-	
-	
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Taller de robotica. Sesion 3. "Hola mundo" en Linux</title>
   <meta name="GENERATOR" content="OpenOffice.org 1.1.3  (Linux)">
-
-	
   <meta name="CREATED" content="20040522;11483800">
-
-	
   <meta name="CHANGED" content="20050720;11070200">
-
-	
   <meta name="KEYWORDS" content="robotica, microcontroladores, pic, hardware, linux">
-
-	
   <style>
 	<!--
 		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
@@ -29,46 +17,29 @@
 
 
 <body dir="ltr" lang="en-US">
-
-
 <table style="page-break-before: always;" bgcolor="#abbeeb" border="0" cellpadding="4" cellspacing="0" width="917">
-
 	<col width="909">
 	<tbody>
     <tr>
-
 		<td width="909">
-			
       <p align="center"><font face="Arial, sans-serif">Taller de
 			Rob&oacute;tica B&aacute;sico - Skybot v1.4. - SESION 3 - <b> &ldquo;Hola mundo&ldquo; en Linux</b></font></p>
-
-
 		</td>
-
 	</tr>
-
   </tbody>
 </table>
 
-
 <p style="margin-bottom: 0cm;" align="center"><br>
-
 </p>
 
 <table border="0" cellpadding="4" cellspacing="0" width="100%">
-
 	<col width="256*">
 	<thead>
 		<tr>
-
 			<td valign="top" width="100%">
-				
     <p align="center"><img src="images/skybot-portatil-linux.png" name="Imagen1" align="middle" border="0" height="300" width="400"></p>
-
 			</td>
-
 		</tr>
-
 	</thead>
 </table>
 
@@ -103,21 +74,15 @@ cap&iacute;tulos veremos c&oacute;mo funciona.</font></font></p>
 	<col width="256*">
 	<thead>
 		<tr>
-
 			<td valign="top" width="100%">
-				
     <p align="center"><img src="images/hola_mundo_skybot_led.png" name="Imagen2" align="middle" border="0" height="300" width="400"></p>
-
 			</td>
-
 		</tr>
-
 	</thead>
 </table>
 
 <p><br>
 <br>
-
 </p>
 
 <hr>
@@ -129,48 +94,33 @@ obra! Vamos a cacharrear. Primero nos decargarmos el programa &ldquo;hola
 mundo&rdquo;.</font></font></p>
 
 <ul>
-
 	<li>
     <p><font face="Arial, sans-serif"><font size="2"><font face="Arial, sans-serif">Bajar
 	el paquete </font></font><a href="download/hola-mundo-linux.tgz"><font size="2"><font face="Arial, sans-serif">hola-mundo-linux.tgz</font></font></a><font size="2"><font face="Arial, sans-serif">.
 	</font></font></font>
 	</p>
-
 	</li>
   <li>
     <p><font face="Arial, sans-serif"><font size="2">Descomprimirlo,
 	entrar en el directorio y ver los ficheros que hay:</font></font></p>
-
   </li>
 </ul>
 
 <table border="0" cellpadding="4" cellspacing="0" width="100%">
-
 	<col width="256*">
 	<thead>
 		<tr>
-
-			<td bgcolor="#e6e6e6" valign="top" width="100%">
-				
+			<td bgcolor="#e6e6e6" valign="top" width="100%">				
     <p><font face="Courier, monospace"><font size="2">$ tar vzxf
 				hola-mundo-linux.tgz </font></font>
 				</p>
-
-				
     <p><font face="Courier, monospace"><font size="2">$ cd
 				hola-mundo-linux</font></font></p>
-
-				
     <p><font face="Courier, monospace"><font size="2">$ ls</font></font></p>
-
-				
     <p><font face="Courier, monospace"><font size="2">ledon.c Makefile
 				pic16f877.h skybot-hola-mundo.prj</font></font></p>
-
 			</td>
-
 		</tr>
-
 	</thead>
 </table>
 
@@ -209,69 +159,50 @@ compilado. Vamos a descargarlo en la skypic.</font></font></p>
 en el robot</font></h2>
 
 <ul>
-
 	<li>
     <p><font face="Arial, sans-serif"><font size="2">Conectar el robot
 	al puerto serie del PC</font></font></p>
-
 	</li>
   <li>
     <p><font face="Arial, sans-serif"><font size="2">Alimentarlo</font></font></p>
-
   </li>
 </ul>
 
 <table border="0" cellpadding="4" cellspacing="0" width="100%">
-
 	<col width="256*">
 	<thead>
 		<tr>
-
-			<td valign="top" width="100%">
-				
+			<td valign="top" width="100%">				
     <p align="center"><img src="images/hola_mundo_skybot_ready.png" name="Imagen3" align="middle" border="0" height="300" width="400"></p>
-
 			</td>
-
 		</tr>
-
 	</thead>
 </table>
 
 <ul>
-
 	<li>
     <p><font face="Arial, sans-serif"><font size="2">Abrir una consola
 	e ir al directorio donde se encuentre el programa ejecutable
 	ledon.hex</font></font></p>
-
   </li>
 </ul>
 
 <ul>
-
 	<li>
     <p><font face="Arial, sans-serif"><font size="2">Ejecutar el
 	cargador:</font></font></p>
-
   </li>
 </ul>
 
 <table border="0" cellpadding="4" cellspacing="0" width="100%">
-
 	<col width="256*">
 	<thead>
 		<tr>
-
-			<td bgcolor="#e6e6e6" valign="top" width="100%">
-				
+			<td bgcolor="#e6e6e6" valign="top" width="100%">	
     <p><font face="Courier, monospace"><font size="2">$ skybot-down
 				ledon.hex</font></font></p>
-
 			</td>
-
 		</tr>
-
 	</thead>
 </table>
 
@@ -287,26 +218,19 @@ a ejecutar el &uacute;ltimo programa cargado. Los programas se graban
 en la memoria flash, que es <b>no vol&aacute;til.</b></font></font></p>
 
 <table border="0" cellpadding="4" cellspacing="0" width="100%">
-
 	<col width="256*">
 	<thead>
 		<tr>
-
-			<td valign="top" width="100%">
-				
+			<td valign="top" width="100%">	
     <p align="center"><img src="images/hola-mundo-download.png" name="Imagen4" align="middle" border="0" height="413" width="666"></p>
-
 			</td>
-
 		</tr>
-
 	</thead>
 </table>
 
 <p><font face="Arial, sans-serif"><font size="2"><b>&iexcl;&iexcl;Ya
 hemos programado el robot!!</b><br>
 <br>
-
 
 Si en este proceso nos sale un mesaje de error diciendo que <b>no se encuentra el Bootloader</b> hay que revisar tres cosas:<br>
 
@@ -324,15 +248,15 @@ caso de no tenerlo se tiene que volver a grabar. Las instrucciones para
 ello est&aacute;n <a href="../../../../proyectos/skypic/bootloader/bootloader.html">aqu&iacute;</a>.Si estamos en un taller comentarlo a alg&uacute;n instructor para que lo haga.
 </font></font></p>
 
-
 <hr>
 <p style="margin-bottom: 0cm;"><a href="../index.html"><font size="2"><font face="Arial, sans-serif">[Sesion
 III]</font></font></a> 
 </p>
 
-<address style="margin-bottom: 0.5cm;"><a href="http://www.iearobotics.com/personal/juan/index.html"><font size="2"><font face="Arial, sans-serif">Juan
+<address style="margin-bottom: 0.5cm;">
+	<a href="../../../../personal/juan/"><font size="2"><font face="Arial, sans-serif">Juan
 Gonz&aacute;lez</font></font></a><br>
-<a href="http://www.iearobotics.com"><font size="2"><font face="Arial, sans-serif">IEAROBOTICS</font></font></a>
+<a href="../../../../wiki/"><font size="2"><font face="Arial, sans-serif">IEAROBOTICS</font></font></a>
 </address>
 
 </body>

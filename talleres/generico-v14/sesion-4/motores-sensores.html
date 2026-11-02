@@ -1,25 +1,13 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-
-	
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=iso-8859-15">
-
-	
-	
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Taller de robotica b&aacute;sico. Sesion 3. Motores y sensores</title>
   <meta name="GENERATOR" content="OpenOffice.org 1.1.3  (Linux)">
-
-	
   <meta name="CREATED" content="20040522;11483800">
-
-	
   <meta name="CHANGED" content="20050720;21225800">
-
-	
   <meta name="KEYWORDS" content="robotica, microcontroladores, pic, hardware">
-
-	
   <style>
 	<!--
 		H2 { margin-left: 0.66cm; margin-right: 0.66cm; margin-top: 0.26cm; border: none; padding: 0cm; color: #000000; font-family: "Times", "Arial"; text-align: left }
@@ -29,30 +17,19 @@
 
 
 <body dir="ltr" lang="en-US">
-
-
 <table style="page-break-before: always;" bgcolor="#abbeeb" border="0" cellpadding="4" cellspacing="0" width="917">
-
 	<col width="909">
 	<tbody>
     <tr>
-
 		<td width="909">
-			
       <p align="center"><font face="Arial, sans-serif">Taller de
 			Rob&oacute;tica B&aacute;sico - Skybot v1.4. - SESION 3 - <b> Motores y sensores</b></font></p>
-
-
 		</td>
-
 	</tr>
-
   </tbody>
 </table>
 
-
 <p style="margin-bottom: 0cm;" align="center"><br>
-
 </p>
 
 <hr>
@@ -77,19 +54,13 @@ accede a estos perif&eacute;ricos por los bits del puerto B que se
 indican en esta figura.</font></font></p>
 
 <table border="0" cellpadding="4" cellspacing="0" width="100%">
-
 	<col width="256*">
 	<thead>
 		<tr>
-
 			<td valign="top" width="100%">
-				
     <p align="center"><img src="images/ejemplos_portb_skybot.png" name="Imagen1" align="middle" border="0" height="134" width="647"></p>
-
 			</td>
-
 		</tr>
-
 	</thead>
 </table>
 
@@ -117,19 +88,13 @@ que indica si el motor est&aacute; encendido o apagado (ON/OFF) y el
 otro el sentido de giro.</font></font></p>
 
 <table border="0" cellpadding="4" cellspacing="0" width="100%">
-
 	<col width="256*">
 	<thead>
 		<tr>
-
 			<td valign="top" width="100%">
-				
     <p align="center"><img src="images/ejemplos_motores.png" name="Imagen2" align="middle" border="0" height="144" width="499"></p>
-
 			</td>
-
 		</tr>
-
 	</thead>
 </table>
 
@@ -143,7 +108,6 @@ valores ser&aacute;n diferentes y el usuario los tendr&aacute; que
 buscar.</font></font></p>
 
 <table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="100%">
-
 	<col width="43*">
 	<col width="43*">
 	<col width="43*">
@@ -152,256 +116,133 @@ buscar.</font></font></p>
 	<col width="43*">
 	<thead>
 		<tr valign="top">
-
 			<th bgcolor="#e6e6e6" width="17%">
-				
     <p><font face="Arial, sans-serif"><font size="2">Acci&oacute;n </font></font>
 				</p>
-
 			</th>
-
 			<th bgcolor="#e6e6e6" width="17%">
-				
     <p><font face="Arial, sans-serif"><font size="2">RB4</font></font></p>
-
 			</th>
-
 			<th bgcolor="#e6e6e6" width="17%">
-				
     <p><font face="Arial, sans-serif"><font size="2">RB3</font></font></p>
-
 			</th>
-
 			<th bgcolor="#e6e6e6" width="17%">
-				
     <p><font face="Arial, sans-serif"><font size="2">RB2</font></font></p>
-
 			</th>
-
 			<th bgcolor="#e6e6e6" width="17%">
-				
     <p><font face="Arial, sans-serif"><font size="2">RB1</font></font></p>
-
 			</th>
-
 			<th bgcolor="#e6e6e6" width="17%">
-				
     <p><font face="Arial, sans-serif"><font size="2">Valor en puerto B</font></font></p>
-
 			</th>
-
 		</tr>
-
 	</thead>
 	<tbody>
-
 		<tr>
-
 			<td valign="top" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2"><b>Adelante</b></font></font></p>
-
 			</td>
-
 			<td sdval="0" sdnum="1034;" valign="bottom" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
-
 			</td>
-
 			<td sdval="0" sdnum="1034;" valign="bottom" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
-
 			</td>
-
 			<td sdval="1" sdnum="1034;" valign="bottom" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
-
 			</td>
-
 			<td sdval="1" sdnum="1034;" valign="bottom" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">0</font></font></p>
-
 			</td>
-
 			<td valign="top" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">0x1C</font></font></p>
-
 			</td>
-
 		</tr>
-
 		<tr>
-
 			<td valign="top" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2"><b>Atras</b></font></font></p>
-
 			</td>
-
 			<td sdval="1" sdnum="1034;" valign="bottom" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
-
 			</td>
-
 			<td sdval="1" sdnum="1034;" valign="bottom" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">0</font></font></p>
-
 			</td>
-
 			<td sdval="1" sdnum="1034;" valign="bottom" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
-
 			</td>
-
 			<td sdval="1" sdnum="1034;" valign="bottom" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
-
 			</td>
-
 			<td valign="top" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">0x16</font></font></p>
-
 			</td>
-
 		</tr>
-
 		<tr>
-
 			<td valign="top" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2"><b>Izquierda</b></font></font></p>
-
 			</td>
-
 			<td sdval="1" sdnum="1034;" valign="bottom" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
-
 			</td>
-
 			<td sdval="0" sdnum="1034;" valign="bottom" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
-
 			</td>
-
 			<td sdval="1" sdnum="1034;" valign="bottom" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
-
 			</td>
-
 			<td sdval="1" sdnum="1034;" valign="bottom" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
-
 			</td>
-
 			<td valign="top" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">0x1E</font></font></p>
-
 			</td>
-
 		</tr>
-
 		<tr>
-
 			<td valign="top" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2"><b>Derecha</b></font></font></p>
-
 			</td>
-
 			<td sdval="0" sdnum="1034;" valign="bottom" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
-
 			</td>
-
 			<td sdval="1" sdnum="1034;" valign="bottom" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">0</font></font></p>
-
 			</td>
-
 			<td sdval="1" sdnum="1034;" valign="bottom" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
-
 			</td>
-
 			<td sdval="1" sdnum="1034;" valign="bottom" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">0</font></font></p>
-
 			</td>
-
 			<td valign="top" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">0x14</font></font></p>
-
 			</td>
-
 		</tr>
-
 		<tr>
-
 			<td valign="top" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2"><b>Parado</b></font></font></p>
-
 			</td>
-
 			<td sdval="0" sdnum="1034;" valign="bottom" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">0</font></font></p>
-
 			</td>
-
 			<td sdval="0" sdnum="1034;" valign="bottom" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">0</font></font></p>
-
 			</td>
-
 			<td sdval="0" sdnum="1034;" valign="bottom" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">0</font></font></p>
-
 			</td>
-
 			<td sdval="0" sdnum="1034;" valign="bottom" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">0</font></font></p>
-
 			</td>
-
 			<td valign="top" width="17%">
-				
       <p align="center"><font face="Arial, sans-serif"><font size="2">0x00</font></font></p>
-
 			</td>
-
 		</tr>
-
-	
   </tbody>
 </table>
 
 <p><br>
 <br>
-
 </p>
 
 <hr>
@@ -416,132 +257,73 @@ superficie es negra, absorbe la mayor parte de la luz y el detector
 no recibe nada.</font></font></p>
 
 <table border="0" cellpadding="4" cellspacing="0" width="100%">
-
 	<col width="256*">
 	<thead>
 		<tr>
-
 			<td valign="top" width="100%">
-				
     <p align="center"><img src="images/ejemplos_sensores.png" name="Imagen3" align="middle" border="0" height="245" width="482"></p>
-
 			</td>
-
 		</tr>
-
 	</thead>
 </table>
 
 <p><br>
 <br>
-
 </p>
 
 <p><font face="Arial, sans-serif"><font size="2">En la siguiente tabla
 se resume el valor leido en el bit correspondiente del puerto B de la
 Skypic seg&uacute;n el color detectado por el sensor:</font></font></p>
-
 <dl>
-
-	
   <dl>
-
-		
     <dl>
-
-			
       <dl>
-
-				
         <dl>
-
-					
           <dl>
-
 						<dd>
-						
               <table border="1" bordercolor="#000000" cellpadding="4" cellspacing="0" width="484">
-
 							<col width="77">
 							<col width="389">
 							<thead>
 								<tr valign="top">
-
 									<th bgcolor="#e6e6e6" width="77">
-										
                   <p><font face="Arial, sans-serif"><font size="2">Color</font></font></p>
-
 									</th>
-
 									<th bgcolor="#e6e6e6" width="389">
-										
                   <p><font face="Arial, sans-serif"><font size="2">Lectura del
 										sensor (Bit del puerto B)</font></font></p>
-
 									</th>
-
 								</tr>
-
 							</thead>
 							<tbody>
-
 								<tr>
-
 									<td valign="top" width="77">
-										
                     <p align="center"><font face="Arial, sans-serif"><font size="2">Blanco</font></font></p>
-
 									</td>
-
 									<td sdval="0" sdnum="1034;" valign="bottom" width="389">
-										
                     <p align="center"><font face="Arial, sans-serif"><font size="2">0</font></font></p>
-
 									</td>
-
 								</tr>
-
 								<tr>
-
 									<td valign="top" width="77">
-										
                     <p align="center"><font face="Arial, sans-serif"><font size="2">Negro</font></font></p>
-
 									</td>
-
 									<td sdval="1" sdnum="1034;" valign="bottom" width="389">
-										
                     <p align="center"><font face="Arial, sans-serif"><font size="2">1</font></font></p>
-
 									</td>
-
 								</tr>
-
-							
                 </tbody>
-						
               </table>
-
 					</dd>
           </dl>
-
-				
         </dl>
-
-			
       </dl>
-
-		
     </dl>
-
-	
   </dl>
-
 </dl>
 
 <p><br>
 <br>
-
 </p>
 
 <hr>
@@ -558,21 +340,17 @@ qu&eacute; estado est&aacute;n los bits RB0, RB5, RB6 y RB7.</font></font></p>
 comportamientos sencillos del robot es el siguiente:</font></font></p>
 
 <ul>
-
 	<li>
     <p><font face="Arial, sans-serif"><font size="2">Leer los sensores
 	(lectura del puerto B)</font></font></p>
-
 	</li>
   <li>
     <p><font face="Arial, sans-serif"><font size="2">Procesar su valor
 	(hacer c&aacute;lculos)</font></font></p>
-
 	</li>
   <li>
     <p><font face="Arial, sans-serif"><font size="2">Mover los motores
 	(escritura en el puerto B)</font></font></p>
-
   </li>
 </ul>
 
@@ -585,12 +363,12 @@ sencillos!!!!</b></font></font></p>
 <p><a href="index.html"><font size="2"><font face="Arial, sans-serif">[Sesion
 3]</font></font></a></p>
 
-<address style="margin-bottom: 0.5cm;"><a href="http://www.iearobotics.com/personal/juan/index.html"><font size="2"><font face="Arial, sans-serif">Juan
-Gonz&aacute;lez</font></font></a><a href="http://www.iearobotics.com/">
-</a>
+<address style="margin-bottom: 0.5cm;">
+	<a href="../../../personal/juan/"><font size="2"><font face="Arial, sans-serif">Juan
+Gonz&aacute;lez</font></font></a>
 </address>
 
-<p style="margin-bottom: 0cm;"><a href="http://www.iearobotics.com"><font size="2"><font face="Arial, sans-serif">IEAROBOTICS</font></font></a>
+<p style="margin-bottom: 0cm;"><a href="../../../wiki/"><font size="2"><font face="Arial, sans-serif">IEAROBOTICS</font></font></a>
 </p>
 
 </body>
