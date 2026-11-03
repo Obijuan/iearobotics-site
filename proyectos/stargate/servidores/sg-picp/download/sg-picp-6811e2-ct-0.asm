@@ -8,7 +8,6 @@
 * Licencia GPL                                     *
 *--------------------------------------------------*
 * IEARobotics                                      *
-* www.iearobotics.com                              *
 ****************************************************
 
 *----- Datos devueltos por el servicio de identificacion
@@ -53,8 +52,8 @@ PACTL   equ $26
 ********************************************************
 * Conexiones entre la CT6811 y el PIC                  *
 *------------------------------------------------------*
-* PA3 Saca la señal de Reloj, CLOCK ---> RB6           *
-* PA7 Saca la señal de Datos, DATA  <--> RB7           *
+* PA3 Saca la seï¿½al de Reloj, CLOCK ---> RB6           *
+* PA7 Saca la seï¿½al de Datos, DATA  <--> RB7           *
 * PA4 Se usa para hacer un reset del PIC               *
 ********************************************************
 PA3	 equ $08  ; Bit PA3
@@ -338,7 +337,7 @@ inicio
 
 * Bucle principal
 server
-* -- Led de la CT6811 encendido. Todas las señales a 0
+* -- Led de la CT6811 encendido. Todas las seï¿½ales a 0
 	LDAA #$40
 	STAA PORTA,X
 	
