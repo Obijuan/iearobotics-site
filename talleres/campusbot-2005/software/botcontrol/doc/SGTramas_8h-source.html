@@ -1,16 +1,18 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<html><head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SGTramas: SGTramas.h Source File</title>
 <link href="doxygen.css" rel="stylesheet" type="text/css">
 </head><body>
 <!-- Generado por Doxygen 1.4.3-20050530 -->
-<div class="qindex"><a class="qindex" href="index.html">P�gina&nbsp;principal</a> | <a class="qindex" href="hierarchy.html">Jerarqu�a&nbsp;de&nbsp;la&nbsp;clase</a> | <a class="qindex" href="annotated.html">Lista&nbsp;de&nbsp;componentes</a> | <a class="qindex" href="files.html">Lista&nbsp;de&nbsp;archivos</a> | <a class="qindex" href="functions.html">Miembros&nbsp;de&nbsp;las&nbsp;clases</a></div>
+<div class="qindex"><a class="qindex" href="index.html">Página&nbsp;principal</a> | <a class="qindex" href="hierarchy.html">Jerarquía&nbsp;de&nbsp;la&nbsp;clase</a> | <a class="qindex" href="annotated.html">Lista&nbsp;de&nbsp;componentes</a> | <a class="qindex" href="files.html">Lista&nbsp;de&nbsp;archivos</a> | <a class="qindex" href="functions.html">Miembros&nbsp;de&nbsp;las&nbsp;clases</a></div>
 <h1>SGTramas.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
 <a name="l00002"></a>00002 <span class="comment">//</span>
 <a name="l00003"></a>00003 <span class="comment">//</span>
 <a name="l00004"></a>00004 <span class="comment">// SGTramas.h: interface for the CSGTramas class.</span>
 <a name="l00005"></a>00005 <span class="comment">//</span>
-<a name="l00006"></a>00006 <span class="comment">// Author: Daniel �lvarez S�nchez        &lt;dani001@gmail.com&gt;</span>
+<a name="l00006"></a>00006 <span class="comment">// Author: Daniel Álvarez Sánchez        &lt;dani001@gmail.com&gt;</span>
 <a name="l00007"></a>00007 <span class="comment">// Date: 22/03/05</span>
 <a name="l00008"></a>00008 <span class="comment">//</span>
 <a name="l00009"></a>00009 <span class="comment">// Comments:  Basado en el servidor PICP del proyecto STARGATE </span>
@@ -85,7 +87,7 @@
 <a name="l00079"></a>00079 <span class="preprocessor"></span><span class="preprocessor">#define TRAMA_RLEE_CAB  'W'</span>
 <a name="l00080"></a>00080 <span class="preprocessor"></span>
 <a name="l00081"></a>00081 <span class="comment">/*************************************/</span>
-<a name="l00082"></a>00082 <span class="comment">/* Identificaci�n de los servidores  */</span>
+<a name="l00082"></a>00082 <span class="comment">/* Identificación de los servidores  */</span>
 <a name="l00083"></a>00083 <span class="comment">/*************************************/</span>
 <a name="l00084"></a>00084 <span class="preprocessor">#define SG_NULL    0x10</span>
 <a name="l00085"></a>00085 <span class="preprocessor"></span><span class="preprocessor">#define SG_GENERIC 0x20</span>
@@ -93,7 +95,7 @@
 <a name="l00087"></a>00087 <span class="preprocessor"></span><span class="preprocessor">#define SG_PICP    0x40</span>
 <a name="l00088"></a>00088 <span class="preprocessor"></span>
 <a name="l00089"></a>00089 <span class="comment">/***********************************************/</span>
-<a name="l00090"></a>00090 <span class="comment">/* Cadenas de identificaci�n de los servidores */</span>
+<a name="l00090"></a>00090 <span class="comment">/* Cadenas de identificación de los servidores */</span>
 <a name="l00091"></a>00091 <span class="comment">/***********************************************/</span>
 <a name="l00092"></a>00092 <span class="preprocessor">#define SG_NULL_CAD    "NULL"</span>
 <a name="l00093"></a>00093 <span class="preprocessor"></span><span class="preprocessor">#define SG_GENERIC_CAD "GENERIC"</span>
@@ -101,7 +103,7 @@
 <a name="l00095"></a>00095 <span class="preprocessor"></span><span class="preprocessor">#define SG_PICP_CAD    "PICP"</span>
 <a name="l00096"></a>00096 <span class="preprocessor"></span>
 <a name="l00097"></a>00097 <span class="comment">/****************************************/</span>
-<a name="l00098"></a>00098 <span class="comment">/* Identificaci�n del Micro.            */</span>
+<a name="l00098"></a>00098 <span class="comment">/* Identificación del Micro.            */</span>
 <a name="l00099"></a>00099 <span class="comment">/****************************************/</span>
 <a name="l00100"></a>00100 <span class="preprocessor">#define MICRO_68HC11E2          0x10</span>
 <a name="l00101"></a>00101 <span class="preprocessor"></span><span class="preprocessor">#define MICRO_68HC08            0x20</span>
@@ -110,7 +112,7 @@
 <a name="l00104"></a>00104 <span class="preprocessor"></span><span class="preprocessor">#define MICRO_PIC16F84A         0x50</span>
 <a name="l00105"></a>00105 <span class="preprocessor"></span>
 <a name="l00106"></a>00106 <span class="comment">/********************************************/</span>
-<a name="l00107"></a>00107 <span class="comment">/* Cadenas de identificaci�n de los micros  */</span>
+<a name="l00107"></a>00107 <span class="comment">/* Cadenas de identificación de los micros  */</span>
 <a name="l00108"></a>00108 <span class="comment">/********************************************/</span>
 <a name="l00109"></a>00109 <span class="preprocessor">#define MICRO_68HC11E2_CAD  "68HC11E2"</span>
 <a name="l00110"></a>00110 <span class="preprocessor"></span><span class="preprocessor">#define MICRO_68HC08_CAD    "68HC08"</span>
