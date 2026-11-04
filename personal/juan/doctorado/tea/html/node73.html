@@ -13,7 +13,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
 
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+    <meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
 <META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
 
@@ -40,7 +41,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
 <BR>
 <B> Next:</B> <A NAME="tex2html1175"
-  HREF="node74.html">5. Conclusiones y líneas</A>
+  HREF="node74.html">5. Conclusiones y lï¿½neas</A>
 <B> Up:</B> <A NAME="tex2html1171"
   HREF="node67.html">4. Experimentos y resultados</A>
 <B> Previous:</B> <A NAME="tex2html1167"
@@ -56,22 +57,22 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 </H1>
 
 <P>
-La implementación del circuito de control presentado en el apartado
+La implementaciï¿½n del circuito de control presentado en el apartado
 <A HREF="node63.html#sub:fpga_alt_cableada"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A> se ha implementando en una FPGA Spartan
 I, en la placa JPS, con un oscilador de 1MHZ. La tabla de control
-empleada se corresponde con una onda sinusoidal periódica de amplitud
+empleada se corresponde con una onda sinusoidal periï¿½dica de amplitud
 20. 
 
 <P>
-La solución con CPU empotrada también se ha sintetizado, sin embargo
-todavía no se ha probado. Los resultados se muestran en la tabla <A HREF="#tab:controladores-fpga"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>:
+La soluciï¿½n con CPU empotrada tambiï¿½n se ha sintetizado, sin embargo
+todavï¿½a no se ha probado. Los resultados se muestran en la tabla <A HREF="#tab:controladores-fpga"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>:
 
 <P>
 <BR><P></P>
 <DIV ALIGN="CENTER"><A NAME="2332"></A>
 <TABLE>
 <CAPTION><STRONG>Table:</STRONG>
-Resultados de la implementación de los controladores en una FPGA</CAPTION>
+Resultados de la implementaciï¿½n de los controladores en una FPGA</CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
 <TABLE CELLPADDING=3 BORDER="1" ALIGN="CENTER">
@@ -80,7 +81,7 @@ Resultados de la implementación de los controladores en una FPGA</CAPTION>
 <TH ALIGN="CENTER"><B>% </B></TH>
 </TR>
 <tr>
-  <TD><B>Lógica comb+sec</B></TD>
+  <TD><B>Lï¿½gica comb+sec</B></TD>
   <td>78</td>
   <td>39</td>
   </tr>
@@ -99,17 +100,17 @@ Resultados de la implementación de los controladores en una FPGA</CAPTION>
 <BR>
 
 <P>
-La solución con la CPU ocupa más recursos y no cabe en la Spartan
-I. Esta solución incluye la CPU, la memoria con las tablas de control
+La soluciï¿½n con la CPU ocupa mï¿½s recursos y no cabe en la Spartan
+I. Esta soluciï¿½n incluye la CPU, la memoria con las tablas de control
 y el programa y las 4 unidades PWM. Es necesario utilizar dos tarjetas
-JPS, particionando el diseño de la siguiente manera: una FPGA con
+JPS, particionando el diseï¿½o de la siguiente manera: una FPGA con
 la CPU y la memoria de programa y la segunda con los datos y las unidades
-PWM, ya que estas últimas comparten con la memoria los buses de datos
-y dirección.
+PWM, ya que estas ï¿½ltimas comparten con la memoria los buses de datos
+y direcciï¿½n.
 
 <P>
 Se ha considerado probar esta alternativa en la placa Digilab2E, que
-posee una XC200E. En este dispositivo el diseño ocupa 285 slices (12%)
+posee una XC200E. En este dispositivo el diseï¿½o ocupa 285 slices (12%)
 sin aprovechamiento de las BRAM.
 
 <P>
@@ -129,7 +130,7 @@ sin aprovechamiento de las BRAM.
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
 <BR>
 <B> Next:</B> <A NAME="tex2html1175"
-  HREF="node74.html">5. Conclusiones y líneas</A>
+  HREF="node74.html">5. Conclusiones y lï¿½neas</A>
 <B> Up:</B> <A NAME="tex2html1171"
   HREF="node67.html">4. Experimentos y resultados</A>
 <B> Previous:</B> <A NAME="tex2html1167"

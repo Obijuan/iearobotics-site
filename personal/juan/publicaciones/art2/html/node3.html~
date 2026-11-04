@@ -7,13 +7,14 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>3 Tabla de control y señales PWM</TITLE>
-<META NAME="description" CONTENT="3 Tabla de control y señales PWM">
+<TITLE>3 Tabla de control y seï¿½ales PWM</TITLE>
+<META NAME="description" CONTENT="3 Tabla de control y seï¿½ales PWM">
 <META NAME="keywords" CONTENT="51-Gonzalez_et_al">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
 
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+    <meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
 <META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
 
@@ -39,11 +40,11 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
 <BR>
 <B> Next:</B> <A NAME="tex2html50"
-  HREF="node4.html">4 Alternativa I: lógica</A>
+  HREF="node4.html">4 Alternativa I: lï¿½gica</A>
 <B> Up:</B> <A NAME="tex2html48"
   HREF="51-Gonzalez_et_al.html">Alternativas Hardware para la</A>
 <B> Previous:</B> <A NAME="tex2html42"
-  HREF="node2.html">2 El robot ápodo</A>
+  HREF="node2.html">2 El robot ï¿½podo</A>
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
@@ -149,11 +150,11 @@ la FPGA se configura y el gusano comienza a moverse.
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
 <BR>
 <B> Next:</B> <A NAME="tex2html50"
-  HREF="node4.html">4 Alternativa I: lógica</A>
+  HREF="node4.html">4 Alternativa I: lï¿½gica</A>
 <B> Up:</B> <A NAME="tex2html48"
   HREF="51-Gonzalez_et_al.html">Alternativas Hardware para la</A>
 <B> Previous:</B> <A NAME="tex2html42"
-  HREF="node2.html">2 El robot ápodo</A></DIV>
+  HREF="node2.html">2 El robot ï¿½podo</A></DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
 Juan Gonzalez

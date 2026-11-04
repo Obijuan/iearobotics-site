@@ -1,8 +1,9 @@
 <html><head><title>Home EagleMan</title>
 
 
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="description" content="EagleMan electronica vibrador Nokia 3210 tarjeta interface bus ISA Fuente alimentacion dual  Adaptador Entrada AUX IPbus Pioneer Diodos Leds Datasheets robotica SHEILA CIT Motorola 68HC11 servos componentes electrónicos">
+    <meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="EagleMan electronica vibrador Nokia 3210 tarjeta interface bus ISA Fuente alimentacion dual  Adaptador Entrada AUX IPbus Pioneer Diodos Leds Datasheets robotica SHEILA CIT Motorola 68HC11 servos componentes electrï¿½nicos">
 
 <style>
 body, td, div { font-family:sans-serif; }

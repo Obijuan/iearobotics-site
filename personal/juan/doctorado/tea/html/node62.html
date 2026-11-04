@@ -13,7 +13,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
 
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+    <meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
 <META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
 
@@ -41,7 +42,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
 <BR>
 <B> Next:</B> <A NAME="tex2html1040"
-  HREF="node63.html">3.6.2 Lógica combinacional y</A>
+  HREF="node63.html">3.6.2 Lï¿½gica combinacional y</A>
 <B> Up:</B> <A NAME="tex2html1036"
   HREF="node61.html">3.6 Control</A>
 <B> Previous:</B> <A NAME="tex2html1030"
@@ -57,29 +58,29 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 </H2>
 
 <P>
-La tabla de control se encuentra en el PC y se envía a través del
+La tabla de control se encuentra en el PC y se envï¿½a a travï¿½s del
 puerto serie al 6811 donde se ejecuta un programa servidor que genera
-las señales PWM en función de las posiciones indicadas. Es interesante
-que este servidor pueda mover cuantos más servos mejor. En Cube 2.0,
-el servidor sólo controlaba 4 servos, usando en total 5 comparadores.
-Uno común para generar una señal de 50Hz y uno medir la anchura del
-pulso de cada una de las señales PWM.
+las seï¿½ales PWM en funciï¿½n de las posiciones indicadas. Es interesante
+que este servidor pueda mover cuantos mï¿½s servos mejor. En Cube 2.0,
+el servidor sï¿½lo controlaba 4 servos, usando en total 5 comparadores.
+Uno comï¿½n para generar una seï¿½al de 50Hz y uno medir la anchura del
+pulso de cada una de las seï¿½ales PWM.
 
 <P>
-Esta solución tiene un error en su concepción. Todas las señales PWM
-están en fase por lo que cuando las posiciones de los servos son las
+Esta soluciï¿½n tiene un error en su concepciï¿½n. Todas las seï¿½ales PWM
+estï¿½n en fase por lo que cuando las posiciones de los servos son las
 mismas, se producen todas las interrupciones a la vez (4) lo que ocasiona
-un retraso en las últimas que se ejecutan, haciendo que su anchura
-del pulso sea un poco mayor, por lo que se observa cómo esos servos
-tienen de vez en cuando unos ``espasmos'' de pequeña amplitud.
+un retraso en las ï¿½ltimas que se ejecutan, haciendo que su anchura
+del pulso sea un poco mayor, por lo que se observa cï¿½mo esos servos
+tienen de vez en cuando unos ``espasmos'' de pequeï¿½a amplitud.
 
 <P>
-La idea para controlar muchos servos es generar las señales PWM desfasadas,
-que se puede hacer con un único comparador, evitándose el problema
-anterior además de poderse controlar el doble de servos con la quinta
-parte de los recursos del microcontrolador. Todos los detalles así
-como el código que se ejecuta en el 6811 se pueden encontrara en el
-apéndice <A HREF="node79.html#cap:apendice-control-servos"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>.
+La idea para controlar muchos servos es generar las seï¿½ales PWM desfasadas,
+que se puede hacer con un ï¿½nico comparador, evitï¿½ndose el problema
+anterior ademï¿½s de poderse controlar el doble de servos con la quinta
+parte de los recursos del microcontrolador. Todos los detalles asï¿½
+como el cï¿½digo que se ejecuta en el 6811 se pueden encontrara en el
+apï¿½ndice <A HREF="node79.html#cap:apendice-control-servos"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>.
 
 <P>
 <HR>
@@ -98,7 +99,7 @@ apéndice <A HREF="node79.html#cap:apendice-control-servos"><IMG  ALIGN="BOTTOM" 
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
 <BR>
 <B> Next:</B> <A NAME="tex2html1040"
-  HREF="node63.html">3.6.2 Lógica combinacional y</A>
+  HREF="node63.html">3.6.2 Lï¿½gica combinacional y</A>
 <B> Up:</B> <A NAME="tex2html1036"
   HREF="node61.html">3.6 Control</A>
 <B> Previous:</B> <A NAME="tex2html1030"

@@ -13,7 +13,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
 
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+    <meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
 <META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
 
@@ -57,10 +58,10 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 </H3>
 
 <P>
-La CPU diseñada presenta una arquitectura muy sencilla, con la intención
-de ir adaptándola a las necesidades que puedan surgir a lo largo del
-desarrollo del problema planteado, el control del robot ápodo. Las
-carácterísticas más relevante son:
+La CPU diseï¿½ada presenta una arquitectura muy sencilla, con la intenciï¿½n
+de ir adaptï¿½ndola a las necesidades que puedan surgir a lo largo del
+desarrollo del problema planteado, el control del robot ï¿½podo. Las
+carï¿½cterï¿½sticas mï¿½s relevante son:
 
 <P>
 
@@ -69,18 +70,18 @@ carácterísticas más relevante son:
 </LI>
 <LI>Arquitectura Harvard, con memorias separadas para datos y programa.
 </LI>
-<LI>Arquitectura LOAD-STORE. Los accesos a la memoria de datos se harán
-sólo con estas instrucciones.
+<LI>Arquitectura LOAD-STORE. Los accesos a la memoria de datos se harï¿½n
+sï¿½lo con estas instrucciones.
 </LI>
-<LI>Cuatro registros internos de propósito general.
+<LI>Cuatro registros internos de propï¿½sito general.
 </LI>
-<LI>Cuatro registros internos de propósito general / indexación.
+<LI>Cuatro registros internos de propï¿½sito general / indexaciï¿½n.
 </LI>
 <LI>Direccionamiento indexado.
 </LI>
 <LI>Un bit de flag para saltos condicionales.
 </LI>
-<LI>8 instrucciones básicas (ver tabla <A HREF="#tab:set-instrucciones"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>).
+<LI>8 instrucciones bï¿½sicas (ver tabla <A HREF="#tab:set-instrucciones"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>).
 </LI>
 </UL>
 <BR><P></P>
@@ -92,8 +93,8 @@ Set de instrucciones de la CPU</CAPTION>
   <TR><TD>
   <DIV ALIGN="CENTER">
   <TABLE CELLPADDING=3 BORDER="1" ALIGN="CENTER">
-  <TR><TH ALIGN="CENTER"><B>Instrucción</B></TH>
-  <TH ALIGN="CENTER"><B>Función</B>
+  <TR><TH ALIGN="CENTER"><B>Instrucciï¿½n</B></TH>
+  <TH ALIGN="CENTER"><B>Funciï¿½n</B>
   <BR>
   LOAD</TH>
   </TR>
@@ -143,14 +144,14 @@ Set de instrucciones de la CPU</CAPTION>
 <BR>
 
 <P>
-Para cumplir con el set de instrucciones, se ha diseñado una arquitectura
-basada en una máquina Mealy de tres estados: captura, decodificación/ejecución
-y almacenamiento. Las salidas de la máquina son las señales de control
-que se envían a los distintos elementos que la acompañan. Un diagrama
-de está arquitectura se muestra en la figura <A HREF="node65.html#fig:arquitectura"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>.
-Además, se ha añadido un interface de comunicación con dos memorias
-de 16 bits de datos y 8 bits de dirección, síncronas. La memoria de
-programa es una ROM, mientras que la de datos es SRAM, y ambas están
+Para cumplir con el set de instrucciones, se ha diseï¿½ado una arquitectura
+basada en una mï¿½quina Mealy de tres estados: captura, decodificaciï¿½n/ejecuciï¿½n
+y almacenamiento. Las salidas de la mï¿½quina son las seï¿½ales de control
+que se envï¿½an a los distintos elementos que la acompaï¿½an. Un diagrama
+de estï¿½ arquitectura se muestra en la figura <A HREF="node65.html#fig:arquitectura"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>.
+Ademï¿½s, se ha aï¿½adido un interface de comunicaciï¿½n con dos memorias
+de 16 bits de datos y 8 bits de direcciï¿½n, sï¿½ncronas. La memoria de
+programa es una ROM, mientras que la de datos es SRAM, y ambas estï¿½n
 implementadas dentro del dispositivo.
 
 <P>
@@ -160,8 +161,8 @@ implementadas dentro del dispositivo.
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
 Diagrama de bloques de la CPU (alternativa II). La interface con
-el exterior se realiza a través de dos buses de datos y dos buses
-de direcciones (arquitectura Hardvard). Además se han añadido señales
+el exterior se realiza a travï¿½s de dos buses de datos y dos buses
+de direcciones (arquitectura Hardvard). Ademï¿½s se han aï¿½adido seï¿½ales
 de control para el manejo de memorias externas.</CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
