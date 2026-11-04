@@ -60,12 +60,12 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <P>
 Todav�a no son autoreconfigurables, pero son muy f�cilmente ensamblables
 a mano (no hay que atornillar). Por las conexiones se pasa la alimentaci�n
-y las l�neas de comunicaciones. Tanto la alimentaci�n como la electr�nica
-se encuentran dentro del propio m�dulo, por lo que son un poco m�s
+y las líneas de comunicaciones. Tanto la alimentaci�n como la electr�nica
+se encuentran dentro del propio módulo, por lo que son un poco m�s
 grandes que los G1 (ver figura <A HREF="node41.html#fig:polybot-g1v4-1"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>). Se siguen
 utilizando <B>servos de RC</B>, pero ahora se manejan en <B>bucle
-cerrado</B>. Adem�s de leer el potenci�metro del servo, tiene sensores
-de fuerza. El objetivo es el estudio de la locomoci�n.
+cerrado</B>. además de leer el potenci�metro del servo, tiene sensores
+de fuerza. El objetivo es el estudio de la locomoción.
 
 <P>
 
@@ -73,7 +73,7 @@ de fuerza. El objetivo es el estudio de la locomoci�n.
 <DIV ALIGN="CENTER"><A NAME="fig:polybot-g1v4-1"></A><A NAME="2296"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
-aspecto de un m�dulos G1v4</CAPTION>
+aspecto de un módulos G1v4</CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
 <IMG
@@ -88,33 +88,33 @@ scale=0.5]{ps/g1v4.eps}">
 </DIV><P></P>
 
 <P>
-Los m�dulos tienen <B>4 placas de conexi�n</B> en cada m�dulo, lo
-que permite conectarlo con otros cuatro m�dulos. O bien se pueden
+Los módulos tienen <B>4 placas de conexi�n</B> en cada módulo, lo
+que permite conectarlo con otros cuatro módulos. O bien se pueden
 enganchar para formar una cadena y utilizar las placas restantes para
 conectar elementos pasivos, como pies o ganchos.
 
 <P>
 Como alimentaci�n utilizan se utilizan 6v proporcionados por pilas
-AAA recargables (para cada m�dulo). 10 m�dulos conectados formando
-una rueda (patr�n de movimiento m�s eficiente), fueron capaces de
+AAA recargables (para cada módulo). 10 módulos conectados formando
+una rueda (patr�n de movimiento más eficiente), fueron capaces de
 recorrer 0.5Km en 45 minutos.
 
 <P>
-Cada m�dulo dispone de un microcontrolador <B>PIC16F877</B> y se
+Cada módulo dispone de un microcontrolador <B>PIC16F877</B> y se
 comunican entre s� mediante un bus serie RS232 (o 485).
 
 <P>
-Todas las aplicaciones de estos m�dulos se han orientado hacia el
-estudio de la locomoci�n. Los experimentos realizados son los siguientes:
+Todas las aplicaciones de estos módulos se han orientado hacia el
+estudio de la locomoción. Los experimentos realizados son los siguientes:
 
 <P>
 
 <UL>
-<LI><B>Montar en triciclo</B>. Este uno de los experimentos m�s interesantes
+<LI><B>Montar en triciclo</B>. Este uno de los experimentos más interesantes
 y fue portada la revista IEEE Spectrum[<A
  HREF="node84.html#Polybot-IEEE">29</A>]. Es un
 ejemplo de c�mo los robots modulares se pueden utilizar para manipular
-objetos humanos. Un total de 20 m�dulos G1v4 se unieron formando dos
+objetos humanos. Un total de 20 módulos G1v4 se unieron formando dos
 piernas y una cintura y se apoyaron en los pedales de un triciclo.
 El movimiento coordinado de estas piernas hace que el triciclo avance,
 con el robot encima (figura <A HREF="node41.html#fig:g1v4-demo-1"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>).
@@ -122,7 +122,7 @@ con el robot encima (figura <A HREF="node41.html#fig:g1v4-demo-1"><IMG  ALIGN="B
 <DIV ALIGN="CENTER"><A NAME="fig:g1v4-demo-1"></A><A NAME="2297"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
-El experimento del triciclo, movido por m�dulos de tipo G1v4</CAPTION>
+El experimento del triciclo, movido por módulos de tipo G1v4</CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
 <IMG
@@ -139,11 +139,11 @@ scale=0.5]{ps/g1v4-demo1.eps}">
 <P>
 </LI>
 <LI><B>Adaptaci�n al terreno</B>: Al disponer de sensores de fuerza,
-los m�dulos pueden detectar la presi�n ejercida sobre la superficie
+los módulos pueden detectar la presi�n ejercida sobre la superficie
 por la que avanzan, pudi�ndo adoptar su misma forma. Los experimentos
-se han realizado con una configuraci�n tipo rueda, de 10 m�dulos y
+se han realizado con una configuraci�n tipo rueda, de 10 módulos y
 los resultados han sido impresionantes. Es capaz de atravesar obst�culos
-de lo m�s diverso as� como subir escaleras (ver figura <A HREF="node41.html#fig:g1v4-demo-2"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>)
+de lo más diverso as� como subir escaleras (ver figura <A HREF="node41.html#fig:g1v4-demo-2"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>)
 </LI>
 <LI><B>Trepar</B> : Otra interesante aplicaci�n es la habilidad para
 trepar por vayas y meteriales porosos, usando bien unos ganchos o
@@ -159,7 +159,7 @@ Se puede encontrar informaci�n en [<A
 <DIV ALIGN="CENTER"><A NAME="fig:g1v4-demo-2"></A><A NAME="2298"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
-Esperimentos con los m�dulos G1v4. En la foto superior izquierda,
+Esperimentos con los módulos G1v4. En la foto superior izquierda,
 el robot con forma de rueda se adapta a la forma del terreno para
 atravesarlo. Arriba a la derecha el mismo robot subiendo una escalera.
 En las fotos de abajo est� trepando, en la izquierda sobre un material

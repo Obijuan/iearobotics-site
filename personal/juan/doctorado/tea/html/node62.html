@@ -61,14 +61,14 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 La tabla de control se encuentra en el PC y se env�a a trav�s del
 puerto serie al 6811 donde se ejecuta un programa servidor que genera
 las se�ales PWM en funci�n de las posiciones indicadas. Es interesante
-que este servidor pueda mover cuantos m�s servos mejor. En Cube 2.0,
+que este servidor pueda mover cuantos más servos mejor. En Cube 2.0,
 el servidor s�lo controlaba 4 servos, usando en total 5 comparadores.
 Uno com�n para generar una se�al de 50Hz y uno medir la anchura del
 pulso de cada una de las se�ales PWM.
 
 <P>
 Esta soluci�n tiene un error en su concepci�n. Todas las se�ales PWM
-est�n en fase por lo que cuando las posiciones de los servos son las
+están en fase por lo que cuando las posiciones de los servos son las
 mismas, se producen todas las interrupciones a la vez (4) lo que ocasiona
 un retraso en las �ltimas que se ejecutan, haciendo que su anchura
 del pulso sea un poco mayor, por lo que se observa c�mo esos servos
@@ -77,7 +77,7 @@ tienen de vez en cuando unos ``espasmos'' de peque�a amplitud.
 <P>
 La idea para controlar muchos servos es generar las se�ales PWM desfasadas,
 que se puede hacer con un �nico comparador, evit�ndose el problema
-anterior adem�s de poderse controlar el doble de servos con la quinta
+anterior además de poderse controlar el doble de servos con la quinta
 parte de los recursos del microcontrolador. Todos los detalles as�
 como el c�digo que se ejecuta en el 6811 se pueden encontrara en el
 ap�ndice <A HREF="node79.html#cap:apendice-control-servos"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>.

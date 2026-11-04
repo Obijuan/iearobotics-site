@@ -59,7 +59,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 </H2>
 
 <P>
-Seg�n el n�mero de grados de libertad (DOF) controlables, en relaci�n
+según el n�mero de grados de libertad (DOF) controlables, en relaci�n
 con los DOF del robot, tenemos los siguientes tipos de robots:
 
 <P>
@@ -71,7 +71,7 @@ con los DOF del robot, tenemos los siguientes tipos de robots:
 con 6 grados libertad).
 </LI>
 <LI><B>Redundante</B>: DOF Controlables &gt; DOF. (ejemplo: brazo robot
-con m�s de 6 articulaciones, un gusano robot). No s�lo importa el
+con más de 6 articulaciones, un gusano robot). No s�lo importa el
 punto final, sino la ``forma'' que tiene el robot.
 </LI>
 <LI><B>Hiper-redundantes</B>: DOF Controlables &gt;&gt;
@@ -80,9 +80,9 @@ DOF.
 </UL>
 En general, <B>los robots modulares reconfigurables pertenecen
 a la categor�a de Hiper-redundantes</B>. Por ello el elemento clave que
-se va buscando en el control es la <B>simplicidad</B> y tambi�n
-es muy importante la <B>escalabilidad</B> (y ser lo m�s independiente
-posible del n�mero de m�dulos). 
+se va buscando en el control es la <B>simplicidad</B> y también
+es muy importante la <B>escalabilidad</B> (y ser lo más independiente
+posible del n�mero de módulos). 
 
 <P>
 
@@ -98,7 +98,7 @@ los segmentos. A este nivel se le pasa la posici�n deseada y �ste
 act�a sobre sobre los motores.
 </LI>
 <LI><B>Nivel de comportamiento</B>. Se definen tres comportamientos
-para cada grado de libertad del m�dulo. Son:
+para cada grado de libertad del módulo. Son:
 
 <P>
 
@@ -118,13 +118,13 @@ la constante k del muelle que se est� simulando). El modo <I>-spring</I>
 se comporta de forma contrario a como lo hace un muelle. Lo mismo
 es v�lido para el otro grado de libertad.
 </LI>
-<LI><B>Modo NO</B> (<I>no mode</I>). El m�dulo permanece en la misma
+<LI><B>Modo NO</B> (<I>no mode</I>). El módulo permanece en la misma
 posici�n.
 </LI>
 </OL>
 </LI>
 <LI><B>Nivel Alto</B>. <B>Tablas de control</B>, que definen la secuencia
-de comportamientos que se aplicar�n a los m�dulos, as� como el instante
+de comportamientos que se aplicar�n a los módulos, as� como el instante
 en el que pasar de una fila a otra. Por ejemplo, imaginemos un comportamiento
 muy sencillo. 4 segmentos unidos formando una cadena. Se quiere que
 se expandan y que luego se contraigan, todos a la vez. La tabla de
@@ -133,11 +133,11 @@ para indicar la condici�n de ``disparo'' que es la que determina
 cuando se pasa a ejecutar la siguiente fila. Una condici�n de disparo
 podr�a ser que todos los modulos se hayan expandido. S�lo se est�
 utilizando el grado de libertado correspondiente a la contracci�n-expansi�n,
-por lo que el DOF restante de todos los m�dulos se pone en el <I>no
+por lo que el DOF restante de todos los módulos se pone en el <I>no
 mode</I>.
 
 <P>
-En la primera fila, todos los m�dulos tendr�an el comportamiento <I>+end</I>
+En la primera fila, todos los módulos tendr�an el comportamiento <I>+end</I>
 y en la segunda fila el <I>-end</I>. La tabla de control ser�a de
 esta manera:
 
