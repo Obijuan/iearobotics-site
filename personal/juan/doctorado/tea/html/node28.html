@@ -59,19 +59,19 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 </H2>
 
 <P>
-según el n�mero de grados de libertad (DOF) controlables, en relaci�n
+según el número de grados de libertad (DOF) controlables, en relación
 con los DOF del robot, tenemos los siguientes tipos de robots:
 
 <P>
 
 <UL>
-<LI><B>no-holon�micos</B>: DOF controlables &lt; DOF. Por ejemplo un coche. 
+<LI><B>no-holonómicos</B>: DOF controlables &lt; DOF. Por ejemplo un coche. 
 </LI>
-<LI><B>Holon�micos</B>: DOF Controlables = DOF (ejemplo: brazo robot
+<LI><B>Holonómicos</B>: DOF Controlables = DOF (ejemplo: brazo robot
 con 6 grados libertad).
 </LI>
 <LI><B>Redundante</B>: DOF Controlables &gt; DOF. (ejemplo: brazo robot
-con más de 6 articulaciones, un gusano robot). No s�lo importa el
+con más de 6 articulaciones, un gusano robot). No sólo importa el
 punto final, sino la ``forma'' que tiene el robot.
 </LI>
 <LI><B>Hiper-redundantes</B>: DOF Controlables &gt;&gt;
@@ -79,10 +79,10 @@ DOF.
 </LI>
 </UL>
 En general, <B>los robots modulares reconfigurables pertenecen
-a la categor�a de Hiper-redundantes</B>. Por ello el elemento clave que
+a la categoría de Hiper-redundantes</B>. Por ello el elemento clave que
 se va buscando en el control es la <B>simplicidad</B> y también
 es muy importante la <B>escalabilidad</B> (y ser lo más independiente
-posible del n�mero de módulos). 
+posible del número de módulos). 
 
 <P>
 
@@ -93,9 +93,9 @@ El control de Polypod se realiza a tres niveles:
 <P>
 
 <OL>
-<LI><B>Nivel bajo</B>: Control PID de la posici�n de ambos motores de
-los segmentos. A este nivel se le pasa la posici�n deseada y �ste
-act�a sobre sobre los motores.
+<LI><B>Nivel bajo</B>: Control PID de la posición de ambos motores de
+los segmentos. A este nivel se le pasa la posición deseada y éste
+actúa sobre sobre los motores.
 </LI>
 <LI><B>Nivel de comportamiento</B>. Se definen tres comportamientos
 para cada grado de libertad del módulo. Son:
@@ -104,41 +104,41 @@ para cada grado de libertad del módulo. Son:
 
 <OL>
 <LI><B>Modo fin</B> (<I>end mode</I>): Moverse en un sentido u otro
-(+/-) hasta llegar al final. Si un segmento est� en modo <I>+end</I>,
-se expander� lo m�ximo posible e informar� al nivel superior cuando
-termine. Si est� en modo <I>-end</I> har� lo mismo pero contray�ndose.
-(Lo mismo para el otro DOF). Obs�rvese que el nivel superior no especifica
-la posici�n, sino el comportamiento.
+(+/-) hasta llegar al final. Si un segmento está en modo <I>+end</I>,
+se expanderá lo máximo posible e informará al nivel superior cuando
+termine. Si está en modo <I>-end</I> hará lo mismo pero contrayéndose.
+(Lo mismo para el otro DOF). Obsérvese que el nivel superior no especifica
+la posición, sino el comportamiento.
 </LI>
-<LI><B>Modo muelle</B> (<I>spring mode</I>): Se mueve a una posici�n
-u otra en funci�n de la fuerza/par medidos. Por ejemplo, si est� en
-modo <I>+spring</I> y no se le aplica fuerza permanecer� expandido.
-Si se sit�a carga se contraer� un determinado valor (determinado por
-la constante k del muelle que se est� simulando). El modo <I>-spring</I>
+<LI><B>Modo muelle</B> (<I>spring mode</I>): Se mueve a una posición
+u otra en función de la fuerza/par medidos. Por ejemplo, si está en
+modo <I>+spring</I> y no se le aplica fuerza permanecerá expandido.
+Si se sitúa carga se contraerá un determinado valor (determinado por
+la constante k del muelle que se está simulando). El modo <I>-spring</I>
 se comporta de forma contrario a como lo hace un muelle. Lo mismo
-es v�lido para el otro grado de libertad.
+es válido para el otro grado de libertad.
 </LI>
 <LI><B>Modo NO</B> (<I>no mode</I>). El módulo permanece en la misma
-posici�n.
+posición.
 </LI>
 </OL>
 </LI>
 <LI><B>Nivel Alto</B>. <B>Tablas de control</B>, que definen la secuencia
-de comportamientos que se aplicar�n a los módulos, as� como el instante
+de comportamientos que se aplicarán a los módulos, así como el instante
 en el que pasar de una fila a otra. Por ejemplo, imaginemos un comportamiento
 muy sencillo. 4 segmentos unidos formando una cadena. Se quiere que
 se expandan y que luego se contraigan, todos a la vez. La tabla de
-control tendr� dos filas por 4 columnas. Se a�ade una quinta columna
-para indicar la condici�n de ``disparo'' que es la que determina
-cuando se pasa a ejecutar la siguiente fila. Una condici�n de disparo
-podr�a ser que todos los modulos se hayan expandido. S�lo se est�
-utilizando el grado de libertado correspondiente a la contracci�n-expansi�n,
+control tendrá dos filas por 4 columnas. Se añade una quinta columna
+para indicar la condición de ``disparo'' que es la que determina
+cuando se pasa a ejecutar la siguiente fila. Una condición de disparo
+podría ser que todos los modulos se hayan expandido. Sólo se está
+utilizando el grado de libertado correspondiente a la contracción-expansión,
 por lo que el DOF restante de todos los módulos se pone en el <I>no
 mode</I>.
 
 <P>
-En la primera fila, todos los módulos tendr�an el comportamiento <I>+end</I>
-y en la segunda fila el <I>-end</I>. La tabla de control ser�a de
+En la primera fila, todos los módulos tendrían el comportamiento <I>+end</I>
+y en la segunda fila el <I>-end</I>. La tabla de control sería de
 esta manera:
 
 <P>
@@ -153,7 +153,7 @@ esta manera:
     <TD ALIGN="CENTER" COLSPAN=4><B>Segmentos</B><br>
     1 2 3 4</TD>
     <TD ALIGN="CENTER" COLSPAN=1>
-    <B>Condici�n de disparo</B></TD>
+    <B>Condición de disparo</B></TD>
   </TR>
   <tr>
     <td>0</td>
@@ -179,10 +179,10 @@ esta manera:
 
 
 <P>
-El controlador de este nivel s�lo tiene que ir a la primera fila,
+El controlador de este nivel sólo tiene que ir a la primera fila,
 enviar el comportamiento al nivel inferior y esperar a que se cumpla
-la condici�n de disparo. A continuaci�n se leen los valores de la
-siguiente fila y se repite la operaci�n. Al llegar al final de la
+la condición de disparo. A continuación se leen los valores de la
+siguiente fila y se repite la operación. Al llegar al final de la
 tabla se vuelve a comenzar.
 
 <P>
@@ -190,7 +190,7 @@ tabla se vuelve a comenzar.
 </OL>
 Este sistema de control tan sencillo ha servido para implementar en
 Polypod todos los patrones de movimiento descritos en el apartado
-<A HREF="node27.html#sub:locomotion-gaits"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>, salvo el de la ara�a.
+<A HREF="node27.html#sub:locomotion-gaits"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>, salvo el de la araña.
 
 <P>
 <HR>

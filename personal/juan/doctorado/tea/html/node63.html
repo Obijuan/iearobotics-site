@@ -77,10 +77,10 @@ l�mites de tolerancia del servo.
 
 <P>
 Por otro lado, el control de los servos es en bucle abierto y el tiempo
-que tarda el servo en alcanzar la posici�n indicada es indeterminado.
+que tarda el servo en alcanzar la posición indicada es indeterminado.
 Es necesario estimarlo. En la soluci�n usando un microcontrolador,
-este tipo se estima en funci�n de el �ngulo que tiene que recorrer
-para llegar a la nueva posici�n (la velocidad angular nominal del
+este tipo se estima en función de el �ngulo que tiene que recorrer
+para llegar a la nueva posición (la velocidad angular nominal del
 servo es constante y conocida). Se estima el tiempo que le llevar�
 al servo recorrer este �ngulo y se realiza una espera, que es variable
 (unas veces se espera m�s, otras veces menos).
@@ -89,7 +89,7 @@ al servo recorrer este �ngulo y se realiza una espera, que es variable
 En el caso de la implementaci�n por hardware se ha simplificado y
 se utiliza un tiempo de espera igual para todas las entradas de la
 tabla. Si el incremento angular de los servos es peque�o al pasar
-de una posici�n a otra, y dado que todos los servos están recorridos
+de una posición a otra, y dado que todos los servos están recorridos
 por la misma onda sinusoidal, el tiempo de espera se puede aproximar
 a una constante para todos los servos.
 
@@ -132,11 +132,11 @@ El periodo de la se�al de reloj del secuenciador (<IMG
  WIDTH="48" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
  SRC="img39.png"
  ALT="$T_{CLK}$">) determina
-el tiempo que se tardar� en enviar la siguiente posici�n a los servos.
+el tiempo que se tardar� en enviar la siguiente posición a los servos.
 Cada servo tarda un tiempo <IMG
  WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
  SRC="img40.png"
- ALT="$t_{Ser}$"> en alcanzar la nueva posici�n.
+ ALT="$t_{Ser}$"> en alcanzar la nueva posición.
 Si <!-- MATH
  $T_{CLK}>t_{Ser}$
  -->
@@ -150,7 +150,7 @@ Si <!-- MATH
  WIDTH="98" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
  SRC="img42.png"
  ALT="$T_{CLK}-t_{Ser}$">
-en reposo en la nueva posici�n, antes de que llegue la siguiente.
+en reposo en la nueva posición, antes de que llegue la siguiente.
 Si esta diferencia es del orden de las centenas de ms, se apreciar�
 un movimiento ``a saltos'' (no continuo). Por el contrario, si
 <!-- MATH
@@ -159,7 +159,7 @@ un movimiento ``a saltos'' (no continuo). Por el contrario, si
 <IMG
  WIDTH="99" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
  SRC="img43.png"
- ALT="$T_{CLK}&lt;t_{Ser}$">, se enviar� la nueva posici�n al servo antes de
+ ALT="$T_{CLK}&lt;t_{Ser}$">, se enviar� la nueva posición al servo antes de
 que haya alcanzado la anterior, por lo que los servos nunca llegar�n
 a alcanzar las posiciones indicadas en la tabla de control.
 
@@ -168,7 +168,7 @@ Mediante un multiplexor de 8 a 1, con sus entradas de selecci�n conectadas
 a tres <I>switches</I> de la tarjeta JPS, se selecciona una se�al
 de reloj de entre 8 posibles, con los siguientes periodos: 1000, 524,
 262, 131, 66, 33, 16 y 8 ms. Si se utiliza la de 1000 ms, los servos
-cambian de posici�n aproximadamente cada segundo. Si se utiliza la
+cambian de posición aproximadamente cada segundo. Si se utiliza la
 �ltima el cambio es demasiado r�pido.
 
 <P>
