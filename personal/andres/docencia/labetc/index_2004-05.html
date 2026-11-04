@@ -19,7 +19,7 @@
 	<TD>
   		<TABLE border=0 >
 		   <TR><TD class="indice" bgcolor="#aaaaaa")>Indice</TD></TR>
-   		<TR><TD>1. <a href="#uno">Introducci�n</a></TD></TR>
+   		<TR><TD>1. <a href="#uno">Introducción</a></TD></TR>
   			<TR><TD>2. <a href="#dos">FAQs / News</a></TD></TR>
    		<TR><TD>3. <a href="#tres">Programas</a></TD></TR>
    		<TR><TD>4. <a href="#cuatro">Enlaces de la asignatura</a></TD></TR>
@@ -28,12 +28,12 @@
 </TR>
 </TABLE>
 
-<!-- Introducci�n -->
-<h2 id="uno">1. Introducci�n </h2>
+<!-- Introducción -->
+<h2 id="uno">1. Introducción </h2>
 <p>
-En esta p�gina encontramos una serie de programas de ejemplo para facilitar la realizaci�n 
-de la pr�ctica 3. El objetivo de dicha pr�ctica es programar el driver para controlar la tarjeta del "analizador l�gico".
-El alumno podr� utilizar este c�digo siempre y cuando lo entienda, ya que podr� ser objeto de evaluaci�n.
+En esta página encontramos una serie de programas de ejemplo para facilitar la realización 
+de la práctica 3. El objetivo de dicha práctica es programar el driver para controlar la tarjeta del "analizador lógico".
+El alumno podrá utilizar este código siempre y cuando lo entienda, ya que podrá ser objeto de evaluación.
 
 <!-- Faq & news -->
 <h2 id="dos">2. FAQs & News </h2>
@@ -43,18 +43,24 @@ El alumno podr� utilizar este c�digo siempre y cuando lo entienda, ya que po
 En algunos ordenadores el bit del registro de control que controla la  Bi-direccionalidad del puerto no es el bit 5. Por ejemplo en los oredenadores Toshiba modelo T2000SX es el bit 7. En los ordenadores del Laboratorio es el bit 5.
 </p>
 
-<B>� Para que sirve el LED rojo ?. (20-ene-2005)</B><BR>
-La placa hardware tiene un LED rojo que se enciende cuando tiene la alimentaci�n correcta y no se deber�a de apagar salvo que quitemos la alimentaci�n. Si al leer o escribir datos del puerto paralelo veis que esa luz parpadea entonces teneis un problema en la alimentaci�n. En ese caso teneis que utilizar pilas o alg�n transformador externo. En los ordenadores del Laboratorio en modo escritura suele funcionar sin alimentaci�n externa pero en modo escritura suele fallar. Por eso os recomiendo que useis 4 pilas tipo AA para alimentar la  tarjeta.
+<B>¿ Para que sirve el LED rojo ?. (20-ene-2005)</B><BR>
+La placa hardware tiene un LED rojo que se enciende cuando tiene la alimentación correcta y no se debería de apagar salvo que quitemos la alimentación. 
+Si al leer o escribir datos del puerto paralelo veis que esa luz parpadea entonces teneis un problema en la alimentación. 
+En ese caso teneis que utilizar pilas o algún transformador externo. En los ordenadores del Laboratorio en modo escritura suele
+ funcionar sin alimentación externa pero en modo escritura suele fallar. Por eso os recomiendo que useis 4 pilas tipo AA para alimentar la  tarjeta.
 </P>
 
-<B>� Debo copiar los programas tal cual ? (14-ene-2005)</B><BR>
-Recomiendo que el alumno los entienda y que haga sus propias rutinas. Adapt�ndolas a la pr�ctica 3 y mejorando el c�digo. Por
-en los c�digos de recibir y enviar dato del puerto paralelo se muestra la secuencia pero no se ha respetado el acceso ordenado a los bits del registro de control del puerto paralelo. Es decir, si lo que queremos es activar un solo bit, lo que hay que hacer es leer el registro de control modificar el bit sin tocar el resto y volverlo a escribir al registro de control.
+<B>¿ Debo copiar los programas tal cual ? (14-ene-2005)</B><BR>
+Recomiendo que el alumno los entienda y que haga sus propias rutinas. Adaptándolas a la práctica 3 y mejorando el código. Por
+en los códigos de recibir y enviar dato del puerto paralelo se muestra la secuencia pero no se ha respetado el acceso ordenado
+ a los bits del registro de control del puerto paralelo. Es decir, si lo que queremos es activar un solo bit, 
+ lo que hay que hacer es leer el registro de control modificar el bit sin tocar el resto y volverlo a escribir al registro de control.
 </P>
 <B>No me funciona el modo EPP en los laboratorios. (13-ene-2005)</B><BR>
-En los ordenadores del laboratorio no disponemos del modo EPP, por eso hay que utilizar el modo bidireccional del puerto paralelo. En los ejemplos PARALELO1 y PARALELO2 encontrareis las rutinas para enviar y leer datos de la tarjeta electr�nica. Cuando los probeis es importante que tengais en cuenta varias cosas:<BR>
+En los ordenadores del laboratorio no disponemos del modo EPP, por eso hay que utilizar el modo bidireccional del puerto paralelo. En los ejemplos PARALELO1 y PARALELO2 encontrareis las rutinas para enviar y leer datos de la tarjeta electrónica. Cuando los probeis es importante que tengais en cuenta varias cosas:<BR>
 *) Para configurar el modo Bidireccional hay que tocar la BIOS y no en todos los ordenadores funciona.<BR> 
-*) Los programas que hay en esta p�gina se han probado en un portatil Toshiba 2000SX (386sx) y en los ordenadores del Laboratorio. Los programas que realizan las pausas con espera activa (Efecto) pueden funcionar de forma diferente en funci�n de la frecuencia de la CPU. 
+*) Los programas que hay en esta página se han probado en un portatil Toshiba 2000SX (386sx) y en los ordenadores del Laboratorio. 
+Los programas que realizan las pausas con espera activa (Efecto) pueden funcionar de forma diferente en funciún de la frecuencia de la CPU. 
 
 <!-- Programas -->
 <h2 id="tres">3. Programas de Ejemplo </h2>
@@ -64,9 +70,9 @@ En los ordenadores del laboratorio no disponemos del modo EPP, por eso hay que u
 <table border=1>
 <tr bgcolor="grey">
 <td width="20">Programa</td>
-<td width="50">Descripci�n</td>
+<td width="50">Descripción</td>
 <td width="20">Enlace</td>
-<td width="10">�ltima actualizaci�n</td>
+<td width="10">Última actualización</td>
 </tr>
 <tr>
 <td>Efecto</td>
@@ -110,7 +116,7 @@ En los ordenadores del laboratorio no disponemos del modo EPP, por eso hay que u
 <td>13-ene-05</td>
 </tr>
 <td>Paralelo-II</td>
-<td>Programa que enciende un LED cuando detecta que se ha apretado un pulsador. Ejemplo de env�o y recepci�n en el puerto paralelo.</td>
+<td>Programa que enciende un LED cuando detecta que se ha apretado un pulsador. Ejemplo de envío y recepción en el puerto paralelo.</td>
 <td><A href="programas/PARALELO2.ASM">paralelo2.asm</a></td>
 <td>13-ene-05</td>
 </tr>
