@@ -71,12 +71,12 @@ Esta soluci�n tiene un error en su concepci�n. Todas las se�ales PWM
 están en fase por lo que cuando las posiciones de los servos son las
 mismas, se producen todas las interrupciones a la vez (4) lo que ocasiona
 un retraso en las �ltimas que se ejecutan, haciendo que su anchura
-del pulso sea un poco mayor, por lo que se observa c�mo esos servos
+del pulso sea un poco mayor, por lo que se observa cómo esos servos
 tienen de vez en cuando unos ``espasmos'' de peque�a amplitud.
 
 <P>
 La idea para controlar muchos servos es generar las se�ales PWM desfasadas,
-que se puede hacer con un �nico comparador, evit�ndose el problema
+que se puede hacer con un único comparador, evit�ndose el problema
 anterior además de poderse controlar el doble de servos con la quinta
 parte de los recursos del microcontrolador. Todos los detalles as�
 como el c�digo que se ejecuta en el 6811 se pueden encontrara en el
