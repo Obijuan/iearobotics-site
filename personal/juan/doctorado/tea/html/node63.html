@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>3.6.2 L�gica combinacional y secuencial en FPGA</TITLE>
-<META NAME="description" CONTENT="3.6.2 L�gica combinacional y secuencial en FPGA">
+<TITLE>3.6.2 Lógica combinacional y secuencial en FPGA</TITLE>
+<META NAME="description" CONTENT="3.6.2 Lógica combinacional y secuencial en FPGA">
 <META NAME="keywords" CONTENT="tea">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -55,7 +55,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <H2><A NAME="SECTION00762000000000000000"></A><A NAME="sub:fpga_alt_cableada"></A>
 <BR>
-3.6.2 L�gica combinacional y secuencial en FPGA
+3.6.2 Lógica combinacional y secuencial en FPGA
 </H2>
 
 <P>
@@ -70,7 +70,7 @@ exactamente 50Hz. En la tarjeta JPS[<A
  HREF="node84.html#JPS-hispabot">40</A>][<A
  HREF="node84.html#JPS-web">41</A>],
 empleada para la implementación de este controlador, se tiene un reloj
-de 1MHZ. A partir de �l hay que obtener la señal de 102KHZ. Utilizando
+de 1MHZ. A partir de él hay que obtener la señal de 102KHZ. Utilizando
 un divisor entre 10, se consigue una frecuencia de 100KHZ, lo que
 proporciona una frecuencia de PWM de 48.8HZ, que entra dentro de los
 límites de tolerancia del servo.
@@ -79,11 +79,11 @@ límites de tolerancia del servo.
 Por otro lado, el control de los servos es en bucle abierto y el tiempo
 que tarda el servo en alcanzar la posición indicada es indeterminado.
 Es necesario estimarlo. En la solución usando un microcontrolador,
-este tipo se estima en función de el �ngulo que tiene que recorrer
+este tipo se estima en función de el ángulo que tiene que recorrer
 para llegar a la nueva posición (la velocidad angular nominal del
-servo es constante y conocida). Se estima el tiempo que le llevar�
-al servo recorrer este �ngulo y se realiza una espera, que es variable
-(unas veces se espera m�s, otras veces menos).
+servo es constante y conocida). Se estima el tiempo que le llevará
+al servo recorrer este ángulo y se realiza una espera, que es variable
+(unas veces se espera más, otras veces menos).
 
 <P>
 En el caso de la implementación por hardware se ha simplificado y
@@ -95,7 +95,7 @@ a una constante para todos los servos.
 
 <P>
 Es decir, en el caso de esta solución hardware, el tiempo entre el
-env�o de una entrada a los servos y otra es constante e igual para
+envío de una entrada a los servos y otra es constante e igual para
 todas las entrada. Esto se podría mejorar incluyendo en la tabla un
 campo que indicase el tiempo a esperar, sin embargo, por lo comentando
 anteriormente de tener unos incrementos angulares pequeños, no es
@@ -107,7 +107,7 @@ necesario.
 <DIV ALIGN="CENTER"><A NAME="fig:fpga-alt-1"></A><A NAME="2319"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
-Controlador hardware basado en l�gica combinacional y secuencial</CAPTION>
+Controlador hardware basado en lógica combinacional y secuencial</CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
 <IMG
@@ -122,7 +122,7 @@ Controlador hardware basado en l�gica combinacional y secuencial</CAPTION>
 
 <P>
 El diagrama de bloques se muestra en la figura <A HREF="node63.html#fig:fpga-alt-1"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>.
-Est� constituido por dos partes: las unidades de PWM y el secuenciador
+Está constituido por dos partes: las unidades de PWM y el secuenciador
 que devuelve consecutivamente las filas de la tabla de control. Esta
 tabla se encuentra en una ROM de 32x32, direccionada mediante un contador
 módulo 30.
@@ -132,7 +132,7 @@ El periodo de la señal de reloj del secuenciador (<IMG
  WIDTH="48" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
  SRC="img39.png"
  ALT="$T_{CLK}$">) determina
-el tiempo que se tardar� en enviar la siguiente posición a los servos.
+el tiempo que se tardará en enviar la siguiente posición a los servos.
 Cada servo tarda un tiempo <IMG
  WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
  SRC="img40.png"
@@ -143,7 +143,7 @@ Si <!-- MATH
 <IMG
  WIDTH="99" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
  SRC="img41.png"
- ALT="$T_{CLK}&gt;t_{Ser}$">, el servo permanecer� un tiempo <!-- MATH
+ ALT="$T_{CLK}&gt;t_{Ser}$">, el servo permanecerá un tiempo <!-- MATH
  $T_{CLK}-t_{Ser}$
  -->
 <IMG
@@ -151,7 +151,7 @@ Si <!-- MATH
  SRC="img42.png"
  ALT="$T_{CLK}-t_{Ser}$">
 en reposo en la nueva posición, antes de que llegue la siguiente.
-Si esta diferencia es del orden de las centenas de ms, se apreciar�
+Si esta diferencia es del orden de las centenas de ms, se apreciará
 un movimiento ``a saltos'' (no continuo). Por el contrario, si
 <!-- MATH
  $T_{CLK}<t_{Ser}$
@@ -159,8 +159,8 @@ un movimiento ``a saltos'' (no continuo). Por el contrario, si
 <IMG
  WIDTH="99" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
  SRC="img43.png"
- ALT="$T_{CLK}&lt;t_{Ser}$">, se enviar� la nueva posición al servo antes de
-que haya alcanzado la anterior, por lo que los servos nunca llegar�n
+ ALT="$T_{CLK}&lt;t_{Ser}$">, se enviará la nueva posición al servo antes de
+que haya alcanzado la anterior, por lo que los servos nunca llegarán
 a alcanzar las posiciones indicadas en la tabla de control.
 
 <P>
@@ -169,7 +169,7 @@ a tres <I>switches</I> de la tarjeta JPS, se selecciona una señal
 de reloj de entre 8 posibles, con los siguientes periodos: 1000, 524,
 262, 131, 66, 33, 16 y 8 ms. Si se utiliza la de 1000 ms, los servos
 cambian de posición aproximadamente cada segundo. Si se utiliza la
-última el cambio es demasiado r�pido.
+última el cambio es demasiado rápido.
 
 <P>
 <HR>
