@@ -13,7 +13,7 @@
 
 <!-- start content -->
 <div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><p>
-	<a href="https://iearobotics.com/wiki/index.php?title=Archivo:PIC_downloader_logo.png" 
+	<a href="images/8/8f/PIC_downloader_logo.png" 
 	class="image" title="Logo del PIC_downloader para Linux">
 	<img alt="Logo del PIC_downloader para Linux" 
 	src="Pic_downloader_files/PIC_downloader_logo_c93X.png" width="310" height="159"></a>
@@ -39,14 +39,16 @@
 
 <h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
 <p>El programa <b>PIC_downloader</b> es una aplicación para LINUX para descargar programas en la tarjeta 
-	<a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a>. Es necesario que en ella esté grabado previamente el <a href="https://iearobotics.com/wiki/index.php?title=PIC_Bootloader" title="PIC Bootloader">PIC_Bootloader</a>.
+	<a href="Skypic.html" title="Skypic">Skypic</a>. 
+	Es necesario que en ella esté grabado previamente el 
+	<a href="PIC_Bootloader.html" title="PIC Bootloader">PIC_Bootloader</a>.
 </p>
 <h2><span class="mw-headline" id="Caracter.C3.ADsticas">Características</span></h2>
 <ul><li> Interfaz en línea de comando</li>
 <li> Funciona con puerto serie o conversores USB-serie</li>
 <li> Lenguaje: C</li>
 <li> Descarga automática sin necesidad de apretar el botón de reset de la 
-	<a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a>. (Jumper JP4 en posición DTR)</li></ul>
+	<a href="Skypic.html" title="Skypic">Skypic</a>. (Jumper JP4 en posición DTR)</li></ul>
 <h2><span class="mw-headline" id="Autores">Autores</span></h2>
 <ul><li> (C) 1999 HI-TECH Software</li>
 <li> (C) 2005 Javier Pascual Soriano</li>
@@ -67,12 +69,13 @@
 <th>Descripción
 </th></tr>
 <tr>
-<td>  <a rel="nofollow" class="external text" href="http://www.iearobotics.com/wiki/images/9/98/PIC_downloader_1.2.zip">PIC_downloader_1.2.zip</a>
+<td>  <a rel="nofollow" class="external text" href="images/9/98/PIC_downloader_1.2.zip">PIC_downloader_1.2.zip</a>
 </td>
 <td> Fuentes y ejecutables
 </td></tr>
 <tr>
-<td>  <a rel="nofollow" class="external text" href="http://www.iearobotics.com/wiki/images/c/c7/PIC_downloader-1.2-arm.zip">PIC_downloader-1.2-arm.zip</a>
+<td>  <a rel="nofollow" class="external text" href="images/c/c7/PIC_downloader-1.2-arm.zip">
+	PIC_downloader-1.2-arm.zip</a>
 </td>
 <td> Binario para <b>arquitectura arm</b>. Probado en un <a rel="nofollow" class="external text" href="https://es.wikipedia.org/wiki/NSLU2">NSLU2</a>
 </td></tr></tbody></table>
@@ -81,7 +84,8 @@
 	<a rel="nofollow" class="external text" href="https://es.wikipedia.org/wiki/NSLU2">NSLU2</a> (Gracias a <b>Ignacio González</b>)</li>
 <li> <b>26/Jul/2007</b>: Version 1.2 puesta en el wiki</li></ul>
 <h2><span class="mw-headline" id="Ejemplo_de_funcionamiento">Ejemplo de funcionamiento</span></h2>
-<p>En este ejemplo la <a href="https://iearobotics.com/wiki/index.php?title=Skypic" title="Skypic">Skypic</a> está conectada al PC mediante un conversor USB-serie. El programa que se quiere descargar es el ledp.hex.
+<p>En este ejemplo la <a href="Skypic.html" title="Skypic">Skypic</a> está conectada al PC mediante un conversor USB-serie. 
+	El programa que se quiere descargar es el ledp.hex.
 Si <b>el jumper JP4 está entre las posiciones 2 y 3 la descarga comenzará automáticamente</b>:
 </p>
 <pre>$ ./PIC_downloader ledp.hex -P/dev/ttyUSB0
