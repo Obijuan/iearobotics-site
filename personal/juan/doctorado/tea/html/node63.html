@@ -64,13 +64,13 @@ de control, que se introduce en una memoria ROM y se direcciona mediante
 un contador.
 
 <P>
-Uno de los principales problemas es la temporizaci�n. Por un lado
-hay que generar una se�al de reloj de 102KHZ para obtener un PWM de
+Uno de los principales problemas es la temporización. Por un lado
+hay que generar una señal de reloj de 102KHZ para obtener un PWM de
 exactamente 50Hz. En la tarjeta JPS[<A
  HREF="node84.html#JPS-hispabot">40</A>][<A
  HREF="node84.html#JPS-web">41</A>],
-empleada para la implementaci�n de este controlador, se tiene un reloj
-de 1MHZ. A partir de �l hay que obtener la se�al de 102KHZ. Utilizando
+empleada para la implementación de este controlador, se tiene un reloj
+de 1MHZ. A partir de �l hay que obtener la señal de 102KHZ. Utilizando
 un divisor entre 10, se consigue una frecuencia de 100KHZ, lo que
 proporciona una frecuencia de PWM de 48.8HZ, que entra dentro de los
 límites de tolerancia del servo.
@@ -78,7 +78,7 @@ límites de tolerancia del servo.
 <P>
 Por otro lado, el control de los servos es en bucle abierto y el tiempo
 que tarda el servo en alcanzar la posición indicada es indeterminado.
-Es necesario estimarlo. En la soluci�n usando un microcontrolador,
+Es necesario estimarlo. En la solución usando un microcontrolador,
 este tipo se estima en función de el �ngulo que tiene que recorrer
 para llegar a la nueva posición (la velocidad angular nominal del
 servo es constante y conocida). Se estima el tiempo que le llevar�
@@ -86,7 +86,7 @@ al servo recorrer este �ngulo y se realiza una espera, que es variable
 (unas veces se espera m�s, otras veces menos).
 
 <P>
-En el caso de la implementaci�n por hardware se ha simplificado y
+En el caso de la implementación por hardware se ha simplificado y
 se utiliza un tiempo de espera igual para todas las entradas de la
 tabla. Si el incremento angular de los servos es pequeño al pasar
 de una posición a otra, y dado que todos los servos están recorridos
@@ -94,7 +94,7 @@ por la misma onda sinusoidal, el tiempo de espera se puede aproximar
 a una constante para todos los servos.
 
 <P>
-Es decir, en el caso de esta soluci�n hardware, el tiempo entre el
+Es decir, en el caso de esta solución hardware, el tiempo entre el
 env�o de una entrada a los servos y otra es constante e igual para
 todas las entrada. Esto se podría mejorar incluyendo en la tabla un
 campo que indicase el tiempo a esperar, sin embargo, por lo comentando
@@ -128,7 +128,7 @@ tabla se encuentra en una ROM de 32x32, direccionada mediante un contador
 módulo 30.
 
 <P>
-El periodo de la se�al de reloj del secuenciador (<IMG
+El periodo de la señal de reloj del secuenciador (<IMG
  WIDTH="48" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
  SRC="img39.png"
  ALT="$T_{CLK}$">) determina
@@ -164,8 +164,8 @@ que haya alcanzado la anterior, por lo que los servos nunca llegar�n
 a alcanzar las posiciones indicadas en la tabla de control.
 
 <P>
-Mediante un multiplexor de 8 a 1, con sus entradas de selecci�n conectadas
-a tres <I>switches</I> de la tarjeta JPS, se selecciona una se�al
+Mediante un multiplexor de 8 a 1, con sus entradas de selección conectadas
+a tres <I>switches</I> de la tarjeta JPS, se selecciona una señal
 de reloj de entre 8 posibles, con los siguientes periodos: 1000, 524,
 262, 131, 66, 33, 16 y 8 ms. Si se utiliza la de 1000 ms, los servos
 cambian de posición aproximadamente cada segundo. Si se utiliza la

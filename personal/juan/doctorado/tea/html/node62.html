@@ -58,29 +58,29 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 </H2>
 
 <P>
-La tabla de control se encuentra en el PC y se env�a a trav�s del
+La tabla de control se encuentra en el PC y se env�a a través del
 puerto serie al 6811 donde se ejecuta un programa servidor que genera
-las se�ales PWM en función de las posiciones indicadas. Es interesante
+las señales PWM en función de las posiciones indicadas. Es interesante
 que este servidor pueda mover cuantos más servos mejor. En Cube 2.0,
 el servidor sólo controlaba 4 servos, usando en total 5 comparadores.
-Uno com�n para generar una se�al de 50Hz y uno medir la anchura del
-pulso de cada una de las se�ales PWM.
+Uno com�n para generar una señal de 50Hz y uno medir la anchura del
+pulso de cada una de las señales PWM.
 
 <P>
-Esta soluci�n tiene un error en su concepci�n. Todas las se�ales PWM
+Esta solución tiene un error en su concepción. Todas las señales PWM
 están en fase por lo que cuando las posiciones de los servos son las
 mismas, se producen todas las interrupciones a la vez (4) lo que ocasiona
 un retraso en las últimas que se ejecutan, haciendo que su anchura
 del pulso sea un poco mayor, por lo que se observa cómo esos servos
-tienen de vez en cuando unos ``espasmos'' de peque�a amplitud.
+tienen de vez en cuando unos ``espasmos'' de pequeña amplitud.
 
 <P>
-La idea para controlar muchos servos es generar las se�ales PWM desfasadas,
+La idea para controlar muchos servos es generar las señales PWM desfasadas,
 que se puede hacer con un único comparador, evit�ndose el problema
 anterior además de poderse controlar el doble de servos con la quinta
 parte de los recursos del microcontrolador. Todos los detalles as�
 como el c�digo que se ejecuta en el 6811 se pueden encontrara en el
-ap�ndice <A HREF="node79.html#cap:apendice-control-servos"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>.
+apéndice <A HREF="node79.html#cap:apendice-control-servos"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>.
 
 <P>
 <HR>

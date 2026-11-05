@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>3.5.1 Microcontrolador espec�fico</TITLE>
-<META NAME="description" CONTENT="3.5.1 Microcontrolador espec�fico">
+<TITLE>3.5.1 Microcontrolador específico</TITLE>
+<META NAME="description" CONTENT="3.5.1 Microcontrolador específico">
 <META NAME="keywords" CONTENT="tea">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -54,12 +54,12 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <!--End of Navigation Panel-->
 
 <H2><A NAME="SECTION00751000000000000000">
-3.5.1 Microcontrolador espec�fico</A>
+3.5.1 Microcontrolador específico</A>
 </H2>
 
 <P>
 Una manera de controlar Cube Reloaded es utilizando un microcontrolador
-determinado para generar las se�ales de PWM (control de servos). El
+determinado para generar las señales de PWM (control de servos). El
 problema de la escalabilidad se resuelve poniendo estos micros en
 red.
 
@@ -67,8 +67,8 @@ red.
 Para Cube Reloaded se ha seguido utilizando el microcontrolador 6811,
 con la tarjeta CT6811. El servidor de control se ha optimizado y ahora
 es posible controlar hasta 8 servos con un único comparador. <B>Consultar
-el ap�ndice <A HREF="node79.html#cap:apendice-control-servos"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A> para más informaci�n</B>.
-El 6811 dispone de 5 comparadores, por lo que te�ricamente se podrían
+el apéndice <A HREF="node79.html#cap:apendice-control-servos"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A> para más información</B>.
+El 6811 dispone de 5 comparadores, por lo que teóricamente se podrían
 controlar hasta 40 servos. La tarjeta BT6811 sólo tiene conectores
 para controlar 4 servos, por lo que se ha dejado de utilizar. 
 
@@ -77,7 +77,7 @@ El cable de bus de 10 hilos que viene de la tarjeta pct-servos situada
 en uno de los módulos se lleva directamente al puerto B de la CT6811.
 El gusano puede tener hasta 8 módulos, sin necesidad de realizar ningún
 cambio. Si se quieren realizar robots con un número mayor de módulos,
-sólo hay que conectar las tarjetas CT6811 que sean necesarias a trav�s
+sólo hay que conectar las tarjetas CT6811 que sean necesarias a través
 del SPI (puerto D).
 
 <P>
@@ -115,11 +115,11 @@ una CT6811. Derecha, conectado a una tarjeta JSP, con FPGA</CAPTION>
 </DIV><P></P>
 
 <P>
-<I>El usar un microcontrolador es una soluci�n viable y sencilla,
+<I>El usar un microcontrolador es una solución viable y sencilla,
 sin embargo, si necesitamos más potencia de c�lculo o queremos usar
 un microcontrolador más avanzado tendremos que rediseñar toda la electrónica.
 Nosotros nos tenemos que adaptar al microcontrolador y solucionar
-los problemas con �l. Es una soluci�n poco flexible.</I>
+los problemas con �l. Es una solución poco flexible.</I>
 
 <P>
 <HR>
