@@ -46,7 +46,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <B> Up:</B> <A NAME="tex2html889"
   HREF="node47.html">3.2 Trabajo previo: CUBE</A>
 <B> Previous:</B> <A NAME="tex2html883"
-  HREF="node49.html">3.2.2 Eletr�nica</A>
+  HREF="node49.html">3.2.2 Electrónica</A>
  &nbsp <B>  <A NAME="tex2html891"
   HREF="node3.html">Contents</A></B> 
 <BR>
@@ -64,35 +64,35 @@ Existen varios niveles de control:
 
 <UL>
 <LI><B>Nivel de servo</B>: El posicionamiento de los servos lo realiza
-la tarjeta BT6811, generando la <B>se�al PWM</B> en función de la
+la tarjeta BT6811, generando la <B>señal PWM</B> en función de la
 posición deseada. En ellas se está ejecutando un servidor que realiza
 esta tarea.
 </LI>
 <LI><B>Tablas de control</B>: En el siguiente nivel se recorren las
 tablas de control, similares a las de <B>Polypod</B> y <B>Polybot</B>.
-Las entradas de la tablase env�an consecutivamente al servo. Es un
+Las entradas de la tablase envían consecutivamente al servo. Es un
 controlador muy sencillo, en el que el tiempo que transcurre desde
-que se env�a una entrada hasta que hay que enviar la siguiente se
+que se envía una entrada hasta que hay que enviar la siguiente se
 estima.
 
 <P>
 Las tablas de control se almacenan en un fichero y mediante la aplicación
-<B>cube-f�sico</B>[<A
- HREF="node84.html#cube-fisico">44</A>] se cargan y env�an al gusano.
+<B>cube-físico</B>[<A
+ HREF="node84.html#cube-fisico">44</A>] se cargan y envían al gusano.
 También es posible posicionar los servos desde este programa, usando
 unas barras de desplazamiento, lo que permie realizar pruebas mecánicas
 y generar tablas de control (secuencias de movimiento) manualmente,
-guard�ndolas en un fichero.
+guardándolas en un fichero.
 
 <P>
 </LI>
-<LI><B>Generación autom�tica de secuencias</B>: Las tablas de control
+<LI><B>Generación automática de secuencias</B>: Las tablas de control
 para mover el gusano se pueden generar usando la aplicación <B>cube-virtual</B>[<A
  HREF="node84.html#cube-virtual">45</A>],
 en la que se especifica la amplitud y la longid de onda que se quiere
 para realizar el movimiento (ver figura <A HREF="node50.html#fig:cube-virtual"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>).
 Esta tabla se almacena en un fichero y puede ser reproducida por el
-programa <I>cube-fisico</I>. S�lo se generan secuencias para un gusano
+programa <I>cube-fisico</I>. Sólo se generan secuencias para un gusano
 de 4 articulaciones.
 </LI>
 </UL>
@@ -136,7 +136,7 @@ ajusta a una función de onda</CAPTION>
 <B> Up:</B> <A NAME="tex2html889"
   HREF="node47.html">3.2 Trabajo previo: CUBE</A>
 <B> Previous:</B> <A NAME="tex2html883"
-  HREF="node49.html">3.2.2 Eletr�nica</A>
+  HREF="node49.html">3.2.2 Electrónica</A>
  &nbsp <B>  <A NAME="tex2html891"
   HREF="node3.html">Contents</A></B> 
 <!--End of Navigation Panel-->
