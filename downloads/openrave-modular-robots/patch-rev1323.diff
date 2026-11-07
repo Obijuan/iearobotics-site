@@ -1,0 +1,12 @@
+Index: plugins/oderave/odespace.h
+===================================================================
+--- plugins/oderave/odespace.h	(revisión: 1323)
++++ plugins/oderave/odespace.h	(copia de trabajo)
+@@ -347,6 +347,7 @@
+                 case KinBody::Joint::JointHinge:
+                     dJointSetHingeAnchor(joint,anchor.x,anchor.y,anchor.z);
+                     dJointSetHingeAxis(joint,axis0.x,axis0.y,axis0.z);
++		    dJointSetHingeParam(joint, dParamFMax, 2);
+                     break;
+                 case KinBody::Joint::JointSlider:
+                     dJointSetSliderAxis(joint,axis0.x,axis0.y,axis0.z);
