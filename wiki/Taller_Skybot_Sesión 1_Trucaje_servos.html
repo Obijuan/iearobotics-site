@@ -1,53 +1,54 @@
 <!DOCTYPE html>
-<html lang="es" dir="ltr" class="client-js"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta charset="UTF-8">
-<title>Taller Skybot:Sesión 1:Trucaje servos - WikiRobotics</title>
-<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
-<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Taller_Skybot:Sesión_1:Trucaje_servos","wgTitle":"Taller Skybot:Sesión 1:Trucaje servos","wgCurRevisionId":9825,"wgRevisionId":9825,"wgArticleId":293,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Taller Skybot","Documentación"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Taller_Skybot:Sesión_1:Trucaje_servos","wgRelevantArticleId":293,"wgRequestId":"au7L1oaMs5-LiYK6t97SQAAAYc0","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
-mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Taller Skybot:Sesión 1:Trucaje servos</title>
+  	<link rel="stylesheet" href="load.css">
+</head>
 
-});mw.loader.load(["mediawiki.page.startup"]);});</script>
-<link rel="stylesheet" href="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/load_4LEa.css">
-<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
-<style>
-.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
-.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
-.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
-.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
-<script async="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/load_4LEa.es"></script>
-<meta name="generator" content="MediaWiki 1.27.7">
-<link rel="shortcut icon" href="https://iearobotics.com/favicon.ico">
-<link rel="search" type="application/opensearchdescription+xml" href="https://iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
-<link rel="EditURI" type="application/rsd+xml" href="https://iearobotics.com/wiki/api.php?action=rsd">
-<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
-<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
-<script src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/load_002_4LEa.es"></script></head>
-<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Taller_Skybot_Sesión_1_Trucaje_servos rootpage-Taller_Skybot_Sesión_1_Trucaje_servos skin-monobook action-view">
-<div id="globalWrapper">
-		<div id="column-content">
-			<div id="content" class="mw-body" role="main">
-				<a id="top"></a>
-				
-				<div class="mw-indicators">
-</div>
-				<h1 id="firstHeading" class="firstHeading" lang="es">Taller Skybot:Sesión 1:Trucaje servos</h1>
-				
-				<div id="bodyContent" class="mw-body-content">
-					<div id="siteSub">De WikiRobotics</div>
-					<div id="contentSub"></div>
-										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+<body style="margin: 10px; font-size: 12px;">
+<h1 id="firstHeading" class="firstHeading" lang="es">Taller Skybot:Sesión 1:Trucaje servos</h1>
+<div id="bodyContent" class="mw-body-content"></div>
 
-					<!-- start content -->
-					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><p><br>
-<a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-ini-fin.png" class="image" title="center"><img alt="center" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/Taller-skybot-sesion1-servos-ini-fin_4LEa.png" width="641" height="205"></a>
+
+<!-- start content -->
+<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><p><br>
+<a href="images/b/bd/Taller-skybot-sesion1-servos-ini-fin.png" 
+class="image" title="center">
+<img alt="center" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/Taller-skybot-sesion1-servos-ini-fin_4LEa.png" 
+width="641" height="205"></a>
+
 </p>
 <h2><span class="mw-headline" id="Descripci.C3.B3n">Descripción</span></h2>
-<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-componentes.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-componentes_4LEa.png" width="300" height="225" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/Taller-skybot-sesion1-servos-componentes_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/Taller-skybot-sesion1-servos-componentes_4LEa.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-componentes.png" class="internal" title="Aumentar"></a></div>Piezas necesarias: Los servos + cable rojo y negro</div></div></div>
-<p>Los servos <a href="https://iearobotics.com/wiki/index.php?title=Servos_Futaba_3003" title="Servos Futaba 3003">Futaba 3003</a> o compatibles son un tipo especial de motores que se usan para construir articulaciones. Tienen un rango de giro limitado a 180 grados (comprobarlo girando el eje con las manos hasta llegar a los dos extremos). En este capítulo trucaremos los servos para convertirlos en motores de corriente continua normales, capaces de girar sin ninguna limitación. Los elementos que emplearemos son los <b>dos servos</b> y <b>25 cm de cable negro y rojo</b>
+<div class="thumb tright">
+	<div class="thumbinner" style="width:302px;">
+		<a href="images/e/e5/Taller-skybot-sesion1-servos-componentes.png" 
+		class="image">
+		<img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-componentes_4LEa.png" 
+		width="300" height="225" class="thumbimage" 
+		srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/Taller-skybot-sesion1-servos-componentes_4LEa.png 1.5x, 
+		Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/Taller-skybot-sesion1-servos-componentes_4LEa.png 2x"></a>  
+		<div class="thumbcaption">
+		Piezas necesarias: Los servos + cable rojo y negro</div></div></div>
+
+<p>Los servos <a href="Servos_Futaba_3003.html" title="Servos Futaba 3003">Futaba 3003</a> o 
+	compatibles son un tipo especial de motores que se usan para construir articulaciones. 
+	Tienen un rango de giro limitado a 180 grados (comprobarlo girando el eje con las manos hasta llegar a 
+	los dos extremos). En este capítulo trucaremos los servos para convertirlos en motores de corriente continua 
+	normales, capaces de girar sin ninguna limitación. 
+	Los elementos que emplearemos son los <b>dos servos</b> y <b>25 cm de cable negro y rojo</b>
 </p>
 <h2><span class="mw-headline" id="Material_adicional_necesario">Material adicional necesario</span></h2>
-<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-material.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-material_4LEa.png" width="300" height="225" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/Taller-skybot-sesion1-servos-material_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/Taller-skybot-sesion1-servos-material_4LEa.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-material.png" class="internal" title="Aumentar"></a></div>Material necesario para el trucaje de los servos</div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="images/2/2b/Taller-skybot-sesion1-servos-material.png" 
+	class="image">
+	<img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-material_4LEa.png" 
+	width="300" height="225" class="thumbimage" 
+	srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/Taller-skybot-sesion1-servos-material_4LEa.png 1.5x, 
+	Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/Taller-skybot-sesion1-servos-material_4LEa.png 2x"></a>  
+	<div class="thumbcaption">
+			Material necesario para el trucaje de los servos</div></div></div>
 <table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
 <tbody><tr>
 <td>
@@ -63,83 +64,157 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 </td></tr></tbody></table>
 <table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
 <tbody><tr>
-<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Icono_aviso.png" class="image"><img alt="Icono aviso.png" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/Icono_aviso_4LEa.png" width="24" height="24"></a> <font color="red"><b>Tened cuidado al emplear el soldador</b>. Conviene que esté siempre situado sobre un soporte cuando no se está utilizando. No dejarlo nunca encendido encima de la mesa. Otra persona se podría quemar sin querer, o el soldador podría entrar en contacto con la propia mesa o algún equipo. <b>Cuando no se vaya a utilizar más, desenchufarlo</b>.</font>
+<td> <a href="images/c/c0/Icono_aviso.png" class="image"><img alt="Icono aviso.png" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/Icono_aviso_4LEa.png" width="24" height="24"></a> <font color="red"><b>Tened cuidado al emplear el soldador</b>. Conviene que esté siempre situado sobre un soporte cuando no se está utilizando. No dejarlo nunca encendido encima de la mesa. Otra persona se podría quemar sin querer, o el soldador podría entrar en contacto con la propia mesa o algún equipo. <b>Cuando no se vaya a utilizar más, desenchufarlo</b>.</font>
 </td></tr></tbody></table>
 <h2><span class="mw-headline" id="Trucando_los_servos">Trucando los servos</span></h2>
 <ul><li> <b>Paso 1</b>: Con un destornillador pequeño de estrella quitar la corona del servo, que está atornillada al eje. Guardar el tornillo y la corona.</li></ul>
 <table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
 <tbody><tr>
-<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso1.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso1_4LEa.png" width="300" height="108" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-paso1_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-paso1_4LEa.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso1.png" class="internal" title="Aumentar"></a></div>Trucade de servos. Paso 1</div></div></div>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="images/e/e4/Taller-skybot-sesion1-servos-paso1.png" class="image">
+		<img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso1_4LEa.png" 
+		width="300" height="108" class="thumbimage" 
+		srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-paso1_4LEa.png 1.5x, 
+		Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-paso1_4LEa.png 2x"></a>  
+		<div class="thumbcaption">
+				Trucade de servos. Paso 1</div></div></div>
 </td></tr></tbody></table>
+
 <ul><li> <b>Paso 2</b>: Con el mismo destornillador, quitar los 4 tornillos de la parte inferior y sacar la tapa. La circuitería del servo quedará al descubierto.</li></ul>
 <table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
 <tbody><tr>
-<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso2.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso2_4LEa.png" width="300" height="109" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-paso2_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-paso2_4LEa.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso2.png" class="internal" title="Aumentar"></a></div>Trucade de servos. Paso 2</div></div></div>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="images/4/47/Taller-skybot-sesion1-servos-paso2.png" class="image">
+		<img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso2_4LEa.png" 
+		width="300" height="109" class="thumbimage" 
+		srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-paso2_4LEa.png 1.5x, 
+		Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-paso2_4LEa.png 2x"></a>  
+		<div class="thumbcaption">
+			Trucade de servos. Paso 2</div></div></div>
 </td></tr></tbody></table>
+
 <ul><li> <b>Paso 3</b>: Retirar la tapa superior. Se verán todos los engranajes. Quitar los engranajes E1 y E2, que se muestran en la figura. En algunas ocasiones al quitar la tapa algunos de los engranajes se quedan dentro de ella, no pasa nada, tan solo teneis que tener en cuenta que están ahí a la hora de volver a montar el servo. <b>Sobretodo tened cuidado de no perder los dos ejes metálicos</b> sobre los que giran los engranajes blancos. <b>Recordad que hay veces que se quedan en la tapa del servo</b>.</li></ul>
 <table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
 <tbody><tr>
-<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso3.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso3_4LEa.png" width="300" height="107" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-paso3_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-paso3_4LEa.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso3.png" class="internal" title="Aumentar"></a></div>Trucade de servos. Paso 3</div></div></div>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="images/a/a4/Taller-skybot-sesion1-servos-paso3.png" class="image">
+		<img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso3_4LEa.png" 
+		width="300" height="107" class="thumbimage" 
+		srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-paso3_4LEa.png 1.5x, 
+		Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-paso3_4LEa.png 2x"></a>  
+		<div class="thumbcaption">
+				Trucade de servos. Paso 3</div></div></div>
 </td></tr></tbody></table>
 <ul><li> <b>Paso 4</b>: Quitar la circuitería. Para ello apretar con el dedo en el saliente negro donde estaba situado el engranaje E1. Utilizando un destornillador finito, introducirlo por una de las esquinas de la parte inferior y hacer palanca. La circuitería sale tirando y no hay que hacer mucha fuerza.</li></ul>
 <table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
 <tbody><tr>
-<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso4.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso4_4LEa.png" width="300" height="73" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-paso4_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-paso4_4LEa.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso4.png" class="internal" title="Aumentar"></a></div>Trucade de servos. Paso 4</div></div></div>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="images/2/21/Taller-skybot-sesion1-servos-paso4.png" class="image">
+		<img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso4_4LEa.png" 
+		width="300" height="73" 
+		class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-paso4_4LEa.png 1.5x, 
+		Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-paso4_4LEa.png 2x"></a>  
+		<div class="thumbcaption">
+				Trucade de servos. Paso 4</div></div></div>
 </td></tr></tbody></table>
 <ul><li> <b>Paso 5</b>: La electrónica lleva soldado un pequeño motor de corriente contínua que tendremos que extraer, quitando el estaño con el soldador. Si se realiza entre dos personas resulta más sencillo. Uno coloca el soldador en los puntos de soldadura del motor y el otro tira del motor, con los dedos, sin aplicar mucha fuerza. <b>Intentad que el soldador este poco tiempo en contacto con la pata del motor</b>. Un soldador de 14W JBC con 2 segundos tiene suficente para desoldar la pata.</li></ul>
 <table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
 <tbody><tr>
-<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso5.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso5_4LEa.png" width="300" height="107" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-paso5_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-paso5_4LEa.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso5.png" class="internal" title="Aumentar"></a></div>Trucade de servos. Paso 5</div></div></div>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="images/f/fb/Taller-skybot-sesion1-servos-paso5.png" class="image">
+		<img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso5_4LEa.png" 
+		width="300" height="107" class="thumbimage" 
+		srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-paso5_4LEa.png 1.5x, 
+		Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-paso5_4LEa.png 2x"></a>  
+		<div class="thumbcaption">
+				Trucade de servos. Paso 5</div></div></div>
 </td></tr></tbody></table>
 <ul><li> <b>Paso 6</b>: Soldar los cables. Tomar un cable rojo y negro de unos 25cm de longitud cada uno y soldarlos a los pines del motor. Primero <b>pelar unos 2mm</b> los cables y <b>estañearlos</b> (significa poner un poco de estaño en la zona pelada calentándolo con el soldador). Después soldarlos <b>en dirección horizontal</b> a los pines. Soldar el cable rojo al pine que tiene un punto rojo y el negro al otro. Recordad lo mismo de antes, el tiempo de soldadura tiene que ser el más pequeño posible para evitar daños en el motor.</li></ul>
 <table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
 <tbody><tr>
-<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso6.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso6_4LEa.png" width="300" height="106" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-paso6_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-paso6_4LEa.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso6.png" class="internal" title="Aumentar"></a></div>Trucade de servos. Paso 6</div></div></div>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="images/7/70/Taller-skybot-sesion1-servos-paso6.png" class="image">
+		<img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso6_4LEa.png" 
+		width="300" height="106" 
+		class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-paso6_4LEa.png 1.5x, 
+		Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-paso6_4LEa.png 2x"></a>  
+		<div class="thumbcaption">
+				Trucade de servos. Paso 6</div></div></div>
 </td></tr></tbody></table>
 <ul><li> <b>Paso 7</b>: Introducir el motor en la caja del servo.</li></ul>
 <table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
 <tbody><tr>
-<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso7.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso7_4LEa.png" width="300" height="107" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-paso7_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-paso7_4LEa.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso7.png" class="internal" title="Aumentar"></a></div>Trucade de servos. Paso 7</div></div></div>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="images/1/1e/Taller-skybot-sesion1-servos-paso7.png" 
+	class="image">
+	<img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso7_4LEa.png" 
+	width="300" height="107" class="thumbimage" 
+	srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-paso7_4LEa.png 1.5x, 
+	Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-paso7_4LEa.png 2x"></a>  
+	<div class="thumbcaption">
+			Trucade de servos. Paso 7</div></div></div>
 </td></tr></tbody></table>
 <ul><li> <b>Paso 8</b>: Hacer un nudo en los cables. Quedará en el interior del servo e impedirá que las soldaduras de los cables se suelten si hay un tirón.</li></ul>
 <table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
 <tbody><tr>
-<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso8-1-orig.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso8-1-orig_4LEa.png" width="300" height="225" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/Taller-skybot-sesion1-servos-paso8-1-orig_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/Taller-skybot-sesion1-servos-paso8-1-orig_4LEa.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso8-1-orig.png" class="internal" title="Aumentar"></a></div>Trucade de servos. Paso 8</div></div></div>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="images/c/c6/Taller-skybot-sesion1-servos-paso8-1-orig.png" class="image">
+		<img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso8-1-orig_4LEa.png" 
+		width="300" height="225" class="thumbimage" 
+		srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/Taller-skybot-sesion1-servos-paso8-1-orig_4LEa.png 1.5x, 
+		Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/Taller-skybot-sesion1-servos-paso8-1-orig_4LEa.png 2x"></a>  
+		<div class="thumbcaption">
+				Trucade de servos. Paso 8</div></div></div>
 </td></tr></tbody></table>
 <ul><li> <b>Paso 9</b>: Eliminar el tope mecánico del engranaje E1. <b>ESTA ES LA PARTE MÁS CRÍTICA</b>. Utilizar unos alicates que estén bien afilados y que no sean muy grandes o un cutter. El tope se quita facilmente haciendo un corte horizontal y otro vertical con los alicates o el cutter. Prestar especial atención a no cortar nada más. Sólo el tope.</li></ul>
 <table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
 <tbody><tr>
-<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso9.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso9_4LEa.png" width="300" height="226" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-paso9_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-paso9_4LEa.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso9.png" class="internal" title="Aumentar"></a></div>Trucade de servos. Paso 9</div></div></div>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="images/f/f8/Taller-skybot-sesion1-servos-paso9.png" class="image">
+		<img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso9_4LEa.png" width="300" height="226" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-paso9_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-paso9_4LEa.png 2x"></a>  <div class="thumbcaption">
+				Trucaje de servos. Paso 9</div></div></div>
 </td></tr></tbody></table>
 <ul><li> <b>Paso 10</b>: Limar la zona donde estaba el tope para que no queden salientes.</li></ul>
 <table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
 <tbody><tr>
-<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso10.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso10_4LEa.png" width="300" height="225" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/Taller-skybot-sesion1-servos-paso10_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/Taller-skybot-sesion1-servos-paso10_4LEa.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso10.png" class="internal" title="Aumentar"></a></div>Trucade de servos. Paso 10</div></div></div>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="images/8/8e/Taller-skybot-sesion1-servos-paso10.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso10_4LEa.png" width="300" height="225" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/Taller-skybot-sesion1-servos-paso10_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/Taller-skybot-sesion1-servos-paso10_4LEa.png 2x"></a>  <div class="thumbcaption">
+			Trucade de servos. Paso 10</div></div></div>
 </td></tr></tbody></table>
 <ul><li> <b>Paso 11</b>: Colocar todos los engranajes y poner la tapa superior. Es muy importante volver a colocar las piezas como estaban al principio. Si nos fijamos en la figura los engranajes blancos giran sobre un pequeño eje metálico. Es necesario que al montar el motor los ejes estén en su sitio. En algunas ocasiones al quitar la tapa dichos ejes quedan en el interior y da la impresión de que los hemos perdido. Por lo tanto revisar siempre la tapa antes de colocarla por si los ejes están todavía en ella.</li></ul>
 <table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
 <tbody><tr>
-<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso11.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso11_4LEa.png" width="300" height="107" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-paso11_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-paso11_4LEa.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso11.png" class="internal" title="Aumentar"></a></div>Trucade de servos. Paso 11</div></div></div>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="images/d/d8/Taller-skybot-sesion1-servos-paso11.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso11_4LEa.png" width="300" height="107" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-paso11_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-paso11_4LEa.png 2x"></a>  <div class="thumbcaption">
+			Trucade de servos. Paso 11</div></div></div>
 </td></tr></tbody></table>
 <ul><li> <b>Paso 12</b>: Poner la tapa inferior. Dejar el nudo en el interior y sacar los cables por la ranura de salida</li></ul>
 <table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
 <tbody><tr>
-<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso12.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso12_4LEa.png" width="300" height="109" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-paso12_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-paso12_4LEa.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso12.png" class="internal" title="Aumentar"></a></div>Trucade de servos. Paso 12</div></div></div>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="images/3/3f/Taller-skybot-sesion1-servos-paso12.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso12_4LEa.png" width="300" height="109" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-paso12_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-paso12_4LEa.png 2x"></a>  <div class="thumbcaption">
+			Trucade de servos. Paso 12</div></div></div>
 </td></tr></tbody></table>
 <ul><li> <b>Paso 13</b>: Poner los tornillos inferiores y atornillar la tapa.</li></ul>
 <table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
 <tbody><tr>
-<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso13.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso13_4LEa.png" width="300" height="107" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-paso13_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-paso13_4LEa.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso13.png" class="internal" title="Aumentar"></a></div>Trucade de servos. Paso 13</div></div></div>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="images/8/80/Taller-skybot-sesion1-servos-paso13.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso13_4LEa.png" width="300" height="107" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-paso13_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-paso13_4LEa.png 2x"></a>  <div class="thumbcaption">
+			Trucade de servos. Paso 13</div></div></div>
 </td></tr></tbody></table>
 <ul><li> <b>Paso 14</b>: Trenzar los cables para que sea más fácil luego el cableado del robot.</li></ul>
 <table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
 <tbody><tr>
-<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso14.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso14_4LEa.png" width="300" height="225" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/Taller-skybot-sesion1-servos-paso14_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/Taller-skybot-sesion1-servos-paso14_4LEa.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso14.png" class="internal" title="Aumentar"></a></div>Trucade de servos. Paso 14</div></div></div>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="images/8/80/Taller-skybot-sesion1-servos-paso14.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso14_4LEa.png" width="300" height="225" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/Taller-skybot-sesion1-servos-paso14_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/Taller-skybot-sesion1-servos-paso14_4LEa.png 2x"></a>  <div class="thumbcaption">
+			Trucade de servos. Paso 14</div></div></div>
 </td></tr></tbody></table>
 <ul><li> <b>Paso 15</b>: Obtener el cable original del servo. Cortarlo de la electrónica a la que está soldado. Este cable lo utilizaremos para el montaje de los dos sensores de infrarrojos adicionales (opcionales). Para los sensores principales se utilizará el cable plano de bus.</li></ul>
 <table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
 <tbody><tr>
-<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso15.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso15_4LEa.png" width="300" height="106" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-paso15_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-paso15_4LEa.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-paso15.png" class="internal" title="Aumentar"></a></div>Trucade de servos. Paso 15</div></div></div>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="images/8/89/Taller-skybot-sesion1-servos-paso15.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-paso15_4LEa.png" width="300" height="106" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-paso15_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-paso15_4LEa.png 2x"></a>  <div class="thumbcaption">
+			Trucade de servos. Paso 15</div></div></div>
 </td></tr></tbody></table>
 <ul><li> <b>Ya tenemos nuestro servo listo!! Ahora el eje puede girar libremente</b>.</li></ul>
 <h2><span class="mw-headline" id="Resultado_final">Resultado final</span></h2>
@@ -147,122 +222,18 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 </p>
 <table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
 <tbody><tr>
-<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-final.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-final_4LEa.png" width="300" height="106" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-final_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-final_4LEa.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion1-servos-final.png" class="internal" title="Aumentar"></a></div>Servos trucados y material sobrante</div></div></div>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="images/8/8f/Taller-skybot-sesion1-servos-final.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/300px-Taller-skybot-sesion1-servos-final_4LEa.png" width="300" height="106" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/450px-Taller-skybot-sesion1-servos-final_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/600px-Taller-skybot-sesion1-servos-final_4LEa.png 2x"></a>  <div class="thumbcaption">
+			Servos trucados y material sobrante</div></div></div>
 </td></tr></tbody></table>
 <h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
-<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot" title="Taller Skybot">Taller Skybot</a>. Página principal</li>
-<li> <a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesi%C3%B3n_1" title="Taller Skybot:Sesión 1"> Sesión 1</a>: Índice</li></ul>
+<ul><li> <a href="Skybot.html" title="Taller Skybot">Taller Skybot</a>. Página principal</li>
+<li> <a href="Taller_Skybot_Sesión_1.html" title="Taller Skybot:Sesión 1"> Sesión 1</a>: Índice</li></ul>
 <h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
 <ul><li> <b>19/Junio/2008</b>: Migración finalizada</li>
-<li> <b>16/Junio/2008</b>: Comenzada esta página. Migración de la <a rel="nofollow" class="external text" href="http://www.iearobotics.com/talleres/generico-v14/sesion-1/trucaje-servos1.html">documentación en HTML</a>.</li></ul>
+<li> <b>16/Junio/2008</b>: Comenzada esta página. Migración de la <a rel="nofollow" class="external text" 
+	href="../talleres/generico-v14/sesion-1/trucaje-servos1.html">documentación en HTML</a>.</li></ul>
 
-<!-- 
-NewPP limit report
-Cached time: 20261107065726
-Cache expiry: 0
-Dynamic content: true
-CPU time usage: 0.035 seconds
-Real time usage: 0.041 seconds
-Preprocessor visited node count: 80/1000000
-Preprocessor generated node count: 187/1000000
-Post‐expand include size: 3600/2097152 bytes
-Template argument size: 0/2097152 bytes
-Highest expansion depth: 3/40
-Expensive parser function count: 0/100
--->
-
-<!-- 
-Transclusion expansion time report (%,ms,calls,template)
-100.00%    2.672      1 - -total
- 66.22%    1.769     18 - Plantilla:Tablabonita
--->
-</div><div class="printfooter">
-Obtenido de «<a dir="ltr" href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesi%C3%B3n_1:Trucaje_servos&amp;oldid=9825">https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesión_1:Trucaje_servos&amp;oldid=9825</a>»</div>
-					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categorías</a>: <ul><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Taller_Skybot" title="Categoría:Taller Skybot">Taller Skybot</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Documentaci%C3%B3n" title="Categoría:Documentación">Documentación</a></li></ul></div></div>					<!-- end content -->
-										<div class="visualClear"></div>
-				</div>
-			</div>
-		</div>
-		<div id="column-one">
-			<h2>Menú de navegación</h2>
-					<div id="p-cactions" class="portlet" role="navigation">
-			<h3>Vistas</h3>
-
-			<div class="pBody">
-				<ul>
-				<li id="ca-nstab-main" class="selected"><a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesi%C3%B3n_1:Trucaje_servos" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
-				<li id="ca-talk" class="new"><a href="https://iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Taller_Skybot:Sesi%C3%B3n_1:Trucaje_servos&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
-				<li id="ca-viewsource"><a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesi%C3%B3n_1:Trucaje_servos&amp;action=edit" title="Esta página está protegida.
-Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
-				<li id="ca-history"><a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesi%C3%B3n_1:Trucaje_servos&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
-				</ul>
-							</div>
-		</div>
-				<div class="portlet" id="p-personal" role="navigation">
-				<h3>Herramientas personales</h3>
-
-				<div class="pBody">
-					<ul>
-													<li id="pt-login"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Taller+Skybot%3ASesi%C3%B3n+1%3ATrucaje+servos" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
-											</ul>
-				</div>
-			</div>
-			<div class="portlet" id="p-logo" role="banner">
-				<a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
-			</div>
-				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
-		<h3>Navegación</h3>
-		<div class="pBody">
-							<ul>
-											<li id="n-mainpage"><a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
-											<li id="n-recentchanges"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
-									</ul>
-					</div>
-		</div>
-			<div id="p-search" class="portlet" role="search">
-			<h3><label for="searchInput">Buscar</label></h3>
-
-			<div id="searchBody" class="pBody">
-				<form action="/wiki/index.php" id="searchform">
-					<input type="hidden" name="title" value="Especial:Buscar">
-					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
-					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
-						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
-				</form>
-
-							</div>
-		</div>
-			<div class="portlet" id="p-tb" role="navigation">
-			<h3>Herramientas</h3>
-
-			<div class="pBody">
-				<ul>
-											<li id="t-whatlinkshere"><a href="https://iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Taller_Skybot:Sesi%C3%B3n_1:Trucaje_servos" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
-											<li id="t-recentchangeslinked"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Taller_Skybot:Sesi%C3%B3n_1:Trucaje_servos" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
-											<li id="t-specialpages"><a href="https://iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
-											<li id="t-print"><a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesi%C3%B3n_1:Trucaje_servos&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
-											<li id="t-permalink"><a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesi%C3%B3n_1:Trucaje_servos&amp;oldid=9825" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
-											<li id="t-info"><a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesi%C3%B3n_1:Trucaje_servos&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
-									</ul>
-							</div>
-		</div>
-			</div><!-- end of the left (by default at least) column -->
-		<div class="visualClear"></div>
-					<div id="footer" role="contentinfo">
-						<div id="f-copyrightico">
-									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/gnu-fdl_4LEa.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
-							</div>
-					<div id="f-poweredbyico">
-									<a href="https://www.mediawiki.org/"><img src="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/poweredby_mediawiki_88x31_4LEa.png" alt="Powered by MediaWiki" srcset="Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/poweredby_mediawiki_132x47_4LEa.png 1.5x, Taller_Skybot_Sesi%C3%B3n%201_Trucaje_servos_files/poweredby_mediawiki_176x62_4LEa.png 2x" width="88" height="31"></a>
-							</div>
-					<ul id="f-list">
-									<li id="lastmod"> Esta página fue modificada por última vez el 28 jul 2010 a las 23:53.</li>
-									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
-									<li id="privacy"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
-									<li id="about"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
-									<li id="disclaimer"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
-							</ul>
-		</div>
-		</div>
-		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":146});});</script>
-<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
+</div>
+</body>
+</html>
