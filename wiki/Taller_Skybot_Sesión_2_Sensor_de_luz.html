@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Taller Skybot:Sesión 2:Sensor de luz - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Taller_Skybot:Sesión_2:Sensor_de_luz","wgTitle":"Taller Skybot:Sesión 2:Sensor de luz","wgCurRevisionId":2885,"wgRevisionId":2885,"wgArticleId":428,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Taller Skybot","Documentación"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Taller_Skybot:Sesión_2:Sensor_de_luz","wgRelevantArticleId":428,"wgRequestId":"au7zF-_keAbdROuIVOCdVAAA0TI","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Taller_Skybot_Sesi%C3%B3n_2_Sensor_de_luz_files/load_ZAI6.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="Taller_Skybot_Sesi%C3%B3n_2_Sensor_de_luz_files/load_ZAI6.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="Taller_Skybot_Sesi%C3%B3n_2_Sensor_de_luz_files/load_002_ZAI6.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Taller_Skybot_Sesión_2_Sensor_de_luz rootpage-Taller_Skybot_Sesión_2_Sensor_de_luz skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Taller Skybot:Sesión 2:Sensor de luz</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><p><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Skybot-ldr.jpg" class="image" title="center"><img alt="center" src="Taller_Skybot_Sesi%C3%B3n_2_Sensor_de_luz_files/Skybot-ldr_ZAI6.jpg" width="356" height="109"></a>
+</p>
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>Vamos a colocar el sensor de luz o <b>LDR</b> en el robot. Lo situaremos a modo de antena en el robot y nos servirá para detectar objetos luminosos. Una LDR proporciona un voltaje dependiente de la intensidad de luz, por lo tanto es un sensor analógico y lo tendremos que manejar usando una entrada analógica de la SKYPIC, situadas en el Puerto A, el mismo que hemos usado para los bumpers.
+</p>
+<h2><span class="mw-headline" id="Materiales_necesarios">Materiales necesarios</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<ul><li> 1 LDR</li>
+<li> 1 cable rojo de 25 cm de longitud</li>
+<li> 1 cable negro de 25 cm de longitud</li>
+<li> Alambre para hacer la antena (no incluído en el kit)</li>
+<li> Tornillo y tuerca métrica 4</li></ul>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion2-ldr-materiales.jpg" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n_2_Sensor_de_luz_files/300px-Taller-skybot-sesion2-ldr-materiales_ZAI6.jpg" width="300" height="200" class="thumbimage" srcset="Taller_Skybot_Sesi%C3%B3n_2_Sensor_de_luz_files/Taller-skybot-sesion2-ldr-materiales_ZAI6.jpg 1.5x, Taller_Skybot_Sesi%C3%B3n_2_Sensor_de_luz_files/Taller-skybot-sesion2-ldr-materiales_ZAI6.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion2-ldr-materiales.jpg" class="internal" title="Aumentar"></a></div>Materiales necesarios para montar el sensor de luz</div></div></div>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Herramientas">Herramientas</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<ul><li> Soldador y estaño</li>
+<li> Pelacables y soporte soldador (opcionales)</li>
+<li> Alicate</li></ul>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:285px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion2-ldr-herramientas.jpg" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n_2_Sensor_de_luz_files/Taller-skybot-sesion2-ldr-herramientas_ZAI6.jpg" width="283" height="188" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Taller-skybot-sesion2-ldr-herramientas.jpg" class="internal" title="Aumentar"></a></div>Herramientas necesarias</div></div></div>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Montaje">Montaje</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:211px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Ldr-1.jpg" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n_2_Sensor_de_luz_files/Ldr-1_ZAI6.jpg" width="209" height="161" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Ldr-1.jpg" class="internal" title="Aumentar"></a></div>Aspecto de la ldr</div></div></div>
+<p>Como se puede apreciar en la figura, una LDR tiene dos patas. Vamos a soldar el cable rojo a una de ellas y el negro a la otra. No importa la polaridad por lo que podemos poner cada cable en la pata que queramos. Luego protegeremos la soldadura con un poco de cinta aislante y montaremos la LDR en el lugar que queramos, una opción es ponerla como si fuera una antena.
+</p><p>Finalmente conectaremos el cable <b>negro</b> a la <b>entrada GND</b> de la SKY293 y el cable <b>rojo</b> a la <b>entrada AN0</b>. Si necesitamos que la LDR detecte la luz de forma direccional conviene encapsularla de tal forma que sólo podamos recibir la luz por un pequeño orificio.
+</p><p><br>
+</p>
+<ul><li> <b>Paso 1</b>: Soldar los cables a la LDR</li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:143px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Ldr-2.jpg" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n_2_Sensor_de_luz_files/Ldr-2_ZAI6.jpg" width="141" height="96" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Ldr-2.jpg" class="internal" title="Aumentar"></a></div>Soldar el cable rojo</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:122px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Ldr-3.jpg" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n_2_Sensor_de_luz_files/Ldr-3_ZAI6.jpg" width="120" height="102" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Ldr-3.jpg" class="internal" title="Aumentar"></a></div>Soldar el cable negro</div></div></div>
+</td></tr></tbody></table>
+<ul><li> <b>Paso 2</b>: Proteger la soldadura</li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:128px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Ldr-4.jpg" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n_2_Sensor_de_luz_files/Ldr-4_ZAI6.jpg" width="126" height="91" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Ldr-4.jpg" class="internal" title="Aumentar"></a></div>Poner cinta aislante para evitar cortocircuitos</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:136px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Ldr-4bis.jpg" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n_2_Sensor_de_luz_files/Ldr-4bis_ZAI6.jpg" width="134" height="74" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Ldr-4bis.jpg" class="internal" title="Aumentar"></a></div>Vista lateral</div></div></div>
+</td></tr></tbody></table>
+<ul><li> <b>Paso 3</b>: Construir la antena y montar el sensor en ella</li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:148px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Ldr-5.jpg" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n_2_Sensor_de_luz_files/Ldr-5_ZAI6.jpg" width="146" height="96" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Ldr-5.jpg" class="internal" title="Aumentar"></a></div>Antena hecha de alambre</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:221px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Ldr-6.jpg" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n_2_Sensor_de_luz_files/Ldr-6_ZAI6.jpg" width="219" height="125" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Ldr-6.jpg" class="internal" title="Aumentar"></a></div>Sensor montado en la antena, pegado con cinta aislante</div></div></div>
+</td></tr></tbody></table>
+<ul><li> <b>Paso 4</b>: Atornillas la antena y encapsular el sensor.</li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:285px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Ldr-7.jpg" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n_2_Sensor_de_luz_files/Ldr-7_ZAI6.jpg" width="283" height="188" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Ldr-7.jpg" class="internal" title="Aumentar"></a></div>Atornillar la antena</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:134px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Ldr-9.jpg" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n_2_Sensor_de_luz_files/Ldr-9_ZAI6.jpg" width="132" height="114" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Ldr-9.jpg" class="internal" title="Aumentar"></a></div>Encapsular el sensor usando cinta aislante, la tapa de un boli, etc. Así conseguimos que sea muy direccional</div></div></div>
+</td></tr></tbody></table>
+<ul><li> <b>Paso 5</b>: Conectar a la tarjeta Sky293</li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:281px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Sky293-ldr.png" class="image"><img alt="" src="Taller_Skybot_Sesi%C3%B3n_2_Sensor_de_luz_files/Sky293-ldr_ZAI6.png" width="279" height="217" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Sky293-ldr.png" class="internal" title="Aumentar"></a></div>300px</div></div></div>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Cable_de_conexi.C3.B3n">Cable de conexión</span></h2>
+<p>Vamos a utilizar el otro cable de bus que hay en el kit. Lo vamos a conectar por un extremo al Puerto A de la SKYPIC (etiquetado como CT1), y por el otro al Puerto A de la SKY293.
+</p>
+<h2><span class="mw-headline" id="Software">Software</span></h2>
+<p>Una LDR es un sensor analógico. Esto significa que nos da un valor de tensión entre 0 y 5 voltios, proporcional a la luz. Por el contrario, los sensores digitales nos dan las tensiones 0 ó 5v. Para poder leer la tensión de manera digital, necesitemos un conversor analógico-digital (ADC Analog to Digital Converter) que nos convierta el valor de tensión a un número binario.
+El ADC recibe como entrada la señal analógina y proporciona en su salida una serie de bits proporcionales al valor de la entrada. El PIC16F876A tiene un conversor AD interno con varias entradas situadas en el Puerto A.
+Nosotros vamos a usar este recurso para leer la información de la LDR. Tendremos que configurar el ADC interno para que sea capaz de leer valores analógicos en la entrada AN0 y dejar el resto de entradas como digitales. De esta forma mantendremos la compatibilidad con los bumpers. 
+</p><p><br>
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th> <b>SKY293 Puerto A</b> </th>
+<th> <b>SKYPIC Puerto A</b>   </th>
+<th>  <b>Descripción</b>
+</th></tr>
+<tr>
+<td> AN0 </td>
+<td> PA0  </td>
+<td>  Cable Rojo LDR
+</td></tr>
+<tr>
+<td> AN1 </td>
+<td> PA1 </td>
+<td>  ---
+</td></tr>
+<tr>
+<td> AN2 </td>
+<td> PA2  </td>
+<td> ---
+</td></tr>
+<tr>
+<td> AN3 </td>
+<td> PA3  </td>
+<td>  ---
+</td></tr>
+<tr>
+<td> TO </td>
+<td> PA4  </td>
+<td>  ---
+</td></tr>
+<tr>
+<td> AN4 </td>
+<td> PA5  </td>
+<td>  ---
+</td></tr></tbody></table>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th> Clema alimentación </th>
+<th> Conexión
+</th></tr>
+<tr>
+<td> GND </td>
+<td> Cable negro LDR
+</td></tr>
+<tr>
+<td> VCC </td>
+<td> <b>NC</b> (No conectado)
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot" title="Taller Skybot">Taller Skybot</a>. Página principal</li>
+<li> <a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesi%C3%B3n_2" title="Taller Skybot:Sesión 2"> Sesión 2</a>: Índice</li></ul>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>26/Julio/2008</b>: Finalizada la migración. (<a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main">Juan González</a>)</li>
+<li> <b>22/Julio/2008</b>: Comenzada esta página. Migración de la <a rel="nofollow" class="external text" href="http://www.iearobotics.com/talleres/generico-v14/sesion-2/ldr.html">documentación en HTML</a>.</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20261107094455
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.033 seconds
+Real time usage: 0.050 seconds
+Preprocessor visited node count: 60/1000000
+Preprocessor generated node count: 121/1000000
+Post‐expand include size: 1800/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    3.275      1 - -total
+ 85.01%    2.784      9 - Plantilla:Tablabonita
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesi%C3%B3n_2:Sensor_de_luz&amp;oldid=2885">https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesión_2:Sensor_de_luz&amp;oldid=2885</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categorías</a>: <ul><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Taller_Skybot" title="Categoría:Taller Skybot">Taller Skybot</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Documentaci%C3%B3n" title="Categoría:Documentación">Documentación</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesi%C3%B3n_2:Sensor_de_luz" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Taller_Skybot:Sesi%C3%B3n_2:Sensor_de_luz&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesi%C3%B3n_2:Sensor_de_luz&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesi%C3%B3n_2:Sensor_de_luz&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Taller+Skybot%3ASesi%C3%B3n+2%3ASensor+de+luz" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Taller_Skybot:Sesi%C3%B3n_2:Sensor_de_luz" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Taller_Skybot:Sesi%C3%B3n_2:Sensor_de_luz" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesi%C3%B3n_2:Sensor_de_luz&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesi%C3%B3n_2:Sensor_de_luz&amp;oldid=2885" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://iearobotics.com/wiki/index.php?title=Taller_Skybot:Sesi%C3%B3n_2:Sensor_de_luz&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Taller_Skybot_Sesi%C3%B3n_2_Sensor_de_luz_files/gnu-fdl_ZAI6.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="Taller_Skybot_Sesi%C3%B3n_2_Sensor_de_luz_files/poweredby_mediawiki_88x31_ZAI6.png" alt="Powered by MediaWiki" srcset="Taller_Skybot_Sesi%C3%B3n_2_Sensor_de_luz_files/poweredby_mediawiki_132x47_ZAI6.png 1.5x, Taller_Skybot_Sesi%C3%B3n_2_Sensor_de_luz_files/poweredby_mediawiki_176x62_ZAI6.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 26 jul 2008 a las 02:53.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":135});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
