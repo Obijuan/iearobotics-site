@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Taller-skybot:Sesión4:Programación Skybot:Ejemplos</title>
+  	<link rel="stylesheet" href="load.css">
+</head>
+
+<body style="margin: 10px; font-size: 12px;">
+<h1 id="firstHeading" class="firstHeading" lang="es">Taller-skybot:Sesión4:Programación Skybot:Ejemplos</h1>
+<div id="bodyContent" class="mw-body-content"></div>
+
+
+<!-- start content -->
+<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Descargas"><span class="tocnumber">2</span> <span class="toctext">Descargas</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Ejemplos_sueltos"><span class="tocnumber">2.1</span> <span class="toctext">Ejemplos sueltos</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Repositorio"><span class="tocnumber">3</span> <span class="toctext">Repositorio</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Ejemplos_b.C3.A1sicos"><span class="tocnumber">4</span> <span class="toctext">Ejemplos básicos</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Encender_el_led_de_la_Skypic"><span class="tocnumber">4.1</span> <span class="toctext">Encender el led de la Skypic</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Led_parpadeante"><span class="tocnumber">4.2</span> <span class="toctext">Led parpadeante</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Leyendo_el_pulsador_de_pruebas"><span class="tocnumber">4.3</span> <span class="toctext">Leyendo el pulsador de pruebas</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Ejemplos_de_motores_y_sensores"><span class="tocnumber">5</span> <span class="toctext">Ejemplos de motores y sensores</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Activar_los_motores_para_que_el_robot_avance"><span class="tocnumber">5.1</span> <span class="toctext">Activar los motores para que el robot avance</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Lectura_del_sensor_4"><span class="tocnumber">5.2</span> <span class="toctext">Lectura del sensor 4</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Lectura_de_los_4_sensores"><span class="tocnumber">5.3</span> <span class="toctext">Lectura de los 4 sensores</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Prueba_de_motores_y_sensores"><span class="tocnumber">5.4</span> <span class="toctext">Prueba de motores y sensores</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Sensores_de_contacto_.28BUMPERS.29"><span class="tocnumber">5.5</span> <span class="toctext">Sensores de contacto (BUMPERS)</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Sensor_de_Luz:_Endender_el_led_en_la_oscuridad"><span class="tocnumber">5.6</span> <span class="toctext">Sensor de Luz: Endender el led en la oscuridad</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#Temporizaci.C3.B3n"><span class="tocnumber">6</span> <span class="toctext">Temporización</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="#Led_parpadeante_con_temporizaci.C3.B3n"><span class="tocnumber">6.1</span> <span class="toctext">Led parpadeante con temporización</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Secuencia_de_movimiento_pregrabada_en_el_Skybot"><span class="tocnumber">6.2</span> <span class="toctext">Secuencia de movimiento pregrabada en el Skybot</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#Puerto_serie_en_el_PIC"><span class="tocnumber">7</span> <span class="toctext">Puerto serie en el PIC</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="#Hacer_eco_a_trav.C3.A9s_del_puerto_serie"><span class="tocnumber">7.1</span> <span class="toctext">Hacer eco a través del puerto serie</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Control_del_Skybot_a_trav.C3.A9s_del_puerto_serie"><span class="tocnumber">7.2</span> <span class="toctext">Control del Skybot a través del puerto serie</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-22"><a href="#Comportamientos_sencillos_en_el_Skybot"><span class="tocnumber">8</span> <span class="toctext">Comportamientos sencillos en el Skybot</span></a>
+<ul>
+<li class="toclevel-2 tocsection-23"><a href="#Seguir_la_l.C3.ADnea_negra"><span class="tocnumber">8.1</span> <span class="toctext">Seguir la línea negra</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Comportamiento_lapa:_pegarse_a_los_objetos"><span class="tocnumber">8.2</span> <span class="toctext">Comportamiento lapa: pegarse a los objetos</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Plantilla_para_el_concurso_del_MOGOLL.C3.93N.21"><span class="tocnumber">8.3</span> <span class="toctext">Plantilla para el concurso del MOGOLLÓN!</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-26"><a href="#Enlaces"><span class="tocnumber">9</span> <span class="toctext">Enlaces</span></a></li>
+<li class="toclevel-1 tocsection-27"><a href="#Noticias"><span class="tocnumber">10</span> <span class="toctext">Noticias</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>El objetivo de este capítulo es mostrar <b>ejemplos de programas en C</b> para manejar diferentes recursos del robot. Editando, compilando, probando y modificando los ejemplos se aprenderá muy rápidamente a manejar el robot y en poco tiempo se podrá dar rienda suelta a la imaginación para hacer otras cosas... <b>¡Qué comience la fiesta!</b>
+</p>
+<h2><span class="mw-headline" id="Descargas">Descargas</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="../downloads/taller-skybot/ejemplos/ejemplos-skybot.zip">ejemplos-skybot.zip</a>
+</td>
+<td> Todos los ejemplos
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Ejemplos_sueltos">Ejemplos sueltos</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/ledon.c">ledon.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="../downloads/taller-skybot/ejemplos/ledon.hex">ledon.hex</a>
+</td>
+<td> Encender el led de la Skypic
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/ledp.c">ledp.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="../downloads/taller-skybot/ejemplos/ledp.hex">ledp.hex</a>
+</td>
+<td> Hacer que el led de la Skypic parpadee
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/pulsador-led.c">pulsador-led.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="../downloads/taller-skybot/ejemplos/pulsador-led.hex">pulsador-led.hex</a>
+</td>
+<td> Mostrar por el led el valor negado del pulsador de pruebas
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/motor-on.c">motor-on.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="../downloads/taller-skybot/ejemplos/motor-on.hex">motor-on.hex</a>
+</td>
+<td> Activar los motores del Skybot para que avance
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/sensor4.c">sensor4.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="../downloads/taller-skybot/ejemplos/sensor4.hex">sensor4.hex</a>
+</td>
+<td> Ejemplo de lectura del sensor 4. Su estado se refleja en el led. Si lee blanco el led se apaga, si lee negro se enciente.
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/sensores.c">sensores.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="../downloads/taller-skybot/ejemplos/sensores.hex">sensores.hex</a>
+</td>
+<td> Prueba de los 4 sensores. Se lee su estado y se envía al puerto A. Si se conectan 4 leds externos se podrá ver en ellos el estado de los sensores.
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/motores-sensor3.c">motores-sensor3.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="../downloads/taller-skybot/ejemplos/motores-sensor3.hex">motores-sensor3.hex</a>
+</td>
+<td> Prueba de motores y sensores. El robot avanza cuando le sensor 3 lee negro. Se para si lee blanco
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/timer0-delay.h">timer0-delay.h</a>
+</td>
+<td> ---
+</td>
+<td> Rutina de pausa que usa el temporizador 0 (sin interrupciones). Para ser incluido desde nuestros programas en c.
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/ledp2.c">ledp2.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="../downloads/taller-skybot/ejemplos/ledp2.hex">ledp2.hex</a>
+</td>
+<td> Hacer parpadear el led de la Skypic a la frecuencia de 1Hz, usando el temporizador 0
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/bumper.c">bumper.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="../downloads/taller-skybot/ejemplos/bumper.hex">bumper.hex</a>
+</td>
+<td> Mostrar el estado de un sensor de contacto (bumper) por el LED
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/conversor-ad1.c">conversor-ad1.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="../downloads/taller-skybot/ejemplos/conversor-ad1.hex">conversor-ad1.hex</a>
+</td>
+<td> Ejemplo de lectura del sensor de Luz: Se apaga el led en la oscuridad (y se muestra el nivel de luz en la tarjeta Freeleds conectada al puerto C)
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/secuencia.c">secuencia.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="../downloads/taller-skybot/ejemplos/secuencia.hex">secuencia.hex</a>
+</td>
+<td> El skybot realiza una secuencia pre-grabada de movimientos
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/sci.h">sci.h</a>
+</td>
+<td> ----
+</td>
+<td> Funciones para acceso al puerto serie
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/sci-eco.c">sci-eco.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="../downloads/taller-skybot/ejemplos/sci-eco.hex">sci-eco.hex</a>
+</td>
+<td> Hacer 'eco' de todo lo recibido a través por el puerto serie
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/sci-skybot-test.c">sci-skybot-test.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="../downloads/taller-skybot/ejemplos/sci-skybot-test.hex">sci-skybot-test.hex</a>
+</td>
+<td> Control del Skybot y lectura de los sensores a través de un terminal serie
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/skybot.h">skybot.h</a>
+</td>
+<td> ----
+</td>
+<td> Constantes y funciones para trabajar con el Skybot
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/linea.c">linea.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="../downloads/taller-skybot/ejemplos/linea.hex">linea.hex</a>
+</td>
+<td> El robot Skybot sigue una línea negra
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/lapa.c">lapa.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="../downloads/taller-skybot/ejemplos/lapa.hex">lapa.hex</a>
+</td>
+<td> Comportamiento de tipo lapa: El robot tiende a pegarse a los objetos que tiene delante
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/mogollon.c">mogollon.c</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="../downloads/taller-skybot/ejemplos/mogollon.hex">mogollon.hex</a>
+</td>
+<td> Plantilla modelo para participar en el concurso del Mogollón!
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Repositorio">Repositorio</span></h2>
+<ul><li> Repositorio SVN: <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos">http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos</a></li></ul>
+<h2><span class="mw-headline" id="Ejemplos_b.C3.A1sicos">Ejemplos básicos</span></h2>
+<h3><span class="mw-headline" id="Encender_el_led_de_la_Skypic"><font color="#0000FF"> Encender el led de la Skypic </font></span></h3>
+<ul><li> <b>Fichero</b>: <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/ledon.c">ledon.c</a></li>
+<li> <b>Descripción</b>: Encender el led de la Skypic</li>
+<li> <b>Explicación</b>:</li></ul>
+<p>Este es el ejemplo "<i>hola mundo</i>" pero <b>con modificaciones</b> para hacerlo más legible.
+</p><p>La directiva <b>#define</b> nos permite definir constantes. En este ejemplo se definen las constantes ENTRADA, LED y ON:
+</p>
+<pre>#define ENTRADA 1
+#define LED     RB1
+#define ON      1
+</pre>
+<p>Esto nos permite poder usar estas nuevas constantes en vez de sus valores. Ahora ya no nos tenemos que acordar de que el led de la skypic está en el bit RB1 ni de que para encenderlo hay que escribir un 1. Ahora simplemente haciendo:
+</p>
+<pre>LED = ON;
+</pre>
+<p>Se encenderá el led de la Skypic
+</p>
+<h3><span class="mw-headline" id="Led_parpadeante"><font color="#0000FF">Led parpadeante</font></span></h3>
+<ul><li> <b>Fichero</b>: <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/ledp.c">ledp.c</a></li>
+<li> <b>Descripción</b>: Este ejemplo hace parpadear el led de la Skypic</li>
+<li> <b>Explicación</b>:</li></ul>
+<p>En la función <b>main()</b> nos encontramos con:
+</p>
+<pre>LED=LED^1;
+</pre>
+<p>Esta línea <b>cambia de estado el LED</b>. Si estaba encendido lo apaga y vice-versa. El símbolo <b>^</b> es el operador XOR (O exclusivo). 
+</p>
+<pre>pausa(RETRASO);    //-- Pausa
+</pre>
+<p>A continuación se llama a la función <b>pausa()</b> que la hemos definido nosotros para hacer una pausa. El microcontrolador ejecuta instrucciones muy rápido. Si cambiamos de estado el led muy rápidamente, nuestro ojo no lo apreciará y dará la impresión de que el led está siempre encendido. Por ello hay que introducir una pausa. En la función de pausa se decrementa una variable hasta llegar a 0. Cambiando el parámetro que se le paso conseguimos una pausa mayor o menor.
+</p>
+<ul><li> <b>Ejercicios para practicar</b>:</li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <b>EJERCICIO 1</b>: </td>
+<td> Modificar el valor de la constante RETRASO. Poniendo diferentes valores. Por ejemplo 0x8000, 0x4000... ¿Qué sucede?
+</td></tr>
+<tr>
+<td> <b>EJERCICIO 2</b>: </td>
+<td> Eliminar la llamada a la función pausa(). ¿Qué sucede?
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Leyendo_el_pulsador_de_pruebas"><font color="#0000FF">Leyendo el pulsador de pruebas</font></span></h3>
+<ul><li> <b>Fichero</b>: <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/pulsador-led.c">pulsador-led.c</a></li>
+<li> <b>Descripción</b>: Mostrar por el LED de la skypic el estado del pulsador de pruebas</li>
+<li> <b>Explicación</b>:</li></ul>
+<p>El pulsador de pruebas de la Skypic se encuentra en el bit RB1. Para hacer el programa más legible se define la constante PULSADOR:
+</p>
+<pre> #define PULSADOR  RB0
+</pre>
+<p>El bucle principal simplemente lee el valor del PULSADOR y saca por el led el estado contrario: si esta apretado se enciende y se apaga en caso contrario:
+</p>
+<pre>LED = PULSADOR^1;
+</pre>
+<h2><span class="mw-headline" id="Ejemplos_de_motores_y_sensores">Ejemplos de motores y sensores</span></h2>
+<h3><span class="mw-headline" id="Activar_los_motores_para_que_el_robot_avance"><font color="#0000FF">Activar los motores para que el robot avance</font></span></h3>
+<ul><li> <b>Fichero</b>: <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/motor-on.c">motor-on.c</a></li>
+<li> <b>Descripción</b>: Activar los motores del Skybot para que avance</li>
+<li> <b>Explicación</b>:</li></ul>
+<p>Ejemplo de cómo activar los motores para que el Skybot se desplace hacia adelante. Esto se consigue enviando valores por el puerto B
+</p><p>Para hacer la programación más sencilla, se ha definido la <b>constante SKYBOT</b>:
+</p>
+<pre>#define SKYBOT PORTB
+</pre>
+<p>y las siguientes constantes contienen los valores necesarios para que el robot realice el resto de movimiento: Adelante, atrás, izquierda y derecha. Están definidos en hexadecimal por comodidad
+</p>
+<pre> #define   AVANZA     0x1C
+ #define   ATRAS      0x16
+ #define   IZQUIERDA  0x1E
+ #define   DERECHA    0x14
+ #define   STOP       0x00
+</pre>
+<p>Para hacer que el robot avance bastará con ejecutar el siguiente comando:
+</p>
+<pre>SKYBOT=AVANZA;
+</pre>
+<ul><li> <b>Ejercicios para practicar</b>:</li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <b>EJERCICIO 3</b>: </td>
+<td> Modificar el programa para que el Skybot gire, se pare o vaya hacia atrás.
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Lectura_del_sensor_4"><font color="#0000FF">Lectura del sensor 4</font></span></h3>
+<ul><li> <b>Fichero</b>: <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/sensor4.c">sensor4.c</a></li>
+<li> <b>Descripción</b>: Ejemplo de lectura del sensor 4. Su estado se refleja en el led. Si lee blanco el led se apaga, si lee negro se enciente.</li>
+<li> <b>Explicación</b>:</li></ul>
+<p>Los sensores están conectados en los bits RB7, RB6, RB5 y RB0 del puerto B. Utilizaremos las siguientes constantes para usarlos:
+</p>
+<pre>#define   SENSOR1  RB0
+#define   SENSOR2  RB5
+#define   SENSOR3  RB6
+#define   SENSOR4  RB7
+</pre>
+<p>Definimos la constante SENSOR para indicar el sensor que utilizaremos en el ejemplo, que en este caso será el 4:
+</p>
+<pre>#define   SENSOR SENSOR4
+</pre>
+<p>El programa principal es muy sencilla. Sólo hay que enviar al LED la lectura del sensor mediante al instrucción:
+</p>
+<pre>LED = SENSOR;
+</pre>
+<ul><li> <b>Ejercicios para practicar</b>:</li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <b>EJERCICIO 4</b>: </td>
+<td> Modificar el programa para utilizar el sensor 3 en vez del 4
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Lectura_de_los_4_sensores"><font color="#0000FF">Lectura de los 4 sensores</font></span></h3>
+<ul><li> <b>Fichero</b>: <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/sensores.c">sensores.c</a></li>
+<li> <b>Descripción</b>: Prueba de los 4 sensores. Se lee su estado y se envía al puerto A.</li>
+<li> <b>Explicación</b>:</li></ul>
+<p>Este ejemplo es similar al sensor4 pero en este caso se leen todos los sensores y su estado se muestra por el PUERTO A. Como la 
+	<a href="Skypic.html" title="Skypic">Skypic</a> tiene sólo un led, para poder probar este programa habrá que conectar 4 leds externos o bien utilizar alguna placa que ya los lleve, como por ejemplo la 
+	<a href="Freeleds.html" title="Freeleds">Freeleds</a>.
+</p><p>Los bits del puerto A se configuran para salida:
+</p>
+<pre> TRISA=0;
+</pre>
+<p>El puerto A puede funcionar como digital o analógico. En este ejemplo lo queremos usar como digital. Se configura con la siguiente instrucción:
+</p>
+<pre> ADCON1=0x06;
+</pre>
+<p>El bucle principal muestra el estado de los sensores en los bits del puerto A usando las instrucciones:
+</p>
+<pre>RA0 = SENSOR1;
+RA1 = SENSOR2;
+RA2 = SENSOR3;
+RA3 = SENSOR4;
+</pre>
+<h3><span class="mw-headline" id="Prueba_de_motores_y_sensores"><font color="#0000FF"> Prueba de motores y sensores</font></span></h3>
+<ul><li> <b>Fichero</b>: <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/motores-sensor3.c">motores-sensor3.c</a></li>
+<li> <b>Descripción</b>: Prueba de motores y sensores. El robot avanza cuando le sensor 3 lee negro. Se para si lee blanco.</li>
+<li> <b>Explicación</b>:</li></ul>
+<p>Ejemplo de un comportamiento muy sencillo del robot. Si el sensor 3 lee negro, el robot está parado. Pero si lee blanco, se pone a avanzar. Cambiando el valor de la constante SENSOR podemos hacer la misma prueba con cualquiera de los otros tres sensores.
+</p><p>Para leer el estado del sensor se han definido las constantes BLANCO y NEGRO:
+</p>
+<pre>#define NEGRO  1
+#define BLANCO 0
+</pre>
+<p>Para comprobar si el sensor toma un valor concreto utilizamos <b>la instrucción if</b>:
+</p>
+<pre>if (SENSOR==BLANCO) {...}
+</pre>
+<ul><li> <b>Ejercicios para practicar</b>:</li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <b>EJERCICIO</b>: </td>
+<td> Colocar el robot sobre una superficie blanca (por ejemplo un folio). Colocar en un trozo de papel un trozo de cinta aislante negro. El robot avanzará pero si le ponemos el trozo negro debajo del sensor 3 se parará. Si lo desplazamos hacia adelante el robot volverá a avanzar hasta situarse otra vez sobre él. Dará la impresión de que está siguiente el trozo de papel negro que le estamos poniendo&nbsp;:-). En este ejemplo sólo se moverá en línea recta.
+<p>Modificar el programa para que avance cuando el sensor lea negro y se pare cuando sea blanco
+</p>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Sensores_de_contacto_.28BUMPERS.29"><font color="#0000FF">Sensores de contacto (BUMPERS)</font></span></h3>
+<ul><li> <b>Fichero</b>: <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/bumper.c">bumper.c</a></li>
+<li> <b>Descripción</b>: Mostrar el estado de un bumper por el led</li>
+<li> <b>Explicación</b>:</li></ul>
+<p>Los sensores de contacto están conectados en los pines RA1 y RA2 del puerto. Por eso establecemos las siguientes definiciones:
+</p>
+<pre>#define BUMPER1 RA1
+#define BUMPER2 RA2
+</pre>
+<p>El puerto A hay que configurarlo como entradas digitales, para ellos ejecutamos:
+</p>
+<pre> TRISA = 0xFF;
+ ADCON1=0x0E;
+</pre>
+<p>Para mostrar el estado del bumper en el led hacemos la asignación:
+</p>
+<pre> LED = BUMPER;
+</pre>
+<ul><li> <b>Ejercicios para practicar</b>:</li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <b>EJERCICIO</b>: </td>
+<td>  Modificar el programa para mostrar por el led el otro bumper
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Sensor_de_Luz:_Endender_el_led_en_la_oscuridad"><font color="#0000FF">Sensor de Luz: Endender el led en la oscuridad</font></span></h3>
+<ul><li> <b>Fichero</b>: <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/conversor-ad1.c">conversor-ad1.c</a></li>
+<li> <b>Descripción</b>: Si está oscuro, se enciende el led de la Skypic. En caso contrario se apaga</li>
+<li> <b>Explicación</b>:</li></ul>
+<p>Ejemplo de manejo del sensor de Luz del Skybot que está conectado al canal RA0 del conversor analógico-digital del PIC. 
+Del sensor se lee un valor de 8 bits, comprendido entre 0 (mucha luz) y 255 (oscuridad)
+</p><p>Cuando el valor de luz leido supera el umbral de oscuridad, definido por la constante UMBRAL_OSCURIDAD se enciende el led de la skypic. Además, el valor leido se envía al puerto C y se puede visualizar si se conecta una tarjeta freeleds.
+</p>
+<pre>#define UMBRAL_OSCURIDAD 0xFC
+
+</pre>
+<p>La función <b>conversor_ad_conf()</b> configura el puerto A para que el pin RA0 funcione como una entrada analógica. La función <b>conversor_ad_read()</b> lee el sensor de luz.
+</p><p>Se utiliza la variable luz para almacenar la lectura del sensore de luz. Está declarada al comienzo del programa:
+</p>
+<pre>unsigned char luz;
+</pre>
+<p>El bucle principal es muy sencillo. Se lee el sensor de luz, se almacena en la variable luz, se saca por el puerto C y se comprueba si su valor supera el umbral de oscuridad. Si es así el led se enciende y en caso contrario se apaga.
+</p>
+<pre> luz = conversor_ad_read();
+ PORTC = luz;
+ if (luz&gt;=UMBRAL_OSCURIDAD)
+   LED=1;
+ else
+   LED=0;
+</pre>
+<ul><li> <b>Ejercicios para practicar</b>:</li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <b>EJERCICIO</b>: </td>
+<td> Modificar el programa para que el robot avance mientras haya suficiente luz y se pare en la oscuridad. Modificar el valor de la constante UMBRAL_OSCURIDAD para adaptarlo a la luz ambiental.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Temporizaci.C3.B3n">Temporización</span></h2>
+<h3><span class="mw-headline" id="Led_parpadeante_con_temporizaci.C3.B3n"><font color="#0000FF">Led parpadeante con temporización</font></span></h3>
+<ul><li> <b>Fichero</b>: <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/ledp2.c">ledp2.c</a></li>
+<li> <b>Descripción</b>: Se hace parpadear el led a la frecuencia de 1Hz, usando el temporizador 0</li>
+<li> <b>Explicación</b>:</li></ul>
+<p>Ejemplo de uso de la librería <b>timer0_delay.h</b> para cambiar el estado del led cada medio segundo. Para usar esta librería hay que poner esta instrucción:
+</p>
+<pre>#include "timer0-delay.h"
+</pre>
+<p>Para realizar las pausas se utiliza el <b>temporizador 0</b>. El microcontrolador PIC tiene varios temporizadores que funcionan como cronómetros, permitiéndonos hacer cálculos de tiempo en nuestro programas. 
+</p><p>Para usar el temporizador 0 debemos configurarlos llamando a la siguiente función:
+</p>
+<pre>timer0_configurar();
+</pre>
+<p>Las pausas se realizan llamando a la función <b>timer0_delay()</b> pasando como argumento el tiempo en centésimas de segundo. En este ejemplo se quiere cambiar el estado del led cada medio segundo, es decir, cada 50 centésimas:
+</p>
+<pre>timer0_delay(50);
+</pre>
+<ul><li> <b>Ejercicios para practicar</b>:</li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <b>EJERCICIO</b>: </td>
+<td> Hacer un programa para que el led permanezca encendido durante 50 centésis y se apague durante 10
+</td></tr>
+<tr>
+<td> <b>EJERCICIO</b>: </td>
+<td> Hacer que el led parpadee a frecuencias más altas. Disminuir el valor de la pausa. Probar con 50, 25, 10, 5...
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Secuencia_de_movimiento_pregrabada_en_el_Skybot"><font color="#0000FF">Secuencia de movimiento pregrabada en el Skybot</font></span></h3>
+<ul><li> <b>Fichero</b>: <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/secuencia.c">secuencia.c</a></li>
+<li> <b>Descripción</b>: El Skybot realiza una secuencia de movimientos pregrabada</li>
+<li> <b>Explicación</b>:</li></ul>
+<p>Este es uno de los ejemplos más divertidos&nbsp;:-). Ya sabemos cómo mover el robot. También podemos esperar un determinado tiempo. Tenemos todos los elementos para hacer que <b>el robot realice una secuencia de movimiento pregrabada</b> del tipo: ir hacia adelante durante 1 segundo, luego girar a la izquierda durante 0.3 segundos, luego ir hacia trás...
+</p><p>Probar el ejemplo y observar cómo se mueve el Skybot. Una vez terminada la secuencia habrá que pulsar el <b>botón de RESET</b> para que la vuelva a realizar.
+</p>
+<ul><li> <b>Ejercicios para practicar</b>:</li></ul>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <b>EJERCICIO</b>: </td>
+<td> Modificar la secuencia para que describa un triangulo y que al terminar vuelva al punto inicial.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Puerto_serie_en_el_PIC">Puerto serie en el PIC</span></h2>
+<h3><span class="mw-headline" id="Hacer_eco_a_trav.C3.A9s_del_puerto_serie"><font color="#0000FF">Hacer eco a través del puerto serie</font></span></h3>
+<ul><li> <b>Fichero</b>: <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/sci-eco.c">sci-eco.c</a></li>
+<li> <b>Descripción</b>: Ejemplo de uso de las funciones del puerto serie. Todos los caracteres recibidos se devuelven</li>
+<li> <b>Explicación</b>:</li></ul>
+<p>La comunicación mediante puerto serie es muy interesante para intercambiar información con el PC de manera muy rápida y sencilla. Para utilizarlo necesitamos incluir el fichero <b>sci.h</b>:
+</p>
+<pre>#include "sci.h"
+</pre>
+<p>Antes de utilizarlo hay que configurarlo. Esto se hace llamando a la siguiente función:
+</p>
+<pre> sci_conf();
+</pre>
+<p>El puerto serie se configura para trabajar a 9600 baudios.
+Para enviar una cadena de caracteres desde la Skypic al PC se usa la función <b>sci_cad()</b>:
+</p>
+<pre>sci_cad("Haciendo eco...");
+</pre>
+<p>Los datos recibidos se almacenan en la variable c, definida al comienzo del programa:
+</p>
+<pre>unsigned char c;
+</pre>
+<p>La recepción de datos se hace llamando a la función <b>sci_read()</b>: 
+</p>
+<pre>c=sci_read();
+</pre>
+<p>El bucle principal lee los recibido por el puerto serie, lo saca por el puerto B para ser visualizado si se conecta una 
+	<a href="Freeleds.html" title="Freeleds">tarjeta freeleds</a> y finalmente lo re-envía de nuevo al PC mediante la función <b>sci_write()</b>:
+</p>
+<pre>PORTB=c;
+sci_write(c);
+</pre>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="images/c/c0/Icono_aviso.png" class="image"><img alt="Icono aviso.png" src="Taller-skybot_Sesi%C3%B3n4_Programaci%C3%B3n_Skybot_Ejemplos_files/Icono_aviso_0uuU.png" width="24" height="24"></a> Para probar este programa hay que arrancar un terminal de comunicaciones en el PC. Por ejemplo el <b>Hyperterminal</b> de Windows o el <b>Gtkterm</b> de Linux. Es necesario configurarlo para trabajar a 9600 baudios
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Control_del_Skybot_a_trav.C3.A9s_del_puerto_serie"><font color="#0000FF">Control del Skybot a través del puerto serie</font></span></h3>
+<ul><li> <b>Fichero</b>: <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/sci-skybot-test.c">sci-skybot-test.c</a></li>
+<li> <b>Descripción</b>: Control de Skybot y lectura de sensores mediante el puerto serie</li>
+<li> <b>Explicación</b>:</li></ul>
+<p>Es un ejemplo sencillo que nos permite controlar el skybot desde un terminal de comunicaciones en nuestro PC. Al hacer un reset aparecerá un menú de opciones:
+</p>
+<pre> Menu
+ ----
+ Teclas q,a,o,p,ESPACIO.- Mover Skybot
+ Teclas 1,2,3,4.- Leer sensores 3,4 y bumpers
+</pre>
+<p>Mediante las teclas q,a,o,p y ESPACIO moveremos el robot hacia adelante,atras, izquierda, derecha y parado respectivamente. Las teclas 1-4 nos permiten obtener el estado de los sensores de infrarrojos 3 y 4 y los bumpers 1 y 2 respectivamente.
+</p><p>El bucle principal lee la tecla pulsada por el usuario y la almacena en la variable c. A continuación utiliza la instrucción switch() para ejecutar la acción oportuna.
+</p>
+<h2><span class="mw-headline" id="Comportamientos_sencillos_en_el_Skybot">Comportamientos sencillos en el Skybot</span></h2>
+<h3><span class="mw-headline" id="Seguir_la_l.C3.ADnea_negra"><font color="#0000FF">Seguir la línea negra</font></span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>  <div class="thumb tright"><div class="thumbinner" style="width:302px;">
+	<a href="images/4/4b/Skybot-siguelineas.jpg" class="image"><img alt="" src="Taller-skybot_Sesi%C3%B3n4_Programaci%C3%B3n_Skybot_Ejemplos_files/300px-Skybot-siguelineas_0uuU.jpg" width="300" height="225" class="thumbimage" srcset="Taller-skybot_Sesi%C3%B3n4_Programaci%C3%B3n_Skybot_Ejemplos_files/450px-Skybot-siguelineas_0uuU.jpg 1.5x, Taller-skybot_Sesi%C3%B3n4_Programaci%C3%B3n_Skybot_Ejemplos_files/600px-Skybot-siguelineas_0uuU.jpg 2x"></a>  <div class="thumbcaption">
+	</div></div></div>
+</td>
+<td> 
+<p>El robot Skybot siguiendo una línea negra <br>
+(<a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=aZykkdvh2Bg">Vídeo</a>)
+</p>
+</td></tr></tbody></table>
+<ul><li> <b>Fichero</b>: <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/linea.c">linea.c</a></li>
+<li> <b>Descripción</b>: El robot Skybot sigue una línea negra</li>
+<li> <b>Explicación</b>:</li></ul>
+<p>Todas las constantes relacionadas con el Skybot se han almacenado en el fichero <b>skybot.h</b>, así como también la función <b>configurar_skybot()</b> para configurar los puertos A y B para trabajar con el Skybot. Por eso, para programar el skybot ponemos lo siguiente:
+</p>
+<pre>#include "skybot.h"
+</pre>
+<p>Se definen las constantes IZQUIERDO y DERECHO para indicar en qué sensores se han colocado en cada lado del Skybot. Esto debe ser modificado por el usuario según dónde haya conectado cada sensor. Por defecto su valor se establece a:
+</p>
+<pre> #define IZQUIERDO SENSOR4
+ #define DERECHO   SENSOR3
+</pre>
+<p>Lo primero que se hace es <b>configurar el skybot</b>:
+</p>
+<pre> configurar_skybot();
+</pre>
+<p>El bucle principal comprueba el estado de los sensores izquierdo y derecho. Se implementa el algoritmo mostrado en la siguiente tabla:
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th> Sensor Izquierdo </th>
+<th> Sensor derecho </th>
+<th> Acción a tomar
+</th></tr>
+<tr>
+<td> NEGRO  </td>
+<td> NEGRO  </td>
+<td> ADELANTE
+</td></tr>
+<tr>
+<td> BLANCO </td>
+<td> NEGRO  </td>
+<td> DERECHA
+</td></tr>
+<tr>
+<td> NEGRO  </td>
+<td> BLANCO </td>
+<td> IZQUIERDA
+</td></tr>
+<tr>
+<td> BLANCO </td>
+<td> BLANCO </td>
+<td> STOP
+</td></tr></tbody></table>
+<p>Esta tabla se implementa fácilmente mediante instrucciones <b>if</b> encadenadas.
+</p>
+<pre> if (IZQUIERDO==NEGRO  &amp;&amp; DERECHO==NEGRO)  {     
+   SKYBOT=AVANZA;
+ }
+ else if (IZQUIERDO==BLANCO &amp;&amp; DERECHO==NEGRO)  { 
+   SKYBOT=DERECHA;
+ }
+ else if (IZQUIERDO==NEGRO  &amp;&amp; DERECHO==BLANCO) { 
+   SKYBOT=IZQUIERDA;
+ }
+ else {                                           
+   SKYBOT=STOP;
+ }
+</pre>
+<p>El <b>operador</b> &amp;&amp; significa 'y'. La primera línea se traduce por: "Si el sensor izquierdo lee negro y el derecho negro entonces avanza"
+</p>
+<h3><span class="mw-headline" id="Comportamiento_lapa:_pegarse_a_los_objetos"><font color="#0000FF">Comportamiento lapa: pegarse a los objetos </font></span></h3>
+<ul><li> <b>Fichero</b>: <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/lapa.c">lapa.c</a></li>
+<li> <b>Descripción</b>: El robot se convierte en una lapa y tiende a pegarse a los objetos&nbsp;;-)</li>
+<li> <b>Explicación</b>:</li></ul>
+<p>Ejemplo de comportamiento tipo lapa: según el estado de los sensores de contacto (bumpers) el Skybot tiende a pegarse hacia el objeto que tiene delante.
+</p><p>Se utilizan las constantes BUMPER_IZDO y BUMPER_DECHO para indicar qué bumpers están colocados en cada lado
+</p>
+<pre> #define BUMPER_IZDO  BUMPER2  //Bumper izquierdo
+ #define BUMPER_DECHO BUMPER1 //Bumper derecha
+</pre>
+<p>El <b>comportamiento del robot</b> está dado por la siguiente <b>tabla</b>:
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th> Bumper Izquierdo </th>
+<th> Bumper derecho </th>
+<th> Acción a tomar
+</th></tr>
+<tr>
+<td> ON  </td>
+<td> OFF  </td>
+<td> IZQUIERDA
+</td></tr>
+<tr>
+<td> ON </td>
+<td> OFF  </td>
+<td> DERECHA
+</td></tr>
+<tr>
+<td> OFF </td>
+<td> OFF </td>
+<td> AVANZA
+</td></tr>
+<tr>
+<td> ON </td>
+<td> ON </td>
+<td> STOP
+</td></tr></tbody></table>
+<p>Se implementa mediante ifs encadenados:
+</p>
+<pre>   if (BUMPER_IZDO==ON &amp;&amp; BUMPER_DECHO==OFF) {
+     SKYBOT=IZQUIERDA;
+   }
+   else if (BUMPER_IZDO==OFF &amp;&amp; BUMPER_DECHO==ON) {
+     SKYBOT=DERECHA;
+   }
+   else if (BUMPER_IZDO==OFF &amp;&amp; BUMPER_DECHO==OFF) {
+     SKYBOT=AVANZA;
+   }
+   else {
+     SKYBOT=STOP;
+     LED=ON;
+   }
+</pre>
+<h3><span class="mw-headline" id="Plantilla_para_el_concurso_del_MOGOLL.C3.93N.21"><font color="#0000FF">Plantilla para el concurso del MOGOLLÓN!</font></span></h3>
+<ul><li> <b>Fichero</b>: <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/taller_skybot/trunk/prog/ejemplos/mogollon.c">mogollon.c</a></li>
+<li> <b>Descripción</b>: Programa modelo para participar en el concurso del mogollón</li>
+<li> <b>Explicación</b>:</li></ul>
+<p>El concurso del mogollón es el final del taller. 
+	<a href="Concurso_mogollón.html" title="Concurso mogollón">Más información en la sesión 5</a>
+</p>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<ul><li> <a href="Taller_Skybot.html" title="Taller Skybot">Taller Skybot</a>. Página principal</li>
+<li> <a href="Taller_Skybot_Sesion4_Programación_del_Skybot.html" title="Taller Skybot:Sesion4:Programación del Skybot">Taller Skybot:Sesión 4</a></li></ul>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>29/Junio/2010</b>: Primera versión finalizada</li>
+<li> <b>23/Junio/2010</b>: Comenzada esta página. Migración de la 
+	<a rel="nofollow" class="external text" href="../talleres/generico-v14/sesion-4/ejemplos/ejemplos-skybot-1.html">documentación en HTML</a>.</li></ul>
+
+</div>
+</body>
+</html>
