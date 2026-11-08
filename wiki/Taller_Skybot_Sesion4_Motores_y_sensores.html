@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Taller Skybot:Sesion4:Motores y sensores</title>
+  	<link rel="stylesheet" href="load.css">
+</head>
+
+<body style="margin: 10px; font-size: 12px;">
+<h1 id="firstHeading" class="firstHeading" lang="es">Taller Skybot:Sesion4:Motores y sensores</h1>
+<div id="bodyContent" class="mw-body-content"></div>
+
+<!-- start content -->
+<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#El_PUERTO_B_en_el_Skybot"><span class="tocnumber">2</span> <span class="toctext">El PUERTO B en el Skybot</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#El_control_de_los_motores"><span class="tocnumber">3</span> <span class="toctext">El control de los motores</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Los_sensores_de_infrarrojos"><span class="tocnumber">4</span> <span class="toctext">Los sensores de infrarrojos</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Programaci.C3.B3n_del_robot"><span class="tocnumber">5</span> <span class="toctext">Programación del robot</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Enlaces"><span class="tocnumber">6</span> <span class="toctext">Enlaces</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Noticias"><span class="tocnumber">7</span> <span class="toctext">Noticias</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>Necesitamos conocer cómo funcionan los motores y los sensores desde el <b>punto de vista del programador</b>. A este nivel no nos importan los detalles físicos, ni el tipo de motor, ni el tipo de sensores. Simplemente necesitamos conocer cómo podemos mover los motores y cómo leer los sensores para programar nuestros algoritmos de comportamiento del robot.
+</p>
+<h2><span class="mw-headline" id="El_PUERTO_B_en_el_Skybot">El PUERTO B en el Skybot</span></h2>
+<p>La tarjeta <a rel="nofollow" class="external text" href="../proyectos/sky293/sky293.html">SKY293</a> se conecta a la 
+	<a href="Skypic.html" title="Skypic">Skypic</a> a través del <b>PUERTO B</b>. Incluye cuatro sensores y dos motores. Para cada sensores sólo se necesita 1 bit y para los motores cuatro, dos para cada motor. Se accede a estos periféricos por los bits del puerto B que se indican en esta figura.
+</p>
+<table>
+<tbody><tr>
+<td> <a href="images/f/f8/Skybot-sesion4-puerto-B-skybot.png" class="image"><img alt="Skybot-sesion4-puerto-B-skybot.png" src="Taller_Skybot_Sesion4_Motores_y_sensores_files/Skybot-sesion4-puerto-B-skybot_kgJ0.png" width="674" height="139"></a>
+</td></tr></tbody></table>
+<p>Los bits <b>RB0</b>, <b>RB5</b>, <b>RB6</b> y <b>RB7</b> hay que configurarlos como <b>entradas</b> para poder leer los sensores. Los bits <b>RB1</b>, <b>RB2</b>, <b>RB3</b> y <b>RB4</b> hay que configurarlos como <b>salidas</b> para poder mover los motores.
+</p><p>En la <a rel="nofollow" class="external text" href="../proyectos/sky293/sky293.html">SKY293</a> hay <b>4 switches</b> que permiten desconectar los sensores por si se quieren utilizar los bits del puerto B para otros propósitos. En la figura se muestra qué número de switch está asociado a qué sensor. Cuando los switches están conectado (posión ON, hacia abajo) los sensores están conectados al puerto B. En caso contrario están desconectados.
+</p>
+<h2><span class="mw-headline" id="El_control_de_los_motores">El control de los motores</span></h2>
+<p>Los motores se controlan de manera digital. Para cada uno de ellos hay dos bits, uno que indica si el motor está <b>encendido o apagado</b> (ON/OFF) y el otro el <b>sentido de giro</b>.
+</p><p><a href="images/b/ba/Skybot-sesion4-motores.png" class="image"><img alt="Skybot-sesion4-motores.png" src="Taller_Skybot_Sesion4_Motores_y_sensores_files/Skybot-sesion4-motores_kgJ0.png" width="464" height="160"></a>
+</p><p>Según las combinaciones de bits que enviemos al puerto B, cambiaremos el estado de los motores. Si las conexiones se han realizado como se ha descrito en la documentación del taller los valores que hay que enviar para mover el robot serán los mostrados en la siguiente tabla. Si se han hecho otras conexiones entonces los valores serán diferentes y el usuario los tendrá que buscar.
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th> Acción </th>
+<th> RB4 </th>
+<th> RB3 </th>
+<th> RB2  </th>
+<th> RB1 </th>
+<th> Valor en PUERTO B
+</th></tr>
+<tr>
+<td> <b>Adelante</b>  </td>
+<td> 1  </td>
+<td> 1  </td>
+<td> 1  </td>
+<td> 0 </td>
+<td> 0x1C
+</td></tr>
+<tr>
+<td> <b>Atras</b>     </td>
+<td> 1  </td>
+<td> 0  </td>
+<td> 1  </td>
+<td> 1 </td>
+<td> 0x16
+</td></tr>
+<tr>
+<td> <b>Izquierda</b> </td>
+<td> 1  </td>
+<td> 1  </td>
+<td> 1  </td>
+<td> 1 </td>
+<td> 0x1E
+</td></tr>
+<tr>
+<td> <b>Derecha</b>   </td>
+<td> 1  </td>
+<td> 0  </td>
+<td> 1  </td>
+<td> 0 </td>
+<td> 0x14
+</td></tr>
+<tr>
+<td> <b>Parado</b>    </td>
+<td> 0  </td>
+<td> 0  </td>
+<td> 0  </td>
+<td> 0 </td>
+<td> 0x00
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Los_sensores_de_infrarrojos">Los sensores de infrarrojos</span></h2>
+<p>Los sensores de infrarrojos <b>CNY70</b> tienen incorporado un emisor y un receptor en el mismo encapsulado. Están constantemente emitiendo luz infrarroja. Si a poca distancia existe una superficie blanca, la luz se refleja y es captada por el receptor. Si la superficie es negra, absorbe la mayor parte de la luz y el detector no recibe nada.
+</p><p><a href="images/9/90/Skybot-sesion4-sensores.png" class="image"><img alt="Skybot-sesion4-sensores.png" src="Taller_Skybot_Sesion4_Motores_y_sensores_files/Skybot-sesion4-sensores_kgJ0.png" width="485" height="268"></a>
+</p><p><br>
+En la siguiente tabla se resume el valor leido en el bit correspondiente del puerto B de la Skypic según el color detectado por el sensor:
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th> Color </th>
+<th> Lectura del sensor (Bit del puerto B)
+</th></tr>
+<tr>
+<td> Blanco  </td>
+<td>  0
+</td></tr>
+<tr>
+<td> Negro   </td>
+<td>  1
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Programaci.C3.B3n_del_robot">Programación del robot</span></h2>
+<p>Para mover los motores y por tanto controlar el robot sólo hay que dar valores a los bits RB4, RB3, RB2 y RB1 del puerto B del PIC. Es decir, el robot se mueve escribiendo valores en el puerto B. Para leer los sensores, sólo hay que leer el puerto B y conocer en qué estado están los bits RB0, RB5, RB6 y RB7.
+</p><p>La manera de programar comportamientos sencillos del robot es el siguiente:
+</p>
+<ul><li> Leer los sensores (lectura del puerto B)</li>
+<li> Procesar su valor (hacer cálculos)</li>
+<li> Mover los motores (escritura en el puerto B)</li></ul>
+<p><b>¡¡Con sólo saber cómo leer del puerto B y cómo escribir en él ya podremos implementar comportamientos sencillos!!!!</b>
+</p>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<ul><li> <a href="Taller_Skybot.html" title="Taller Skybot">Taller Skybot</a>. Página principal</li>
+<li> <a href="Taller_Skybot_Sesion4_Programación_del_Skybot.html" title="Taller Skybot:Sesion4:Programación del Skybot">Taller Skybot:Sesión 4</a></li></ul>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>23/Junio/2010</b>: Comenzada esta página. Migración de la <a rel="nofollow" class="external text" 
+	href="../talleres/generico-v14/sesion-4/motores-sensores.html">documentación en HTML</a>.</li></ul>
+
+</div>
+</body>
+</html>
