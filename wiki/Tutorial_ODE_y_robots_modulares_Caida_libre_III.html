@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Tutorial:ODE y robots modulares:Caida libre (III) - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Tutorial:ODE_y_robots_modulares:Caida_libre_(III)","wgTitle":"Tutorial:ODE y robots modulares:Caida libre (III)","wgCurRevisionId":4674,"wgRevisionId":4674,"wgArticleId":779,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Tutorial ODE y robots modulares"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Tutorial:ODE_y_robots_modulares:Caida_libre_(III)","wgRelevantArticleId":779,"wgRequestId":"avM-TWInoBqqvw3wymr2jQAnJWI","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/load_aguf.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/load_002_aguf.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://www.iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://www.iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/load_aguf.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Tutorial_ODE_y_robots_modulares_Caida_libre_III rootpage-Tutorial_ODE_y_robots_modulares_Caida_libre_III skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Tutorial:ODE y robots modulares:Caida libre (III)</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Box3_screenshot1.png" class="image"><img alt="Box3 screenshot1.png" src="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/300px-Box3_screenshot1_aguf.png" width="300" height="238" class="thumbimage" srcset="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Box3_screenshot1_aguf.png 1.5x, Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Box3_screenshot1_aguf.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Box3_screenshot1.png" class="internal" title="Aumentar"></a></div></div></div></div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Simulaci.C3.B3n_de_un_cubo_en_caida_libre_.28III.29:_3D"><span class="tocnumber">1</span> <span class="toctext">Simulación de un cubo en caida libre (III): 3D</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Introducci.C3.B3n"><span class="tocnumber">1.1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Objetivos"><span class="tocnumber">1.2</span> <span class="toctext">Objetivos</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#C.C3.B3digo"><span class="tocnumber">1.3</span> <span class="toctext">Código</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Compilaci.C3.B3n"><span class="tocnumber">1.4</span> <span class="toctext">Compilación</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Ejecuci.C3.B3n"><span class="tocnumber">1.5</span> <span class="toctext">Ejecución</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Capturas_de_pantalla"><span class="tocnumber">1.6</span> <span class="toctext">Capturas de pantalla</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#V.C3.ADdeo"><span class="tocnumber">1.7</span> <span class="toctext">Vídeo</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Conceptos_previos"><span class="tocnumber">1.8</span> <span class="toctext">Conceptos previos</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="#Sistema_de_referencia"><span class="tocnumber">1.8.1</span> <span class="toctext">Sistema de referencia</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#Texturas_y_sombras"><span class="tocnumber">1.8.2</span> <span class="toctext">Texturas y sombras</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#Movimiento_de_la_c.C3.A1mara"><span class="tocnumber">1.8.3</span> <span class="toctext">Movimiento de la cámara</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#Control_de_la_simulaci.C3.B3n"><span class="tocnumber">1.8.4</span> <span class="toctext">Control de la simulación</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#Generaci.C3.B3n_de_v.C3.ADdeos"><span class="tocnumber">1.8.5</span> <span class="toctext">Generación de vídeos</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-15"><a href="#Explicaci.C3.B3n_del_c.C3.B3digo"><span class="tocnumber">1.9</span> <span class="toctext">Explicación del código</span></a>
+<ul>
+<li class="toclevel-3 tocsection-16"><a href="#Organizaci.C3.B3n_del_c.C3.B3digo"><span class="tocnumber">1.9.1</span> <span class="toctext">Organización del código</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#Fichero_body.cpp"><span class="tocnumber">1.9.2</span> <span class="toctext">Fichero body.cpp</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#Funci.C3.B3n_Main_.28fichero_box3.cpp.29"><span class="tocnumber">1.9.3</span> <span class="toctext">Función Main (fichero box3.cpp)</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#Funci.C3.B3n_simLoop.28.29"><span class="tocnumber">1.9.4</span> <span class="toctext">Función simLoop()</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#Funci.C3.B3n_Start"><span class="tocnumber">1.9.5</span> <span class="toctext">Función Start</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="#Funci.C3.B3n_Command"><span class="tocnumber">1.9.6</span> <span class="toctext">Función Command</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Simulaci.C3.B3n_de_un_cubo_en_caida_libre_.28III.29:_3D"><font color="#0000FF">Simulación de un cubo en caida libre (III): 3D</font></span></h1>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <center><div style="position: relative; width: 32px; height: 34px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Caida_libre_(II)" title="Tutorial:ODE y robots modulares:Caida libre (II)">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Icon_arrow_left.png" class="image" title="Tutorial:ODE y robots modulares:Caida libre (II)"><img alt="Tutorial:ODE y robots modulares:Caida libre (II)" src="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Icon_arrow_left_aguf.png" width="32" height="34"></a></div>
+</div> <a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Caida_libre_(II)" title="Tutorial:ODE y robots modulares:Caida libre (II)">Capítulo anterior</a></center>
+</td>
+<td> <center><div style="position: relative; width: 32px; height: 32px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:_ODE_y_robots_modulares" title="Tutorial: ODE y robots modulares">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Icono_index.png" class="image" title="Tutorial:_ODE_y_robots_modulares"><img alt="Tutorial:_ODE_y_robots_modulares" src="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Icono_index_aguf.png" width="32" height="32"></a></div>
+</div> <a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:_ODE_y_robots_modulares" title="Tutorial: ODE y robots modulares">Índice</a></center>
+</td>
+<td> <center><div style="position: relative; width: 32px; height: 34px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Cuerpos_compuestos_(I)" title="Tutorial:ODE y robots modulares:Cuerpos compuestos (I)">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Icon_arrow_right.png" class="image" title="Tutorial:ODE y robots modulares:Cuerpos compuestos (I)"><img alt="Tutorial:ODE y robots modulares:Cuerpos compuestos (I)" src="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Icon_arrow_right_aguf.png" width="32" height="34"></a></div>
+</div> <a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Cuerpos_compuestos_(I)" title="Tutorial:ODE y robots modulares:Cuerpos compuestos (I)">Capítulo siguiente</a></center>
+</td></tr></tbody></table>
+<p><br>
+</p>
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>En este ejemplo añadiremos <b>visualización en 3D</b> a la <a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Caida_libre_(II)" title="Tutorial:ODE y robots modulares:Caida libre (II)">simulación del cubo en caida libre</a>. Para ello utilizaremos la <b>librería drawstuff</b>, creada por <a rel="nofollow" class="external text" href="http://q12.org/">Russell L. Smith</a> (el autor del ODE). Esta, a su vez, utiliza <b>OpenGL</b>.
+</p><p>Las simulaciones con visualización en 3D son muy interesantes, ya que con un sólo golpe de vista nos permite conocer cómo ha evolucionado nuestro sistema. Sin embargo, es importante tener en cuenta que <b>el ODE nos permite realizar simulaciones sin visualización</b>. Esto es muy útil para realizar búsquedas mediante algoritmos genéritos, en las que hay que evaluar centenares de individuos intermedios. La visualización 3D se utiliza para observar los resultados obtenidos, pero no los el resto de individuos.
+</p>
+<h2><span class="mw-headline" id="Objetivos">Objetivos</span></h2>
+<ul><li> Añadir visualización 3D a las simulaciones con ODE, usando la <b>librería drawstuff</b>.</li></ul>
+<h2><span class="mw-headline" id="C.C3.B3digo">Código</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<ul><li> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/ode_mr/trunk/box3_ex/box3.cpp">box3_ex/box3.cpp</a></li></ul>
+</td>
+<td> Programa principal
+</td></tr>
+<tr>
+<td>
+<ul><li> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/ode_mr/trunk/box3_ex/body.cpp">box3_ex/body.cpp</a></li></ul>
+</td>
+<td> Creación y dibujo del cubo
+</td></tr>
+<tr>
+<td>
+<ul><li> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/ode_mr/trunk/box2_ex/parameters.h">box2_ex/parameters.h</a></li></ul>
+</td>
+<td> Definición de las constantes.
+</td></tr>
+<tr>
+<td>
+<ul><li> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/ode_mr/trunk/box3_ex/body.h">box3_ex/body.h</a></li></ul>
+</td>
+<td> Definición de los prototipos de body.cpp y las estructuras de datos.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Compilaci.C3.B3n">Compilación</span></h2>
+<p>Todos los ejemplos de este tutorial compilan tecleando "<b>make</b>". Sin embargo se describe a continuación cómo se compila directamente usando el GCC:
+</p>
+<pre>g++ -o box3 -Iinclude box3_ex/box3.cpp box3_ex/body.cpp libdrawstuff.a -lm -lode  -lX11  -lGL -lGLU
+</pre>
+<h2><span class="mw-headline" id="Ejecuci.C3.B3n">Ejecución</span></h2>
+<p>Para probar el ejemplo, teclear:
+</p>
+<pre>./box3
+</pre>
+<p>En la consola aparecerán los siguientes mensajes. El primero lo genera la propia <b>librería drawstuff</b>. Muestra cuáles son las teclas que se pueden emplear para mover la cámara, parar la simulación, simular un paso, volcar las imágenes a ficheros, etc:
+</p>
+<pre>Simulation test environment v0.02
+   Ctrl-P&nbsp;: pause / unpause (or say `-pause' on command line).
+   Ctrl-O&nbsp;: single step when paused.
+   Ctrl-T&nbsp;: toggle textures (or say `-notex' on command line).
+   Ctrl-S&nbsp;: toggle shadows (or say `-noshadow' on command line).
+   Ctrl-V&nbsp;: print current viewpoint coordinates (x,y,z,h,p,r).
+   Ctrl-W&nbsp;: write frames to ppm files: frame/frameNNN.ppm
+   Ctrl-X&nbsp;: exit.<br>
+Change the camera position by clicking + dragging in the window.
+   Left button - pan and tilt.
+   Right button - forward and sideways.
+   Left + Right button (or middle button) - sideways and up.
+</pre>
+<p>Los últimos mensajes los imprime la aplicación <b>box3</b>:
+</p>
+<pre>Keys: 
+1: Drop the box
+q: Quit
+</pre>
+<p>La tecla '1' sitúa el cubo en su posición inicial, por lo que vuelve a caer. La tecla 'q' finaliza la simulación.
+</p>
+<h2><span class="mw-headline" id="Capturas_de_pantalla">Capturas de pantalla</span></h2>
+<p>Visualización de la caida del cubo, en tres instantes diferentes:
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Box3_screenshot1.png" class="image"><img alt="" src="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/300px-Box3_screenshot1_aguf.png" width="300" height="238" class="thumbimage" srcset="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Box3_screenshot1_aguf.png 1.5x, Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Box3_screenshot1_aguf.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Box3_screenshot1.png" class="internal" title="Aumentar"></a></div>Pinchar para ampliar</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Box3_screenshot2.png" class="image"><img alt="" src="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/300px-Box3_screenshot2_aguf.png" width="300" height="238" class="thumbimage" srcset="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Box3_screenshot2_aguf.png 1.5x, Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Box3_screenshot2_aguf.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Box3_screenshot2.png" class="internal" title="Aumentar"></a></div>Pinchar para ampliar</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Box3_screenshot3.png" class="image"><img alt="" src="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/300px-Box3_screenshot3_aguf.png" width="300" height="238" class="thumbimage" srcset="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Box3_screenshot3_aguf.png 1.5x, Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Box3_screenshot3_aguf.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Box3_screenshot3.png" class="internal" title="Aumentar"></a></div>Pinchar para ampliar</div></div></div>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="V.C3.ADdeo">Vídeo</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Box3_video_thumb.png" class="image"><img alt="Box3 video thumb.png" src="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Box3_video_thumb_aguf.png" width="100" height="79"></a>
+</td>
+<td>
+<ul><li> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/wiki/images/2/24/Tutorial_ode_box3_video.mpg">Video en MPEG</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=fCIANaHTqGU">Vídeo en Youtube</a></li></ul>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Conceptos_previos">Conceptos previos</span></h2>
+<h3><span class="mw-headline" id="Sistema_de_referencia">Sistema de referencia</span></h3>
+<p>En la <b>figura 1</b> se muestra el aspecto del mundo virtual dibujado con la librería drawstuff. Está formado por un cielo, el suelo y unos puntos de referencia en el suelo. El sistema de referencia es como el mostrado en la <b>figura 2</b>. El <i>eje y</i> se dirige hacia el punto azul y el <i>eje x</i> hacia el rojo.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Drawstuff_world1.png" class="image"><img alt="" src="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/300px-Drawstuff_world1_aguf.png" width="300" height="225" class="thumbimage" srcset="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Drawstuff_world1_aguf.png 1.5x, Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Drawstuff_world1_aguf.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Drawstuff_world1.png" class="internal" title="Aumentar"></a></div><b>Figura 1</b>: Aspecto del "mundo virtual" dibujado por la librería drawstuff</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Drawstuff_world2.png" class="image"><img alt="" src="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/300px-Drawstuff_world2_aguf.png" width="300" height="225" class="thumbimage" srcset="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Drawstuff_world2_aguf.png 1.5x, Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Drawstuff_world2_aguf.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Drawstuff_world2.png" class="internal" title="Aumentar"></a></div><b>Figura 2</b>: Sistema de referencia del mundo virtual</div></div></div>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Texturas_y_sombras">Texturas y sombras</span></h3>
+<p>La <b>librería drawstuff</b> dibuja por defecto los objetos con texturas, incluyendo el suelo y el cielo, y proyecta las sobras de los objetos sobre el suelo. Esto da una mayor sensación de realismos (<b>Figura 4</b>). Sin embargo, para que las simulaciones se ejecuten más rápidamente, es posible <b>eliminar las texturas</b> pulsando <b>control-T</b> (<b>Figura 5</b>) y <b>las sombras</b> con <b>control-S</b> (<b>figura 6</b>).
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Box3_screenshot3.png" class="image"><img alt="" src="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/300px-Box3_screenshot3_aguf.png" width="300" height="238" class="thumbimage" srcset="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Box3_screenshot3_aguf.png 1.5x, Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Box3_screenshot3_aguf.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Box3_screenshot3.png" class="internal" title="Aumentar"></a></div><b>Figura 3</b>: Aspecto del mundo virtual, con un cubo en el origen</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Tutorial_ode_box3_drawstuff2.png" class="image"><img alt="" src="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/300px-Tutorial_ode_box3_drawstuff2_aguf.png" width="300" height="238" class="thumbimage" srcset="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Tutorial_ode_box3_drawstuff2_aguf.png 1.5x, Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Tutorial_ode_box3_drawstuff2_aguf.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Tutorial_ode_box3_drawstuff2.png" class="internal" title="Aumentar"></a></div><b>Figura 4</b>: Texturas eliminadas</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Tutorial_ode_box3_drawstuff3.png" class="image"><img alt="" src="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/300px-Tutorial_ode_box3_drawstuff3_aguf.png" width="300" height="238" class="thumbimage" srcset="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Tutorial_ode_box3_drawstuff3_aguf.png 1.5x, Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Tutorial_ode_box3_drawstuff3_aguf.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Tutorial_ode_box3_drawstuff3.png" class="internal" title="Aumentar"></a></div><b>Figura 5</b>: Texturas y sombras eliminadas</div></div></div>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Movimiento_de_la_c.C3.A1mara">Movimiento de la cámara</span></h3>
+<p>La drawstuff permite que <b>el usuario pueda mover la cámara</b> pinchando en la ventana de la simulación y arrastrando el ratón. Según el botón empleado se consiguen diferentes efectos:
+</p>
+<ul><li> <b>Botón izquierdo</b>: Cambio de la orientación de la cámara. Hacia arriba y abajo (cabeceo) o hacia los lados (viraje)</li>
+<li> <b>Botón derecho</b>: Movimiento hacia adelante/atras o izquierda/derecha.</li>
+<li> <b>Botón central</b>: Movimiento hacia arriba/abajo o izquierda/derecha</li></ul>
+<p>Pulsando <b>control-v</b> se obtienen las coordenadas <i>x,y,z</i> y las orientaciones <i>pitch, yaw, roll</i> de la cámara. Esto nos permite introducirlas en nuestro código para que la cámara se sitúe inicialmente en el punto seleccionado.
+</p>
+<h3><span class="mw-headline" id="Control_de_la_simulaci.C3.B3n">Control de la simulación</span></h3>
+<p>Es posible <b>congelar la simulación</b> pulsando <b>control-P</b>. Y utilizar los movimientos de la cámara para observar los objetos desde diferentes puntos de vista. Cuando la simulación está parada, con <b>control-O</b> simulamos un único paso. Con ello podemos <b>ir a cámara lenta</b>.
+</p>
+<h3><span class="mw-headline" id="Generaci.C3.B3n_de_v.C3.ADdeos">Generación de vídeos</span></h3>
+<p>La <b>drawstuff</b> permite <b>volcar las imágenes de la simulación a ficheros con extensión .ppm</b>. Para ello hay que pulsar <b>control-W</b>. Para finalizar la captura de imágenes hay que pulsar nuevamente control-W.
+Los ficheros con las imágenes se almacenan en el <b>directorio frame</b> y sus nombres son de la forma: <b>framexxxx.ppm</b>, donde xxxx es un número decimal de 4 dígitos que indica el número de frame. Comienza por 0001.
+</p><p>Para <b>generar un vídeo MPEG</b> hay que entrar en el directorio frame y ejecutar este comando:
+</p>
+<pre>ffmpeg -f image2 -i frame%04d.ppm misimulacion.mpg
+</pre>
+<p>Es necesario tener instalada la aplicación <b>ffmpeg</b> (paquete ffmpeg en Debian)
+</p>
+<h2><span class="mw-headline" id="Explicaci.C3.B3n_del_c.C3.B3digo">Explicación del código</span></h2>
+<h3><span class="mw-headline" id="Organizaci.C3.B3n_del_c.C3.B3digo">Organización del código</span></h3>
+<p>El código se ha dividido en dos ficheros: <b>box3.cpp</b> y <b>body.cpp</b>. El primero es el principal y se encarga de la simulación. En el segundo se han agrupado las funciones para <b>crear el cubo</b>, <b>establecer su orientación inicial</b> y <b>dibujarlo</b> en la pantalla.
+</p>
+<h3><span class="mw-headline" id="Fichero_body.cpp">Fichero body.cpp</span></h3>
+<p>La creación del cubo (función <b>Body_new()</b>) es igual que en el <a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Caida_libre_(II)" title="Tutorial:ODE y robots modulares:Caida libre (II)">ejemplo anterior</a>, salvo que la posición y rotación iniciales se ha llevado a la función <b>Body_init()</b>. Esto permite llevar el cubo a su estado inicial cada vez que el usuario lo solicite pulsando la tecla '1'.
+</p><p>El cubo se dibuja en la función <b>Body_render()</b>:
+</p>
+<pre> void Body_render(MyBody *box)
+ {
+   dsSetTexture (DS_WOOD);
+   dsSetColor (1.0, 1.0 ,0.0);
+   drawGeom(box-&gt;geom);
+ }
+</pre>
+<p>Primero se establece la textura, luego el color y finalmente se dibuja la geometría con la función <b>drawGeom()</b>. El color se especifica mediante el valor de sus componentes Rojo, Verde y Azul. Cada una de ellas puede tener un valor comprendido entre 0 y 1.
+</p><p>La función drawGeom() se emplea para dibujar los difererentes tipos de geometrías y establecer el escalado. Primero se obtiene la posición y rotación de la geometría g:
+</p>
+<pre> pos = dGeomGetPosition (g);
+ R = dGeomGetRotation (g);
+</pre>
+<p>A continuación el tipo de geometría:
+</p>
+<pre>int type = dGeomGetClass (g);
+</pre>
+<p>En este ejemplo la única geometría es un hexaedro, pero se ha generalizado para que se pueda ampliar facilmente a ejemplos que usen otras geometrías.
+</p><p>En el caso del hexaedro, se obtienen sus dimensiones y se aplica un factor de escalado definido por la constante <b>VIEW_SCALE</b> del fichero <b>box3_ex/parameters.h</b>.
+</p>
+<pre>dGeomBoxGetLengths (g,sides);
+pos2[0]=pos[0]*VIEW_SCALE;
+pos2[1]=pos[1]*VIEW_SCALE;
+pos2[2]=pos[2]*VIEW_SCALE;   
+sides[0]*=VIEW_SCALE;
+sides[1]*=VIEW_SCALE;
+sides[2]*=VIEW_SCALE;
+</pre>
+<p>Por defecto, las unidades métricas que usa ODE son metros. Cada una de las cuadrículas dibujadas en el suelo equivalen a un metro. Si los objetos a simular son más pequeños, como es el caso de los módulos de los robots modulares, hay que cambiar la escala para verlos con un tamaño mayor.
+</p><p>El valor dado a VIEW_SCALE es de 10, por lo que <b>cada cuadrícula del suelo equivale a 10cm</b>
+</p><p>Finalmente se dibuja el cubo invocando a la función <b>dsDrawBox()</b> de la librería drawstuff.
+</p>
+<h3><span class="mw-headline" id="Funci.C3.B3n_Main_.28fichero_box3.cpp.29">Función Main (fichero box3.cpp)</span></h3>
+<p>La simulación es similar a la del <a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Caida_libre_(II)" title="Tutorial:ODE y robots modulares:Caida libre (II)">capítulo anterior</a>, pero ahora el bucle principal lo controla la <b>drawstuff</b>.
+</p><p>Lo primero es configurar la drawstuff. Hay que establecer las <b>funciones de retrollamada</b>:
+</p>
+<pre> dsFunctions fn;
+ fn.start = &amp;start;
+ fn.step = &amp;simLoop;
+ fn.command = &amp;command;
+</pre>
+<p>La función <b>start()</b> se invoca al comienzo de la simulación. Cada vez que haya que realizar un nuevo paso de simulación, se llamará a <b>simLoop()</b> y cada vez que el usuario aprieta una tecla, se ejecutará <b>command()</b>.
+</p><p>Otros parémtros que se configura con:
+</p>
+<pre> fn.version = DS_VERSION;
+ fn.stop = 0;
+ fn.path_to_textures = (char *)"./textures";
+</pre>
+<p>la versión, si la simulación está parada inicialmente y la ruta hacia donde se encuentran las texturas a aplicar.
+</p><p>Una vez configurado el ODE y construido el cubo, se invoca a la función <b>dsSimulationLoop()</b> para comenzar. A partir de este punto, <b>el bucle principal de la drawstuff toma el control</b> y llama a las diferentes funciones de retrollamada:
+</p>
+<pre>dsSimulationLoop (argc,argv,400,300,&amp;fn);
+</pre>
+<p>Además de pasar como parámetros los recibidos por la línea de comandos (argc, argv), se pasan las <b>dimensiones de la ventana</b> donde representar el mundo virtual (en este ejemplo 400x300 pixeles) y la configuración establecida (fn).
+</p>
+<h3><span class="mw-headline" id="Funci.C3.B3n_simLoop.28.29">Función simLoop()</span></h3>
+<p>Se encarga de realizar un paso de simulación. El parámetro pause indica si la simulación está parada o no. En caso de no estar detenida, se realiza la simulación como en el ejemplo anterior:
+</p>
+<pre> if (!pause) {
+   dSpaceCollide (space,0,&amp;nearCallback);
+   dWorldStep(world,STEP);
+   dJointGroupEmpty (contactgroup);
+   usleep(PAUSE);
+ }
+</pre>
+<p>Se ha añadido una pausa final, determinada por la constante <b>PAUSE</b>. Dependiendo de la velocidad del ordenador donde se está ejecutando la simulación, puede que esta vaya muy rápido, por lo que es necesario hacer una pausa para ralentizarla. Por otro lado, al poner una pausa, la CPU se descarga.
+</p><p>Por último hay que dibujar el cubo:
+</p>
+<pre>Body_render(&amp;box);
+</pre>
+<h3><span class="mw-headline" id="Funci.C3.B3n_Start">Función Start</span></h3>
+<p>Esta función es invocada al comienzo de la simulación. Se establece la orientación y posición inicial de la cámara:
+</p>
+<pre>static float xyz[3] = {-2.46,-1.85, 1.14};
+static float hpr[3] = {33.5,-15.0,0.0};
+dsSetViewpoint (xyz,hpr);
+</pre>
+<p>El parámetro hpr es la orientación: pitch, yaw y roll en grados.
+</p><p>Después se imprime el menú para este ejemplo:
+</p>
+<pre> printf ("Keys: \n");
+ printf ("1: Drop the box\n");
+ printf ("q: Quit\n");
+</pre>
+<h3><span class="mw-headline" id="Funci.C3.B3n_Command">Función Command</span></h3>
+<p>Esta función se invoca cada vez que el usuario aprieta una tecla y se pasa en el parámetro <b>cmd</b>. En este ejemplo, si el usuario pulsa la tecla '1' el cubo se colocará en su posición inicial por lo que volverá a caer. Si se aprieta 'q' termina. Esto se consigue llamando a la función <b>dsStop()</b> que finaliza el bucle principal.
+</p>
+<pre> if (cmd=='1') {        
+   Body_init (&amp;box);
+ }
+ else if (cmd=='q') {
+   dsStop();
+ }
+</pre>
+<hr>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <center><div style="position: relative; width: 32px; height: 34px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Caida_libre_(II)" title="Tutorial:ODE y robots modulares:Caida libre (II)">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Icon_arrow_left.png" class="image" title="Tutorial:ODE y robots modulares:Caida libre (II)"><img alt="Tutorial:ODE y robots modulares:Caida libre (II)" src="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Icon_arrow_left_aguf.png" width="32" height="34"></a></div>
+</div> <a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Caida_libre_(II)" title="Tutorial:ODE y robots modulares:Caida libre (II)">Capítulo anterior</a></center>
+</td>
+<td> <center><div style="position: relative; width: 32px; height: 32px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:_ODE_y_robots_modulares" title="Tutorial: ODE y robots modulares">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Icono_index.png" class="image" title="Tutorial:_ODE_y_robots_modulares"><img alt="Tutorial:_ODE_y_robots_modulares" src="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Icono_index_aguf.png" width="32" height="32"></a></div>
+</div> <a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:_ODE_y_robots_modulares" title="Tutorial: ODE y robots modulares">Índice</a></center>
+</td>
+<td> <center><div style="position: relative; width: 32px; height: 34px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Cuerpos_compuestos_(I)" title="Tutorial:ODE y robots modulares:Cuerpos compuestos (I)">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Icon_arrow_right.png" class="image" title="Tutorial:ODE y robots modulares:Cuerpos compuestos (I)"><img alt="Tutorial:ODE y robots modulares:Cuerpos compuestos (I)" src="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/Icon_arrow_right_aguf.png" width="32" height="34"></a></div>
+</div> <a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Cuerpos_compuestos_(I)" title="Tutorial:ODE y robots modulares:Cuerpos compuestos (I)">Capítulo siguiente</a></center>
+</td></tr></tbody></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20261110155453
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.041 seconds
+Real time usage: 0.047 seconds
+Preprocessor visited node count: 216/1000000
+Preprocessor generated node count: 595/1000000
+Post‐expand include size: 3388/2097152 bytes
+Template argument size: 716/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.686      1 - -total
+ 50.92%    2.386      6 - Plantilla:Click
+ 34.93%    1.637      4 - Plantilla:Tablabonita
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Caida_libre_(III)&amp;oldid=4674">https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Caida_libre_(III)&amp;oldid=4674</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categoría</a>: <ul><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Tutorial_ODE_y_robots_modulares" title="Categoría:Tutorial ODE y robots modulares">Tutorial ODE y robots modulares</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Caida_libre_(III)" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://www.iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Tutorial:ODE_y_robots_modulares:Caida_libre_(III)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Caida_libre_(III)&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Caida_libre_(III)&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Tutorial%3AODE+y+robots+modulares%3ACaida+libre+%28III%29" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Tutorial:ODE_y_robots_modulares:Caida_libre_(III)" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Tutorial:ODE_y_robots_modulares:Caida_libre_(III)" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Caida_libre_(III)&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Caida_libre_(III)&amp;oldid=4674" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Caida_libre_(III)&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/gnu-fdl_aguf.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/poweredby_mediawiki_88x31_aguf.png" alt="Powered by MediaWiki" srcset="Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/poweredby_mediawiki_132x47_aguf.png 1.5x, Tutorial_ODE_y_robots_modulares_Caida_libre_III_files/poweredby_mediawiki_176x62_aguf.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 13 ene 2009 a las 01:46.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":111});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>

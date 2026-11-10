@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Tutorial:ODE y robots modulares:Robot ápodo - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Tutorial:ODE_y_robots_modulares:Robot_ápodo","wgTitle":"Tutorial:ODE y robots modulares:Robot ápodo","wgCurRevisionId":4679,"wgRevisionId":4679,"wgArticleId":769,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Tutorial ODE y robots modulares"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Tutorial:ODE_y_robots_modulares:Robot_ápodo","wgRelevantArticleId":769,"wgRequestId":"avM_OWInoBqqvw3wymr-zQAnkUI","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/load_aXaI.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/load_002_aXaI.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://www.iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://www.iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/load_aXaI.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Tutorial_ODE_y_robots_modulares_Robot_ápodo rootpage-Tutorial_ODE_y_robots_modulares_Robot_ápodo skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Tutorial:ODE y robots modulares:Robot ápodo</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Snake_screenshot2.png" class="image"><img alt="" src="Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/300px-Snake_screenshot2_aXaI.png" width="300" height="238" class="thumbimage" srcset="Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/Snake_screenshot2_aXaI.png 1.5x, Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/Snake_screenshot2_aXaI.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Snake_screenshot2.png" class="internal" title="Aumentar"></a></div>Desplazamiento lateral inclinado</div></div></div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Simulaci.C3.B3n_de_un_robot_.C3.A1podo_del_grupo_cabeceo-viraje"><span class="tocnumber">1</span> <span class="toctext">Simulación de un robot ápodo del grupo cabeceo-viraje</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Introducci.C3.B3n"><span class="tocnumber">1.1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Objetivo"><span class="tocnumber">1.2</span> <span class="toctext">Objetivo</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#C.C3.B3digo"><span class="tocnumber">1.3</span> <span class="toctext">Código</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Compilaci.C3.B3n"><span class="tocnumber">1.4</span> <span class="toctext">Compilación</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Ejecuci.C3.B3n"><span class="tocnumber">1.5</span> <span class="toctext">Ejecución</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Capturas_de_pantalla"><span class="tocnumber">1.6</span> <span class="toctext">Capturas de pantalla</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#V.C3.ADdeo"><span class="tocnumber">1.7</span> <span class="toctext">Vídeo</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Clasificaci.C3.B3n_de_robots_.C3.A1podos"><span class="tocnumber">1.8</span> <span class="toctext">Clasificación de robots ápodos</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Modelo_de_robot"><span class="tocnumber">1.9</span> <span class="toctext">Modelo de robot</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Modelo_de_control"><span class="tocnumber">1.10</span> <span class="toctext">Modelo de control</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Espacio_de_formas"><span class="tocnumber">1.11</span> <span class="toctext">Espacio de formas</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Realizaci.C3.B3n_de_los_modos_de_caminar"><span class="tocnumber">1.12</span> <span class="toctext">Realización de los modos de caminar</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Explicaci.C3.B3n_del_c.C3.B3digo"><span class="tocnumber">1.13</span> <span class="toctext">Explicación del código</span></a>
+<ul>
+<li class="toclevel-3 tocsection-15"><a href="#Funci.C3.B3n_Robot_new.28.29"><span class="tocnumber">1.13.1</span> <span class="toctext">Función Robot_new()</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#Funci.C3.B3n_Robot_Render.28.29"><span class="tocnumber">1.13.2</span> <span class="toctext">Función Robot_Render()</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#Funci.C3.B3n_servos_sim.28.29"><span class="tocnumber">1.13.3</span> <span class="toctext">Función servos_sim()</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#Funci.C3.B3n_sequence_generation.28.29"><span class="tocnumber">1.13.4</span> <span class="toctext">Función sequence_generation()</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#Funciones_para_implementar_la_locomoci.C3.B3n"><span class="tocnumber">1.13.5</span> <span class="toctext">Funciones para implementar la locomoción</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#Funci.C3.B3n_Command.28.29"><span class="tocnumber">1.13.6</span> <span class="toctext">Función Command()</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-21"><a href="#Enlaces"><span class="tocnumber">1.14</span> <span class="toctext">Enlaces</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Simulaci.C3.B3n_de_un_robot_.C3.A1podo_del_grupo_cabeceo-viraje"><font color="#0000FF">Simulación de un robot ápodo del grupo cabeceo-viraje</font></span></h1>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <center><div style="position: relative; width: 32px; height: 34px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Configuraci%C3%B3n_PP" title="Tutorial:ODE y robots modulares:Configuración PP">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Icon_arrow_left.png" class="image" title="Tutorial:ODE y robots modulares:Configuración PP"><img alt="Tutorial:ODE y robots modulares:Configuración PP" src="Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/Icon_arrow_left_aXaI.png" width="32" height="34"></a></div>
+</div> <a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Configuraci%C3%B3n_PP" title="Tutorial:ODE y robots modulares:Configuración PP">Capítulo anterior</a></center>
+</td>
+<td> <center><div style="position: relative; width: 32px; height: 32px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:_ODE_y_robots_modulares" title="Tutorial: ODE y robots modulares">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Icono_index.png" class="image" title="Tutorial:_ODE_y_robots_modulares"><img alt="Tutorial:_ODE_y_robots_modulares" src="Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/Icono_index_aXaI.png" width="32" height="32"></a></div>
+</div> <a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:_ODE_y_robots_modulares" title="Tutorial: ODE y robots modulares">Índice</a></center>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>En este ejemplo se simula un <b>robot ápodo del grupo cabeceo-viraje de 16 módulos</b>. El usuario puede establecer los diferentes modos de caminar mediante el teclado: línea recta, desplazamiento lateral, rotación, rodar, girar, etc. Para la generación de todos los movimientos se utiliza la misma técnica de generadores sinusoidales que en el ejemplo de la cocnfiguración PP.
+</p>
+<h2><span class="mw-headline" id="Objetivo">Objetivo</span></h2>
+<ul><li> Mostrar cómo mover un robot ápodo de cualquier número de módulos</li></ul>
+<h2><span class="mw-headline" id="C.C3.B3digo">Código</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<ul><li> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/ode_mr/trunk/snake_ex/snake.cpp">snake_ex/snake.cpp</a>]</li></ul>
+</td>
+<td> Programa principal
+</td></tr>
+<tr>
+<td>
+<ul><li> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/ode_mr/trunk/snake_ex/robot.cpp">snake_ex/robot.cpp</a>]</li></ul>
+</td>
+<td> Creación y dibujo del robot
+</td></tr>
+<tr>
+<td>
+<ul><li> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/ode_mr/trunk/snake_ex/parameters.h">snake_ex/parameters.h</a></li></ul>
+</td>
+<td> Definición de las constantes.
+</td></tr>
+<tr>
+<td>
+<ul><li> <a rel="nofollow" class="external text" href="http://svn.iearobotics.com/ode_mr/trunk/snake_ex/robot.h">snake_ex/robot.h</a></li></ul>
+</td>
+<td> Definición de los prototipos de robot.cpp y las estructuras de datos.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Compilaci.C3.B3n">Compilación</span></h2>
+<p>Todos los ejemplos de este tutorial compilan tecleando "<b>make</b>". Sin embargo se describe a continuación cómo se compila directamente usando el GCC:
+</p>
+<pre>g++ -Iinclude -c -o snake_ex/snake.o snake_ex/snake.cpp
+g++ -Iinclude -c -o snake_ex/robot.o snake_ex/robot.cpp
+g++ -o snake snake_ex/snake.o snake_ex/robot.o libdrawstuff.a -lm -lode -lX11 -lGL -lGLU
+</pre>
+<h2><span class="mw-headline" id="Ejecuci.C3.B3n">Ejecución</span></h2>
+<p>Para probar el ejemplo, teclear:
+</p>
+<pre>./snake
+</pre>
+<p>Además de los mensajes impresos en pantalla por la drawstuff, aparecerá el siguiente menú:
+</p>
+<pre>Keys for selecting the gaits: 
+1: Straight
+2: Turning
+3: Side-winding
+4: Inclined side-winding
+5: Flapping
+6: S-shaped rotating
+7: U-sahped rotating
+8: Rolling
+q: Quit simulation
+</pre>
+<p>Mediante las diferentes teclas se pueden seleccionar las 8 maneras de caminar del robot ápodo
+</p>
+<h2><span class="mw-headline" id="Capturas_de_pantalla">Capturas de pantalla</span></h2>
+<p>Visualización del robot moviéndose de diferentes maneras:
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Snake_screenshot1.png" class="image"><img alt="" src="Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/300px-Snake_screenshot1_aXaI.png" width="300" height="238" class="thumbimage" srcset="Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/Snake_screenshot1_aXaI.png 1.5x, Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/Snake_screenshot1_aXaI.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Snake_screenshot1.png" class="internal" title="Aumentar"></a></div>Movimiento en línea recta</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Snake_screenshot2.png" class="image"><img alt="" src="Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/300px-Snake_screenshot2_aXaI.png" width="300" height="238" class="thumbimage" srcset="Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/Snake_screenshot2_aXaI.png 1.5x, Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/Snake_screenshot2_aXaI.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Snake_screenshot2.png" class="internal" title="Aumentar"></a></div>Desplazamiento lateral inclinado</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Snake_screenshot3.png" class="image"><img alt="" src="Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/300px-Snake_screenshot3_aXaI.png" width="300" height="238" class="thumbimage" srcset="Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/Snake_screenshot3_aXaI.png 1.5x, Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/Snake_screenshot3_aXaI.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Snake_screenshot3.png" class="internal" title="Aumentar"></a></div>La serpiente rodando</div></div></div>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="V.C3.ADdeo">Vídeo</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Snake_video_thumb.png" class="image"><img alt="Snake video thumb.png" src="Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/Snake_video_thumb_aXaI.png" width="100" height="79"></a>
+</td>
+<td>
+<ul><li> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/wiki/images/a/af/Tutorial_ode_snake_video.mpg">video.mpg</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=tlsfUvzfJB0">Vídeo en Youtube</a></li></ul>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Clasificaci.C3.B3n_de_robots_.C3.A1podos">Clasificación de robots ápodos</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Snake_classification.png" class="image"><img alt="Snake classification.png" src="Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/Snake_classification_aXaI.png" width="693" height="175"></a>
+</td></tr>
+<tr>
+<td> <b>Figura 1</b>: Clasificación de los robots ápodos: grupo cabeceo-cabeceo (izquierda), viraje-viraje (centro) y cabeceo-viraje (derecha)
+</td></tr></tbody></table>
+<p>Los <b>robots ápodos</b> se pueden clasificar en tres grupos dependiendo de la conexión entre sus módulos, como se muestra en la <b>figura 1</b>. Los grupos son: <b>cabeceo-cabeceo</b>, <b>viraje-viraje</b> y <b>cabeceo-viraje</b>.
+</p><p>En este capítulo se simula la locomoción de un robot ápodo del grupo cabeceo-viraje.
+</p>
+<h2><span class="mw-headline" id="Modelo_de_robot">Modelo de robot</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Tutorial_ode_snake.png" class="image"><img alt="" src="Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/300px-Tutorial_ode_snake_aXaI.png" width="300" height="235" class="thumbimage" srcset="Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/450px-Tutorial_ode_snake_aXaI.png 1.5x, Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/600px-Tutorial_ode_snake_aXaI.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Tutorial_ode_snake.png" class="internal" title="Aumentar"></a></div><b>Figura 1</b>: Modelo de robot. Unión de módulos de cabeceo y viraje (pinchar para ampliar)</div></div></div>
+<p>El robot está constituido por la unión en cadena de MOD módulos, numerados desde el módulo 0 hasta el MOD-1. Los impares son de cabeceo y los pares de viraje. En la <b>Figura 1</b> se muestra la geometría de los dos primeros módulos del robot, el 0 y el 1.
+</p><p>El robot está formado por:
+</p>
+<ul><li> <b>MOD módulos iguales</b>, de masa MASS y dimensiones (W,L,H).</li>
+<li> <b>MOD articulaciones</b>, de cuales las impares son de cabeceo y las pares de viraje. Sus ejes de rotación son el x (1,0,0) y el z (0,0,1) respectivamente.</li>
+<li> <b>MOD+1 cuerpos</b>:
+<ul><li> El <b>izquierdo</b> y <b>derecho</b> están formados por una única geometría hexaédrica, de dimensiones (W,L/2,H) y masa MASS/2</li>
+<li> Los <b>cuerpos centrales</b> están compuestos por la unión de dos geometrías hexaédricas. Tienen masa MASS y dimensiones (W,L,H)</li>
+<li> <b>2*MOD geometrías</b>, de dimensiones (W,L/2,H). Los cuerpos centrales tiene dos geometrías, denominadas 1 y 2,</li></ul></li></ul>
+<p><b>Las posiciones de los elementos</b> con respecto al origen de coordenadas son:
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <b>Cuerpo izquierdo</b>: </td>
+<td> (0,-L/4,H/2)
+</td></tr>
+<tr>
+<td> <b>Cuerpo derecho</b>: </td>
+<td> (0, -MOD*L + l/4, H/2)
+</td></tr>
+<tr>
+<td> <b>Cuerpo central i</b>: </td>
+<td>(0, -L(i+1), H/2)
+</td></tr>
+<tr>
+<td> <b>Articulación i</b> </td>
+<td>  (0, -iL-L/2, H/2)
+</td></tr></tbody></table>
+<p>Las dos geometrías de los cuerpo central están desplazadas -L/4 y L/4 a lo largo del eje y.
+</p><p>La <b>estructura de datos</b> está definida en el fichero <b>robot.h</b>: 
+</p>
+<pre>struct MySnake {
+  dJointID joint[MOD];       //-- Robot joints
+ 
+  dBodyID body[MOD-1];       //-- Central bodies
+                             //-- Every central body is composed of two boxes  
+  dGeomID geom1[MOD-1];      //-- One in the left and another 
+  dGeomID geom2[MOD-1];      //-- in the right
+ 
+  dBodyID body_left;         //-- This is the body on the left of the snake
+  dGeomID geom_left;         //-- and its geometry (a box)
+ 
+  dBodyID body_right;        //-- This is the body on the right of the snake 
+  dGeomID geom_right;        //-- and its geometry (a box)
+ 
+  dReal servo_ref_pos[MOD];  //-- Reference positions for the servos
+};
+</pre>
+<h2><span class="mw-headline" id="Modelo_de_control">Modelo de control</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Tutorial-ode-snake-pitch-yaw-generators.png" class="image"><img alt="" src="Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/300px-Tutorial-ode-snake-pitch-yaw-generators_aXaI.png" width="300" height="138" class="thumbimage" srcset="Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/Tutorial-ode-snake-pitch-yaw-generators_aXaI.png 1.5x, Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/Tutorial-ode-snake-pitch-yaw-generators_aXaI.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Tutorial-ode-snake-pitch-yaw-generators.png" class="internal" title="Aumentar"></a></div><b>Figura 2</b>: Modelo de control para los robots ápodos del grupo cabeceo-viraje</div></div></div>
+<p>Para el control del robot usaremos la misma idea que para <a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Configuraci%C3%B3n_PP" title="Tutorial:ODE y robots modulares:Configuración PP">la configuración PP</a> del capítulo anterior: un <b>modelo bioinspirado</b> basado en <b>generadores sinusoidales</b> que hacen oscilar las articulaciones.
+</p><p>Se usan dos grupos de generadores, que denominaremos verticales y horizontales para controlar las articulaciones de cabeceo y viraje respectivamente. El esquema se muestra en la <b>figura 2</b>. Los generadores pares son los verticales y los impares los horizontales. 
+</p><p><b>Las posiciones de referencia de los servos</b> se calculan mediante las siguientes ecuaciones:
+</p>
+<ul><li> <b>Módulos verticales</b>:
+<ul><li> &lt;math&gt;\varphi_{vi}\left(n\right)=A_{v}\sin\left(\frac{2\pi}{N}n+\frac{i}{2}\Delta\phi_{v}+\phi_{0}\right) &lt;/math&gt;, para valores de i pares entre [0,MOD-1]</li></ul></li>
+<li> <b>Módulos horizontales</b>:
+<ul><li> &lt;math&gt; \varphi_{hi}\left(n\right)=A_{h}\sin\left(\frac{2\pi}{N}n+\frac{\left(i-1\right)}{2}\Delta\phi_{h}+\Delta\phi_{v}+\phi_{0}\right)+o_{h} &lt;/math&gt;, para valores de i impares entre [1,MOD-1]</li></ul></li></ul>
+<p>Los parámetros son:
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> &lt;math&gt;A_{v}&lt;/math&gt; </td>
+<td> Amplitud de los osciladores verticales (grados)
+</td></tr>
+<tr>
+<td> &lt;math&gt;A_{h}&lt;/math&gt; </td>
+<td> Amplitud de los osciladores horizontales (grados)
+</td></tr>
+<tr>
+<td> &lt;math&gt;\Delta\Phi_{v}&lt;/math&gt; </td>
+<td> Diferencia de fase entre los generadores verticales (radianes)
+</td></tr>
+<tr>
+<td> &lt;math&gt;\Delta\Phi_{h}&lt;/math&gt; </td>
+<td> Diferencia de fase entre los generadores horizontales (radianes)
+</td></tr>
+<tr>
+<td> &lt;math&gt;\Delta\Phi_{vh}&lt;/math&gt; </td>
+<td> Diferencia de fase entre los generadores verticales y horizontales (radianes)
+</td></tr>
+<tr>
+<td> &lt;math&gt;\Phi_{0}&lt;/math&gt;  </td>
+<td> Fase inicial (radianes)
+</td></tr>
+<tr>
+<td> &lt;math&gt;o_{h}&lt;/math&gt; </td>
+<td> Offset de los generadores horizontales (grados)
+</td></tr>
+<tr>
+<td> N </td>
+<td> Número de muestras por ciclo
+</td></tr>
+<tr>
+<td> n </td>
+<td> Tiempo discreto
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Espacio_de_formas">Espacio de formas</span></h2>
+<p>El <b>modo de caminar</b> de los robots ápodos del grupo cabeceo-viraje depende de la forma de la <b>onda tridimensional</b> que recorre su cuerpo. Esta onda es el resultado de la <b>superposición</b> de una que se propaga por las articulaciones horizontales (la onda horizontal) y otra por las verticales (la onda vertical).
+</p><p>Tanto las ondas verticales como horizontales son de <b>tipo serpentinoide</b>, caracterizadas por sus dos parámetros <b>ángulo de serpenteo</b> &lt;math&gt;\alpha&lt;/math&gt; y <b>número de ondulaciones</b> k. <b>La forma de la onda tridimensional</b> está determinada por los siguientes parámetros:
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> &lt;math&gt;\alpha_v&lt;/math&gt;  </td>
+<td> Ángulo de serpenteo de la onda vertical
+</td></tr>
+<tr>
+<td> &lt;math&gt;k_{v}&lt;/math&gt;    </td>
+<td> Número de ondulaciones de la onda vertical
+</td></tr>
+<tr>
+<td> &lt;math&gt;\alpha_h&lt;/math&gt;  </td>
+<td> Ángulo de serpenteo de la onda vertical
+</td></tr>
+<tr>
+<td> &lt;math&gt;k_{h}&lt;/math&gt;    </td>
+<td> Número de ondulaciones de la onda vertical
+</td></tr>
+<tr>
+<td> &lt;math&gt;\Delta\Phi_{vh}&lt;/math&gt; </td>
+<td> Diferencia de fase entra la onda vertical y horizontal
+</td></tr></tbody></table>
+<p>El punto de trabajo en el espacio de formas permite establecer las características de la locomoción. Aplicando las siguientes ecuaciones <b>se obtienen los parámetros en el espacio de control</b> para aplicar a los generadores:
+</p>
+<ul><li> &lt;math&gt;A_{h}=2\alpha_{h}\sin\left(\frac{2\pi k_{h}}{MOD}\right)&lt;/math&gt;</li>
+<li> &lt;math&gt;A_{v}=2\alpha_{V}\sin\left(\frac{2\pi k_{v}}{MOD}\right)&lt;/math&gt;</li>
+<li> &lt;math&gt;\Delta\phi_{V}=\frac{4\pi k_{v}}{MOD}&lt;/math&gt;</li>
+<li> &lt;math&gt;\Delta\phi_{h}=\frac{4\pi k_{h}}{MOD}&lt;/math&gt;</li></ul>
+<p>Hay dos casos particulares para cada una de las ondas horizontales o verticales:
+</p>
+<ul><li> <b>Curva circular</b>. El ángulo de serpenteo es cero por lo que la amplitud también lo es. La forma que se obtiene es la de un sector circular, según el valor dado al parámetro offset. Además esta forma no cambia con el tiempo. Se calcula mediante la ecuación: &lt;math&gt;o=\frac{2\alpha}{MOD} &lt;/math&gt;. En esta caso &lt;math&gt;\alpha&lt;/math&gt; representa el ángulo del sector circular.</li>
+<li> <b>Onda circular</b>. El número de ondulaciones k es cero, por lo que la diferencia de fase &lt;math&gt;\Delta\Phi&lt;/math&gt; también es cero y todas las articulaciones oscilan en fase. La forma varía con el tiempo entre un sector circular máximo y mínima, cuya amplitud viene dada por: &lt;math&gt;A=\frac{2\alpha}{MOD}&lt;/math&gt;, donde &lt;math&gt;\alpha&lt;/math&gt; es el ángulo del sector circular máximo.</li></ul>
+<h2><span class="mw-headline" id="Realizaci.C3.B3n_de_los_modos_de_caminar">Realización de los modos de caminar</span></h2>
+<p>Los modos de caminar del robot se establecen dando valores a sus parámetros del espacio de forma y transformándolos al espacio de control. En la siguiente tabla se muestran los diferentes movimientos posibles y las restricciones que deben cumplir sus parámetros
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<th>Modo de caminar</th>
+<th> Restricciones </th>
+<th> Parámetros libres </th>
+<th> Descripción
+</th></tr>
+<tr>
+<td>Línea recta </td>
+<td> &lt;math&gt;\alpha_{h}=0, o_{h}=0&lt;/math&gt; </td>
+<td> &lt;math&gt;\alpha_{v}, k_{v}&lt;/math&gt; </td>
+<td> No hay onda horizontal
+</td></tr>
+<tr>
+<td>Giro </td>
+<td> &lt;math&gt;\alpha_{h}=0, o_{h}\neq0&lt;/math&gt; </td>
+<td> &lt;math&gt;\alpha_{v}, k_{v}, o_{h}&lt;/math&gt; </td>
+<td> Curva circular en articulaciones horizontales. Ángulo del giro dado por el valor de &lt;math&gt;o_{h}&lt;/math&gt;
+</td></tr>
+<tr>
+<td> Desplazamiento lateral </td>
+<td> &lt;math&gt;\alpha_{v}\ll\alpha_{h}, k_{v}=k_{h}, o_{h}=0, &lt;/math&gt; <br>
+<p>&lt;math&gt;\Delta\Phi_{vh}=0&lt;/math&gt;
+</p>
+</td>
+<td> &lt;math&gt;\alpha_{h}, k_{h}&lt;/math&gt;
+</td>
+<td> Dos ondas serpentinoides con el mismo número de ondulaciones. La vertical con un ángulo de serpenteo mucho menor que la horizontal
+</td></tr>
+<tr>
+<td> Desplazamiento lateral inclinado
+</td>
+<td>
+<p>&lt;math&gt;\alpha_{v}=\alpha\sin\left(\beta\right)&lt;/math&gt; <br>
+&lt;math&gt;\alpha_{h}=\alpha\cos\left(\beta\right)&lt;/math&gt; <br>
+&lt;math&gt;k_{v}=k_{h}, \Delta\Phi_{vh}=0, o_{h}=0&lt;/math&gt;
+</p>
+</td>
+<td> &lt;math&gt;\alpha, k, \beta&lt;/math&gt;
+</td>
+<td> Dos ondas serpentinoides con mismo número ondulaciones. El parámetro beta determina la inclinación
+</td></tr>
+<tr>
+<td> Rotación en S
+</td>
+<td> &lt;math&gt;\alpha_{v}\ll\alpha_{h}, k_{v}=2k_{h}&lt;/math&gt; <br>
+<p>&lt;math&gt;\Delta\Phi_{vh}=0, o_{h}=0&lt;/math&gt;
+</p>
+</td>
+<td> &lt;math&gt;\alpha_{h}, k_{h}&lt;/math&gt;
+</td>
+<td> Dos ondas serpentinoides. La vertical con ángulo de serpenteo mucho menor que el de la horizontal y con el doble de ondlulaciones
+</td></tr>
+<tr>
+<td> Rotación en U
+</td>
+<td> &lt;math&gt;\alpha_{v}\ll\alpha_{h}, k_{h}=0, k_{v}=2&lt;/math&gt; <br>
+<p>&lt;math&gt;\Delta\Phi_{vh}=0, o_{h}=0&lt;/math&gt;
+</p>
+</td>
+<td> &lt;math&gt;\alpha_{h}&lt;/math&gt;
+</td>
+<td> Serpentinoide vertical con ángulo de serpenteo pequeño La onda horizontal es circular
+</td></tr>
+<tr>
+<td> Remero
+</td>
+<td> &lt;math&gt;\alpha_{v}=\alpha_{h}&lt;\alpha_{min}, k_{v}=0, k_{h}=0, &lt;/math&gt; <br>
+<p>&lt;math&gt;\Delta\Phi_{vh}=90, o_{h}=0 &lt;/math&gt;
+</p>
+</td>
+<td> ---
+</td>
+<td> Dos ondas circulares iguales, con parámetros &lt;math&gt;\alpha&lt;/math&gt; pequeños
+</td></tr>
+<tr>
+<td> Rodar
+</td>
+<td>  &lt;math&gt;\alpha_{v}=\alpha_{h}&gt;\alpha_{min}, k_{v}=0, k_{h}=0&lt;/math&gt; <br>
+<p>&lt;math&gt;\Delta\Phi_{vh}=90, o_{h}=0 &lt;/math&gt;
+</p>
+</td>
+<td> &lt;math&gt;\alpha&lt;/math&gt;
+</td>
+<td> Dos ondas circulares iguales. El parámetro &lt;math&gt;\alpha&lt;/math&gt; determina el ángulo del sector circular que adopta el robot al rodar
+</td></tr></tbody></table>
+<p>En la siguiente tabla se muestran <b>los valores que se han usado para el ejemplo presentado en este capítulo</b>:
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <b>Línea recta</b>  </td>
+<td>  &lt;math&gt;\alpha_{v}=20&lt;/math&gt;, &lt;math&gt;k_{v}=2&lt;/math&gt;, &lt;math&gt;\alpha_{h}=0&lt;/math&gt;, &lt;math&gt;o_{h}=0&lt;/math&gt;
+</td></tr>
+<tr>
+<td> <b>Giro</b> </td>
+<td> &lt;math&gt;\alpha_{v}=20&lt;/math&gt;, &lt;math&gt;k_{v}=2&lt;/math&gt;, &lt;math&gt;\alpha_{h}=180&lt;/math&gt;
+</td></tr>
+<tr>
+<td> <b>Desplazamiento lateral</b> </td>
+<td> &lt;math&gt;\alpha_{v}=5&lt;/math&gt;, &lt;math&gt;k_{v}=1&lt;/math&gt;, &lt;math&gt;\alpha_{h}=40&lt;/math&gt;,&lt;math&gt;k_{h}=1&lt;/math&gt;, &lt;math&gt;o_{h}=0&lt;/math&gt;, &lt;math&gt;\Delta\Phi_{vh}=0&lt;/math&gt;
+</td></tr>
+<tr>
+<td> <b>Desplazamiento lateral inclinado</b>
+</td>
+<td> &lt;math&gt;\alpha=40&lt;/math&gt;, &lt;math&gt;\beta=45&lt;/math&gt;, &lt;math&gt;k=1&lt;/math&gt;, &lt;math&gt;o_{h}=0&lt;/math&gt;, &lt;math&gt;\Delta\Phi_{vh}=0, o_{h}=0 &lt;/math&gt;
+</td></tr>
+<tr>
+<td> <b>Rotación en S</b>
+</td>
+<td> &lt;math&gt;\alpha_{v}=5&lt;/math&gt;, &lt;math&gt;k_{v}=2&lt;/math&gt;, &lt;math&gt;\alpha_{h}=40&lt;/math&gt;,&lt;math&gt;k_{h}=1&lt;/math&gt;, &lt;math&gt;o_{h}=0&lt;/math&gt;, &lt;math&gt;\Delta\Phi_{vh}=0 &lt;/math&gt;
+</td></tr>
+<tr>
+<td> <b>Rotación en U</b>
+</td>
+<td> &lt;math&gt;\alpha_{v}=5&lt;/math&gt;, &lt;math&gt;k_{v}=2&lt;/math&gt;, &lt;math&gt;\alpha_{h}=180&lt;/math&gt;,&lt;math&gt;k_{h}=0&lt;/math&gt;, &lt;math&gt;o_{h}=0&lt;/math&gt;, &lt;math&gt;\Delta\Phi_{vh}=0&lt;/math&gt;
+</td></tr>
+<tr>
+<td> <b>Remero</b>
+</td>
+<td>  &lt;math&gt;\alpha_{v}=12&lt;/math&gt;, &lt;math&gt;k_{v}=0&lt;/math&gt;, &lt;math&gt;\alpha_{h}=180&lt;/math&gt;,&lt;math&gt;k_{h}=0&lt;/math&gt;, &lt;math&gt;o_{h}=0&lt;/math&gt;, &lt;math&gt;\Delta\Phi_{vh}=90&lt;/math&gt;
+</td></tr>
+<tr>
+<td> <b>Rodar</b>
+</td>
+<td> &lt;math&gt;\alpha_{v}=180&lt;/math&gt;, &lt;math&gt;k_{v}=0&lt;/math&gt;, &lt;math&gt;\alpha_{h}=180&lt;/math&gt;,&lt;math&gt;k_{h}=0&lt;/math&gt;, &lt;math&gt;o_{h}=0&lt;/math&gt;, &lt;math&gt;\Delta\Phi_{vh}=90&lt;/math&gt;
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Explicaci.C3.B3n_del_c.C3.B3digo">Explicación del código</span></h2>
+<h3><span class="mw-headline" id="Funci.C3.B3n_Robot_new.28.29">Función Robot_new()</span></h3>
+<p>Es la función encargada de <b>construir el modelo ODE de la serpiente</b>. Construye robots del grupo cabeceo-viraje, de número de módulos MOD, con MOD&gt;=1. Se divide en varias partes:
+</p><p>Primero se construye el <b>cuerpo izquierdo</b>, con su geometría asociada:
+</p>
+<pre> snake-&gt;body_left = dBodyCreate(world);
+ dBodySetPosition(snake-&gt;body_left, 0.0, -L/4, H/2);
+ dMassSetBoxTotal (&amp;m, MASS/2, W,L/2,H);
+ dBodySetMass (snake-&gt;body_left,&amp;m);
+ snake-&gt;geom_left = dCreateBox (space, W,L/2, H); 
+ dGeomSetBody (snake-&gt;geom_left,snake-&gt;body_left);
+</pre>
+<p>Luego los <b>cuerpos centrales</b>, que tienen dos geometrías asociadas, en desplazadas -L/4 y L/4 en el eje y respecto al centro de masas del cuerpo:
+</p>
+<pre> for (int i=0; i&lt;MOD-1; i++) {
+   snake-&gt;body[i]=dBodyCreate(world);
+   dBodySetPosition(snake-&gt;body[i], 0.0, -L*(i+1), H/2);
+   dMassSetBoxTotal (&amp;m, MASS, W,L/2,H);
+   dBodySetMass (snake-&gt;body[i],&amp;m);
+   
+   snake-&gt;geom1[i] = dCreateBox (space, W,L/2, H); 
+   snake-&gt;geom2[i] = dCreateBox (space, W,L/2, H); 
+   dGeomSetBody (snake-&gt;geom1[i],snake-&gt;body[i]);
+   dGeomSetBody (snake-&gt;geom2[i],snake-&gt;body[i]);
+   
+   dGeomSetOffsetPosition (snake-&gt;geom1[i], 0.0,  L/4, 0.0);
+   dGeomSetOffsetPosition (snake-&gt;geom2[i], 0.0, -L/4, 0.0);
+ }
+</pre>
+<p>Ahora el <b>cuerpo derecho</b>:
+</p>
+<pre> snake-&gt;body_right = dBodyCreate(world);
+ dBodySetPosition(snake-&gt;body_right, 0.0, -MOD*L+L/4, H/2);
+ dMassSetBoxTotal (&amp;m, MASS/2, W,L/2,H);
+ dBodySetMass (snake-&gt;body_right,&amp;m);
+ snake-&gt;geom_right = dCreateBox (space, W,L/2, H); 
+ dGeomSetBody (snake-&gt;geom_right,snake-&gt;body_right);
+</pre>
+<p>Después se añaden las <b>articulaciones centrales</b>. Las pares rotan alrededor del eje x, las impares alrededor del z:
+</p>
+<pre> for (int i=1; i&lt;=MOD-2; i++) {
+   snake-&gt;joint[i]=dJointCreateHinge (world, 0);
+   dJointAttach (snake-&gt;joint[i],snake-&gt;body[i-1],snake-&gt;body[i]);
+   
+   if (i%2==0) 
+     dJointSetHingeAxis (snake-&gt;joint[i], 1,0,0);  //-- Pitch
+   else
+     dJointSetHingeAxis (snake-&gt;joint[i], 0,0,1);  //-- Yaw
+   
+   dJointSetHingeAnchor (snake-&gt;joint[i], 0, -i*L-L/2, H/2);
+   dJointSetHingeParam(snake-&gt;joint[i], dParamFMax, TORQUE);
+   dJointSetHingeParam(snake-&gt;joint[i], dParamVel, 0.0);
+ }
+</pre>
+<p>y por último las articulaciones izquierda y derecha. Se ha separado en casos diferentes para que se pueda construir robots de cual número de módulos (MOD&gt;=1).
+</p><p>Para la <b>articulación izquierda</b>:
+</p>
+<pre> snake-&gt;joint[0]=dJointCreateHinge (world, 0);
+ 
+ //-- If the robot consist of only one module, the left joint is
+ //-- connected to the left and right bodies.
+ //-- If not, it is connected to the left body and the next
+ if (MOD==1) 
+   dJointAttach (snake-&gt;joint[0],snake-&gt;body_left,snake-&gt;body_right);
+ else
+   dJointAttach (snake-&gt;joint[0],snake-&gt;body_left,snake-&gt;body[0]);
+ 
+ dJointSetHingeAxis (snake-&gt;joint[0], 1,0,0); 
+ dJointSetHingeAnchor (snake-&gt;joint[0], 0, -L/2, H/2);
+ dJointSetHingeParam(snake-&gt;joint[0], dParamFMax, TORQUE);
+ dJointSetHingeParam(snake-&gt;joint[0], dParamVel, 0.0);
+</pre>
+<p>Para la <b>articulación derecha</b>: 
+</p>
+<pre> //-- Create the joint in the right. It only should be created if there
+ //-- are more than one modules in the robot.
+ if (MOD&gt;1) {
+   
+   snake-&gt;joint[MOD-1]=dJointCreateHinge (world, 0);
+   dJointAttach (snake-&gt;joint[MOD-1],snake-&gt;body[MOD-2],snake-&gt;body_right);
+   
+   if (MOD%2==0)
+     dJointSetHingeAxis (snake-&gt;joint[MOD-1], 0,0,1);  //-- Yaw
+   else
+     dJointSetHingeAxis (snake-&gt;joint[MOD-1], 1,0,0);  //-- Pitch
+   
+   dJointSetHingeAnchor (snake-&gt;joint[MOD-1], 0, -MOD*L+L/2, H/2);
+   dJointSetHingeParam(snake-&gt;joint[MOD-1], dParamFMax, TORQUE);
+   dJointSetHingeParam(snake-&gt;joint[MOD-1], dParamVel, 0.0);
+ }
+</pre>
+<h3><span class="mw-headline" id="Funci.C3.B3n_Robot_Render.28.29">Función Robot_Render()</span></h3>
+<p>Es la función que se encarga de dibujar la serpiente en pantalla. Hay que representar las 2*MOD geometrías que tiene el robot. Dependiendo de que la geometría pertenezca a un módulo par o impar, el color utilizado será amarillo o rojo.
+</p><p>Primero se dibuja la <b>geomtría izquierda</b>, asociada al cuerpo izquierdo, en color amarillo:
+</p>
+<pre> dsSetColor (1,1,0);
+ drawGeom (snake-&gt;geom_left);
+</pre>
+<p>A continuación se dibujan todas las <b>geomtrías de los cuerpos centrales</b>, cambiando el color:
+</p>
+<pre> for (int i=0; i&lt;MOD-1; i++) {
+   if (i%2==0) G=1;
+   else G=0;
+   
+   //-- Draw the first box
+   dsSetColor (1,G,0);
+   drawGeom(snake-&gt;geom1[i]);
+   
+   //-- Draw the second box
+   dsSetColor (1,!G,0);
+   drawGeom(snake-&gt;geom2[i]);
+ }
+</pre>
+<p>Por último se dibuja la <b>geometría derecha</b>. Su color será diferente al de la geometría anterior:
+</p>
+<pre> dsSetColor (1,!G,0);
+ drawGeom (snake-&gt;geom_right);
+</pre>
+<h3><span class="mw-headline" id="Funci.C3.B3n_servos_sim.28.29">Función servos_sim()</span></h3>
+<p>Esta función es igual que la que se implementó en el <a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Configuraci%C3%B3n_PP" title="Tutorial:ODE y robots modulares:Configuración PP">capítulo anterior</a>, pero ahora en vez de dos servos hay que simular MOD. Por ello, sólo cambia la definición del bucle:
+</p>
+<pre>for (int i=0; i&lt;MOD; i++) {
+  
+</pre>
+<p>El resto del código es igual
+</p>
+<h3><span class="mw-headline" id="Funci.C3.B3n_sequence_generation.28.29">Función sequence_generation()</span></h3>
+<p>Esta función se encarga de <b>generar las posiciones de referencia para todos los servos</b>. Las ecuaciones de los osciladores son diferentes dependiendo de si son verticales (módulos impares) u horizontales (módulos pares):
+</p>
+<pre> for (int i=0; i&lt;MOD; i++) {
+   if (i%2==0) {
+     phase = PDv*(i/2) + F0;
+     snake.servo_ref_pos[i]=Av*sin(2*M_PI*n/N + DEG2RAD(phase) );
+   }
+   else {
+     phase = PDh*(i-1)/2 + PDvh + F0;
+     snake.servo_ref_pos[i]=Ah*sin(2*M_PI*n/N + DEG2RAD(phase))+Oh;
+   }    
+ }
+ n = (n + 1)&nbsp;% N;
+</pre>
+<h3><span class="mw-headline" id="Funciones_para_implementar_la_locomoci.C3.B3n">Funciones para implementar la locomoción</span></h3>
+<p>Para mover el robot hay que especificar el valor de los diferentes parámetros del espacio de formas y calcular a partir de ellos los parámetros de los osciladores del espacio de control. Dependiendo del modo de caminar que se quiere lograr, las funciones para ello son:
+</p>
+<ul><li> <b>Movimiento en línea recta</b>:</li></ul>
+<pre>void straight(dReal alfa,dReal k)
+{
+  Ah=0; Oh=0; F0=0;
+  Av=2*alfa*sin(2*M_PI*k/MOD);
+  PDv=direction*(4*M_PI*k/MOD)*180/M_PI;
+}
+</pre>
+<ul><li> <b>Giros</b>: </li></ul>
+<pre> void turning(dReal alfah, dReal kv)
+ {
+   Ah=0; F0=0;
+   Oh=2*alfah/MOD;
+   Av=2*20*sin(2*M_PI*kv/MOD);
+   PDv=direction*(4*M_PI*kv/MOD)*180/M_PI;
+ }
+</pre>
+<ul><li> <b>Desplazamiento lateral</b>:</li></ul>
+<pre>void side_winding(dReal alfah, dReal kh)
+{
+  dReal kv=kh;
+ 
+  Av=2*5*sin(2*M_PI*kv/MOD);
+  PDv=direction*(4*M_PI*kv/MOD)*180/M_PI;
+  Oh=0;
+  Ah=2*alfah*sin(2*M_PI*kh/MOD);
+  PDh=PDv;
+  PDvh=0;
+}
+</pre>
+<ul><li> <b>Desplazamiento lateral inclinado</b>:</li></ul>
+<pre>void inclined_side_winding(dReal alfa, dReal k)
+{
+  dReal alfav = alfa*sin(45);
+  dReal alfah = alfav;
+  dReal kv=k; 
+  dReal kh=k;
+ 
+  Av=2*alfav*sin(2*M_PI*kv/MOD);
+  PDv=direction*(4*M_PI*kv/MOD)*180/M_PI;
+  Oh=0;
+  Ah=2*alfah*sin(2*M_PI*kh/MOD);
+  PDh=PDv;
+  PDvh=0; 
+}
+</pre>
+<ul><li> <b>Rotación en S</b>:</li></ul>
+<pre>void rotating_S(dReal alfah, dReal kh)
+{
+  dReal kv=2*kh;
+  Av=2*5*sin(2*M_PI*kv/MOD);
+  PDv=direction*(4*M_PI*kv/MOD)*180/M_PI;
+ 
+  Oh=0;
+  Ah=2*alfah*sin(2*M_PI*kh/MOD);
+  PDh=direction*(4*M_PI*kh/MOD)*180/M_PI;
+  PDvh=0;
+}
+</pre>
+<ul><li> <b>Rotación en U</b>:</li></ul>
+<pre>void rotating_U(dReal alfa)
+{
+  dReal kv=2;
+ 
+  Av=2*5*sin(2*M_PI*kv/MOD);
+  PDv=direction*(4*M_PI*kv/MOD)*180/M_PI;
+  Oh=0;
+  Ah=2*alfa/MOD;
+  PDh=0;
+  PDvh=direction*90;
+}
+</pre>
+<ul><li> <b>Remero</b>:</li></ul>
+<pre>void flapping()
+{
+  dReal alfa=12;
+ 
+  Av=2*alfa/MOD;
+  Ah=Av; PDv=0; PDh=0;
+  PDvh=direction*90;
+  Oh=0;
+}
+</pre>
+<ul><li> <b>Rodar</b>:</li></ul>
+<pre>void rotating_S(dReal alfah, dReal kh)
+{
+  dReal kv=2*kh;
+
+  Av=2*5*sin(2*M_PI*kv/MOD);
+  PDv=direction*(4*M_PI*kv/MOD)*180/M_PI;
+  Oh=0;
+  Ah=2*alfah*sin(2*M_PI*kh/MOD);
+  PDh=direction*(4*M_PI*kh/MOD)*180/M_PI;
+  PDvh=0;
+}
+</pre>
+<h3><span class="mw-headline" id="Funci.C3.B3n_Command.28.29">Función Command()</span></h3>
+<p>Esta es la <b>función que selecciona el modo de caminar según la tecla pulsada</b> por el usuario. Cada vez que se pulsa una tecla, el sentido del movimiento del robot se cambia. Se invoca a las funciones definidas en el apartado anterior:
+</p>
+<pre>if (cmd=='1') {
+   direction=direction*-1;
+   straight(20,2);
+ }
+ else if (cmd=='2') {
+   direction=direction*-1;
+   turning(180,2);
+ }
+ else if (cmd=='3') {
+   direction=direction*-1;
+   side_winding(40,1);
+ }
+ else if (cmd=='4') {
+   direction=direction*-1;
+   inclined_side_winding(40,1);
+ }
+ else if (cmd=='5') {
+   direction=direction*-1;
+   flapping();
+ }
+ else if (cmd=='6') {
+   direction=direction*-1;
+   rotating_S(40,1); 
+ }  
+ else if (cmd=='7') {
+   direction=direction*-1;
+   rotating_U(180);
+ }
+ else if (cmd=='8') {
+   direction=direction*-1;
+   rolling(180);
+ }
+ else if (cmd=='q') {
+   dsStop();
+ }
+</pre>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <center><div style="position: relative; width: 32px; height: 34px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Configuraci%C3%B3n_PP" title="Tutorial:ODE y robots modulares:Configuración PP">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Icon_arrow_left.png" class="image" title="Tutorial:ODE y robots modulares:Configuración PP"><img alt="Tutorial:ODE y robots modulares:Configuración PP" src="Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/Icon_arrow_left_aXaI.png" width="32" height="34"></a></div>
+</div> <a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Configuraci%C3%B3n_PP" title="Tutorial:ODE y robots modulares:Configuración PP">Capítulo anterior</a></center>
+</td>
+<td> <center><div style="position: relative; width: 32px; height: 32px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 200px; overflow: hidden; line-height: 200px; z-index: 3"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:_ODE_y_robots_modulares" title="Tutorial: ODE y robots modulares">&nbsp;&nbsp;&nbsp;</a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Icono_index.png" class="image" title="Tutorial:_ODE_y_robots_modulares"><img alt="Tutorial:_ODE_y_robots_modulares" src="Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/Icono_index_aXaI.png" width="32" height="32"></a></div>
+</div> <a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:_ODE_y_robots_modulares" title="Tutorial: ODE y robots modulares">Índice</a></center>
+</td></tr></tbody></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20261110155849
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.042 seconds
+Real time usage: 0.061 seconds
+Preprocessor visited node count: 194/1000000
+Preprocessor generated node count: 499/1000000
+Post‐expand include size: 3688/2097152 bytes
+Template argument size: 440/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    5.145      1 - -total
+ 45.83%    2.358      4 - Plantilla:Click
+ 36.49%    1.878     10 - Plantilla:Tablabonita
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Robot_%C3%A1podo&amp;oldid=4679">https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Robot_ápodo&amp;oldid=4679</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categoría</a>: <ul><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Tutorial_ODE_y_robots_modulares" title="Categoría:Tutorial ODE y robots modulares">Tutorial ODE y robots modulares</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Robot_%C3%A1podo" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://www.iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Tutorial:ODE_y_robots_modulares:Robot_%C3%A1podo&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Robot_%C3%A1podo&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Robot_%C3%A1podo&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Tutorial%3AODE+y+robots+modulares%3ARobot+%C3%A1podo" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Tutorial:ODE_y_robots_modulares:Robot_%C3%A1podo" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Tutorial:ODE_y_robots_modulares:Robot_%C3%A1podo" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Robot_%C3%A1podo&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Robot_%C3%A1podo&amp;oldid=4679" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://www.iearobotics.com/wiki/index.php?title=Tutorial:ODE_y_robots_modulares:Robot_%C3%A1podo&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/gnu-fdl_aXaI.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/poweredby_mediawiki_88x31_aXaI.png" alt="Powered by MediaWiki" srcset="Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/poweredby_mediawiki_132x47_aXaI.png 1.5x, Tutorial_ODE_y_robots_modulares_Robot_%C3%A1podo_files/poweredby_mediawiki_176x62_aXaI.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 13 ene 2009 a las 02:11.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":146});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
