@@ -24,10 +24,12 @@ else
 fi
 
 # Extraer todos los NOMBRE_FICH.EXT únicos que coincidan con el patrón
-ARCHIVOS=$(grep -oP '<a href="https://www\.iearobotics\.com/wiki/index\.php\?title=Archivo:\K[^"]+(?=" class="image">)' "$FICHERO_HTML" | sort -u)
-
+# 'https?' y '(?:www\.)?' permiten coincidencias con o sin 'www.' y con http o https
+# Busca cualquier enlace a Archivo:NOMBRE dentro de una etiqueta <a ... class="image" ...>
+ARCHIVOS=$(grep -oP '<a\b[^>]*\bhref="https?://(?:www\.)?iearobotics\.com/wiki/index\.php\?title=Archivo:\K[^"]+(?="[^>]*\bclass="image")' "$FICHERO_HTML" | sort -u)
 if [ -z "$ARCHIVOS" ]; then
   echo "No se encontraron enlaces para sustituir en '$FICHERO_HTML'."
+  echo "Archivos: '$ARCHIVOS'"
   exit 0
 fi
 
