@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Módulos REPYZ - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Módulos_REPYZ","wgTitle":"Módulos REPYZ","wgCurRevisionId":18053,"wgRevisionId":18053,"wgArticleId":3193,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Reprap","Objetos 3D","Robots modulares","SVN","Videos"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Módulos_REPYZ","wgRelevantArticleId":3193,"wgRequestId":"avSONuQC3hofA8luwicMpgAnSb8","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="M%C3%B3dulos_REPYZ_files/load_6xna.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="M%C3%B3dulos_REPYZ_files/load_002_6xna.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://www.iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://www.iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="M%C3%B3dulos_REPYZ_files/load_6xna.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Módulos_REPYZ rootpage-Módulos_REPYZ skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Módulos REPYZ</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repyz-logo.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Repyz-logo_6xna.jpg" width="300" height="291" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Repyz-logo_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Repyz-logo_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repyz-logo.jpg" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Informaci.C3.B3n"><span class="tocnumber">2</span> <span class="toctext">Información</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Repositorio"><span class="tocnumber">3</span> <span class="toctext">Repositorio</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Descargar"><span class="tocnumber">4</span> <span class="toctext">Descargar</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Piezas_para_imprimir_.28STL.29"><span class="tocnumber">4.1</span> <span class="toctext">Piezas para imprimir (STL)</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Fuentes"><span class="tocnumber">4.2</span> <span class="toctext">Fuentes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Fotos"><span class="tocnumber">5</span> <span class="toctext">Fotos</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#V.C3.ADdeos"><span class="tocnumber">6</span> <span class="toctext">Vídeos</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Planos_del_m.C3.B3dulo"><span class="tocnumber">7</span> <span class="toctext">Planos del módulo</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#REPYZ_normal"><span class="tocnumber">7.1</span> <span class="toctext">REPYZ normal</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#REPYZ_PRO"><span class="tocnumber">7.2</span> <span class="toctext">REPYZ PRO</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Montaje"><span class="tocnumber">8</span> <span class="toctext">Montaje</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#Material_necesario"><span class="tocnumber">8.1</span> <span class="toctext">Material necesario</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Instrucciones_de_montaje"><span class="tocnumber">8.2</span> <span class="toctext">Instrucciones de montaje</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#Autor"><span class="tocnumber">9</span> <span class="toctext">Autor</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#Licencia"><span class="tocnumber">10</span> <span class="toctext">Licencia</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#Cr.C3.A9ditos"><span class="tocnumber">11</span> <span class="toctext">Créditos</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#Noticias"><span class="tocnumber">12</span> <span class="toctext">Noticias</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repyz-20130530_121241.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Repyz-20130530_121241_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Repyz-20130530_121241_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Repyz-20130530_121241_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repyz-20130530_121241.jpg" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+<p>Los <b>módulos REPYZ</b> son las unidades necesarias para construir <b>robots modulares</b>. Están diseñados para ser fabricados con impresoras 3D opensource (Repraps), para que cualquiera pueda disponer de ellos. Son <b>hardware libre</b>: se conceden permisos  para su fabricación, estudio, modificación, copia y distribución. Son una evolución de los <a href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_REPY-1" title="Módulos REPY-1"> Módulos REPY</a>, tanto de la versión 1, como de los <a rel="nofollow" class="external text" href="http://www.dsquaredrobotics.com/wiki/index.php?title=REPY-2.0">REPY V2</a> (de <a rel="nofollow" class="external text" href="https://plus.google.com/u/0/102149211090472693729/posts">David Estévez</a>)
+</p><p>Las nuevas características de estos módulos son:
+</p>
+<ul><li> <b>Estructura simplificada</b>. El cuerpo del módulo es mucho más pequeño que su antecesor, gracias a la utilización de la tapa imprimible del servo. Tarda menos en imprimirse y es más fácil de montar</li>
+<li> <b>Robustez mejorada</b>. Las piezas están reforzadas y el diseño es mucho más robusto</li>
+<li> <b>Compacto</b>. Gracias a la inclusión de un falso eje en la tapa inferior del servo, el diseño es mucho más compacto</li>
+<li> <b>Simetría</b>. Esta versión hereda la simetría de la versión v2, de manera que los robots así creados se mueven igual tanto boca arriba como boca abajo</li>
+<li> <b>Versión PRO</b>. Además de la versión estándar, hay una PRO que utiliza rodamientos 608 para el falso eje, haciendo que los movimientos sean más suaves y eliminando las holguras.</li></ul>
+<h2><span class="mw-headline" id="Informaci.C3.B3n">Información</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <b>Dimensiones</b> </td>
+<td>  80.5mm x 52.5mm x 52.5mm  (en posición de reposo)
+</td></tr>
+<tr>
+<td> <b>Material</b> </td>
+<td>  ABS ó PLA (o cualquiera otro que se pueda usar con las repraps)
+</td></tr>
+<tr>
+<td> <b>Peso</b> </td>
+<td> Módulo montado con servo y tornillos: Versión estándar: 75gr. Versión PRO: 85gr
+</td></tr>
+<tr>
+<td> <b>Tiempo de impresión</b> </td>
+<td>  2h aproximadamente
+</td></tr>
+<tr>
+<td> <b>Tiempo de montaje</b> </td>
+<td>  10 minutos
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Repositorio">Repositorio</span></h2>
+<ul><li> Disponible en github: <a rel="nofollow" class="external text" href="https://github.com/Obijuan/REPYZ">https://github.com/Obijuan/REPYZn</a></li></ul>
+<h2><span class="mw-headline" id="Descargar">Descargar</span></h2>
+<h3><span class="mw-headline" id="Piezas_para_imprimir_.28STL.29">Piezas para imprimir (STL)</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:REPYZ-servo-lower-cover.png" class="image" title="100px"><img alt="100px" src="M%C3%B3dulos_REPYZ_files/REPYZ-servo-lower-cover_6xna.png" width="1454" height="1073"></a>
+</td>
+<td> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/REPYZ/raw/master/STL/servo_lower_cover_fake_shaft.stl">servo_lower_cover_fake_shaft.stl</a>
+</td>
+<td> Tapa inferior del servo Futaba 3003 (<a rel="nofollow" class="external text" href="https://github.com/Obijuan/REPYZ/blob/master/STL/servo_lower_cover_fake_shaft.stl">Vista 3D</a>)
+</td></tr>
+<tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:REPYZ-body.png" class="image" title="100px"><img alt="100px" src="M%C3%B3dulos_REPYZ_files/REPYZ-body_6xna.png" width="1454" height="1073"></a>
+</td>
+<td> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/REPYZ/raw/master/STL/repyz-body.stl">repyz-body.stl</a>
+</td>
+<td> Cuerpo del módulo  (<a rel="nofollow" class="external text" href="https://github.com/Obijuan/REPYZ/blob/master/STL/repyz-body.stl">Vista 3D</a>)
+</td></tr>
+<tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:REPYZ-head.png" class="image" title="100px"><img alt="100px" src="M%C3%B3dulos_REPYZ_files/REPYZ-head_6xna.png" width="1454" height="1073"></a>
+</td>
+<td> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/REPYZ/raw/master/STL/repyz-head.stl">repyz-head.stl</a>
+</td>
+<td> Cabeza del módulo. Versión normal (<a rel="nofollow" class="external text" href="https://github.com/Obijuan/REPYZ/blob/master/STL/repyz-head.stl">Vista 3D</a>)
+</td></tr>
+<tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:REPYZ-head-PRO.png" class="image" title="100px"><img alt="100px" src="M%C3%B3dulos_REPYZ_files/REPYZ-head-PRO_6xna.png" width="1454" height="1073"></a>
+</td>
+<td> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/REPYZ/raw/master/STL/repyz-head-PRO.stl">repyz-head-PRO.stl</a>
+</td>
+<td> Cabeza del módulo. Versión PRO (<a rel="nofollow" class="external text" href="https://github.com/Obijuan/REPYZ/blob/master/STL/repyz-head-PRO.stl">Vista 3D</a>)
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Fuentes">Fuentes</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="https://www.iearobotics.com/downloads/2013-05-30-REPYZ/REPYZ-openscad-src.zip">REPYZ-openscad-src.zip</a>
+</td>
+<td> Fuentes para Openscad
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/REPYZ/raw/master/doc/Freecad/repyz.fcstd">repyz.fcstd</a>
+</td>
+<td> FREECAD. Módulo ensamblado
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/REPYZ/raw/master/doc/Freecad/repyz-exploded-view.fcstd">repyz-exploded-view.fcstd</a>
+</td>
+<td> [FREECAD. Despiece del módulo]
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/REPYZ/raw/master/doc/Freecad/repyz-PRO.fcstd">repyz-PRO.fcstd</a>
+</td>
+<td> FREECAD. Módulo REPYZ PRO ensamblado
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/REPYZ/raw/master/doc/Freecad/repyz-PRO-exploded-view.fcstd">repyz-PRO-exploded-view.fcstd</a>
+</td>
+<td> FREECAD. Despiece del módulo REPYZ PRO
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Fotos">Fotos</span></h2>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <b><a rel="nofollow" class="external text" href="https://plus.google.com/u/0/photos/109138697406392447933/albums/5878857037837654529">Álbum de fotos completo</a></b>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:REPYZ-1.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-REPYZ-1_6xna.jpg" width="300" height="246" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-REPYZ-1_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-REPYZ-1_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:REPYZ-1.jpg" class="internal" title="Aumentar"></a></div>Módulo repyz en posición horizontal (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:REPYZ-2.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-REPYZ-2_6xna.jpg" width="300" height="226" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-REPYZ-2_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-REPYZ-2_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:REPYZ-2.jpg" class="internal" title="Aumentar"></a></div>Módulo repyz en posición horizontal (ángulo contrario)  (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:20130530_114830.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-20130530_114830_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-20130530_114830_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-20130530_114830_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:20130530_114830.jpg" class="internal" title="Aumentar"></a></div>Las tres partes impresas del módulo  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:20130530_115336.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-20130530_115336_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-20130530_115336_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-20130530_115336_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:20130530_115336.jpg" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repyz-PRO-module-freecad1.png" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Repyz-PRO-module-freecad1_6xna.png" width="300" height="221" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Repyz-PRO-module-freecad1_6xna.png 1.5x, M%C3%B3dulos_REPYZ_files/600px-Repyz-PRO-module-freecad1_6xna.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repyz-PRO-module-freecad1.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repyz-module-freecad-2.png" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Repyz-module-freecad-2_6xna.png" width="300" height="221" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Repyz-module-freecad-2_6xna.png 1.5x, M%C3%B3dulos_REPYZ_files/600px-Repyz-module-freecad-2_6xna.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repyz-module-freecad-2.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+</tbody></table>
+<h2><span class="mw-headline" id="V.C3.ADdeos">Vídeos</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>300|250&lt;/youtube&gt;
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Planos_del_m.C3.B3dulo">Planos del módulo</span></h2>
+<h3><span class="mw-headline" id="REPYZ_normal">REPYZ normal</span></h3>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repyz-estandar-views-Screenshot.png" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Repyz-estandar-views-Screenshot_6xna.png" width="300" height="188" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Repyz-estandar-views-Screenshot_6xna.png 1.5x, M%C3%B3dulos_REPYZ_files/600px-Repyz-estandar-views-Screenshot_6xna.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repyz-estandar-views-Screenshot.png" class="internal" title="Aumentar"></a></div>(<i>Click para aumentar</i>)</div></div></div>
+</td></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repyz-module-exploded-view.png" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Repyz-module-exploded-view_6xna.png" width="300" height="221" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Repyz-module-exploded-view_6xna.png 1.5x, M%C3%B3dulos_REPYZ_files/600px-Repyz-module-exploded-view_6xna.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repyz-module-exploded-view.png" class="internal" title="Aumentar"></a></div>Despiece del módulo REPYZ (<i>Click para aumentar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="REPYZ_PRO">REPYZ PRO</span></h3>
+<p>La versión PRO se diferencia de la normal en que lleva un rodamiento 608 en el falso eje. El resto de piezas son iguales.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repyz-pro-view-screenshot.png" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Repyz-pro-view-screenshot_6xna.png" width="300" height="188" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Repyz-pro-view-screenshot_6xna.png 1.5x, M%C3%B3dulos_REPYZ_files/600px-Repyz-pro-view-screenshot_6xna.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repyz-pro-view-screenshot.png" class="internal" title="Aumentar"></a></div>(<i>Click para aumentar</i>)</div></div></div>
+</td></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repyz-PRO-module-exploded-view.png" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Repyz-PRO-module-exploded-view_6xna.png" width="300" height="221" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Repyz-PRO-module-exploded-view_6xna.png 1.5x, M%C3%B3dulos_REPYZ_files/600px-Repyz-PRO-module-exploded-view_6xna.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Repyz-PRO-module-exploded-view.png" class="internal" title="Aumentar"></a></div>(<i>Click para aumentar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Montaje">Montaje</span></h2>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <b><a rel="nofollow" class="external text" href="https://plus.google.com/u/0/photos/109138697406392447933/albums/5884847018420290209">Album de fotos del montaje</a></b>
+</th></tr></tbody></table>
+<h3><span class="mw-headline" id="Material_necesario">Material necesario</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-01.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-01_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-01_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-01_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-01.jpg" class="internal" title="Aumentar"></a></div>Todo el material necesario para montar un módulo REPYZ PRO  (<i>click para ampliar</i>)</div></div></div>
+<p>En la siguiente lista (y en la figura) se muestra el material necesario para construir un módulo <b>REPYZ PRO</b>.  Para monta la versión normal (no PRO), no es necesario el rodamiento 608. La cabeza del módulo también es diferente (hay que imprimir otro fichero STL).
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> Las 3 piezas imprimibles del módulo
+</td></tr>
+<tr>
+<td> 1 servos de tipo Futaba 3003 o compatible
+</td></tr>
+<tr>
+<td> 1 Arandela M8
+</td></tr>
+<tr>
+<td> 1 Rodamiento 608 (Sólo para versión PRO)
+</td></tr>
+<tr>
+<td> 4 tuercas M3
+</td></tr>
+<tr>
+<td> 4 tornillos M3x10mm
+</td></tr>
+<tr>
+<td> 2 tornillos M2x12 mm (vienen con el servo)
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Instrucciones_de_montaje">Instrucciones de montaje</span></h3>
+<ul><li> <font color="blue"><b>Paso 1</b></font>: <b>Repasar los taladros M3 del cuerpo del módulo y de la tapa inferior del servo</b> para asegurarse que los tornillos M3 entran bien.  Se pueden repasar introduciendo un destornillar de estrella de 3mm o bien con una lima pequeña.</li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-Paso-1-1.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-Paso-1-1_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-Paso-1-1_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-Paso-1-1_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-Paso-1-1.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 1-1</b>: Repasando los taladros del cuerpo del módulo, con un destornillador de estrella de 3mm de diámetro  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-Paso-1-2.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-Paso-1-2_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-Paso-1-2_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-Paso-1-2_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-Paso-1-2.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 1-2</b>: Comprobando que los tornillos M3 entran bien (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-Paso-1-3.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-Paso-1-3_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-Paso-1-3_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-Paso-1-3_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-Paso-1-3.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 1-3</b>: Comprobando que los tornillos M3 entran bien en la tapa inferior del servo. Agrandarlos en caso necesario  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<ul><li> <font color="blue"><b>Paso 2</b></font>: <b>Empotrar las 4 tuercas M3 en el cuerpo del módulo</b>.  Dependiendo de la impresora donde se haya impreso el módulo, las tuercas entrarán bien aplicando una ligera presión, o bien no encajarán en el hueco. En ese caso basta con aplicar un poco de calor con el soldador y empujar la tuerca hasta que quede perfectamente incrustada.</li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-Paso-2-1.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-Paso-2-1_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-Paso-2-1_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-Paso-2-1_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-Paso-2-1.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 2-1</b>:  Introducir un tornillo M3 con su tuerca, todavía sin meter en el hueco (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-Paso-2-2.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-Paso-2-2_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-Paso-2-2_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-Paso-2-2_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-Paso-2-2.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 2-2</b>:  Aplicar calor con un soldador y empujar suavemente hasta que la tuerca se incruste en su hueco (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-Paso-2-3.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-Paso-2-3_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-Paso-2-3_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-Paso-2-3_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-Paso-2-3.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 2-3</b>: Una tuerca empotrada  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-Paso-2-4.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-Paso-2-4_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-Paso-2-4_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-Paso-2-4_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-Paso-2-4.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 2-4</b>: Todas las tuercas empotradas (en la imagen sólo se ven 2 de las 4) (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<ul><li> <font color="blue"><b>Paso 3</b></font>: Colocar la nueva tapa inferior del servo.  Desatornillar la tapa inferior del servo Futaba 3003 y colocar la nueva tapa (impresa)</li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-3-1.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-paso-3-1_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-paso-3-1_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-paso-3-1_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-3-1.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 3-1</b>: Desatornillar la tapa inferior del Futaba 3003  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-3-2.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-paso-3-2_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-paso-3-2_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-paso-3-2_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-3-2.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 3-2</b>:  Atornillar la nueva tapa (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-3-3.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-paso-3-3_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-paso-3-3_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-paso-3-3_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-3-3.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 3-3</b>: Servo con la nueva tapa colocada (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<ul><li> <font color="blue"><b>Paso 4</b></font>: <b>Atornillar el servo al cuerpo</b>. Primero colocar el servo  en el cuerpo. Como el cuerpo es simétrico, da igual hacia qué lado apunte el eje del servo. Hay que apretar el servo para encajarlo en el cuerpo. En caso de que no entrase bien, limar un poco los laterales de la pestaña de la tapa inferior</li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-4-1.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-paso-4-1_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-paso-4-1_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-paso-4-1_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-4-1.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 4-1</b>: Colocar el servo sobre el cuerpo  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-4-2.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-paso-4-2_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-paso-4-2_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-paso-4-2_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-4-2.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 4-2</b>: Servo sobre el cuerpo. Otra vista (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-4-3.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-paso-4-3_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-paso-4-3_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-paso-4-3_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-4-3.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 4-3</b>: Colocar los 4 tornillos. En la imagen se muestran los 2 frontales  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-4-4.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-paso-4-4_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-paso-4-4_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-paso-4-4_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-4-4.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 4-4</b>: Servo atornillado al cuerpo. Vista posterior (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<ul><li> <font color="blue"><b>Paso 5</b></font>: <b>Atornillar la corona del servo a la cabeza del módulo</b>. Primero se colocan los tornillos M2 en la corona del servo, de forma que las puntas sobresalgan un poco. Esto permitirá que los tornillos sirvan de guía al colocar la corona en la cabeza del módulo. A continuación se atornillan hasta el fondo. Por último hay que cortarlos  para que no choquen contra el servo cuando se coloque la cabeza en el módulo.</li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-5-1.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-paso-5-1_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-paso-5-1_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-paso-5-1_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-5-1.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 5-1</b>: Los tornillos M2 en la corona del servo. Vista lateral  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-5-2.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-paso-5-2_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-paso-5-2_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-paso-5-2_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-5-2.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 5-2</b>: Los tornillos M2 en la corona del servo. Vista frontal (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-5-3.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-paso-5-3_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-paso-5-3_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-paso-5-3_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-5-3.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 5-3</b>: Colocar la corona sobre la cabeza, haciendo coincidir los tornillos con los taladros  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-5-4.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-paso-5-4_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-paso-5-4_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-paso-5-4_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-5-4.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 5-4</b>: Atornillar la corona a la cabeza (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-5-5.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-paso-5-5_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-paso-5-5_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-paso-5-5_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-5-5.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 5-5</b>: Los tornillos M2 sobresalen por la parte posterior (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-5-6.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-paso-5-6_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-paso-5-6_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-paso-5-6_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-5-6.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 5-6</b>: Cortando el sobrante de los tornillos (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-5-7.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-paso-5-7_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-paso-5-7_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-paso-5-7_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-5-7.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 5-7</b>: Tornillos cortados  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td>
+</td></tr>
+</tbody></table>
+<ul><li> <font color="blue"><b>Paso 6</b></font>: Preparar los huecos para el rodamiento. Hay que comprobar que el rodamiento entra bien en el falso (suavemente). Si no es así, limar un poco el falso eje.  También hay que comprobar que entra bien en el hueco de la cabeza del módulo. Limar si es necesario.</li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-6-1.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-paso-6-1_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-paso-6-1_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-paso-6-1_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-6-1.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 6-1</b>: Comprobando que el rodamiento entra bien en el falso eje  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-6-2.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-paso-6-2_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-paso-6-2_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-paso-6-2_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-6-2.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 6-2</b>: Comprobando que el rodamiento entra bien en la cabeza del módulo (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+</tbody></table>
+<ul><li> <font color="blue"><b>Paso 7</b></font>: Unir el cuerpo y la cabeza del módulo. Esta unión se tiene que hacer situando el eje del servo en una posición CONOCIDA. Para ello habrá que rotarlo hasta un extremo (o bien conectarlo a la electrónica y posicionarlo en el centro).</li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-7-1.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-paso-7-1_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-paso-7-1_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-paso-7-1_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-7-1.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 7-1</b>: Rotar el eje del servo en sentido antihorario hasta llevarlo al extremo. Para facilitar el giro, se puede usar la corona de 4 brazos que viene con el servo  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-7-2.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-paso-7-2_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-paso-7-2_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-paso-7-2_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-7-2.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 7-2</b>: Poner la cabeza en la posición indicada (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-7-3.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-paso-7-3_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-paso-7-3_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-paso-7-3_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-7-3.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 7-3</b>: Enganchar la corona del servo en el eje, de manera que en esa posición la cabeza FORME 90 GRADOS (aproximadamente) con el servo  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-7-4.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-paso-7-4_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-paso-7-4_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-paso-7-4_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-7-4.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 7-4</b>: Vista posterior (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-7-5.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-paso-7-5_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-paso-7-5_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-paso-7-5_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-7-5.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 7-5</b>: Colocar la arandela M8 sobre el falso eje  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-7-6.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-paso-7-6_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-paso-7-6_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-paso-7-6_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-7-6.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 7-6</b>: Insertar el rodamiento en el falso eje y en el hueco de la cabeza del módulo (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-7-7.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-paso-7-7_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-paso-7-7_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-paso-7-7_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-paso-7-7.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 7-7</b>: Vista superior. Así debe quedar el módulo una vez conectados cabeza y cuerpo  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-7-8.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-7-8_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-7-8_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-7-8_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-7-8.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 7-8</b>: Atornillar la corona al servo (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+</tbody></table>
+<ul><li> <font color="blue"><b>Paso 8</b></font>: Módulo Listo! Últimas comprobaciones. Colocar el módulo en ambos extremos y compararlo con las imágenes</li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-comprobacion-1.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-comprobacion-1_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-comprobacion-1_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-comprobacion-1_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-comprobacion-1.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 8-1</b>: Módulo en el extremo izquierdo (movimiento anti-horario). Debe quedar más o menos a 90 grados  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-comprobacion-2.jpg" class="image"><img alt="" src="M%C3%B3dulos_REPYZ_files/300px-Montaje-repyz-comprobacion-2_6xna.jpg" width="300" height="225" class="thumbimage" srcset="M%C3%B3dulos_REPYZ_files/450px-Montaje-repyz-comprobacion-2_6xna.jpg 1.5x, M%C3%B3dulos_REPYZ_files/600px-Montaje-repyz-comprobacion-2_6xna.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Montaje-repyz-comprobacion-2.jpg" class="internal" title="Aumentar"></a></div><b>Fig. 8-2</b>: Módulo en el extremo derecho (movimiento horario). El ángulo será mayor de 90 grados  (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+</tbody></table>
+<h2><span class="mw-headline" id="Autor">Autor</span></h2>
+<p><a href="https://www.iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main">Juan González Gómez</a>
+</p>
+<h2><span class="mw-headline" id="Licencia">Licencia</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://www.iearobotics.com/wiki/index.php?title=Archivo:Cc_logo.png" class="image"><img alt="Cc logo.png" src="M%C3%B3dulos_REPYZ_files/Cc_logo_6xna.png" width="88" height="31"></a> This work is licensed under a <a rel="nofollow" class="external text" href="http://creativecommons.org/licenses/by-sa/3.0/es/">Creative Commons Attribution-ShareAlike 3.0 Spain License</a>.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Cr.C3.A9ditos">Créditos</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="https://plus.google.com/u/0/102149211090472693729/posts">David Estévez</a>, es el autor de los módulos <a rel="nofollow" class="external text" href="http://www.dsquaredrobotics.com/wiki/index.php?title=REPY-2.0">REPY v2</a>. Esta versión de los módulos ha sido una gran fuente de inspiración. ¡Gracias!</li>
+<li> <a href="https://www.iearobotics.com/wiki/index.php?title=Andr%C3%A9s_Prieto-Moreno" title="Andrés Prieto-Moreno">Andrés Prieto-Moreno</a>.  Suya es la idea de hacer una tapa inferior del servo que incluya las mismas orejas con taladros de la parte superior. De esta forma el servo es simétrico y se puede conectar más fácilmente a otras estructuras. Andrés también es el creador de los módulos MY, de los que he tomado ideas para los REPYZ. ¡Muchas gracias!</li>
+<li> <b>Gocha</b> es el gato de <b>Carlos García Saura</b>, que ha prestado su imagen para el logo de los módulos repyz. ¡Graciazzzz!&nbsp;:-)</li></ul>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>5/Junio/2013</b>: Publicados los módulos en:
+<ul><li> <a rel="nofollow" class="external text" href="http://www.thingiverse.com/thing:98864">Thingiverse</a></li>
+<li> <a rel="nofollow" class="external text" href="http://www.fabfabbers.com/models/id/165/repyz-by-obijuan">Fabfabbers</a></li></ul></li>
+<li> <b>4/Junio/2013</b>: Publicadas las instrucciones de montaje</li>
+<li> <b>31/Mayo/2013</b>: Publicados los planos de los módulos en Freecad</li>
+<li> <b>19/Mayo/2013</b>: 
+<ul><li> Primer prototipo de los módulos listo</li>
+<li> Primera configuración mínima PP con los módulos REPYZ</li>
+<li> Comenzada esta página</li></ul></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20261111154806
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.077 seconds
+Real time usage: 0.142 seconds
+Preprocessor visited node count: 99/1000000
+Preprocessor generated node count: 153/1000000
+Post‐expand include size: 1200/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    3.938      1 - -total
+ 89.54%    3.526      6 - Plantilla:Tablabonita
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_REPYZ&amp;oldid=18053">https://www.iearobotics.com/wiki/index.php?title=Módulos_REPYZ&amp;oldid=18053</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categorías</a>: <ul><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Reprap" title="Categoría:Reprap">Reprap</a></li><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Objetos_3D" title="Categoría:Objetos 3D">Objetos 3D</a></li><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Robots_modulares" title="Categoría:Robots modulares">Robots modulares</a></li><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:SVN" title="Categoría:SVN">SVN</a></li><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Videos" title="Categoría:Videos">Videos</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_REPYZ" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://www.iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:M%C3%B3dulos_REPYZ&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_REPYZ&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_REPYZ&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=M%C3%B3dulos+REPYZ" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/M%C3%B3dulos_REPYZ" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/M%C3%B3dulos_REPYZ" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_REPYZ&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_REPYZ&amp;oldid=18053" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://www.iearobotics.com/wiki/index.php?title=M%C3%B3dulos_REPYZ&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="M%C3%B3dulos_REPYZ_files/gnu-fdl_6xna.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="M%C3%B3dulos_REPYZ_files/poweredby_mediawiki_88x31_6xna.png" alt="Powered by MediaWiki" srcset="M%C3%B3dulos_REPYZ_files/poweredby_mediawiki_132x47_6xna.png 1.5x, M%C3%B3dulos_REPYZ_files/poweredby_mediawiki_176x62_6xna.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 5 jun 2013 a las 11:49.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":240});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
