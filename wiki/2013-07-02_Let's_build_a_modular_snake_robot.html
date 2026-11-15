@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link rel="stylesheet" href="load.css">
+
+	<!-- 🚧 Modificar 🚧 -->
+	<title>2013-07-02:Let's build a modular snake robot</title>
+</head>
+
+<body style="margin: 10px; font-size: 12px;">
+<h1 id="firstHeading" class="firstHeading" lang="es">2013-07-02:Let's build a modular snake robot</h1>
+<div id="bodyContent" class="mw-body-content"></div>
+
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/2/29/2013-07-02-snake-robots.png" class="image"><img alt="2013-07-02-snake-robots.png" src="2013-07-02_Let's_build_a_modular_snake_robot_files/300px-2013-07-02-snake-robots_eoHG.png" width="300" height="225" class="thumbimage" srcset="2013-07-02_Let's_build_a_modular_snake_robot_files/450px-2013-07-02-snake-robots_eoHG.png 1.5x, 2013-07-02_Let's_build_a_modular_snake_robot_files/600px-2013-07-02-snake-robots_eoHG.png 2x"></a>  <div class="thumbcaption"></div></div></div> 
+<p><br>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Information"><span class="tocnumber">1</span> <span class="toctext">Information</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Abstract"><span class="tocnumber">2</span> <span class="toctext">Abstract</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#BILL_of_Materials"><span class="tocnumber">3</span> <span class="toctext">BILL of Materials</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Download"><span class="tocnumber">4</span> <span class="toctext">Download</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Slides"><span class="tocnumber">4.1</span> <span class="toctext">Slides</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Software"><span class="tocnumber">4.2</span> <span class="toctext">Software</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Git_repository"><span class="tocnumber">5</span> <span class="toctext">Git repository</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Video"><span class="tocnumber">6</span> <span class="toctext">Video</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Pictures"><span class="tocnumber">7</span> <span class="toctext">Pictures</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Related_publications"><span class="tocnumber">8</span> <span class="toctext">Related publications</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#More_information"><span class="tocnumber">9</span> <span class="toctext">More information</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#About_modules"><span class="tocnumber">9.1</span> <span class="toctext">About modules</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Firmware_for_modular_robots"><span class="tocnumber">9.2</span> <span class="toctext">Firmware for modular robots</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Other_workshops_on_modular_robots"><span class="tocnumber">9.3</span> <span class="toctext">Other workshops on modular robots</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#About_3D_printers"><span class="tocnumber">9.4</span> <span class="toctext">About 3D printers</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#About_opensource_tools_for_3D_design"><span class="tocnumber">9.5</span> <span class="toctext">About opensource tools for 3D design</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Other"><span class="tocnumber">9.6</span> <span class="toctext">Other</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#Author"><span class="tocnumber">10</span> <span class="toctext">Author</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#License"><span class="tocnumber">11</span> <span class="toctext">License</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="#Acknowledgment"><span class="tocnumber">12</span> <span class="toctext">Acknowledgment</span></a></li>
+<li class="toclevel-1 tocsection-21"><a href="#News"><span class="tocnumber">13</span> <span class="toctext">News</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Information">Information</span></h2>
+<ul><li> <b>Tittle</b>: Let's build a modular snake robot</li>
+<li> <b>Event</b>: <a rel="nofollow" class="external text" href="https://sites.google.com/site/microboticsworkshop/">Microbotics summer Workshop</a>. From 2nd to 6th of July 2013</li>
+<li> <b>Place</b>: ETSIT. Universidad de Malaga  </li>
+<li> <b>Speaker</b>: <a href="Juan_Gonzalez_Main.html" title="Juan Gonzalez:Main">Juan González Gomez</a></li>
+<li> <b>Students</b>: 20</li>
+<li> <b>Hours</b>: 6 (session 1)</li>
+<li> <b>Date</b>: 02/Julio/2013</li></ul>
+<h2><span class="mw-headline" id="Abstract">Abstract</span></h2>
+<p>This is the session 1 of the 2013 <b>Microbotics Summer Workshop</b> organized by the Electronic Technology department at <b>University of Malaga</b>. In this session, a printable modular snake robot, consisting of 9 modules is assembled and the main locomotion principles are presented.
+</p>
+<h2><span class="mw-headline" id="BILL_of_Materials">BILL of Materials</span></h2>
+<ul><li> 10 <a rel="nofollow" class="external text" href="https://github.com/Obijuan/REPYZ">Repyz pro modules</a>, already assembled</li>
+<li> 3 <a rel="nofollow" class="external text" href="SkyMega.html">Skymega boards</a>, Arduino compatibles.  These boards are used only during the session 1 for showing the different locomotion gais. In the following session the students had to program the <a rel="nofollow" class="external text" href="http://processors.wiki.ti.com/index.php/EZ430-RF2500">EZ430-RF2500</a> boards, connected to some extension boards that include connectors for the servos and the sensors.</li>
+<li> 3 <a rel="nofollow" class="external text" href="Objeto_3D_Portapilas_parametrizado.html">battery holders</a> (for 4 AAA batteries) already assembled</li>
+<li> 3 pairs of <a rel="nofollow" class="external text" href="https://github.com/Obijuan/3D-parts/tree/master/repyz-battery-holder-brackets">mounting brackets</a> for attaching the battery holders to the modules</li>
+<li> 60 M3x10 mm bolts</li>
+<li> 60 M3 nuts</li></ul>
+<h2><span class="mw-headline" id="Download">Download</span></h2>
+<h3><span class="mw-headline" id="Slides">Slides</span></h3>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>  <a rel="nofollow" class="external text" href="../downloads/2013-07-02-modular-robot-malaga/2013-07-01-Modular-snake-robots-Malaga.odp">2013-07-01-Modular-snake-robots-Malaga.odp</a>
+</td>
+<td> Slides (Sources, for Libre-office 4.0)
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="../downloads/2013-07-02-modular-robot-malaga/2013-07-01-Modular-snake-robots-Malaga.pdf">2013-07-01-Modular-snake-robots-Malaga.pdf</a>
+</td>
+<td> Slides in PDF
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.slideshare.net/obijuan_cube/lets-build-modular-robots">on-line</a>
+</td>
+<td> Read on-line in Slideshare
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Software">Software</span></h3>
+<p>Before using this software, make sure you have installed the   
+	<a href="ArduSnake_Arduino_Modular_Snake_Robots_Library.html" title="ArduSnake: Arduino Modular Snake Robots Library">Ardusnake Library</a>
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>  <a rel="nofollow" class="external text" href="https://github.com/Obijuan/ArduSnake/blob/master/Workshops/2013-07-02-microbotics-summer-Malaga/examples/Unimod_test1/Unimod_test1.ino">Unimod_test1.ino</a>
+</td>
+<td>  Example 1: different oscillations of 1 module. The oscillation changes when the test button is pressed
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="https://github.com/Obijuan/ArduSnake/blob/master/Workshops/2013-07-02-microbotics-summer-Malaga/examples/Unimod_test2/Unimod_test2.ino">Unimod_test2.ino</a>
+</td>
+<td>  Example 2: Oscillation of 2 modules. The phase difference is changed when the test button is pressed
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="https://github.com/Obijuan/ArduSnake/tree/master/Workshops/2013-07-02-microbotics-summer-Malaga/examples/wave">wave.ino</a>
+</td>
+<td> Example 3: The wave. 9 independent modules are oscillation so that a wave is generated
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="https://github.com/Obijuan/ArduSnake/blob/master/Workshops/2013-07-02-microbotics-summer-Malaga/examples/pp_test/pp_test.ino">pp_test.ino</a>
+</td>
+<td> Example 4: Locomotion of the pitch-pitch minimal configuration. When the test button is pressed, the gait is changed
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="https://github.com/Obijuan/ArduSnake/blob/master/Workshops/2013-07-02-microbotics-summer-Malaga/examples/pyp_gaits/pyp_gaits.ino">pyp_gaits.ino</a>
+</td>
+<td> Example 5: Locomotion of the pitch-yaw-pitch minimal configuration. When the test button is pressed, the gait is changed
+</td></tr>
+<tr>
+<td>  <a rel="nofollow" class="external text" href="https://github.com/Obijuan/ArduSnake/blob/master/Workshops/2013-07-02-microbotics-summer-Malaga/examples/py6/py6.ino">py6.ino</a>
+</td>
+<td> Example 6: Locomotion of a 6 module pitch-yaw snake
+</td></tr>
+</tbody></table>
+<h2><span class="mw-headline" id="Git_repository">Git repository</span></h2>
+<ul><li> <a rel="nofollow" class="external free" href="https://github.com/Obijuan/ArduSnake/tree/master/Workshops/2013-07-02-microbotics-summer-Malaga">https://github.com/Obijuan/ArduSnake/tree/master/Workshops/2013-07-02-microbotics-summer-Malaga</a></li></ul>
+<h2><span class="mw-headline" id="Video">Video</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody>
+<tr>
+<td>
+	
+	<p>
+		<a href="https://www.youtube.com/watch?v=MiuLaC4CxZw">
+			<img src="http://img.youtube.com/vi/MiuLaC4CxZw/0.jpg" alt="">
+		</a>
+	</p>
+	<p><a href="https://www.youtube.com/watch?v=MiuLaC4CxZw">Enlace al vídeo en Youtube</a></p>
+	
+</td></tr></tbody></table>
+<p>Courtesy of <a rel="nofollow" class="external text" href="http://www.malakabot.com/index.php?option=com_content&amp;view=article&amp;id=158:summer-workshop-2013-fotos&amp;catid=70:cat-uma-workshop-2013&amp;Itemid=133">Malakabot</a>. Many thanks!
+</p>
+<h2><span class="mw-headline" id="Pictures">Pictures</span></h2>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="http://www.flickr.com/photos/98460895@N06/"><b>Flickr Album</b></a>
+</th></tr></tbody></table>
+<table class="wikitable">
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/a/aa/Repyz-snake-1.jpg" class="image"><img alt="" src="2013-07-02_Let's_build_a_modular_snake_robot_files/300px-Repyz-snake-1_eoHG.jpg" width="300" height="400" class="thumbimage" srcset="2013-07-02_Let's_build_a_modular_snake_robot_files/450px-Repyz-snake-1_eoHG.jpg 1.5x, 2013-07-02_Let's_build_a_modular_snake_robot_files/600px-Repyz-snake-1_eoHG.jpg 2x"></a>  <div class="thumbcaption">(<i>Click to enlarge</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/2/2a/Malaga-2013-summer-workshop-2.jpg" class="image"><img alt="" src="2013-07-02_Let's_build_a_modular_snake_robot_files/300px-Malaga-2013-summer-workshop-2_eoHG.jpg" width="300" height="225" class="thumbimage" srcset="2013-07-02_Let's_build_a_modular_snake_robot_files/450px-Malaga-2013-summer-workshop-2_eoHG.jpg 1.5x, 2013-07-02_Let's_build_a_modular_snake_robot_files/600px-Malaga-2013-summer-workshop-2_eoHG.jpg 2x"></a>  <div class="thumbcaption">(<i>Click to enlarge</i>)</div></div></div>
+</td></tr>
+<tr>
+<td><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/1/1a/Malaga-2013-summer-workshop-3.jpg" class="image"><img alt="" src="2013-07-02_Let's_build_a_modular_snake_robot_files/300px-Malaga-2013-summer-workshop-3_eoHG.jpg" width="300" height="225" class="thumbimage" srcset="2013-07-02_Let's_build_a_modular_snake_robot_files/450px-Malaga-2013-summer-workshop-3_eoHG.jpg 1.5x, 2013-07-02_Let's_build_a_modular_snake_robot_files/600px-Malaga-2013-summer-workshop-3_eoHG.jpg 2x"></a>  <div class="thumbcaption">(<i>Click to enlarge</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/1/14/Malaga-2013-summer-workshop-4.jpg" class="image"><img alt="" src="2013-07-02_Let's_build_a_modular_snake_robot_files/300px-Malaga-2013-summer-workshop-4_eoHG.jpg" width="300" height="225" class="thumbimage" srcset="2013-07-02_Let's_build_a_modular_snake_robot_files/450px-Malaga-2013-summer-workshop-4_eoHG.jpg 1.5x, 2013-07-02_Let's_build_a_modular_snake_robot_files/600px-Malaga-2013-summer-workshop-4_eoHG.jpg 2x"></a>  <div class="thumbcaption">(<i>Click to enlarge</i>)</div></div></div>
+</td></tr>
+<tr>
+<td><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/8/80/Malaga-2013-summer-workshop-5.jpg" class="image"><img alt="" src="2013-07-02_Let's_build_a_modular_snake_robot_files/300px-Malaga-2013-summer-workshop-5_eoHG.jpg" width="300" height="225" class="thumbimage" srcset="2013-07-02_Let's_build_a_modular_snake_robot_files/450px-Malaga-2013-summer-workshop-5_eoHG.jpg 1.5x, 2013-07-02_Let's_build_a_modular_snake_robot_files/600px-Malaga-2013-summer-workshop-5_eoHG.jpg 2x"></a>  <div class="thumbcaption">(<i>Click to enlarge</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/f/f0/Malaga-2013-summer-workshop-2013-6.jpg" class="image"><img alt="" src="2013-07-02_Let's_build_a_modular_snake_robot_files/300px-Malaga-2013-summer-workshop-2013-6_eoHG.jpg" width="300" height="225" class="thumbimage" srcset="2013-07-02_Let's_build_a_modular_snake_robot_files/450px-Malaga-2013-summer-workshop-2013-6_eoHG.jpg 1.5x, 2013-07-02_Let's_build_a_modular_snake_robot_files/600px-Malaga-2013-summer-workshop-2013-6_eoHG.jpg 2x"></a>  <div class="thumbcaption">From left to right: Juan Robles de Toro, José María Torralba, Federico Coca Caba, Obijuan, Juan Carlos Joya Clarés and Enrique Norro Gañan  (<i>Click to enlarge</i>)</div></div></div>
+</td></tr>
+<tr>
+<td><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/9/95/Malaga-2013-summer-workshop-7.jpg" class="image"><img alt="" src="2013-07-02_Let's_build_a_modular_snake_robot_files/300px-Malaga-2013-summer-workshop-7_eoHG.jpg" width="300" height="225" class="thumbimage" srcset="2013-07-02_Let's_build_a_modular_snake_robot_files/450px-Malaga-2013-summer-workshop-7_eoHG.jpg 1.5x, 2013-07-02_Let's_build_a_modular_snake_robot_files/600px-Malaga-2013-summer-workshop-7_eoHG.jpg 2x"></a>  <div class="thumbcaption">Notes taken by Cristina Urdiales during the talk. Amazing drawings!!! Thanks Cristina!!&nbsp;:-)  (<i>Click to enlarge</i>)</div></div></div>
+</td>
+<td>
+</td></tr>
+</tbody></table>
+<h2><span class="mw-headline" id="Related_publications">Related publications</span></h2>
+<table class="wikitable">
+
+<tbody><tr>
+<td> Avinash Ranganath, Juan Gonzalez-Gomez, Luis Moreno Lorente (2011), "<b>A Distributed Neural Controller for Locomotion in Linear Modular Robotic Configurations</b>", Book chapter (VII),  ISBN: 978-84-7484-238-8. Centro de automática y Robótica CSIC-UPM, pp. 129-144.
+<p>(<a rel="nofollow" class="external text" href="../downloads/2011-05-30-robocity/Avinash-et-at-MR-ANN-Robocity-May2011.pdf">PDF</a>) (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/57370406/A-DISTRIBUTED-NEURAL-CONTROLLER-FOR-LOCOMOTION-IN-LINEAR-MODULAR-ROBOTIC-CONFIGURATIONS">On-line</a>)
+(<a href="Paper_2011-Robocity-Modular-robot-neural-controller.html" title="Paper:2011-Robocity-Modular-robot-neural-controller">More information</a>)
+</p>
+</td></tr>
+<tr>
+<td> Juan González-Gómez, Javier González-Quijano, Houxiang Zhang, Mohamed Abderrahim (2010),"<b>Desarrollo de Robots modulares de tipo serpiente para búsqueda y rescate en entornos urbanos</b>", Capítulo de Libro (20), ISBN: 978-84-614-5558-4. Centro de Automática y Robótica CSIC-UPM, pp. 335-353
+<p>(<a rel="nofollow" class="external text" href="../downloads/2010-12-02-RoboCity-exteriores/Cap-20-robots-modulares-busqueda-rescate-robocity-2030.pdf">PDF</a>) (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/44591049/DESARROLLO-DE-ROBOTS-MODULARES-DE-TIPO-SERPIENTE-PARA-BUSQUEDA-Y-RESCATE-EN-ENTORNOS-URBANOS">online</a>) 
+	<a href="Paper_2010-RoboCity-8-workshop-robots-exteriores.html" title="Paper:2010-RoboCity-8-workshop-robots-exteriores">More information</a> 
+</p>
+</td></tr>
+<tr>
+<td> Houxiang Zhang, Wei Wang, Juan Gonzalez-Gomez and Jianwei Zhang (2010), "<b>A bio-inspired small-sized wall-climbing caterpillar robot</b>", Book chapter (1), Mechatronic Systems Applications, Annalisa Milella Donato Di Paola and Grazia Cicirelli (Ed.), pp. 1-16, ISBN: 978-953-307-040-7, InTech
+<p>(<a rel="nofollow" class="external text" href="../downloads/papers/Bio-inspired-small-sized-wall-climbing-caterpillar-robot.pdf">PDF</a>) (<a rel="nofollow" class="external text" href="http://www.intechopen.com/articles/show/title/a-bio-inspired-small-sized-wall-climbing-caterpillar-robot">On line</a>)
+</p>
+</td></tr>
+<tr>
+<td> Juan Gonzalez-Gomez, Javier Gonzalez-quijano, Houxiang Zhang, Mohamed Abderrahim, "<b>Toward the sense of touch in snake modular robots for search and rescue operations</b>". In Proc of the ICRA 2010 workshop on modular robots: State of the art. pp. 63-68, May-3rd, Anchorage, Alaska
+<p>(<a rel="nofollow" class="external text" href="../downloads/2010-05-03-ICRA-Workshop/Paper-ICRA-workshop-2010-snake-USAR.pdf">PDF</a>) (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/31527410/Paper-Toward-the-sense-of-touch-in-snake-modular-robots-for-search-and-rescue-operations">On line in Scribd</a>) 
+	(<a href="Paper_ICRA-2010-Workshop-on-modular-robots.html" title="Paper:ICRA-2010-Workshop-on-modular-robots">More information</a> )
+</p>
+</td></tr>
+<tr>
+<td> Juan Gonzalez-Gomez, "<b>Modular Robotics and Locomotion: Application to Limbless robots</b>". PhD Thesis. Universidad Autónoma de Madrid. November-2008 (Translated into English)
+<p>(<a rel="nofollow" class="external text" href="../downloads/2008-11-08-Tesis-Juan/Thesis_PhD_Juan_Gonzalez_Gomez-2008.pdf">PDF</a>) (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/19362767/Modular-Robotics-and-Locomotion-Application-to-Limbless-robots">On line in Scribd</a>) 
+	(<a href="Juan_Gonzalez_Tesis.html" title="Juan Gonzalez:Tesis">More information</a>)
+</p>
+</td></tr>
+<tr>
+<td> G. Salvietti, H.X. Zhang, J. Gonzalez-Gomez, D. Prattichizzo, and J.W. Zhang, "<b>Task Priority Grasping and Locomotion Control of Modular Robot</b>". In Proc. IEEE Int. Conf. on Robotics and Biomimetics, Guilin, China, December 2009
+<p>(<a rel="nofollow" class="external text" href="../downloads/papers/Robio2009-task-priority.pdf">PDF</a>)
+</p>
+</td></tr>
+<tr>
+<td>  Houxiang Zhang, Wei Wang, Juan Gonzalez-Gomez, Jianwei Zhang. "<b>Design and Realization of a Novel Modular Climbing Caterpillar Using Low-frequency Vibrating Passive Suckers</b>". Advanced Robotics. Volume 23, Numbers 7-8, 2009 , pp. 889-906.
+</td></tr>
+<tr>
+<td> Houxiang Zhang, Juan González-Gómez, Jianwei Zhang. "<b>A New Application of Modular Robots on Analysis of Caterpillar-like Locomotion</b>". Proceedings of the 2009 IEEE International Conference on Mechatronics, Malaga, Spain, 14-17 April. <i>I.S.B.N 978-1-4244-4195-2</i>
+<p>(<a rel="nofollow" class="external text" href="../downloads/papers/ICM2009-caterpillar.pdf">PDF</a>) (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/17673227/A-New-Application-of-Modular-Robots-on-Analysis-of-Caterpillarlike-Locomotion">On-line in Scribd</a>) 
+	(<a href="Paper_ICM09-caterpillar.html" title="Paper:ICM09-caterpillar"> More Information</a>)
+</p>
+</td></tr>
+<tr>
+<td> Houxiang Zhang, Juan Gonzalez-Gomez, S.Y. Chen, Jianwei Zhang. "<b>Embedded Intelligent Capability of a Modular Robotic System</b>".Proceeding of IEEE Robio2008, Bangkok, Thailand, Dec. 2008
+<p>(<a rel="nofollow" class="external text" href="../downloads/papers/Robio2008-modular-robot.pdf">PDF</a>) (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/17655808/Embedded-Intelligent-Capability-of-a-Modular-Robotic-System">On-line in scribd</a>)
+</p>
+</td></tr>
+<tr>
+<td> Juan Gonzalez-Gomez, "<b>Robótica Modular y Locomoción: Aplicación a Robots Ápodos</b>". Tesis doctoral. Universidad Autónoma de Madrid. Noviembre-2008
+<p>(<a rel="nofollow" class="external text" href="../downloads/2008-11-08-Tesis-Juan/Tesis-Juan-Gonzalez-Gomez.pdf">PDF</a>) (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/14753410/Robotica-modular-y-locomocion-aplicacion-a-robots-apodos">En línea en Scribd</a>) 
+	(<a href="Juan_Gonzalez_Tesis.html" title="Juan Gonzalez:Tesis">Más información</a>)
+</p>
+</td></tr>
+<tr>
+<td> Houxiang Zhang, Juan Gonzalez-Gomez, Zhizhu Xie, Sheng Cheng, Jianwei Zhang. "<b> Development of a Low-cost Flexible Modular Robot GZ-I</b>". Proceeding of 2008 IEEE/ASME International Conference on Advanced Intelligent Mechatronlics, pp. 223-228, Xi'an, China, 4 - 7 June. <i>I.S.B.N. 978-1-4244-2495-5</i>
+<p>(<a rel="nofollow" class="external text" href="../downloads/papers/AIM_2008-GZ-I.pdf">PDF</a>) (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/17645063/Development-of-a-Lowcost-Flexible-Modular-Robot-GZI">On line in scribd</a>)
+</p>
+</td></tr>
+<tr>
+<td> J. Gonzalez-Gomez, Houxiang Zhang and Eduardo Boemo, <b>Locomotion Principles of 1D Topology Pitch and Pitch-Yaw-Connecting Modular Robots</b>. Chapter 24 of the Book: Bioinspiration and Robotics: Walking and Climbing Robots, pp. 403-428. Published by Advanced Robotics Systems International and I-Tech Education and Publishing. Vienna, Austria. September 2007. <i>I.S.B.N 978-3-902613-15-8</i>.
+<p>(<a rel="nofollow" class="external text" href="../personal/juan/publicaciones/art16/download/cwr-chap24-Gonzalez_et_al.pdf">PDF</a>) (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/17613884/Locomotion-Principles-of-1D-Topology-Pitch-and-PitchYawConnecting-Modular-Robots">On-line in scribd</a>) 
+	(<a rel="nofollow" class="external text" href="../personal/juan/publicaciones/art16/index.html">More Information</a>)
+</p>
+</td></tr>
+<tr>
+<td> H. X. Zhang, J. Gonzalez-Gomez, S.Y. Chen, W. Wang, R. Lin, D. Li, J.W. Zhang. <b>A Novel Modular Climbing Caterpillar Using Low-Frequency Vibrating Passive Suckers</b>. IEEE/ASME International Conference on Advanced Intelligent Mechatronics. AIM2007. ETH Zurich, September 4-7, 2007, Switzerland. <i>I.S.B.N. 978-1-4244-1264-1</i>
+<p>(<a rel="nofollow" class="external text" href="../personal/juan/publicaciones/art15/download/AIM07.pdf">PDF</a>) (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/17613615/A-Novel-Modular-Climbing-Caterpillar-Using-Lowfrequency-Vibrating-Passive-Suckers">On-line in scribd</a>) 
+	(<a rel="nofollow" class="external text" href="../personal/juan/publicaciones/art15/index.html">More Information</a>)
+</p>
+</td></tr>
+<tr>
+<td> J. Gonzalez-Gomez, Houxiang Zhang, Eduardo Boemo and Jianwei Zhang, <b>Locomotion Capabilities of a Modular Robot with Eight Pitch-Yaw-Connecting Modules</b>,Proc. of the 9th International Conference on Climbing and Walking Robots. Clawar06, pp. 150-157. Brussels, September 2006
+<p>(<a rel="nofollow" class="external text" href="../personal/juan/publicaciones/art14/download/hypercube-clawar06.pdf">PDF</a>) (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/17608275/Locomotion-Capabilities-of-a-Modular-Robot-with-Eight-PitchYawConnecting-Modules">On-line in scribd</a>) 
+	(<a rel="nofollow" class="external text" href="../personal/juan/publicaciones/art14/index.html">More Information</a>)
+</p>
+</td></tr>
+<tr>
+<td> Gonzalez-Gomez, J. ,Gonzalez, I. ,Gomez-Arribas F.J. and Boemo, E. <b>Evaluation of a locomotion algorithm for worm-like robots on FPGA-embedded processors</b>, In Lecture Notes in computer Science, vol.3985, pp. 24-29. <i>I.S.S.N: 3-540-36708-X</i>
+<p>(<a rel="nofollow" class="external text" href="../personal/juan/publicaciones/art13/download/arc-cube-2006.pdf">PDF</a>) (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/17613446/Evaluation-of-a-locomotion-algorithm-for-wormlike-robots-on-FPGAembedded-processors">On-line in scribd</a>) 
+	(<a rel="nofollow" class="external text" href="../personal/juan/publicaciones/art13/index.html">More Information</a>)
+</p>
+</td></tr>
+<tr>
+<td> Gonzalez-Gomez, J. and Boemo, E. <b>Motion of Minimal Configurations of a Modular Robot: Sinusoidal, Lateral Rolling and Lateral Shift</b>, Proc. of the 8th International Conference on Climbing and Walking Robots. CLAWAR, pp. 667-674. London, September 2005. <i>I.S.B.N</i>: 3-540-26413-2
+<p>(<a rel="nofollow" class="external text" href="../personal/juan/publicaciones/art12/download/multicube-clawar.pdf">PDF</a>) (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/16581798/Motion-of-Minimal-Configurations-of-a-Modular-Robot-Sinusoidal-Lateral-Rolling-and-Lateral-Shift">on-line in Scribd</a>) 
+	(<a rel="nofollow" class="external text" href="../personal/juan/publicaciones/art12/index.html">More Information</a>)
+</p>
+</td></tr>
+<tr>
+<td> J. Gonzalez-Gomez, I. Gonzalez, FJ. Gomez-Arribas y E. Boemo, <b>Evaluación de un Algoritmo de Locomoción de Robots Ápodos en Diferentes Procesadores Embebidos en FPGA</b>, V Jornadas de Computacion Reconfigurable y Aplicaciones. JCRA 2005. Dentro del Primer Congreso Espanol de Informatica, CEDI 2005, pp. 109-116. Granada, Septiembre 2005. <i>I.S.B.N</i>: 84-9732-439-0 
+	(<a rel="nofollow" class="external text" href="../personal/juan/publicaciones/art11/download/cedi-cube.pdf">PDF</a>) (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/16377145/Evaluacion-de-un-Algoritmo-de-Locomocion-de-Robots-Apodos-en-Diferentes-Procesadores-Embebidos-en-FPGA">En línea en Scribd</a>) 
+	(<a rel="nofollow" class="external text" href="../personal/juan/publicaciones/art11/index.html">Más Información</a>)
+</td></tr>
+<tr>
+<td> Gonzalez-Gomez, J, Aguayo E. and Boemo E.,<b>Locomotion of a Modular Worm-like Robot using a FPGA-based embedded MicroBlaze Soft-processor</b>, Proc. of the 7th International Conference on Climbing and Walking Robots, CLAWAR 2004, pp. 869-878, CSIC, Madrid (spain). September, 2004. <i>I.S.B.N</i>: 3-540-22992-2. 
+	(<a rel="nofollow" class="external text" href="../personal/juan/publicaciones/art8/cube-clawar04.pdf">PDF</a>) (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/15048332/Locomotion-of-a-Modular-Wormlike-Robot-using-a-FPGAbased-embedded-MicroBlaze-Softprocessor">On-line in Scribd</a>) 
+	(<a rel="nofollow" class="external text" href="../personal/juan/publicaciones/art8/index.html">More Information</a>)
+</td></tr>
+<tr>
+<td> González-Gómez, J, Aguayo E. y Boemo E.,<b>Locomoción de un Robot Ápodo Modular con el Procesador MicroBlaze</b>, IV Jornadas sobre Computación Reconfigurable y Aplicaciones, JCRA04, Escuela Técnica Superior de Ingenierías. Universidad Autónoma de Barcelona, Septiembre 2004, pp. 675-681. <i>I.S.B.N</i>: 846887667-4. 
+	(<a rel="nofollow" class="external text" href="../personal/juan/publicaciones/art7/cube-rev.pdf">PDF</a>) (<a rel="nofollow" class="external text" href="http://www.scribd.com/doc/15047587/Locomocion-de-un-Robot-apodo-modular-con-el-procesador-MicroBlaze">En línea en Scribd</a>) 
+	(<a rel="nofollow" class="external text" href="../personal/juan/publicaciones/art7/index.html">Más Información</a>)
+<p><br>
+</p>
+<h2><span class="mw-headline" id="More_information">More information</span></h2>
+<h3><span class="mw-headline" id="About_modules">About modules</span></h3>
+<ul><li> <b>Repyz</b>: (<a href="Módulos_REPYZ.html" title="Módulos REPYZ">Wiki</a>)  (<a rel="nofollow" class="external text" href="http://www.thingiverse.com/thing:98864">thingiverse</a>) (<a rel="nofollow" class="external text" href="https://github.com/Obijuan/REPYZ">Github</a>)</li>
+<li> <b>Repy 2.0</b>: (<a rel="nofollow" class="external text" href="http://www.dsquaredrobotics.com/wiki/doku.php?id=en%3arepy-2.0">wiki</a>) (<a rel="nofollow" class="external text" href="http://www.thingiverse.com/thing:99207">thingiverse</a>) (<a rel="nofollow" class="external text" href="https://github.com/David-Estevez/REPY-2.0">github</a>)</li>
+<li> <b>Repy 1.1</b>: (<a href="Módulos_REPY-1.html" title="Módulos REPY-1">Wiki</a>) (<a rel="nofollow" class="external text" href="http://www.thingiverse.com/thing:13442">thingiverse</a>)</li>
+<li> <a href="Módulos_MY.html" title="Módulos MY">MY Modules</a>: Aluminium version of the Y1 modules</li>
+<li> <a href="Módulos_Y1.html" title="Módulos Y1">Y1 modules</a>: Initial modules. Lasercut parts.</li></ul>
+<h3><span class="mw-headline" id="Firmware_for_modular_robots">Firmware for modular robots</span></h3>
+<ul><li> <a href="ArduSnake_Arduino_Modular_Snake_Robots_Library.html" title="ArduSnake: Arduino Modular Snake Robots Library">ArduSnake:_Arduino_Modular_Snake_Robots_Library</a></li></ul>
+<h3><span class="mw-headline" id="Other_workshops_on_modular_robots">Other workshops on modular robots</span></h3>
+<ul><li> <a href="Training_on_modular_snake_robots.html" title="Training on modular snake robots">Training on modular snake robots</a>. General information</li>
+<li> <i>05/March/2011</i>:  <b>Training on modular snake robots</b> given at National Robotics &amp; Intelligent Systems Center. King Abdulaziz City for Science and Technology (KACST). Riyadh. Saudi Arabia </li></ul>
+<dl><dd>(<a href="Training_on_modular_robots_Saudi-arabia_March-5th-2011.html" title="Training on modular robots: Saudi-arabia March-5th-2011">More information</a>)</dd></dl>
+<ul><li> <i>22/Julio/2010</i>: <b>Jugando con Robots modulares</b>. Taller de robots modulares. Campus científico de Verano. Universidad Carlos III de Madrid</li></ul>
+<dl><dd>(<a href="Campus_científico_2010_Taller_de_robots_modulares.html" title="Campus científico 2010:Taller de robots modulares">Más información</a>)</dd></dl>
+<h3><span class="mw-headline" id="About_3D_printers">About 3D printers</span></h3>
+<ul><li> <a rel="nofollow" class="external text" href="http://reprap.org/">RepRap Project</a>: Self-replicating printers</li>
+<li> <a rel="nofollow" class="external text" href="http://www.reprap.org/wiki/Proyecto_Clone_Wars">Clone wars project</a>: Spanish speaking community about 3D printers</li>
+<li> <a rel="nofollow" class="external text" href="http://www.thingiverse.com/">Thingiverse</a>: The youtube of phisical objetcs</li></ul>
+<h3><span class="mw-headline" id="About_opensource_tools_for_3D_design">About opensource tools for 3D design</span></h3>
+<ul><li> <a rel="nofollow" class="external text" href="http://www.openscad.org/">OpenScad</a></li>
+<li> <a rel="nofollow" class="external text" href="http://sourceforge.net/apps/mediawiki/free-cad/index.php?title=Main_Page">Freecad</a></li>
+<li> <a rel="nofollow" class="external text" href="">OOML</a>: Object Oriented Mechanics</li></ul>
+<h3><span class="mw-headline" id="Other">Other</span></h3>
+<ul><li> <a rel="nofollow" class="external text" href="http://www.malakabot.com/index.php?option=com_content&amp;view=article&amp;id=158:summer-workshop-2013-fotos&amp;catid=70:cat-uma-workshop-2013&amp;Itemid=133">Malakabot</a></li></ul>
+<h2><span class="mw-headline" id="Author">Author</span></h2>
+<ul><li> <a href="Juan_Gonzalez_Main.html" title="Juan Gonzalez:Main"> Juan González-Gómez</a></li></ul>
+<h2><span class="mw-headline" id="License">License</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="images/c/c1/Cc_logo.png" class="image"><img alt="Cc logo.png" src="2013-07-02_Let's_build_a_modular_snake_robot_files/Cc_logo_eoHG.png" width="88" height="31"></a> This work is licensed under a <a rel="nofollow" class="external text" href="http://creativecommons.org/licenses/by-sa/2.5/es/">Creative Commons Attribution-ShareAlike 2.5 Spain License</a>.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Acknowledgment">Acknowledgment</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="http://beentheredrawnthat.blogspot.com.es/">Cristina Urdiales</a>: Thanks you very much for inviting me to Malaga to give this lecture!</li>
+<li> <a rel="nofollow" class="external text" href="http://www.dte.uma.es/index.php?option=com_content&amp;task=view&amp;id=279">Manuel Fernández Carmona</a>: Thank you very much for all your help and technical support!</li>
+<li> <a rel="nofollow" class="external text" href="http://www.granadaimprusa.org/">Granada imprusa team</a>: <b>Juan Robles de Toro</b>, <b>José María Torralba</b>, <b>Federico Coca Caba</b> and <b>Juan Carlos Joya Clarés</b>. Thank you very much for your help, your wonderful present and your donation! &nbsp;:-)</li>
+<li> <b>Enrique Norro Gañan</b>: From Dpto. Electrónica del IES Politécnico Jesús Marín and organizer of <a rel="nofollow" class="external text" href="http://www.malakabot.com/index.php?option=com_content&amp;view=article&amp;id=158:summer-workshop-2013-fotos&amp;catid=70:cat-uma-workshop-2013&amp;Itemid=133">Malakabot</a>. Thank you very much for help, your wonderful board for controlling the robot and all the pictures and videos!</li></ul>
+<h2><span class="mw-headline" id="News">News</span></h2>
+<ul><li> <b>20/oct/2013</b>: First version is ready!</li>
+<li> <b>08/Sep/2013</b>: This page is started</li></ul>
+<hr>
+<table class="wikitable">
+
+<tbody><tr>
+<td>
+<p><img alt="Proyecto Clone wars" 
+	src="2013-07-02_Let's_build_a_modular_snake_robot_files/Clone-Wars-logo_eoHG.png" 
+	title="Proyecto Clone wars" width="100">
+</p>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.reprap.org/wiki/Proyecto_Clone_Wars">Proyecto Clone wars</a>
+</td></tr>
+<tr>
+<td>
+<center> <img alt="Proyecto Reprap" 
+	src="2013-07-02_Let's_build_a_modular_snake_robot_files/RepRap1_eoHG.png" 
+	title="Proyecto Reprap" height="100"> </center>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://reprap.org/">Proyecto RepRap</a>
+</td></tr>
+<tr>
+<td>
+<center><img alt="Obijuan Academy" 
+	src="2013-07-02_Let's_build_a_modular_snake_robot_files/Logo-obijuan-academy-white-back_eoHG.png" 
+	title="Obijuan Academy" width="100"> </center>
+</td>
+<td> <a href="Obijuan_Academy.html" title="Obijuan Academy">Obijuan Academy</a>
+</td></tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+
+</div>
+</body>
+</html>
+
