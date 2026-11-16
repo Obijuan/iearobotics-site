@@ -1,46 +1,15 @@
 <!DOCTYPE html>
-<html lang="es" dir="ltr" class="client-js"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta charset="UTF-8">
-<title>Diseño de piezas con OpenScad - WikiRobotics</title>
-<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
-<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Diseño_de_piezas_con_OpenScad","wgTitle":"Diseño de piezas con OpenScad","wgCurRevisionId":16009,"wgRevisionId":16009,"wgArticleId":2397,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Robots imprimibles","Charlas y Conferencias","Robótica","Obijuan Academy"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Diseño_de_piezas_con_OpenScad","wgRelevantArticleId":2397,"wgRequestId":"atpS5OX8SrxsZ8SfJEQ0QwAnXCM","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
-mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Diseño de piezas con OpenScad</title>
+  	<link rel="stylesheet" href="load.css">
+</head>
 
-});mw.loader.load(["mediawiki.page.startup"]);});</script>
-<link rel="stylesheet" href="Dise%C3%B1o_de_piezas_con_OpenScad_files/load_R57K.css">
-<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
-<style>
-.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
-.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
-@media screen {
-	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
-@media print {
-	#toc.tochidden,.toctoggle{display:none}}
-.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
-.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
-<script async="" src="Dise%C3%B1o_de_piezas_con_OpenScad_files/load_002_R57K.es"></script>
-<meta name="generator" content="MediaWiki 1.27.7">
-<link rel="shortcut icon" href="https://www.iearobotics.com/favicon.ico">
-<link rel="search" type="application/opensearchdescription+xml" href="https://www.iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
-<link rel="EditURI" type="application/rsd+xml" href="https://www.iearobotics.com/wiki/api.php?action=rsd">
-<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
-<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
-<script src="Dise%C3%B1o_de_piezas_con_OpenScad_files/load_R57K.es"></script></head>
-<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Diseño_de_piezas_con_OpenScad rootpage-Diseño_de_piezas_con_OpenScad skin-monobook action-view">
-<div id="globalWrapper">
-		<div id="column-content">
-			<div id="content" class="mw-body" role="main">
-				<a id="top"></a>
-				
-				<div class="mw-indicators">
-</div>
-				<h1 id="firstHeading" class="firstHeading" lang="es">Diseño de piezas con OpenScad</h1>
-				
-				<div id="bodyContent" class="mw-body-content">
-					<div id="siteSub">De WikiRobotics</div>
-					<div id="contentSub"></div>
-										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+<body style="margin: 10px; font-size: 12px;">
+<h1 id="firstHeading" class="firstHeading" lang="es">Diseño de piezas con OpenScad</h1>
+<div id="bodyContent" class="mw-body-content"></div>
 
 					<!-- start content -->
 					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><center>
@@ -86,13 +55,15 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 
 <h2><span class="mw-headline" id="Ficha">Ficha</span></h2>
 <ul><li> <b>Título</b>: Diseño de piezas con OpenScad</li>
-<li> <b>Contexto</b>: Sesión 2 del seminario: <a href="https://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_e_Impresi%C3%B3n_de_Piezas_3D_con_herramientas_Open_Source._UC3M-2011" title="Diseño e Impresión de Piezas 3D con herramientas Open Source. UC3M-2011">Diseño e Impresión de Piezas 3D con herramientas Open Source. UC3M-2011</a> dentro del Máster de Áutomática y Robótica de la UC3M </li>
+<li> <b>Contexto</b>: Sesión 2 del seminario: 
+	<a href="Diseño_e_Impresión_de_Piezas_3D_con_herramientas_Open_Source._UC3M-2011.html" title="Diseño e Impresión de Piezas 3D con herramientas Open Source. UC3M-2011">Diseño e Impresión de Piezas 3D con herramientas Open Source. UC3M-2011</a> dentro del Máster de Áutomática y Robótica de la UC3M </li>
 <li> <b>Ponente</b>: <a href="Juan_Gonzalez_Main.html" title="Juan Gonzalez:Main"> Juan González</a></li>
 <li> <b>Duración</b>: 2 horas</li>
 <li> <b>Lugar</b>: Universidad Carlos III de Madrid</li>
 <li> <b>Fecha</b>: 17-Nov-2011</li></ul>
 <h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
-<p>Inicialmente en esta página se iban a poner sólo los ejemplos dados en la sesión 2 del seminario <a href="https://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_e_Impresi%C3%B3n_de_Piezas_3D_con_herramientas_Open_Source._UC3M-2011" title="Diseño e Impresión de Piezas 3D con herramientas Open Source. UC3M-2011">Diseño e Impresión de Piezas 3D con herramientas Open Source</a> dentro del <b>Máster de Áutomática y Robótica de la UC3M</b>. Esta sesión fue presencial con una duración de 2 horas. Mostré diferentes ejemplos en mi portátil y los asistentes iban haciéndolos sobre la marcha en los suyos.
+<p>Inicialmente en esta página se iban a poner sólo los ejemplos dados en la sesión 2 del seminario 
+	<a href="Diseño_e_Impresión_de_Piezas_3D_con_herramientas_Open_Source._UC3M-2011.html" title="Diseño e Impresión de Piezas 3D con herramientas Open Source. UC3M-2011">Diseño e Impresión de Piezas 3D con herramientas Open Source</a> dentro del <b>Máster de Áutomática y Robótica de la UC3M</b>. Esta sesión fue presencial con una duración de 2 horas. Mostré diferentes ejemplos en mi portátil y los asistentes iban haciéndolos sobre la marcha en los suyos.
 </p><p>Al publicar la información en esta wiki (6 meses después y ya fuera de la UC3M), decidí hacer unos micro <b>video-tutoriales</b> y convertir esta sesión en un <b>micro-curso on-line</b>. Tomé la decisión de hacer micro-sesiones de unos <b>3 minutos</b>. La razón de esto es que antes de la publicación, asistí a un curso/charla que duró 2h y 30 minutos, fue un auténtico rollazo y no aprendí nada. Salí tan cabreado que decidí hacer micro-sesiones de 3 minutos. Así, si una sesión no te ha gustado, <b>sólo habrás perdido 3 minutos de tu vida</b>. Y si te ha gustado, podrás seguir avanzando con las siguientes.
 </p>
 <h2><span class="mw-headline" id="Descargas">Descargas</span></h2>
@@ -521,16 +492,20 @@ translate([0,30,0])
   pieza_mecano(n=2); <br>
 </pre>
 </td></tr></tbody></table>
-<p>Se generan 3 piezas de mecano de 4, 3 y 2 taladros, y se imprimen usando la impresora <a href="https://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteraci%C3%B3n_2:_R3" title="Prusa Mendel Iteración 2: R3">R3</a> (Una Prusa mendel iteración 2)
+<p>Se generan 3 piezas de mecano de 4, 3 y 2 taladros, y se imprimen usando la impresora 
+	<a href="Prusa_Mendel_Iteración_2_R3.html" title="Prusa Mendel Iteración 2: R3">R3</a> (Una Prusa mendel iteración 2)
 </p>
 <dl><dd><table class="wikitable">
 
 <tbody><tr>
-<td> <a href="images/b/b3/DSC05129.JPG" class="image" title="Imprimiendo las piezas  (click para ampliar)"><img alt="Imprimiendo las piezas  (click para ampliar)" src="Dise%C3%B1o_de_piezas_con_OpenScad_files/DSC05129_R57K.JPG" width="2048" height="1536"></a>
+<td> <a href="images/b/b3/DSC05129.JPG" class="image" title="Imprimiendo las piezas  (click para ampliar)">
+	<img alt="Imprimiendo las piezas  (click para ampliar)" src="Dise%C3%B1o_de_piezas_con_OpenScad_files/DSC05129_R57K.JPG" width="300"></a>
 </td>
-<td> <a href="images/6/6c/DSC05130.JPG" class="image" title="Piezas impresas (click para ampliar)"><img alt="Piezas impresas (click para ampliar)" src="Dise%C3%B1o_de_piezas_con_OpenScad_files/DSC05130_R57K.JPG" width="2048" height="1536"></a>
+<td> <a href="images/6/6c/DSC05130.JPG" class="image" title="Piezas impresas (click para ampliar)">
+	<img alt="Piezas impresas (click para ampliar)" src="Dise%C3%B1o_de_piezas_con_OpenScad_files/DSC05130_R57K.JPG" width="300"></a>
 </td>
-<td> <a href="images/f/f1/DSC05133.JPG" class="image" title="Probando las piezas (click para ampliar)"><img alt="Probando las piezas (click para ampliar)" src="Dise%C3%B1o_de_piezas_con_OpenScad_files/DSC05133_R57K.JPG" width="2048" height="1536"></a>
+<td> <a href="images/f/f1/DSC05133.JPG" class="image" title="Probando las piezas (click para ampliar)">
+	<img alt="Probando las piezas (click para ampliar)" src="Dise%C3%B1o_de_piezas_con_OpenScad_files/DSC05133_R57K.JPG" width="300"></a>
 </td>
 <td>
 </td></tr></tbody></table></dd></dl>
@@ -553,119 +528,12 @@ translate([0,30,0])
 <li> <a rel="nofollow" class="external text" href="http://www.thingiverse.com/thing:8559">Orugator</a></li>
 <li> <a rel="nofollow" class="external text" href="http://www.thingiverse.com/thing:7640">Unitrack</a></li>
 <li> <a rel="nofollow" class="external text" href="http://asrob.uc3m.es/index.php/Proyecto:_Clone_wars">Proyecto Clone Wars</a>: Clonando impresoras 3D</li>
-<li> <a rel="nofollow" class="external text" href="http://iearobotics.com/oomlwiki/doku.php">OOML</a>: Object Oriented Mechanics. Mecánica orientada a Objetos</li></ul>
+<li> <a rel="nofollow" class="external text" href="">OOML</a>: Object Oriented Mechanics. Mecánica orientada a Objetos</li></ul>
 <h2><span class="mw-headline" id="Noicias">Noicias</span></h2>
-<ul><li> <b>06/Sep/2012</b>: Tutorial incluido en la <a href="https://www.iearobotics.com/wiki/index.php?title=Obijuan_Academy" title="Obijuan Academy">Obijuan Academy</a></li>
+<ul><li> <b>06/Sep/2012</b>: Tutorial incluido en la <a href="Obijuan_Academy.html" title="Obijuan Academy">Obijuan Academy</a></li>
 <li> <b>22/Mayo/2012</b>: Lista la primera versión. Video-tutorial (1-14) finalizado</li>
 <li> <b>08/Mayo/2012</b>: Comenzada la página</li></ul>
 
-<!-- 
-NewPP limit report
-Cached time: 20261022181604
-Cache expiry: 0
-Dynamic content: true
-CPU time usage: 0.053 seconds
-Real time usage: 0.176 seconds
-Preprocessor visited node count: 145/1000000
-Preprocessor generated node count: 241/1000000
-Post‐expand include size: 3200/2097152 bytes
-Template argument size: 0/2097152 bytes
-Highest expansion depth: 3/40
-Expensive parser function count: 0/100
--->
-
-<!-- 
-Transclusion expansion time report (%,ms,calls,template)
-100.00%    7.310      1 - -total
- 86.41%    6.316     16 - Plantilla:Tablabonita
--->
-</div><div class="printfooter">
-Obtenido de «<a dir="ltr" href="https://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&amp;oldid=16009">https://www.iearobotics.com/wiki/index.php?title=Diseño_de_piezas_con_OpenScad&amp;oldid=16009</a>»</div>
-					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categorías</a>: <ul><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Robots_imprimibles" title="Categoría:Robots imprimibles">Robots imprimibles</a></li><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Charlas_y_Conferencias" title="Categoría:Charlas y Conferencias">Charlas y Conferencias</a></li><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Rob%C3%B3tica" title="Categoría:Robótica">Robótica</a></li><li><a href="https://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Obijuan_Academy" title="Categoría:Obijuan Academy">Obijuan Academy</a></li></ul></div></div>					<!-- end content -->
-										<div class="visualClear"></div>
-				</div>
-			</div>
-		</div>
-		<div id="column-one">
-			<h2>Menú de navegación</h2>
-					<div id="p-cactions" class="portlet" role="navigation">
-			<h3>Vistas</h3>
-
-			<div class="pBody">
-				<ul>
-				<li id="ca-nstab-main" class="selected"><a href="https://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
-				<li id="ca-talk" class="new"><a href="https://www.iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Dise%C3%B1o_de_piezas_con_OpenScad&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
-				<li id="ca-viewsource"><a href="https://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&amp;action=edit" title="Esta página está protegida.
-Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
-				<li id="ca-history"><a href="https://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
-				</ul>
-							</div>
-		</div>
-				<div class="portlet" id="p-personal" role="navigation">
-				<h3>Herramientas personales</h3>
-
-				<div class="pBody">
-					<ul>
-													<li id="pt-login"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Dise%C3%B1o+de+piezas+con+OpenScad" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
-											</ul>
-				</div>
-			</div>
-			<div class="portlet" id="p-logo" role="banner">
-				<a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
-			</div>
-				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
-		<h3>Navegación</h3>
-		<div class="pBody">
-							<ul>
-											<li id="n-mainpage"><a href="https://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
-											<li id="n-recentchanges"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
-									</ul>
-					</div>
-		</div>
-			<div id="p-search" class="portlet" role="search">
-			<h3><label for="searchInput">Buscar</label></h3>
-
-			<div id="searchBody" class="pBody">
-				<form action="/wiki/index.php" id="searchform">
-					<input type="hidden" name="title" value="Especial:Buscar">
-					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
-					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
-						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
-				</form>
-
-							</div>
-		</div>
-			<div class="portlet" id="p-tb" role="navigation">
-			<h3>Herramientas</h3>
-
-			<div class="pBody">
-				<ul>
-											<li id="t-whatlinkshere"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Dise%C3%B1o_de_piezas_con_OpenScad" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
-											<li id="t-recentchangeslinked"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Dise%C3%B1o_de_piezas_con_OpenScad" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
-											<li id="t-specialpages"><a href="https://www.iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
-											<li id="t-print"><a href="https://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
-											<li id="t-permalink"><a href="https://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&amp;oldid=16009" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
-											<li id="t-info"><a href="https://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
-									</ul>
-							</div>
-		</div>
-			</div><!-- end of the left (by default at least) column -->
-		<div class="visualClear"></div>
-					<div id="footer" role="contentinfo">
-						<div id="f-copyrightico">
-									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Dise%C3%B1o_de_piezas_con_OpenScad_files/gnu-fdl_R57K.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
-							</div>
-					<div id="f-poweredbyico">
-									<a href="https://www.mediawiki.org/"><img src="Dise%C3%B1o_de_piezas_con_OpenScad_files/poweredby_mediawiki_88x31_R57K.png" alt="Powered by MediaWiki" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_files/poweredby_mediawiki_132x47_R57K.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_files/poweredby_mediawiki_176x62_R57K.png 2x" width="88" height="31"></a>
-							</div>
-					<ul id="f-list">
-									<li id="lastmod"> Esta página fue modificada por última vez el 6 sep 2012 a las 08:16.</li>
-									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
-									<li id="privacy"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
-									<li id="about"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
-									<li id="disclaimer"><a href="https://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
-							</ul>
-		</div>
-		</div>
-		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":405});});</script>
-<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
+</div>
+</body>
+</html>
