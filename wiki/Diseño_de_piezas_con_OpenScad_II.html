@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Diseño de piezas con OpenScad II - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Diseño_de_piezas_con_OpenScad_II","wgTitle":"Diseño de piezas con OpenScad II","wgCurRevisionId":19081,"wgRevisionId":19081,"wgArticleId":3334,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Robots imprimibles","Charlas y Conferencias","Robótica","Obijuan Academy"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Diseño_de_piezas_con_OpenScad_II","wgRelevantArticleId":3334,"wgRequestId":"av4ZfrNAwcZVCuigpWwA8QAn0Xc","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/load_scYq.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/load_scYq.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/load_002_scYq.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Diseño_de_piezas_con_OpenScad_II rootpage-Diseño_de_piezas_con_OpenScad_II skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Diseño de piezas con OpenScad II</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><center>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Logo-temp-2.png" class="image"><img alt="Logo-temp-2.png" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Logo-temp-2_scYq.png" width="300" height="234" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Logo-temp-2_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Logo-temp-2_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Logo-temp-2.png" class="internal" title="Aumentar"></a></div></div></div></div> 
+</center>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Ficha"><span class="tocnumber">1</span> <span class="toctext">Ficha</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Introducci.C3.B3n"><span class="tocnumber">2</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Descargas"><span class="tocnumber">3</span> <span class="toctext">Descargas</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#PLAYLIST"><span class="tocnumber">4</span> <span class="toctext">PLAYLIST</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Aprendiendo_m.C3.A1s_opciones_de_Openscad"><span class="tocnumber">5</span> <span class="toctext">Aprendiendo más opciones de Openscad</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#1.29_Usando_un_editor_mejorado"><span class="tocnumber">5.1</span> <span class="toctext">1) Usando un editor mejorado</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="#Descripci.C3.B3n"><span class="tocnumber">5.1.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Pasos"><span class="tocnumber">5.1.2</span> <span class="toctext">Pasos</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Configuraci.C3.B3n_del_editor_kate_en_Linux"><span class="tocnumber">5.1.3</span> <span class="toctext">Configuración del editor kate en Linux</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#Cr.C3.A9ditos"><span class="tocnumber">5.1.4</span> <span class="toctext">Créditos</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-11"><a href="#2.29_.C2.A1.C2.A1.C2.A1Las_pir.C3.A1mides_son_cilindros.21.21.21"><span class="tocnumber">5.2</span> <span class="toctext">2) ¡¡¡Las pirámides son cilindros!!!</span></a>
+<ul>
+<li class="toclevel-3 tocsection-12"><a href="#Descripci.C3.B3n_2"><span class="tocnumber">5.2.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#C.C3.B3digo"><span class="tocnumber">5.2.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-14"><a href="#3.29_Mis_objetos_en_una_cuadr.C3.ADcula.2C_por_favor"><span class="tocnumber">5.3</span> <span class="toctext">3) Mis objetos en una cuadrícula, por favor</span></a>
+<ul>
+<li class="toclevel-3 tocsection-15"><a href="#Descripci.C3.B3n_3"><span class="tocnumber">5.3.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#C.C3.B3digo_2"><span class="tocnumber">5.3.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-17"><a href="#4.29_Esferita.2C_esferita.2C_dime_donde_est.C3.A1_la_cuadr.C3.ADcula"><span class="tocnumber">5.4</span> <span class="toctext">4) Esferita, esferita, dime donde está la cuadrícula</span></a>
+<ul>
+<li class="toclevel-3 tocsection-18"><a href="#Descripci.C3.B3n_4"><span class="tocnumber">5.4.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#C.C3.B3digo_3"><span class="tocnumber">5.4.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-20"><a href="#5.29_Organiza_tus_canicas"><span class="tocnumber">5.5</span> <span class="toctext">5) Organiza tus canicas</span></a>
+<ul>
+<li class="toclevel-3 tocsection-21"><a href="#Descripci.C3.B3n_5"><span class="tocnumber">5.5.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-22"><a href="#C.C3.B3digo_4"><span class="tocnumber">5.5.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-23"><a href="#6.29_.C2.A1Comparte_tus_dise.C3.B1os.21"><span class="tocnumber">5.6</span> <span class="toctext">6) ¡Comparte tus diseños!</span></a>
+<ul>
+<li class="toclevel-3 tocsection-24"><a href="#Descripci.C3.B3n_6"><span class="tocnumber">5.6.1</span> <span class="toctext">Descripción</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-25"><a href="#7.29_Tirando_tangentes_con_el_operador_hull"><span class="tocnumber">5.7</span> <span class="toctext">7) Tirando tangentes con el operador hull</span></a>
+<ul>
+<li class="toclevel-3 tocsection-26"><a href="#Descripci.C3.B3n_7"><span class="tocnumber">5.7.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="#C.C3.B3digo_5"><span class="tocnumber">5.7.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-28"><a href="#8.29_Figuras_redondeadas_en_el_plano_xy"><span class="tocnumber">5.8</span> <span class="toctext">8) Figuras redondeadas en el plano xy</span></a>
+<ul>
+<li class="toclevel-3 tocsection-29"><a href="#Descripci.C3.B3n_8"><span class="tocnumber">5.8.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-30"><a href="#C.C3.B3digo_6"><span class="tocnumber">5.8.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-31"><a href="#9.29_Automatizando_con_vectores"><span class="tocnumber">5.9</span> <span class="toctext">9) Automatizando con vectores</span></a>
+<ul>
+<li class="toclevel-3 tocsection-32"><a href="#Descripci.C3.B3n_9"><span class="tocnumber">5.9.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-33"><a href="#C.C3.B3digo_7"><span class="tocnumber">5.9.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-34"><a href="#Apilando_2_objetos"><span class="tocnumber">5.10</span> <span class="toctext">Apilando 2 objetos</span></a>
+<ul>
+<li class="toclevel-3 tocsection-35"><a href="#Descripci.C3.B3n_10"><span class="tocnumber">5.10.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-36"><a href="#C.C3.B3digo_8"><span class="tocnumber">5.10.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-37"><a href="#Apilando_varios_objetos"><span class="tocnumber">5.11</span> <span class="toctext">Apilando varios objetos</span></a>
+<ul>
+<li class="toclevel-3 tocsection-38"><a href="#Descripci.C3.B3n_11"><span class="tocnumber">5.11.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-39"><a href="#C.C3.B3digo_9"><span class="tocnumber">5.11.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-40"><a href="#Mis_cubos_con_curvas.2C_por_favor"><span class="tocnumber">5.12</span> <span class="toctext">Mis cubos con curvas, por favor</span></a>
+<ul>
+<li class="toclevel-3 tocsection-41"><a href="#Descripci.C3.B3n_12"><span class="tocnumber">5.12.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-42"><a href="#C.C3.B3digo_10"><span class="tocnumber">5.12.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-43"><a href="#Objetos_condicionales:_cilindros_redondeados"><span class="tocnumber">5.13</span> <span class="toctext">Objetos condicionales: cilindros redondeados</span></a>
+<ul>
+<li class="toclevel-3 tocsection-44"><a href="#Descripci.C3.B3n_13"><span class="tocnumber">5.13.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-45"><a href="#C.C3.B3digo_11"><span class="tocnumber">5.13.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-46"><a href="#Redondeados_parciales_con_hull_.28II.29"><span class="tocnumber">5.14</span> <span class="toctext">Redondeados parciales con hull (II)</span></a>
+<ul>
+<li class="toclevel-3 tocsection-47"><a href="#Descripci.C3.B3n_14"><span class="tocnumber">5.14.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-48"><a href="#C.C3.B3digo_12"><span class="tocnumber">5.14.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-49"><a href="#El_operador_Minkowski"><span class="tocnumber">5.15</span> <span class="toctext">El operador Minkowski</span></a>
+<ul>
+<li class="toclevel-3 tocsection-50"><a href="#Descripci.C3.B3n_15"><span class="tocnumber">5.15.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-51"><a href="#C.C3.B3digo_13"><span class="tocnumber">5.15.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-52"><a href="#Estudiando_el_c.C3.B3digo_compartido_por_los_dem.C3.A1s"><span class="tocnumber">5.16</span> <span class="toctext">Estudiando el código compartido por los demás</span></a>
+<ul>
+<li class="toclevel-3 tocsection-53"><a href="#Descripci.C3.B3n_16"><span class="tocnumber">5.16.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-54"><a href="#C.C3.B3digo_14"><span class="tocnumber">5.16.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-55"><a href="#Update:_Actualizando_a_Openscad_2014.03"><span class="tocnumber">6</span> <span class="toctext">Update: Actualizando a Openscad 2014.03</span></a>
+<ul>
+<li class="toclevel-2 tocsection-56"><a href="#17_Probando_el_nuevo_Openscad_2014.03"><span class="tocnumber">6.1</span> <span class="toctext">17 Probando el nuevo Openscad 2014.03</span></a>
+<ul>
+<li class="toclevel-3 tocsection-57"><a href="#Descripci.C3.B3n_17"><span class="tocnumber">6.1.1</span> <span class="toctext">Descripción</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-58"><a href="#C.C3.B3digo_15"><span class="tocnumber">6.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-59"><a href="#Objetos_3D_a_partir_de_objetos_2D"><span class="tocnumber">7</span> <span class="toctext">Objetos 3D a partir de objetos 2D</span></a>
+<ul>
+<li class="toclevel-2 tocsection-60"><a href="#18_Extruyendo_pol.C3.ADgonos"><span class="tocnumber">7.1</span> <span class="toctext">18 Extruyendo polígonos</span></a>
+<ul>
+<li class="toclevel-3 tocsection-61"><a href="#Descripci.C3.B3n_18"><span class="tocnumber">7.1.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-62"><a href="#C.C3.B3digo_16"><span class="tocnumber">7.1.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-63"><a href="#19_Extrusi.C3.B3n_lineal_con_torsi.C3.B3n"><span class="tocnumber">7.2</span> <span class="toctext">19 Extrusión lineal con torsión</span></a>
+<ul>
+<li class="toclevel-3 tocsection-64"><a href="#Descripci.C3.B3n_19"><span class="tocnumber">7.2.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-65"><a href="#C.C3.B3digo_17"><span class="tocnumber">7.2.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-66"><a href="#20_Extrusi.C3.B3n_axial"><span class="tocnumber">7.3</span> <span class="toctext">20 Extrusión axial</span></a>
+<ul>
+<li class="toclevel-3 tocsection-67"><a href="#Descripci.C3.B3n_20"><span class="tocnumber">7.3.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-68"><a href="#C.C3.B3digo_18"><span class="tocnumber">7.3.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-69"><a href="#21_Rueda_para_printbot"><span class="tocnumber">7.4</span> <span class="toctext">21 Rueda para printbot</span></a>
+<ul>
+<li class="toclevel-3 tocsection-70"><a href="#Descripci.C3.B3n_21"><span class="tocnumber">7.4.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-71"><a href="#C.C3.B3digo_19"><span class="tocnumber">7.4.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-72"><a href="#22_Extruyendo_dibujos_con_l.C3.ADneas_rectas"><span class="tocnumber">7.5</span> <span class="toctext">22  Extruyendo dibujos con líneas rectas</span></a>
+<ul>
+<li class="toclevel-3 tocsection-73"><a href="#Descripci.C3.B3n_22"><span class="tocnumber">7.5.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-74"><a href="#C.C3.B3digo_20"><span class="tocnumber">7.5.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-75"><a href="#23_Me_gustan_las_curvas:_Extruyendo_dibujos_con_curvas_.28II.29"><span class="tocnumber">7.6</span> <span class="toctext">23  Me gustan las curvas: Extruyendo dibujos con curvas (II)</span></a>
+<ul>
+<li class="toclevel-3 tocsection-76"><a href="#Descripci.C3.B3n_23"><span class="tocnumber">7.6.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-77"><a href="#C.C3.B3digo_21"><span class="tocnumber">7.6.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-78"><a href="#24_.C2.A1Pon_un_smiley_en_tu_vida.21_.28III.29"><span class="tocnumber">7.7</span> <span class="toctext">24  ¡Pon un smiley en tu vida! (III)</span></a>
+<ul>
+<li class="toclevel-3 tocsection-79"><a href="#Descripci.C3.B3n_24"><span class="tocnumber">7.7.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-80"><a href="#C.C3.B3digo_22"><span class="tocnumber">7.7.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-81"><a href="#25_Extruyendo_logos_a_partir_de_im.C3.A1genes"><span class="tocnumber">7.8</span> <span class="toctext">25  Extruyendo logos a partir de imágenes</span></a>
+<ul>
+<li class="toclevel-3 tocsection-82"><a href="#Descripci.C3.B3n_25"><span class="tocnumber">7.8.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-83"><a href="#C.C3.B3digo_23"><span class="tocnumber">7.8.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-84"><a href="#26_Extrusi.C3.B3n_de_dibujos_por_capas"><span class="tocnumber">7.9</span> <span class="toctext">26  Extrusión de dibujos por capas</span></a>
+<ul>
+<li class="toclevel-3 tocsection-85"><a href="#Descripci.C3.B3n_26"><span class="tocnumber">7.9.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-86"><a href="#C.C3.B3digo_24"><span class="tocnumber">7.9.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-87"><a href="#27_Texto_en_3D"><span class="tocnumber">7.10</span> <span class="toctext">27  Texto en 3D</span></a>
+<ul>
+<li class="toclevel-3 tocsection-88"><a href="#Descripci.C3.B3n_27"><span class="tocnumber">7.10.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-89"><a href="#C.C3.B3digo_25"><span class="tocnumber">7.10.2</span> <span class="toctext">Código</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-90"><a href="#28_Keep_calm_and_.C2.A1Haz_Tutoriales.21"><span class="tocnumber">7.11</span> <span class="toctext">28 Keep calm and ¡Haz Tutoriales!</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-91"><a href="#Para_las_pr.C3.B3ximas_temporadas_de_tutoriales_..."><span class="tocnumber">8</span> <span class="toctext">Para las próximas temporadas de tutoriales ...</span></a></li>
+<li class="toclevel-1 tocsection-92"><a href="#Repositorio"><span class="tocnumber">9</span> <span class="toctext">Repositorio</span></a></li>
+<li class="toclevel-1 tocsection-93"><a href="#Licencia"><span class="tocnumber">10</span> <span class="toctext">Licencia</span></a></li>
+<li class="toclevel-1 tocsection-94"><a href="#Sobre_este_tutorial"><span class="tocnumber">11</span> <span class="toctext">Sobre este tutorial</span></a></li>
+<li class="toclevel-1 tocsection-95"><a href="#Enlaces"><span class="tocnumber">12</span> <span class="toctext">Enlaces</span></a></li>
+<li class="toclevel-1 tocsection-96"><a href="#Noticias"><span class="tocnumber">13</span> <span class="toctext">Noticias</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Ficha">Ficha</span></h2>
+<ul><li> <b>Título</b>: Diseño de piezas con OpenScad II</li>
+<li> <b>Contexto</b>: Continuación del tutorial <a href="https://iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad" title="Diseño de piezas con OpenScad">Diseño de piezas con OpenScad</a></li>
+<li> <b>Autor</b>: <a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main"> Juan González</a> (Obijuan)</li></ul>
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>Segunda temporada de tutoriales de Openscad. La filosofía es la misma que con los primeros: Intentar que <b>NO SOBREPASEN LOS 3 MINUTOS</b>, de manera que si uno no te gusta, <b>sólo habrás perdido 3 minutos de tu vida</b>.
+</p><p><b>Nota</b>: Bueno, vale, en algunos vídeos me he pasado de tiempo. Intentaré estar por debajo de 5 minutos siempre &nbsp;:-)
+</p><p><b>Nota 2</b>: ¡buaaahhhh! En el tutorial 21 me he ido a 10 minutos!
+</p>
+<h2><span class="mw-headline" id="Descargas">Descargas</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> Todos los ejemplos están accesibles desde el repositorio en <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/tree/master/temporada-2">github</a>
+</td>
+<td>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="PLAYLIST">PLAYLIST</span></h2>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/playlist?list=PLmnz0JqIMEzXipVqksIcvWfskeEiWFw66"><b>PLAYLIST CON TODOS LOS VIDEOS DE LA TEMPORADA 2 (28)</b></a>
+</th></tr></tbody></table>
+<p><br>
+</p>
+<h2><span class="mw-headline" id="Aprendiendo_m.C3.A1s_opciones_de_Openscad">Aprendiendo más opciones de Openscad</span></h2>
+<h3><span class="mw-headline" id="1.29_Usando_un_editor_mejorado">1) Usando un editor mejorado</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=xLWdrG-pogY"><b>Video Tutorial 1/28</b></a>
+</th></tr></tbody></table>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Tutorial-openscad-2-editor-externo-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Tutorial-openscad-2-editor-externo-1_scYq.png" width="300" height="159" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Tutorial-openscad-2-editor-externo-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Tutorial-openscad-2-editor-externo-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Tutorial-openscad-2-editor-externo-1.png" class="internal" title="Aumentar"></a></div>Código openscad en el editor externo kate (<i>click para ampliar</i>)</div></div></div>
+<h4><span class="mw-headline" id="Descripci.C3.B3n">Descripción</span></h4>
+<p>El editor de textos que incorpora openscad es muy básico. Vamos a ver cómo podemos utilizar un editor externo
+</p>
+<h4><span class="mw-headline" id="Pasos">Pasos</span></h4>
+<p>Los pasos a realizar son los siguientes:
+</p>
+<ul><li> Abrir openscad</li>
+<li> Ir a la opción <b>view/hide editor</b>. Con esto dejamos de ver el editor de openscad</li>
+<li> Ir a la opción <b>design/automatic reload and compile</b></li>
+<li> Salir de openscad. Se quedarán grabadas las estas opciones de manera que la siguiente vez que arranque openscad no hace falta volverlas a activar</li></ul>
+<p>Ahora, para editar cualquier programa sólo hay que abrirlo con openscad y luego con el editor de texto que queramos. Cada vez que se graben los cambios, openscad cargará automaticamente ese fichero y lo visualizará.
+</p>
+<h4><span class="mw-headline" id="Configuraci.C3.B3n_del_editor_kate_en_Linux">Configuración del editor kate en Linux</span></h4>
+<ul><li> Instalar kate (sudo apt-get install kate)</li>
+<li> Descargar el fichero <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T01-editor/kate-cfg/openscad.xml">openscad.xml</a></li>
+<li> Copiar el fichero en <i>/usr/share/kde4/apps/katepart/syntax/</i></li></ul>
+<pre>sudo cp $HOME/Downloads/openscad.xml /usr/share/kde4/apps/katepart/syntax/
+</pre>
+<ul><li> Dar permiso de lectura al fichero:</li></ul>
+<pre>sudo chmod a+r  /usr/share/kde4/apps/katepart/syntax/openscad.xml
+</pre>
+<ul><li> Ejecutar kate</li>
+<li> Ir a la opción tools &gt; mode &gt; Other &gt; Openscad</li></ul>
+<h4><span class="mw-headline" id="Cr.C3.A9ditos">Créditos</span></h4>
+<ul><li> El primero que me enseñó esta opción de openscad fue <b>Sergio Vilches</b></li>
+<li> El fichero con resaltado de sintaxis de kate es obra de <a rel="nofollow" class="external text" href="http://www.thingiverse.com/thing:29505">Kevin Weekly</a></li></ul>
+<h3><span class="mw-headline" id="2.29_.C2.A1.C2.A1.C2.A1Las_pir.C3.A1mides_son_cilindros.21.21.21">2) ¡¡¡Las pirámides son cilindros!!!</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=dFvxW7ATolc"><b>Video Tutorial 2/28</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-2-cilindros-cono.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-2-cilindros-cono_scYq.png" width="300" height="294" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-2-cilindros-cono_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Openscad-2-cilindros-cono_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-2-cilindros-cono.png" class="internal" title="Aumentar"></a></div>Cono truncado (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-2-cilindros-piramide.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-2-cilindros-piramide_scYq.png" width="300" height="294" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-2-cilindros-piramide_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Openscad-2-cilindros-piramide_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-2-cilindros-piramide.png" class="internal" title="Aumentar"></a></div>Piramide (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_2">Descripción</span></h4>
+<p>Se muestra cómo con el comando "cylinder" de openscad se pueden crear conos, pirámides y tetraedros
+</p>
+<h4><span class="mw-headline" id="C.C3.B3digo">Código</span></h4>
+<ul><li> Fichero: <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T02-conos-piramides/cylindros-2.scad">cylindros-2.scad</a></li></ul>
+<pre>//-- Cilindro normal. r es el radio, h es la altura
+*cylinder (r = 20, h = 20, $fn = 100);
+
+//-- Cono truncado. r1 radio base inferior, r2 radio de la base superior
+*cylinder (r1 = 20, r2 = 10, h = 20, $fn = 100);
+
+//-- Cono
+*cylinder (r1 = 20, r2 = 0, h = 20, $fn = 100);
+
+//-- Piramide de base hexagonal
+*cylinder (r1 = 20, r2 = 10, h = 20, $fn = 6);
+
+//-- Piramide
+*cylinder (r1 = 20, r2 = 0, h = 20, $fn = 4);
+
+//-- Tetraedro
+cylinder (r1 = 20, r2 = 0, h = 20, $fn = 3);
+</pre>
+<h3><span class="mw-headline" id="3.29_Mis_objetos_en_una_cuadr.C3.ADcula.2C_por_favor">3) Mis objetos en una cuadrícula, por favor</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=sQPa2cbGAwo"><b>Video Tutorial 3/28</b></a>
+</th></tr></tbody></table>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-2-cuadricula-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-2-cuadricula-1_scYq.png" width="300" height="311" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-2-cuadricula-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Openscad-2-cuadricula-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-2-cuadricula-1.png" class="internal" title="Aumentar"></a></div>Objetos en la cuadrícula virtual (<i>click para ampliar</i>)</div></div></div>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_3">Descripción</span></h4>
+<p>Ejemplo de organización de 6 objetos en una cuadrícula virtual paramétrica. Más adelante esta idea se desarrollará y refinará
+</p>
+<h4><span class="mw-headline" id="C.C3.B3digo_2">Código</span></h4>
+<ul><li> Fichero: <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T03-cuadricula/cuadricula-1.scad">cuadricula-1.scad</a></li></ul>
+<pre>//-- Dimensiones de los cuadros de la cuadricula
+d = 60;
+
+//-- Centrar la cuadricula (opcional)
+translate([-2*d / 2, -d / 2, 0]) {
+
+  //-- Punto: 0, 0
+  translate([0, 0, 0]) cylinder (r = 20, h = 20, $fn = 100);
+  
+  //-- Punto: 1, 0
+  translate([d, 0, 0]) cylinder (r1 = 20, r2 = 10, h = 20, $fn = 100);
+
+  //-- Punto: 2, 0
+  translate([2*d, 0, 0]) cylinder (r1 = 20, r2 = 0, h = 20, $fn = 100);
+
+  //-- Punto: 0, 1
+  translate([0, d, 0])  cylinder (r1 = 20, r2 = 10, h = 20, $fn = 6);
+
+  //-- Punto: 1, 1
+  translate([d, d, 0])  cylinder (r1 = 20, r2 = 0, h = 20, $fn = 4);
+
+  //-- Punto: 2, 1
+  translate([2*d, d, 0]) cylinder (r1 = 20, r2 = 0, h = 20, $fn = 3);
+
+}
+</pre>
+<h3><span class="mw-headline" id="4.29_Esferita.2C_esferita.2C_dime_donde_est.C3.A1_la_cuadr.C3.ADcula">4) Esferita, esferita, dime donde está la cuadrícula</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=DIs8MDCJfC0"><b>Video Tutorial 4/28</b></a>
+</th></tr></tbody></table>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Esfera-cuadricula-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Esfera-cuadricula-1_scYq.png" width="300" height="292" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Esfera-cuadricula-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Esfera-cuadricula-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Esfera-cuadricula-1.png" class="internal" title="Aumentar"></a></div>Una esfera y un cube dentro de la cuadrícula  (<i>click para ampliar</i>)</div></div></div>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_4">Descripción</span></h4>
+<p>Aprender a crear esferas. Ejemplo de cómo visualizar una cuadrícula.
+</p>
+<h4><span class="mw-headline" id="C.C3.B3digo_3">Código</span></h4>
+<p>Fichero: <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T04-esfera/esfera-cuadricula.scad">esfera-cuadricula.scad</a>
+</p>
+<pre>//-- Ejemplo de uso de esferas para visualizar una cuadrícula
+//-- de N x N cuadros
+
+//-- Tamaño de cada cuadro
+d = 30; 
+
+//-- Radio de las esferas en la cuadrícula
+r = 2;
+
+//-- Número de cuadros (N x N)
+N = 10;
+
+//-- Tamaño total de la cuadrícula
+size = N * d;
+
+//-- Dibujar la cuadricula
+translate([-size / 2, -size / 2, 0]) //-- Centrar cuadricula
+for (ix = [0:N]) //-- Esferas en eje x
+  for (iy = [0:N]) //-- Esferas en eje y
+    //-- Posicionar la esfera en punto (ix, iy)
+    translate([ix * d, iy * d, 0])
+      sphere(r = r, $fn=20);
+
+//-- Objeto ejemplo en punto (2, 2): una esfera roja
+translate([2 * d, 2 * d, 0])
+  color("red")
+    sphere(r = 15, $fn = 20);
+
+//-- Objeto ejemplo en punto (-3, -4): un cubo azul
+color("blue")
+  translate([-3 * d, -4 * d, 0])
+   cube([20, 20, 20], center = true);
+</pre>
+<h3><span class="mw-headline" id="5.29_Organiza_tus_canicas">5) Organiza tus canicas</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=0v7RYabL4nM"><b>Video Tutorial 5/28</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Porta-canicas-5.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Porta-canicas-5_scYq.png" width="300" height="327" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Porta-canicas-5_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Porta-canicas-5_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Porta-canicas-5.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Porta-canicas-1.jpg" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Porta-canicas-1_scYq.jpg" width="300" height="225" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Porta-canicas-1_scYq.jpg 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Porta-canicas-1_scYq.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Porta-canicas-1.jpg" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_5">Descripción</span></h4>
+<p>Ejemplo de diseño de una pieza paramétrica para organizar las canicas
+</p>
+<h4><span class="mw-headline" id="C.C3.B3digo_4">Código</span></h4>
+<ul><li> Fichero: <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T05-porta-canicas/porta-canicas.scad">porta-canicas.scad</a></li></ul>
+<pre>//-- Organizador de canicas paramétrico
+
+//-- Número de canicas
+N = 3;
+
+//-- Diametro de las canicas
+dc = 16;
+
+//-- Tamaño de cada cuadro
+d = dc + 3;
+
+//-- Tamaño total de la cuadrícula
+size = (N-1) * d;
+
+//-- Tamaño de la caja donde están las canicas
+size_box = N * d;
+h_box = dc / 2 + 1;
+
+difference() {
+  //-- Caja de las canicas
+  translate([0, 0, -h_box / 2])
+  cube([size_box, size_box, h_box], center = true);
+
+  //-- Canicas
+  translate([-size / 2, -size / 2, 0]) //-- Centrar canicas
+  for (ix = [0:N-1])
+    for (iy = [0:N-1])
+      //-- Posicionar la canica en punto (ix, iy)
+      translate([ix * d, iy * d, 0])
+        sphere(r = dc/2, $fn=20);
+}
+</pre>
+<h3><span class="mw-headline" id="6.29_.C2.A1Comparte_tus_dise.C3.B1os.21">6) ¡Comparte tus diseños!</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=vaW5LCskarE"><b>Video Tutorial 6/28</b></a>
+</th></tr></tbody></table>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Esfera-cuadricula-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Esfera-cuadricula-1_scYq.png" width="300" height="292" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Esfera-cuadricula-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Esfera-cuadricula-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Esfera-cuadricula-1.png" class="internal" title="Aumentar"></a></div>Una esfera y un cube dentro de la cuadrícula  (<i>click para ampliar</i>)</div></div></div>
+<p><br>
+</p>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_6">Descripción</span></h4>
+<p>Una vez terminado un diseño... ¡Compártelo! Es la manera de que el conocimiento esté disponible para todos y que podamos mejorar.
+</p><p>Como ejemplo, esto son los sitios donde he compartido el organizador de canicas:
+</p>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=Organizador_de_canicas" title="Organizador de canicas">En mi wiki personal</a></li>
+<li> El código lo subo a <a rel="nofollow" class="external text" href="https://github.com/Obijuan/3D-parts/tree/master/marble-organizer">github</a>. Es un repositorio y permite que otros aporten sus modificaciones fácilmente</li>
+<li> También lo he publicado en <a rel="nofollow" class="external text" href="http://www.fabfabbers.com/models/id/209/marble-organizer-by-obijuan">Fabfabbers</a></li>
+<li> y en <a rel="nofollow" class="external text" href="https://www.youmagine.com/designs/marble-organizer">Youmagine</a></li>
+<li> El repositorio más antiguo es <a rel="nofollow" class="external text" href="http://www.thingiverse.com/">Thingiverse</a>, aunque yo lo he dejado de usar.</li></ul>
+<h3><span class="mw-headline" id="7.29_Tirando_tangentes_con_el_operador_hull">7) Tirando tangentes con el operador hull</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=FQlKJZ3MznI"><b>Video Tutorial 7/28</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Tirando-tangentes-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Tirando-tangentes-1_scYq.png" width="300" height="236" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Tirando-tangentes-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Tirando-tangentes-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Tirando-tangentes-1.png" class="internal" title="Aumentar"></a></div>Pieza que queremos diseñar  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Tirando-tangentes-2.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Tirando-tangentes-2_scYq.png" width="300" height="236" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Tirando-tangentes-2_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Tirando-tangentes-2_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Tirando-tangentes-2.png" class="internal" title="Aumentar"></a></div>Esquema de los elementos geométricos que componen la pieza (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_7">Descripción</span></h4>
+<p>El comando hull crea el objeto convexo mínimo que incluye otros objetos indicados. Se muestra su uso para construir una pieza en la que es necesario crear las tangentes entre dos cilindros.
+</p>
+<h4><span class="mw-headline" id="C.C3.B3digo_5">Código</span></h4>
+<ul><li> Fichero: <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T07-tirando-tangentes/tirando-tangentes.scad">tirando-tangentes.scad</a> </li></ul>
+<pre>//-------- Parametros de la pieza
+r1 = 25; //-- Radio cilindro 1
+r2 = 10; //-- Radio cilindro 2
+th = 5; //-- Grosor
+
+//-- Distancia entre los centros de los cilincros
+d = r1 + r2 + 10;
+
+//-- Crear el objetco convexo minimo que contiene ls dos
+//-- cilindros
+hull() {
+
+  //-- Cilindro 1
+  translate([-d/2, 0, 0])
+    cylinder(r = r1, h = th, center = true, $fn = 50);
+    
+  //-- Cilincro 2
+  translate([d/2, 0, 0])
+    cylinder(r = r2, h = th, center = true, $fn = 50);
+}
+</pre>
+<h3><span class="mw-headline" id="8.29_Figuras_redondeadas_en_el_plano_xy">8) Figuras redondeadas en el plano xy</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=GfoJzz-7wLM"><b>Video Tutorial 8/28</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Caja-redondeada-01.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Caja-redondeada-01_scYq.png" width="300" height="292" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Caja-redondeada-01_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Caja-redondeada-01_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Caja-redondeada-01.png" class="internal" title="Aumentar"></a></div>Caja redondeada (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Caja-redondeada-02.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Caja-redondeada-02_scYq.png" width="300" height="292" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Caja-redondeada-02_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Caja-redondeada-02_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Caja-redondeada-02.png" class="internal" title="Aumentar"></a></div>Esquema de cómo hacer la caja redondeada  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_8">Descripción</span></h4>
+<p>Ejemplo de cómo se pueden hacer objetos con las aristas verticales redondeadas, usando el comando hull
+</p>
+<h4><span class="mw-headline" id="C.C3.B3digo_6">Código</span></h4>
+<ul><li> Fichero: <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T08-objetos-redondeados-en-xy/cubo-redondeado.scad">cubo-redondeado.scad</a></li></ul>
+<pre>//-- Parametros de la caja
+lx = 50; //-- Longitud en eje x
+ly = 40; //-- Longitud en eje y
+r = 5; //-- Radio del redondeo de las esquinas
+h = 10; //-- Altura
+
+//-- Coordenadas del cilindro del primer cuadrante
+cx = lx/2 - r;
+cy = ly/2 - r;
+
+//-- Posicion de los 4 cilindros de las esquinas
+P1 = [cx, cy, 0];
+P2 = [-cx, cy, 0];
+P3 = [-cx, -cy, 0];
+P4 = [cx, -cy, 0];
+ 
+
+//-- Obtener el menor objeto convexo que contiene
+//-- los 4 cilindros
+hull() {
+  translate(P1)
+    cylinder(r = r, h = h, center = true, $fn = 20);
+   
+  translate(P2)
+    cylinder(r = r, h = h, center = true, $fn = 20);
+   
+  translate(P3)
+    cylinder(r = r, h = h, center = true, $fn = 20);
+   
+  translate(P4)
+    cylinder(r = r, h = h, center = true, $fn = 20);
+}
+</pre>
+<h3><span class="mw-headline" id="9.29_Automatizando_con_vectores">9) Automatizando con vectores</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=QOhAltQx8bc"><b>Video Tutorial 9/28</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Figura-convexa-redondeada-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Figura-convexa-redondeada-1_scYq.png" width="300" height="292" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Figura-convexa-redondeada-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Figura-convexa-redondeada-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Figura-convexa-redondeada-1.png" class="internal" title="Aumentar"></a></div>Figura convexa redondeada formada mediante 7 cilindros y el comando hull (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Figura-convexa-redondeada-2.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Figura-convexa-redondeada-2_scYq.png" width="300" height="291" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Figura-convexa-redondeada-2_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Figura-convexa-redondeada-2_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Figura-convexa-redondeada-2.png" class="internal" title="Aumentar"></a></div>Detalles de la figura y los cilindros (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_9">Descripción</span></h4>
+<p>Creación de objetos redondeados a partir de un número genérico de cilindros. Las posiciones de los cilincros se guardan en un vector (array). Usando un bucle for se recorren y se colocan automáticamente los cilindros. Luego se aplica hull para generar el objeto convexo mínimo que contiene todos los cilindros.
+</p>
+<h4><span class="mw-headline" id="C.C3.B3digo_7">Código</span></h4>
+<ul><li> Fichero: <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T09-automatizando-con-vectores/poligonos-redondeados.scad">poligonos-redondeados.scad</a></li></ul>
+<pre>//-- Parametros
+r = 5; //-- Radio del redondeo de las esquinas
+h = 10; //-- Altura
+
+//-- Coordenadas del cilindro del primer cuadrante
+cx = 20;
+cy = 15;
+
+//-- Vector de puntos, con las posiciones de los cilindros
+POINT = [
+  [cx, cy, 0], //-- Punto 0
+  [-cx, cy, 0], //-- Punto 1
+  [-cx, -cy, 0], //-- Punto 2
+  [cx, -cy, 0], //-- Punto 3
+  [2*cx, 0, 0], //-- Punto 4
+  [0, 1.5*cy, 0], //-- Punto 5
+  [0,0,h], //-- Punto 6
+];
+ 
+
+//-- Obtener el menor objeto convexo que contiene
+//-- los cilindros situados en los puntos indicados en
+//-- el vector POINT
+
+hull() { 
+
+  //-- Dibujar cada cilindro en su posicion correspondiente
+  for (pos = POINT)
+    translate(pos)
+      cylinder(r = r, h = h, center = true, $fn = 20);
+}
+</pre>
+<h3><span class="mw-headline" id="Apilando_2_objetos">Apilando 2 objetos</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=sCfmxMPpuUI"><b>Video Tutorial 10/28</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Apilando-2-cubos-2.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Apilando-2-cubos-2_scYq.png" width="300" height="241" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Apilando-2-cubos-2_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Apilando-2-cubos-2_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Apilando-2-cubos-2.png" class="internal" title="Aumentar"></a></div>Dos cubos apilados  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Apilando-2-cubos-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Apilando-2-cubos-1_scYq.png" width="300" height="241" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Apilando-2-cubos-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Apilando-2-cubos-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Apilando-2-cubos-1.png" class="internal" title="Aumentar"></a></div>Dos cubos apilados (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p><br>
+</p>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_10">Descripción</span></h4>
+<p>Apilar 2 objetos es fácil... pero usando vectores es mucho más fácil aún y el código se mantiene mejor
+</p>
+<h4><span class="mw-headline" id="C.C3.B3digo_8">Código</span></h4>
+<ul><li> Fichero: <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T10-apilando-2-objetos/apilando-2-cajas.scad">apilando-2-cajas.scad</a></li></ul>
+<pre>//-- Definiciones para acceder a las componentes X,Y,Z
+//-- Aunque las definimos todas, en este ejemplo solo
+//-- accedemos a la componente Z de los cubos
+X = 0;
+Y = 1;
+Z = 2;
+
+//-- Dimensiones de los cubos. Se pueden cambiar por el usuario
+//-- Todo se recalculara para que B esté siempre encima de A
+A = [30, 30, 10];
+B = [10, 10, 30];
+
+//-- Calcular la posicion de B para que este encima de A
+posB = [0, 0, B[Z]/2 + A[Z]/2];
+
+//---- Construccion de la figura a partir de los datos calculados!
+//-- Poner el cubo B encima del A
+
+//-- Poner el cubo A (es la base)
+cube(A, center = true);
+
+//-- Cubo B, encima de A
+translate(posB)
+  cube(B, center = true);
+</pre>
+<h3><span class="mw-headline" id="Apilando_varios_objetos">Apilando varios objetos</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=p_J44OXwjxs"><b>Video Tutorial 11/28</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Apilando-varios-objetos-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Apilando-varios-objetos-1_scYq.png" width="300" height="258" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Apilando-varios-objetos-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Apilando-varios-objetos-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Apilando-varios-objetos-1.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p><br>
+</p>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_11">Descripción</span></h4>
+<p>Se propone como ejercicio modificar el ejemplo del tutorial anterior para apilar 4 objetos
+</p>
+<h4><span class="mw-headline" id="C.C3.B3digo_9">Código</span></h4>
+<ul><li> Fichero: <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T11-apilando-varios-objetos/apilando-varias-cajas.scad">apilando-varias-cajas.scad</a></li></ul>
+<pre>//-- Definiciones para acceder a las componentes X,Y,Z
+//-- Aunque las definimos todas, en este ejemplo solo
+//-- accedemos a la componente Z de los cubos
+X = 0;
+Y = 1;
+Z = 2;
+
+//-- Dimensiones de los cubos. Se pueden cambiar por el usuario
+//-- Todo se recalculara para que todos los cubos esten apilados
+A = [30, 30, 10];
+B = [10, 10, 30];
+C = [6, 6, 10];
+D = [3, 3, 3];
+
+//-- Calcular las posicion de los cubos para que esten apilados
+posB = [0, 0, B[Z]/2 + A[Z]/2];
+posC = posB + [0, 0, C[Z]/2 + B[Z]/2];
+posD = posC + [0, 0, D[Z]/2 + C[Z]/2]; 
+
+//---- Construccion de la figura a partir de los datos calculados! 
+
+//-- Poner el cubo A (es la base)
+cube(A, center = true);
+
+//-- Cubo B, encima de A
+translate(posB)
+  cube(B, center = true);
+  
+//-- Poner el cubo C encima del B
+translate(posC)
+  cube(C, center = true);
+
+//-- Poner el cubo D encima del C   
+translate(posD)
+  cube(D, center = true);
+</pre>
+<h3><span class="mw-headline" id="Mis_cubos_con_curvas.2C_por_favor">Mis cubos con curvas, por favor</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=IaIdKBlWRzo"><b>Video Tutorial 12/28</b></a>
+</th></tr></tbody></table>
+<p><br>
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cubo-redondeado-3d-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Cubo-redondeado-3d-1_scYq.png" width="300" height="233" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Cubo-redondeado-3d-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Cubo-redondeado-3d-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cubo-redondeado-3d-1.png" class="internal" title="Aumentar"></a></div>El cubo redondeado en 3D (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cubo-redondeado-3d-2.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Cubo-redondeado-3d-2_scYq.png" width="300" height="230" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Cubo-redondeado-3d-2_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Cubo-redondeado-3d-2_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cubo-redondeado-3d-2.png" class="internal" title="Aumentar"></a></div>Construido a partir de 8 esferas y aplicando el comando hull (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cubo-redondeado-3d-6.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Cubo-redondeado-3d-6_scYq.png" width="300" height="230" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Cubo-redondeado-3d-6_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Cubo-redondeado-3d-6_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cubo-redondeado-3d-6.png" class="internal" title="Aumentar"></a></div>Comparación entre el cubo redondeado y uno sin redondear (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cubo-redondeado-3d-7.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Cubo-redondeado-3d-7_scYq.png" width="300" height="230" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Cubo-redondeado-3d-7_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Cubo-redondeado-3d-7_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cubo-redondeado-3d-7.png" class="internal" title="Aumentar"></a></div>Obtener las coordenadas de las esferas de los vértices (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_12">Descripción</span></h4>
+<p>Crear un cubo con todas las aristas redondeadas es muy fácil. Basta con colocar esferas en cada uno de los vertices y aplicar el comando hull. Para que el cubo tenga las mismas dimensiones que el equivalente sin redondear, hay que calcular las coordenadas de las 8 esferas.
+</p>
+<h4><span class="mw-headline" id="C.C3.B3digo_10">Código</span></h4>
+<ul><li> Fichero: <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T12-cubo-redondeado-3D/cubo-redondeado-3d.scad">cubo-redondeado-3d.scad</a></li></ul>
+<pre>//-- Constantes para acceder a las coordenadas X,Y,Z de los vectores
+X = 0;
+Y = 1;
+Z = 2;
+
+//-- Parámetros del cubo redondeado
+r = 4; //-- Radio de las curvas
+A = [30, 30, 20]; //-- Dimensiones del cubo 
+
+//-- Calcular las coordenadas en funcion de los parametros del user
+a = (A - [2*r, 2*r, 2*r])/2;
+
+//-- Obtener las coordenadas. Es un atajo para no escribir tanto
+x = a[X];
+y = a[Y];
+z = a[Z]; 
+
+//-- Calcular los vertices del cubo
+vertice = [
+  [x, y, z],
+  [-x, y, z],
+  [-x, -y, z],
+  [x, -y, z],
+  [x, y, -z],
+  [-x, y, -z],
+  [-x, -y, -z],
+  [x, -y, -z],
+]; 
+
+//-- Cubo de comprobacion. Mismas dimensiones pero sin
+//-- redondear. El redondeado debe tener las mismas dimensiones
+%cube(A, center = true);
+
+//-- Dibujar el cubo redondeado. Se coloca en cada vertice una
+//-- esfera de radio r y se aplica el operador hull
+hull()
+  for (pos = vertice)
+    translate(pos)
+      sphere(r = r, $fn = 20);
+</pre>
+<h3><span class="mw-headline" id="Objetos_condicionales:_cilindros_redondeados">Objetos condicionales: cilindros redondeados</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=R573Dov1Tv0"><b>Video Tutorial 13/28</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Rcilinder-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Rcilinder-1_scYq.png" width="300" height="235" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Rcilinder-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Rcilinder-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Rcilinder-1.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Rcilinder-3.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Rcilinder-3_scYq.png" width="300" height="235" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Rcilinder-3_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Rcilinder-3_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Rcilinder-3.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Rcilinder-5.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Rcilinder-5_scYq.png" width="300" height="235" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Rcilinder-5_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Rcilinder-5_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Rcilinder-5.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_13">Descripción</span></h4>
+<p>Crearemos un objeto condicional denominado <b>rcylinder</b>. En función del parámetro <i>both</i>, se dibuja bien un cilindro con ambas tampas redondeadas, o bien sólo con la superior. También la translación aplicada dependerá del valor del parámetro <i>center</i>.
+</p>
+<h4><span class="mw-headline" id="C.C3.B3digo_11">Código</span></h4>
+<ul><li> Fichero: <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T13-objetos-condicionales-cilindros-redondeados/cilindro-redondeado.scad">cilindro-redondeado.scad</a></li></ul>
+<pre>//-- Cilindro redondeado en las tapas
+//-- Parametros:
+//-- r: radio del cilindro
+//-- h: Altura del cilindro
+//-- center&nbsp;: [true, false], centrar el cilindro
+//-- both: [true, false]
+//-- true: Redondear ambas tapas (superior e inferior)
+//-- false: solo se redondea la tapa superior
+module rcylinder(r = 4,
+                 h = 20,
+                 center = false,
+                 both = false, $fn = 30)
+{ 
+
+  //-- Calcular la altura del cilindro interior
+  //-- Si redondeo por las dos tapas, vale h - 2*r
+  //-- si solo una tapa entonces h - r
+  hc = (both == true)&nbsp;? h - 2 * r&nbsp;: h - r;
+  
+  //-- Calcular la traslacion para centrar el cilindro
+  posc = (center == true)&nbsp;? 0&nbsp;: h/2;
+  
+  //-- Aplicar traslaciopn para el centrado
+  translate([0, 0, posc])
+  
+    //-- Cilindro con ambas tapas redondeadas
+    //-- Se pone un cilindro de altura hc y una esfera
+    //-- en la parte superior y otra en la inferior
+    if (both == true) {
+      cylinder(r = r, h = hc, center = true, $fn = $fn);
+      
+      //-- Esferas superior e inferior
+      for (i = [-1, 1])
+        translate([0, 0, i * hc / 2])
+          sphere(r = r);
+          
+    }
+    //-- Cilindro con tapa superior redondeada
+    else
+      //-- Centrar la figura
+      translate([0, 0, -h/2]) {
+     
+        //-- Cilindro + esfera
+        cylinder(r = r, h = hc, $fn = $fn);
+          translate([0, 0, hc]) sphere(r = r, $fn = $fn);
+      }
+       
+}
+
+//-- Parametros para los ejemplos
+r = 5;
+h = 30;
+center = false;
+$fn = 30;
+
+//-- Cilindro normal
+translate([-3*r, 0, 0])
+  cylinder(r = r, h = h, center = center, $fn = $fn);
+
+//-- Cilindro con tapa superior redondeada
+rcylinder(r = r, h = h, both = false, center = center, $fn = $fn);
+
+//-- Cilindro con ambas tapas redondeadas
+translate([3*r, 0, 0])
+  rcylinder(r = r, h = h, both = true, center = center, $fn = $fn);
+</pre>
+<h3><span class="mw-headline" id="Redondeados_parciales_con_hull_.28II.29">Redondeados parciales con hull (II)</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=ZWga3xpuZKE"><b>Video Tutorial 14/28</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Redondeo1-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Redondeo1-1_scYq.png" width="300" height="241" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Redondeo1-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Redondeo1-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Redondeo1-1.png" class="internal" title="Aumentar"></a></div>Cubo con 2 aristas verticales afiladas, una en chaflán y otra redondeada (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Redondeo1-2.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Redondeo1-2_scYq.png" width="300" height="246" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Redondeo1-2_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Redondeo1-2_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Redondeo1-2.png" class="internal" title="Aumentar"></a></div>Esquema de cómo se ha construido la figura (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Redondeo2-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Redondeo2-1_scYq.png" width="300" height="233" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Redondeo2-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Redondeo2-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Redondeo2-1.png" class="internal" title="Aumentar"></a></div>Cubo con todas las aristas redondeadas (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Redondeo2-2.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Redondeo2-2_scYq.png" width="300" height="237" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Redondeo2-2_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Redondeo2-2_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Redondeo2-2.png" class="internal" title="Aumentar"></a></div>Esquema (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Redondeo3-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Redondeo3-1_scYq.png" width="300" height="237" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Redondeo3-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Redondeo3-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Redondeo3-1.png" class="internal" title="Aumentar"></a></div>Cubo con las aristas verticales y horizontales superiores redondeadas (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Redondeo3-2.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Redondeo3-2_scYq.png" width="300" height="240" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Redondeo3-2_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Redondeo3-2_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Redondeo3-2.png" class="internal" title="Aumentar"></a></div>Esquema (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+</tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_14">Descripción</span></h4>
+<p>Ejemplo de cómo hacer figuras con diferentes terminaciones en las aristas. Según cómo combinemos los objetos con hull, conseguimos aristas en 90 grados, en chaflán o redondeadas
+</p>
+<h4><span class="mw-headline" id="C.C3.B3digo_12">Código</span></h4>
+<ul><li> Ficheros: 
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T14-redondeos-parciales/redondeos_parciales.scad">redondeos_parciales.scad</a></li>
+<li> Cylindros redondeados: <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T14-redondeos-parciales/rcylinder.scad">rcylinder.scad</a></li></ul></li></ul>
+<pre>use &lt;rcylinder.scad&gt;
+
+X = 0;
+Y = 1;
+Z = 2;
+
+//-- Parametros del cubo
+size = [20, 20, 10];
+r = 2;
+
+//-- Calcular las coordenadas de la esquina del cuadrante 1
+xc = size[X]/2 - r;
+yc = size[Y]/2 - r;
+zc = size[Z]/2;
+
+//-- Tamaño de las columnas cuadradas
+col_size = [2 * r, 2 * r, size[Z]];
+
+//-- Posiciones de las columnas
+vertex = [
+  [xc, yc, 0],
+  [-xc, yc, 0],
+  [-xc, -yc, 0],
+  [xc, -yc, 0],
+];
+
+//-- Ejemplo 1:  Modificacion de las aristas verticales
+module example1() 
+{
+  hull() {
+    for (v = [0:1]) 
+      translate(vertex[v]) 
+      	 cube(col_size, center = true);
+        //cylinder(r = r, h = size[Z], center = true, $fn = 4);
+
+    translate(vertex[2])
+      cylinder(r = r, h = size[Z], center = true, $fn = 50);    
+	
+    translate(vertex[3])
+      cylinder(r = r, h = size[Z], center = true, $fn = 4);
+  }
+}
+
+//-- Ejemplo 2: Modificacion de las aristas horizontales y verticales
+module example2()
+{
+  hull() {
+  for (v = [0:3]) 
+    translate(vertex[v])
+       //cylinder(r = r, h = size[Z], center = true, $fn = 50);
+      rcylinder(r = r, h = size[Z], both = false, center = true, $fn = 40);
+      //rcylinder(r = r, h = size[Z], both = true, center = true, $fn = 40);
+  }
+}
+
+//-- Ejemplos para probar
+
+example1();
+//example2();
+</pre>
+<h3><span class="mw-headline" id="El_operador_Minkowski">El operador Minkowski</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=35Wtpk5kVaM"><b>Video Tutorial 15/28</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Minkowski1-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Minkowski1-1_scYq.png" width="300" height="253" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Minkowski1-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Minkowski1-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Minkowski1-1.png" class="internal" title="Aumentar"></a></div>Minkowski de la pieza con un cilindro (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Minkowski1-2.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Minkowski1-2_scYq.png" width="300" height="251" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Minkowski1-2_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Minkowski1-2_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Minkowski1-2.png" class="internal" title="Aumentar"></a></div>Resultado final (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Minkowski1-3.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Minkowski1-3_scYq.png" width="300" height="253" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Minkowski1-3_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Minkowski1-3_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Minkowski1-3.png" class="internal" title="Aumentar"></a></div>Piezas originales y resultado del minkowski(<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Minkowski2-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Minkowski2-1_scYq.png" width="300" height="253" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Minkowski2-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Minkowski2-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Minkowski2-1.png" class="internal" title="Aumentar"></a></div>Minkowski de la pieza con una esfera (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Minkowski2-2.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Minkowski2-2_scYq.png" width="300" height="253" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Minkowski2-2_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Minkowski2-2_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Minkowski2-2.png" class="internal" title="Aumentar"></a></div>Resultado final (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Minkowski2-3.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Minkowski2-3_scYq.png" width="300" height="253" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Minkowski2-3_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Minkowski2-3_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Minkowski2-3.png" class="internal" title="Aumentar"></a></div>Piezas originales y resultado del minkowski (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Minkowski3-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Minkowski3-1_scYq.png" width="300" height="253" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Minkowski3-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Minkowski3-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Minkowski3-1.png" class="internal" title="Aumentar"></a></div>Minkowski de la pieza con un cilindro redondeado (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Minkowski3-2.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Minkowski3-2_scYq.png" width="300" height="253" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Minkowski3-2_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Minkowski3-2_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Minkowski3-2.png" class="internal" title="Aumentar"></a></div>Resultado final (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Minkowski3-3.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Minkowski3-3_scYq.png" width="300" height="255" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Minkowski3-3_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Minkowski3-3_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Minkowski3-3.png" class="internal" title="Aumentar"></a></div>Piezas originales y resultado del minkowski (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+
+</tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_15">Descripción</span></h4>
+<p>Utilización del operador Minkowski para redondear tanto las aristas verticales como horizontales de un objeto no convexo
+</p>
+<h4><span class="mw-headline" id="C.C3.B3digo_13">Código</span></h4>
+<ul><li> Ficheros: 
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T15-Minkowski/minkowski.scad">minkowski.scad</a></li>
+<li> Cylindro redondeado: <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T15-Minkowski/rcylinder.scad">rcylinder.scad</a></li></ul></li></ul>
+<pre>use &lt;rcylinder.scad&gt;
+
+X = 0;
+Y = 1;
+Z = 2;
+
+size = [20, 20, 10];
+r = 2;
+
+//-- Pieza de ejemplo, a la que aplicar Minkowski
+module pieza()
+{
+  cube(size, center = true);
+    
+  translate([10,10,0])
+    cube(size, center = true);
+}
+
+//-- Aplicar Minkowski a la pieza, usando diferentes objetos 
+minkowski() {
+  pieza();
+  
+  cylinder(r = r, h = 1, center = true, $fn = 10);
+  //sphere(r = r, $fn = 10);
+  //rcylinder(r = r, h = 2 * r, both = false, center = true, $fn = 10);
+}
+
+// Pieza original, para compararla con la conseguido con minkowski
+*pieza();
+
+//-- La otra pieza utilizada con minkowski
+*color("red")
+translate([-size[X]/2, 0, size[Z]/2])
+cylinder(r = r, h = 1, center = true, $fn = 10);
+//sphere(r = r, $fn = 10);
+//rcylinder(r = r, h = 2 * r, both = false, center = true, $fn = 10);
+</pre>
+<h3><span class="mw-headline" id="Estudiando_el_c.C3.B3digo_compartido_por_los_dem.C3.A1s">Estudiando el código compartido por los demás</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=sV3uKn3WEcw"><b>Video Tutorial 16/28</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-2-T16-example-9.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-2-T16-example-9_scYq.png" width="300" height="185" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-2-T16-example-9_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Openscad-2-T16-example-9_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-2-T16-example-9.png" class="internal" title="Aumentar"></a></div>Ejemplo 9 incluido en Openscad: Un ventilador (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-2-T16-example-10.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-2-T16-example-10_scYq.png" width="300" height="185" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-2-T16-example-10_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Openscad-2-T16-example-10_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-2-T16-example-10.png" class="internal" title="Aumentar"></a></div>Ejemplo 10 incluido en Openscad: Una superficie (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-2-T16-MCAD-gear.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-2-T16-MCAD-gear_scYq.png" width="300" height="185" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-2-T16-MCAD-gear_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Openscad-2-T16-MCAD-gear_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-2-T16-MCAD-gear.png" class="internal" title="Aumentar"></a></div>Engranaje de ejemplo. Incluido en el fichero involute_gears.scad de la librería MCAD (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-2-T16-MCAD-hardware.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-2-T16-MCAD-hardware_scYq.png" width="300" height="185" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-2-T16-MCAD-hardware_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Openscad-2-T16-MCAD-hardware_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-2-T16-MCAD-hardware.png" class="internal" title="Aumentar"></a></div>Elementos del fichero hardware.scad de la librería MCAD  (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:R4i3.jpg" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-R4i3_scYq.jpg" width="300" height="304" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-R4i3_scYq.jpg 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-R4i3_scYq.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:R4i3.jpg" class="internal" title="Aumentar"></a></div>Una Impresora 3D modelo Prusa i3. Las piezas están diseñadas con Openscad (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-2-T16-Prusa-i3-carro-x.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-2-T16-Prusa-i3-carro-x_scYq.png" width="300" height="185" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-2-T16-Prusa-i3-carro-x_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Openscad-2-T16-Prusa-i3-carro-x_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-2-T16-Prusa-i3-carro-x.png" class="internal" title="Aumentar"></a></div>El carro del eje x de una Prusa i3 (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-PowerCode.jpg" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-PowerCode_scYq.jpg" width="300" height="341" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-PowerCode_scYq.jpg 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/Openscad-PowerCode_scYq.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-PowerCode.jpg" class="internal" title="Aumentar"></a></div>Impresora 3D modelo Powercode, derivada de la Prusa i3. Piezas en openscad (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-2-T16-PowerCode-carro-x.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-2-T16-PowerCode-carro-x_scYq.png" width="300" height="185" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-2-T16-PowerCode-carro-x_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Openscad-2-T16-PowerCode-carro-x_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-2-T16-PowerCode-carro-x.png" class="internal" title="Aumentar"></a></div>El carro del eje x de una PowerCode (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cyclone_built_v0.9.7.jpg" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Cyclone_built_v0.9.7_scYq.jpg" width="300" height="240" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Cyclone_built_v0.9.7_scYq.jpg 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Cyclone_built_v0.9.7_scYq.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cyclone_built_v0.9.7.jpg" class="internal" title="Aumentar"></a></div>La Cyclone PCB Factory, una fresadora imprimible para hacer Circuitos Impresos  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cyclone_render_v0.9.7.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Cyclone_render_v0.9.7_scYq.png" width="300" height="291" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Cyclone_render_v0.9.7_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Cyclone_render_v0.9.7_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cyclone_render_v0.9.7.png" class="internal" title="Aumentar"></a></div>Vista 3D de la Cyclone, hecha con Openscad (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Miniskybot-2-1.jpg" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Miniskybot-2-1_scYq.jpg" width="300" height="324" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Miniskybot-2-1_scYq.jpg 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Miniskybot-2-1_scYq.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Miniskybot-2-1.jpg" class="internal" title="Aumentar"></a></div>El Miniskybot II, un robot imprimible (Printbot), diseñado con Openscad  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-tutorial-2-miniskybot-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-tutorial-2-miniskybot-1_scYq.png" width="300" height="185" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-tutorial-2-miniskybot-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Openscad-tutorial-2-miniskybot-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-tutorial-2-miniskybot-1.png" class="internal" title="Aumentar"></a></div>Vista 3D del Miniskybot II (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Repyz-20130530_121241.jpg" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Repyz-20130530_121241_scYq.jpg" width="300" height="225" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Repyz-20130530_121241_scYq.jpg 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Repyz-20130530_121241_scYq.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Repyz-20130530_121241.jpg" class="internal" title="Aumentar"></a></div>Los módulos REPYZ, para hacer robots de tipo gusano-serpiente. Diseñados con Openscad (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-tutorial-2-REPYZ-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-tutorial-2-REPYZ-1_scYq.png" width="300" height="185" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-tutorial-2-REPYZ-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Openscad-tutorial-2-REPYZ-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-tutorial-2-REPYZ-1.png" class="internal" title="Aumentar"></a></div>Una de las partes del módulo REPYZ (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+</tbody></table>
+<p><br>
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-tutorial-cheatsheet.jpg" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-tutorial-cheatsheet_scYq.jpg" width="300" height="128" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-tutorial-cheatsheet_scYq.jpg 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Openscad-tutorial-cheatsheet_scYq.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-tutorial-cheatsheet.jpg" class="internal" title="Aumentar"></a></div>La chuleta de Openscad (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_16">Descripción</span></h4>
+<p>La mejora manera de aprender openscad es ver el código de las piezas creadas por otros. Esto es lo grande de los proyectos libres: se tiene acceso a "cómo están hechos", para poder aprender de ellos, modificarlos y mejorarlos.
+</p><p>Algunos proyectos interesantes diseñados con openscad son:
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/elmom/MCAD">MCAD</a>&nbsp;: Biblioteca de compoentes: engranajes, motores, servos, tornillos, tuercas...</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/josefprusa/Prusa3">Prusa i3</a>: Impresora 3D modelo Prusa i3</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Mecan0/Code">PowerCode</a>: Impresora 3D, modelo PowerCode, derivada de la Prusa i3</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/carlosgs/Cyclone-PCB-Factory">Cyclone</a>: Fresadora imprimible, para hacer circuitos impresos</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/Miniskybot">Miniskybot Miniskybot</a>: Robot imprimible, para aprender robótica</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/REPYZ">REPYZ</a>: Módulos imprimibles para hacer robots de tipo gusano/serpiente</li>
+<li> <a rel="nofollow" class="external free" href="http://www.openscad.org/cheatsheet/">http://www.openscad.org/cheatsheet/</a>: Chuleta con todos los comandos de openscad. ¡Imprescindible!</li></ul>
+<h4><span class="mw-headline" id="C.C3.B3digo_14">Código</span></h4>
+<ul><li> Ficheros:
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T16-estudiando-codigo-de-otros/zip/01-MCAD.zip">01-MCAD.zip</a>. Biblioteca MCAD</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T16-estudiando-codigo-de-otros/zip/02-Prusa3.zip">Prusa3.zip</a>. La Prusa i3</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T16-estudiando-codigo-de-otros/zip/03-Code.zip">03-Code.zip</a>. La Powercode</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T16-estudiando-codigo-de-otros/zip/04-cyclone.zip">04-cyclone.zip</a>. La Cyclone PCB factory</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T16-estudiando-codigo-de-otros/zip/05-miniskybot.zip">05-miniskybot.zip</a>. El printbot Miniskybot</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T16-estudiando-codigo-de-otros/zip/06-REPYZ.zip">06-REPYZ.zip</a>. Módulos imprimibles</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T16-estudiando-codigo-de-otros/07-openscad-cheatsheet/openscad-cheatsheet.pdf">openscad-cheatsheet.pdf</a> (Chuleta para openscad)</li></ul></li></ul>
+<p><br>
+</p>
+<h2><span class="mw-headline" id="Update:_Actualizando_a_Openscad_2014.03">Update: Actualizando a Openscad 2014.03</span></h2>
+<h3><span class="mw-headline" id="17_Probando_el_nuevo_Openscad_2014.03">17 Probando el nuevo Openscad 2014.03</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=GxbSo3Ijktw"><b>Video Tutorial 17/28</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-2014-03-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-2014-03-1_scYq.png" width="300" height="169" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-2014-03-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Openscad-2014-03-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-2014-03-1.png" class="internal" title="Aumentar"></a></div>La nueva web de Openscad (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-2014-03-2.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-2014-03-2_scYq.png" width="300" height="169" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-2014-03-2_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Openscad-2014-03-2_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-2014-03-2.png" class="internal" title="Aumentar"></a></div>Una figura recursiva en Openscad 2014.03 (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+</tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_17">Descripción</span></h4>
+<p>Se acaba de liberar una nueva versión de openscad: la <b>2014.03</b>. A partir de ahora es la que se utilizará para los tutoriales. Algunas de las mejoras que incluyen son:
+</p>
+<ul><li> Editor con resaltado de sintáxis</li>
+<li> Parámetro d para estableder el diámetro en cilindros, esferas y círculos</li>
+<li> <b>Recursividad</b></li></ul>
+<h3><span class="mw-headline" id="C.C3.B3digo_15">Código</span></h3>
+<ul><li> Fichero: <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T17-openscad-2014-03/zigurat.scad">zigurat.scad</a></li></ul>
+<p>Ejemplo de una figura recursiva:
+</p>
+<pre>//-- Ejemplo de figura recursiva
+//-- Piramide escalonada
+//-- Utilizar Openscad 2014.03 o superior
+
+//-- Parametros
+step = 3; //-- Altura de cada nivel
+min = 5;  //-- Dimensiones de la parte superior (ultimo nivel)
+
+//-- Modulo recursivo
+//-- n: Numero de niveles de la piramide 
+module zigurat(n)
+{
+
+  //-- Terminacion: en el nivel uno se situa el cubo superior (pequeño)
+  if (n &lt;= 1) {
+    cube([min, min, step], center = true);
+  }
+  else {
+    //-- Dibujar el cubo del nivel n
+    cube([n * min, n * min, step], center = true);
+
+    //-- Colocar encima una piramide de n-1 niveles (recursion)
+	translate([0, 0, step])
+	  zigurat(n - 1);
+  }
+}	
+
+//-- Piramide de 10 niveles
+zigurat(10);
+</pre>
+<h2><span class="mw-headline" id="Objetos_3D_a_partir_de_objetos_2D">Objetos 3D a partir de objetos 2D</span></h2>
+<h3><span class="mw-headline" id="18_Extruyendo_pol.C3.ADgonos">18 Extruyendo polígonos</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=wCI-FbwGF3o"><b>Video Tutorial 18/28</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Lingote-3.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Lingote-3_scYq.png" width="300" height="194" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Lingote-3_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Lingote-3_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Lingote-3.png" class="internal" title="Aumentar"></a></div>Un prisma de base trapezoidal (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Lingote-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Lingote-1_scYq.png" width="300" height="193" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Lingote-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Lingote-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Lingote-1.png" class="internal" title="Aumentar"></a></div>Un trapecio (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Trapecio.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Trapecio_scYq.png" width="300" height="191" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Trapecio_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Trapecio_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Trapecio.png" class="internal" title="Aumentar"></a></div>Coordenadas del trapecio (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_18">Descripción</span></h4>
+<p>Otra forma de diseñar objetos 3D es mediante la creación de polígonos que se extruyen linealmente convirtiéndolos en objetos 3D
+</p>
+<h4><span class="mw-headline" id="C.C3.B3digo_16">Código</span></h4>
+<ul><li> Ficheros: 
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T18-extruyendo-poligonos/extruyendo_poligonos.scad">extruyendo_poligonos.scad</a></li></ul></li></ul>
+<pre>//-- Parametros del trapecio
+B = 40; //-- Base larga
+b = 20; //-- Base corta
+h = 15; //-- Altura
+ 
+//-- Rotar prisma para apoyarlo en plano xy
+rotate([90, 0, 0])
+
+//-- Extrusion lineal del trapecio
+linear_extrude(height = 80, center = true)
+
+//-- Trapecio
+polygon(points = [
+                  [-B/2, -h/2],
+                  [-b/2, h/2],
+                  [b/2, h/2],
+                  [B/2, -h/2]
+                 ]);
+</pre>
+<h3><span class="mw-headline" id="19_Extrusi.C3.B3n_lineal_con_torsi.C3.B3n">19 Extrusión lineal con torsión</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=l1acokZktdk"><b>Video Tutorial 19/28</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Torsion-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Torsion-1_scYq.png" width="300" height="202" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Torsion-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Torsion-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Torsion-1.png" class="internal" title="Aumentar"></a></div>4 objetos extruidos linealmente con torsión (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Torsion-2.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Torsion-2_scYq.png" width="300" height="218" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Torsion-2_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Torsion-2_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Torsion-2.png" class="internal" title="Aumentar"></a></div>Un prisa de base rectangular con una torsión de 90 grados (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Torsion-3.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Torsion-3_scYq.png" width="300" height="208" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Torsion-3_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Torsion-3_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Torsion-3.png" class="internal" title="Aumentar"></a></div>Una hélice generada mediante la extrusión con torsión de un círculo transladado (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Torsion-4.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Torsion-4_scYq.png" width="300" height="226" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Torsion-4_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Torsion-4_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Torsion-4.png" class="internal" title="Aumentar"></a></div>Vista superior de la hélice (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_19">Descripción</span></h4>
+<p>A la extrusión lineal se le puede añadir torsión con el parámetro twist. Esto permite crear figuras "retorcidas", así como hélices
+</p>
+<h4><span class="mw-headline" id="C.C3.B3digo_17">Código</span></h4>
+<ul><li> Ficheros: 
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T19-extrusion-lineal-torsion/extrusion_lineal_torsion.scad">extrusion_lineal_torsion.scad</a></li></ul></li></ul>
+<pre>//-- Extrusion lineal con torsion de un rectangulo
+translate([-50, 0, 0])
+  linear_extrude(height = 50, twist = 90, $fn = 100)
+    square([40,20], center = true);
+
+//-- Extrusion lineal con torsion de un poligono
+
+//-- Triangulo
+translate([0, 0, 0])
+  linear_extrude(height = 50, twist = 120, $fn = 100)
+    circle(d = 40, $fn = 3);
+
+//-- Hexagono
+translate([50, 0, 0])
+  linear_extrude(height = 50, twist = 120, $fn = 100)
+    circle(d = 40, $fn = 6);
+
+//-- Circulo
+translate([100, 0, 0])
+  linear_extrude(height = 50, twist = 2*360)
+    translate([15, 0, 0])
+      circle(d = 20, center = true);
+</pre>
+<h3><span class="mw-headline" id="20_Extrusi.C3.B3n_axial">20 Extrusión axial</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=FQD8_zI-5Q4"><b>Video Tutorial 20/28</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Toroide-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Toroide-1_scYq.png" width="300" height="219" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Toroide-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Toroide-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Toroide-1.png" class="internal" title="Aumentar"></a></div>Un toro  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Toroide-2.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Toroide-2_scYq.png" width="300" height="213" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Toroide-2_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Toroide-2_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Toroide-2.png" class="internal" title="Aumentar"></a></div>Parámetros del toro: radio interior y diámetro de la sección (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Toroide-3.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Toroide-3_scYq.png" width="300" height="215" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Toroide-3_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Toroide-3_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Toroide-3.png" class="internal" title="Aumentar"></a></div>Generación de la sección mediante un círculo desplazado (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Toroide-4.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Toroide-4_scYq.png" width="300" height="212" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Toroide-4_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Toroide-4_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Toroide-4.png" class="internal" title="Aumentar"></a></div>Toroide de sección triangular (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Toroide-5.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Toroide-5_scYq.png" width="300" height="214" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Toroide-5_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Toroide-5_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Toroide-5.png" class="internal" title="Aumentar"></a></div>Toroide de sección hexagonal (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Toroide-6.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Toroide-6_scYq.png" width="300" height="212" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Toroide-6_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Toroide-6_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Toroide-6.png" class="internal" title="Aumentar"></a></div>Toroide de sección compuesta por un círculo y un cuadrado (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_20">Descripción</span></h4>
+<p>Generación de superficies de revolución usando la extrusión axial. Ejemplos: toro y toroides
+</p>
+<h4><span class="mw-headline" id="C.C3.B3digo_18">Código</span></h4>
+<ul><li> Ficheros: 
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T20-extrusion-axial/extrusion_axial.scad">extrusion_axial.scad</a></li></ul></li></ul>
+<pre>//-- Parametros del toroide
+ri = 10;
+ds = 10;
+
+//-- Toroide, de seccion un hexagono
+*rotate_extrude($fn = 100)
+translate([ds/2 + ri, 0, 0])
+circle(d = ds, $fn = 6);
+
+//-- Toroide, cuya seccion es la la union de
+//-- varios objetos 2D
+rotate_extrude($fn = 100)
+translate([ds/2 + ri, 0, 0]) {
+  translate([ds/2, 0, 0])
+  circle(d = ds);
+  square([ds,ds], center = true);
+}
+</pre>
+<h3><span class="mw-headline" id="21_Rueda_para_printbot">21 Rueda para printbot</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=oc5JpcLPwN4"><b>Video Tutorial 21/28</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Rueda-1.jpg" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Rueda-1_scYq.jpg" width="300" height="225" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Rueda-1_scYq.jpg 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Rueda-1_scYq.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Rueda-1.jpg" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Rueda-2.jpg" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Rueda-2_scYq.jpg" width="300" height="225" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Rueda-2_scYq.jpg 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Rueda-2_scYq.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Rueda-2.jpg" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Rueda-3.jpg" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Rueda-3_scYq.jpg" width="300" height="225" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Rueda-3_scYq.jpg 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Rueda-3_scYq.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Rueda-3.jpg" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Miniskybot-v1.0-red-r1.jpg" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Miniskybot-v1.0-red-r1_scYq.jpg" width="300" height="278" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Miniskybot-v1.0-red-r1_scYq.jpg 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Miniskybot-v1.0-red-r1_scYq.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Miniskybot-v1.0-red-r1.jpg" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Rueda-4.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Rueda-4_scYq.png" width="300" height="191" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Rueda-4_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Rueda-4_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Rueda-4.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Rueda-5.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Rueda-5_scYq.png" width="300" height="193" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Rueda-5_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Rueda-5_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Rueda-5.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Rueda-seccion-circular.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Rueda-seccion-circular_scYq.png" width="300" height="193" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Rueda-seccion-circular_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Rueda-seccion-circular_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Rueda-seccion-circular.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Rueda-seccion-triangular.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Rueda-seccion-triangular_scYq.png" width="300" height="192" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Rueda-seccion-triangular_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Rueda-seccion-triangular_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Rueda-seccion-triangular.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_21">Descripción</span></h4>
+<p>Diseño de una rueda para un printbot (robot imprimible) utilizando extrusión axial
+</p>
+<h4><span class="mw-headline" id="C.C3.B3digo_19">Código</span></h4>
+<ul><li> Ficheros: 
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T21-rueda-miniskybot/rueda.scad">rueda.scad</a></li></ul></li></ul>
+<pre>//-- Parametros de la rueda
+di = 50;  //-- Diametro interno de la junta torica
+ds = 3;  //-- Diametro de la junta torica
+h = ds + 2;   //-- Grosor de la rueda
+
+//-- Parametros calculados
+d = di + 2 * ds;  //-- Diametro rueda
+r1 = d / 2; //-- Radio de la rueda
+r2 = ds / 2;  //-- Radio de la junta toria
+
+//-- Seccion de la rueda
+module section()
+{
+
+  difference() {
+    translate([r1 / 2, 0, 0])
+      square([r1, h], center = true);
+
+    //-- Para alojamiento circular
+    *translate([r1, 0, 0])
+      circle(d = 3, $fn = 20);
+
+    //-- Para alojamiento triangular
+     translate([r1 - r2, 0, 0])
+       polygon(points = [[0, 0], 
+                        [r2 + 1, r2 + 1],
+                        [r2 + 1, -r2 - 1],
+                        ]);
+  }
+}
+
+//-- Junta torica
+module junta()
+{
+  rotate_extrude($fn = 100)
+  translate([r1, 0, 0])
+    circle(d = ds);
+}
+
+//-- Rueda
+difference() {
+  rotate_extrude(convexity = 10, $fn = 100)
+  section();
+
+  //-- Eje de la rueda
+  cylinder(d = 3, h = h + 10, center = true, $fn = 20);
+}
+
+color("grey")
+  junta();
+</pre>
+<h3><span class="mw-headline" id="22_Extruyendo_dibujos_con_l.C3.ADneas_rectas">22  Extruyendo dibujos con líneas rectas</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=kdFHX-C0c8w"><b>Video Tutorial 22/28</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo_objetos-1-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Extruyendo_objetos-1-1_scYq.png" width="300" height="269" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Extruyendo_objetos-1-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Extruyendo_objetos-1-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo_objetos-1-1.png" class="internal" title="Aumentar"></a></div>Dibujando una flecha en Inkscape (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo_objetos-1-2.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Extruyendo_objetos-1-2_scYq.png" width="300" height="272" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Extruyendo_objetos-1-2_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Extruyendo_objetos-1-2_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo_objetos-1-2.png" class="internal" title="Aumentar"></a></div>Flecha terminada. Exportada a formato dxf (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo_objetos-1-3.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Extruyendo_objetos-1-3_scYq.png" width="300" height="230" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Extruyendo_objetos-1-3_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Extruyendo_objetos-1-3_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo_objetos-1-3.png" class="internal" title="Aumentar"></a></div>Flecha importada en openscad, como un objeto 2D (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo_objetos-1-4.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Extruyendo_objetos-1-4_scYq.png" width="300" height="231" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Extruyendo_objetos-1-4_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Extruyendo_objetos-1-4_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo_objetos-1-4.png" class="internal" title="Aumentar"></a></div>Flecha final en openscad, convertieda en objeto 3D mediante extrusión lineal (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_22">Descripción</span></h4>
+<p>Openscad puede importar figuras almacenadas en <b>archivos .dxf</b>.  Pero estas figuras <b>sólo pueden tener líneas rectas</b> (dxf con curvas no se pueden importar). Para crear figuras usamos programas de diseño 2d, como por ejemplo el <a rel="nofollow" class="external text" href="http://www.inkscape.org/es/">Inkscape</a>, que es software libre y multiplataforma. Estas figuras se exportan a formato .dxf y luego se importan en openscad usando el comando <b>import</b>.
+</p>
+<h4><span class="mw-headline" id="C.C3.B3digo_20">Código</span></h4>
+<ul><li> Ficheros: 
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T22-extruyendo-dibujos-1/extruyendo_dxf_1.scad">extruyendo_dxf_1.scad</a>. Ejemplo en openscad</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T22-extruyendo-dibujos-1/flecha.dxf">flecha.dxf</a>. Fichero 2d con la flecha, en formato dxf</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T22-extruyendo-dibujos-1/flecha.svg">flecha.svg</a>. Fichero 2d con el dibujo original, en formato vectorial SVG. Es el que se abre con inkscape</li></ul></li></ul>
+<pre>linear_extrude(height = 10)
+  import("flecha.dxf");
+</pre>
+<h3><span class="mw-headline" id="23_Me_gustan_las_curvas:_Extruyendo_dibujos_con_curvas_.28II.29">23  Me gustan las curvas: Extruyendo dibujos con curvas (II)</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=JD9AqKv1KIo"><b>Video Tutorial 23/28</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo-objetos-2-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Extruyendo-objetos-2-1_scYq.png" width="300" height="240" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Extruyendo-objetos-2-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Extruyendo-objetos-2-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo-objetos-2-1.png" class="internal" title="Aumentar"></a></div>Dibujando la flecha con curvas de bezier (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo-objetos-2-2.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Extruyendo-objetos-2-2_scYq.png" width="300" height="252" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Extruyendo-objetos-2-2_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Extruyendo-objetos-2-2_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo-objetos-2-2.png" class="internal" title="Aumentar"></a></div>Flecha con curvas lista (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo-objetos-2-3.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Extruyendo-objetos-2-3_scYq.png" width="300" height="218" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Extruyendo-objetos-2-3_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Extruyendo-objetos-2-3_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo-objetos-2-3.png" class="internal" title="Aumentar"></a></div>Flecha importada en openscad, en 2D (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo-objetos-2-4.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Extruyendo-objetos-2-4_scYq.png" width="300" height="218" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Extruyendo-objetos-2-4_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Extruyendo-objetos-2-4_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo-objetos-2-4.png" class="internal" title="Aumentar"></a></div>La convertimos en 3D mediante extrusión lineal (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_23">Descripción</span></h4>
+<p>También es posible <b>extruir objetos en 2d con curvas</b>, pero primero es necesario <b>convertirlos a segmentos rectos</b>. Utilizaremos el inkscape para generar una flecha curva, con <b>curvas de bezier</b>. Al editarla y seleccionar todos los puntos, veremos dos tipos: los puntos normales y los que tienen 2 tiradores que nos permiten cambiar la curvatura:
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo-objetos-2-exp-2.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Extruyendo-objetos-2-exp-2_scYq.png" width="300" height="143" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Extruyendo-objetos-2-exp-2_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/Extruyendo-objetos-2-exp-2_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo-objetos-2-exp-2.png" class="internal" title="Aumentar"></a></div>Flecha en inkscape. Puntos normales y los que tienen tiradores (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>El primer paso seŕa insertar más puntos, para "discretizar" las curvas en segmentos rectos. Con todos los puntos seleccionados (en azul), pulsaremos el botón "+".
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:37px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo-objetos-2-exp-3.png" class="image"><img alt="Extruyendo-objetos-2-exp-3.png" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/Extruyendo-objetos-2-exp-3_scYq.png" width="35" height="56" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo-objetos-2-exp-3.png" class="internal" title="Aumentar"></a></div></div></div></div>
+</td>
+<td> Botón para añadir más puntos (<i>click para ampliar</i>)
+</td></tr></tbody></table>
+<p>Cada vez que se pulsa aparecerán nuevos puntos entre cada dos. Apretarlo 3 ó más veces, según la resolución que se quiera.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo-objetos-2-exp-4.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Extruyendo-objetos-2-exp-4_scYq.png" width="300" height="129" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/Extruyendo-objetos-2-exp-4_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/Extruyendo-objetos-2-exp-4_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo-objetos-2-exp-4.png" class="internal" title="Aumentar"></a></div>Los puntos se han duplicado (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo-objetos-2-exp-5.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Extruyendo-objetos-2-exp-5_scYq.png" width="300" height="132" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/Extruyendo-objetos-2-exp-5_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/Extruyendo-objetos-2-exp-5_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo-objetos-2-exp-5.png" class="internal" title="Aumentar"></a></div>Flecha con muchos más puntos (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Ahora apretamos este botón para convertir todos los puntos en normales, y que las curvas sean segmentos en vez de curvas de bezier:
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:33px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo-objetos-2-exp-6.png" class="image"><img alt="Extruyendo-objetos-2-exp-6.png" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/Extruyendo-objetos-2-exp-6_scYq.png" width="31" height="45" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo-objetos-2-exp-6.png" class="internal" title="Aumentar"></a></div></div></div></div>
+</td>
+<td>  botón para convertir todos los tramos en segmentos rectos (<i>click para ampliar</i>)
+</td></tr></tbody></table>
+<p>Y ya no deben aparecer tiradores en los puntos. El objeto está formado sólo por segmentos rectos. Está listo para importarlo en openscad y poder extruirlo!
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo-objetos-2-exp-7.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Extruyendo-objetos-2-exp-7_scYq.png" width="300" height="129" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/Extruyendo-objetos-2-exp-7_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/Extruyendo-objetos-2-exp-7_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo-objetos-2-exp-7.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo-objetos-2-exp-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Extruyendo-objetos-2-exp-1_scYq.png" width="300" height="136" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Extruyendo-objetos-2-exp-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/Extruyendo-objetos-2-exp-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Extruyendo-objetos-2-exp-1.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+</tbody></table>
+<h4><span class="mw-headline" id="C.C3.B3digo_21">Código</span></h4>
+<ul><li> Ficheros: 
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T23-extruyendo-dibujos-2/extruyendo_objetos-2.scad">extruyendo_objetos-2.scad</a>. Ejemplo en openscad</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T23-extruyendo-dibujos-2/flecha-curva.dxf">flecha-curva.dxf</a>. Flecha curvada en DXF</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T23-extruyendo-dibujos-2/flecha-curva.svg">flecha-curva.svg</a>. Flecha curvada en SVG, para editar con Inkscape</li></ul></li></ul>
+<pre>linear_extrude(height = 10)
+  import ("flecha-curva.dxf");
+</pre>
+<h3><span class="mw-headline" id="24_.C2.A1Pon_un_smiley_en_tu_vida.21_.28III.29">24  ¡Pon un smiley en tu vida! (III)</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=GXpwOZ_K_QM"><b>Video Tutorial 24/28</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-smiley-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-smiley-1_scYq.png" width="300" height="175" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-smiley-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Openscad-smiley-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-smiley-1.png" class="internal" title="Aumentar"></a></div>Dibujando el smiley en inkscape (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-smiley-2.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-smiley-2_scYq.png" width="300" height="221" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-smiley-2_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Openscad-smiley-2_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-smiley-2.png" class="internal" title="Aumentar"></a></div>Smiley importado en 2d en openscad (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-smiley-3.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-smiley-3_scYq.png" width="300" height="218" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-smiley-3_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Openscad-smiley-3_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-smiley-3.png" class="internal" title="Aumentar"></a></div>El smiley en 3d (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_24">Descripción</span></h4>
+<p>El smiley está compuesto de 3 círculos y un polígono con curvas de bezier (la sonrisa). Una vez hecho se combinan todos los ejemplos en uno único utilizando la opción <b>path/combine</b>
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-smiley-exp-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-smiley-exp-1_scYq.png" width="300" height="175" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-smiley-exp-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Openscad-smiley-exp-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-smiley-exp-1.png" class="internal" title="Aumentar"></a></div>Combinando los cuatro objetos de la cara en uno único (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Se convierte en un objeto hecho sólo con curvas de bezier y rectas. 
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:266px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-smiley-exp-2.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/Openscad-smiley-exp-2_scYq.png" width="264" height="248" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-smiley-exp-2.png" class="internal" title="Aumentar"></a></div>Objeto único (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:223px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-smiley-exp-3.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/Openscad-smiley-exp-3_scYq.png" width="221" height="225" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-smiley-exp-3.png" class="internal" title="Aumentar"></a></div>Los puntos del nuevo objetos (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>A continuación hacemos lo mismo que en los tutoriales anteriores: seleccionar todos los puntos para añadir más y convertirlos en líneas rectas
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:224px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-smiley-exp-4.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/Openscad-smiley-exp-4_scYq.png" width="222" height="224" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-smiley-exp-4.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:224px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-smiley-exp-5.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/Openscad-smiley-exp-5_scYq.png" width="222" height="224" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-smiley-exp-5.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>El objeto final formado sólo por puntos normales y líneas rectas
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:220px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-smiley-exp-6.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/Openscad-smiley-exp-6_scYq.png" width="218" height="222" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-smiley-exp-6.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="C.C3.B3digo_22">Código</span></h4>
+<ul><li> Ficheros: 
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T24-smiley/smiley.scad">smiley.scad</a>. Ejemplo en openscad</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T24-smiley/smiley.dxf">smiley.dxf</a>. Smiley en dxf</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T24-smiley/smiley.svg">smiley.svg</a>. Smiley en SVG</li></ul></li></ul>
+<pre>linear_extrude(height = 10)
+  import("smiley.dxf");
+</pre>
+<h3><span class="mw-headline" id="25_Extruyendo_logos_a_partir_de_im.C3.A1genes">25  Extruyendo logos a partir de imágenes</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=XNeONsqFwmw"><b>Video Tutorial 25/28</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-rebel-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-rebel-1_scYq.png" width="300" height="300" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-rebel-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/Openscad-rebel-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-rebel-1.png" class="internal" title="Aumentar"></a></div>Imagen original (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-rebel-3.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-rebel-3_scYq.png" width="300" height="272" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-rebel-3_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/Openscad-rebel-3_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-rebel-3.png" class="internal" title="Aumentar"></a></div>Logo final en 3D (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-rebel-2.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-rebel-2_scYq.png" width="300" height="234" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-rebel-2_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Openscad-rebel-2_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-rebel-2.png" class="internal" title="Aumentar"></a></div>Logo vectorizado con inkscape, calcándolo (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_25">Descripción</span></h4>
+<p>Generar un logo 3D a partir de una imagen. Utilizamos la técnica de "calcar" una imagen. Primero la importamos en la capa inferior y en la superior la vamos calcando usando curvas de bezier con el inkscape. Luego desde openscad importamos el dxf, lo extruimos y lo escalamos
+</p>
+<h4><span class="mw-headline" id="C.C3.B3digo_23">Código</span></h4>
+<ul><li> Ficheros: 
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T25-logos-imagenes/rebel.scad">rebel.scad</a>. Ejemplo en openscad</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T25-logos-imagenes/rebel.dxf">rebel.dxf</a>. Logo en dxf</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T25-logos-imagenes/images/rebel.svg">rebel.svg</a>. Logo en SVG</li></ul></li></ul>
+<pre>anchura_cm = 10;
+
+color("red")
+  scale([anchura_cm, anchura_cm, 1])
+    linear_extrude(height = 5)
+      import("rebel.dxf");
+</pre>
+<h3><span class="mw-headline" id="26_Extrusi.C3.B3n_de_dibujos_por_capas">26  Extrusión de dibujos por capas</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=6EyhYoEQ1ww"><b>Video Tutorial 26/28</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-obijuan-academy-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-obijuan-academy-1_scYq.png" width="300" height="224" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-obijuan-academy-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Openscad-obijuan-academy-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-obijuan-academy-1.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-obijuan-academy-2.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-obijuan-academy-2_scYq.png" width="300" height="224" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-obijuan-academy-2_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Openscad-obijuan-academy-2_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-obijuan-academy-2.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-obijuan-academy-3.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-obijuan-academy-3_scYq.png" width="300" height="168" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-obijuan-academy-3_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Openscad-obijuan-academy-3_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-obijuan-academy-3.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_26">Descripción</span></h4>
+<p>Se pueden hacer logos más complejos en 3D mediante la extrusión de capas. Al extruir un fichero dxf se puede seleccionar la capa donde realizar la operación. De esta forma, se pueden dar diferentes alturas a cada capa.
+</p>
+<h4><span class="mw-headline" id="C.C3.B3digo_24">Código</span></h4>
+<ul><li> Ficheros: 
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T26-extrusion-capas/logo.scad">logo.scad</a>. Ejemplo en openscad</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T26-extrusion-capas/logo.dxf">logo.dxf</a>. Logo en dxf</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T26-extrusion-capas/images/obijuan-academy-logo1.svg">obijuan-academy-logo1.svg</a>. Logo en SVG</li></ul></li></ul>
+<pre>h1 = 3;
+h2 = 6;
+
+linear_extrude(height = h1)
+  import(file = "logo.dxf", layer = "capa1");
+
+ color("red")
+   linear_extrude(height = h2)
+     import(file = "logo.dxf", layer = "capa2");
+</pre>
+<h3><span class="mw-headline" id="27_Texto_en_3D">27  Texto en 3D</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=Tu_ZF__17_k"><b>Video Tutorial 27/28</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-write-1.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Openscad-write-1_scYq.png" width="300" height="194" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Openscad-write-1_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Openscad-write-1_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Openscad-write-1.png" class="internal" title="Aumentar"></a></div>Texto escrito con la biblioteca write (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_27">Descripción</span></h4>
+<p>Se puede generar texto en 3D muy fácilmente usando la <a rel="nofollow" class="external text" href="http://www.thingiverse.com/thing:16193">librería Write.scad</a> de <b>HarlanDMii</b>. La generación de las letras se basa en la extrusión a partir de un fichero dxf. Con sólo invocar el <b>módulo write</b> podemos escribir cualquier cadena en 3D.
+</p><p>Crear una <b>carpeta</b> que se llame <b>write</b> en el directorio donde esté nuestro fichero openscad. En ella situar los ficheros <b>writes.scad</b> y <b>letters.dxf</b>.
+</p>
+<h4><span class="mw-headline" id="C.C3.B3digo_25">Código</span></h4>
+<ul><li> Ficheros: 
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T27-letras-3D/texto-3D.scad">texto-3D.scad</a>. Ejemplo de uso de la librería write</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T27-letras-3D/write/write.scad">write.scad</a>. Librería write. Usar junto al fichero Letters.dxf</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/tutorial-openscad/raw/master/temporada-2/T27-letras-3D/write/Letters.dxf">Letters.dxf</a>. Fichero con las letras</li></ul></li></ul>
+<pre>use &lt;write/write.scad&gt;
+
+grosor = 10;
+size = 20;
+
+translate([0, size*1.5, 0])
+write("OBIJUAN",t=grosor,h=size,center=true);
+
+color("red")
+write("ACADEMY", t = grosor, h = size, center = true);
+
+color("gray")
+translate([0, -size * 2, 0])
+write ("GRACIAS&nbsp;:-)", t = grosor, h = size, center = true);
+</pre>
+<h3><span class="mw-headline" id="28_Keep_calm_and_.C2.A1Haz_Tutoriales.21">28 Keep calm and ¡Haz Tutoriales!</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=uao99yq49ok"><b>Video Tutorial 28/28</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Keep-calm-and-haz-tutoriales.png" class="image"><img alt="" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/300px-Keep-calm-and-haz-tutoriales_scYq.png" width="300" height="287" class="thumbimage" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/450px-Keep-calm-and-haz-tutoriales_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/600px-Keep-calm-and-haz-tutoriales_scYq.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Keep-calm-and-haz-tutoriales.png" class="internal" title="Aumentar"></a></div>Texto escrito con la biblioteca write (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Para_las_pr.C3.B3ximas_temporadas_de_tutoriales_...">Para las próximas temporadas de tutoriales ...</span></h2>
+<ul><li> Creando tus propias transformaciones</li>
+<li> Cuadricula: grid</li>
+<li> Obiscad: roudend cube </li>
+<li> Obiscad: Vectors </li>
+<li> Obiscad: beveling and reinforcements</li>
+<li> attach</li>
+<li> MCAD library</li>
+<li> Generando polígonos con python</li>
+<li> Engranajes</li>
+<li> Recursividad</li></ul>
+<h2><span class="mw-headline" id="Repositorio">Repositorio</span></h2>
+<p>Los ficheros fuentes están en este repositorio:
+</p>
+<ul><li> <a rel="nofollow" class="external free" href="https://github.com/Obijuan/tutorial-openscad/tree/master/temporada-2">https://github.com/Obijuan/tutorial-openscad/tree/master/temporada-2</a></li></ul>
+<h2><span class="mw-headline" id="Licencia">Licencia</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cc_logo.png" class="image"><img alt="Cc logo.png" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/Cc_logo_scYq.png" width="88" height="31"></a> This work is licensed under a <a rel="nofollow" class="external text" href="http://creativecommons.org/licenses/by-sa/2.5/es/">Creative Commons Attribution-ShareAlike 2.5 Spain License</a>.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Sobre_este_tutorial">Sobre este tutorial</span></h2>
+<p>Este tutorial está realizado <b>exclusivamente usando herramientas libres</b>.
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<ul><li> <b>Sistema Operativo</b>: <a rel="nofollow" class="external text" href="http://www.ubuntu.com/">Ubuntu Linux</a> 13.10 y 14.04</li>
+<li> <b>Openscad</b>: <a rel="nofollow" class="external text" href="http://www.openscad.org/">Openscad</a> 2013.05.28. Actualizacion a: 2014.03</li>
+<li> <b>Retoque de imágenes</b>: <a rel="nofollow" class="external text" href="http://www.gimp.org/">Gimp</a> 2.8.6</li>
+<li> <b>Dibujos</b>: <a rel="nofollow" class="external text" href="http://inkscape.org/">Inkscape</a> 0.48.4</li>
+<li> <b>Grabación del escritorio</b>: <a rel="nofollow" class="external text" href="http://www.twm-kd.com/category/linux/kazam/">kazam</a> 1.4.3</li></ul>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<ul><li> <a rel="nofollow" class="external free" href="http://www.thingiverse.com/thing:29505">http://www.thingiverse.com/thing:29505</a>: Resaltado de sintaxis en kate para Openscad</li></ul>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>30/Marzo/2014</b>: Fin de la temporada 2. ¡Que el patrimonio tecnológico de la humanidad os acompañe!</li>
+<li> <b>11/Marzo/2014</b>: Actualización a Openscad 2014.03. Todos los tutoriales a partir de ahora se harán con esta versión</li>
+<li> <b>8/Marzo/2014</b>: Tutorial 16: Aprendiendo del código compartido por los demás. Fin de la primera sección</li>
+<li> <b>25/Dic/2013</b>: Tutorial 1) Usando un editor externo</li>
+<li> <b>24/Dic/2013</b>: Comenzada la página</li></ul>
+<table class="wikitable">
+
+<tbody><tr>
+<td>
+<p><img alt="Proyecto Clone wars" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/Clone-Wars-logo_scYq.png" title="Proyecto Clone wars" width="348" height="204">
+</p>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.reprap.org/wiki/Proyecto_Clone_Wars">Proyecto Clone wars</a>: Construye tu impresora 3D opensource!
+</td></tr>
+<tr>
+<td>
+<center><img alt="Proyecto Reprap" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/RepRap1_scYq.png" title="Proyecto Reprap" width="110" height="137"></center>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://reprap.org/">Proyecto RepRap</a>: Impresoras 3D auto-replicantes. El origen de la revolución de las impresoras 3D opensource
+</td></tr>
+<tr>
+<td>
+<center><img alt="Obijuan Academy" src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/Logo-obijuan-academy-white-back_scYq.png" title="Obijuan Academy" width="731" height="655"> </center>
+</td>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Obijuan_Academy" title="Obijuan Academy">Obijuan Academy</a>, Tu academia rebelde!&nbsp;;-)
+</td></tr>
+</tbody></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20261118213246
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.183 seconds
+Real time usage: 0.247 seconds
+Preprocessor visited node count: 394/1000000
+Preprocessor generated node count: 425/1000000
+Post‐expand include size: 600/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.943      1 - -total
+ 66.97%    1.971      3 - Plantilla:Tablabonita
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad_II&amp;oldid=19081">https://iearobotics.com/wiki/index.php?title=Diseño_de_piezas_con_OpenScad_II&amp;oldid=19081</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categorías</a>: <ul><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Robots_imprimibles" title="Categoría:Robots imprimibles">Robots imprimibles</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Charlas_y_Conferencias" title="Categoría:Charlas y Conferencias">Charlas y Conferencias</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Rob%C3%B3tica" title="Categoría:Robótica">Robótica</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Obijuan_Academy" title="Categoría:Obijuan Academy">Obijuan Academy</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="Diseño_de_piezas_con_OpenScad_II.html" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Dise%C3%B1o_de_piezas_con_OpenScad_II&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad_II&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad_II&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Dise%C3%B1o+de+piezas+con+OpenScad+II" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Dise%C3%B1o_de_piezas_con_OpenScad_II" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Dise%C3%B1o_de_piezas_con_OpenScad_II" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad_II&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad_II&amp;oldid=19081" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad_II&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/gnu-fdl_scYq.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/poweredby_mediawiki_88x31_scYq.png" alt="Powered by MediaWiki" srcset="Dise%C3%B1o_de_piezas_con_OpenScad_II_files/poweredby_mediawiki_132x47_scYq.png 1.5x, Dise%C3%B1o_de_piezas_con_OpenScad_II_files/poweredby_mediawiki_176x62_scYq.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 30 mar 2014 a las 08:26.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":321});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>

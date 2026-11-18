@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Tutorial: Github y Freecad - WikiRobotics</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Tutorial:_Github_y_Freecad","wgTitle":"Tutorial: Github y Freecad","wgCurRevisionId":22925,"wgRevisionId":22925,"wgArticleId":4962,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Robots imprimibles","Charlas y Conferencias","Robótica","Obijuan Academy"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Tutorial:_Github_y_Freecad","wgRelevantArticleId":4962,"wgRequestId":"av4aw7NAwcZVCuigpWwJHAAnojg","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Tutorial_Github_y_Freecad_files/load_lc32.css">
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="Tutorial_Github_y_Freecad_files/load_lc32.es"></script>
+<meta name="generator" content="MediaWiki 1.27.7">
+<link rel="shortcut icon" href="https://iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="https://iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<script src="Tutorial_Github_y_Freecad_files/load_002_lc32.es"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Tutorial_Github_y_Freecad rootpage-Tutorial_Github_y_Freecad skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="es">Tutorial: Github y Freecad</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">De WikiRobotics</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><center>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-logo.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-logo_lc32.png" width="300" height="160" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/Github-freecad-logo_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/Github-freecad-logo_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-logo.png" class="internal" title="Aumentar"></a></div>Github y Freecad</div></div></div> 
+</center>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Claves"><span class="tocnumber">1.1</span> <span class="toctext">Claves</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#Descargas"><span class="tocnumber">2</span> <span class="toctext">Descargas</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#PLAYLIST"><span class="tocnumber">3</span> <span class="toctext">PLAYLIST</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#.C2.A1Manos_a_la_obra.21"><span class="tocnumber">4</span> <span class="toctext">¡Manos a la obra!</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#1_Presentaci.C3.B3n"><span class="tocnumber">4.1</span> <span class="toctext">1 Presentación</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="#Descripci.C3.B3n"><span class="tocnumber">4.1.1</span> <span class="toctext">Descripción</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="#2_Git_clone:_bajando_proyectos_de_Github"><span class="tocnumber">4.2</span> <span class="toctext">2 Git clone: bajando proyectos de Github</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="#Descripci.C3.B3n_2"><span class="tocnumber">4.2.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#Explicaci.C3.B3n"><span class="tocnumber">4.2.2</span> <span class="toctext">Explicación</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#Ejercicios_propuestos"><span class="tocnumber">4.2.3</span> <span class="toctext">Ejercicios propuestos</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-12"><a href="#3_Git_pull:_.C2.A1dame_novedades.21"><span class="tocnumber">4.3</span> <span class="toctext">3 Git pull: ¡dame novedades!</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="#Descripci.C3.B3n_3"><span class="tocnumber">4.3.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#Explicaci.C3.B3n_2"><span class="tocnumber">4.3.2</span> <span class="toctext">Explicación</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#Ejercicios_propuestos_2"><span class="tocnumber">4.3.3</span> <span class="toctext">Ejercicios propuestos</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-16"><a href="#4_Fork_me_on_github.21"><span class="tocnumber">4.4</span> <span class="toctext">4 Fork me on github!</span></a>
+<ul>
+<li class="toclevel-3 tocsection-17"><a href="#Descripci.C3.B3n_4"><span class="tocnumber">4.4.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#Explicaci.C3.B3n_3"><span class="tocnumber">4.4.2</span> <span class="toctext">Explicación</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#Ejercicios_propuestos_3"><span class="tocnumber">4.4.3</span> <span class="toctext">Ejercicios propuestos</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-20"><a href="#5_Creando_el_llavero_.22hola_mundo.22"><span class="tocnumber">4.5</span> <span class="toctext">5 Creando el llavero "hola mundo"</span></a>
+<ul>
+<li class="toclevel-3 tocsection-21"><a href="#Descripci.C3.B3n_5"><span class="tocnumber">4.5.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-22"><a href="#Explicaci.C3.B3n_4"><span class="tocnumber">4.5.2</span> <span class="toctext">Explicación</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="#Ejercicios_propuestos_4"><span class="tocnumber">4.5.3</span> <span class="toctext">Ejercicios propuestos</span></a></li>
+<li class="toclevel-3 tocsection-24"><a href="#Ficheros"><span class="tocnumber">4.5.4</span> <span class="toctext">Ficheros</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-25"><a href="#6_Subiendo_el_llavero_hola_mundo:_git_push"><span class="tocnumber">4.6</span> <span class="toctext">6 Subiendo el llavero hola mundo: git push</span></a>
+<ul>
+<li class="toclevel-3 tocsection-26"><a href="#Descripci.C3.B3n_6"><span class="tocnumber">4.6.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="#Explicaci.C3.B3n_5"><span class="tocnumber">4.6.2</span> <span class="toctext">Explicación</span></a></li>
+<li class="toclevel-3 tocsection-28"><a href="#Ejercicios_propuestos_5"><span class="tocnumber">4.6.3</span> <span class="toctext">Ejercicios propuestos</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-29"><a href="#7_Contribuyendo:_pull_request"><span class="tocnumber">4.7</span> <span class="toctext">7 Contribuyendo: pull request</span></a>
+<ul>
+<li class="toclevel-3 tocsection-30"><a href="#Descripci.C3.B3n_7"><span class="tocnumber">4.7.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-31"><a href="#Explicaci.C3.B3n_6"><span class="tocnumber">4.7.2</span> <span class="toctext">Explicación</span></a></li>
+<li class="toclevel-3 tocsection-32"><a href="#Ejercicios_propuestos_6"><span class="tocnumber">4.7.3</span> <span class="toctext">Ejercicios propuestos</span></a></li>
+<li class="toclevel-3 tocsection-33"><a href="#Entregas"><span class="tocnumber">4.7.4</span> <span class="toctext"><b>Entregas</b></span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-34"><a href="#.C2.A18_Sincron.C3.ADzate.21"><span class="tocnumber">4.8</span> <span class="toctext">¡8 Sincronízate!</span></a>
+<ul>
+<li class="toclevel-3 tocsection-35"><a href="#Descripci.C3.B3n_8"><span class="tocnumber">4.8.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-36"><a href="#Explicaci.C3.B3n_7"><span class="tocnumber">4.8.2</span> <span class="toctext">Explicación</span></a></li>
+<li class="toclevel-3 tocsection-37"><a href="#Ejercicios_propuestos_7"><span class="tocnumber">4.8.3</span> <span class="toctext">Ejercicios propuestos</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-38"><a href="#9_JUEGO:_contribuciones_a_ciegas"><span class="tocnumber">4.9</span> <span class="toctext">9 JUEGO: contribuciones a ciegas</span></a>
+<ul>
+<li class="toclevel-3 tocsection-39"><a href="#Descripci.C3.B3n_9"><span class="tocnumber">4.9.1</span> <span class="toctext">Descripción</span></a></li>
+<li class="toclevel-3 tocsection-40"><a href="#Explicaci.C3.B3n_8"><span class="tocnumber">4.9.2</span> <span class="toctext">Explicación</span></a></li>
+<li class="toclevel-3 tocsection-41"><a href="#El_juego"><span class="tocnumber">4.9.3</span> <span class="toctext">El juego</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-42"><a href="#10_Final:_Hasta_el_github_y_m.C3.A1s_all.C3.A1"><span class="tocnumber">4.10</span> <span class="toctext">10 Final: Hasta el github y más allá</span></a>
+<ul>
+<li class="toclevel-3 tocsection-43"><a href="#Descripci.C3.B3n_10"><span class="tocnumber">4.10.1</span> <span class="toctext">Descripción</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-44"><a href="#Repositorio"><span class="tocnumber">5</span> <span class="toctext">Repositorio</span></a></li>
+<li class="toclevel-1 tocsection-45"><a href="#Enlaces"><span class="tocnumber">6</span> <span class="toctext">Enlaces</span></a></li>
+<li class="toclevel-1 tocsection-46"><a href="#Autor"><span class="tocnumber">7</span> <span class="toctext">Autor</span></a></li>
+<li class="toclevel-1 tocsection-47"><a href="#Licencia"><span class="tocnumber">8</span> <span class="toctext">Licencia</span></a></li>
+<li class="toclevel-1 tocsection-48"><a href="#Cr.C3.A9ditos"><span class="tocnumber">9</span> <span class="toctext">Créditos</span></a></li>
+<li class="toclevel-1 tocsection-49"><a href="#Sobre_este_tutorial"><span class="tocnumber">10</span> <span class="toctext">Sobre este tutorial</span></a></li>
+<li class="toclevel-1 tocsection-50"><a href="#Enlaces_2"><span class="tocnumber">11</span> <span class="toctext">Enlaces</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p><a rel="nofollow" class="external text" href="http://www.freecadweb.org/">Freecad</a> pertenece al <b>patrimonio tecnológico de la humanidad</b>. Esto abre las puertas a que cualquier persona del mundo pueda usar esta herramienta para diseñar piezas 3D. El siguiente paso es aunar esfuerzos y aumentar entre todos este patrimonio contribuyendo con nuevas piezas diseñadas. Pero esto sólo es posible si <b>aprendemos a usar herramientas que nos permitan compartir, contribuir y colaborar</b>. Una de ellas es <a rel="nofollow" class="external text" href="https://github.com/">github</a>. 
+</p><p>El propósito de esta serie de microtutoriales es <b>enseñarte lo mínimo indispensable de github</b> para que puedas contribuir con tus piezas 3D al incremento del patrimonio tecnológico de la humanidad. Este esfuerzo merecerá la pena.
+</p><p>Se propone un reto: "<b>Crear entre todos una biblioteca de llaveros en Freecad</b>". Es un experimento. Por un lado se dispondrá de un repositorio en github sobre el que se realizarán las entregas de los ejercicios propuestos en los tutoriales, y sobre el que podréis hacer pruebas y ensayos. Por otro lado podremos ver cómo va creciendo con el tiempo, la cantidad de gente que contribuye, etc.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Casino-chip-key-chain-2.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Casino-chip-key-chain-2_lc32.png" width="300" height="206" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Casino-chip-key-chain-2_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Casino-chip-key-chain-2_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Casino-chip-key-chain-2.png" class="internal" title="Aumentar"></a></div>Diseño del Llavero ficha de casino  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Casino-chip-key-chain-3.jpg" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Casino-chip-key-chain-3_lc32.jpg" width="300" height="225" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Casino-chip-key-chain-3_lc32.jpg 1.5x, Tutorial_Github_y_Freecad_files/600px-Casino-chip-key-chain-3_lc32.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Casino-chip-key-chain-3.jpg" class="internal" title="Aumentar"></a></div>Llavero fichero de casino impreso (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p><b>¿Por qué llaveros?</b> Bueno, me parece que es algo muy genérico y que se imprime en 3D muy bien. Hay gente que los colecciona. Se pueden regalar. Y prácticamente cualquier cosa se puede convertir en llavero. Así que, ¿Por qué no?&nbsp;:-)
+</p>
+<h3><span class="mw-headline" id="Claves">Claves</span></h3>
+<p>Tutorial github. Freecad. Patrimonio tecnológico de la humanidad. Piezas 3D. Biblioteca de llaveros en Freecad
+</p>
+<h2><span class="mw-headline" id="Descargas">Descargas</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> Todos los ejemplos están en el <a rel="nofollow" class="external text" href="https://github.com/Obijuan/freecad-key-chain-library">repositorio de la biblioteca de llaveros</a> en github
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="PLAYLIST">PLAYLIST</span></h2>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/playlist?list=PLmnz0JqIMEzXThALT6gTUH1rlW1gS-GzU"><b>PLAYLIST CON TODOS LOS VIDEOS DE LA SERIE DE MICRO-TUTORIALES</b></a>
+</th></tr></tbody></table>
+<h2><span class="mw-headline" id=".C2.A1Manos_a_la_obra.21">¡Manos a la obra!</span></h2>
+<h3><span class="mw-headline" id="1_Presentaci.C3.B3n">1 Presentación</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=7JCSnGJ5kkk"><b>Video Tutorial 1/10</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:T01-presentacion-2.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-T01-presentacion-2_lc32.png" width="300" height="265" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-T01-presentacion-2_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-T01-presentacion-2_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:T01-presentacion-2.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:T01-presentacion-1.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-T01-presentacion-1_lc32.png" width="300" height="265" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-T01-presentacion-1_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-T01-presentacion-1_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:T01-presentacion-1.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n">Descripción</span></h4>
+<p>Presentacion de la serie de microtutoriales. La importancia de contribuir y compartir
+Explicación del "efecto comunidad":
+</p><p>Imaginemos una mínima comunidad de 4 personas, en las que cada una hace un diseño 3D y lo comparte
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Community-1.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Community-1_lc32.png" width="300" height="332" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Community-1_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/Community-1_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Community-1.png" class="internal" title="Aumentar"></a></div>Minicomunidad de 4 usuarios. Cada uno aporta un diseño  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Community-2.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Community-2_lc32.png" width="300" height="341" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Community-2_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/Community-2_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Community-2.png" class="internal" title="Aumentar"></a></div>Los 4 comparten sus diseños  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>El balance es positivo para todos. Cada uno aporta 1 pieza, pero recibe 3. En las comunidades el conocimiento se amplifica y multiplica y siempre se recibe más de lo que se aporta.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Community-3.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Community-3_lc32.png" width="300" height="290" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Community-3_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Community-3_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Community-3.png" class="internal" title="Aumentar"></a></div>balance positivo para el usuario (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p><b>¡Vamos a aprender a contribuir!</b>
+</p>
+<h3><span class="mw-headline" id="2_Git_clone:_bajando_proyectos_de_Github">2 Git clone: bajando proyectos de Github</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=zLEKQzlz8bs"><b>Video Tutorial 2/10</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-1.png" class="image"><img alt="Github-freecad-T2-1.png" src="Tutorial_Github_y_Freecad_files/Github-freecad-T2-1_lc32.png" width="649" height="254"></a>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_2">Descripción</span></h4>
+<p>Navegación web por los proyectos de github y descarga individual de ficheros. Descarga de proyectos completos en nuestros ordenadores mediante el comando git clone.
+</p>
+<ul><li> <b>Conceptos nuevos</b>: Cliente git, comando git clone</li></ul>
+<h4><span class="mw-headline" id="Explicaci.C3.B3n">Explicación</span></h4>
+<p>Abrir el navegador y entrar en el <a rel="nofollow" class="external text" href="https://github.com/Obijuan/freecad-key-chain-library">repositorio de los llaveros</a>. <b>NO hace falta tener cuenta en github</b> ni estar registrado. Podemos acceder a todos los millones de proyectos alojados de manera anónima, así como buscarlos en google. Se puede navegar por las carpetas. Vamos a entrar en la carpeta <b>freecad-src</b>, donde están las fuentes de los llaveros en Freecad
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-1.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T2-exp-1_lc32.png" width="300" height="163" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T2-exp-1_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T2-exp-1_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-1.png" class="internal" title="Aumentar"></a></div>El github del repositorio de los llaveros en FreeCAD   (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-2.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T2-exp-2_lc32.png" width="300" height="166" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T2-exp-2_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T2-exp-2_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-2.png" class="internal" title="Aumentar"></a></div>Dentro de la carpeta freecad-src  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>El repositorio está en <b>inglés</b> (el nombre, los mensajes de los commits, los nombres de las carpetas, etc). Eso lo he creado así aposta. La idea es que <b>puedan contribuir el mayor número de personas</b> a este proyecto, de todas partes del mundo y no sólo los de habla hispana. Por ello, es buena constumbre hacer el esfuerzo de escribir todo lo que se pueda en inglés. Recordad: nuestro objetivo es compartir y aprender a contribuir&nbsp;:-)
+</p><p>Si nos metemos en la <b>carpeta Gallery</b> y pinchamos en los ficheros se abren las imágenes. También <b>se visualizan en 3D los ficheros STLs</b>. Esto es muy útil para saber de qué pieza se trata. Vamos a la <b>carpeta stl</b> y pinchamos por ejemplo en el fichero <b>obijuan-academy.stl</b>. Se abre en 3D en el navegador. Al cabo de unos segundos se pone a rotar automáticamente. Podemos cambiar la cámara apretando el botón izquierdo y moviendo el ratón. También podemos hacer zoon hacia adelante / atrás con la rueda del ratón.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-3.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T2-exp-3_lc32.png" width="300" height="260" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T2-exp-3_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T2-exp-3_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-3.png" class="internal" title="Aumentar"></a></div>Visualizando la imagen del llavero OSHW aportado por <b>Roberto Carlos Carmona</b> (rcccort)  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-4.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T2-exp-4_lc32.png" width="300" height="258" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T2-exp-4_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T2-exp-4_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-4.png" class="internal" title="Aumentar"></a></div>Visualizando en 3D el stl del llavero obijuan-academy, aportado por <b>Jose Vega</b>  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>También nos podemos bajar ficheros individuales. Vamos a bajarnos el <b>OpenHw.stl</b> para imprimir. En la parte de la derecha hay un botón que pone <b>RAW</b>. Es un enlace directo al fichero para descargarlo. Le damos al botón derecho y lo bajamos.  Para verlo, vamos a usar el programa <b>Cura</b>. Lo lanzamos y cargamos el fichero OpenHw.stl. Listo para imprimir!&nbsp;:-) 
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-5.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T2-exp-5_lc32.png" width="300" height="254" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T2-exp-5_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T2-exp-5_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-5.png" class="internal" title="Aumentar"></a></div>Bajando el fichero OpenHw.stl (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-6.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T2-exp-6_lc32.png" width="300" height="163" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T2-exp-6_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T2-exp-6_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-6.png" class="internal" title="Aumentar"></a></div>Fichero OpenHw abierto en Cura para imprimirlo (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Nos podemos <b> bajar un proyecto completo</b> pinchando en el botón <b>Download ZIP</b>. Se nos generará automáticamente un fichero .zip con todo el proyecto y se comenzará la descarga. Luego lo descomprimimos y listo!!! Todo esto sin haber tenido que crearnos cuentas ni instalar nada en nuestro ordenador.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-7.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T2-exp-7_lc32.png" width="300" height="235" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T2-exp-7_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T2-exp-7_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-7.png" class="internal" title="Aumentar"></a></div>Descargando el proyecto de los llaveros a nuestro ordenador  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Para <b>bajarnos</b> un proyecto completo de github <b>necesitamos instalar</b> en nuestro ordenador <b>un cliente de git</b>. Esto dependerá del sistema operativo que estemos usando (Linux, Mac, Windows). El más usado es el propio <a rel="nofollow" class="external text" href="http://git-scm.com/">Página oficial de git </a>, que funciona en la línea de comandos. Los usuarios de Mac y Windows podéis instalaros clientes de git desde este enlace: <a rel="nofollow" class="external text" href="http://gitimmersion.com/">git inmmersion</a>. También tenéis esta aplicación: <a rel="nofollow" class="external text" href="http://www.sourcetreeapp.com/">SourceTree</a> y si buscáis en google encontraréis muchos más
+</p><p>En este portátil tengo instalado <b>Ubuntu/Linux 14.10</b>. La instalación se realiza muy rápidamente mediante este comando:
+</p>
+<pre>$ sudo apt-get install git
+</pre>
+<p><b>Usaremos git desde la línea de comandos</b>. Pero...  <b>¡No os asustéis!</b>. El proceso es muy sencillo. Para constribuir realmente son necesarios muy pocos comandos. Primero aprended a contribuir y luego os instaláis clientes gráficos. Los principios de funcionamiento son los mismos
+</p><p>Una vez instalado el cliente, comprobad que se ejecuta correctamente con este comando (que muestra la versión):
+</p>
+<pre> $ git --version
+</pre>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-8.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T2-exp-8_lc32.png" width="300" height="178" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T2-exp-8_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T2-exp-8_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-8.png" class="internal" title="Aumentar"></a></div>Instalación del cliente git en Ubuntu 14.10  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-9.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T2-exp-9_lc32.png" width="300" height="177" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T2-exp-9_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T2-exp-9_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-9.png" class="internal" title="Aumentar"></a></div>Comprobando que git está instalado correctamente en Ubuntu 14.10  (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-9-bis.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T2-exp-9-bis_lc32.png" width="300" height="162" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T2-exp-9-bis_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T2-exp-9-bis_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-9-bis.png" class="internal" title="Aumentar"></a></div>Ejecutando <i>git --version</i> desde un terminal en Windows. Gracias a Juanma Roldan Gomez (Exodous)  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-9-bis-mac.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T2-exp-9-bis-mac_lc32.png" width="300" height="217" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T2-exp-9-bis-mac_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/Github-freecad-T2-exp-9-bis-mac_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-9-bis-mac.png" class="internal" title="Aumentar"></a></div>Ejecutando <i>git --version</i> desde un terminal en Mac. Gracias a Salvador Litris  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p><br>
+</p><p>Vamos a <b>bajarnos</b> el repositorio de los llaveros. Esta operación se llama <b>clonar</b> y la realizamos mediante el comando <b>git clone</b>. Nos vamos al repositorio en la web y copiamos la URL que pone en la parte inferior izquierda (ver figura). Luego desde el terminal ejecutamos el siguiente comando:
+</p>
+<pre> $ git clone <a rel="nofollow" class="external free" href="https://github.com/Obijuan/freecad-key-chain-library.git">https://github.com/Obijuan/freecad-key-chain-library.git</a>
+</pre>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp10.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T2-exp10_lc32.png" width="300" height="234" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T2-exp10_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T2-exp10_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp10.png" class="internal" title="Aumentar"></a></div>Copiar la URL para clonar el proyecto   (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-11.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T2-exp-11_lc32.png" width="300" height="193" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T2-exp-11_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T2-exp-11_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-11.png" class="internal" title="Aumentar"></a></div>Ejecutando el comando <i>git clone</i> para clonar el respositorio  (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-11-bis.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T2-exp-11-bis_lc32.png" width="300" height="300" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T2-exp-11-bis_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T2-exp-11-bis_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-11-bis.png" class="internal" title="Aumentar"></a></div>Ejecutando <i>git clone</i> en la terminal de windows. Gracias a Juanma Roldan Gomez (Exodous) (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-11-bis-mac.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T2-exp-11-bis-mac_lc32.png" width="300" height="218" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T2-exp-11-bis-mac_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/Github-freecad-T2-exp-11-bis-mac_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-11-bis-mac.png" class="internal" title="Aumentar"></a></div>Ejecutando <i>git clone</i> en la terminal de Mac. Gracias a Salvador Litris (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Al cabo de unos segundos ya tendremos el proyecto clonado en nuestro ordenador. Se nos habrá creado la <b>carpeta freecad-key-chain-library</b>. Vamos al directorio freecad-key-chain-library/freecad-src y abrimos con freecad uno de los llaveros, por ejemplo el OpenHw.fcstd de Roberto Carlos Carmona
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-12.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T2-exp-12_lc32.png" width="300" height="213" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T2-exp-12_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T2-exp-12_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-12.png" class="internal" title="Aumentar"></a></div>El proyecto de los llaveros en nuestro ordenador  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-13.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T2-exp-13_lc32.png" width="300" height="168" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T2-exp-13_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T2-exp-13_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-exp-13.png" class="internal" title="Aumentar"></a></div>El llavero OpenHw de Roberto Carlos Carmona abierto en Freecad  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Ejercicios_propuestos">Ejercicios propuestos</span></h4>
+<ul><li> <b>Ejercicio 1:</b>
+<ul><li> Instalar el cliente git para vuestro Sistema Operativo</li>
+<li> Clonar el <a rel="nofollow" class="external text" href="https://github.com/Obijuan/freecad-key-chain-library">repo de los llaveros</a></li>
+<li> Navegar en local y y abrir algunos llaveros en freecad</li></ul></li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-ej1-2.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T2-ej1-2_lc32.png" width="300" height="168" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T2-ej1-2_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T2-ej1-2_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-ej1-2.png" class="internal" title="Aumentar"></a></div>Llavero con el logo de Obijuan Academy, por Jose Vega (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-ej1-1.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T2-ej1-1_lc32.png" width="300" height="168" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T2-ej1-1_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T2-ej1-1_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-ej1-1.png" class="internal" title="Aumentar"></a></div>Llavero con la letra A  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<ul><li> <b>Ejercicio 2:</b> 
+<ul><li> Clonar el <a rel="nofollow" class="external text" href="https://github.com/yorikvanhavre/FreeCAD-library">repositorio de la biblioteca de piezas de Freecad</a></li>
+<li> Navegar en local y abrir algunas piezas</li></ul></li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-ej2-1.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T2-ej2-1_lc32.png" width="300" height="169" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T2-ej2-1_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T2-ej2-1_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-ej2-1.png" class="internal" title="Aumentar"></a></div>Pallet europeo: FreeCAD-library/Shipping Containers/Pallet_EUR_1.FCStd  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-ej2-2.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T2-ej2-2_lc32.png" width="300" height="169" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T2-ej2-2_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T2-ej2-2_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-ej2-2.png" class="internal" title="Aumentar"></a></div>Portapilas: FreeCAD-library/Electrical Parts/Batteries/battery-holder-4-AAA.fcstd  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<ul><li> <b>Ejercicio 3:</b> 
+<ul><li> Clonar el <a rel="nofollow" class="external text" href="https://github.com/bq/printbots">repositorio de printbots de bq</a></li>
+<li> Navegar en local y abrir los ensambles de los robots Renacuajo y Bettle</li></ul></li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-ej3-1.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T2-ej3-1_lc32.png" width="300" height="169" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T2-ej3-1_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T2-ej3-1_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-ej3-1.png" class="internal" title="Aumentar"></a></div>Ensamble 3D del robot Renacuajo de bq: printbots/Renacuajo/freecad/renacuajo-assembly.fcstd    (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-ej3-2.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T2-ej3-2_lc32.png" width="300" height="169" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T2-ej3-2_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T2-ej3-2_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T2-ej3-2.png" class="internal" title="Aumentar"></a></div>Ensamble 3D del robot Beetle de bq: printbots/Beetle/freecad/Assembly.fcstd  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="3_Git_pull:_.C2.A1dame_novedades.21">3 Git pull: ¡dame novedades!</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=GVfjUfY1NBk"><b>Video Tutorial 3/10</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T3-1.png" class="image"><img alt="Github-freecad-T3-1.png" src="Tutorial_Github_y_Freecad_files/Github-freecad-T3-1_lc32.png" width="696" height="222"></a>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_3">Descripción</span></h4>
+<p>El comando <b>git clone</b> sólo se ejecuta la primera vez para bajarse una copia local del proyecto. Mediante el comando <b>git pull</b> se nos bajan los cambios nuevos desde la última actualización. 
+</p>
+<ul><li> <b>Conceptos nuevos</b>: comando git pull</li></ul>
+<h4><span class="mw-headline" id="Explicaci.C3.B3n_2">Explicación</span></h4>
+<p>El repositorio de los llaveros de freecad está en el github (que está en la nube). Cualquiera se lo puede "clonar" para tener una copia local en su ordenador. Esto se hace con el comando <b>git clone</b>. Este comando sólo se ejecuta una vez, para crear la copia del repositorio.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T3-exp-1.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T3-exp-1_lc32.png" width="300" height="246" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T3-exp-1_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/Github-freecad-T3-exp-1_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T3-exp-1.png" class="internal" title="Aumentar"></a></div>Repositorio de llaveros con 3 piezas   (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T3-exp-2.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T3-exp-2_lc32.png" width="300" height="246" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T3-exp-2_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/Github-freecad-T3-exp-2_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T3-exp-2.png" class="internal" title="Aumentar"></a></div>Un usuario se lo clona en su ordenador local  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Imaginemos que otros <b>dos usuarios realizan la clonación</b>. Puede tratarse del mismo usuario que clona en diferentes ordenadores, o incluso el mismo usuario que clona en carpetas diferentes. Todo ello sin tener que registrarse. Todos ellos tienen la última versión de los llaveros.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T3-exp-3.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T3-exp-3_lc32.png" width="300" height="211" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T3-exp-3_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T3-exp-3_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T3-exp-3.png" class="internal" title="Aumentar"></a></div>Otro usuario clona el repositorio  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T3-exp-4.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T3-exp-4_lc32.png" width="300" height="211" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T3-exp-4_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T3-exp-4_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T3-exp-4.png" class="internal" title="Aumentar"></a></div>y otro más que lo clona  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Uno de esos usuarios <b>diseña un llavero nuevo y lo añade localmente</b>. Supongamos que ese usuario es obijuan, y como <b>tiene permisos de escritura</b> en el respositorio, lo sube (usando el comando <i>git push</i> que veremos más adelante). Ahora el repo de obijuan y el de github están actualizados, pero el del resto de usuarios no
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T3-exp-5.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T3-exp-5_lc32.png" width="300" height="218" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T3-exp-5_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T3-exp-5_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T3-exp-5.png" class="internal" title="Aumentar"></a></div>el usuario obijuan crea un llavero nuevo en su ordenador  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T3-exp-6.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T3-exp-6_lc32.png" width="300" height="218" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T3-exp-6_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T3-exp-6_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T3-exp-6.png" class="internal" title="Aumentar"></a></div>Como obijuan tiene permisos de escritura sube la pieza al repo. El resto de usuarios no la tiene todavía  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Cualquier usuario puede <b>actualizarse a la última versión</b> ejecutando el comando <b>git clone</b>. Automáticamente todos los cambios nuevos se le enviarán y su repositorio local estará actualizado con respecto al de github.
+</p><p>En este escenario, <b>sólo los usuarios que tienen permisos pueden subir piezas</b>. El resto se van actualizando. Este modelo es muy común, ya que la mayoría de las veces utilizas proyectos de la comunidad, pero no contribuyes, sólo los usas. Con git pull siempre tendrás la última versión.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T3-exp-7.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T3-exp-7_lc32.png" width="300" height="221" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T3-exp-7_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T3-exp-7_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T3-exp-7.png" class="internal" title="Aumentar"></a></div>Los usuarios ejecutan git pull y se actualizan  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T3-exp-8.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T3-exp-8_lc32.png" width="300" height="221" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T3-exp-8_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T3-exp-8_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T3-exp-8.png" class="internal" title="Aumentar"></a></div>Esquema de trabajo. Sólo los que tienen permisos pueden subir piezas. El resto se actualizan  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Nos vamos al repositorio local de los llaveros y ejecutamos el comando git pull para ver las novedades
+</p>
+<pre>$ git pull
+</pre>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T3-exp-9.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T3-exp-9_lc32.png" width="300" height="175" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T3-exp-9_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T3-exp-9_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T3-exp-9.png" class="internal" title="Aumentar"></a></div>Carpeta tutorial antes de actualizar  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T3-exp-10.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T3-exp-10_lc32.png" width="300" height="236" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T3-exp-10_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T3-exp-10_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T3-exp-10.png" class="internal" title="Aumentar"></a></div>Actualizando el repo. Aparece la carpeta T3-gitpull  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Si volvemos a ejecutar el comando, nos aparece el mensaje: "<b>Already up-to-date</b>" para indicarnos que ya está todo actualizado. Es decir, que no hay nada nuevo que bajar.  <b>El comando git pull siempre hay que ejecutarlo antes de trabajar con un proyecto, para asegurarnos de que estamos en la última versión.</b>
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T3-exp-11.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T3-exp-11_lc32.png" width="300" height="192" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T3-exp-11_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T3-exp-11_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T3-exp-11.png" class="internal" title="Aumentar"></a></div>No hay más novedades  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Ejercicios_propuestos_2">Ejercicios propuestos</span></h4>
+<ul><li> <b>Ejercicio 1:</b>: Bajarse las novedades del repositorio de los <a rel="nofollow" class="external text" href="https://github.com/Obijuan/freecad-key-chain-library">llaveros de freecad</a>. Los que estéis siguiendo el tutorial en directo, veréis cómo han aparecido ficheros nuevos. Si lo estás siguiendo en diferido y lo acabas de clonar en el tutorial anterior, no se te bajará nada nuevo.</li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-ej1-1.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T4-ej1-1_lc32.png" width="300" height="367" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T4-ej1-1_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T4-ej1-1_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-ej1-1.png" class="internal" title="Aumentar"></a></div>Ejecución del comando <i>git pull</i> en Windows. Gracias a Juanma Roldan Gomez (Exodous)   (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<ul><li> <b>Ejercicio 2:</b> Lo mismo con repositorio de las <a rel="nofollow" class="external text" href="https://github.com/yorikvanhavre/FreeCAD-library">piezas de freecad</a></li></ul>
+<ul><li> <b>Ejercicio 3:</b> Lo mismo con el repositorio de los <a rel="nofollow" class="external text" href="https://github.com/bq/printbots">printbots de bq</a></li></ul>
+<h3><span class="mw-headline" id="4_Fork_me_on_github.21">4 Fork me on github!</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=21npTcqaOyU"><b>Video Tutorial 4/10</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-1.png" class="image"><img alt="Github-freecad-T4-1.png" src="Tutorial_Github_y_Freecad_files/Github-freecad-T4-1_lc32.png" width="642" height="296"></a>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_4">Descripción</span></h4>
+<p>Plantilla wiki para crear nuevos tutoriales
+</p>
+<ul><li> <b>Conceptos nuevos</b>: </li></ul>
+<h4><span class="mw-headline" id="Explicaci.C3.B3n_3">Explicación</span></h4>
+<p>Partimos del escenario que dejamos en el tutorial anterior: el repositorio de llaveros, que le <b>pertenece al usuario Obijuan</b>, que tiene permisos para añadir llaveros (permisos de escritura). El resto de usuarios sólo lo pueden clonar y actualizar, pero no pueden escribir en él.
+</p><p>El usuario <b>chanquete</b> quiere contribuir con un llavero al repositorio. para ello tiene que <b>crearse una cuenta en github</b>. Antes las operaciones eran "anónimas", pero para crear un repositorio tenemos que registrarnos.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-exp-1.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T4-exp-1_lc32.png" width="300" height="235" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T4-exp-1_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T4-exp-1_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-exp-1.png" class="internal" title="Aumentar"></a></div>Escenario original del respositorio de llaveros  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-exp-2.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T4-exp-2_lc32.png" width="300" height="235" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T4-exp-2_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T4-exp-2_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-exp-2.png" class="internal" title="Aumentar"></a></div>El usuario chanquete quiere contribuir al proyecto  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Ahora <b>Chanquete</b> realiza un "<b>fork</b>" del repositorio original de llaveros. Es una copia del proyecto original, pero que <b>pertenece a chanquete</b>. Tiene permisos de escritura en él.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-exp-3.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T4-exp-3_lc32.png" width="300" height="235" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T4-exp-3_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T4-exp-3_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-exp-3.png" class="internal" title="Aumentar"></a></div><b>Chanquete</b> realiza un <i>fork</i> del repositorio de llaveros  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-exp-4.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T4-exp-4_lc32.png" width="300" height="235" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T4-exp-4_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T4-exp-4_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-exp-4.png" class="internal" title="Aumentar"></a></div><b>Chanquete</b> clona su repositorio de llaveros para trabajar  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p><b>Chanquete</b> puede añadir llaveros localmente y subirlos con <i>git push</i> (porque tiene permisos en su repositorio). También puede usar <i>git pull</i> para actualizarse por si hubiese otros usuarios con permisos de escritura en su repositorio. Finalmente, para contribuir al repositorio de llaveros original tiene que emitir una operación "<b>pull request</b>" que veremos más adelante.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-exp-5.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T4-exp-5_lc32.png" width="300" height="235" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T4-exp-5_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T4-exp-5_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-exp-5.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-exp-6.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T4-exp-6_lc32.png" width="300" height="235" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T4-exp-6_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T4-exp-6_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-exp-6.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p><b>Vamos a realizar nuestro primer fork</b>. Lo primero es <b>crearnos una cuenta</b>. En este ejemplo se ha creado un usuario ficticio que se llama <b>obijuan-test</b>. Una vez hemos entrado con nuestro usuario, nos aparece la pantalla que aparece en la figura. En la parte superiore derecha podemos ver nuestro nombre de usuario. Si lo pinchamos nos lleva a nuestra cuenta principal de github. Ahí vemos las contribuciones que llevamos hechas, que hasta ahora son 0.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-exp-7.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T4-exp-7_lc32.png" width="300" height="284" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T4-exp-7_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T4-exp-7_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-exp-7.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-exp-8.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T4-exp-8_lc32.png" width="300" height="284" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T4-exp-8_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T4-exp-8_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-exp-8.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Si pinchamos en la pestaña de "repositories" nos indica los repositorios que tenemos creados. De momento ninguno.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-exp-9.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T4-exp-9_lc32.png" width="300" height="283" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T4-exp-9_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T4-exp-9_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-exp-9.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Nos vamos a la URL del <a rel="nofollow" class="external text" href="https://github.com/Obijuan/freecad-key-chain-library">repositorio de los llaveros</a>. Tenemos que estar <i>logeados</i> (nuestro nombre de usuario debe aparecer en la parte superior derecha). Le damos al botón de "<b>FORK</b>" (situado en la parte superior derecha también). En unos segundos se nos empezará a copiar el repositorio original en nuestra cuenta.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-exp-10.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T4-exp-10_lc32.png" width="300" height="283" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T4-exp-10_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T4-exp-10_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-exp-10.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-exp-11.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T4-exp-11_lc32.png" width="300" height="283" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T4-exp-11_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T4-exp-11_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-exp-11.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Si ahora nos vamos a nuestra página de usuario (pinchando en nuestro nombre de usuario) y vamos otra vez a la pestaña de los repositorios, nos aparecerá un nuevo repositorio que se llamará: "<b>Obijuan-test/freecad-key-chain-library</b>". En la parte inferior pondrá: "<b>forked from Obijuan/freecad-key-chain-library</b>", para indicarnos que originalmente este repositorio ha derivado del de los llaveros de obijuan. Si pinchamos en el respositorio nos llevará a la página principal del repositorio
+"
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-exp-12.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T4-exp-12_lc32.png" width="300" height="284" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T4-exp-12_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T4-exp-12_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T4-exp-12.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Ahora ya sólo nos queda clonarlo en nuestro ordenador local y empezar a trabajar con él.
+</p>
+<h4><span class="mw-headline" id="Ejercicios_propuestos_3">Ejercicios propuestos</span></h4>
+<ul><li> <b>Ejercicio 1:</b>
+<ul><li> Crearos vuestra cuenta en github</li>
+<li> Hacer un fork del repositorio de los llaveros</li>
+<li> Clonar el repositorio</li></ul></li></ul>
+<ul><li> <b>Ejercicio 2:</b> Idem con el respositorio de piezas de freecad</li></ul>
+<ul><li> <b>Ejercicio 3:</b> Idem con el respositorio de printbots de bq</li></ul>
+<h3><span class="mw-headline" id="5_Creando_el_llavero_.22hola_mundo.22">5 Creando el llavero "hola mundo"</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=SB3Ec9TWlkQ"><b>Video Tutorial 5/10</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-1.png" class="image"><img alt="Github-freecad-T5-1.png" src="Tutorial_Github_y_Freecad_files/Github-freecad-T5-1_lc32.png" width="465" height="182"></a>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_5">Descripción</span></h4>
+<p>Vamos a crear nuestro llavero "hola mundo" que será el que subiremos al repositorio de llaveros.
+</p>
+<h4><span class="mw-headline" id="Explicaci.C3.B3n_4">Explicación</span></h4>
+<p>Hay dos repositorios de llaveros. El original, que podemos clonar en nuestro ordenador, y el fork que hemos hecho. Son dos repositorios totalmente independientes, pero tu fork te pertenece a tí y tú eres el único con permisos para escribir en él.
+</p><p>Vamos a la carpeta <b>tutorial/exercises</b> de tu fork, que lo tienes clonado en tu ordenador. Ahí <b>crea una nueva carpeta con tu nombre de usuario de github</b>. Esta será donde grabarás el llavero hola mundo y donde podrás hacer pruebas para subirlas al repo y practicar
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-exp-1.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T5-exp-1_lc32.png" width="300" height="179" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T5-exp-1_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T5-exp-1_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-exp-1.png" class="internal" title="Aumentar"></a></div>En la carpeta tutorial/exercises de NUESTRO fork local del repo de llaveros   (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-exp-2.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T5-exp-2_lc32.png" width="300" height="179" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T5-exp-2_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T5-exp-2_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-exp-2.png" class="internal" title="Aumentar"></a></div>Creando nuestra carpeta donde colocar el llavero hola mundo  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Vamos ahora a la carpeta <b>freecad-src</b> (en el mismo repo, el del fork) y abrimos el llavero <b>casino-chip.fcstd</b> con freecad. Con la opción <b>file/save as</b> lo grabamos con el nuevo nombre <b>T5-ej1.fcstd</b> en la carpeta que acabamos de crear.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-exp-3.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T5-exp-3_lc32.png" width="300" height="188" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T5-exp-3_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T5-exp-3_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-exp-3.png" class="internal" title="Aumentar"></a></div>Llavero "hola mundo" casino-chip.fcstd abierto en freecad   (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-exp-4.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T5-exp-4_lc32.png" width="300" height="188" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T5-exp-4_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T5-exp-4_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-exp-4.png" class="internal" title="Aumentar"></a></div>Grabar el llavero en tutorial/exercise/&lt;tu-usuario&gt;/T5-ej1.fcstd  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Al abrir el llavero en freecad vemos que hay dos carpetas en la izquierda. Una contiene las <b>piezas para hacer el ensamblaje</b>: el llavero con la llave y una anilla. Es para hacernos una idea del tamaño del llavero.  La otra carpeta contiene <b>las fuentes de la propia ficha de casino</b>. Hacemos invisible el ensamblaje y visualizamos la ficha de casino.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-exp-5.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T5-exp-5_lc32.png" width="300" height="188" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T5-exp-5_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T5-exp-5_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-exp-5.png" class="internal" title="Aumentar"></a></div>Llave y anilla de referencia para el llavero  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-exp-6.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T5-exp-6_lc32.png" width="300" height="188" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T5-exp-6_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T5-exp-6_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-exp-6.png" class="internal" title="Aumentar"></a></div>Ficha de casino sobre la que hacer nuestro llavero hola mundo  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Desde el banco de trabajo "<b>part design</b>" seleccionamos la <b>cara superior de la ficha de casino</b> y creamos un boceto nuevo sobre ella.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-exp-7.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T5-exp-7_lc32.png" width="300" height="188" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T5-exp-7_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T5-exp-7_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-exp-7.png" class="internal" title="Aumentar"></a></div>Seleccionar cara superior de la ficha de casino desde el entorno part-design   (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-exp-8.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T5-exp-8_lc32.png" width="300" height="188" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T5-exp-8_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T5-exp-8_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-exp-8.png" class="internal" title="Aumentar"></a></div>Crear un sketch nuevo sobre esa cara   (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Hacemos un triángulo mediante la herramienta de multi-línea. El vértice superior lo hacemos coincidir con el eje y. La base del triángulo la hacemos horizontal. Creamos una circunferencia auxiliar centrado en el origen. Hacemos coincidir los tres vértices del triángulo con el perímetro de la circunferencia.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-exp-9.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T5-exp-9_lc32.png" width="300" height="188" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T5-exp-9_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T5-exp-9_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-exp-9.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-exp-10.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T5-exp-10_lc32.png" width="300" height="188" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T5-exp-10_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T5-exp-10_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-exp-10.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Damos un radio de 11mm a la circunferencia y hacemos que la base sea igual a uno de los lados del triángulo. Ya tenemos el boceto definido. Ahora aplicamos un vaciado y ya tenemos nuestro llavero hola mundo!! Lo grabamos.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-exp-11.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T5-exp-11_lc32.png" width="300" height="188" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T5-exp-11_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T5-exp-11_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-exp-11.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-exp-12.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T5-exp-12_lc32.png" width="300" height="188" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T5-exp-12_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T5-exp-12_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-exp-12.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Ejercicios_propuestos_4">Ejercicios propuestos</span></h4>
+<ul><li> <b>Ejercicio 1:</b> Hacer el llavero hola mundo, a partir del llavero ficha de casino. Con un triángulo en el interior</li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-ej-1.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T5-ej-1_lc32.png" width="300" height="203" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T5-ej-1_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T5-ej-1_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-ej-1.png" class="internal" title="Aumentar"></a></div>Ejercicio 1: Llavero Hola mundo   (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<ul><li> <b>Ejercicio 2:</b> Hacer el llavero smily. Lo podéis hacer a partir del llavero chasino-chip2.fcstd que está en el repositorio oficial (puede que en vuestro fork no esté, dependiendo de cuando hicistéis el fork). Grabarlo en la carpeta tutorial/exercises/&lt;tu usuario&gt; con el nombre T5-ej2.fcstd</li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-ej-2-smily-1.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T5-ej-2-smily-1_lc32.png" width="300" height="195" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T5-ej-2-smily-1_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T5-ej-2-smily-1_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-ej-2-smily-1.png" class="internal" title="Aumentar"></a></div>Ejercicio 2: llavero smily  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-ej-2-smily-2.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T5-ej-2-smily-2_lc32.png" width="300" height="203" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T5-ej-2-smily-2_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T5-ej-2-smily-2_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-ej-2-smily-2.png" class="internal" title="Aumentar"></a></div>Boceto del llavero smily  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<ul><li> <b>Ejercicio 3:</b> Hacer  el llavero botón de encendido. Grabarlo en la carpeta tutorial/exercises/&lt;tu usuario&gt; con el nombre T5-ej3.fcstd</li></ul>
+<p><br>
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-ej-3-power-on-1.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T5-ej-3-power-on-1_lc32.png" width="300" height="195" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T5-ej-3-power-on-1_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T5-ej-3-power-on-1_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-ej-3-power-on-1.png" class="internal" title="Aumentar"></a></div>Ejercicio 3: Llavero de botón de encendido   (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-ej-3-power-on-2.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T5-ej-3-power-on-2_lc32.png" width="300" height="204" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T5-ej-3-power-on-2_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T5-ej-3-power-on-2_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T5-ej-3-power-on-2.png" class="internal" title="Aumentar"></a></div>Boceto del llavero de botón de encendido  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<ul><li> Entregas</li></ul>
+<table>
+<tbody><tr>
+<td> [[|thumb|300px|   (<i>click para ampliar</i>)]]
+</td>
+<td> [[|thumb|300px|   (<i>click para ampliar</i>)]]
+</td></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> [[|thumb|300px|   (<i>click para ampliar</i>)]]
+</td>
+<td> [[|thumb|300px|   (<i>click para ampliar</i>)]]
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Ficheros">Ficheros</span></h4>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/freecad-key-chain-library/raw/master/freecad-src/casino-chip.fcstd">casino-chip.fcstd</a>
+</td>
+<td> Llavero ficha de casino. Hacer el llavero hola mundo a partir de él
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/freecad-key-chain-library/raw/master/freecad-src/casino-chip2.fcstd">casino-chip2.fcstd</a>
+</td>
+<td> Llavero ficha de casino, tipo 2. Usado para hacer los ejercicios 2 y 3
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/freecad-key-chain-library/raw/master/freecad-src/casino-chip-triangle.fcstd">casino-chip-triangle.fcstd</a>
+</td>
+<td> Llavero hola mundo. Fuentes en freecad
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/freecad-key-chain-library/raw/master/stl/casino-chip-triangle.stl">casino-chip-triangle.stl</a>
+</td>
+<td> Llavero hola mundo. STL
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/freecad-key-chain-library/raw/master/step/casino-chip-triangle.step">casino-chip-triangle.step</a>
+</td>
+<td> Llavero hola mundo. STEP
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/freecad-key-chain-library/raw/master/freecad-src/smily.fcstd">smily.fcstd</a>
+</td>
+<td> Llavero Smily. Fuentes en freecad
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/freecad-key-chain-library/raw/master/stl/smily.stl">smily.stl</a>
+</td>
+<td> Llavero smily. STL
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/freecad-key-chain-library/raw/master/step/smily.step">smily.step</a>
+</td>
+<td> Llavero smily. STEP
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/freecad-key-chain-library/raw/master/freecad-src/power-on-button.fcstd">power-on-button.fcstd</a>
+</td>
+<td> Llavero boton de encendido. Fuentes en freecad
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/freecad-key-chain-library/raw/master/stl/power-on-button.stl">power-on-button.stl</a>
+</td>
+<td> Llavero botón de encendido. STL
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://github.com/Obijuan/freecad-key-chain-library/raw/master/step/power-on-button.step">power-on-button.step</a>
+</td>
+<td> Llavero botón de encendido. STEP
+</td></tr>
+</tbody></table>
+<h3><span class="mw-headline" id="6_Subiendo_el_llavero_hola_mundo:_git_push">6 Subiendo el llavero hola mundo: git push</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=m0g1Pzfoo1g"><b>Video Tutorial 6/10</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-1.png" class="image"><img alt="Github-freecad-T6-1.png" src="Tutorial_Github_y_Freecad_files/Github-freecad-T6-1_lc32.png" width="684" height="280"></a>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_6">Descripción</span></h4>
+<p>Meter nuestra aportación del llavero hola mundo en el repositorio local y subirlo al repositorio de github
+</p>
+<ul><li> <b>Conceptos nuevos</b>: comandos <b>git config</b>, <b>git status</b>, <b>git add</b>, <b>git commit</b> y <b>git push</b></li></ul>
+<h4><span class="mw-headline" id="Explicaci.C3.B3n_5">Explicación</span></h4>
+<p>Tenemos dos repositorios, el original de los llaveros y el fork del usuario <b>chanquete</b>. Este último chanquete se lo ha bajado a su ordenador (lo ha clonado) y ha creado el <b>llavero hola mundo que quiere compartir</b>. Primero lo tiene que introducir en el repositorio clonado y después mediante el comando <b>git push</b> se envía al repositorio. El repositorio de chanquete en github recibe el nombre de <b>origin</b> y por defecto siempre se trabaja en la rama <b>master</b>, así que lo identificamos con el nombre <b>origin/master</b>.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-exp-1.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T6-exp-1_lc32.png" width="300" height="254" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T6-exp-1_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T6-exp-1_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-exp-1.png" class="internal" title="Aumentar"></a></div>Repositorios iniciales   (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-exp-2.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T6-exp-2_lc32.png" width="300" height="254" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T6-exp-2_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T6-exp-2_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-exp-2.png" class="internal" title="Aumentar"></a></div>El usuario chanquete sube su contribución al repo origin / master  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Ahora el repo de chanquete tiene un llavero que NO está en el repositorio original de obijuan. Son dos repos independientes. Para que el llavero se incluya en este repo tendrá que hacer una solicitud (un <b>pull request</b>).
+</p><p>Vamos a subir el llavero hola mundo a nuestro repositorio <b>origin / master</b>. Nos vamos a la carpeta <b>tutorial / exercises</b> y abrimos un terminal
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-exp-3.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T6-exp-3_lc32.png" width="300" height="254" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T6-exp-3_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T6-exp-3_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-exp-3.png" class="internal" title="Aumentar"></a></div>Haciendo una solicitud para incluir el llavero (pull request)   (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-exp-4.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T6-exp-4_lc32.png" width="300" height="179" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T6-exp-4_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T6-exp-4_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-exp-4.png" class="internal" title="Aumentar"></a></div>Carpeta tutorial / exercises de nuestro repo local  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Hay que configurar primero el <b>repositorio local</b>, para indicar nuestros datos. Usamos el comando <b>git config</b> para especificar nuestro nombre de usuario y el correo. Git los necesita para asociarlos a nuestras contribuciones.  Como mi usuario de ejemplo es <b>obijuan-test</b>, ejecuto los comandos así:
+</p>
+<pre>git config user.email "obijuan.cube@gmail.com"
+git config user.name "obijuan-test"
+</pre>
+<p>Ahora ejecutamos el comando <b>git status</b> para ver el estado del repositorio local
+</p>
+<pre>git status
+</pre>
+<p>Se nos indica que el fichero <b>obijuan-test/T5-ej1.fcstd</b> no pertenece al repositorio. Claro, lo hemos añadido nosotros
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-exp-5.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T6-exp-5_lc32.png" width="300" height="195" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T6-exp-5_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T6-exp-5_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-exp-5.png" class="internal" title="Aumentar"></a></div>Configurando el usuario del repositorio local   (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-exp-6.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T6-exp-6_lc32.png" width="300" height="195" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T6-exp-6_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T6-exp-6_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-exp-6.png" class="internal" title="Aumentar"></a></div>Ejecundo el comando git status  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Añadimos el fichero a nuestra aportación con el comando <b>git add</b>
+</p>
+<pre> git add obijuan-test/T5-ej1.fcstd
+</pre>
+<p>Ejecutamos otra vez el comando <b>git status</b> y nos aparece el fichero marcado, indicándonos que está en nuestra aportación. Podríamos añadir más ficheros antes de meter la aportación en nuestro repositorio local.
+</p><p>Hacemos la aportación con el comando git commit.  Es obligatorio poner siempre un comentario a las aportaciones. El comando típico para hacer estas aportaciones es:
+</p>
+<pre>git commit -m "Mi fichero hola mundo"
+</pre>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-exp-7.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T6-exp-7_lc32.png" width="300" height="195" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T6-exp-7_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T6-exp-7_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-exp-7.png" class="internal" title="Aumentar"></a></div>Fichero obijuan-test/T5-ej1.fcstd añadido a la aportación  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-exp-8.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T6-exp-8_lc32.png" width="300" height="195" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T6-exp-8_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T6-exp-8_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-exp-8.png" class="internal" title="Aumentar"></a></div>Realizando la aportación en el repositorio local  (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-exp-7-windows.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T6-exp-7-windows_lc32.png" width="300" height="196" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T6-exp-7-windows_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T6-exp-7-windows_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-exp-7-windows.png" class="internal" title="Aumentar"></a></div>Añadiendo la aportación en windows. Gracias a Juanma Roldan Gomez (Exodous)  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td>
+</td></tr></tbody></table>
+<p>Ahora enviamos la aportación al repositorio origin/master con el comando:
+</p>
+<pre> git push origin master
+</pre>
+<p>Nos pedirá el usuario y la clave. ¡¡Nuestra contribución ya está en el github disponible para todos!!
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-exp-9.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T6-exp-9_lc32.png" width="300" height="164" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T6-exp-9_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T6-exp-9_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-exp-9.png" class="internal" title="Aumentar"></a></div>Subiendo la aportación al repo con git push  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-exp-10.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T6-exp-10_lc32.png" width="300" height="171" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T6-exp-10_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T6-exp-10_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-exp-10.png" class="internal" title="Aumentar"></a></div>Nuestro llavero en el repo de github  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr>
+<td>
+<p><b>Resumen</b>, una vez configurado todo, el ciclo de trabajo es el siguiente:
+</p>
+<ul><li> Añadir los ficheros que queremos meter en la aportación con <b>git add</b></li>
+<li> Hacer la aportación en el repo local, con <b>git commit -m "Mi comentario"</b></li>
+<li> Enviar la aportación al repositorio de github con <b>git push origin master</b></li></ul>
+</td></tr></tbody></table>
+<p><br>
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-exp-11.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T6-exp-11_lc32.png" width="300" height="160" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T6-exp-11_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T6-exp-11_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T6-exp-11.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p><br>
+</p>
+<h4><span class="mw-headline" id="Ejercicios_propuestos_5">Ejercicios propuestos</span></h4>
+<ul><li> <b>Ejercicio 1:</b> Subir el llavero hola mundo a vuestro repo</li></ul>
+<ul><li> <b>Ejercicio 2:</b> Subir el llavero smily</li></ul>
+<ul><li> <b>Ejercicio 3:</b> Subir el llavero botón de encendido</li></ul>
+<h3><span class="mw-headline" id="7_Contribuyendo:_pull_request">7 Contribuyendo: pull request</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=pBrUS9aPO38"><b>Video Tutorial 7/10</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T7-1.png" class="image"><img alt="Github-freecad-T7-1.png" src="Tutorial_Github_y_Freecad_files/Github-freecad-T7-1_lc32.png" width="642" height="280"></a>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_7">Descripción</span></h4>
+<p>Haremos <b>nuestra primera contribución al repositorio oficial de llaveros</b>. El primer paso es hacer una <b>solicitud</b> (<i>pull request</i>). El segundo es <b>esperar a que nos la acepten</b>. Todo se hace desde la propia web de github. No es necesario ejecutar comandos en nuestro repositorio local.
+</p>
+<ul><li> <b>Conceptos nuevos</b>: pull request</li></ul>
+<h4><span class="mw-headline" id="Explicaci.C3.B3n_6">Explicación</span></h4>
+<p>Para <b>contribuir</b> a un proyecto desde nuestro fork tenemos que <b>lanzar una solicitud</b> (<i>pull request</i>) desde la propia <b>web de github</b>. Esta solicitud quedará registrada en el proyecto y podrá ser atendida por cualquiera que tenga permisos de escritura en ese repositorio. <b>Es decisión de los desarrolladores aceptarla o no</b>. También, es muy común que antes de aceptarla se pongan comentarios de cosas que tienen que ser modificadas antes de poderse integrar.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T7-exp-1.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T7-exp-1_lc32.png" width="300" height="143" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T7-exp-1_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T7-exp-1_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T7-exp-1.png" class="internal" title="Aumentar"></a></div>Solicitud emitida hacia el repositorio de llaveros de obijuan   (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T7-exp-2.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T7-exp-2_lc32.png" width="300" height="143" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T7-exp-2_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T7-exp-2_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T7-exp-2.png" class="internal" title="Aumentar"></a></div>Solicitud aceptada. ¡Nuestra primera contribución!  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Vamos a la web de github, a <b>nuestro repositorio de los llaveros</b>. Pinchamos en el icono <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Icon-pull-req-1.png" class="image"><img alt="Icon-pull-req-1.png" src="Tutorial_Github_y_Freecad_files/Icon-pull-req-1_lc32.png" width="40" height="30"></a> que está en la parte superior izquierda. Nos aparecerán las contribuciones que hemos hechos nosotros y que <b>NO</b> están en el repositorio original. En nuestro caso sólo hay 1 contribución: el llavero hola mundo.  Para comenzar el proceso de emitir una solicitud (pull request) pinchamos en el botón verde que dice "<b>Create pull request</b>" <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Icon-create-pull-request.png" class="image"><img alt="Icon-create-pull-request.png" src="Tutorial_Github_y_Freecad_files/Icon-create-pull-request_lc32.png" width="163" height="37"></a>.
+</p><p><br>
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T7-exp-3.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T7-exp-3_lc32.png" width="300" height="288" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T7-exp-3_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T7-exp-3_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T7-exp-3.png" class="internal" title="Aumentar"></a></div>Nuestro repositorio en github   (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T7-exp-4.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T7-exp-4_lc32.png" width="300" height="289" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T7-exp-4_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T7-exp-4_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T7-exp-4.png" class="internal" title="Aumentar"></a></div>Mostrando los cambios con respecto al repositorio original  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Ponemos un título y <b>explicamos en los comentarios cual es nuestra aportación</b>, para que la lea el dueño del repo y decida si aceptarla o no.
+Luego pichamos en "Create pull request".  Ya está creado. Es el número #9 (en este ejemplo). ¡tu primera contribución ha sido enviada! Ahora ya sólo te toca esperar a que te la acepten
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T7-exp-5.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T7-exp-5_lc32.png" width="300" height="288" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T7-exp-5_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T7-exp-5_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T7-exp-5.png" class="internal" title="Aumentar"></a></div>Preparando la solicutd de aportación (pull request)   (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T7-exp-6.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T7-exp-6_lc32.png" width="300" height="171" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T7-exp-6_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T7-exp-6_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T7-exp-6.png" class="internal" title="Aumentar"></a></div>Pull request creado (#9)  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p><b>Vamos a verlo desde el otro lado</b>. Cuando haces un pull request, los usuarios con permisos reciben una notificación. Al conectarse a la página del repositorio se indicará en la parte superior derecha el número de pull request pendientes. En este caso hay sólo uno. Al pinchar se abre el pull request. Pinchamos para verlo. Nos aparecen los comentarios.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T7-exp-7.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T7-exp-7_lc32.png" width="300" height="172" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T7-exp-7_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T7-exp-7_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T7-exp-7.png" class="internal" title="Aumentar"></a></div>Pull request pendientes de validar  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T7-exp-8.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T7-exp-8_lc32.png" width="300" height="172" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T7-exp-8_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T7-exp-8_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T7-exp-8.png" class="internal" title="Aumentar"></a></div>Pull request #9: Mi llavero hola mundo  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>En este caso se acepta el pull request directamente pulsando en "<b>Merge pull request</b>". Desde la página principal se ve que ya no queda ninguno pendiente.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T7-exp-9.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T7-exp-9_lc32.png" width="300" height="171" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T7-exp-9_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T7-exp-9_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T7-exp-9.png" class="internal" title="Aumentar"></a></div>Pull request #9 aceptado!   (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T7-exp-10.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T7-exp-10_lc32.png" width="300" height="171" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T7-exp-10_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T7-exp-10_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T7-exp-10.png" class="internal" title="Aumentar"></a></div>Ya no hay pull requests pendientes  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>En vuestro perfil aparecerá en qué proyecto habéis contribuido
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T7-exp-11.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T7-exp-11_lc32.png" width="300" height="171" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T7-exp-11_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T7-exp-11_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T7-exp-11.png" class="internal" title="Aumentar"></a></div>La contribución aparece en el perfil de obijuan-test  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Ejercicios_propuestos_6">Ejercicios propuestos</span></h4>
+<ul><li> <b>Ejercicio 1:</b> Emitir pull request de vuestros llaveros hola mundo</li></ul>
+<ul><li> <b>Ejercicio 2:</b> Crear un llavero nuevo, y aportarlo directamente a la biblioteca. Hacer un pull request del fichero freecad, del stl, del step y de una imagen. Cada uno se debe colocar en su carpeta correspondiente: freecad-src, step, stl y gallery</li></ul>
+<h4><span class="mw-headline" id="Entregas"><b>Entregas</b></span></h4>
+<ul><li> <b>Carlos García Saura</b> (Carlosgs): Primer pull request recibido</li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Delivery-carlosgs-T5-ej1.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Delivery-carlosgs-T5-ej1_lc32.png" width="300" height="203" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Delivery-carlosgs-T5-ej1_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Delivery-carlosgs-T5-ej1_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Delivery-carlosgs-T5-ej1.png" class="internal" title="Aumentar"></a></div>Ejercicio 1 de <b>Carlos García Saura</b>  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Delivery-carlosgs-T5-ej2.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Delivery-carlosgs-T5-ej2_lc32.png" width="300" height="203" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Delivery-carlosgs-T5-ej2_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Delivery-carlosgs-T5-ej2_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Delivery-carlosgs-T5-ej2.png" class="internal" title="Aumentar"></a></div>Ejercicio 2 de <b>Carlos García Saura</b>   (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Delivery-carlosgs-T5-ej3.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Delivery-carlosgs-T5-ej3_lc32.png" width="300" height="203" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Delivery-carlosgs-T5-ej3_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Delivery-carlosgs-T5-ej3_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Delivery-carlosgs-T5-ej3.png" class="internal" title="Aumentar"></a></div>Ejercicio 3 de <b>Carlos García Saura</b>  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cheese.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Cheese_lc32.png" width="300" height="174" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Cheese_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Cheese_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Cheese.png" class="internal" title="Aumentar"></a></div>Llavero Trozo de queso, de <b>Carlos García Saura</b>  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<ul><li> <b>Salvador Liris</b>: Segundo pull request recibido (Litris) </li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Delivery-litris-T5-ej1.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Delivery-litris-T5-ej1_lc32.png" width="300" height="203" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Delivery-litris-T5-ej1_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Delivery-litris-T5-ej1_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Delivery-litris-T5-ej1.png" class="internal" title="Aumentar"></a></div>Ejercicio 1 de <b>Salvador Litris</b>   (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<ul><li> <b>Jose Ignacio Alonso</b> (jialonso333): Tercer pull request recibido</li></ul>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Delivery-jialonso333-T5-ej1.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Delivery-jialonso333-T5-ej1_lc32.png" width="300" height="194" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Delivery-jialonso333-T5-ej1_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Delivery-jialonso333-T5-ej1_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Delivery-jialonso333-T5-ej1.png" class="internal" title="Aumentar"></a></div>Ejercicio 1 de <b>Jose Ignacio Alonso</b>   (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Delivery-jialonso333-T5-ej2.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Delivery-jialonso333-T5-ej2_lc32.png" width="300" height="194" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Delivery-jialonso333-T5-ej2_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Delivery-jialonso333-T5-ej2_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Delivery-jialonso333-T5-ej2.png" class="internal" title="Aumentar"></a></div>Ejercicio 2 de <b>Jose Ignacio Alonso</b>  (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Delivery-jialonso333-T5-ej3.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Delivery-jialonso333-T5-ej3_lc32.png" width="300" height="194" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Delivery-jialonso333-T5-ej3_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Delivery-jialonso333-T5-ej3_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Delivery-jialonso333-T5-ej3.png" class="internal" title="Aumentar"></a></div>Ejercicio 3 de <b>Jose Ignacio Alonso</b>  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Logo-GitHub-keychain.jpg" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Logo-GitHub-keychain_lc32.jpg" width="300" height="515" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/Logo-GitHub-keychain_lc32.jpg 1.5x, Tutorial_Github_y_Freecad_files/Logo-GitHub-keychain_lc32.jpg 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Logo-GitHub-keychain.jpg" class="internal" title="Aumentar"></a></div>Llavero con el logo de github, por <b>Jose Ignacio Alonso</b>  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id=".C2.A18_Sincron.C3.ADzate.21">¡8 Sincronízate!</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=muuMfhgP250"><b>Video Tutorial 8/10</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-1.png" class="image"><img alt="Github-freecad-T8-1.png" src="Tutorial_Github_y_Freecad_files/Github-freecad-T8-1_lc32.png" width="811" height="315"></a>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_8">Descripción</span></h4>
+<p>Como más gente ha hecho aportaciones al repositorio oficial de llaveros, nuestro repo se ha quedado desincronizado. Las aportaciones de los demás no están en nuestro repo. Tenemos que sincronizarlo.
+</p>
+<ul><li> <b>Conceptos nuevos</b>: upstream, git remote, git fetch, git checkout, git merge</li></ul>
+<h4><span class="mw-headline" id="Explicaci.C3.B3n_7">Explicación</span></h4>
+<p>En el escenario actual tenemos el <b>repositorio inicial con todas las contribuciones</b> recibidas de la gente, a partir de sus repositorios. Así, por ejemplo, <b>carlosgs</b> ha contribuido con su llavero queso, <b>movilujo</b> con el llavero de TEDx, etc...  Si bien en el repo inicial están todas las contribuciones, los forks hechos por la gente están <b>desincronizados</b>. 
+</p><p>El repositorio inicial lo denominamos <b>upstream/master</b>. El repositorio del usuario chanquete (origin / master) no está sincronizado con el upstream. Hay llaveros en el upstream que no están en el repo de chanquete. 
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-1.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T8-exp-1_lc32.png" width="300" height="287" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T8-exp-1_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T8-exp-1_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-1.png" class="internal" title="Aumentar"></a></div>Escenario actual: muchos forks desde los que se han enviado contribuciones al repo principal   (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-2.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T8-exp-2_lc32.png" width="300" height="368" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T8-exp-2_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T8-exp-2_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-2.png" class="internal" title="Aumentar"></a></div>El repositorio del chanquete NO está sincronizado   (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Para sincronizarle tiene que <b>configurar</b> su repositorio local para establecer el <b>upstream</b>. Luego mediante el comando <b>git fetch</b> se baja el reporitorio upstream. Ahora tiene los dos repositorios en local. El repositorio activo es el último que se ha bajado. Se indica con una flecha en el dibujo. Queremos que el activo sea el nuestro local. Cambiamos a él mediante el comando <b>git checkout</b>. 
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-3.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T8-exp-3_lc32.png" width="300" height="368" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T8-exp-3_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T8-exp-3_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-3.png" class="internal" title="Aumentar"></a></div>Bajando el repositorio upstram con git fetch  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-3-bis.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T8-exp-3-bis_lc32.png" width="300" height="368" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T8-exp-3-bis_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T8-exp-3-bis_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-3-bis.png" class="internal" title="Aumentar"></a></div>Poniendo el repo local como activo  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Con el comando <b>git merge</b> se mezclan los dos repositorios. <b>¡El repositorio local queda sincronizado!</b>
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-4.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T8-exp-4_lc32.png" width="300" height="368" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T8-exp-4_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T8-exp-4_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-4.png" class="internal" title="Aumentar"></a></div>Mezclando los dos repositorios con git merge  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-5.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T8-exp-5_lc32.png" width="300" height="368" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T8-exp-5_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T8-exp-5_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-5.png" class="internal" title="Aumentar"></a></div>Repositorio local sincronizado   (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Ahora lo enviamos al github con el comando <b>git push</b>, de modo que el repositorio origin/master también queda sincronizado
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-6.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T8-exp-6_lc32.png" width="300" height="368" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T8-exp-6_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T8-exp-6_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-6.png" class="internal" title="Aumentar"></a></div>Repositorio origin sincronizado  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>¡Pasamos a la acción! <b>Vamos a sincronizar nuestro repositorio</b> para tener las constribuciones del resto de usuario. Nos vamos a la web de github, a nuestro repositorio. En la figura se muestra el del usuario de prueba obijuan-test, que está 100 contribuciones por detrás del repo oficial. 
+</p><p>Nos vamos ahora al github del repositorio <a rel="nofollow" class="external text" href="https://github.com/Obijuan/freecad-key-chain-library">upstream</a> y <b>copiamos su dirección</b> (lo mismo que cuando lo clonamos). La necesitaremos para configurar el upstream en nuestro repositorio local.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-7.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T8-exp-7_lc32.png" width="300" height="293" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T8-exp-7_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T8-exp-7_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-7.png" class="internal" title="Aumentar"></a></div>El repositorio del usuario de pruebas obijuan-test tiene 100 contribuciones menos que el oficial   (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-8.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T8-exp-8_lc32.png" width="300" height="284" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T8-exp-8_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T8-exp-8_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-8.png" class="internal" title="Aumentar"></a></div>Copiando la dirección del repositorio upstream  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Configuramos el upstream mediante el comando <b>git remote add</b>:
+</p>
+<pre>git remote add upstream <a rel="nofollow" class="external free" href="https://github.com/Obijuan/freecad-key-chain-library.git">https://github.com/Obijuan/freecad-key-chain-library.git</a>
+</pre>
+<p>Podemos comprobar que está configurado correctamente con:
+</p>
+<pre>git remote -v
+</pre>
+<p>Nos bajamos el repositorio upstream con <b>git fetch upstream</b>:
+</p>
+<pre>git fetch upstream
+</pre>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-9.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T8-exp-9_lc32.png" width="300" height="171" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T8-exp-9_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T8-exp-9_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-9.png" class="internal" title="Aumentar"></a></div>Configuración del repositorio upstream  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-10.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T8-exp-10_lc32.png" width="300" height="171" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T8-exp-10_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T8-exp-10_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-10.png" class="internal" title="Aumentar"></a></div>Bajando el repositorio upstream  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Cambiamos al repositorio local, a la rama master:
+</p>
+<pre>git checkout master
+</pre>
+<p>y fusionamos el repositorio upstream/master:
+</p>
+<pre>git merge upstream/master
+</pre>
+<p>Comprobamos con git status, y en este ejemplo vemos que hay 100 aportaciones nuevas
+</p><p>Por último subimos las aportaciones al repositorio origin/master con <b>git push</b>:
+</p>
+<pre>git push origin master
+</pre>
+<pre><b>¡Ya estamos sincronizados!</b>
+</pre>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-11.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T8-exp-11_lc32.png" width="300" height="171" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T8-exp-11_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T8-exp-11_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-11.png" class="internal" title="Aumentar"></a></div>Cambiando al repositorio local y fusionándolo con upstream/master  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-12.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T8-exp-12_lc32.png" width="300" height="172" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T8-exp-12_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T8-exp-12_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-12.png" class="internal" title="Aumentar"></a></div>Comprobando con status. Hay 100 aportaciones nuevas  (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-13.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T8-exp-13_lc32.png" width="300" height="171" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T8-exp-13_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T8-exp-13_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-13.png" class="internal" title="Aumentar"></a></div>Subiendo las aportaciones al repositorio origin/master   (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Si ahora miramos nuestro repo en la web de github, vemos en la parte superior izquierda que ahora <b>nuestro repo está a la par que el inicial de obijuan</b>.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-14.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T8-exp-14_lc32.png" width="300" height="284" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T8-exp-14_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T8-exp-14_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-14.png" class="internal" title="Aumentar"></a></div>¡Repo sincronizado!   (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Como <b>resumen</b>, una vez que se tiene configurada la dirección del repositorio upstream, los comandos que hay que ejecutar para sincronizar el repo son los siguientes:
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-15.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T8-exp-15_lc32.png" width="300" height="202" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T8-exp-15_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T8-exp-15_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T8-exp-15.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Pantallazos de la <b>sincronización en Mac</b>:
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecat-T8-exp16-mac.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecat-T8-exp16-mac_lc32.png" width="300" height="193" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecat-T8-exp16-mac_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecat-T8-exp16-mac_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecat-T8-exp16-mac.png" class="internal" title="Aumentar"></a></div>Cortesía de Salvador Litris. ¡Gracias! (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecat-T8-exp17-mac.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecat-T8-exp17-mac_lc32.png" width="300" height="266" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecat-T8-exp17-mac_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecat-T8-exp17-mac_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecat-T8-exp17-mac.png" class="internal" title="Aumentar"></a></div>Cortesía de Salvador Litris. ¡Gracias! (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecat-T8-exp18-mac.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecat-T8-exp18-mac_lc32.png" width="300" height="206" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecat-T8-exp18-mac_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecat-T8-exp18-mac_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecat-T8-exp18-mac.png" class="internal" title="Aumentar"></a></div>Cortesía de Salvador Litris. ¡Gracias! (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td>
+</td></tr></tbody></table>
+<p>Pantallazos de la <b>sincronización en Windows</b>:
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecat-T8-exp19-windows.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecat-T8-exp19-windows_lc32.png" width="300" height="196" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecat-T8-exp19-windows_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecat-T8-exp19-windows_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecat-T8-exp19-windows.png" class="internal" title="Aumentar"></a></div>Cortesía de Juanma Roldán (Exodous). ¡Gracias! (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecat-T8-exp20-windows.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecat-T8-exp20-windows_lc32.png" width="300" height="196" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecat-T8-exp20-windows_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecat-T8-exp20-windows_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecat-T8-exp20-windows.png" class="internal" title="Aumentar"></a></div>Cortesía de Juanma Roldán (Exodous). ¡Gracias! (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecat-T8-exp21-windows.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecat-T8-exp21-windows_lc32.png" width="300" height="331" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecat-T8-exp21-windows_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecat-T8-exp21-windows_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecat-T8-exp21-windows.png" class="internal" title="Aumentar"></a></div>Cortesía de Juanma Roldán (Exodous). ¡Gracias! (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td>
+</td></tr></tbody></table>
+<p><br>
+</p>
+<h4><span class="mw-headline" id="Ejercicios_propuestos_7">Ejercicios propuestos</span></h4>
+<ul><li> <b>Ejercicio 1:</b> Sincronizarse con el repositorio de llaveros</li></ul>
+<h3><span class="mw-headline" id="9_JUEGO:_contribuciones_a_ciegas">9 JUEGO: contribuciones a ciegas</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=t3srJMh9jyQ"><b>Video Tutorial 9/10</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-1.png" class="image" title="400px"><img alt="400px" src="Tutorial_Github_y_Freecad_files/Github-freecad-T9-exp-1_lc32.png" width="710" height="678"></a>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_9">Descripción</span></h4>
+<p>Se plantea el juego de "<b>las contribuciones a ciegas</b>" para aprender a crear repositorios, recibir contribuciones y practicar un poco más las aportaciones a otros
+</p>
+<ul><li> <b>Conceptos nuevos</b>: Crear repositorio, aceptar pull request</li></ul>
+<h4><span class="mw-headline" id="Explicaci.C3.B3n_8">Explicación</span></h4>
+<p>Para jugar al <b>juego de las contribuciones a ciegas</b> tenemos que crear un repositorio en nuestra cuenta de github. Entramos en github y en la parte superior derecha desplegamos el <b>icono que tiene un +</b>. Seleccionamos la opción <b>new repository</b>. Rellenamos los datos para crear el repositorio:
+</p>
+<ul><li> Nombre del repositorio: <b>contribucion-a-ciegas</b></li>
+<li> Descripción: <i>Repositorio para jugar al juego de las contribuciones a ciegas</i></li></ul>
+<p>Marcamos la casilla que dice "<b>Initialize this repository with a README</b>" y pulsamos el botón verde "<b>create repository</b>"
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-2.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T9-exp-2_lc32.png" width="300" height="299" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T9-exp-2_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T9-exp-2_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-2.png" class="internal" title="Aumentar"></a></div>Crear un repositorio nuevo desde nuestra cuenta de github  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-3.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T9-exp-3_lc32.png" width="300" height="300" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T9-exp-3_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T9-exp-3_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-3.png" class="internal" title="Aumentar"></a></div>Introduciendo datos para crear el repositorio contribucion-a-ciegas  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p><b>¡Ya tenemos un repositorio nuevo!</b> Y nosotros somos los dueños, con permisos de escritura, para subir cualquier fichero o realizar modificaciones. Si miramos en nuestra lista de repositorios, nos aparecerá el nuevo, junto con el que ya teníamos de los llaveros
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-4.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T9-exp-4_lc32.png" width="300" height="299" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T9-exp-4_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T9-exp-4_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-4.png" class="internal" title="Aumentar"></a></div>Repositorio recién creado  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-5.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T9-exp-5_lc32.png" width="300" height="301" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T9-exp-5_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T9-exp-5_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-5.png" class="internal" title="Aumentar"></a></div>Lista de nuestros repositorios  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Ahora <b>clonamos</b> el repositorio en nuestro ordenador con <b>git clone</b>. Si nos metemos en la carpeta veremos que sólo contiene el fichero README.md
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-6.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T9-exp-6_lc32.png" width="300" height="192" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T9-exp-6_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T9-exp-6_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-6.png" class="internal" title="Aumentar"></a></div>Clonando el repositorio contribucion-a-ciegas   (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-7.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T9-exp-7_lc32.png" width="300" height="185" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T9-exp-7_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T9-exp-7_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-7.png" class="internal" title="Aumentar"></a></div>El repo sólo contiene el fichero README  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Creamos dos carpetas, llamadas <b>contribuciones</b> y <b>visitas</b>. En cada una de ellas creamos un fichero README.md. 
+En el de contribuciones ponemos: 
+</p>
+<pre>Sube aquí tus contribuciones&nbsp;:-)
+</pre>
+<p>y en el de visitas: 
+</p>
+<pre>Deja tu firma en el libro de visitas!!
+Crea un fichero tu_nick.txt y deja tu mensaje!!
+</pre>
+<p>Hacemos un git status y vemos que las carpetas están en rojo porque no las hemos añadido todavía. No aparecen los README porque las carpetas NO están añadidas.
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-8.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T9-exp-8_lc32.png" width="300" height="184" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T9-exp-8_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T9-exp-8_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-8.png" class="internal" title="Aumentar"></a></div>Carpetas contribuciones y visitas creadas  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-9.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T9-exp-9_lc32.png" width="300" height="193" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T9-exp-9_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T9-exp-9_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-9.png" class="internal" title="Aumentar"></a></div>Las carpetas están sin añadir todavía  (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Añadimos los ficheros README (las carpetas se añaden automáticamente):
+</p>
+<pre>git add contribuciones/README.md
+git add visitas/README.md
+</pre>
+<p>Hacemos la contribución local:
+</p>
+<pre>git commit -m "Creadas carpetas contribuciones y visitas y añadidos ficheros README"
+</pre>
+<p>y la subimos al repositorio de github:
+</p>
+<pre>git push origin master
+</pre>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-10.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T9-exp-10_lc32.png" width="300" height="215" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T9-exp-10_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T9-exp-10_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-10.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-11.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T9-exp-11_lc32.png" width="300" height="217" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T9-exp-11_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T9-exp-11_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-11.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Comprobamos en la web de github que tenemos nuestra contribución subida. ¡Listos para jugar!
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-12.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T9-exp-12_lc32.png" width="300" height="300" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T9-exp-12_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T9-exp-12_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-12.png" class="internal" title="Aumentar"></a></div>(<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p><br>
+</p>
+<h4><span class="mw-headline" id="El_juego">El juego</span></h4>
+<p>El juego es muy sencillo. Una vez creado tu repo "contribucion-a-ciegas", tendrás que buscar a otros usuarios que también lo tengan creado y <b>hacerles una contribución</b> a su repo. Puede ser cualquier cosa: una imagen, una figura, un texto, una foto... <b>¡Sorpréndeles!</b>. Al hacer una contribución (en el directorio contribuciones) hay que escribir algo también en el <b>libro de visitas</b>. Sube un fichero <i>tu_nick.txt</i> con tu texto en el directorio visitas.
+</p><p>Hay una regla:  <b>Si alguien te hace una contribución, tu le tienes que hacer otra en su repo</b>. 
+</p><p>Para buscar potenciales usuarios a los que hacerles contribuciones, mirar la lista de contribuidores en el repositorio oficial de los llaveros en github, pinchando en la parte superior izquierda donde pone <b>contributors</b>. Ir a sus perfiles y mirar si tienen creado el repositorio <b>contribución-a-ciegas</b>. Si es así, hazles una contribución. Y ellos tendrán que hacerte una a tí&nbsp;:-)
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-13.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T9-exp-13_lc32.png" width="300" height="299" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T9-exp-13_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T9-exp-13_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-13.png" class="internal" title="Aumentar"></a></div>Pulsar en la lista de contribuidores para buscar jugadores (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-14.png" class="image"><img alt="" src="Tutorial_Github_y_Freecad_files/300px-Github-freecad-T9-exp-14_lc32.png" width="300" height="299" class="thumbimage" srcset="Tutorial_Github_y_Freecad_files/450px-Github-freecad-T9-exp-14_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/600px-Github-freecad-T9-exp-14_lc32.png 2x"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T9-exp-14.png" class="internal" title="Aumentar"></a></div>Lista de contribuidores al repositorio de los llaveros   (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>¿Qué contribuciones te harán? ¿Cuantos <i>pull request</i> recibirás?&nbsp;:-)
+</p>
+<h3><span class="mw-headline" id="10_Final:_Hasta_el_github_y_m.C3.A1s_all.C3.A1">10 Final: Hasta el github y más allá</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=hhxGe26abZE"><b>Video Tutorial 10/10</b></a>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:Github-freecad-T10-1.png" class="image"><img alt="Github-freecad-T10-1.png" src="Tutorial_Github_y_Freecad_files/Github-freecad-T10-1_lc32.png" width="640" height="393"></a>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Descripci.C3.B3n_10">Descripción</span></h4>
+<p>Fin de los tutoriales. Muchas gracias a todos por vuestras contribuciones. Con lo que ya sabéis podéis contribuir en los proyectos de otros y crear los vuestros propios. Os animo a que exploréis más el git, que es una herramienta super potente. Y <b>no os perdáis</b> <a rel="nofollow" class="external text" href="https://github.com/JJ/top-github-users-data/">los rankings de usuarios más activos en github de JJmelero!</a>
+</p><p>¡Gracias!
+</p>
+<h2><span class="mw-headline" id="Repositorio">Repositorio</span></h2>
+<p>Los ficheros fuentes están en este repositorio:
+</p>
+<ul><li> <a rel="nofollow" class="external free" href="https://github.com/Obijuan/freecad-key-chain-library">https://github.com/Obijuan/freecad-key-chain-library</a></li></ul>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="http://rogerdudler.github.io/git-guide/index.es.html">Git, la guía sencilla</a></li>
+<li> <a rel="nofollow" class="external text" href="http://blog.desdelinux.net/guia-rapida-para-utilizar-github/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+UsemosLinux+%28Usemos+Linux%29">Guía rápida para usar github</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.amazon.es/Aprende-Git-y-camino-GitHub-ebook/dp/B00K515GL2/ref=sr_1_1/280-9493946-6487969?s=digital-text&amp;ie=UTF8&amp;qid=1425624985&amp;sr=1-1">Aprende Git: ... y, de camino, GitHub</a>. Libro en Amazon, por Juan Julián Melero (jjmelero)</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/JJ/top-github-users-data/">Ranking the usuarios más activos en Github de España</a>. Página principal. JJMelero</li></ul>
+<h2><span class="mw-headline" id="Autor">Autor</span></h2>
+<ul><li> <a href="https://iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main"> Juan González</a> (Obijuan)</li></ul>
+<h2><span class="mw-headline" id="Licencia">Licencia</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Archivo:By-sa.png" class="image"><img alt="By-sa.png" src="Tutorial_Github_y_Freecad_files/By-sa_lc32.png" width="403" height="141"></a> This work is licensed under a <a rel="nofollow" class="external text" href="http://creativecommons.org/licenses/by-sa/3.0/es/">Creative commons Attributions Sharealike</a>.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Cr.C3.A9ditos">Créditos</span></h2>
+<ul><li> <b>Roberto Carlos Carmona</b> (rcccord): Llavero con el logo del hardware libre. ¡Gracias!</li>
+<li> <b>Jose Vega</b>: Llavero con el logo de la Obijuan Academy. ¡Gracias!</li>
+<li> <b>Pablo Clemente</b> (Paclema). Consejos y ayuda sobre github en Windows. ¡Gracias!</li>
+<li> <b>Juanma Roldan Gomez</b> (Exodous). Pantallazos de git en Windows. Llavero Vendetta. ¡Gracias!</li>
+<li> <b>Salvador Litris</b>. Pantallazos de git en Max y llavero THX. ¡Gracias!</li>
+<li> <b>Antonio Ruiz Cuellar</b>. Pantallazos de git en Windows. ¡Gracias!</li>
+<li> <b>LLuis Vilarubies</b>: Llavero de Octoprint. ¡Gracias!</li>
+<li> <b>Jose Luis Villarejo</b>: Llavero de TEDx. ¡Gracias!</li>
+<li> <b>Carlos García Saura</b>: Llavero de Queso. ¡Gracias!</li>
+<li> <b>Jose Ignacio Alonso</b>: Llavero github. ¡Gracias!</li>
+<li> <b>Marckstack</b>: Llavero de cubos. ¡Gracias!</li>
+<li> <b>Jon (b1-66er)</b>: Llavero León. ¡Gracias!</li>
+<li> <b>AngelLM</b>: Pokellavero. ¡Gracias!</li>
+<li> <b>furanshishouco</b>: Llavero con el logo de freecad. ¡Gracias!</li>
+<li> <b>José Montes Moreno (jota-mon3)</b>: Llaveros imperio, alianza rebelde y twitter </li>
+<li> <b>Diego Mallo Menéndez</b>: Llavero Ubuntu. ¡Gracias!</li></ul>
+<h2><span class="mw-headline" id="Sobre_este_tutorial">Sobre este tutorial</span></h2>
+<p>Este tutorial está realizado <b>exclusivamente usando herramientas libres</b>.
+</p>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<ul><li> <b>Sistema Operativo</b>: <a rel="nofollow" class="external text" href="http://www.ubuntu.com/">Ubuntu Linux</a> 14.10</li>
+<li> <b>Freecad</b>: <a rel="nofollow" class="external text" href="http://www.freecadweb.org/">Freecad</a> 0.14.3702</li>
+<li> <b>Retoque imagenes</b>: <a rel="nofollow" class="external text" href="http://www.gimp.org/">gimp</a> 2.8.10</li>
+<li> <b>Dibujos</b>: <a rel="nofollow" class="external text" href="https://inkscape.org/es/">inkscape</a> 0.48.5</li>
+<li> <b>Grabación escritorio</b>: Kazam 1.4.5</li>
+<li> <b>Edición de vídeos</b>: <a rel="nofollow" class="external text" href="http://www.openshotvideo.com/">Openshot</a> 1.4.3</li>
+<li> <b>Visualización de las pulsaciones del ratón</b>: keymon 1.17</li></ul>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Enlaces_2">Enlaces</span></h2>
+<table class="wikitable">
+
+<tbody><tr>
+<td>
+<p><img alt="Proyecto Clone wars" src="Tutorial_Github_y_Freecad_files/Clone-Wars-logo_lc32.png" title="Proyecto Clone wars" width="348" height="204">
+</p>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://www.reprap.org/wiki/Proyecto_Clone_Wars">Proyecto Clone wars</a>: Construye tu impresora 3D opensource!
+</td></tr>
+<tr>
+<td>
+<center><img alt="Proyecto Reprap" src="Tutorial_Github_y_Freecad_files/RepRap1_lc32.png" title="Proyecto Reprap" width="110" height="137"></center>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://reprap.org/">Proyecto RepRap</a>: Impresoras 3D auto-replicantes. El origen de la revolución de las impresoras 3D opensource
+</td></tr>
+<tr>
+<td>
+<center><img alt="Obijuan Academy" src="Tutorial_Github_y_Freecad_files/Logo-obijuan-academy-white-back_lc32.png" title="Obijuan Academy" width="731" height="655"> </center>
+</td>
+<td> <a href="https://iearobotics.com/wiki/index.php?title=Obijuan_Academy" title="Obijuan Academy">Obijuan Academy</a>, Tu academia rebelde!&nbsp;;-)
+</td></tr>
+</tbody></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20261118213811
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.199 seconds
+Real time usage: 0.237 seconds
+Preprocessor visited node count: 213/1000000
+Preprocessor generated node count: 249/1000000
+Post‐expand include size: 800/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.578      1 - -total
+ 80.42%    2.073      4 - Plantilla:Tablabonita
+-->
+</div><div class="printfooter">
+Obtenido de «<a dir="ltr" href="https://iearobotics.com/wiki/index.php?title=Tutorial:_Github_y_Freecad&amp;oldid=22925">https://iearobotics.com/wiki/index.php?title=Tutorial:_Github_y_Freecad&amp;oldid=22925</a>»</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categorías</a>: <ul><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Robots_imprimibles" title="Categoría:Robots imprimibles">Robots imprimibles</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Charlas_y_Conferencias" title="Categoría:Charlas y Conferencias">Charlas y Conferencias</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Rob%C3%B3tica" title="Categoría:Robótica">Robótica</a></li><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Obijuan_Academy" title="Categoría:Obijuan Academy">Obijuan Academy</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Menú de navegación</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Vistas</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://iearobotics.com/wiki/index.php?title=Tutorial:_Github_y_Freecad" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Tutorial:_Github_y_Freecad&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://iearobotics.com/wiki/index.php?title=Tutorial:_Github_y_Freecad&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://iearobotics.com/wiki/index.php?title=Tutorial:_Github_y_Freecad&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Herramientas personales</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-login"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Tutorial%3A+Github+y+Freecad" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navegación</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
+											<li id="n-recentchanges"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Buscar</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Especial:Buscar">
+					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Herramientas</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Tutorial:_Github_y_Freecad" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
+											<li id="t-recentchangeslinked"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Tutorial:_Github_y_Freecad" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
+											<li id="t-specialpages"><a href="https://iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
+											<li id="t-print"><a href="https://iearobotics.com/wiki/index.php?title=Tutorial:_Github_y_Freecad&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
+											<li id="t-permalink"><a href="https://iearobotics.com/wiki/index.php?title=Tutorial:_Github_y_Freecad&amp;oldid=22925" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+											<li id="t-info"><a href="https://iearobotics.com/wiki/index.php?title=Tutorial:_Github_y_Freecad&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Tutorial_Github_y_Freecad_files/gnu-fdl_lc32.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+							</div>
+					<div id="f-poweredbyico">
+									<a href="https://www.mediawiki.org/"><img src="Tutorial_Github_y_Freecad_files/poweredby_mediawiki_88x31_lc32.png" alt="Powered by MediaWiki" srcset="Tutorial_Github_y_Freecad_files/poweredby_mediawiki_132x47_lc32.png 1.5x, Tutorial_Github_y_Freecad_files/poweredby_mediawiki_176x62_lc32.png 2x" width="88" height="31"></a>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Esta página fue modificada por última vez el 10 mar 2015 a las 12:15.</li>
+									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
+									<li id="privacy"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
+									<li id="about"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+									<li id="disclaimer"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":311});});</script>
+<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
