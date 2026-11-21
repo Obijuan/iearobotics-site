@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Obiscad</title>
+  	<link rel="stylesheet" href="load.css">
+</head>
+
+<body style="margin: 10px; font-size: 12px;">
+<h1 id="firstHeading" class="firstHeading" lang="es">Obiscad</h1>
+<div id="bodyContent" class="mw-body-content"></div>
+
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><p>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Componentes"><span class="tocnumber">2</span> <span class="toctext">Componentes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Bcube.scad:_Cubos_biselados"><span class="tocnumber">2.1</span> <span class="toctext">Bcube.scad: Cubos biselados</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Vector.scad:_Vectores"><span class="tocnumber">2.2</span> <span class="toctext">Vector.scad: Vectores</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#Introducci.C3.B3n_2"><span class="tocnumber">2.2.1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#API"><span class="tocnumber">2.2.2</span> <span class="toctext">API</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-7"><a href="#Attach.scad:_uniendo_piezas"><span class="tocnumber">2.3</span> <span class="toctext">Attach.scad: uniendo piezas</span></a>
+<ul>
+<li class="toclevel-3 tocsection-8"><a href="#Introducci.C3.B3n_3"><span class="tocnumber">2.3.1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Ejemplo"><span class="tocnumber">2.3.2</span> <span class="toctext">Ejemplo</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#API_2"><span class="tocnumber">2.3.3</span> <span class="toctext">API</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-11"><a href="#Bevel.scad:_Biselando_lados_y_a.C3.B1adiendo_refuerzos"><span class="tocnumber">2.4</span> <span class="toctext">Bevel.scad: Biselando lados y añadiendo refuerzos</span></a>
+<ul>
+<li class="toclevel-3 tocsection-12"><a href="#Introducci.C3.B3n_4"><span class="tocnumber">2.4.1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#Ejemplo_1"><span class="tocnumber">2.4.2</span> <span class="toctext">Ejemplo 1</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#Ejemplo_2"><span class="tocnumber">2.4.3</span> <span class="toctext">Ejemplo 2</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#API_3"><span class="tocnumber">2.4.4</span> <span class="toctext">API</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#Repositorio"><span class="tocnumber">3</span> <span class="toctext">Repositorio</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#Autor"><span class="tocnumber">4</span> <span class="toctext">Autor</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#Licencia"><span class="tocnumber">5</span> <span class="toctext">Licencia</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#Enlaces"><span class="tocnumber">6</span> <span class="toctext">Enlaces</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="#Noticias"><span class="tocnumber">7</span> <span class="toctext">Noticias</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>Biblioteca de <b>Módulos y objetos en Openscad</b> para facilitar el diseño.
+</p>
+<h2><span class="mw-headline" id="Componentes">Componentes</span></h2>
+<h3><span class="mw-headline" id="Bcube.scad:_Cubos_biselados">Bcube.scad: Cubos biselados</span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th>  <b><a href="Objeto_3D_Cubo_Biselado.html" title="Objeto 3D:Cubo Biselado">Más información</a></b>
+</th></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/6/67/Beveled-cube.png" class="image"><img alt="" src="Obiscad_files/300px-Beveled-cube_eg4C.png" width="300" height="247" class="thumbimage" srcset="Obiscad_files/450px-Beveled-cube_eg4C.png 1.5x, Obiscad_files/600px-Beveled-cube_eg4C.png 2x"></a>  <div class="thumbcaption">Cubo biselado con mismo radio pero diferentes resoluciones   (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/2/2f/Beveled-cube-screenshot2.png" class="image"><img alt="" src="Obiscad_files/300px-Beveled-cube-screenshot2_eg4C.png" width="300" height="235" class="thumbimage" srcset="Obiscad_files/450px-Beveled-cube-screenshot2_eg4C.png 1.5x, Obiscad_files/600px-Beveled-cube-screenshot2_eg4C.png 2x"></a>  <div class="thumbcaption">Pieza hecha a partir de cubos biselados (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/3/3c/DSC05830.JPG" class="image"><img alt="" src="Obiscad_files/300px-DSC05830_eg4C.JPG" width="300" height="225" class="thumbimage" srcset="Obiscad_files/450px-DSC05830_eg4C.JPG 1.5x, Obiscad_files/600px-DSC05830_eg4C.JPG 2x"></a>  <div class="thumbcaption">(<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/9/9d/DSC05831.JPG" class="image"><img alt="" src="Obiscad_files/300px-DSC05831_eg4C.JPG" width="300" height="225" class="thumbimage" srcset="Obiscad_files/450px-DSC05831_eg4C.JPG 1.5x, Obiscad_files/600px-DSC05831_eg4C.JPG 2x"></a>  <div class="thumbcaption">Cubo biselado, con vaciado interior biselado también (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+</tbody></table>
+<h3><span class="mw-headline" id="Vector.scad:_Vectores">Vector.scad: Vectores</span></h3>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/0/05/Vector_screenshot-3-array.png" class="image"><img alt="" src="Obiscad_files/300px-Vector_screenshot-3-array_eg4C.png" width="300" height="305" class="thumbimage" srcset="Obiscad_files/450px-Vector_screenshot-3-array_eg4C.png 1.5x, Obiscad_files/600px-Vector_screenshot-3-array_eg4C.png 2x"></a>  <div class="thumbcaption">22 vectores apuntando a diferentes direcciones  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/0/01/Vector_screenshot-4-test.png" class="image"><img alt="" src="Obiscad_files/300px-Vector_screenshot-4-test_eg4C.png" width="300" height="305" class="thumbimage" srcset="Obiscad_files/450px-Vector_screenshot-4-test_eg4C.png 1.5x, Obiscad_files/600px-Vector_screenshot-4-test_eg4C.png 2x"></a>  <div class="thumbcaption">Probando los vectores y la orientación de un elemento (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/9/95/Vector_screenshot-1-robot.png" class="image"><img alt="" src="Obiscad_files/300px-Vector_screenshot-1-robot_eg4C.png" width="300" height="305" class="thumbimage" srcset="Obiscad_files/450px-Vector_screenshot-1-robot_eg4C.png 1.5x, Obiscad_files/600px-Vector_screenshot-1-robot_eg4C.png 2x"></a>  <div class="thumbcaption">Boceto de robot junto con sus sistemas de referencia, y proyección sobre plano z=0 (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/a/aa/Vector_screenshot-2-robot-kin.png" class="image"><img alt="" src="Obiscad_files/300px-Vector_screenshot-2-robot-kin_eg4C.png" width="300" height="305" class="thumbimage" srcset="Obiscad_files/450px-Vector_screenshot-2-robot-kin_eg4C.png 1.5x, Obiscad_files/600px-Vector_screenshot-2-robot-kin_eg4C.png 2x"></a>  <div class="thumbcaption">Cinemática del robot (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+</tbody></table>
+<h4><span class="mw-headline" id="Introducci.C3.B3n_2">Introducción</span></h4>
+<p>Librería para la <b>visualización de vectores</b> y sistemas de referencia. Incluye también el operador <i>orientate()</i> para <b>orientar cualquier pieza</b> según la dirección dada por un vector. Esta librería es especialmente útil para el <b>diseño de robots</b> y <b>estudio de sus cinemáticas</b>, así como para facilitar el diseño de piezas complejas mediante la visualización de vectores auxiliares o sistemas de referencia.
+</p>
+<h4><span class="mw-headline" id="API">API</span></h4>
+<ul><li> <b>vector(v, l, l_arrow)</b>:  Dibujar el vector<i> v</i>. <i>l_arrow</i> es la longitud de la flecha. Hay dos modos de dibujo:
+<ul><li> <i>Modo 1</i>: Cuando el parámetro <i>l</i> es 0, v especifica el vector cartesiado. Se dibuja un vector que va desde el origen y que tiene su punta en las coordenadas indicadas por v</li>
+<li> <i>Modo 2</i>: Cuando <b>l es distinto de 0</b>, se dibuja un vector en la <b>misma dirección</b> que <i>v</i>, con una longitud de <i>l</i></li>
+<li> Ejemplos de uso:</li></ul></li></ul>
+<pre>vector([10,20,30]);       //-- Dibujar vector cartesiano
+vector([10,20,30],l=50);  //-- Dibujar un vector en la misma dirección que el anterior, pero de longitud 50
+</pre>
+<ul><li> <b>frame(l,l_arrow)</b>: Dibujar un sistema de referencia con 3 vectores de longitud l.  El parámetro l_arrow indica la longitud de las flechas.
+<ul><li> Ejemplo:</li></ul></li></ul>
+<pre>frame(l=10);
+</pre>
+<ul><li> <b>orientate(v,roll)</b>: Operador para <b>orientar cualquier objeto</b> según la dirección dada por <i>v</i>, y rotado un ángulo <i>roll</i> alrededor del eje definido por <i>v</i>
+<ul><li> Ejemplo:</li></ul></li></ul>
+<pre>orientate([1,1,1]) cube([10,10,10])
+</pre>
+<p>Dibujar un cubo de 10 de arista y orientarlo en la dirección dada por el vector [1,1,1]
+</p>
+<h3><span class="mw-headline" id="Attach.scad:_uniendo_piezas">Attach.scad: uniendo piezas</span></h3>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/9/96/Attach-02.png" class="image"><img alt="" src="Obiscad_files/300px-Attach-02_eg4C.png" width="300" height="267" class="thumbimage" srcset="Obiscad_files/450px-Attach-02_eg4C.png 1.5x, Obiscad_files/600px-Attach-02_eg4C.png 2x"></a>  <div class="thumbcaption"><b>Fig. 1</b>: Parte principal (cuerpo) en la que se han definido 2 connectores (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/e/e4/Attach-03.png" class="image"><img alt="" src="Obiscad_files/300px-Attach-03_eg4C.png" width="300" height="267" class="thumbimage" srcset="Obiscad_files/450px-Attach-03_eg4C.png 1.5x, Obiscad_files/600px-Attach-03_eg4C.png 2x"></a>  <div class="thumbcaption"><b>Fig. 2</b>: Parte secundaria. Se ha definido 1 conector  (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/8/89/Attach-04.png" class="image"><img alt="" src="Obiscad_files/300px-Attach-04_eg4C.png" width="300" height="267" class="thumbimage" srcset="Obiscad_files/450px-Attach-04_eg4C.png 1.5x, Obiscad_files/600px-Attach-04_eg4C.png 2x"></a>  <div class="thumbcaption"><b>Fig. 3</b>: Parte principal con dos piezas en sus conectores (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/8/89/Attach-01.png" class="image"><img alt="" src="Obiscad_files/300px-Attach-01_eg4C.png" width="300" height="267" class="thumbimage" srcset="Obiscad_files/450px-Attach-01_eg4C.png 1.5x, Obiscad_files/600px-Attach-01_eg4C.png 2x"></a>  <div class="thumbcaption"><b>Fig. 4</b>: La pieza secundaria y el objeto final (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/a/a5/Attach-05.png" class="image"><img alt="" src="Obiscad_files/300px-Attach-05_eg4C.png" width="300" height="267" class="thumbimage" srcset="Obiscad_files/450px-Attach-05_eg4C.png 1.5x, Obiscad_files/600px-Attach-05_eg4C.png 2x"></a>  <div class="thumbcaption"><b>Fig. 5</b>: Cambio en los ángulos de los conectores (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/8/8f/Attach-06.png" class="image"><img alt="" src="Obiscad_files/300px-Attach-06_eg4C.png" width="300" height="267" class="thumbimage" srcset="Obiscad_files/450px-Attach-06_eg4C.png 1.5x, Obiscad_files/600px-Attach-06_eg4C.png 2x"></a>  <div class="thumbcaption"><b>Fig. 6</b>: Misma figura, pero en modo no-debug (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+</tbody></table>
+<h4><span class="mw-headline" id="Introducci.C3.B3n_3">Introducción</span></h4>
+<p>El operador <b>attach</b> permite conectar dos piezas en las que se han definido conectores. Hace que el código sea más legible y fácil de entender.
+</p>
+<h4><span class="mw-headline" id="Ejemplo">Ejemplo</span></h4>
+<p>Partimos de la pieza principal, que en este ejemplo usaremos un cubo. Queremos unir al cubo otras dos piezas, una en la parte superior y otra en la izquierda. Primero definimos los conectores: son los elementos donde se conectarán las piezas.
+</p><p>Un conector consta de 3 componentes: El <b>punto de anclaje</b>, el <b>eje</b> de unión y el <b>ángulo</b> de giro. Para nuestro ejemplo definiremos los dos conectores c1 y c2 así:
+</p>
+<pre>//--     punto     eje    ángulo
+c1 = [ [0,0,10],  [0,0,1],  20 ]; 
+c2 = [ [-10,0,0], [-1,0,0],-30 ];
+</pre>
+<p>Para hacerlo más fácil, podemos invocar al comando connect() para verlos gráficamente junto con nuestra pieza:
+</p>
+<pre>connector(c1);
+connector(c2);
+</pre>
+<p>El resultado se muestra en la <b>figura 1</b>. A continuación hacemos lo mismo para otra pieza. En esta solo definimos el conector a:
+</p>
+<pre>a = [ [0, 2,2], [0,0,1], 0 ];
+</pre>
+<p>Para "depurar" podemos ver tanto el conector como el sistema de referencia de la piza (<b>Figura 2</b>).
+</p><p>Por último, ya podemos unir las piezas secundarias al cuerpo usando <b>attach</b>:
+</p>
+<pre>attach(c1,a) mi_pieza();
+attach(c2,a) mi_pieza();
+</pre>
+<p>¡Y ya está!  El código queda muy limpio y fácil de entender. Si ahora cambiamos los ángulo de los connectores (tercera componente) ocurre lo que se muestra en las <b>figuras 5 y 6</b>.
+</p>
+<h4><span class="mw-headline" id="API_2">API</span></h4>
+<ul><li> <b>connector(c)</b>&nbsp;: Representar en pantalla el conector c. Se muestras sus tres componentes: una <b>esfera</b> para indicar el punto de anclaje, un <b>vector</b> para el eje de la unión y una <b>marca</b> en la cabeza del vector para el ángulo de giro.</li>
+<li> <b>attach(c1,c2) mi_modulo(); </b>: Se une "mi_modulo()" definido por el conector c2 con el conector c1 del cuerpo principal</li></ul>
+<h3><span class="mw-headline" id="Bevel.scad:_Biselando_lados_y_a.C3.B1adiendo_refuerzos">Bevel.scad: Biselando lados y añadiendo refuerzos</span></h3>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/1/17/Obiscad-bevel-01.png" class="image"><img alt="" src="Obiscad_files/300px-Obiscad-bevel-01_eg4C.png" width="300" height="136" class="thumbimage" srcset="Obiscad_files/450px-Obiscad-bevel-01_eg4C.png 1.5x, Obiscad_files/600px-Obiscad-bevel-01_eg4C.png 2x"></a>  <div class="thumbcaption"><b>Fig. 1</b>: Colocando los conectores para biselar el borde de un cubo (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/8/83/Obiscad-bevel-02.png" class="image"><img alt="" src="Obiscad_files/300px-Obiscad-bevel-02_eg4C.png" width="300" height="268" class="thumbimage" srcset="Obiscad_files/450px-Obiscad-bevel-02_eg4C.png 1.5x, Obiscad_files/600px-Obiscad-bevel-02_eg4C.png 2x"></a>  <div class="thumbcaption"><b>Fig. 2</b>: Pieza cóncava colocada. ¡Listo para biselar!  (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/2/2b/Obiscad-bevel-03.png" class="image"><img alt="" src="Obiscad_files/300px-Obiscad-bevel-03_eg4C.png" width="300" height="194" class="thumbimage" srcset="Obiscad_files/450px-Obiscad-bevel-03_eg4C.png 1.5x, Obiscad_files/600px-Obiscad-bevel-03_eg4C.png 2x"></a>  <div class="thumbcaption"><b>Fig. 3</b>: ¡La arista está redondeada! (<i>click para ampliar</i>)</div></div></div>
+</td></tr>
+<tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/9/9c/Bevel_02_cube.png" class="image"><img alt="" src="Obiscad_files/300px-Bevel_02_cube_eg4C.png" width="300" height="198" class="thumbimage" srcset="Obiscad_files/450px-Bevel_02_cube_eg4C.png 1.5x, Obiscad_files/600px-Bevel_02_cube_eg4C.png 2x"></a>  <div class="thumbcaption"><b>Fig. 4</b>:  Una caja con aristas y segmentos de aristas biselados (<i>click para ampliar</i>)</div></div></div>
+</td>
+<td>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Introducci.C3.B3n_4">Introducción</span></h4>
+<p>Hay dos operaciones que se realizan con mucha frecuencia en nuestros diseños: el <b>biselado de los bordes</b> tanto <b>interiores</b> como <b>exteriores</b>. Con el biselado de los exteriores logramos <b>redondear las aristas</b> y que los bordes no estén afilados. Con el biselado interior se consigue <b>reforzar las uniones</b> entre piezas ortogonales.
+</p>
+<h4><span class="mw-headline" id="Ejemplo_1">Ejemplo 1</span></h4>
+<p>Partimos de una caja. Queremos biselar la arista superior derecha. Lo primero es definir 2 conectores sobre la arista (en el mismo punto). Uno en la dirección de la arista (da igual el sentido) y el otro orgonal, apuntando hacia la bisectriz exterior:
+</p>
+<pre>//-- Dimensiones del cubo
+size=[40,40,15];<br>
+//-- Conectores
+//--      posicion                 direccion  cero
+ec1 = [ [size[0]/2, 0, size[2]/2], [0,1,0],    0];
+en1 = [ ec1[0],                    [1,0,1],    0];
+</pre>
+<p>Conviene visualizar los conectores para asegurarnos de que no nos hemos equivocado (<b>Fig 1</b>):
+</p>
+<pre>//-- Debug!
+connector(ec1);
+connector(en1);
+</pre>
+<p>y dibujar el cubo en transparente:
+</p>
+<pre>color("Yellow",0.4) cube(size,center=true);
+</pre>
+<p>Ahora llega el momento de la magia. Con el módulo <b>bevel()</b> se colocará una pieza cóncava sobre la arista (<b>Fig 2</b>)
+</p>
+<pre>bevel(ec1, en1, cr = 8, cres=10, l=size[1]+2);
+</pre>
+<p>Lo único que hay que hacer ahora es la diferencia, obteniéndose la arista biselada (<b>Fig 3</b>):
+</p>
+<pre>difference() { 
+  cube(size,center=true);
+  bevel(ec1, en1, cr = 8, cres=10, l=size[1]+2);
+}
+</pre>
+<p>En general, en una pieza se harán más de un biselado. Primero se definen todos los connectores y luego se usa un bloque de este tipo:
+</p>
+<pre>difference() {
+   my_part();
+   bevel(a1,a2...); //-- Biselar la arista a
+   bevel(b1,b2...); //-- Biserl a arista b
+}
+</pre>
+<p>Como ejemplo, ver la (<b>Fig 4</b>).
+</p>
+<h4><span class="mw-headline" id="Ejemplo_2">Ejemplo 2</span></h4>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/b/b1/Obiscad-bevel-04.png" class="image"><img alt="" src="Obiscad_files/300px-Obiscad-bevel-04_eg4C.png" width="300" height="99" class="thumbimage" srcset="Obiscad_files/450px-Obiscad-bevel-04_eg4C.png 1.5x, Obiscad_files/600px-Obiscad-bevel-04_eg4C.png 2x"></a>  <div class="thumbcaption"><b>Fig. 5</b>: Colocando los conectores para reforzar una pieza (<i>click para ampliar</i>)</div></div></div>
+</td></tr></tbody></table>
+<p>Vamos a reforzar una pieza. El procedimiento es similar. Empezamos visualizando la pieza y creando los conectores (visualizándolos para depurar)  (<b>Fig 5</b>); En este caso el conector normal al eje de unión tiene que estar apuntando hacia la bisectriz interna
+</p>
+<pre>size=[30,30,30];
+th = 3; <br>
+//-- Conectores
+ec1 = [ [0,-size[1]/2+th,-size[2]/2+th], [1,0,0],  0];
+en1 = [ ec1[0],                          [0,1,1], 0]; <br>
+//-- Ver los conectores para depurar
+connector(ec1);
+connector(en1); <br>
+//-- Dibujar la pieza a reforzar
+difference() {
+ cube(size,center=true);
+ translate([0,th,th])
+   cube([size[0]+2,size[1],size[2]],center=true);
+}
+</pre>
+<p>Ahora añadimos el refuerzo con este comando:
+</p>
+<pre>bconcave_corner_attach(ec1,en1,l=th,cr=8,cres=0);
+</pre>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/5/59/Obiscad-bevel-05.png" class="image"><img alt="" src="Obiscad_files/300px-Obiscad-bevel-05_eg4C.png" width="300" height="194" class="thumbimage" srcset="Obiscad_files/450px-Obiscad-bevel-05_eg4C.png 1.5x, Obiscad_files/600px-Obiscad-bevel-05_eg4C.png 2x"></a>  <div class="thumbcaption"><b>Fig. 6</b>: Pieza con refuerzo</div></div></div>
+</td></tr></tbody></table>
+<p>Jugando con los parámetros (radio, resolución...) y añadiendo más conectores se obtienen diferentes tipos de refuerzos:
+</p>
+<table>
+<tbody><tr>
+<td> <div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="images/b/b6/Obiscad-bevel-06.png" class="image"><img alt="" src="Obiscad_files/300px-Obiscad-bevel-06_eg4C.png" width="300" height="155" class="thumbimage" srcset="Obiscad_files/450px-Obiscad-bevel-06_eg4C.png 1.5x, Obiscad_files/600px-Obiscad-bevel-06_eg4C.png 2x"></a>  <div class="thumbcaption"><b>Fig. 7</b>: Distintos refuerzos</div></div></div>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="API_3">API</span></h4>
+<ul><li> <b>bconcave_corner</b>(cr=1,cres=4,th=1,l=10,ext_corner=false)&nbsp;: Obtener un esquina cóncava.</li>
+<li> <b>bconcave_corner_attach</b> (ec1,en1,l=th,cr=8,cres=0):  Colocar una esquina cóncava como refuerzo</li>
+<li> <b>bevel</b> (ec1, en1, cr = 8, cres=10, l=size[1]+2): Colocar una pieza cóncaba para hacer el biselado de aristas exteriores</li></ul>
+<h2><span class="mw-headline" id="Repositorio">Repositorio</span></h2>
+<ul><li> Acceso al repositorio: <a rel="nofollow" class="external free" href="https://github.com/Obijuan/obiscad">https://github.com/Obijuan/obiscad</a></li></ul>
+<h2><span class="mw-headline" id="Autor">Autor</span></h2>
+<ul><li> <a href="Juan_Gonzalez_Main.html" title="Juan Gonzalez:Main">Juan González Gómez</a> (Obijuan)</li></ul>
+<h2><span class="mw-headline" id="Licencia">Licencia</span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="images/c/c1/Cc_logo.png" class="image"><img alt="Cc logo.png" src="Obiscad_files/Cc_logo_eg4C.png" width="88" height="31"></a> This work is licensed under a <a rel="nofollow" class="external text" href="http://creativecommons.org/licenses/by-sa/2.5/es/">Creative Commons Attribution-ShareAlike 2.5 Spain License</a>.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
+<h2><span class="mw-headline" id="Noticias">Noticias</span></h2>
+<ul><li> <b>7/Sep/2012</b>: Comenzada esta página</li></ul>
+
+</div>
+</body>
+</html>
