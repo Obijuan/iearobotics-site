@@ -14,7 +14,7 @@
 
 <!-- start content -->
 <div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="thumb tright"><div class="thumbinner" style="width:302px;">
-	<a href="images/3/36/Tutorial_ode_box2_1.png" class="image"><img alt="Tutorial ode box2 1.png" src="Tutorial_ODE_y_robots_modulares_Caida_libre_II_files/300px-Tutorial_ode_box2_1_UmWc.png" width="300" height="225" class="thumbimage" srcset="Tutorial_ODE_y_robots_modulares_Caida_libre_II_files/450px-Tutorial_ode_box2_1_UmWc.png 1.5x, Tutorial_ODE_y_robots_modulares_Caida_libre_II_files/600px-Tutorial_ode_box2_1_UmWc.png 2x"></a>  <div class="thumbcaption">
+	<a href="images/3/36/Tutorial_ode_box2_1.png" class="image"><img alt="Tutorial ode box2 1.png" src="Tutorial_ODE_y_robots_modulares_Caida_libre_II_files/300px-Tutorial_ode_box2_1_UmWc.png" width="300" height="225" class="thumbimage"></a>  <div class="thumbcaption">
 		</div></div></div>
 <div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
 <ul>
@@ -97,7 +97,7 @@ Se presentan los nuevos parámetros que hay que definir para la realización de 
 </pre>
 <h2><span class="mw-headline" id="Ejecuci.C3.B3n">Ejecución</span></h2>
 <div class="thumb tright"><div class="thumbinner" style="width:302px;">
-	<a href="images/3/36/Tutorial_ode_box2_1.png" class="image"><img alt="" src="Tutorial_ODE_y_robots_modulares_Caida_libre_II_files/300px-Tutorial_ode_box2_1_UmWc.png" width="300" height="225" class="thumbimage" srcset="Tutorial_ODE_y_robots_modulares_Caida_libre_II_files/450px-Tutorial_ode_box2_1_UmWc.png 1.5x, Tutorial_ODE_y_robots_modulares_Caida_libre_II_files/600px-Tutorial_ode_box2_1_UmWc.png 2x"></a>  <div class="thumbcaption">
+	<a href="images/3/36/Tutorial_ode_box2_1.png" class="image"><img alt="" src="Tutorial_ODE_y_robots_modulares_Caida_libre_II_files/300px-Tutorial_ode_box2_1_UmWc.png" width="300" height="225" class="thumbimage"></a>  <div class="thumbcaption">
 			Resultado de la simulación del ejemplo <b>box2</b></div></div></div>
 <p>Para su ejecución redireccionaremos la salida estándar hacia el fichero <i>z.m</i> para poder visualizarlo con <i>octave</i>:
 </p>
@@ -127,7 +127,7 @@ octave z.m
 </pre>
 <h3><span class="mw-headline" id="Puntos_y_articulaciones_de_contacto">Puntos y articulaciones de contacto</span></h3>
 <div class="thumb tright"><div class="thumbinner" style="width:302px;">
-	<a href="images/4/41/Ode_mr_collision.png" class="image"><img alt="" src="Tutorial_ODE_y_robots_modulares_Caida_libre_II_files/300px-Ode_mr_collision_UmWc.png" width="300" height="145" class="thumbimage" srcset="Tutorial_ODE_y_robots_modulares_Caida_libre_II_files/450px-Ode_mr_collision_UmWc.png 1.5x, Tutorial_ODE_y_robots_modulares_Caida_libre_II_files/Ode_mr_collision_UmWc.png 2x"></a>  <div class="thumbcaption">
+	<a href="images/4/41/Ode_mr_collision.png" class="image"><img alt="" src="Tutorial_ODE_y_robots_modulares_Caida_libre_II_files/300px-Ode_mr_collision_UmWc.png" width="300" height="145" class="thumbimage"></a>  <div class="thumbcaption">
 			<b>Figura 1</b>. Pinchar en la imagen para ampliarla</div></div></div>
 <p>En la <b>figura 1</b> se muestran tres instantes de la simulación de un hexaedro en caida libre. En la izquierda el objeto está cayendo y se acerca al suelo. En el <i>instante</i> &lt;math&gt;t_{1}&lt;/math&gt; se produce la colisión y aparece un <b>punto de contacto</b> entre la geometría del objeto y el suelo. Durante la transición entre los instantes &lt;math&gt;t_{1}&lt;/math&gt; y &lt;math&gt;t_{2}&lt;/math&gt;, la trayectoria del objeto se modifica debido a la colisión. En ODE eso se modela colocando una articulación especial sobre el punto de contacto, denominada <b>articulación de contacto</b>. Esta articulación impone restricciones a la hora de moverse el objeto y se tendrá en cuenta al realizar el  paso de simulación entre &lt;math&gt;t_{1}&lt;/math&gt; y &lt;math&gt;t_{2}&lt;/math&gt;.<br>
 </p><p>En el siguiente paso de simulación (instante &lt;math&gt;t_{3}&lt;/math&gt;) se repetirá el proceso: se determinará cuáles son los puntos de contactos y se situará sobre ellos una articulación de contacto. Por tanto, <b>los pasos generales a realizar para simular colisiones son</b>:
