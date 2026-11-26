@@ -1,49 +1,20 @@
 <!DOCTYPE html>
-<html lang="es" dir="ltr" class="client-js"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta charset="UTF-8">
-<title>Printerbot: P1 - WikiRobotics</title>
-<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
-<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Printerbot:_P1","wgTitle":"Printerbot: P1","wgCurRevisionId":17226,"wgRevisionId":17226,"wgArticleId":2528,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Reprap"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Printerbot:_P1","wgRelevantArticleId":2528,"wgRequestId":"avxcOUZEz23n4ZotPvk-swAAvxs","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"es"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
-mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+<html lang="es" dir="ltr" class="client-js">
+<head>
+	<meta charset="UTF-8"> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Printerbot: P1</title>
+  	<link rel="stylesheet" href="load.css">
+</head>
 
-});mw.loader.load(["mediawiki.page.startup"]);});</script>
-<link rel="stylesheet" href="Printerbot_P1_files/load_A06T.css">
-<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/MonoBook/IE70Fixes.css?303" media="screen"/><![endif]-->
-<style>
-.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
-.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
-@media screen {
-	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
-@media print {
-	#toc.tochidden,.toctoggle{display:none}}
-.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/wiki/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
-.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
-<script async="" src="Printerbot_P1_files/load_A06T.es"></script>
-<meta name="generator" content="MediaWiki 1.27.7">
-<link rel="shortcut icon" href="https://iearobotics.com/favicon.ico">
-<link rel="search" type="application/opensearchdescription+xml" href="https://iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
-<link rel="EditURI" type="application/rsd+xml" href="https://iearobotics.com/wiki/api.php?action=rsd">
-<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html">
-<link rel="alternate" type="application/atom+xml" title="Canal Atom de WikiRobotics" href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
-<script src="Printerbot_P1_files/load_002_A06T.es"></script></head>
-<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Printerbot_P1 rootpage-Printerbot_P1 skin-monobook action-view">
-<div id="globalWrapper">
-		<div id="column-content">
-			<div id="content" class="mw-body" role="main">
-				<a id="top"></a>
-				
-				<div class="mw-indicators">
-</div>
-				<h1 id="firstHeading" class="firstHeading" lang="es">Printerbot: P1</h1>
-				
-				<div id="bodyContent" class="mw-body-content">
-					<div id="siteSub">De WikiRobotics</div>
-					<div id="contentSub"></div>
-										<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="#column-one">navegación</a>, <a href="#searchInput">buscar</a></div>
+<body style="margin: 10px; font-size: 12px;">
+<h1 id="firstHeading" class="firstHeading" lang="es">Printerbot: P1</h1>
+<div id="bodyContent" class="mw-body-content"></div>
 
-					<!-- start content -->
-					<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><p><a href="images/e/e2/Reprap-gen1.png" class="image" title="300px"><img alt="300px" src="Printerbot_P1_files/Reprap-gen1_A06T.png" width="570" height="216"></a>
+<!-- start content -->
+<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><p>
+	<a href="images/e/e2/Reprap-gen1.png" class="image" title="300px">
+		<img alt="300px" src="Printerbot_P1_files/Reprap-gen1_A06T.png" width="200"></a>
 </p>
 <div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">ocultar</a>]&nbsp;</span></div>
 <ul>
@@ -69,14 +40,17 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 <h2><span class="mw-headline" id="M.C3.A9ritos">Méritos</span></h2>
 <table class="wikitable">
 <tbody><tr>
-<td>  <a href="images/f/f3/Icono_premio.png" class="image"><img alt="Icono premio.png" src="Printerbot_P1_files/Icono_premio_A06T.png" width="20" height="39"></a> Primera printrbot original en Clone Wars
+<td>  <a href="images/f/f3/Icono_premio.png" class="image">
+	<img alt="Icono premio.png" src="Printerbot_P1_files/Icono_premio_A06T.png" width="20">
+</a> Primera printrbot original en Clone Wars
 </td></tr>
 </tbody></table>
 <h2><span class="mw-headline" id="Ficha">Ficha</span></h2>
-<table class="wikitable" style="width:100%">
+<table class="wikitable">
 
 <tbody><tr>
-<td> <center><a href="images/4/4b/Clon-33-P1.png" class="image" title="300px"><img alt="300px" src="Printerbot_P1_files/Clon-33-P1_A06T.png" width="1539" height="1389"></a></center>
+<td> <center><a href="images/4/4b/Clon-33-P1.png" class="image" title="300px">
+	<img alt="300px" src="Printerbot_P1_files/Clon-33-P1_A06T.png" width="200"></a></center>
 </td>
 <td>
 <ul><li> <b>Nombre</b>: <b><font color="#0000FF">P1</font></b></li>
@@ -92,19 +66,22 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 <li> <b>Nacimiento</b>:  11/Jul/2012</li>
 <li> <b>Constructor</b>: <a href="Juan_Gonzalez_Main.html" title="Juan Gonzalez:Main">Juan González Gómez</a> (Obijuan)</li></ul>
 </td>
-<td> <center><a href="images/c/cc/P1.png" class="image" title="150px"><img alt="150px" src="Printerbot_P1_files/P1_A06T.png" width="159" height="143"></a> </center>
+<td> <center><a href="images/c/cc/P1.png" class="image" title="150px">
+	<img alt="150px" src="Printerbot_P1_files/P1_A06T.png" width="120"></a> </center>
 </td></tr></tbody></table>
 <h2><span class="mw-headline" id="Autor">Autor</span></h2>
 <ul><li> <a href="Juan_Gonzalez_Main.html" title="Juan Gonzalez:Main">Juan González Gómez</a> (Obijuan)</li></ul>
 <h2><span class="mw-headline" id="Descargas">Descargas</span></h2>
 <table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
 <tbody><tr>
-<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/2012-07-05-P1-printrbot/2012-07-05-Printrun-skeinforge50.zip">2012-07-05-Printrun-skeinforge50.zip</a>
+<td> <a rel="nofollow" class="external text" 
+	href="../downloads/2012-07-05-P1-printrbot/2012-07-05-Printrun-skeinforge50.zip">2012-07-05-Printrun-skeinforge50.zip</a>
 </td>
 <td> Software PrintRun + Skeinforge 50 + slic3r perfiles para Linux. Incluye la carpeta test con piezas para probar la Prusa: moneda, cubo de calibración, etc...
 </td></tr>
 <tr>
-<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/2012-07-05-P1-printrbot/P1_profile_v1_skeinforge50.zip">P1_profile_v1_skeinforge50.zip</a>
+<td> <a rel="nofollow" class="external text" 
+	href="../downloads/2012-07-05-P1-printrbot/P1_profile_v1_skeinforge50.zip">P1_profile_v1_skeinforge50.zip</a>
 </td>
 <td> Sólo las carpetas con los perfiles: Los originales se instalan en skeinforge/skeinforge_application (carpetas alterations y profile). Los que skeinforge usa realmente están en $HOME/.skeinforge
 </td></tr></tbody></table>
@@ -168,29 +145,36 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 <dl><dd><table class="wikitable">
 
 <tbody><tr>
-<td> <a href="images/9/9e/20130123_155409.jpg" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Printerbot_P1_files/20130123_155409_A06T.jpg" width="2560" height="1920"></a>
+<td> <a href="images/9/9e/20130123_155409.jpg" class="image" title="(click para ampliar)">
+	<img alt="(click para ampliar)" src="Printerbot_P1_files/20130123_155409_A06T.jpg" width="200"></a>
 </td></tr></tbody></table></dd></dl>
 <ul><li> <b>22/Enero/2013</b>: Imprimiendo un objeto grande en PLA</li></ul>
 <dl><dd><table class="wikitable">
 
 <tbody><tr>
-<td> <a href="images/7/71/20130122_131911.jpg" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Printerbot_P1_files/1920px-20130122_131911_A06T.jpg" width="1920" height="2560"></a>
+<td> <a href="images/7/71/20130122_131911.jpg" class="image" title="(click para ampliar)">
+	<img alt="(click para ampliar)" src="Printerbot_P1_files/1920px-20130122_131911_A06T.jpg" 
+	width="200"></a>
 </td></tr></tbody></table></dd></dl>
 <ul><li> <b>17/Enero/2013</b>: Mis primeras impresiones en PLA</li></ul>
 <dl><dd><table class="wikitable">
 
 <tbody><tr>
-<td> <a href="images/d/de/DSC02236.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Printerbot_P1_files/DSC02236_A06T.JPG" width="3648" height="2736"></a>
+<td> <a href="images/d/de/DSC02236.JPG" class="image" title="(click para ampliar)">
+	<img alt="(click para ampliar)" src="Printerbot_P1_files/DSC02236_A06T.JPG" width="200"></a>
 </td>
-<td> <a href="images/a/ac/DSC02233.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Printerbot_P1_files/DSC02233_A06T.JPG" width="3648" height="2736"></a>
+<td> <a href="images/a/ac/DSC02233.JPG" class="image" title="(click para ampliar)">
+	<img alt="(click para ampliar)" src="Printerbot_P1_files/DSC02233_A06T.JPG" width="200"></a>
 </td></tr></tbody></table></dd></dl>
 <ul><li> <b>10/Enero/2013</b>: Me llevo P1 al Centro Tecnológico de Repsol (CTR)</li></ul>
 <dl><dd><table class="wikitable">
 
 <tbody><tr>
-<td> <a href="images/6/63/DSC02197.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Printerbot_P1_files/DSC02197_A06T.JPG" width="2048" height="1536"></a>
+<td> <a href="images/6/63/DSC02197.JPG" class="image" title="(click para ampliar)">
+	<img alt="(click para ampliar)" src="Printerbot_P1_files/DSC02197_A06T.JPG" width="200"></a>
 </td>
-<td> <a href="images/7/76/DSC02196.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Printerbot_P1_files/DSC02196_A06T.JPG" width="2048" height="1536"></a>
+<td> <a href="images/7/76/DSC02196.JPG" class="image" title="(click para ampliar)">
+	<img alt="(click para ampliar)" src="Printerbot_P1_files/DSC02196_A06T.JPG" width="200"></a>
 </td></tr></tbody></table></dd></dl>
 <p><br>
 </p>
@@ -198,9 +182,11 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 <dl><dd><table class="wikitable">
 
 <tbody><tr>
-<td> <a href="images/6/6d/DSC01811.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Printerbot_P1_files/DSC01811_A06T.JPG" width="2048" height="1536"></a>
+<td> <a href="images/6/6d/DSC01811.JPG" class="image" title="(click para ampliar)">
+	<img alt="(click para ampliar)" src="Printerbot_P1_files/DSC01811_A06T.JPG" width="200"></a>
 </td>
-<td> <a href="images/5/54/DSC_6578.jpg" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Printerbot_P1_files/DSC_6578_A06T.jpg" width="2048" height="1357"></a>
+<td> <a href="images/5/54/DSC_6578.jpg" class="image" title="(click para ampliar)">
+	<img alt="(click para ampliar)" src="Printerbot_P1_files/DSC_6578_A06T.jpg" width="200"></a>
 </td></tr></tbody></table></dd></dl>
 <ul><li> <b>14/Oct/2012</b>: P1 en la <a rel="nofollow" class="external text" href="http://vilanetcon.org/">Vilanet party</a>. </li></ul>
 <p><a rel="nofollow" class="external text" href="https://plus.google.com/u/0/photos/109138697406392447933/albums/5799112397064370385">Album de fotos en G+</a>
@@ -208,9 +194,11 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 <dl><dd><table class="wikitable">
 
 <tbody><tr>
-<td> <a href="images/0/09/DSC01698.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Printerbot_P1_files/DSC01698_A06T.JPG" width="3648" height="2736"></a>
+<td> <a href="images/0/09/DSC01698.JPG" class="image" title="(click para ampliar)">
+	<img alt="(click para ampliar)" src="Printerbot_P1_files/DSC01698_A06T.JPG" width="200"></a>
 </td>
-<td> <a href="images/e/e8/DSC01707.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Printerbot_P1_files/DSC01707_A06T.JPG" width="2736" height="3648"></a>
+<td> <a href="images/e/e8/DSC01707.JPG" class="image" title="(click para ampliar)">
+	<img alt="(click para ampliar)" src="Printerbot_P1_files/DSC01707_A06T.JPG" width="200"></a>
 </td></tr></tbody></table></dd></dl>
 <p><br>
 </p>
@@ -218,7 +206,9 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 <dl><dd><table class="wikitable">
 
 <tbody><tr>
-<td> <a href="images/a/a6/DSC05799.JPG" class="image" title="P1 con sus nuevas letras (click para ampliar)"><img alt="P1 con sus nuevas letras (click para ampliar)" src="Printerbot_P1_files/DSC05799_A06T.JPG" width="2048" height="1536"></a>
+<td> <a href="images/a/a6/DSC05799.JPG" class="image" title="P1 con sus nuevas letras (click para ampliar)">
+	<img alt="P1 con sus nuevas letras (click para ampliar)" src="Printerbot_P1_files/DSC05799_A06T.JPG" 
+	width="200"></a>
 </td></tr></tbody></table></dd></dl>
 <ul><li> <b>12/Jul/2012</b>: 
 <ul><li> Pariendo piezas para comprobar a P1</li>
@@ -226,9 +216,11 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 <dl><dd><table class="wikitable">
 
 <tbody><tr>
-<td> <a href="images/b/bd/DSC05472.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05472_A06T.JPG" width="2048" height="1536"></a>
+<td> <a href="images/b/bd/DSC05472.JPG" class="image" title="(click para ampliar)">
+	<img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05472_A06T.JPG" width="200"></a>
 </td>
-<td> <a href="images/2/2e/DSC05502.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05502_A06T.JPG" width="2048" height="1536"></a>
+<td> <a href="images/2/2e/DSC05502.JPG" class="image" title="(click para ampliar)">
+	<img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05502_A06T.JPG" width="200"></a>
 </td></tr></tbody></table></dd></dl>
 <p><br>
 </p>
@@ -236,21 +228,25 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 <dl><dd><table class="wikitable">
 
 <tbody><tr>
-<td> <a href="images/8/8f/DSC05466.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05466_A06T.JPG" width="2048" height="1536"></a>
+<td> <a href="images/8/8f/DSC05466.JPG" class="image" title="(click para ampliar)">
+	<img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05466_A06T.JPG" width="200"></a>
 </td></tr></tbody></table></dd></dl>
 <ul><li> <b>10/Jul/2012</b>: Montado eje z.  Ya están operativos los tres ejes. P1 es Padawan!</li></ul>
 <dl><dd><table class="wikitable">
 
 <tbody><tr>
-<td> <a href="images/7/7c/DSC05460.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05460_A06T.JPG" width="2048" height="1536"></a>
+<td> <a href="images/7/7c/DSC05460.JPG" class="image" title="(click para ampliar)">
+	<img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05460_A06T.JPG" width="200"></a>
 </td></tr></tbody></table></dd></dl>
 <ul><li> <b>09/Jul/2012</b>: Montado eje x</li></ul>
 <dl><dd><table class="wikitable">
 
 <tbody><tr>
-<td> <a href="images/9/91/DSC05454.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05454_A06T.JPG" width="2048" height="1536"></a>
+<td> <a href="images/9/91/DSC05454.JPG" class="image" title="(click para ampliar)">
+	<img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05454_A06T.JPG" width="200"></a>
 </td>
-<td> <a href="images/7/79/DSC05455.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05455_A06T.JPG" width="2048" height="1536"></a>
+<td> <a href="images/7/79/DSC05455.JPG" class="image" title="(click para ampliar)">
+	<img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05455_A06T.JPG" width="200"></a>
 </td></tr></tbody></table></dd></dl>
 <ul><li> <b>07/Jul/2012</b>: 
 <ul><li> Aplanados los ejes de los motores E, x, y. Poleas listas y colocadas</li>
@@ -258,15 +254,18 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 <dl><dd><table class="wikitable">
 
 <tbody><tr>
-<td> <a href="images/e/ee/DSC05436.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05436_A06T.JPG" width="2048" height="1536"></a>
+<td> <a href="images/e/ee/DSC05436.JPG" class="image" title="(click para ampliar)">
+	<img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05436_A06T.JPG" width="200"></a>
 </td>
-<td> <a href="images/a/a8/DSC05437.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05437_A06T.JPG" width="2048" height="1536"></a>
+<td> <a href="images/a/a8/DSC05437.JPG" class="image" title="(click para ampliar)">
+	<img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05437_A06T.JPG" width="200"></a>
 </td></tr></tbody></table></dd></dl>
 <ul><li> <b>06/Jul/2012</b>: Pequeños avances en el montaje de la base</li></ul>
 <dl><dd><table class="wikitable">
 
 <tbody><tr>
-<td> <a href="images/e/e5/DSC05433.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05433_A06T.JPG" width="2048" height="1536"></a>
+<td> <a href="images/e/e5/DSC05433.JPG" class="image" title="(click para ampliar)">
+	<img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05433_A06T.JPG" width="200"></a>
 </td></tr></tbody></table></dd></dl>
 <ul><li> <b>05/Jul/2012</b>: </li>
 <li> Fuente de alimentación y tarjeta printrboard probadas!</li>
@@ -274,148 +273,48 @@ mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","cs
 <dl><dd><table class="wikitable">
 
 <tbody><tr>
-<td> <a href="images/f/ff/DSC05421.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05421_A06T.JPG" width="2048" height="1536"></a>
+<td> <a href="images/f/ff/DSC05421.JPG" class="image" title="(click para ampliar)">
+	<img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05421_A06T.JPG" width="200"></a>
 </td>
-<td> <a href="images/4/46/DSC05422.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05422_A06T.JPG" width="2048" height="1536"></a>
+<td> <a href="images/4/46/DSC05422.JPG" class="image" title="(click para ampliar)">
+	<img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05422_A06T.JPG" width="200"></a>
 </td></tr>
 <tr>
-<td> <a href="images/c/c4/DSC05424.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05424_A06T.JPG" width="2048" height="1536"></a>
+<td> <a href="images/c/c4/DSC05424.JPG" class="image" title="(click para ampliar)">
+	<img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05424_A06T.JPG" width="200"></a>
 </td></tr></tbody></table></dd></dl>
 <ul><li> <b>04/Jul/2012</b>: Printrbot recibida!!</li></ul>
 <dl><dd><table class="wikitable">
 
 <tbody><tr>
-<td> <a href="images/e/e6/DSC05405.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05405_A06T.JPG" width="2048" height="1536"></a>
+<td> <a href="images/e/e6/DSC05405.JPG" class="image" title="(click para ampliar)">
+	<img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05405_A06T.JPG" width="200"></a>
 </td>
-<td> <a href="images/1/1d/DSC05418.JPG" class="image" title="(click para ampliar)"><img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05418_A06T.JPG" width="2048" height="1536"></a>
+<td> <a href="images/1/1d/DSC05418.JPG" class="image" title="(click para ampliar)">
+	<img alt="(click para ampliar)" src="Printerbot_P1_files/DSC05418_A06T.JPG" width="200"></a>
 </td></tr></tbody></table></dd></dl>
 <ul><li> <b>28/Jun/2012</b>: Recibida notificación por correo electrónica de la están preparando mi printrbot para enviarla</li>
 <li> <b>17/Dic/2011</b>: Me convierto en "backer" de la printrbot (proyecto en kickstarter). Soy el #1597</li></ul>
 <h2><span class="mw-headline" id="Enlaces">Enlaces</span></h2>
 <ul><li> <a rel="nofollow" class="external text" href="http://printrbot.com/">Printrbot</a></li>
 <li> <a rel="nofollow" class="external text" href="http://www.kickstarter.com/projects/printrbot/printrbot-your-first-3d-printer">Printrbot en Kickstarter</a></li>
-<li> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/2012-07-05-P1-printrbot/Printrbot-Getting-Started-Guide2.pdf">Printrbot-Getting-Started-Guide2.pdf</a>: Guía de calibración de la printrbot</li>
-<li> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/2012-07-05-P1-printrbot/Printrbot-BOM-052312.pdf">Printrbot-BOM-052312.pdf</a>: Listado de materiales de la printrbot original</li>
-<li> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/2012-07-05-P1-printrbot/1004-01-REV-D-PRINTRBOT-ASM.pdf">Planos de montaje</a></li>
-<li> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/2012-07-05-P1-printrbot/1026-02-Rev-A-EXTRUDER-ASSEMBLY-WO-MOUNT.pdf">Planos del extrusor</a></li>
+<li> <a rel="nofollow" class="external text" href="../downloads/2012-07-05-P1-printrbot/Printrbot-Getting-Started-Guide2.pdf">Printrbot-Getting-Started-Guide2.pdf</a>: Guía de calibración de la printrbot</li>
+<li> <a rel="nofollow" class="external text" href="../downloads/2012-07-05-P1-printrbot/Printrbot-BOM-052312.pdf">Printrbot-BOM-052312.pdf</a>: Listado de materiales de la printrbot original</li>
+<li> <a rel="nofollow" class="external text" href="../downloads/2012-07-05-P1-printrbot/1004-01-REV-D-PRINTRBOT-ASM.pdf">Planos de montaje</a></li>
+<li> <a rel="nofollow" class="external text" href="../downloads/2012-07-05-P1-printrbot/1026-02-Rev-A-EXTRUDER-ASSEMBLY-WO-MOUNT.pdf">Planos del extrusor</a></li>
 <li> <a rel="nofollow" class="external text" href="https://www.youtube.com/playlist?list=PLDEB12F986EC83054&amp;">Vídeos de montaje de la Printrbot</a></li></ul>
 <table class="wikitable">
 
 <tbody><tr>
 <td>
-<p><img alt="Proyecto Clone wars" src="Printerbot_P1_files/Clone_Wars_logo-peq_A06T.png" title="Proyecto Clone wars" width="200" height="137">
+<p><img alt="Proyecto Clone wars" src="Printerbot_P1_files/Clone_Wars_logo-peq_A06T.png" 
+	title="Proyecto Clone wars" width="100">
 </p>
 </td>
 <td> <a rel="nofollow" class="external text" href="http://asrob.uc3m.es/index.php/Proyecto:_Clone_wars">Proyecto Clone Wars</a>
 </td></tr></tbody></table>
 
-<!-- 
-NewPP limit report
-Cached time: 20261117135257
-Cache expiry: 0
-Dynamic content: true
-CPU time usage: 0.057 seconds
-Real time usage: 0.067 seconds
-Preprocessor visited node count: 45/1000000
-Preprocessor generated node count: 67/1000000
-Post‐expand include size: 200/2097152 bytes
-Template argument size: 0/2097152 bytes
-Highest expansion depth: 3/40
-Expensive parser function count: 0/100
--->
 
-<!-- 
-Transclusion expansion time report (%,ms,calls,template)
-100.00%    1.719      1 - Plantilla:Tablabonita
-100.00%    1.719      1 - -total
--->
-</div><div class="printfooter">
-Obtenido de «<a dir="ltr" href="https://iearobotics.com/wiki/index.php?title=Printerbot:_P1&amp;oldid=17226">https://iearobotics.com/wiki/index.php?title=Printerbot:_P1&amp;oldid=17226</a>»</div>
-					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categoría</a>: <ul><li><a href="https://iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Reprap" title="Categoría:Reprap">Reprap</a></li></ul></div></div>					<!-- end content -->
-										<div class="visualClear"></div>
-				</div>
-			</div>
-		</div>
-		<div id="column-one">
-			<h2>Menú de navegación</h2>
-					<div id="p-cactions" class="portlet" role="navigation">
-			<h3>Vistas</h3>
-
-			<div class="pBody">
-				<ul>
-				<li id="ca-nstab-main" class="selected"><a href="Printerbot_P1.html" title="Ver la página de contenido [Alt+Shift+c]" accesskey="c">Página</a></li>
-				<li id="ca-talk" class="new"><a href="https://iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Printerbot:_P1&amp;action=edit&amp;redlink=1" rel="discussion" title="Discusión acerca de la página de contenido [Alt+Shift+t]" accesskey="t">Discusión</a></li>
-				<li id="ca-viewsource"><a href="https://iearobotics.com/wiki/index.php?title=Printerbot:_P1&amp;action=edit" title="Esta página está protegida.
-Puedes ver su código fuente [Alt+Shift+e]" accesskey="e">Ver código</a></li>
-				<li id="ca-history"><a href="https://iearobotics.com/wiki/index.php?title=Printerbot:_P1&amp;action=history" title="Versiones anteriores de esta página [Alt+Shift+h]" accesskey="h">Historial</a></li>
-				</ul>
-							</div>
-		</div>
-				<div class="portlet" id="p-personal" role="navigation">
-				<h3>Herramientas personales</h3>
-
-				<div class="pBody">
-					<ul>
-													<li id="pt-login"><a href="https://iearobotics.com/wiki/index.php?title=Especial:Entrar&amp;returnto=Printerbot%3A+P1" title="Te recomendamos iniciar sesión, aunque no es obligatorio [Alt+Shift+o]" accesskey="o">Acceder</a></li>
-											</ul>
-				</div>
-			</div>
-			<div class="portlet" id="p-logo" role="banner">
-				<a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" class="mw-wiki-logo" title="Visitar la página principal"></a>
-			</div>
-				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
-		<h3>Navegación</h3>
-		<div class="pBody">
-							<ul>
-											<li id="n-mainpage"><a href="https://iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [Alt+Shift+z]" accesskey="z">Página principal</a></li>
-											<li id="n-recentchanges"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [Alt+Shift+r]" accesskey="r">Cambios recientes</a></li>
-									</ul>
-					</div>
-		</div>
-			<div id="p-search" class="portlet" role="search">
-			<h3><label for="searchInput">Buscar</label></h3>
-
-			<div id="searchBody" class="pBody">
-				<form action="/wiki/index.php" id="searchform">
-					<input type="hidden" name="title" value="Especial:Buscar">
-					<input type="search" name="search" placeholder="Buscar" title="Buscar en WikiRobotics [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
-					<input type="submit" name="go" value="Ir" title="Ir a la página con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
-						<input type="submit" name="fulltext" value="Buscar" title="Buscar este texto en las páginas" id="mw-searchButton" class="searchButton">
-				</form>
-
-							</div>
-		</div>
-			<div class="portlet" id="p-tb" role="navigation">
-			<h3>Herramientas</h3>
-
-			<div class="pBody">
-				<ul>
-											<li id="t-whatlinkshere"><a href="https://iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Printerbot:_P1" title="Lista de todas las páginas del wiki que enlazan aquí [Alt+Shift+j]" accesskey="j">Lo que enlaza aquí</a></li>
-											<li id="t-recentchangeslinked"><a href="https://iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Printerbot:_P1" title="Cambios recientes en las páginas que enlazan con esta [Alt+Shift+k]" accesskey="k">Cambios relacionados</a></li>
-											<li id="t-specialpages"><a href="https://iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [Alt+Shift+q]" accesskey="q">Páginas especiales</a></li>
-											<li id="t-print"><a href="https://iearobotics.com/wiki/index.php?title=Printerbot:_P1&amp;printable=yes" rel="alternate" title="Versión imprimible de esta página [Alt+Shift+p]" accesskey="p">Versión para imprimir</a></li>
-											<li id="t-permalink"><a href="https://iearobotics.com/wiki/index.php?title=Printerbot:_P1&amp;oldid=17226" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
-											<li id="t-info"><a href="https://iearobotics.com/wiki/index.php?title=Printerbot:_P1&amp;action=info" title="Más información sobre esta página">Información de la página</a></li>
-									</ul>
-							</div>
-		</div>
-			</div><!-- end of the left (by default at least) column -->
-		<div class="visualClear"></div>
-					<div id="footer" role="contentinfo">
-						<div id="f-copyrightico">
-									<a href="http://www.gnu.org/copyleft/fdl.html"><img src="Printerbot_P1_files/gnu-fdl_A06T.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
-							</div>
-					<div id="f-poweredbyico">
-									<a href="https://www.mediawiki.org/"><img src="Printerbot_P1_files/poweredby_mediawiki_88x31_A06T.png" alt="Powered by MediaWiki" width="88" height="31"></a>
-							</div>
-					<ul id="f-list">
-									<li id="lastmod"> Esta página fue modificada por última vez el 23 ene 2013 a las 09:23.</li>
-									<li id="copyright">El contenido está disponible bajo la licencia <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> a menos que se indique lo contrario.</li>
-									<li id="privacy"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_privacidad" title="WikiRobotics:Política de privacidad">Política de privacidad</a></li>
-									<li id="about"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
-									<li id="disclaimer"><a href="https://iearobotics.com/wiki/index.php?title=WikiRobotics:Descargo_general" title="WikiRobotics:Descargo general">Exoneraciones</a></li>
-							</ul>
-		</div>
-		</div>
-		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":130});});</script>
-<div style="display: none; font-size: 11.4688px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
+</div>
+</body>
+</html>
